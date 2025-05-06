@@ -1,0 +1,182 @@
+---
+title: "Synoptic_CB_Nutrients_2023_AnalysisTemplate"
+author: "Stephanie J. Wilson"
+date: "2025-05-05"
+output: html_document
+---
+
+---
+title: "COMPASS Synoptic Discrete Data Workflow: Example Worflow"
+author: "Stephanie J. Wilson & Stephanie Pennington"
+date: '2024-10-08'
+output: html_document
+---
+##Setup
+```{r setup, include=FALSE}
+
+#let you know which section you are in 
+cat("Setup")
+
+#a link to the Gitbook or whatever protocol you are using for this analysis 
+
+
+#Packages that are required 
+  library(dplyr)
+  library(ggplot2)
+  library(ggpubr)
+  library(stringr)
+
+#any coefficients / constants that are needed for calculations 
+
+
+#expected ranges for sample concentrations used for flags 
+  # min_conc = int
+  # max_conc = int
+  # cv_flag = 10% 
+  # rep_flag = 10%
+
+#check standard concentrations 
+  # chk_std = 10
+  
+
+#any reference to other code 
+
+
+
+```
+
+## Import Data  
+```{r Import Data, echo=FALSE}
+
+cat("Import Data")
+
+#set working directory
+  #could be from google drive or local drive etc. 
+path <- ("file path")
+
+#Read in Raw Data 
+raw <- read.csv("raw_datafile.csv")
+head(raw)
+
+```
+
+## Assessing standard Curves 
+```{r Assess Standard Curves, echo=FALSE}
+
+cat("Assess Standard Curves")
+
+#Identify standards within raw file 
+
+
+#Plot standard Curve or Curves 
+
+
+#Pull out slope and R2 
+
+
+#Report out a flag if the run has an R2 lower than appropriate 
+
+
+#compare slopes to previous runs (from log) in order to assess drift 
+
+
+#write out slopes from current run to log 
+
+```
+
+## Sample Processing - Calculating Concentrations  
+```{r Sample Processing, echo=FALSE}
+
+cat("Sample Processing")
+
+#Remove standards or other checks not needed here if necessary 
+
+
+#Calculate concentrations from standard curve 
+
+
+```
+
+## Sample Flagging - Within standards range?  
+```{r Sample Processing, echo=FALSE}
+
+cat("Sample Flagging")
+
+#Flagging data if the concentration is outside the standards range 
+
+
+#Flagging for CV of analytical duplicates or replicates 
+
+
+
+```
+
+## Analyze the Check Standards 
+```{r Check Standards, echo=FALSE}
+
+cat("Analysis Check Standards")
+
+#Pull out check standards from raw file 
+
+
+#Calculate their concentrations if not done already 
+
+
+#change this if check standard concentrations are different 
+
+
+#calculate percent difference between check standards & expected concentration 
+
+
+#flag if the percent difference is over X% (defined in setup)
+
+
+#Visualize check std concentrations vs. the expected concentrations
+
+
+#report out if flags indicate need for rerun
+
+
+```
+
+## Dilution Corrections 
+```{r Dilution Corrections}
+
+cat("Dilution Corrections")
+
+#Calculate the concentration when accounting for the dilution factor if applicable
+
+
+
+```
+
+## Visualize Data 
+```{r Visualize Data}
+
+cat("Visualize Data")
+
+#Plot samples to get a first look at concentrations (sanity check)
+
+
+```
+
+## Export Processed Data  
+```{r, Export Processed Data}
+
+cat("Export Processed Data")
+
+#set working directory 
+finalpath <- "file path"
+
+#Prepare data to be exported 
+
+#Add any necessary identifiers to the samples  ### VERY IMPORTANT AND STANDARD FOR PROJECT ####
+  #example read in sample IDs list and merge 
+  #create required ID columns in R, etc. 
+
+#Write out data frame 
+write.csv(alldat, "file_name")
+
+```
+
+#end
