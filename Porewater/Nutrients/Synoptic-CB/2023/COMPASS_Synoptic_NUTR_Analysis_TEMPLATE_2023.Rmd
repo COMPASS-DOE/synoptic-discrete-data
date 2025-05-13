@@ -48,6 +48,8 @@ cat("Setup")
 ## Import Data  
 ```{r Import Data, echo=FALSE}
 
+setwd("/Raw Data")
+
 cat("Import Data")
 
 #set working directory
