@@ -20,13 +20,28 @@ cat("Setup")
 #a link to the Gitbook or whatever protocol you are using for this analysis 
 
 
+#Maybe using pacman instead?
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(
+  dplyr,
+  ggplot2,
+  ggpubr,
+  stringr,
+  readr)
+
 #Packages that are required 
   library(dplyr)
   library(ggplot2)
   library(ggpubr)
   library(stringr)
+  library(readr)
+  library(stringr)
 
-#any coefficients / constants that are needed for calculations 
+#Coefficients / constants that are needed for calculations 
+N_mw <- 14.0067    # molecular weight of N 
+P_mw <- 30.973762  # molecular weight of P 
+Con1 <- 1000       # conversion factor value
+Con2 <- 1000000    # conversion factor value 
 
 
 #expected ranges for sample concentrations used for flags 
@@ -47,30 +62,80 @@ cat("Setup")
 
 ## Import Data  
 ```{r Import Data, echo=FALSE}
-
-setwd("/Raw Data")
-
 cat("Import Data")
+
+#setwd("/Raw Data")
 
 #set working directory
   #could be from google drive or local drive etc. 
 path <- ("file path")
 
+#---------------------
+
+#---------------------NOX---------------------
 #Read in Raw Data 
-raw <- read.csv("raw_datafile.csv")
-head(raw)
+NOx_COMP_Syn_Rename <- readr::read_csv("Raw Data/SEAL_COMPASS_Synoptic_NOx_April2023_1.csv") %>%
+  #Renaming Columns 
+  rename(`NOx_Conc_mgNL⁻¹` = `...6`,
+         `Absorbance` = `...7`,
+         `Dilution` = `...9`,
+         `Sample_Name` = `...4`,
+         `Test` = `...13`,
+         `Run_Time` = `...15`) 
+
+
+#making list to remove other columns
+cols_to_remove <- c("RUNSTARTED", "...5", "...8", "...10", "...11", "...12", "...14")
+
+#Removing other columns
+NOx_COMP_Syn <- NOx_COMP_Syn_Rename %>%
+  select(-all_of(cols_to_remove)) %>%
+  select(!c(1,2))
+
+#Checking column headers
+head(NOx_COMP_Syn)
+
+#Combine NOx Runs
+
+#---------------------PO4----------------------
+
+#---------------------___----------------------
+
 
 ```
 
 ## Assessing standard Curves 
 ```{r Assess Standard Curves, echo=FALSE}
-
 cat("Assess Standard Curves")
 
-#Identify standards within raw file 
+#Pulling standards within raw file 
+stds_NOx <- c(0.0222, 0.05, 0.1, 0.25, 0.5, 0.75, 1)
 
 
+
+ Stds_NOx_COMP_Syn <- NOx_COMP_Syn %>%
+  filter(str_detect(Sample_Name, "Standard")) %>%
+  mutate(`NOx_Conc_mgNL⁻¹` = case_when(
+    Sample_Name == "Standard_11" ~ 0.0222,
+    Sample_Name == "Standard_12" ~ 0.05,
+    Sample_Name == "Standard_13" ~ 0.1,
+    Sample_Name == "Standard_14" ~ 0.25,
+    Sample_Name == "Standard_15" ~ 0.5,
+    Sample_Name == "Standard_16" ~ 0.75,
+    Sample_Name == "Standard_17" ~ 1.0,
+    TRUE ~ `NOx_Conc_mgNL⁻¹`  # leave unchanged if no match
+  ))
+    head(Stds_NOx_COMP_Syn)
+
+
+# Filter standard samples and replace concentration values
+Stds_NOx_COMP_Syn <- NOx_COMP_Syn %>%
+  filter(str_detect(Sample_Name, "Standard")) %>%
+  mutate(`NOx_Conc_mgNL⁻¹` = stds_NOx)
+  
 #Plot standard Curve or Curves 
+Std_Curve_NOx <- ggplot(data = Stds_NOx_COMP_Syn, aes())
+  
 
 
 #Pull out slope and R2 
