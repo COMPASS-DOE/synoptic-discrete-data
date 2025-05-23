@@ -208,9 +208,9 @@ std_curve_combo <- bind_rows(std_curve_NOx_1, std_curve_NH3_1, std_curve_PO4_1)
 
 
 #Plot standard Curve or Curves 
-std_curve <- ggplot(stds_combo, aes(x = Conc, y = Absorbance)) +
+std_curve_NOx <- ggplot(stds_NOx, aes(x = Conc, y = Absorbance)) +
   geom_point() +
-  group_by(Test, geom_smooth(method = "lm", se = FALSE, color = "blue")) +
+  geom_smooth(method = "lm", se = FALSE, color = "blue") +
   facet_wrap(~ Test, scales = "free") +
   theme_minimal()
 print(std_curve)
