@@ -126,7 +126,7 @@ stds_PO4 <- stds[stds$Test == "o-PHOS 0.3", ]
 #Inputting Standard Values Based on Protocol (LINK PROTOCOL)
 stds_NOx <- stds_NOx %>%
   mutate(`Conc` = case_when(
-#    Sample_Name == "Standard_1" ~ 1.0, -> CHECK TO SEE WHAT IS
+    Sample_Name == "Standard_1" ~ 1.0,
     Sample_Name == "Standard_90" ~ 0.0222,
     Sample_Name == "Standard_91" ~ 0.05,
     Sample_Name == "Standard_92" ~ 0.1,
@@ -139,7 +139,7 @@ stds_NOx <- stds_NOx %>%
 
 stds_NH3 <- stds_NH3 %>%
   mutate(`Conc` = case_when(
-#    Sample_Name == "Standard_1" ~ 1.0, -> CHECK TO SEE WHAT IS
+    Sample_Name == "Standard_1" ~ 2.0,
     Sample_Name == "Standard_90" ~ 0.0389,
     Sample_Name == "Standard_91" ~ 0.1,
     Sample_Name == "Standard_92" ~ 0.2,
@@ -152,7 +152,7 @@ stds_NH3 <- stds_NH3 %>%
 
 stds_PO4 <- stds_PO4 %>%
   mutate(`Conc` = case_when(
-#    Sample_Name == "Standard_1" ~ 1.0, -> CHECK TO SEE WHAT IS
+    Sample_Name == "Standard_1" ~ 0.3,
     Sample_Name == "Standard_90" ~ 0.0060,
     Sample_Name == "Standard_91" ~ 0.0150,
     Sample_Name == "Standard_92" ~ 0.0300,
