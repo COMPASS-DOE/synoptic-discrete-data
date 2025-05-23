@@ -11,7 +11,9 @@ author: "Stephanie J. Wilson & Stephanie Pennington"
 date: '2024-10-08'
 output: html_document
 ---
+
 ##Setup
+
 ```{r setup, include=FALSE}
 
 #let you know which section you are in 
@@ -20,13 +22,29 @@ cat("Setup")
 #a link to the Gitbook or whatever protocol you are using for this analysis 
 
 
+#Maybe using pacman instead?
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(
+  dplyr,
+  ggplot2,
+  ggpubr,
+  stringr,
+  readr,
+  broom)
+
 #Packages that are required 
   library(dplyr)
   library(ggplot2)
   library(ggpubr)
   library(stringr)
+  library(readr)
+  library(stringr)
 
-#any coefficients / constants that are needed for calculations 
+#Coefficients / constants that are needed for calculations 
+N_mw <- 14.0067    # molecular weight of N 
+P_mw <- 30.973762  # molecular weight of P 
+Con1 <- 1000       # conversion factor value
+Con2 <- 1000000    # conversion factor value 
 
 
 #expected ranges for sample concentrations used for flags 
@@ -45,61 +63,194 @@ cat("Setup")
 
 ```
 
-## Import Data  
+## Import Data
+
 ```{r Import Data, echo=FALSE}
-
-setwd("/Raw Data")
-
 cat("Import Data")
+
+#setwd("/Raw Data")
 
 #set working directory
   #could be from google drive or local drive etc. 
 path <- ("file path")
 
+#---------------------
+
+#---------------------NOX---------------------
 #Read in Raw Data 
-raw <- read.csv("raw_datafile.csv")
-head(raw)
+dat_NOx <- readr::read_csv("Raw Data/SEAL_COMPASS_Synoptic_NOx_April2023_1.csv") 
+dat_NH3_PO4 <- readr::read_csv("Raw Data/SEAL_COMPASS_Synoptic_NH3_PO4_April2023_1.csv")
+# Combining Files
+df_combo <- bind_rows(dat_NOx, dat_NH3_PO4)
+
+# Rename columns
+df_combo_rename <- df_combo %>%
+  rename('Conc' = ...6,
+         'Absorbance' = ...7,
+         'Dilution' = ...9,
+         'Sample_Name' = ...4,
+         'Test' = ...13,
+         'Run_Time' = ...15,
+         'Unit' = ...12)
+
+#making list to remove columns
+cols_to_remove <- c("RUNSTARTED", "...5", "...8", "...10", "...11", "...14")
+
+#Removing columns
+df_all <- df_combo_rename %>%
+  select(-all_of(cols_to_remove)) %>%
+  select(!c(1,2))%>%
+  select(!c(8,9))
+
+#Checking column headers
+head(df_all)
+
 
 ```
 
-## Assessing standard Curves 
-```{r Assess Standard Curves, echo=FALSE}
+## Assessing standard Curves
 
+```{r Assess Standard Curves, echo=FALSE}
 cat("Assess Standard Curves")
 
-#Identify standards within raw file 
+
+#Pull out standards 
+stds <- df_all %>%
+  filter(str_detect(Sample_Name, "Standard"))
+
+#Making standards dataframe based on the test
+stds_NOx <- stds[stds$Test == "Vanadium NOx", ]
+stds_NH3 <- stds[stds$Test == "Ammonia 2", ]
+stds_PO4 <- stds[stds$Test == "o-PHOS 0.3", ]
+
+#Inputting Standard Values Based on Protocol (LINK PROTOCOL)
+stds_NOx <- stds_NOx %>%
+  mutate(`Conc` = case_when(
+    Sample_Name == "Standard_1" ~ 1.0,
+    Sample_Name == "Standard_90" ~ 0.0222,
+    Sample_Name == "Standard_91" ~ 0.05,
+    Sample_Name == "Standard_92" ~ 0.1,
+    Sample_Name == "Standard_93" ~ 0.25,
+    Sample_Name == "Standard_94" ~ 0.5,
+    Sample_Name == "Standard_95" ~ 0.75,
+    Sample_Name == "Standard_96" ~ 1.0,
+    TRUE ~ `Conc`  # leave unchanged if no match
+  ))
+
+stds_NH3 <- stds_NH3 %>%
+  mutate(`Conc` = case_when(
+    Sample_Name == "Standard_1" ~ 2.0,
+    Sample_Name == "Standard_90" ~ 0.0389,
+    Sample_Name == "Standard_91" ~ 0.1,
+    Sample_Name == "Standard_92" ~ 0.2,
+    Sample_Name == "Standard_93" ~ 0.5,
+    Sample_Name == "Standard_94" ~ 1.0,
+    Sample_Name == "Standard_95" ~ 1.5,
+    Sample_Name == "Standard_96" ~ 2,
+    TRUE ~ `Conc`  # leave unchanged if no match
+  ))
+
+stds_PO4 <- stds_PO4 %>%
+  mutate(`Conc` = case_when(
+    Sample_Name == "Standard_1" ~ 0.3,
+    Sample_Name == "Standard_90" ~ 0.0060,
+    Sample_Name == "Standard_91" ~ 0.0150,
+    Sample_Name == "Standard_92" ~ 0.0300,
+    Sample_Name == "Standard_93" ~ 0.0750,
+    Sample_Name == "Standard_94" ~ 0.1500,
+    Sample_Name == "Standard_95" ~ 0.2250,
+    Sample_Name == "Standard_96" ~ 0.3000,
+    TRUE ~ `Conc`  # leave unchanged if no match
+  ))
+
+
+#generating line of best fit aka standard curves
+#NOx
+lin_reg_NOx <- lm(stds_NOx$Absorbance ~stds_NOx$Conc, stds_NOx)
+NOx_coefs <- coef(lin_reg_NOx)                        # intercept and slope
+NOx_r2 <- summary(lin_reg_NOx)$r.squared              # R squared
+# Store in a clean dataframe
+std_curve_NOx_1 <- data.frame(
+  Test = "NOx",
+  Intercept = NOx_coefs["(Intercept)"],
+  Slope = NOx_coefs["Conc"],
+  R_squared = NOx_r2
+)
+
+#NH3
+lin_reg_NH3 <- lm(stds_NH3$Absorbance ~stds_NH3$Conc, stds_NH3)
+NH3_coefs <- coef(lin_reg_NH3)                        # intercept and slope
+NH3_r2 <- summary(lin_reg_NH3)$r.squared              # R squared
+# Store in a clean dataframe
+std_curve_NH3_1 <- data.frame(
+  Test = "NH3",
+  Intercept = NH3_coefs["(Intercept)"],
+  Slope = NH3_coefs["Conc"],
+  R_squared = NH3_r2
+)
+
+#PO4
+lin_reg_PO4 <- lm(stds_PO4$Absorbance ~stds_PO4$Conc, stds_PO4)
+PO4_coefs <- coef(lin_reg_PO4)                        # intercept and slope
+PO4_r2 <- summary(lin_reg_PO4)$r.squared              # R squared
+# Store in a clean dataframe
+std_curve_PO4_1 <- data.frame(
+  Test = "PO4",
+  Intercept = PO4_coefs["(Intercept)"],
+  Slope = PO4_coefs["Conc"],
+  R_squared = PO4_r2
+) # WANT TO FIND A WAY TO GET THE DATE IN THERE
+
+
+#Combining standards & curve data frames
+stds_combo <- bind_rows(stds_NOx, stds_NH3, stds_PO4)
+std_curve_combo <- bind_rows(std_curve_NOx_1, std_curve_NH3_1, std_curve_PO4_1)
 
 
 #Plot standard Curve or Curves 
+std_curve_NOx <- ggplot(stds_NOx, aes(x = Conc, y = Absorbance)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "blue") +
+  facet_wrap(~ Test, scales = "free") +
+  theme_minimal()
+print(std_curve)
 
 
-#Pull out slope and R2 
 
 
 #Report out a flag if the run has an R2 lower than appropriate 
+  #what is goung to be our cut off
 
 
 #compare slopes to previous runs (from log) in order to assess drift 
+  
 
 
 #write out slopes from current run to log 
 
 ```
 
-## Sample Processing - Calculating Concentrations  
+## Sample Processing - Calculating Concentrations
+
 ```{r Sample Processing, echo=FALSE}
 
 cat("Sample Processing")
 
 #Remove standards or other checks not needed here if necessary 
 
+#Pull out samples 
+alldat2 <- alldat[alldat$Sample_Name %like% "MSM_", ]
+alldat2 <- rbind(alldat2, (alldat[alldat$Sample_Name %like% "GWI_", ]))
+alldat2 <- rbind(alldat2, (alldat[alldat$Sample_Name %like% "GCrew_", ]))
 
 #Calculate concentrations from standard curve 
 
 
+
 ```
 
-## Sample Flagging - Within standards range?  
+## Sample Flagging - Within standards range?
+
 ```{r Sample Processing, echo=FALSE}
 
 cat("Sample Flagging")
@@ -113,7 +264,8 @@ cat("Sample Flagging")
 
 ```
 
-## Analyze the Check Standards 
+## Analyze the Check Standards
+
 ```{r Check Standards, echo=FALSE}
 
 cat("Analysis Check Standards")
@@ -141,7 +293,8 @@ cat("Analysis Check Standards")
 
 ```
 
-## Dilution Corrections 
+## Dilution Corrections
+
 ```{r Dilution Corrections}
 
 cat("Dilution Corrections")
@@ -152,7 +305,8 @@ cat("Dilution Corrections")
 
 ```
 
-## Visualize Data 
+## Visualize Data
+
 ```{r Visualize Data}
 
 cat("Visualize Data")
@@ -162,7 +316,8 @@ cat("Visualize Data")
 
 ```
 
-## Export Processed Data  
+## Export Processed Data
+
 ```{r, Export Processed Data}
 
 cat("Export Processed Data")
