@@ -30,7 +30,8 @@ pacman::p_load(
   ggpubr,
   stringr,
   readr,
-  broom)
+  broom,
+  data.table)
 
 #Packages that are required 
   library(dplyr)
@@ -100,7 +101,7 @@ cols_to_remove <- c("RUNSTARTED", "...5", "...8", "...10", "...11", "...14")
 df_all <- df_combo_rename %>%
   select(-all_of(cols_to_remove)) %>%
   select(!c(1,2))%>%
-  select(!c(8,9))
+  select(!c(8,9)) 
 
 #Checking column headers
 head(df_all)
@@ -166,38 +167,38 @@ stds_PO4 <- stds_PO4 %>%
 
 #generating line of best fit aka standard curves
 #NOx
-lin_reg_NOx <- lm(stds_NOx$Absorbance ~stds_NOx$Conc, stds_NOx)
+lin_reg_NOx <- lm(stds_NOx$Conc ~stds_NOx$Absorbance, stds_NOx)
 NOx_coefs <- coef(lin_reg_NOx)                        # intercept and slope
 NOx_r2 <- summary(lin_reg_NOx)$r.squared              # R squared
 # Store in a clean dataframe
 std_curve_NOx_1 <- data.frame(
   Test = "NOx",
   Intercept = NOx_coefs["(Intercept)"],
-  Slope = NOx_coefs["Conc"],
+  Slope = NOx_coefs[2],
   R_squared = NOx_r2
 )
 
 #NH3
-lin_reg_NH3 <- lm(stds_NH3$Absorbance ~stds_NH3$Conc, stds_NH3)
+lin_reg_NH3 <- lm(stds_NH3$Conc ~stds_NH3$Absorbance, stds_NH3)
 NH3_coefs <- coef(lin_reg_NH3)                        # intercept and slope
 NH3_r2 <- summary(lin_reg_NH3)$r.squared              # R squared
 # Store in a clean dataframe
 std_curve_NH3_1 <- data.frame(
   Test = "NH3",
   Intercept = NH3_coefs["(Intercept)"],
-  Slope = NH3_coefs["Conc"],
+  Slope = NH3_coefs[2],
   R_squared = NH3_r2
 )
 
 #PO4
-lin_reg_PO4 <- lm(stds_PO4$Absorbance ~stds_PO4$Conc, stds_PO4)
+lin_reg_PO4 <- lm(stds_PO4$Conc ~stds_PO4$Absorbance, stds_PO4)
 PO4_coefs <- coef(lin_reg_PO4)                        # intercept and slope
 PO4_r2 <- summary(lin_reg_PO4)$r.squared              # R squared
 # Store in a clean dataframe
 std_curve_PO4_1 <- data.frame(
   Test = "PO4",
   Intercept = PO4_coefs["(Intercept)"],
-  Slope = PO4_coefs["Conc"],
+  Slope = PO4_coefs[2],
   R_squared = PO4_r2
 ) # WANT TO FIND A WAY TO GET THE DATE IN THERE
 
@@ -208,22 +209,52 @@ std_curve_combo <- bind_rows(std_curve_NOx_1, std_curve_NH3_1, std_curve_PO4_1)
 
 
 #Plot standard Curve or Curves 
-std_curve_NOx <- ggplot(stds_NOx, aes(x = Conc, y = Absorbance)) +
-  geom_point() +
-  geom_smooth(method = "lm", se = FALSE, color = "blue") +
-  facet_wrap(~ Test, scales = "free") +
-  theme_minimal()
-print(std_curve)
+#NOx INCORRECT 
+std_curve_NOx_test <- ggplot(stds_NOx, aes(x = Absorbance, y = Conc)) +
+  geom_point(size = 3) +  # scatter plot of standards
+  geom_abline(
+    intercept = std_curve_NOx_1$Intercept,
+    slope = std_curve_NOx_1$Slope,
+    color = "orange2",
+    linetype = "solid"
+  ) +
+  theme_minimal() +
+  labs(title = "NOx Standard Curve") 
+print(std_curve_NOx_test)
 
+#NH3
+std_curve_NH3 <- ggplot(stds_NH3, aes(x = Absorbance, y = Conc)) +
+  geom_point(size = 3) +  # scatter plot of standards
+  geom_abline(
+    intercept = std_curve_NH3_1$Intercept,
+    slope = std_curve_NH3_1$Slope,
+    color = "green4",
+    linetype = "solid"
+  ) +
+  theme_minimal()+
+  labs(title = "NH3 Standard Curve")
+print(std_curve_NH3)
 
+std_curve_PO4 <- ggplot(stds_PO4, aes(x = Absorbance, y = Conc)) +
+  geom_point(size = 3) +  # scatter plot of standards
+  geom_abline(
+    intercept = std_curve_PO4_1$Intercept,
+    slope = std_curve_PO4_1$Slope,
+    color = "blue3",
+    linetype = "solid"
+  ) +
+  theme_minimal()+
+  labs(title = "PO4 Standard Curve")
+print(std_curve_PO4)
 
 
 #Report out a flag if the run has an R2 lower than appropriate 
-  #what is goung to be our cut off
+  #what is going to be our cut off
+
 
 
 #compare slopes to previous runs (from log) in order to assess drift 
-  
+  #want to get a way to have the run date in the stds_combo file so we can continuously export it into a sheet
 
 
 #write out slopes from current run to log 
@@ -238,13 +269,40 @@ cat("Sample Processing")
 
 #Remove standards or other checks not needed here if necessary 
 
-#Pull out samples 
-alldat2 <- alldat[alldat$Sample_Name %like% "MSM_", ]
-alldat2 <- rbind(alldat2, (alldat[alldat$Sample_Name %like% "GWI_", ]))
-alldat2 <- rbind(alldat2, (alldat[alldat$Sample_Name %like% "GCrew_", ]))
+#Pull out samples and adding metadata
+df_all_clean_1 <- df_all[df_all$Sample_Name %like% "MSM_", ]
+df_all_clean_2 <- rbind(df_all_clean_1, (df_all[df_all$Sample_Name %like% "GWI_", ]))
+df_all_clean_3 <- rbind(df_all_clean_2, (df_all[df_all$Sample_Name %like% "GCW_", ])) 
 
-#Calculate concentrations from standard curve 
+df_all_clean <- df_all_clean_3 %>%
+  mutate(separate(
+    df_all_clean_3,
+    col = Sample_Name,
+    sep = "_",
+    into = c("Site", "Samp_Date", "Position", "Replicate", "Depth"))) %>%
+   mutate(Samp_Date = lubridate::ym(Samp_Date)) %>%
+   mutate(Run_Time = lubridate::mdy_hm(Run_Time))
 
+#Calculate Concentrations from Standard Curve & Unit Conversion
+df_all_calc <- df_all_clean %>% 
+mutate(Conc_Calc = case_when(
+      Test == "Ammonia 2" ~ lin_reg_NH3$coefficients["(Intercept)"] + 
+              lin_reg_NH3$coefficients["stds_NH3$Absorbance"] * Absorbance,
+      Test == "o-PHOS 0.3" ~ lin_reg_PO4$coefficients["(Intercept)"] + 
+              lin_reg_PO4$coefficients["stds_PO4$Absorbance"] * Absorbance,
+     # Test == "Vanadium NOx "~ lin_reg_NOx$coefficients["(Intercept)"] + 
+     #         lin_reg_NOx$coefficients["stds_NOx$Absorbance"] * Absorbance,
+      TRUE ~ NA_real_)) %>%
+  mutate(`Conc_Calc_uM` = case_when(
+    Test == "Ammonia 2" ~ ((Conc_Calc/Con1)/N_mw)*2,
+    Test == "o-PHOS 0.3" ~ ((Conc_Calc/Con1)/P_mw)*2,
+    #Test == "Vanadium NOx" ~ ((Conc_Calc/Con1)/N_mw)*2
+  ))
+
+
+#add step to make negative values equal to bd (below detection) and replace with zeros 
+df_all_calc$Conc_Calc_uM <- ifelse(df_all_calc$Conc_Calc_uM<0, 0, (df_all_calc$Conc_Calc_uM) )
+head(df_all_calc)
 
 
 ```
@@ -257,8 +315,22 @@ cat("Sample Flagging")
 
 #Flagging data if the concentration is outside the standards range 
 
+df_all_calc_chk <- df_all_calc %>% 
+mutate(Range = case_when(
+      Test == "Ammonia 2" ~ ifelse(Conc < 0.02,"bdl", ifelse(Conc > 2, "adl", "Within_Range")),
+      Test == "o-PHOS 0.3" ~ ifelse(Conc < 0.003,"bdl", ifelse(Conc > 3, "adl", "Within_Range")),
+     # Test == "Vanadium NOx "~ ifelse(Conc < 0.025,"bdl", ifelse(Conc > 1, "adl", "Within_Range")),
+      TRUE ~ NA_character_)) %>%
+  mutate(`Conc_Calc_uM` = case_when(
+    Test == "Ammonia 2" ~ ((Conc_Calc/Con1)/N_mw)*2,
+    Test == "o-PHOS 0.3" ~ ((Conc_Calc/Con1)/P_mw)*2,
+    #Test == "Vanadium NOx" ~ ((Conc_Calc/Con1)/N_mw)*2
+  ))
 
-#Flagging for CV of analytical duplicates or replicates 
+
+#Flagging for CV of analyticalreplicates 
+
+
 
 
 
@@ -269,6 +341,13 @@ cat("Sample Flagging")
 ```{r Check Standards, echo=FALSE}
 
 cat("Analysis Check Standards")
+
+#this pechk was made on 10/30/24. 
+#check PECHK_Concentrations file in the Seal teams to make sure the correct concentrations are below
+pechk_pred_NH3 = 0.97
+pechk_pred_PO4 = 0.74
+pechk_pred_NOx = 1.40
+
 
 #Pull out check standards from raw file 
 
@@ -333,7 +412,7 @@ finalpath <- "file path"
 
 #Write out data frame 
 write.csv(alldat, "file_name")
-
+#
 ```
 
 #end
