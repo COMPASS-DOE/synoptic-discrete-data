@@ -12,6 +12,34 @@ date: '2024-10-08'
 output: html_document
 ---
 
+##Info 
+
+```{r setup, include=FALSE}
+
+#let you know which section you are in 
+cat("Setup")
+
+#set the run date & user name 
+  run_date <- "20230603"
+  sample_year <- 2023
+  sample_month <- 04
+  user <- "Stephanie Wilson"
+
+#identify the files you want to read in 
+  NOx_file <- "Raw Data/SEAL_COMPASS_Synoptic_NOx_April2023_1.csv"
+  NH3_PO4_file <- "Raw Data/SEAL_COMPASS_Synoptic_NH3_PO4_April2023_1.csv"
+
+# Define the file path for QAQC log file - NO Need to change just check year 
+  file_path <- "Raw Data/SEAL_COMPASS_Synoptic_QAQC_Log_2023.csv"
+  final_path <- "Processed Data/COMPASS_Synoptic_Nutrients_202304.csv"
+
+  
+#record any notes about the run or anything other info here: 
+  Notes <- "any info that needs recorded"
+
+```
+
+
 ##Setup
 
 ```{r setup, include=FALSE}
@@ -46,12 +74,33 @@ P_mw <- 30.973762  # molecular weight of P
 Con1 <- 1000       # conversion factor value
 Con2 <- 1000000    # conversion factor value 
 
+#Detection limit and top standards for flagging 
+NOx_dl <- 0.025  #mgL
+NH3_dl <- 0.02  #mgL
+PO4_dl <- 0.003 #mgL
+
+NOx_top <- 1  #mgL
+NH3_top <- 2  #mgL
+PO4_top <- 0.3 #mgL
+
+#Check Standard concnetrations 
+NOx_CCV <- 0.5 
+NH3_CCV <- 1.0 
+PO4_CCV <- 0.15 
+
 
 #expected ranges for sample concentrations used for flags 
+    r2_cutoff = 0.990
+    chk_flag = 0.10
+    chk_conc_flag = 15 #cutoff level for percent difference of check stds vs. expected concentration 
   # min_conc = int
   # max_conc = int
   # cv_flag = 10% 
   # rep_flag = 10%
+    #Flag that we 
+
+  rep_flag = 25 #this is a 25% error between samples
+  #blank_flag is calculated based on samples later in this code
 
 #check standard concentrations 
   # chk_std = 10
@@ -78,8 +127,8 @@ path <- ("file path")
 
 #---------------------NOX---------------------
 #Read in Raw Data 
-dat_NOx <- readr::read_csv("Raw Data/SEAL_COMPASS_Synoptic_NOx_April2023_1.csv") 
-dat_NH3_PO4 <- readr::read_csv("Raw Data/SEAL_COMPASS_Synoptic_NH3_PO4_April2023_1.csv")
+dat_NOx <- readr::read_csv(NOx_file) 
+dat_NH3_PO4 <- readr::read_csv(NH3_PO4_file)
 # Combining Files
 df_combo <- bind_rows(dat_NOx, dat_NH3_PO4)
 
@@ -110,6 +159,7 @@ head(df_all)
 
 ## Assessing standard Curves
 
+  #Pull out standards data - MAJOR ISSUE WE ARE NOT GETTING THE SAME SLOPE AS THE INSTRUMENT 
 ```{r Assess Standard Curves, echo=FALSE}
 cat("Assess Standard Curves")
 
@@ -126,40 +176,44 @@ stds_PO4 <- stds[stds$Test == "o-PHOS 0.3", ]
 #Inputting Standard Values Based on Protocol (LINK PROTOCOL)
 stds_NOx <- stds_NOx %>%
   mutate(`Conc` = case_when(
-    Sample_Name == "Standard_1" ~ 1.0,
-    Sample_Name == "Standard_90" ~ 0.0222,
-    Sample_Name == "Standard_91" ~ 0.05,
-    Sample_Name == "Standard_92" ~ 0.1,
-    Sample_Name == "Standard_93" ~ 0.25,
-    Sample_Name == "Standard_94" ~ 0.5,
-    Sample_Name == "Standard_95" ~ 0.75,
-    Sample_Name == "Standard_96" ~ 1.0,
+    Sample_Name == "Standard 0" ~  0.0,
+    Sample_Name == "Standard 1" ~  0.0,
+    Sample_Name == "Standard 90" ~ 0.0222,
+    Sample_Name == "Standard 91" ~ 0.05,
+    Sample_Name == "Standard 92" ~ 0.1,
+    Sample_Name == "Standard 93" ~ 0.25,
+    Sample_Name == "Standard 94" ~ 0.5,
+    Sample_Name == "Standard 95" ~ 0.75,
+    Sample_Name == "Standard 96" ~ 1.0,
     TRUE ~ `Conc`  # leave unchanged if no match
-  ))
+  )) %>%
+  filter(!Sample_Name %in% c("Nitrate Standard" , "Nitrite Standard"))
 
 stds_NH3 <- stds_NH3 %>%
   mutate(`Conc` = case_when(
-    Sample_Name == "Standard_1" ~ 2.0,
-    Sample_Name == "Standard_90" ~ 0.0389,
-    Sample_Name == "Standard_91" ~ 0.1,
-    Sample_Name == "Standard_92" ~ 0.2,
-    Sample_Name == "Standard_93" ~ 0.5,
-    Sample_Name == "Standard_94" ~ 1.0,
-    Sample_Name == "Standard_95" ~ 1.5,
-    Sample_Name == "Standard_96" ~ 2,
+    Sample_Name == "Standard 0" ~  0.0,
+    Sample_Name == "Standard 1" ~  0.0,
+    Sample_Name == "Standard .0389" ~ 0.0389,
+    Sample_Name == "Standard .1000" ~ 0.1,
+    Sample_Name == "Standard .2000" ~ 0.2,
+    Sample_Name == "Standard .5000" ~ 0.5,
+    Sample_Name == "Standard 1.0000" ~ 1.0,
+    Sample_Name == "Standard 1.5000" ~ 1.5,
+    Sample_Name == "Standard 2.0000" ~ 2,
     TRUE ~ `Conc`  # leave unchanged if no match
   ))
 
 stds_PO4 <- stds_PO4 %>%
   mutate(`Conc` = case_when(
-    Sample_Name == "Standard_1" ~ 0.3,
-    Sample_Name == "Standard_90" ~ 0.0060,
-    Sample_Name == "Standard_91" ~ 0.0150,
-    Sample_Name == "Standard_92" ~ 0.0300,
-    Sample_Name == "Standard_93" ~ 0.0750,
-    Sample_Name == "Standard_94" ~ 0.1500,
-    Sample_Name == "Standard_95" ~ 0.2250,
-    Sample_Name == "Standard_96" ~ 0.3000,
+    Sample_Name == "Standard 0" ~  0.0,
+    Sample_Name == "Standard 1" ~  0.0,
+    Sample_Name == "Standard 90" ~ 0.0060,
+    Sample_Name == "Standard 91" ~ 0.0150,
+    Sample_Name == "Standard 92" ~ 0.0300,
+    Sample_Name == "Standard 93" ~ 0.0750,
+    Sample_Name == "Standard 94" ~ 0.1500,
+    Sample_Name == "Standard 95" ~ 0.2250,
+    Sample_Name == "Standard 96" ~ 0.3000,
     TRUE ~ `Conc`  # leave unchanged if no match
   ))
 
@@ -207,44 +261,406 @@ stds_combo <- bind_rows(stds_NOx, stds_NH3, stds_PO4)
 std_curve_combo <- bind_rows(std_curve_NOx_1, std_curve_NH3_1, std_curve_PO4_1)
 
 
+```
+
+  #Plot standards data 
+```{r Assess Standard Curves, echo=FALSE}
+cat("Assess Standard Curves")
+
 #Plot standard Curve or Curves 
+  #v-Nox
 std_curve_NOx <- ggplot(stds_NOx, aes(x = Conc, y = Absorbance)) +
-  geom_point() +
-  geom_smooth(method = "lm", se = FALSE, color = "blue") +
+  geom_point(size=3) +
+  geom_smooth(method = "lm", se = FALSE, color = "darkorchid") +
   facet_wrap(~ Test, scales = "free") +
-  theme_minimal()
-print(std_curve)
+  theme_bw() + 
+  labs(x="Concentration (ppm)")+ 
+  annotate("text", x = 0.75, y = max(stds_NOx$Absorbance), label = paste("r^2 =", round(NOx_r2, 4)),
+          color = "black", size = 4)
+print(std_curve_NOx)
 
+  #NH3 
+std_curve_NH3 <- ggplot(stds_NH3, aes(x = Conc, y = Absorbance)) +
+  geom_point(size=3) +
+  geom_smooth(method = "lm", se = FALSE, color = "darkblue") +
+  facet_wrap(~ Test, scales = "free") +
+  theme_bw() + 
+  labs(x="Concentration (ppm)")+ 
+  annotate("text", x = 1.7, y = max(stds_NH3$Absorbance), label = paste("r^2 =", round(NH3_r2, 4)),
+          color = "black", size = 4)
+print(std_curve_NH3)
 
+  #PO4 
+std_curve_PO4 <- ggplot(stds_PO4, aes(x = Conc, y = Absorbance)) +
+  geom_point(size=3) +
+  geom_smooth(method = "lm", se = FALSE, color = "darkgreen") +
+  facet_wrap(~ Test, scales = "free") +
+  theme_bw() + 
+  labs(x="Concentration (ppm)")+ 
+  annotate("text", x = 0.25, y = max(stds_PO4$Absorbance), label = paste("r^2 =", round(PO4_r2, 4)),
+          color = "black", size = 4)
+print(std_curve_PO4)
 
+############## Report on Cutoffs 
 
 #Report out a flag if the run has an R2 lower than appropriate 
-  #what is goung to be our cut off
+#Write out to the user whether or not the r2 is above the cutoff of 0.98
+  ifelse(NOx_r2 <= r2_cutoff, "NOx Curve r2 is below cutoff! - REASSESS", "NOx Curve r2 GOOD - PROCEED")
+  ifelse(NH3_r2 <= r2_cutoff, "NH3 Curve r2 is below cutoff! - REASSESS", "NH3 Curve r2 GOOD - PROCEED")
+  ifelse(PO4_r2 <= r2_cutoff, "PO4 Curve r2 is below cutoff! - REASSESS", "PO4 Curve r2 GOOD - PROCEED")
+  
+#write out to the user if the slope is within 10% of previous slopes 
+  #calculate an average of the slopes and then determine how far off we are? 
+  
+    #ifelse(C_slope_cv <= chk_flag, "NPOC Curve slope is out of range! - REASSESS", "NPOC Curve slope GOOD")
+    #ifelse(N_slope_cv <= chk_flag, "TN Curve slope is out of range! - REASSESS", "TN Curve slope GOOD")
 
+
+#check for the a slope QAQC file, if there is not one, make one 
+if (file.exists(file_path)) {
+  # If it exists, read it back into R
+  stds_log <- read.csv(file_path)
+  print("CSV file exists and has been read into the code.")
+  } else {
+  # If it does not exist, create the CSV file
+  stds_log <- as.data.frame(matrix(ncol = 6, nrow = 0))
+  x <- c("Test", "Intercept", "Slope", "R_squared", "run_date", "user")
+  colnames(stds_log) <- x
+  
+  # Write add_log to CSV
+  write.csv(stds_log, file = file_path, row.names = FALSE)
+  print("CSV file does not exist. It has been created.")
+}
+
+#create a dataframe that can be appended to the QAQC log 
+add_log <- as.data.frame(rbind(std_curve_NOx_1, std_curve_NH3_1, std_curve_PO4_1))
+add_log$run_date <- run_date
+add_log$user <- user
 
 #compare slopes to previous runs (from log) in order to assess drift 
-  
+log <- rbind(stds_log, add_log)
+
+Slopes_chk <- ggplot(log, aes(run_date, Slope, col=Test)) + geom_point(size=4) + 
+  geom_line() + theme_bw() + labs(title="Slope Drift Assessment", x="Run Date", y="Slope") +
+  scale_color_manual(values=c("darkblue", "darkorchid", "darkgreen"))
+Slopes_chk
+
+#write out the log file with the added lines for this run date 
+write.csv(log, file_path)
 
 
-#write out slopes from current run to log 
 
 ```
 
-## Sample Processing - Calculating Concentrations
+
+## Analyze the Check Standards
+
+```{r Check Standards, echo=FALSE}
+
+cat("Analyze Check Standards")
+
+#Pull out check standards from raw file 
+NOx_chks <- df_all %>%
+  filter(str_detect(Sample_Name, "CCV"))%>% 
+  mutate(rep = row_number())
+
+NH3_chks <- df_all %>%
+  filter(str_detect(Sample_Name, "1mg/L ammonia"))%>% 
+  mutate(rep = row_number())
+
+PO4_chks <- df_all %>%
+  filter(str_detect(Sample_Name, "0.15 mg/L"))%>% 
+  mutate(rep = row_number())
+
+#RSV of standards 
+chks_NOx_rsv <- ((sd(NOx_chks$Conc))/mean(NOx_chks$Conc))
+chks_NH3_rsv <- ((sd(NH3_chks$Conc))/mean(NH3_chks$Conc))
+chks_PO4_rsv <- ((sd(PO4_chks$Conc))/mean(PO4_chks$Conc))
+
+#write out to user about whether or not to continue 
+ifelse(chks_NOx_rsv >= chk_flag, "NOx CHECK STANDARD RSD TOO HIGH - REASSESS",
+       "NOx Check Standard RSD within Range - PROCEED")
+ifelse(chks_NH3_rsv >= chk_flag, "NH3 CHECK STANDARD RSD TOO HIGH - REASSESS",
+       "NH3 Check Standard RSD within Range - PROCEED")
+ifelse(chks_PO4_rsv >= chk_flag, "PO4 CHECK STANDARD RSD TOO HIGH - REASSESS",
+       "PO4 Check Standard RSD within Range - PROCEED")
+
+#calculate percent difference between check standards & expected concentration 
+#flag if the percent difference is over X% (defined in setup)
+#calculate percent difference of check standards 
+NOx_chks$NOx_diff <- ((NOx_chks$Conc - NOx_CCV)/((NOx_chks$Conc + NOx_CCV)/2)) * 100
+NOx_chks$NOx_diff_flag <-  ifelse(NOx_chks$NOx_diff <= chk_conc_flag, 'YES', 'NO, rerun')
+
+NH3_chks$NH3_diff <- ((NH3_chks$Conc - NH3_CCV)/((NH3_chks$Conc + NH3_CCV)/2)) * 100
+NH3_chks$NH3_diff_flag <-  ifelse(NH3_chks$NH3_diff <= chk_conc_flag, 'YES', 'NO, rerun')
+
+PO4_chks$PO4_diff <- ((PO4_chks$Conc - PO4_CCV)/((PO4_chks$Conc + PO4_CCV)/2)) * 100
+PO4_chks$PO4_diff_flag <-  ifelse(PO4_chks$PO4_diff <= chk_conc_flag, 'YES', 'NO, rerun')
+
+#now plot the Ch4 concentrations and the CO2 concentrations vs. the expected concentration 
+#then also make the color the percent difference between the expected and observed concentration
+NOx_chks_plot <-  ggplot(data = NOx_chks, aes(x = rep, y = Conc, fill=NOx_diff_flag)) +
+       geom_bar(stat = 'identity') + 
+        scale_fill_manual(values = c("YES" = "darkgreen", "NO, rerun" = "darkgrey")) +
+        theme_classic() + labs(x= " ", y="NOx (mg/L)", title="Check Stds: NOx") + 
+        theme(legend.position="bottom") +  geom_hline(yintercept=NOx_CCV,
+              linetype="dashed", color = "black", linewidth=1) + 
+              guides(fill=guide_legend(title="% Difference <10%"))
+
+NH3_chks_plot <-  ggplot(data = NH3_chks, aes(x = rep, y = Conc, fill=NH3_diff_flag)) +
+       geom_bar(stat = 'identity') + 
+       scale_fill_manual(values = c("YES" = "darkgreen", "NO, rerun" = "darkgrey")) +
+        theme_classic() + labs(x= " ", y="NH3  (mg/L)", title="Check Stds: NH3") + 
+        theme(legend.position="bottom") +  geom_hline(yintercept=NH3_CCV,
+              linetype="dashed",  color = "black", linewidth=1) + 
+              guides(fill=guide_legend(title="% Difference <10%"))
+
+PO4_chks_plot <-  ggplot(data = PO4_chks, aes(x = rep, y = Conc, fill=PO4_diff_flag)) +
+       geom_bar(stat = 'identity') + 
+       scale_fill_manual(values = c("YES" = "darkgreen", "NO, rerun" = "darkgrey")) +
+        theme_classic() + labs(x= " ", y="PO4  (mg/L)", title="Check Stds: PO4") + 
+        theme(legend.position="bottom") +  geom_hline(yintercept=PO4_CCV,
+              linetype="dashed",  color = "black", linewidth=1) + 
+              guides(fill=guide_legend(title="% Difference <10%"))
+
+ggarrange(NOx_chks_plot, NH3_chks_plot,NH3_chks_plot, nrow=1, ncol=3)
+
+#calculate the percent of check standards that are within the range based on the flag 
+NOx_chks_percent <- (sum(NOx_chks$NOx_diff_flag == "YES")/nrow(NOx_chks))*100
+NH3_chks_percent <- (sum(NH3_chks$NH3_diff_flag == "YES")/nrow(NH3_chks))*100
+PO4_chks_percent <- (sum(PO4_chks$PO4_diff_flag == "YES")/nrow(PO4_chks))*100
+
+#report out if flags indicate need for rerun
+ifelse(NOx_chks_percent >= 60, ">60% of NOx Check Standards are within range of expected concentration - PROCEED",
+       "<60% of NOx Check Standards are within range of expected concentration - REASSESS")
+ifelse(NH3_chks_percent >= 60,">60% of NH3 Check Standards are within range of expected concentration - PROCEED",
+       "<60% of NH3 Check Standards are within range of expected concentration - REASSESS")
+ifelse(PO4_chks_percent >= 60,">60% of PO4 Check Standards are within range of expected concentration - PROCEED",
+       "<60% of PO4 Check Standards are within range of expected concentration - REASSESS")
+
+```
+
+## Analyze Blanks 
+
+```{r Analyze Blanks}
+
+cat("Assess Blanks")
+
+#Pull out check standards from raw file 
+NOx_blks <- df_all %>%
+  filter(str_detect(Sample_Name, "CCB"))%>% 
+  mutate(rep = row_number())
+
+NH3_chks <- df_all %>%
+  filter(Test == "Ammonia 2")%>% 
+  filter(str_detect(Sample_Name, "Blank"))%>% 
+  mutate(rep = row_number())
+
+PO4_chks <- df_all %>%
+  filter(Test == "o-PHOS 0.3")%>% 
+  filter(str_detect(Sample_Name, "Blank"))%>% 
+  mutate(rep = row_number())
+
+
+#I think we want to check that the blank concentrations are less than the lowest 25% of sample concentrations: 
+blk_flag_NOx <- samples %>%
+  filter(Test == "Vanadium NOx") %>%
+  summarise(Q1 = quantile(Conc, 0.25))   #this gives you the lower 25% quartile of the data 
+NOx_blks$NOx_diff_flag <-  ifelse(NOx_blks$Conc <= blk_flag_NOx, 'YES', 'NO, rerun')
+
+blk_flag_NH3 <- samples %>%
+  filter(Test == "Ammonia 2") %>%
+  summarise(Q1 = quantile(Conc, 0.25))   #this gives you the lower 25% quartile of the data 
+NH3_chks$NH3_diff_flag <-  ifelse(NH3_chks$Conc <= blk_flag_NH3, 'YES', 'NO, rerun')
+
+blk_flag_PO4 <- samples %>%
+  filter(Test == "o-PHOS 0.3") %>%
+  summarise(Q1 = quantile(Conc, 0.25))   #this gives you the lower 25% quartile of the data 
+PO4_chks$PO4_diff_flag <-  ifelse(PO4_chks$Conc <= blk_flag_PO4, 'YES', 'NO, rerun')
+
+#calculate the percent of check standards that are within the range based on the flag 
+NOx_blks_percent <- (sum(NOx_blks$NOx_diff_flag == "YES")/nrow(NOx_blks))*100
+NH3_blks_percent <- (sum(NH3_chks$NH3_diff_flag == "YES")/nrow(NH3_chks))*100
+PO4_blks_percent <- (sum(PO4_chks$PO4_diff_flag == "YES")/nrow(PO4_chks))*100
+
+#report out if flags indicate need for rerun
+ifelse(NOx_blks_percent >= 60,
+       ">60% of NOx Blank concentrations are lower than the lower 25% quartile of samples - PROCEED",
+       "<60% of NOx blaks are lower 25% quartile of samples - REASSESS")
+ifelse(NH3_blks_percent >= 60,
+       ">60% of NH3 Blank concentrations are lower than the lower 25% quartile of samples - PROCEED",
+       "<60% of NH3 blaks are lower 25% quartile of samples - REASSESS")
+ifelse(PO4_blks_percent >= 60,
+       ">60% of PO4 Blank concentrations are lower than the lower 25% quartile of samples- PROCEED",
+       "<60% of PO4 blaks are lower 25% quartile of samples - REASSESS")
+
+#now plot the DOC concentrations and the TDN concentrations vs. the expected concentration 
+#then also make the color the percent difference between the expected and observed concentration
+NOx_blks_plot <-  ggplot(data = NOx_blks, aes(x = rep, y = Conc, fill=NOx_diff_flag)) +
+       geom_bar(stat = 'identity') + 
+        scale_fill_manual(values = c("YES" = "darkblue", "NO, rerun" = "darkgrey")) +
+        theme_classic() + labs(x= " ", y="NPOC  (mg/L)", title="NOx Blanks") + 
+        theme(legend.position="bottom") +  geom_hline(yintercept= as.numeric(blk_flag_NOx), linetype="dashed", 
+                color = "black", linewidth=1)  + 
+                guides(fill=guide_legend(title="Blank Conc <25% Quartile Samples"))
+
+
+NH3_blks_plot <-  ggplot(data = NH3_chks, aes(x = rep, y = Conc, fill=NH3_diff_flag)) +
+       geom_bar(stat = 'identity') + 
+        scale_fill_manual(values = c("YES" = "darkblue", "NO, rerun" = "darkgrey")) +
+        theme_classic() + labs(x= " ", y="TN  (mg/L)", title="NH3 Blanks") + 
+        theme(legend.position="bottom") +  geom_hline(yintercept=as.numeric(blk_flag_NH3), linetype="dashed", 
+                color = "black", linewidth=1)  + 
+                guides(fill=guide_legend(title="Blank Conc <25% Quartile Samples"))
+
+PO4_blks_plot <-  ggplot(data = PO4_chks, aes(x = rep, y = Conc, fill=PO4_diff_flag)) +
+       geom_bar(stat = 'identity') + 
+        scale_fill_manual(values = c("YES" = "darkblue", "NO, rerun" = "darkgrey")) +
+        theme_classic() + labs(x= " ", y="TN  (mg/L)", title="PO4 Blanks") + 
+        theme(legend.position="bottom") +  geom_hline(yintercept=as.numeric(blk_flag_PO4), linetype="dashed", 
+                color = "black", linewidth=1)  + 
+                guides(fill=guide_legend(title="Blank Conc <25% Quartile Samples"))
+
+ggarrange(NOx_blks_plot, NH3_blks_plot,PO4_blks_plot, nrow=1, ncol=3)
+
+#find average of run carbon and nitrogen blanks for flagging samples later 
+blk_avg_NOx <- mean(NOx_blks$Conc)
+cat("NOx blanks:")
+print(blk_avg_NOx)
+
+blk_avg_NH3 <- mean(NH3_chks$Conc)
+cat("NH3 blanks:")
+print(blk_flag_NH3)
+
+blk_avg_PO4 <- mean(PO4_chks$Conc)
+cat("PO4 blanks:")
+print(blk_flag_PO4)
+
+
+```
+
+## Analyze Duplicates - Going to be a little tricky need to pull the row that says duplicate and the one above it
+
+```{#r Analyze Duplicates}
+
+cat("Analyze Duplicates")
+
+#Show me the data that we have from the calculations 
+head(dat_raw)
+
+#pull out any rows that have "dup" in the SampleID column
+dups <- dat_raw %>%  
+  filter(str_detect(sample_name, "dup"))      #have to change this to match data
+head(dups)
+
+#remove these from sample dataframe in a new dataframe
+dat_raw2 <- dat_raw %>%  
+  filter(!str_detect(sample_name, "dup")) 
+head(dat_raw2)
+
+#remove the dup from these IDs so we will have duplicate sample names
+dups$sample_name<-gsub("_dup","",as.character(dups$sample_name))
+dups <- dups[ ,-c(4)] #remove the run date time for 
+colnames(dups) <- c('sample_name', 'npoc_raw_dup', "tdn_raw_dup")
+head(dups)
+
+QAdups <- merge(dat_raw2, dups)
+head(QAdups)
+
+df2 <- as.data.frame(QAdups$npoc_raw)
+df2$dups <- QAdups$npoc_raw_dup
+
+df2$sds <- apply(df2,1,sd)
+df2$mean <- apply(df2, 1, mean)
+
+QAdups$npoc_dups_cv <- (df2$sds/df2$mean) * 100
+QAdups$npoc_dups_cv_flag <-  ifelse(QAdups$npoc_dups_cv <10, 'YES', 'NO, rerun')
+
+df3 <- as.data.frame(QAdups$tdn_raw)
+df3$dups <- QAdups$tdn_raw_dup
+
+df3$sds <- apply(df3,1,sd)
+df3$mean <- apply(df3, 1, mean)
+
+QAdups$tdn_dups_cv <- (df3$sds/df3$mean) * 100
+QAdups$tdn_dups_cv_flag <-  ifelse(QAdups$tdn_dups_cv <10, 'YES', 'NO, rerun')
+
+head(QAdups)
+
+#plot dups output as a bar graph to easily check - want any over 10% to be red need to work on this 
+C_dups <- ggplot(data =QAdups, aes(x =sample_name, y =npoc_dups_cv, fill=npoc_dups_cv_flag)) +
+       geom_bar(stat = 'identity') + 
+        theme_classic() + labs(x= "Sample ID", y="NPOC (mg/L)") + 
+        scale_fill_manual(values = c("YES" = "darkgreen", "NO, rerun" = "red")) +
+        theme(legend.position="none") +  geom_hline(yintercept=10, linetype="dashed", 
+                color = "black", size=1)  + 
+              guides(fill=guide_legend(title="CV Between Dups <10%"))
+
+
+N_dups <- ggplot(data =QAdups, aes(x =sample_name, y =tdn_dups_cv, fill=tdn_dups_cv_flag)) +
+       geom_bar(stat = 'identity') + 
+        theme_classic() + labs(x= "Sample ID", y="TN (mg/L)") + 
+          scale_fill_manual(values = c("YES" = "darkgreen", "NO, rerun" = "red")) +
+        theme(legend.position="none") +  geom_hline(yintercept=10, linetype="dashed", 
+                color = "black", size=1) + 
+              guides(fill=guide_legend(title="CV Between Dups <10%"))
+
+ggarrange(C_dups, N_dups,ncol=2, nrow=1)
+
+
+#calculate the percent of check standards that are within the range based on the flag 
+c_dups_percent <- (sum(QAdups$npoc_dups_cv_flag == "YES")/nrow(QAdups))*100
+n_dups_percent <- (sum(QAdups$tdn_dups_cv_flag == "YES")/nrow(QAdups))*100
+
+#report out if flags indicate need for rerun
+ifelse(c_dups_percent >= 60, ">60% of Carbon Duplicates have a CV <10%",
+       "<60% of Carbon Duplicates have a CB <10% - REASSESS")
+ifelse(n_dups_percent >= 60, ">60% of Nitrogen Duplicates have a CV <10%",
+       "<60% of Nitrogen Duplicates have a CB <10% - REASSESS")
+
+
+```
+
+
+
+
+## Sample Processing - Pull out Concentrations
 
 ```{r Sample Processing, echo=FALSE}
 
 cat("Sample Processing")
 
-#Remove standards or other checks not needed here if necessary 
+head(df_all)
 
 #Pull out samples 
-alldat2 <- alldat[alldat$Sample_Name %like% "MSM_", ]
-alldat2 <- rbind(alldat2, (alldat[alldat$Sample_Name %like% "GWI_", ]))
-alldat2 <- rbind(alldat2, (alldat[alldat$Sample_Name %like% "GCrew_", ]))
+samples <- df_all %>%  
+  filter(str_detect(Sample_Name, c("GCW|GWI|MSM|SWH")))     
+head(samples)
 
-#Calculate concentrations from standard curve 
 
+
+
+
+```
+
+## Add Unit Converted Data Column (mg/L to uM )
+```{r Add unit conversion}
+head(samples)
+
+
+#Convert values based on the Test ID 
+samples <- samples %>%
+  mutate(
+    Conc_uM = case_when(
+      Test == "Vanadium NOx" ~ (((as.numeric(samples$Conc))/Con1)/N_mw)*Con2,
+      Test == "Ammonia 2" ~ (((as.numeric(samples$Conc))/Con1)/N_mw)*Con2,
+      Test == "o-PHOS 0.3" ~ (((as.numeric(samples$Conc))/Con1)/P_mw)*Con2,
+      TRUE ~ as.numeric(NA)  # fallback in case of unexpected value
+    ),
+    # Replace negatives with 0 in 'value' and 'value_converted'
+    Conc = pmax(Conc, 0),
+    Conc_uM = pmax(Conc_uM, 0)
+  )
 
 
 ```
@@ -256,42 +672,35 @@ alldat2 <- rbind(alldat2, (alldat[alldat$Sample_Name %like% "GCrew_", ]))
 cat("Sample Flagging")
 
 #Flagging data if the concentration is outside the standards range 
+samples_flagged <- samples %>%
+  mutate(
+    Conc_flag = case_when(
+      Test == "Vanadium NOx" & Conc < NOx_dl ~ "bdl",
+      Test == "Vanadium NOx" & Conc > NOx_top    ~ "adl",
+      Test == "Vanadium NOx"               ~ "Within_Range",
+      
+      Test == "Ammonia 2" & Conc < NH3_dl ~ "bdl",
+      Test == "Ammonia 2" & Conc > NH3_top    ~ "adl",
+      Test == "Ammonia 2"                ~ "Within_Range",
+      
+      Test == "o-PHOS 0.3" & Conc < PO4_dl  ~ "bdl",
+      Test == "o-PHOS 0.3" & Conc > PO4_top   ~ "adl",
+      Test == "o-PHOS 0.3"                ~ "Within_Range",
+      
+      TRUE ~ NA_character_  # fallback for unexpected values
+    )
+  )
 
 
-#Flagging for CV of analytical duplicates or replicates 
 
+#Flagging for CV of analytical duplicates or replicates - we can add QA flags based on info above 
 
+  #probably an if else statement or something similar that we can link to from above in the slopes, chks, blks, dups
 
-```
-
-## Analyze the Check Standards
-
-```{r Check Standards, echo=FALSE}
-
-cat("Analysis Check Standards")
-
-#Pull out check standards from raw file 
-
-
-#Calculate their concentrations if not done already 
-
-
-#change this if check standard concentrations are different 
-
-
-#calculate percent difference between check standards & expected concentration 
-
-
-#flag if the percent difference is over X% (defined in setup)
-
-
-#Visualize check std concentrations vs. the expected concentrations
-
-
-#report out if flags indicate need for rerun
 
 
 ```
+
 
 ## Dilution Corrections
 
@@ -301,6 +710,13 @@ cat("Dilution Corrections")
 
 #Calculate the concentration when accounting for the dilution factor if applicable
 
+samples_flagged_dilcorr <- samples %>% 
+    mutate(`Dilution` = case_when(
+    Dilution == "0" ~  1.0, #if no dilution it will say 0, so we need this to be 1 for factor multiplying
+    TRUE ~ `Dilution`  # leave unchanged if no match
+  )) %>%
+  mutate(Conc_dilcorr = Conc * Dilution, 
+         Conc_uM_dilcor = Conc_uM * Dilution)
 
 
 ```
@@ -308,10 +724,59 @@ cat("Dilution Corrections")
 ## Visualize Data
 
 ```{r Visualize Data}
-
 cat("Visualize Data")
 
 #Plot samples to get a first look at concentrations (sanity check)
+IDs <- data.frame(do.call('rbind', strsplit(as.character(samples_flagged_dilcorr$Sample_Name),'_',fixed=TRUE)))
+colnames(IDs) <- c("Site_Code" , "Date","Zone", "Lysimeter", "Depth", "Excess_Info")
+head(IDs)
+
+#rejoin them to the dataframe
+dat_forplot <- cbind(IDs, samples_flagged_dilcorr)
+head(dat_florplot)
+
+NOx_forplot <- dat_florplot %>%
+  filter(Test == "Vanadium NOx")%>%
+  mutate(Zone = factor(Zone, levels = c("UP", "SWAMP", "TR", "WC", "SW"))  # your desired order
+  )
+
+NH3_forplot <- dat_florplot %>%
+  filter(str_detect(Test, "Ammonia 2"))%>%
+  mutate(Zone = factor(Zone, levels = c("UP", "SWAMP", "TR", "WC", "SW"))  # your desired order
+  )
+
+PO4_forplot <- dat_florplot %>%
+  filter(str_detect(Test, "o-PHOS 0.3"))%>%
+  mutate(Zone = factor(Zone, levels = c("UP", "SWAMP", "TR", "WC", "SW"))  # your desired order
+  )
+
+#Plot data and change colors based on flags to check it: 
+viz_NOx_plot <-  ggplot(data = NOx_forplot, aes(x = Zone, y = Conc, fill=Zone)) +
+       geom_bar(stat = 'identity') + 
+        facet_grid(~factor(Site_Code, levels=c('GCW', 'MSM', 'GWI', "SWH"))) + 
+        scale_fill_manual(values = c("UP" = "#20063B", "TR" = "#FFBC42", "SWAMP" = "darkgrey",
+                                     "WC" = "#419973", "SW" = "#25ABE6")) +
+        theme_classic() + labs(x= " ", y="NOx (mg/L)", title="NOx by Site and Zone") + 
+        theme(legend.position="none") 
+
+
+viz_NH3_plot <- ggplot(data = NH3_forplot, aes(x = Zone, y = Conc, fill=Zone)) +
+       geom_bar(stat = 'identity') + 
+        facet_grid(~factor(Site_Code, levels=c('GCW', 'MSM', 'GWI', "SWH"))) + 
+        scale_fill_manual(values = c("UP" = "#20063B", "TR" = "#FFBC42", "SWAMP" = "darkgrey",
+                                     "WC" = "#419973", "SW" = "#25ABE6")) +
+        theme_classic() + labs(x= " ", y="NH3 (mg/L)", title="NH3 by Site and Zone") + 
+        theme(legend.position="none") 
+
+viz_PO4_plot <- ggplot(data = PO4_forplot, aes(x = Zone, y = Conc, fill=Zone)) +
+       geom_bar(stat = 'identity') + 
+        facet_grid(~factor(Site_Code, levels=c('GCW', 'MSM', 'GWI', "SWH"))) + 
+        scale_fill_manual(values = c("UP" = "#20063B", "TR" = "#FFBC42", "SWAMP" = "darkgrey",
+                                     "WC" = "#419973", "SW" = "#25ABE6")) +
+        theme_classic() + labs(x= " ", y="PO4 (mg/L)", title="PO4 by Site and Zone") + 
+        theme(legend.position="none") 
+
+ggarrange(viz_NOx_plot, viz_NH3_plot, viz_PO4_plot, nrow=1, ncol=3)
 
 
 ```
@@ -322,17 +787,38 @@ cat("Visualize Data")
 
 cat("Export Processed Data")
 
-#set working directory 
-finalpath <- "file path"
-
 #Prepare data to be exported 
+head(dat_forplot)
 
-#Add any necessary identifiers to the samples  ### VERY IMPORTANT AND STANDARD FOR PROJECT ####
-  #example read in sample IDs list and merge 
-  #create required ID columns in R, etc. 
+#we need to make this long format so that we have a set of NH3 columns, NO2x columns, and PO4 columns 
+    #make sure that we use TRUE so that if there don't have a NH3 for one sample we still have the data for the other analytes and NAs when we don't have data 
+
+
+#prep the data 
+processed_data <- dat_forplot %>%
+  mutate(Replicate = str_replace(Lysimeter, "Lys", ""), 
+         Depth_cm = str_replace(Depth, "cm", ""), 
+         Year = sample_year, 
+         Month = sample_month) %>% 
+  mutate(
+    Depth_cm = if_else(Zone == "SW", "0", Depth_cm) 
+  )  %>% 
+  select(-c(Excess_Info, Depth, Lysimeter, Date)) #Take out the excess column
+
+#Link to metadata file for 2023 year data - this doesn't exist yet we need to make it
+
+  #call in metadata file 
+  #add sample day 
+  #add sample time if available 
+  #add any field notes if applicable 
+
+
+
+#finalize column names and reorder them - metadata first then values preferred 
+
 
 #Write out data frame 
-write.csv(alldat, "file_name")
+  #write.csv(final_data, final_path)
 
 ```
 
