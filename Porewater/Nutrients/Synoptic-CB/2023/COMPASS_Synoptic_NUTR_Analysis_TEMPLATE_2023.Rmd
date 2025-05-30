@@ -60,14 +60,6 @@ pacman::p_load(
   readr,
   broom)
 
-#Packages that are required 
-  library(dplyr)
-  library(ggplot2)
-  library(ggpubr)
-  library(stringr)
-  library(readr)
-  library(stringr)
-
 #Coefficients / constants that are needed for calculations 
 N_mw <- 14.0067    # molecular weight of N 
 P_mw <- 30.973762  # molecular weight of P 
@@ -82,6 +74,7 @@ PO4_dl <- 0.003 #mgL
 NOx_top <- 1  #mgL
 NH3_top <- 2  #mgL
 PO4_top <- 0.3 #mgL
+
 
 #Check Standard concnetrations 
 NOx_CCV <- 0.5 
@@ -163,6 +156,9 @@ head(df_all)
 ```{r Assess Standard Curves, echo=FALSE}
 cat("Assess Standard Curves")
 
+#CHECK SEAL METHOD FOR WHAT THE SETTING FOR THE EQUATIONS USED TO CALCULARE THE CONCENTRATIONS
+    #maybe nonlinear model or intercept settigns
+
 
 #Pull out standards 
 stds <- df_all %>%
@@ -227,7 +223,7 @@ NOx_r2 <- summary(lin_reg_NOx)$r.squared              # R squared
 std_curve_NOx_1 <- data.frame(
   Test = "NOx",
   Intercept = NOx_coefs["(Intercept)"],
-  Slope = NOx_coefs["Conc"],
+  Slope = NOx_coefs[2],
   R_squared = NOx_r2
 )
 
@@ -239,7 +235,7 @@ NH3_r2 <- summary(lin_reg_NH3)$r.squared              # R squared
 std_curve_NH3_1 <- data.frame(
   Test = "NH3",
   Intercept = NH3_coefs["(Intercept)"],
-  Slope = NH3_coefs["Conc"],
+  Slope = NH3_coefs[2],
   R_squared = NH3_r2
 )
 
@@ -251,7 +247,7 @@ PO4_r2 <- summary(lin_reg_PO4)$r.squared              # R squared
 std_curve_PO4_1 <- data.frame(
   Test = "PO4",
   Intercept = PO4_coefs["(Intercept)"],
-  Slope = PO4_coefs["Conc"],
+  Slope = PO4_coefs[2],
   R_squared = PO4_r2
 ) # WANT TO FIND A WAY TO GET THE DATE IN THERE
 
@@ -309,28 +305,24 @@ print(std_curve_PO4)
   ifelse(NH3_r2 <= r2_cutoff, "NH3 Curve r2 is below cutoff! - REASSESS", "NH3 Curve r2 GOOD - PROCEED")
   ifelse(PO4_r2 <= r2_cutoff, "PO4 Curve r2 is below cutoff! - REASSESS", "PO4 Curve r2 GOOD - PROCEED")
   
-#write out to the user if the slope is within 10% of previous slopes 
-  #calculate an average of the slopes and then determine how far off we are? 
-  
-    #ifelse(C_slope_cv <= chk_flag, "NPOC Curve slope is out of range! - REASSESS", "NPOC Curve slope GOOD")
-    #ifelse(N_slope_cv <= chk_flag, "TN Curve slope is out of range! - REASSESS", "TN Curve slope GOOD")
-
 
 #check for the a slope QAQC file, if there is not one, make one 
 if (file.exists(file_path)) {
   # If it exists, read it back into R
   stds_log <- read.csv(file_path)
-  print("CSV file exists and has been read into the code.")
+  print("QAQC log file exists and has been read into the code.")
   } else {
   # If it does not exist, create the CSV file
   stds_log <- as.data.frame(matrix(ncol = 6, nrow = 0))
-  x <- c("Test", "Intercept", "Slope", "R_squared", "run_date", "user")
-  colnames(stds_log) <- x
+  colnames(stds_log) <- c("Test", "Intercept", "Slope", "R_squared", "run_date", "user")
+  
+  #maybe add here the last slopes from the previous year
   
   # Write add_log to CSV
   write.csv(stds_log, file = file_path, row.names = FALSE)
-  print("CSV file does not exist. It has been created.")
-}
+  print("QAQC log file does not exist. It has been created.")
+  }
+  
 
 #create a dataframe that can be appended to the QAQC log 
 add_log <- as.data.frame(rbind(std_curve_NOx_1, std_curve_NH3_1, std_curve_PO4_1))
@@ -344,6 +336,17 @@ Slopes_chk <- ggplot(log, aes(run_date, Slope, col=Test)) + geom_point(size=4) +
   geom_line() + theme_bw() + labs(title="Slope Drift Assessment", x="Run Date", y="Slope") +
   scale_color_manual(values=c("darkblue", "darkorchid", "darkgreen"))
 Slopes_chk
+
+
+#write out to the user if the slope is within 10% of previous slopes 
+  #calculate an average of the slopes and then determine how far off we are? 
+# section where we take all the logs that will calc avg of all prev ran slopes then compare current slope 
+#since there wouldnt be any prev dat we will have to put a starter slope to compare to 
+  
+    #ifelse(C_slope_cv <= chk_flag, "NPOC Curve slope is out of range! - REASSESS", "NPOC Curve slope GOOD")
+    #ifelse(N_slope_cv <= chk_flag, "TN Curve slope is out of range! - REASSESS", "TN Curve slope GOOD")
+
+
 
 #write out the log file with the added lines for this run date 
 write.csv(log, file_path)
@@ -372,6 +375,7 @@ PO4_chks <- df_all %>%
   filter(str_detect(Sample_Name, "0.15 mg/L"))%>% 
   mutate(rep = row_number())
 
+
 #RSV of standards 
 chks_NOx_rsv <- ((sd(NOx_chks$Conc))/mean(NOx_chks$Conc))
 chks_NH3_rsv <- ((sd(NH3_chks$Conc))/mean(NH3_chks$Conc))
@@ -384,6 +388,7 @@ ifelse(chks_NH3_rsv >= chk_flag, "NH3 CHECK STANDARD RSD TOO HIGH - REASSESS",
        "NH3 Check Standard RSD within Range - PROCEED")
 ifelse(chks_PO4_rsv >= chk_flag, "PO4 CHECK STANDARD RSD TOO HIGH - REASSESS",
        "PO4 Check Standard RSD within Range - PROCEED")
+
 
 #calculate percent difference between check standards & expected concentration 
 #flag if the percent difference is over X% (defined in setup)
@@ -399,19 +404,26 @@ PO4_chks$PO4_diff_flag <-  ifelse(PO4_chks$PO4_diff <= chk_conc_flag, 'YES', 'NO
 
 #now plot the Ch4 concentrations and the CO2 concentrations vs. the expected concentration 
 #then also make the color the percent difference between the expected and observed concentration
+
+
+
 NOx_chks_plot <-  ggplot(data = NOx_chks, aes(x = rep, y = Conc, fill=NOx_diff_flag)) +
        geom_bar(stat = 'identity') + 
         scale_fill_manual(values = c("YES" = "darkgreen", "NO, rerun" = "darkgrey")) +
-        theme_classic() + labs(x= " ", y="NOx (mg/L)", title="Check Stds: NOx") + 
-        theme(legend.position="bottom") +  geom_hline(yintercept=NOx_CCV,
+        labs(x= " ", y="NOx (mg/L)", title="Check Stds: NOx") + 
+        theme(legend.position="bottom") +  
+        geom_hline(yintercept=NOx_CCV,
               linetype="dashed", color = "black", linewidth=1) + 
-              guides(fill=guide_legend(title="% Difference <10%"))
+        guides(fill=guide_legend(title="% Difference <10%")) +
+        theme_classic()
 
 NH3_chks_plot <-  ggplot(data = NH3_chks, aes(x = rep, y = Conc, fill=NH3_diff_flag)) +
        geom_bar(stat = 'identity') + 
        scale_fill_manual(values = c("YES" = "darkgreen", "NO, rerun" = "darkgrey")) +
-        theme_classic() + labs(x= " ", y="NH3  (mg/L)", title="Check Stds: NH3") + 
-        theme(legend.position="bottom") +  geom_hline(yintercept=NH3_CCV,
+       theme_classic() + 
+       labs(x= " ", y="NH3  (mg/L)", title="Check Stds: NH3") + 
+       theme(legend.position="bottom") +  
+       geom_hline(yintercept=NH3_CCV,
               linetype="dashed",  color = "black", linewidth=1) + 
               guides(fill=guide_legend(title="% Difference <10%"))
 
@@ -423,7 +435,8 @@ PO4_chks_plot <-  ggplot(data = PO4_chks, aes(x = rep, y = Conc, fill=PO4_diff_f
               linetype="dashed",  color = "black", linewidth=1) + 
               guides(fill=guide_legend(title="% Difference <10%"))
 
-ggarrange(NOx_chks_plot, NH3_chks_plot,NH3_chks_plot, nrow=1, ncol=3)
+Chk_Std_Plots <- ggarrange(NOx_chks_plot, NH3_chks_plot,NH3_chks_plot, nrow=1, ncol=3)
+print(Chk_Std_Plots)
 
 #calculate the percent of check standards that are within the range based on the flag 
 NOx_chks_percent <- (sum(NOx_chks$NOx_diff_flag == "YES")/nrow(NOx_chks))*100
@@ -461,6 +474,9 @@ PO4_chks <- df_all %>%
   filter(str_detect(Sample_Name, "Blank"))%>% 
   mutate(rep = row_number())
 
+#Pull out samples from df_all to calc quantile
+samples <- df_all %>%  
+  filter(str_detect(Sample_Name, c("GCW|GWI|MSM|SWH"))) 
 
 #I think we want to check that the blank concentrations are less than the lowest 25% of sample concentrations: 
 blk_flag_NOx <- samples %>%
@@ -496,10 +512,12 @@ ifelse(PO4_blks_percent >= 60,
 
 #now plot the DOC concentrations and the TDN concentrations vs. the expected concentration 
 #then also make the color the percent difference between the expected and observed concentration
+
+
 NOx_blks_plot <-  ggplot(data = NOx_blks, aes(x = rep, y = Conc, fill=NOx_diff_flag)) +
        geom_bar(stat = 'identity') + 
         scale_fill_manual(values = c("YES" = "darkblue", "NO, rerun" = "darkgrey")) +
-        theme_classic() + labs(x= " ", y="NPOC  (mg/L)", title="NOx Blanks") + 
+        theme_classic() + labs(x= " ", y="NOx (mg/L)", title="NOx Blanks") + 
         theme(legend.position="bottom") +  geom_hline(yintercept= as.numeric(blk_flag_NOx), linetype="dashed", 
                 color = "black", linewidth=1)  + 
                 guides(fill=guide_legend(title="Blank Conc <25% Quartile Samples"))
@@ -508,7 +526,7 @@ NOx_blks_plot <-  ggplot(data = NOx_blks, aes(x = rep, y = Conc, fill=NOx_diff_f
 NH3_blks_plot <-  ggplot(data = NH3_chks, aes(x = rep, y = Conc, fill=NH3_diff_flag)) +
        geom_bar(stat = 'identity') + 
         scale_fill_manual(values = c("YES" = "darkblue", "NO, rerun" = "darkgrey")) +
-        theme_classic() + labs(x= " ", y="TN  (mg/L)", title="NH3 Blanks") + 
+        theme_classic() + labs(x= " ", y="NH3  (mg/L)", title="NH3 Blanks") + 
         theme(legend.position="bottom") +  geom_hline(yintercept=as.numeric(blk_flag_NH3), linetype="dashed", 
                 color = "black", linewidth=1)  + 
                 guides(fill=guide_legend(title="Blank Conc <25% Quartile Samples"))
@@ -516,7 +534,7 @@ NH3_blks_plot <-  ggplot(data = NH3_chks, aes(x = rep, y = Conc, fill=NH3_diff_f
 PO4_blks_plot <-  ggplot(data = PO4_chks, aes(x = rep, y = Conc, fill=PO4_diff_flag)) +
        geom_bar(stat = 'identity') + 
         scale_fill_manual(values = c("YES" = "darkblue", "NO, rerun" = "darkgrey")) +
-        theme_classic() + labs(x= " ", y="TN  (mg/L)", title="PO4 Blanks") + 
+        theme_classic() + labs(x= " ", y="PO4 (mg/L)", title="PO4 Blanks") + 
         theme(legend.position="bottom") +  geom_hline(yintercept=as.numeric(blk_flag_PO4), linetype="dashed", 
                 color = "black", linewidth=1)  + 
                 guides(fill=guide_legend(title="Blank Conc <25% Quartile Samples"))
@@ -545,24 +563,12 @@ print(blk_flag_PO4)
 
 cat("Analyze Duplicates")
 
-#Show me the data that we have from the calculations 
-head(dat_raw)
-
-#pull out any rows that have "dup" in the SampleID column
-dups <- dat_raw %>%  
-  filter(str_detect(sample_name, "dup"))      #have to change this to match data
-head(dups)
-
-#remove these from sample dataframe in a new dataframe
-dat_raw2 <- dat_raw %>%  
-  filter(!str_detect(sample_name, "dup")) 
-head(dat_raw2)
-
-#remove the dup from these IDs so we will have duplicate sample names
-dups$sample_name<-gsub("_dup","",as.character(dups$sample_name))
-dups <- dups[ ,-c(4)] #remove the run date time for 
-colnames(dups) <- c('sample_name', 'npoc_raw_dup', "tdn_raw_dup")
-head(dups)
+#annotate this chunk
+#pull out duplicates in one frame and the sample id of the one above the dup in another 
+#copy the sample ID of the sample df and add to dup file
+#merge the two and use code below to ID any bad tech reps
+#NPOC raw = NOX 
+#NPOC dup = dup
 
 QAdups <- merge(dat_raw2, dups)
 head(QAdups)
@@ -697,7 +703,7 @@ samples_flagged <- samples %>%
 
   #probably an if else statement or something similar that we can link to from above in the slopes, chks, blks, dups
 
-
+#want an if then statement about QAQC
 
 ```
 
@@ -710,7 +716,7 @@ cat("Dilution Corrections")
 
 #Calculate the concentration when accounting for the dilution factor if applicable
 
-samples_flagged_dilcorr <- samples %>% 
+samples_flagged_dilcorr <- samples_flagged %>% 
     mutate(`Dilution` = case_when(
     Dilution == "0" ~  1.0, #if no dilution it will say 0, so we need this to be 1 for factor multiplying
     TRUE ~ `Dilution`  # leave unchanged if no match
@@ -733,19 +739,19 @@ head(IDs)
 
 #rejoin them to the dataframe
 dat_forplot <- cbind(IDs, samples_flagged_dilcorr)
-head(dat_florplot)
+head(dat_forplot)
 
-NOx_forplot <- dat_florplot %>%
+NOx_forplot <- dat_forplot %>%
   filter(Test == "Vanadium NOx")%>%
   mutate(Zone = factor(Zone, levels = c("UP", "SWAMP", "TR", "WC", "SW"))  # your desired order
   )
 
-NH3_forplot <- dat_florplot %>%
+NH3_forplot <- dat_forplot %>%
   filter(str_detect(Test, "Ammonia 2"))%>%
   mutate(Zone = factor(Zone, levels = c("UP", "SWAMP", "TR", "WC", "SW"))  # your desired order
   )
 
-PO4_forplot <- dat_florplot %>%
+PO4_forplot <- dat_forplot %>%
   filter(str_detect(Test, "o-PHOS 0.3"))%>%
   mutate(Zone = factor(Zone, levels = c("UP", "SWAMP", "TR", "WC", "SW"))  # your desired order
   )
