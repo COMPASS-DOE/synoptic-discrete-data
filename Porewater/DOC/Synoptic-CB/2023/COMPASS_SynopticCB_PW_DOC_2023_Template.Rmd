@@ -1,0 +1,582 @@
+---
+title: "COMPASS_SynopticCB_PW_DOC_2023_Template"
+author: "Stephanie J. Wilson"
+date: "2025-05-30"
+output: html_document
+---
+
+##Setup
+```{r setup, include=FALSE}
+
+#identify which section you are in 
+cat("Setup")
+
+#a link to the Gitbook or whatever protocol you are using for this analysis 
+  #steph will add this soon 
+
+#Packages that are required 
+  library(dplyr)
+  library(ggplot2)
+  library(ggpubr)
+  library(stringr)
+  library(purrr)
+  library(tidyverse)
+  library(here)
+  library(googledrive)
+  
+#anything that needs to be changed do this in the first chunk
+  Date_Run = "7/20/22"
+  Run_by = "Technician"
+  Script_run_by = "Name"
+  #file path and name for summary file 
+ # raw_file_name = "~/GitHub/TEMPEST_Porewater/processing_scripts/DOC/tmp_doc_2024/tmp_doc_raw_data_2024/TMP_202408.txt" 
+    raw_file_name = "tmp_doc_raw_data_2024/TMP_202408.txt" 
+  #file path and name for the all peaks file 
+#  raw_allpeaks_name = "~/GitHub/TEMPEST_Porewater/processing_scripts/DOC/tmp_doc_2024/tmp_doc_raw_data_2024/TMP_202408_allpeaks.txt"
+    raw_allpeaks_name = "tmp_doc_raw_data_2024/TMP_202408_allpeaks.txt"
+    processed_file_name = "?"
+
+#any coefficients / constants that are needed for calculations 
+  mw_c <- 12   #molecular weight of Carbon 
+  mw_n <- 14  #molecular weight of Nitrogen
+
+#Flag that we 
+  r2_cutoff = 0.98  #this is the level below which we want to rerun or consider a curve 
+  chk_flag = 0.10   #if the RSD (relative standard deviation) is over 1 among checks this is the std dev. / mean  
+  chk_conc_flag = 15 #this is the level cutoff for percent difference of check standards vs. the concentration they are meant to be 
+  rep_flag = 25 #this is a 25% error between samples
+  #blank_flag is calculated based on samples later in this code
+
+#check standard concentrations - Update if running different checks: 
+   chk_std_low_c = 1
+   chk_std_high_c = 50
+   chk_std_low_n = 1
+   chk_std_high_n = 2
+   
+#Top standard Concentrations- Update if running different standard curve: 
+   top_std_c = 100
+   top_std_n = 3
+  
+#any reference to other code 
+   ## if we need the metadata to check sample names we can put path here 
+
+#Set time zone 
+  common_tz = "Etc/GMT+5"
+  Sys.setenv(TZ = "America/New_York")
+  
+#plot indicators 
+plot_order <- c('Control', 'Freshwater', 'Saltwater')
+anyas_colors <- c('springgreen2', 'cyan2', 'violetred2')
+
+```
+
+## pull in active porewater tracking inventory sheet: 
+```{r pull in metadata for later}
+
+inventory_directory <- "https://docs.google.com/spreadsheets/d/1sFWq-WKhemPzbOFInqhCu_Lx0lsO6a_Z/edit#gid=496164093"
+
+directory= file.path(here() %>% dirname(), 'tmp_doc_2024/tmp_doc_metadata_2024')
+
+file_path = file.path(directory, paste0("porewaterinventory_", Sys.Date(), ".xlsx"))
+
+drive_download(inventory_directory, path= file_path, overwrite = FALSE)
+```
+
+## Import Data Functions  
+```{r create function to read in data}
+## Create a function to read in data from summary file: 
+
+read_data <- function(data){
+  # Second, read in data
+  read_delim(file = data, skip = 10, delim = "\t", show_col_types = FALSE) %>% 
+    rename(sample_name = `Sample Name`, 
+           npoc_raw = `Result(NPOC)`, 
+           tdn_raw = `Result(TN)`,
+           run_datetime = `Date / Time`) %>% 
+    select(sample_name, npoc_raw, tdn_raw,run_datetime)
+}
+
+read_curve <- function(data){
+  # Second, read in data
+  read_delim(file = data, skip = 10, delim = "\t", show_col_types = FALSE) %>% 
+    rename(sample_name = `Sample Name`,
+           analyte = `Analysis(Inj.)`,
+           concentration = `Conc.`,
+           area = Area,
+           manual_dilution = `Manual Dilution`,
+           excluded = Excluded,
+           run_datetime = `Date / Time`) %>% 
+    filter(excluded == 0) %>% #filter to injections that are included in the analysis 
+    select(sample_name, analyte, concentration, area, run_datetime) %>%
+    pivot_wider(names_from= analyte, values_from = concentration) %>%
+    rename(npoc_raw = NPOC,
+           tdn_raw = TN)
+}
+```
+
+## Import Sample Data     
+```{r Import Data, echo=FALSE}
+
+cat("Import Sample Data")
+
+#find the file in the raw data folder 
+dat_raw <- raw_file_name %>% 
+  map_df(read_data) %>% 
+  filter(grepl("TMP", sample_name)) %>% # filter to TMP samples only
+  bind_rows() 
+
+head(dat_raw)
+```
+
+## Assessing standard Curves 
+```{r Assess Standard Curves, echo=FALSE}
+
+cat("Assess the Standard Curve")
+
+#filter standards out and AMP will add this 
+stds_all <- raw_allpeaks_name %>% 
+  map_df(read_curve) %>% 
+  filter(grepl("CalCurve", sample_name)) %>% 
+  dplyr::rename(standard_C_ppm = npoc_raw,
+         standard_N_ppm = tdn_raw) %>%
+  select(run_datetime,standard_C_ppm,standard_N_ppm, area) %>%
+  bind_rows() 
+
+stds_C <- stds_all %>%
+  filter(!is.na(standard_C_ppm)) %>%
+  select(-standard_N_ppm)
+
+stds_N <- stds_all %>%
+  filter(!is.na(standard_N_ppm)) %>%
+  select(-standard_C_ppm)
+
+#calculate slope and r2 of cal curves
+
+stds_C_lm <- lm(stds_C$area ~ stds_C$standard_C_ppm)
+summary(stds_C_lm)
+cf_C <- coef(stds_C_lm)
+r2_C <- summary(stds_C_lm)$adj.r.squared
+
+
+stds_N_lm <- lm(stds_N$area ~ stds_N$standard_N_ppm)
+summary(stds_N_lm)
+cf_N <- coef(stds_N_lm)
+r2_N <- summary(stds_N_lm)$adj.r.squared
+
+
+##Plot standard Curve or Curves 
+
+#C Curve
+C_stds_plot <- ggplot(stds_C, aes(standard_C_ppm, area)) + geom_point(size=4) + 
+  geom_smooth(method = "lm", se = FALSE, color="blue") + 
+  labs(title="NPOC Std Curve", x="Carbon Standard Concentration (ppm)", y="Peak Area")+ 
+  annotate("text", x = 15, y = max(stds_C$area), label = paste("R^2 =", round(r2_C, 5)),
+          color = "black", size = 4)+
+  theme_bw()
+C_stds_plot
+
+#N Curve
+N_stds_plot <- ggplot(stds_N, aes(standard_N_ppm, area)) + geom_point(size=4) + 
+  geom_smooth(method = "lm", se = FALSE, color="purple") + 
+  labs(title="TN Std Curve", x="Nitrogen Standard Concentration (ppm)", y="Peak Area")+
+    annotate("text", x = 0.5, y = max(stds_N$area), label = paste("R^2 =", round(r2_N, 5)),
+          color = "black", size = 4)+
+  theme_bw()
+N_stds_plot
+
+
+#Pull out slope, intercept, and r2 to put into the log and compare to previous slopes 
+#pull NPOC curve info
+Slope_NPOC <- data.frame(matrix(ncol = 0, nrow = 1))
+Slope_NPOC$curve <- "Slope_NPOC"
+Slope_NPOC$r2 <- summary(stds_C_lm)$adj.r.squared
+Slope_NPOC$slope <- cf_C[2]
+Slope_NPOC$intercept <- cf_C[1]
+
+#pull TN curve info 
+Slope_TN <- data.frame(matrix(ncol = 0, nrow = 1))
+Slope_TN$curve <- "Slope_TN"
+Slope_TN$r2 <- summary(stds_N_lm)$adj.r.squared
+Slope_TN$slope <- cf_N[2]
+Slope_TN$intercept <- cf_N[1]
+
+Slopes <- rbind(Slope_NPOC, Slope_TN)
+Slopes$run_date <- Date_Run
+
+
+#compare slopes to previous runs (from log) in order to assess drift 
+#write out slopes from current run to log 
+log <- read.csv("tmp_doc_raw_data_2024/COMPASS_TMP_TOCTN_QAQClog_2024.csv")
+#head(log)
+log <- log[ ,-c(1)]
+
+
+log <- rbind(log, Slopes)
+
+Slopes_chk <- ggplot(log, aes(run_date, slope, col=curve)) + geom_point(size=4) + 
+  geom_line() + theme_bw() + labs(title="Slope Drift Assessment", x="Run Date", y="Slope") +
+  scale_color_manual(values=c("blue", "purple"))
+Slopes_chk
+
+#write out the log file with the added lines for this run date 
+write.csv(log, "tmp_doc_raw_data_2024/COMPASS_TMP_TOCTN_QAQClog_2024.csv")
+
+#Write out to the user whether or not the r2 is above the cutoff of 0.98
+  ifelse(r2_C <= r2_cutoff, "NPOC Curve r2 is below cutoff! - REASSESS", "NPOC Curve r2 GOOD")
+  ifelse(r2_N <= r2_cutoff, "TN Curve r2 is below cutoff! - REASSESS", "TN Curve r2 GOOD")
+  
+#write out to the user if the slope is within 10% of previous slopes 
+  #calculate an average of the slopes and then determine how far off we are? 
+  
+    #ifelse(C_slope_cv <= chk_flag, "NPOC Curve slope is out of range! - REASSESS", "NPOC Curve slope GOOD")
+    #ifelse(N_slope_cv <= chk_flag, "TN Curve slope is out of range! - REASSESS", "TN Curve slope GOOD")
+```
+
+## Assess Check Standards 
+```{r Check Standards, echo=FALSE}
+
+cat("Assess the Check Standards")
+
+#call to checkstds orrrr Pull out check standards from raw file 
+chks_raw <- raw_file_name %>% 
+  map_df(read_data) %>% 
+  filter(grepl("Chk", sample_name)) %>% # filter to TMP samples only
+  bind_rows() 
+
+chks_raw <- chks_raw %>% 
+  mutate(rep = row_number())
+
+
+#RSV of standards 
+chks_C_rsv <- ((sd(chks_raw$npoc_raw))/mean(chks_raw$npoc_raw))
+chks_N_rsv <- ((sd(chks_raw$tdn_raw))/mean(chks_raw$tdn_raw))
+
+#write out to user about whether or not to continue 
+ifelse(chks_C_rsv >= chk_flag, "Carbon CHECK STANDARD RSD TOO HIGH - REASSESS", "Carbon Check Standard RSD within Range")
+ifelse(chks_N_rsv >= chk_flag, "Nitrogen CHECK STANDARD RSD TOO HIGH - REASSESS", "Nitrogen Check Standard RSD within Range")
+
+#calculate percent difference between check standards & expected concentration 
+#flag if the percent difference is over X% (defined in setup)
+#calculate percent difference of check standards 
+chks_raw$C_diff <- ((chks_raw$npoc_raw - chk_std_low_c)/((chks_raw$npoc_raw + chk_std_low_c)/2)) * 100
+chks_raw$C_diff_flag <-  ifelse(chks_raw$C_diff <= chk_conc_flag, 'YES', 'NO, rerun')
+
+chks_raw$N_diff <- ((chks_raw$tdn_raw - chk_std_low_n)/((chks_raw$tdn_raw + chk_std_low_n)/2)) * 100
+chks_raw$N_diff_flag <-  ifelse(chks_raw$N_diff <= chk_conc_flag, 'YES', 'NO, rerun')
+
+#now plot the Ch4 concentrations and the CO2 concentrations vs. the expected concentration 
+#then also make the color the percent difference between the expected and observed concentration
+c_chks <-  ggplot(data = chks_raw, aes(x = rep, y = npoc_raw, fill=C_diff_flag)) +
+       geom_bar(stat = 'identity') + 
+        scale_fill_manual(values = c("YES" = "darkgreen", "NO, rerun" = "darkgrey")) +
+        theme_classic() + labs(x= " ", y="NPOC (mg/L)", title="Check Stds: NPOC") + 
+        theme(legend.position="bottom") +  geom_hline(yintercept=chk_std_low_c,
+              linetype="dashed", color = "black", linewidth=1) + 
+              guides(fill=guide_legend(title="% Difference <10%"))
+
+
+n_chks <-  ggplot(data = chks_raw, aes(x = rep, y = tdn_raw, fill=N_diff_flag)) +
+       geom_bar(stat = 'identity') + 
+       scale_fill_manual(values = c("YES" = "darkgreen", "NO, rerun" = "darkgrey")) +
+        theme_classic() + labs(x= " ", y="TN  (mg/L)", title="Check Stds: TN") + 
+        theme(legend.position="bottom") +  geom_hline(yintercept=chk_std_low_n,
+              linetype="dashed",  color = "black", linewidth=1) + 
+              guides(fill=guide_legend(title="% Difference <10%"))
+
+ggarrange(c_chks, n_chks, nrow=1, ncol=2)
+
+#calculate the percent of check standards that are within the range based on the flag 
+c_chks_percent <- (sum(chks_raw$C_diff_flag == "YES")/nrow(chks_raw))*100
+n_chks_percent <- (sum(chks_raw$N_diff_flag == "YES")/nrow(chks_raw))*100
+
+#report out if flags indicate need for rerun
+ifelse(c_chks_percent >= 60, ">60% of Carbon Check Standards are within range of expected concentration",
+       "<60% of Carbon Check Standards are within range of expected concentration - REASSESS")
+ifelse(n_chks_percent >= 60,">60% of Nitrogen Check Standards are within range of expected concentration",
+       "<60% of Nitrogen Check Standards are within range of expected concentration - REASSESS")
+
+```
+
+## Assess Blanks 
+```{r Check Blanks, echo=FALSE}
+
+cat("Assess Blanks")
+
+#Pull out check standards from raw file 
+blks_raw <- raw_file_name %>% 
+  map_df(read_data) %>% 
+  filter(grepl("DI", sample_name)) %>% # filter to TMP samples only
+  bind_rows() 
+
+blks_raw <- blks_raw %>% 
+  mutate(rep = row_number())
+
+
+#I think we want to check that the blank concentrations are less than the lowest 25% of sample concentrations: 
+
+blk_flag_c <- quantile(dat_raw$npoc_raw, prob=c(.25))   #this gives you the lower 25% quartile of the data 
+blks_raw$C_diff_flag <-  ifelse(blks_raw$npoc_raw <= blk_flag_c, 'YES', 'NO, rerun')
+
+blk_flag_n <- quantile(dat_raw$tdn_raw, prob=c(.25))   #this gives you the lower 25% quartile of the data 
+blks_raw$N_diff_flag <-  ifelse(blks_raw$tdn_raw <= blk_flag_n, 'YES', 'NO, rerun')
+
+#calculate the percent of check standards that are within the range based on the flag 
+c_blks_percent <- (sum(blks_raw$C_diff_flag == "YES")/nrow(blks_raw))*100
+n_blks_percent <- (sum(blks_raw$N_diff_flag == "YES")/nrow(blks_raw))*100
+
+#report out if flags indicate need for rerun
+ifelse(c_blks_percent >= 60, ">60% of Carbon Blank concentrations are lower 25% quartile of samples",
+       "<60% of Carbon blaks are lower 25% quartile of samples - REASSESS")
+ifelse(n_blks_percent >= 60, ">60% of Nitrogen Blank concentrations are lower 25% quartile of samples",
+       "<60% of Nitrogen blaks are lower 25% quartile of samples - REASSESS")
+
+
+#now plot the DOC concentrations and the TDN concentrations vs. the expected concentration 
+#then also make the color the percent difference between the expected and observed concentration
+c_blks <-  ggplot(data = blks_raw, aes(x = rep, y = npoc_raw, fill=C_diff_flag)) +
+       geom_bar(stat = 'identity') + 
+        scale_fill_manual(values = c("YES" = "darkblue", "NO, rerun" = "darkgrey")) +
+        theme_classic() + labs(x= " ", y="NPOC  (mg/L)", title="Check Stds: NPOC") + 
+        theme(legend.position="bottom") +  geom_hline(yintercept=blk_flag_c, linetype="dashed", 
+                color = "black", linewidth=1)  + 
+                guides(fill=guide_legend(title="Blank Conc <25% Quartile Samples"))
+
+
+n_blks <-  ggplot(data = blks_raw, aes(x = rep, y = tdn_raw, fill=N_diff_flag)) +
+       geom_bar(stat = 'identity') + 
+        scale_fill_manual(values = c("YES" = "darkblue", "NO, rerun" = "darkgrey")) +
+        theme_classic() + labs(x= " ", y="TN  (mg/L)", title="Check Stds: TN") + 
+        theme(legend.position="bottom") +  geom_hline(yintercept=blk_flag_n, linetype="dashed", 
+                color = "black", linewidth=1)  + 
+                guides(fill=guide_legend(title="Blank Conc <25% Quartile Samples"))
+
+ggarrange(c_blks, n_blks, nrow=1, ncol=2)
+
+#find average of run carbon and nitrogen blanks for flagging samples later 
+blk_avg_c <- mean(blks_raw$npoc_raw)
+
+cat("carbon blanks:")
+print(blk_avg_c)
+
+blk_avg_n <- mean(blks_raw$tdn_raw)
+
+cat("nitrogen blanks:")
+print(blk_avg_n)
+
+```
+
+## Assess Duplicates - if there are any 
+```{r Check Duplicates, echo=FALSE}
+
+cat("Assess Duplicates")
+
+#Show me the data that we have from the calculations 
+head(dat_raw)
+
+#pull out any rows that have "dup" in the SampleID column
+dups <- dat_raw %>%  
+  filter(str_detect(sample_name, "dup"))      #have to change this to match data
+head(dups)
+
+#remove these from sample dataframe in a new dataframe
+dat_raw2 <- dat_raw %>%  
+  filter(!str_detect(sample_name, "dup")) 
+head(dat_raw2)
+
+#remove the dup from these IDs so we will have duplicate sample names
+dups$sample_name<-gsub("_dup","",as.character(dups$sample_name))
+dups <- dups[ ,-c(4)] #remove the run date time for 
+colnames(dups) <- c('sample_name', 'npoc_raw_dup', "tdn_raw_dup")
+head(dups)
+
+QAdups <- merge(dat_raw2, dups)
+head(QAdups)
+
+df2 <- as.data.frame(QAdups$npoc_raw)
+df2$dups <- QAdups$npoc_raw_dup
+
+df2$sds <- apply(df2,1,sd)
+df2$mean <- apply(df2, 1, mean)
+
+QAdups$npoc_dups_cv <- (df2$sds/df2$mean) * 100
+QAdups$npoc_dups_cv_flag <-  ifelse(QAdups$npoc_dups_cv <10, 'YES', 'NO, rerun')
+
+df3 <- as.data.frame(QAdups$tdn_raw)
+df3$dups <- QAdups$tdn_raw_dup
+
+df3$sds <- apply(df3,1,sd)
+df3$mean <- apply(df3, 1, mean)
+
+QAdups$tdn_dups_cv <- (df3$sds/df3$mean) * 100
+QAdups$tdn_dups_cv_flag <-  ifelse(QAdups$tdn_dups_cv <10, 'YES', 'NO, rerun')
+
+head(QAdups)
+
+#plot dups output as a bar graph to easily check - want any over 10% to be red need to work on this 
+C_dups <- ggplot(data =QAdups, aes(x =sample_name, y =npoc_dups_cv, fill=npoc_dups_cv_flag)) +
+       geom_bar(stat = 'identity') + 
+        theme_classic() + labs(x= "Sample ID", y="NPOC (mg/L)") + 
+        scale_fill_manual(values = c("YES" = "darkgreen", "NO, rerun" = "red")) +
+        theme(legend.position="none") +  geom_hline(yintercept=10, linetype="dashed", 
+                color = "black", size=1)  + 
+              guides(fill=guide_legend(title="CV Between Dups <10%"))
+
+
+N_dups <- ggplot(data =QAdups, aes(x =sample_name, y =tdn_dups_cv, fill=tdn_dups_cv_flag)) +
+       geom_bar(stat = 'identity') + 
+        theme_classic() + labs(x= "Sample ID", y="TN (mg/L)") + 
+          scale_fill_manual(values = c("YES" = "darkgreen", "NO, rerun" = "red")) +
+        theme(legend.position="none") +  geom_hline(yintercept=10, linetype="dashed", 
+                color = "black", size=1) + 
+              guides(fill=guide_legend(title="CV Between Dups <10%"))
+
+ggarrange(C_dups, N_dups,ncol=2, nrow=1)
+
+
+#calculate the percent of check standards that are within the range based on the flag 
+c_dups_percent <- (sum(QAdups$npoc_dups_cv_flag == "YES")/nrow(QAdups))*100
+n_dups_percent <- (sum(QAdups$tdn_dups_cv_flag == "YES")/nrow(QAdups))*100
+
+#report out if flags indicate need for rerun
+ifelse(c_dups_percent >= 60, ">60% of Carbon Duplicates have a CV <10%",
+       "<60% of Carbon Duplicates have a CB <10% - REASSESS")
+ifelse(n_dups_percent >= 60, ">60% of Nitrogen Duplicates have a CV <10%",
+       "<60% of Nitrogen Duplicates have a CB <10% - REASSESS")
+
+
+
+```
+
+## Sample Flagging   
+```{r Sample Flagging, echo=FALSE}
+
+cat("Sample Flagging")
+
+#Flagging data if the concentration is outside the standards range and based on blanks - AMP will add 
+dat_flagged <- dat_raw %>% 
+  mutate(npoc_flag = case_when(npoc_raw > top_std_c ~ "value above cal curve",
+            blk_avg_c > 0.25*npoc_raw ~ "blank is ≥ 25% of sample value"), # flagging if blank concentration is > 20% of the sample concentration
+            #sample_name == "TMP_SW_F4_T3" ~ "incorrect sample naming, cannot resolve"), # if needed and there are issues with sample names
+    
+        tdn_flag = case_when(tdn_raw > top_std_n ~ "value above cal curve",
+            blk_avg_n > 0.25*tdn_raw ~ "blank is ≥ 25% of sample value") #, # flagging if blank concentration is > 25% of the sample concentration 
+           #sample_name == "TMP_SW_F4_T3" ~ "incorrect sample naming, cannot resolve"), # if needed and there are issues with sample names
+ )
+
+print(dat_flagged)
+
+
+#Plot data and change colors based on flags to check it: 
+c_samples_flag <-  ggplot(data = dat_flagged, aes(x = sample_name, y = npoc_raw, fill=npoc_flag)) +
+       geom_bar(stat = 'identity') + 
+        scale_fill_manual(values=c("red", "orange"))+
+        theme_classic() + labs(x= " ", y="C (mg/L)", title="C: Grey = Within Range of Curve") + 
+        theme(legend.position="none") 
+
+
+n_samples_flag <-  ggplot(data = dat_flagged, aes(x = sample_name, y = tdn_raw, fill=tdn_flag)) +
+       geom_bar(stat = 'identity') + 
+        scale_fill_manual(values=c("red", "orange"))+
+        theme_classic() + labs(x= " ", y="N (mg/L)", title="N: Grey = Within Range of Curve") + 
+        theme(legend.position="none") 
+
+ggarrange(c_samples_flag, n_samples_flag, nrow=1, ncol=2)
+
+
+
+
+
+
+```
+
+## Visualize Data by Plot   
+```{r Visualize Data}
+
+cat("Visualize Data")
+
+#Plot samples to get a first look at concentrations (sanity check)
+IDs <- data.frame(do.call('rbind', strsplit(as.character(dat_flagged$sample_name),'_',fixed=TRUE)))
+colnames(IDs) <- c("Site_Code" , "Date","Plot", "Grid_Square", "NA")
+head(IDs)
+
+#rejoin them to the dataframe
+dat_florplot <- cbind(IDs, dat_flagged)
+head(dat_florplot)
+
+dat_florplot <- dat_florplot %>% 
+  mutate(Plot_name = case_when(Plot == 'SW' ~ "Saltwater", 
+                               Plot == 'FW' ~ "Freshwater", 
+                               Plot == 'C' ~ "Control"))
+
+
+#Plot data and change colors based on flags to check it: 
+viz_c_plot <-  ggplot(data = dat_florplot, aes(x = Grid_Square, y = npoc_raw, fill=Plot_name)) +
+       geom_bar(stat = 'identity') + 
+        facet_grid(~factor(Plot_name, levels=c('Control', 'Freshwater', 'Saltwater'))) + 
+        scale_fill_manual(values = c("Control" = "springgreen2", "Freshwater" = "cyan2",
+                                      "Saltwater" = "violetred2")) +
+        theme_classic() + labs(x= " ", y="NPOC (mg/L)", title="Carbon by Plot") + 
+        theme(legend.position="none") 
+
+
+viz_n_plot <-  ggplot(data = dat_florplot, aes(x = Grid_Square, y = tdn_raw, fill=Plot_name)) +
+       geom_bar(stat = 'identity') + 
+        facet_grid(~factor(Plot_name, levels=c('Control', 'Freshwater', 'Saltwater'))) + 
+        scale_fill_manual(values = c("Control" = "springgreen2", "Freshwater" = "cyan2",
+                                      "Saltwater" = "violetred2")) + 
+        theme_classic() + labs(x= " ", y="TN (mg/L)", title="Nitrogen by Plot") + 
+        theme(legend.position="none") 
+
+ggarrange(viz_c_plot, viz_n_plot, nrow=1, ncol=2)
+
+```
+
+## Add in/check metadata 
+Do sample IDs match? Add flags 
+
+```{r, check sample ids with metadata}
+
+cat("Check Sample IDs with Metadata")
+
+sample_collected_metadata <- readxl::read_excel(file_path, skip=3, sheet="Porewater - Individual") %>%
+  select(Vial_ID) %>%
+  mutate(sample_type = stringr::str_extract(Vial_ID, 'SO4|FE|DOC|NUTR|AMINO|ISO|SAC|HR-MS|CDOM')) %>% #get the sample type from the Vial_ID
+  filter(sample_type == "DOC") #filter to just DOC samples
+
+samples_collected <- sample_collected_metadata %>%
+  #note sample names are not entered in the sheets the same way: DOC data entered time_plot_grid; metadata entered plot_grid_date
+  mutate(plot = stringr::str_extract(Vial_ID, 'SW|FW|C'),
+         grid = stringr::str_extract(Vial_ID, "B4|C3|C6|D5|E3|F4|F6|H3|H6|I5") ,
+         date = stringr::str_extract(Vial_ID, "[0-9]{8}"),
+         sample_name = paste0("TMP_", date, "_", plot, "_", grid)) 
+
+# Were samples ran in this run?
+dat_flagged %>%
+  mutate(metadata_recorded = case_when(sample_name %in% samples_collected$sample_name ~ TRUE,
+                                       .default = FALSE))
+
+```
+** need to decide how we are handling replicates **
+
+## Export Processed Data  
+```{r, Export Processed Data}
+
+cat("Export Processed Data")
+
+#will put final data in processed data folder 
+
+#set working directory 
+finalpath <- "file path"
+
+#Prepare data to be exported 
+
+#Add any necessary identifiers to the samples  ### VERY IMPORTANT AND STANDARD FOR PROJECT ####
+  #example read in sample IDs list and merge 
+  #create required ID columns in R, etc. 
+
+#Write out data frame - call from first chunk ## CHANGE 
+write.csv(alldat, "file_name")
+
+```
+
+#end
