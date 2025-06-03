@@ -1,5 +1,5 @@
 ---
-title: "COMPASS_SynopticCB_PW_DOC_2025_Template"
+title: "COMPASS_SynopticCB_PW_DOC_202505_Data"
 author: "Stephanie J. Wilson"
 date: "2025-05-30"
 output: html_document
@@ -24,16 +24,13 @@ cat("Setup Information")
   
 ###### File Names - PLEASE CHANGE 
 #file path and name for raw summary data file 
-    #raw_file_name = "Raw Data/COMPASS_SynopticCB_PW_DOC_202505.txt" #example
-    raw_file_name = "Raw Data/FILE_NAME.txt"
+    raw_file_name = "Raw Data/COMPASS_SynopticCB_PW_DOC_202505.txt" 
     
 #file path and name for raw all peaks file 
-    #raw_allpeaks_name = "Raw Data/COMPASS_SynopticCB_PW_DOC_202505_allpeaks.txt" #example
-    raw_allpeaks_name = "Raw Data/FILE_NAME.txt" 
+    raw_allpeaks_name = "Raw Data/COMPASS_SynopticCB_PW_DOC_202505_allpeaks.txt"
 
 #file path and name of processed data file 
-    #processed_file_name = "Processed Data/COMPASS_SynopticCB_PW_Processed_DOC_202505.csv" #example
-    processed_file_name = "Processed Data/FILE_NAME.csv" #example
+    processed_file_name = "Processed Data/COMPASS_SynopticCB_PW_Processed_DOC_202505.csv"
 
 
 ###### Log Files - PLEASE CHECK 
