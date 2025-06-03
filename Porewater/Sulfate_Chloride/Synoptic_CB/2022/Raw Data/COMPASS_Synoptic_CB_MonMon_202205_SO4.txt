@@ -1,0 +1,47 @@
+Inj.	Injection Name	Type 	Ret.Time	Amount	Rel.Area 	Area	Height
+No.	Selected Peak:		min	µg/mL	%	µS*min	µS
+			CD	CD	CD	CD	CD
+			IC-SO4	IC-SO4	IC-SO4	IC-SO4	IC-SO4
+1	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+2	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+3	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+4	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+5	Standard 1	Calibration Standard	4.133 	0.4711 	6.47 	0.4192 	2.16 
+6	Standard 2	Calibration Standard	4.130 	0.9084 	6.22 	0.8083 	4.14 
+7	Standard 3	Calibration Standard	4.127 	1.8882 	6.57 	1.6801 	8.45 
+8	Standard 4	Calibration Standard	4.107 	9.9838 	6.83 	8.8837 	43.56 
+9	Standard 5	Calibration Standard	4.083 	19.6833 	6.87 	17.5143 	84.51 
+10	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+11	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+12	COMPASS_20220502_MSM_SipA_10cm	Unknown	4.107 	924.7531 	10.65 	8.2285 	41.07 
+13	COMPASS_20220502_MSM_SipB_10cm	Unknown	4.113 	747.5236 	9.39 	6.6515 	33.39 
+14	COMPASS_20220502_MSM_SipC_10cm	Unknown	4.113 	869.9081 	10.27 	7.7405 	38.84 
+15	COMPASS_20220502_MSM_SipA_20cm	Unknown	4.113 	686.1893 	8.26 	6.1058 	30.83 
+16	COMPASS_20220502_MSM_SipB_20cm	Unknown	4.113 	706.2678 	8.80 	6.2844 	31.83 
+17	COMPASS_20220502_MSM_SipC_20cm	Unknown	4.113 	707.5838 	7.88 	6.2961 	31.86 
+18	COMPASS_20220502_MSM_SipA_45cm	Unknown	4.123 	399.7609 	4.08 	3.5571 	18.23 
+19	COMPASS_20220502_MSM_SipA_45cm_Dup	Unknown	4.123 	398.1761 	4.11 	3.5430 	18.11 
+20	COMPASS_20220502_MSM_SipA_45cm_Spike	Spiked	4.120 	606.2450 	6.30 	5.3944 	27.38 
+21	Standard 1	Check Standard	4.137 	0.4888 	6.52 	0.4349 	2.27 
+22	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+23	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+24	COMPASS_20220505_GWI_SipA_10cm	Unknown	4.120 	1122.2131 	8.40 	4.9928 	25.30 
+25	COMPASS_20220505_GWI_SipB_10cm	Unknown	4.123 	853.2639 	8.61 	3.7962 	19.10 
+26	COMPASS_20220505_GWI_SipC_10cm	Unknown	4.123 	939.1756 	8.39 	4.1784 	21.01 
+27	COMPASS_20220505_GWI_SipA_20cm	Unknown	4.123 	1068.0465 	7.90 	4.7518 	23.91 
+28	COMPASS_20220505_GWI_SipA_20cm_Dup	Unknown	4.123 	1069.4710 	7.90 	4.7581 	23.84 
+29	Standard 1	Check Standard	4.133 	0.4906 	6.50 	0.4366 	2.26 
+30	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+31	Standard 1	Calibration Standard	4.137 	0.4979 	6.48 	0.4430 	2.30 
+32	Standard 2	Calibration Standard	4.137 	0.9339 	6.21 	0.8310 	4.27 
+33	Standard 3	Calibration Standard	4.133 	1.9565 	6.55 	1.7409 	8.81 
+34	Standard 4	Calibration Standard	4.110 	10.1375 	6.81 	9.0204 	44.68 
+35	Standard 5	Calibration Standard	4.087 	20.2803 	6.86 	18.0455 	87.74 
+36	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+37	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+38	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+Maximum			4.137 	1122.2131 	10.65 	18.0455 	87.74 
+Average			4.119 	429.4730 	7.30 	5.2514 	26.15 
+Minimum			4.083 	0.4711 	4.08 	0.4192 	2.16 
+Standard Deviation			0.014 	432.9564 	1.56 	4.5966 	22.31 
+Relative Standard Deviation			0.33%	100.81%	21.43%	87.53%	85.34%

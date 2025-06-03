@@ -1,0 +1,179 @@
+Inj.	Injection Name	Type 	Ret.Time	Amount	Rel.Area 	Area	Height
+No.	Selected Peak:		min	µg/mL	%	µS*min	µS
+			CD	CD	CD	CD	CD
+			IC-SO4	IC-SO4	IC-SO4	IC-SO4	IC-SO4
+1	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+2	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+3	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+4	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+5	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+6	Standard 1	Calibration Standard	4.303 	0.5203 	6.97 	0.5091 	3.17 
+7	Standard 2	Calibration Standard	4.300 	0.9682 	6.55 	0.9474 	5.77 
+8	Standard 3	Calibration Standard	4.297 	1.9952 	6.82 	1.9523 	11.66 
+9	Standard 4	Calibration Standard	4.257 	9.9443 	6.91 	9.7305 	53.44 
+10	Standard 5	Calibration Standard	4.217 	19.6703 	6.85 	19.2474 	96.37 
+11	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+12	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+13	1_202207_GCrew_UP_LysB_10cm	Unknown	4.327 	3.3588 	1.29 	0.0657 	0.22 
+14	2_202207_GCrew_UP_LysC_10cm	Unknown	4.327 	3.3268 	1.30 	0.0651 	0.22 
+15	3_202207_GCrew_UP_LysA_20cm	Unknown	4.317 	4.5447 	1.74 	0.0889 	0.28 
+16	4_202207_GCrew_UP_LysB_20cm	Unknown	4.323 	3.6999 	1.43 	0.0724 	0.24 
+17	5_202207_GCrew_UP_LysC_20cm	Unknown	4.323 	3.5197 	1.39 	0.0689 	0.22 
+18	6_202207_GCrew_UP_LysB_45cm	Unknown	4.310 	7.1961 	2.58 	0.1408 	0.45 
+19	7_202207_GCrew_UP_LysC_45cm	Unknown	4.310 	8.8104 	3.12 	0.1724 	0.56 
+20	8_202207_GCrew_TR_LysB_10cm	Unknown	4.317 	6.0239 	2.02 	0.1179 	0.26 
+21	9_202207_GCrew_TR_LysC_10cm	Unknown	4.307 	14.4031 	4.76 	0.2819 	1.13 
+22	Standard 1	Check Standard	4.303 	26.0234 	6.98 	0.5093 	3.18 
+23	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+24	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+25	10_202207_GCrew_TR_LysA_20cm	Unknown	4.307 	22.5506 	8.00 	0.4413 	2.11 
+26	10_202207_GCrew_TR_LysA_20cm_dup	Unknown	4.307 	22.7271 	8.03 	0.4448 	2.13 
+27	10_202207_GCrew_TR_LysA_20cm_spk	Unknown	4.297 	117.7331 	31.30 	2.3040 	12.65 
+28	11_202207_GCrew_TR_LysB_20cm	Unknown	4.323 	4.1594 	1.50 	0.0814 	0.25 
+29	12_202207_GCrew_TR_LysC_20cm	Unknown	4.310 	19.4722 	5.91 	0.3811 	1.69 
+30	Standard 1	Check Standard	4.300 	0.5198 	6.98 	0.5086 	3.17 
+31	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+32	Standard 2	Check Standard	4.303 	0.9675 	6.56 	0.9467 	5.76 
+33	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+34	13_202207_GCrew_TR_LysA_45	Unknown	4.307 	22.5602 	7.66 	0.4415 	1.76 
+35	14_202207_GCrew_TR_LysB_45cm	Unknown	4.303 	23.8275 	7.54 	0.4663 	1.87 
+36	15_202207_GCrew_TR_LysC_45cm	Unknown	4.307 	26.1724 	9.04 	0.5122 	2.50 
+37	16_202207_GCrew_WC_SipA_10cm	Unknown	4.287 	342.0715 	5.59 	3.3468 	19.76 
+38	17_202207_GCrew_WC_SipB_10cm	Unknown	4.277 	583.0435 	9.41 	5.7045 	32.81 
+39	18_202207_GCrew_WC_SipC_10cm	Unknown	4.273 	581.2771 	9.87 	5.6872 	32.68 
+40	19_202207_GCrew_WC_SipA_20cm	Unknown	4.287 	381.8156 	5.90 	3.7357 	21.98 
+41	20_202207_GCrew_WC_SipB_20cm	Unknown	4.277 	554.4386 	8.76 	5.4246 	31.32 
+42	20_202207_GCrew_WC_SipB_20cm_dup	Unknown	4.280 	532.6823 	8.78 	5.2118 	30.08 
+43	20_202207_GCrew_WC_SipB_20cm_spk	Unknown	4.267 	725.9881 	11.55 	7.1031 	40.09 
+44	21_202207_GCrew_WC_SipC_20cm	Unknown	4.277 	600.8407 	9.13 	5.8786 	33.67 
+45	22_202207_GCrew_WC_SipA_45cm	Unknown	4.300 	91.2859 	1.28 	0.8931 	5.52 
+46	23_202207_GCrew_WC_SipB_45cm	Unknown	4.290 	352.5223 	6.04 	3.4491 	20.33 
+47	24_202207_GCrew_WC_SipC_45cm	Unknown	4.253 	972.2943 	6.32 	9.5130 	52.64 
+48	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+49	Standard 3	Check Standard	4.297 	1.9912 	6.83 	1.9484 	11.63 
+50	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+51	25_202207_GCrew_WC_LysA_10cm	Unknown	4.283 	391.9489 	6.27 	3.8348 	22.47 
+52	26_202207_GCrew_WC_LysA_20cm	Unknown	4.293 	277.7426 	4.55 	2.7174 	16.15 
+53	27_202207_GCrew_WC_LysA_45cm	Unknown	4.303 	65.6575 	0.96 	0.6424 	4.01 
+54	28_202207_GWI_UP_LysA_10cm	Unknown	4.290 	342.7449 	9.20 	3.3534 	19.61 
+55	29_202207_GWI_UP_LysB_10cm	Unknown	4.303 	148.7517 	7.15 	1.4554 	8.65 
+56	30_202207_GWI_UP_LysC_10cm	Unknown	4.270 	702.7388 	8.92 	6.8756 	38.83 
+57	30_202207_GWI_UP_LysC_10cm_dup	Unknown	4.273 	691.7529 	8.87 	6.7681 	38.58 
+58	30_202207_GWI_UP_LysC_10cm_spk	Unknown	4.263 	863.2929 	10.70 	8.4465 	47.68 
+59	31_202207_GWI_UP_LysA_20cm	Unknown	4.277 	519.7981 	8.55 	5.0857 	30.04 
+60	32_202207_GWI_UP_LysB_20cm	Unknown	4.283 	430.5717 	8.65 	4.2127 	25.20 
+61	33_202207_GWI_UP_LysC_20cm	Unknown	4.270 	774.4437 	9.17 	7.5772 	39.22 
+62	34_202207_GWI_UP_LysA_45cm	Unknown	4.277 	641.5114 	8.52 	6.2766 	32.92 
+63	35_202207_GWI_UP_LysB_45cm	Unknown	4.277 	646.2377 	9.15 	6.3228 	33.26 
+64	36_202207_GWI_UP_LysA_10cm	Unknown	4.263 	1035.2309 	9.05 	10.1287 	51.42 
+65	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+66	Standard 4	Check Standard	4.257 	11.1556 	7.45 	10.9158 	54.56 
+67	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+68	37_202207_GWI_TR_LysB_10cm	Unknown	4.273 	764.2602 	8.79 	7.4775 	39.03 
+69	38_202207_GWI_TR_LysC_10cm	Unknown	4.293 	393.6444 	7.36 	3.8514 	20.75 
+70	39_202207_GWI_TR_LysA_20cm	Unknown	4.273 	788.8762 	6.16 	7.7184 	39.65 
+71	40_202207_GWI_TR_LysB_20cm	Unknown	4.290 	386.4381 	3.39 	3.7809 	19.29 
+72	40_202207_GWI_TR_LysB_20cm_dup	Unknown	4.290 	403.8785 	3.37 	3.9516 	20.17 
+73	40_202207_GWI_TR_LysB_20cm_spk	Unknown	4.283 	535.5176 	4.90 	5.2395 	27.27 
+74	41_202207_GWI_TR_LysC_20cm	Unknown	4.273 	765.3006 	7.96 	7.4877 	39.15 
+75	42_202207_GWI_TR_LysA_45cm	Unknown	4.267 	925.3642 	7.99 	9.0538 	46.22 
+76	43_202207_GWI_TR_LysB_45cm	Unknown	4.263 	1022.4111 	7.89 	10.0033 	50.80 
+77	44_202207_GWI_TR_LysC_45cm	Unknown	4.260 	1175.8090 	9.11 	11.5041 	57.73 
+78	45_202207_GWI_WC_SipA_10cm	Unknown	4.287 	1043.0344 	9.04 	5.1028 	27.43 
+79	46_202207_GWI_WC_SipB_10cm	Unknown	4.283 	1180.7728 	8.77 	5.7766 	30.79 
+80	47_202207_GWI_WC_SipC_10cm	Unknown	4.287 	1115.3174 	8.72 	5.4564 	29.21 
+81	48_202207_GWI_WC_SipA_20cm	Unknown	4.283 	1226.3117 	8.71 	5.9994 	31.91 
+82	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+83	Standard 5	Check Standard	4.223 	22.1167 	7.39 	21.6412 	97.33 
+84	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+85	49_202207_GWI_WC_SipB_20cm	Unknown	4.280 	1324.4669 	8.93 	6.4796 	34.35 
+86	50_202207_GWI_WC_SipC_20cm	Unknown	4.287 	1063.0874 	8.74 	5.2009 	27.93 
+87	50_202207_GWI_WC_SipC_20cm_dup	Unknown	4.287 	1107.7006 	8.75 	5.4192 	29.06 
+88	50_202207_GWI_WC_SipC_20cm_spk	Unknown	4.277 	1505.9961 	11.43 	7.3677 	38.92 
+89	51_202207_GWI_WC_SipA_45cm	Unknown	4.283 	1283.4062 	9.26 	6.2788 	33.40 
+90	52_202207_GWI_WC_SipB_45cm	Unknown	4.280 	1399.6069 	8.16 	6.8472 	36.16 
+91	53_202207_GWI_WC_SipC_45cm	Unknown	4.277 	1635.7937 	9.27 	8.0027 	41.81 
+92	54_202207_GWI_TR_RHZ_Tree_1	Unknown	4.293 	394.7391 	7.89 	3.8621 	20.92 
+93	55_202207_GWI_TR_RHZ_Tree_2	Unknown	4.280 	681.8275 	8.58 	6.6710 	35.12 
+94	56_202207_GWI_TR_RHZ_Tree_3	Unknown	4.287 	564.5633 	8.41 	5.5237 	29.44 
+95	57_202207_GWI_TR_RHZ_Tree_4	Unknown	4.290 	430.8447 	7.09 	4.2154 	22.69 
+96	58_202207_GWI_TR_RHZ_Tree_5	Unknown	4.287 	530.4613 	7.93 	5.1900 	27.73 
+97	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+98	Standard 1	Check Standard	4.310 	0.5470 	7.13 	0.5353 	3.09 
+99	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+100	59_202207_GWI_TR_RHZ_Tree_6	Unknown	4.283 	479.4035 	7.06 	4.6905 	25.07 
+101	60_202207_GWI_TR_RHZ_Tree_7	Unknown	4.280 	659.9456 	8.08 	6.4569 	34.12 
+102	60_202207_GWI_TR_RHZ_Tree_7_dup	Unknown	4.280 	635.1923 	8.08 	6.2147 	32.90 
+103	60_202207_GWI_TR_RHZ_Tree_7_spk	Unknown	4.273 	787.8655 	10.37 	7.7085 	40.54 
+104	61_202207_GWI_TR_RHZ_Tree_8	Unknown	4.283 	554.7130 	8.07 	5.4273 	29.02 
+105	62_202207_MSM_UP_LysB_10cm	Unknown	4.297 	119.0623 	7.58 	2.3301 	12.47 
+106	63_202207_MSM_UP_LysC_10cm	Unknown	4.300 	119.7154 	6.81 	2.3428 	12.48 
+107	64_202207_MSM_UP_LysA_20cm	Unknown	4.297 	184.9015 	5.74 	3.6185 	18.75 
+108	65_202207_MSM_UP_LysB_20cm	Unknown	4.297 	123.0181 	6.53 	2.4075 	12.63 
+109	66_202207_MSM_UP_LysC_20cm	Unknown	4.297 	166.3247 	6.09 	3.2550 	16.83 
+110	67_202207_MSM_UP_LysA_45cm	Unknown	4.297 	200.5974 	5.15 	3.9257 	20.08 
+111	68_202207_MSM_UP_LysB_45cm	Unknown	4.293 	244.3392 	6.99 	4.7817 	24.74 
+112	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+113	Standard 2	Check Standard	4.307 	1.0264 	6.74 	1.0043 	5.70 
+114	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+115	69_202207_MSM_UP_LysC_45cm	Unknown	4.283 	295.8905 	7.25 	5.7906 	32.50 
+116	70_202207_MSM_TR_LysA_10cm	Unknown	4.283 	327.6731 	8.49 	6.4126 	33.39 
+117	70_202207_MSM_TR_LysA_10cm_dup	Unknown	4.287 	327.6792 	8.48 	6.4127 	33.37 
+118	70_202207_MSM_TR_LysB_10cm_spk	Unknown	4.277 	423.2290 	10.68 	8.2826 	42.42 
+119	71_202207_MSM_TR_LysB_10cm	Unknown	4.277 	414.8244 	8.39 	8.1181 	41.47 
+120	72_202207_MSM_TR_LysC_10cm	Unknown	4.270 	384.2227 	8.08 	7.5192 	41.50 
+121	73_202207_MSM_TR_LysA_20cm	Unknown	4.277 	432.8485 	9.25 	8.4708 	42.81 
+122	74_202207_MSM_TR_LysB_20cm	Unknown	4.287 	249.4690 	5.93 	4.8821 	27.79 
+123	75_202207_MSM_TR_LysC_20cm	Unknown	4.287 	279.6787 	6.01 	5.4733 	30.80 
+124	76_202207_MSM_TR_LysA_45cm	Unknown	4.273 	500.9737 	9.04 	9.8041 	48.66 
+125	77_202207_MSM_TR_LysB_45cm	Unknown	4.283 	348.8308 	6.85 	6.8266 	37.11 
+126	78_202207_MSM_TR_LysC_45cm	Unknown	4.273 	503.2238 	8.85 	9.8481 	51.00 
+127	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+128	Standard 3	Check Standard	4.310 	1.9335 	6.48 	1.8919 	10.84 
+129	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+130	79_202207_MSM_WC_SipA_10cm	Unknown	4.290 	592.5776 	7.94 	5.7978 	31.76 
+131	80_202207_MSM_WC_SipB_10cm	Unknown	4.263 	1137.1783 	9.53 	11.1262 	57.72 
+132	80_202207_MSM_WC_SipB_10cm_dup	Unknown	4.263 	1116.2906 	9.50 	10.9218 	56.81 
+133	80_202207_MSM_WC_SipB_10cm_spk	Unknown	4.260 	1404.7526 	11.32 	13.7441 	66.54 
+134	81_202207_MSM_WC_SipC_10cm	Unknown	4.270 	988.5871 	8.67 	9.6724 	50.98 
+135	82_202207_MSM_WC_SipA_20cm	Unknown	4.283 	662.1419 	7.89 	6.4784 	35.30 
+136	83_202207_MSM_WC_SipB_20cm	Unknown	4.270 	959.8857 	7.18 	9.3915 	49.90 
+137	84_202207_MSM_WC_SipC_20cm	Unknown	4.283 	701.8369 	7.08 	6.8668 	37.42 
+138	86_202207_MSM_WC_SipC_45cm	Unknown	4.303 	203.8927 	2.08 	1.9949 	11.98 
+139	87_202207_MSM_UP_RHZ_Tree_1	Unknown	4.307 	117.7618 	5.55 	2.3046 	12.95 
+140	88_202207_MSM_UP_RHZ_Tree_2	Unknown	4.313 	71.4786 	6.02 	1.3988 	7.18 
+141	89_202207_MSM_UP_RHZ_Tree_3	Unknown	4.307 	108.3185 	5.74 	2.1198 	11.84 
+142	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+143	Standard 4	Check Standard	4.267 	10.5812 	7.06 	10.3538 	51.57 
+144	Lab Blank	Unknown	4.297 	0.0596 	78.58 	0.0584 	0.04 
+145	90_202207_MSM_UP_RHZ_Tree_4	Unknown	4.290 	75.5974 	4.39 	1.4794 	8.88 
+146	90_202207_MSM_UP_RHZ_Tree_4_dup	Unknown	4.290 	100.2039 	5.39 	1.9610 	9.83 
+147	90_202207_MSM_UP_RHZ_Tree_4_spk	Unknown	4.277 	169.3862 	8.99 	3.3149 	19.68 
+148	91_202207_MSM_UP_RHZ_Tree_5	Unknown	4.287 	95.9523 	5.15 	1.8778 	11.39 
+149	92_202207_MSM_UP_RHZ_Tree_6	Unknown	4.283 	137.1408 	7.36 	2.6838 	16.01 
+150	93_202207_MSM_UP_RHZ_Tree_7	Unknown	4.290 	115.0122 	4.92 	2.2508 	13.56 
+151	94_202207_MSM_UP_RHZ_Tree_8	Unknown	4.293 	81.6136 	4.00 	1.5972 	9.68 
+152	95_202207_MSM_TR_RHZ_Tree_1	Unknown	4.260 	349.7258 	8.20 	6.8441 	39.33 
+153	96_202207_MSM_TR_RHZ_Tree_2	Unknown	4.260 	333.6696 	7.56 	6.5299 	37.73 
+154	97_202207_MSM_TR_RHZ_Tree_3	Unknown	4.260 	342.2743 	8.05 	6.6983 	38.52 
+155	98_202207_MSM_TR_RHZ_Tree_4	Unknown	4.253 	429.4559 	8.39 	8.4045 	47.53 
+156	99_202207_MSM_TR_RHZ_Tree_5	Unknown	4.257 	423.0852 	8.24 	8.2798 	46.68 
+157	100_202207_MSM_TR_RHZ_Tree_6	Unknown	4.250 	447.3915 	8.30 	8.7555 	48.98 
+158	101_202207_MSM_TR_RHZ_Tree_7	Unknown	4.253 	440.3151 	9.32 	8.6170 	48.27 
+159	102_202207_MSM_TR_RHZ_Tree_8	Unknown	4.250 	499.3243 	8.87 	9.7718 	54.07 
+160	102_202207_MSM_TR_RHZ_Tree_8_dup	Unknown	4.247 	503.8052 	8.87 	9.8595 	54.60 
+161	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+162	Standard 5	Check Standard	4.207 	19.8529 	6.95 	19.4260 	96.97 
+163	Lab Blank	Unknown	4.300 	0.0118 	26.26 	0.0116 	0.03 
+164	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+165	Standard 1	Calibration Standard	4.320 	0.5178 	6.75 	0.5067 	3.07 
+166	Standard 2	Calibration Standard	4.317 	0.9636 	6.36 	0.9429 	5.61 
+167	Standard 3	Calibration Standard	4.313 	2.0010 	6.65 	1.9580 	11.36 
+168	Standard 4	Calibration Standard	4.273 	10.1824 	6.85 	9.9635 	52.56 
+169	Standard 5	Calibration Standard	4.237 	20.2692 	6.84 	19.8334 	94.82 
+170	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+Maximum			4.327 	1635.7937 	78.58 	21.6412 	97.33 
+Average			4.285 	410.8412 	7.94 	5.2191 	27.79 
+Minimum			4.207 	0.0118 	0.96 	0.0116 	0.03 
+Standard Deviation			0.021 	402.3230 	6.85 	4.1513 	20.82 
+Relative Standard Deviation			0.49%	97.93%	86.33%	79.54%	74.93%

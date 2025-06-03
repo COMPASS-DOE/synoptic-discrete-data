@@ -1,0 +1,99 @@
+Inj.	Injection Name	Type 	Ret.Time	Amount	Rel.Area 	Area	Height
+No.	Selected Peak:		min	µg/mL	%	µS*min	µS
+			CD	CD	CD	CD	CD
+			IC-SO4	IC-SO4	IC-SO4	IC-SO4	IC-SO4
+1	Lab Blank	Unknown	4.453 	0.0337 	5.56 	0.0343 	0.09 
+2	Lab Blank	Unknown	4.100 	0.0238 	3.82 	0.0242 	0.07 
+3	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+4	Lab Blank	Unknown	4.450 	0.0349 	5.48 	0.0356 	0.09 
+5	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+6	Lab Blank	Unknown	4.450 	0.0117 	2.36 	0.0119 	0.04 
+7	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+8	Standard 1	Calibration Standard	4.447 	0.5088 	7.03 	0.5188 	3.31 
+9	Standard 2	Calibration Standard	4.440 	0.9857 	6.64 	1.0050 	6.33 
+10	Standard 3	Calibration Standard	4.437 	2.0439 	6.84 	2.0839 	12.80 
+11	Standard 4	Calibration Standard	4.390 	9.8583 	6.91 	10.0515 	55.51 
+12	Standard 5	Calibration Standard	4.347 	20.0662 	6.91 	20.4596 	101.29 
+13	Lab Blank	Unknown	4.100 	0.0198 	2.07 	0.0202 	0.06 
+14	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+15	1_MSM_202208_UP_LysA_20cm	Unknown	4.427 	157.5194 	5.47 	3.2121 	19.41 
+16	2_MSM_202208_UP_LysA_45cm	Unknown	4.420 	185.4838 	4.91 	3.7824 	22.79 
+17	3_MSM_202208_UP_LysB_10cm	Unknown	4.430 	106.3955 	8.39 	2.1696 	13.16 
+18	4_MSM_202208_UP_LysB_20cm	Unknown	4.430 	100.6902 	7.21 	2.0533 	12.47 
+19	5_MSM_202208_UP_LysB_45cm	Unknown	4.417 	226.6307 	7.12 	4.6215 	27.45 
+20	6_MSM_202208_UP_LysC_10cm	Unknown	4.433 	86.0538 	5.65 	1.7548 	10.77 
+21	7_MSM_202208_UP_LysC_20cm	Unknown	4.427 	126.3110 	5.58 	2.5757 	15.77 
+22	8_MSM_202208_UP_LysC_45cm	Unknown	4.443 	9.8873 	1.98 	0.2016 	0.62 
+23	8_MSM_202208_UP_LysC_45cm_dup	Unknown	4.663 	44.5578 	9.15 	0.9086 	0.64 
+24	8_MSM_202208_UP_LysC_45cm_spk	Unknown	4.430 	156.6900 	25.37 	3.1952 	15.01 
+25	9_MSM_202208_TR_LysA_10cm	Unknown	4.390 	472.8090 	8.46 	9.6416 	53.67 
+26	Standard 1	Check Standard	4.440 	0.5310 	7.06 	0.5414 	3.49 
+27	Lab Blank	Unknown	4.103 	0.0228 	3.13 	0.0232 	0.06 
+28	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+29	10_MSM_202208_TR_LysA_20cm	Unknown	4.400 	406.2132 	9.56 	8.2835 	46.72 
+30	11_MSM_202208_TR_LysA_45cm	Unknown	4.390 	469.2068 	8.82 	9.5681 	53.23 
+31	12_MSM_202208_TR_LysB_10cm	Unknown	4.400 	378.0426 	8.35 	7.7091 	43.93 
+32	13_MSM_202208_TR_LysB_20cm	Unknown	4.420 	169.5410 	4.23 	3.4573 	21.06 
+33	14_MSM_202208_TR_LysB_45cm	Unknown	4.407 	285.5842 	6.14 	5.8237 	34.08 
+34	Standard 1	Check Standard	4.440 	0.5384 	7.09 	0.5489 	3.50 
+35	Lab Blank	Unknown	4.443 	0.0371 	5.33 	0.0378 	0.12 
+36	Standard 2	Check Standard	4.437 	0.9926 	6.65 	1.0121 	6.41 
+37	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+38	15_MSM_202208_TR_LysC_10cm	Unknown	4.397 	401.9924 	8.33 	8.1975 	46.38 
+39	16_MSM_202208_TR_LysC_20cm	Unknown	4.410 	281.1557 	6.42 	5.7334 	33.63 
+40	17_MSM_202208_TR_LysC_45cm	Unknown	4.390 	500.6626 	8.83 	10.2096 	56.17 
+41	18_MSM_202208_WC_SipA_10cm	Unknown	4.393 	879.3070 	7.90 	8.9646 	50.33 
+42	19_MSM_202208_WC_SipA_20cm	Unknown	4.400 	789.0551 	7.54 	8.0444 	45.67 
+43	20_MSM_202208_WC_SipA_45cm	Unknown	4.437 	69.7056 	0.76 	0.7107 	4.80 
+44	21_MSM_202208_WC_SipB_10cm	Unknown	4.393 	914.6513 	8.06 	9.3249 	52.00 
+45	22_MSM_202208_WC_SipB_20cm	Unknown	4.397 	821.3436 	7.56 	8.3736 	47.26 
+46	23_MSM_202208_WC_SipB_45cm	Unknown	4.433 	189.9997 	1.99 	1.9371 	12.32 
+47	24_MSM_202208_WC_SipC_10cm	Unknown	4.403 	697.8872 	7.12 	7.1150 	40.92 
+48	25_MSM_202208_WC_SipC_20cm	Unknown	4.413 	508.4243 	5.60 	5.1834 	30.72 
+49	26_MSM_202208_WC_SipC_45cm	Unknown	4.440 	52.4325 	0.60 	0.5346 	3.68 
+50	26_MSM_202208_WC_SipC_45cm_dup	Unknown	4.440 	52.7837 	0.60 	0.5381 	3.70 
+51	26_MSM_202208_WC_SipC_45cm_spk	Unknown	4.427 	290.4766 	2.98 	2.9614 	18.30 
+52	Lab Blank	Unknown	4.447 	0.0098 	1.28 	0.0100 	0.06 
+53	Standard 3	Check Standard	4.433 	2.0552 	6.85 	2.0954 	12.90 
+54	Lab Blank	Unknown	4.457 	0.0261 	5.31 	0.0266 	0.07 
+55	27_MSM_202208_SW_A	Unknown	4.387 	1023.1997 	8.86 	10.4315 	57.43 
+56	28_MSM_202208_SW_B	Unknown	4.387 	1036.0978 	8.89 	10.5630 	58.06 
+57	29_MSM_202208_SW_C	Unknown	4.387 	502.3477 	8.89 	10.2439 	56.51 
+58	30_MSM_202208_RHZ_UP_SF_1	Unknown	4.433 	102.8666 	4.56 	2.0977 	12.89 
+59	31_MSM_202208_RHZ_UP_SF_2	Unknown	4.433 	83.4063 	5.63 	1.7008 	10.37 
+60	32_MSM_202208_RHZ_UP_SF_3	Unknown	4.427 	123.0879 	5.05 	2.5100 	15.38 
+61	33_MSM_202208_RHZ_UP_SF_4	Unknown	4.437 	68.4764 	4.15 	1.3964 	8.63 
+62	34_MSM_202208_RHZ_UP_SF_5	Unknown	4.437 	78.5371 	3.95 	1.6015 	9.92 
+63	35_MSM_202208_RHZ_UP_SF_6	Unknown	4.440 	49.9685 	3.13 	1.0190 	6.32 
+64	36_MSM_202208_RHZ_UP_SF_7	Unknown	4.437 	68.3382 	2.70 	1.3936 	8.72 
+65	37_MSM_202208_RHZ_UP_SF_8	Unknown	4.440 	60.4674 	2.44 	1.2331 	7.73 
+66	37_MSM_202208_RHZ_UP_SF_8_dup	Unknown	4.437 	61.1325 	2.44 	1.2466 	7.81 
+67	Lab Blank	Unknown	4.453 	0.0243 	5.23 	0.0247 	0.06 
+68	Standard 4	Check Standard	4.390 	9.8704 	6.94 	10.0639 	55.70 
+69	Lab Blank	Unknown	4.447 	0.0395 	3.16 	0.0403 	0.26 
+70	37_MSM_202208_RHZ_UP_SF_8_spk	Unknown	4.423 	178.5871 	6.77 	3.6418 	21.84 
+71	38_MSM_202208_RHZ_TR_SF_1	Unknown	4.377 	622.8850 	9.02 	12.7019 	68.10 
+72	39_MSM_202208_RHZ_TR_SF_2	Unknown	4.393 	440.5948 	7.71 	8.9846 	50.37 
+73	40_MSM_202208_RHZ_TR_SF_3	Unknown	4.400 	399.0884 	8.75 	8.1382 	46.06 
+74	41_MSM_202208_RHZ_TR_SF_4	Unknown	4.383 	571.3338 	8.32 	11.6507 	63.31 
+75	42_MSM_202208_RHZ_TR_SF_5	Unknown	4.390 	475.9529 	8.32 	9.7057 	53.87 
+76	43_MSM_202208_RHZ_TR_SF_6	Unknown	4.390 	490.9597 	8.65 	10.0117 	55.38 
+77	44_MSM_202208_RHZ_TR_SF_7	Unknown	4.387 	502.8438 	8.89 	10.2540 	56.49 
+78	45_MSM_202208_RHZ_TR_SF_8	Unknown	4.387 	520.7936 	8.53 	10.6201 	58.41 
+79	45_MSM_202208_RHZ_TR_SF_8_dup	Unknown	4.387 	534.3976 	8.54 	10.8975 	59.71 
+80	45_MSM_202208_RHZ_TR_SF_8_spk	Unknown	4.377 	649.8361 	10.21 	13.2515 	70.61 
+81	Lab Blank	Unknown	4.447 	0.0214 	5.28 	0.0218 	0.06 
+82	Standard 5	Check Standard	4.347 	20.1251 	6.92 	20.5197 	102.15 
+83	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+84	Lab Blank	Unknown	4.447 	0.0243 	5.38 	0.0248 	0.06 
+85	Standard 1	Calibration Standard	4.440 	0.5106 	7.00 	0.5206 	3.37 
+86	Standard 2	Calibration Standard	4.440 	0.9841 	6.64 	1.0034 	6.40 
+87	Standard 3	Calibration Standard	4.430 	2.0462 	6.85 	2.0863 	12.98 
+88	Standard 4	Calibration Standard	4.387 	9.8734 	6.92 	10.0670 	56.01 
+89	Standard 5	Calibration Standard	4.347 	20.0600 	6.91 	20.4532 	101.98 
+90	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+Maximum			4.663 	1036.0978 	25.37 	20.5197 	102.15 
+Average			4.408 	226.5618 	6.32 	4.9445 	27.39 
+Minimum			4.100 	0.0098 	0.60 	0.0100 	0.04 
+Standard Deviation			0.071 	279.7974 	3.18 	5.1152 	26.85 
+Relative Standard Deviation			1.61%	123.50%	50.36%	103.45%	98.05%
