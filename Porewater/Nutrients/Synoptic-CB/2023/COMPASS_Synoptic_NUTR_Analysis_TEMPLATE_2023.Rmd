@@ -26,8 +26,12 @@ cat("Setup")
   user <- "Stephanie Wilson"
 
 #identify the files you want to read in 
-  NOx_file <- "Raw Data/SEAL_COMPASS_Synoptic_NOx_April2023_1.csv"
-  NH3_PO4_file <- "Raw Data/SEAL_COMPASS_Synoptic_NH3_PO4_April2023_1.csv"
+  NOx_file_1 <- "Raw Data/SEAL_COMPASS_Synoptic_NOx_April2023_1.csv"
+  NH3_PO4_file_1 <- "Raw Data/SEAL_COMPASS_Synoptic_NH3_PO4_April2023_1.csv"
+#  NH3_PO4_file_2 <- "Raw Data/SEAL_COMPASS_Synoptic_NH3_PO4_Aug2023_2.csv"
+  
+#combine files if multople 
+#  NH3_PO4_file <- rbind(NH3_PO4_file_1, NH3_PO4_file_2)
 
 # Define the file path for QAQC log file - NO Need to change just check year 
   file_path <- "Raw Data/SEAL_COMPASS_Synoptic_QAQC_Log_2023.csv"
@@ -105,7 +109,7 @@ PO4_CCV <- 0.15
 
 ```
 
-## Import Data
+## Import Data & Clean
 
 ```{r Import Data, echo=FALSE}
 cat("Import Data")
@@ -116,14 +120,14 @@ cat("Import Data")
   #could be from google drive or local drive etc. 
 path <- ("file path")
 
-#---------------------
-
-#---------------------NOX---------------------
 #Read in Raw Data 
-dat_NOx <- readr::read_csv(NOx_file) 
-dat_NH3_PO4 <- readr::read_csv(NH3_PO4_file)
+dat_NOx_1 <- readr::read_csv(NOx_file_1) 
+dat_NH3_PO4_1 <- readr::read_csv(NH3_PO4_file_1)
+#dat_NH3_PO4_2 <- readr::read_csv(NH3_PO4_file_2)
+
 # Combining Files
-df_combo <- bind_rows(dat_NOx, dat_NH3_PO4)
+#dat_NH3_PO4 <- bind_rows(dat_NH3_PO4_1, dat_NH3_PO4_2)
+df_combo <- bind_rows(dat_NOx_1, dat_NH3_PO4)
 
 # Rename columns
 df_combo_rename <- df_combo %>%
@@ -146,7 +150,6 @@ df_all <- df_combo_rename %>%
 
 #Checking column headers
 head(df_all)
-
 
 ```
 
@@ -249,7 +252,7 @@ std_curve_PO4_1 <- data.frame(
   Intercept = PO4_coefs["(Intercept)"],
   Slope = PO4_coefs[2],
   R_squared = PO4_r2
-) # WANT TO FIND A WAY TO GET THE DATE IN THERE
+) 
 
 
 #Combining standards & curve data frames
@@ -268,7 +271,6 @@ cat("Assess Standard Curves")
 std_curve_NOx <- ggplot(stds_NOx, aes(x = Conc, y = Absorbance)) +
   geom_point(size=3) +
   geom_smooth(method = "lm", se = FALSE, color = "darkorchid") +
-  facet_wrap(~ Test, scales = "free") +
   theme_bw() + 
   labs(x="Concentration (ppm)")+ 
   annotate("text", x = 0.75, y = max(stds_NOx$Absorbance), label = paste("r^2 =", round(NOx_r2, 4)),
@@ -279,7 +281,6 @@ print(std_curve_NOx)
 std_curve_NH3 <- ggplot(stds_NH3, aes(x = Conc, y = Absorbance)) +
   geom_point(size=3) +
   geom_smooth(method = "lm", se = FALSE, color = "darkblue") +
-  facet_wrap(~ Test, scales = "free") +
   theme_bw() + 
   labs(x="Concentration (ppm)")+ 
   annotate("text", x = 1.7, y = max(stds_NH3$Absorbance), label = paste("r^2 =", round(NH3_r2, 4)),
@@ -290,7 +291,6 @@ print(std_curve_NH3)
 std_curve_PO4 <- ggplot(stds_PO4, aes(x = Conc, y = Absorbance)) +
   geom_point(size=3) +
   geom_smooth(method = "lm", se = FALSE, color = "darkgreen") +
-  facet_wrap(~ Test, scales = "free") +
   theme_bw() + 
   labs(x="Concentration (ppm)")+ 
   annotate("text", x = 0.25, y = max(stds_PO4$Absorbance), label = paste("r^2 =", round(PO4_r2, 4)),
@@ -301,9 +301,9 @@ print(std_curve_PO4)
 
 #Report out a flag if the run has an R2 lower than appropriate 
 #Write out to the user whether or not the r2 is above the cutoff of 0.98
-  ifelse(NOx_r2 <= r2_cutoff, "NOx Curve r2 is below cutoff! - REASSESS", "NOx Curve r2 GOOD - PROCEED")
-  ifelse(NH3_r2 <= r2_cutoff, "NH3 Curve r2 is below cutoff! - REASSESS", "NH3 Curve r2 GOOD - PROCEED")
-  ifelse(PO4_r2 <= r2_cutoff, "PO4 Curve r2 is below cutoff! - REASSESS", "PO4 Curve r2 GOOD - PROCEED")
+  ifelse(std_curve_NOx_1$R_squared <= r2_cutoff, "NOx Curve r2 is below cutoff! - REASSESS", "NOx Curve r2 GOOD - PROCEED")
+  ifelse(std_curve_NH3_1$R_squared <= r2_cutoff, "NH3 Curve r2 is below cutoff! - REASSESS", "NH3 Curve r2 GOOD - PROCEED")
+  ifelse(std_curve_PO4_1$R_squared <= r2_cutoff, "PO4 Curve r2 is below cutoff! - REASSESS", "PO4 Curve r2 GOOD - PROCEED")
   
 
 #check for the a slope QAQC file, if there is not one, make one 
@@ -322,8 +322,10 @@ if (file.exists(file_path)) {
   write.csv(stds_log, file = file_path, row.names = FALSE)
   print("QAQC log file does not exist. It has been created.")
   }
+  #getting rid of first "X" column
+  stds_log <- stds_log %>%
+    select(-X)
   
-
 #create a dataframe that can be appended to the QAQC log 
 add_log <- as.data.frame(rbind(std_curve_NOx_1, std_curve_NH3_1, std_curve_PO4_1))
 add_log$run_date <- run_date
@@ -334,7 +336,7 @@ log <- rbind(stds_log, add_log)
 
 Slopes_chk <- ggplot(log, aes(run_date, Slope, col=Test)) + geom_point(size=4) + 
   geom_line() + theme_bw() + labs(title="Slope Drift Assessment", x="Run Date", y="Slope") +
-  scale_color_manual(values=c("darkblue", "darkorchid", "darkgreen"))
+  scale_color_manual(values=c("cadetblue4", "blueviolet", "darkolivegreen"))
 Slopes_chk
 
 
@@ -402,14 +404,11 @@ NH3_chks$NH3_diff_flag <-  ifelse(NH3_chks$NH3_diff <= chk_conc_flag, 'YES', 'NO
 PO4_chks$PO4_diff <- ((PO4_chks$Conc - PO4_CCV)/((PO4_chks$Conc + PO4_CCV)/2)) * 100
 PO4_chks$PO4_diff_flag <-  ifelse(PO4_chks$PO4_diff <= chk_conc_flag, 'YES', 'NO, rerun')
 
-#now plot the Ch4 concentrations and the CO2 concentrations vs. the expected concentration 
-#then also make the color the percent difference between the expected and observed concentration
-
 
 
 NOx_chks_plot <-  ggplot(data = NOx_chks, aes(x = rep, y = Conc, fill=NOx_diff_flag)) +
        geom_bar(stat = 'identity') + 
-        scale_fill_manual(values = c("YES" = "darkgreen", "NO, rerun" = "darkgrey")) +
+        scale_fill_manual(values = c("YES" = "chartreuse4", "NO, rerun" = "darkred")) +
         labs(x= " ", y="NOx (mg/L)", title="Check Stds: NOx") + 
         theme(legend.position="bottom") +  
         geom_hline(yintercept=NOx_CCV,
@@ -419,7 +418,7 @@ NOx_chks_plot <-  ggplot(data = NOx_chks, aes(x = rep, y = Conc, fill=NOx_diff_f
 
 NH3_chks_plot <-  ggplot(data = NH3_chks, aes(x = rep, y = Conc, fill=NH3_diff_flag)) +
        geom_bar(stat = 'identity') + 
-       scale_fill_manual(values = c("YES" = "darkgreen", "NO, rerun" = "darkgrey")) +
+       scale_fill_manual(values = c("YES" = "chartreuse4", "NO, rerun" = "darkred")) +
        theme_classic() + 
        labs(x= " ", y="NH3  (mg/L)", title="Check Stds: NH3") + 
        theme(legend.position="bottom") +  
@@ -429,13 +428,20 @@ NH3_chks_plot <-  ggplot(data = NH3_chks, aes(x = rep, y = Conc, fill=NH3_diff_f
 
 PO4_chks_plot <-  ggplot(data = PO4_chks, aes(x = rep, y = Conc, fill=PO4_diff_flag)) +
        geom_bar(stat = 'identity') + 
-       scale_fill_manual(values = c("YES" = "darkgreen", "NO, rerun" = "darkgrey")) +
+       scale_fill_manual(values = c("YES" = "chartreuse4", "NO, rerun" = "darkred")) +
         theme_classic() + labs(x= " ", y="PO4  (mg/L)", title="Check Stds: PO4") + 
         theme(legend.position="bottom") +  geom_hline(yintercept=PO4_CCV,
-              linetype="dashed",  color = "black", linewidth=1) + 
+              linetype="dashed",  color = "red", linewidth=1) + 
               guides(fill=guide_legend(title="% Difference <10%"))
 
-Chk_Std_Plots <- ggarrange(NOx_chks_plot, NH3_chks_plot,NH3_chks_plot, nrow=1, ncol=3)
+Chk_Std_Plots <- ggarrange(
+  NOx_chks_plot, 
+  NH3_chks_plot, 
+  PO4_chks_plot,   # (you had NH3 twice!)
+  nrow = 1, 
+  ncol = 3,
+  common.legend = TRUE,
+  legend = "bottom")
 print(Chk_Std_Plots)
 
 #calculate the percent of check standards that are within the range based on the flag 
@@ -516,7 +522,7 @@ ifelse(PO4_blks_percent >= 60,
 
 NOx_blks_plot <-  ggplot(data = NOx_blks, aes(x = rep, y = Conc, fill=NOx_diff_flag)) +
        geom_bar(stat = 'identity') + 
-        scale_fill_manual(values = c("YES" = "darkblue", "NO, rerun" = "darkgrey")) +
+        scale_fill_manual(values = c("YES" = "deepskyblue", "NO, rerun" = "darkred")) +
         theme_classic() + labs(x= " ", y="NOx (mg/L)", title="NOx Blanks") + 
         theme(legend.position="bottom") +  geom_hline(yintercept= as.numeric(blk_flag_NOx), linetype="dashed", 
                 color = "black", linewidth=1)  + 
@@ -525,7 +531,7 @@ NOx_blks_plot <-  ggplot(data = NOx_blks, aes(x = rep, y = Conc, fill=NOx_diff_f
 
 NH3_blks_plot <-  ggplot(data = NH3_chks, aes(x = rep, y = Conc, fill=NH3_diff_flag)) +
        geom_bar(stat = 'identity') + 
-        scale_fill_manual(values = c("YES" = "darkblue", "NO, rerun" = "darkgrey")) +
+        scale_fill_manual(values = c("YES" = "deepskyblue", "NO, rerun" = "darkred")) +
         theme_classic() + labs(x= " ", y="NH3  (mg/L)", title="NH3 Blanks") + 
         theme(legend.position="bottom") +  geom_hline(yintercept=as.numeric(blk_flag_NH3), linetype="dashed", 
                 color = "black", linewidth=1)  + 
@@ -533,7 +539,7 @@ NH3_blks_plot <-  ggplot(data = NH3_chks, aes(x = rep, y = Conc, fill=NH3_diff_f
 
 PO4_blks_plot <-  ggplot(data = PO4_chks, aes(x = rep, y = Conc, fill=PO4_diff_flag)) +
        geom_bar(stat = 'identity') + 
-        scale_fill_manual(values = c("YES" = "darkblue", "NO, rerun" = "darkgrey")) +
+        scale_fill_manual(values = c("YES" = "deepskyblue", "NO, rerun" = "darkred")) +
         theme_classic() + labs(x= " ", y="PO4 (mg/L)", title="PO4 Blanks") + 
         theme(legend.position="bottom") +  geom_hline(yintercept=as.numeric(blk_flag_PO4), linetype="dashed", 
                 color = "black", linewidth=1)  + 
@@ -559,7 +565,8 @@ print(blk_flag_PO4)
 
 ## Analyze Duplicates - Going to be a little tricky need to pull the row that says duplicate and the one above it
 
-```{#r Analyze Duplicates}
+
+```{r Analyze Duplicates}
 
 cat("Analyze Duplicates")
 
@@ -569,6 +576,87 @@ cat("Analyze Duplicates")
 #merge the two and use code below to ID any bad tech reps
 #NPOC raw = NOX 
 #NPOC dup = dup
+
+
+#Getting dataframe of just samples 
+df_NOx_dup <- df_all %>%
+  filter(Test == "Vanadium NOx") %>%
+  filter(
+     !grepl("CCV|CCB|Standard|Auto Spike", Sample_Name, ignore.case = TRUE), 
+     #^removes autospice, ccv, ccb, standards
+     !is.na(Sample_Name),                                         # Remove NA
+     !grepl("^\\d+$", Sample_Name),                               # removes all numbers
+     !grepl("^\\d{1,2}/\\d{1,2}/\\d{2,4}", Sample_Name)) %>%      # removes all date/time
+  mutate(`Duplicate?` = if_else(                                  # adds duplicate column
+     grepl("Duplicate", Sample_Name, ignore.case = TRUE),         # keeps sample ID if there
+     lag(Sample_Name),                                            # get previous row's SampleID
+     Sample_Name)) %>%                                            # keeps sample ID if not duplicate
+  group_by(`Duplicate?`) %>%                                      # groups by duplicate 
+  filter(n() > 1) %>%                                             # filters anything that appears more than once 
+  ungroup()
+
+df_NH3_dup <- df_all %>%
+  filter(Test == "Ammonia 2") %>%
+  filter(
+     !grepl("CCV|CCB|Blank|1mg/L ammonia|Abs_Chk_20ppt|Abs_Chk_10ppt|Standard|Auto Spike", Sample_Name, ignore.case = TRUE), 
+     #^removes autospice, ccv, ccb, standards
+     !is.na(Sample_Name),                                         # Remove NA
+     !grepl("^\\d+$", Sample_Name),                               # removes all numbers
+     !grepl("^\\d{1,2}/\\d{1,2}/\\d{2,4}", Sample_Name)) %>%      # removes all date/time
+  mutate(`Duplicate?` = if_else(                                  # adds duplicate column
+     grepl("Duplicate", Sample_Name, ignore.case = TRUE),         # keeps sample ID if there
+     lag(Sample_Name),                                            # get previous row's SampleID
+     Sample_Name)) %>%                                            # keeps sample ID if not duplicate
+  group_by(`Duplicate?`) %>%                                      # groups by duplicate 
+  filter(n() > 1) %>%                                             # filters anything that appears more than once 
+  ungroup()
+
+df_PO4_dup <- df_all %>%
+  filter(Test == "o-PHOS 0.3") %>%
+  filter(
+     !grepl("CCV|CCB|Standard|Auto Spike", Sample_Name, ignore.case = TRUE), 
+     #^removes autospice, ccv, ccb, standards
+     !is.na(Sample_Name),                                         # Remove NA
+     !grepl("^\\d+$", Sample_Name),                               # removes all numbers
+     !grepl("^\\d{1,2}/\\d{1,2}/\\d{2,4}", Sample_Name)) %>%      # removes all date/time
+  mutate(`Duplicate?` = if_else(                                  # adds duplicate column
+     grepl("Duplicate", Sample_Name, ignore.case = TRUE),         # keeps sample ID if there
+     lag(Sample_Name),                                            # get previous row's SampleID
+     Sample_Name)) %>%                                            # keeps sample ID if not duplicate
+  group_by(`Duplicate?`) %>%                                      # groups by duplicate 
+  filter(n() > 1) %>%                                             # filters anything that appears more than once 
+  ungroup()
+
+Nox_dup_chk <- df_NOx_dup %>%                                     
+  group_by(`Duplicate?`) %>%
+  filter(n() == 2) %>%                                            # make sure there's a pair
+  mutate(
+    pct_diff = abs(diff(Conc)) / mean(Conc) * 100,
+    NOx_diff_flag = ifelse(pct_diff < 10, 'YES', 'NO, rerun')) %>%
+  ungroup()
+
+#calculate the percent of check standards that are within the range based on the flag 
+NOx_dup_percent <- (sum(Nox_dup_chk$NOx_diff_flag == "YES")/nrow(Nox_dup_chk))*100
+
+NH3_dup_percent <- (sum(NH3_chks$pct_diff_flag == "YES")/nrow(NH3_chks))*100
+PO4_dup_percent <- (sum(PO4_chks$pct_diff_flag == "YES")/nrow(PO4_chks))*100
+
+
+ifelse(NOx_dup_percent >= 60,
+       ">60% of NOx Blank concentrations are lower than the lower 25% quartile of samples - PROCEED",
+       "<60% of NOx blaks are lower 25% quartile of samples - REASSESS")
+
+ifelse(NOx_dup_percent >= 60, ">60% of Duplicates have a CV <10% - PROCEED",
+       "<60% of Carbon Duplicates have a CB <10% - REASSESS")
+
+
+ifelse(NH3_blks_percent >= 60,
+       ">60% of NH3 Blank concentrations are lower than the lower 25% quartile of samples - PROCEED",
+       "<60% of NH3 blaks are lower 25% quartile of samples - REASSESS")
+ifelse(PO4_blks_percent >= 60,
+       ">60% of PO4 Blank concentrations are lower than the lower 25% quartile of samples- PROCEED",
+       "<60% of PO4 blaks are lower 25% quartile of samples - REASSESS")
+
 
 QAdups <- merge(dat_raw2, dups)
 head(QAdups)
