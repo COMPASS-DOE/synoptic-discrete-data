@@ -127,7 +127,7 @@ dat_NH3_PO4_1 <- readr::read_csv(NH3_PO4_file_1)
 
 # Combining Files
 #dat_NH3_PO4 <- bind_rows(dat_NH3_PO4_1, dat_NH3_PO4_2)
-df_combo <- bind_rows(dat_NOx_1, dat_NH3_PO4)
+df_combo <- bind_rows(dat_NOx_1, dat_NH3_PO4_1)
 
 # Rename columns
 df_combo_rename <- df_combo %>%
@@ -334,10 +334,16 @@ add_log$user <- user
 #compare slopes to previous runs (from log) in order to assess drift 
 log <- rbind(stds_log, add_log)
 
-Slopes_chk <- ggplot(log, aes(run_date, Slope, col=Test)) + geom_point(size=4) + 
-  geom_line() + theme_bw() + labs(title="Slope Drift Assessment", x="Run Date", y="Slope") +
-  scale_color_manual(values=c("cadetblue4", "blueviolet", "darkolivegreen"))
+Slopes_chk <- ggplot(log, aes(run_date, Slope, col=Test)) + 
+  geom_point(size=4) + 
+  geom_line() + theme_bw() + 
+  labs(title="Slope Drift Assessment", x="Run Date", y="Slope") +
+  scale_color_manual(values=c("darkred", "darkorange", "darkolivegreen"))
 Slopes_chk
+
+
+
+
 
 
 #write out to the user if the slope is within 10% of previous slopes 
@@ -431,7 +437,7 @@ PO4_chks_plot <-  ggplot(data = PO4_chks, aes(x = rep, y = Conc, fill=PO4_diff_f
        scale_fill_manual(values = c("YES" = "chartreuse4", "NO, rerun" = "darkred")) +
         theme_classic() + labs(x= " ", y="PO4  (mg/L)", title="Check Stds: PO4") + 
         theme(legend.position="bottom") +  geom_hline(yintercept=PO4_CCV,
-              linetype="dashed",  color = "red", linewidth=1) + 
+              linetype="dashed",  color = "black", linewidth=1) + 
               guides(fill=guide_legend(title="% Difference <10%"))
 
 Chk_Std_Plots <- ggarrange(
@@ -547,6 +553,17 @@ PO4_blks_plot <-  ggplot(data = PO4_chks, aes(x = rep, y = Conc, fill=PO4_diff_f
 
 ggarrange(NOx_blks_plot, NH3_blks_plot,PO4_blks_plot, nrow=1, ncol=3)
 
+Blks_Plots <- ggarrange(
+  NOx_blks_plot, 
+  NH3_blks_plot, 
+  PO4_blks_plot,   # (you had NH3 twice!)
+  nrow = 1, 
+  ncol = 3,
+  common.legend = TRUE,
+  legend = "bottom")
+print(Chk_Std_Plots)
+
+
 #find average of run carbon and nitrogen blanks for flagging samples later 
 blk_avg_NOx <- mean(NOx_blks$Conc)
 cat("NOx blanks:")
@@ -565,7 +582,6 @@ print(blk_flag_PO4)
 
 ## Analyze Duplicates - Going to be a little tricky need to pull the row that says duplicate and the one above it
 
-
 ```{r Analyze Duplicates}
 
 cat("Analyze Duplicates")
@@ -578,7 +594,7 @@ cat("Analyze Duplicates")
 #NPOC dup = dup
 
 
-#Getting dataframe of just samples 
+#Getting dataframe of just duplicated samples
 df_NOx_dup <- df_all %>%
   filter(Test == "Vanadium NOx") %>%
   filter(
@@ -627,6 +643,8 @@ df_PO4_dup <- df_all %>%
   filter(n() > 1) %>%                                             # filters anything that appears more than once 
   ungroup()
 
+
+# Finding out the percent difference of duplicates 
 Nox_dup_chk <- df_NOx_dup %>%                                     
   group_by(`Duplicate?`) %>%
   filter(n() == 2) %>%                                            # make sure there's a pair
@@ -635,69 +653,64 @@ Nox_dup_chk <- df_NOx_dup %>%
     NOx_diff_flag = ifelse(pct_diff < 10, 'YES', 'NO, rerun')) %>%
   ungroup()
 
+NH3_dup_chk <- df_NH3_dup %>%                                     
+  group_by(`Duplicate?`) %>%
+  filter(n() == 2) %>%                                            # make sure there's a pair
+  mutate(
+    pct_diff = abs(diff(Conc)) / mean(Conc) * 100,
+    NH3_diff_flag = ifelse(pct_diff < 10, 'YES', 'NO, rerun')) %>%
+  ungroup()
+
+PO4_dup_chk <- df_PO4_dup %>%                                     
+  group_by(`Duplicate?`) %>%
+  filter(n() == 2) %>%                                            # make sure there's a pair
+  mutate(
+    pct_diff = abs(diff(Conc)) / mean(Conc) * 100,
+    PO4_diff_flag = ifelse(pct_diff < 10, 'YES', 'NO, rerun')) %>%
+  ungroup()
+
 #calculate the percent of check standards that are within the range based on the flag 
 NOx_dup_percent <- (sum(Nox_dup_chk$NOx_diff_flag == "YES")/nrow(Nox_dup_chk))*100
+NH3_dup_percent <- (sum(NH3_dup_chk$NH3_diff_flag == "YES")/nrow(NH3_dup_chk))*100
+PO4_dup_percent <- (sum(PO4_dup_chk$PO4_diff_flag == "YES")/nrow(PO4_dup_chk))*100
 
-NH3_dup_percent <- (sum(NH3_chks$pct_diff_flag == "YES")/nrow(NH3_chks))*100
-PO4_dup_percent <- (sum(PO4_chks$pct_diff_flag == "YES")/nrow(PO4_chks))*100
-
-
-ifelse(NOx_dup_percent >= 60,
-       ">60% of NOx Blank concentrations are lower than the lower 25% quartile of samples - PROCEED",
-       "<60% of NOx blaks are lower 25% quartile of samples - REASSESS")
-
+#dup flag report out
 ifelse(NOx_dup_percent >= 60, ">60% of Duplicates have a CV <10% - PROCEED",
+       "<60% of Carbon Duplicates have a CB <10% - REASSESS")
+ifelse(NH3_dup_percent >= 60, ">60% of Duplicates have a CV <10% - PROCEED",
+       "<60% of Carbon Duplicates have a CB <10% - REASSESS")
+ifelse(PO4_dup_percent >= 60, ">60% of Duplicates have a CV <10% - PROCEED",
        "<60% of Carbon Duplicates have a CB <10% - REASSESS")
 
 
-ifelse(NH3_blks_percent >= 60,
-       ">60% of NH3 Blank concentrations are lower than the lower 25% quartile of samples - PROCEED",
-       "<60% of NH3 blaks are lower 25% quartile of samples - REASSESS")
-ifelse(PO4_blks_percent >= 60,
-       ">60% of PO4 Blank concentrations are lower than the lower 25% quartile of samples- PROCEED",
-       "<60% of PO4 blaks are lower 25% quartile of samples - REASSESS")
-
-
-QAdups <- merge(dat_raw2, dups)
-head(QAdups)
-
-df2 <- as.data.frame(QAdups$npoc_raw)
-df2$dups <- QAdups$npoc_raw_dup
-
-df2$sds <- apply(df2,1,sd)
-df2$mean <- apply(df2, 1, mean)
-
-QAdups$npoc_dups_cv <- (df2$sds/df2$mean) * 100
-QAdups$npoc_dups_cv_flag <-  ifelse(QAdups$npoc_dups_cv <10, 'YES', 'NO, rerun')
-
-df3 <- as.data.frame(QAdups$tdn_raw)
-df3$dups <- QAdups$tdn_raw_dup
-
-df3$sds <- apply(df3,1,sd)
-df3$mean <- apply(df3, 1, mean)
-
-QAdups$tdn_dups_cv <- (df3$sds/df3$mean) * 100
-QAdups$tdn_dups_cv_flag <-  ifelse(QAdups$tdn_dups_cv <10, 'YES', 'NO, rerun')
-
-head(QAdups)
-
 #plot dups output as a bar graph to easily check - want any over 10% to be red need to work on this 
-C_dups <- ggplot(data =QAdups, aes(x =sample_name, y =npoc_dups_cv, fill=npoc_dups_cv_flag)) +
-       geom_bar(stat = 'identity') + 
+NOx_dups <- ggplot(data =Nox_dup_chk, aes(x =sample_name, y =npoc_dups_cv, fill=npoc_dups_cv_flag)) +
+        geom_bar(stat = 'identity') + 
         theme_classic() + labs(x= "Sample ID", y="NPOC (mg/L)") + 
-        scale_fill_manual(values = c("YES" = "darkgreen", "NO, rerun" = "red")) +
-        theme(legend.position="none") +  geom_hline(yintercept=10, linetype="dashed", 
-                color = "black", size=1)  + 
-              guides(fill=guide_legend(title="CV Between Dups <10%"))
+        scale_fill_manual(values = c("YES" = "darkslateblue", "NO, rerun" = "darkred")) +
+        theme(legend.position="none") +  
+        geom_hline(yintercept=10, linetype="dashed", 
+            color = "black", size=1)  + 
+        guides(fill=guide_legend(title="CV Between Dups <10%"))
 
 
-N_dups <- ggplot(data =QAdups, aes(x =sample_name, y =tdn_dups_cv, fill=tdn_dups_cv_flag)) +
-       geom_bar(stat = 'identity') + 
+NH3_dups <- ggplot(data =QAdups, aes(x =sample_name, y =tdn_dups_cv, fill=tdn_dups_cv_flag)) +
+        geom_bar(stat = 'identity') + 
         theme_classic() + labs(x= "Sample ID", y="TN (mg/L)") + 
-          scale_fill_manual(values = c("YES" = "darkgreen", "NO, rerun" = "red")) +
-        theme(legend.position="none") +  geom_hline(yintercept=10, linetype="dashed", 
+        scale_fill_manual(values = c("YES" = "darkslateblue", "NO, rerun" = "darkred")) +
+        theme(legend.position="none") +  
+        geom_hline(yintercept=10, linetype="dashed", 
+              color = "black", size=1) + 
+        guides(fill=guide_legend(title="CV Between Dups <10%"))
+
+PO4_dups <- ggplot(data =QAdups, aes(x =sample_name, y =tdn_dups_cv, fill=tdn_dups_cv_flag)) +
+       geom_bar(stat = 'identity') + 
+       theme_classic() + labs(x= "Sample ID", y="TN (mg/L)") + 
+       scale_fill_manual(values = c("YES" = "darkslateblue", "NO, rerun" = "darkred")) +
+       theme(legend.position="none") +  
+       geom_hline(yintercept=10, linetype="dashed", 
                 color = "black", size=1) + 
-              guides(fill=guide_legend(title="CV Between Dups <10%"))
+        guides(fill=guide_legend(title="CV Between Dups <10%"))
 
 ggarrange(C_dups, N_dups,ncol=2, nrow=1)
 
@@ -731,6 +744,40 @@ samples <- df_all %>%
   filter(str_detect(Sample_Name, c("GCW|GWI|MSM|SWH")))     
 head(samples)
 
+df_all_clean <- df_all %>%
+  filter(str_detect(Sample_Name, "GCW|GWI|MSM|SWH")) %>%
+  mutate(Run_Time = lubridate::mdy_hm(Run_Time))
+  mutate(separate(
+    df_all,
+    col = Sample_Name,
+    sep = "_",
+    into = c("Site", "Samp_Time", "Zone", "Replicate", "Depth")
+  )) %>%
+  mutate(Samp_Time = ym(Samp_Time)) %>%
+  mutate(
+    Site = case_when(
+      Site == "GCW" ~ "GCReW",
+      Site == "GWI" ~ "Goodwin Island",
+      Site == "MSM" ~ "Moneystump",
+      Site == "SWH" ~ "Sweethall",
+      TRUE ~ Site),
+    `Zone` = case_when(
+      `Zone` == "UP" ~ "Upland",
+      `Zone` == "TR" ~ "Transition",
+      `Zone` == "WC" ~ "Wetland",
+      `Zone` == "SWAMP" ~ "Swamp",
+      `Zone` == "SW" ~ "Surface Water",
+      TRUE ~ `Zone`
+    )) 
+
+  
+
+  NOx_Samples <- df_all %>%
+    filter(Test == "Vanadium NOx") 
+  
+  NOx_Samples$Conc_Calc = 
+  #  ((Con2)*
+       (NOx_Samples$Absorbance*std_curve_NOx_1$Slope) #+ std_curve_NOx_1$Intercept) #)/(Con1)/(N_mw))
 
 
 
@@ -811,6 +858,9 @@ samples_flagged_dilcorr <- samples_flagged %>%
   )) %>%
   mutate(Conc_dilcorr = Conc * Dilution, 
          Conc_uM_dilcor = Conc_uM * Dilution)
+
+ifelse(#dilution not equal 0) then mulitply by the dilution
+  
 
 
 ```
