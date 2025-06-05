@@ -38,7 +38,19 @@ cat("Setup")
 
   
 #record any notes about the run or anything other info here: 
-  Notes <- "any info that needs recorded"
+  Notes <- "There are two sample names we suspect were input incorrectly, they are listed below and have been checked against metadata"
+  
+#duplicate sample names to be changed 
+  #list the sample iDs that are messed up and create a list with the cup identifier as well so that we can change them below 
+  wrong_names <- c("GCW_202304_TR_LysC_45cm", "GCW_202304_TR_LysA_20cm")
+  wrong_cups <- c("20", "13")
+  right_names <- c("GCW_202304_TR_LysB_45cm", "GCW_202304_TR_LysA_10cm")
+  
+  #can't determine from metadata - for now unsure 
+  issue_names <- c("GCW_202304_TR_LysA_20cm") 
+      #couldn't tell which onethis is from the metadata, no A_10cm which is what we thought marked on the sheet, need to check sample vials in            freezer to see if we have a A_10cm from GCW_TR to be sure 
+  issue_cups <- c("13")
+  
 
 ```
 
