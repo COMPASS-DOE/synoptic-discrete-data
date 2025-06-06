@@ -233,9 +233,13 @@ stds_PO4 <- stds_PO4 %>%
 #generating line of best fit aka standard curves
 #NOx
 
-Conc2 <- ((stds_NOx$Conc)^2)
+stds_NOx <- stds_NOx %>%
+  mutate(Conc2 = Conc^2)
 
+# Fit the quadratic model
 quad_reg_NOx <- lm(Absorbance ~ Conc + Conc2, data = stds_NOx)
+
+#quad_reg_NOx <- lm(Absorbance ~ Conc + Conc2, data = stds_NOx)
 NOx_coefs <- coef(quad_reg_NOx)                        # intercept and slopes
 NOx_r2 <- summary(quad_reg_NOx)$r.squared              # R squared
 # Store in a clean dataframe
@@ -246,7 +250,6 @@ std_curve_NOx_1 <- data.frame(
   Conc2_Coeff = NOx_coefs["Conc2"],
   R_squared = NOx_r2
 )
-#hHOW DO YOU WANT THE NON LINEAR COEFFS SAVED SINCE THERE IS NO LONGER A SLOPE 
 
 #NH3
 lin_reg_NH3 <- lm(stds_NH3$Absorbance ~stds_NH3$Conc, stds_NH3)
@@ -809,8 +812,7 @@ ifelse(n_dups_percent >= 60, ">60% of Nitrogen Duplicates have a CV <10%",
 
 ```
 
-## Spikes?
-
+## Spikes
 ```{r}
 
  
@@ -818,7 +820,7 @@ ifelse(n_dups_percent >= 60, ">60% of Nitrogen Duplicates have a CV <10%",
 df_NOx_spike <- df_all %>%
   filter(Test == "Vanadium NOx") %>%
   filter(
-     !grepl("CCV|CCB|Standard|Duplicate|Abs_Chk_20ppt|Abs_Chk_10ppt", Sample_Name, ignore.case = TRUE),
+     !grepl("CCV|CCB|Standard|Duplicate", Sample_Name, ignore.case = TRUE),
      #^removes dup, ccv, ccb, standards
      !is.na(Sample_Name),                                     # Remove NA
      !grepl("^\\d+$", Sample_Name),                           # removes all numbers
@@ -841,7 +843,7 @@ df_NOx_spike <- df_all %>%
 df_NH3_spike <- df_all %>%
   filter(Test == "Ammonia 2") %>%
   filter(
-     !grepl("CCV|CCB|Blank|1mg/L ammonia|Abs_Chk_20ppt|Abs_Chk_10ppt|Standard|Duplicate", Sample_Name, ignore.case = TRUE),
+     !grepl("CCV|CCB|Blank|1mg/L ammonia|Standard|Duplicate", Sample_Name, ignore.case = TRUE),
      #^removes dup, ccv, ccb, standards
      !is.na(Sample_Name),                                         # Remove NA
      !grepl("^\\d+$", Sample_Name),                               # removes all numbers
@@ -859,7 +861,7 @@ df_NH3_spike <- df_all %>%
 df_PO4_dup <- df_all %>%
   filter(Test == "o-PHOS 0.3") %>%
   filter(
-     !grepl("CCV|CCB|Standard|Duplicate|Abs_Chk_20ppt|Abs_Chk_10ppt", Sample_Name, ignore.case = TRUE),
+     !grepl("CCV|CCB|Standard|Duplicate", Sample_Name, ignore.case = TRUE),
      #^removes dup, ccv, ccb, standards
      !is.na(Sample_Name),                                         # Remove NA
      !grepl("^\\d+$", Sample_Name),                               # removes all numbers
