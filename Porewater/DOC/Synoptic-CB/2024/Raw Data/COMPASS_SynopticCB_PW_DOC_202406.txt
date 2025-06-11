@@ -1,0 +1,80 @@
+[Header]	
+System	TOCL TNML ASIL 9ML	
+S/W Version	1.00	
+User	sjw	
+Date/Time	6/3/2025 3:09:11 PM	
+
+[System]	
+Instrument Options	TOC/ASI/IC Unit/TN/	
+
+[Data]	
+Type	Anal.	Sample Name	Sample ID	Result(TOC)	Result(TC)	Result(IC)	Result(POC)	Result(NPOC)	Result(TN)	Unit	Vial	Date / Time	
+Unknown	NPOC/TN	DI	Untitled					0.1423	-0.09335	mg/L	0	6/29/2024 10:16:48 AM	
+Unknown	NPOC/TN	DI	Untitled					0.1060	-0.09102	mg/L	0	6/29/2024 10:35:29 AM	
+Unknown	NPOC/TN	DI	Untitled					0.08620	-0.09655	mg/L	0	6/29/2024 10:55:44 AM	
+Unknown	NPOC/TN	Chk_Std_50C_2N	Untitled					46.00	2.297	mg/L	1	6/29/2024 11:22:22 AM	
+Unknown	NPOC/TN	DI	Untitled					0.4536	-0.1017	mg/L	0	6/29/2024 11:41:10 AM	
+Standard	NPOC	CalCurve_NPOC	Untitled					100.0		mg/L	2, 3, 4, 5, 6, 7, 8, 9	6/29/2024 2:22:52 PM	
+Unknown	NPOC/TN	DI	Untitled					0.6402	-0.1019	mg/L	0	6/29/2024 3:10:38 PM	
+Standard	TN	CalCurve_TN	Untitled						3.000	mg/L	10, 11, 12, 13, 14, 15, 16	6/29/2024 5:23:24 PM	
+Unknown	NPOC/TN	DI	Untitled					0.9301	0.1193	mg/L	0	6/29/2024 5:44:57 PM	
+Unknown	NPOC/TN	Chk_Std_50C_2N	Untitled					47.72	2.298	mg/L	17	6/29/2024 6:01:34 PM	
+Unknown	NPOC/TN	DI	Untitled					1.040	0.09156	mg/L	0	6/29/2024 6:20:19 PM	
+Unknown	NPOC/TN	202306_SWH_UP_LysA_10cm	Untitled					10.25	0.4833	mg/L	18	6/29/2024 6:44:46 PM	
+Unknown	NPOC/TN	202306_SWH_UP_LysA_20cm	Untitled					8.057	0.4038	mg/L	19	6/29/2024 7:09:08 PM	
+Unknown	NPOC/TN	202306_SWH_UP_LysA_45cm	Untitled					14.69	0.5410	mg/L	20	6/29/2024 7:34:09 PM	
+Unknown	NPOC/TN	202306_SWH_UP_LysB_10cm	Untitled					20.50	0.7361	mg/L	21	6/29/2024 7:56:34 PM	
+Unknown	NPOC/TN	202306_SWH_UP_LysB_20cm	Untitled					17.90	0.8948	mg/L	22	6/29/2024 8:18:55 PM	
+Unknown	NPOC/TN	202306_SWH_UP_LysB_45cm	Untitled					29.69	0.9551	mg/L	23	6/29/2024 8:44:15 PM	
+Unknown	NPOC/TN	202306_SWH_UP_LysC_10cm	Untitled					24.11	0.8482	mg/L	24	6/29/2024 9:08:45 PM	
+Unknown	NPOC/TN	202306_SWH_UP_LysC_20cm	Untitled					21.23	0.9012	mg/L	25	6/29/2024 9:36:28 PM	
+Unknown	NPOC/TN	202306_SWH_UP_LysC_45cm	Untitled					25.80	0.9094	mg/L	26	6/29/2024 9:53:04 PM	
+Unknown	NPOC/TN	DI	Untitled					1.159	0.09993	mg/L	0	6/29/2024 10:13:02 PM	
+Unknown	NPOC/TN	Chk_Std_50C_2N	Untitled					46.98	2.263	mg/L	57	6/29/2024 10:37:25 PM	
+Unknown	NPOC/TN	DI	Untitled					1.414	0.1253	mg/L	0	6/29/2024 10:57:30 PM	
+Unknown	NPOC/TN	202306_SWH_SWAMP_LysA_10cm	Untitled					13.84	0.6162	mg/L	27	6/29/2024 11:22:31 PM	
+Unknown	NPOC/TN	202306_SWH_SWAMP_LysA_20cm	Untitled					10.65	0.6169	mg/L	28	6/29/2024 11:45:44 PM	
+Unknown	NPOC/TN	202306_SWH_SWAMP_LysA_45cm	Untitled					17.22	1.007	mg/L	29	6/30/2024 12:08:58 AM	
+Unknown	NPOC/TN	202306_SWH_SWAMP_LysB_10cm	Untitled					116.5	4.385	mg/L	30	6/30/2024 12:26:51 AM	
+Unknown	NPOC/TN	202306_SWH_SWAMP_LysB_20cm	Untitled					25.10	1.498	mg/L	31	6/30/2024 12:51:28 AM	
+Unknown	NPOC/TN	202306_SWH_SWAMP_LysB_45cm	Untitled					7.031	0.7005	mg/L	32	6/30/2024 1:14:27 AM	
+Unknown	NPOC/TN	202306_SWH_SWAMP_LysC_10cm	Untitled					9.689	0.4293	mg/L	33	6/30/2024 1:38:37 AM	
+Unknown	NPOC/TN	202306_SWH_SWAMP_LysC_20cm	Untitled					12.84	0.6491	mg/L	34	6/30/2024 2:01:53 AM	
+Unknown	NPOC/TN	202306_SWH_SWAMP_LysC_45cm	Untitled					15.93	0.8413	mg/L	35	6/30/2024 2:26:41 AM	
+Unknown	NPOC/TN	DI	Untitled					1.072	0.09405	mg/L	0	6/30/2024 2:45:01 AM	
+Unknown	NPOC/TN	Chk_Std_50C_2N	Untitled					48.38	2.255	mg/L	58	6/30/2024 3:12:03 AM	
+Unknown	NPOC/TN	DI	Untitled					1.118	0.1046	mg/L	0	6/30/2024 3:30:56 AM	
+Unknown	NPOC/TN	202306_SWH_TR_LysA_10cm	Untitled					20.53	1.747	mg/L	36	6/30/2024 3:55:40 AM	
+Unknown	NPOC/TN	202306_SWH_TR_LysA_10cm_dup	Untitled					20.51	1.852	mg/L	37	6/30/2024 4:16:09 AM	
+Unknown	NPOC/TN	202306_SWH_TR_LysA_20cm	Untitled					17.21	4.026	mg/L	38	6/30/2024 4:37:55 AM	
+Unknown	NPOC/TN	202306_SWH_TR_LysA_45cm	Untitled					16.74	3.844	mg/L	39	6/30/2024 4:54:35 AM	
+Unknown	NPOC/TN	202306_SWH_TR_LysB_10cm	Untitled					14.84	0.9902	mg/L	40	6/30/2024 5:18:18 AM	
+Unknown	NPOC/TN	202306_SWH_TR_LysB_20cm	Untitled					22.18	4.469	mg/L	41	6/30/2024 5:38:32 AM	
+Unknown	NPOC/TN	202306_SWH_TR_LysB_45cm	Untitled					27.19	4.266	mg/L	42	6/30/2024 5:55:37 AM	
+Unknown	NPOC/TN	202306_SWH_TR_LysC_10cm	Untitled					8.530	0.5225	mg/L	43	6/30/2024 6:19:44 AM	
+Unknown	NPOC/TN	202306_SWH_TR_LysC_20cm	Untitled					15.44	2.325	mg/L	44	6/30/2024 6:39:52 AM	
+Unknown	NPOC/TN	202306_SWH_TR_LysC_45cm	Untitled					19.11	2.651	mg/L	45	6/30/2024 7:04:11 AM	
+Unknown	NPOC/TN	DI	Untitled					1.036	0.1194	mg/L	0	6/30/2024 7:22:36 AM	
+Unknown	NPOC/TN	Chk_Std_50C_2N	Untitled					47.08	2.163	mg/L	59	6/30/2024 7:48:42 AM	
+Unknown	NPOC/TN	DI	Untitled					1.057	0.09503	mg/L	0	6/30/2024 8:07:20 AM	
+Unknown	NPOC/TN	202306_SWH_WC_LysA_10cm	Untitled					19.60	1.006	mg/L	46	6/30/2024 8:32:08 AM	
+Unknown	NPOC/TN	202306_SWH_WC_LysA_45cm	Untitled					13.59	0.5882	mg/L	47	6/30/2024 8:54:47 AM	
+Unknown	NPOC/TN	202306_SWH_WC_LysB_10cm	Untitled					10.04	0.5226	mg/L	48	6/30/2024 9:17:20 AM	
+Unknown	NPOC/TN	202306_SWH_WC_LysB_20cm	Untitled					15.97	0.6925	mg/L	49	6/30/2024 9:41:21 AM	
+Unknown	NPOC/TN	202306_SWH_WC_LysC_10cm	Untitled					10.42	1.141	mg/L	50	6/30/2024 10:05:31 AM	
+Unknown	NPOC/TN	202306_SWH_WC_LysC_10cm_dup	Untitled					10.46	1.173	mg/L	51	6/30/2024 10:29:33 AM	
+Unknown	NPOC/TN	202306_SWH_WC_LysC_20cm	Untitled					18.56	0.8912	mg/L	52	6/30/2024 10:49:21 AM	
+Unknown	NPOC/TN	202306_SWH_WC_LysC_45cm	Untitled					15.88	0.7257	mg/L	53	6/30/2024 11:14:27 AM	
+Unknown	NPOC/TN	202306_SWH_SW_A	Untitled					5.713	0.4738	mg/L	54	6/30/2024 11:36:43 AM	
+Unknown	NPOC/TN	202306_SWH_SW_B	Untitled					5.974	0.4971	mg/L	55	6/30/2024 11:59:18 AM	
+Unknown	NPOC/TN	202306_SWH_SW_C	Untitled					5.902	0.4867	mg/L	56	6/30/2024 12:22:32 PM	
+Unknown	NPOC/TN	DI	Untitled					0.7742	0.09494	mg/L	0	6/30/2024 12:41:55 PM	
+Unknown	NPOC/TN	Chk_Std_50C_2N	Untitled					45.95	2.238	mg/L	77	6/30/2024 1:07:09 PM	
+Unknown	NPOC/TN	DI	Untitled					1.115	0.09455	mg/L	0	6/30/2024 1:26:03 PM	
+Standard	NPOC	CalCurve_NPOC	Untitled					100.0		mg/L	78, 79, 80, 81, 82, 83, 84, 85	6/30/2024 4:00:46 PM	
+Unknown	NPOC/TN	DI	Untitled					1.354	0.1183	mg/L	0	6/30/2024 4:20:59 PM	
+Standard	TN	CalCurve_TN	Untitled						3.000	mg/L	86, 87, 88, 89, 90, 91, 92	6/30/2024 6:40:52 PM	
+Unknown	NPOC/TN	Chk_Std_50C_2N	Untitled					49.03	2.223	mg/L	93	6/30/2024 6:57:28 PM	
+Unknown	NPOC/TN	DI	Untitled					0.9910	0.1263	mg/L	0	6/30/2024 7:16:39 PM	
+Unknown	NPOC/TN	DI	Untitled					0.7922	0.09324	mg/L	0	6/30/2024 7:35:28 PM	
+Unknown	NPOC/TN	DI	Untitled					0.8069	0.1215	mg/L	0	6/30/2024 7:54:35 PM	

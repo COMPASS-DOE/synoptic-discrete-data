@@ -70,6 +70,8 @@ pacman::p_load(
   dplyr,
   ggplot2,
   ggpubr,
+  tidyr,
+  tidyverse,
   stringr,
   readr,
   broom)
@@ -185,6 +187,7 @@ stds_NOx <- stds[stds$Test == "Vanadium NOx", ]
 stds_NH3 <- stds[stds$Test == "Ammonia 2", ]
 stds_PO4 <- stds[stds$Test == "o-PHOS 0.3", ]
 
+
 #Inputting Standard Values Based on Protocol (LINK PROTOCOL)
 stds_NOx <- stds_NOx %>%
   mutate(`Conc` = case_when(
@@ -201,6 +204,10 @@ stds_NOx <- stds_NOx %>%
   )) %>%
   filter(!Sample_Name %in% c("Nitrate Standard" , "Nitrite Standard"))
 
+#ID x and y
+x1 <- stds_NOx$Absorbance
+y1 <- stds_NOx$Conc
+
 stds_NH3 <- stds_NH3 %>%
   mutate(`Conc` = case_when(
     Sample_Name == "Standard 0" ~  0.0,
@@ -214,6 +221,10 @@ stds_NH3 <- stds_NH3 %>%
     Sample_Name == "Standard 2.0000" ~ 2,
     TRUE ~ `Conc`  # leave unchanged if no match
   ))
+
+# identifying x and y
+x2 <- stds_NH3$Absorbance
+y2 <- stds_NH3$Conc
 
 stds_PO4 <- stds_PO4 %>%
   mutate(`Conc` = case_when(
@@ -229,15 +240,15 @@ stds_PO4 <- stds_PO4 %>%
     TRUE ~ `Conc`  # leave unchanged if no match
   ))
 
+#ID x and y
+x3 <- stds_PO4$Absorbance
+y3 <- stds_PO4$Conc
 
 #generating line of best fit aka standard curves
 #NOx
 
-stds_NOx <- stds_NOx %>%
-  mutate(Conc2 = Conc^2)
-
 # Fit the quadratic model
-quad_reg_NOx <- lm(Absorbance ~ Conc + Conc2, data = stds_NOx)
+quad_reg_NOx <- lm(y1 ~ x1 + I(x1^2))
 
 #quad_reg_NOx <- lm(Absorbance ~ Conc + Conc2, data = stds_NOx)
 NOx_coefs <- coef(quad_reg_NOx)                        # intercept and slopes
@@ -252,7 +263,7 @@ std_curve_NOx_1 <- data.frame(
 )
 
 #NH3
-lin_reg_NH3 <- lm(stds_NH3$Absorbance ~stds_NH3$Conc, stds_NH3)
+lin_reg_NH3 <- lm(y2 ~ x2)
 NH3_coefs <- coef(lin_reg_NH3)                        # intercept and slope
 NH3_r2 <- summary(lin_reg_NH3)$r.squared              # R squared
 # Store in a clean dataframe
@@ -264,7 +275,7 @@ std_curve_NH3_1 <- data.frame(
 )
 
 #PO4
-lin_reg_PO4 <- lm(stds_PO4$Absorbance ~stds_PO4$Conc, stds_PO4)
+lin_reg_PO4 <- lm(y3 ~ x3)
 PO4_coefs <- coef(lin_reg_PO4)                        # intercept and slope
 PO4_r2 <- summary(lin_reg_PO4)$r.squared              # R squared
 # Store in a clean dataframe
@@ -329,9 +340,15 @@ print(std_curve_PO4)
 
 #Report out a flag if the run has an R2 lower than appropriate 
 #Write out to the user whether or not the r2 is above the cutoff of 0.98
-  ifelse(std_curve_NOx_1$R_squared <= r2_cutoff, "NOx Curve r2 is below cutoff! - REASSESS", "NOx Curve r2 GOOD - PROCEED")
-  ifelse(std_curve_NH3_1$R_squared <= r2_cutoff, "NH3 Curve r2 is below cutoff! - REASSESS", "NH3 Curve r2 GOOD - PROCEED")
-  ifelse(std_curve_PO4_1$R_squared <= r2_cutoff, "PO4 Curve r2 is below cutoff! - REASSESS", "PO4 Curve r2 GOOD - PROCEED")
+  ifelse(std_curve_NOx_1$R_squared <= r2_cutoff, 
+         "NOx Curve r2 is below cutoff! - REASSESS", 
+         "NOx Curve r2 GOOD - PROCEED")
+  ifelse(std_curve_NH3_1$R_squared <= r2_cutoff, 
+         "NH3 Curve r2 is below cutoff! - REASSESS", 
+         "NH3 Curve r2 GOOD - PROCEED")
+  ifelse(std_curve_PO4_1$R_squared <= r2_cutoff, 
+         "PO4 Curve r2 is below cutoff! - REASSESS", 
+         "PO4 Curve r2 GOOD - PROCEED")
   
 
 #check for the a slope QAQC file, if there is not one, make one 
@@ -350,6 +367,7 @@ if (file.exists(file_path)) {
   write.csv(stds_log, file = file_path, row.names = FALSE)
   print("QAQC log file does not exist. It has been created.")
   }
+  
   #getting rid of first "X" column
   stds_log <- stds_log %>%
     select(-X)
@@ -474,11 +492,14 @@ chks_NH3_rsv <- ((sd(NH3_chks$Conc))/mean(NH3_chks$Conc))
 chks_PO4_rsv <- ((sd(PO4_chks$Conc))/mean(PO4_chks$Conc))
 
 #write out to user about whether or not to continue 
-ifelse(chks_NOx_rsv >= chk_flag, "NOx CHECK STANDARD RSD TOO HIGH - REASSESS",
+ifelse(chks_NOx_rsv >= chk_flag, 
+       "NOx CHECK STANDARD RSD TOO HIGH - REASSESS",
        "NOx Check Standard RSD within Range - PROCEED")
-ifelse(chks_NH3_rsv >= chk_flag, "NH3 CHECK STANDARD RSD TOO HIGH - REASSESS",
+ifelse(chks_NH3_rsv >= chk_flag, 
+       "NH3 CHECK STANDARD RSD TOO HIGH - REASSESS",
        "NH3 Check Standard RSD within Range - PROCEED")
-ifelse(chks_PO4_rsv >= chk_flag, "PO4 CHECK STANDARD RSD TOO HIGH - REASSESS",
+ifelse(chks_PO4_rsv >= chk_flag, 
+       "PO4 CHECK STANDARD RSD TOO HIGH - REASSESS",
        "PO4 Check Standard RSD within Range - PROCEED")
 
 
@@ -514,7 +535,7 @@ NH3_chks_plot <-  ggplot(data = NH3_chks, aes(x = rep, y = Conc, fill=NH3_diff_f
        theme(legend.position="bottom") +  
        geom_hline(yintercept=NH3_CCV,
               linetype="dashed",  color = "black", linewidth=1) + 
-              guides(fill=guide_legend(title="% Difference <10%"))
+       guides(fill=guide_legend(title="% Difference <10%"))
 
 PO4_chks_plot <-  ggplot(data = PO4_chks, aes(x = rep, y = Conc, fill=PO4_diff_flag)) +
        geom_bar(stat = 'identity') + 
@@ -522,12 +543,12 @@ PO4_chks_plot <-  ggplot(data = PO4_chks, aes(x = rep, y = Conc, fill=PO4_diff_f
         theme_classic() + labs(x= " ", y="PO4  (mg/L)", title="Check Stds: PO4") + 
         theme(legend.position="bottom") +  geom_hline(yintercept=PO4_CCV,
               linetype="dashed",  color = "black", linewidth=1) + 
-              guides(fill=guide_legend(title="% Difference <10%"))
+        guides(fill=guide_legend(title="% Difference <10%"))
 
 Chk_Std_Plots <- ggarrange(
   NOx_chks_plot, 
   NH3_chks_plot, 
-  PO4_chks_plot,   # (you had NH3 twice!)
+  PO4_chks_plot,   
   nrow = 1, 
   ncol = 3,
   common.legend = TRUE,
@@ -540,11 +561,14 @@ NH3_chks_percent <- (sum(NH3_chks$NH3_diff_flag == "YES")/nrow(NH3_chks))*100
 PO4_chks_percent <- (sum(PO4_chks$PO4_diff_flag == "YES")/nrow(PO4_chks))*100
 
 #report out if flags indicate need for rerun
-ifelse(NOx_chks_percent >= 60, ">60% of NOx Check Standards are within range of expected concentration - PROCEED",
+ifelse(NOx_chks_percent >= 60, 
+       ">60% of NOx Check Standards are within range of expected concentration - PROCEED",
        "<60% of NOx Check Standards are within range of expected concentration - REASSESS")
-ifelse(NH3_chks_percent >= 60,">60% of NH3 Check Standards are within range of expected concentration - PROCEED",
+ifelse(NH3_chks_percent >= 60,
+       ">60% of NH3 Check Standards are within range of expected concentration - PROCEED",
        "<60% of NH3 Check Standards are within range of expected concentration - REASSESS")
-ifelse(PO4_chks_percent >= 60,">60% of PO4 Check Standards are within range of expected concentration - PROCEED",
+ifelse(PO4_chks_percent >= 60,
+       ">60% of PO4 Check Standards are within range of expected concentration - PROCEED",
        "<60% of PO4 Check Standards are within range of expected concentration - REASSESS")
 
 ```
@@ -611,28 +635,30 @@ ifelse(PO4_blks_percent >= 60,
 
 NOx_blks_plot <-  ggplot(data = NOx_blks, aes(x = rep, y = Conc, fill=NOx_diff_flag)) +
        geom_bar(stat = 'identity') + 
-        scale_fill_manual(values = c("YES" = "deepskyblue3", "NO, rerun" = "darkred")) +
-        theme_classic() + labs(x= " ", y="NOx (mg/L)", title="NOx Blanks") + 
-        theme(legend.position="bottom") +  geom_hline(yintercept= as.numeric(blk_flag_NOx), linetype="dashed", 
+       scale_fill_manual(values = c("YES" = "deepskyblue3", "NO, rerun" = "darkred")) +
+       theme_classic() + labs(x= " ", y="NOx (mg/L)", title="NOx Blanks") + 
+       theme(legend.position="bottom") +  
+       geom_hline(yintercept= as.numeric(blk_flag_NOx), linetype="dashed", 
                 color = "black", linewidth=1)  + 
-                guides(fill=guide_legend(title="Blank Conc <25% Quartile Samples"))
-
+       guides(fill=guide_legend(title="Blank Conc <25% Quartile Samples"))
 
 NH3_blks_plot <-  ggplot(data = NH3_chks, aes(x = rep, y = Conc, fill=NH3_diff_flag)) +
        geom_bar(stat = 'identity') + 
-        scale_fill_manual(values = c("YES" = "deepskyblue3", "NO, rerun" = "darkred")) +
-        theme_classic() + labs(x= " ", y="NH3  (mg/L)", title="NH3 Blanks") + 
-        theme(legend.position="bottom") +  geom_hline(yintercept=as.numeric(blk_flag_NH3), linetype="dashed", 
+       scale_fill_manual(values = c("YES" = "deepskyblue3", "NO, rerun" = "darkred")) +
+       theme_classic() + labs(x= " ", y="NH3  (mg/L)", title="NH3 Blanks") + 
+       theme(legend.position="bottom") +  
+       geom_hline(yintercept=as.numeric(blk_flag_NH3), linetype="dashed",
                 color = "black", linewidth=1)  + 
-                guides(fill=guide_legend(title="Blank Conc <25% Quartile Samples"))
+       guides(fill=guide_legend(title="Blank Conc <25% Quartile Samples"))
 
 PO4_blks_plot <-  ggplot(data = PO4_chks, aes(x = rep, y = Conc, fill=PO4_diff_flag)) +
        geom_bar(stat = 'identity') + 
-        scale_fill_manual(values = c("YES" = "deepskyblue3", "NO, rerun" = "darkred")) +
-        theme_classic() + labs(x= " ", y="PO4 (mg/L)", title="PO4 Blanks") + 
-        theme(legend.position="bottom") +  geom_hline(yintercept=as.numeric(blk_flag_PO4), linetype="dashed", 
+       scale_fill_manual(values = c("YES" = "deepskyblue3", "NO, rerun" = "darkred")) +
+       theme_classic() + labs(x= " ", y="PO4 (mg/L)", title="PO4 Blanks") + 
+       theme(legend.position="bottom") +  
+       geom_hline(yintercept=as.numeric(blk_flag_PO4), linetype="dashed", 
                 color = "black", linewidth=1)  + 
-                guides(fill=guide_legend(title="Blank Conc <25% Quartile Samples"))
+       guides(fill=guide_legend(title="Blank Conc <25% Quartile Samples"))
 
 #Combined Plot
 Blks_Plots <- ggarrange(
@@ -788,11 +814,14 @@ NH3_dup_percent <- (sum(NH3_dup_chk$NH3_diff_flag == "YES")/nrow(NH3_dup_chk))*1
 PO4_dup_percent <- (sum(PO4_dup_chk$PO4_diff_flag == "YES")/nrow(PO4_dup_chk))*100
 
 #dup flag report out
-ifelse(NOx_dup_percent >= 60, ">60% of Duplicates have a CV <10% - PROCEED",
+ifelse(NOx_dup_percent >= 60, 
+       ">60% of Duplicates have a CV <10% - PROCEED",
        "<60% of Carbon Duplicates have a CB <10% - REASSESS")
-ifelse(NH3_dup_percent >= 60, ">60% of Duplicates have a CV <10% - PROCEED",
+ifelse(NH3_dup_percent >= 60, 
+       ">60% of Duplicates have a CV <10% - PROCEED",
        "<60% of Carbon Duplicates have a CB <10% - REASSESS")
-ifelse(PO4_dup_percent >= 60, ">60% of Duplicates have a CV <10% - PROCEED",
+ifelse(PO4_dup_percent >= 60, 
+       ">60% of Duplicates have a CV <10% - PROCEED",
        "<60% of Carbon Duplicates have a CB <10% - REASSESS")
 
 
@@ -807,7 +836,6 @@ NOx_dups_plot <- ggplot(data =Nox_dup_chk, aes(x =Pair_ID, y =CV, fill=NOx_diff_
         geom_hline(yintercept=10, linetype="dashed", 
             color = "black", size=1)  + 
         guides(fill=guide_legend(title="CV Between Dups <10%"))
-print(NOx_dups_plot)
 
 NH3_dups_plot <- ggplot(data = NH3_dup_chk, aes(x =Pair_ID, y =CV, fill=NH3_diff_flag)) +
         geom_bar(stat = 'identity') + 
@@ -847,10 +875,7 @@ print(Dups_Plots)
 ## Spikes
 ```{r}
 
-
-
-
- 
+#getting spikes and samples pulled 
 df_NOx_spk <- df_all_cor %>%
   filter(Test == "Vanadium NOx") %>%
   filter(
@@ -870,10 +895,8 @@ df_NOx_spk <- df_all_cor %>%
     Pair_ID = `Spike?`,
     Sample_Name,
     Conc,
-    Type = if_else(str_detect(Sample_Name, "Auto Spike"), "Auto_Spike", "Original")
-  )
+    Type = if_else(str_detect(Sample_Name, "Auto Spike"), "Auto_Spike", "Original"))
  
-
 df_NH3_spk <- df_all_cor %>%
   filter(Test == "Ammonia 2") %>%
   filter(
@@ -882,8 +905,8 @@ df_NH3_spk <- df_all_cor %>%
      !is.na(Sample_Name),                                         # Remove NA
      !grepl("^\\d+$", Sample_Name),                               # removes all numbers
      !grepl("^\\d{1,2}/\\d{1,2}/\\d{2,4}", Sample_Name)) %>%      # removes all date/time
-  mutate(`Spike?` = if_else(                                  # adds duplicate column
-     grepl("Auto Spike", Sample_Name, ignore.case = TRUE),         # keeps sample ID if there
+  mutate(`Spike?` = if_else(                                      # adds duplicate column
+     grepl("Auto Spike", Sample_Name, ignore.case = TRUE),        # keeps sample ID if there
      lag(Sample_Name),                                            # get previous row's SampleID
      Sample_Name)) %>%                                            # keeps sample ID if not duplicate
   group_by(`Spike?`) %>%                                          # groups by duplicate
@@ -893,10 +916,8 @@ df_NH3_spk <- df_all_cor %>%
     Pair_ID = `Spike?`,
     Sample_Name,
     Conc,
-    Type = if_else(str_detect(Sample_Name, "Auto Spike"), "Auto_Spike", "Original")
-  )
+    Type = if_else(str_detect(Sample_Name, "Auto Spike"), "Auto_Spike", "Original"))
  
-
 df_PO4_spk <- df_all_cor %>%
   filter(Test == "o-PHOS 0.3") %>%
   filter(
@@ -905,19 +926,18 @@ df_PO4_spk <- df_all_cor %>%
      !is.na(Sample_Name),                                         # Remove NA
      !grepl("^\\d+$", Sample_Name),                               # removes all numbers
      !grepl("^\\d{1,2}/\\d{1,2}/\\d{2,4}", Sample_Name)) %>%      # removes all date/time
-   mutate(`Spike?` = if_else(                                  # adds duplicate column
-     grepl("Auto Spike", Sample_Name, ignore.case = TRUE),         # keeps sample ID if there
+   mutate(`Spike?` = if_else(                                     # adds duplicate column
+     grepl("Auto Spike", Sample_Name, ignore.case = TRUE),        # keeps sample ID if there
      lag(Sample_Name),                                            # get previous row's SampleID
      Sample_Name)) %>%                                            # keeps sample ID if not duplicate
-  group_by(`Spike?`) %>%                                         # groups by duplicate
+  group_by(`Spike?`) %>%                                          # groups by duplicate
   filter(n() > 1) %>%                                             # filters anything that appears more than once
   ungroup()  %>%
   transmute(
     Pair_ID = `Spike?`,
     Sample_Name,
     Conc,
-    Type = if_else(str_detect(Sample_Name, "Auto Spike"), "Auto_Spike", "Original")
-  )
+    Type = if_else(str_detect(Sample_Name, "Auto Spike"), "Auto_Spike", "Original"))
  
 
 #checking and flagging against the expected spike conc
@@ -939,9 +959,8 @@ df_spk_NOx_chk <- df_NOx_spk %>%
     Pct_Diff = abs(Spike_Conc - Exp_Conc) / Mean_Conc * 100,
     SD_Conc = sd(c(Spike_Conc, Exp_Conc)),
     CV = (SD_Conc / Mean_Conc) * 100,
-    Spike_diff_flag = ifelse(Pct_Diff < 10, "YES", "NO, check")) %>%
+    Spike_diff_flag = ifelse(CV < 20, "YES", "NO, check")) %>%
     ungroup()
-
   
 df_spk_NH3_chk <- df_NH3_spk %>%
   select(Pair_ID, Conc, Type) %>%
@@ -961,9 +980,8 @@ df_spk_NH3_chk <- df_NH3_spk %>%
     Pct_Diff = abs(Spike_Conc - Exp_Conc) / Mean_Conc * 100,
     SD_Conc = sd(c(Spike_Conc, Exp_Conc)),
     CV = (SD_Conc / Mean_Conc) * 100,
-    Spike_diff_flag = ifelse(Pct_Diff < 10, "YES", "NO, check")) %>%
+    Spike_diff_flag = ifelse(CV < 20, "YES", "NO, check")) %>%
     ungroup()
-
 
 df_spk_PO4_chk <- df_PO4_spk %>%
   select(Pair_ID, Conc, Type) %>%
@@ -983,10 +1001,13 @@ df_spk_PO4_chk <- df_PO4_spk %>%
     Pct_Diff = abs(Spike_Conc - Exp_Conc) / Mean_Conc * 100,
     SD_Conc = sd(c(Spike_Conc, Exp_Conc)),
     CV = (SD_Conc / Mean_Conc) * 100,
-    Spike_diff_flag = ifelse(Pct_Diff < 10, "YES", "NO, check")) %>%
+    Spike_diff_flag = ifelse(CV < 20, "YES", "NO, check")) %>%
     ungroup()
 
- 
+
+# Combining Auto Spike data frames
+df_spk_combo <- bind_rows(df_spk_NOx_chk, df_spk_NH3_chk, df_spk_PO4_chk)
+
 
 #calculate the percent of check standards that are within the range based on the flag
 NOx_spk_percent <- (sum(df_spk_NOx_chk$Spike_diff_flag == "YES")/nrow(df_spk_NOx_chk))*100
@@ -995,25 +1016,25 @@ PO4_spk_percent <- (sum(df_spk_PO4_chk$Spike_diff_flag == "YES")/nrow(df_spk_PO4
  
 
 #spk flag report out
-ifelse(NOx_spk_percent >= 60, ">60% of Spikes have a CV <10% - PROCEED",
-       "<60% of Carbon Spikes have a CV <10% - REASSESS")
-ifelse(NH3_spk_percent >= 60, ">60% of Spikes have a CV <10% - PROCEED",
-       "<60% of Carbon Spikes have a CV <10% - REASSESS")
-ifelse(PO4_spk_percent >= 60, ">60% of Spikes have a CV <10% - PROCEED",
-       "<60% of Carbon Spikes have a CV <10% - REASSESS")
+ifelse(NOx_spk_percent >= 60, 
+       ">60% of Spikes have a CV <10% - PROCEED",
+       "<60% of Carbon Spikes have a CV <20% - REASSESS")
+ifelse(NH3_spk_percent >= 60, 
+       ">60% of Spikes have a CV <10% - PROCEED",
+       "<60% of Carbon Spikes have a CV <20% - REASSESS")
+ifelse(PO4_spk_percent >= 60, 
+       ">60% of Spikes have a CV <10% - PROCEED",
+       "<60% of Carbon Spikes have a CV <20% - REASSESS")
  
 
-#plot dups output as a bar graph to easily check - want any over 10% to be red need to work on this
-
- 
-#plot dups output as a bar graph to easily check - want any over 10% to be red need to work on this 
+#plot spikes output as a bar graph to easily check - want any over 10% to be red need to work on this 
 NOx_spk_plot <- ggplot(data =df_spk_NOx_chk, aes(x =Pair_ID, y =CV, fill=Spike_diff_flag)) +
         geom_bar(stat = 'identity') + 
         theme_classic() + 
         labs(x= "Sample ID", y="NOx N (mg/L)", title = "NOx Auto Spike CV") + 
         scale_fill_manual(values = c("YES" = "aquamarine", "NO, check" = "darkred")) +
         theme(legend.position="none") + 
-        guides(fill=guide_legend(title="CV Between Dups <10%"))
+        guides(fill=guide_legend(title="CV Between Spks <20%"))
 print(NOx_spk_plot)
 
 NH3_spk_plot <- ggplot(data = df_spk_NH3_chk, aes(x =Pair_ID, y =CV, fill=Spike_diff_flag)) +
@@ -1022,7 +1043,7 @@ NH3_spk_plot <- ggplot(data = df_spk_NH3_chk, aes(x =Pair_ID, y =CV, fill=Spike_
         labs(x= "Sample ID", y="NH3 N(mg/L)", title = "NH3 Auto Spike CV") + 
         scale_fill_manual(values = c("YES" = "aquamarine", "NO, check" = "darkred")) +
         theme(legend.position="none")  + 
-        guides(fill=guide_legend(title="CV Between Dups <10%"))
+        guides(fill=guide_legend(title="CV Between Spks <20%"))
 
 PO4_spk_plot <- ggplot(data =df_spk_PO4_chk, aes(x =Pair_ID, y =CV, fill=Spike_diff_flag)) +
        geom_bar(stat = 'identity') + 
@@ -1030,7 +1051,7 @@ PO4_spk_plot <- ggplot(data =df_spk_PO4_chk, aes(x =Pair_ID, y =CV, fill=Spike_d
         labs(x= "Sample ID", y="PO4 P(mg/L)", title = "PO4 Auto Spike CV") + 
        scale_fill_manual(values = c("YES" = "aquamarine", "NO, check" = "darkred")) +
        theme(legend.position="none")  + 
-        guides(fill=guide_legend(title="CV Between Dups <10%"))
+        guides(fill=guide_legend(title="CV Between Spks <20%"))
  
 
 Spk_Plots <- ggarrange(
@@ -1044,6 +1065,18 @@ Spk_Plots <- ggarrange(
 print(Spk_Plots)
 
  
+
+```
+## Matrix Effects
+
+```{r}
+
+df_matrix <- df_spk_combo%>%
+  filter(str_detect(Pair_ID, "Abs_Chk")) %>%
+  group_by(Test)
+  ifelse(df_matrix$Spike_diff_flag == "YES", "NO Matrix Effect, PROCEED",
+       ">20% CV in seawater auto spikes - REASSESS Matrix Effect")
+
 
 ```
 
@@ -1084,9 +1117,6 @@ df_all_clean <- samples %>%
       `Zone` == "SW" ~ "Surface Water",
       TRUE ~ `Zone`
     )) 
-
-  
-
 
 ```
 
@@ -1164,12 +1194,14 @@ NOx_forplot <- df_all_clean %>%
 viz_NOx_plot <-  ggplot(data = NOx_forplot, aes(x = Zone, y = Conc, fill=Zone)) +
        geom_bar(stat = 'identity') + 
         facet_grid(~factor(Site, levels=c('GCReW', 'MSM', 'Goodwin Island', "SWH"))) + 
-        scale_fill_manual(values = c("Upland" = "#20063B", "Transition" = "#FFBC42", "Swamp" = "darkgrey",
-                                     "Wetland" = "#419973", "Surface Water" = "#25ABE6")) +
-        theme_classic() + labs(x= " ", y="NOx (mg/L)", title="NOx by Site and Zone") + 
+        scale_fill_manual(values = c("Upland" = "#20063B", 
+                                     "Transition" = "#FFBC42", 
+                                     "Swamp" = "darkgrey",
+                                     "Wetland" = "#419973", 
+                                     "Surface Water" = "#25ABE6")) +
+        theme_classic() + 
+        labs(x= " ", y="NOx (mg/L)", title="NOx by Site and Zone") + 
         theme(legend.position="none") 
-
-
 
 
 NH3_forplot <- df_all_clean %>%
@@ -1177,12 +1209,18 @@ NH3_forplot <- df_all_clean %>%
 
 viz_NH3_plot <- ggplot(data = NH3_forplot, aes(x = Zone, y = Conc, fill=Zone)) +
        geom_bar(stat = 'identity') + 
-        facet_grid(~factor(Site, levels=c('GCReW', 'MSM', 'Goodwin Island', "SWH"))) + 
-        scale_fill_manual(values = c("Upland" = "#20063B", "Transition" = "#FFBC42", "Swamp" = "darkgrey",
-                                     "Wetland" = "#419973", "Surface Water" = "#25ABE6")) +
-        theme_classic() + labs(x= " ", y="NH3 (mg/L)", title="NH3 by Site and Zone") + 
+        facet_grid(~factor(Site, levels=c('GCReW', 
+                                          'MSM', 
+                                          'Goodwin Island', 
+                                          "SWH"))) + 
+        scale_fill_manual(values = c("Upland" = "#20063B", 
+                                     "Transition" = "#FFBC42", 
+                                     "Swamp" = "darkgrey",
+                                     "Wetland" = "#419973", 
+                                     "Surface Water" = "#25ABE6")) +
+        theme_classic() + 
+        labs(x= " ", y="NH3 (mg/L)", title="NH3 by Site and Zone") + 
         theme(legend.position="none") 
-
 
 
 PO4_forplot <- df_all_clean %>%
@@ -1190,10 +1228,17 @@ PO4_forplot <- df_all_clean %>%
 
 viz_PO4_plot <- ggplot(data = PO4_forplot, aes(x = Zone, y = Conc, fill=Zone)) +
        geom_bar(stat = 'identity') + 
-        facet_grid(~factor(Site, levels=c('GCReW', 'MSM', 'Goodwin Island', "SWH"))) + 
-        scale_fill_manual(values = c("Upland" = "#20063B", "Transition" = "#FFBC42", "Swamp" = "darkgrey",
-                                     "Wetland" = "#419973", "Surface Water" = "#25ABE6")) +
-        theme_classic() + labs(x= " ", y="PO4 (mg/L)", title="PO4 by Site and Zone") + 
+        facet_grid(~factor(Site, levels=c('GCReW', 
+                                          'MSM', 
+                                          'Goodwin Island', 
+                                          "SWH"))) + 
+        scale_fill_manual(values = c("Upland" = "#20063B", 
+                                     "Transition" = "#FFBC42", 
+                                     "Swamp" = "darkgrey",
+                                     "Wetland" = "#419973", 
+                                     "Surface Water" = "#25ABE6")) +
+        theme_classic() + 
+        labs(x= " ", y="PO4 (mg/L)", title="PO4 by Site and Zone") + 
         theme(legend.position="none") 
 
 
