@@ -103,9 +103,9 @@ PO4_Spk <- 0.152
 
 
 #expected ranges for sample concentrations used for flags 
-    r2_cutoff = 0.990
-    chk_flag = 0.10
-    chk_conc_flag = 15 #cutoff level for percent difference of check stds vs. expected concentration 
+r2_cutoff = 0.990
+chk_flag = 0.10
+chk_conc_flag = 15 #cutoff level for percent difference of check stds vs. expected concentration 
   # min_conc = int
   # max_conc = int
   # cv_flag = 10% 
@@ -200,8 +200,8 @@ stds_NOx <- stds_NOx %>%
     Sample_Name == "Standard 94" ~ 0.5,
     Sample_Name == "Standard 95" ~ 0.75,
     Sample_Name == "Standard 96" ~ 1.0,
-    TRUE ~ `Conc`  # leave unchanged if no match
-  )) %>%
+    TRUE ~ `Conc`),  # leave unchanged if no match
+    Run_Date = format(mdy_hm(Run_Time), "%m-%d-%Y")) %>%
   filter(!Sample_Name %in% c("Nitrate Standard" , "Nitrite Standard"))
 
 #ID x and y
@@ -219,8 +219,8 @@ stds_NH3 <- stds_NH3 %>%
     Sample_Name == "Standard 1.0000" ~ 1.0,
     Sample_Name == "Standard 1.5000" ~ 1.5,
     Sample_Name == "Standard 2.0000" ~ 2,
-    TRUE ~ `Conc`  # leave unchanged if no match
-  ))
+    TRUE ~ `Conc`),  # leave unchanged if no match
+    Run_Date = format(mdy_hm(Run_Time), "%m-%d-%Y"))
 
 # identifying x and y
 x2 <- stds_NH3$Absorbance
@@ -237,8 +237,8 @@ stds_PO4 <- stds_PO4 %>%
     Sample_Name == "Standard 94" ~ 0.1500,
     Sample_Name == "Standard 95" ~ 0.2250,
     Sample_Name == "Standard 96" ~ 0.3000,
-    TRUE ~ `Conc`  # leave unchanged if no match
-  ))
+    TRUE ~ `Conc`),  # leave unchanged if no match
+    Run_Date = format(mdy_hm(Run_Time), "%m-%d-%Y"))
 
 #ID x and y
 x3 <- stds_PO4$Absorbance
@@ -301,9 +301,9 @@ cat("Assess Standard Curves")
   #v-Nox
 std_curve_NOx <- ggplot(stds_NOx, aes(x = Conc, y = Absorbance)) +
   geom_point(size=3) +
-  geom_smooth(method = "lm", 
-              formula = y ~ poly(x, 2, raw = TRUE), color = "coral") +
+  geom_smooth(method = "lm", formula = y ~ poly(x, 2, raw = TRUE), color = "coral") +
   theme_bw() + 
+  facet_wrap(~Run_Date) +
   labs(x="Concentration (ppm)",
        y="Absorbance",
        title = "NOx Standard Curve")+ 
@@ -317,6 +317,7 @@ std_curve_NH3 <- ggplot(stds_NH3, aes(x = Conc, y = Absorbance)) +
   geom_point(size=3) +
   geom_smooth(method = "lm", se = FALSE, color = "darkgoldenrod") +
   theme_bw() + 
+  facet_wrap(~Run_Date) +
   labs(x="Concentration (ppm)",
        y="Absorbance",
        title = "NH3 Standard Curve")+ 
@@ -328,6 +329,7 @@ print(std_curve_NH3)
 std_curve_PO4 <- ggplot(stds_PO4, aes(x = Conc, y = Absorbance)) +
   geom_point(size=3) +
   geom_smooth(method = "lm", se = FALSE, color = "darkkhaki") +
+  facet_wrap(~Run_Date) +
   theme_bw() + 
   labs(x="Concentration (ppm)",
        y="Absorbance",
@@ -390,7 +392,7 @@ Slopes_chk <- ggplot(log, aes(run_date, Slope, col=Test)) +
   geom_line() + 
   theme_bw() + 
   labs(title="Slope Drift Assessment", x="Run Date", y="Slope") +
-  scale_color_manual(values=c("darkred", "darkorange", "darkolivegreen"))
+  scale_color_manual(values=c("coral", "darkgoldenrod", "darkkhaki"))
 Slopes_chk
 
 
@@ -959,7 +961,8 @@ df_spk_NOx_chk <- df_NOx_spk %>%
     Pct_Diff = abs(Spike_Conc - Exp_Conc) / Mean_Conc * 100,
     SD_Conc = sd(c(Spike_Conc, Exp_Conc)),
     CV = (SD_Conc / Mean_Conc) * 100,
-    Spike_diff_flag = ifelse(CV < 20, "YES", "NO, check")) %>%
+    Spike_diff_flag = ifelse(CV < 20, "YES", "NO, check"),
+    Test = "Vanadium NOx") %>%
     ungroup()
   
 df_spk_NH3_chk <- df_NH3_spk %>%
@@ -980,7 +983,8 @@ df_spk_NH3_chk <- df_NH3_spk %>%
     Pct_Diff = abs(Spike_Conc - Exp_Conc) / Mean_Conc * 100,
     SD_Conc = sd(c(Spike_Conc, Exp_Conc)),
     CV = (SD_Conc / Mean_Conc) * 100,
-    Spike_diff_flag = ifelse(CV < 20, "YES", "NO, check")) %>%
+    Spike_diff_flag = ifelse(CV < 20, "YES", "NO, check"),
+    Test = "Ammonia 2") %>%
     ungroup()
 
 df_spk_PO4_chk <- df_PO4_spk %>%
@@ -1001,12 +1005,15 @@ df_spk_PO4_chk <- df_PO4_spk %>%
     Pct_Diff = abs(Spike_Conc - Exp_Conc) / Mean_Conc * 100,
     SD_Conc = sd(c(Spike_Conc, Exp_Conc)),
     CV = (SD_Conc / Mean_Conc) * 100,
-    Spike_diff_flag = ifelse(CV < 20, "YES", "NO, check")) %>%
+    Spike_diff_flag = ifelse(CV < 20, "YES", "NO, check"),
+    Test = "o-PHOS 0.3") %>%
     ungroup()
 
 
 # Combining Auto Spike data frames
 df_spk_combo <- bind_rows(df_spk_NOx_chk, df_spk_NH3_chk, df_spk_PO4_chk)
+
+#add column for test ^^ aand then combine
 
 
 #calculate the percent of check standards that are within the range based on the flag
@@ -1268,16 +1275,24 @@ head(dat_forplot)
     #make sure that we use TRUE so that if there don't have a NH3 for one sample we still have the data for the other analytes and NAs when we don't have data 
 
 
+df_wide <- df %>%
+  pivot_wider(
+    names_from = test,
+    values_from = c(value1, value2),
+    names_glue = "{.value}_{test}"
+  )
+
+
 #prep the data 
 processed_data <- df_all_clean %>%
-  mutate(Replicate = str_replace(Lysimeter, "Lys", ""), 
-         Depth_cm = str_replace(Depth, "cm", ""), 
-         Year = sample_year, 
-         Month = sample_month) %>% 
-  mutate(
-    Depth_cm = if_else(Zone == "SW", "0", Depth_cm) 
-  )  %>% 
-  select(-c(Excess_Info, Depth, Lysimeter, Date)) #Take out the excess column
+  select(Sample_Name, Test, Conc, Zone, Replicate, Depth, Absorbance, Dilution, Unit) %>%
+  pivot_wider(
+    id_cols = Sample_Name,
+    names_from = Test,
+    values_from = Conc,
+    names_glue = "{Test}_Conc"
+  )
+  #Take out the excess column
 
 #Link to metadata file for 2023 year data - this doesn't exist yet we need to make it
 
