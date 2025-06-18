@@ -1275,14 +1275,6 @@ head(dat_forplot)
     #make sure that we use TRUE so that if there don't have a NH3 for one sample we still have the data for the other analytes and NAs when we don't have data 
 
 
-df_wide <- df %>%
-  pivot_wider(
-    names_from = test,
-    values_from = c(value1, value2),
-    names_glue = "{.value}_{test}"
-  )
-
-
 #prep the data 
 processed_data <- df_all_clean %>%
   select(Sample_Name, Test, Conc, Zone, Replicate, Depth, Absorbance, Dilution, Unit) %>%
