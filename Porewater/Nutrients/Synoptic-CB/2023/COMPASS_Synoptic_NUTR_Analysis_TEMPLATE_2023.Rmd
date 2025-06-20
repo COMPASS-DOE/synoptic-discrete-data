@@ -242,7 +242,7 @@ df_all <- df_all %>%
 ```
 
 ## Assessing standard Curves
-  #Pull out standards data - MAJOR ISSUE WE ARE NOT GETTING THE SAME SLOPE AS THE INSTRUMENT 
+  #Pull out standards data  
 ```{r Pull out Standard Curves, echo=FALSE}
 cat("Assess Standard Curves")
 
@@ -529,7 +529,7 @@ dil_dups_string <- df_duplicates %>%
 
 #Report duplicated samples
 if (dil_dups_string != "") {
-  message("Duplicated samples: ", duplicates_string)
+  message("Duplicated samples: ", dil_dups_string)
 
   # Check for dilution in duplicates
   if (any(df_duplicates$Dilution > 0, na.rm = TRUE)) {
@@ -980,7 +980,7 @@ NH3_dup_chk <- df_NH3_dup %>%
     NH3_diff_flag = ifelse(abs(CV) < 10, "YES", "NO, rerun"),
     .groups = "drop") 
 
-PO4_dup_chk <- df_NOx_dup %>%
+PO4_dup_chk <- df_PO4_dup %>%
   group_by(Pair_ID) %>%  # Use Pair_ID as it groups Originals and Duplicates
   filter(n_distinct(Type) == 2) %>%  # Keep only groups that have both Original and Duplicate
   summarise(
@@ -1090,7 +1090,7 @@ if (PO4_dup_percent <= chks_flag) {  # assuming you have tn_chks_percent similar
   )
 }
 
-print()
+
 
 ```
 
@@ -1457,30 +1457,24 @@ samples_flagged <- samples %>%
 
 cat("Sample Processing")
 
-df_all_clean <- samples %>%
+samples_flagged <- samples_flagged %>%
   filter(str_detect(Sample_Name, "GCW|GWI|MSM|SWH")) %>%
+  filter(!str_detect(Sample_Name, "RHZ|PPR")) %>% 
   mutate(Run_Time = lubridate::mdy_hm(Run_Time)) %>%
   separate(
     col = Sample_Name,
     sep = "_",
     into = c("Site", "Samp_Time", "Zone", "Replicate", "Depth"),
     remove = FALSE) %>%
-  mutate(Samp_Time = ym(Samp_Time)) %>%
-  mutate(
-    Site = case_when(
-      Site == "GCW" ~ "GCReW",
-      Site == "GWI" ~ "Goodwin Island",
-      Site == "MSM" ~ "Moneystump",
-      Site == "SWH" ~ "Sweethall",
-      TRUE ~ Site),
-    `Zone` = case_when(
-      `Zone` == "UP" ~ "Upland",
-      `Zone` == "TR" ~ "Transition",
-      `Zone` == "WC" ~ "Wetland",
-      `Zone` == "SWAMP" ~ "Swamp",
-      `Zone` == "SW" ~ "Surface Water",
-      TRUE ~ `Zone`
-    )) 
+  mutate(Samp_Time = ym(Samp_Time))
+
+
+#we can make a new dataframe here that has rhizon samples 
+  #if they exist pulled into a new dataframe and exported to a folder in processed data called Rhizons
+
+
+#we can make a new dataframe here that has Peeper samples 
+  #if they exist pulled into a new dataframe and exported to a folder in processed data called Peepers
 
 ```
 
@@ -1518,6 +1512,16 @@ df_all_clean <- merged_data %>%
     into = c("Site", "Samp_Time", "Zone", "Replicate", "Depth"),
     remove = FALSE) %>%
   mutate(Samp_Time = ym(Samp_Time)) 
+
+
+############### THIS IS ONLY FOR 2023 when SWAMP was called UP and UPLAND was called UPCON ##############
+df_all_clean <- df_all_clean %>%
+  mutate(
+    Zone = case_when(
+      Site == "SWH" & Zone == "UP" ~ "SWAMP",
+      Site == "SWH" & Zone == "UPCON" ~ "UP",
+      TRUE ~ `Zone`
+    )) 
 
 ```
 
