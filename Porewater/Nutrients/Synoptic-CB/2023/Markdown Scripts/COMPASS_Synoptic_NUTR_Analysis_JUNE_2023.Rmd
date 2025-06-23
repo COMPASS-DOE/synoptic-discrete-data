@@ -2,11 +2,7 @@
 title: "Synoptic_CB_Nutrients_2023_AnalysisTemplate"
 author: "Month of Data Being Analyzed"
 date: "`r Sys.Date()`"
-output: 
-  pdf_document:
-    toc: true
-    number_sections: true
-output_dir: "To Be Reviewed/PDF"
+output: pdf_document
 ---
 
 ##Run Information 
