@@ -28,11 +28,11 @@ cat("Run Information: Input by User")
 
 # Define the file path for QAQC log file - NO Need to change just check year 
   file_path <- "Raw Data/SEAL_COMPASS_Synoptic_QAQC_Log_2023.csv"
-  final_path <- "Processed Data/COMPASS_Synoptic_Nutrients_202304.csv"
+  final_path <- "Processed Data/COMPASS_Synoptic_Nutrients_202306.csv"
 
 #record any notes about the run or anything other info here: 
   run_notes <- "There are two sample names we suspect were input incorrectly,
-  they are listed below and have been checked against metadata"
+  they are listed below and have been checked against metadata. The metadata from Goodwin samples is not present."
   
 #duplicate sample names to be changed 
   #list the sample iDs that are messed up and create a list 
@@ -467,6 +467,12 @@ Slopes_chk <- ggplot(log, aes(run_date, Slope, col=Test)) +
   scale_color_manual(values=c("coral", "darkgoldenrod", "darkkhaki"))
 Slopes_chk
 
+#averaging the slopes from the log and printing
+avg_slopes <- log %>%
+  group_by(Test) %>%
+  summarise(avg_slope = mean(Slope, na.rm = TRUE))
+print(avg_slopes)
+
 
 #write out the log file with the added lines for this run date 
 write.csv(log, file_path)
@@ -490,6 +496,8 @@ df_all <- df_all %>%
       ""
     }
   )
+
+
 
 ```
  
@@ -1469,14 +1477,48 @@ samples_flagged <- samples_flagged %>%
   mutate(Samp_Time = ym(Samp_Time))
 
 
-#we can make a new dataframe here that has rhizon samples 
-  #if they exist pulled into a new dataframe and exported to a folder in processed data called Rhizons
-
-
-#we can make a new dataframe here that has Peeper samples 
-  #if they exist pulled into a new dataframe and exported to a folder in processed data called Peepers
 
 ```
+
+## Pulling Rhizon Samples
+```{r Rhizon Sample Wrangle}
+
+cat("Rhizon Samples")
+
+
+#we can make a new dataframe here that has rhizon & peeper samples 
+  #if they exist pulled into a new dataframe and exported to a folder in processed data called Rhizons
+# Filter rhizon and peeper data
+df_rhizon <- df_all %>%
+  filter(str_detect(Sample_Name, "RHZ"))
+df_peep <- df_all %>%
+  filter(str_detect(Sample_Name, "PPR"))
+
+# Timestamp for backups
+timestamp <- format(Sys.time(), "%Y-%m-%d_%H%M")
+
+# Paths
+folder_path <- file.path("Raw Data", "Rhizon+Peeper")
+dir.create(folder_path, recursive = TRUE, showWarnings = FALSE)
+
+rhizon_main <- file.path(folder_path, "rhizon_data.csv")
+peeper_main <- file.path(folder_path, "peeper_data.csv")
+
+rhizon_backup <- file.path(folder_path, paste0("rhizon_data_", timestamp, ".csv"))
+peeper_backup <- file.path(folder_path, paste0("peeper_data_", timestamp, ".csv"))
+
+# Write timestamped backups
+write.csv(df_rhizon, rhizon_backup, row.names = FALSE)
+write.csv(df_peep, peeper_backup, row.names = FALSE)
+
+# Overwrite the main files with latest data
+write.csv(df_rhizon, rhizon_main, row.names = FALSE)
+write.csv(df_peep, peeper_main, row.names = FALSE)
+
+## ^^ I think there is a cleaner way to write this out, but this should work for now ^^
+
+```
+
 
 ## Check to see if samples run match metadata & merge info
 ```{r check sample ids with metadata, echo=FALSE}
