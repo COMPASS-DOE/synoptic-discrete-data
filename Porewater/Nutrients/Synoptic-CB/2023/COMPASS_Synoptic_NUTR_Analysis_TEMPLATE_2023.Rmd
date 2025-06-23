@@ -32,7 +32,7 @@ cat("Run Information: Input by User")
 
 #record any notes about the run or anything other info here: 
   run_notes <- "There are two sample names we suspect were input incorrectly,
-  they are listed below and have been checked against metadata. The metadata from Goodwin samples is not present."
+  they are listed below and have been checked against metadata. The metadata from Goodwin ans Sweethall samples is not present."
   
 #duplicate sample names to be changed 
   #list the sample iDs that are messed up and create a list 
@@ -79,6 +79,9 @@ pacman::p_load(
   tinytex,
   stringr,
   readr,
+  LaTeX,
+  MacTeX,
+  tinytex,
   broom)
 
 #Coefficients / constants that are needed for calculations 
@@ -1343,8 +1346,6 @@ if (PO4_spk_percent <= chks_flag) {
 ## Matrix Effects
 ```{r Analyze Matrix Effects, echo=FALSE}
 
-##IVB can you build this out a bit so that it reports per test? 
-
 df_matrix <- df_spk_combo%>%
   filter(str_detect(Pair_ID, "Abs_Chk")) 
 
@@ -1357,7 +1358,7 @@ df_matrix_NOx <- df_matrix %>%
 )
   
 df_matrix_NH3 <- df_matrix %>%
-  filter(str_detect(Test, "Vanadium")) 
+  filter(str_detect(Test, "Ammonia")) 
   ifelse(
   all(df_matrix_NH3$Spike_diff_flag == "YES"),
   "NO NH3 Matrix Effect, PROCEED",
@@ -1365,7 +1366,7 @@ df_matrix_NH3 <- df_matrix %>%
 )
   
 df_matrix_PO4 <- df_matrix %>%
-  filter(str_detect(Test, "Vanadium")) 
+  filter(str_detect(Test, "PHOS")) 
   ifelse(
   all(df_matrix_PO4$Spike_diff_flag == "YES"),
   "NO PO4 Matrix Effect, PROCEED",
@@ -1485,10 +1486,7 @@ samples_flagged <- samples_flagged %>%
 
 cat("Rhizon Samples")
 
-
-#we can make a new dataframe here that has rhizon & peeper samples 
-  #if they exist pulled into a new dataframe and exported to a folder in processed data called Rhizons
-# Filter rhizon and peeper data
+# Filter rhizon and peeper samples
 df_rhizon <- df_all %>%
   filter(str_detect(Sample_Name, "RHZ"))
 df_peep <- df_all %>%
