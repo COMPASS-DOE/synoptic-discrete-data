@@ -1,11 +1,13 @@
 ---
-title: "Synoptic_CB_Nutrients_2023_Analysis"
-author: "June 2023"
+title: "Synoptic_CB_Nutrients_202305"
+author: "May 2023"
 date: "`r Sys.Date()`"
-output: pdf_document
+output: 
+  pdf_document:
+    toc: true
+    number_sections: true
+output_dir: "Run Summaries To Review"
 ---
-
- \newpage
 
 ##Run Information 
 ```{r run information, include=TRUE}
@@ -27,8 +29,6 @@ cat("Run Information: Input by User") #lets you know what section you're in
 
 # Define the file path for QAQC log file - NO Need to change just check year 
   file_path <- "Raw Data/SEAL_COMPASS_Synoptic_QAQC_Log_2023.csv"
-  
-# Define Final Path for Processed Data
   final_path <- "Processed Data/COMPASS_Synoptic_Nutrients_202306.csv"
 
 #record any notes about the run or anything other info here: 
@@ -55,12 +55,9 @@ cat("Run Information: Input by User") #lets you know what section you're in
 #Set up file path for metadata 
   #downloaded metadata csv - downloaded from Google drive as csv for this year
   #https://docs.google.com/spreadsheets/d/1HCAN0_q6y17x0RUXVzID09hVal-RfwWc/edit?usp=sharing&ouid=108994740386869376571&rtpof=true&sd=true
-  Raw_Metadata_Path <- file.path("Raw Data", "COMPASS_SynopticCB_PW_SampleLog_2023.csv")
-  
+  Raw_Metadata = "Raw Data/COMPASS_SynopticCB_PW_SampleLog_2023.csv"
 
 ```
-
- \newpage
 
 ##Setup
 ```{r setup, include=FALSE}
@@ -86,7 +83,6 @@ pacman::p_load(
   LaTeX,
   MacTeX,
   tinytex,
-  here,
   broom)
 
 #Coefficients / constants that are needed for calculations 
@@ -129,9 +125,7 @@ rep_flag = 25
 ```{r pull in metadata for later, include=FALSE}
 
 #read in the raw metadata file 
-raw_metadata <- readr::read_csv(
-  here("Raw Data", "COMPASS_SynopticCB_PW_SampleLog_2023.csv"))
-
+raw_metadata <- read.csv(Raw_Metadata)
 
 #make a new columns in the metadata with important info:
 metadata <- raw_metadata %>%
@@ -139,11 +133,11 @@ metadata <- raw_metadata %>%
   mutate(LysID = paste0("Lys", Lysimeter)) %>%
   mutate(YearMonth = sprintf("%d%02d", Year, Month))  %>%
   mutate(Zone = case_when(
-    `Transect Location` == "Transition" ~ "TR",
-    `Transect Location` == "Wetland"    ~ "WC",
-    `Transect Location` == "Upland"     ~ "UP",   
-    `Transect Location` == "Surface Water" ~ "SW",
-    TRUE                 ~ `Transect Location`    # keep original value if no match
+    `Transect.Location` == "Transition" ~ "TR",
+    `Transect.Location` == "Wetland"    ~ "WC",
+    `Transect.Location` == "Upland"     ~ "UP",   
+    `Transect.Location` == "Surface Water" ~ "SW",
+    TRUE                 ~ `Transect.Location`    # keep original value if no match
   ))
 
 #Create NUTR IDs from what was collected for comparison later
@@ -151,7 +145,7 @@ metadata <- metadata %>%
   mutate(NUTR_ID = ifelse(NUTR == "x",
                           paste(Site,
                                 YearMonth,
-                                `Transect Location`,
+                                Zone,
                                 LysID,
                                 Depth,
                                 sep = "_"),
@@ -161,7 +155,7 @@ metadata <- metadata %>%
 metadata <- metadata %>%
   mutate(
     NUTR_ID = if_else(
-      `Transect Location` == "SW",
+      Zone == "SW",
       # Modify the string:
       NUTR_ID %>%
         str_replace("_LysA", "_A") %>%                    # Replace "_LysA" with "_A"
@@ -175,10 +169,9 @@ metadata <- metadata %>%
 #Take out the columns and rows that are not relevant
 nutr_metadata <- metadata %>%
   select(NUTR_ID, Year, Month, Day, YearMonth, Site, Zone, Lysimeter, LysID, Depth_cm, 
-         Depth, `Time (24hr)`, `Time Zone_EDT/EST`, `Field Notes`, ) %>%        
+         Depth, Time..24hr., Time.Zone_EDT.EST, Field.Notes, ) %>%        
   # only keep specific columns
   filter(!is.na(NUTR_ID) & NUTR_ID != "")  # remove missing/blank NUTR_ID rows
-
 
 
 ```
@@ -430,7 +423,7 @@ print(std_curve_PO4)
          "PO4 Curve r2 is below cutoff! - REASSESS", 
          "PO4 Curve r2 GOOD - PROCEED")
   
-  
+
 #check for the a slope QAQC file, if there is not one, make one 
 if (file.exists(file_path)) {
   # If it exists, read it back into R
@@ -576,9 +569,8 @@ df_all_cor <- df_all %>%
 
 ```
 
-\vspace{1in}
  
-## NOx Reduction Efficiency Check
+  #Check NOx Reduction Efficiency 
 ```{r Assess reduction Efficiency, echo=FALSE}
 cat("Assess Reduction Efficiency")
 
@@ -1420,8 +1412,6 @@ if (any(df_matrix$Spike_diff_flag[df_matrix$Test == "o-PHOS 0.3"] != "YES")) {
 
 ```
 
-\vspace{1in}
-
 ## Unit Converted Data Column Added (mg/L to uM )
 ```{r Add unit conversion, include=FALSE}
 
@@ -1447,8 +1437,6 @@ samples <- samples %>%
 head(samples)
 
 ```
-
-\vspace{1in}
 
 ## Sample Flagging - Within range of standard curve
 ```{r Sample Flagging, echo=FALSE}
@@ -1477,8 +1465,6 @@ samples_flagged <- samples %>%
 
 ```
 
-\vspace{1in}
-
 ## Pull out sample id information 
 ```{r Sample Identification, echo=FALSE}
 
@@ -1499,10 +1485,8 @@ samples_flagged <- samples_flagged %>%
 
 ```
 
-\vspace{1in}
-
-## Pulling Rhizon Samples
-```{r Rhizon Sample Wrangle, echo=FALSE}
+## Pulling Out Rhizon Samples
+```{r Rhizon Sample Wrangle, include=FALSE}
 
 # Filter rhizon and peeper samples
 df_rhizon <- df_all %>%
@@ -1535,7 +1519,6 @@ write.csv(df_peep, peeper_main, row.names = FALSE)
 
 ```
 
-\newpage
 
 ## Check to see if samples run match metadata & merge info
 ```{r check sample ids with metadata, echo=FALSE}
@@ -1637,7 +1620,7 @@ viz_NH3_plot <- ggplot(data = NH3_forplot, aes(x = factor(row_num), y = Conc, fi
                                      "WC" = "#419973", 
                                      "SW" = "#25ABE6")) +
         theme_classic() + 
-        labs(x= " ", y="H3 (mg/L)", title="Porewater NH3") + 
+        labs(x= " ", y="NH3 (mg/L)", title="Porewater NH3") + 
           theme(legend.position = "none") +
           scale_x_discrete(drop = TRUE)+
         theme(axis.text.x = element_text(angle = 90, hjust = 0.5))
