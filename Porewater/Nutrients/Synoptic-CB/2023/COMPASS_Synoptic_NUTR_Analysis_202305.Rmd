@@ -15,14 +15,14 @@ cat("Run Information: Input by User") #lets you know what section you're in
 #set the run date & user name 
   run_date <- "20240114"
   sample_year <- 2023
-  sample_month <- 06
+  sample_month <- 05
   user <- "Stephanie Wilson"
 
 #identify the files you want to read in 
   #read in as a list to accommadate ultiple runs in a month
-  NOx_files <- c("Raw Data/SEAL_COMPASS_Synoptic_NOx_June2023_1.csv",
-                 "Raw Data/SEAL_COMPASS_Synoptic_NOx_June2023_2.csv",
-                 "Raw Data/SEAL_COMPASS_Synoptic_NOx_June2023_3.csv")
+  NOx_files <- c("Raw Data/SEAL_COMPASS_Synoptic_NOx_May2023_1.csv",
+                 "Raw Data/SEAL_COMPASS_Synoptic_NOx_May2023_2_redo.csv",
+                 "Raw Data/SEAL_COMPASS_Synoptic_NOx_May2023_3_redoA.csv")
   NH3_PO4_files <- c("Raw Data/SEAL_COMPASS_Synoptic_NH3_PO4_June2023_1.csv", 
                      "Raw Data/SEAL_COMPASS_Synoptic_NH3_PO4_June2023_2.csv",
                      "Raw Data/SEAL_COMPASS_Synoptic_NH3_PO4_June2023_3.csv")
