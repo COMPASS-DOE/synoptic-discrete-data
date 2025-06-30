@@ -464,6 +464,17 @@ df_all <- df_all %>%
  
  \newpage
 
+## TEMPORARY CHUNK FOR SEPT 2023 - Run finished then restarted for dilutions 
+```{r}
+
+cat("Replace diluted samples to allow for qaqc - see GitHub issue #32")
+
+replacements <- c("list out the samples that we need to replace")
+
+#we will need to take the one with a later date and remove the older ones 
+
+```
+
 
 ## Dilution Corrections - ensure the latest dilution is kept
 ```{r Dilution Corrections, echo=FALSE}
@@ -475,7 +486,7 @@ cat("Dilution Corrections")
 #checking to see if duplicate samples (mislabeled/wrongly inputted/reran)
 df_duplicates <- df_all %>% 
   filter(!if_all(everything(), is.na)) %>%                    #removing NA rows
-  filter(!(Sample_Name %in% c("Duplicate",                    #removing duplicates, autospikes, ccv/bs 
+  filter(!(Sample_Name %in% c("Duplicate",    "DI",                #removing duplicates, autospikes, ccv/bs 
                               "CCV", "CCB", "1mg/L ammonia", 
                               "Blank", "Auto Spike", 
                               "0.15 mg/L")) &
