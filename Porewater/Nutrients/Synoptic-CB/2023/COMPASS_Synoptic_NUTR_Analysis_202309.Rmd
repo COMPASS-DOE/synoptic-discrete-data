@@ -511,6 +511,23 @@ if (dil_dups_string != "") {
   message("No duplicated samples.")
 }
 
+# Identify problematic duplicates: duplicated samples that have no diluted version
+bad_dups <- df_duplicates %>%
+  group_by(Sample_Name) %>%
+  summarise(
+    n_dups = n(),
+    has_dilution = any(Dilution > 0, na.rm = TRUE)
+  ) %>%
+  filter(n_dups > 1 & !has_dilution) %>%
+  pull(Sample_Name)
+
+if (length(bad_dups) > 0) {
+  message("Duplicated samples with NO dilution present (possible input error): ",
+          paste(bad_dups, collapse = ", "))
+} else {
+  message("All duplicated samples have valid dilutions. No naming issues detected.")
+}
+
 df_all_cor <- df_all %>%
   arrange(row_number()) %>%
   mutate(
@@ -1130,7 +1147,7 @@ df_NH3_spk <- df_all_cor %>%
 df_PO4_spk <- df_all_cor %>%
   filter(Test == "o-PHOS 0.3") %>%
   filter(
-     !grepl("CCV|CCB|Standard|Duplicate", Sample_Name, ignore.case = TRUE),
+     !grepl("CCV|CCB|Standard|Duplicate|Blank|0.15 mg/L|peChk_NH3_PO4", Sample_Name, ignore.case = TRUE),
      #^removes dup, ccv, ccb, standards
      !is.na(Sample_Name),                                         # Remove NA
      !grepl("^\\d+$", Sample_Name),                               # removes all numbers
