@@ -501,20 +501,30 @@ dil_dups_string <- df_duplicates %>%
   pull(Sample_Name) %>%
   paste(collapse = ", ")
 
-#Report duplicated samples
+#Report duplicated samples if dilution or error
 if (dil_dups_string != "") {
   message("Duplicated samples: ", dil_dups_string)
-
-  # Check for dilution in duplicates
-  if (any(df_duplicates$Dilution > 0, na.rm = TRUE)) {
-    message("Dilution Present, Need to Correct")
+  
+  bad_dups <- df_duplicates %>%
+    group_by(Sample_Name) %>%
+    summarise(
+      n_dups = n(),
+      has_dilution = any(Dilution > 0, na.rm = TRUE)
+    ) %>%
+    filter(n_dups > 1 & !has_dilution) %>%
+    pull(Sample_Name)
+  
+  if (length(bad_dups) > 0) {
+    message("Duplicated samples with NO dilution present (possible input error): ",
+            paste(bad_dups, collapse = ", "))
   } else {
-    message("No Dilution, Most likely sample name input error, refer to sample log and next chunk")
+    message("All duplicated samples have valid dilutions. No naming issues detected.")
   }
-
+  
 } else {
   message("No duplicated samples.")
 }
+
 
 df_all_cor <- df_all %>%
   arrange(row_number()) %>%
@@ -522,7 +532,6 @@ df_all_cor <- df_all %>%
     Dilution = case_when(
       Dilution == "0" ~ 1.0,
       TRUE ~ as.numeric(Dilution)),     #ensure it's numeric for math
-    Conc_dilcorr = Conc * Dilution,     #calculate a corrected conc
     Pair_ID = ifelse(                   # Assign a unique ID for pairing
       grepl("Duplicate", Sample_Name, ignore.case = TRUE),
       lag(Sample_Name), Sample_Name),  # Preserve original sample name for QA
