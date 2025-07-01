@@ -1,6 +1,6 @@
 ---
-title: "Synoptic_CB_Nutrients_202308"
-author: "August 2023"
+title: "Synoptic_CB_Nutrients_2023_October"
+author: "Month of Data Being Analyzed"
 date: "`r Sys.Date()`"
 output: 
   pdf_document:
@@ -13,28 +13,28 @@ output_dir: "To Be Reviewed/PDF"
 
 ##Run Information 
 ```{r run information, include=TRUE}
-cat("Run Information: Input by User") #lets you know what section you're in 
+cat("Run Information: Input by I. Van Benschoten") #lets you know what section you're in 
 #set the run date & user name 
-  run_date <- "20240114"
+  run_date <- "DATE"
   sample_year <- 2023
-  sample_month <- 08
+  sample_month <- "October"
   user <- "Stephanie Wilson"
 
 #identify the files you want to read in 
-  #read in as a list to accommadate ultiple runs in a month
-  NOx_files <- c("Raw Data/SEAL_COMPASS_Synoptic_NOx_Aug2023_1.csv",
-                 "Raw Data/SEAL_COMPASS_Synoptic_NOx_Aug2023_2.csv",
-                 "Raw Data/SEAL_COMPASS_Synoptic_NOx_Aug2023_3.csv")
-  NH3_PO4_files <- c("Raw Data/SEAL_COMPASS_Synoptic_NH3_PO4_Aug2023_1.csv", 
-                     "Raw Data/SEAL_COMPASS_Synoptic_NH3_PO4_Aug2023_2.csv",
-                     "Raw Data/SEAL_COMPASS_Synoptic_NH3_PO4_Aug2023_3.csv")
+  #read in as a list to accommodate multiple runs in a month
+  NOx_files <- c("Raw Data/SEAL_COMPASS_Synoptic_NOx_Oct2023_1.csv",
+                 "Raw Data/SEAL_COMPASS_Synoptic_NOx_Oct2023_2.csv",
+                 "Raw Data/SEAL_COMPASS_Synoptic_NOx_Oct2023_3.csv")
+  NH3_PO4_files <- c("Raw Data/SEAL_COMPASS_Synoptic_NH3_PO4_Oct2023_1.csv", 
+                     "Raw Data/SEAL_COMPASS_Synoptic_NH3_PO4_Oct2023_2.csv",
+                     "Raw Data/SEAL_COMPASS_Synoptic_NH3_PO4_Oct2023_3.csv")
 
 # Define the file path for QAQC log file - NO Need to change just check year 
   file_path <- "Raw Data/SEAL_COMPASS_Synoptic_QAQC_Log_2023.csv"
-  final_path <- "Processed Data/COMPASS_Synoptic_Nutrients_202308.csv"
+  final_path <- "Processed Data/COMPASS_Synoptic_Nutrients_202310.csv"
 
 #record any notes about the run or anything other info here: 
-  run_notes <- "Duplicates are out of range because of detection limit, too small of values"
+  run_notes <- ""
   
 #Set up file path for metadata 
   #downloaded metadata csv - downloaded from Google drive as csv for this year
@@ -42,8 +42,6 @@ cat("Run Information: Input by User") #lets you know what section you're in
   Raw_Metadata = "Raw Data/COMPASS_SynopticCB_PW_SampleLog_2023.csv"
 
 ```
-
-\newpage
 
 ##Setup
 ```{r setup, include=FALSE}
@@ -204,6 +202,9 @@ head(df)
 df_all <- df %>%
   mutate(Run_Number = as.numeric(Run_Number))
 ```
+
+
+\newpage
 
 ## Assessing standard Curves
   #Pull out standards data  
@@ -467,6 +468,7 @@ df_all <- df_all %>%
  
  \newpage
 
+
 ## Dilution Corrections - ensure the latest dilution is kept
 ```{r Dilution Corrections, echo=FALSE}
 
@@ -538,8 +540,10 @@ df_all_cor <- df_all %>%
   ) %>%                                #keeps the higher dilution value
   ungroup()
 
-```
 
+
+
+```
 
 ## Performance Check
 ```{r pe Check, echo = FALSE}
@@ -598,7 +602,6 @@ cat("Expected  =", PO4_pe, "\n")
 
 
 ```
-
  
   #Check NOx Reduction Efficiency 
 ```{r Assess reduction Efficiency, echo=FALSE}
@@ -979,27 +982,24 @@ df_NH3_dup <- df_all_cor %>%
 df_PO4_dup <- df_all_cor %>%
   filter(Test == "o-PHOS 0.3") %>%
   filter(
-    !grepl("CCV|CCB|Standard|Auto Spike|Blank|1mg/L ammonia|Abs_Chk_20ppt|Abs_Chk_10ppt|0.15 mg/L", Sample_Name, ignore.case = TRUE),
-    !is.na(Sample_Name),
-    !grepl("^\\d+$", Sample_Name),
-    !grepl("^\\d{1,2}/\\d{1,2}/\\d{2,4}", Sample_Name)
-  ) %>%
-  arrange(row_number()) %>%  # ensure original order is preserved
-  mutate(Pair_ID = ifelse(
-    grepl("Duplicate", Sample_Name, ignore.case = TRUE),
-    lag(Sample_Name),  # assign the Sample_Name of the previous row
-    Sample_Name         # assign own name if not a duplicate
-  )) %>%
-  group_by(Pair_ID) %>%
-  filter(n() > 1) %>%  # keep only true pairs
-  ungroup() %>%
-  transmute(
-    Pair_ID,
-    Sample_Name,
-    Conc,
-    Type = ifelse(grepl("Duplicate", Sample_Name, ignore.case = TRUE), "Duplicate", "Original")
-  )
-
+     !grepl("CCV|CCB|Standard|Auto Spike|Blank|1mg/L ammonia|Abs_Chk_20ppt|Abs_Chk_10ppt|	
+0.15 mg/L", Sample_Name, ignore.case = TRUE), 
+     #^removes autospice, ccv, ccb, standards
+     !is.na(Sample_Name),                                         # Remove NA
+     !grepl("^\\d+$", Sample_Name),                               # removes all numbers
+     !grepl("^\\d{1,2}/\\d{1,2}/\\d{2,4}", Sample_Name)) %>%      # removes all date/time
+  mutate(`Duplicate?` = if_else(                                  # adds duplicate column
+     grepl("Duplicate", Sample_Name, ignore.case = TRUE),         # keeps sample ID if there
+     lag(Sample_Name),                                            # get previous row's SampleID
+     Sample_Name)) %>%                                            # keeps sample ID if not duplicate
+  group_by(`Duplicate?`) %>%                                      # groups by duplicate 
+  filter(n() > 1) %>%                                             # filters anything that appears more than once 
+  ungroup() %>%                      
+  transmute(   
+     Pair_ID = `Duplicate?`,                                      # changing heading to pair_id
+     Sample_Name,                                                 #keeping sample name and conc
+     Conc,                                                        #if sample name duplicate then put duplicate 
+     Type = if_else(str_detect(Sample_Name, "Duplicate"), "Duplicate", "Original")) 
 
 # Duplicate Stats
 Nox_dup_chk <- df_NOx_dup %>%
@@ -1169,7 +1169,7 @@ df_NOx_spk <- df_all_cor %>%
     Conc,
     Type = if_else(str_detect(Sample_Name, "Auto Spike"), "Auto_Spike", "Original"))
  
-df_NH3_spk <- df_all %>%
+df_NH3_spk <- df_all_cor %>%
   filter(Test == "Ammonia 2") %>%
   filter(
      !grepl("CCV|CCB|Blank|1mg/L ammonia|Standard|Duplicate", Sample_Name, ignore.case = TRUE),
@@ -1190,7 +1190,7 @@ df_NH3_spk <- df_all %>%
     Conc,
     Type = if_else(str_detect(Sample_Name, "Auto Spike"), "Auto_Spike", "Original"))
  
-df_PO4_spk <- df_all %>%
+df_PO4_spk <- df_all_cor %>%
   filter(Test == "o-PHOS 0.3") %>%
   filter(
      !grepl("CCV|CCB|Standard|Duplicate", Sample_Name, ignore.case = TRUE),
@@ -1471,8 +1471,6 @@ head(samples)
 
 ```
 
-\vspace{0.25in}
-
 ## Sample Flagging - Within range of standard curve
 ```{r Sample Flagging, echo=FALSE}
 
@@ -1500,7 +1498,6 @@ samples_flagged <- samples %>%
 
 ```
 
-
 ## Pull out sample id information 
 ```{r Sample Identification, echo=FALSE}
 
@@ -1522,7 +1519,7 @@ samples_flagged <- samples_flagged %>%
 ```
 
 ## Pulling Rhizon Samples
-```{r Rhizon Sample Wrangle, echo = FALSE}
+```{r Rhizon Sample Wrangle}
 
 # Filter rhizon and peeper samples
 df_rhizon <- df_all %>%
@@ -1555,7 +1552,6 @@ write.csv(df_peep, peeper_main, row.names = FALSE)
 
 ```
 
-\vspace{0.25in}
 
 ## Check to see if samples run match metadata & merge info
 ```{r check sample ids with metadata, echo=FALSE}

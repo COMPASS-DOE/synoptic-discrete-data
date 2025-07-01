@@ -15,27 +15,26 @@ output_dir: "To Be Reviewed/PDF"
 ```{r run information, include=TRUE}
 cat("Run Information: Input by User") #lets you know what section you're in 
 #set the run date & user name 
-  run_date <- "20240114"
-  sample_year <- 2023
-  sample_month <- 06
+  run_date <- "DATE"
+  sample_year <- YEAR
+  sample_month <- MONTH
   user <- "Stephanie Wilson"
 
 #identify the files you want to read in 
   #read in as a list to accommadate ultiple runs in a month
-  NOx_files <- c("Raw Data/SEAL_COMPASS_Synoptic_NOx_June2023_1.csv",
-                 "Raw Data/SEAL_COMPASS_Synoptic_NOx_June2023_2.csv",
-                 "Raw Data/SEAL_COMPASS_Synoptic_NOx_June2023_3.csv")
-  NH3_PO4_files <- c("Raw Data/SEAL_COMPASS_Synoptic_NH3_PO4_June2023_1.csv", 
-                     "Raw Data/SEAL_COMPASS_Synoptic_NH3_PO4_June2023_2.csv",
-                     "Raw Data/SEAL_COMPASS_Synoptic_NH3_PO4_June2023_3.csv")
+  NOx_files <- c("Raw Data/SEAL_COMPASS_Synoptic_NOx_DATE_1.csv",
+                 "Raw Data/SEAL_COMPASS_Synoptic_NOx_DATE_2.csv",
+                 "Raw Data/SEAL_COMPASS_Synoptic_NOx_DATE_3.csv")
+  NH3_PO4_files <- c("Raw Data/SEAL_COMPASS_Synoptic_NH3_PO4_DATE_1.csv", 
+                     "Raw Data/SEAL_COMPASS_Synoptic_NH3_PO4_DATE_2.csv",
+                     "Raw Data/SEAL_COMPASS_Synoptic_NH3_PO4_DATE_3.csv")
 
 # Define the file path for QAQC log file - NO Need to change just check year 
   file_path <- "Raw Data/SEAL_COMPASS_Synoptic_QAQC_Log_2023.csv"
-  final_path <- "Processed Data/COMPASS_Synoptic_Nutrients_202306.csv"
+  final_path <- "Processed Data/COMPASS_Synoptic_Nutrients_DATE.csv"
 
 #record any notes about the run or anything other info here: 
-  run_notes <- "There are two sample names we suspect were input incorrectly,
-  they are listed below and have been checked against metadata. The metadata from Goodwin ans Sweethall samples is not present."
+  run_notes <- ""
   
 #Set up file path for metadata 
   #downloaded metadata csv - downloaded from Google drive as csv for this year
@@ -481,7 +480,7 @@ cat("Dilution Corrections")
 df_duplicates <- df_all %>% 
   filter(!if_all(everything(), is.na)) %>%                    #removing NA rows
   filter(!(Sample_Name %in% c("Duplicate",                    #removing duplicates, autospikes, ccv/bs 
-                              "CCV", "CCB", "1mg/L ammonia", 
+                              "CCV", "CCB", "1mg/L ammonia", "DI",
                               "Blank", "Auto Spike", 
                               "0.15 mg/L")) &
   !startsWith(Sample_Name, "Standard ") &               #removing standards
@@ -501,7 +500,7 @@ dil_dups_string <- df_duplicates %>%
   pull(Sample_Name) %>%
   paste(collapse = ", ")
 
-#Report duplicated samples if dilution or error
+#Report duplicated samples
 if (dil_dups_string != "") {
   message("Duplicated samples: ", dil_dups_string)
   
@@ -525,7 +524,6 @@ if (dil_dups_string != "") {
   message("No duplicated samples.")
 }
 
-
 df_all_cor <- df_all %>%
   arrange(row_number()) %>%
   mutate(
@@ -543,61 +541,11 @@ df_all_cor <- df_all %>%
   ungroup()
 
 
-```
-
-Performance Check
-```{r pe Check, echo = FALSE}
-
-NOx_peChk <- df_all_cor %>%
-  filter(Test == "Vanadium NOx", 
-         str_detect(Sample_Name, "peChk_NOx")) %>%
-  summarise(
-    Mean_Chk_Conc = mean(Conc_dilcorr, na.rm = TRUE),
-    SD_Chk_Conc = sd(Conc_dilcorr, na.rm = TRUE),
-    CV = (SD_Chk_Conc / Mean_Chk_Conc) * 100,
-    pct_diff_Chk = abs(Mean_Chk_Conc - NOx_pe) / NOx_pe,
-    NOx_pe_flag = ifelse(abs(pct_diff_Chk) < 10, "YES, Pass", "NO, rerun"))
-      
-
-NH3_peChk <- df_all_cor %>%
-  filter(Test == "Ammonia 2", 
-         str_detect(Sample_Name, "peChk_NH3")) %>%
-  summarise(
-    Mean_Chk_Conc = mean(Conc_dilcorr, na.rm = TRUE),
-    SD_Chk_Conc = sd(Conc_dilcorr, na.rm = TRUE),
-    CV = (SD_Chk_Conc / Mean_Chk_Conc) * 100,
-    pct_diff_Chk = abs(Mean_Chk_Conc - NH3_pe) / NH3_pe,
-    NH3_pe_flag = ifelse(abs(pct_diff_Chk) < 10, "YES, Pass", "NO, rerun"))
-
-PO4_peChk <- df_all_cor %>%
-  filter(Test == "o-PHOS 0.3", 
-         str_detect(Sample_Name, "peChk_NH3")) %>%
-  summarise(
-    Mean_Chk_Conc = mean(Conc_dilcorr, na.rm = TRUE),
-    SD_Chk_Conc = sd(Conc_dilcorr, na.rm = TRUE),
-    CV = (SD_Chk_Conc / Mean_Chk_Conc) * 100,
-    pct_diff_Chk = abs(Mean_Chk_Conc - PO4_pe) / PO4_pe,
-    PO4_pe_flag = ifelse(abs(pct_diff_Chk) < 10, "YES, Pass", "NO, rerun"))
-  
-
-
-#flag write out 
-ifelse(NOx_peChk$pct_diff_Chk >= chk_flag, 
-       "NOx pe Check has a % Difference >10% - REASSESS",  
-       "NOx pe Check has a % Difference <10% - PROCEED")
-ifelse(NH3_peChk$pct_diff_Chk >= chk_flag, 
-       "NH3 pe Check has a % Difference >10% - REASSESS",  
-       "NH3 pe Check has a % Difference <10% - PROCEED")
-ifelse(PO4_peChk$pct_diff_Chk >= chk_flag, 
-       "PO4 pe Check has a % Difference >10% - REASSESS",  
-       "PO4 pe Check has a % Difference <10% - PROCEED")
-
-
 
 
 ```
 
-
+## OPTIONAL Nameing Error Chunk 
 ```{r Sample Name Errors - DELETE IF NO ERROR, echo = false}
 
 #duplicate sample names to be changed 
@@ -644,6 +592,65 @@ df_all <- df_all %>%
   select(-Run_Number)
 
 ```
+
+## Performance Check
+```{r pe Check, echo = FALSE}
+
+NOx_peChk <- df_all_cor %>%
+  filter(Test == "Vanadium NOx", 
+         str_detect(Sample_Name, "peChk_NOx")) %>%
+  summarise(
+    Mean_Chk_Conc = mean(Conc, na.rm = TRUE),
+    SD_Chk_Conc = sd(Conc, na.rm = TRUE),
+    CV = (SD_Chk_Conc / Mean_Chk_Conc) * 100,
+    pct_diff_Chk = abs(Mean_Chk_Conc - NOx_pe) / NOx_pe,
+    NOx_pe_flag = ifelse(abs(pct_diff_Chk) < 10, "YES, Pass", "NO, rerun"))
+      
+
+NH3_peChk <- df_all_cor %>%
+  filter(Test == "Ammonia 2", 
+         str_detect(Sample_Name, "peChk_NH3")) %>%
+  summarise(
+    Mean_Chk_Conc = mean(Conc, na.rm = TRUE),
+    SD_Chk_Conc = sd(Conc, na.rm = TRUE),
+    CV = (SD_Chk_Conc / Mean_Chk_Conc) * 100,
+    pct_diff_Chk = abs(Mean_Chk_Conc - NH3_pe) / NH3_pe,
+    NH3_pe_flag = ifelse(abs(pct_diff_Chk) < 10, "YES, Pass", "NO, rerun"))
+
+PO4_peChk <- df_all_cor %>%
+  filter(Test == "o-PHOS 0.3", 
+         str_detect(Sample_Name, "peChk_NH3")) %>%
+  summarise(
+    Mean_Chk_Conc = mean(Conc, na.rm = TRUE),
+    SD_Chk_Conc = sd(Conc, na.rm = TRUE),
+    CV = (SD_Chk_Conc / Mean_Chk_Conc) * 100,
+    pct_diff_Chk = abs(Mean_Chk_Conc - PO4_pe) / PO4_pe,
+    PO4_pe_flag = ifelse(abs(pct_diff_Chk) < 10, "YES, Pass", "NO, rerun"))
+  
+
+
+#flag write out 
+ifelse(NOx_peChk$pct_diff_Chk >= chk_flag, 
+       "NOx pe Check has a % Difference >10% - REASSESS",  
+       "NOx pe Check has a % Difference <10% - PROCEED")
+cat("Run mean =", NOx_peChk$Mean_Chk_Conc, "\n")
+cat("Expected  =", NOx_pe, "\n\n")
+ifelse(NH3_peChk$pct_diff_Chk >= chk_flag, 
+       "NH3 pe Check has a % Difference >10% - REASSESS",  
+       "NH3 pe Check has a % Difference <10% - PROCEED")
+cat("Run mean =", NH3_peChk$Mean_Chk_Conc, "\n")
+cat("Expected  =", NH3_pe, "\n\n")
+ifelse(PO4_peChk$pct_diff_Chk >= chk_flag, 
+       "PO4 pe Check has a % Difference >10% - REASSESS",  
+       "PO4 pe Check has a % Difference <10% - PROCEED")
+cat("Run mean =", PO4_peChk$Mean_Chk_Conc, "\n")
+cat("Expected  =", PO4_pe, "\n")
+
+
+
+
+```
+
  
   #Check NOx Reduction Efficiency 
 ```{r Assess reduction Efficiency, echo=FALSE}
