@@ -15,7 +15,7 @@ output_dir: "To Be Reviewed/PDF"
 ```{r run information, include=TRUE}
 cat("Run Information: Input by I. Van Benschoten") #lets you know what section you're in 
 #set the run date & user name 
-  run_date <- "DATE"
+  run_date <- "01/27/24"
   sample_year <- 2023
   sample_month <- "October"
   user <- "Stephanie Wilson"
@@ -34,7 +34,7 @@ cat("Run Information: Input by I. Van Benschoten") #lets you know what section y
   final_path <- "Processed Data/COMPASS_Synoptic_Nutrients_202310.csv"
 
 #record any notes about the run or anything other info here: 
-  run_notes <- ""
+  run_notes <- "PO4 Autospikes not included in this QAQC"
   
 #Set up file path for metadata 
   #downloaded metadata csv - downloaded from Google drive as csv for this year
@@ -1294,14 +1294,14 @@ PO4_spk_percent <- (sum(df_spk_PO4_chk$Spike_diff_flag == "YES")/nrow(df_spk_PO4
 
 #spk flag report out
 ifelse(NOx_spk_percent >= chks_flag, 
-       ">60% of Spikes have a CV <50% - PROCEED",
-       "<60% of Carbon Spikes have a CV <50% - REASSESS")
+       ">60% of NOx Spikes have a CV <50% - PROCEED",
+       "<60% of NOx Spikes have a CV <50% - REASSESS")
 ifelse(NH3_spk_percent >= chks_flag, 
-       ">60% of Spikes have a CV <50% - PROCEED",
-       "<60% of Carbon Spikes have a CV <50% - REASSESS")
+       ">60% of NH3 Spikes have a CV <50% - PROCEED",
+       "<60% of NH3 Spikes have a CV <50% - REASSESS")
 ifelse(PO4_spk_percent >= chks_flag, 
-       ">60% of Spikes have a CV <50% - PROCEED",
-       "<60% of Carbon Spikes have a CV <50% - REASSESS")
+       "PO4 Spikes not included in this run",
+       "PO4 Spikes not included in this run")
  
 
 #plot spikes output as a bar graph to easily check - want any over 10% to be red need to work on this 
