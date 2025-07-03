@@ -31,7 +31,7 @@ cat("Run Information: Input by I. Van Benschoten") #lets you know what section y
 
 # Define the file path for QAQC log file - NO Need to change just check year 
   file_path <- "Raw Data/SEAL_COMPASS_Synoptic_QAQC_Log_2023.csv"
-  final_path <- "Processed Data/COMPASS_Synoptic_Nutrients_202310.csv"
+  final_path <- "Processed Data/COMPASS_Synoptic_Nutrients_202310.xlsx"
 
 #record any notes about the run or anything other info here: 
   run_notes <- "PO4 Autospikes not included in this QAQC"

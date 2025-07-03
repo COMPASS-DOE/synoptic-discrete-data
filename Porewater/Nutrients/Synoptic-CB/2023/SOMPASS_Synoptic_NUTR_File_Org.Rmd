@@ -3,10 +3,30 @@ title: "SOMPASS_Synoptic_NUTR_File_Org"
 output: html_document
 ---
 
+```{r}
 
-##Run Information 
+#some packages 
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(
+  dplyr,
+  purrr,
+  ggplot2,
+  ggpubr,
+  tidyr,
+  tidyverse,
+  tinytex,
+  stringr,
+  readr,
+  tinytex,
+  broom)
+
+
+```
+
+
 ```{r run information, include=TRUE}
 cat("Run Information: I. Van Benschoten") #lets you know what section you're in 
+
 
 #check if redo and redoA are the same
 
@@ -38,26 +58,6 @@ redoA_vs_redo <- anti_join(redo, redoA)
 
 ```
 
-
-```{r}
-
-#some packages 
-if (!require("pacman")) install.packages("pacman")
-pacman::p_load(
-  dplyr,
-  purrr,
-  ggplot2,
-  ggpubr,
-  tidyr,
-  tidyverse,
-  tinytex,
-  stringr,
-  readr,
-  tinytex,
-  broom)
-
-
-```
 
 ```{r cleaning up}
 

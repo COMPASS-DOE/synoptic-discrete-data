@@ -15,7 +15,7 @@ output_dir: "To Be Reviewed/PDF"
 ```{r run information, include=TRUE}
 cat("Run Information: Input by User") #lets you know what section you're in 
 #set the run date & user name 
-  run_date <- "20240114"
+  run_date <- "20240122"
   sample_year <- 2023
   sample_month <- 08
   user <- "Stephanie Wilson"
@@ -31,7 +31,7 @@ cat("Run Information: Input by User") #lets you know what section you're in
 
 # Define the file path for QAQC log file - NO Need to change just check year 
   file_path <- "Raw Data/SEAL_COMPASS_Synoptic_QAQC_Log_2023.csv"
-  final_path <- "Processed Data/COMPASS_Synoptic_Nutrients_202308.csv"
+  final_path <- "Processed Data/COMPASS_Synoptic_Nutrients_202308.xlsx"
 
 #record any notes about the run or anything other info here: 
   run_notes <- "Duplicates are out of range because of detection limit, too small of values"
@@ -1657,7 +1657,7 @@ viz_NH3_plot <- ggplot(data = NH3_forplot, aes(x = factor(row_num), y = Conc, fi
                                      "WC" = "#419973", 
                                      "SW" = "#25ABE6")) +
         theme_classic() + 
-        labs(x= " ", y="H3 (mg/L)", title="Porewater NH3") + 
+        labs(x= " ", y="NH3 (mg/L)", title="Porewater NH3") + 
           theme(legend.position = "none") +
           scale_x_discrete(drop = TRUE)+
         theme(axis.text.x = element_text(angle = 90, hjust = 0.5))

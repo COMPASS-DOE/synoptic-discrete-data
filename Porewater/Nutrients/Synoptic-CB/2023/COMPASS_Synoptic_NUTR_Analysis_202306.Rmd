@@ -31,7 +31,7 @@ cat("Run Information: Input by User") #lets you know what section you're in
 
 # Define the file path for QAQC log file - NO Need to change just check year 
   file_path <- "Raw Data/SEAL_COMPASS_Synoptic_QAQC_Log_2023.csv"
-  final_path <- "Processed Data/COMPASS_Synoptic_Nutrients_202306.csv"
+  final_path <- "Processed Data/COMPASS_Synoptic_Nutrients_202306.xlsx"
 
 #record any notes about the run or anything other info here: 
   run_notes <- "There are two sample names we suspect were input incorrectly,

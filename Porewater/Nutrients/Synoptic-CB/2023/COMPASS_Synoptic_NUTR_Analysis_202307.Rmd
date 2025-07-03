@@ -15,7 +15,7 @@ output_dir: "To Be Reviewed/PDF"
 ```{r run information, include=TRUE}
 cat("Run Information: Input by User") #lets you know what section you're in 
 #set the run date & user name 
-  run_date <- "20240114"
+  run_date <- "20240117"
   sample_year <- 2023
   sample_month <- 07
   user <- "Stephanie Wilson"
@@ -31,11 +31,12 @@ cat("Run Information: Input by User") #lets you know what section you're in
 
 # Define the file path for QAQC log file - NO Need to change just check year 
   file_path <- "Raw Data/SEAL_COMPASS_Synoptic_QAQC_Log_2023.csv"
-  final_path <- "Processed Data/COMPASS_Synoptic_Nutrients_202307.csv"
+  final_path <- "Processed Data/COMPASS_Synoptic_Nutrients_202307.xlsx"
 
 #record any notes about the run or anything other info here: 
   run_notes <- "<60% of NOx blaks are lower 25% quartile of samples - REASSESS
-  Duplicate CVs out of range most likely due to low concentrations making small values high percentages"
+  Duplicate CVs out of range most likely due to low concentrations 
+  making small values high percentages"
   
 #Set up file path for metadata 
   #downloaded metadata csv - downloaded from Google drive as csv for this year
@@ -1657,7 +1658,7 @@ viz_NH3_plot <- ggplot(data = NH3_forplot, aes(x = factor(row_num), y = Conc, fi
                                      "WC" = "#419973", 
                                      "SW" = "#25ABE6")) +
         theme_classic() + 
-        labs(x= " ", y="H3 (mg/L)", title="Porewater NH3") + 
+        labs(x= " ", y="NH3 (mg/L)", title="Porewater NH3") + 
           theme(legend.position = "none") +
           scale_x_discrete(drop = TRUE)+
         theme(axis.text.x = element_text(angle = 90, hjust = 0.5))
