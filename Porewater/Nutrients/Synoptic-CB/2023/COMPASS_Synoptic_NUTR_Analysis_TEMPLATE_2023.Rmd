@@ -13,7 +13,7 @@ output_dir: "To Be Reviewed/PDF"
 
 ##Run Information 
 ```{r run information, include=TRUE}
-cat("Run Information: Input by User") #lets you know what section you're in 
+cat("Run Information: I. Van Benschoten") #lets you know what section you're in 
 #set the run date & user name 
   run_date <- "DATE"
   sample_year <- YEAR
@@ -1834,9 +1834,21 @@ final_data <- final_data_labeled %>%
 
 #Write out data frame 
   write.csv(final_data, final_path)
-
+  
 
 ```
+
+```{r if csv isnt working, echo = FALSE}
+
+#changing lists to strings
+final_data_excel <- final_data %>%
+  mutate(across(where(is.list), ~ sapply(., toString)))
+
+#Write out data frame 
+  write_xlsx(final_data_excel, final_path)
+
+```
+
 
 #end
 

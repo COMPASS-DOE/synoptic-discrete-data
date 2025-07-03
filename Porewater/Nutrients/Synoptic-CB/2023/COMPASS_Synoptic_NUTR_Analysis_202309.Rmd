@@ -31,7 +31,7 @@ cat("Run Information: Input by User") #lets you know what section you're in
 
 # Define the file path for QAQC log file - NO Need to change just check year 
   file_path <- "Raw Data/SEAL_COMPASS_Synoptic_QAQC_Log_2023.csv"
-  final_path <- "Processed Data/COMPASS_Synoptic_Nutrients_202309.csv"
+  final_path <- "Processed Data/COMPASS_Synoptic_Nutrients_202309.xlsx"
 
 #record any notes about the run or anything other info here: 
   run_notes <- "NOx Blanks are out of range because of the slightly negative y intercept of the standard curve and the dups are out of range becasue of their very low concentrations. AUtospikes for PO4 and NH3 are not estimated for this run, flags reported. Tean pe check concentration for PO4 was the concentration of the last run since it was the latest."
@@ -65,6 +65,7 @@ pacman::p_load(
   stringr,
   readr,
   tinytex,
+  writexl,
   broom)
 
 #Coefficients / constants that are needed for calculations 
@@ -564,8 +565,8 @@ NOx_peChk <- df_all_cor %>%
   filter(Test == "Vanadium NOx", 
          str_detect(Sample_Name, "peChk_NOx")) %>%
   summarise(
-    Mean_Chk_Conc = mean(Conc_dilcorr, na.rm = TRUE),
-    SD_Chk_Conc = sd(Conc_dilcorr, na.rm = TRUE),
+    Mean_Chk_Conc = mean(Conc, na.rm = TRUE),
+    SD_Chk_Conc = sd(Conc, na.rm = TRUE),
     CV = (SD_Chk_Conc / Mean_Chk_Conc) * 100,
     pct_diff_Chk = abs(Mean_Chk_Conc - NOx_pe) / NOx_pe,
     NOx_pe_flag = ifelse(abs(pct_diff_Chk) < 10, "YES, Pass", "NO, rerun"))
@@ -575,8 +576,8 @@ NH3_peChk <- df_all_cor %>%
   filter(Test == "Ammonia 2", 
          str_detect(Sample_Name, "peChk_NH3")) %>%
   summarise(
-    Mean_Chk_Conc = mean(Conc_dilcorr, na.rm = TRUE),
-    SD_Chk_Conc = sd(Conc_dilcorr, na.rm = TRUE),
+    Mean_Chk_Conc = mean(Conc, na.rm = TRUE),
+    SD_Chk_Conc = sd(Conc, na.rm = TRUE),
     CV = (SD_Chk_Conc / Mean_Chk_Conc) * 100,
     pct_diff_Chk = abs(Mean_Chk_Conc - NH3_pe) / NH3_pe,
     NH3_pe_flag = ifelse(abs(pct_diff_Chk) < 10, "YES, Pass", "NO, rerun"))
@@ -588,8 +589,8 @@ PO4_peChk <- df_all_cor %>%
   slice_max(order_by = Run_Time, n = 1) %>%
   ungroup() %>%
   summarise(
-    Mean_Chk_Conc = mean(Conc_dilcorr, na.rm = TRUE),
-    SD_Chk_Conc = sd(Conc_dilcorr, na.rm = TRUE),
+    Mean_Chk_Conc = mean(Conc, na.rm = TRUE),
+    SD_Chk_Conc = sd(Conc, na.rm = TRUE),
     CV = (SD_Chk_Conc / Mean_Chk_Conc) * 100,
     pct_diff_Chk = abs(Mean_Chk_Conc - PO4_pe) / PO4_pe,
     PO4_pe_flag = ifelse(abs(pct_diff_Chk) < 10, "YES, Pass", "NO, rerun"))
@@ -1818,9 +1819,13 @@ final_data <- final_data_labeled %>%
          PO4_Conc_mgL, PO4_Conc_uM, PO4_Conc_Flag, PO4_QAQC_Flag,
          Analysis_rundate,  Run_notes, Field_notes)
 
+#converting lists to strings
+final_data_excel <- final_data %>%
+  mutate(across(where(is.list), ~ sapply(., toString)))
 
 #Write out data frame 
-  write.csv(final_data, final_path)
+  write_xlsx(final_data_excel, final_path)
+
 
 
 ```

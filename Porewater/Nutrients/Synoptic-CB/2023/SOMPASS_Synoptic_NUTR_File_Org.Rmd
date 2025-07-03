@@ -1,0 +1,120 @@
+---
+title: "SOMPASS_Synoptic_NUTR_File_Org"
+output: html_document
+---
+
+
+##Run Information 
+```{r run information, include=TRUE}
+cat("Run Information: I. Van Benschoten") #lets you know what section you're in 
+
+#check if redo and redoA are the same
+
+redoA <-  read.csv("Raw Data/SEAL_COMPASS_Synoptic_NOx_May2023_3_redoA.csv")
+redo <-  read.csv("Raw Data/SEAL_COMPASS_Synoptic_NOx_May2023_3_redo.csv")
+
+
+redo_vs_redoA <- anti_join(redoA, redo)
+redoA_vs_redo <- anti_join(redo, redoA)
+
+#identify the files you want to read in 
+  #read in as a list to accommadate ultiple runs in a month
+  NOx_files <- c("Raw Data/SEAL_COMPASS_Synoptic_NOx_April2023_1.csv",
+                 "Raw Data/SEAL_COMPASS_Synoptic_NOx_April2023_TEMPEST_May2023_2.csv",
+                 "Raw Data/SEAL_COMPASS_Synoptic_NOx_May2023_1.csv",
+                 "Raw Data/SEAL_COMPASS_Synoptic_NOx_May2023_2_redo.csv",
+                 "Raw Data/SEAL_COMPASS_Synoptic_NOx_May2023_3_redo.csv")
+  
+  NH3_PO4_files <- c("Raw Data/SEAL_COMPASS_Synoptic_NH3_PO4_April2023_1.csv", 
+                     "Raw Data/SEAL_COMPASS_Synoptic_NH3_PO4_April2023_TEMPEST_May2023_2.csv",
+                     "Raw Data/SEAL_COMPASS_Synoptic_NH3_PO4_May2023_1redopo4.csv",
+                     "Raw Data/SEAL_COMPASS_Synoptic_NH3_PO4_May2023_3.csv")
+
+# Define the file path for QAQC log file - NO Need to change just check year 
+  file_path_april <- "Raw Data/COMPASS_Synoptic_Nutrients_clean_2023_April.csv"
+  file_path_may <- "Raw Data/COMPASS_Synoptic_Nutrients_clean_2023_May.csv"
+  file_path_all <- "Raw Data/COMPASS_Synoptic_Nutrients_df_all_2023.csv"
+
+
+```
+
+
+```{r}
+
+#some packages 
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(
+  dplyr,
+  purrr,
+  ggplot2,
+  ggpubr,
+  tidyr,
+  tidyverse,
+  tinytex,
+  stringr,
+  readr,
+  tinytex,
+  broom)
+
+
+```
+
+```{r cleaning up}
+
+
+#set file path for data - in run info chunk 
+path <- ("file path")
+
+#Read in Raw Data 
+data_NOx <- map(NOx_files, read_csv)
+data_NH3_PO4 <- map(NH3_PO4_files, read_csv)
+
+# Combining Files
+df_combo <- bind_rows(data_NOx, data_NH3_PO4)
+
+# Rename columns
+df_combo_rename <- df_combo %>%
+  rename('Conc' = ...6,
+         'Absorbance' = ...7,
+         'Dilution' = ...9,
+         'Sample_Name' = ...4,
+         'Test' = ...13,
+         'Run_Time' = ...15,
+         'Unit' = ...12, 
+         'Run_Number' = ...5)
+
+#making list to remove columns
+cols_to_remove <- c("RUNSTARTED", "...8", "...10", "...11", "...14")
+
+#Removing columns
+df <- df_combo_rename %>%
+  select(-all_of(cols_to_remove)) %>%
+  select(!c(1,2))%>%
+  select(Sample_Name, Run_Number, Conc, Absorbance, Dilution, Unit, Test, Run_Time)
+
+#Checking column headers
+head(df)
+
+df_all <- df %>%
+  mutate(Run_Number = as.numeric(Run_Number))
+
+```
+
+```{r seperating by month}
+
+df_april <- df_all %>%
+  filter(str_detect(Sample_Name, "202304"))
+
+df_may <- df_all %>%
+  filter(str_detect(Sample_Name, "202305"))
+
+```
+
+```{r exporting as csv}
+
+write.csv(df_april, file_path_april)
+write.csv(df_may, file_path_may)
+write.csv(df_all, file_path_all)
+
+```
+
