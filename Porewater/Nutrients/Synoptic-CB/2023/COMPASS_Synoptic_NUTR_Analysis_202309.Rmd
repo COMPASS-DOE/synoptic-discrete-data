@@ -34,13 +34,14 @@ cat("Run Information: Input by User") #lets you know what section you're in
   final_path <- "Processed Data/COMPASS_Synoptic_Nutrients_202309.xlsx"
 
 #record any notes about the run or anything other info here: 
-  run_notes <- "NOx Blanks are out of range because of the slightly negative y intercept of the standard curve and the dups are out of range becasue of their very low concentrations. AUtospikes for PO4 and NH3 are not estimated for this run, flags reported. Tean pe check concentration for PO4 was the concentration of the last run since it was the latest."
+  run_notes <- "NOx Blanks and Duplicates are out of range due to samples bdl.
+  Autospikes for PO4 and NH3 are not estimated for this run, flags reported." 
   
 #Set up file path for metadata 
   #downloaded metadata csv - downloaded from Google drive as csv for this year
-  #https://docs.google.com/spreadsheets/d/1HCAN0_q6y17x0RUXVzID09hVal-RfwWc/edit?usp=sharing&ouid=108994740386869376571&rtpof=true&sd=true
   Raw_Metadata = "Raw Data/COMPASS_SynopticCB_PW_SampleLog_2023.csv"
 
+  cat(run_notes)
 ```
 
 ##Setup
