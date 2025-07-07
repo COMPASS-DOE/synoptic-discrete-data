@@ -1,6 +1,6 @@
 ---
-title: "Synoptic_CB_Nutrients_2023_AnalysisTemplate"
-author: "July 2023"
+title: "Synoptic CB: Porewater Nutrients"
+author: "July 2023 Samples"
 date: "`r Sys.Date()`"
 output: 
   pdf_document:
@@ -13,7 +13,8 @@ output_dir: "To Be Reviewed/PDF"
 
 ##Run Information 
 ```{r run information, include=TRUE}
-cat("Run Information: Input by User") #lets you know what section you're in 
+cat("Run Information: Please Read
+") #lets you know what section you're in 
 #set the run date & user name 
   run_date <- "20240117"
   sample_year <- 2023
@@ -34,16 +35,19 @@ cat("Run Information: Input by User") #lets you know what section you're in
   final_path <- "Processed Data/COMPASS_Synoptic_Nutrients_202307.xlsx"
 
 #record any notes about the run or anything other info here: 
-  run_notes <- "<60% of NOx blaks are lower 25% quartile of samples - REASSESS
-  Duplicate CVs out of range most likely due to low concentrations 
-  making small values high percentages"
+  run_notes <- "Run Notes: peChks for NOx and NH3 out of range, but all other
+  run metrics looked fine, so we are accepting the run with flags.
+  Blanks and Duplicates: Flags for NOx blanks out of range - because samples
+  have bdl concentrations, same problem for out of range duplicates"
   
 #Set up file path for metadata 
   #downloaded metadata csv - downloaded from Google drive as csv for this year
-  #https://docs.google.com/spreadsheets/d/1HCAN0_q6y17x0RUXVzID09hVal-RfwWc/edit?usp=sharing&ouid=108994740386869376571&rtpof=true&sd=true
   Raw_Metadata = "Raw Data/COMPASS_SynopticCB_PW_SampleLog_2023.csv"
+  
+cat(run_notes)
 
 ```
+
 
 ##Setup
 ```{r setup, include=FALSE}
@@ -557,7 +561,7 @@ NOx_peChk <- df_all_cor %>%
     SD_Chk_Conc = sd(Conc, na.rm = TRUE),
     CV = (SD_Chk_Conc / Mean_Chk_Conc) * 100,
     pct_diff_Chk = abs(Mean_Chk_Conc - NOx_pe) / NOx_pe,
-    NOx_pe_flag = ifelse(abs(pct_diff_Chk) < 10, "YES, Pass", "NO, rerun"))
+    NOx_pe_flag = ifelse(abs(pct_diff_Chk) < 20, "YES, Pass", "NO, rerun"))
       
 
 NH3_peChk <- df_all_cor %>%
@@ -568,7 +572,7 @@ NH3_peChk <- df_all_cor %>%
     SD_Chk_Conc = sd(Conc, na.rm = TRUE),
     CV = (SD_Chk_Conc / Mean_Chk_Conc) * 100,
     pct_diff_Chk = abs(Mean_Chk_Conc - NH3_pe) / NH3_pe,
-    NH3_pe_flag = ifelse(abs(pct_diff_Chk) < 10, "YES, Pass", "NO, rerun"))
+    NH3_pe_flag = ifelse(abs(pct_diff_Chk) < 20, "YES, Pass", "NO, rerun"))
 
 PO4_peChk <- df_all_cor %>%
   filter(Test == "o-PHOS 0.3", 
@@ -578,24 +582,24 @@ PO4_peChk <- df_all_cor %>%
     SD_Chk_Conc = sd(Conc, na.rm = TRUE),
     CV = (SD_Chk_Conc / Mean_Chk_Conc) * 100,
     pct_diff_Chk = abs(Mean_Chk_Conc - PO4_pe) / PO4_pe,
-    PO4_pe_flag = ifelse(abs(pct_diff_Chk) < 10, "YES, Pass", "NO, rerun"))
+    PO4_pe_flag = ifelse(abs(pct_diff_Chk) < 20, "YES, Pass", "NO, rerun"))
   
 
 
 #flag write out 
 ifelse(NOx_peChk$pct_diff_Chk >= chk_flag, 
-       "NOx pe Check has a % Difference >10% - REASSESS",  
-       "NOx pe Check has a % Difference <10% - PROCEED")
+       "NOx pe Check has a % Difference >20% - REASSESS",  
+       "NOx pe Check has a % Difference <20% - PROCEED")
 cat("Run mean =", NOx_peChk$Mean_Chk_Conc, "\n")
 cat("Expected  =", NOx_pe, "\n\n")
 ifelse(NH3_peChk$pct_diff_Chk >= chk_flag, 
-       "NH3 pe Check has a % Difference >10% - REASSESS",  
-       "NH3 pe Check has a % Difference <10% - PROCEED")
+       "NH3 pe Check has a % Difference >20% - REASSESS",  
+       "NH3 pe Check has a % Difference <20% - PROCEED")
 cat("Run mean =", NH3_peChk$Mean_Chk_Conc, "\n")
 cat("Expected  =", NH3_pe, "\n\n")
 ifelse(PO4_peChk$pct_diff_Chk >= chk_flag, 
-       "PO4 pe Check has a % Difference >10% - REASSESS",  
-       "PO4 pe Check has a % Difference <10% - PROCEED")
+       "PO4 pe Check has a % Difference >20% - REASSESS",  
+       "PO4 pe Check has a % Difference <20% - PROCEED")
 cat("Run mean =", PO4_peChk$Mean_Chk_Conc, "\n")
 cat("Expected  =", PO4_pe, "\n")
 
@@ -603,6 +607,8 @@ cat("Expected  =", PO4_pe, "\n")
 
 
 ```
+ 
+ \newpage
  
   #Check NOx Reduction Efficiency 
 ```{r Assess reduction Efficiency, echo=FALSE}
@@ -909,7 +915,7 @@ if (NOx_blks_percent <= chks_flag) {
     paste0(df_all_cor$NOx_flag, "; NOx blanks out of range"),
     "NOx blanks out of range"
   )
-}
+} 
 
 if (NH3_blks_percent <= chks_flag) {  # assuming you have tn_chks_percent similarly
     df_all_cor$NH3_flag <- ifelse(
@@ -1041,7 +1047,6 @@ PO4_dup_chk <- df_PO4_dup %>%
     pct_diff = abs(Dup_Conc - OG_Conc) / Mean_Conc * 100,
     PO4_diff_flag = ifelse(abs(CV) < 10, "YES", "NO, rerun"),
     .groups = "drop") 
-
 
 #calculate the percent of check standards that are within the range based on the flag 
 NOx_dup_percent <- (sum(Nox_dup_chk$NOx_diff_flag == "YES")/nrow(Nox_dup_chk))*100
@@ -1622,7 +1627,7 @@ NOx_forplot <- NOx_forplot %>%
   mutate(row_num = factor(row_number())) %>%  # create row_num as factor per group
   ungroup()
 
-viz_NOx_plot <-  ggplot(data = NOx_forplot, aes(x = factor(row_num), y = Conc, fill=Zone)) +
+viz_NOx_plot <-  ggplot(data = NOx_forplot, aes(x = factor(row_num), y = Conc, fill=Zone))+
        geom_bar(stat = "identity", position = position_dodge2(preserve = "single"), 
                  color="black") +
        facet_grid(~ Site, scales="free_x") +

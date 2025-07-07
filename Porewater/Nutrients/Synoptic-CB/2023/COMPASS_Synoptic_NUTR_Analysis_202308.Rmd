@@ -1,6 +1,6 @@
 ---
-title: "Synoptic_CB_Nutrients_202308"
-author: "August 2023"
+title: "Synoptic CB: Porewater Nutrients"
+author: "August 2023 Samples"
 date: "`r Sys.Date()`"
 output: 
   pdf_document:
@@ -34,13 +34,14 @@ cat("Run Information: Input by User") #lets you know what section you're in
   final_path <- "Processed Data/COMPASS_Synoptic_Nutrients_202308.xlsx"
 
 #record any notes about the run or anything other info here: 
-  run_notes <- "Duplicates are out of range because of detection limit, too small of values"
+  run_notes <- "NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run."
   
 #Set up file path for metadata 
   #downloaded metadata csv - downloaded from Google drive as csv for this year
-  #https://docs.google.com/spreadsheets/d/1HCAN0_q6y17x0RUXVzID09hVal-RfwWc/edit?usp=sharing&ouid=108994740386869376571&rtpof=true&sd=true
   Raw_Metadata = "Raw Data/COMPASS_SynopticCB_PW_SampleLog_2023.csv"
 
+  cat(run_notes)
 ```
 
 \newpage
@@ -55,7 +56,7 @@ cat("Setup")
 
 
 #load/install packages
-if (!require("pacman")) install.packages("pacman")
+#if (!require("pacman")) install.packages("pacman")
 pacman::p_load(
   dplyr,
   purrr,
@@ -67,6 +68,7 @@ pacman::p_load(
   stringr,
   readr,
   tinytex,
+  writexl,
   broom)
 
 #Coefficients / constants that are needed for calculations 
@@ -109,6 +111,7 @@ NOx_pe <- 0.706
 PO4_pe <- 0.818
 
 ```
+
 ##Read in metadata and create similar sample IDs for matching to samples 
 ```{r pull in metadata for later, include=FALSE}
 

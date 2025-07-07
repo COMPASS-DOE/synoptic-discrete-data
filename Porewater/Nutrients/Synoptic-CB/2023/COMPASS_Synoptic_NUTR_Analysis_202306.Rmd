@@ -1,6 +1,6 @@
 ---
-title: "Synoptic_CB_Nutrients_202306"
-author: "June 2023"
+title: "Synoptic CB: Porewater Nutrients"
+author: "June 2023 Samples"
 date: "`r Sys.Date()`"
 output: 
   pdf_document:
@@ -31,11 +31,12 @@ cat("Run Information: Input by User") #lets you know what section you're in
 
 # Define the file path for QAQC log file - NO Need to change just check year 
   file_path <- "Raw Data/SEAL_COMPASS_Synoptic_QAQC_Log_2023.csv"
-  final_path <- "Processed Data/COMPASS_Synoptic_Nutrients_202306.xlsx"
+  final_path <- "Processed Data/COMPASS_Synoptic_Nutrients_202306.csv"
 
 #record any notes about the run or anything other info here: 
   run_notes <- "There are two sample names we suspect were input incorrectly,
-  they are listed below and have been checked against metadata. The metadata from Goodwin ans Sweethall samples is not present."
+  they are listed below and have been checked against metadata.
+  NOx duplicates are out of range due to sample concentrations bdl."
   
 #duplicate sample names to be changed 
   #list the sample iDs that are messed up and create a list 
@@ -56,9 +57,9 @@ cat("Run Information: Input by User") #lets you know what section you're in
   
 #Set up file path for metadata 
   #downloaded metadata csv - downloaded from Google drive as csv for this year
-  #https://docs.google.com/spreadsheets/d/1HCAN0_q6y17x0RUXVzID09hVal-RfwWc/edit?usp=sharing&ouid=108994740386869376571&rtpof=true&sd=true
   Raw_Metadata = "Raw Data/COMPASS_SynopticCB_PW_SampleLog_2023.csv"
 
+cat(run_notes)
 ```
 
 ##Setup
@@ -82,8 +83,6 @@ pacman::p_load(
   tinytex,
   stringr,
   readr,
-  LaTeX,
-  writexl,
   tinytex,
   broom)
 
