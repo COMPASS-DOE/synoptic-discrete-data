@@ -1,0 +1,118 @@
+---
+title: 'Synoptic CB: Collate Porewater Nutrients 2023'
+author: "Stephanie J. Wilson"
+date: "2025-07-08"
+output: pdf_document
+---
+## Set up 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(dplyr)
+library(readr)
+library(lubridate)
+```
+
+## Pull In Data
+
+```{r}
+
+#read in all data from processed data folder 
+files <- list.files(path = "Processed Data", pattern = "\\.csv$", full.names = TRUE)
+list_of_dfs <- lapply(files, read_csv)
+
+#combine those files together into one dataframe 
+combined_df <- bind_rows(list_of_dfs)
+
+combined_df <- combined_df %>%
+  select(-1)
+
+head(combined_df)
+```
+
+## Clean up Data frame for ESS DIVE / Use 
+  #need to work with Steph P to determine set up here 
+
+```{r, echo=FALSE}
+
+#not sure what this will look like just yet 
+
+#create a date column from year, month, date columns
+combined_df <- combined_df %>% 
+  mutate(Date = make_date(year = Year, month = Month, day = Day))
+
+final_df <- combined_df
+
+```
+
+
+## Might be worth calculating some averages and plotting through time as a quick viz?
+
+```{r, echo=FALSE}
+
+final_df <- final_df %>%
+  mutate(Zone = factor(Zone, levels = c("UP","SWAMP","TR","WC","SW")))
+
+levels(final_df$Zone) 
+
+#boxplots of all 2023 data 
+NOx <- ggplot(data = final_df, aes(Zone, NOx_Conc_uM, color = Zone)) + 
+  geom_boxplot() + 
+  facet_grid(~ Site, scales="free_x") +
+        scale_color_manual(values = c("UP" = "#20063B", 
+                                     "TR" = "#FFBC42", 
+                                     "SWAMP" = "darkgrey",
+                                     "WC" = "#419973", 
+                                     "SW" = "#25ABE6")) +
+        theme_classic() + 
+        labs(x= " ", y="Nitrate + Nitrite (uM)", title="Synoptic CB: Porewater NOx") + 
+          theme(legend.position = "none") +
+          scale_x_discrete(drop = TRUE)
+NOx
+
+NH4 <- ggplot(data = final_df, aes(Zone, NH3_Conc_uM, color = Zone)) + 
+  geom_boxplot() + 
+  facet_grid(~ Site, scales="free_x") +
+        scale_color_manual(values = c("UP" = "#20063B", 
+                                     "TR" = "#FFBC42", 
+                                     "SWAMP" = "darkgrey",
+                                     "WC" = "#419973", 
+                                     "SW" = "#25ABE6")) +
+        theme_classic() + 
+        labs(x= " ", y="Ammonium (uM)", title="Synoptic CB: Porewater Ammonium") + 
+          theme(legend.position = "none") +
+          scale_x_discrete(drop = TRUE)
+NH4
+
+PO4 <- ggplot(data = final_df, aes(Zone, PO4_Conc_uM, color = Zone)) + 
+  geom_boxplot() + 
+  facet_grid(~ Site, scales="free_x") +
+        scale_color_manual(values = c("UP" = "#20063B", 
+                                     "TR" = "#FFBC42", 
+                                     "SWAMP" = "darkgrey",
+                                     "WC" = "#419973", 
+                                     "SW" = "#25ABE6")) +
+        theme_classic() + 
+        labs(x= " ", y="Phosphate (uM)", title="Synoptic CB: Porewater Phosphate") + 
+          theme(legend.position = "none") +
+          scale_x_discrete(drop = TRUE)
+PO4
+
+```
+
+
+## Write out the final file with all of the data 
+
+```{r, echo=FALSE}
+
+#write out the csv to the main folder 
+
+write.csv(final_df, "COMPASS_Synoptic_CB_Nutrients_2023.csv")
+
+```
+
+
+
+
+
+

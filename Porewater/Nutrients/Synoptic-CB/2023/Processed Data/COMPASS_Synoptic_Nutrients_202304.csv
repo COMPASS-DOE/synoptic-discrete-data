@@ -1,305 +1,153 @@
 "","Project","Region","Site","Zone","Replicate","Depth_cm","Sample_ID","Year","Month","Day","Time","Time_Zone","NOx_Conc_mgL","NOx_Conc_uM","NOx_Conc_Flag","NOx_QAQC_Flag","NH3_Conc_mgL","NH3_Conc_uM","NH3_Conc_Flag","NH3_QAQC_Flag","PO4_Conc_mgL","PO4_Conc_uM","PO4_Conc_Flag","PO4_QAQC_Flag","Analysis_rundate","Run_notes","Field_notes"
-"1","COMPASS: Synoptic","CB","GCW","SW","A",0,"GCW_202304_SW_A",2023,4,19,NA,NA,0.020381,1.45508935009674,"bdl","NOx r2 low; NOx dups out of range",0.046872,3.34639850928484,"Within_Range","",0.075541,2.4388706802874,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"2","COMPASS: Synoptic","CB","GCW","SW","B",0,"GCW_202304_SW_B",2023,4,19,NA,NA,0.013559,0.968036725281472,"bdl","NOx r2 low; NOx dups out of range",0.013939,0.995166598841983,"bdl","",0.037855,1.22216345563706,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"3","COMPASS: Synoptic","CB","GCW","SW","C",0,"GCW_202304_SW_C",2023,4,19,NA,NA,0.013407,0.957184775857268,"bdl","NOx r2 low; NOx dups out of range",0.104449,7.4570741145309,"Within_Range","",0.064779,2.0914153082212,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"4","COMPASS: Synoptic","CB","GCW","TR","A",10,"GCW_202304_TR_LysA_10cm",2023,4,19,NA,NA,0.010109,0.721726031113681,"bdl","NOx r2 low; NOx dups out of range",0.352631,25.1758801145166,"Within_Range","",0.005954,0.192227214763257,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"5","COMPASS: Synoptic","CB","GCW","TR","A",20,"GCW_202304_TR_LysA_20cm",2023,4,19,NA,NA,0.012501,0.892501445736683,"bdl","NOx r2 low; NOx dups out of range",0.002209,0.157710238671493,"bdl","",0.020493,0.661624506574306,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"6","COMPASS: Synoptic","CB","GCW","TR","A",45,"GCW_202304_TR_LysA_45cm",2023,4,19,NA,NA,0.00805,0.574724953058179,"bdl","NOx r2 low; NOx dups out of range",0.025265,1.8037796197534,"Within_Range","",0.003515,0.113483147445893,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"7","COMPASS: Synoptic","CB","GCW","TR","B",10,"GCW_202304_TR_LysB_10cm",2023,4,19,NA,NA,0.009195,0.656471545760243,"bdl","NOx r2 low; NOx dups out of range",0.57163,40.8111832194593,"Within_Range","",0.011044,0.356559852174237,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"8","COMPASS: Synoptic","CB","GCW","TR","B",20,"GCW_202304_TR_LysB_20cm",2023,4,19,NA,NA,0.008206,0.58586248009881,"bdl","NOx r2 low; NOx dups out of range",0.042787,3.05475236850936,"Within_Range","",0.009605,0.310101175310897,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"9","COMPASS: Synoptic","CB","GCW","TR","B",45,"GCW_202304_TR_LysB_45cm",2023,4,19,NA,NA,0.009821,0.701164442730979,"bdl","NOx r2 low; NOx dups out of range",0.012967,0.925771238050362,"bdl","",0.010533,0.340062017652231,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"10","COMPASS: Synoptic","CB","GCW","TR","C",10,"GCW_202304_TR_LysC_10cm",2023,4,19,NA,NA,0.011979,0.855233566793035,"bdl","NOx r2 low; NOx dups out of range",0,0,"bdl","",0.009851,0.318043381362587,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"11","COMPASS: Synoptic","CB","GCW","TR","C",20,"GCW_202304_TR_LysC_20cm",2023,4,19,NA,NA,0.022741,1.62358014378833,"bdl","NOx r2 low; NOx dups out of range",0.33914,24.2126982087144,"Within_Range","",0.031842,1.02803140283702,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"12","COMPASS: Synoptic","CB","GCW","TR","C",45,"GCW_202304_TR_LysC_45cm",2023,4,19,NA,NA,0.017131,1.22305753675027,"bdl","NOx r2 low; NOx dups out of range",0.017104,1.22112988783939,"bdl","",0.006507,0.210081035684332,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"13","COMPASS: Synoptic","CB","GCW","UP","C",10,"GCW_202304_UP_LysC_10cm",2023,4,19,NA,NA,0.009018,0.643834736233374,"bdl","NOx r2 low; NOx dups out of range",0.022529,1.60844453011773,"Within_Range","",0.003792,0.122426200601658,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"14","COMPASS: Synoptic","CB","GCW","UP","C",20,"GCW_202304_UP_LysC_20cm",2023,4,19,NA,NA,0.008055,0.575081925078712,"bdl","NOx r2 low; NOx dups out of range",0,0,"bdl","",0.019973,0.644836103538214,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"15","COMPASS: Synoptic","CB","GCW","WC","A",10,"GCW_202304_WC_LysA_10cm",2023,4,19,NA,NA,0.017704,1.26396653030335,"bdl","NOx r2 low; NOx dups out of range",0.140183,10.0082817508764,"Within_Range","",0.063588,2.05296340819045,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"16","COMPASS: Synoptic","CB","GCW","WC","A",20,"GCW_202304_WC_LysA_20cm",2023,4,19,NA,NA,0.014095,1.00630412588261,"bdl","NOx r2 low; NOx dups out of range",0.032231,2.30111303876002,"Within_Range","",0.069645,2.24851601817048,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"17","COMPASS: Synoptic","CB","GCW","WC","A",45,"GCW_202304_WC_LysA_45cm",2023,4,19,NA,NA,0.015121,1.07955478449599,"bdl","NOx r2 low; NOx dups out of range",1.461704,104.357486060243,"Within_Range","",0.388595,12.5459413034813,"adl","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"18","COMPASS: Synoptic","CB","GCW","WC","B",10,"GCW_202304_WC_LysB_10cm",2023,4,19,NA,NA,0.014401,1.02815081353923,"bdl","NOx r2 low; NOx dups out of range",0.097795,6.98201574960555,"Within_Range","",0.133846,4.32127037070925,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"19","COMPASS: Synoptic","CB","GCW","WC","B",20,"GCW_202304_WC_LysB_20cm",2023,4,19,NA,NA,0.013664,0.975533137712666,"bdl","NOx r2 low; NOx dups out of range",0.331997,23.7027279801809,"Within_Range","",0.195939,6.32596712017094,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"20","COMPASS: Synoptic","CB","GCW","WC","B",45,"GCW_202304_WC_LysB_45cm",2023,4,19,NA,NA,0.015169,1.08298171589311,"bdl","NOx r2 low; NOx dups out of range",1.669343,119.181748734534,"Within_Range","",0.455037,14.6910472160276,"adl","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"21","COMPASS: Synoptic","CB","GCW","WC","C",10,"GCW_202304_WC_LysC_10cm",2023,4,19,NA,NA,0.013623,0.972605967144295,"bdl","NOx r2 low; NOx dups out of range",0.027958,1.99604475001249,"Within_Range","",0.079555,2.56846423756985,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"22","COMPASS: Synoptic","CB","GCW","WC","C",20,"GCW_202304_WC_LysC_20cm",2023,4,19,NA,NA,0.011947,0.852948945861623,"bdl","NOx r2 low; NOx dups out of range",0.113166,8.07941913512819,"Within_Range","",0.102977,3.32465265278399,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"23","COMPASS: Synoptic","CB","GCW","WC","C",45,"GCW_202304_WC_LysC_45cm",2023,4,19,NA,NA,0.01529,1.09162043879001,"bdl","NOx r2 low; NOx dups out of range",0.254317,18.1568106691797,"Within_Range","",0.249267,8.04768242230311,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"24","COMPASS: Synoptic","CB","GWI","SW","A",0,"GWI_202304_SW_A",2023,4,25,NA,NA,0.003416,0.243883284428167,"bdl","NOx r2 low; NOx dups out of range",0.224756,16.0463206893844,"Within_Range","",0.001808,0.0583719859408747,"bdl","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"25","COMPASS: Synoptic","CB","GWI","SW","B",0,"GWI_202304_SW_B",2023,4,25,NA,NA,0.003841,0.274225906173474,"bdl","NOx r2 low; NOx dups out of range",0.202248,14.4393754417529,"Within_Range","",0.002359,0.0761612360810417,"bdl","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"26","COMPASS: Synoptic","CB","GWI","SW","C",0,"GWI_202304_SW_C",2023,4,25,NA,NA,0.009281,0.662611464513411,"bdl","NOx r2 low; NOx dups out of range",0.205539,14.6743344256677,"Within_Range","",0.002659,0.0858468532172488,"bdl","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"27","COMPASS: Synoptic","CB","GWI","TR","A",10,"GWI_202304_TR_LysA_10cm",2023,4,25,NA,NA,0.014806,1.05706554720241,"bdl","NOx r2 low; NOx dups out of range",0.065811,4.69853712865986,"Within_Range","",0.005149,0.166237475447768,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"28","COMPASS: Synoptic","CB","GWI","TR","A",20,"GWI_202304_TR_LysA_20cm",2023,4,25,NA,NA,0.011665,0.83281572390356,"bdl","NOx r2 low; NOx dups out of range",0.259694,18.540698380061,"Within_Range","",0.010244,0.330731539811018,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"29","COMPASS: Synoptic","CB","GWI","TR","B",10,"GWI_202304_TR_LysB_10cm",2023,4,25,NA,NA,0.012423,0.886932682216368,"bdl","NOx r2 low; NOx dups out of range",0.092028,6.57028422112275,"Within_Range","",0.004486,0.14483226157675,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"30","COMPASS: Synoptic","CB","GWI","TR","B",20,"GWI_202304_TR_LysB_20cm",2023,4,25,NA,NA,0.016812,1.20028272184026,"bdl","NOx r2 low; NOx dups out of range",0.62062,44.3087950766419,"Within_Range","",0.016669,0.53816517347812,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"31","COMPASS: Synoptic","CB","GWI","TR","B",45,"GWI_202304_TR_LysB_45cm",2023,4,25,NA,NA,0.009002,0.642692425767668,"bdl","NOx r2 low; NOx dups out of range",0.658268,46.9966516024474,"Within_Range","",0.01553,0.501392113750987,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"32","COMPASS: Synoptic","CB","GWI","TR","C",10,"GWI_202304_TR_LysC_10cm",2023,4,25,NA,NA,0.013662,0.975390348904453,"bdl","NOx r2 low; NOx dups out of range",0.018747,1.33843089378655,"bdl","",0.00684,0.220832070705522,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"33","COMPASS: Synoptic","CB","GWI","TR","C",20,"GWI_202304_TR_LysC_20cm",2023,4,25,NA,NA,0.00957,0.683244447300221,"bdl","NOx r2 low; NOx dups out of range",0.11656,8.32173174266601,"Within_Range","",0.006955,0.224544890607734,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"34","COMPASS: Synoptic","CB","GWI","TR","C",45,"GWI_202304_TR_LysC_45cm",2023,4,25,NA,NA,0.008375,0.597928134392826,"bdl","NOx r2 low; NOx dups out of range",0.839634,59.9451690976461,"Within_Range","",0.024743,0.798837416003907,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"35","COMPASS: Synoptic","CB","GWI","UP","A",10,"GWI_202304_UP_LysA_10cm",2023,4,25,NA,NA,0.010594,0.756352317105385,"bdl","NOx r2 low; NOx dups out of range",0.034179,2.44018933795969,"Within_Range","",0.030853,0.996101151677991,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"36","COMPASS: Synoptic","CB","GWI","UP","A",45,"GWI_202304_UP_LysA_45cm",2023,4,25,NA,NA,0.011256,0.803615412623959,"bdl","NOx r2 low; NOx dups out of range",0.364523,26.0249023681524,"Within_Range","",0.032648,1.05405342754296,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"37","COMPASS: Synoptic","CB","GWI","UP","B",10,"GWI_202304_UP_LysB_10cm",2023,4,25,NA,NA,NA,NA,NA,"NOx r2 low; NOx dups out of range",0,0,"bdl","",0.049892,1.61078270053215,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"38","COMPASS: Synoptic","CB","GWI","UP","B",20,"GWI_202304_UP_LysB_20cm",2023,4,25,NA,NA,0.01258,0.898141603661105,"bdl","NOx r2 low; NOx dups out of range",0.077937,5.56426567285656,"Within_Range","",0.01348,0.435207063320239,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"39","COMPASS: Synoptic","CB","GWI","UP","B",45,"GWI_202304_UP_LysB_45cm",2023,4,25,NA,NA,0.011968,0.854448228347862,"bdl","NOx r2 low; NOx dups out of range",0.295836,21.1210349332819,"Within_Range","",0.021964,0.709116315932175,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"40","COMPASS: Synoptic","CB","GWI","UP","C",10,"GWI_202304_UP_LysC_10cm",2023,4,25,NA,NA,0.018739,1.33785973855369,"bdl","NOx r2 low; NOx dups out of range",0.181256,12.940664110747,"Within_Range","",0.030477,0.983961844867278,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"41","COMPASS: Synoptic","CB","GWI","UP","C",20,"GWI_202304_UP_LysC_20cm",2023,4,25,NA,NA,0.013522,0.965395132329528,"bdl","NOx r2 low; NOx dups out of range",0.194667,13.8981344642207,"Within_Range","",0.032746,1.05721739580746,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"42","COMPASS: Synoptic","CB","GWI","WC","A",10,"GWI_202304_WC_LysA_10cm",2023,4,25,NA,NA,0.007987,0.570227105599463,"bdl","NOx r2 low; NOx dups out of range",0.146768,10.4784139019184,"Within_Range","",0.009573,0.309068042816368,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"43","COMPASS: Synoptic","CB","GWI","WC","A",20,"GWI_202304_WC_LysA_20cm",2023,4,25,NA,NA,0.011812,0.843310701307231,"bdl","NOx r2 low; NOx dups out of range",0.367494,26.2370151427531,"Within_Range","",0.016655,0.537713178011764,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"44","COMPASS: Synoptic","CB","GWI","WC","A",45,"GWI_202304_WC_LysA_45cm",2023,4,25,NA,NA,0.00809,0.577580729222444,"bdl","NOx r2 low; NOx dups out of range",0.760386,54.2873053610058,"Within_Range","",0.02114,0.68251315419806,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"45","COMPASS: Synoptic","CB","GWI","WC","B",10,"GWI_202304_WC_LysB_10cm",2023,4,25,NA,NA,0.008676,0.619417850028915,"bdl","NOx r2 low; NOx dups out of range",0.152067,10.8567328492793,"Within_Range","",0.011259,0.363501211121852,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"46","COMPASS: Synoptic","CB","GWI","WC","B",20,"GWI_202304_WC_LysB_20cm",2023,4,25,NA,NA,0.007553,0.539241934217196,"bdl","NOx r2 low; NOx dups out of range",0.257451,18.3805607316499,"Within_Range","",0.014388,0.464522197852492,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"47","COMPASS: Synoptic","CB","GWI","WC","B",45,"GWI_202304_WC_LysB_45cm",2023,4,25,NA,NA,0.010274,0.733506107791271,"bdl","NOx r2 low; NOx dups out of range",0.678139,48.4153298064498,"Within_Range","",0.021542,0.695491881160577,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"48","COMPASS: Synoptic","CB","GWI","WC","C",10,"GWI_202304_WC_LysC_10cm",2023,4,25,NA,NA,0.01237,0.883148778798718,"bdl","NOx r2 low; NOx dups out of range",0.299051,21.3505679424847,"Within_Range","",0.013971,0.451059190033164,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"49","COMPASS: Synoptic","CB","GWI","WC","C",20,"GWI_202304_WC_LysC_20cm",2023,4,25,NA,NA,0.015656,1.11775079069303,"bdl","NOx r2 low; NOx dups out of range",0.326966,23.3435427331206,"Within_Range","",0.008133,0.262577080562574,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"50","COMPASS: Synoptic","CB","MSM","SW","A",0,"MSM_202304_SW_A",2023,4,24,NA,NA,0.009886,0.705805078997908,"bdl","NOx r2 low; NOx dups out of range",0.152359,10.8775800152784,"Within_Range","",0.001987,0.064151070832145,"bdl","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"51","COMPASS: Synoptic","CB","MSM","SW","B",0,"MSM_202304_SW_B",2023,4,24,NA,NA,0.009778,0.698094483354395,"bdl","NOx r2 low; NOx dups out of range",0.157535,11.2471174509342,"Within_Range","",0.001303,0.0420678637615928,"bdl","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"52","COMPASS: Synoptic","CB","MSM","SW","C",0,"MSM_202304_SW_C",2023,4,24,NA,NA,0.011538,0.823748634582022,"bdl","NOx r2 low; NOx dups out of range",0.138848,9.91297022139405,"Within_Range","",0.001743,0.0562734355613632,"bdl","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"53","COMPASS: Synoptic","CB","MSM","TR","A",10,"MSM_202304_TR_LysA_10cm",2023,4,24,NA,NA,0.006582,0.469917967829681,"bdl","NOx r2 low; NOx dups out of range",0.061516,4.39189816302198,"Within_Range","",0.008046,0.259768251593074,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"54","COMPASS: Synoptic","CB","MSM","TR","A",20,"MSM_202304_TR_LysA_20cm",2023,4,24,NA,NA,0.000314,0.0224178428894743,"bdl","NOx r2 low; NOx dups out of range",1.655024,118.159452262132,"Within_Range","",0.018583,0.599959410807121,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"55","COMPASS: Synoptic","CB","MSM","TR","A",45,"MSM_202304_TR_LysA_45cm",2023,4,24,NA,NA,0.002479,0.176986727780277,"bdl","NOx r2 low; NOx dups out of range",1.101478,78.6393654465363,"Within_Range","",0.04142,1.33726087260566,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"56","COMPASS: Synoptic","CB","MSM","TR","B",10,"MSM_202304_TR_LysB_10cm",2023,4,24,NA,NA,0.012625,0.901354351845902,"bdl","NOx r2 low; NOx dups out of range",0.173016,12.3523742209086,"Within_Range","",0.009732,0.314201419898558,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"57","COMPASS: Synoptic","CB","MSM","TR","B",20,"MSM_202304_TR_LysB_20cm",2023,4,24,NA,NA,0.002713,0.193693018341222,"bdl","NOx r2 low; NOx dups out of range",1.141872,81.5232710060185,"Within_Range","",0.010759,0.34735851589484,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"58","COMPASS: Synoptic","CB","MSM","TR","B",45,"MSM_202304_TR_LysB_45cm",2023,4,24,NA,NA,0.00469,0.334839755259983,"bdl","NOx r2 low; NOx dups out of range",1.508024,107.664474858461,"Within_Range","",0.022875,0.738528306635791,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"59","COMPASS: Synoptic","CB","MSM","TR","C",10,"MSM_202304_TR_LysC_10cm",2023,4,24,NA,NA,0.004958,0.353973455560553,"bdl","NOx r2 low; NOx dups out of range",0.395239,28.2178528846909,"Within_Range","",0.010315,0.333023802533254,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"60","COMPASS: Synoptic","CB","MSM","TR","C",20,"MSM_202304_TR_LysC_20cm",2023,4,24,NA,NA,0.002296,0.163921551828768,"bdl","NOx r2 low; NOx dups out of range",1.768716,126.27642485382,"Within_Range","",0.017241,0.556632416817821,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"61","COMPASS: Synoptic","CB","MSM","TR","C",45,"MSM_202304_TR_LysC_45cm",2023,4,24,NA,NA,0.001937,0.138290960754496,"bdl","NOx r2 low; NOx dups out of range",1.6932,120.885005033305,"Within_Range","",0.040908,1.3207307526932,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"62","COMPASS: Synoptic","CB","MSM","UP","A",20,"MSM_202304_UP_LysA_20cm",2023,4,24,NA,NA,0.006471,0.461993188973848,"bdl","NOx r2 low; NOx dups out of range",1.293663,92.3602989997644,"Within_Range","",0.009653,0.31165087405269,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"63","COMPASS: Synoptic","CB","MSM","UP","A",45,"MSM_202304_UP_LysA_45cm",2023,4,24,NA,NA,0.006773,0.483554299014043,"bdl","NOx r2 low; NOx dups out of range",1.180041,84.2483240163636,"Within_Range","",0.02076,0.670244705825531,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"64","COMPASS: Synoptic","CB","MSM","UP","B",10,"MSM_202304_UP_LysB_10cm",2023,4,24,NA,NA,0.003985,0.284506700364825,"bdl","NOx r2 low; NOx dups out of range",0.055432,3.95753460843739,"Within_Range","",0.004005,0.129302988768365,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"65","COMPASS: Synoptic","CB","MSM","UP","B",20,"MSM_202304_UP_LysB_20cm",2023,4,24,NA,NA,0.007757,0.553806392654944,"bdl","NOx r2 low; NOx dups out of range",0.310648,22.178528846909,"Within_Range","",0.003886,0.125461027304336,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"66","COMPASS: Synoptic","CB","MSM","UP","B",45,"MSM_202304_UP_LysB_45cm",2023,4,24,NA,NA,0.006868,0.490336767404171,"bdl","NOx r2 low; NOx dups out of range",0.651014,46.4787565950581,"Within_Range","",0.015691,0.506590061614085,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"67","COMPASS: Synoptic","CB","MSM","UP","C",10,"MSM_202304_UP_LysC_10cm",2023,4,24,NA,NA,0.00783,0.559018184154726,"bdl","NOx r2 low; NOx dups out of range",0.411369,29.3694446229305,"Within_Range","",0.007038,0.227224578015418,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"68","COMPASS: Synoptic","CB","MSM","UP","C",20,"MSM_202304_UP_LysC_20cm",2023,4,24,NA,NA,0.008553,0.610636338323802,"bdl","NOx r2 low; NOx dups out of range",1.412201,100.823248873753,"Within_Range","",0.008676,0.280108047579109,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"69","COMPASS: Synoptic","CB","MSM","WC","A",10,"MSM_202304_WC_LysA_10cm",2023,4,24,NA,NA,0.00588,0.419799096146844,"bdl","NOx r2 low; NOx dups out of range",0,0,"bdl","",0.004981,0.160813529851492,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"70","COMPASS: Synoptic","CB","MSM","WC","A",20,"MSM_202304_WC_LysA_20cm",2023,4,24,NA,NA,0.004349,0.31049426345963,"bdl","NOx r2 low; NOx dups out of range",0.37939,27.0863229740053,"Within_Range","",0.021894,0.706856338600393,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"71","COMPASS: Synoptic","CB","MSM","WC","A",45,"MSM_202304_WC_LysA_45cm",2023,4,24,NA,NA,0.004859,0.346905409553999,"bdl","NOx r2 low; NOx dups out of range",0.264459,18.8808927156289,"Within_Range","",0.019676,0.635247342573369,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"72","COMPASS: Synoptic","CB","MSM","WC","B",10,"MSM_202304_WC_LysB_10cm",2023,4,24,NA,NA,NA,NA,NA,"NOx r2 low; NOx dups out of range",0.179774,12.834857603861,"Within_Range","",0.022691,0.73258779479225,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"73","COMPASS: Synoptic","CB","MSM","WC","B",20,"MSM_202304_WC_LysB_20cm",2023,4,24,NA,NA,0.002097,0.149714065411553,"bdl","NOx r2 low; NOx dups out of range",0.199648,14.2537499910757,"Within_Range","",0.036642,1.18300127701633,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"74","COMPASS: Synoptic","CB","MSM","WC","C",10,"MSM_202304_WC_LysC_10cm",2023,4,24,NA,NA,0.001222,0.0872439618182727,"bdl","NOx r2 low; NOx dups out of range",0.331774,23.6868070280651,"Within_Range","",0.023865,0.770490843185274,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"75","COMPASS: Synoptic","CB","MSM","WC","C",20,"MSM_202304_WC_LysC_20cm",2023,4,24,NA,NA,0.006694,0.477914141089621,"bdl","NOx r2 low; NOx dups out of range",1.153183,82.3308131108684,"Within_Range","",0.057651,1.86128504506492,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
-"76","COMPASS: Synoptic","CB","MSM","WC","C",45,"MSM_202304_WC_LysC_45cm",2023,4,24,NA,NA,0.00766,0.546881135456603,"bdl","NOx r2 low; NOx dups out of range",1.437025,102.595543561296,"Within_Range","",0.013784,0.445021822018262,"Within_Range","","20230604","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.
-  NOx duplicates out of range due to low sample concentrations.
-  ",""
+"1","COMPASS: Synoptic","CB","GCW","SW","A",0,"GCW_202304_SW_A",2023,4,19,NA,NA,0.020381,1.45508935009674,"bdl","NOx r2 low",0.046872,3.34639850928484,"Within_Range","",0.075541,2.4388706802874,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"2","COMPASS: Synoptic","CB","GCW","SW","B",0,"GCW_202304_SW_B",2023,4,19,NA,NA,0.013559,0.968036725281472,"bdl","NOx r2 low",0.013939,0.995166598841983,"bdl","",0.037855,1.22216345563706,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"3","COMPASS: Synoptic","CB","GCW","SW","C",0,"GCW_202304_SW_C",2023,4,19,NA,NA,0.013407,0.957184775857268,"bdl","NOx r2 low",0.104449,7.4570741145309,"Within_Range","",0.064779,2.0914153082212,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"4","COMPASS: Synoptic","CB","GCW","TR","A",10,"GCW_202304_TR_LysA_10cm",2023,4,19,NA,NA,0.010109,0.721726031113681,"bdl","NOx r2 low",0.352631,25.1758801145166,"Within_Range","",0.005954,0.192227214763257,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"5","COMPASS: Synoptic","CB","GCW","TR","A",20,"GCW_202304_TR_LysA_20cm",2023,4,19,NA,NA,0.012501,0.892501445736683,"bdl","NOx r2 low",0.002209,0.157710238671493,"bdl","",0.020493,0.661624506574306,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"6","COMPASS: Synoptic","CB","GCW","TR","A",45,"GCW_202304_TR_LysA_45cm",2023,4,19,NA,NA,0.00805,0.574724953058179,"bdl","NOx r2 low",0.025265,1.8037796197534,"Within_Range","",0.003515,0.113483147445893,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"7","COMPASS: Synoptic","CB","GCW","TR","B",10,"GCW_202304_TR_LysB_10cm",2023,4,19,NA,NA,0.009195,0.656471545760243,"bdl","NOx r2 low",0.57163,40.8111832194593,"Within_Range","",0.011044,0.356559852174237,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"8","COMPASS: Synoptic","CB","GCW","TR","B",20,"GCW_202304_TR_LysB_20cm",2023,4,19,NA,NA,0.008206,0.58586248009881,"bdl","NOx r2 low",0.042787,3.05475236850936,"Within_Range","",0.009605,0.310101175310897,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"9","COMPASS: Synoptic","CB","GCW","TR","B",45,"GCW_202304_TR_LysB_45cm",2023,4,19,NA,NA,0.009821,0.701164442730979,"bdl","NOx r2 low",0.012967,0.925771238050362,"bdl","",0.010533,0.340062017652231,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"10","COMPASS: Synoptic","CB","GCW","TR","C",10,"GCW_202304_TR_LysC_10cm",2023,4,19,NA,NA,0.011979,0.855233566793035,"bdl","NOx r2 low",0,0,"bdl","",0.009851,0.318043381362587,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"11","COMPASS: Synoptic","CB","GCW","TR","C",20,"GCW_202304_TR_LysC_20cm",2023,4,19,NA,NA,0.022741,1.62358014378833,"bdl","NOx r2 low",0.33914,24.2126982087144,"Within_Range","",0.031842,1.02803140283702,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"12","COMPASS: Synoptic","CB","GCW","TR","C",45,"GCW_202304_TR_LysC_45cm",2023,4,19,NA,NA,0.017131,1.22305753675027,"bdl","NOx r2 low",0.017104,1.22112988783939,"bdl","",0.006507,0.210081035684332,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"13","COMPASS: Synoptic","CB","GCW","UP","C",10,"GCW_202304_UP_LysC_10cm",2023,4,19,NA,NA,0.009018,0.643834736233374,"bdl","NOx r2 low",0.022529,1.60844453011773,"Within_Range","",0.003792,0.122426200601658,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"14","COMPASS: Synoptic","CB","GCW","UP","C",20,"GCW_202304_UP_LysC_20cm",2023,4,19,NA,NA,0.008055,0.575081925078712,"bdl","NOx r2 low",0,0,"bdl","",0.019973,0.644836103538214,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"15","COMPASS: Synoptic","CB","GCW","WC","A",10,"GCW_202304_WC_LysA_10cm",2023,4,19,NA,NA,0.017704,1.26396653030335,"bdl","NOx r2 low",0.140183,10.0082817508764,"Within_Range","",0.063588,2.05296340819045,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"16","COMPASS: Synoptic","CB","GCW","WC","A",20,"GCW_202304_WC_LysA_20cm",2023,4,19,NA,NA,0.014095,1.00630412588261,"bdl","NOx r2 low",0.032231,2.30111303876002,"Within_Range","",0.069645,2.24851601817048,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"17","COMPASS: Synoptic","CB","GCW","WC","A",45,"GCW_202304_WC_LysA_45cm",2023,4,19,NA,NA,0.015121,1.07955478449599,"bdl","NOx r2 low",1.461704,104.357486060243,"Within_Range","",0.388595,12.5459413034813,"adl","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"18","COMPASS: Synoptic","CB","GCW","WC","B",10,"GCW_202304_WC_LysB_10cm",2023,4,19,NA,NA,0.014401,1.02815081353923,"bdl","NOx r2 low",0.097795,6.98201574960555,"Within_Range","",0.133846,4.32127037070925,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"19","COMPASS: Synoptic","CB","GCW","WC","B",20,"GCW_202304_WC_LysB_20cm",2023,4,19,NA,NA,0.013664,0.975533137712666,"bdl","NOx r2 low",0.331997,23.7027279801809,"Within_Range","",0.195939,6.32596712017094,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"20","COMPASS: Synoptic","CB","GCW","WC","B",45,"GCW_202304_WC_LysB_45cm",2023,4,19,NA,NA,0.015169,1.08298171589311,"bdl","NOx r2 low",1.669343,119.181748734534,"Within_Range","",0.455037,14.6910472160276,"adl","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"21","COMPASS: Synoptic","CB","GCW","WC","C",10,"GCW_202304_WC_LysC_10cm",2023,4,19,NA,NA,0.013623,0.972605967144295,"bdl","NOx r2 low",0.027958,1.99604475001249,"Within_Range","",0.079555,2.56846423756985,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"22","COMPASS: Synoptic","CB","GCW","WC","C",20,"GCW_202304_WC_LysC_20cm",2023,4,19,NA,NA,0.011947,0.852948945861623,"bdl","NOx r2 low",0.113166,8.07941913512819,"Within_Range","",0.102977,3.32465265278399,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"23","COMPASS: Synoptic","CB","GCW","WC","C",45,"GCW_202304_WC_LysC_45cm",2023,4,19,NA,NA,0.01529,1.09162043879001,"bdl","NOx r2 low",0.254317,18.1568106691797,"Within_Range","",0.249267,8.04768242230311,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"24","COMPASS: Synoptic","CB","GWI","SW","A",0,"GWI_202304_SW_A",2023,4,25,NA,NA,0.003416,0.243883284428167,"bdl","NOx r2 low",0.224756,16.0463206893844,"Within_Range","",0.001808,0.0583719859408747,"bdl","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"25","COMPASS: Synoptic","CB","GWI","SW","B",0,"GWI_202304_SW_B",2023,4,25,NA,NA,0.003841,0.274225906173474,"bdl","NOx r2 low",0.202248,14.4393754417529,"Within_Range","",0.002359,0.0761612360810417,"bdl","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"26","COMPASS: Synoptic","CB","GWI","SW","C",0,"GWI_202304_SW_C",2023,4,25,NA,NA,0.009281,0.662611464513411,"bdl","NOx r2 low",0.205539,14.6743344256677,"Within_Range","",0.002659,0.0858468532172488,"bdl","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"27","COMPASS: Synoptic","CB","GWI","TR","A",10,"GWI_202304_TR_LysA_10cm",2023,4,25,NA,NA,0.014806,1.05706554720241,"bdl","NOx r2 low",0.065811,4.69853712865986,"Within_Range","",0.005149,0.166237475447768,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"28","COMPASS: Synoptic","CB","GWI","TR","A",20,"GWI_202304_TR_LysA_20cm",2023,4,25,NA,NA,0.011665,0.83281572390356,"bdl","NOx r2 low",0.259694,18.540698380061,"Within_Range","",0.010244,0.330731539811018,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"29","COMPASS: Synoptic","CB","GWI","TR","B",10,"GWI_202304_TR_LysB_10cm",2023,4,25,NA,NA,0.012423,0.886932682216368,"bdl","NOx r2 low",0.092028,6.57028422112275,"Within_Range","",0.004486,0.14483226157675,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"30","COMPASS: Synoptic","CB","GWI","TR","B",20,"GWI_202304_TR_LysB_20cm",2023,4,25,NA,NA,0.016812,1.20028272184026,"bdl","NOx r2 low",0.62062,44.3087950766419,"Within_Range","",0.016669,0.53816517347812,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"31","COMPASS: Synoptic","CB","GWI","TR","B",45,"GWI_202304_TR_LysB_45cm",2023,4,25,NA,NA,0.009002,0.642692425767668,"bdl","NOx r2 low",0.658268,46.9966516024474,"Within_Range","",0.01553,0.501392113750987,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"32","COMPASS: Synoptic","CB","GWI","TR","C",10,"GWI_202304_TR_LysC_10cm",2023,4,25,NA,NA,0.013662,0.975390348904453,"bdl","NOx r2 low",0.018747,1.33843089378655,"bdl","",0.00684,0.220832070705522,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"33","COMPASS: Synoptic","CB","GWI","TR","C",20,"GWI_202304_TR_LysC_20cm",2023,4,25,NA,NA,0.00957,0.683244447300221,"bdl","NOx r2 low",0.11656,8.32173174266601,"Within_Range","",0.006955,0.224544890607734,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"34","COMPASS: Synoptic","CB","GWI","TR","C",45,"GWI_202304_TR_LysC_45cm",2023,4,25,NA,NA,0.008375,0.597928134392826,"bdl","NOx r2 low",0.839634,59.9451690976461,"Within_Range","",0.024743,0.798837416003907,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"35","COMPASS: Synoptic","CB","GWI","UP","A",10,"GWI_202304_UP_LysA_10cm",2023,4,25,NA,NA,0.010594,0.756352317105385,"bdl","NOx r2 low",0.034179,2.44018933795969,"Within_Range","",0.030853,0.996101151677991,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"36","COMPASS: Synoptic","CB","GWI","UP","A",45,"GWI_202304_UP_LysA_45cm",2023,4,25,NA,NA,0.011256,0.803615412623959,"bdl","NOx r2 low",0.364523,26.0249023681524,"Within_Range","",0.032648,1.05405342754296,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"37","COMPASS: Synoptic","CB","GWI","UP","B",10,"GWI_202304_UP_LysB_10cm",2023,4,25,NA,NA,NA,NA,NA,"NOx r2 low",0,0,"bdl","",0.049892,1.61078270053215,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"38","COMPASS: Synoptic","CB","GWI","UP","B",20,"GWI_202304_UP_LysB_20cm",2023,4,25,NA,NA,0.01258,0.898141603661105,"bdl","NOx r2 low",0.077937,5.56426567285656,"Within_Range","",0.01348,0.435207063320239,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"39","COMPASS: Synoptic","CB","GWI","UP","B",45,"GWI_202304_UP_LysB_45cm",2023,4,25,NA,NA,0.011968,0.854448228347862,"bdl","NOx r2 low",0.295836,21.1210349332819,"Within_Range","",0.021964,0.709116315932175,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"40","COMPASS: Synoptic","CB","GWI","UP","C",10,"GWI_202304_UP_LysC_10cm",2023,4,25,NA,NA,0.018739,1.33785973855369,"bdl","NOx r2 low",0.181256,12.940664110747,"Within_Range","",0.030477,0.983961844867278,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"41","COMPASS: Synoptic","CB","GWI","UP","C",20,"GWI_202304_UP_LysC_20cm",2023,4,25,NA,NA,0.013522,0.965395132329528,"bdl","NOx r2 low",0.194667,13.8981344642207,"Within_Range","",0.032746,1.05721739580746,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"42","COMPASS: Synoptic","CB","GWI","WC","A",10,"GWI_202304_WC_LysA_10cm",2023,4,25,NA,NA,0.007987,0.570227105599463,"bdl","NOx r2 low",0.146768,10.4784139019184,"Within_Range","",0.009573,0.309068042816368,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"43","COMPASS: Synoptic","CB","GWI","WC","A",20,"GWI_202304_WC_LysA_20cm",2023,4,25,NA,NA,0.011812,0.843310701307231,"bdl","NOx r2 low",0.367494,26.2370151427531,"Within_Range","",0.016655,0.537713178011764,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"44","COMPASS: Synoptic","CB","GWI","WC","A",45,"GWI_202304_WC_LysA_45cm",2023,4,25,NA,NA,0.00809,0.577580729222444,"bdl","NOx r2 low",0.760386,54.2873053610058,"Within_Range","",0.02114,0.68251315419806,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"45","COMPASS: Synoptic","CB","GWI","WC","B",10,"GWI_202304_WC_LysB_10cm",2023,4,25,NA,NA,0.008676,0.619417850028915,"bdl","NOx r2 low",0.152067,10.8567328492793,"Within_Range","",0.011259,0.363501211121852,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"46","COMPASS: Synoptic","CB","GWI","WC","B",20,"GWI_202304_WC_LysB_20cm",2023,4,25,NA,NA,0.007553,0.539241934217196,"bdl","NOx r2 low",0.257451,18.3805607316499,"Within_Range","",0.014388,0.464522197852492,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"47","COMPASS: Synoptic","CB","GWI","WC","B",45,"GWI_202304_WC_LysB_45cm",2023,4,25,NA,NA,0.010274,0.733506107791271,"bdl","NOx r2 low",0.678139,48.4153298064498,"Within_Range","",0.021542,0.695491881160577,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"48","COMPASS: Synoptic","CB","GWI","WC","C",10,"GWI_202304_WC_LysC_10cm",2023,4,25,NA,NA,0.01237,0.883148778798718,"bdl","NOx r2 low",0.299051,21.3505679424847,"Within_Range","",0.013971,0.451059190033164,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"49","COMPASS: Synoptic","CB","GWI","WC","C",20,"GWI_202304_WC_LysC_20cm",2023,4,25,NA,NA,0.015656,1.11775079069303,"bdl","NOx r2 low",0.326966,23.3435427331206,"Within_Range","",0.008133,0.262577080562574,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"50","COMPASS: Synoptic","CB","MSM","SW","A",0,"MSM_202304_SW_A",2023,4,24,NA,NA,0.009886,0.705805078997908,"bdl","NOx r2 low",0.152359,10.8775800152784,"Within_Range","",0.001987,0.064151070832145,"bdl","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"51","COMPASS: Synoptic","CB","MSM","SW","B",0,"MSM_202304_SW_B",2023,4,24,NA,NA,0.009778,0.698094483354395,"bdl","NOx r2 low",0.157535,11.2471174509342,"Within_Range","",0.001303,0.0420678637615928,"bdl","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"52","COMPASS: Synoptic","CB","MSM","SW","C",0,"MSM_202304_SW_C",2023,4,24,NA,NA,0.011538,0.823748634582022,"bdl","NOx r2 low",0.138848,9.91297022139405,"Within_Range","",0.001743,0.0562734355613632,"bdl","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"53","COMPASS: Synoptic","CB","MSM","TR","A",10,"MSM_202304_TR_LysA_10cm",2023,4,24,NA,NA,0.006582,0.469917967829681,"bdl","NOx r2 low",0.061516,4.39189816302198,"Within_Range","",0.008046,0.259768251593074,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"54","COMPASS: Synoptic","CB","MSM","TR","A",20,"MSM_202304_TR_LysA_20cm",2023,4,24,NA,NA,0.000314,0.0224178428894743,"bdl","NOx r2 low",1.655024,118.159452262132,"Within_Range","",0.018583,0.599959410807121,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"55","COMPASS: Synoptic","CB","MSM","TR","A",45,"MSM_202304_TR_LysA_45cm",2023,4,24,NA,NA,0.002479,0.176986727780277,"bdl","NOx r2 low",1.101478,78.6393654465363,"Within_Range","",0.04142,1.33726087260566,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"56","COMPASS: Synoptic","CB","MSM","TR","B",10,"MSM_202304_TR_LysB_10cm",2023,4,24,NA,NA,0.012625,0.901354351845902,"bdl","NOx r2 low",0.173016,12.3523742209086,"Within_Range","",0.009732,0.314201419898558,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"57","COMPASS: Synoptic","CB","MSM","TR","B",20,"MSM_202304_TR_LysB_20cm",2023,4,24,NA,NA,0.002713,0.193693018341222,"bdl","NOx r2 low",1.141872,81.5232710060185,"Within_Range","",0.010759,0.34735851589484,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"58","COMPASS: Synoptic","CB","MSM","TR","B",45,"MSM_202304_TR_LysB_45cm",2023,4,24,NA,NA,0.00469,0.334839755259983,"bdl","NOx r2 low",1.508024,107.664474858461,"Within_Range","",0.022875,0.738528306635791,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"59","COMPASS: Synoptic","CB","MSM","TR","C",10,"MSM_202304_TR_LysC_10cm",2023,4,24,NA,NA,0.004958,0.353973455560553,"bdl","NOx r2 low",0.395239,28.2178528846909,"Within_Range","",0.010315,0.333023802533254,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"60","COMPASS: Synoptic","CB","MSM","TR","C",20,"MSM_202304_TR_LysC_20cm",2023,4,24,NA,NA,0.002296,0.163921551828768,"bdl","NOx r2 low",1.768716,126.27642485382,"Within_Range","",0.017241,0.556632416817821,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"61","COMPASS: Synoptic","CB","MSM","TR","C",45,"MSM_202304_TR_LysC_45cm",2023,4,24,NA,NA,0.001937,0.138290960754496,"bdl","NOx r2 low",1.6932,120.885005033305,"Within_Range","",0.040908,1.3207307526932,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"62","COMPASS: Synoptic","CB","MSM","UP","A",20,"MSM_202304_UP_LysA_20cm",2023,4,24,NA,NA,0.006471,0.461993188973848,"bdl","NOx r2 low",1.293663,92.3602989997644,"Within_Range","",0.009653,0.31165087405269,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"63","COMPASS: Synoptic","CB","MSM","UP","A",45,"MSM_202304_UP_LysA_45cm",2023,4,24,NA,NA,0.006773,0.483554299014043,"bdl","NOx r2 low",1.180041,84.2483240163636,"Within_Range","",0.02076,0.670244705825531,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"64","COMPASS: Synoptic","CB","MSM","UP","B",10,"MSM_202304_UP_LysB_10cm",2023,4,24,NA,NA,0.003985,0.284506700364825,"bdl","NOx r2 low",0.055432,3.95753460843739,"Within_Range","",0.004005,0.129302988768365,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"65","COMPASS: Synoptic","CB","MSM","UP","B",20,"MSM_202304_UP_LysB_20cm",2023,4,24,NA,NA,0.007757,0.553806392654944,"bdl","NOx r2 low",0.310648,22.178528846909,"Within_Range","",0.003886,0.125461027304336,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"66","COMPASS: Synoptic","CB","MSM","UP","B",45,"MSM_202304_UP_LysB_45cm",2023,4,24,NA,NA,0.006868,0.490336767404171,"bdl","NOx r2 low",0.651014,46.4787565950581,"Within_Range","",0.015691,0.506590061614085,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"67","COMPASS: Synoptic","CB","MSM","UP","C",10,"MSM_202304_UP_LysC_10cm",2023,4,24,NA,NA,0.00783,0.559018184154726,"bdl","NOx r2 low",0.411369,29.3694446229305,"Within_Range","",0.007038,0.227224578015418,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"68","COMPASS: Synoptic","CB","MSM","UP","C",20,"MSM_202304_UP_LysC_20cm",2023,4,24,NA,NA,0.008553,0.610636338323802,"bdl","NOx r2 low",1.412201,100.823248873753,"Within_Range","",0.008676,0.280108047579109,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"69","COMPASS: Synoptic","CB","MSM","WC","A",10,"MSM_202304_WC_LysA_10cm",2023,4,24,NA,NA,0.00588,0.419799096146844,"bdl","NOx r2 low",0,0,"bdl","",0.004981,0.160813529851492,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"70","COMPASS: Synoptic","CB","MSM","WC","A",20,"MSM_202304_WC_LysA_20cm",2023,4,24,NA,NA,0.004349,0.31049426345963,"bdl","NOx r2 low",0.37939,27.0863229740053,"Within_Range","",0.021894,0.706856338600393,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"71","COMPASS: Synoptic","CB","MSM","WC","A",45,"MSM_202304_WC_LysA_45cm",2023,4,24,NA,NA,0.004859,0.346905409553999,"bdl","NOx r2 low",0.264459,18.8808927156289,"Within_Range","",0.019676,0.635247342573369,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"72","COMPASS: Synoptic","CB","MSM","WC","B",10,"MSM_202304_WC_LysB_10cm",2023,4,24,NA,NA,NA,NA,NA,"NOx r2 low",0.179774,12.834857603861,"Within_Range","",0.022691,0.73258779479225,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"73","COMPASS: Synoptic","CB","MSM","WC","B",20,"MSM_202304_WC_LysB_20cm",2023,4,24,NA,NA,0.002097,0.149714065411553,"bdl","NOx r2 low",0.199648,14.2537499910757,"Within_Range","",0.036642,1.18300127701633,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"74","COMPASS: Synoptic","CB","MSM","WC","C",10,"MSM_202304_WC_LysC_10cm",2023,4,24,NA,NA,0.001222,0.0872439618182727,"bdl","NOx r2 low",0.331774,23.6868070280651,"Within_Range","",0.023865,0.770490843185274,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"75","COMPASS: Synoptic","CB","MSM","WC","C",20,"MSM_202304_WC_LysC_20cm",2023,4,24,NA,NA,0.006694,0.477914141089621,"bdl","NOx r2 low",1.153183,82.3308131108684,"Within_Range","",0.057651,1.86128504506492,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"76","COMPASS: Synoptic","CB","MSM","WC","C",45,"MSM_202304_WC_LysC_45cm",2023,4,24,NA,NA,0.00766,0.546881135456603,"bdl","NOx r2 low",1.437025,102.595543561296,"Within_Range","",0.013784,0.445021822018262,"Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""

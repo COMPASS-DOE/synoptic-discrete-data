@@ -1,6 +1,6 @@
 ---
-title: "Synoptic_CB_Nutrients_202305"
-author: "May 2023"
+title: "Synoptic CB: Porewater Nutrients"
+author: "May 2023 - DO NOT RUN REQUIRES SAMPLE RERUNS"
 date: "`r Sys.Date()`"
 output: 
   pdf_document:
@@ -10,7 +10,7 @@ output_dir: "Run Summaries To Review"
 ---
 
 ##Run Information 
-```{r run information, include=TRUE}
+```#{r run information, include=TRUE}
 cat("Run Information: Isabelle Van Benschoten") #lets you know what section you're in 
 #set the run date & user name 
   run_date <- "20230603/20230111"
