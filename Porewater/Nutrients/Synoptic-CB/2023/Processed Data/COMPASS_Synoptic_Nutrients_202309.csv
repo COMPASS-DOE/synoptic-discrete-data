@@ -1,0 +1,413 @@
+Project,Region,Site,Zone,Replicate,Depth_cm,Sample_ID,Year,Month,Day,Time,Time_Zone,NOx_Conc_mgL,NOx_Conc_uM,NOx_Conc_Flag,NOx_QAQC_Flag,NH3_Conc_mgL,NH3_Conc_uM,NH3_Conc_Flag,NH3_QAQC_Flag,PO4_Conc_mgL,PO4_Conc_uM,PO4_Conc_Flag,PO4_QAQC_Flag,Analysis_rundate,Run_notes,Field_notes
+COMPASS: Synoptic,CB,GCW,SW,A,0,GCW_202309_SW_A,2023,9,12,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,GCW,SW,B,0,GCW_202309_SW_B,2023,9,12,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,GCW,SW,C,0,GCW_202309_SW_C,2023,9,12,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,GCW,TR,A,20,GCW_202309_TR_LysA_20cm,2023,9,12,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,GCW,TR,A,45,GCW_202309_TR_LysA_45cm,2023,9,12,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,GCW,TR,B,10,GCW_202309_TR_LysB_10cm,2023,9,12,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,GCW,TR,B,20,GCW_202309_TR_LysB_20cm,2023,9,12,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,GCW,TR,B,45,GCW_202309_TR_LysB_45cm,2023,9,12,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,GCW,TR,C,10,GCW_202309_TR_LysC_10cm,2023,9,12,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,GCW,TR,C,20,GCW_202309_TR_LysC_20cm,2023,9,12,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,GCW,TR,C,45,GCW_202309_TR_LysC_45cm,2023,9,12,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,GCW,WC,A,10,GCW_202309_WC_LysA_10cm,2023,9,12,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,GCW,WC,A,20,GCW_202309_WC_LysA_20cm,2023,9,12,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,GCW,WC,A,45,GCW_202309_WC_LysA_45cm,2023,9,12,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,GCW,WC,B,10,GCW_202309_WC_LysB_10cm,2023,9,12,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,GCW,WC,B,20,GCW_202309_WC_LysB_20cm,2023,9,12,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,GCW,WC,B,45,GCW_202309_WC_LysB_45cm,2023,9,12,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,GCW,WC,C,10,GCW_202309_WC_LysC_10cm,2023,9,12,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,GCW,WC,C,20,GCW_202309_WC_LysC_20cm,2023,9,12,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,GCW,WC,C,45,GCW_202309_WC_LysC_45cm,2023,9,12,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,GWI,SW,A,0,GWI_202309_SW_A,2023,9,21,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,GWI,SW,B,0,GWI_202309_SW_B,2023,9,21,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,GWI,SW,C,0,GWI_202309_SW_C,2023,9,21,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,GWI,TR,A,10,GWI_202309_TR_LysA_10cm,2023,9,21,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,GWI,TR,A,20,GWI_202309_TR_LysA_20cm,2023,9,21,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,GWI,TR,B,10,GWI_202309_TR_LysB_10cm,2023,9,21,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,GWI,TR,B,20,GWI_202309_TR_LysB_20cm,2023,9,21,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,GWI,TR,B,45,GWI_202309_TR_LysB_45cm,2023,9,21,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,GWI,TR,C,10,GWI_202309_TR_LysC_10cm,2023,9,21,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,GWI,TR,C,20,GWI_202309_TR_LysC_20cm,2023,9,21,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,GWI,UP,A,20,GWI_202309_UP_LysA_20cm,2023,9,21,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,GWI,UP,A,45,GWI_202309_UP_LysA_45cm,2023,9,21,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,GWI,UP,B,10,GWI_202309_UP_LysB_10cm,2023,9,21,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,GWI,UP,B,20,GWI_202309_UP_LysB_20cm,2023,9,21,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,GWI,UP,C,10,GWI_202309_UP_LysC_10cm,2023,9,21,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,GWI,UP,C,20,GWI_202309_UP_LysC_20cm,2023,9,21,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,GWI,WC,A,10,GWI_202309_WC_LysA_10cm,2023,9,21,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,GWI,WC,A,20,GWI_202309_WC_LysA_20cm,2023,9,21,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,GWI,WC,A,45,GWI_202309_WC_LysA_45cm,2023,9,21,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,GWI,WC,B,10,GWI_202309_WC_LysB_10cm,2023,9,21,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,GWI,WC,B,20,GWI_202309_WC_LysB_20cm,2023,9,21,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,GWI,WC,B,45,GWI_202309_WC_LysB_45cm,2023,9,21,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,GWI,WC,C,10,GWI_202309_WC_LysC_10cm,2023,9,21,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,GWI,WC,C,20,GWI_202309_WC_LysC_20cm,2023,9,21,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,MSM,SW,A,0,MSM_202309_SW_A,2023,9,14,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,MSM,SW,B,0,MSM_202309_SW_B,2023,9,14,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,MSM,SW,C,0,MSM_202309_SW_C,2023,9,14,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,MSM,TR,A,10,MSM_202309_TR_LysA_10cm,2023,9,14,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,MSM,TR,A,20,MSM_202309_TR_LysA_20cm,2023,9,14,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,MSM,TR,A,45,MSM_202309_TR_LysA_45cm,2023,9,14,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,MSM,TR,B,10,MSM_202309_TR_LysB_10cm,2023,9,14,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,MSM,TR,B,20,MSM_202309_TR_LysB_20cm,2023,9,14,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,MSM,TR,B,45,MSM_202309_TR_LysB_45cm,2023,9,14,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,MSM,TR,C,10,MSM_202309_TR_LysC_10cm,2023,9,14,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,MSM,TR,C,20,MSM_202309_TR_LysC_20cm,2023,9,14,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,MSM,TR,C,45,MSM_202309_TR_LysC_45cm,2023,9,14,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,MSM,UP,B,10,MSM_202309_UP_LysB_10cm,2023,9,14,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,MSM,UP,B,45,MSM_202309_UP_LysB_45cm,2023,9,14,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,MSM,UP,C,10,MSM_202309_UP_LysC_10cm,2023,9,14,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,MSM,UP,C,20,MSM_202309_UP_LysC_20cm,2023,9,14,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,MSM,WC,A,10,MSM_202309_WC_LysA_10cm,2023,9,14,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,MSM,WC,A,20,MSM_202309_WC_LysA_20cm,2023,9,14,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,MSM,WC,A,45,MSM_202309_WC_LysA_45cm,2023,9,14,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,MSM,WC,B,10,MSM_202309_WC_LysB_10cm,2023,9,14,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,MSM,WC,B,20,MSM_202309_WC_LysB_20cm,2023,9,14,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,MSM,WC,C,10,MSM_202309_WC_LysC_10cm,2023,9,14,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,MSM,WC,C,20,MSM_202309_WC_LysC_20cm,2023,9,14,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,MSM,WC,C,45,MSM_202309_WC_LysC_45cm,2023,9,14,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,SWH,SW,A,0,SWH_202309_SW_A,2023,9,20,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,SWH,SW,B,0,SWH_202309_SW_B,2023,9,20,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,SWH,SW,C,0,SWH_202309_SW_C,2023,9,20,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,SWH,TR,A,10,SWH_202309_TR_LysA_10cm,2023,9,20,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,SWH,TR,A,20,SWH_202309_TR_LysA_20cm,2023,9,20,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,SWH,TR,A,45,SWH_202309_TR_LysA_45cm,2023,9,20,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,SWH,TR,B,10,SWH_202309_TR_LysB_10cm,2023,9,20,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,SWH,TR,B,20,SWH_202309_TR_LysB_20cm,2023,9,20,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,SWH,TR,B,45,SWH_202309_TR_LysB_45cm,2023,9,20,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,SWH,TR,C,10,SWH_202309_TR_LysC_10cm,2023,9,20,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,SWH,TR,C,20,SWH_202309_TR_LysC_20cm,2023,9,20,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,SWH,TR,C,45,SWH_202309_TR_LysC_45cm,2023,9,20,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,SWH,UP,A,10,SWH_202309_UPCON_LysA_10cm,2023,9,20,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,SWH,UP,A,20,SWH_202309_UPCON_LysA_20cm,2023,9,20,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,SWH,UP,A,45,SWH_202309_UPCON_LysA_45cm,2023,9,20,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,SWH,UP,B,20,SWH_202309_UPCON_LysB_20cm,2023,9,20,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,SWH,UP,B,45,SWH_202309_UPCON_LysB_45cm,2023,9,20,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,SWH,UP,C,10,SWH_202309_UPCON_LysC_10cm,2023,9,20,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,SWH,UP,C,20,SWH_202309_UPCON_LysC_20cm,2023,9,20,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,SWH,UP,C,45,SWH_202309_UPCON_LysC_45cm,2023,9,20,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,SWH,SWAMP,A,10,SWH_202309_UP_LysA_10cm,2023,9,20,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,SWH,SWAMP,A,20,SWH_202309_UP_LysA_20cm,2023,9,20,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,SWH,SWAMP,A,45,SWH_202309_UP_LysA_45cm,2023,9,20,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,SWH,SWAMP,B,10,SWH_202309_UP_LysB_10cm,2023,9,20,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,SWH,SWAMP,B,20,SWH_202309_UP_LysB_20cm,2023,9,20,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,SWH,SWAMP,B,45,SWH_202309_UP_LysB_45cm,2023,9,20,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,SWH,SWAMP,C,10,SWH_202309_UP_LysC_10cm,2023,9,20,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,SWH,SWAMP,C,20,SWH_202309_UP_LysC_20cm,2023,9,20,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,SWH,SWAMP,C,45,SWH_202309_UP_LysC_45cm,2023,9,20,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,SWH,WC,A,45,SWH_202309_WC_LysA_45cm,2023,9,20,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,SWH,WC,B,10,SWH_202309_WC_LysB_10cm,2023,9,20,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,SWH,WC,B,20,SWH_202309_WC_LysB_20cm,2023,9,20,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,SWH,WC,C,10,SWH_202309_WC_LysC_10cm,2023,9,20,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,SWH,WC,C,20,SWH_202309_WC_LysC_20cm,2023,9,20,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
+COMPASS: Synoptic,CB,SWH,WC,C,45,SWH_202309_WC_LysC_45cm,2023,9,20,NA,NA,,,,,,,,,,,,,01/25/2024,"This run was stopped and restarted part way through due to
+  insufficient water and/or reaction segments. 
+  There are fewer spikes for PO4 and NH3 in this run due to stop and rerun.
+  NH3 peCheck is high, but other run metrics okay, so accepting this run.",
