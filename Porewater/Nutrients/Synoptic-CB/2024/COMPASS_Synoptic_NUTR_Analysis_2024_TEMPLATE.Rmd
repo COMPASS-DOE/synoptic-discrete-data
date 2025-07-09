@@ -1,6 +1,6 @@
 ---
-title: "Synoptic CB: Porewater Nutrients: TEMPLATE"
-author: "October of Data Being Analyzed"
+title: "Synoptic CB: Porewater Nutrients"
+author: "MONTH 2024 Samples"
 date: "`r Sys.Date()`"
 output: 
   pdf_document:
@@ -13,25 +13,27 @@ output_dir: "To Be Reviewed/PDF"
 
 ##Run Information 
 ```{r run information, include=TRUE}
-cat("Run Information: Isabelle Van Benschoten") #lets you know what section you're in 
+cat("Run Information: NAME ") #lets you know what section you're in 
 #set the run date & user name 
-  run_date <- "07/01/2025"
-  sample_year <- "2024"
-  sample_month <- "October"
-  user <- "Isabelle Van Benschoten"
+  run_date <- "MM/DD/YYYY"
+  sample_year <- "YYYY"
+  sample_month <- "Month"
+  user <- "Name of Instrument User"
 
 #identify the files you want to read in 
   #read in as a list to accommadate ultiple runs in a month
-  NOx_files <- c("Raw Data/COMPASS_Synoptic_CB_202410_VNOx_1.xlsx")
-  NH3_PO4_files <- c("Raw Data/COMPASS_Synoptic_CB_202410_NH3_PO4_1.xlsx")
+  NOx_files <- c("Raw Data/COMPASS_Synoptic_CB_2024MM_VNOx_1.csv", 
+                 "Raw Data/COMPASS_Synoptic_CB_2024MM_VNOx_2.csv")
+  NH3_PO4_files <- c("Raw Data/COMPASS_Synoptic_CB_2024MM_NH3_PO4_1.csv", 
+                     "Raw Data/COMPASS_Synoptic_CB_2024MM_NH3_PO4_2.csv")
 
 # Define the file path for QAQC log file - NO Need to change just check year 
   file_path <- "Raw Data/SEAL_COMPASS_Synoptic_QAQC_Log_2024.csv"
-  final_path <- "Processed Data/COMPASS_Synoptic_Nutrients_202410.csv"
+  final_path <- "Processed Data/COMPASS_Synoptic_Nutrients_2024MM.csv"
 
 #record any notes about the run or anything other info here: 
-  run_notes <- "Nitrate and nitrite reduction efficiency is okay, graph off 
-  because only one run for this month. Performance check for NOx was significantly lower"
+  run_notes <- "Run notes that will give users info about issues 
+  or any concerns.  "
   
 #Set up file path for metadata 
   #downloaded metadata csv - downloaded from Google drive as csv for this year
@@ -174,25 +176,25 @@ cat("Import Data")
 path <- ("file path")
 
 #Read in Raw Data 
-data_NOx <- map(NOx_files, read_excel)
-data_NH3_PO4 <- map(NH3_PO4_files, read_excel)
+data_NOx <- map(NOx_files, read.csv)
+data_NH3_PO4 <- map(NH3_PO4_files, read.csv)
 
 # Combining Files
 df_combo <- bind_rows(data_NOx, data_NH3_PO4)
 
 # Rename columns
 df_combo_rename <- df_combo %>%
-  rename('Conc' = ...6,
-         'Absorbance' = ...7,
-         'Dilution' = ...9,
-         'Sample_Name' = ...4,
-         'Test' = ...13,
-         'Run_Time' = ...15,
-         'Unit' = ...12, 
-         'Run_Number' = ...5)
+  rename('Conc' = X.2,
+         'Absorbance' = X.3,
+         'Dilution' = X.5,
+         'Sample_Name' = X,
+         'Test' = X.9,
+         'Run_Time' = X.11,
+         'Unit' = X.8, 
+         'Run_Number' = X.1)
 
 #making list to remove columns
-cols_to_remove <- c("RUNSTARTED", "...8", "...10", "...11", "...14")
+cols_to_remove <- c("RUNSTARTED", "X.4", "X.6", "X.7", "X.10")
 
 #Removing columns
 df <- df_combo_rename %>%
@@ -237,7 +239,7 @@ stds_NOx <- stds_NOx %>%
     Sample_Name == "Standard 95" ~ 0.75,
     Sample_Name == "Standard 96" ~ 1.0,
     TRUE ~ `Conc`),  # leave unchanged if no match
-    Run_Date = format(lubridate::ymd_hms(Run_Time), "%m-%d-%Y")) %>%
+    Run_Date = format(lubridate::mdy_hm(Run_Time), "%m-%d-%Y")) %>%
   filter(!Sample_Name %in% c("Nitrate Standard" , "Nitrite Standard"))
 
 #ID x and y
@@ -256,7 +258,7 @@ stds_NH3 <- stds_NH3 %>%
     Sample_Name == "Standard 1.5000" ~ 1.5,
     Sample_Name == "Standard 2.0000" ~ 2,
     TRUE ~ `Conc`),  # leave unchanged if no match
-    Run_Date = format(lubridate::ymd_hms(Run_Time), "%m-%d-%Y"))
+    Run_Date = format(lubridate::mdy_hm(Run_Time), "%m-%d-%Y"))
 
 # identifying x and y
 x2 <- stds_NH3$Absorbance
@@ -274,7 +276,7 @@ stds_PO4 <- stds_PO4 %>%
     Sample_Name == "Standard 95" ~ 0.2250,
     Sample_Name == "Standard 96" ~ 0.3000,
     TRUE ~ `Conc`),  # leave unchanged if no match
-    Run_Date = format(lubridate::ymd_hms(Run_Time), "%m-%d-%Y"))
+    Run_Date = format(lubridate::mdy_hm(Run_Time), "%m-%d-%Y"))
 
 #ID x and y
 x3 <- stds_PO4$Absorbance
@@ -539,15 +541,19 @@ df_all_cor <- df_all %>%
   mutate(
     Dilution = case_when(
       Dilution == "0" ~ 1.0,
-      TRUE ~ as.numeric(Dilution)),     #ensure it's numeric for math
-    Pair_ID = ifelse(                   # Assign a unique ID for pairing
+      TRUE ~ as.numeric(Dilution)
+    ),
+    Pair_ID = ifelse(
       grepl("Duplicate", Sample_Name, ignore.case = TRUE),
-      lag(Sample_Name), Sample_Name),  # Preserve original sample name for QA
-    Original_Name = Sample_Name) %>%  
-  group_by(Pair_ID, Test) %>%          #groups by the name and test
+      paste0(lag(Sample_Name), "_", lag(Run_Number)),  # pair only if same run
+      paste0(Sample_Name, "_", Run_Number)
+    ),
+    Original_Name = Sample_Name
+  ) %>%
+  group_by(Pair_ID, Test, Run_Number) %>%  # group by Pair_ID, Test, and Run_Number
   filter(
     Dilution == ifelse(any(Dilution > 1, na.rm = TRUE), max(Dilution, na.rm = TRUE), 1)
-  ) %>%                                #keeps the higher dilution value
+  ) %>%
   ungroup()
 
 
@@ -616,7 +622,7 @@ cat("Expected  =", PO4_pe, "\n")
 
  
 ##Check NOx Reduction Efficiency 
-```{r Assess reduction Efficiency, echo=FALSE}
+```{#r Assess reduction Efficiency, echo=FALSE}
 cat("Assess Reduction Efficiency")
 
 #check on the reduction efficiency for the NOx test: 
@@ -1534,41 +1540,6 @@ samples_flagged <- samples_flagged %>%
 
 ```
 
-## Pulling Rhizon Samples
-```{r Rhizon Sample Wrangle}
-
-# Filter rhizon and peeper samples
-df_rhizon <- df_all %>%
-  filter(str_detect(Sample_Name, "RHZ"))
-df_peep <- df_all %>%
-  filter(str_detect(Sample_Name, "PPR"))
-
-# Timestamp for backups
-timestamp <- format(Sys.time(), "%Y-%m-%d_%H%M")
-
-# Paths
-folder_path <- file.path("Raw Data", "Rhizon+Peeper")
-dir.create(folder_path, recursive = TRUE, showWarnings = FALSE)
-
-rhizon_main <- file.path(folder_path, "rhizon_data.csv")
-peeper_main <- file.path(folder_path, "peeper_data.csv")
-
-rhizon_backup <- file.path(folder_path, paste0("rhizon_data_", timestamp, ".csv"))
-peeper_backup <- file.path(folder_path, paste0("peeper_data_", timestamp, ".csv"))
-
-# Write timestamped backups
-write.csv(df_rhizon, rhizon_backup, row.names = FALSE)
-write.csv(df_peep, peeper_backup, row.names = FALSE)
-
-# Overwrite the main files with latest data
-write.csv(df_rhizon, rhizon_main, row.names = FALSE)
-write.csv(df_peep, peeper_main, row.names = FALSE)
-
-## ^^ I think there is a cleaner way to write this out, but this should work for now ^^
-
-```
-
-
 ## Check to see if samples run match metadata & merge info
 ```{r check sample ids with metadata, echo=FALSE}
 
@@ -1604,15 +1575,6 @@ df_all_clean <- merged_data %>%
     remove = FALSE) %>%
   mutate(Samp_Time = ym(Samp_Time)) 
 
-
-############### THIS IS ONLY FOR 2023 when SWAMP was called UP and UPLAND was called UPCON ##############
-df_all_clean <- df_all_clean %>%
-  mutate(
-    Zone = case_when(
-      Site == "SWH" & Zone == "UP" ~ "SWAMP",
-      Site == "SWH" & Zone == "UPCON" ~ "UP",
-      TRUE ~ `Zone`
-    )) 
 
 ```
 
@@ -1802,17 +1764,6 @@ final_data <- final_data_labeled %>%
 #Write out data frame 
   write.csv(final_data, final_path)
   
-
-```
-
-```{#r if csv isnt working, echo = FALSE}
-
-#changing lists to strings
-final_data_excel <- final_data %>%
-  mutate(across(where(is.list), ~ sapply(., toString)))
-
-#Write out data frame 
-  write_xlsx(final_data_excel, final_path)
 
 ```
 

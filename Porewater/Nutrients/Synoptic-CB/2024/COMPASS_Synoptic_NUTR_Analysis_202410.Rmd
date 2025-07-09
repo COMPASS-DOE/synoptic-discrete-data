@@ -1,6 +1,6 @@
 ---
-title: "Synoptic CB: Porewater Nutrients: TEMPLATE"
-author: "Month of Data Being Analyzed"
+title: "Synoptic CB: Porewater Nutrients"
+author: "October 2024 Samples"
 date: "`r Sys.Date()`"
 output: 
   pdf_document:
@@ -13,32 +13,31 @@ output_dir: "To Be Reviewed/PDF"
 
 ##Run Information 
 ```{r run information, include=TRUE}
-cat("Run Information: Who Ran Code") #lets you know what section you're in 
+cat("Run Information: Isabelle Van Benschoten ") #lets you know what section you're in 
 #set the run date & user name 
-  run_date <- "MM/DD/YYYY"
-  sample_year <- YEAR
-  sample_month <- MONTH
-  user <- "Who Ran the instrument"
+  run_date <- "07/01/2025"
+  sample_year <- "2024"
+  sample_month <- "October"
+  user <- "Isabelle Van Benschoten"
 
 #identify the files you want to read in 
   #read in as a list to accommadate ultiple runs in a month
-  NOx_files <- c("Raw Data/SEAL_COMPASS_Synoptic_NOx_DATE_1.csv",
-                 "Raw Data/SEAL_COMPASS_Synoptic_NOx_DATE_2.csv",
-                 "Raw Data/SEAL_COMPASS_Synoptic_NOx_DATE_3.csv")
-  NH3_PO4_files <- c("Raw Data/SEAL_COMPASS_Synoptic_NH3_PO4_DATE_1.csv", 
-                     "Raw Data/SEAL_COMPASS_Synoptic_NH3_PO4_DATE_2.csv",
-                     "Raw Data/SEAL_COMPASS_Synoptic_NH3_PO4_DATE_3.csv")
+  NOx_files <- c("Raw Data/COMPASS_Synoptic_CB_202410_VNOx_1.csv")
+  NH3_PO4_files <- c("Raw Data/COMPASS_Synoptic_CB_202410_NH3_PO4_1.csv")
 
 # Define the file path for QAQC log file - NO Need to change just check year 
-  file_path <- "Raw Data/SEAL_COMPASS_Synoptic_QAQC_Log_2023.csv"
-  final_path <- "Processed Data/COMPASS_Synoptic_Nutrients_DATE.csv"
+  file_path <- "Raw Data/SEAL_COMPASS_Synoptic_QAQC_Log_2024.csv"
+  final_path <- "Processed Data/COMPASS_Synoptic_Nutrients_202410.csv"
 
 #record any notes about the run or anything other info here: 
-  run_notes <- "Put any notes about peChecks, dups, issues with run etc."
+  run_notes <- "Nitrate and nitrite reduction efficiency is okay, graph off 
+  because only one run for this month. 
+  Performance check for NOx looks like DI was run instead of the peCheck.
+  ** Something up with the phosphate on this run... needs looked at. "
   
 #Set up file path for metadata 
   #downloaded metadata csv - downloaded from Google drive as csv for this year
-  Raw_Metadata = "Raw Data/COMPASS_SynopticCB_PW_SampleLog_2023.csv"
+  Raw_Metadata = "Raw Data/COMPASS_SynopticCB_PW_SampleLog_2024.csv"
 
   cat(run_notes)
 ```
@@ -61,10 +60,13 @@ pacman::p_load(
   ggpubr,
   tidyr,
   tidyverse,
+  lubridate,
   tinytex,
   stringr,
   writexl,
   readr,
+  readxl,
+  purrr,
   tinytex,
   broom)
 
@@ -103,11 +105,12 @@ rep_flag = 25
 #blank_flag is calculated based on samples later in this code
 
 #pe check Concentrations
-NH3_pe <- 0.948
-NOx_pe <- 0.706
-PO4_pe <- 0.818
+NH3_pe <- 1.034
+NOx_pe <- 1.51
+PO4_pe <- 0.824
 
 ```
+
 ##Read in metadata and create similar sample IDs for matching to samples 
 ```{r pull in metadata for later, include=FALSE}
 
@@ -173,25 +176,25 @@ cat("Import Data")
 path <- ("file path")
 
 #Read in Raw Data 
-data_NOx <- map(NOx_files, read_csv)
-data_NH3_PO4 <- map(NH3_PO4_files, read_csv)
+data_NOx <- map(NOx_files, read.csv)
+data_NH3_PO4 <- map(NH3_PO4_files, read.csv)
 
 # Combining Files
 df_combo <- bind_rows(data_NOx, data_NH3_PO4)
 
 # Rename columns
 df_combo_rename <- df_combo %>%
-  rename('Conc' = ...6,
-         'Absorbance' = ...7,
-         'Dilution' = ...9,
-         'Sample_Name' = ...4,
-         'Test' = ...13,
-         'Run_Time' = ...15,
-         'Unit' = ...12, 
-         'Run_Number' = ...5)
+  rename('Conc' = X.2,
+         'Absorbance' = X.3,
+         'Dilution' = X.5,
+         'Sample_Name' = X,
+         'Test' = X.9,
+         'Run_Time' = X.11,
+         'Unit' = X.8, 
+         'Run_Number' = X.1)
 
 #making list to remove columns
-cols_to_remove <- c("RUNSTARTED", "...8", "...10", "...11", "...14")
+cols_to_remove <- c("RUNSTARTED", "X.4", "X.6", "X.7", "X.10")
 
 #Removing columns
 df <- df_combo_rename %>%
@@ -236,7 +239,7 @@ stds_NOx <- stds_NOx %>%
     Sample_Name == "Standard 95" ~ 0.75,
     Sample_Name == "Standard 96" ~ 1.0,
     TRUE ~ `Conc`),  # leave unchanged if no match
-    Run_Date = format(mdy_hm(Run_Time), "%m-%d-%Y")) %>%
+    Run_Date = format(lubridate::mdy_hm(Run_Time), "%m-%d-%Y")) %>%
   filter(!Sample_Name %in% c("Nitrate Standard" , "Nitrite Standard"))
 
 #ID x and y
@@ -255,7 +258,7 @@ stds_NH3 <- stds_NH3 %>%
     Sample_Name == "Standard 1.5000" ~ 1.5,
     Sample_Name == "Standard 2.0000" ~ 2,
     TRUE ~ `Conc`),  # leave unchanged if no match
-    Run_Date = format(mdy_hm(Run_Time), "%m-%d-%Y"))
+    Run_Date = format(lubridate::mdy_hm(Run_Time), "%m-%d-%Y"))
 
 # identifying x and y
 x2 <- stds_NH3$Absorbance
@@ -273,7 +276,7 @@ stds_PO4 <- stds_PO4 %>%
     Sample_Name == "Standard 95" ~ 0.2250,
     Sample_Name == "Standard 96" ~ 0.3000,
     TRUE ~ `Conc`),  # leave unchanged if no match
-    Run_Date = format(mdy_hm(Run_Time), "%m-%d-%Y"))
+    Run_Date = format(lubridate::mdy_hm(Run_Time), "%m-%d-%Y"))
 
 #ID x and y
 x3 <- stds_PO4$Absorbance
@@ -406,8 +409,8 @@ if (file.exists(file_path)) {
   }
   
   #getting rid of first "X" column
-  stds_log <- stds_log %>%
-    select(-1)
+  #stds_log <- stds_log %>%
+  #  select(-1)
   
 #create a dataframe that can be appended to the QAQC log 
 add_log <- as.data.frame(bind_rows(std_curve_NOx_1, std_curve_NH3_1, std_curve_PO4_1))
@@ -418,8 +421,15 @@ add_log$user <- user
 stds_log$run_date <- as.character(stds_log$run_date)
 add_log$run_date  <- as.character(add_log$run_date)     #getting the run_date column in the same type to merge
 
-# Filter to only rows in Slopes that are NOT already in log (by run_date + analyte)
-new_rows <- anti_join(add_log, stds_log, by = c("run_date", "Test"))
+#Filter to only rows in Slopes that are NOT already in log (by run_date + analyte) but need to add if none
+if (nrow(stds_log) == 0) {
+  # If log is empty, everything in add_log is new
+  new_rows <- add_log
+} else {
+  # Otherwise, compare to existing log
+  new_rows <- anti_join(add_log, stds_log, by = c("run_date", "Test"))
+}
+
 
 # Append the new, non-duplicate rows to log
 log <- bind_rows(stds_log, new_rows)
@@ -531,15 +541,19 @@ df_all_cor <- df_all %>%
   mutate(
     Dilution = case_when(
       Dilution == "0" ~ 1.0,
-      TRUE ~ as.numeric(Dilution)),     #ensure it's numeric for math
-    Pair_ID = ifelse(                   # Assign a unique ID for pairing
+      TRUE ~ as.numeric(Dilution)
+    ),
+    Pair_ID = ifelse(
       grepl("Duplicate", Sample_Name, ignore.case = TRUE),
-      lag(Sample_Name), Sample_Name),  # Preserve original sample name for QA
-    Original_Name = Sample_Name) %>%  
-  group_by(Pair_ID, Test) %>%          #groups by the name and test
+      paste0(lag(Sample_Name), "_", lag(Run_Number)),  # pair only if same run
+      paste0(Sample_Name, "_", Run_Number)
+    ),
+    Original_Name = Sample_Name
+  ) %>%
+  group_by(Pair_ID, Test, Run_Number) %>%  # group by Pair_ID, Test, and Run_Number
   filter(
     Dilution == ifelse(any(Dilution > 1, na.rm = TRUE), max(Dilution, na.rm = TRUE), 1)
-  ) %>%                                #keeps the higher dilution value
+  ) %>%
   ungroup()
 
 
@@ -547,53 +561,6 @@ df_all_cor <- df_all %>%
 
 ```
 
-## OPTIONAL Nameing Error Chunk 
-```{r Sample Name Errors - DELETE IF NO ERROR, echo = false}
-
-#duplicate sample names to be changed 
-  #list the sample iDs that are messed up and create a list 
-  #with run number as well so that we can change them below 
-  wrong_names <- c("GCW_202304_TR_LysC_45cm", "GCW_202304_TR_LysA_20cm_8",
-                   "GWI_202304_UP_LysA_20cm", "GWI_202304_UP_LysA_20cm")
-  wrong_nums <- c(20, 16, 46, 44)
-  correct_names <- c("GCW_202304_TR_LysB_45cm", "GCW_202304_TR_LysA_20cm",
-                     "GWI_202304_UP_LysA_10cm", "GWI_202304_UP_LysA_10cm")
-  
-  #can't determine from metadata - for now unsure 
-  remove_names <- c("GCW_202304_TR_LysA_20cm", "GCW_202304_TR_LysA_20cm",
-                    "GCW_202304_TR_LysB_20cm_13", "GCW_202304_TR_LysB_20cm_13") 
-      #couldn't tell which onethis is from the metadata, no A_10cm which is what we thought
-      #marked on the sheet, need to check sample vials in freezer 
-      #to see if we have a A_10cm from GCW_TR to be sure 
-  remove_nums <- c(15, 13, 21, 19 )
-
-# Build a lookup table to check for input error/sample name duplicates
-lookup <- tibble(
-  Sample_Name = wrong_names,
-  Run_Number = as.numeric(wrong_nums),
-  Correct_Name = correct_names)
-
-# Join and replace to get correct names into df
-df_filtered <- df %>%
-  left_join(lookup, by = c("Sample_Name", "Run_Number")) %>%
-  mutate(Sample_Name = coalesce(Correct_Name, Sample_Name)) %>%
-  select(-Correct_Name)
-
-#also remove any lines that we cannot identify which is the correct one 
-remove_df <- tibble(
-  Sample_Name = remove_names,
-  Run_Number = remove_nums
-)
-
-# Remove matching rows
-df_all <- df_filtered %>%
-  anti_join(remove_df, by = c("Sample_Name", "Run_Number"))
-
-# Remove run number column now 
-df_all <- df_all %>%
-  select(-Run_Number)
-
-```
 
 ## Performance Check
 ```{r pe Check, echo = FALSE}
@@ -611,7 +578,7 @@ NOx_peChk <- df_all_cor %>%
 
 NH3_peChk <- df_all_cor %>%
   filter(Test == "Ammonia 2", 
-         str_detect(Sample_Name, "peChk_NH3")) %>%
+         str_detect(Sample_Name, "peChk_")) %>%
   summarise(
     Mean_Chk_Conc = mean(Conc, na.rm = TRUE),
     SD_Chk_Conc = sd(Conc, na.rm = TRUE),
@@ -621,7 +588,7 @@ NH3_peChk <- df_all_cor %>%
 
 PO4_peChk <- df_all_cor %>%
   filter(Test == "o-PHOS 0.3", 
-         str_detect(Sample_Name, "peChk_NH3")) %>%
+         str_detect(Sample_Name, "peChk_")) %>%
   summarise(
     Mean_Chk_Conc = mean(Conc, na.rm = TRUE),
     SD_Chk_Conc = sd(Conc, na.rm = TRUE),
@@ -1573,41 +1540,6 @@ samples_flagged <- samples_flagged %>%
 
 ```
 
-## Pulling Rhizon Samples
-```{r Rhizon Sample Wrangle}
-
-# Filter rhizon and peeper samples
-df_rhizon <- df_all %>%
-  filter(str_detect(Sample_Name, "RHZ"))
-df_peep <- df_all %>%
-  filter(str_detect(Sample_Name, "PPR"))
-
-# Timestamp for backups
-timestamp <- format(Sys.time(), "%Y-%m-%d_%H%M")
-
-# Paths
-folder_path <- file.path("Raw Data", "Rhizon+Peeper")
-dir.create(folder_path, recursive = TRUE, showWarnings = FALSE)
-
-rhizon_main <- file.path(folder_path, "rhizon_data.csv")
-peeper_main <- file.path(folder_path, "peeper_data.csv")
-
-rhizon_backup <- file.path(folder_path, paste0("rhizon_data_", timestamp, ".csv"))
-peeper_backup <- file.path(folder_path, paste0("peeper_data_", timestamp, ".csv"))
-
-# Write timestamped backups
-write.csv(df_rhizon, rhizon_backup, row.names = FALSE)
-write.csv(df_peep, peeper_backup, row.names = FALSE)
-
-# Overwrite the main files with latest data
-write.csv(df_rhizon, rhizon_main, row.names = FALSE)
-write.csv(df_peep, peeper_main, row.names = FALSE)
-
-## ^^ I think there is a cleaner way to write this out, but this should work for now ^^
-
-```
-
-
 ## Check to see if samples run match metadata & merge info
 ```{r check sample ids with metadata, echo=FALSE}
 
@@ -1643,15 +1575,6 @@ df_all_clean <- merged_data %>%
     remove = FALSE) %>%
   mutate(Samp_Time = ym(Samp_Time)) 
 
-
-############### THIS IS ONLY FOR 2023 when SWAMP was called UP and UPLAND was called UPCON ##############
-df_all_clean <- df_all_clean %>%
-  mutate(
-    Zone = case_when(
-      Site == "SWH" & Zone == "UP" ~ "SWAMP",
-      Site == "SWH" & Zone == "UPCON" ~ "UP",
-      TRUE ~ `Zone`
-    )) 
 
 ```
 
@@ -1841,17 +1764,6 @@ final_data <- final_data_labeled %>%
 #Write out data frame 
   write.csv(final_data, final_path)
   
-
-```
-
-```{#r if csv isnt working, echo = FALSE}
-
-#changing lists to strings
-final_data_excel <- final_data %>%
-  mutate(across(where(is.list), ~ sapply(., toString)))
-
-#Write out data frame 
-  write_xlsx(final_data_excel, final_path)
 
 ```
 
