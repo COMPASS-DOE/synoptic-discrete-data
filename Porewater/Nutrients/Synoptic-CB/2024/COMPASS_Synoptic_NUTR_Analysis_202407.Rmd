@@ -6,7 +6,9 @@ output:
   pdf_document:
     toc: true
     number_sections: true
+    latex_engine: xelatex
 output_dir: "To Be Reviewed/PDF"
+
 ---
 
 \newpage
@@ -31,11 +33,15 @@ cat("Run Information: NAME ") #lets you know what section you're in
 
 # Define the file path for QAQC log file - NO Need to change just check year 
   file_path <- "Raw Data/SEAL_COMPASS_Synoptic_QAQC_Log_2024.csv"
-  final_path <- "Processed Data/COMPASS_Synoptic_Nutrients_2024XX.csv"
+  final_path <- "Processed Data/COMPASS_Synoptic_Nutrients_202407.csv"
 
 #record any notes about the run or anything other info here: 
-  run_notes <- "Run notes that will give users info about issues 
-  or any concerns.  "
+  run_notes <- "Reduction Effieciency was not ran for all of the runs included within this month.
+                One NH3 check standard was ut of range but CV was within. 
+                One PO4 blank was out of range but CV was within.
+                PO4 duplicates out of range.
+                Metadata is missing:
+                MSM_202407_TR_LysC_45cm, SWH_202407_UP_LysC_10cm, and SWH_202407_WC_LysA_45cm" 
   
 #Set up file path for metadata 
   #downloaded metadata csv - downloaded from Google drive as csv for this year
@@ -1052,6 +1058,7 @@ NH3_dup_chk <- df_NH3_dup %>%
     .groups = "drop") 
 
 PO4_dup_chk <- df_PO4_dup %>%
+  filter(Sample_Name != "0.15 mg/L") %>%
   group_by(Pair_ID) %>%  # Use Pair_ID as it groups Originals and Duplicates
   filter(n_distinct(Type) == 2) %>%  # Keep only groups that have both Original and Duplicate
   summarise(
