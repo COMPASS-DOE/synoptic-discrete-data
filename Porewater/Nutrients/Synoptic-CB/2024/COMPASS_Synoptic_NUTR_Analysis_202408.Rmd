@@ -30,9 +30,8 @@ cat("Run Information: NAME ") #lets you know what section you're in
   final_path <- "Processed Data/COMPASS_Synoptic_Nutrients_202408.csv"
 
 #record any notes about the run or anything other info here: 
-  run_notes <- "Run notes that will give users info about issues 
-  or any concerns.  "
-  
+  run_notes <- "PO4 pe check was out of range as well as it's duplicates and spikes. 
+                Would reccommend rerunning the PO4 for this SWH run. "
 #Set up file path for metadata 
   #downloaded metadata csv - downloaded from Google drive as csv for this year
   Raw_Metadata = "Raw Data/COMPASS_SynopticCB_PW_SampleLog_2024.csv"
