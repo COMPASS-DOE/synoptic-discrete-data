@@ -1,8 +1,12 @@
 ---
-title: "Dionex_COMPASS_June2023"
+title: "Dionex_COMPASS_November2023"
 author: "Stephanie J. Wilson"
-date: '2023-06-23'
-output: html_document
+date: "`r Sys.Date()`"
+output: 
+  pdf_document:
+    toc: true
+    number_sections: true
+output_dir: "To Be Reviewed/PDF"
 ---
 ## Daily Set up 
 ```{r setup, include=FALSE}
@@ -23,49 +27,48 @@ library(stringr)
 
 ### Read in and Format the raw data - change wd & file names 
 ```{r}
-setwd("S:/Biogeochemistry/People/Wilson (Steph)/Data/Dionex/Raw Data Files")
-
-# SULFATE DATA: 
+# SULFATE DATA: CHANGE DATAFILE NAME
 
 ## Read in raw data file from Dionex - copied and saved as a txt
-Sdat <- read.table("COMPASS_Synoptic_CB_MonMon_202311_SO4.txt",sep='\t' , header=T, skip=3)
-head(Sdat)
+Sdat <- read.table("Raw Data/COMPASS_Synoptic_CB_MonMon_202311_SO4.txt",sep='\t' , header=T, skip=3)
+# head(Sdat)
 
 ## Only keep the columns that we need 
-Sdat <- Sdat[ ,c(2,5)] # dont need this here 
-head(Sdat)
+# Sdat <- Sdat[ ,c(2,5)] # dont need this here 
+# head(Sdat)
 
 ## Name the columns correctly 
-colnames(Sdat) <- c( "Sample_ID", "SO4_ppm")
+colnames(Sdat) <- c( "Num", "Sample_ID", "Type", "SO4_ppm")
 Sdat$Sample_ID <- as.factor(Sdat$Sample_ID)
 Sdat$SO4_ppm <- as.numeric(Sdat$SO4_ppm)
 Sdat <- as.data.frame(Sdat)
-head(Sdat)
+# head(Sdat)
 
-#Chloride data 
+
+# CHLORIDE DATA: CHANGE DATAFILE NAME
+
 ## Read in raw data file from Dionex - copied and saved as a txt
-Cldat <- read.table("COMPASS_Synoptic_CB_MonMon_202311_Cl.txt",sep='\t' , header=T, skip=3)
-head(Cldat)
+Cldat <- read.table("Raw Data/COMPASS_Synoptic_CB_MonMon_202311_Cl.txt",sep='\t' , header=T, skip=3)
+# head(Cldat)
 
 ## Only keep the columns that we need 
-Cldat <- Cldat[ ,c(2,5)]
-head(Cldat)
+# Cldat <- Cldat[ ,c(2,5)]
+# head(Cldat)
 
 ## Name the columns correctly 
 colnames(Cldat) <- c( "Sample_ID", "Cl_ppm")
 Cldat$Sample_ID <- as.factor(Cldat$Sample_ID)
 Cldat$Cl_ppm <- as.numeric(Cldat$Cl_ppm)
 Cldat <- as.data.frame(Cldat)
-head(Cldat) 
-
+# head(Cldat) 
 
 ## Bring the data back together: 
 all_dat <- merge(Sdat, Cldat, by="Sample_ID")
-head(all_dat)
+# head(all_dat)
 
 ## Remove empty lines 
 all_dat <- all_dat[!(is.na(all_dat$Sample_ID) | all_dat$Sample_ID==""), ]
-head(all_dat)
+# head(all_dat)
 
 all_dat <- droplevels(all_dat[!all_dat$Sample_ID == 'Lab Blank',])
 
