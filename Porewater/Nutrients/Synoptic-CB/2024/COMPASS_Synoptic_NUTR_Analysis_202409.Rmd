@@ -34,7 +34,7 @@ cat("Run Information: NAME ") #lets you know what section you're in
   final_path <- "Processed Data/COMPASS_Synoptic_Nutrients_202409.csv"
 
 #record any notes about the run or anything other info here: 
-  run_notes <- "Reduction efficiency check was only ran for some of the runs within this month."
+  run_notes <- "Reduction efficiency check was only ran for some of the runs within this month's data."
   
 #Set up file path for metadata 
   #downloaded metadata csv - downloaded from Google drive as csv for this year
