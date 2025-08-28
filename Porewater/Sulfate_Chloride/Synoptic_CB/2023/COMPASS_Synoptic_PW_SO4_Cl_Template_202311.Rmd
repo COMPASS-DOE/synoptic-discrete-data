@@ -1,5 +1,5 @@
 ---
-title: "COMPASS_SynopticCB_PW_SO4_Cl_202304_Template"
+title: "COMPASS_SynopticCB_PW_SO4_Cl_202311_Template"
 author: "Stephanie J. Wilson"
 date: "`r Sys.Date()`"
 output: 
@@ -18,9 +18,9 @@ output_dir: "To Be Reviewed/PDF"
 cat("Setup Information")
 
 ###### Run information - PLEASE CHANGE
-  Date_Run = "09/05/23"  #Date that instrument was run
-  Run_by = "Stephanie J. Wilson"  #Instrument user 
-  Script_run_by = "Stephanie J. Wilson" #Code user 
+  Date_Run = "Unknown"  #Date that instrument was run
+  Run_by = "Unknown"  #Instrument user 
+  Script_run_by = "Zoe Read" #Code user 
   run_notes = "Samples missing from metadata: MSM_202311_UP_LYSC_45CM MSM_202311_WC_LYSB_45CM MSM_202311_WC_LYSC_45CM      MSM_202311_UP_RHZ_SF_TREE_1 MSM_202311_UP_RHZ_SF_TREE_2   MSM_202311_UP_RHZ_SF_TREE_3   MSM_202311_UP_RHZ_SF_TREE_4  MSM_202311_UP_RHZ_SF_TREE_6   MSM_202311_UP_RHZ_SF_TREE_7   MSM_202311_UP_RHZ_SF_TREE_8   MSM_202311_TR_RHZ_SF_TREE_   MSM_202311_TR_RHZ_SF_TREE_2   MSM_202311_TR_RHZ_SF_TREE_3 MSM_202311_TR_RHZ_SF_TREE_4  MSM_202311_TR_RHZ_SF_TREE_5  MSM_202311_TR_RHZ_SF_TREE_6  MSM_202311_TR_RHZ_SF_TREE_7   MSM_202311_TR_RHZ_SF_TREE_8 MSM_202311_WC_RHZ_SF_COLLAR_1 MSM_202311_WC_RHZ_SF_COLLAR_2 MSM_202311_WC_RHZ_SF_COLLAR_3 MSM_202311_WC_RHZ_SF_COLLAR_4 MSM_202311_WC_RHZ_SF_COLLAR_5 MSM_202311_WC_RHZ_LYSA     
 MSM_202311_WC_RHZ_LYSC, 118_MSM_202311_TR_RHZ_SF_Tree_1 value above cal curve for SO4, but only slightly" #any notes from the run
   
@@ -31,15 +31,15 @@ MSM_202311_WC_RHZ_LYSC, 118_MSM_202311_TR_RHZ_SF_Tree_1 value above cal curve fo
   
 ###### File Names - PLEASE CHANGE 
 #file path and name for raw summary data file 
-    raw_file_name_cl = "Raw Data/COMPASS_Synoptic_CB_MonMon_202311_Cl.txt"  #example
+    raw_file_name_cl = "Raw Data/COMPASS_Synoptic_CB_MonMon_202311_Cl.txt"  
     raw_file_name_so4 = "Raw Data/COMPASS_Synoptic_CB_MonMon_202311_SO4.txt"
     
 #file path and name of processed data file 
-    processed_file_name = "Processed Data/COMPASS_SynopticCB_PW_Processed_Cl_SO4_202311.csv" #example
+    processed_file_name = "Processed Data/COMPASS_SynopticCB_PW_Processed_Cl_SO4_202311.csv" 
 
 ###### Log Files - PLEASE CHECK 
 #downloaded metadata csv - downloaded from Google drive as csv for this year
-  Raw_Metadata = "Raw Data/COMPASS_SynopticCB_PW_SampleLog_2023.csv"
+  Raw_Metadata = "/Porewater/Sulfate_Chloride/Synoptic_CB/2023/Raw Data/COMPASS_SynopticCB_PW_SampleLog_2023.csv"
   
 #qaqc log file path for this year 
   Log_path = "Raw Data/COMPASS_Synoptic_Cl_SO4_QAQClog_2023.csv"
@@ -68,29 +68,26 @@ lapply(c(
 #Link to the protocol used for analysis 
   #steph will add this soon 
 
-#any coefficients / constants that are needed for calculations 
+#Any coefficients / constants that are needed for calculations 
   cl_mw <- 35.45     #molecular weight of Chloride: 35.45 
   s_mw <- 32.06      #molecular weight of sulfur: 32.06
-  Con1 <- 1000       # conversion factor value
-  Con2 <- 1000000    # conversion factor value 
 
-#Flag for Dionex ##Need to edit this! 
+#Flags for Dionex 
   r2_cutoff = 0.98  #this is the level below which we want to rerun or consider a curve 
-  chk_flag = 5   #for the cv 
-  chk_conc_flag = 5 #this is the level cutoff for percent difference of check standards vs. the concentration they are meant to be 
-  chks_flag = 0.50 #this is the percent of chks we want to have a CV less than 10, usually 60
-  rep_flag = 25 #this is a 25% error between samples
+  chk_flag_std_s = 10 #this is the maximum cv allowed for sulfate check standards
+  chk_flag_std_cl = 5   #this is the maximum cv allowed for chloride check standards
+  chk_flag_std_dups = 10 #this is the maximum cv allowed for duplicates
+  chks_flag = 0.20 #this is the percent of chks we want to have a CV less than the max allowable cv
   #blank_flag - calculated based on samples later in this code as lower 25% quantile of sample concentrations
 
-#standard concentrations - Update if running different checks: 
+#Standard concentrations - Update if running different standard curve:  
   standards <- tibble(
     sample_ID = c("Standard 1", "Standard 2", "Standard 3", "Standard 4", "Standard 5"),
     SO4_std_conc = c(0.5, 1.0, 2.0, 10, 20),
-    Cl_std_conc = c(5, 10, 20, 100, 200)
-)
+    Cl_std_conc = c(5, 10, 20, 100, 200))
 
 
-#Spike concentration calc: 
+#Spike concentration calc 
   spk_std <- (250/s_mw)    # in mM
   spkvol <- 10             # in uL
   spkvol <- spkvol/1000000 
