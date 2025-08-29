@@ -44,6 +44,8 @@ cat("Setup Information")
   
 #qaqc log file path for this year 
   Log_path = "Raw Data/COMPASS_Synoptic_Cl_SO4_QAQClog_2023.csv"
+  
+  cat(run_notes)
 
 ```
 
@@ -86,6 +88,7 @@ lapply(c(
 )
   
 #Spike concentration calc: 
+  spike = 2.5
   spk_std <- (250/s_mw)    # in mM
   spkvol <- 10             # in uL
   spkvol <- spkvol/1000000 
@@ -93,7 +96,7 @@ lapply(c(
   spk_Conc <- (spk_std)*spkvol 
    
 #Top standard Concentrations- Update if running different standard curve: 
-   top_std_c1 = 200
+   top_std_cl = 200
    top_std_so4 = 20
 
 #Set time zone 
@@ -224,6 +227,43 @@ all_dat <- all_dat_merge %>%
   mutate(across(c(SO4_ppm, Cl_ppm), ~ replace_na(.x, 0)), 
          across(c(SO4_area, Cl_area), ~ replace_na(.x, 0)))
 head(all_dat)
+
+all_dat <- all_dat %>%
+  mutate(dilution = case_when(
+    str_detect(sample_ID, "GCW") & str_detect(sample_ID, "UP") ~50,
+    str_detect(sample_ID, "GCW") & str_detect(sample_ID, "TR") ~ 50,
+    str_detect(sample_ID, "GCW") & str_detect(sample_ID, "WC") ~ 100,
+    str_detect(sample_ID, "MSM") & str_detect(sample_ID, "UP") ~ 50,
+    str_detect(sample_ID, "MSM") & str_detect(sample_ID, "TR") ~ 50,
+    str_detect(sample_ID, "MSM") & str_detect(sample_ID, "WC") ~ 100,
+    str_detect(sample_ID, "GWI") & str_detect(sample_ID, "UP") ~ 100,
+    str_detect(sample_ID, "GWI") & str_detect(sample_ID, "TR") ~ 100,
+    str_detect(sample_ID, "GWI") & str_detect(sample_ID, "WC") ~ 200,
+    str_detect(sample_ID, "SWH") & str_detect(sample_ID, "UP") ~ 50,
+    str_detect(sample_ID, "SWH") & str_detect(sample_ID, "UPCON") ~ 50,
+    str_detect(sample_ID, "SWH") & str_detect(sample_ID, "SWAMP") ~ 50,
+    str_detect(sample_ID, "SWH") & str_detect(sample_ID, "TR") ~ 50,
+    str_detect(sample_ID, "SWH") & str_detect(sample_ID, "WC") ~ 50,
+    TRUE ~ NA_real_
+  )) %>%
+  mutate(sample_vol = case_when(
+    str_detect(sample_ID, "GCW") & str_detect(sample_ID, "UP") ~ 1501,
+    str_detect(sample_ID, "GCW") & str_detect(sample_ID, "TR") ~ 1501,
+    str_detect(sample_ID, "GCW") & str_detect(sample_ID, "WC") ~ 1475,
+    str_detect(sample_ID, "MSM") & str_detect(sample_ID, "UP") ~ 1501,
+    str_detect(sample_ID, "MSM") & str_detect(sample_ID, "TR") ~ 1501,
+    str_detect(sample_ID, "MSM") & str_detect(sample_ID, "WC") ~ 1475,
+    str_detect(sample_ID, "GWI") & str_detect(sample_ID, "UP") ~ 1475,
+    str_detect(sample_ID, "GWI") & str_detect(sample_ID, "TR") ~ 1475,
+    str_detect(sample_ID, "GWI") & str_detect(sample_ID, "WC") ~ 1462,
+    str_detect(sample_ID, "SWH") & str_detect(sample_ID, "UP") ~ 1501,
+    str_detect(sample_ID, "SWH") & str_detect(sample_ID, "UPCON") ~ 1501,
+    str_detect(sample_ID, "SWH") & str_detect(sample_ID, "SWAMP") ~ 1501,
+    str_detect(sample_ID, "SWH") & str_detect(sample_ID, "TR") ~ 1501,
+    str_detect(sample_ID, "SWH") & str_detect(sample_ID, "WC") ~ 1501,
+    TRUE ~ NA_real_
+  )) 
+
 
 ```
 
@@ -410,47 +450,38 @@ chks_raw <- chks_raw %>%
   filter(!(sample_ID == "Standard 1" & SO4_ppm > 20)) %>% #some of the checks got labeled incorrectly
   filter(!(sample_ID == "Standard 1" & Cl_ppm > 300)) #some of the checks got labeled incorrectly
 
-#Cl standards
-chks_Cl <- chks_raw %>%
-  group_by(sample_ID) %>%
-  summarise(
-    mean_Cl = mean(Cl_ppm, na.rm = TRUE),
-    sd_Cl = sd(Cl_ppm, na.rm = TRUE),
-    .groups = "drop"
-  ) %>%
-  mutate(
-    cv_Cl = (sd_Cl / mean_Cl),
-    flag_Cl = ifelse(cv_Cl < chk_flag, "Chloride Check Standard RSD within Range", "Chloride CHECK STANDARD RSD TOO HIGH - REASSESS")
-  )
+#we don't always the same checks so we need to pull the concentration out of the name 
+chks_raw <- chks_raw %>%
+    mutate(Cl_chk_conc = case_when(
+    sample_ID == "Standard 1" ~ 5,
+    sample_ID == "Standard 2" ~ 10,
+    sample_ID == "Standard 3" ~ 20,
+    sample_ID == "Standard 4" ~ 100,
+    sample_ID == "Standard 5" ~ 200,
+    TRUE ~ NA_real_  # For samples that aren't standards
+  )) %>%  # extract the number
+  mutate(Cl_chk_conc = as.numeric(Cl_chk_conc)) %>%
+    mutate(SO4_chk_conc = case_when(
+    sample_ID == "Standard 1" ~ 0.5,
+    sample_ID == "Standard 2" ~ 1.0,
+    sample_ID == "Standard 3" ~ 2.0,
+    sample_ID == "Standard 4" ~ 10,
+    sample_ID == "Standard 5" ~ 20,
+    TRUE ~ NA_real_  # For samples that aren't standards
+  )) %>%  # extract the number
+  mutate(SO4_chk_conc = as.numeric(SO4_chk_conc))  
 
-#SO4 standards
-chks_S <- chks_raw %>%
-  group_by(sample_ID) %>%
-  summarise(
-    mean_SO4 = mean(SO4_ppm, na.rm = TRUE),
-    sd_SO4 = sd(SO4_ppm, na.rm = TRUE),
-    .groups = "drop"
-  ) %>%
-  mutate(
-    cv_SO4 = (sd_SO4 / mean_SO4),
-    flag_SO4 = ifelse(cv_SO4 < chk_flag, "Sulfate Check Standard RSD within Range", "Sulfate CHECK STANDARD RSD TOO HIGH - REASSESS")
-  )
-
-# View results
-head(chks_Cl)
-head(chks_S)
-
-chks_merged <- left_join(chks_raw, standards, by = "sample_ID")
+#we won't be calculating rsd because we run checks of different concentrations
 
 #calculate percent difference between check standards & expected concentration 
-chks_merged$Cl_diff <- ((chks_merged$Cl_ppm - chks_merged$Cl_std_conc)/((chks_merged$Cl_ppm + chks_merged$Cl_std_conc)/2)) * 100
-chks_merged$Cl_diff_flag <-  ifelse(chks_merged$Cl_diff <= chk_conc_flag, 'YES', 'NO, rerun')
+chks_raw$Cl_diff <- ((chks_raw$Cl_ppm - chks_raw$Cl_chk_conc)/((chks_raw$Cl_ppm + chks_raw$Cl_chk_conc)/2)) * 100
+chks_raw$Cl_diff_flag <-  ifelse(abs(chks_raw$Cl_diff) <= chk_conc_flag, 'YES', 'NO, rerun')
 
-chks_merged$SO4_diff <- ((chks_merged$SO4_ppm - chks_merged$SO4_std_conc)/((chks_raw$SO4_ppm + chks_merged$SO4_std_conc)/2)) * 100
-chks_merged$SO4_diff_flag <-  ifelse(chks_merged$SO4_diff <= chk_conc_flag, 'YES', 'NO, rerun')
+chks_raw$SO4_diff <- ((chks_raw$SO4_ppm - chks_raw$SO4_chk_conc)/((chks_raw$SO4_ppm + chks_raw$SO4_chk_conc)/2)) * 100
+chks_raw$SO4_diff_flag <-  ifelse(abs(chks_raw$SO4_diff) <= chk_conc_flag, 'YES', 'NO, rerun')
 
 #Plot the check standardsvs. the expected concentration 
-cl_chks <-  ggplot(data = chks_merged, aes(x = rep, y = Cl_ppm, fill=Cl_diff_flag)) +
+cl_chks <-  ggplot(data = chks_raw, aes(x = rep, y = Cl_ppm, fill=Cl_diff_flag)) +
        geom_bar(stat = 'identity') + 
         scale_fill_manual(values = c("YES" = "darkgreen", "NO, rerun" = "darkgrey")) +
         theme_classic() + labs(x= " ", y="Cl (ppm)", title="Check Stds: Chloride") + 
@@ -459,7 +490,7 @@ cl_chks <-  ggplot(data = chks_merged, aes(x = rep, y = Cl_ppm, fill=Cl_diff_fla
               guides(fill=guide_legend(title="% Difference <10%"))
 
 
-so4_chks <-  ggplot(data = chks_merged, aes(x = rep, y = SO4_ppm, fill=SO4_diff_flag)) +
+so4_chks <-  ggplot(data = chks_raw, aes(x = rep, y = SO4_ppm, fill=SO4_diff_flag)) +
        geom_bar(stat = 'identity') + 
        scale_fill_manual(values = c("YES" = "darkgreen", "NO, rerun" = "darkgrey")) +
         theme_classic() + labs(x= " ", y="SO4  (ppm)", title="Check Stds: Sulfate") + 
@@ -470,8 +501,8 @@ so4_chks <-  ggplot(data = chks_merged, aes(x = rep, y = SO4_ppm, fill=SO4_diff_
 ggarrange(cl_chks, so4_chks, nrow=1, ncol=2)
 
 #calculate the percent of check standards that are within the range based on the flag 
-cl_chks_percent <- (sum(chks_merged$Cl_diff_flag == "YES")/nrow(chks_merged))*100
-so4_chks_percent <- (sum(chks_merged$SO4_diff_flag == "YES")/nrow(chks_merged))*100
+cl_chks_percent <- (sum(chks_raw$Cl_diff_flag == "YES")/nrow(chks_raw))*100
+so4_chks_percent <- (sum(chks_raw$SO4_diff_flag == "YES")/nrow(chks_raw))*100
 
 #report out if flags indicate need for rerun
 ifelse(cl_chks_percent >= chk_flag, ">60% of Chloride Check Standards are within range of expected concentration",
@@ -593,10 +624,6 @@ dat_raw2 <- all_dat %>%
   select(!c(sample_name, sample_type, SO4_area, Cl_area, Cl_flag, SO4_flag))
 
 #remove the dup from these IDs so we will have duplicate sample names
-#dups$sample_ID<-gsub("_dup","",as.character(dups$sample_ID))
-#dups <- all_dat %>%  
- # select(!c(sample_name, sample_type, SO4_area, Cl_area, Cl_flag, SO4_flag)) #remove unneeded columns
-#colnames(dups) <- c('sample_ID',  "SO4_ppm_dup", 'CL_ppm_dup')
 dups <- dups %>%
   mutate(sample_ID = gsub("_dup", "", as.character(sample_ID))) %>%
   rename(
@@ -632,8 +659,10 @@ QAdups$SO4_dups_cv_flag <-  ifelse(QAdups$SO4_dups_cv <10, 'YES', 'NO, rerun')
 
 #Put all the dups together and create row numbers for plotting
 QAdups <- QAdups %>%
-  mutate(row_num = row_number())
+  filter(sample_ID != "100_MSM_202304_PPR_TR_4") %>%  #this run has a weird thing going on 
+  mutate(row_num = row_number()) 
 #head(QAdups)
+
 
 
 #plot dups output as a bar graph to easily check - want any over 10% to be red need to work on this 
@@ -691,158 +720,149 @@ if (so4_dups_percent <= chks_flag) {  # assuming you have tn_chks_percent simila
 ```
 
 
-## Assess Analytical Spikes
-```{#r}
+## Calculate mmol/L concentrations & salinity
+```{r}
+cat("Unit Conversion and Salinity Calculation")
+
+# Convert ppm to mmol/L
+all_dat$SO4_mM <- (all_dat$SO4_ppm / s_mw)
+all_dat$Cl_mM <- (all_dat$Cl_ppm / cl_mw)
+
+# Calculate Salinity 
+# calculated using the Knudsen equation 
+# Salinity = 0.03 + 1.8050 * Chlorinity
+# Ref: A Practical Handbook of Seawater Analysis by Strickland & Parsons (P. 11)
+# =((1.807*Cl_ppm)+0.026)/1000
+all_dat$salinity <- ((1.8070 * all_dat$Cl_ppm) + 0.026) / 1000
+
+head(all_dat)
+```
+
+
+## Assess Analytical Spikes 
+```{r}
 cat("Assess Spikes")
 
 #pull out any rows that have "spk" in the SampleID column
 spks <- all_dat %>%  
-  select(!c(sample_name, sample_type, SO4_area, Cl_ppm, Cl_area, Cl_flag, SO4_flag)) %>%
+  select(!c(sample_name, sample_type, SO4_area, SO4_ppm, Cl_ppm, Cl_area, Cl_flag, Cl_mM, SO4_flag, salinity)) %>%
   filter(str_detect(sample_ID, "spk"))      #have to change this to match data
 head(spks)
 
 #create a new dataframe and remove dups from sample dataframe 
 dat_spks <- all_dat %>%  
   filter(!str_detect(sample_ID, "spk")) %>%  
-  select(!c(sample_name, sample_type, SO4_area, Cl_ppm, Cl_area, Cl_flag, SO4_flag))
+  select(!c(sample_name, sample_type, SO4_area, SO4_ppm, Cl_ppm, Cl_area, Cl_flag, Cl_mM, SO4_flag, salinity))
 
 #remove the dup from these IDs so we will have duplicate sample names
 spks <- spks %>%
   mutate(sample_ID = gsub("_spk", "", as.character(sample_ID))) %>%
   rename(
     sample_ID = sample_ID,
-    SO4_ppm_spk = SO4_ppm
+    SO4_mM_spk = SO4_mM
   )
 
 #put it back together with the old data set and look for duplicates 
 QAspks <- merge(dat_spks, spks)
-head(QAspks)
 
-
-
-#this is getting confusing here and needs to be dealt with 
-  #need to figure out if we need the dilution correction before we do this because doesn't the instrument already do that? 
-  #check check check 
+QAspks <- QAspks %>%
+  filter(sample_ID != "101_MSM_202304_PPR_TR_5") 
 
 #now we need to calculate the spike concentration and calculate the spike recovery
-spkconc <- (250/smw)    # in mM
+spkconc <- (250/s_mw)    # in mM
 spkvol <- 10             # in uL
 spkvol <- spkvol/1000000 
 #spike for these samples was 10uL of the 250mM standard
 QAspks$SO4_spk_Conc <- spk_Conc     # mmoles of SO4 
-head(QAspks)
-
-#need to determine dilution factors and initial amount of sample added
-#if your samples are all the same dilution just use the first line 
-#for Steph / COMPASS this depends on the site so... 
-QAspks$Dilution <- 1
-QAspks$Dilution <-  ifelse(str_detect(QAspks$Sample_ID, "MSM_202306_UP"), 50, QAspks$Dilution)
-QAspks$Dilution <-  ifelse(str_detect(QAspks$Sample_ID, "MSM_202306_TR"), 50, QAspks$Dilution)
-QAspks$Dilution <-  ifelse(str_detect(QAspks$Sample_ID, "MSM_202306_WC"), 100, QAspks$Dilution)
-QAspks$Dilution <-  ifelse(str_detect(QAspks$Sample_ID, "GCrew_202306_UP"), 50, QAspks$Dilution)
-QAspks$Dilution <-  ifelse(str_detect(QAspks$Sample_ID, "GCrew_202306_TR"), 50, QAspks$Dilution)
-QAspks$Dilution <-  ifelse(str_detect(QAspks$Sample_ID, "GCrew_202306_WC"), 100, QAspks$Dilution)
-QAspks$Dilution <-  ifelse(str_detect(QAspks$Sample_ID, "GWI_202306_UP"), 100, QAspks$Dilution)
-QAspks$Dilution <-  ifelse(str_detect(QAspks$Sample_ID, "GWI_202306_TR"), 100, QAspks$Dilution)
-QAspks$Dilution <-  ifelse(str_detect(QAspks$Sample_ID, "GWI_202306_WC"), 200, QAspks$Dilution)
-QAspks$Dilution <-  ifelse(str_detect(QAspks$Sample_ID, "SWH_202306_UP"), 50, QAspks$Dilution)
-QAspks$Dilution <-  ifelse(str_detect(QAspks$Sample_ID, "SWH_202306_TR"), 50, QAspks$Dilution)
-QAspks$Dilution <-  ifelse(str_detect(QAspks$Sample_ID, "SWH_202306_WC"), 50, QAspks$Dilution)
-
-#Set Sample volumes in uL 
-QAspks$SampleVol <- 1
-QAspks$SampleVol <-  ifelse(str_detect(QAspks$Sample_ID, "MSM_202306_UP"), 1501, QAspks$SampleVol)
-QAspks$SampleVol <-  ifelse(str_detect(QAspks$Sample_ID, "MSM_202306_TR"), 1501, QAspks$SampleVol)
-QAspks$SampleVol <-  ifelse(str_detect(QAspks$Sample_ID, "MSM_202306_WC"), 1475, QAspks$SampleVol)
-QAspks$SampleVol <-  ifelse(str_detect(QAspks$Sample_ID, "GCrew_202306_UP"), 1501, QAspks$SampleVol)
-QAspks$SampleVol <-  ifelse(str_detect(QAspks$Sample_ID, "GCrew_202306_TR"), 1501, QAspks$SampleVol)
-QAspks$SampleVol <-  ifelse(str_detect(QAspks$Sample_ID, "GCrew_202306_WC"), 1475, QAspks$SampleVol)
-QAspks$SampleVol <-  ifelse(str_detect(QAspks$Sample_ID, "GWI_202306_UP"), 1475, QAspks$SampleVol)
-QAspks$SampleVol <-  ifelse(str_detect(QAspks$Sample_ID, "GWI_202306_TR"), 1475, QAspks$SampleVol)
-QAspks$SampleVol <-  ifelse(str_detect(QAspks$Sample_ID, "GWI_202306_WC"), 1462, QAspks$SampleVol)
-QAspks$SampleVol <-  ifelse(str_detect(QAspks$Sample_ID, "SWH_202306_UP"), 1501, QAspks$SampleVol)
-QAspks$SampleVol <-  ifelse(str_detect(QAspks$Sample_ID, "SWH_202306_TR"), 1501, QAspks$SampleVol)
-QAspks$SampleVol <-  ifelse(str_detect(QAspks$Sample_ID, "SWH_202306_WC"), 1501, QAspks$SampleVol)
 
 #change sample volume to L 
-QAspks$SampleVol <- QAspks$SampleVol/1000000
-head(QAspks)
+QAspks$sample_vol <- QAspks$sample_vol/1000000
 
 #gives us the total SO4 in the sample in mmoles
-QAspks$SO4_Total_unspkd <- (QAspks$SO4_mM/QAspks$Dilution)*(QAspks$SampleVol) 
+QAspks$SO4_Total_unspkd <- (QAspks$SO4_mM/QAspks$dilution)*(QAspks$sample_vol) 
 
 ##total SO4 in spiked sample in mmoles
-QAspks$SO4_Total_spkd <- (QAspks$SO4_mM_spk/QAspks$Dilution)*(QAspks$SampleVol+spkvol) 
+QAspks$SO4_Total_spkd <- (QAspks$SO4_mM_spk/QAspks$dilution)*(QAspks$sample_vol+spkvol) 
 
 QAspks$SO4_expctd_spkd <-  (QAspks$SO4_Total_unspkd + QAspks$SO4_spk_Conc)
 QAspks$spk_recovery <-    (QAspks$SO4_Total_spkd/QAspks$SO4_expctd_spkd)*100
 QAspks$SO4_spks_flag <-  ifelse(QAspks$spk_recovery <=120 & QAspks$spk_recovery >=80 , 'YES', 'NO, rerun')  #fix 
 
-head(QAspks)
-
 #plot spk recoveries output as a bar graph to easily check - want any over 10% to be red need to work on this 
-spksbar <- ggplot(data = QAspks, aes(x = Sample_ID, y = spk_recovery)) +
+spksbar <- ggplot(data = QAspks, aes(x = sample_ID, y = spk_recovery, fill=SO4_spks_flag)) +
         geom_bar(stat = 'identity') + 
-        scale_fill_manual(values=c("lightblue4")) + 
+        scale_fill_manual(values = c("YES" = "darkcyan", "NO, rerun" = "darkred")) +
         theme_classic() + labs(x= "Sample ID", y="Spike Recovery (%)") + 
         theme(legend.position="none") +  
         geom_hline(yintercept=80, linetype="dashed", color = "black", size=1) + 
-        geom_hline(yintercept=120, linetype="dashed", color = "black", size=1)
+        geom_hline(yintercept=120, linetype="dashed", color = "black", size=1)+
+        theme(axis.text.x = element_text(angle = 90, hjust = 0.5))
 
 spksbar
 
+#calculate the percent of check standards that are within the range based on the flag
+spk_percent <- (sum(QAspks$SO4_spks_flag == "YES")/nrow(QAspks))*100
+ 
+#spk flag report out
+ifelse(spk_percent >= chks_flag, 
+       ">60% of Spikes are within the expected range - PROCEED",
+       "<60% of Spikes are outside of the expected range - REASSESS")
 
-
-#check for percent of no, reruns to see if it  would warrant reruns 
-Perc_spks <- QAspks %>% 
-  group_by(SO4_spks_flag) %>%
-  summarise(no_rows = length(SO4_spks_flag)) 
-Perc_spks$Total <- length(QAspks$SO4_spks_flag)
-Perc_spks$Percent <- (Perc_spks$no_rows / Perc_spks$Total)*100
-head(Perc_spks)
+#write out a flag to the sample dataframe if more than 60% of the dups have CVs out of range
+if (spk_percent <= chks_flag) {  # assuming you have tn_chks_percent similarly
+    all_dat$SO4_flag <- ifelse(
+    all_dat$SO4_flag != "",
+    paste0(all_dat$SO4_flag, "; SO4 spikes out of range"),
+    "SO4 spikes out of range"
+  )
+}
 
 ```
 
 
 ## Sample Flagging - Are samples Within the range of the curve? 
-      ######### need to undilute them to check this and then we can calculate and flag if they are within the curve 
-```{#r Sample Flagging, echo=FALSE}
+```{r Sample Flagging, echo=FALSE}
 
 cat("Sample Flagging")
 
-#Flagging data if the concentration is outside the standards range and based on blanks
 dat_flagged <- all_dat %>%
+  filter(str_detect(sample_name, "GCW|GWI|MSM|SWH")) %>%
+  mutate(Cl_ppm_undiluted = Cl_ppm / dilution) %>%
+  mutate(SO4_ppm_undiluted = SO4_ppm / dilution)
+
+#Flagging data if the concentration is outside the standards range and based on blanks
+dat_flagged <- dat_flagged %>%
   mutate(
-   # Cl_flag = if_else(
-    #  Cl_ppm > top_std_cl,
-     # if_else(
-      #  Cl_flag != "" & !is.na(Cl_flag),
-       # paste0(Cl_flag, "; value above cal curve"),
-        #"value above cal curve"
-    #  ),
-     # Cl_flag
-  #  ),
     Cl_flag = if_else(
-      blk_avg_c > 0.25 * Cl_ppm,
+      Cl_ppm_undiluted > top_std_cl,
       if_else(
-        npoc_flag != "" & !is.na(Cl_flag),
+        Cl_flag != "" & !is.na(Cl_flag),
+        paste0(Cl_flag, "; value above cal curve"),
+        "value above cal curve"
+      ),
+      Cl_flag
+    ),
+    Cl_flag = if_else(
+      blk_avg_cl > 0.25 * Cl_ppm_undiluted,
+      if_else(
+        Cl_flag != "" & !is.na(Cl_flag),
         paste0(Cl_flag, "; blank is ≥ 25% of sample value"),
         "blank is ≥ 25% of sample value"
       ),
       Cl_flag
     ),
 
-#    SO4_flag = if_else(
-#      tdn_raw > top_std_so4,
-#      if_else(
-#        SO4_flag != "" & !is.na(SO4_flag),
-#        paste0(SO4_flag, "; value above cal curve"),
-#        "value above cal curve"
-#      ),
-#      SO4_flag
-#    ),
     SO4_flag = if_else(
-      blk_avg_n > 0.25 * SO4_ppm,
+      SO4_ppm_undiluted > top_std_so4,
+      if_else(
+        SO4_flag != "" & !is.na(SO4_flag),
+        paste0(SO4_flag, "; value above cal curve"),
+        "value above cal curve"
+      ),
+      SO4_flag
+    ),
+    SO4_flag = if_else(
+      blk_avg_so4 > 0.25 * SO4_ppm,
       if_else(
         SO4_flag != "" & !is.na(SO4_flag),
         paste0(SO4_flag, "; blank is ≥ 25% of sample value"),
@@ -853,34 +873,121 @@ dat_flagged <- all_dat %>%
   )
 
 #lets make a dataframe with just the concentration flag for plotting 
-dat_flag_viz <- all_dat %>% 
-  mutate(npoc_flag = case_when(npoc_raw > top_std_c ~ "value above cal curve",
-            blk_avg_c > 0.25*npoc_raw ~ "blank is ≥ 25% of sample value"), # flagging if blank concentration is > 20% of the sample concentration
+dat_flag_viz <- dat_flagged %>% 
+  mutate(Cl_flag = case_when(Cl_ppm_undiluted > top_std_cl ~ "value above cal curve",
+            blk_avg_cl > 0.25*Cl_ppm_undiluted ~ "blank is ≥ 25% of sample value"), # flagging if blank concentration is > 20% of the sample concentration
             #sample_name == "TMP_SW_F4_T3" ~ "incorrect sample naming, cannot resolve"), # if needed and there are issues with sample names
     
-        tdn_flag = case_when(tdn_raw > top_std_n ~ "value above cal curve",
-            blk_avg_n > 0.25*tdn_raw ~ "blank is ≥ 25% of sample value") #, # flagging if blank concentration is > 25% of the sample concentration
+        SO4_flag = case_when(SO4_ppm_undiluted > top_std_so4 ~ "value above cal curve",
+            blk_avg_so4 > 0.25*SO4_ppm_undiluted ~ "blank is ≥ 25% of sample value") #, # flagging if blank concentration is > 25% of the sample concentration
           #sample_name == "TMP_SW_F4_T3" ~ "incorrect sample naming, cannot resolve"), # if needed and there are issues with sample names
  )
 
 #Plot data and change colors based on flags to check it: 
-c_samples_flag <-  ggplot(data = dat_flag_viz, aes(x = sample_name, y = npoc_raw, fill=npoc_flag)) +
+c_samples_flag <-  ggplot(data = dat_flag_viz, aes(x = sample_name, y = Cl_ppm, fill=Cl_flag)) +
        geom_bar(stat = 'identity') + 
         scale_fill_manual(values=c("red", "orange"))+
-        theme_classic() + labs(x= " ", y="C (mg/L)", title="C: Grey = Within Range of Curve") + 
-        theme(legend.position="none") 
+        theme_classic() + labs(x= " ", y="Cl (mg/L)", title="C: Grey = Within Range of Curve") + 
+        theme(legend.position="none") +
+        theme(axis.text.x = element_text(angle = 90, hjust = 0.5))
 
 
-n_samples_flag <-  ggplot(data = dat_flag_viz, aes(x = sample_name, y = tdn_raw, fill=tdn_flag)) +
+n_samples_flag <-  ggplot(data = dat_flag_viz, aes(x = sample_name, y = SO4_ppm, fill=SO4_flag)) +
        geom_bar(stat = 'identity') + 
         scale_fill_manual(values=c("red", "orange"))+
-        theme_classic() + labs(x= " ", y="N (mg/L)", title="N: Grey = Within Range of Curve") + 
-        theme(legend.position="none") 
+        theme_classic() + labs(x= " ", y="SO4 (mg/L)", title="N: Grey = Within Range of Curve") + 
+        theme(legend.position="none") +
+        theme(axis.text.x = element_text(angle = 90, hjust = 0.5))
 
 ggarrange(c_samples_flag, n_samples_flag, nrow=1, ncol=2)
 
 
 ```
+
+## Pull out sample id information 
+```{r Sample Identification, echo=FALSE}
+
+cat("Sample Processing")
+
+samples_flagged <- dat_flagged %>%
+  filter(str_detect(sample_name, "GCW|GWI|MSM|SWH")) %>%
+  filter(!str_detect(sample_name, "RHZ|PPR")) %>% 
+  separate(
+    col = sample_name,
+    sep = "_",
+    into = c("Number", "Site", "Samp_Time", "Zone", "Replicate", "Depth"),
+    remove = FALSE) 
+
+```
+
+## Pulling Rhizon Samples
+```{#r Rhizon Sample Wrangle}
+
+# Filter rhizon and peeper samples
+df_rhizon <- dat_flagged %>%
+  filter(str_detect(Sample_Name, "RHZ"))
+df_peep <- dat_flagged %>%
+  filter(str_detect(Sample_Name, "PPR"))
+
+# Timestamp for backups
+timestamp <- format(Sys.time(), "%Y-%m-%d_%H%M")
+
+# Paths
+folder_path <- file.path("Raw Data", "Rhizon+Peeper")
+dir.create(folder_path, recursive = TRUE, showWarnings = FALSE)
+
+rhizon_main <- file.path(folder_path, "rhizon_data.csv")
+peeper_main <- file.path(folder_path, "peeper_data.csv")
+
+rhizon_backup <- file.path(folder_path, paste0("rhizon_data_", timestamp, ".csv"))
+peeper_backup <- file.path(folder_path, paste0("peeper_data_", timestamp, ".csv"))
+
+# Write timestamped backups
+write.csv(df_rhizon, rhizon_backup, row.names = FALSE)
+write.csv(df_peep, peeper_backup, row.names = FALSE)
+
+# Overwrite the main files with latest data
+write.csv(df_rhizon, rhizon_main, row.names = FALSE)
+write.csv(df_peep, peeper_main, row.names = FALSE)
+
+## ^^ I think there is a cleaner way to write this out, but this should work for now ^^
+
+```
+
+## Check to see if samples run match metadata & merge info
+```{r, check sample ids with metadata, echo=FALSE}
+
+cat("Check Sample IDs with Metadata")
+
+#remove duplicates from the sample dataframe bc we are just taking the first dup run
+all_data_flagged <- samples_flagged %>%
+  filter(!str_detect(sample_ID, "dup")) %>%
+  filter(!str_detect(sample_ID, "spk")) %>%
+  mutate(sample_ID = sub("^[^_]+_", "", sample_ID))
+  #select(!Excess_Info)
+
+#check to see if all samples are present in the metadata 
+all_present <- all(all_data_flagged$sample_ID %in% dionex_metadata$Cl_SO4_ID)
+
+if (all_present) {
+  message("All sample IDs are present in metadata.")
+} else {
+  message("Some sample IDs are missing from metadata.")
+  
+  # Optional: Which ones are missing?
+  missing_ids <- setdiff(all_data_flagged$sample_ID, dionex_metadata$Cl_SO4_ID)
+  print(missing_ids)
+}
+
+dionex_metadata_selected <- dionex_metadata %>%
+  select(Cl_SO4_ID, Year, Month, Day, Depth_cm, Lysimeter, Time..24hr., Time.Zone_EDT.EST,  Field.Notes) 
+
+#merge metadata with sample run data 
+merged_data <- all_data_flagged %>%
+  left_join(dionex_metadata_selected, by = c("sample_ID" = "Cl_SO4_ID"))
+
+```
+
 
 ## Visualize Data by Plot   
 ```{r Visualize Data, echo=FALSE}
@@ -892,7 +999,6 @@ dat_flagged <- all_dat %>%
   filter(!str_detect(sample_ID, "_dup")) %>%
   filter(!str_detect(sample_ID, "_spk")) %>%
   filter(str_detect(sample_ID, samples_pattern))
-
 
 cat("Visualize Data")
 
@@ -938,71 +1044,18 @@ viz_so4_plot <-  ggplot(dat_flagged_id, aes(x = row_num, y = SO4_ppm, fill = Zon
     "SW" = "#25ABE6"
   )) +
   theme_classic() +
-  labs(x = " ", y = "TN (mg/L)", title = "Samples: TN") +
+  labs(x = " ", y = "SO4 (mg/L)", title = "Samples: Sulfate") +
   theme(legend.position = "none") +
   scale_x_discrete(drop = TRUE)
-
-#print(viz_c_plot)
-#print(viz_n_plot)
 
 ggarrange(viz_cl_plot, viz_so4_plot, nrow=2, ncol=1)
 
 ```
 
-## Calculate mmol/L concentrations & salinity
-```{r}
-cat("Unit Conversion and Salinity Calculation")
 
-# Convert ppm to mmol/L
-dat_flagged_id$SO4_mM <- (dat_flagged_id$SO4_ppm / s_mw)
-dat_flagged_id$Cl_mM <- (dat_flagged_id$Cl_ppm / cl_mw)
-
-# Calculate Salinity 
-# calculated using the Knudsen equation 
-# Salinity = 0.03 + 1.8050 * Chlorinity
-# Ref: A Practical Handbook of Seawater Analysis by Strickland & Parsons (P. 11)
-# =((1.807*Cl_ppm)+0.026)/1000
-dat_flagged_id$salinity <- ((1.8070 * dat_flagged_id$Cl_ppm) + 0.026) / 1000
-
-head(dat_flagged_id)
-```
-
-
-## Check to see if samples run match metadata & merge info
-```{r, check sample ids with metadata, echo=FALSE}
-
-cat("Check Sample IDs with Metadata")
-
-#remove duplicates from the sample dataframe bc we are just taking the first dup run
-all_data_flagged <- dat_flagged_id %>%
-  filter(!str_detect(sample_ID, "dup")) %>%
-  mutate(sample_ID = sub("^[^_]+_", "", sample_ID))
-  #select(!Excess_Info)
-
-#check to see if all samples are present in the metadata 
-all_present <- all(all_data_flagged$sample_ID %in% dionex_metadata$Cl_SO4_ID)
-
-if (all_present) {
-  message("All sample IDs are present in metadata.")
-} else {
-  message("Some sample IDs are missing from metadata.")
-  
-  # Optional: Which ones are missing?
-  missing_ids <- setdiff(all_data_flagged$sample_ID, dionex_metadata$Cl_SO4_ID)
-  print(missing_ids)
-}
-
-dionex_metadata_selected <- dionex_metadata %>%
-  select(Cl_SO4_ID, Year, Month, Day, Depth_cm, Lysimeter, Time..24hr., Time.Zone_EDT.EST,  Field.Notes) 
-
-#merge metadata with sample run data 
-merged_data <- all_data_flagged %>%
-  left_join(dionex_metadata_selected, by = c("sample_ID" = "Cl_SO4_ID"))
-
-```
 
 ## Export Processed Data  
-```{#r, Export Processed Data, echo=FALSE}
+```{r, Export Processed Data, echo=FALSE}
 
 cat("Export Processed Data")
 
