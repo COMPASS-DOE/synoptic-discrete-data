@@ -1,0 +1,120 @@
+Machine,User ,Run_Date,Sample_Type,Type1,Sample_Year,Sample_Month,Sample_ID,Dilution_Factor,STD_Conc,CO2_Area,CH4_Area,Field Notes,Lab Notes
+Varian GC,Wegner,20230301,Blank,Blank,2023,NA,Blank_0,1,0,2844,0,,
+Varian GC,Wegner,20230301,STD_CH4,STD_CH4,2023,NA,Blank_0_repeatforCH4,1,0,2844,0,,
+Varian GC,Wegner,20230301,STD_CO2,STD_CO2,2023,NA,Blank_0_repeatforCO2,1,0,2844,0,,
+Varian GC,Wegner,20230301,STD_CH4,STD_CH4,2023,NA,STD_1ppm_CH4,1,1,27299,587,,
+Varian GC,Wegner,20230301,STD_CH4,STD_CH4,2023,NA,STD_2.5ppm_CH4,1,2.5,72256,1621,,
+Varian GC,Wegner,20230301,STD_CH4,STD_CH4,2023,NA,STD_5ppm_CH4,1,5,149377,3304,,
+Varian GC,Wegner,20230301,STD_CH4,STD_CH4,2023,NA,STD_10ppm_CH4,1,10,295564,6524,,
+Varian GC,Wegner,20230301,STD_CH4,STD_CH4,2023,NA,STD_25ppm_CH4,1,25,717573,16421,,
+Varian GC,Wegner,20230301,STD_CH4,STD_CH4,2023,NA,STD_50ppm_CH4,1,50,1510928,34294,,
+Varian GC,Wegner,20230301,STD_CH4,STD_CH4,2023,NA,STD_100ppm_CH4,1,100,2885,70749,,
+Varian GC,Wegner,20230301,STD_CH4,STD_CH4,2023,NA,STD_250ppm_CH4,1,250,1939,178249,,
+Varian GC,Wegner,20230301,STD_CH4,STD_CH4,2023,NA,STD_500ppm_CH4,1,500,1720,362086,,
+Varian GC,Wegner,20230301,STD_CH4,STD_CH4,2023,NA,STD_2500ppm_CH4,1,2500,1886,1835062,,
+Varian GC,Wegner,20230301,STD_CH4,STD_CH4,2023,NA,STD_5000ppm_CH4,1,5000,3498,3357100,,
+Varian GC,Wegner,20230301,STD_CO2,STD_CO2,2023,NA,STD_125ppm_CO2,1,125,24650,933,,
+Varian GC,Wegner,20230301,STD_CO2,STD_CO2,2023,NA,STD_500ppm_CO2,1,500,85043,363,,
+Varian GC,Wegner,20230301,STD_CO2,STD_CO2,2023,NA,STD_2500ppm_CO2,1,2500,413053,236,,
+Varian GC,Wegner,20230301,STD_CO2,STD_CO2,2023,NA,STD_5000ppm_CO2,1,5000,833274,209,,
+Varian GC,Wegner,20230301,STD_CO2,STD_CO2,2023,NA,STD_50000ppm_CO2,1,50000,8122823,393,,
+Varian GC,Wegner,20230301,Blank,Blank,2023,NA,Blank_1,1,0,10609,0,,checked
+Varian GC,Wegner,20230301,Unknown,TGW,2023,June,GCW_TGW_TR_SF_1,12,NA,995839,74179,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,June,GCW_TGW_TR_SF_2,12,NA,1002126,332049,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,June,GCW_TGW_TR_SF_3,12,NA,819981,115222,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,June,GCW_TGW_TR_SF_4,12,NA,878772,198883,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,June,GCW_TGW_TR_SF_5,12,NA,1223752,5258787,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,June,GCW_TGW_TR_SF_6,12,NA,1261107,3472444,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,June,MSM_TGW_UP_SF_1,2.83,NA,254719,2762,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,June,MSM_TGW_UP_SF_2,2.83,NA,120806,1144,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,June,MSM_TGW_UP_SF_3,2.83,NA,267187,963,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,June,MSM_TGW_UP_SF_4,2.83,NA,131065,976,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,June,MSM_TGW_UP_SF_5,2.83,NA,493114,1613,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,June,MSM_TGW_UP_SF_6,2.83,NA,353430,1238,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,June,MSM_TGW_UP_SF_7,2.83,NA,288290,652,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,June,MSM_TGW_UP_SF_8,2.83,NA,541284,971,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,June,MSM_TGW_TR_SF_1,2.83,NA,1597839,667731,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,June,MSM_TGW_TR_SF_2,2.83,NA,243500,1687,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,June,MSM_TGW_TR_SF_3,2.83,NA,256105,1017,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,June,MSM_TGW_TR_SF_4,2.83,NA,92497,1030,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,June,MSM_TGW_TR_SF_5,2.83,NA,76902,909,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,June,MSM_TGW_TR_SF_6,2.83,NA,161383,619,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,June,MSM_TGW_TR_SF_7,2.83,NA,149366,610,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,June,MSM_TGW_TR_SF_8,2.83,NA,393767,10330,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,June,MSM_TGW_TR_DS_1,2.83,NA,51478,794,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,June,MSM_TGW_TR_DS_2,2.83,NA,281134,4192,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,June,MSM_TGW_TR_DS_3,2.83,NA,157541,743,,10mL N2 added in lab
+Varian GC,Wegner,20230301,CHKSTD,CHKSTD,2023,NA,CHKSTD_5ppm_CH4,1,5,156496,3520,,
+Varian GC,Wegner,20230301,Blank,Blank,2023,NA,Blank_2,1,0,4263,0,,
+Varian GC,Wegner,20230301,Unknown,TGW,2023,June,GWI_TGW_UP_SF_1,2.83,NA,398592,1350,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,June,GWI_TGW_UP_SF_2,2.83,NA,345382,975,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,June,GWI_TGW_UP_SF_3,2.83,NA,282820,1943,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,June,GWI_TGW_UP_SF_4,2.83,NA,401781,1861,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,June,GWI_TGW_UP_SF_5,2.83,NA,269762,1047,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,June,GWI_TGW_UP_SF_6,2.83,NA,151901,1303,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,June,GWI_TGW_UP_SF_7,2.83,NA,555174,22517,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,June,GWI_TGW_UP_SF_8,2.83,NA,179971,2214,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,June,GWI_TGW_TR_SF_1,2.83,NA,62907,745,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,June,GWI_TGW_TR_SF_2,2.83,NA,41090,916,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,June,GWI_TGW_TR_SF_3,2.83,NA,450984,856,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,June,GWI_TGW_TR_SF_4,2.83,NA,116406,814,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,June,GWI_TGW_TR_SF_5,2.83,NA,NA,NA,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,June,GWI_TGW_TR_SF_6,2.83,NA,61989,868,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,June,GWI_TGW_TR_SF_7,2.83,NA,169259,1003,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,June,GWI_TGW_TR_SF_8,2.83,NA,92196,1432,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,June,GWI_TGW_TR_DS_1,2.83,NA,939645,655,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,June,GWI_TGW_TR_DS_2,2.83,NA,1261806,639,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,June,GWI_TGW_TR_DS_3,2.83,NA,44795,552,,10mL N2 added in lab
+Varian GC,Wegner,20230301,CHKSTD,CHKSTD,2023,NA,CHKSTD_5ppm_CH4_1,2,5,147189,3281,,
+Varian GC,Wegner,20230301,Blank,Blank,2023,NA,Blank_3,1,0,4854,0,,
+Varian GC,Wegner,20230301,Unknown,TGW,2023,July,MSM_TGW_UP_SF_1,2.83,NA,919508,1599,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,July,MSM_TGW_UP_SF_2,2.83,NA,626638,2620,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,July,MSM_TGW_UP_SF_3,2.83,NA,1074354,1747,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,July,MSM_TGW_UP_SF_4,2.83,NA,533006,1943,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,July,MSM_TGW_UP_SF_5,2.83,NA,1030386,3776,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,July,MSM_TGW_UP_SF_6,2.83,NA,861775,2739,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,July,MSM_TGW_UP_SF_7,2.83,NA,818715,826,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,July,MSM_TGW_UP_SF_8,2.83,NA,1446376,1753,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,July,MSM_TGW_TR_SF_1,2.83,NA,543528,27297,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,July,MSM_TGW_TR_SF_2,2.83,NA,350461,1621,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,July,MSM_TGW_TR_SF_3,2.83,NA,604137,1828,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,July,MSM_TGW_TR_SF_4,2.83,NA,212906,2398,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,July,MSM_TGW_TR_SF_5,2.83,NA,195043,1941,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,July,MSM_TGW_TR_SF_6,2.83,NA,501024,923,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,July,MSM_TGW_TR_SF_7,2.83,NA,2342774,13993,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,July,MSM_TGW_TR_SF_8,2.83,NA,468282,1025,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,July,MSM_TGW_TR_DS_1,2.83,NA,40988,637,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,July,MSM_TGW_TR_DS_2,2.83,NA,277343,4015,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,July,MSM_TGW_TR_DS_3,2.83,NA,331260,1047,,10mL N2 added in lab
+Varian GC,Wegner,20230301,CHKSTD,CHKSTD,2023,NA,CHKSTD_5ppm_CH4_2,1,5,144696,3224,,
+Varian GC,Wegner,20230301,Blank,Blank,2023,NA,Blank_4,1,0,3631,0,,
+Varian GC,Wegner,20230301,Unknown,TGW,2023,July,GWI_TGW_UP_SF_1,2.83,NA,500122,1613,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,July,GWI_TGW_UP_SF_2,2.83,NA,765588,1605,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,July,GWI_TGW_UP_SF_3,2.83,NA,356762,2357,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,July,GWI_TGW_UP_SF_4,2.83,NA,1039120,3564,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,July,GWI_TGW_UP_SF_5,2.83,NA,217317,942,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,July,GWI_TGW_UP_SF_6,2.83,NA,309439,1627,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,July,GWI_TGW_UP_SF_7,2.83,NA,788161,33132,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,July,GWI_TGW_UP_SF_8,2.83,NA,320448,4371,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,July,GWI_TGW_TR_SF_1,2.83,NA,164580,1300,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,July,GWI_TGW_TR_SF_2_A,2.83,NA,41446,1172,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,July,GWI_TGW_TR_SF_2_B,2.83,NA,59468,2006,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,July,GWI_TGW_TR_SF_3,2.83,NA,3771328,34087,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,July,GWI_TGW_TR_SF_4,2.83,NA,126960,962,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,July,GWI_TGW_TR_SF_5,2.83,NA,52041,1111,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,July,GWI_TGW_TR_SF_6,2.83,NA,84256,1055,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,July,GWI_TGW_TR_SF_7,2.83,NA,309384,1626,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,July,GWI_TGW_TR_SF_8,2.83,NA,942220,2581,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,July,GWI_TGW_TR_DS_1,2.83,NA,1108129,568,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,July,GWI_TGW_TR_DS_2,2.83,NA,298096,522,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,July,GWI_TGW_TR_DS_3,2.83,NA,125060,546,,10mL N2 added in lab
+Varian GC,Wegner,20230301,CHKSTD,CHKSTD,2023,NA,CHKSTD_5ppm_CH4_3,1,5,152158,3318,,
+Varian GC,Wegner,20230301,Blank,Blank,2023,NA,Blank_5,1,0,4713,0,,
+Varian GC,Wegner,20230301,Unknown,TGW,2023,July,GCW_TGW_TR_SF_1,12,NA,972214,205850,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,July,GCW_TGW_TR_SF_2,12,NA,1113353,330027,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,July,GCW_TGW_TR_SF_3,12,NA,826546,108840,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,July,GCW_TGW_TR_SF_4,12,NA,956280,59097,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,July,GCW_TGW_TR_SF_5,12,NA,1201677,5363358,,10mL N2 added in lab
+Varian GC,Wegner,20230301,Unknown,TGW,2023,July,GCW_TGW_TR_SF_6,12,NA,1098321,3382138,,10mL N2 added in lab
+Varian GC,Wegner,20230301,CHKSTD,CHKSTD,2023,NA,CHKSTD_5ppm_CH4_4,1,5,151693,4420,,
+Varian GC,Wegner,20230301,Blank,Blank,2023,NA,Blank_6,1,0,5156,500,,
