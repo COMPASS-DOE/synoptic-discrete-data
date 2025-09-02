@@ -6,13 +6,14 @@ output:
   pdf_document:
     toc: true
     number_sections: true
+
 output_dir: "To Be Reviewed/PDF"
 ---
 
 \newpage
 
 ##Add Required Packages
-```{r, include = FALSE}
+```{r packages, include = FALSE}
 
 #Packages that are required 
 lapply(c(
@@ -24,13 +25,8 @@ lapply(c(
 
 ```
 
-##Keep the R Markdown output within the PDF margins
-```{r, include = FALSE}
-opts_chunk$set(tidy.opts=list(width.cutoff=60),tidy=TRUE)
-```
-
 ##Setup - Change things here & write any notes
-```{r setup info}
+```{r changeable info, include = TRUE}
 
 ###### Run information - PLEASE CHANGE
   Date_Run = "2025-06-16"  #Date that instrument was run
@@ -40,35 +36,26 @@ opts_chunk$set(tidy.opts=list(width.cutoff=60),tidy=TRUE)
   samples <- c("GCW", "GWI", "MSM", "SWH") #whatever identifies your samples within the same names 
   samples_pattern <- paste(samples, collapse = "|") 
     #samples_pattern <- "GCW" #use this instead of the line above if you have only one site code 
-  chks_name = "Check Standard"  #what did you name your check standards? 
-  
+
 ###### File Names - PLEASE CHANGE 
 #file path and name for raw summary data file 
-  # raw_file_name_cl = "Porewater/Sulfate_Chloride/Synoptic_CB/2024/Raw Data/COMPASS_Synoptic_CB_MonMon_202408_Cl.txt"  
-  # raw_file_name_so4 = "Porewater/Sulfate_Chloride/Synoptic_CB/2024/Raw Data/COMPASS_Synoptic_CB_MonMon_202408_SO4.txt"
-    
   raw_file_name_cl = "Raw Data/COMPASS_Synoptic_CB_MonMon_202408_Cl.txt"
   raw_file_name_so4 = "Raw Data/COMPASS_Synoptic_CB_MonMon_202408_SO4.txt"
 
 #file path and name of processed data file 
-  # processed_file_name = "Porewater/Sulfate_Chloride/Synoptic_CB/2024/Processed Data/COMPASS_SynopticCB_PW_Processed_Cl_SO4_202408.csv" 
   processed_file_name = "Processed Data/COMPASS_SynopticCB_PW_Processed_Cl_SO4_202408.csv" 
 
 ###### Log Files - PLEASE CHECK 
 #downloaded metadata csv - downloaded from Google drive as csv for this year
-  # Raw_Metadata = "Porewater/Sulfate_Chloride/Synoptic_CB/2024/Raw Data/COMPASS_SynopticCB_PW_SampleLog_2024.csv"
   Raw_Metadata = "Raw Data/COMPASS_SynopticCB_PW_SampleLog_2024.csv"
 
 #qaqc log file path for this year 
-  # Log_path = "Porewater/Sulfate_Chloride/Synoptic_CB/2024/Raw Data/COMPASS_Synoptic_Cl_SO4_QAQClog_2024.csv"
   Log_path = "Raw Data/COMPASS_Synoptic_Cl_SO4_QAQClog_2024.csv"
-
 
 ```
 
-
-##Set Up Code
-```{r setup}
+##Set Up Code - constants and QAQC cutoffs
+```{r setup values, include = FALSE}
 
 #Link to the protocol used for analysis 
   #steph will add this soon 
@@ -168,6 +155,7 @@ head(dionex_metadata)
 
 ```
 
+
 ## Import Sample Data     
 ```{r Import Data, include=FALSE}
 
@@ -217,14 +205,16 @@ Cldat_clean <- Cldat %>%
 all_dat_merge <- inner_join(Sdat_clean, Cldat_clean, by = c("sample_name", "sample_ID", "sample_type"))
 
 #Remove any lines that have no sample ID, make n.a. into NAs,
-  #if there are NAs in the SO4 or Cl columns, make them zeros because that means there was no peak detected
+  #if there are NAs or zeroes in the SO4 or Cl columns, make them zeros because that means there was no peak detected
 all_dat <- all_dat_merge %>%
   filter(!is.na(sample_ID) & sample_ID != "") %>%
   mutate(across(everything(), ~ na_if(.x, "n.a."))) %>%
   mutate(across(c(SO4_ppm, Cl_ppm), as.numeric), 
          across(c(SO4_area, Cl_area), as.numeric)) %>%
   mutate(across(c(SO4_ppm, Cl_ppm), ~ replace_na(.x, 0)), 
-         across(c(SO4_area, Cl_area), ~ replace_na(.x, 0)))
+         across(c(SO4_area, Cl_area), ~ replace_na(.x, 0))) %>%
+  mutate(across(c(SO4_ppm, Cl_ppm), ~ replace(.x, .x<0, 0)), 
+         across(c(SO4_area, Cl_area), ~ replace(.x, .x<0, 0)))
 head(all_dat)
 
 ```
@@ -394,12 +384,12 @@ r2_SO4 = max(lm_results_s$r2)
 #write out a flag to the sample dataframe if the r2 is above the cutoff of 0.98
 all_dat <- all_dat %>%
   mutate(
-    Cl_flag = if (r2_Cl <= r2_cutoff) {
+    Cl_QAQC_flag = if (r2_Cl <= r2_cutoff) {
       "Cl r2 low"
     } else {
       ""
     },
-    SO4_flag = if (r2_SO4 <= r2_cutoff) {
+    SO4_QAQC_flag = if (r2_SO4 <= r2_cutoff) {
       "SO4 r2 low"
     } else {
       ""
@@ -427,7 +417,7 @@ chks_Cl <- chks_raw %>%
   ) %>%
   mutate(
     cv_Cl = (sd_Cl / mean_Cl),
-    flag_Cl = ifelse(cv_Cl < chk_flag_std_cl, "Chloride Check Standard RSD within Range", "Chloride CHECK STANDARD RSD TOO HIGH - REASSESS")
+    flag_Cl = ifelse(cv_Cl < chk_flag_std_cl, "Chloride Check Standard RSD within Range - PROCEED", "Chloride CHECK STANDARD RSD TOO HIGH - REASSESS")
   )
 
 #SO4 standards
@@ -440,7 +430,7 @@ chks_S <- chks_raw %>%
   ) %>%
   mutate(
     cv_SO4 = (sd_SO4 / mean_SO4),
-    flag_SO4 = ifelse(cv_SO4 < chk_flag_std_s, "Sulfate Check Standard RSD within Range", "Sulfate CHECK STANDARD RSD TOO HIGH - REASSESS")
+    flag_SO4 = ifelse(cv_SO4 < chk_flag_std_s, "Sulfate Check Standard RSD within Range - PROCEED", "Sulfate CHECK STANDARD RSD TOO HIGH - REASSESS")
   )
 
 # View results
@@ -452,17 +442,17 @@ chks_merged <- left_join(chks_raw, standards, by = "sample_ID")
 
 #calculate percent difference between check standards & expected concentration 
 chks_merged$Cl_diff <- ((chks_merged$Cl_ppm - chks_merged$Cl_std_conc)/((chks_merged$Cl_ppm + chks_merged$Cl_std_conc)/2)) * 100
-chks_merged$Cl_diff_flag <-  ifelse(chks_merged$Cl_diff <= chk_flag_std_cl, 'YES', 'No, check')
+chks_merged$Cl_diff_flag <-  ifelse(chks_merged$Cl_diff <= chk_flag_std_cl, 'YES', 'No, rerun')
 
 chks_merged$SO4_diff <- ((chks_merged$SO4_ppm - chks_merged$SO4_std_conc)/((chks_raw$SO4_ppm + chks_merged$SO4_std_conc)/2)) * 100
-chks_merged$SO4_diff_flag <-  ifelse(chks_merged$SO4_diff <= chk_flag_std_s, 'YES', 'No, check')
+chks_merged$SO4_diff_flag <-  ifelse(chks_merged$SO4_diff <= chk_flag_std_s, 'YES', 'No, rerun')
 
 # head(chks_merged)
 
 #Plot the check standards vs. the expected concentration 
 cl_chks <-  ggplot(data = chks_merged, aes(x = rep, y = Cl_ppm, fill=Cl_diff_flag)) +
         geom_bar(stat = 'identity') + 
-        scale_fill_manual(values = c("YES" = "darkgreen", "No, check" = "darkgrey")) +
+        scale_fill_manual(values = c("YES" = "darkgreen", "No, rerun" = "darkgrey")) +
         theme_classic() + labs(x= " ", y="Cl (ppm)", title="Check Stds: Chloride") + 
         theme(legend.position="bottom") +  
         #geom_hline(yintercept=chk_std_high_c, linetype="dashed", color = "black", linewidth=1) + 
@@ -471,7 +461,7 @@ cl_chks <-  ggplot(data = chks_merged, aes(x = rep, y = Cl_ppm, fill=Cl_diff_fla
 
 so4_chks <-  ggplot(data = chks_merged, aes(x = rep, y = SO4_ppm, fill=SO4_diff_flag)) +
         geom_bar(stat = 'identity') + 
-        scale_fill_manual(values = c("YES" = "darkgreen", "No, check" = "darkgrey")) +
+        scale_fill_manual(values = c("YES" = "darkgreen", "No, rerun" = "darkgrey")) +
         theme_classic() + labs(x= " ", y="SO4  (ppm)", title="Check Stds: Sulfate") + 
         theme(legend.position="bottom") + 
         #geom_hline(yintercept=chk_std_high_n,linetype="dashed",  color = "black", linewidth=1) + 
@@ -484,24 +474,24 @@ cl_chks_percent <- (sum(chks_merged$Cl_diff_flag == "YES")/nrow(chks_merged))*10
 so4_chks_percent <- (sum(chks_merged$SO4_diff_flag == "YES")/nrow(chks_merged))*100
 
 #report out if flags indicate need for rerun
-ifelse(cl_chks_percent >= chks_flag, ">80% of Chloride Check Standards are within range of expected concentration",
+ifelse(cl_chks_percent >= chks_flag, ">80% of Chloride Check Standards are within range of expected concentration - PROCEED",
        "<20% of Chloride Check Standards are within range of expected concentration - REASSESS")
-ifelse(so4_chks_percent >= chks_flag,">80% of Sulfate Check Standards are within range of expected concentration",
+ifelse(so4_chks_percent >= chks_flag,">80% of Sulfate Check Standards are within range of expected concentration - PROCEED",
        "<20% of Sulfate Check Standards are within range of expected concentration - REASSESS")
 
 #write out a flag to the sample dataframe if less than 80% of the checks are within the expected CV
 if (cl_chks_percent <= chks_flag) {
-    all_dat$Cl_flag <- ifelse(
-    all_dat$Cl_flag != "",
-    paste0(all_dat$cl_flag, "; Cl checks out of range"),
+    all_dat$Cl_QAQC_flag <- ifelse(
+    all_dat$Cl_QAQC_flag != "",
+    paste0(all_dat$Cl_QAQC_flag, "; Cl checks out of range"),
     "Cl checks out of range"
   )
 }
 
 if (so4_chks_percent <= chks_flag) {  
-    all_dat$SO4_flag <- ifelse(
-    all_dat$SO4_flag != "",
-    paste0(all_dat$SO4_flag, "; SO4 checks out of range"),
+    all_dat$SO4_QAQC_flag <- ifelse(
+    all_dat$SO4_QAQC_flag != "",
+    paste0(all_dat$SO4_QAQC_flag, "; SO4 checks out of range"),
     "SO4 checks out of range"
   )
 }
@@ -520,10 +510,10 @@ blks_raw <- blks_raw %>%
 
 #Check if the blanks are above the lower 25% quantile of your data 
 blk_flag_cl <- quantile(all_dat$Cl_ppm, prob=c(.25))   #this gives you the lower 25% quantile of the data 
-blks_raw$Cl_diff_flag <-  ifelse(blks_raw$Cl_ppm <= blk_flag_cl, 'YES', 'No, check')
+blks_raw$Cl_diff_flag <-  ifelse(blks_raw$Cl_ppm <= blk_flag_cl, 'YES', 'No, rerun')
 
 blk_flag_so4 <- quantile(all_dat$SO4_ppm, prob=c(.25))   #this gives you the lower 25% quantile of the data 
-blks_raw$so4_diff_flag <-  ifelse(blks_raw$SO4_ppm <= blk_flag_so4, 'YES', 'No, check')
+blks_raw$so4_diff_flag <-  ifelse(blks_raw$SO4_ppm <= blk_flag_so4, 'YES', 'No, rerun')
 
 #calculate the percent of check standards that are within the range based on the flag 
 cl_blks_percent <- (sum(blks_raw$Cl_diff_flag == "YES")/nrow(blks_raw))*100
@@ -539,7 +529,7 @@ ifelse(so4_blks_percent >= chks_flag, ">80% of Sulfate Blank concentrations are 
 #Plot the blanks vs. the lower 25% quantile of your data in this run (black line)
 cl_blks <-  ggplot(data = blks_raw, aes(x = rep, y = Cl_ppm, fill=Cl_diff_flag)) +
        geom_bar(stat = 'identity') + 
-        scale_fill_manual(values = c("YES" = "darkblue", "No, check" = "darkgrey")) +
+        scale_fill_manual(values = c("YES" = "darkblue", "No, rerun" = "darkgrey")) +
         theme_classic() + labs(x= " ", y="Cl  (mg/L)", title="Blanks: Chloride") + 
         theme(legend.position="bottom") +  geom_hline(yintercept=blk_flag_cl, linetype="dashed", 
                 color = "black", linewidth=1)  + 
@@ -547,7 +537,7 @@ cl_blks <-  ggplot(data = blks_raw, aes(x = rep, y = Cl_ppm, fill=Cl_diff_flag))
 
 so4_blks <-  ggplot(data = blks_raw, aes(x = rep, y = SO4_ppm, fill=so4_diff_flag)) +
        geom_bar(stat = 'identity') + 
-        scale_fill_manual(values = c("YES" = "darkblue", "No, check" = "darkgrey")) +
+        scale_fill_manual(values = c("YES" = "darkblue", "No, rerun" = "darkgrey")) +
         theme_classic() + labs(x= " ", y="SO4  (mg/L)", title="Blanks: Sulfate") + 
         theme(legend.position="bottom") +  geom_hline(yintercept=blk_flag_so4, linetype="dashed", 
                 color = "black", linewidth=1)  + 
@@ -566,17 +556,17 @@ print(blk_avg_so4)
 
 #write out a flag to the sample dataframe if more than 80% of the blanks are above the lower 25% quantile of samples
 if (cl_blks_percent <= chks_flag) {
-  all_dat$Cl_flag <- ifelse(
-    all_dat$Cl_flag != "",
-    paste0(all_dat$Cl_flag, "; Cl blanks out of range"),
+  all_dat$Cl_QAQC_flag <- ifelse(
+    all_dat$Cl_QAQC_flag != "",
+    paste0(all_dat$Cl_QAQC_flag, "; Cl blanks out of range"),
     "Cl blanks out of range"
   )
 }
 
 if (so4_blks_percent <= chks_flag) {  
-  all_dat$SO4_flag <- ifelse(
-    all_dat$SO4_flag != "",
-    paste0(all_dat$SO4_flag, "; SO4 blanks out of range"),
+  all_dat$SO4_QAQC_flag <- ifelse(
+    all_dat$SO4_QAQC_flag != "",
+    paste0(all_dat$SO4_QAQC_flag, "; SO4 blanks out of range"),
     "SO4 blanks out of range"
   )
 }
@@ -588,13 +578,13 @@ if (so4_blks_percent <= chks_flag) {
 
 #pull out any rows that have "dup" in the sample_name column
 dups <- all_dat %>%  
-  select(!c(sample_name, sample_type, SO4_area, Cl_area, Cl_flag, SO4_flag)) %>%
+  select(!c(sample_name, sample_type, SO4_area, Cl_area, Cl_QAQC_flag, SO4_QAQC_flag)) %>%
   filter(str_detect(sample_ID, "dup"))      #have to change this to match data
 
 #create a new dataframe and remove dups from sample dataframe 
 dat_raw2 <- all_dat %>%  
   filter(!str_detect(sample_ID, "dup")) %>%  
-  select(!c(sample_name, sample_type, SO4_area, Cl_area, Cl_flag, SO4_flag))
+  select(!c(sample_name, sample_type, SO4_area, Cl_area, Cl_QAQC_flag, SO4_QAQC_flag))
 
 #remove the dup from these IDs so we will have duplicate sample names
 dups <- dups %>%
@@ -617,7 +607,7 @@ df2$sds <- apply(df2,1,sd)
 df2$mean <- apply(df2, 1, mean)
 
 QAdups$Cl_dups_cv <- (df2$sds/df2$mean) * 100
-QAdups$Cl_dups_cv_flag <-  ifelse(QAdups$Cl_dups_cv <chk_flag_dups, 'YES', 'No, check')
+QAdups$Cl_dups_cv_flag <-  ifelse(QAdups$Cl_dups_cv <chk_flag_dups, 'YES', 'No, rerun')
 
 #create a dataframe to compare SO4 dups 
 df3 <- as.data.frame(QAdups$SO4_ppm)
@@ -628,7 +618,7 @@ df3$sds <- apply(df3,1,sd)
 df3$mean <- apply(df3, 1, mean)
 
 QAdups$SO4_dups_cv <- (df3$sds/df3$mean) * 100
-QAdups$SO4_dups_cv_flag <-  ifelse(QAdups$SO4_dups_cv <chk_flag_dups, 'YES', 'No, check')
+QAdups$SO4_dups_cv_flag <-  ifelse(QAdups$SO4_dups_cv <chk_flag_dups, 'YES', 'No, rerun')
 
 #Put all the dups together and create row numbers for plotting
 QAdups <- QAdups %>%
@@ -639,7 +629,7 @@ QAdups <- QAdups %>%
 Cl_dups <- ggplot(data =QAdups, aes(x =row_num, y =Cl_dups_cv, fill=Cl_dups_cv_flag)) +
        geom_bar(stat = 'identity') + 
         theme_classic() + labs(x= " ", y="CV of Chloride Duplicates") + 
-        scale_fill_manual(values = c("YES" = "darkgreen", "No, check" = "red")) +
+        scale_fill_manual(values = c("YES" = "darkgreen", "No, rerun" = "red")) +
         theme(legend.position="none") +  geom_hline(yintercept=10, linetype="dashed", 
                 color = "black", linewidth=1)  + 
               guides(fill=guide_legend(title="CV Between Dups <10%"))
@@ -648,7 +638,7 @@ Cl_dups <- ggplot(data =QAdups, aes(x =row_num, y =Cl_dups_cv, fill=Cl_dups_cv_f
 SO4_dups <- ggplot(data =QAdups, aes(x =row_num, y =SO4_dups_cv, fill=SO4_dups_cv_flag)) +
        geom_bar(stat = 'identity') + 
         theme_classic() + labs(x= " ", y="CV of Sulfate Duplicates") + 
-          scale_fill_manual(values = c("YES" = "darkgreen", "No, check" = "red")) +
+          scale_fill_manual(values = c("YES" = "darkgreen", "No, rerun" = "red")) +
         theme(legend.position="none") +  geom_hline(yintercept=10, linetype="dashed", 
                 color = "black", linewidth=1) + 
               guides(fill=guide_legend(title="CV Between Dups <10%"))
@@ -672,17 +662,17 @@ ifelse(so4_dups_percent >= chks_flag, ">80% of Sulfate Duplicates have a CV <10%
 
 #write out a flag to the sample dataframe if more than 80% of the dups have CVs out of range 
 if (cl_dups_percent <= chks_flag) {
-    all_dat$Cl_flag <- ifelse(
-    all_dat$Cl_flag != "",
-    paste0(all_dat$Cl_flag, "; Cl dups cv out of range"),
+    all_dat$Cl_QAQC_flag <- ifelse(
+    all_dat$Cl_QAQC_flag != "",
+    paste0(all_dat$Cl_QAQC_flag, "; Cl dups cv out of range"),
     "Cl dups cv out of range"
   )
 }
 
 if (so4_dups_percent <= chks_flag) {  
-    all_dat$SO4_flag <- ifelse(
-    all_dat$SO4_flag != "",
-    paste0(all_dat$SO4_flag, "; SO4 dups cv out of range"),
+    all_dat$SO4_QAQC_flag <- ifelse(
+    all_dat$SO4_QAQC_flag != "",
+    paste0(all_dat$SO4_QAQC_flag, "; SO4 dups cv out of range"),
     "SO4 dups cv out of range"
   )
 }
@@ -690,17 +680,17 @@ if (so4_dups_percent <= chks_flag) {
 
 #Calculate percent difference between duplicates
 QAdups$Cl_dups_diff <- ((abs(QAdups$Cl_ppm - QAdups$Cl_ppm_dup))/((QAdups$Cl_ppm + QAdups$Cl_ppm_dup)/2)) * 100
-QAdups$Cl_dups_diff_flag <-  ifelse(QAdups$Cl_dups_diff <chk_flag_dups, 'YES', 'No, check')
+QAdups$Cl_dups_diff_flag <-  ifelse(QAdups$Cl_dups_diff <chk_flag_dups, 'YES', 'No, rerun')
 
 QAdups$SO4_dups_diff <- ((abs(QAdups$SO4_ppm - QAdups$SO4_ppm_dup))/((QAdups$SO4_ppm + QAdups$SO4_ppm_dup)/2)) * 100
-QAdups$SO4_dups_diff_flag <-  ifelse(QAdups$SO4_dups_diff <chk_flag_dups, 'YES', 'No, check')
+QAdups$SO4_dups_diff_flag <-  ifelse(QAdups$SO4_dups_diff <chk_flag_dups, 'YES', 'No, rerun')
 
 
 #plot dups output as a bar graph to easily check
 Cl_dups1 <- ggplot(data =QAdups, aes(x =row_num, y =Cl_dups_diff, fill=Cl_dups_diff_flag)) +
        geom_bar(stat = 'identity') + 
         theme_classic() + labs(x= " ", y="Difference Between Chloride Duplicates (%)") + 
-        scale_fill_manual(values = c("YES" = "darkgreen", "No, check" = "red")) +
+        scale_fill_manual(values = c("YES" = "darkgreen", "No, rerun" = "red")) +
         theme(legend.position="none") +  geom_hline(yintercept=10, linetype="dashed", 
                 color = "black", linewidth=1)  + 
               guides(fill=guide_legend(title="CV Between Dups <10%"))
@@ -709,7 +699,7 @@ Cl_dups1 <- ggplot(data =QAdups, aes(x =row_num, y =Cl_dups_diff, fill=Cl_dups_d
 SO4_dups1 <- ggplot(data =QAdups, aes(x =row_num, y =SO4_dups_diff, fill=SO4_dups_diff_flag)) +
        geom_bar(stat = 'identity') + 
         theme_classic() + labs(x= " ", y="Difference Between Sulfate Duplicates (%)") + 
-        scale_fill_manual(values = c("YES" = "darkgreen", "No, check" = "red")) +
+        scale_fill_manual(values = c("YES" = "darkgreen", "No, rerun" = "red")) +
         theme(legend.position="none") +  geom_hline(yintercept=10, linetype="dashed", 
                 color = "black", linewidth=1) + 
               guides(fill=guide_legend(title="CV Between Dups <10%"))
@@ -726,25 +716,25 @@ cl_dups_diff_percent <- (sum(QAdups$Cl_dups_diff_flag == "YES")/nrow(QAdups))*10
 so4_dups_diff_percent <- (sum(QAdups$SO4_dups_diff_flag == "YES")/nrow(QAdups))*100
 
 #report out if the dups are within range
-ifelse(cl_dups_diff_percent >= chks_flag, ">80% of Chloride Duplicates have a percent difference <10%",
+ifelse(cl_dups_diff_percent >= chks_flag, ">80% of Chloride Duplicates have a percent difference <10% - PROCEED",
        "<80% of Chloride Duplicates have a CV <10% - REASSESS")
-ifelse(so4_dups_diff_percent >= chks_flag, ">80% of Sulfate Duplicates have a percent difference <10%",
+ifelse(so4_dups_diff_percent >= chks_flag, ">80% of Sulfate Duplicates have a percent difference <10% - PROCEED",
        "<80% of Sulfate Duplicates have a CV <10% - REASSESS")
 
 #write out a flag to the sample dataframe if more than 80% of the dups have percent differences out of range 
 if (cl_dups_diff_percent <= chks_flag) {
-    all_dat$Cl_flag <- ifelse(
-    all_dat$Cl_flag != "",
-    paste0(all_dat$Cl_flag, "; Cl dups perc diff out of range"),
-    "Cl dups perc diff out of range"
+    all_dat$Cl_QAQC_flag <- ifelse(
+    all_dat$Cl_QAQC_flag != "",
+    paste0(all_dat$Cl_QAQC_flag, "; Cl dups out of range"),
+    "Cl dups out of range"
   )
 }
 
 if (so4_dups_diff_percent <= chks_flag) {  
-    all_dat$SO4_flag <- ifelse(
-    all_dat$SO4_flag != "",
-    paste0(all_dat$SO4_flag, "; SO4 dups perc diff out of range"),
-    "SO4 dups perc diff out of range"
+    all_dat$SO4_QAQC_flag <- ifelse(
+    all_dat$SO4_QAQC_flag != "",
+    paste0(all_dat$SO4_QAQC_flag, "; SO4 dups out of range"),
+    "SO4 dups out of range"
   )
 }
 
@@ -752,12 +742,11 @@ if (so4_dups_diff_percent <= chks_flag) {
 ```
 
 ## Calculate mmol/L concentrations & salinity, add dilutions
-```{r, results = 'hide'}
-cat("Unit Conversion and Salinity Calculation")
+```{r Unit Conversion and Salinity Calculation, results = 'hide'}
 
 # Convert ppm to mmol/L
-all_dat$SO4_mM <- (all_dat$SO4_ppm / s_mw)
-all_dat$Cl_mM <- (all_dat$Cl_ppm / cl_mw)
+all_dat$SO4_Conc_mM <- (all_dat$SO4_ppm / s_mw)
+all_dat$Cl_Conc_mM <- (all_dat$Cl_ppm / cl_mw)
 
 # Calculate Salinity 
 # calculated using the Knudsen equation 
@@ -796,21 +785,21 @@ head(all_dat)
 
 #pull out any rows that have "spk" in the Sample ID column
 spks <- all_dat %>%  
-  select(!c(sample_name, sample_type, SO4_area, Cl_ppm, Cl_mM, Cl_area, Cl_flag, SO4_flag, salinity, Dilution)) %>%
+  select(!c(sample_name, sample_type, SO4_area, Cl_ppm, Cl_Conc_mM, Cl_area, Cl_QAQC_flag, SO4_QAQC_flag, salinity, Dilution)) %>%
   filter(str_detect(sample_ID, "spk"))      #have to change this to match data
 # head(spks)
 
 #create a new dataframe and remove dups from sample dataframe 
 dat_spks <- all_dat %>%  
   filter(!str_detect(sample_ID, "spk")) %>%  
-  select(!c(sample_name, sample_type, SO4_area, Cl_ppm,  Cl_mM, Cl_area, Cl_flag, SO4_flag, salinity))
+  select(!c(sample_name, sample_type, SO4_area, Cl_ppm,  Cl_Conc_mM, Cl_area, Cl_QAQC_flag, SO4_QAQC_flag, salinity))
 
 #remove the dup from these IDs so we will have duplicate sample names
 spks <- spks %>%
   mutate(sample_ID = gsub("_spk", "", as.character(sample_ID))) %>%
   rename(
     sample_ID = sample_ID,
-    SO4_mM_spk = SO4_mM, 
+    SO4_Conc_mM_spk = SO4_Conc_mM, 
     SO4_ppm_spk = SO4_ppm
   )
 
@@ -833,10 +822,10 @@ QAspks$SampleVol <- QAspks$SampleVol/Con1
 # head(QAspks)
 
 #gives us the total SO4 in the sample in mmoles
-QAspks$SO4_Total_unspkd <- (QAspks$SO4_mM/QAspks$Dilution)*(QAspks$SampleVol) 
+QAspks$SO4_Total_unspkd <- (QAspks$SO4_Conc_mM/QAspks$Dilution)*(QAspks$SampleVol) 
 
 #gives us the total SO4 in the spiked sample in mmoles
-QAspks$SO4_Total_spkd <- (QAspks$SO4_mM_spk/QAspks$Dilution)*(QAspks$SampleVol+spkvol) 
+QAspks$SO4_Total_spkd <- (QAspks$SO4_Conc_mM_spk/QAspks$Dilution)*(QAspks$SampleVol+spkvol) 
 
 #gives us expected SO4 in the spiked sample in mmoles
 QAspks$SO4_expctd_spkd <-  (QAspks$SO4_Total_unspkd + QAspks$SO4_spk_Conc)
@@ -845,7 +834,7 @@ QAspks$SO4_expctd_spkd <-  (QAspks$SO4_Total_unspkd + QAspks$SO4_spk_Conc)
 QAspks$spk_recovery <-    (QAspks$SO4_Total_spkd/QAspks$SO4_expctd_spkd)*100
 
 #flags if recovery of SO4 is outside range
-QAspks$SO4_spks_flag <-  ifelse(QAspks$spk_recovery <= high_recovery_cutoff & QAspks$spk_recovery >= low_recovery_cutoff , 'Yes', 'No, check')
+QAspks$SO4_spks_flag <-  ifelse(QAspks$spk_recovery <= high_recovery_cutoff & QAspks$spk_recovery >= low_recovery_cutoff , 'Yes', 'No, rerun')
 
 # head(QAspks)
 
@@ -855,14 +844,14 @@ spksbar <- ggplot(data = QAspks, aes(x = sample_ID, y = spk_recovery, fill=SO4_s
             theme_bw() + labs(x= "Sample ID", y="Spike Recovery (%)") + 
             geom_hline(yintercept=80, linetype="dashed", color = "black", linewidth=1) + 
             geom_hline(yintercept=120, linetype="dashed", color = "black", linewidth=1)+
-            scale_fill_manual(values = c("Yes" = "darkgreen", "No, check" = "darkred"))+
+            scale_fill_manual(values = c("Yes" = "darkgreen", "No, rerun" = "darkred"))+
             theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))+
             theme(legend.position="none")
 
 spksbar
 
 
-#check for percent of no, checks to see if it  would warrant reruns 
+#check for percent of No, reruns to see if it  would warrant reruns 
 Perc_spks <- QAspks %>% 
   group_by(SO4_spks_flag) %>%
   summarise(no_rows = length(SO4_spks_flag)) 
@@ -877,9 +866,9 @@ ifelse(Perc_spks$Percent/100 >= chks_flag, ">80% of SO4 spikes have a recovery b
 
 #write out a flag to the sample dataframe if less than 80% of the SO4 spikes are within range 
 if (Perc_spks$Percent/100 <= chks_flag) {
-    all_dat$SO4_flag <- ifelse(
-    all_dat$SO4_flag != "",
-    paste0(all_dat$SO4_flag, "; SO4 spikes out of range"),
+    all_dat$SO4_QAQC_flag <- ifelse(
+    all_dat$SO4_QAQC_flag != "",
+    paste0(all_dat$SO4_QAQC_flag, "; SO4 spikes out of range"),
     "SO4 spikes out of range"
   )
 }
@@ -892,9 +881,9 @@ if (Perc_spks$Percent/100 <= chks_flag) {
 
 cat("Sample Flagging")
 
-#Undilute samples 
-all_dat$Cl_ppm_undil <- all_dat$Cl_ppm/all_dat$Dilution
-all_dat$SO4_ppm_undil <- all_dat$SO4_ppm/all_dat$Dilution
+#Dilute samples 
+all_dat$Cl_ppm_dil <- all_dat$Cl_ppm/all_dat$Dilution
+all_dat$SO4_ppm_dil <- all_dat$SO4_ppm/all_dat$Dilution
 
 #Remove standards
 dat_flagged <- all_dat %>%  
@@ -903,62 +892,44 @@ dat_flagged <- all_dat %>%
 #Flagging data if the concentration is outside the standards range and based on blanks
 dat_flagged <- dat_flagged %>%
   mutate(
-  Cl_flag = if_else(Cl_ppm_undil > top_std_cl,
-            if_else(Cl_flag != "" & !is.na(Cl_flag),
-            paste0(Cl_flag, "; value above cal curve"), "value above cal curve"), Cl_flag),
+    Cl_Conc_flag = case_when(
+      Cl_ppm_dil <= 0 ~ "bdl",
+      Cl_ppm_dil > top_std_cl ~ "adl",
+      Cl_ppm_dil > 0 & Cl_ppm_dil < top_std_cl ~ "Within_Range",
+      TRUE ~ NA_character_  )) # fallback for unexpected values
 
-  SO4_flag = if_else(SO4_ppm_undil > top_std_so4,
-             if_else(SO4_flag != "" & !is.na(SO4_flag),
-             paste0(SO4_flag, "; value above cal curve"), "value above cal curve"), SO4_flag) )
+dat_flagged <- dat_flagged %>%
+  mutate(
+    SO4_Conc_flag = case_when(
+      SO4_ppm_dil <= 0 ~ "bdl",
+      SO4_ppm_dil > top_std_so4 ~ "adl",
+      SO4_ppm_dil > 0 & SO4_ppm_dil < top_std_so4 ~ "Within_Range",
+      TRUE ~ NA_character_  )) # fallback for unexpected values
+
 
 #Plot data and change colors based on flags to check it: 
-cl_samples_flag <-  ggplot(data = dat_flagged, aes(x = sample_name, y = Cl_ppm_undil, fill=Cl_flag)) +
+cl_samples_flag <-  ggplot(data = dat_flagged, aes(x = sample_name, y = Cl_ppm_dil, fill=Cl_Conc_flag)) +
        geom_bar(stat = 'identity') + 
-        scale_fill_manual(values=c("darkgreen", "red"))+
-        theme_classic() + labs(x= " ", y="C (mg/L)", title="Cl: Green = Within Range of Curve") + 
+        scale_fill_manual(values = c("bdl" = "darkblue", "adl" = "red", "Within_Range" = "darkgreen")) +
+        theme_classic() + labs(x= " ", y="Cl (diluted ppm)", title="Cl: Green = Within Range of Curve") + 
         theme(plot.title = element_text(size = 12)) +
-        theme(legend.position="none") +
+        theme(legend.position = "bottom") +
         theme(axis.text.x = element_blank())
 
-so4_samples_flag <-  ggplot(data = dat_flagged, aes(x = sample_name, y = SO4_ppm_undil, fill=SO4_flag)) +
+so4_samples_flag <-  ggplot(data = dat_flagged, aes(x = sample_name, y = SO4_ppm_dil, fill=SO4_Conc_flag)) +
        geom_bar(stat = 'identity') + 
-        scale_fill_manual(values=c("darkgreen", "red"))+
-        theme_classic() + labs(x= " ", y="N (mg/L)", title="SO4: Green = Within Range of Curve") + 
+        scale_fill_manual(values = c("bdl" = "darkblue", "adl" = "red", "Within_Range" = "darkgreen")) +
+        theme_classic() + labs(x= " ", y="SO4 (diluted ppm)", title="SO4: Green = Within Range of Curve") + 
         theme(plot.title = element_text(size = 12)) + 
-        theme(legend.position="none") +
+        theme(legend.position = "bottom") +
         theme(axis.text.x = element_blank())
 
 ggarrange(cl_samples_flag, so4_samples_flag, nrow=1, ncol=2)
 
-#Chloride check for percent of no, checks to see if it  would warrant reruns 
-Perc_cl_flag <- dat_flagged %>% 
-  group_by(Cl_flag) %>%
-  summarise(no_rows = length(Cl_flag)) 
-Perc_cl_flag$Total <- length(dat_flagged$Cl_flag)
-Perc_cl_flag$Percent <- (Perc_cl_flag$no_rows / Perc_cl_flag$Total)*100
-head(Perc_cl_flag)
-
-#report out if the dups are within range
-ifelse(Perc_cl_flag$Percent == 100, "All chloride samples are within the range of the standard curve - PROCEED",
-       "Some chloride samples are outside the range of the standard curve - REASSESS")
-
-
-#Sulfate check for percent of no, checks to see if it would warrant reruns 
-Perc_so4_flag <- dat_flagged %>% 
-  group_by(SO4_flag) %>%
-  summarise(no_rows = length(SO4_flag)) 
-Perc_so4_flag$Total <- length(dat_flagged$SO4_flag)
-Perc_so4_flag$Percent <- (Perc_so4_flag$no_rows / Perc_so4_flag$Total)*100
-head(Perc_so4_flag)
-
-ifelse(Perc_so4_flag$Percent == 100, "All chloride samples are within the range of the standard curve - PROCEED",
-       "Some chloride samples are outside the range of the standard curve - REASSESS")
-
-
 ```
 
 ## Check to see if samples run match metadata & merge info
-```{r, check sample ids with metadata, echo=FALSE, warning = FALSE}
+```{r check sample ids with metadata, echo=FALSE, warning = FALSE}
 
 #remove duplicates from the sample dataframe bc we are just taking the first dup run
 all_data_flagged <- dat_flagged %>%
@@ -1066,7 +1037,7 @@ ggarrange(viz_cl_plot, viz_so4_plot, nrow=2, ncol=1)
 ```
 
 ## Export Processed Data  
-```{r, Export Processed Data, echo=FALSE, , include = FALSE}
+```{r Export Processed Data, echo=FALSE, include = FALSE}
 
 #Prepare data to be exported - if there is anything else to add 
 #Add any necessary identifiers to the samples  ### VERY IMPORTANT AND STANDARD FOR PROJECT ####
@@ -1095,7 +1066,7 @@ final_data <- final_data %>%
   select(
     Project, Region, Site, Zone, Replicate, Depth_cm, 
          Sample_ID, Year, Month, Day, Time, Time_Zone,
-         SO4_mM, Cl_mM, salinity, Cl_flag, SO4_flag, 
+         SO4_Conc_mM, SO4_Conc_flag, SO4_QAQC_flag, Cl_Conc_mM, Cl_Conc_flag, Cl_QAQC_flag, salinity,
          Analysis_rundate,  Run_notes, Field_notes
         # list columns in the order you want them
   )
