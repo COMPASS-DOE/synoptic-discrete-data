@@ -31,8 +31,6 @@ opts_chunk$set(tidy.opts=list(width.cutoff=60),tidy=TRUE)
 
 ##Setup - Change things here & write any notes
 ```{r setup info}
-#identify section 
-cat("Setup Information")
 
 ###### Run information - PLEASE CHANGE
   Date_Run = "2025-06-16"  #Date that instrument was run
@@ -173,8 +171,6 @@ head(dionex_metadata)
 ## Import Sample Data     
 ```{r Import Data, include=FALSE}
 
-cat("Import Sample Data")
-
 ## Read in raw data file from Dionex - copied and saved as a txt
 #Sulfate
 Sdat <- read.table(raw_file_name_so4, sep='\t' , header=T, skip=3)
@@ -235,8 +231,6 @@ head(all_dat)
 
 ## Assessing Standard Curves 
 ```{r Assess Standard Curves, echo=FALSE, warning=FALSE, message=FALSE}
-
-cat("Assess the Standard Curves")
 
 # Filter standards
 stds <- all_dat %>%
@@ -418,8 +412,6 @@ all_dat <- all_dat %>%
 ## Assess Check Standards 
 ```{r Check Standards, echo=FALSE, warning = FALSE}
 
-cat("Assess the Check Standards")
-
 # Pull out check standards
 chks_raw <- all_dat %>%
   filter(grepl("Check Standard", sample_type))%>% 
@@ -506,7 +498,7 @@ if (cl_chks_percent <= chks_flag) {
   )
 }
 
-if (so4_chks_percent <= chks_flag) {  # assuming you have tn_chks_percent similarly
+if (so4_chks_percent <= chks_flag) {  
     all_dat$SO4_flag <- ifelse(
     all_dat$SO4_flag != "",
     paste0(all_dat$SO4_flag, "; SO4 checks out of range"),
@@ -518,8 +510,6 @@ if (so4_chks_percent <= chks_flag) {  # assuming you have tn_chks_percent simila
 
 ## Assess Blanks 
 ```{r Check Blanks, echo=FALSE}
-
-cat("Assess Blanks")
 
 #Pull out the blanks from raw file 
 blks_raw <- all_dat %>%
@@ -595,8 +585,6 @@ if (so4_blks_percent <= chks_flag) {
 
 ## Assess Duplicates 
 ```{r Check Duplicates, echo=FALSE}
-
-cat("Assess Duplicates")
 
 #pull out any rows that have "dup" in the sample_name column
 dups <- all_dat %>%  
@@ -804,15 +792,13 @@ head(all_dat)
 
 
 ## Assess Analytical Spikes
-```{r Assess Spikes, include=FALSE}
-
-cat("Assess Spikes")
+```{r Assess Spikes, echo=FALSE}
 
 #pull out any rows that have "spk" in the Sample ID column
 spks <- all_dat %>%  
   select(!c(sample_name, sample_type, SO4_area, Cl_ppm, Cl_mM, Cl_area, Cl_flag, SO4_flag, salinity, Dilution)) %>%
   filter(str_detect(sample_ID, "spk"))      #have to change this to match data
-head(spks)
+# head(spks)
 
 #create a new dataframe and remove dups from sample dataframe 
 dat_spks <- all_dat %>%  
@@ -830,11 +816,11 @@ spks <- spks %>%
 
 #put it back together with the old data set and look for duplicates 
 QAspks <- merge(dat_spks, spks, by = "sample_ID")
-head(QAspks)
+# head(QAspks)
 
 #spike for these samples was 10uL of the 250 µg/mL SO4 standard
 QAspks$SO4_spk_Conc <- spk_Conc     # mmoles of SO4 in spike
-head(QAspks)
+# head(QAspks)
 
 #Set Sample volumes in uL 
 QAspks$SampleVol <- 1
@@ -844,7 +830,7 @@ QAspks$SampleVol <-  ifelse(QAspks$Dilution == 200, 1462, QAspks$SampleVol)
 
 #change sample volume to L 
 QAspks$SampleVol <- QAspks$SampleVol/Con1
-head(QAspks)
+# head(QAspks)
 
 #gives us the total SO4 in the sample in mmoles
 QAspks$SO4_Total_unspkd <- (QAspks$SO4_mM/QAspks$Dilution)*(QAspks$SampleVol) 
@@ -861,7 +847,7 @@ QAspks$spk_recovery <-    (QAspks$SO4_Total_spkd/QAspks$SO4_expctd_spkd)*100
 #flags if recovery of SO4 is outside range
 QAspks$SO4_spks_flag <-  ifelse(QAspks$spk_recovery <= high_recovery_cutoff & QAspks$spk_recovery >= low_recovery_cutoff , 'Yes', 'No, check')
 
-head(QAspks)
+# head(QAspks)
 
 #plot spk recoveries output as a bar graph to easily check - want any over 10% to be red need to work on this 
 spksbar <- ggplot(data = QAspks, aes(x = sample_ID, y = spk_recovery, fill=SO4_spks_flag)) +
@@ -930,6 +916,7 @@ cl_samples_flag <-  ggplot(data = dat_flagged, aes(x = sample_name, y = Cl_ppm_u
        geom_bar(stat = 'identity') + 
         scale_fill_manual(values=c("darkgreen", "red"))+
         theme_classic() + labs(x= " ", y="C (mg/L)", title="Cl: Green = Within Range of Curve") + 
+        theme(plot.title = element_text(size = 12)) +
         theme(legend.position="none") +
         theme(axis.text.x = element_blank())
 
@@ -937,17 +924,41 @@ so4_samples_flag <-  ggplot(data = dat_flagged, aes(x = sample_name, y = SO4_ppm
        geom_bar(stat = 'identity') + 
         scale_fill_manual(values=c("darkgreen", "red"))+
         theme_classic() + labs(x= " ", y="N (mg/L)", title="SO4: Green = Within Range of Curve") + 
+        theme(plot.title = element_text(size = 12)) + 
         theme(legend.position="none") +
         theme(axis.text.x = element_blank())
 
 ggarrange(cl_samples_flag, so4_samples_flag, nrow=1, ncol=2)
 
+#Chloride check for percent of no, checks to see if it  would warrant reruns 
+Perc_cl_flag <- dat_flagged %>% 
+  group_by(Cl_flag) %>%
+  summarise(no_rows = length(Cl_flag)) 
+Perc_cl_flag$Total <- length(dat_flagged$Cl_flag)
+Perc_cl_flag$Percent <- (Perc_cl_flag$no_rows / Perc_cl_flag$Total)*100
+head(Perc_cl_flag)
+
+#report out if the dups are within range
+ifelse(Perc_cl_flag$Percent == 100, "All chloride samples are within the range of the standard curve - PROCEED",
+       "Some chloride samples are outside the range of the standard curve - REASSESS")
+
+
+#Sulfate check for percent of no, checks to see if it would warrant reruns 
+Perc_so4_flag <- dat_flagged %>% 
+  group_by(SO4_flag) %>%
+  summarise(no_rows = length(SO4_flag)) 
+Perc_so4_flag$Total <- length(dat_flagged$SO4_flag)
+Perc_so4_flag$Percent <- (Perc_so4_flag$no_rows / Perc_so4_flag$Total)*100
+head(Perc_so4_flag)
+
+ifelse(Perc_so4_flag$Percent == 100, "All chloride samples are within the range of the standard curve - PROCEED",
+       "Some chloride samples are outside the range of the standard curve - REASSESS")
+
+
 ```
 
 ## Check to see if samples run match metadata & merge info
 ```{r, check sample ids with metadata, echo=FALSE, warning = FALSE}
-
-cat("Check Sample IDs with Metadata")
 
 #remove duplicates from the sample dataframe bc we are just taking the first dup run
 all_data_flagged <- dat_flagged %>%
@@ -1004,8 +1015,6 @@ df_all_clean <- merged_data %>%
 ## Visualize Data by Plot   
 ```{r Visualize Data, echo=FALSE, warning=FALSE}
 
-cat("Visualize Data")
-
 #Plot samples to get a first look at concentrations (sanity check)
 data_plotting <- df_all_clean
 
@@ -1058,8 +1067,6 @@ ggarrange(viz_cl_plot, viz_so4_plot, nrow=2, ncol=1)
 
 ## Export Processed Data  
 ```{r, Export Processed Data, echo=FALSE, , include = FALSE}
-
-cat("Export Processed Data")
 
 #Prepare data to be exported - if there is anything else to add 
 #Add any necessary identifiers to the samples  ### VERY IMPORTANT AND STANDARD FOR PROJECT ####
