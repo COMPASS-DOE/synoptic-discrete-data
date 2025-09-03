@@ -47,7 +47,7 @@ dat23 <- read.csv("2023/COMPASS_SynopticCB_TGAS_2023.csv")
 ```{r}
 
 #read in the tree information about species and dbh
-tree_dat <- read.csv("COMPASS_SynopticCB_TGAS_TreeInfo.csv")
+tree_dat <- read.csv("TGAS Tree Info/COMPASS_SynopticCB_TGAS_TreeInfo.csv")
 head(tree_dat)
 
 #combine the tree data with the 2022 File 
@@ -91,17 +91,17 @@ metadat$Instrument_ifapplicable <- ""
 
 #add information about each line: 
 
-metadat$Description <- c("Project Name: Project Component", 
+metadat$Description <- c("Project name: Project component", 
                          "Region samples originated from: CB = Chesapeake Bay",
                          "Year (YYYY) of sample collection", 
                          "Month of sample collection",
                          "Name of sampling transect location (GCW, SWH, MSM, GWI), see dataset locations for coordinates", 
                          "Zone within space-for-time transect (UP=upland, TR=transition)",
-                         "Sap Flow (SF) Replicate tree id (1-8, 11, 19). The ID for the sapflow sensor associated with the tree (only live trees)", 
+                         "Sap flow (SF) replicate tree id (1-8, 11, 19). The ID for the sap flow sensor associated with the tree (only live trees)", 
                          "USDA Species code for tree sampled", 
                          "Diameter at breast height (DBH) for tree sampled in same year",
                          "Tree status indicates if the tree was Living or Dead Standing", 
-                         "Tree Info indicates if the tree had sapflow monitoring during sampling, dead trees were not monitored for sapflow",
+                         "Tree Info indicates if the tree had sap flow monitoring during sampling, dead trees were not monitored for sap flow",
                          "Sample identifier used in laboratory and field", 
                          "Methane concentration of sample from tree gas well", 
                          "Methane concentration flag: NA (data within instrument and std curve range) or Out of Std Curve Range.", 
@@ -153,18 +153,8 @@ metadat$Instrument_ifapplicable <-  c("NA",
 write.csv(all_dat, "COMPASS_SynopticCB_TGAS_AllData.csv")
 
 
-#write out an excel file for ESS DIVE with the data on the first sheet and metadata on the second
-wb <- createWorkbook()
-
-# Add worksheets and write data
-addWorksheet(wb, "COMPASS_SynopticCB_TGAS_Data")
-writeData(wb, sheet = "COMPASS_SynopticCB_TGAS_Data", all_dat)
-
-addWorksheet(wb, "Metadata")
-writeData(wb, sheet = "Metadata", metadat)
-
-# Save the workbook
-saveWorkbook(wb, "COMPASS_SynopticCB_TGAS_AllData_forESSDIVE.xlsx", overwrite = TRUE)
+#write out a csv of the metadata associated with the data: 
+write.csv(metadat, "COMPASS_SynopticCB_TGAS_Metadata.csv")
 
 ```
 
