@@ -13,7 +13,7 @@ output_dir: "To Be Reviewed/PDF"
 \newpage
 
 ##Add Required Packages
-```{r packages, include = FALSE}
+```{r packages, include=FALSE}
 
 #Packages that are required 
 lapply(c(
@@ -25,8 +25,9 @@ lapply(c(
 
 ```
 
-##Setup - Change things here & write any notes
-```{r changeable info, include = TRUE}
+
+## Run Information
+```{r Run Information, echo=TRUE, message=FALSE, warning=FALSE}
 
 ###### Run information - PLEASE CHANGE
   Date_Run = "2025-06-16"  #Date that instrument was run
@@ -54,8 +55,9 @@ lapply(c(
 
 ```
 
+
 ##Set Up Code - constants and QAQC cutoffs
-```{r setup values, include = FALSE}
+```{r Constants and QAQC cutoffs, include=FALSE}
 
 #Link to the protocol used for analysis 
   #steph will add this soon 
@@ -155,9 +157,8 @@ head(dionex_metadata)
 
 ```
 
-
-## Import Sample Data     
-```{r Import Data, include=FALSE}
+##Import Sample Data 
+```{r import data, include=FALSE}
 
 ## Read in raw data file from Dionex - copied and saved as a txt
 #Sulfate
@@ -217,10 +218,12 @@ all_dat <- all_dat_merge %>%
          across(c(SO4_area, Cl_area), ~ replace(.x, .x<0, 0)))
 head(all_dat)
 
+
 ```
 
-## Assessing Standard Curves 
-```{r Assess Standard Curves, echo=FALSE, warning=FALSE, message=FALSE}
+
+## Assess Check Standards 
+```{r Assess Standard Curves, echo=FALSE, message=FALSE, warning = FALSE}
 
 # Filter standards
 stds <- all_dat %>%
