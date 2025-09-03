@@ -221,8 +221,7 @@ head(all_dat)
 
 ```
 
-
-## Assess Check Standards 
+##Assess Check Standards 
 ```{r Assess Standard Curves, echo=FALSE, message=FALSE, warning = FALSE}
 
 # Filter standards
@@ -402,7 +401,7 @@ all_dat <- all_dat %>%
 ```
 
 
-## Assess Check Standards 
+## Assess Standards 
 ```{r Check Standards, echo=FALSE, warning = FALSE}
 
 # Pull out check standards
