@@ -1,0 +1,81 @@
+Inj.	Injection Name	Type 	Ret.Time	Amount	Rel.Area 	Area	Height
+No.	Selected Peak:		min	µg/mL	%	µS*min	µS
+			CD	CD	CD	CD	CD
+			IC-SO4	IC-SO4	IC-SO4	IC-SO4	IC-SO4
+1	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+2	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+3	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+4	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+5	Standard 1	Calibration Standard	4.667	0.3745	5.69	0.324	2.5
+6	Standard 2	Calibration Standard	4.657	0.8916	6.71	0.7714	5.61
+7	Standard 3	Calibration Standard	4.647	1.9038	7.09	1.6471	11.36
+8	Standard 4	Calibration Standard	4.603	10.1142	7.25	8.7502	54.83
+9	Standard 5	Calibration Standard	4.563	19.9611	7.21	17.2691	97.33
+10	Lab Blank	Unknown	5.047	0.022	20.29	0.019	0.02
+11	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+12	1_SWH_202410_UP_LYSA_10cm	Unknown	4.667	20.2274	3.19	0.35	2.21
+13	2_SWH_202410_UP_LYSA_20cm	Unknown	4.667	21.7398	3.62	0.3762	2.42
+14	3_SWH_202410_UP_LYSA_45cm	Unknown	4.673	13.1077	2.27	0.2268	1.36
+15	4_SWH_202410_UP_LYSB_10cm	Unknown	4.657	39.025	4.38	0.6752	4.68
+16	5_SWH_202410_UP_LYSB_20cm	Unknown	4.667	14.3121	2.04	0.2476	1.74
+17	6_SWH_202410_UP_LYSB_45cm	Unknown	4.653	0.8934	0.17	0.0155	0.11
+18	7_SWH_202410_UP_LYSC_10cm	Unknown	4.657	33.9245	4.3	0.587	4.07
+19	8_SWH_202410_UP_LYSC_20cm	Unknown	4.667	19.0123	2.71	0.329	2.28
+20	9_SWH_202410_UP_LYSC_45cm	Unknown	5.063	0.4185	0.07	0.0072	0.03
+21	10_SWH_202410_TR_LYSA_10cm	Unknown	4.65	92.7378	5.76	1.6046	10.93
+22	10_SWH_202410_TR_LYSA_10cm_dup	Unknown	4.647	93.5874	5.75	1.6193	11.03
+23	11_SWH_202410_TR_LYSA_20cm	Unknown	4.66	18.0747	0.84	0.3127	2.15
+24	11_SWH_202410_TR_LYSA_20cm_spk	Spiked	4.643	115.8914	6.41	2.0052	13.6
+25	Standard 1	Check Standard	4.663	0.4105	6.17	0.3551	2.6
+26	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+27	12_SWH_202410_TR_LYSA_45cm	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+28	13_SWH_202410_TR_LYSB_10cm	Unknown	4.64	139.132	10.9	2.4074	16.21
+29	14_SWH_202410_TR_LYSB_20cm	Unknown	4.663	16.0825	1.13	0.2783	1.89
+30	15_SWH_202410_TR_LYSB_45cm	Unknown	4.533	5.0774	0.3	0.0879	0.24
+31	16_SWH_202410_TR_LYSC_10cm	Unknown	4.643	148.3377	7.58	2.5667	17.19
+32	17_SWH_202410_TR_LYSC_20cm	Unknown	4.657	41.686	2.96	0.7213	5.02
+33	18_SWH_202410_TR_LYSC_45cm	Unknown	4.663	2.8554	0.17	0.0494	0.32
+34	19_SWH_202410_SWAMP_LYSA_10cm	Unknown	4.663	18.7681	1.45	0.3247	2.25
+35	20_SWH_202410_SWAMP_LYSA_20cm	Unknown	4.67	13.645	1.24	0.2361	1.62
+36	20_SWH_202410_SWAMP_LYSA_20cm_dup	Unknown	4.67	13.9573	1.25	0.2415	1.66
+37	21_SWH_202410_SWAMP_LYSA_45cm	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+38	21_SWH_202410_SWAMP_LYSA_45cm_spk	Spiked	4.65	86.7941	13.16	1.5018	10.29
+39	Standard 2	Check Standard	4.657	0.8927	6.67	0.7723	5.61
+40	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+41	22_SWH_202410_SWAMP_LYSB_10cm	Unknown	4.66	34.5277	2.68	0.5974	4.22
+42	23_SWH_202410_SWAMP_LYSB_20cm	Unknown	5.053	4.1665	0.67	0.0721	0
+43	24_SWH_202410_SWAMP_LYSB_45cm	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+44	25_SWH_202410_SWAMP_LYSC_10cm	Unknown	4.65	74.7849	6.55	1.294	8.97
+45	26_SWH_202410_SWAMP_LYSC_20cm	Unknown	4.667	1.5038	0.17	0.026	1.07
+46	27_SWH_202410_SWAMP_LYSC_45cm	Unknown	4.67	10.0025	1.07	0.1731	1.16
+47	28_SWH_202410_WC_LYSA_10cm	Unknown	4.66	18.8033	1.19	0.3253	2.26
+48	29_SWH_202410_WC_LYSA_20cm	Unknown	5.183	0.8866	0.09	0.0153	0.08
+49	30_SWH_202410_WC_LYSA_45cm	Unknown	4.663	2.9745	0.21	0.0515	0.31
+50	30_SWH_202410_WC_LYSA_45cm_dup	Unknown	4.663	3.0156	0.21	0.0522	0.32
+51	31_SWH_202410_WC_LYSB_10cm	Unknown	4.647	65.2279	3.08	1.1286	7.8
+52	31_SWH_202410_WC_LYSB_10cm_spk	Spiked	4.633	161.8751	7.33	2.8009	18.83
+53	Standard 3	Check Standard	4.64	1.9086	7.04	1.6512	11.39
+54	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+55	32_SWH_202410_WC_LYSB_20cm	Unknown	5.187	1.2315	0.07	0.0213	0.11
+56	33_SWH_202410_WC_LYSB_45cm	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+57	34_SWH_202410_WC_LYSC_10cm	Unknown	4.653	29.5047	1.33	0.5105	3.57
+58	35_SWH_202410_WC_LYSC_20cm	Unknown	4.663	7.866	0.44	0.1361	0.89
+59	36_SWH_202410_WC_LYSC_45cm	Unknown	4.567	0.2166	0.02	0.0037	0
+60	37_SWH_202410_SW_A	Unknown	4.63	210.6927	7.93	3.6456	24.33
+61	38_SWH_202410_SW_B	Unknown	4.63	209.7447	7.91	3.6292	24.24
+62	38_SWH_202410_SW_B_dup	Unknown	4.627	210.9925	7.91	3.6507	24.33
+63	39_SWH_202410_SW_C	Unknown	4.627	218.6212	7.95	3.7827	25.22
+64	39_SWH_202410_SW_C_spk	Spiked	4.617	313.0758	11	5.4171	35.42
+65	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+66	Standard 1	Check Standard	4.667	0.3402	5.11	0.2943	2.37
+67	Standard 2	Check Standard	4.65	0.8615	6.44	0.7454	5.58
+68	Standard 3	Check Standard	4.643	1.8853	6.98	1.6311	11.34
+69	Standard 4	Check Standard	4.593	10.2458	7.23	8.8641	55.35
+70	Standard 5	Check Standard	4.557	20.0227	7.22	17.3224	97.47
+71	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+72	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+Maximum			5.187	313.0758	20.29	17.3224	97.47
+Average			4.685	45.9445	4.5	1.8337	11.57
+Minimum			4.533	0.022	0.02	0.0037	0
+Standard Deviation			0.137	71.3582	3.97	3.5178	20.4
+Relative Standard Deviation			2.92%	155.31%	88.23%	191.84%	176.21%

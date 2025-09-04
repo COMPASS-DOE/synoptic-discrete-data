@@ -1,6 +1,6 @@
 ---
 title: "Synoptic CB: Porewater SO4/Cl"
-author: "Month YYYY Samples"
+author: "October 2024 Samples"
 date: "`r Sys.Date()`"
 output: 
   pdf_document:
@@ -30,21 +30,21 @@ lapply(c(
 ```{r Run Information, echo=TRUE, message=FALSE, warning=FALSE}
 
 ###### Run information - PLEASE CHANGE
-  Date_Run = "YYYY-MM-DD"  #Date that instrument was run
-  Run_by = "First Last"  #Instrument user 
-  Script_run_by = "First Last" #Code user 
-  run_notes = " " #any notes from the run
+  Date_Run = "2025-06-18"  #Date that instrument was run
+  Run_by = "Zoe Read"  #Instrument user 
+  Script_run_by = "Zoe Read" #Code user 
+  run_notes = "Some Cl/SO4 standards and checks were lower than the expected concentration" #any notes from the run
   samples <- c("GCW", "GWI", "MSM", "SWH") #whatever identifies your samples within the same names 
   samples_pattern <- paste(samples, collapse = "|") 
     #samples_pattern <- "GCW" #use this instead of the line above if you have only one site code 
 
 ###### File Names - PLEASE CHANGE 
 #file path and name for raw summary data file 
-  raw_file_name_cl = "Raw Data/COMPASS_Synoptic_CB_MonMon_202408_Cl.txt"
-  raw_file_name_so4 = "Raw Data/COMPASS_Synoptic_CB_MonMon_202408_SO4.txt"
+  raw_file_name_cl = "Raw Data/COMPASS_Synoptic_CB_MonMon_202410_Cl.txt"
+  raw_file_name_so4 = "Raw Data/COMPASS_Synoptic_CB_MonMon_202410_SO4.txt"
 
 #file path and name of processed data file 
-  processed_file_name = "Processed Data/COMPASS_SynopticCB_PW_Processed_Cl_SO4_202408.csv" 
+  processed_file_name = "Processed Data/COMPASS_SynopticCB_PW_Processed_Cl_SO4_202410.csv" 
 
 ###### Log Files - PLEASE CHECK 
 #downloaded metadata csv - downloaded from Google drive as csv for this year
@@ -75,7 +75,7 @@ lapply(c(
   chk_flag_dups = 10          #this is the maximum cv allowed for duplicates
   high_recovery_cutoff = 120  #this is the maximum percent recovery of SO4 allowed in spiked samples
   low_recovery_cutoff = 80    #this is the minimum percent recovery of SO4 allowed in spiked samples
-  chks_flag = 0.80            #if less than this percent of samples pass a check, a flag is added
+  chks_flag = 80            #if less than this percent of samples pass a check, a flag is added
 
 #Standard concentrations - Update if running different standard curve:  
   standards <- tibble(
@@ -351,7 +351,7 @@ if (file.exists(Log_path)) {
 log <- log[ ,-c(1)]
 
 #make sure they both have dates in Date format
-log$run_date <- as.Date(log$run_date)
+log$run_date <- as.Date(log$run_date, format = "%m/%d/%y")
 log$analyte <- as.character(log$analyte)
 log$curve <- as.character(log$curve)
 Slopes$run_date <- as.Date(Slopes$run_date)
@@ -406,7 +406,7 @@ all_dat <- all_dat %>%
 
 # Pull out check standards
 chks_raw <- all_dat %>%
-  filter(grepl("Check Standard", sample_type))%>% 
+  filter(grepl("Standard", sample_type))%>% 
   mutate(rep = row_number())
 
 #Cl standards
@@ -436,22 +436,31 @@ chks_S <- chks_raw %>%
   )
 
 # View results
-# head(chks_Cl)
-# head(chks_S)
+head(chks_Cl)
+head(chks_S)
 
+
+##Add in the expected concentrations
 chks_merged <- left_join(chks_raw, standards, by = "sample_ID")
 
+##Order by standard concentration and add rep numbers
+chks_merged <- chks_merged[order(chks_merged$SO4_std_conc, chks_merged$Cl_std_conc), ]
+chks_merged <- chks_merged %>%
+  mutate(rep = row_number())
 
 #calculate percent difference between check standards & expected concentration 
-chks_merged$Cl_diff <- ((chks_merged$Cl_ppm - chks_merged$Cl_std_conc)/((chks_merged$Cl_ppm + chks_merged$Cl_std_conc)/2)) * 100
+chks_merged$Cl_diff <- (abs(chks_merged$Cl_ppm - chks_merged$Cl_std_conc)/((chks_merged$Cl_ppm + chks_merged$Cl_std_conc)/2)) * 100
 chks_merged$Cl_diff_flag <-  ifelse(chks_merged$Cl_diff <= chk_flag_std_cl, 'YES', 'No, rerun')
 
-chks_merged$SO4_diff <- ((chks_merged$SO4_ppm - chks_merged$SO4_std_conc)/((chks_raw$SO4_ppm + chks_merged$SO4_std_conc)/2)) * 100
+chks_merged$SO4_diff <- (abs(chks_merged$SO4_ppm - chks_merged$SO4_std_conc)/((chks_raw$SO4_ppm + chks_merged$SO4_std_conc)/2)) * 100
 chks_merged$SO4_diff_flag <-  ifelse(chks_merged$SO4_diff <= chk_flag_std_s, 'YES', 'No, rerun')
 
-# head(chks_merged)
+chks_merged[c("sample_ID", "Cl_diff", "Cl_diff_flag", "SO4_diff", "SO4_diff_flag")]
+
 
 #Plot the check standards vs. the expected concentration 
+##Maybe arrange by standard number and add horizontal lines to graphs showing where the expected concentration is? 
+
 cl_chks <-  ggplot(data = chks_merged, aes(x = rep, y = Cl_ppm, fill=Cl_diff_flag)) +
         geom_bar(stat = 'identity') + 
         scale_fill_manual(values = c("YES" = "darkgreen", "No, rerun" = "darkgrey")) +
@@ -477,9 +486,9 @@ so4_chks_percent <- (sum(chks_merged$SO4_diff_flag == "YES")/nrow(chks_merged))*
 
 #report out if flags indicate need for rerun
 ifelse(cl_chks_percent >= chks_flag, ">80% of Chloride Check Standards are within range of expected concentration - PROCEED",
-       "<20% of Chloride Check Standards are within range of expected concentration - REASSESS")
+       "<80% of Chloride Check Standards are within range of expected concentration - REASSESS")
 ifelse(so4_chks_percent >= chks_flag,">80% of Sulfate Check Standards are within range of expected concentration - PROCEED",
-       "<20% of Sulfate Check Standards are within range of expected concentration - REASSESS")
+       "<80% of Sulfate Check Standards are within range of expected concentration - REASSESS")
 
 #write out a flag to the sample dataframe if less than 80% of the checks are within the expected CV
 if (cl_chks_percent <= chks_flag) {
@@ -777,7 +786,7 @@ all_dat$Dilution <-  ifelse(str_detect(all_dat$sample_ID, "GWI") & str_detect(al
 
 all_dat$Dilution <-  ifelse(str_detect(all_dat$sample_ID, "SWH"), 50, all_dat$Dilution)
 
-head(all_dat)
+# head(all_dat)
 ```
 
 
@@ -863,11 +872,11 @@ head(Perc_spks)
 
 
 #report out if the dups are within range
-ifelse(Perc_spks$Percent/100 >= chks_flag, ">80% of SO4 spikes have a recovery between the high and low cutoff - PROCEED",
-       ">80% of SO4 spikes have a recovery between the high and low cutoff - REASSESS")
+ifelse(Perc_spks$Percent >= chks_flag, ">80% of SO4 spikes have a recovery between the high and low cutoff - PROCEED",
+       "<80% of SO4 spikes have a recovery between the high and low cutoff - REASSESS")
 
 #write out a flag to the sample dataframe if less than 80% of the SO4 spikes are within range 
-if (Perc_spks$Percent/100 <= chks_flag) {
+if (Perc_spks$Percent <= chks_flag) {
     all_dat$SO4_QAQC_flag <- ifelse(
     all_dat$SO4_QAQC_flag != "",
     paste0(all_dat$SO4_QAQC_flag, "; SO4 spikes out of range"),
