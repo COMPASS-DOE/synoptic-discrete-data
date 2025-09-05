@@ -5,7 +5,7 @@
 "4","Month","Month of sample collection","NA","NA"
 "5","Site","Name of sampling transect location (GCW, SWH, MSM, GWI), see dataset locations for coordinates","NA","NA"
 "6","Zone","Zone within space-for-time transect (UP=upland, TR=transition)","NA","NA"
-"7","SF_Replicate_ID","Sap flow (SF) replicate tree id (1-8, 11, 19). The ID for the sap flow sensor associated with the tree (only live trees)","NA","NA"
+"7","Sapflux_ID","Sap flow (SF) id (1-8, 11, 19). The # ID for the sap flow sensor associated with the tree (only live trees)","NA","NA"
 "8","Species","USDA Species code for tree sampled","NA","NA"
 "9","DBH_cm","Diameter at breast height (DBH) for tree sampled in same year","cm","DBH tape"
 "10","Status","Tree status indicates if the tree was Living or Dead Standing","NA","NA"
