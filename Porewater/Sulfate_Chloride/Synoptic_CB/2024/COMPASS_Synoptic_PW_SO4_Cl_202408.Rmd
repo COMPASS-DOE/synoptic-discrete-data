@@ -20,7 +20,7 @@ lapply(c(
   "dplyr", "ggplot2", "ggpubr", "stringr",
   "purrr", "tidyverse", "here", "broom", "tibble",
   "googledrive", "googlesheets4", "data.table", 
-  "matrixStats", "gridExtra", "grid", "tidyverse", "formatR", "knitr"), 
+  "matrixStats", "gridExtra", "grid", "tidyverse", "knitr"), 
   library, character.only = TRUE)
 
 ```
@@ -33,7 +33,9 @@ lapply(c(
   Date_Run = "2025-06-16"  #Date that instrument was run
   Run_by = "Zoe Read"  #Instrument user 
   Script_run_by = "Zoe Read" #Code user 
-  run_notes = "All SO4 blanks were zero" #any notes from the run
+  run_notes = "One chk std 1 and one chk std 2 had Cl values of 0; 
+  Some Cl/SO4 standards and checks were lower than the expected concentration; 
+  All SO4 blanks were zero" #any notes from the run
   samples <- c("GCW", "GWI", "MSM", "SWH") #whatever identifies your samples within the same names 
   samples_pattern <- paste(samples, collapse = "|") 
     #samples_pattern <- "GCW" #use this instead of the line above if you have only one site code 
@@ -52,7 +54,6 @@ lapply(c(
 
 #qaqc log file path for this year 
   Log_path = "Raw Data/COMPASS_Synoptic_Cl_SO4_QAQClog_2024.csv"
-
 ```
 
 
@@ -75,7 +76,7 @@ lapply(c(
   chk_flag_dups = 10          #this is the maximum cv allowed for duplicates
   high_recovery_cutoff = 120  #this is the maximum percent recovery of SO4 allowed in spiked samples
   low_recovery_cutoff = 80    #this is the minimum percent recovery of SO4 allowed in spiked samples
-  chks_flag = 0.80            #if less than this percent of samples pass a check, a flag is added
+  chks_flag = 80            #if less than this percent of samples pass a check, a flag is added
 
 #Standard concentrations - Update if running different standard curve:  
   standards <- tibble(
@@ -351,7 +352,7 @@ if (file.exists(Log_path)) {
 log <- log[ ,-c(1)]
 
 #make sure they both have dates in Date format
-log$run_date <- as.Date(log$run_date)
+log$run_date <- as.Date(log$run_date, format = "%Y-%m-%d")
 log$analyte <- as.character(log$analyte)
 log$curve <- as.character(log$curve)
 Slopes$run_date <- as.Date(Slopes$run_date)
@@ -406,7 +407,7 @@ all_dat <- all_dat %>%
 
 # Pull out check standards
 chks_raw <- all_dat %>%
-  filter(grepl("Check Standard", sample_type))%>% 
+  filter(grepl("Standard", sample_type))%>% 
   mutate(rep = row_number())
 
 #Cl standards
@@ -436,37 +437,82 @@ chks_S <- chks_raw %>%
   )
 
 # View results
-# head(chks_Cl)
-# head(chks_S)
+head(chks_Cl)
+head(chks_S)
 
+
+#calculate the percent of check standards that have high cv's based on the flag 
+cl_chks_percent_cv <- (sum(chks_Cl$flag_Cl == "Chloride Check Standard RSD within Range - PROCEED")/nrow(chks_Cl))*100
+so4_chks_percent_cv <- (sum(chks_S$flag_SO4 == "Sulfate Check Standard RSD within Range - PROCEED")/nrow(chks_S))*100
+
+#report out if flags indicate need for rerun
+ifelse(cl_chks_percent_cv >= chks_flag, ">80% of Chloride Check Standards have RSD within range - PROCEED",
+       "<80% of Chloride Check Standards have RSD within range - REASSESS")
+ifelse(so4_chks_percent_cv >= chks_flag,">80% of Sulfate Check Standards have RSD within range - PROCEED",
+       "<80% of Sulfate Check Standards have RSD within range - REASSESS")
+
+#write out a flag to the sample dataframe if less than 80% of the check standard RSD's are within range
+if (cl_chks_percent_cv <= chks_flag) {
+    all_dat$Cl_QAQC_flag <- ifelse(
+    all_dat$Cl_QAQC_flag != "",
+    paste0(all_dat$Cl_QAQC_flag, "; Cl checks RSD out of range"),
+    "Cl checks RSD out of range"
+  )
+}
+
+if (so4_chks_percent_cv <= chks_flag) {  
+    all_dat$SO4_QAQC_flag <- ifelse(
+    all_dat$SO4_QAQC_flag != "",
+    paste0(all_dat$SO4_QAQC_flag, "; SO4 checks RSD out of range"),
+    "SO4 checks RSD out of range"
+  )
+}
+
+
+
+
+
+##Add in the expected concentrations
 chks_merged <- left_join(chks_raw, standards, by = "sample_ID")
 
+##Order by standard concentration and add rep numbers
+chks_merged <- chks_merged[order(chks_merged$SO4_std_conc, chks_merged$Cl_std_conc), ]
+chks_merged <- chks_merged %>%
+  mutate(rep = row_number())
 
 #calculate percent difference between check standards & expected concentration 
-chks_merged$Cl_diff <- ((chks_merged$Cl_ppm - chks_merged$Cl_std_conc)/((chks_merged$Cl_ppm + chks_merged$Cl_std_conc)/2)) * 100
+chks_merged$Cl_diff <- (abs(chks_merged$Cl_ppm - chks_merged$Cl_std_conc)/((chks_merged$Cl_ppm + chks_merged$Cl_std_conc)/2)) * 100
 chks_merged$Cl_diff_flag <-  ifelse(chks_merged$Cl_diff <= chk_flag_std_cl, 'YES', 'No, rerun')
 
-chks_merged$SO4_diff <- ((chks_merged$SO4_ppm - chks_merged$SO4_std_conc)/((chks_raw$SO4_ppm + chks_merged$SO4_std_conc)/2)) * 100
+chks_merged$SO4_diff <- (abs(chks_merged$SO4_ppm - chks_merged$SO4_std_conc)/((chks_raw$SO4_ppm + chks_merged$SO4_std_conc)/2)) * 100
 chks_merged$SO4_diff_flag <-  ifelse(chks_merged$SO4_diff <= chk_flag_std_s, 'YES', 'No, rerun')
 
-# head(chks_merged)
+# chks_merged[c("sample_ID", "Cl_diff", "Cl_diff_flag", "SO4_diff", "SO4_diff_flag")]
+
 
 #Plot the check standards vs. the expected concentration 
+##Maybe arrange by standard number and add horizontal lines to graphs showing where the expected concentration is? 
+custom_y_breaks_Cl <- standards$Cl_std_conc
+custom_y_labels_Cl <- standards$sample_ID
 cl_chks <-  ggplot(data = chks_merged, aes(x = rep, y = Cl_ppm, fill=Cl_diff_flag)) +
         geom_bar(stat = 'identity') + 
-        scale_fill_manual(values = c("YES" = "darkgreen", "No, rerun" = "darkgrey")) +
+        scale_fill_manual(values = c("YES" = "darkgreen", "No, rerun" = "red")) +
         theme_classic() + labs(x= " ", y="Cl (ppm)", title="Check Stds: Chloride") + 
         theme(legend.position="bottom") +  
-        #geom_hline(yintercept=chk_std_high_c, linetype="dashed", color = "black", linewidth=1) + 
-              guides(fill=guide_legend(title="% Difference <10%"))
+        geom_hline(yintercept=standards$Cl_std_conc, linetype="dashed", color = "black", linewidth=1) + 
+        scale_y_continuous(breaks = custom_y_breaks_Cl, labels = custom_y_labels_Cl) +
+        guides(fill=guide_legend(title="% Difference <10%"))
 
 
+custom_y_breaks_SO4 <- standards$SO4_std_conc
+custom_y_labels_SO4 <- standards$sample_ID
 so4_chks <-  ggplot(data = chks_merged, aes(x = rep, y = SO4_ppm, fill=SO4_diff_flag)) +
         geom_bar(stat = 'identity') + 
-        scale_fill_manual(values = c("YES" = "darkgreen", "No, rerun" = "darkgrey")) +
+        scale_fill_manual(values = c("YES" = "darkgreen", "No, rerun" = "red")) +
         theme_classic() + labs(x= " ", y="SO4  (ppm)", title="Check Stds: Sulfate") + 
         theme(legend.position="bottom") + 
-        #geom_hline(yintercept=chk_std_high_n,linetype="dashed",  color = "black", linewidth=1) + 
+        scale_y_continuous(breaks = custom_y_breaks_SO4, labels = custom_y_labels_SO4) +
+        geom_hline(yintercept=standards$SO4_std_conc,linetype="dashed",  color = "black", linewidth=1) + 
               guides(fill=guide_legend(title="% Difference <10%"))
 
 ggarrange(cl_chks, so4_chks, nrow=1, ncol=2)
@@ -477,24 +523,24 @@ so4_chks_percent <- (sum(chks_merged$SO4_diff_flag == "YES")/nrow(chks_merged))*
 
 #report out if flags indicate need for rerun
 ifelse(cl_chks_percent >= chks_flag, ">80% of Chloride Check Standards are within range of expected concentration - PROCEED",
-       "<20% of Chloride Check Standards are within range of expected concentration - REASSESS")
+       "<80% of Chloride Check Standards are within range of expected concentration - REASSESS")
 ifelse(so4_chks_percent >= chks_flag,">80% of Sulfate Check Standards are within range of expected concentration - PROCEED",
-       "<20% of Sulfate Check Standards are within range of expected concentration - REASSESS")
+       "<80% of Sulfate Check Standards are within range of expected concentration - REASSESS")
 
-#write out a flag to the sample dataframe if less than 80% of the checks are within the expected CV
+#write out a flag to the sample dataframe if less than 80% of the checks are within range of expected concentration
 if (cl_chks_percent <= chks_flag) {
     all_dat$Cl_QAQC_flag <- ifelse(
     all_dat$Cl_QAQC_flag != "",
-    paste0(all_dat$Cl_QAQC_flag, "; Cl checks out of range"),
-    "Cl checks out of range"
+    paste0(all_dat$Cl_QAQC_flag, "; Cl checks perc diff out of range"),
+    "Cl checks perc diff out of range"
   )
 }
 
 if (so4_chks_percent <= chks_flag) {  
     all_dat$SO4_QAQC_flag <- ifelse(
     all_dat$SO4_QAQC_flag != "",
-    paste0(all_dat$SO4_QAQC_flag, "; SO4 checks out of range"),
-    "SO4 checks out of range"
+    paste0(all_dat$SO4_QAQC_flag, "; SO4 checks perc diff out of range"),
+    "SO4 checks perc diff out of range"
   )
 }
 
@@ -777,7 +823,7 @@ all_dat$Dilution <-  ifelse(str_detect(all_dat$sample_ID, "GWI") & str_detect(al
 
 all_dat$Dilution <-  ifelse(str_detect(all_dat$sample_ID, "SWH"), 50, all_dat$Dilution)
 
-head(all_dat)
+# head(all_dat)
 ```
 
 
@@ -859,15 +905,15 @@ Perc_spks <- QAspks %>%
   summarise(no_rows = length(SO4_spks_flag)) 
 Perc_spks$Total <- length(QAspks$SO4_spks_flag)
 Perc_spks$Percent <- (Perc_spks$no_rows / Perc_spks$Total)*100
-head(Perc_spks)
+# head(Perc_spks)
 
 
 #report out if the dups are within range
-ifelse(Perc_spks$Percent/100 >= chks_flag, ">80% of SO4 spikes have a recovery between the high and low cutoff - PROCEED",
-       ">80% of SO4 spikes have a recovery between the high and low cutoff - REASSESS")
+ifelse(Perc_spks$Percent >= chks_flag, ">80% of SO4 spikes have a recovery between the high and low cutoff - PROCEED",
+       "<80% of SO4 spikes have a recovery between the high and low cutoff - REASSESS")
 
 #write out a flag to the sample dataframe if less than 80% of the SO4 spikes are within range 
-if (Perc_spks$Percent/100 <= chks_flag) {
+if (Perc_spks$Percent <= chks_flag) {
     all_dat$SO4_QAQC_flag <- ifelse(
     all_dat$SO4_QAQC_flag != "",
     paste0(all_dat$SO4_QAQC_flag, "; SO4 spikes out of range"),
@@ -889,7 +935,8 @@ all_dat$SO4_ppm_dil <- all_dat$SO4_ppm/all_dat$Dilution
 
 #Remove standards
 dat_flagged <- all_dat %>%  
-            filter(!str_detect(sample_ID, "Standard"))
+            filter(!str_detect(sample_ID, "Standard")) %>%  
+            filter(!str_detect(sample_ID, "Blank"))
 
 #Flagging data if the concentration is outside the standards range and based on blanks
 dat_flagged <- dat_flagged %>%
@@ -927,6 +974,21 @@ so4_samples_flag <-  ggplot(data = dat_flagged, aes(x = sample_name, y = SO4_ppm
         theme(axis.text.x = element_blank())
 
 ggarrange(cl_samples_flag, so4_samples_flag, nrow=1, ncol=2)
+
+##Get number of samples bdl, adl, and within range
+length = length(dat_flagged$SO4_Conc_flag) 
+Perc_SO4_flagged <- dat_flagged %>% 
+  group_by(SO4_Conc_flag) %>%
+  summarise(Percent_samples = n()/length*100)
+
+length = length(dat_flagged$Cl_Conc_flag) 
+Perc_Cl_flagged <- dat_flagged %>% 
+  group_by(Cl_Conc_flag) %>%
+  summarise(Percent_samples = n()/length*100)
+
+
+knitr::kable(Perc_SO4_flagged, caption = "SO4 samples")
+knitr::kable(Perc_Cl_flagged, caption = "Cl samples")
 
 ```
 

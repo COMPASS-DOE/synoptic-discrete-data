@@ -351,7 +351,7 @@ if (file.exists(Log_path)) {
 log <- log[ ,-c(1)]
 
 #make sure they both have dates in Date format
-log$run_date <- as.Date(log$run_date, format = "%m/%d/%y")
+log$run_date <- as.Date(log$run_date, format = "%Y-%m-%d")
 log$analyte <- as.character(log$analyte)
 log$curve <- as.character(log$curve)
 Slopes$run_date <- as.Date(Slopes$run_date)
