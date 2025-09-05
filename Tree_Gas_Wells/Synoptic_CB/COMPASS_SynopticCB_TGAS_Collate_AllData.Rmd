@@ -71,10 +71,10 @@ dat23_wtree <- dat23_wtree %>%
 all_dat <- rbind(dat22_wtree, dat23_wtree)
 
 all_dat <- all_dat %>% 
-  rename( SF_Replicate_ID = Replicate ) %>%
+  rename( Sapflux_ID = Replicate ) %>%
   mutate(CH4_Flag = recode(CH4_Flag, "Within Std Curve Range" = "NA")) %>%
   mutate(CO2_Flag = recode(CO2_Flag, "Within Std Curve Range" = "NA")) %>%
-  select("Project", "Region", "Year", "Month", "Site", "Zone", "SF_Replicate_ID", "Species" ,
+  select("Project", "Region", "Year", "Month", "Site", "Zone", "Sapflux_ID", "Species" ,
          "DBH_cm" ,  "Status",  "Tree_Info", "Sample_ID","CH4_ppm", "CH4_Flag",  "CO2_ppm","CO2_Flag")      
 
 ```
@@ -97,7 +97,7 @@ metadat$Description <- c("Project name: Project component",
                          "Month of sample collection",
                          "Name of sampling transect location (GCW, SWH, MSM, GWI), see dataset locations for coordinates", 
                          "Zone within space-for-time transect (UP=upland, TR=transition)",
-                         "Sap flow (SF) replicate tree id (1-8, 11, 19). The ID for the sap flow sensor associated with the tree (only live trees)", 
+                         "Sap flow (SF) id (1-8, 11, 19). The # ID for the sap flow sensor associated with the tree (only live trees)", 
                          "USDA Species code for tree sampled", 
                          "Diameter at breast height (DBH) for tree sampled in same year",
                          "Tree status indicates if the tree was Living or Dead Standing", 
