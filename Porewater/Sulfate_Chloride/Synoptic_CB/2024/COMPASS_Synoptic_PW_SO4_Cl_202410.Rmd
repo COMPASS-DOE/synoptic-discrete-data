@@ -481,10 +481,10 @@ chks_merged <- chks_merged %>%
 
 #calculate percent difference between check standards & expected concentration 
 chks_merged$Cl_diff <- (abs(chks_merged$Cl_ppm - chks_merged$Cl_std_conc)/((chks_merged$Cl_ppm + chks_merged$Cl_std_conc)/2)) * 100
-chks_merged$Cl_diff_flag <-  ifelse(chks_merged$Cl_diff <= chk_flag_std_cl, 'YES', 'No, rerun')
+chks_merged$Cl_diff_flag <-  ifelse(chks_merged$Cl_diff <= chk_flag_std_perc, 'YES', 'No, rerun')
 
 chks_merged$SO4_diff <- (abs(chks_merged$SO4_ppm - chks_merged$SO4_std_conc)/((chks_raw$SO4_ppm + chks_merged$SO4_std_conc)/2)) * 100
-chks_merged$SO4_diff_flag <-  ifelse(chks_merged$SO4_diff <= chk_flag_std_s, 'YES', 'No, rerun')
+chks_merged$SO4_diff_flag <-  ifelse(chks_merged$SO4_diff <= chk_flag_std_perc, 'YES', 'No, rerun')
 
 # chks_merged[c("sample_ID", "Cl_diff", "Cl_diff_flag", "SO4_diff", "SO4_diff_flag")]
 
