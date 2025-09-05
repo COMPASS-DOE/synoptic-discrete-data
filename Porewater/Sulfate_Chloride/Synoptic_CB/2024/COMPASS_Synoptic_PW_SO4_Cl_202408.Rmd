@@ -1054,7 +1054,7 @@ df_all_clean <- merged_data %>%
 data_plotting <- df_all_clean
 
 #Order by Zone from Upland to Surface Water
-data_plotting$Zone = factor(data_plotting$Zone, levels = c("UP", "TR", "SWAMP", "WC", "SW"))
+data_plotting$Zone = factor(data_plotting$Zone, levels = c("UP",  "SWAMP","TR", "WC", "SW"))
 data_plotting <- data_plotting[order(data_plotting$Zone), ]
 
 #group the data for plotting
@@ -1069,8 +1069,8 @@ viz_cl_plot <- ggplot(data_plotting, aes(x = row_num, y = Cl_ppm, fill = Zone)) 
   facet_grid(~ Site_Code, scales="free_x") +
   scale_fill_manual(values = c(
     "UP" = "#20063B",
-    "TR" = "#FFBC42",
     "SWAMP" = "darkgrey",
+    "TR" = "#FFBC42",
     "WC" = "#419973",
     "SW" = "#25ABE6"
   )) +
@@ -1085,8 +1085,8 @@ viz_so4_plot <-  ggplot(data_plotting, aes(x = row_num, y = SO4_ppm, fill = Zone
   facet_grid(~ Site_Code, scales="free_x") +
   scale_fill_manual(values = c(
     "UP" = "#20063B",
-    "TR" = "#FFBC42",
     "SWAMP" = "darkgrey",
+    "TR" = "#FFBC42",
     "WC" = "#419973",
     "SW" = "#25ABE6"
   )) +
