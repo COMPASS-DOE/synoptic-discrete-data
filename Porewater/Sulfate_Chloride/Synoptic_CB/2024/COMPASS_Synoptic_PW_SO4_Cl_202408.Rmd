@@ -703,9 +703,9 @@ cl_dups_percent <- (sum(QAdups$Cl_dups_cv_flag == "YES")/nrow(QAdups))*100
 so4_dups_percent <- (sum(QAdups$SO4_dups_cv_flag == "YES")/nrow(QAdups))*100
 
 #report out if the dups are within range
-ifelse(cl_dups_percent >= chks_flag, ">80% of Chloride Duplicates have a CV <10%",
+ifelse(cl_dups_percent >= chks_flag, ">80% of Chloride Duplicates have a CV <10% - PROCEED",
        "<80% of Chloride Duplicates have a CV <10% - REASSESS")
-ifelse(so4_dups_percent >= chks_flag, ">80% of Sulfate Duplicates have a CV <10%",
+ifelse(so4_dups_percent >= chks_flag, ">80% of Sulfate Duplicates have a CV <10% - PROCEED",
        "<80% of Sulfate Duplicates have a CV <10% - REASSESS")
 
 #write out a flag to the sample dataframe if more than 80% of the dups have CVs out of range 

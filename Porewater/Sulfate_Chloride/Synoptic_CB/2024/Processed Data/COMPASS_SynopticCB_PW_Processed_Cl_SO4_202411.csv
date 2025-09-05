@@ -1,0 +1,433 @@
+"","Project","Region","Site","Zone","Replicate","Depth_cm","Sample_ID","Year","Month","Day","Time","Time_Zone","SO4_Conc_mM","SO4_Conc_flag","SO4_QAQC_flag","Cl_Conc_mM","Cl_Conc_flag","Cl_QAQC_flag","salinity","Analysis_rundate","Run_notes","Field_notes"
+"1","COMPASS: Synoptic","CB","GWI","UP","A",20,"GWI_202411_UP_LYSA_20CM",2024,11,14,"12:35","EDT",17.6358265751715,"Within_Range","SO4 checks perc diff out of range",135.5898674189,"Within_Range","",8.6856620656,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"2","COMPASS: Synoptic","CB","GWI","UP","A",45,"GWI_202411_UP_LYSA_45CM",2024,11,14,"12:40","EDT",29.4403649407361,"Within_Range","SO4 checks perc diff out of range",235.922047954866,"Within_Range","",15.1127559362,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"3","COMPASS: Synoptic","CB","GWI","UP","B",10,"GWI_202411_UP_LYSB_10CM",2024,11,14,"12:42","EDT",22.0159887710543,"Within_Range","SO4 checks perc diff out of range",175.928078984485,"Within_Range","",11.2696532728,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"4","COMPASS: Synoptic","CB","GWI","UP","B",20,"GWI_202411_UP_LYSB_20CM",2024,11,14,"12:45","EDT",19.214984404242,"Within_Range","SO4 checks perc diff out of range",152.84674471086,"Within_Range","",9.7911056997,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"5","COMPASS: Synoptic","CB","GWI","UP","B",45,"GWI_202411_UP_LYSB_45CM",2024,11,14,"12:50","EDT",21.8366531503431,"Within_Range","SO4 checks perc diff out of range",165.514868829337,"Within_Range","",10.6026022947,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"6","COMPASS: Synoptic","CB","GWI","UP","C",20,"GWI_202411_UP_LYSC_20CM",2024,11,14,"12:55","EDT",26.050945102932,"Within_Range","SO4 checks perc diff out of range",216.79367842031,"Within_Range","",13.8874279713,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"7","COMPASS: Synoptic","CB","GWI","TR","A",10,"GWI_202411_TR_LYSA_10CM",2024,11,14,"12:00","EDT",48.4136774797255,"Within_Range","SO4 checks perc diff out of range",339.527709449929,"Within_Range","",21.7495429411,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"8","COMPASS: Synoptic","CB","GWI","TR","A",20,"GWI_202411_TR_LYSA_20CM",2024,11,14,"12:05","EDT",31.9170648783531,"Within_Range","SO4 checks perc diff out of range",318.593314527503,"Within_Range","",20.408524331,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"9","COMPASS: Synoptic","CB","GWI","TR","A",45,"GWI_202411_TR_LYSA_45CM",2024,11,14,"12:07","EDT",25.8090517779164,"Within_Range","SO4 checks perc diff out of range",265.589960507757,"Within_Range","",17.0132275287,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"10","COMPASS: Synoptic","CB","GWI","TR","B",10,"GWI_202411_TR_LYSB_10CM",2024,11,14,"12:10","EDT",60.1086650031191,"Within_Range","SO4 checks perc diff out of range",390.376380818054,"Within_Range","",25.0068147589,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"11","COMPASS: Synoptic","CB","GWI","TR","B",20,"GWI_202411_TR_LYSB_20CM",2024,11,14,"12:15","EDT",37.6652900810979,"Within_Range","SO4 checks perc diff out of range",328.04885190409,"Within_Range","",21.0142285626,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"12","COMPASS: Synoptic","CB","GWI","TR","B",45,"GWI_202411_TR_LYSB_45CM",2024,11,14,"12:20","EDT",36.4341515907673,"Within_Range","SO4 checks perc diff out of range",274.250462623413,"Within_Range","",17.5680032723,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"13","COMPASS: Synoptic","CB","GWI","TR","C",10,"GWI_202411_TR_LYSC_10CM",2024,11,14,"12:25","EDT",54.7965658140986,"Within_Range","SO4 checks perc diff out of range",363.200524682652,"Within_Range","",23.2659796902,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"14","COMPASS: Synoptic","CB","GWI","TR","C",20,"GWI_202411_TR_LYSC_20CM",2024,11,14,"12:29","EDT",49.3234591391142,"Within_Range","SO4 checks perc diff out of range",336.188944992948,"Within_Range","",21.5356678667,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"15","COMPASS: Synoptic","CB","GWI","WC","A",10,"GWI_202411_WC_LYSA_10CM",2024,11,14,"11:35","EDT",60.5310729881472,"Within_Range","SO4 checks perc diff out of range",389.791856135402,"Within_Range","",24.9693711891,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"16","COMPASS: Synoptic","CB","GWI","WC","A",20,"GWI_202411_WC_LYSA_20CM",2024,11,14,"11:37","EDT",55.312370555209,"Within_Range","SO4 checks perc diff out of range",359.13533145275,"Within_Range","",23.0055709325,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"17","COMPASS: Synoptic","CB","GWI","WC","A",45,"GWI_202411_WC_LYSA_45CM",2024,11,14,"11:40","EDT",42.219847161572,"Within_Range","SO4 checks perc diff out of range",350.94498448519,"Within_Range","",22.4809124579,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"18","COMPASS: Synoptic","CB","GWI","WC","B",10,"GWI_202411_WC_LYSB_10CM",2024,11,14,"11:42","EDT",64.1264628820961,"Within_Range","SO4 checks perc diff out of range",421.240369534556,"Within_Range","",26.9839047777,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"19","COMPASS: Synoptic","CB","GWI","WC","B",20,"GWI_202411_WC_LYSB_20CM",2024,11,14,"11:45","EDT",61.0117311291329,"Within_Range","SO4 checks perc diff out of range",379.934581100141,"Within_Range","",24.3379323863,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"20","COMPASS: Synoptic","CB","GWI","WC","B",45,"GWI_202411_WC_LYSB_45CM",2024,11,14,"11:50","EDT",50.8016469120399,"Within_Range","SO4 checks perc diff out of range",380.814925246826,"Within_Range","",24.3943256037,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"21","COMPASS: Synoptic","CB","GWI","WC","C",10,"GWI_202411_WC_LYSC_10CM",2024,11,14,"11:52","EDT",64.7207641921397,"Within_Range","SO4 checks perc diff out of range",397.094792665726,"Within_Range","",25.4371837928,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"22","COMPASS: Synoptic","CB","GWI","WC","C",45,"GWI_202411_WC_LYSC_45CM",2024,11,14,"11:55","EDT",44.9691110417966,"Within_Range","SO4 checks perc diff out of range",372.174383638928,"Within_Range","",23.8408284933,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"23","COMPASS: Synoptic","CB","GWI","SW","A",0,"GWI_202411_SW_A",2024,11,14,"10:00","EDT",50.7950405489707,"Within_Range","SO4 checks perc diff out of range",342.472708039492,"Within_Range","",21.9381941025,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"24","COMPASS: Synoptic","CB","GWI","SW","B",0,"GWI_202411_SW_B",2024,11,14,"10:00","EDT",51.0099968808484,"Within_Range","SO4 checks perc diff out of range",344.654163610719,"Within_Range","",22.0779341107,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"25","COMPASS: Synoptic","CB","GWI","SW","C",0,"GWI_202411_SW_C",2024,11,14,"10:00","EDT",51.445670617592,"Within_Range","SO4 checks perc diff out of range",344.313215796897,"Within_Range","",22.0560936245,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"26","COMPASS: Synoptic","CB","SWH","UP","A",10,"SWH_202411_UP_LYSA_10CM",2024,11,12,"14:50","EDT",0.541088583905178,"Within_Range","SO4 checks perc diff out of range",0.409444287729196,"Within_Range","",0.0262542436,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"27","COMPASS: Synoptic","CB","SWH","UP","A",20,"SWH_202411_UP_LYSA_20CM",2024,11,12,"14:55","EDT",0.623022457891453,"Within_Range","SO4 checks perc diff out of range",0.272425952045134,"Within_Range","",0.0174771025,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"28","COMPASS: Synoptic","CB","SWH","UP","A",45,"SWH_202411_UP_LYSA_45CM",2024,11,12,"15:00","EDT",0.355470991890206,"Within_Range","SO4 checks perc diff out of range",0.291689703808181,"Within_Range","",0.0187111028,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"29","COMPASS: Synoptic","CB","SWH","UP","B",10,"SWH_202411_UP_LYSB_10CM",2024,11,12,"15:05","EDT",1.11940736119775,"Within_Range","SO4 checks perc diff out of range",7.7294442877292,"Within_Range","",0.4951599016,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"30","COMPASS: Synoptic","CB","SWH","UP","B",20,"SWH_202411_UP_LYSB_20CM",2024,11,12,"15:10","EDT",0.582751091703057,"Within_Range","SO4 checks perc diff out of range",4.39855853314528,"Within_Range","",0.2817895223,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"31","COMPASS: Synoptic","CB","SWH","UP","B",45,"SWH_202411_UP_LYSB_45CM",2024,11,12,"15:15","EDT",0.0386088583905178,"Within_Range","SO4 checks perc diff out of range",0.859088857545839,"Within_Range","",0.0550576429,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"32","COMPASS: Synoptic","CB","SWH","UP","C",10,"SWH_202411_UP_LYSC_10CM",2024,11,12,"15:20","EDT",0.967270742358079,"Within_Range","SO4 checks perc diff out of range",10.0647165021157,"Within_Range","",0.6447531194,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"33","COMPASS: Synoptic","CB","SWH","UP","C",20,"SWH_202411_UP_LYSC_20CM",2024,11,12,"15:25","EDT",0.592679351216469,"Within_Range","SO4 checks perc diff out of range",4.66333427362482,"Within_Range","",0.2987505664,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"34","COMPASS: Synoptic","CB","SWH","UP","C",45,"SWH_202411_UP_LYSC_45CM",2024,11,12,"15:30","EDT",0.00381472239550842,"Within_Range","SO4 checks perc diff out of range",2.03474471086037,"Within_Range","",0.1303679819,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"35","COMPASS: Synoptic","CB","SWH","TR","A",10,"SWH_202411_TR_LYSA_10CM",2024,11,12,"12:30","EDT",6.00903930131004,"Within_Range","SO4 checks perc diff out of range",34.8659492242595,"Within_Range","",2.2334742053,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"36","COMPASS: Synoptic","CB","SWH","TR","A",20,"SWH_202411_TR_LYSA_20CM",2024,11,12,"12:35","EDT",0.96796631316282,"Within_Range","SO4 checks perc diff out of range",30.7314894217207,"Within_Range","",1.9686283591,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"37","COMPASS: Synoptic","CB","SWH","TR","A",45,"SWH_202411_TR_LYSA_45CM",2024,11,12,"12:40","EDT",0.0331940112289457,"Within_Range","SO4 checks perc diff out of range",30.0336784203103,"Within_Range","",1.9239278773,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"38","COMPASS: Synoptic","CB","SWH","TR","B",10,"SWH_202411_TR_LYSB_10CM",2024,11,12,"12:45","EDT",6.99792888334373,"Within_Range","SO4 checks perc diff out of range",24.2042566995769,"Within_Range","",1.5505059063,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"39","COMPASS: Synoptic","CB","SWH","TR","B",20,"SWH_202411_TR_LYSB_20CM",2024,11,12,"12:50","EDT",0.529129756706176,"Within_Range","SO4 checks perc diff out of range",25.7965077574048,"Within_Range","",1.6525025634,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"40","COMPASS: Synoptic","CB","SWH","TR","B",45,"SWH_202411_TR_LYSB_45CM",2024,11,12,"12:55","EDT",0.0196412975670618,"Within_Range","SO4 checks perc diff out of range",25.9875317348378,"Within_Range","",1.664739206,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"41","COMPASS: Synoptic","CB","SWH","TR","C",10,"SWH_202411_TR_LYSC_10CM",2024,11,12,"13:00","EDT",4.5932096069869,"Within_Range","SO4 checks perc diff out of range",23.9544174894217,"Within_Range","",1.5345016687,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"42","COMPASS: Synoptic","CB","SWH","TR","C",20,"SWH_202411_TR_LYSC_20CM",2024,11,12,"13:05","EDT",0.864978165938865,"Within_Range","SO4 checks perc diff out of range",24.2066262341326,"Within_Range","",1.5506576943,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"43","COMPASS: Synoptic","CB","SWH","TR","C",45,"SWH_202411_TR_LYSC_45CM",2024,11,12,"13:10","EDT",0.036890205864005,"Within_Range","SO4 checks perc diff out of range",32.6042595204513,"Within_Range","",2.088594547,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"44","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202411_SWAMP_LYSA_10CM",2024,11,12,"14:20","EDT",0.548075483468497,"Within_Range","SO4 checks perc diff out of range",13.5806572637518,"Within_Range","",0.8699777801,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"45","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202411_SWAMP_LYSA_20CM",2024,11,12,"14:22","EDT",0.358611977542108,"Within_Range","SO4 checks perc diff out of range",12.0222002820874,"Within_Range","",0.770145909,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"46","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202411_SWAMP_LYSA_45CM",2024,11,12,"14:25","EDT",0.00276980661260137,"Within_Range","SO4 checks perc diff out of range",3.0501269393512,"Within_Range","",0.195411489,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"47","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202411_SWAMP_LYSB_10CM",2024,11,12,"14:30","EDT",1.50271678103556,"Within_Range","SO4 checks perc diff out of range",19.7960141043724,"Within_Range","",1.2681220409,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"48","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202411_SWAMP_LYSB_20CM",2024,11,12,"14:32","EDT",0.0125389893948846,"Within_Range","SO4 checks perc diff out of range",6.24377433004231,"Within_Range","",0.3999906326,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"49","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202411_SWAMP_LYSB_45CM",2024,11,12,"14:35","EDT",0.0316001247660636,"Within_Range","SO4 checks perc diff out of range",0.310149506346968,"Within_Range","",0.0198936036,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"50","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202411_SWAMP_LYSC_10CM",2024,11,12,"14:40","EDT",2.0025327510917,"Within_Range","SO4 checks perc diff out of range",9.04355712270804,"Within_Range","",0.5793395387,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"51","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202411_SWAMP_LYSC_20CM",2024,11,12,"14:42","EDT",0.167875857766687,"Within_Range","SO4 checks perc diff out of range",4.75583638928068,"Within_Range","",0.3046760808,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"52","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202411_SWAMP_LYSC_45CM",2024,11,12,"14:45","EDT",0.0318621334996881,"Within_Range","SO4 checks perc diff out of range",6.04721861777151,"Within_Range","",0.3873996373,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"53","COMPASS: Synoptic","CB","SWH","WC","A",10,"SWH_202411_WC_LYSA_10CM",2024,11,12,"13:30","EDT",1.82568309419838,"Within_Range","SO4 checks perc diff out of range",37.8727588152327,"Within_Range","",2.4260848651,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"54","COMPASS: Synoptic","CB","SWH","WC","A",20,"SWH_202411_WC_LYSA_20CM",2024,11,12,"13:35","EDT",0.0241391141609482,"Within_Range","SO4 checks perc diff out of range",24.4431452750353,"Within_Range","",1.5658086665,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"55","COMPASS: Synoptic","CB","SWH","WC","A",45,"SWH_202411_WC_LYSA_45CM",2024,11,12,"13:40","EDT",0.246534622582658,"Within_Range","SO4 checks perc diff out of range",25.0496220028209,"Within_Range","",1.6046584437,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"56","COMPASS: Synoptic","CB","SWH","WC","B",10,"SWH_202411_WC_LYSB_10CM",2024,11,12,"13:45","EDT",2.88713661883968,"Within_Range","SO4 checks perc diff out of range",39.8148631875881,"Within_Range","",2.5504924783,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"57","COMPASS: Synoptic","CB","SWH","WC","B",20,"SWH_202411_WC_LYSB_20CM",2024,11,12,"13:50","EDT",0.057935121646912,"Within_Range","SO4 checks perc diff out of range",33.6637658674189,"Within_Range","",2.1564645635,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"58","COMPASS: Synoptic","CB","SWH","WC","B",45,"SWH_202411_WC_LYSB_45CM",2024,11,12,"13:55","EDT",0.00723331253898939,"Within_Range","SO4 checks perc diff out of range",19.9512750352609,"Within_Range","",1.2780677689,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"59","COMPASS: Synoptic","CB","SWH","WC","C",10,"SWH_202411_WC_LYSC_10CM",2024,11,12,"14:00","EDT",0.970053025577043,"Within_Range","SO4 checks perc diff out of range",39.0421946403385,"Within_Range","",2.5009967606,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"60","COMPASS: Synoptic","CB","SWH","WC","C",20,"SWH_202411_WC_LYSC_20CM",2024,11,12,"14:05","EDT",1.68204304429195,"Within_Range","SO4 checks perc diff out of range",34.7741156558533,"Within_Range","",2.2275915168,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"61","COMPASS: Synoptic","CB","SWH","WC","C",45,"SWH_202411_WC_LYSC_45CM",2024,11,12,"14:10","EDT",0,"bdl","SO4 checks perc diff out of range",17.0906657263752,"Within_Range","",1.0948224287,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"62","COMPASS: Synoptic","CB","SWH","SW","A",0,"SWH_202411_SW_A",2024,11,12,"13:10","EDT",7.45598877105427,"Within_Range","SO4 checks perc diff out of range",50.6107588152327,"Within_Range","",3.2420575798,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"63","COMPASS: Synoptic","CB","SWH","SW","B",0,"SWH_202411_SW_B",2024,11,12,"13:10","EDT",7.64407985028072,"Within_Range","SO4 checks perc diff out of range",51.6985359661495,"Within_Range","",3.3117385717,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"64","COMPASS: Synoptic","CB","SWH","SW","C",0,"SWH_202411_SW_C",2024,11,12,"13:10","EDT",7.59856519026825,"Within_Range","SO4 checks perc diff out of range",51.3118110014104,"Within_Range","",3.2869656859,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"65","COMPASS: Synoptic","CB","GCW","TR","A",20,"GCW_202411_TR_LYSA_20CM",2024,11,19,"11:58","EST",4.09448222083593,"Within_Range","SO4 checks perc diff out of range",76.9380169252468,"Within_Range","",4.9285330289,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl","Collected on 11-19-2024, but then left overnight and collected some also on 11-20-2024"
+"66","COMPASS: Synoptic","CB","GCW","TR","A",45,"GCW_202411_TR_LYSA_45CM",2024,11,19,"11:58","EST",0.123512164691204,"Within_Range","SO4 checks perc diff out of range",19.2541297602257,"Within_Range","",1.2334099323,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl","Collected on 11-19-2024, but then left overnight and collected some also on 11-20-2024"
+"67","COMPASS: Synoptic","CB","GCW","TR","B",10,"GCW_202411_TR_LYSB_10CM",2024,11,19,"12:03","EST",19.4570648783531,"Within_Range","SO4 checks perc diff out of range",141.829447108604,"Within_Range","",9.0853579973,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl","Collected on 11-19-2024, but then left overnight and collected some also on 11-20-2024"
+"68","COMPASS: Synoptic","CB","GCW","TR","B",20,"GCW_202411_TR_LYSB_20CM",2024,11,19,"12:03","EST",8.78716781035558,"Within_Range","SO4 checks perc diff out of range",108.194564174894,"Within_Range","",6.9307696211,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl","Collected on 11-19-2024, but then left overnight and collected some also on 11-20-2024"
+"69","COMPASS: Synoptic","CB","GCW","TR","B",45,"GCW_202411_TR_LYSB_45CM",2024,11,19,"12:03","EST",0.0521272613849033,"Within_Range","SO4 checks perc diff out of range",44.5671368124118,"Within_Range","",2.854914335,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl","Collected on 11-19-2024, but then left overnight and collected some also on 11-20-2024"
+"70","COMPASS: Synoptic","CB","GCW","TR","C",10,"GCW_202411_TR_LYSC_10CM",2024,11,19,"12:09","EST",15.0255832813475,"Within_Range","SO4 checks perc diff out of range",125.213322990127,"Within_Range","",8.0209598261,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl","Collected on 11-19-2024, but then left overnight and collected some also on 11-20-2024"
+"71","COMPASS: Synoptic","CB","GCW","TR","C",20,"GCW_202411_TR_LYSC_20CM",2024,11,19,"12:09","EST",6.78490018714909,"Within_Range","SO4 checks perc diff out of range",91.7053286318759,"Within_Range","",5.8744996973,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl","Collected on 11-19-2024, but then left overnight and collected some also on 11-20-2024"
+"72","COMPASS: Synoptic","CB","GCW","TR",NA,NA,"GCW_202411_TR_LYSC_45CM",NA,NA,NA,NA,NA,0.050670617592015,"Within_Range","SO4 checks perc diff out of range",60.3206093088858,"Within_Range","",3.8640526392,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",NA
+"73","COMPASS: Synoptic","CB","GCW","WC","A",10,"GCW_202411_WC_LYSA_10CM",2024,11,19,"10:42","EST",17.2299906425452,"Within_Range","SO4 checks perc diff out of range",184.565991537377,"Within_Range","",11.8229819708,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"74","COMPASS: Synoptic","CB","GCW","WC","A",20,"GCW_202411_WC_LYSA_20CM",2024,11,19,"10:42","EST",13.0815938864629,"Within_Range","SO4 checks perc diff out of range",179.932674188999,"Within_Range","",11.5261802331,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"75","COMPASS: Synoptic","CB","GCW","WC","A",45,"GCW_202411_WC_LYSA_45CM",2024,11,19,"10:42","EST",3.52511540860886,"Within_Range","SO4 checks perc diff out of range",172.56690832158,"Within_Range","",11.0543428983,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"76","COMPASS: Synoptic","CB","GCW","WC","B",10,"GCW_202411_WC_LYSB_10CM",2024,11,19,"10:50","EST",16.9262819713038,"Within_Range","SO4 checks perc diff out of range",176.809813822285,"Within_Range","",11.3261355753,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"77","COMPASS: Synoptic","CB","GCW","WC","B",20,"GCW_202411_WC_LYSB_20CM",2024,11,19,"10:50","EST",11.4965502183406,"Within_Range","SO4 checks perc diff out of range",180.273540197461,"Within_Range","",11.548015479,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"78","COMPASS: Synoptic","CB","GCW","WC","B",45,"GCW_202411_WC_LYSB_45CM",2024,11,19,"10:50","EST",2.41637866500312,"Within_Range","SO4 checks perc diff out of range",161.742973201693,"Within_Range","",10.3609816388,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"79","COMPASS: Synoptic","CB","GCW","WC","C",10,"GCW_202411_WC_LYSC_10CM",2024,11,19,"11:05","EST",32.5663256394261,"Within_Range","SO4 checks perc diff out of range",220.016614950635,"Within_Range","",14.093883323,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"80","COMPASS: Synoptic","CB","GCW","WC","C",20,"GCW_202411_WC_LYSC_20CM",2024,11,19,"11:05","EST",30.8962944479102,"Within_Range","SO4 checks perc diff out of range",226.517241184767,"Within_Range","",14.5103014134,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"81","COMPASS: Synoptic","CB","GCW","WC","C",45,"GCW_202411_WC_LYSC_45CM",2024,11,19,"11:05","EST",12.7513630692452,"Within_Range","SO4 checks perc diff out of range",152.15525528914,"Within_Range","",9.7468101666,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"82","COMPASS: Synoptic","CB","GCW","SW","A",0,"GCW_202411_SW_A",2024,11,19,"10:14","EST",38.524809731753,"Within_Range","SO4 checks perc diff out of range",259.939086036671,"Within_Range","",16.6512429642,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"83","COMPASS: Synoptic","CB","GCW","SW","B",0,"GCW_202411_SW_B",2024,11,19,"10:14","EST",37.4921802869619,"Within_Range","SO4 checks perc diff out of range",252.550022566996,"Within_Range","",16.1779132281,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"84","COMPASS: Synoptic","CB","GCW","SW","C",0,"GCW_202411_SW_C",2024,11,19,"10:14","EST",36.1886650031191,"Within_Range","SO4 checks perc diff out of range",242.547297602257,"Within_Range","",15.5371571719,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"85","COMPASS: Synoptic","CB","MSM","UP","A",20,"MSM_202411_UP_LYSA_20CM",2024,11,21,"13:28","EST",7.18240174672489,"Within_Range","SO4 checks perc diff out of range",91.9223018335684,"Within_Range","",5.8883985992,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"86","COMPASS: Synoptic","CB","MSM","UP","A",45,"MSM_202411_UP_LYSA_45CM",2024,11,21,"13:28","EST",5.53820648783531,"Within_Range","SO4 checks perc diff out of range",73.083221438646,"Within_Range","",4.6816019614,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"87","COMPASS: Synoptic","CB","MSM","UP","B",10,"MSM_202411_UP_LYSB_10CM",2024,11,21,"13:30","EST",5.4206425452277,"Within_Range","SO4 checks perc diff out of range",70.6732073342736,"Within_Range","",4.5272209164,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"88","COMPASS: Synoptic","CB","MSM","UP","B",45,"MSM_202411_UP_LYSB_45CM",2024,11,21,"13:30","EST",6.92957891453525,"Within_Range","SO4 checks perc diff out of range",74.3233032440056,"Within_Range","",4.7610393077,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"89","COMPASS: Synoptic","CB","MSM","UP","C",10,"MSM_202411_UP_LYSC_10CM",2024,11,21,"13:35","EST",6.22053337492202,"Within_Range","SO4 checks perc diff out of range",61.6322425952045,"Within_Range","",3.948073441,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"90","COMPASS: Synoptic","CB","MSM","UP","C",20,"MSM_202411_UP_LYSC_20CM",2024,11,21,"13:35","EST",4.10171553337492,"Within_Range","SO4 checks perc diff out of range",36.2978053596615,"Within_Range","",2.3251962604,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"91","COMPASS: Synoptic","CB","MSM","UP","C",45,"MSM_202411_UP_LYSC_45CM",2024,11,21,"13:35","EST",5.87714909544604,"Within_Range","SO4 checks perc diff out of range",53.9354894217207,"Within_Range","",3.4550336717,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"92","COMPASS: Synoptic","CB","MSM","TR","A",10,"MSM_202411_TR_LYSA_10CM",2024,11,21,"12:24","EST",35.8724703680599,"adl","SO4 checks perc diff out of range",255.560073342736,"Within_Range","",16.3707315122,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"93","COMPASS: Synoptic","CB","MSM","TR","A",20,"MSM_202411_TR_LYSA_20CM",2024,11,21,"12:24","EST",25.1098877105427,"Within_Range","SO4 checks perc diff out of range",193.879557122708,"Within_Range","",12.4195917521,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"94","COMPASS: Synoptic","CB","MSM","TR","A",45,"MSM_202411_TR_LYSA_45CM",2024,11,21,"12:24","EST",19.4306425452277,"Within_Range","SO4 checks perc diff out of range",154.570705218618,"Within_Range","",9.9015394205,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"95","COMPASS: Synoptic","CB","MSM","TR","B",10,"MSM_202411_TR_LYSB_10CM",2024,11,21,"12:32","EST",34.6394853399875,"adl","SO4 checks perc diff out of range",246.697802538787,"Within_Range","",15.8030308397,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"96","COMPASS: Synoptic","CB","MSM","TR","B",20,"MSM_202411_TR_LYSB_20CM",2024,11,21,"12:32","EST",24.8129382407985,"Within_Range","SO4 checks perc diff out of range",217.407543018336,"Within_Range","",13.9267510018,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"97","COMPASS: Synoptic","CB","MSM","TR","B",45,"MSM_202411_TR_LYSB_45CM",2024,11,21,"12:32","EST",14.4449407361198,"Within_Range","SO4 checks perc diff out of range",182.829929478138,"Within_Range","",11.711773047,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"98","COMPASS: Synoptic","CB","MSM","TR","C",10,"MSM_202411_TR_LYSC_10CM",2024,11,21,"12:43","EST",35.8138677479726,"adl","SO4 checks perc diff out of range",251.459218617772,"Within_Range","",16.1080383451,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"99","COMPASS: Synoptic","CB","MSM","TR","C",20,"MSM_202411_TR_LYSC_20CM",2024,11,21,"12:43","EST",22.3073362445415,"Within_Range","SO4 checks perc diff out of range",203.246629055007,"Within_Range","",13.019629051,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"100","COMPASS: Synoptic","CB","MSM","TR","C",45,"MSM_202411_TR_LYSC_45CM",2024,11,21,"12:43","EST",21.7072832189644,"Within_Range","SO4 checks perc diff out of range",189.991472496474,"Within_Range","",12.1705282439,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"101","COMPASS: Synoptic","CB","MSM","WC","A",20,"MSM_202411_WC_LYSA_20CM",2024,11,21,"11:28","EST",34.7520492825951,"Within_Range","SO4 checks perc diff out of range",261.348617771509,"Within_Range","",16.7415349595,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"102","COMPASS: Synoptic","CB","MSM","WC","A",45,"MSM_202411_WC_LYSA_45CM",2024,11,21,"12:10","EST",2.03412975670618,"Within_Range","SO4 checks perc diff out of range",273.272220028209,"Within_Range","",17.5053388614,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"103","COMPASS: Synoptic","CB","MSM","WC",NA,NA,"MSM_202411_WC_LYSC_10CM",NA,NA,NA,NA,NA,33.5534653774173,"Within_Range","SO4 checks perc diff out of range",253.681390691114,"Within_Range","",16.2503865771,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",NA
+"104","COMPASS: Synoptic","CB","MSM","WC","B",20,"MSM_202411_WC_LYSB_20CM",2024,11,21,"11:41","EST",27.1442794759825,"Within_Range","SO4 checks perc diff out of range",233.616899858956,"Within_Range","",14.9650924137,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"105","COMPASS: Synoptic","CB","MSM","WC","C",20,"MSM_202411_WC_LYSC_20CM",2024,11,21,"11:45","EST",21.2360511540861,"Within_Range","SO4 checks perc diff out of range",243.665534555712,"Within_Range","",15.6087893624,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"106","COMPASS: Synoptic","CB","MSM","SW","A",0,"MSM_202411_SW_A",2024,11,21,"12:00","EST",39.6246849656893,"Within_Range","SO4 checks perc diff out of range",268.36325528914,"Within_Range","",17.1908796618,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"107","COMPASS: Synoptic","CB","MSM","SW","B",0,"MSM_202411_SW_B",2024,11,21,"12:00","EST",41.0087461010605,"Within_Range","SO4 checks perc diff out of range",277.220445698166,"Within_Range","",17.7582548936,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
+"108","COMPASS: Synoptic","CB","MSM","SW","C",0,"MSM_202411_SW_C",2024,11,21,"12:00","EST",39.3274173424828,"Within_Range","SO4 checks perc diff out of range",266.124205923836,"Within_Range","",17.0474503017,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
+  One SO4 dup had high CV; 
+  3 samples had SO4 adl",""
