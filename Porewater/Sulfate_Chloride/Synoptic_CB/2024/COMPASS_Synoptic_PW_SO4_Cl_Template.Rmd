@@ -1,6 +1,6 @@
 ---
 title: "Synoptic CB: Porewater SO4/Cl"
-author: "October 2024 Samples"
+author: "Month Year Samples"
 date: "`r Sys.Date()`"
 output: 
   pdf_document:
@@ -30,10 +30,10 @@ lapply(c(
 ```{r Run Information, echo=TRUE, message=FALSE, warning=FALSE}
 
 ###### Run information - PLEASE CHANGE
-  Date_Run = "2025-06-18"  #Date that instrument was run
+  Date_Run = "YYYY-MM-DD"  #Date that instrument was run
   Run_by = "Zoe Read"  #Instrument user 
   Script_run_by = "Zoe Read" #Code user 
-  run_notes = "Some Cl/SO4 standards and checks were lower than the expected concentration" #any notes from the run
+  run_notes = " " #any notes from the run
   samples <- c("GCW", "GWI", "MSM", "SWH") #whatever identifies your samples within the same names 
   samples_pattern <- paste(samples, collapse = "|") 
     #samples_pattern <- "GCW" #use this instead of the line above if you have only one site code 
@@ -481,10 +481,10 @@ chks_merged <- chks_merged %>%
 
 #calculate percent difference between check standards & expected concentration 
 chks_merged$Cl_diff <- (abs(chks_merged$Cl_ppm - chks_merged$Cl_std_conc)/((chks_merged$Cl_ppm + chks_merged$Cl_std_conc)/2)) * 100
-chks_merged$Cl_diff_flag <-  ifelse(chks_merged$Cl_diff <= chk_flag_std_cl, 'YES', 'No, rerun')
+chks_merged$Cl_diff_flag <-  ifelse(chks_merged$Cl_diff <= chk_flag_std_perc, 'YES', 'No, rerun')
 
 chks_merged$SO4_diff <- (abs(chks_merged$SO4_ppm - chks_merged$SO4_std_conc)/((chks_raw$SO4_ppm + chks_merged$SO4_std_conc)/2)) * 100
-chks_merged$SO4_diff_flag <-  ifelse(chks_merged$SO4_diff <= chk_flag_std_s, 'YES', 'No, rerun')
+chks_merged$SO4_diff_flag <-  ifelse(chks_merged$SO4_diff <= chk_flag_std_perc, 'YES', 'No, rerun')
 
 # chks_merged[c("sample_ID", "Cl_diff", "Cl_diff_flag", "SO4_diff", "SO4_diff_flag")]
 
@@ -772,7 +772,7 @@ ifelse(so4_dups_diff_percent >= chks_flag, ">80% of Sulfate Duplicates have a pe
 if (cl_dups_diff_percent <= chks_flag) {
     all_dat$Cl_QAQC_flag <- ifelse(
     all_dat$Cl_QAQC_flag != "",
-    paste0(all_dat$Cl_QAQC_flag, "; Cl dups out of range"),
+    paste0(all_dat$Cl_QAQC_flag, "; Cl dups perc diff out of range"),
     "Cl dups out of range"
   )
 }
@@ -780,7 +780,7 @@ if (cl_dups_diff_percent <= chks_flag) {
 if (so4_dups_diff_percent <= chks_flag) {  
     all_dat$SO4_QAQC_flag <- ifelse(
     all_dat$SO4_QAQC_flag != "",
-    paste0(all_dat$SO4_QAQC_flag, "; SO4 dups out of range"),
+    paste0(all_dat$SO4_QAQC_flag, "; SO4 dups perc diff out of range"),
     "SO4 dups out of range"
   )
 }
@@ -906,6 +906,9 @@ Perc_spks$Total <- length(QAspks$SO4_spks_flag)
 Perc_spks$Percent <- (Perc_spks$no_rows / Perc_spks$Total)*100
 # head(Perc_spks)
 
+#select only the samples that passed the check
+Perc_spks <- Perc_spks %>%
+  filter(grepl("Yes", SO4_spks_flag))
 
 #report out if the dups are within range
 ifelse(Perc_spks$Percent >= chks_flag, ">80% of SO4 spikes have a recovery between the high and low cutoff - PROCEED",
@@ -1035,13 +1038,13 @@ df_all_clean <- merged_data %>%
     remove = FALSE)
 
 ############### THIS IS ONLY FOR 2023 when SWAMP was called UP and UPLAND was called UPCON ##############
-# df_all_clean <- df_all_clean %>%
-#   mutate(
-#     Zone = case_when(
-#       Site_Code == "SWH" & Zone == "UP" ~ "SWAMP",
-#       Site_Code == "SWH" & Zone == "UPCON" ~ "UP",
-#       TRUE ~ `Zone`
-#     )) 
+df_all_clean <- df_all_clean %>%
+  mutate(
+    Zone = case_when(
+      Site_Code == "SWH" & Zone == "UP" ~ "SWAMP",
+      Site_Code == "SWH" & Zone == "UPCON" ~ "UP",
+      TRUE ~ `Zone`
+    ))
 
 
 ```
