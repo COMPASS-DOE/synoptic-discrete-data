@@ -67,15 +67,53 @@ dat23_wtree <- dat23_wtree %>%
   rename(DBH_cm = DBH_2023_cm)
 
 
+```
+
+## Grab sampling dates and add to file
+```{r}
+
+#read in the sampling date information
+dates <- read.csv("TGAS Tree Info/COMPASS_Synoptic_TGAS_CollectionDates.csv")
+head(dates)
+
+#add sampling date and the month # to dat22
+dat22_wtree_dates <- dat22_wtree %>%
+  left_join(dates %>% select(Site, Year, Month, Day),
+            by = c("Site", "Year", "Month")) %>%
+  mutate(Month_num = match(Month, month.name))
+
+#add sampling date and the month # to dat23
+dat23_wtree_dates <- dat23_wtree %>%
+  left_join(dates %>% select(Site, Year, Month, Day),
+            by = c("Site", "Year", "Month")) %>%
+  mutate(Month_num = match(Month, month.name))
+
+
+```
+
+## Combine years and clean up
+```{r}
 #combine all the data together in one dataframe
-all_dat <- rbind(dat22_wtree, dat23_wtree)
+all_dat <- rbind(dat22_wtree_dates, dat23_wtree_dates)
+
+all_dat <- all_dat %>%
+  mutate(CO2_ppm = if_else(CO2_ppm < 0, 0, CO2_ppm),
+         CO2_ppm = round(CO2_ppm, 3)) %>%
+  mutate(CH4_ppm = if_else(CH4_ppm < 0, 0, CH4_ppm),
+         CH4_ppm = round(CH4_ppm, 3))
 
 all_dat <- all_dat %>% 
-  rename( Sapflux_ID = Replicate ) %>%
+  rename( Sapflux_ID = Replicate, 
+          Month_name = Month, 
+          Month = Month_num) %>%
   mutate(CH4_Flag = recode(CH4_Flag, "Within Std Curve Range" = "NA")) %>%
   mutate(CO2_Flag = recode(CO2_Flag, "Within Std Curve Range" = "NA")) %>%
-  select("Project", "Region", "Year", "Month", "Site", "Zone", "Sapflux_ID", "Species" ,
-         "DBH_cm" ,  "Status",  "Tree_Info", "Sample_ID","CH4_ppm", "CH4_Flag",  "CO2_ppm","CO2_Flag")      
+  select("Project", "Region", "Year", "Month", "Day", "Site", "Zone", 
+         "Sapflux_ID", "Species",
+         "DBH_cm" ,  "Status",  "Tree_Info", "Sample_ID","CH4_ppm", 
+         "CH4_Flag", "CO2_ppm","CO2_Flag")      
+
+
 
 ```
 
@@ -94,7 +132,8 @@ metadat$Instrument_ifapplicable <- ""
 metadat$Description <- c("Project name: Project component", 
                          "Region samples originated from: CB = Chesapeake Bay",
                          "Year (YYYY) of sample collection", 
-                         "Month of sample collection",
+                         "Month (#) of sample collection",
+                         "Day (#) of sample collection",
                          "Name of sampling transect location (GCW, SWH, MSM, GWI), see dataset locations for coordinates", 
                          "Zone within space-for-time transect (UP=upland, TR=transition)",
                          "Sap flow (SF) id (1-8, 11, 19). The # ID for the sap flow sensor associated with the tree (only live trees)", 
@@ -111,6 +150,7 @@ metadat$Description <- c("Project name: Project component",
 metadat$Units <-      c("NA", 
                          "NA",
                          "NA", 
+                         "NA",
                          "NA",
                          "NA", 
                          "NA",
@@ -129,6 +169,7 @@ metadat$Instrument_ifapplicable <-  c("NA",
                          "NA",
                          "NA", 
                          "NA",
+                         "NA",
                          "NA", 
                          "NA",
                          "NA", 
@@ -145,7 +186,6 @@ metadat$Instrument_ifapplicable <-  c("NA",
 
 ```
 
-
 ## Write out files
 ```{r}
 
@@ -158,3 +198,42 @@ write.csv(metadat, "COMPASS_SynopticCB_TGAS_Metadata.csv")
 
 ```
 
+
+## Viz  Raw data   
+```{r}
+
+#just plot all the data 
+ggplot(data=all_dat, aes(x=Sapflux_ID, y=CH4_ppm, fill=Zone, color=Zone))+
+  geom_point()+ 
+  facet_grid(Site~Month, scales="free_y")+ 
+  theme_bw()
+
+#Let's pull out dead trees and only plot the live ones 
+live_dat <- subset(all_dat, Status == "Living")
+
+ggplot(data=live_dat, aes(x=Sapflux_ID, y=CH4_ppm, fill=Zone, color=Zone))+
+  geom_point()+ 
+  facet_grid(Site~Month, scales="free_y")+ 
+  theme_bw()
+
+```
+
+## Summarize the data  
+```{r}
+
+TGAS_avg <- live_dat %>%
+  group_by(Month, Site, Zone) %>%
+   dplyr::summarize(mean_CH4 = mean(CH4_ppm, na.rm=TRUE), 
+            sd_CH4 = sd(CH4_ppm, na.rm=TRUE), 
+            mean_CO2 = mean(CO2_ppm, na.rm=TRUE), 
+            sd_CO2 = sd(CO2_ppm, na.rm=TRUE))
+
+
+
+ggplot(data=TGAS_avg, aes(x=Month, y=mean_CH4, fill=Zone, color=Zone))+
+  geom_boxplot()+ 
+  facet_grid(~Site, scales="free_y")+ 
+  theme_bw()
+
+
+```

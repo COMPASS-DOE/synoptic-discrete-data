@@ -246,7 +246,7 @@ Samples1 <- Samples[ ,c(1:3,5:9,13, 18:21)]
 head(Samples1)
 
 Samples1 <- Samples1 %>%
-  separate(Sample_ID, into = c("Site", "Gas_Sample", "Zone", "Replicate"), sep = "_", remove = FALSE) %>%
+  separate(Sample_ID, into = c("Site", "Gas_Sample", "Zone", "Tree_Code", "Replicate"), sep = "_", remove = FALSE) %>%
   mutate(Tree_Code = "SF") %>%
   mutate(Tree_Info = case_when(
     Tree_Code == "DS" ~ "Dead Standing",
