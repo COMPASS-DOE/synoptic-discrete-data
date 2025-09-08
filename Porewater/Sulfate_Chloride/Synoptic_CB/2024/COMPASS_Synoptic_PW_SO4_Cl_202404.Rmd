@@ -33,7 +33,9 @@ lapply(c(
   Date_Run = "2024-05-29"  #Date that instrument was run
   Run_by = "Zoe Read"  #Instrument user 
   Script_run_by = "Zoe Read" #Code user 
-  run_notes = "Std curve slopes higher than runs a year later" #any notes from the run
+  run_notes = "Std curve slopes higher than other 2024 runs because this run was put on 
+      before major changes to the dionex. The output values have been checked against those run
+      at later dates and look good / comparable. We are accepting this slope deviation." #any notes from the run
   samples <- c("GCW", "GWI", "MSM", "SWH") #whatever identifies your samples within the same names 
   samples_pattern <- paste(samples, collapse = "|") 
     #samples_pattern <- "GCW" #use this instead of the line above if you have only one site code 
