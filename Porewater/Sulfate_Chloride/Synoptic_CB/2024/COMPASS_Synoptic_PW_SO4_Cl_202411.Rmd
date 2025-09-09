@@ -33,10 +33,14 @@ lapply(c(
   Date_Run = "2025-06-23"  #Date that instrument was run
   Run_by = "Zoe Read"  #Instrument user 
   Script_run_by = "Zoe Read" #Code user 
-  run_notes = "Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM, MSM_202411_WC_LYSC_10CM; 
+  run_notes = "Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+  MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
-  3 samples had SO4 adl" #any notes from the run
+  3 samples had SO4 adl. 
+  Another note: These samples These samples came to room temperature during storage 
+  due to the refrigerator dying. 
+  The data does not appear to be impacted, but is noted here." #any notes from the run
   samples <- c("GCW", "GWI", "MSM", "SWH") #whatever identifies your samples within the same names 
   samples_pattern <- paste(samples, collapse = "|") 
     #samples_pattern <- "GCW" #use this instead of the line above if you have only one site code 
