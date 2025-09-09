@@ -11,7 +11,7 @@ Sampling Locations: COMPASS Synoptic Sites: MSM, GWI, GCW Trees
 **Data Description:** 
 These data are from tree gas wells (installed after coring trees at the synoptic sites). The gas wells were capped with rubber stoppers and allowed to  equilibrate then sampled with a needle and syringe to collect a gas sample from the tree. The sample volume is dependent on the gas well size (see     protocols within each year for details). The samples were stored in exetainers then analyzed for methane and carbon dioxide on a Varian 450 Gas   Chromatograph. The methane is determined with an FID and the carbon dioxide with a TCD. 
 
-![Figure 1: Gas well example and sample collection](TGAS\ Tree\ Info/TGAS_Image_1.png)
+![Figure 1: Gas well example and sample collection](TGAS_Image_1.png)
 
 <br>
 
@@ -19,7 +19,7 @@ Samples were collected from the Moneystump (MSM), Goodwin Islands (GWI), and GCW
 
 <br>
 
-![Figure 2: Experimental design ](TGAS\ Tree\ Info/TGAS_Image_2.png)  
+![Figure 2: Experimental design ](TGAS_Image_2.png)  
 
 <br>
 
