@@ -1,0 +1,137 @@
+---
+title: "COMPASS_SynopticCB_Tree_GHG_Flux_Calcs"
+author: "Stephanie J. Wilson"
+date: "2025-09-09"
+output: pdf_document
+---
+
+##Add Required Packages
+```{r packages, include=FALSE}
+
+#Packages that are required 
+lapply(c( "fluxfinder", "readxl",
+  "dplyr", "ggplot2", "ggpubr", "stringr",
+  "purrr", "tidyverse", "here", "broom", "tibble",
+  "googledrive", "googlesheets4", "data.table", 
+  "matrixStats", "gridExtra", "grid", "tidyverse", "knitr"), 
+  library, character.only = TRUE)
+
+```
+
+## Pull in Raw Datafiles
+```{r, echo=FALSE}
+
+#list files in raw data folder
+L <- list.files(path = "Raw Data/", pattern = "txt$", full.names = TRUE)
+head(L)
+
+#Read in the data 
+alldat1 <- lapply(L, ffi_read_LI7810)
+
+alldat <- data.table::rbindlist(alldat1, fill=TRUE)
+
+```
+
+## Read in metadata file and match to raw data
+```{r}
+#read in metadata file
+md <- "Raw Data/COMPASS_SynopticCB_TreeFlux_Metadata_2023.csv"
+metadat <- read.csv(md)
+
+#can remove any row that have NA's in the date column 
+metadat <- metadat %>%
+  filter(!is.na(Date))
+
+head(metadat) 
+
+#need to make a unique plot id that includes the date or an obs number
+metadat$Plot <- paste0(metadat$Plot, "-", seq_len(nrow(metadat)))
+metadat$Obs_length <- 90
+
+head(metadat)
+```
+
+## Match metadata to raw data
+```{r}
+
+#match the metadata to the concentration data 
+alldat$metadat_row <- ffi_metadata_match(
+  data_timestamps = alldat$TIMESTAMP,
+  start_dates = metadat$Date,
+  start_times = metadat$Time_start,
+  obs_lengths = metadat$Obs_length) 
+head(alldat)
+
+#Set plot, temp, volume, etc. here 
+alldat$Plot <- metadat$Plot[alldat$metadat_row]
+alldat$Volume <- metadat$Volume[alldat$metadat_row]
+alldat$Temp <- metadat$Temp[alldat$metadat_row]
+alldat$Site <- metadat$Site[alldat$metadat_row]
+metadat$metadat_row <- seq_len(nrow(metadat))
+
+#remove the rows that don't match to metadata 
+alldat <- alldat %>%
+  filter(!is.na(metadat_row))
+
+#can remove any row that have NA's in the CH4 column 
+#alldat <- alldat %>%
+ # filter(!is.na(CH4))
+
+#can remove any row that have NA's in the CH4 column 
+#alldat <- alldat %>%
+ # filter(CH4 < 0)
+
+#can remove any row that have NA's in the CH4 column 
+#alldat <- alldat %>%
+ # filter(!is.na(CH4))
+
+#can remove any row that have NA's in the CH4 column 
+#alldat <- alldat %>%
+ # filter(CH4 < 0)
+
+```
+
+## Calculate fluxes 
+```{r}
+#change the units
+alldat$CH4_nmol <- ffi_ppb_to_nmol(alldat$CH4, 
+                                volume = alldat$Volume, # m3
+                                temp = alldat$Temp)    # degrees C
+#> Assuming atm = 101325 Pa
+#> Using R = 8.31446261815324 m3 Pa K-1 mol-1
+
+alldat$CH4_nmol_m2 <- alldat$CH4_nmol / 0.16
+
+fluxes <- ffi_compute_fluxes(alldat,
+                             group_column = "Plot", 
+                             time_column = "TIMESTAMP", 
+                             gas_column = "CH4_nmol_m2", 
+                             dead_band = 10)
+head(fluxes)
+
+#take a look at the fluxes we calculated with R2 
+ggplot(fluxes, aes(Plot, lin_flux.estimate, color = lin_r.squared)) +
+  geom_point(size=4) + theme_classic() + 
+  geom_linerange(aes(ymin = lin_flux.estimate- lin_flux.std.error,
+                   ymax = lin_flux.estimate+ lin_flux.std.error)) +
+  scale_color_gradientn(colours = c("darkred",  "red", "white","lightblue", "darkblue"),
+                        values = c(0, 0.5, 0.6, 0.7, 1)) +
+  ylab("CH4 flux (nmol/m2/s)")
+
+#sort fluxes by R2 
+fluxes_good <- as.data.frame(subset(fluxes, lin_r.squared >= .90, select = Plot:TIMESTAMP_max))
+fluxes_weird <- as.data.frame(subset(fluxes, lin_r.squared < .90, select = Plot:TIMESTAMP_max))
+
+#find fluxes that represent the first and fourth quartile of the data 
+low <- quantile(fluxes$lin_flux.estimate, 0.05) 
+high <- quantile(fluxes$lin_flux.estimate, 0.95) 
+
+fluxes_low <- as.data.frame(subset(fluxes, lin_flux.estimate <= low, select = Plot:TIMESTAMP_max))
+fluxes_high <- as.data.frame(subset(fluxes, lin_flux.estimate >= high, select = Plot:TIMESTAMP_max))
+
+tails <- rbind(fluxes_low, fluxes_high)
+
+```
+
+
+
