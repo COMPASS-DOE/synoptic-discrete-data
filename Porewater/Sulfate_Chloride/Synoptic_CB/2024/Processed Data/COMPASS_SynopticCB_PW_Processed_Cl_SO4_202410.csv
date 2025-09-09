@@ -1,40 +1,196 @@
 "","Project","Region","Site","Zone","Replicate","Depth_cm","Sample_ID","Year","Month","Day","Time","Time_Zone","SO4_Conc_mM","SO4_Conc_flag","SO4_QAQC_flag","Cl_Conc_mM","Cl_Conc_flag","Cl_QAQC_flag","salinity","Analysis_rundate","Run_notes","Field_notes"
-"1","COMPASS: Synoptic","CB","SWH","UP","A",10,"SWH_202410_UP_LYSA_10CM",2024,10,22,"14:45","EDT",0.630923268870867,"Within_Range","",0.426947813822285,"Within_Range","",0.0273754871,"2025-06-18","Some Cl/SO4 standards and checks were lower than the expected concentration",""
-"2","COMPASS: Synoptic","CB","SWH","UP","A",20,"SWH_202410_UP_LYSA_20CM",2024,10,22,"14:45","EDT",0.678097317529632,"Within_Range","",0.378550070521862,"Within_Range","",0.0242752172,"2025-06-18","Some Cl/SO4 standards and checks were lower than the expected concentration",""
-"3","COMPASS: Synoptic","CB","SWH","UP","A",45,"SWH_202410_UP_LYSA_45CM",2024,10,22,"14:45","EDT",0.408849033063007,"Within_Range","",0.27810437235543,"Within_Range","",0.0178408516,"2025-06-18","Some Cl/SO4 standards and checks were lower than the expected concentration",""
-"4","COMPASS: Synoptic","CB","SWH","UP","B",10,"SWH_202410_UP_LYSB_10CM",2024,10,22,"14:55","EDT",1.21724890829694,"Within_Range","",8.7722143864598,"Within_Range","",0.561957825,"2025-06-18","Some Cl/SO4 standards and checks were lower than the expected concentration",""
-"5","COMPASS: Synoptic","CB","SWH","UP","B",20,"SWH_202410_UP_LYSB_20CM",2024,10,22,"14:55","EDT",0.446416094822208,"Within_Range","",4.87161071932299,"Within_Range","",0.3120923702,"2025-06-18","Some Cl/SO4 standards and checks were lower than the expected concentration",""
-"6","COMPASS: Synoptic","CB","SWH","UP","B",45,"SWH_202410_UP_LYSB_45CM",2024,10,22,"14:55","EDT",0.0278665003119152,"Within_Range","",1.01103244005642,"Within_Range","",0.0647908677,"2025-06-18","Some Cl/SO4 standards and checks were lower than the expected concentration",""
-"7","COMPASS: Synoptic","CB","SWH","UP","C",10,"SWH_202410_UP_LYSC_10CM",2024,10,22,"15:05","EDT",1.05815658140986,"Within_Range","",6.68435543018336,"Within_Range","",0.4282134428,"2025-06-18","Some Cl/SO4 standards and checks were lower than the expected concentration",""
-"8","COMPASS: Synoptic","CB","SWH","UP","C",20,"SWH_202410_UP_LYSC_20CM",2024,10,22,"15:05","EDT",0.593022457891453,"Within_Range","",5.04683497884344,"Within_Range","",0.3233169121,"2025-06-18","Some Cl/SO4 standards and checks were lower than the expected concentration",""
-"9","COMPASS: Synoptic","CB","SWH","UP","C",45,"SWH_202410_UP_LYSC_45CM",2024,10,22,"15:05","EDT",0.0130536494073612,"Within_Range","",1.97260084626234,"Within_Range","",0.1263871609,"2025-06-18","Some Cl/SO4 standards and checks were lower than the expected concentration",""
-"10","COMPASS: Synoptic","CB","SWH","TR","A",10,"SWH_202410_TR_LYSA_10CM",2024,10,22,"9:00","EDT",2.89263256394261,"Within_Range","",33.2703046544429,"Within_Range","",2.1312601661,"2025-06-18","Some Cl/SO4 standards and checks were lower than the expected concentration",""
-"11","COMPASS: Synoptic","CB","SWH","TR","A",20,"SWH_202410_TR_LYSA_20CM",2024,10,22,"9:00","EDT",0.563777292576419,"Within_Range","",37.3374047954866,"Within_Range","",2.391791077,"2025-06-18","Some Cl/SO4 standards and checks were lower than the expected concentration",""
-"12","COMPASS: Synoptic","CB","SWH","TR","A",45,"SWH_202410_TR_LYSA_45CM",2024,10,22,"9:00","EDT",0,"bdl","",33.4074386459802,"Within_Range","",2.1400447159,"2025-06-18","Some Cl/SO4 standards and checks were lower than the expected concentration",""
-"13","COMPASS: Synoptic","CB","SWH","TR","B",10,"SWH_202410_TR_LYSB_10CM",2024,10,22,"9:10","EDT",4.33973799126638,"Within_Range","",24.9232383638928,"Within_Range","",1.5965625416,"2025-06-18","Some Cl/SO4 standards and checks were lower than the expected concentration",""
-"14","COMPASS: Synoptic","CB","SWH","TR","B",20,"SWH_202410_TR_LYSB_20CM",2024,10,22,"9:10","EDT",0.501637554585153,"Within_Range","",30.8469196050776,"Within_Range","",1.9760226031,"2025-06-18","Some Cl/SO4 standards and checks were lower than the expected concentration",""
-"15","COMPASS: Synoptic","CB","SWH","TR","B",45,"SWH_202410_TR_LYSB_45CM",2024,10,22,"9:10","EDT",0.158371802869619,"Within_Range","",26.7786262341326,"Within_Range","",1.7154152561,"2025-06-18","Some Cl/SO4 standards and checks were lower than the expected concentration",""
-"16","COMPASS: Synoptic","CB","SWH","TR","C",10,"SWH_202410_TR_LYSC_10CM",2024,10,22,"9:20","EDT",4.62687772925764,"Within_Range","",29.6542256699577,"Within_Range","",1.8996208361,"2025-06-18","Some Cl/SO4 standards and checks were lower than the expected concentration",""
-"17","COMPASS: Synoptic","CB","SWH","TR","C",20,"SWH_202410_TR_LYSC_20CM",2024,10,22,"9:20","EDT",1.30024953212726,"Within_Range","",29.9153737658674,"Within_Range","",1.9163495,"2025-06-18","Some Cl/SO4 standards and checks were lower than the expected concentration",""
-"18","COMPASS: Synoptic","CB","SWH","TR","C",45,"SWH_202410_TR_LYSC_45CM",2024,10,22,"9:20","EDT",0.0890642545227698,"Within_Range","",35.7755063469676,"Within_Range","",2.2917387519,"2025-06-18","Some Cl/SO4 standards and checks were lower than the expected concentration",""
-"19","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202410_SWAMP_LYSA_10CM",2024,10,22,"14:08","EDT",0.5854054897068,"Within_Range","",17.8618617771509,"Within_Range","",1.144223821,"2025-06-18","Some Cl/SO4 standards and checks were lower than the expected concentration",""
-"20","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202410_SWAMP_LYSA_20CM",2024,10,22,"14:08","EDT",0.4256082345602,"Within_Range","",14.1137743300423,"Within_Range","",0.9041282731,"2025-06-18","Some Cl/SO4 standards and checks were lower than the expected concentration",""
-"21","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202410_SWAMP_LYSA_45CM",2024,10,22,"14:08","EDT",0,"bdl","",2.75232722143865,"Within_Range","",0.17633499,"2025-06-18","Some Cl/SO4 standards and checks were lower than the expected concentration",""
-"22","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202410_SWAMP_LYSB_10CM",2024,10,22,"14:30","EDT",1.07697130380536,"Within_Range","",17.8500028208745,"Within_Range","",1.1434641582,"2025-06-18","Some Cl/SO4 standards and checks were lower than the expected concentration",""
-"23","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202410_SWAMP_LYSB_20CM",2024,10,22,"14:30","EDT",0.12995945102932,"Within_Range","",3.45361071932299,"Within_Range","",0.2212579135,"2025-06-18","Some Cl/SO4 standards and checks were lower than the expected concentration",""
-"24","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202410_SWAMP_LYSB_45CM",2024,10,22,"14:30","EDT",0,"bdl","",0.32374047954866,"Within_Range","",0.0207642162,"2025-06-18","Some Cl/SO4 standards and checks were lower than the expected concentration",""
-"25","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202410_SWAMP_LYSC_10CM",2024,10,22,"13:52","EDT",2.33265439800374,"Within_Range","",13.6565416078984,"Within_Range","",0.8748387908,"2025-06-18","Some Cl/SO4 standards and checks were lower than the expected concentration",""
-"26","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202410_SWAMP_LYSC_20CM",2024,10,22,"13:52","EDT",0.0469058016219588,"Within_Range","",9.23175458392102,"Within_Range","",0.5913951199,"2025-06-18","Some Cl/SO4 standards and checks were lower than the expected concentration",""
-"27","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202410_SWAMP_LYSC_45CM",2024,10,22,"13:52","EDT",0.3119931378665,"Within_Range","",10.2912609308886,"Within_Range","",0.6592651364,"2025-06-18","Some Cl/SO4 standards and checks were lower than the expected concentration",""
-"28","COMPASS: Synoptic","CB","SWH","WC","A",10,"SWH_202410_WC_LYSA_10CM",2024,10,22,"10:20","EDT",0.58650343106675,"Within_Range","",34.2008772919605,"Within_Range","",2.1908709277,"2025-06-18","Some Cl/SO4 standards and checks were lower than the expected concentration",""
-"29","COMPASS: Synoptic","CB","SWH","WC","A",20,"SWH_202410_WC_LYSA_20CM",2024,10,22,"10:20","EDT",0.027654398003743,"Within_Range","",22.4396361071932,"Within_Range","",1.4374675757,"2025-06-18","Some Cl/SO4 standards and checks were lower than the expected concentration",""
-"30","COMPASS: Synoptic","CB","SWH","WC","A",45,"SWH_202410_WC_LYSA_45CM",2024,10,22,"10:20","EDT",0.0927791640673737,"Within_Range","",0,"bdl","",2.6e-05,"2025-06-18","Some Cl/SO4 standards and checks were lower than the expected concentration",""
-"31","COMPASS: Synoptic","CB","SWH","WC","B",10,"SWH_202410_WC_LYSB_10CM",2024,10,22,"10:30","EDT",2.03455708047411,"Within_Range","",0,"bdl","",2.6e-05,"2025-06-18","Some Cl/SO4 standards and checks were lower than the expected concentration",""
-"32","COMPASS: Synoptic","CB","SWH","WC","B",20,"SWH_202410_WC_LYSB_20CM",2024,10,22,"10:30","EDT",0.0384123518402994,"Within_Range","",0,"bdl","",2.6e-05,"2025-06-18","Some Cl/SO4 standards and checks were lower than the expected concentration",""
-"33","COMPASS: Synoptic","CB","SWH","WC","B",45,"SWH_202410_WC_LYSB_45CM",2024,10,22,"10:30","EDT",0,"bdl","",17.8873878702398,"Within_Range","",1.1458589753,"2025-06-18","Some Cl/SO4 standards and checks were lower than the expected concentration",""
-"34","COMPASS: Synoptic","CB","SWH","WC","C",10,"SWH_202410_WC_LYSC_10CM",2024,10,22,"10:10","EDT",0.920296319401123,"Within_Range","",0,"bdl","",2.6e-05,"2025-06-18","Some Cl/SO4 standards and checks were lower than the expected concentration",""
-"35","COMPASS: Synoptic","CB","SWH","WC","C",20,"SWH_202410_WC_LYSC_20CM",2024,10,22,"10:10","EDT",0.245352464129757,"Within_Range","",0,"bdl","",2.6e-05,"2025-06-18","Some Cl/SO4 standards and checks were lower than the expected concentration",""
-"36","COMPASS: Synoptic","CB","SWH","WC","C",45,"SWH_202410_WC_LYSC_45CM",2024,10,22,"10:10","EDT",0.00675608234560199,"Within_Range","",15.5460253878702,"Within_Range","",0.9958756262,"2025-06-18","Some Cl/SO4 standards and checks were lower than the expected concentration",""
-"37","COMPASS: Synoptic","CB","SWH","SW","A",0,"SWH_202410_SW_A",2024,10,22,"9:50","EDT",6.5718247036806,"Within_Range","",44.3683977433004,"Within_Range","",2.8421834779,"2025-06-18","Some Cl/SO4 standards and checks were lower than the expected concentration",""
-"38","COMPASS: Synoptic","CB","SWH","SW","B",0,"SWH_202410_SW_B",2024,10,22,"9:50","EDT",6.54225514660012,"Within_Range","",44.1123497884344,"Within_Range","",2.8257815196,"2025-06-18","Some Cl/SO4 standards and checks were lower than the expected concentration",""
-"39","COMPASS: Synoptic","CB","SWH","SW","C",0,"SWH_202410_SW_C",2024,10,22,"9:50","EDT",6.81912663755458,"Within_Range","",45.9626008462623,"Within_Range","",2.9443051794,"2025-06-18","Some Cl/SO4 standards and checks were lower than the expected concentration",""
+"1","COMPASS: Synoptic","CB","SWH","UP","A",10,"SWH_202410_UP_LYSA_10CM",2024,10,22,"14:45","EDT",0.630923268870867,"Within_Range","",0.426947813822285,"Within_Range","",0.0273754871,"2025-06-18","Some Cl/SO4 standards and checks were lower than the 
+  expected concentration 
+  Another note: These samples These samples came to room temperature during storage 
+  due to the refrigerator dying. 
+  The data does not appear to be impacted, but is noted here.",""
+"2","COMPASS: Synoptic","CB","SWH","UP","A",20,"SWH_202410_UP_LYSA_20CM",2024,10,22,"14:45","EDT",0.678097317529632,"Within_Range","",0.378550070521862,"Within_Range","",0.0242752172,"2025-06-18","Some Cl/SO4 standards and checks were lower than the 
+  expected concentration 
+  Another note: These samples These samples came to room temperature during storage 
+  due to the refrigerator dying. 
+  The data does not appear to be impacted, but is noted here.",""
+"3","COMPASS: Synoptic","CB","SWH","UP","A",45,"SWH_202410_UP_LYSA_45CM",2024,10,22,"14:45","EDT",0.408849033063007,"Within_Range","",0.27810437235543,"Within_Range","",0.0178408516,"2025-06-18","Some Cl/SO4 standards and checks were lower than the 
+  expected concentration 
+  Another note: These samples These samples came to room temperature during storage 
+  due to the refrigerator dying. 
+  The data does not appear to be impacted, but is noted here.",""
+"4","COMPASS: Synoptic","CB","SWH","UP","B",10,"SWH_202410_UP_LYSB_10CM",2024,10,22,"14:55","EDT",1.21724890829694,"Within_Range","",8.7722143864598,"Within_Range","",0.561957825,"2025-06-18","Some Cl/SO4 standards and checks were lower than the 
+  expected concentration 
+  Another note: These samples These samples came to room temperature during storage 
+  due to the refrigerator dying. 
+  The data does not appear to be impacted, but is noted here.",""
+"5","COMPASS: Synoptic","CB","SWH","UP","B",20,"SWH_202410_UP_LYSB_20CM",2024,10,22,"14:55","EDT",0.446416094822208,"Within_Range","",4.87161071932299,"Within_Range","",0.3120923702,"2025-06-18","Some Cl/SO4 standards and checks were lower than the 
+  expected concentration 
+  Another note: These samples These samples came to room temperature during storage 
+  due to the refrigerator dying. 
+  The data does not appear to be impacted, but is noted here.",""
+"6","COMPASS: Synoptic","CB","SWH","UP","B",45,"SWH_202410_UP_LYSB_45CM",2024,10,22,"14:55","EDT",0.0278665003119152,"Within_Range","",1.01103244005642,"Within_Range","",0.0647908677,"2025-06-18","Some Cl/SO4 standards and checks were lower than the 
+  expected concentration 
+  Another note: These samples These samples came to room temperature during storage 
+  due to the refrigerator dying. 
+  The data does not appear to be impacted, but is noted here.",""
+"7","COMPASS: Synoptic","CB","SWH","UP","C",10,"SWH_202410_UP_LYSC_10CM",2024,10,22,"15:05","EDT",1.05815658140986,"Within_Range","",6.68435543018336,"Within_Range","",0.4282134428,"2025-06-18","Some Cl/SO4 standards and checks were lower than the 
+  expected concentration 
+  Another note: These samples These samples came to room temperature during storage 
+  due to the refrigerator dying. 
+  The data does not appear to be impacted, but is noted here.",""
+"8","COMPASS: Synoptic","CB","SWH","UP","C",20,"SWH_202410_UP_LYSC_20CM",2024,10,22,"15:05","EDT",0.593022457891453,"Within_Range","",5.04683497884344,"Within_Range","",0.3233169121,"2025-06-18","Some Cl/SO4 standards and checks were lower than the 
+  expected concentration 
+  Another note: These samples These samples came to room temperature during storage 
+  due to the refrigerator dying. 
+  The data does not appear to be impacted, but is noted here.",""
+"9","COMPASS: Synoptic","CB","SWH","UP","C",45,"SWH_202410_UP_LYSC_45CM",2024,10,22,"15:05","EDT",0.0130536494073612,"Within_Range","",1.97260084626234,"Within_Range","",0.1263871609,"2025-06-18","Some Cl/SO4 standards and checks were lower than the 
+  expected concentration 
+  Another note: These samples These samples came to room temperature during storage 
+  due to the refrigerator dying. 
+  The data does not appear to be impacted, but is noted here.",""
+"10","COMPASS: Synoptic","CB","SWH","TR","A",10,"SWH_202410_TR_LYSA_10CM",2024,10,22,"9:00","EDT",2.89263256394261,"Within_Range","",33.2703046544429,"Within_Range","",2.1312601661,"2025-06-18","Some Cl/SO4 standards and checks were lower than the 
+  expected concentration 
+  Another note: These samples These samples came to room temperature during storage 
+  due to the refrigerator dying. 
+  The data does not appear to be impacted, but is noted here.",""
+"11","COMPASS: Synoptic","CB","SWH","TR","A",20,"SWH_202410_TR_LYSA_20CM",2024,10,22,"9:00","EDT",0.563777292576419,"Within_Range","",37.3374047954866,"Within_Range","",2.391791077,"2025-06-18","Some Cl/SO4 standards and checks were lower than the 
+  expected concentration 
+  Another note: These samples These samples came to room temperature during storage 
+  due to the refrigerator dying. 
+  The data does not appear to be impacted, but is noted here.",""
+"12","COMPASS: Synoptic","CB","SWH","TR","A",45,"SWH_202410_TR_LYSA_45CM",2024,10,22,"9:00","EDT",0,"bdl","",33.4074386459802,"Within_Range","",2.1400447159,"2025-06-18","Some Cl/SO4 standards and checks were lower than the 
+  expected concentration 
+  Another note: These samples These samples came to room temperature during storage 
+  due to the refrigerator dying. 
+  The data does not appear to be impacted, but is noted here.",""
+"13","COMPASS: Synoptic","CB","SWH","TR","B",10,"SWH_202410_TR_LYSB_10CM",2024,10,22,"9:10","EDT",4.33973799126638,"Within_Range","",24.9232383638928,"Within_Range","",1.5965625416,"2025-06-18","Some Cl/SO4 standards and checks were lower than the 
+  expected concentration 
+  Another note: These samples These samples came to room temperature during storage 
+  due to the refrigerator dying. 
+  The data does not appear to be impacted, but is noted here.",""
+"14","COMPASS: Synoptic","CB","SWH","TR","B",20,"SWH_202410_TR_LYSB_20CM",2024,10,22,"9:10","EDT",0.501637554585153,"Within_Range","",30.8469196050776,"Within_Range","",1.9760226031,"2025-06-18","Some Cl/SO4 standards and checks were lower than the 
+  expected concentration 
+  Another note: These samples These samples came to room temperature during storage 
+  due to the refrigerator dying. 
+  The data does not appear to be impacted, but is noted here.",""
+"15","COMPASS: Synoptic","CB","SWH","TR","B",45,"SWH_202410_TR_LYSB_45CM",2024,10,22,"9:10","EDT",0.158371802869619,"Within_Range","",26.7786262341326,"Within_Range","",1.7154152561,"2025-06-18","Some Cl/SO4 standards and checks were lower than the 
+  expected concentration 
+  Another note: These samples These samples came to room temperature during storage 
+  due to the refrigerator dying. 
+  The data does not appear to be impacted, but is noted here.",""
+"16","COMPASS: Synoptic","CB","SWH","TR","C",10,"SWH_202410_TR_LYSC_10CM",2024,10,22,"9:20","EDT",4.62687772925764,"Within_Range","",29.6542256699577,"Within_Range","",1.8996208361,"2025-06-18","Some Cl/SO4 standards and checks were lower than the 
+  expected concentration 
+  Another note: These samples These samples came to room temperature during storage 
+  due to the refrigerator dying. 
+  The data does not appear to be impacted, but is noted here.",""
+"17","COMPASS: Synoptic","CB","SWH","TR","C",20,"SWH_202410_TR_LYSC_20CM",2024,10,22,"9:20","EDT",1.30024953212726,"Within_Range","",29.9153737658674,"Within_Range","",1.9163495,"2025-06-18","Some Cl/SO4 standards and checks were lower than the 
+  expected concentration 
+  Another note: These samples These samples came to room temperature during storage 
+  due to the refrigerator dying. 
+  The data does not appear to be impacted, but is noted here.",""
+"18","COMPASS: Synoptic","CB","SWH","TR","C",45,"SWH_202410_TR_LYSC_45CM",2024,10,22,"9:20","EDT",0.0890642545227698,"Within_Range","",35.7755063469676,"Within_Range","",2.2917387519,"2025-06-18","Some Cl/SO4 standards and checks were lower than the 
+  expected concentration 
+  Another note: These samples These samples came to room temperature during storage 
+  due to the refrigerator dying. 
+  The data does not appear to be impacted, but is noted here.",""
+"19","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202410_SWAMP_LYSA_10CM",2024,10,22,"14:08","EDT",0.5854054897068,"Within_Range","",17.8618617771509,"Within_Range","",1.144223821,"2025-06-18","Some Cl/SO4 standards and checks were lower than the 
+  expected concentration 
+  Another note: These samples These samples came to room temperature during storage 
+  due to the refrigerator dying. 
+  The data does not appear to be impacted, but is noted here.",""
+"20","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202410_SWAMP_LYSA_20CM",2024,10,22,"14:08","EDT",0.4256082345602,"Within_Range","",14.1137743300423,"Within_Range","",0.9041282731,"2025-06-18","Some Cl/SO4 standards and checks were lower than the 
+  expected concentration 
+  Another note: These samples These samples came to room temperature during storage 
+  due to the refrigerator dying. 
+  The data does not appear to be impacted, but is noted here.",""
+"21","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202410_SWAMP_LYSA_45CM",2024,10,22,"14:08","EDT",0,"bdl","",2.75232722143865,"Within_Range","",0.17633499,"2025-06-18","Some Cl/SO4 standards and checks were lower than the 
+  expected concentration 
+  Another note: These samples These samples came to room temperature during storage 
+  due to the refrigerator dying. 
+  The data does not appear to be impacted, but is noted here.",""
+"22","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202410_SWAMP_LYSB_10CM",2024,10,22,"14:30","EDT",1.07697130380536,"Within_Range","",17.8500028208745,"Within_Range","",1.1434641582,"2025-06-18","Some Cl/SO4 standards and checks were lower than the 
+  expected concentration 
+  Another note: These samples These samples came to room temperature during storage 
+  due to the refrigerator dying. 
+  The data does not appear to be impacted, but is noted here.",""
+"23","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202410_SWAMP_LYSB_20CM",2024,10,22,"14:30","EDT",0.12995945102932,"Within_Range","",3.45361071932299,"Within_Range","",0.2212579135,"2025-06-18","Some Cl/SO4 standards and checks were lower than the 
+  expected concentration 
+  Another note: These samples These samples came to room temperature during storage 
+  due to the refrigerator dying. 
+  The data does not appear to be impacted, but is noted here.",""
+"24","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202410_SWAMP_LYSB_45CM",2024,10,22,"14:30","EDT",0,"bdl","",0.32374047954866,"Within_Range","",0.0207642162,"2025-06-18","Some Cl/SO4 standards and checks were lower than the 
+  expected concentration 
+  Another note: These samples These samples came to room temperature during storage 
+  due to the refrigerator dying. 
+  The data does not appear to be impacted, but is noted here.",""
+"25","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202410_SWAMP_LYSC_10CM",2024,10,22,"13:52","EDT",2.33265439800374,"Within_Range","",13.6565416078984,"Within_Range","",0.8748387908,"2025-06-18","Some Cl/SO4 standards and checks were lower than the 
+  expected concentration 
+  Another note: These samples These samples came to room temperature during storage 
+  due to the refrigerator dying. 
+  The data does not appear to be impacted, but is noted here.",""
+"26","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202410_SWAMP_LYSC_20CM",2024,10,22,"13:52","EDT",0.0469058016219588,"Within_Range","",9.23175458392102,"Within_Range","",0.5913951199,"2025-06-18","Some Cl/SO4 standards and checks were lower than the 
+  expected concentration 
+  Another note: These samples These samples came to room temperature during storage 
+  due to the refrigerator dying. 
+  The data does not appear to be impacted, but is noted here.",""
+"27","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202410_SWAMP_LYSC_45CM",2024,10,22,"13:52","EDT",0.3119931378665,"Within_Range","",10.2912609308886,"Within_Range","",0.6592651364,"2025-06-18","Some Cl/SO4 standards and checks were lower than the 
+  expected concentration 
+  Another note: These samples These samples came to room temperature during storage 
+  due to the refrigerator dying. 
+  The data does not appear to be impacted, but is noted here.",""
+"28","COMPASS: Synoptic","CB","SWH","WC","A",10,"SWH_202410_WC_LYSA_10CM",2024,10,22,"10:20","EDT",0.58650343106675,"Within_Range","",34.2008772919605,"Within_Range","",2.1908709277,"2025-06-18","Some Cl/SO4 standards and checks were lower than the 
+  expected concentration 
+  Another note: These samples These samples came to room temperature during storage 
+  due to the refrigerator dying. 
+  The data does not appear to be impacted, but is noted here.",""
+"29","COMPASS: Synoptic","CB","SWH","WC","A",20,"SWH_202410_WC_LYSA_20CM",2024,10,22,"10:20","EDT",0.027654398003743,"Within_Range","",22.4396361071932,"Within_Range","",1.4374675757,"2025-06-18","Some Cl/SO4 standards and checks were lower than the 
+  expected concentration 
+  Another note: These samples These samples came to room temperature during storage 
+  due to the refrigerator dying. 
+  The data does not appear to be impacted, but is noted here.",""
+"30","COMPASS: Synoptic","CB","SWH","WC","A",45,"SWH_202410_WC_LYSA_45CM",2024,10,22,"10:20","EDT",0.0927791640673737,"Within_Range","",0,"bdl","",2.6e-05,"2025-06-18","Some Cl/SO4 standards and checks were lower than the 
+  expected concentration 
+  Another note: These samples These samples came to room temperature during storage 
+  due to the refrigerator dying. 
+  The data does not appear to be impacted, but is noted here.",""
+"31","COMPASS: Synoptic","CB","SWH","WC","B",10,"SWH_202410_WC_LYSB_10CM",2024,10,22,"10:30","EDT",2.03455708047411,"Within_Range","",0,"bdl","",2.6e-05,"2025-06-18","Some Cl/SO4 standards and checks were lower than the 
+  expected concentration 
+  Another note: These samples These samples came to room temperature during storage 
+  due to the refrigerator dying. 
+  The data does not appear to be impacted, but is noted here.",""
+"32","COMPASS: Synoptic","CB","SWH","WC","B",20,"SWH_202410_WC_LYSB_20CM",2024,10,22,"10:30","EDT",0.0384123518402994,"Within_Range","",0,"bdl","",2.6e-05,"2025-06-18","Some Cl/SO4 standards and checks were lower than the 
+  expected concentration 
+  Another note: These samples These samples came to room temperature during storage 
+  due to the refrigerator dying. 
+  The data does not appear to be impacted, but is noted here.",""
+"33","COMPASS: Synoptic","CB","SWH","WC","B",45,"SWH_202410_WC_LYSB_45CM",2024,10,22,"10:30","EDT",0,"bdl","",17.8873878702398,"Within_Range","",1.1458589753,"2025-06-18","Some Cl/SO4 standards and checks were lower than the 
+  expected concentration 
+  Another note: These samples These samples came to room temperature during storage 
+  due to the refrigerator dying. 
+  The data does not appear to be impacted, but is noted here.",""
+"34","COMPASS: Synoptic","CB","SWH","WC","C",10,"SWH_202410_WC_LYSC_10CM",2024,10,22,"10:10","EDT",0.920296319401123,"Within_Range","",0,"bdl","",2.6e-05,"2025-06-18","Some Cl/SO4 standards and checks were lower than the 
+  expected concentration 
+  Another note: These samples These samples came to room temperature during storage 
+  due to the refrigerator dying. 
+  The data does not appear to be impacted, but is noted here.",""
+"35","COMPASS: Synoptic","CB","SWH","WC","C",20,"SWH_202410_WC_LYSC_20CM",2024,10,22,"10:10","EDT",0.245352464129757,"Within_Range","",0,"bdl","",2.6e-05,"2025-06-18","Some Cl/SO4 standards and checks were lower than the 
+  expected concentration 
+  Another note: These samples These samples came to room temperature during storage 
+  due to the refrigerator dying. 
+  The data does not appear to be impacted, but is noted here.",""
+"36","COMPASS: Synoptic","CB","SWH","WC","C",45,"SWH_202410_WC_LYSC_45CM",2024,10,22,"10:10","EDT",0.00675608234560199,"Within_Range","",15.5460253878702,"Within_Range","",0.9958756262,"2025-06-18","Some Cl/SO4 standards and checks were lower than the 
+  expected concentration 
+  Another note: These samples These samples came to room temperature during storage 
+  due to the refrigerator dying. 
+  The data does not appear to be impacted, but is noted here.",""
+"37","COMPASS: Synoptic","CB","SWH","SW","A",0,"SWH_202410_SW_A",2024,10,22,"9:50","EDT",6.5718247036806,"Within_Range","",44.3683977433004,"Within_Range","",2.8421834779,"2025-06-18","Some Cl/SO4 standards and checks were lower than the 
+  expected concentration 
+  Another note: These samples These samples came to room temperature during storage 
+  due to the refrigerator dying. 
+  The data does not appear to be impacted, but is noted here.",""
+"38","COMPASS: Synoptic","CB","SWH","SW","B",0,"SWH_202410_SW_B",2024,10,22,"9:50","EDT",6.54225514660012,"Within_Range","",44.1123497884344,"Within_Range","",2.8257815196,"2025-06-18","Some Cl/SO4 standards and checks were lower than the 
+  expected concentration 
+  Another note: These samples These samples came to room temperature during storage 
+  due to the refrigerator dying. 
+  The data does not appear to be impacted, but is noted here.",""
+"39","COMPASS: Synoptic","CB","SWH","SW","C",0,"SWH_202410_SW_C",2024,10,22,"9:50","EDT",6.81912663755458,"Within_Range","",45.9626008462623,"Within_Range","",2.9443051794,"2025-06-18","Some Cl/SO4 standards and checks were lower than the 
+  expected concentration 
+  Another note: These samples These samples came to room temperature during storage 
+  due to the refrigerator dying. 
+  The data does not appear to be impacted, but is noted here.",""
