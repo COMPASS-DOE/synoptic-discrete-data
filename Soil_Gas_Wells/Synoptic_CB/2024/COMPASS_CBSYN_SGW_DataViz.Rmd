@@ -1,0 +1,43 @@
+---
+title: "COMPASS_CBSYN_SGW_DataViz"
+author: "Stephanie J. Wilson"
+date: "2024-06-26"
+output: html_document
+---
+#SETUP
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(ggplot2)
+library(ggpubr)
+library(lubridate)
+```
+
+## Pull in Processed Datafiles
+```{r}
+setwd("S:/Biogeochemistry/COMPASS Synoptics/Samples & Data/GHG/Soil GHG/Processed Data Files")
+
+L <- list.files(path = "S:/Biogeochemistry/COMPASS Synoptics/Samples & Data/GHG/Soil GHG/Processed Data Files")
+head(L)
+
+file.list <- dir(pattern = "csv$")
+
+#Read in the data 
+alldat1 <- lapply(file.list, read.csv)
+
+alldat <- data.table::rbindlist(alldat1, fill=TRUE)
+```
+
+
+## Make a dataframe of those that need diluted
+```{r}
+#change directory to write file to raw files folder
+setwd("S:/Biogeochemistry/COMPASS Synoptics/Samples & Data/GHG/Soil GHG/Raw Data Files/2023")
+
+#subset by those that need to be diluted
+dilutions <- subset(alldat, CH4_Flag == "Needs Dilution")
+
+#write out file of the list 
+write.csv(dilutions, "COMPASS_CBSYN_SGW_2023_SamplesToDilute.csv")
+```
+
