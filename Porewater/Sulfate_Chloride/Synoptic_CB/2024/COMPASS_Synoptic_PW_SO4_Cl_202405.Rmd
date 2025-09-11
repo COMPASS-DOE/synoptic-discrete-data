@@ -1,6 +1,6 @@
 ---
 title: "Synoptic CB: Porewater SO4/Cl"
-author: "Month Year Samples"
+author: "May 2024 Samples"
 date: "`r Sys.Date()`"
 output: 
   pdf_document:
@@ -30,21 +30,23 @@ lapply(c(
 ```{r Run Information, echo=TRUE, message=FALSE, warning=FALSE}
 
 ###### Run information - PLEASE CHANGE
-  Date_Run = "YYYY-MM-DD"  #Date that instrument was run
+  Date_Run = "2024-06-04"  #Date that instrument was run
   Run_by = "Zoe Read"  #Instrument user 
   Script_run_by = "Zoe Read" #Code user 
-  run_notes = " " #any notes from the run
+  run_notes = "Some sample IDs are missing from metadata: 
+  GWI_202405_UP_LYSC_45CM - this has values of 0 for SO4 and Cl so maybe there was no sample. 
+  MSM_202405_UP_LYSA_10CM" #any notes from the run
   samples <- c("GCW", "GWI", "MSM", "SWH") #whatever identifies your samples within the same names 
   samples_pattern <- paste(samples, collapse = "|") 
     #samples_pattern <- "GCW" #use this instead of the line above if you have only one site code 
 
 ###### File Names - PLEASE CHANGE 
 #file path and name for raw summary data file 
-  raw_file_name_cl = "Raw Data/COMPASS_Synoptic_CB_MonMon_202410_Cl.txt"
-  raw_file_name_so4 = "Raw Data/COMPASS_Synoptic_CB_MonMon_202410_SO4.txt"
+  raw_file_name_cl = "Raw Data/COMPASS_Synoptic_CB_MonMon_202405_Cl.txt"
+  raw_file_name_so4 = "Raw Data/COMPASS_Synoptic_CB_MonMon_202405_SO4.txt"
 
 #file path and name of processed data file 
-  processed_file_name = "Processed Data/COMPASS_SynopticCB_PW_Processed_Cl_SO4_202410.csv" 
+  processed_file_name = "Processed Data/COMPASS_SynopticCB_PW_Processed_Cl_SO4_202405.csv" 
 
 ###### Log Files - PLEASE CHECK 
 #downloaded metadata csv - downloaded from Google drive as csv for this year
