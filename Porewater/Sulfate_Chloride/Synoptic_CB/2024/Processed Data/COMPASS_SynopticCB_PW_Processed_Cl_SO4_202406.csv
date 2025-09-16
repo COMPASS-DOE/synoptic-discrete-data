@@ -1,5 +1,5 @@
 "","Project","Region","Site","Zone","Replicate","Depth_cm","Sample_ID","Year","Month","Day","Time","Time_Zone","SO4_Conc_mM","SO4_Conc_flag","SO4_QAQC_flag","Cl_Conc_mM","Cl_Conc_flag","Cl_QAQC_flag","salinity","Analysis_rundate","Run_notes","Field_notes"
-"1","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202406_UP_LYSA_10CM",2024,6,26,"","",0.0997816593886463,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range",0.190008462623413,"Within_Range","",0.0121975906,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
+"1","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202406_UP_LYSA_10CM",2024,6,26,"","",0.099772301933874,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range; SO4 spikes out of range",0.190008462623413,"Within_Range","",0.0121975906,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
   specifically check standards 1 and 2 were lower than expected; 
   <80% (2/4) of Sulfate Duplicates have a CV <10% - REASSESS, 
   although one of the dups had a CV of 15 which was not too much higher than the cutoff of 10; 
@@ -10,7 +10,7 @@
   FTS_1630_20230816 
   FTS_1730_20230816
   ",""
-"2","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202406_UP_LYSA_20CM",2024,6,26,"","",0.272420461634435,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range",0.183303244005642,"Within_Range","",0.0117680667,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
+"2","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202406_UP_LYSA_20CM",2024,6,26,"","",0.272389270118528,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range; SO4 spikes out of range",0.183303244005642,"Within_Range","",0.0117680667,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
   specifically check standards 1 and 2 were lower than expected; 
   <80% (2/4) of Sulfate Duplicates have a CV <10% - REASSESS, 
   although one of the dups had a CV of 15 which was not too much higher than the cutoff of 10; 
@@ -21,7 +21,7 @@
   FTS_1630_20230816 
   FTS_1730_20230816
   ",""
-"3","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202406_UP_LYSA_45CM",2024,6,26,"","",0.0852058640049906,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range",0.140550070521862,"Within_Range","",0.0090293775,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
+"3","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202406_UP_LYSA_45CM",2024,6,26,"","",0.0851933873986276,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range; SO4 spikes out of range",0.140550070521862,"Within_Range","",0.0090293775,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
   specifically check standards 1 and 2 were lower than expected; 
   <80% (2/4) of Sulfate Duplicates have a CV <10% - REASSESS, 
   although one of the dups had a CV of 15 which was not too much higher than the cutoff of 10; 
@@ -32,7 +32,7 @@
   FTS_1630_20230816 
   FTS_1730_20230816
   ",""
-"4","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202406_UP_LYSB_10CM",2024,6,26,"","",0.0952900810979414,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range",0.239700987306065,"Within_Range","",0.0153808018,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
+"4","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202406_UP_LYSB_10CM",2024,6,26,"","",0.095280723643169,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range; SO4 spikes out of range",0.239700987306065,"Within_Range","",0.0153808018,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
   specifically check standards 1 and 2 were lower than expected; 
   <80% (2/4) of Sulfate Duplicates have a CV <10% - REASSESS, 
   although one of the dups had a CV of 15 which was not too much higher than the cutoff of 10; 
@@ -43,7 +43,7 @@
   FTS_1630_20230816 
   FTS_1730_20230816
   ",""
-"5","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202406_UP_LYSB_20CM",2024,6,26,"","",0.18406425452277,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range",0.131478138222849,"Within_Range","",0.0084482463,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
+"5","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202406_UP_LYSB_20CM",2024,6,26,"","",0.184042420461634,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range; SO4 spikes out of range",0.131478138222849,"Within_Range","",0.0084482463,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
   specifically check standards 1 and 2 were lower than expected; 
   <80% (2/4) of Sulfate Duplicates have a CV <10% - REASSESS, 
   although one of the dups had a CV of 15 which was not too much higher than the cutoff of 10; 
@@ -54,7 +54,7 @@
   FTS_1630_20230816 
   FTS_1730_20230816
   ",""
-"6","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202406_UP_LYSB_45CM",2024,6,26,"","",0.0635402370555209,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range",0.155300423131171,"Within_Range","",0.0099742578,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
+"6","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202406_UP_LYSB_45CM",2024,6,26,"","",0.0635308796007486,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range; SO4 spikes out of range",0.155300423131171,"Within_Range","",0.0099742578,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
   specifically check standards 1 and 2 were lower than expected; 
   <80% (2/4) of Sulfate Duplicates have a CV <10% - REASSESS, 
   although one of the dups had a CV of 15 which was not too much higher than the cutoff of 10; 
@@ -65,7 +65,7 @@
   FTS_1630_20230816 
   FTS_1730_20230816
   ",""
-"7","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202406_UP_LYSC_10CM",2024,6,26,"","",0.211774797255147,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range",0.175080394922426,"Within_Range","",0.0112413262,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
+"7","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202406_UP_LYSC_10CM",2024,6,26,"","",0.211752963194011,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range; SO4 spikes out of range",0.175080394922426,"Within_Range","",0.0112413262,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
   specifically check standards 1 and 2 were lower than expected; 
   <80% (2/4) of Sulfate Duplicates have a CV <10% - REASSESS, 
   although one of the dups had a CV of 15 which was not too much higher than the cutoff of 10; 
@@ -76,7 +76,7 @@
   FTS_1630_20230816 
   FTS_1730_20230816
   ",""
-"8","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202406_UP_LYSC_20CM",2024,6,26,"","",0.0945196506550218,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range",0.155097320169252,"Within_Range","",0.0099612474,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
+"8","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202406_UP_LYSC_20CM",2024,6,26,"","",0.0945071740486588,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range; SO4 spikes out of range",0.155097320169252,"Within_Range","",0.0099612474,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
   specifically check standards 1 and 2 were lower than expected; 
   <80% (2/4) of Sulfate Duplicates have a CV <10% - REASSESS, 
   although one of the dups had a CV of 15 which was not too much higher than the cutoff of 10; 
@@ -87,7 +87,7 @@
   FTS_1630_20230816 
   FTS_1730_20230816
   ",""
-"9","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202406_UP_LYSC_45CM",2024,6,26,"","",0.0553493449781659,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range",0.145743300423131,"Within_Range","",0.0093620462,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
+"9","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202406_UP_LYSC_45CM",2024,6,26,"","",0.0553431066749844,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range; SO4 spikes out of range",0.145743300423131,"Within_Range","",0.0093620462,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
   specifically check standards 1 and 2 were lower than expected; 
   <80% (2/4) of Sulfate Duplicates have a CV <10% - REASSESS, 
   although one of the dups had a CV of 15 which was not too much higher than the cutoff of 10; 
@@ -98,7 +98,7 @@
   FTS_1630_20230816 
   FTS_1730_20230816
   ",""
-"10","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202406_SWAMP_LYSA_10CM",2024,6,26,"","",0.0900187149095446,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range",0.155915373765867,"Within_Range","",0.0100136504,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
+"10","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202406_SWAMP_LYSA_10CM",2024,6,26,"","",0.0900187149095446,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range; SO4 spikes out of range",0.155915373765867,"Within_Range","",0.0100136504,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
   specifically check standards 1 and 2 were lower than expected; 
   <80% (2/4) of Sulfate Duplicates have a CV <10% - REASSESS, 
   although one of the dups had a CV of 15 which was not too much higher than the cutoff of 10; 
@@ -109,7 +109,7 @@
   FTS_1630_20230816 
   FTS_1730_20230816
   ",""
-"11","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202406_SWAMP_LYSA_20CM",2024,6,26,"","",0,"bdl","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range",0.148304654442877,"Within_Range","",0.0095261218,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
+"11","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202406_SWAMP_LYSA_20CM",2024,6,26,"","",0.0564160948222084,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range; SO4 spikes out of range",0.148304654442877,"Within_Range","",0.0095261218,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
   specifically check standards 1 and 2 were lower than expected; 
   <80% (2/4) of Sulfate Duplicates have a CV <10% - REASSESS, 
   although one of the dups had a CV of 15 which was not too much higher than the cutoff of 10; 
@@ -120,7 +120,7 @@
   FTS_1630_20230816 
   FTS_1730_20230816
   ",""
-"12","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202406_SWAMP_LYSA_45CM",2024,6,26,"","",0,"bdl","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range",0.249887165021157,"Within_Range","",0.0160333095,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
+"12","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202406_SWAMP_LYSA_45CM",2024,6,26,"","",0,"bdl","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range; SO4 spikes out of range",0.249887165021157,"Within_Range","",0.0160333095,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
   specifically check standards 1 and 2 were lower than expected; 
   <80% (2/4) of Sulfate Duplicates have a CV <10% - REASSESS, 
   although one of the dups had a CV of 15 which was not too much higher than the cutoff of 10; 
@@ -131,7 +131,7 @@
   FTS_1630_20230816 
   FTS_1730_20230816
   ",""
-"13","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202406_SWAMP_LYSB_10CM",2024,6,26,"","",0,"bdl","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range",0.313746121297602,"Within_Range","",0.0201239961,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
+"13","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202406_SWAMP_LYSB_10CM",2024,6,26,"","",0,"bdl","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range; SO4 spikes out of range",0.313746121297602,"Within_Range","",0.0201239961,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
   specifically check standards 1 and 2 were lower than expected; 
   <80% (2/4) of Sulfate Duplicates have a CV <10% - REASSESS, 
   although one of the dups had a CV of 15 which was not too much higher than the cutoff of 10; 
@@ -142,7 +142,7 @@
   FTS_1630_20230816 
   FTS_1730_20230816
   ",""
-"14","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202406_SWAMP_LYSB_20CM",2024,6,26,"","",0,"bdl","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range",0.238479548660085,"Within_Range","",0.0153025587,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
+"14","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202406_SWAMP_LYSB_20CM",2024,6,26,"","",0,"bdl","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range; SO4 spikes out of range",0.238479548660085,"Within_Range","",0.0153025587,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
   specifically check standards 1 and 2 were lower than expected; 
   <80% (2/4) of Sulfate Duplicates have a CV <10% - REASSESS, 
   although one of the dups had a CV of 15 which was not too much higher than the cutoff of 10; 
@@ -153,7 +153,7 @@
   FTS_1630_20230816 
   FTS_1730_20230816
   ",""
-"15","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202406_SWAMP_LYSB_45CM",2024,6,26,"","",0,"bdl","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range",0.650967559943582,"Within_Range","",0.0417257776,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
+"15","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202406_SWAMP_LYSB_45CM",2024,6,26,"","",0,"bdl","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range; SO4 spikes out of range",0.650967559943582,"Within_Range","",0.0417257776,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
   specifically check standards 1 and 2 were lower than expected; 
   <80% (2/4) of Sulfate Duplicates have a CV <10% - REASSESS, 
   although one of the dups had a CV of 15 which was not too much higher than the cutoff of 10; 
@@ -164,7 +164,7 @@
   FTS_1630_20230816 
   FTS_1730_20230816
   ",""
-"16","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202406_SWAMP_LYSC_10CM",2024,6,26,"","",0.111837180286962,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range",0.132578279266573,"Within_Range","",0.0085187193,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
+"16","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202406_SWAMP_LYSC_10CM",2024,6,26,"","",0.111824703680599,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range; SO4 spikes out of range",0.132578279266573,"Within_Range","",0.0085187193,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
   specifically check standards 1 and 2 were lower than expected; 
   <80% (2/4) of Sulfate Duplicates have a CV <10% - REASSESS, 
   although one of the dups had a CV of 15 which was not too much higher than the cutoff of 10; 
@@ -175,7 +175,7 @@
   FTS_1630_20230816 
   FTS_1730_20230816
   ",""
-"17","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202406_SWAMP_LYSC_20CM",2024,6,26,"","",0.0569213973799127,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range",0.110349788434415,"Within_Range","",0.0070948033,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
+"17","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202406_SWAMP_LYSC_20CM",2024,6,26,"","",0.0569151590767311,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range; SO4 spikes out of range",0.110349788434415,"Within_Range","",0.0070948033,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
   specifically check standards 1 and 2 were lower than expected; 
   <80% (2/4) of Sulfate Duplicates have a CV <10% - REASSESS, 
   although one of the dups had a CV of 15 which was not too much higher than the cutoff of 10; 
@@ -186,7 +186,7 @@
   FTS_1630_20230816 
   FTS_1730_20230816
   ",""
-"18","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202406_SWAMP_LYSC_45CM",2024,6,26,"","",0.0413973799126637,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range",0.21563610719323,"Within_Range","",0.0138392501,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
+"18","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202406_SWAMP_LYSC_45CM",2024,6,26,"","",0.0413911416094822,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range; SO4 spikes out of range",0.21563610719323,"Within_Range","",0.0138392501,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
   specifically check standards 1 and 2 were lower than expected; 
   <80% (2/4) of Sulfate Duplicates have a CV <10% - REASSESS, 
   although one of the dups had a CV of 15 which was not too much higher than the cutoff of 10; 
@@ -197,7 +197,7 @@
   FTS_1630_20230816 
   FTS_1730_20230816
   ",""
-"19","COMPASS: Synoptic","CB","SWH","TR","A",10,"SWH_202406_TR_LYSA_10CM",2024,6,26,"","",0.162598253275109,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range",5.14341043723554,"Within_Range","",0.3295033573,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
+"19","COMPASS: Synoptic","CB","SWH","TR","A",10,"SWH_202406_TR_LYSA_10CM",2024,6,26,"","",0.162579538365565,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range; SO4 spikes out of range",5.14341043723554,"Within_Range","",0.3295033573,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
   specifically check standards 1 and 2 were lower than expected; 
   <80% (2/4) of Sulfate Duplicates have a CV <10% - REASSESS, 
   although one of the dups had a CV of 15 which was not too much higher than the cutoff of 10; 
@@ -208,7 +208,7 @@
   FTS_1630_20230816 
   FTS_1730_20230816
   ",""
-"20","COMPASS: Synoptic","CB","SWH","TR","A",20,"SWH_202406_TR_LYSA_20CM",2024,6,26,"","",0.00963194011228946,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range",4.74536248236953,"Within_Range","",0.3040051417,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
+"20","COMPASS: Synoptic","CB","SWH","TR","A",20,"SWH_202406_TR_LYSA_20CM",2024,6,26,"","",0.00963194011228946,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range; SO4 spikes out of range",4.74536248236953,"Within_Range","",0.3040051417,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
   specifically check standards 1 and 2 were lower than expected; 
   <80% (2/4) of Sulfate Duplicates have a CV <10% - REASSESS, 
   although one of the dups had a CV of 15 which was not too much higher than the cutoff of 10; 
@@ -219,7 +219,7 @@
   FTS_1630_20230816 
   FTS_1730_20230816
   ",""
-"21","COMPASS: Synoptic","CB","SWH","TR","A",45,"SWH_202406_TR_LYSA_45CM",2024,6,26,"","",0.0340860885839052,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range",8.54288293370945,"Within_Range","",0.5472672764,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
+"21","COMPASS: Synoptic","CB","SWH","TR","A",45,"SWH_202406_TR_LYSA_45CM",2024,6,26,"","",0.0240580162195883,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range; SO4 spikes out of range",8.54288293370945,"Within_Range","",0.5472672764,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
   specifically check standards 1 and 2 were lower than expected; 
   <80% (2/4) of Sulfate Duplicates have a CV <10% - REASSESS, 
   although one of the dups had a CV of 15 which was not too much higher than the cutoff of 10; 
@@ -230,7 +230,7 @@
   FTS_1630_20230816 
   FTS_1730_20230816
   ",""
-"22","COMPASS: Synoptic","CB","SWH","TR","B",10,"SWH_202406_TR_LYSB_10CM",2024,6,26,"","",0.856175920149719,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range",7.44515937940762,"Within_Range","",0.4769491363,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
+"22","COMPASS: Synoptic","CB","SWH","TR","B",10,"SWH_202406_TR_LYSB_10CM",2024,6,26,"","",0.856079226450405,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range; SO4 spikes out of range",7.44515937940762,"Within_Range","",0.4769491363,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
   specifically check standards 1 and 2 were lower than expected; 
   <80% (2/4) of Sulfate Duplicates have a CV <10% - REASSESS, 
   although one of the dups had a CV of 15 which was not too much higher than the cutoff of 10; 
@@ -241,7 +241,7 @@
   FTS_1630_20230816 
   FTS_1730_20230816
   ",""
-"23","COMPASS: Synoptic","CB","SWH","TR","B",20,"SWH_202406_TR_LYSB_20CM",2024,6,26,"","",0,"bdl","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range",4.57559379407616,"Within_Range","",0.2931300736,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
+"23","COMPASS: Synoptic","CB","SWH","TR","B",20,"SWH_202406_TR_LYSB_20CM",2024,6,26,"","",0,"bdl","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range; SO4 spikes out of range",4.57559379407616,"Within_Range","",0.2931300736,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
   specifically check standards 1 and 2 were lower than expected; 
   <80% (2/4) of Sulfate Duplicates have a CV <10% - REASSESS, 
   although one of the dups had a CV of 15 which was not too much higher than the cutoff of 10; 
@@ -252,7 +252,7 @@
   FTS_1630_20230816 
   FTS_1730_20230816
   ",""
-"24","COMPASS: Synoptic","CB","SWH","TR","B",45,"SWH_202406_TR_LYSB_45CM",2024,6,26,"","",0,"bdl","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range",6.95749506346968,"Within_Range","",0.4457102624,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
+"24","COMPASS: Synoptic","CB","SWH","TR","B",45,"SWH_202406_TR_LYSB_45CM",2024,6,26,"","",0,"bdl","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range; SO4 spikes out of range",6.95749506346968,"Within_Range","",0.4457102624,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
   specifically check standards 1 and 2 were lower than expected; 
   <80% (2/4) of Sulfate Duplicates have a CV <10% - REASSESS, 
   although one of the dups had a CV of 15 which was not too much higher than the cutoff of 10; 
@@ -263,7 +263,7 @@
   FTS_1630_20230816 
   FTS_1730_20230816
   ",""
-"25","COMPASS: Synoptic","CB","SWH","TR","C",10,"SWH_202406_TR_LYSC_10CM",2024,6,26,"","",1.36008109794136,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range",7.22022002820874,"Within_Range","",0.4625399376,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
+"25","COMPASS: Synoptic","CB","SWH","TR","C",10,"SWH_202406_TR_LYSC_10CM",2024,6,26,"","",1.35992825951341,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range; SO4 spikes out of range",7.22022002820874,"Within_Range","",0.4625399376,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
   specifically check standards 1 and 2 were lower than expected; 
   <80% (2/4) of Sulfate Duplicates have a CV <10% - REASSESS, 
   although one of the dups had a CV of 15 which was not too much higher than the cutoff of 10; 
@@ -274,7 +274,7 @@
   FTS_1630_20230816 
   FTS_1730_20230816
   ",""
-"26","COMPASS: Synoptic","CB","SWH","TR","C",20,"SWH_202406_TR_LYSC_20CM",2024,6,26,"","",0.117495321272614,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range",5.99303244005642,"Within_Range","",0.383928571,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
+"26","COMPASS: Synoptic","CB","SWH","TR","C",20,"SWH_202406_TR_LYSC_20CM",2024,6,26,"","",0.117482844666251,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range; SO4 spikes out of range",5.99303244005642,"Within_Range","",0.383928571,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
   specifically check standards 1 and 2 were lower than expected; 
   <80% (2/4) of Sulfate Duplicates have a CV <10% - REASSESS, 
   although one of the dups had a CV of 15 which was not too much higher than the cutoff of 10; 
@@ -285,7 +285,7 @@
   FTS_1630_20230816 
   FTS_1730_20230816
   ",""
-"27","COMPASS: Synoptic","CB","SWH","TR","C",45,"SWH_202406_TR_LYSC_45CM",2024,6,26,"","",0,"bdl","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range",4.8888490832158,"Within_Range","",0.3131966279,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
+"27","COMPASS: Synoptic","CB","SWH","TR","C",45,"SWH_202406_TR_LYSC_45CM",2024,6,26,"","",0,"bdl","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range; SO4 spikes out of range",4.8888490832158,"Within_Range","",0.3131966279,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
   specifically check standards 1 and 2 were lower than expected; 
   <80% (2/4) of Sulfate Duplicates have a CV <10% - REASSESS, 
   although one of the dups had a CV of 15 which was not too much higher than the cutoff of 10; 
@@ -296,7 +296,7 @@
   FTS_1630_20230816 
   FTS_1730_20230816
   ",""
-"28","COMPASS: Synoptic","CB","SWH","WC","A",10,"SWH_202406_WC_LYSA_10CM",2024,6,26,"","",0,"bdl","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range",7.63903808180536,"Within_Range","",0.4893686473,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
+"28","COMPASS: Synoptic","CB","SWH","WC","A",10,"SWH_202406_WC_LYSA_10CM",2024,6,26,"","",0,"bdl","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range; SO4 spikes out of range",7.63903808180536,"Within_Range","",0.4893686473,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
   specifically check standards 1 and 2 were lower than expected; 
   <80% (2/4) of Sulfate Duplicates have a CV <10% - REASSESS, 
   although one of the dups had a CV of 15 which was not too much higher than the cutoff of 10; 
@@ -307,7 +307,7 @@
   FTS_1630_20230816 
   FTS_1730_20230816
   ",""
-"29","COMPASS: Synoptic","CB","SWH","WC","A",20,"SWH_202406_WC_LYSA_20CM",2024,6,26,"","",0,"bdl","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range",6.18718758815233,"Within_Range","",0.3963657906,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
+"29","COMPASS: Synoptic","CB","SWH","WC","A",20,"SWH_202406_WC_LYSA_20CM",2024,6,26,"","",0,"bdl","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range; SO4 spikes out of range",6.18718758815233,"Within_Range","",0.3963657906,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
   specifically check standards 1 and 2 were lower than expected; 
   <80% (2/4) of Sulfate Duplicates have a CV <10% - REASSESS, 
   although one of the dups had a CV of 15 which was not too much higher than the cutoff of 10; 
@@ -318,7 +318,7 @@
   FTS_1630_20230816 
   FTS_1730_20230816
   ",""
-"30","COMPASS: Synoptic","CB","SWH","WC","A",45,"SWH_202406_WC_LYSA_45CM",2024,6,26,"","",0,"bdl","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range",12.8113229901269,"Within_Range","",0.8206956498,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
+"30","COMPASS: Synoptic","CB","SWH","WC","A",45,"SWH_202406_WC_LYSA_45CM",2024,6,26,"","",0,"bdl","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range; SO4 spikes out of range",12.8113229901269,"Within_Range","",0.8206956498,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
   specifically check standards 1 and 2 were lower than expected; 
   <80% (2/4) of Sulfate Duplicates have a CV <10% - REASSESS, 
   although one of the dups had a CV of 15 which was not too much higher than the cutoff of 10; 
@@ -329,7 +329,7 @@
   FTS_1630_20230816 
   FTS_1730_20230816
   ",""
-"31","COMPASS: Synoptic","CB","SWH","WC","B",10,"SWH_202406_WC_LYSB_10CM",2024,6,26,"","",0,"bdl","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range",5.66843159379408,"Within_Range","",0.3631352413,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
+"31","COMPASS: Synoptic","CB","SWH","WC","B",10,"SWH_202406_WC_LYSB_10CM",2024,6,26,"","",0,"bdl","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range; SO4 spikes out of range",5.66843159379408,"Within_Range","",0.3631352413,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
   specifically check standards 1 and 2 were lower than expected; 
   <80% (2/4) of Sulfate Duplicates have a CV <10% - REASSESS, 
   although one of the dups had a CV of 15 which was not too much higher than the cutoff of 10; 
@@ -340,7 +340,7 @@
   FTS_1630_20230816 
   FTS_1730_20230816
   ",""
-"32","COMPASS: Synoptic","CB","SWH","WC","B",20,"SWH_202406_WC_LYSB_20CM",2024,6,26,"","",0,"bdl","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range",6.48362764456982,"Within_Range","",0.4153551922,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
+"32","COMPASS: Synoptic","CB","SWH","WC","B",20,"SWH_202406_WC_LYSB_20CM",2024,6,26,"","",0,"bdl","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range; SO4 spikes out of range",6.48362764456982,"Within_Range","",0.4153551922,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
   specifically check standards 1 and 2 were lower than expected; 
   <80% (2/4) of Sulfate Duplicates have a CV <10% - REASSESS, 
   although one of the dups had a CV of 15 which was not too much higher than the cutoff of 10; 
@@ -351,7 +351,7 @@
   FTS_1630_20230816 
   FTS_1730_20230816
   ",""
-"33","COMPASS: Synoptic","CB","SWH","WC","B",45,"SWH_202406_WC_LYSB_45CM",2024,6,26,"","",0.0379631940112289,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range",20.3275684062059,"Within_Range","",1.3021724261,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
+"33","COMPASS: Synoptic","CB","SWH","WC","B",45,"SWH_202406_WC_LYSB_45CM",2024,6,26,"","",0.0379569557080474,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range; SO4 spikes out of range",20.3275684062059,"Within_Range","",1.3021724261,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
   specifically check standards 1 and 2 were lower than expected; 
   <80% (2/4) of Sulfate Duplicates have a CV <10% - REASSESS, 
   although one of the dups had a CV of 15 which was not too much higher than the cutoff of 10; 
@@ -362,7 +362,7 @@
   FTS_1630_20230816 
   FTS_1730_20230816
   ",""
-"34","COMPASS: Synoptic","CB","SWH","WC","C",10,"SWH_202406_WC_LYSC_10CM",2024,6,26,"","",0.0499500935745477,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range",7.17870803949224,"Within_Range","",0.4598807564,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
+"34","COMPASS: Synoptic","CB","SWH","WC","C",10,"SWH_202406_WC_LYSC_10CM",2024,6,26,"","",0.049946974422957,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range; SO4 spikes out of range",7.17870803949224,"Within_Range","",0.4598807564,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
   specifically check standards 1 and 2 were lower than expected; 
   <80% (2/4) of Sulfate Duplicates have a CV <10% - REASSESS, 
   although one of the dups had a CV of 15 which was not too much higher than the cutoff of 10; 
@@ -373,7 +373,7 @@
   FTS_1630_20230816 
   FTS_1730_20230816
   ",""
-"35","COMPASS: Synoptic","CB","SWH","WC","C",20,"SWH_202406_WC_LYSC_20CM",2024,6,26,"","",0,"bdl","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range",5.5682143864598,"Within_Range","",0.3567155124,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
+"35","COMPASS: Synoptic","CB","SWH","WC","C",20,"SWH_202406_WC_LYSC_20CM",2024,6,26,"","",0,"bdl","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range; SO4 spikes out of range",5.5682143864598,"Within_Range","",0.3567155124,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
   specifically check standards 1 and 2 were lower than expected; 
   <80% (2/4) of Sulfate Duplicates have a CV <10% - REASSESS, 
   although one of the dups had a CV of 15 which was not too much higher than the cutoff of 10; 
@@ -384,7 +384,7 @@
   FTS_1630_20230816 
   FTS_1730_20230816
   ",""
-"36","COMPASS: Synoptic","CB","SWH","WC","C",45,"SWH_202406_WC_LYSC_45CM",2024,6,26,"","",0,"bdl","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range",18.3080282087447,"Within_Range","",1.1728044172,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
+"36","COMPASS: Synoptic","CB","SWH","WC","C",45,"SWH_202406_WC_LYSC_45CM",2024,6,26,"","",0,"bdl","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range; SO4 spikes out of range",18.3080282087447,"Within_Range","",1.1728044172,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
   specifically check standards 1 and 2 were lower than expected; 
   <80% (2/4) of Sulfate Duplicates have a CV <10% - REASSESS, 
   although one of the dups had a CV of 15 which was not too much higher than the cutoff of 10; 
@@ -395,7 +395,7 @@
   FTS_1630_20230816 
   FTS_1730_20230816
   ",""
-"37","COMPASS: Synoptic","CB","SWH","SW","A",0,"SWH_202406_SW_A",2024,6,26,"","",1.55893013100437,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range",10.9995909732017,"Within_Range","",0.7046394485,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
+"37","COMPASS: Synoptic","CB","SWH","SW","A",0,"SWH_202406_SW_A",2024,6,26,"","",1.55875545851528,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range; SO4 spikes out of range",10.9995909732017,"Within_Range","",0.7046394485,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
   specifically check standards 1 and 2 were lower than expected; 
   <80% (2/4) of Sulfate Duplicates have a CV <10% - REASSESS, 
   although one of the dups had a CV of 15 which was not too much higher than the cutoff of 10; 
@@ -406,7 +406,7 @@
   FTS_1630_20230816 
   FTS_1730_20230816
   ",""
-"38","COMPASS: Synoptic","CB","SWH","SW","B",0,"SWH_202406_SW_B",2024,6,26,"","",1.59576731129133,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range",11.079658674189,"Within_Range","",0.7097684373,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
+"38","COMPASS: Synoptic","CB","SWH","SW","B",0,"SWH_202406_SW_B",2024,6,26,"","",1.59558640049906,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range; SO4 spikes out of range",11.079658674189,"Within_Range","",0.7097684373,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
   specifically check standards 1 and 2 were lower than expected; 
   <80% (2/4) of Sulfate Duplicates have a CV <10% - REASSESS, 
   although one of the dups had a CV of 15 which was not too much higher than the cutoff of 10; 
@@ -417,7 +417,7 @@
   FTS_1630_20230816 
   FTS_1730_20230816
   ",""
-"39","COMPASS: Synoptic","CB","SWH","SW","C",0,"SWH_202406_SW_C",2024,6,26,"","",1.59957579538366,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range",11.4280056417489,"Within_Range","",0.7320828996,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
+"39","COMPASS: Synoptic","CB","SWH","SW","C",0,"SWH_202406_SW_C",2024,6,26,"","",1.59939488459139,"Within_Range","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range; SO4 spikes out of range",11.4280056417489,"Within_Range","",0.7320828996,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
   specifically check standards 1 and 2 were lower than expected; 
   <80% (2/4) of Sulfate Duplicates have a CV <10% - REASSESS, 
   although one of the dups had a CV of 15 which was not too much higher than the cutoff of 10; 
@@ -428,7 +428,7 @@
   FTS_1630_20230816 
   FTS_1730_20230816
   ",""
-"40","COMPASS: Synoptic","CB","FTS","20230816",NA,NA,"FTS_1630_20230816",NA,NA,NA,NA,NA,18.5028477854024,"adl","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range",139.163952045134,"adl","",8.9146113147,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
+"40","COMPASS: Synoptic","CB","FTS","20230816",NA,NA,"FTS_1630_20230816",NA,NA,NA,NA,NA,18.5007485963818,"adl","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range; SO4 spikes out of range",139.163952045134,"adl","",8.9146113147,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
   specifically check standards 1 and 2 were lower than expected; 
   <80% (2/4) of Sulfate Duplicates have a CV <10% - REASSESS, 
   although one of the dups had a CV of 15 which was not too much higher than the cutoff of 10; 
@@ -439,7 +439,7 @@
   FTS_1630_20230816 
   FTS_1730_20230816
   ",NA
-"41","COMPASS: Synoptic","CB","FTS","20230816",NA,NA,"FTS_1730_20230816",NA,NA,NA,NA,NA,20.271943231441,"adl","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range",148.235009873061,"adl","",9.4956864977,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
+"41","COMPASS: Synoptic","CB","FTS","20230816",NA,NA,"FTS_1730_20230816",NA,NA,NA,NA,NA,20.2696475358702,"adl","SO4 checks perc diff out of range; SO4 dups cv out of range; SO4 dups perc diff out of range; SO4 spikes out of range",148.235009873061,"adl","",9.4956864977,"2024-08-07","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
   specifically check standards 1 and 2 were lower than expected; 
   <80% (2/4) of Sulfate Duplicates have a CV <10% - REASSESS, 
   although one of the dups had a CV of 15 which was not too much higher than the cutoff of 10; 
