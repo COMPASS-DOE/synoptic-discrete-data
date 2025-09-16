@@ -1076,6 +1076,9 @@ data_plotting <- data_plotting %>%
   mutate(row_num = factor(row_number())) %>%  # create row_num as factor per group
   ungroup()
 
+data_plotting <- data_plotting %>%  
+  filter(!str_detect(Site_Code, "FTS"))
+  
 #Plot data and change colors based on Zone:
 viz_cl_plot <- ggplot(data_plotting, aes(x = row_num, y = Cl_ppm, fill = Zone)) +
   geom_bar(stat = "identity", position = position_dodge2(preserve = "single")) +
