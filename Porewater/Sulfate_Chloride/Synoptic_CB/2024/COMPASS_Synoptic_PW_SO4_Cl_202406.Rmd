@@ -33,16 +33,13 @@ lapply(c(
   Date_Run = "2024-08-07"  #Date that instrument was run
   Run_by = "Zoe Read"  #Instrument user 
   Script_run_by = "Zoe Read" #Code user 
-  run_notes = "<80% of Sulfate Check Standards are within range of expected concentration - REASSESS, 
-  specifically check standards 1 and 2 were lower than expected; 
-  <80% (2/4) of Sulfate Duplicates have a CV <10% - REASSESS, 
+  run_notes = "2/4 of Sulfate Duplicates have a CV <10%, 
   although one of the dups had a CV of 15 which was not too much higher than the cutoff of 10; 
-  <80% (3/4) of SO4 spikes have a recovery between the high and low cutoff - REASSESS; 
-  The two samples from the FTS were adl; 
-  One blank was high
-  Some sample IDs are missing from metadata: 
-  FTS_1630_20230816 
-  FTS_1730_20230816
+  3/4 of SO4 spikes have a recovery between the high and low cutoff; 
+  This run did not have a lot of samples so we are lowering the cutoff for percentage dups/spks 
+  that need to pass and accepting this run. 
+  Check standards 1 and 2 were lower than expected. 
+  Removed FTS samples from the final dataset. 
   " #any notes from the run
   samples <- c("GCW", "GWI", "MSM", "SWH") #whatever identifies your samples within the same names 
   samples_pattern <- paste(samples, collapse = "|") 
@@ -941,6 +938,10 @@ if (Perc_spks$Percent <= chks_flag) {
 ```{r Sample Flagging, echo=FALSE}
 
 cat("Sample Flagging")
+
+#########Remove FTS samples#########
+all_dat <- all_dat %>%
+  filter(!str_detect(sample_ID, "FTS"))
 
 #Dilute samples 
 all_dat$Cl_ppm_dil <- all_dat$Cl_ppm/all_dat$Dilution
