@@ -17,6 +17,8 @@ These data are tree stem greenhouse gas concentrations collected from tree gas w
 
 Gas samples were collected roughly from May to November at each site during 2022 and 2023. Sampling these wells was discontinued in 2024. 
 
+Samples were labeled as:  SiteCode_SampleType_Zone_TreeType_Replicate (ex. GCW_TGW_TR_SF_1) 
+
 For questions about this data: contact Stephanie J. Wilson (wilsonsj@si.edu) or Patrick Megonigal (megonigalp@si.edu). 
 
 <br>
