@@ -1,0 +1,298 @@
+"","Project","Region","Site","Zone","Replicate","Depth_cm","Sample_ID","Year","Month","Day","Time","Time_Zone","SO4_Conc_mM","SO4_Conc_flag","SO4_QAQC_flag","Cl_Conc_mM","Cl_Conc_flag","Cl_QAQC_flag","salinity","Analysis_rundate","Run_notes","Field_notes"
+"1","COMPASS: Synoptic","CB","MSM","UP","B",45,"MSM_202409_UP_LYSB_45CM",2024,9,12,"13:45","EDT",6.0470929507174,"Within_Range","",59.1392947813822,"Within_Range","",3.788379816,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"2","COMPASS: Synoptic","CB","MSM","TR","A",10,"MSM_202409_TR_LYSA_10CM",2024,9,12,"12:51","EDT",36.7535839051778,"adl","",247.109509167842,"Within_Range","",15.8294040047,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"3","COMPASS: Synoptic","CB","MSM","TR","A",20,"MSM_202409_TR_LYSA_20CM",2024,9,12,"12:51","EDT",20.7472676232065,"Within_Range","",157.2956022567,"Within_Range","",10.0760912837,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"4","COMPASS: Synoptic","CB","MSM","TR","A",45,"MSM_202409_TR_LYSA_45CM",2024,9,12,"12:51","EDT",17.5945851528384,"Within_Range","",137.745348377997,"Within_Range","",8.8237381882,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"5","COMPASS: Synoptic","CB","MSM","TR","B",10,"MSM_202409_TR_LYSB_10CM",2024,9,12,"13:06","EDT",33.8976419213974,"adl","",222.052095909732,"Within_Range","",14.2242724676,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"6","COMPASS: Synoptic","CB","MSM","TR","B",20,"MSM_202409_TR_LYSB_20CM",2024,9,12,"13:06","EDT",17.4338022457891,"Within_Range","",166.301238363893,"Within_Range","",10.6529756723,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"7","COMPASS: Synoptic","CB","MSM","TR","B",45,"MSM_202409_TR_LYSB_45CM",2024,9,12,"13:06","EDT",13.5885776668746,"Within_Range","",159.023712270804,"Within_Range","",10.1867908142,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"8","COMPASS: Synoptic","CB","MSM","TR","C",10,"MSM_202409_TR_LYSC_10CM",2024,9,12,"13:14","EDT",38.823247036806,"adl","",261.684696755994,"Within_Range","",16.7630635575,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"9","COMPASS: Synoptic","CB","MSM","TR","C",20,"MSM_202409_TR_LYSC_20CM",2024,9,12,"13:14","EDT",20.2050655021834,"Within_Range","",184.2736022567,"Within_Range","",11.8042520544,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"10","COMPASS: Synoptic","CB","MSM","TR","C",45,"MSM_202409_TR_LYSC_45CM",2024,9,12,"13:14","EDT",18.3313880224579,"Within_Range","",161.613949224259,"Within_Range","",10.3527166015,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"11","COMPASS: Synoptic","CB","MSM","WC","A",10,"MSM_202409_WC_LYSA_10CM",2024,9,12,"11:41","EDT",29.177011852776,"Within_Range","",234.584609308886,"Within_Range","",15.0270820908,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"12","COMPASS: Synoptic","CB","MSM","WC","A",20,"MSM_202409_WC_LYSA_20CM",2024,9,12,"11:41","EDT",25.155807860262,"Within_Range","",227.475980253879,"Within_Range","",14.5717164645,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"13","COMPASS: Synoptic","CB","MSM","WC","A",45,"MSM_202409_WC_LYSA_45CM",2024,9,12,"11:41","EDT",1.66763256394261,"Within_Range","",263.112581100141,"Within_Range","",16.854531187,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"14","COMPASS: Synoptic","CB","MSM","WC","B",10,"MSM_202409_WC_LYSB_10CM",2024,9,12,"11:54","EDT",24.7857174048659,"Within_Range","",230.136922425952,"Within_Range","",14.7421714973,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"15","COMPASS: Synoptic","CB","MSM","WC","B",20,"MSM_202409_WC_LYSB_20CM",2024,9,12,"11:54","EDT",22.8218683718029,"Within_Range","",222.068507757405,"Within_Range","",14.2253237802,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"16","COMPASS: Synoptic","CB","MSM","WC","C",20,"MSM_202409_WC_LYSC_20CM",2024,9,12,"11:35","EDT",16.2638209606987,"Within_Range","",217.689303244006,"Within_Range","",13.9448000406,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"17","COMPASS: Synoptic","CB","MSM","WC","C",45,"MSM_202409_WC_LYSC_45CM",2024,9,12,"11:35","EDT",3.8541547099189,"Within_Range","",250.177622002821,"Within_Range","",16.0259416369,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"18","COMPASS: Synoptic","CB","MSM","SW","A",0,"MSM_202409_SW_A",2024,9,12,"11:15","EDT",31.3807735495945,"Within_Range","",212.204544428773,"Within_Range","",13.5934565377,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"19","COMPASS: Synoptic","CB","MSM","SW","B",0,"MSM_202409_SW_B",2024,9,12,"11:15","EDT",31.688780411728,"Within_Range","",214.568330042313,"Within_Range","",13.7448762711,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"20","COMPASS: Synoptic","CB","MSM","SW","C",0,"MSM_202409_SW_C",2024,9,12,"11:15","EDT",31.3473050530256,"Within_Range","",211.446688293371,"Within_Range","",13.5449096757,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"21","COMPASS: Synoptic","CB","GCW","TR","A",20,"GCW_202409_TR_LYSA_20CM",2024,9,11,"13:23","EDT",0.207136618839676,"Within_Range","",6.0910634696756,"Within_Range","",0.3902082574,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ","started collection on 9-10-24, but only got SO4 so left to sit overnight and collected some on 9-11-24 to get more water "
+"22","COMPASS: Synoptic","CB","GCW","TR","A",45,"GCW_202409_TR_LYSA_45CM",2024,9,11,"13:23","EDT",0.19235807860262,"Within_Range","",4.52301833568406,"Within_Range","",0.289762187,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ","started collection on 9-10-24, but only got SO4 so left to sit overnight and collected some on 9-11-24 to get more water "
+"23","COMPASS: Synoptic","CB","GCW","TR","B",10,"GCW_202409_TR_LYSB_10CM",2024,9,11,"13:29","EDT",6.22474422956956,"Within_Range","",56.0923554301834,"Within_Range","",3.593198518,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ","started collection on 9-10-24, but only got SO4 so left to sit overnight and collected some on 9-11-24 to get more water "
+"24","COMPASS: Synoptic","CB","GCW","TR","B",20,"GCW_202409_TR_LYSB_20CM",2024,9,11,"13:29","EDT",0.491606363069245,"Within_Range","",16.4542059238364,"Within_Range","",1.0540519912,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ","started collection on 9-10-24, but only got SO4 so left to sit overnight and collected some on 9-11-24 to get more water "
+"25","COMPASS: Synoptic","CB","GCW","TR","B",45,"GCW_202409_TR_LYSB_45CM",2024,9,11,"13:29","EDT",0.0832907049282595,"Within_Range","",12.2270267983075,"Within_Range","",0.7832667167,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ","started collection on 9-10-24, but only got SO4 so left to sit overnight and collected some on 9-11-24 to get more water "
+"26","COMPASS: Synoptic","CB","GCW","TR","C",20,"GCW_202409_TR_LYSC_20CM",2024,9,11,"13:34","EDT",0.611734248284467,"Within_Range","",8.62536248236953,"Within_Range","",0.5525507637,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ","started collection on 9-10-24, but only got SO4 so left to sit overnight and collected some on 9-11-24 to get more water "
+"27","COMPASS: Synoptic","CB","GCW","TR","C",45,"GCW_202409_TR_LYSC_45CM",2024,9,11,"13:34","EDT",0.0287149095446039,"Within_Range","",19.8997376586742,"Within_Range","",1.2747663799,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ","started collection on 9-10-24, but only got SO4 so left to sit overnight and collected some on 9-11-24 to get more water "
+"28","COMPASS: Synoptic","CB","GCW","WC","A",10,"GCW_202409_WC_LYSA_10CM",2024,9,10,"11:51","EDT",23.0601933873986,"Within_Range","",175.175201692525,"Within_Range","",11.2214253463,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"29","COMPASS: Synoptic","CB","GCW","WC","A",20,"GCW_202409_WC_LYSA_20CM",2024,9,10,"11:51","EDT",20.7009045539613,"Within_Range","",177.761988716502,"Within_Range","",11.3871301375,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"30","COMPASS: Synoptic","CB","GCW","WC","A",45,"GCW_202409_WC_LYSA_45CM",2024,9,10,"11:51","EDT",3.91609482220836,"Within_Range","",168.494361071932,"Within_Range","",10.7934630557,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"31","COMPASS: Synoptic","CB","GCW","WC","B",10,"GCW_202409_WC_LYSB_10CM",2024,9,10,"12:05","EDT",16.8109887710543,"Within_Range","",148.42469393512,"Within_Range","",9.5078373078,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"32","COMPASS: Synoptic","CB","GCW","WC","B",20,"GCW_202409_WC_LYSB_20CM",2024,9,10,"12:05","EDT",9.58380224578915,"Within_Range","",137.579763046544,"Within_Range","",8.8131310982,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"33","COMPASS: Synoptic","CB","GCW","WC","B",45,"GCW_202409_WC_LYSB_45CM",2024,9,10,"12:05","EDT",5.05072364316906,"Within_Range","",154.213940761636,"Within_Range","",9.8786857494,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"34","COMPASS: Synoptic","CB","GCW","WC","C",10,"GCW_202409_WC_LYSC_10CM",2024,9,10,"12:17","EDT",20.3351653150343,"Within_Range","",164.802558533145,"Within_Range","",10.5569730149,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"35","COMPASS: Synoptic","CB","GCW","WC","C",20,"GCW_202409_WC_LYSC_20CM",2024,9,10,"12:17","EDT",16.7664691203993,"Within_Range","",138.681153737659,"Within_Range","",8.8836841483,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"36","COMPASS: Synoptic","CB","GCW","WC","C",45,"GCW_202409_WC_LYSC_45CM",2024,9,10,"12:17","EDT",9.72535558328135,"Within_Range","",138.44056135402,"Within_Range","",8.8682722453,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"37","COMPASS: Synoptic","CB","GCW","SW","A",0,"GCW_202409_SW_A",2024,9,10,"11:05","EDT",20.5376512788521,"Within_Range","",142.009001410437,"Within_Range","",9.0968599137,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"38","COMPASS: Synoptic","CB","GCW","SW","B",0,"GCW_202409_SW_B",2024,9,10,"11:05","EDT",19.1240205864005,"Within_Range","",132.671873060649,"Within_Range","",8.4987407453,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"39","COMPASS: Synoptic","CB","GCW","SW","C",0,"GCW_202409_SW_C",2024,9,10,"11:05","EDT",20.0300873362445,"Within_Range","",137.821094499295,"Within_Range","",8.8285903446,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"40","COMPASS: Synoptic","CB","GWI","UP","A",10,"GWI_202409_UP_LYSA_10CM",2024,9,26,"12:50","EDT",24.3912850904554,"Within_Range","",186.953365303244,"Within_Range","",11.9759127176,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"41","COMPASS: Synoptic","CB","GWI","UP","A",20,"GWI_202409_UP_LYSA_20CM",2024,9,26,"12:50","EDT",16.3937024329382,"Within_Range","",124.89384203103,"Within_Range","",8.0004944669,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"42","COMPASS: Synoptic","CB","GWI","UP","A",45,"GWI_202409_UP_LYSA_45CM",2024,9,26,"12:55","EDT",22.7374797255147,"Within_Range","",180.39784203103,"Within_Range","",11.5559780245,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"43","COMPASS: Synoptic","CB","GWI","UP","B",10,"GWI_202409_UP_LYSB_10CM",2024,9,26,"13:00","EDT",18.6407829070493,"Within_Range","",141.984682651622,"Within_Range","",9.095302099,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"44","COMPASS: Synoptic","CB","GWI","UP","B",20,"GWI_202409_UP_LYSB_20CM",2024,9,26,"13:05","EDT",13.8262289457268,"Within_Range","",106.727802538787,"Within_Range","",6.8368115842,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"45","COMPASS: Synoptic","CB","GWI","UP","B",45,"GWI_202409_UP_LYSB_45CM",2024,9,26,"13:10","EDT",20.5412414223331,"Within_Range","",153.347808180536,"Within_Range","",9.8232028986,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"46","COMPASS: Synoptic","CB","GWI","UP","C",20,"GWI_202409_UP_LYSC_20CM",2024,9,26,"13:20","EDT",20.8213256394261,"Within_Range","",156.985537376587,"Within_Range","",10.0562291011,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"47","COMPASS: Synoptic","CB","GWI","TR","A",10,"GWI_202409_TR_LYSA_10CM",2024,9,26,"12:05","EDT",52.8909887710543,"Within_Range","",358.842197461213,"Within_Range","",22.9867933113,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"48","COMPASS: Synoptic","CB","GWI","TR","A",20,"GWI_202409_TR_LYSA_20CM",2024,9,26,"12:10","EDT",31.1164441671865,"Within_Range","",329.209046544429,"Within_Range","",21.0885484849,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"49","COMPASS: Synoptic","CB","GWI","TR","B",10,"GWI_202409_TR_LYSB_10CM",2024,9,26,"12:15","EDT",45.0859638178415,"Within_Range","",303.966882933709,"Within_Range","",19.471582182,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"50","COMPASS: Synoptic","CB","GWI","TR","B",20,"GWI_202409_TR_LYSB_20CM",2024,9,26,"12:20","EDT",41.4446225826575,"Within_Range","",289.460149506347,"Within_Range","",18.5423076761,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"51","COMPASS: Synoptic","CB","GWI","TR","B",45,"GWI_202409_TR_LYSB_45CM",2024,9,26,"12:25","EDT",35.7180973175296,"Within_Range","",269.945616361072,"Within_Range","",17.2922427847,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"52","COMPASS: Synoptic","CB","GWI","TR","C",10,"GWI_202409_TR_LYSC_10CM",2024,9,26,"12:30","EDT",47.4473892701185,"Within_Range","",319.614919605078,"Within_Range","",20.4739664623,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"53","COMPASS: Synoptic","CB","GWI","TR","C",20,"GWI_202409_TR_LYSC_20CM",2024,9,26,"12:35","EDT",49.571547099189,"Within_Range","",314.456891396333,"Within_Range","",20.1435527176,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"54","COMPASS: Synoptic","CB","GWI","WC","A",10,"GWI_202409_WC_LYSA_10CM",2024,9,26,"10:45","EDT",57.1785932626326,"Within_Range","",360.245139633286,"Within_Range","",23.0766631914,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"55","COMPASS: Synoptic","CB","GWI","WC","A",45,"GWI_202409_WC_LYSA_45CM",2024,9,26,"10:50","EDT",40.6778820960699,"Within_Range","",341.674843441467,"Within_Range","",21.8870843724,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"56","COMPASS: Synoptic","CB","GWI","WC","B",10,"GWI_202409_WC_LYSB_10CM",2024,9,26,"10:55","EDT",52.1211010605115,"Within_Range","",341.081799717913,"Within_Range","",21.8490950886,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"57","COMPASS: Synoptic","CB","GWI","WC","B",20,"GWI_202409_WC_LYSB_20CM",2024,9,26,"11:00","EDT",65.8624422956956,"Within_Range","",365.647695345557,"Within_Range","",23.4227409156,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"58","COMPASS: Synoptic","CB","GWI","WC","B",45,"GWI_202409_WC_LYSB_45CM",2024,9,26,"11:05","EDT",49.158162819713,"Within_Range","",378.044118476728,"Within_Range","",24.216832848,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"59","COMPASS: Synoptic","CB","GWI","WC","C",45,"GWI_202409_WC_LYSC_45CM",2024,9,26,"11:20","EDT",44.8754304429195,"Within_Range","",379.313509167842,"Within_Range","",24.2981476673,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"60","COMPASS: Synoptic","CB","GWI","SW","A",0,"GWI_202409_SW_A",2024,9,26,"","EDT",47.9425389893949,"Within_Range","",324.833007052186,"Within_Range","",20.8082274907,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"61","COMPASS: Synoptic","CB","GWI","SW","B",0,"GWI_202409_SW_B",2024,9,26,"","EDT",48.2397317529632,"Within_Range","",326.147988716502,"Within_Range","",20.8924627834,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"62","COMPASS: Synoptic","CB","GWI","SW","C",0,"GWI_202409_SW_C",2024,9,26,"","EDT",46.9618964441672,"Within_Range","",316.9997348378,"Within_Range","",20.3064425642,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"63","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202409_UP_LYSA_10CM",2024,9,24,"14:39","EDT",0.355252651278852,"Within_Range","",2.00181100141044,"Within_Range","",0.1282583094,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"64","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202409_UP_LYSA_20CM",2024,9,24,"14:45","EDT",0.419416718652526,"Within_Range","",1.96877009873061,"Within_Range","",0.1261417703,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"65","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202409_UP_LYSA_45CM",2024,9,24,"14:50","EDT",0.323633811603244,"Within_Range","",0.8849365303244,"Within_Range","",0.056713397,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"66","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202409_UP_LYSB_10CM",2024,9,24,"14:55","EDT",1.55491266375546,"Within_Range","",13.3570155148096,"Within_Range","",0.8556517034,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"67","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202409_UP_LYSB_20CM",2024,9,24,"15:00","EDT",0.620695570804741,"Within_Range","",3.72445698166432,"Within_Range","",0.238607824,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"68","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202409_UP_LYSB_45CM",2024,9,24,"15:05","EDT",0.0447099189020586,"Within_Range","",0.970152327221439,"Within_Range","",0.0621721633,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"69","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202409_UP_LYSC_10CM",2024,9,24,"15:10","EDT",3.9887492202121,"Within_Range","",30.7827926657264,"Within_Range","",1.97191475,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"70","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202409_UP_LYSC_20CM",2024,9,24,"15:15","EDT",1.41374298190892,"Within_Range","",12.5608603667137,"Within_Range","",0.8046514775,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"71","COMPASS: Synoptic","CB","SWH","TR","A",10,"SWH_202409_TR_LYSA_10CM",2024,9,25,"12:11","EDT",4.70017779164067,"Within_Range","",56.4367672778561,"Within_Range","",3.6152609038,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"72","COMPASS: Synoptic","CB","SWH","TR","A",20,"SWH_202409_TR_LYSA_20CM",2024,9,25,"12:15","EDT",0.327741734248284,"Within_Range","",39.6707870239774,"Within_Range","",2.5412632258,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"73","COMPASS: Synoptic","CB","SWH","TR","A",45,"SWH_202409_TR_LYSA_45CM",2024,9,25,"12:20","EDT",0.0359669369931379,"Within_Range","",18.5549590973202,"Within_Range","",1.1886223531,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"74","COMPASS: Synoptic","CB","SWH","TR","B",10,"SWH_202409_TR_LYSB_10CM",2024,9,25,"12:25","EDT",8.05737055520898,"Within_Range","",61.669461212976,"Within_Range","",3.9504575968,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"75","COMPASS: Synoptic","CB","SWH","TR","B",20,"SWH_202409_TR_LYSB_20CM",2024,9,25,"12:30","EDT",0.972461010605115,"Within_Range","",41.9182623413258,"Within_Range","",2.6852323368,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"76","COMPASS: Synoptic","CB","SWH","TR","B",45,"SWH_202409_TR_LYSB_45CM",2024,9,25,"12:40","EDT",0.0239925140361822,"Within_Range","",16.8515007052186,"Within_Range","",1.0795019599,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"77","COMPASS: Synoptic","CB","SWH","TR","C",10,"SWH_202409_TR_LYSC_10CM",2024,9,25,"12:50","EDT",4.08297567061759,"Within_Range","",52.1221946403385,"Within_Range","",3.3388773626,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"78","COMPASS: Synoptic","CB","SWH","TR","C",20,"SWH_202409_TR_LYSC_20CM",2024,9,25,"13:00","EDT",3.06556144728634,"Within_Range","",47.7162566995769,"Within_Range","",3.0566411291,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"79","COMPASS: Synoptic","CB","SWH","TR","C",45,"SWH_202409_TR_LYSC_45CM",2024,9,25,"13:11","EDT",0.542935121646912,"Within_Range","",29.4219125528914,"Within_Range","",1.8847392876,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"80","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202409_SWAMP_LYSA_10CM",2024,9,24,"15:36","EDT",3.1736494073612,"Within_Range","",28.0967983074753,"Within_Range","",1.7998549205,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"81","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202409_SWAMP_LYSA_20CM",2024,9,24,"15:40","EDT",1.84568621334997,"Within_Range","",15.9671452750353,"Within_Range","",1.0228517871,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"82","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202409_SWAMP_LYSA_45CM",2024,9,24,"15:45","EDT",0.0374922021210231,"Within_Range","",1.23598307475317,"Within_Range","",0.0792007892,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"83","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202409_SWAMP_LYSB_10CM",2024,9,24,"15:50","EDT",1.62103243917654,"Within_Range","",19.0288067700987,"Within_Range","",1.2189761584,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"84","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202409_SWAMP_LYSB_20CM",2024,9,24,"15:55","EDT",0,"bdl","",0,"bdl","",2.6e-05,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"85","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202409_SWAMP_LYSB_45CM",2024,9,24,"16:00","EDT",0.00948222083593262,"Within_Range","",0.407991537376587,"Within_Range","",0.0261611831,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"86","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202409_SWAMP_LYSC_10CM",2024,9,24,"16:05","EDT",4.81917654398004,"Within_Range","",40.4505275035261,"Within_Range","",2.5912119584,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"87","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202409_SWAMP_LYSC_20CM",2024,9,24,"16:10","EDT",4.69788209606987,"Within_Range","",37.6581382228491,"Within_Range","",2.412336667,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"88","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202409_SWAMP_LYSC_45CM",2024,9,24,"16:22","EDT",3.76208671241422,"Within_Range","",31.9631509167842,"Within_Range","",2.0475263159,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"89","COMPASS: Synoptic","CB","SWH","WC","A",10,"SWH_202409_WC_LYSA_10CM",2024,9,25,"10:53","EDT",0.074061135371179,"Within_Range","",30.775418899859,"Within_Range","",1.9714424002,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"90","COMPASS: Synoptic","CB","SWH","WC","A",20,"SWH_202409_WC_LYSA_20CM",2024,9,25,"11:00","EDT",0.0148877105427324,"Within_Range","",19.972874471086,"Within_Range","",1.2794513888,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"91","COMPASS: Synoptic","CB","SWH","WC","A",45,"SWH_202409_WC_LYSA_45CM",2024,9,25,"11:05","EDT",0.0119401122894573,"Within_Range","",20.1190352609309,"Within_Range","",1.2888141786,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"92","COMPASS: Synoptic","CB","SWH","WC","B",10,"SWH_202409_WC_LYSB_10CM",2024,9,25,"11:10","EDT",4.70172800998129,"Within_Range","",51.6118533145275,"Within_Range","",3.3061858414,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"93","COMPASS: Synoptic","CB","SWH","WC","B",20,"SWH_202409_WC_LYSB_20CM",2024,9,25,"11:15","EDT",0.00838427947598253,"Within_Range","",25.7553624823695,"Within_Range","",1.6498668732,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"94","COMPASS: Synoptic","CB","SWH","WC","C",10,"SWH_202409_WC_LYSC_10CM",2024,9,25,"11:25","EDT",0.749488459139114,"Within_Range","",42.1933483779972,"Within_Range","",2.7028538394,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"95","COMPASS: Synoptic","CB","SWH","WC","C",20,"SWH_202409_WC_LYSC_20CM",2024,9,25,"11:30","EDT",0.11861821584529,"Within_Range","",24.5556332863188,"Within_Range","",1.5730144404,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"96","COMPASS: Synoptic","CB","SWH","WC","C",45,"SWH_202409_WC_LYSC_45CM",2024,9,25,"11:34","EDT",0.010321272613849,"Within_Range","",15.7686629055007,"Within_Range","",1.0101373737,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"97","COMPASS: Synoptic","CB","SWH","SW","A",0,"SWH_202409_SW_A",2024,9,25,"10:10","EDT",13.4145227698066,"Within_Range","",91.5887588152327,"Within_Range","",5.8670324505,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"98","COMPASS: Synoptic","CB","SWH","SW","B",0,"SWH_202409_SW_B",2024,9,25,"10:10","EDT",13.532988147224,"Within_Range","",92.4686008462623,"Within_Range","",5.9233935033,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
+"99","COMPASS: Synoptic","CB","SWH","SW","C",0,"SWH_202409_SW_C",2024,9,25,"10:10","EDT",14.0489550842171,"Within_Range","",95.5896220028209,"Within_Range","",6.1233203447,"2025-05-29","3 samples were above the highest standard: 
+  2_MSM_202409_TR_LysA_10cm, 5_MSM_202409_TR_LysB_10cm, 8_MSM_202409_TR_LysC_10cm
+  ",""
