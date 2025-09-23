@@ -860,9 +860,9 @@ QAspks$SO4_spk_Conc <- spk_Conc     # mmoles of SO4 in spike
 
 #Set Sample volumes in uL 
 QAspks$SampleVol <- 1
-QAspks$SampleVol <-  ifelse(QAspks$Dilution == 50, 1501, QAspks$SampleVol)
-QAspks$SampleVol <-  ifelse(QAspks$Dilution == 100, 1475, QAspks$SampleVol)
-QAspks$SampleVol <-  ifelse(QAspks$Dilution == 200, 1462, QAspks$SampleVol)
+QAspks$SampleVol <-  ifelse(QAspks$Dilution == 50, 1483, QAspks$SampleVol)
+QAspks$SampleVol <-  ifelse(QAspks$Dilution == 100, 1466, QAspks$SampleVol)
+QAspks$SampleVol <-  ifelse(QAspks$Dilution == 200, 1458, QAspks$SampleVol)
 
 #change sample volume to L 
 QAspks$SampleVol <- QAspks$SampleVol/Con1
