@@ -35,10 +35,8 @@ lapply(c(
   Script_run_by = "Zoe Read" #Code user 
   run_notes = "Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
-  1 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C
-  1 dup had high CV for Cl and SO4: 80_SWH_202505_UP_LysB_10cm
+  2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
-  1 spk had low recovery and likely did not get spiked: 91_SWH_202505_SWAMP_LysB_45cm
   Some sample IDs are missing from metadata: 
   GCW_202505_TR_LYSC_45CM, TEMPEST_AQWELL_20250904_1300_B, TEMPEST_AQWELL_20250904_1225_B,
   TEMPEST_AQWELL_20250904_1400_B, TEMPEST_AQWELL_20250904_1400_A, TEMPEST_AQWELL_20250904_1225_C,
