@@ -230,7 +230,7 @@ TGAS_avg <- live_dat %>%
 
 
 
-ggplot(data=TGAS_avg, aes(x=Month, y=mean_CH4, fill=Zone, color=Zone))+
+ggplot(data=TGAS_avg, aes(x=Zone, y=mean_CH4, fill=Zone, color=Zone))+
   geom_boxplot()+ 
   facet_grid(~Site, scales="free_y")+ 
   theme_bw()
