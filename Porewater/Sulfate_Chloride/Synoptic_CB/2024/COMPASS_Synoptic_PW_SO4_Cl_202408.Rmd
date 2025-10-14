@@ -33,8 +33,7 @@ lapply(c(
   Date_Run = "2025-06-16"  #Date that instrument was run
   Run_by = "Zoe Read"  #Instrument user 
   Script_run_by = "Zoe Read" #Code user 
-  run_notes = "One chk std 1 and one chk std 2 had Cl values of 0; 
-  Some Cl/SO4 standards and checks were lower than the expected concentration; 
+  run_notes = "Some Cl/SO4 standards and checks were lower than the expected concentration; 
   All SO4 blanks were zero" #any notes from the run
   samples <- c("GCW", "GWI", "MSM", "SWH") #whatever identifies your samples within the same names 
   samples_pattern <- paste(samples, collapse = "|") 
