@@ -1,121 +1,81 @@
 "","Project","Region","Site","Zone","Replicate","Depth_cm","Sample_ID","Year","Month","Day","Time","Time_Zone","SO4_Conc_mM","SO4_Conc_flag","SO4_QAQC_flag","Cl_Conc_mM","Cl_Conc_flag","Cl_QAQC_flag","salinity","Analysis_rundate","Run_notes","Field_notes"
-"1","COMPASS: Synoptic","CB","SWH","UP","A",10,"SWH_202408_UP_LYSA_10CM",2024,8,20,"","",0.0893325015595758,"Within_Range","SO4 checks perc diff out of range",0.14711706629055,"Within_Range","Cl checks perc diff out of range",0.0094500471,"2025-06-16","One chk std 1 and one chk std 2 had Cl values of 0; 
-  Some Cl/SO4 standards and checks were lower than the expected concentration; 
+"1","COMPASS: Synoptic","CB","SWH","UP","A",10,"SWH_202408_UP_LYSA_10CM",2024,8,20,"","",0.0893325015595758,"Within_Range","SO4 checks perc diff out of range",0.147083215796897,"Within_Range","Cl checks perc diff out of range",0.0094478787,"2025-06-16","Some Cl/SO4 standards and checks were lower than the expected concentration; 
   All SO4 blanks were zero",""
-"2","COMPASS: Synoptic","CB","SWH","UP","A",20,"SWH_202408_UP_LYSA_20CM",2024,8,20,"","",0.189806612601372,"Within_Range","SO4 checks perc diff out of range",0.181337094499295,"Within_Range","Cl checks perc diff out of range",0.0116421188,"2025-06-16","One chk std 1 and one chk std 2 had Cl values of 0; 
-  Some Cl/SO4 standards and checks were lower than the expected concentration; 
+"2","COMPASS: Synoptic","CB","SWH","UP","A",20,"SWH_202408_UP_LYSA_20CM",2024,8,20,"","",0.189806612601372,"Within_Range","SO4 checks perc diff out of range",0.181294781382228,"Within_Range","Cl checks perc diff out of range",0.0116394083,"2025-06-16","Some Cl/SO4 standards and checks were lower than the expected concentration; 
   All SO4 blanks were zero",""
-"3","COMPASS: Synoptic","CB","SWH","UP","A",45,"SWH_202408_UP_LYSA_45CM",2024,8,20,"","",0.0779164067373674,"Within_Range","SO4 checks perc diff out of range",0.28462341325811,"Within_Range","Cl checks perc diff out of range",0.0182584493,"2025-06-16","One chk std 1 and one chk std 2 had Cl values of 0; 
-  Some Cl/SO4 standards and checks were lower than the expected concentration; 
+"3","COMPASS: Synoptic","CB","SWH","UP","A",45,"SWH_202408_UP_LYSA_45CM",2024,8,20,"","",0.0779164067373674,"Within_Range","SO4 checks perc diff out of range",0.284558533145275,"Within_Range","Cl checks perc diff out of range",0.0182542932,"2025-06-16","Some Cl/SO4 standards and checks were lower than the expected concentration; 
   All SO4 blanks were zero",""
-"4","COMPASS: Synoptic","CB","SWH","UP","B",10,"SWH_202408_UP_LYSB_10CM",2024,8,20,"","",0.081890205864005,"Within_Range","SO4 checks perc diff out of range",0.0847418899858956,"Within_Range","Cl checks perc diff out of range",0.0054544087,"2025-06-16","One chk std 1 and one chk std 2 had Cl values of 0; 
-  Some Cl/SO4 standards and checks were lower than the expected concentration; 
+"4","COMPASS: Synoptic","CB","SWH","UP","B",10,"SWH_202408_UP_LYSB_10CM",2024,8,20,"","",0.081890205864005,"Within_Range","SO4 checks perc diff out of range",0.084722143864598,"Within_Range","Cl checks perc diff out of range",0.0054531438,"2025-06-16","Some Cl/SO4 standards and checks were lower than the expected concentration; 
   All SO4 blanks were zero",""
-"5","COMPASS: Synoptic","CB","SWH","UP","B",20,"SWH_202408_UP_LYSB_20CM",2024,8,20,"","",0.222283218964442,"Within_Range","SO4 checks perc diff out of range",0.149743300423131,"Within_Range","Cl checks perc diff out of range",0.0096182788,"2025-06-16","One chk std 1 and one chk std 2 had Cl values of 0; 
-  Some Cl/SO4 standards and checks were lower than the expected concentration; 
+"5","COMPASS: Synoptic","CB","SWH","UP","B",20,"SWH_202408_UP_LYSB_20CM",2024,8,20,"","",0.222283218964442,"Within_Range","SO4 checks perc diff out of range",0.149709449929478,"Within_Range","Cl checks perc diff out of range",0.0096161104,"2025-06-16","Some Cl/SO4 standards and checks were lower than the expected concentration; 
   All SO4 blanks were zero",""
-"6","COMPASS: Synoptic","CB","SWH","UP","B",45,"SWH_202408_UP_LYSB_45CM",2024,8,20,"","",0.158742981908921,"Within_Range","SO4 checks perc diff out of range",0.348372355430183,"Within_Range","Cl checks perc diff out of range",0.0223420886,"2025-06-16","One chk std 1 and one chk std 2 had Cl values of 0; 
-  Some Cl/SO4 standards and checks were lower than the expected concentration; 
+"6","COMPASS: Synoptic","CB","SWH","UP","B",45,"SWH_202408_UP_LYSB_45CM",2024,8,20,"","",0.158742981908921,"Within_Range","SO4 checks perc diff out of range",0.348290550070522,"Within_Range","Cl checks perc diff out of range",0.0223368483,"2025-06-16","Some Cl/SO4 standards and checks were lower than the expected concentration; 
   All SO4 blanks were zero",""
-"7","COMPASS: Synoptic","CB","SWH","UP","C",10,"SWH_202408_UP_LYSC_10CM",2024,8,20,"","",0.284934497816594,"Within_Range","SO4 checks perc diff out of range",0.229534555712271,"Within_Range","Cl checks perc diff out of range",0.014729559,"2025-06-16","One chk std 1 and one chk std 2 had Cl values of 0; 
-  Some Cl/SO4 standards and checks were lower than the expected concentration; 
+"7","COMPASS: Synoptic","CB","SWH","UP","C",10,"SWH_202408_UP_LYSC_10CM",2024,8,20,"","",0.284934497816594,"Within_Range","SO4 checks perc diff out of range",0.22948095909732,"Within_Range","Cl checks perc diff out of range",0.0147261257,"2025-06-16","Some Cl/SO4 standards and checks were lower than the expected concentration; 
   All SO4 blanks were zero",""
-"8","COMPASS: Synoptic","CB","SWH","UP","C",20,"SWH_202408_UP_LYSC_20CM",2024,8,20,"","",0.116041796631316,"Within_Range","SO4 checks perc diff out of range",0.202183356840621,"Within_Range","Cl checks perc diff out of range",0.0129774918,"2025-06-16","One chk std 1 and one chk std 2 had Cl values of 0; 
-  Some Cl/SO4 standards and checks were lower than the expected concentration; 
+"8","COMPASS: Synoptic","CB","SWH","UP","C",20,"SWH_202408_UP_LYSC_20CM",2024,8,20,"","",0.116041796631316,"Within_Range","SO4 checks perc diff out of range",0.202135401974612,"Within_Range","Cl checks perc diff out of range",0.0129744199,"2025-06-16","Some Cl/SO4 standards and checks were lower than the expected concentration; 
   All SO4 blanks were zero",""
-"9","COMPASS: Synoptic","CB","SWH","UP","C",45,"SWH_202408_UP_LYSC_45CM",2024,8,20,"","",0.0237492202121023,"Within_Range","SO4 checks perc diff out of range",0.417449929478138,"Within_Range","Cl checks perc diff out of range",0.0267670702,"2025-06-16","One chk std 1 and one chk std 2 had Cl values of 0; 
-  Some Cl/SO4 standards and checks were lower than the expected concentration; 
+"9","COMPASS: Synoptic","CB","SWH","UP","C",45,"SWH_202408_UP_LYSC_45CM",2024,8,20,"","",0.0237492202121023,"Within_Range","SO4 checks perc diff out of range",0.417354019746121,"Within_Range","Cl checks perc diff out of range",0.0267609264,"2025-06-16","Some Cl/SO4 standards and checks were lower than the expected concentration; 
   All SO4 blanks were zero",""
-"10","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202408_SWAMP_LYSA_10CM",2024,8,20,"","",0.0276450405489707,"Within_Range","SO4 checks perc diff out of range",0.173170662905501,"Within_Range","Cl checks perc diff out of range",0.0111189923,"2025-06-16","One chk std 1 and one chk std 2 had Cl values of 0; 
-  Some Cl/SO4 standards and checks were lower than the expected concentration; 
+"10","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202408_SWAMP_LYSA_10CM",2024,8,20,"","",0.0276450405489707,"Within_Range","SO4 checks perc diff out of range",0.173131170662905,"Within_Range","Cl checks perc diff out of range",0.0111164625,"2025-06-16","Some Cl/SO4 standards and checks were lower than the expected concentration; 
   All SO4 blanks were zero",""
-"11","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202408_SWAMP_LYSA_20CM",2024,8,20,"","",0,"bdl","SO4 checks perc diff out of range",0.191435825105783,"Within_Range","Cl checks perc diff out of range",0.0122890248,"2025-06-16","One chk std 1 and one chk std 2 had Cl values of 0; 
-  Some Cl/SO4 standards and checks were lower than the expected concentration; 
+"11","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202408_SWAMP_LYSA_20CM",2024,8,20,"","",0,"bdl","SO4 checks perc diff out of range",0.191390691114245,"Within_Range","Cl checks perc diff out of range",0.0122861336,"2025-06-16","Some Cl/SO4 standards and checks were lower than the expected concentration; 
   All SO4 blanks were zero",""
-"12","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202408_SWAMP_LYSA_45CM",2024,8,20,"","",0,"bdl","SO4 checks perc diff out of range",0.356228490832158,"Within_Range","Cl checks perc diff out of range",0.0228453381,"2025-06-16","One chk std 1 and one chk std 2 had Cl values of 0; 
-  Some Cl/SO4 standards and checks were lower than the expected concentration; 
+"12","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202408_SWAMP_LYSA_45CM",2024,8,20,"","",0,"bdl","SO4 checks perc diff out of range",0.356143864598025,"Within_Range","Cl checks perc diff out of range",0.0228399171,"2025-06-16","Some Cl/SO4 standards and checks were lower than the expected concentration; 
   All SO4 blanks were zero",""
-"13","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202408_SWAMP_LYSB_10CM",2024,8,20,"","",0.0197223955084217,"Within_Range","SO4 checks perc diff out of range",0.222899858956276,"Within_Range","Cl checks perc diff out of range",0.0143045526,"2025-06-16","One chk std 1 and one chk std 2 had Cl values of 0; 
-  Some Cl/SO4 standards and checks were lower than the expected concentration; 
+"13","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202408_SWAMP_LYSB_10CM",2024,8,20,"","",0.0197223955084217,"Within_Range","SO4 checks perc diff out of range",0.222846262341326,"Within_Range","Cl checks perc diff out of range",0.0143011193,"2025-06-16","Some Cl/SO4 standards and checks were lower than the expected concentration; 
   All SO4 blanks were zero",""
-"14","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202408_SWAMP_LYSB_20CM",2024,8,20,"","",0.0340361821584529,"Within_Range","SO4 checks perc diff out of range",0.198693935119887,"Within_Range","Cl checks perc diff out of range",0.0127539659,"2025-06-16","One chk std 1 and one chk std 2 had Cl values of 0; 
-  Some Cl/SO4 standards and checks were lower than the expected concentration; 
+"14","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202408_SWAMP_LYSB_20CM",2024,8,20,"","",0.0340361821584529,"Within_Range","SO4 checks perc diff out of range",0.19864880112835,"Within_Range","Cl checks perc diff out of range",0.0127510747,"2025-06-16","Some Cl/SO4 standards and checks were lower than the expected concentration; 
   All SO4 blanks were zero",""
-"15","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202408_SWAMP_LYSB_45CM",2024,8,20,"","",0,"bdl","SO4 checks perc diff out of range",0.367816643159379,"Within_Range","Cl checks perc diff out of range",0.0235876537,"2025-06-16","One chk std 1 and one chk std 2 had Cl values of 0; 
-  Some Cl/SO4 standards and checks were lower than the expected concentration; 
+"15","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202408_SWAMP_LYSB_45CM",2024,8,20,"","",0,"bdl","SO4 checks perc diff out of range",0.367729196050776,"Within_Range","Cl checks perc diff out of range",0.023582052,"2025-06-16","Some Cl/SO4 standards and checks were lower than the expected concentration; 
   All SO4 blanks were zero",""
-"16","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202408_SWAMP_LYSC_10CM",2024,8,20,"","",0.036126013724267,"Within_Range","SO4 checks perc diff out of range",0.103413258110014,"Within_Range","Cl checks perc diff out of range",0.006650462,"2025-06-16","One chk std 1 and one chk std 2 had Cl values of 0; 
-  Some Cl/SO4 standards and checks were lower than the expected concentration; 
+"16","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202408_SWAMP_LYSC_10CM",2024,8,20,"","",0.036126013724267,"Within_Range","SO4 checks perc diff out of range",0.103387870239774,"Within_Range","Cl checks perc diff out of range",0.0066488357,"2025-06-16","Some Cl/SO4 standards and checks were lower than the expected concentration; 
   All SO4 blanks were zero",""
-"17","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202408_SWAMP_LYSC_20CM",2024,8,20,"","",0.0294728633811603,"Within_Range","SO4 checks perc diff out of range",0.106677009873061,"Within_Range","Cl checks perc diff out of range",0.0068595319,"2025-06-16","One chk std 1 and one chk std 2 had Cl values of 0; 
-  Some Cl/SO4 standards and checks were lower than the expected concentration; 
+"17","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202408_SWAMP_LYSC_20CM",2024,8,20,"","",0.0294728633811603,"Within_Range","SO4 checks perc diff out of range",0.106651622002821,"Within_Range","Cl checks perc diff out of range",0.0068579056,"2025-06-16","Some Cl/SO4 standards and checks were lower than the expected concentration; 
   All SO4 blanks were zero",""
-"18","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202408_SWAMP_LYSC_45CM",2024,8,20,"","",0.0732220835932626,"Within_Range","SO4 checks perc diff out of range",0.408849083215797,"Within_Range","Cl checks perc diff out of range",0.0262161159,"2025-06-16","One chk std 1 and one chk std 2 had Cl values of 0; 
-  Some Cl/SO4 standards and checks were lower than the expected concentration; 
+"18","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202408_SWAMP_LYSC_45CM",2024,8,20,"","",0.0732220835932626,"Within_Range","SO4 checks perc diff out of range",0.40875317348378,"Within_Range","Cl checks perc diff out of range",0.0262099721,"2025-06-16","Some Cl/SO4 standards and checks were lower than the expected concentration; 
   All SO4 blanks were zero",""
-"19","COMPASS: Synoptic","CB","SWH","TR","A",10,"SWH_202408_TR_LYSA_10CM",2024,8,21,"","",0.318817841547099,"Within_Range","SO4 checks perc diff out of range",13.3562623413258,"Within_Range","Cl checks perc diff out of range",0.8556034565,"2025-06-16","One chk std 1 and one chk std 2 had Cl values of 0; 
-  Some Cl/SO4 standards and checks were lower than the expected concentration; 
+"19","COMPASS: Synoptic","CB","SWH","TR","A",10,"SWH_202408_TR_LYSA_10CM",2024,8,21,"","",0.318817841547099,"Within_Range","SO4 checks perc diff out of range",13.3531452750353,"Within_Range","Cl checks perc diff out of range",0.855403783,"2025-06-16","Some Cl/SO4 standards and checks were lower than the expected concentration; 
   All SO4 blanks were zero",""
-"20","COMPASS: Synoptic","CB","SWH","TR","A",20,"SWH_202408_TR_LYSA_20CM",2024,8,21,"","",0,"bdl","SO4 checks perc diff out of range",11.1342425952045,"Within_Range","Cl checks perc diff out of range",0.7132649823,"2025-06-16","One chk std 1 and one chk std 2 had Cl values of 0; 
-  Some Cl/SO4 standards and checks were lower than the expected concentration; 
+"20","COMPASS: Synoptic","CB","SWH","TR","A",20,"SWH_202408_TR_LYSA_20CM",2024,8,21,"","",0,"bdl","SO4 checks perc diff out of range",11.1316417489422,"Within_Range","Cl checks perc diff out of range",0.7130983769,"2025-06-16","Some Cl/SO4 standards and checks were lower than the expected concentration; 
   All SO4 blanks were zero",""
-"21","COMPASS: Synoptic","CB","SWH","TR","A",45,"SWH_202408_TR_LYSA_45CM",2024,8,21,"","",0,"bdl","SO4 checks perc diff out of range",10.3307475317348,"Within_Range","Cl checks perc diff out of range",0.661794575,"2025-06-16","One chk std 1 and one chk std 2 had Cl values of 0; 
-  Some Cl/SO4 standards and checks were lower than the expected concentration; 
+"21","COMPASS: Synoptic","CB","SWH","TR","A",45,"SWH_202408_TR_LYSA_45CM",2024,8,21,"","",0,"bdl","SO4 checks perc diff out of range",10.3283356840621,"Within_Range","Cl checks perc diff out of range",0.6616400765,"2025-06-16","Some Cl/SO4 standards and checks were lower than the expected concentration; 
   All SO4 blanks were zero",""
-"22","COMPASS: Synoptic","CB","SWH","TR","B",10,"SWH_202408_TR_LYSB_10CM",2024,8,21,"","",0.91158452900811,"Within_Range","SO4 checks perc diff out of range",12.4572778561354,"Within_Range","Cl checks perc diff out of range",0.7980161735,"2025-06-16","One chk std 1 and one chk std 2 had Cl values of 0; 
-  Some Cl/SO4 standards and checks were lower than the expected concentration; 
+"22","COMPASS: Synoptic","CB","SWH","TR","B",10,"SWH_202408_TR_LYSB_10CM",2024,8,21,"","",0.91158452900811,"Within_Range","SO4 checks perc diff out of range",12.4543723554302,"Within_Range","Cl checks perc diff out of range",0.7978300525,"2025-06-16","Some Cl/SO4 standards and checks were lower than the expected concentration; 
   All SO4 blanks were zero",""
-"23","COMPASS: Synoptic","CB","SWH","TR","B",20,"SWH_202408_TR_LYSB_20CM",2024,8,21,"","",0,"bdl","SO4 checks perc diff out of range",10.6026205923836,"Within_Range","Cl checks perc diff out of range",0.6792102603,"2025-06-16","One chk std 1 and one chk std 2 had Cl values of 0; 
-  Some Cl/SO4 standards and checks were lower than the expected concentration; 
+"23","COMPASS: Synoptic","CB","SWH","TR","B",20,"SWH_202408_TR_LYSB_20CM",2024,8,21,"","",0,"bdl","SO4 checks perc diff out of range",10.6001466854725,"Within_Range","Cl checks perc diff out of range",0.6790517864,"2025-06-16","Some Cl/SO4 standards and checks were lower than the expected concentration; 
   All SO4 blanks were zero",""
-"24","COMPASS: Synoptic","CB","SWH","TR","B",45,"SWH_202408_TR_LYSB_45CM",2024,8,21,"","",0,"bdl","SO4 checks perc diff out of range",9.55972073342736,"Within_Range","Cl checks perc diff out of range",0.6124040247,"2025-06-16","One chk std 1 and one chk std 2 had Cl values of 0; 
-  Some Cl/SO4 standards and checks were lower than the expected concentration; 
+"24","COMPASS: Synoptic","CB","SWH","TR","B",45,"SWH_202408_TR_LYSB_45CM",2024,8,21,"","",0,"bdl","SO4 checks perc diff out of range",9.55748942172073,"Within_Range","Cl checks perc diff out of range",0.612261091,"2025-06-16","Some Cl/SO4 standards and checks were lower than the expected concentration; 
   All SO4 blanks were zero",""
-"25","COMPASS: Synoptic","CB","SWH","TR","C",10,"SWH_202408_TR_LYSC_10CM",2024,8,21,"","",0.631194635059264,"Within_Range","SO4 checks perc diff out of range",16.0949703808181,"Within_Range","Cl checks perc diff out of range",1.0310400269,"2025-06-16","One chk std 1 and one chk std 2 had Cl values of 0; 
-  Some Cl/SO4 standards and checks were lower than the expected concentration; 
+"25","COMPASS: Synoptic","CB","SWH","TR","C",10,"SWH_202408_TR_LYSC_10CM",2024,8,21,"","",0.631194635059264,"Within_Range","SO4 checks perc diff out of range",16.0912129760226,"Within_Range","Cl checks perc diff out of range",1.0307993345,"2025-06-16","Some Cl/SO4 standards and checks were lower than the expected concentration; 
   All SO4 blanks were zero",""
-"26","COMPASS: Synoptic","CB","SWH","TR","C",20,"SWH_202408_TR_LYSC_20CM",2024,8,21,"","",0.0505146600124766,"Within_Range","SO4 checks perc diff out of range",12.7500733427362,"Within_Range","Cl checks perc diff out of range",0.8167721107,"2025-06-16","One chk std 1 and one chk std 2 had Cl values of 0; 
-  Some Cl/SO4 standards and checks were lower than the expected concentration; 
+"26","COMPASS: Synoptic","CB","SWH","TR","C",20,"SWH_202408_TR_LYSC_20CM",2024,8,21,"","",0.0505146600124766,"Within_Range","SO4 checks perc diff out of range",12.7470973201693,"Within_Range","Cl checks perc diff out of range",0.8165814722,"2025-06-16","Some Cl/SO4 standards and checks were lower than the expected concentration; 
   All SO4 blanks were zero",""
-"27","COMPASS: Synoptic","CB","SWH","TR","C",45,"SWH_202408_TR_LYSC_45CM",2024,8,21,"","",0,"bdl","SO4 checks perc diff out of range",11.5532186177715,"Within_Range","Cl checks perc diff out of range",0.7401038112,"2025-06-16","One chk std 1 and one chk std 2 had Cl values of 0; 
-  Some Cl/SO4 standards and checks were lower than the expected concentration; 
+"27","COMPASS: Synoptic","CB","SWH","TR","C",45,"SWH_202408_TR_LYSC_45CM",2024,8,21,"","",0,"bdl","SO4 checks perc diff out of range",11.5505218617772,"Within_Range","Cl checks perc diff out of range",0.739931062,"2025-06-16","Some Cl/SO4 standards and checks were lower than the expected concentration; 
   All SO4 blanks were zero",""
-"28","COMPASS: Synoptic","CB","SWH","WC","A",10,"SWH_202408_WC_LYSA_10CM",2024,8,21,"","",0,"bdl","SO4 checks perc diff out of range",17.5809590973202,"Within_Range","Cl checks perc diff out of range",1.126229715,"2025-06-16","One chk std 1 and one chk std 2 had Cl values of 0; 
-  Some Cl/SO4 standards and checks were lower than the expected concentration; 
+"28","COMPASS: Synoptic","CB","SWH","WC","A",10,"SWH_202408_WC_LYSA_10CM",2024,8,21,"","",0,"bdl","SO4 checks perc diff out of range",17.5768575458392,"Within_Range","Cl checks perc diff out of range",1.1259669772,"2025-06-16","Some Cl/SO4 standards and checks were lower than the expected concentration; 
   All SO4 blanks were zero",""
-"29","COMPASS: Synoptic","CB","SWH","WC","A",20,"SWH_202408_WC_LYSA_20CM",2024,8,21,"","",0,"bdl","SO4 checks perc diff out of range",14.4228180535966,"Within_Range","Cl checks perc diff out of range",0.9239250423,"2025-06-16","One chk std 1 and one chk std 2 had Cl values of 0; 
-  Some Cl/SO4 standards and checks were lower than the expected concentration; 
+"29","COMPASS: Synoptic","CB","SWH","WC","A",20,"SWH_202408_WC_LYSA_20CM",2024,8,21,"","",0,"bdl","SO4 checks perc diff out of range",14.4194527503526,"Within_Range","Cl checks perc diff out of range",0.9237094672,"2025-06-16","Some Cl/SO4 standards and checks were lower than the expected concentration; 
   All SO4 blanks were zero",""
-"30","COMPASS: Synoptic","CB","SWH","WC","A",45,"SWH_202408_WC_LYSA_45CM",2024,8,21,"","",0,"bdl","SO4 checks perc diff out of range",14.7641833568406,"Within_Range","Cl checks perc diff out of range",0.9457922721,"2025-06-16","One chk std 1 and one chk std 2 had Cl values of 0; 
-  Some Cl/SO4 standards and checks were lower than the expected concentration; 
+"30","COMPASS: Synoptic","CB","SWH","WC","A",45,"SWH_202408_WC_LYSA_45CM",2024,8,21,"","",0,"bdl","SO4 checks perc diff out of range",14.760736248237,"Within_Range","Cl checks perc diff out of range",0.9455714567,"2025-06-16","Some Cl/SO4 standards and checks were lower than the expected concentration; 
   All SO4 blanks were zero",""
-"31","COMPASS: Synoptic","CB","SWH","WC","B",10,"SWH_202408_WC_LYSB_10CM",2024,8,21,"","",0,"bdl","SO4 checks perc diff out of range",18.8120141043724,"Within_Range","Cl checks perc diff out of range",1.2050888213,"2025-06-16","One chk std 1 and one chk std 2 had Cl values of 0; 
-  Some Cl/SO4 standards and checks were lower than the expected concentration; 
+"31","COMPASS: Synoptic","CB","SWH","WC","B",10,"SWH_202408_WC_LYSB_10CM",2024,8,21,"","",0,"bdl","SO4 checks perc diff out of range",18.8076248236953,"Within_Range","Cl checks perc diff out of range",1.2048076521,"2025-06-16","Some Cl/SO4 standards and checks were lower than the expected concentration; 
   All SO4 blanks were zero",""
-"32","COMPASS: Synoptic","CB","SWH","WC","B",20,"SWH_202408_WC_LYSB_20CM",2024,8,21,"","",0,"bdl","SO4 checks perc diff out of range",17.8755007052186,"Within_Range","Cl checks perc diff out of range",1.1450975055,"2025-06-16","One chk std 1 and one chk std 2 had Cl values of 0; 
-  Some Cl/SO4 standards and checks were lower than the expected concentration; 
+"32","COMPASS: Synoptic","CB","SWH","WC","B",20,"SWH_202408_WC_LYSB_20CM",2024,8,21,"","",0,"bdl","SO4 checks perc diff out of range",17.8713286318759,"Within_Range","Cl checks perc diff out of range",1.1448302502,"2025-06-16","Some Cl/SO4 standards and checks were lower than the expected concentration; 
   All SO4 blanks were zero",""
-"33","COMPASS: Synoptic","CB","SWH","WC","B",45,"SWH_202408_WC_LYSB_45CM",2024,8,21,"","",0,"bdl","SO4 checks perc diff out of range",14.7777179125529,"Within_Range","Cl checks perc diff out of range",0.9466592707,"2025-06-16","One chk std 1 and one chk std 2 had Cl values of 0; 
-  Some Cl/SO4 standards and checks were lower than the expected concentration; 
+"33","COMPASS: Synoptic","CB","SWH","WC","B",45,"SWH_202408_WC_LYSB_45CM",2024,8,21,"","",0,"bdl","SO4 checks perc diff out of range",14.7742708039492,"Within_Range","Cl checks perc diff out of range",0.9464384553,"2025-06-16","Some Cl/SO4 standards and checks were lower than the expected concentration; 
   All SO4 blanks were zero",""
-"34","COMPASS: Synoptic","CB","SWH","WC","C",10,"SWH_202408_WC_LYSC_10CM",2024,8,21,"","",0.127538989394885,"Within_Range","SO4 checks perc diff out of range",21.0352778561354,"Within_Range","Cl checks perc diff out of range",1.3475069842,"2025-06-16","One chk std 1 and one chk std 2 had Cl values of 0; 
-  Some Cl/SO4 standards and checks were lower than the expected concentration; 
+"34","COMPASS: Synoptic","CB","SWH","WC","C",10,"SWH_202408_WC_LYSC_10CM",2024,8,21,"","",0.127538989394885,"Within_Range","SO4 checks perc diff out of range",21.0303695345557,"Within_Range","Cl checks perc diff out of range",1.3471925662,"2025-06-16","Some Cl/SO4 standards and checks were lower than the expected concentration; 
   All SO4 blanks were zero",""
-"35","COMPASS: Synoptic","CB","SWH","WC","C",20,"SWH_202408_WC_LYSC_20CM",2024,8,21,"","",0,"bdl","SO4 checks perc diff out of range",15.1007672778561,"Within_Range","Cl checks perc diff out of range",0.9673532154,"2025-06-16","One chk std 1 and one chk std 2 had Cl values of 0; 
-  Some Cl/SO4 standards and checks were lower than the expected concentration; 
+"35","COMPASS: Synoptic","CB","SWH","WC","C",20,"SWH_202408_WC_LYSC_20CM",2024,8,21,"","",0,"bdl","SO4 checks perc diff out of range",15.0972411847673,"Within_Range","Cl checks perc diff out of range",0.9671273404,"2025-06-16","Some Cl/SO4 standards and checks were lower than the expected concentration; 
   All SO4 blanks were zero",""
-"36","COMPASS: Synoptic","CB","SWH","WC","C",45,"SWH_202408_WC_LYSC_45CM",2024,8,21,"","",0,"bdl","SO4 checks perc diff out of range",13.6750550070522,"Within_Range","Cl checks perc diff out of range",0.8760247249,"2025-06-16","One chk std 1 and one chk std 2 had Cl values of 0; 
-  Some Cl/SO4 standards and checks were lower than the expected concentration; 
+"36","COMPASS: Synoptic","CB","SWH","WC","C",45,"SWH_202408_WC_LYSC_45CM",2024,8,21,"","",0,"bdl","SO4 checks perc diff out of range",13.6718645980254,"Within_Range","Cl checks perc diff out of range",0.8758203532,"2025-06-16","Some Cl/SO4 standards and checks were lower than the expected concentration; 
   All SO4 blanks were zero",""
-"37","COMPASS: Synoptic","CB","SWH","SW","A",0,"SWH_202408_SW_A",2024,8,21,"","",2.01502183406114,"Within_Range","SO4 checks perc diff out of range",13.4573032440056,"Within_Range","Cl checks perc diff out of range",0.8620759498,"2025-06-16","One chk std 1 and one chk std 2 had Cl values of 0; 
-  Some Cl/SO4 standards and checks were lower than the expected concentration; 
+"37","COMPASS: Synoptic","CB","SWH","SW","A",0,"SWH_202408_SW_A",2024,8,21,"","",2.01502183406114,"Within_Range","SO4 checks perc diff out of range",13.4541636107193,"Within_Range","Cl checks perc diff out of range",0.8618748307,"2025-06-16","Some Cl/SO4 standards and checks were lower than the expected concentration; 
   All SO4 blanks were zero",""
-"38","COMPASS: Synoptic","CB","SWH","SW","B",0,"SWH_202408_SW_B",2024,8,21,"","",2.00079850280724,"Within_Range","SO4 checks perc diff out of range",13.3398307475317,"Within_Range","Cl checks perc diff out of range",0.854550879,"2025-06-16","One chk std 1 and one chk std 2 had Cl values of 0; 
-  Some Cl/SO4 standards and checks were lower than the expected concentration; 
+"38","COMPASS: Synoptic","CB","SWH","SW","B",0,"SWH_202408_SW_B",2024,8,21,"","",2.00079850280724,"Within_Range","SO4 checks perc diff out of range",13.3367165021157,"Within_Range","Cl checks perc diff out of range",0.8543513862,"2025-06-16","Some Cl/SO4 standards and checks were lower than the expected concentration; 
   All SO4 blanks were zero",""
-"39","COMPASS: Synoptic","CB","SWH","SW","C",0,"SWH_202408_SW_C",2024,8,21,"","",2.0153368683718,"Within_Range","SO4 checks perc diff out of range",13.3906713681241,"Within_Range","Cl checks perc diff out of range",0.8578076351,"2025-06-16","One chk std 1 and one chk std 2 had Cl values of 0; 
-  Some Cl/SO4 standards and checks were lower than the expected concentration; 
+"39","COMPASS: Synoptic","CB","SWH","SW","C",0,"SWH_202408_SW_C",2024,8,21,"","",2.0153368683718,"Within_Range","SO4 checks perc diff out of range",13.3875486600846,"Within_Range","Cl checks perc diff out of range",0.8576076002,"2025-06-16","Some Cl/SO4 standards and checks were lower than the expected concentration; 
   All SO4 blanks were zero",""
-"40","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202409_SWAMP_LYSB_20CM",2024,9,24,"15:55","EDT",0,"bdl","SO4 checks perc diff out of range",0.337746121297602,"Within_Range","Cl checks perc diff out of range",0.0216613917,"2025-06-16","One chk std 1 and one chk std 2 had Cl values of 0; 
-  Some Cl/SO4 standards and checks were lower than the expected concentration; 
+"40","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202409_SWAMP_LYSB_20CM",2024,9,24,"15:55","EDT",0,"bdl","SO4 checks perc diff out of range",0.337667136812412,"Within_Range","Cl checks perc diff out of range",0.0216563321,"2025-06-16","Some Cl/SO4 standards and checks were lower than the expected concentration; 
   All SO4 blanks were zero",""
