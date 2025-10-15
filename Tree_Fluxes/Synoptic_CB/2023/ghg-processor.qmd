@@ -1,0 +1,857 @@
+---
+title: "GHG processor"
+author: "Bond-Lamberty / Wilson"
+title-block-banner: true
+params:
+  html_outfile: "ghg-processor.html"
+  data_folder: "Raw Data/"
+  output_folder: "Processed Data/"
+  metadata_folder: "Raw Data/"
+  MSMT_LENGTH_SEC: 120
+  DEAD_BAND_SEC: 10
+  SAVE_RESULTS_FIGURES: true
+date: now
+date-format: "YYYY-MM-DD HH:mm:ssZ"
+format: 
+  html:
+    toc: true
+    code-fold: true
+editor: visual
+---
+
+# Initializing
+
+```{r setup}
+#| include: false
+
+library(rmarkdown)
+library(readr)
+library(lubridate)
+library(ggplot2)
+theme_set(theme_bw())
+library(ggrepel)
+library(readxl)
+library(broom)
+library(DT)
+library(MASS)
+library(tidyr)
+library(dplyr)
+
+# These columns are REQUIRED to be present in the metadata file(s)
+# (NB there are can be other columns present; they will be carried through to the results)
+METADATA_REQUIRED_FIELDS <- c("Date", "Time_start", "Plot", "Area", "Volume", "Temp")
+
+# Data files must end with ".txt" and may be in sub-folders
+data_files <- list.files(params$data_folder, 
+                         pattern = "*txt$", 
+                         full.names = TRUE, recursive = TRUE)
+# Metadata files must end with ".xlsx" and may be in sub-folders
+metadata_files <- list.files(params$metadata_folder, 
+                             pattern = "*xlsx$", 
+                             full.names = TRUE, recursive = TRUE)
+```
+
+I see `r length(data_files)` data files to process.
+
+I see `r length(metadata_files)` metadata files to process.
+
+Measurement length is `r params$MSMT_LENGTH_SEC` seconds.
+
+Default dead band time is `r params$DEAD_BAND_SEC` seconds.
+
+Required metafields are: `r paste(METADATA_REQUIRED_FIELDS, collapse = ", ")`.
+
+Writing output to `r normalizePath(params$output_folder)`.
+
+HTML outfile is `r params$html_outfile`.
+
+Working directory is `r getwd()`.
+
+# Data
+
+## Read in GHG data
+
+```{r read-data}
+errors <- 0 # error count
+
+# Function to read a data file given by 'fn', filename
+# Returns NULL if there's an error reading
+read_ghg_data <- function(fn) {
+  basefn <- basename(fn)
+  message(Sys.time(), " Processing ", basefn)
+  
+  dat_raw <- readLines(fn)
+  # Save the serial number in case we want to look at machine differences later
+  sn <- trimws(gsub("SN:\t", "", dat_raw[2], fixed = TRUE))
+  # Parse the timezone from the header and use it to make a TIMESTAMP field
+  tz <- trimws(gsub("Timezone:\t", "", dat_raw[5], fixed = TRUE))
+  
+  # These files have five header lines, then the names of the columns in line 6,
+  # and then the column units in line 7. We only want the names
+  dat_raw <- dat_raw[-c(1:5, 7)]
+  # Irritatingly, the units line can repeat in the file (???!?). Remove these
+  dat_raw <- dat_raw[grep("DATAU", dat_raw, invert = TRUE)]
+  # Double irritatingly, if there's no remark, the software write \t\t, not
+  # \t""\t, causing a read error. Replace these instances
+  dat_raw <- gsub("\t\t", "\tnan\t", dat_raw, fixed = TRUE)
+  dat <- try({
+    readr::read_table(I(dat_raw), na = "nan", guess_max = 1e4)
+  })
+  
+  # If the try() above succeeded, we haev a data frame and can process it 
+  if(is.data.frame(dat)) {
+    message("\tRead in ", nrow(dat), " rows of data, ", 
+            min(dat$DATE), " to ", max(dat$DATE))
+    message("\tInstrument serial number: ", sn)
+    dat$SN <- sn
+    message("\tInstrument time zone: ", tz)
+    # We record the time zone but don't convert the timestamps to it as
+    # that's not needed right now; metadata time is guaranteed to be same
+    dat$TIMESTAMP <- lubridate::ymd_hms(paste(dat$DATE, dat$TIME))
+    dat$TZ <- tz
+    # Remove unneeded Licor DATE and TIME columns
+    dat$DATE <- dat$TIME <- NULL
+    dat$Data_file <- basefn
+    return(dat)
+  } else {
+    warning("File read error for ", basefn)
+    errors <<- errors + 1
+    return(NULL)
+  }
+}
+
+dat <- lapply(data_files, read_ghg_data)
+dat <- do.call("rbind", dat)
+```
+
+Errors: `r errors`
+
+```{r}
+#| echo: false
+#| output: asis
+
+if(errors) cat("**<span style='color:red'>---> At least one error occurred! <---</span>**")
+```
+
+Total observations: `r format(nrow(dat), big.mark = ",")`
+
+## Read in metadata
+
+```{r read-metadata}
+errors <- 0
+
+# Function to read a metadata file given by 'fn', filename
+# Returns NULL if there's an error reading
+read_metadata <- function(fn) {
+  basefn <- basename(fn)
+  message(Sys.time(), " Processing ", basefn)
+  
+  metadat_raw <- try({
+    read_excel(fn)
+  })
+  
+  if(is.data.frame(metadat_raw)) {
+    if(!all(METADATA_REQUIRED_FIELDS %in% names(metadat_raw))) {
+      warning("Metadata file ", basefn, " doesn't have required fields!")
+      return(NULL)
+    }
+
+    metadat_raw$Metadata_file <- basefn
+    # Note that it's guaranteed that metadata time is instrument time,
+    # so we don't worry about any time zones right now
+    metadat <- metadat_raw
+    
+    # Metadata files can, optionally, have "Dead_band" and "Msmt_length" columns
+    # If not present, insert those columns with NA values
+    if(!"Dead_band" %in% names(metadat)) {
+      metadat$Dead_band <- NA_real_
+    } else {
+      message("\tCustom Dead_band column exists")
+    }
+    if(!"Msmt_stop" %in% names(metadat)) {
+      metadat$Msmt_stop <- NA_real_
+    } else {
+      message("\tCustom Msmt_stop column exists")
+    }
+    
+  } else {
+    warning("File read error for ", basefn)
+    errors <<- errors + 1
+    return(NULL)
+  }
+
+  metadat
+}
+
+metadat <- lapply(metadata_files, read_metadata)
+metadat <- do.call("rbind", metadat)
+if (!nrow(metadat)) {stop("No metadata read!")}
+
+metadat$Obs <- seq_len(nrow(metadat))
+```
+
+Errors: `r errors`
+
+Total metadata rows: `r nrow(metadat)`
+
+## Metadata-data matching
+
+```{r join-data}
+# For each row of metadata, find corresponding observational data
+zero_matches <- data.frame()
+match_info <- data.frame()
+
+matched_dat <- list()
+for(i in seq_len(nrow(metadat))) {
+  ts <- metadat$Time_start[i]
+  start_time <- metadat$Date[i] + hour(ts) * 60 * 60 + minute(ts) * 60 + second(ts)
+  end_time <- start_time + params$MSMT_LENGTH_SEC
+
+  # Subset data following timestamp in metadata and store
+  x <- subset(dat, TIMESTAMP >= start_time & TIMESTAMP < end_time)
+  
+#  message("Metadata row ", i, " ", metadat$Plot[i], " start = ", start_time, " matched ", nrow(x), " data rows")
+  info <- data.frame(Row = i,
+                     Plot = metadat$Plot[i],
+                     start_time = start_time,
+                     Rows_matched = nrow(x),
+                     Min_timestamp = NA,
+                     Max_timestamp = NA)
+  if(nrow(x)) {
+    # We have matched data!
+    x$Obs <- i
+    
+    # Assign dead band: value given in Quarto params, but can be overridden in metadata    
+    if(is.na(metadat$Dead_band[i])) {
+      x$DEAD_BAND_SEC <- params$DEAD_BAND_SEC
+    } else {
+      x$DEAD_BAND_SEC <- metadat$Dead_band[i]
+    }
+    # Assign stop time (in seconds, not including dead band): value given in 
+    # Quarto params, but can be overridden in metadata    
+    if(is.na(metadat$Msmt_stop[i])) {
+      x$MSMT_STOP_SEC <- params$MSMT_LENGTH_SEC
+    } else {
+      x$MSMT_STOP_SEC <- metadat$Msmt_stop[i]
+    }
+    
+    # Calculate ELAPSED_SECS, which is relative time (in s) since start of measurement
+    x$ELAPSED_SECS <- time_length(interval(min(x$TIMESTAMP), x$TIMESTAMP), "seconds")
+    info$Min_timestamp <- min(x$TIMESTAMP)
+    info$Max_timestamp <- max(x$TIMESTAMP)
+  } else {
+    # No data matched the date and time given in this row of the metadata
+    message("\tWARNING; file: ", metadat$Metadata_file[i])
+    zero_matches <- rbind(zero_matches, data.frame(File = metadat$Metadata_file[i],
+                                                   Row = i,
+                                                   Date = metadat$Date[i],
+                                                   Time_start = metadat$Time_start[i]))
+  }
+  match_info <- rbind(match_info, info)
+  matched_dat[[i]] <- x
+}
+
+# Combine all subsetted data together and merge with metadata 
+combined_dat <- do.call("rbind", matched_dat)
+combined_dat <- merge(metadat, combined_dat, by = "Obs")
+
+# Compute a few basic stats about the combined data
+n <- nrow(combined_dat)
+neg_CO2 <- sum(combined_dat$CO2 < 0, na.rm = TRUE)
+na_CO2 <- sum(is.na(combined_dat$CO2), na.rm = TRUE)
+na_CH4 <- sum(is.na(combined_dat$CH4), na.rm = TRUE)
+
+datatable(match_info)
+```
+
+Checking for metadata rows with no matching data...
+
+```{r}
+#| echo: false
+#| output: asis
+
+if(nrow(zero_matches)) {
+  cat("**<span style='color:red'>---> At least one metadata row had no matching data! <---</span>**\n\n")
+}
+```
+
+```{r}
+# Table of zero-match data, if any
+if(nrow(zero_matches)) {
+  knitr::kable(zero_matches)
+}
+```
+
+Checking for unused data files...
+
+```{r}
+#| echo: false
+#| output: asis
+
+unused_files <- setdiff(unique(dat$Data_file), unique(combined_dat$Data_file))
+if(length(unused_files)) {
+  cat("**<span style='color:red'>---> At least one data file was unused! <---</span>**\n\n")
+}
+```
+
+```{r}
+# Table of unused files, if any
+if(length(unused_files)) {
+  knitr::kable(data.frame(Data_file = unused_files))
+}
+```
+
+Total rows of combined data: `r format(nrow(combined_dat), big.mark = ",")`
+
+## CO2 and CH4 measurement data
+
+Observations with negative CO2: `r neg_CO2` (`r round(neg_CO2 / n * 100, 0)`%)
+
+Observations with missing CO2: `r na_CO2` (`r round(na_CO2 / n * 100, 0)`%)
+
+Distribution of CO2 values:
+
+```{r}
+# Print distribution and (below) plot random subsample of CO2 data
+OVERALL_PLOT_N <- 300
+summary(combined_dat$CO2)
+```
+
+Plot of `r OVERALL_PLOT_N` random CO2 values (y axis 5%-95%):
+
+```{r plot-obs}
+#| fig-width: 8
+#| fig-height: 4
+
+df_split <- split(combined_dat, rep(1:3, each = nrow(combined_dat) / 3)) 
+
+for (obs_group in df_split) {
+
+  obs_group <- bind_rows(obs_group)
+  ylim_co2 <- quantile(obs_group$CO2, probs = c(0.05, 0.95), na.rm = TRUE)
+  
+  dat_small <- obs_group[sample.int(n, OVERALL_PLOT_N, replace = TRUE),]
+  print(ggplot(dat_small, aes(TIMESTAMP, CO2, color=Plot)) + 
+    geom_point(na.rm = TRUE) +
+    coord_cartesian(ylim = ylim_co2)) 
+}
+```
+
+Observations with missing CH4: `r na_CH4` (`r round(na_CH4 / n * 100, 0)`%)
+
+Distribution of CH4 values:
+
+```{r}
+# Print distribution and (below) plot random subsample of CH4 data
+summary(combined_dat$CH4)
+```
+
+Plot of `r OVERALL_PLOT_N` random CH4 values (y axis 5%-95%):
+
+```{r plot-ch4}
+#| fig-width: 8
+#| fig-height: 4
+
+for (obs_group in df_split) {
+
+  ylim_ch4 <- quantile(obs_group$CH4, probs = c(0.05, 0.95), na.rm = TRUE)
+  
+  dat_small <- obs_group[sample.int(n, OVERALL_PLOT_N, replace = TRUE),]
+  print(ggplot(dat_small, aes(TIMESTAMP, CH4, color = Plot)) + 
+    geom_point(na.rm = TRUE) +
+    coord_cartesian(ylim = ylim_ch4))
+}
+
+```
+
+## Observations by plot and day
+
+```{r plot-co2}
+obs_list <- split(combined_dat, combined_dat$Obs)
+grouped_obs_list <- split(obs_list, ceiling(seq_along(obs_list)/12))
+
+for (obs_group in grouped_obs_list) {
+  for (list in obs_group) {
+    data.frame(list)
+  }
+  obs_group <- bind_rows(obs_group)
+  #| fig-width: 8
+  print(ggplot(obs_group, aes(ELAPSED_SECS, CO2, group = Obs)) +
+    geom_point(na.rm = TRUE, color = "purple") +
+    facet_wrap(~Plot + Date, scales = "free") +
+    # Plot both linear and curvilinear fits
+    #geom_smooth(method = lm, formula = 'y ~ poly(x, 2)', na.rm = TRUE, linetype = 2, color = "blue") +
+    geom_smooth(method = lm, formula = 'y ~ x', na.rm = TRUE, color = "black", linewidth = 0.5) +
+    geom_vline(aes(xintercept = DEAD_BAND_SEC), linetype = 2, color = "green") +
+    geom_vline(aes(xintercept = MSMT_STOP_SEC), linetype = 2, color = "red"))
+
+  print(ggplot(obs_group, aes(ELAPSED_SECS, CH4, group = Obs)) +
+    geom_point(na.rm = TRUE, color = "blue") +
+    facet_wrap(~Plot + Date, scales = "free") +
+    #geom_smooth(method = lm, formula = 'y ~ poly(x, 2)', na.rm = TRUE, linetype = 2, color = "blue") +
+    geom_smooth(method = lm, formula = 'y ~ x', na.rm = TRUE, color = "black", linewidth = 0.5) +
+    geom_vline(aes(xintercept = DEAD_BAND_SEC), linetype = 2, color = "green") +
+    geom_vline(aes(xintercept = MSMT_STOP_SEC), linetype = 2, color = "red"))
+}
+  
+```
+
+# Fluxes
+
+## Model fitting
+
+```{r model-fitting}
+
+model_fit_error <- FALSE
+# Fit a model to units of gas per day
+fit_model <- function(df, depvar) {
+  # Metadata
+  info <- data.frame(Obs = df$Obs[1],
+                     TIMESTAMP = mean(df$TIMESTAMP),
+                     DEAD_BAND_SEC = unique(df$DEAD_BAND_SEC),
+                     MSMT_STOP_SEC = unique(df$MSMT_STOP_SEC),
+                     TZ = df$TZ[1],
+                     SN = df$SN[1],
+                     Data_file = df$Data_file[1],
+                     Gas = depvar,
+                     Volume = df$Volume[1],
+                     Temp = df$Temp[1],
+                     Area = df$Area[1]
+                     )
+  # Remove the dead band data
+  df <- df[df$ELAPSED_SECS > df$DEAD_BAND_SEC,]
+  # Remove the after-end data
+  df <- df[df$ELAPSED_SECS <= df$MSMT_STOP_SEC,]
+  # Fit a linear model
+  try(mod <- lm(df[,depvar] ~ df$ELAPSED_SECS))
+  if(!exists("mod")) {
+    message("ERROR fitting model for obs ", df$Obs[1], " ", df$Plot[1], " ", depvar)
+    model_fit_error <- model_fit_error & FALSE
+  }
+  # Model statistics
+  model_stats <- glance(mod)
+  # Slope and intercept statistics
+  slope_stats <- tidy(mod)[2,-1]
+  names(slope_stats) <- paste("slope", names(slope_stats), sep = "_")
+  intercept_stats <- tidy(mod)[1,-1]
+  names(intercept_stats) <- paste("int", names(intercept_stats), sep = "_")
+  # Add robust regression slope as a QA/QC check
+  robust <- MASS::rlm(df[,depvar] ~ df$ELAPSED_SECS)
+  slope_stats$slope_estimate_robust <- coefficients(robust)[2]
+  # Add polynomial regression R2 as a QA/QC check
+  poly <- lm(df[,depvar] ~ poly(df$ELAPSED_SECS, 3))
+  slope_stats$r.squared_poly <- summary(poly)$r.squared
+  
+  res <- cbind(info, model_stats, slope_stats, intercept_stats)
+  
+  # Round to a sensible number of digits and return
+  numerics <- sapply(res, is.numeric)
+  res[numerics] <- signif(res[numerics], 3)
+  res
+}
+results_ch4 <- lapply(split(combined_dat, combined_dat$Obs), fit_model, "CH4")
+results_ch4 <- do.call("rbind", results_ch4)
+results_co2 <- lapply(split(combined_dat, combined_dat$Obs), fit_model, "CO2")
+results_co2 <- do.call("rbind", results_co2)
+```
+
+```{r}
+#| echo: false
+#| output: asis
+
+if(model_fit_error) cat("**<span style='color:red'>---> At least one model didn't fit! <---</span>**")
+```
+
+## Unit conversion
+
+```{r unit-conversion}
+required_fields <- c("Volume", "Temp")
+if(!all(required_fields %in% names(combined_dat))) {
+  stop("We need volume ('Volume') and temperature ('Temp')")  
+}
+
+# The slopes and their errors, from model-fitting above, are in ppb/s (CH4) 
+# and ppm/s (CO2). Convert them to µmol/m2/day and mmol/m2/day respectively.
+
+# CH4
+# Use known volume of chamber to convert ppb/s to liters/s:
+#   ppb CH4 * volume of chamber (m3) * 1000 L per m3
+CH4_slope_L <- with(results_ch4, (slope_estimate / 1e9) * Volume * 1000)
+CH4_slope_err_L <- with(results_ch4, (slope_std.error / 1e9) * Volume * 1000)
+
+# Use ideal gas law to calculate µmol of CH4 per m2 ground:
+# (atm pressure * L CH4) / (R [in L*atm / T[K] * mol] * T[K]) * 10^6 µmol/mol
+TEMP_K <- with(results_ch4, Temp + 273.15)
+AREA <- results_ch4$Area
+S_PER_DAY <- 60 * 60 * 24
+results_ch4$flux_estimate <- (1 * CH4_slope_L) / (0.08206 * TEMP_K) * 1e6 / AREA * S_PER_DAY
+results_ch4$flux_units <- "µmol/m2/day"
+results_ch4$flux_std.error <- (1 * CH4_slope_err_L) / (0.08206 * TEMP_K) * 1e6 / AREA * S_PER_DAY
+
+# CO2
+# Use known volume of chamber to convert ppm/s to liters/s:
+#   ppm CO2 * volume of chamber (m3) * 1000 L per m3
+CO2_slope_L <- with(results_co2, (slope_estimate / 1e9) * Volume * 1000)
+CO2_slope_err_L <- with(results_co2, (slope_std.error / 1e9) * Volume * 1000)
+# Use ideal gas law to calculate mmol of CO2 per m2 ground:
+# (atm pressure * L CO2) / (R [in L*atm / T[K] * mol] * T[K]) * 10^3 mmol/mol
+#combined_dat$`CO2 mmol/m2` <- (1 * CO2_L) / (0.08206 * TEMP_K) * 1e3 / AREA
+TEMP_K <- with(results_co2, Temp + 273.15)
+AREA <- results_co2$Area
+results_co2$flux_estimate <- (1 * CO2_slope_L) / (0.08206 * TEMP_K) * 1e6 / AREA * S_PER_DAY
+results_co2$flux_units <- "mmol/m2/day"
+results_co2$flux_std.error <- (1 * CO2_slope_err_L) / (0.08206 * TEMP_K) * 1e6 / AREA * S_PER_DAY
+
+# Combine CH4 and CO2 results and re-merge with metadata
+results <- rbind(results_co2, results_ch4)
+# Drop columns we don't need because they'll come in with the merge
+results$Area <- results$Temp <- results$Volume <- NULL
+
+# Re-merge with metadata
+results <- as_tibble(merge(results, metadat, by = "Obs"))
+```
+
+Total rows of results: `r format(nrow(results), big.mark = ",")`
+
+## Flux summary
+
+```{r flux-summary}
+#| fig-width: 8
+
+# Flux table and visualization
+obs_list <- split(results, results$Site)
+for (result in obs_list) {
+  
+  formatRound(datatable(result),
+              which(sapply(result, is.numeric)), digits = 3)
+  
+  print(ggplot(result, aes(x = TIMESTAMP, y = flux_estimate, color = Plot)) + 
+    geom_point() + 
+    geom_errorbar(aes(ymin = flux_estimate - flux_std.error,
+                      ymax = flux_estimate + flux_std.error)) +
+    geom_line(aes(group = Plot)) +
+    facet_wrap(~paste(Gas, flux_units) + Site, scales = "free"))
+  
+}
+```
+
+# QA/QC
+
+```{r qaqc-helpers}
+#| include: false
+
+# General function: plot distribution of a single column,
+# identify outliers
+onecol_plot_and_flag <- function(results, col, probs = c(0.05, 0.95),
+                                 left = TRUE, right = TRUE) {
+  
+  p <- ggplot(results, aes(.data[[col]])) + 
+    geom_histogram(bins = 30) +
+    facet_wrap(Gas ~., scales = "free", ncol = 1)
+  print(p)
+  
+  # Find which ones are outside of quantiles and flag
+  q_flags <- rep(FALSE, nrow(results))
+  co2 <- results$Gas == "CO2"
+  x <- as.data.frame(results)
+  q_co2 <- quantile(x[co2, col], probs = probs)
+  q_ch4 <- quantile(x[!co2, col], probs = probs)
+  if(left) q_flags[co2] <- q_flags[co2] | x[co2, col] < min(q_co2) 
+  if(right) q_flags[co2] <- q_flags[co2] | x[co2, col] > max(q_co2)
+  if(left) q_flags[!co2] <- q_flags[!co2] | x[!co2, col] < min(q_ch4) 
+  if(right) q_flags[!co2] <- q_flags[!co2] | x[!co2, col] > max(q_ch4)
+
+  # Create plot labels for all data, then NA the ones inside the cutoff
+  results$lab <- x$Obs
+  results$lab[!q_flags] <- NA_character_
+
+  p <- ggplot(results, aes(.data[[col]], flux_estimate)) + 
+    geom_point() + 
+    facet_wrap(~Gas, scales = "free") +
+    geom_rug(sides = "b", alpha = 0.3) +
+    geom_label_repel(aes(label = lab), size = 2.5, na.rm = TRUE)
+  print(p)
+  
+  return(q_flags)
+}
+
+# General function: plot two columns against each other, coloring by
+# standardized residual. Return vector of T/F flags if s.resid > cutoff
+twocol_plot_and_flag <- function(results, col1, col2,
+                                 add_1to1_line = FALSE,
+                          rstandard_cutoff = 2) {
+  
+  results <- as.data.frame(results)
+  # Identify standardized residuals outside of our cutoff
+  m <- lm(results[,col2] ~ results[,col1])
+  results$rstandard <- round(abs(rstandard(m)), 2)
+  resid_flags <- results$rstandard > rstandard_cutoff
+  # Create plot labels for all data, then NA the ones inside the cutoff
+  results$lab <- with(results, paste(paste0("#", Obs), 
+                                     Date, "\n", 
+                                     Plot, 
+                                     "\nsresid =", rstandard))
+  results$lab[!resid_flags] <- NA_character_
+
+  p <- ggplot(results, aes(.data[[col1]], .data[[col2]])) + 
+    geom_point()
+  if(add_1to1_line) p <- p + geom_abline()
+  p <- p +
+    geom_label_repel(aes(label = lab), size = 2.5, na.rm = TRUE) +
+    facet_wrap(Gas ~., scales = "free", ncol = 1)
+  print(p)
+  
+  return(resid_flags)
+}
+
+# General function: given a results subset, reshape to long form,
+# merge with concentration data, and plot for closer inspection
+# Typically code will call twocol_plot_and_flag above to identify potential
+# issues, and then this function to plot data in detail
+plot_group <- function(results, combined_dat) {
+  
+  plotdata <- merge(results[c("Obs", "adj.r.squared")], combined_dat, by = "Obs")
+  plotdata_long <- tidyr::pivot_longer(plotdata, c("CO2", "CH4"),
+                                       names_to = "Gas")
+  model_data <- subset(plotdata_long, 
+                       ELAPSED_SECS > DEAD_BAND_SEC & ELAPSED_SECS <= MSMT_STOP_SEC)
+  
+  print(ggplot(plotdata_long, aes(ELAPSED_SECS, value, group = Obs, color = Gas)) + 
+    scale_color_manual(values = c("CH4" = "blue", "CO2" = "purple")) +
+    geom_point(na.rm = TRUE) +
+    geom_vline(aes(xintercept = DEAD_BAND_SEC), linetype = 2, color = "green") +
+    geom_vline(aes(xintercept = MSMT_STOP_SEC), linetype = 2, color = "red") +
+    facet_wrap(~paste(paste0("#", Obs), date(TIMESTAMP)) + paste(Plot, Gas), 
+               scales = "free") +
+    theme(strip.text = element_text(size = 8)) +
+    geom_smooth(data = model_data,
+                method = lm, formula = 'y ~ x', na.rm = TRUE, color = "black"))
+}
+
+# Made a function above that prints each plot in order for it to iteratively print 
+# in a loop, this is not always necessary, so this is the same function without the # print statement
+plot_without_print <- function(results, combined_dat) {
+  
+  plotdata <- merge(results[c("Obs", "adj.r.squared")], combined_dat, by = "Obs")
+  plotdata_long <- tidyr::pivot_longer(plotdata, c("CO2", "CH4"),
+                                       names_to = "Gas")
+  model_data <- subset(plotdata_long, 
+                       ELAPSED_SECS > DEAD_BAND_SEC & ELAPSED_SECS <= MSMT_STOP_SEC)
+  
+  ggplot(plotdata_long, aes(ELAPSED_SECS, value, group = Obs, color = Gas)) + 
+    scale_color_manual(values = c("CH4" = "blue", "CO2" = "purple")) +
+    geom_point(na.rm = TRUE) +
+    geom_vline(aes(xintercept = DEAD_BAND_SEC), linetype = 2, color = "green") +
+    geom_vline(aes(xintercept = MSMT_STOP_SEC), linetype = 2, color = "red") +
+    facet_wrap(~paste(paste0("#", Obs), date(TIMESTAMP)) + paste(Plot, Gas), 
+               scales = "free") +
+    theme(strip.text = element_text(size = 8)) +
+    geom_smooth(data = model_data,
+                method = lm, formula = 'y ~ x', na.rm = TRUE, color = "black")
+}
+```
+
+## R2 distribution
+
+```{r qaqc-r2}
+#| fig-width: 8
+#| fig-height: 6
+
+
+results$FLAG_R2 <- onecol_plot_and_flag(results,
+                                        "adj.r.squared",
+                                        right = FALSE)
+
+subset_results_df <- subset(results, FLAG_R2=="TRUE")
+n <- 6
+nr <- nrow(subset_results_df)
+R2_list <- split(subset_results_df, rep(1:ceiling(nr/n), each=n, length.out=nr))
+for (flagged_df in R2_list) {
+  plot_group(flagged_df, combined_dat)
+}  
+```
+
+## y-intercept distribution
+
+```{r qaqc-yint}
+#| fig-width: 8
+#| fig-height: 6
+
+# The intercept is quite variable, so use {0.01, 0.99}
+results$FLAG_INTERCEPT <- onecol_plot_and_flag(results, "int_estimate", 
+                                               probs = c(0.01, 0.99))
+plot_group(subset(results, FLAG_INTERCEPT), combined_dat)
+```
+
+## Robust regression divergence
+
+This can indicate outlier problems or ebullition events.
+
+```{r qaqc-robust}
+#| fig-width: 8
+#| fig-height: 6
+results$FLAG_ROBUST_DIV <- twocol_plot_and_flag(results,
+                                                "slope_estimate", 
+                                                "slope_estimate_robust",
+                                                add_1to1_line = TRUE)
+plot_group(subset(results, FLAG_ROBUST_DIV), combined_dat)
+```
+
+## Polynomial regression divergence
+
+This can indicate curvature of the gas concentrations time series due to saturation, etc.
+
+```{r qaqc-poly}
+#| fig-width: 8
+#| fig-height: 6
+results$FLAG_POLY_DIV <- twocol_plot_and_flag(results,
+                                                "adj.r.squared", 
+                                                "r.squared_poly",
+                                                add_1to1_line = TRUE)
+
+subset_results_df <- subset(results, FLAG_POLY_DIV=="TRUE")
+n <- 6
+nr <- nrow(subset_results_df)
+R2_list <- split(subset_results_df, rep(1:ceiling(nr/n), each=n, length.out=nr))
+for (flagged_df in R2_list) {
+  plot_group(flagged_df, combined_dat)
+}  
+```
+
+## QA/QC summary
+
+```{r qaqc-summary}
+res1 <- results["Obs"]
+res2 <- results[grepl("^FLAG_", names(results))]
+res <- pivot_longer(cbind(res1, res2), starts_with("FLAG"), names_to = "Flag")
+res <- subset(res, value)
+f <- function(x) paste(unique(x), collapse = ", ")
+knitr::kable(aggregate(Obs ~ Flag, data = res, f))
+```
+
+```{r}
+#| include: false
+
+# -----------------------------------------------------------------------------
+is_outlier <- function(x, devs = 5.2) {
+ # See: Davies, P.L. and Gather, U. (1993).
+ # "The identification of multiple outliers" (with discussion)
+ # J. Amer. Statist. Assoc., 88, 782-801.
+
+ x <- na.omit(x)
+ lims <- median(x) + c(-1, 1) * devs * mad(x, constant = 1)
+ return(x < lims[1] | x > lims[2])
+}
+```
+
+# Output
+
+## Data
+
+```{r write-output}
+now_string <- function() format(Sys.time(), "%Y-%m-%d")
+mkfn <- function(name, extension) { # "make filename" helper function
+  file.path(params$output_folder,
+            paste(paste(name, now_string(), sep = "_"), extension, sep = "."))
+}
+
+flux_fn <- mkfn("results", "csv")
+message("Writing final flux dataset ", flux_fn, "...")
+write_csv(results, flux_fn)
+obs_fn <- mkfn("observations", "csv")
+message("Writing compiled observations dataset ", obs_fn, "...")
+write_csv(combined_dat, obs_fn)
+
+if(params$SAVE_RESULTS_FIGURES) {
+  message("Writing plot outputs...", appendLF = FALSE)
+  # Loop through each line, generating plot and filename and saving
+  for(i in seq_len(nrow(results))) {
+    p <- plot_without_print(results[i,], combined_dat)
+    fn <- mkfn(paste("obs", results$Obs[i], results$Date[i],
+                     results$Plot[i], sep = "_"), "pdf")
+    ggsave(fn, plot = p, width = 8, height = 5)
+  }
+  message("\t", i, " written")
+}
+```
+
+## Metadata
+
+Note this doesn't include any 'extra' fields in the metadata file.
+
+```{r write-metadata}
+results_fields <- c(
+  "adj.r.squared" = "Linear flux model adjusted R2",
+  "AIC" = "Linear flux model AIC",
+  "Area" = "Area entry from metadata file, m2",
+  "BIC" = "Linear flux model BIC",
+  "Data_file" = "Data file name",
+  "Date" = "Date entry from metadata file",
+  "DEAD_BAND_SEC" = "Dead band used for flux calculation, s",
+  "Dead_band" = "Dead band entry from metadata file, if present, s",
+  "deviance" = "Linear flux model deviance",
+  "df.residual" = "Linear flux model degrees of freedom",
+  "df" = "Linear flux model degrees of freedom",
+  "FLAG_INTERCEPT" = "Flag: linear model intercept flagged as unusual",
+  "FLAG_POLY_DIV" = "Flag: linear model R2 diverges from polynomial model",
+  "FLAG_R2" = "Flag: linear model R2 flagged as unusual",
+  "FLAG_ROBUST_DIV" = "Flag: linear model flux diverges from robust model",
+  "flux_estimate" = "Gas flux computed from slope of linear flux model",
+  "flux_std.error" = "Standard error of flux_estimate",
+  "flux_units" = "Units of flux_estimate and flux_std.error",
+  "Gas" = "Gas (CO2 or CH4)",
+  "int_estimate" = "Intercept of linear flux model, ppb (CH4) or ppm (CO2)",
+  "int_p.value" = "P-value of intercept of linear flux model",
+  "int_statistic" = "Statistic (t-value) of intercept of linear flux model",
+  "int_std.error" = "Standard error of intercept of linear flux model",
+  "logLik" = "Linear flux model log-likelihood",
+  "Metadata_file" = "Metadata file name",
+  "MSMT_STOP_SEC" = "Measurement stop used for flux calculation, s",
+  "Msmt_stop" = "Measurement stop entry from metadata file, if present, s",
+  "nobs" = "Linear flux model number of observations",
+  "Obs" = "Observation number, i.e. order in metadata file(s)",
+  "p.value" = "Linear flux model p-value",
+  "Plot" = "Plot entry from metadata file",
+  "r.squared_poly" = "Polynomial flux model R2",
+  "r.squared" = "Linear flux model R2",
+  "sigma" = "Linear flux model sigma",
+  "slope_estimate_robust" = "Slope of robust flux model, ppb (CH4) or ppm (CO2) /s",
+  "slope_estimate" = "Slope of linear flux model, ppb (CH4) or ppm (CO2) /s",
+  "slope_p.value" = "P-value of slope of linear flux model",
+  "slope_statistic" = "Statistic (t-value) of slope of linear flux model",
+  "slope_std.error" = "Standard error of slope of linear flux model",
+  "SN" = "Serial number from analyzer",
+  "statistic" = "Linear flux model F-statistic",
+  "Temp" = "Temperature entry from metadata file, degC",
+  "Time_start" = "Time_start entry from metadata file",
+  "TIMESTAMP" = "Original timestamp from analyzer",
+  "TZ" = "Time zone from analyzer",
+  "Volume" = "Volume entry from metadata file, m3"
+)
+
+# Which metadata names above don't occur in results?
+not_there <- names(results_fields)[!names(results_fields) %in% names(results)]
+if(length(not_there)) {
+  message("Field metadata descriptions NOT in results: ", paste(not_there, collapse = ", "))
+}
+
+results_meta <- data.frame(Field_name = names(results))
+results_meta$Description <- results_fields[results_meta$Field_name]
+# Mark any metadata fields that aren't required - they're extra, from user
+from_metadata <- is.na(results_meta$Description) &
+  results_meta$Field_name %in% names(metadat)
+results_meta$Description[from_metadata] <- "<from metadata file>"
+datatable(results_meta)
+
+metadata_fn <- mkfn("results_metadata", "csv")
+message("Writing metadata ", metadata_fn, "...")
+write_csv(results_meta, metadata_fn)
+```
+
+All done!
+
+# Reproducibility
+
+```{r}
+sessionInfo()
+```
