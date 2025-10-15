@@ -36,6 +36,7 @@ library(DT)
 library(MASS)
 library(tidyr)
 library(dplyr)
+library(fluxfinder)
 
 # These columns are REQUIRED to be present in the metadata file(s)
 # (NB there are can be other columns present; they will be carried through to the results)
@@ -49,6 +50,9 @@ data_files <- list.files(params$data_folder,
 metadata_files <- list.files(params$metadata_folder, 
                              pattern = "*xlsx$", 
                              full.names = TRUE, recursive = TRUE)
+
+#SW made the metadata file a csv to be visable on Github and there is only one 
+#metadata_files <- "COMPASS_Synoptic_TreeFlux_Metadata_2023.csv"
 ```
 
 I see `r length(data_files)` data files to process.
@@ -185,9 +189,12 @@ read_metadata <- function(fn) {
 
 metadat <- lapply(metadata_files, read_metadata)
 metadat <- do.call("rbind", metadat)
-if (!nrow(metadat)) {stop("No metadata read!")}
+if(!nrow(metadat)) {stop("No metadata read!")}
 
 metadat$Obs <- seq_len(nrow(metadat))
+
+
+
 ```
 
 Errors: `r errors`
@@ -377,21 +384,21 @@ for (obs_group in grouped_obs_list) {
   obs_group <- bind_rows(obs_group)
   #| fig-width: 8
   print(ggplot(obs_group, aes(ELAPSED_SECS, CO2, group = Obs)) +
-    geom_point(na.rm = TRUE, color = "purple") +
+    geom_point(na.rm = TRUE, color = "orchid") +
     facet_wrap(~Plot + Date, scales = "free") +
     # Plot both linear and curvilinear fits
     #geom_smooth(method = lm, formula = 'y ~ poly(x, 2)', na.rm = TRUE, linetype = 2, color = "blue") +
-    geom_smooth(method = lm, formula = 'y ~ x', na.rm = TRUE, color = "black", linewidth = 0.5) +
-    geom_vline(aes(xintercept = DEAD_BAND_SEC), linetype = 2, color = "green") +
-    geom_vline(aes(xintercept = MSMT_STOP_SEC), linetype = 2, color = "red"))
+    geom_smooth(method = lm, formula = 'y ~ x', na.rm = TRUE, color = "darkslateblue", linewidth = 0.5) +
+    geom_vline(aes(xintercept = DEAD_BAND_SEC), linetype = 2, color = "gray40") +
+    geom_vline(aes(xintercept = MSMT_STOP_SEC), linetype = 2, color = "black"))
 
   print(ggplot(obs_group, aes(ELAPSED_SECS, CH4, group = Obs)) +
-    geom_point(na.rm = TRUE, color = "blue") +
+    geom_point(na.rm = TRUE, color = "skyblue") +
     facet_wrap(~Plot + Date, scales = "free") +
     #geom_smooth(method = lm, formula = 'y ~ poly(x, 2)', na.rm = TRUE, linetype = 2, color = "blue") +
-    geom_smooth(method = lm, formula = 'y ~ x', na.rm = TRUE, color = "black", linewidth = 0.5) +
-    geom_vline(aes(xintercept = DEAD_BAND_SEC), linetype = 2, color = "green") +
-    geom_vline(aes(xintercept = MSMT_STOP_SEC), linetype = 2, color = "red"))
+    geom_smooth(method = lm, formula = 'y ~ x', na.rm = TRUE, color = "navy", linewidth = 0.5) +
+    geom_vline(aes(xintercept = DEAD_BAND_SEC), linetype = 2, color = "gray40") +
+    geom_vline(aes(xintercept = MSMT_STOP_SEC), linetype = 2, color = "black"))
 }
   
 ```
@@ -401,6 +408,38 @@ for (obs_group in grouped_obs_list) {
 ## Model fitting
 
 ```{r model-fitting}
+
+#change units 
+  #so we will use temp and volume from metadata 
+  #using the fluxfinder conversion function to get nmol or umol units
+combined_dat$CH4_nmol <- ffi_ppb_to_nmol(combined_dat$CH4,
+                                        volume = combined_dat$Volume, #m3
+                                        temp = combined_dat$Temp) #degrees C
+
+combined_dat$CO2_umol <- ffi_ppm_to_umol(combined_dat$CO2,
+                                        volume = combined_dat$Volume, #m3
+                                        temp = combined_dat$Temp) #degrees C
+
+#area from metadata used to get a concentration per area
+combined_dat$CH4_nmol_m2 <- combined_dat$CH4_nmol / combined_dat$Area
+combined_dat$CO2_umol_m2 <- combined_dat$CO2_umol / combined_dat$Area
+
+
+#need to create a date_time column in dataframe
+combined_dat$datetime <- as.POSIXct(
+  paste(combined_dat$Date, format(combined_dat$Time_start, "%H:%M:%S")),
+  tz = "EST"
+)
+
+fluxes_ch4 <- ffi_compute_fluxes(combined_dat,
+                     group_column = "Plot",
+                     time_column = "datetime",
+                     gas_column = "CH4_nmol_m2",
+                     dead_band = 0)
+
+                             
+
+
 
 model_fit_error <- FALSE
 # Fit a model to units of gas per day
