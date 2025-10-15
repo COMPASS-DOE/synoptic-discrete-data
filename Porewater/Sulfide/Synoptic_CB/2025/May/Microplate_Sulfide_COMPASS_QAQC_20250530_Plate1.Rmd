@@ -12,7 +12,6 @@ output_dir: "To Be Reviewed/PDF"
 
 \newpage
 
-
 ##Add Required Packages
 ```{r packages, include=FALSE}
 
@@ -22,7 +21,7 @@ lapply(c(
   "purrr", "tidyverse", "here", "broom", "tibble",
   "googledrive", "googlesheets4", "data.table", 
   "matrixStats", "gridExtra", "grid", "tidyverse", "knitr", 
-  "plater", "raster", "readxl"), 
+  "plater", "raster", "readxl", "patchwork"), 
   library, character.only = TRUE)
 
 ```
@@ -99,7 +98,6 @@ lapply(c(
 
 ```
 
-
 ##Tidy data
 ```{r Tidy data, include=FALSE}
 
@@ -137,23 +135,18 @@ colnames(dat) <- c("Wells", "Abs", "IDs", "Dilution")
 
 ## Fix data that was entered incorrectly
 ```{r fix data entered incorrectly}
-
 ##Sample data entered incorrectly 
 dat$IDs[dat$IDs == "17 Dup"] <- "16 Dup"
 dat$IDs[dat$IDs == "18 Dup"] <- "16 Dup"
-
-
 ##Chk stds entered incorrectly 
 dat$IDs[dat$IDs == "ChkStd 1"] <- "ChkStd 0"
 dat$IDs[dat$IDs == "ChkStd 2"] <- "ChkStd 0"
-
 dat$IDs[dat$IDs == "ChkStd 5"] <- "ChkStd 4"
 dat$IDs[dat$IDs == "ChkStd 6"] <- "ChkStd 4"
 ```
 
-
-## Plot standards 
-```{r Plot Standards, echo=FALSE, message=FALSE, warning = FALSE, fig.height = 4}
+##Plot standards
+```{r Plot Standards, echo=FALSE, message=FALSE, warning = FALSE, fig.keep='none', include=FALSE}
 
 #subset by H2s Stds
 H2S_stds_all <- dat %>%  
@@ -171,10 +164,6 @@ H2S_stds <- na.omit(H2S_stds_all)
 #H2S_stds <- subset(H2S_stds, !(Wells %in% c("D01","D02" ,"D03","E01")))
 #H2S_stds <- subset(H2S_stds, !(IDs %in% c("Std 3")))
 
-#Plot stds and calculate the slope, intercept, and R2 
-H2S <- ggplot(H2S_stds, aes(Conc, Abs)) + geom_point() + geom_smooth(method = "lm", se = FALSE)
-H2S
-
 H2S_lm <- lm(H2S_stds$Abs ~ H2S_stds$Conc)
 # summary(H2S_lm)
 cf <- coef(H2S_lm)
@@ -187,6 +176,21 @@ Slopes$Slope <- cf[2]
 Slopes$Intercept <- cf[1]
 # head(Slopes)
 
+#Plot stds and calculate the slope, intercept, and R2 
+H2S <- ggplot(H2S_stds, aes(Conc, Abs)) + 
+  geom_point() + 
+  geom_smooth(method = "lm", se = FALSE)+
+  # geom_text(
+  #   aes(x = max(H2S_stds$Conc, na.rm = TRUE) * 0.8,
+  #   y = max(H2S_stds$Abs, na.rm = TRUE),
+  #   label = paste0("R² = ", round(Slopes$R2, 4))),
+  #   inherit.aes = FALSE,
+  #   hjust = 1, vjust = 1,
+  #   size = 4
+  # ) +
+  ggtitle("Sulfide Standard Curve")
+# H2S
+
 #Calculate cv for STDs
 H2S_stds1 <- H2S_stds %>%
   group_by(IDs) %>%
@@ -196,7 +200,7 @@ H2S_stds1 <- H2S_stds %>%
 # head(H2S_stds1)
 
 #Flag high cvs
-H2S_stds1$H2S_cv_flag <- ifelse(H2S_stds1$H2S_cv > cv_flag_stds, 'High CV', 'within range')
+H2S_stds1$H2S_cv_flag <- ifelse(H2S_stds1$H2S_cv > cv_flag_stds, 'High CV', 'Within range')
 # head(H2S_stds1)
 
 
@@ -220,8 +224,8 @@ dat <- dat %>%
 
 ```
 
-## Assess Standard Curves
-```{r Assess Standards, echo=FALSE, message=FALSE, warning = FALSE, fig.height = 4}
+##Assess Standard Curves
+```{r Assess Standards, echo=FALSE, message=FALSE, warning = FALSE, fig.keep='none', include=FALSE}
 
 #read in datafile with all the slopes
 qlogO <- read.csv(Log_path)
@@ -299,10 +303,20 @@ Rsq1
 #write out the log file with the added lines for this run  
 write.csv(qlog, Log_path)
 
+
+
 ```
 
-## Assess Check Standards 
-```{r Check Standards, echo=FALSE, warning = FALSE}
+## Plot standard graphs
+```{r, echo = FALSE, warning = FALSE, out.width = "100%", out.height = "100%"}
+
+##Plot std graphs together
+(H2S)/(slope1)/(int1)
+
+```
+
+##Assess Check Standards
+```{r Check Standards, echo=FALSE, warning = FALSE, include=FALSE}
 
 ####This part could probably be streamlined####
 
@@ -332,8 +346,8 @@ stats0 <- data.frame(
   Value = c(t.test.std0$statistic, t.test.std0$parameter, t.test.std0$p.value)
 )
 # Use knitr::kable to print a formatted table with a caption
-knitr::kable(stats0,
-             caption = "Two-Sample T-Test Comparing Chk Std 0 with Std 0")
+# knitr::kable(stats0,
+             # caption = "Two-Sample T-Test Comparing Chk Std 0 with Std 0")
 
 
 if(t.test.std0$p.value > p_value_chkstds){
@@ -360,8 +374,8 @@ stats3 <- data.frame(
   Value = c(t.test.std3$statistic, t.test.std3$parameter, t.test.std3$p.value)
 )
 # Use knitr::kable to print a formatted table with a caption
-knitr::kable(stats3,
-             caption = "Two-Sample T-Test Comparing Chk Std 3 with Std 3")
+# knitr::kable(stats3,
+             # caption = "Two-Sample T-Test Comparing Chk Std 3 with Std 3")
 
 
 if(t.test.std3$p.value > p_value_chkstds){
@@ -389,8 +403,8 @@ stats4 <- data.frame(
   Value = c(t.test.std4$statistic, t.test.std4$parameter, t.test.std4$p.value)
 )
 # Use knitr::kable to print a formatted table with a caption
-knitr::kable(stats4,
-             caption = "Two-Sample T-Test Comparing Chk Std 4 with Std 4")
+# knitr::kable(stats4,
+#              caption = "Two-Sample T-Test Comparing Chk Std 4 with Std 4")
 
 if(t.test.std4$p.value > p_value_chkstds){
 print("Chk Std 4 GOOD")
@@ -407,10 +421,38 @@ if (t.test.std4$p.value < p_value_chkstds) {
   )
 }
 
+##Add p-values to dataframes
+std0$p_value <- t.test.std0$p.value
+std3$p_value <- t.test.std3$p.value
+std4$p_value <- t.test.std4$p.value
+
+##Matrix Checks Plot
+##plot MC Abs vs Std 5 Abs and color based on whether passed T test
+
+##Combine matrix checks
+QAstdchk <- rbind(std0, std3, std4)
+
+#Calculate p-values
+QAstdchk$p_flag <-  ifelse(QAstdchk$p_value > p_value_chkstds, 'OK', 'Rerun')
+
+# head(QAdups)
+
+#plot dups output as a bar graph to easily check - want any over 10% to be red need to work on this 
+ChkStdbar <- ggplot(data = QAstdchk, aes(x = IDs, y = p_value, fill=p_flag)) +
+        geom_bar(stat = 'identity') + 
+        scale_fill_manual(values = c("OK" = "darkgreen", "No, rerun" = "darkred"))+
+        theme_classic() + labs(x= "Sample ID", y="T-test p-value") + 
+        theme(legend.position="none") +  geom_hline(yintercept=0.05, linetype="dashed", 
+                color = "black", linewidth=1)+ 
+        ggtitle("Check Standard P-values from T-test")
+
+# ChkStdbar
+
+
 ```
 
-## Matrix Check QAQC
-```{r Matrix Checks, echo=FALSE, warning = FALSE}
+##Matrix Check QAQC
+```{r Matrix Checks, echo=FALSE, warning = FALSE, include=FALSE}
 
 std5 <- subset(H2S_stds, IDs == "Std 5")
 MC10 <- subset(dat, IDs == "MC: 10ppt S5")
@@ -424,8 +466,8 @@ statsMC10 <- data.frame(
   Value = c(t.test.MC10$statistic, t.test.MC10$parameter, t.test.MC10$p.value)
 )
 # Use knitr::kable to print a formatted table with a caption
-knitr::kable(statsMC10,
-             caption = "Two-Sample T-Test Comparing MC10 with Std 5")
+# knitr::kable(statsMC10,
+#              caption = "Two-Sample T-Test Comparing MC10 with Std 5")
 
 
 if(t.test.MC10$p.value > p_value_MC){
@@ -443,6 +485,8 @@ if (t.test.MC10$p.value < p_value_MC) {
   )
 }
 
+##Add p-value to dataframe
+MC10$p_value <- t.test.MC10$p.value
 
 #20ppt matrix check
 t.test.MC20 <- t.test(std5$Abs,MC20$Abs,var.equal = T)
@@ -452,8 +496,8 @@ statsMC20 <- data.frame(
   Value = c(t.test.MC20$statistic, t.test.MC20$parameter, t.test.MC20$p.value)
 )
 # Use knitr::kable to print a formatted table with a caption
-knitr::kable(statsMC20,
-             caption = "Two-Sample T-Test Comparing MC20 with Std 5")
+# knitr::kable(statsMC20,
+#              caption = "Two-Sample T-Test Comparing MC20 with Std 5")
 
 
 if(t.test.MC20$p.value > p_value_MC){
@@ -470,13 +514,43 @@ if (t.test.MC20$p.value < p_value_MC) {
     "MC 20 out of range"
   )
 }
+##Add p-value to dataframe
+MC20$p_value <- t.test.MC20$p.value
 
+##Matrix Checks Plot
+##plot MC Abs vs Std 5 Abs and color based on whether passed T test
+
+##Combine matrix checks
+QAMC <- rbind(MC10, MC20)
+
+#Calculate p-values
+QAMC$p_flag <-  ifelse(QAMC$p_value > p_value_MC, 'OK', 'Rerun')
+
+# head(QAdups)
+
+#plot dups output as a bar graph to easily check - want any over 10% to be red need to work on this 
+MCbar <- ggplot(data = QAMC, aes(x = IDs, y = p_value, fill=p_flag)) +
+        geom_bar(stat = 'identity') + 
+        scale_fill_manual(values = c("OK" = "darkgreen", "No, rerun" = "darkred"))+
+        theme_classic() + labs(x= "Sample ID", y="T-test p-value") + 
+        theme(legend.position="none") +  geom_hline(yintercept=0.05, linetype="dashed", 
+                color = "black", linewidth=1)+ 
+        ggtitle("Matrix Effect P-values from T-test")
+
+
+```
+
+## Plot check standards and matrix checks
+```{r, echo = FALSE, warning = FALSE, out.width = "100%", out.height = "100%"}
+
+##Plot chk stds and MC graphs together
+ChkStdbar+MCbar
 
 ```
 
 
 ##Flag sample data
-```{r Flag sample data, echo=FALSE, warning = FALSE}
+```{r Flag sample data, echo=FALSE, warning = FALSE, include=FALSE}
 
 dat_flagged <- dat %>%  
       filter(!str_detect(IDs, "Std")) %>%  
@@ -498,9 +572,8 @@ dat_flagged$Conc_flag <- ifelse(dat_flagged$Conc <0, 'bdl', ifelse(dat_flagged$A
 
 ```
 
-
-## Calculate CV across wells
-```{r calculate sample CVs, echo = FALSE}
+##Calculate CV across wells
+```{r calculate sample CVs, include = FALSE}
 # head(dat_flagged)
 
 #summarize by sampleID so that we can calculate the mean and std. dev. of the three wells 
@@ -513,25 +586,25 @@ dat1 <- dat_flagged %>%
 # head(dat1)
 
 #Flag high cvs 
-dat1$H2S_cv_flag <- ifelse(dat1$H2S_cv > cv_flag_sample, 'High CV', 'within range')
+dat1$H2S_cv_flag <- ifelse(dat1$H2S_cv > cv_flag_sample, 'High CV', 'Within range')
 
 # head(dat1)
 
-
 #plot data and sd's just to check and see what they look like - just a quick first look 
-H2S <- ggplot(dat1, aes(x=IDs, y=H2S_mean))+ 
+H2S_original <- ggplot(dat1, aes(x=IDs, y=H2S_mean, color = H2S_cv_flag))+ 
   geom_point(size=4) +  theme_classic() + 
+  scale_color_manual(values = c("Within range" = "darkgreen", "High CV" = "darkred"))+
   labs(y="Sulfide (uM)", x="Sample ID") + 
   geom_errorbar(aes(ymin=H2S_mean-H2S_sd,
                     ymax=H2S_mean+H2S_sd),width=0.3,position=position_dodge(.1))+
   guides(x = guide_axis(angle = 70)) + 
   ggtitle("Sample triplicate means and sd dev before bad reps removed") 
-H2S
+H2S_original
 
 ```
 
-## Remove bad reps
-```{r remove bad reps, echo = FALSE}
+##Remove bad reps
+```{r remove bad reps, include = FALSE}
 
 ####This is a bit clunky but they figured out how to auto remove bad reps!####
 
@@ -574,7 +647,7 @@ dat_HCV1 <- dat_HCV1 %>%
   summarise(H2S_mean = mean(H2S_Conc_Final), H2S_sd = sd(H2S_Conc_Final), H2S_cv = cv(H2S_Conc_Final), 
             H2S_flag = first(Conc_flag), 
             Dilution = first(Dilution))
-dat_HCV1$H2S_cv_flag <- ifelse(dat_HCV1$H2S_cv > cv_flag_sample, 'High CV', 'within range')
+dat_HCV1$H2S_cv_flag <- ifelse(dat_HCV1$H2S_cv > cv_flag_sample, 'High CV', 'Within range')
 
 #W/out column2
 dat_HCV2 <- dat_HCV2 %>%
@@ -582,7 +655,7 @@ dat_HCV2 <- dat_HCV2 %>%
   summarise(H2S_mean = mean(H2S_Conc_Final), H2S_sd = sd(H2S_Conc_Final), H2S_cv = cv(H2S_Conc_Final), 
             H2S_flag = first(Conc_flag), 
             Dilution = first(Dilution))
-dat_HCV2$H2S_cv_flag <- ifelse(dat_HCV2$H2S_cv > cv_flag_sample, 'High CV', 'within range')
+dat_HCV2$H2S_cv_flag <- ifelse(dat_HCV2$H2S_cv > cv_flag_sample, 'High CV', 'Within range')
 
 #W/out column3
 dat_HCV3 <- dat_HCV3 %>%
@@ -590,7 +663,7 @@ dat_HCV3 <- dat_HCV3 %>%
   summarise(H2S_mean = mean(H2S_Conc_Final), H2S_sd = sd(H2S_Conc_Final), H2S_cv = cv(H2S_Conc_Final), 
             H2S_flag = first(Conc_flag), 
             Dilution = first(Dilution))
-dat_HCV3$H2S_cv_flag <- ifelse(dat_HCV3$H2S_cv > cv_flag_sample, 'High CV', 'within range')
+dat_HCV3$H2S_cv_flag <- ifelse(dat_HCV3$H2S_cv > cv_flag_sample, 'High CV', 'Within range')
 
 
 #find lowest CVs
@@ -637,19 +710,21 @@ dat1 <- rbind(dat2_HCV, dat1)
 #head(dat1)
 
 #Flag high cvs
-#dat1$H2S_cv_flag <- ifelse(dat1$H2S_cv > 10, 'High CV rerun', 'within range')
+#dat1$H2S_cv_flag <- ifelse(dat1$H2S_cv > 10, 'High CV rerun', 'Within range')
 
 #head(dat1)
 
 #plot data and sd's just to check and see what they look like - just a quick first look 
-H2S <- ggplot(dat1, aes(x=IDs, y=H2S_mean))+ 
+H2S_fixed <- ggplot(dat1, aes(x=IDs, y=H2S_mean, color = H2S_cv_flag))+ 
   geom_point(size=4) +  theme_classic() + 
+  scale_color_manual(values = c("Within range" = "darkgreen", "High CV" = "darkred"))+
   labs(y="Sulfide (uM)", x="Sample ID") + 
   geom_errorbar(aes(ymin=H2S_mean-H2S_sd,
                     ymax=H2S_mean+H2S_sd),width=0.3,position=position_dodge(.1))+
   guides(x = guide_axis(angle = 70)) + 
   ggtitle("Sample triplicate means and sd dev after bad reps removed") 
-H2S
+H2S_fixed
+
 
 #If samples with cv >10 rerun those samples 
 H2S_HighCVRerun <- subset(dat1, H2S_cv_flag == "High CV")
@@ -664,10 +739,16 @@ knitr::kable(H2S_DiluteRerun, caption = "Samples that need to be diluted")
 
 ```
 
-\newpage
+## Plot samples before and after removing bad replicates
+```{r, echo = FALSE, warning = FALSE, out.width = "100%", out.height = "100%"}
 
-## Check the dups for QAQC 
-```{r Check Duplicates, echo=FALSE}
+##Plot original and fixed sample CV graphs together
+H2S_original/H2S_fixed
+
+```
+
+##Assess Duplicates
+```{r Check Duplicates, echo=FALSE, fig.keep = "none", warning=FALSE, include=FALSE}
 
 #Show me the data that we have from the calculations 
 # head(dat1)
@@ -723,9 +804,8 @@ if (nrow(Baddups) > 0) {
 #check for any one's that would warrant reruns 
 ```
 
-
-## Check the spks for QAQC 
-```{r Assess Spikes, echo=FALSE}
+##Assess Analytical Spikes
+```{r Assess Spikes, echo=FALSE, fig.keep = "none", include=FALSE}
 
 #Show me the data that we have from the calculations 
 # head(dat1)
@@ -786,8 +866,16 @@ if (nrow(Badspks) > 0) {
 #check for any no's that would warrant reruns! 
 ```
 
+## Plot duplicates and spikes
+```{r, echo = FALSE, warning = FALSE, out.width = "100%", out.height = "100%"}
 
-## Export final data and samples to rerun
+##Plot dup and spk together
+(dupsbar + spksbar)
+
+```
+
+
+##Export final data and samples to rerun
 ```{r Export Processed Data, echo=FALSE, include = FALSE}
 
 dat_IDs <- dat1
@@ -804,8 +892,3 @@ write.csv(H2S_HighCVRerun, samples_high_cv_name)
 ```
 
 ### END
-
-
-
-
-
