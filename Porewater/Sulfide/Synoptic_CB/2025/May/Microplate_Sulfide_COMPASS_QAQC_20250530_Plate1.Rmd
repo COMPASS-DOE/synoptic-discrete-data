@@ -10,6 +10,8 @@ output:
 output_dir: "To Be Reviewed/PDF"
 ---
 
+##Need to make sure that the QAQC_flag column makes it into the final processed data file! 
+
 \newpage
 
 ##Add Required Packages
@@ -46,9 +48,9 @@ lapply(c(
 
 #file path and name of processed data file 
   tidy_file_name = "Tidy Data/20250529_COMPASS_H2S_Plate1_tidy.csv" 
-  processed_file_name = "Processed Data/COMPASS_H2S_20250529_Plate4.csv" 
-  samples_need_dilution_name = "Processed Data/COMPASS_H2S_20250529_Plate4_SamplesNeedDilution.csv" 
-  samples_high_cv_name = "Processed Data/COMPASS_H2S_20250529_Plate4_SamplesHighCV.csv" 
+  processed_file_name = "Processed Data/COMPASS_H2S_20250529_Plate1.csv" 
+  samples_need_dilution_name = "Processed Data/COMPASS_H2S_20250529_Plate1_SamplesNeedDilution.csv" 
+  samples_high_cv_name = "Processed Data/COMPASS_H2S_20250529_Plate1_SamplesHighCV.csv" 
 
 
 ###### Log Files - PLEASE CHECK 
