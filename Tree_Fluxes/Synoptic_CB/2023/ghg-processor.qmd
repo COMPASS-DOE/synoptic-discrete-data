@@ -204,6 +204,7 @@ Total metadata rows: `r nrow(metadat)`
 ## Metadata-data matching
 
 ```{r join-data}
+
 # For each row of metadata, find corresponding observational data
 zero_matches <- data.frame()
 match_info <- data.frame()
@@ -409,6 +410,16 @@ for (obs_group in grouped_obs_list) {
 
 ```{r model-fitting}
 
+#metadat$Obs_length <- 100
+
+#metadat$TimeOnly <- format(metadat$Time_start, "%H:%M:%S")
+  
+#dat_w_meta <- ffi_metadata_match(
+  data_timestamps = dat$TIMESTAMP,
+  start_dates = metadat$Date,
+  start_times = metadat$TimeOnly,
+  obs_lengths = metadat$Obs_length)
+
 #change units 
   #so we will use temp and volume from metadata 
   #using the fluxfinder conversion function to get nmol or umol units
@@ -431,10 +442,15 @@ combined_dat$datetime <- as.POSIXct(
   tz = "EST"
 )
 
-fluxes_ch4 <- ffi_compute_fluxes(combined_dat,
-                     group_column = "Plot",
-                     time_column = "datetime",
-                     gas_column = "CH4_nmol_m2",
+combined_dat <- combined_dat %>%
+  mutate(PlotID = paste0(Plot, "-", Date))
+
+#also need to create a unique Plot_ID with the 
+
+fluxes_co2 <- ffi_compute_fluxes(combined_dat,
+                     group_column = "PlotID",
+                     time_column = "TIMESTAMP",
+                     gas_column = "CO2_umol_m2",
                      dead_band = 0)
 
                              
