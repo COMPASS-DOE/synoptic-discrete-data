@@ -1,17 +1,18 @@
 ---
-title: "Synoptic CB: Porewater Sulfide"
+title: "Synoptic CB: Porewater SO4/Cl"
 author: "May 2025 Samples"
 date: "`r Sys.Date()`"
 output: 
   pdf_document:
-    toc: false
-    number_sections: false
-geometry: "left=2cm,right=2cm,top=1cm,bottom=2cm"
+    toc: true
+    number_sections: true
+
 output_dir: "To Be Reviewed/PDF"
 ---
 
 
-```{r Add Required Packages, include=FALSE}
+##Add Required Packages
+```{r packages, include=FALSE}
 
 #Packages that are required 
 lapply(c(
@@ -26,6 +27,7 @@ lapply(c(
 
 ## Run Information
 ```{r Run Information, echo=TRUE, message=FALSE, warning=FALSE}
+
 ###### Run information - PLEASE CHANGE
   Date_Run = "20250529"  #Date that instrument was run
   Run_by = "Melanie Giessner"  #Instrument user 
@@ -47,6 +49,7 @@ lapply(c(
   samples_need_dilution_name = "Processed Data/COMPASS_H2S_20250529_Plate1_SamplesNeedDilution.csv" 
   samples_high_cv_name = "Processed Data/COMPASS_H2S_20250529_Plate1_SamplesHighCV.csv" 
 
+
 ###### Log Files - PLEASE CHECK 
 #downloaded metadata csv - downloaded from Google drive as csv for this year
   Raw_Metadata = "Raw Data/COMPASS_SynopticCB_PW_SampleLog_2025.csv"
@@ -57,8 +60,8 @@ lapply(c(
 
 ```
 
-
-```{r Set Up Code - constants and QAQC cutoffs, include=FALSE}
+##Set Up Code - constants and QAQC cutoffs
+```{r Constants and QAQC cutoffs, include=FALSE}
 
   #Flag cutoffs
   r2_cutoff = 0.98            #this is the level below which we want to rerun or consider a curve 
@@ -94,6 +97,7 @@ lapply(c(
 
 ```
 
+##Tidy data
 ```{r Tidy data, include=FALSE}
 
 # Read in file with IDs and dilutions
@@ -111,7 +115,8 @@ write.table(raw_tidy, tidy_file_name, sep = ",", col.names = FALSE, row.names = 
 
 ```
 
-```{r Read in tidy data, include=FALSE}
+##Read in tidy data
+```{r Read in tidied data, include=FALSE}
 
 # Read tidy plate file
 dat <- stds <- read_plate(
@@ -139,7 +144,8 @@ dat$IDs[dat$IDs == "ChkStd 5"] <- "ChkStd 4"
 dat$IDs[dat$IDs == "ChkStd 6"] <- "ChkStd 4"
 ```
 
-```{r Plot Standard Curve, echo=FALSE, message=FALSE, warning = FALSE, fig.keep='none', include=FALSE}
+##Plot standards
+```{r Plot Standards, echo=FALSE, message=FALSE, warning = FALSE, fig.keep='none', include=FALSE}
 
 #subset by H2s Stds
 H2S_stds_all <- dat %>%  
@@ -182,7 +188,6 @@ H2S <- ggplot(H2S_stds, aes(Conc, Abs)) +
   #   size = 4
   # ) +
   ggtitle("Sulfide Standard Curve")
-
 # H2S
 
 #Calculate cv for STDs
@@ -218,7 +223,8 @@ dat <- dat %>%
 
 ```
 
-```{r Assess Standard Curves, echo=FALSE, message=FALSE, warning = FALSE, fig.keep='none', include=FALSE}
+##Assess Standard Curves
+```{r Assess Standards, echo=FALSE, message=FALSE, warning = FALSE, fig.keep='none', include=FALSE}
 
 #read in datafile with all the slopes
 qlogO <- read.csv(Log_path)
@@ -289,7 +295,7 @@ Rsq1 <- ggplot(data=qlog, aes(x=Date, y=R2)) +
   theme_classic() + ylim(0.96, 1.01) + 
   theme(legend.position="none")+ 
   ggtitle("Sulfide R2s")+
-  guides(x = guide_axis(angle = 70)) 
+  guides(x = guide_axis(angle = 70))
 
 Rsq1
 
@@ -300,17 +306,16 @@ write.csv(qlog, Log_path)
 
 ```
 
-```{r Plot standard graphs, echo = FALSE, warning = FALSE, message = FALSE, fig.width=8, fig.height=12}
-#, out.width = "40 cm", out.height = "40 cm"
-
-knit_print((paste("Std Curve R squared:", round(Slopes$R2, 4))))
+## Plot standard graphs
+```{r, echo = FALSE, warning = FALSE, out.width = "100%", out.height = "100%"}
 
 ##Plot std graphs together
 (H2S)/(slope1)/(int1)
 
 ```
 
-```{r Assess Check Standards, echo=FALSE, warning = FALSE, include=FALSE}
+##Assess Check Standards
+```{r Check Standards, echo=FALSE, warning = FALSE, include=FALSE}
 
 ####This part could probably be streamlined####
 
@@ -438,13 +443,14 @@ ChkStdbar <- ggplot(data = QAstdchk, aes(x = IDs, y = p_value, fill=p_flag)) +
         theme_classic() + labs(x= "Sample ID", y="T-test p-value") + 
         theme(legend.position="none") +  geom_hline(yintercept=0.05, linetype="dashed", 
                 color = "black", linewidth=1)+ 
-        ggtitle("Check Standards")
+        ggtitle("Check Standard P-values from T-test")
 
 # ChkStdbar
 
 
 ```
 
+##Matrix Check QAQC
 ```{r Matrix Checks, echo=FALSE, warning = FALSE, include=FALSE}
 
 std5 <- subset(H2S_stds, IDs == "Std 5")
@@ -528,12 +534,21 @@ MCbar <- ggplot(data = QAMC, aes(x = IDs, y = p_value, fill=p_flag)) +
         theme_classic() + labs(x= "Sample ID", y="T-test p-value") + 
         theme(legend.position="none") +  geom_hline(yintercept=0.05, linetype="dashed", 
                 color = "black", linewidth=1)+ 
-        ggtitle("Matrix Effects")
+        ggtitle("Matrix Effect P-values from T-test")
 
 
 ```
 
+##Plot check standards and matrix checks
+```{r, echo = FALSE, warning = FALSE, out.width = "100%", out.height = "100%"}
 
+##Plot chk stds and MC graphs together
+ChkStdbar+MCbar
+
+```
+
+
+##Flag sample data
 ```{r Flag sample data, echo=FALSE, warning = FALSE, include=FALSE}
 
 dat_flagged <- dat %>%  
@@ -556,6 +571,7 @@ dat_flagged$Conc_flag <- ifelse(dat_flagged$Conc <0, 'bdl', ifelse(dat_flagged$A
 
 ```
 
+##Calculate CV across wells
 ```{r calculate sample CVs, include = FALSE}
 # head(dat_flagged)
 
@@ -587,6 +603,7 @@ H2S_original
 
 ```
 
+##Remove bad reps
 ```{r remove bad reps, include = FALSE}
 
 ####This is a bit clunky but they figured out how to auto remove bad reps!####
@@ -725,14 +742,16 @@ knitr::kable(H2S_DiluteRerun, caption = "Samples that need to be diluted")
 
 ```
 
-```{r Plot samples before and after removing bad replicates, echo = FALSE, warning = FALSE, fig.width=8, fig.height=10}
+##Plot samples before and after removing bad replicates
+```{r, echo = FALSE, warning = FALSE, out.width = "100%", out.height = "100%"}
 
 ##Plot original and fixed sample CV graphs together
 H2S_original/H2S_fixed
 
 ```
 
-```{r Assess Duplicates, echo=FALSE, fig.keep = "none", warning=FALSE, include=FALSE}
+##Assess Duplicates
+```{r Check Duplicates, echo=FALSE, fig.keep = "none", warning=FALSE, include=FALSE}
 
 #Show me the data that we have from the calculations 
 # head(dat1)
@@ -789,7 +808,8 @@ if (nrow(Baddups) > 0) {
 #check for any one's that would warrant reruns 
 ```
 
-```{r Assess Analytical Spikes, echo=FALSE, fig.keep = "none", include=FALSE}
+##Assess Analytical Spikes
+```{r Assess Spikes, echo=FALSE, fig.keep = "none", include=FALSE}
 
 #Show me the data that we have from the calculations 
 # head(dat1)
@@ -851,7 +871,8 @@ if (nrow(Badspks) > 0) {
 #check for any no's that would warrant reruns! 
 ```
 
-```{r Plot duplicates and spikes, echo = FALSE, warning = FALSE, out.width = "100%", out.height = "100%"}
+##Plot duplicates and spikes
+```{r, echo = FALSE, warning = FALSE, out.width = "100%", out.height = "100%"}
 
 ##Plot dup and spk together
 (dupsbar + spksbar)
@@ -859,15 +880,8 @@ if (nrow(Badspks) > 0) {
 ```
 
 
-```{r Plot check standards and matrix checks, echo = FALSE, warning = FALSE, out.width = "100%", out.height = "100%"}
-
-##Plot chk stds and MC graphs together
-ChkStdbar+MCbar
-
-```
-
-
-```{r Export final data and samples to rerun, echo=FALSE, include = FALSE}
+##Export final data and samples to rerun
+```{r Export Processed Data, echo=FALSE, include = FALSE}
 
 dat_IDs <- dat1
 
@@ -882,3 +896,4 @@ write.csv(H2S_HighCVRerun, samples_high_cv_name)
 
 ```
 
+### END
