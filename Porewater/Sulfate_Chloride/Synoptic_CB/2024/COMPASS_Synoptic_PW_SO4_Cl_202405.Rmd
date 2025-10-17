@@ -33,12 +33,19 @@ lapply(c(
   Date_Run = "2024-06-04"  #Date that instrument was run
   Run_by = "Zoe Read"  #Instrument user 
   Script_run_by = "Zoe Read" #Code user 
-  run_notes = "Some sample IDs are missing from metadata: 
-  GWI_202405_UP_LYSC_45CM - this has values of 0 for SO4 and Cl so maybe there was no sample. 
-  MSM_202405_UP_LYSA_10CM" #any notes from the run
+  run_notes = "Two SO4 duplicates had high CVs. 
+  Some sample IDs are missing from metadata: 
+  GWI_202405_UP_LYSC_45CM - this has values of 0 for SO4 and Cl so was likely just Zn Ac and was removed. 
+  MSM_202405_UP_LYSA_10CM - this sample ID was changed to MSM_202405_UP_LYSC_10CM. 
+  " #any notes from the run
   samples <- c("GCW", "GWI", "MSM", "SWH") #whatever identifies your samples within the same names 
   samples_pattern <- paste(samples, collapse = "|") 
     #samples_pattern <- "GCW" #use this instead of the line above if you have only one site code 
+
+##Fix samples that were entered incorrectly
+  samples_to_remove <- "GWI_202405_UP_LYSC_45CM"
+  Old_ID_1 = "MSM_202405_UP_LYSA_10CM"
+  New_ID_1 = "MSM_202405_UP_LYSC_10CM"
 
 ###### File Names - PLEASE CHANGE 
 #file path and name for raw summary data file 
@@ -1007,8 +1014,15 @@ all_data_flagged <- dat_flagged %>%
   mutate(sample_ID = sub("^[^_]+_", "", sample_ID))
   #select(!Excess_Info)
 
-#check to see if all samples are present in the metadata 
 all_data_flagged$sample_ID <- toupper(all_data_flagged$sample_ID)
+all_data_flagged$sample_name <- toupper(all_data_flagged$sample_name)
+
+####Fix Sample IDs####
+all_data_flagged <- subset(all_data_flagged, !(sample_ID %in% samples_to_remove))
+all_data_flagged$sample_ID <- str_replace(all_data_flagged$sample_ID, Old_ID_1, New_ID_1)
+all_data_flagged$sample_name <- str_replace(all_data_flagged$sample_name, Old_ID_1, New_ID_1)
+
+#check to see if all samples are present in the metadata 
 dionex_metadata$Cl_SO4_ID <- toupper(dionex_metadata$Cl_SO4_ID)
 
 all_present <- all(all_data_flagged$sample_ID %in% dionex_metadata$Cl_SO4_ID)
