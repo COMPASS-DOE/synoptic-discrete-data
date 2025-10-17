@@ -1,0 +1,231 @@
+---
+title: "COMPASS_SynopticCB_Collate_TGAS_2022_Data"
+author: "Stephanie J. Wilson"
+date: "2025-08-29"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(dplyr)
+library(ggplot2)
+library(ggpubr)
+library(stringr)
+library(readxl)
+library(tidyr)
+library(tibble)
+library(lubridate)
+```
+
+#Read in and collate all the files in the Processed Data folder 
+```{r}
+##Read in list of processed data files
+files <- list.files(path = "Processed Data", pattern = "\\.csv$", full.names = TRUE)
+
+desired_columns <- c("Project",	"Region",	"Site",	"Zone",	"Replicate",	"Depth_cm",	"Tree_ID", "Sample_ID",	"Year",	"Month",	"Day",	"Time",	"Time_Zone",	"SO4_Conc_mM",	"SO4_Conc_flag",	"SO4_QAQC_flag",	"Cl_Conc_mM",	"Cl_Conc_flag",	"Cl_QAQC_flag",	"salinity",	"Analysis_rundate",	"Run_notes",	"Field_notes")
+```
+
+
+```{r}
+##Read in each data file
+file1 <- read.csv(files[1])
+head(file1)
+
+missing_columns <- setdiff(desired_columns, names(file1))
+for (col in missing_columns) {
+  file1[[col]] <- NA
+}
+
+file1_clean <- file1 %>%
+  mutate(
+    Project = "COMPASS: Synoptic", 
+    Region = "CB", 
+    Date = Site,
+    Site = Zone,
+    Depth_cm = Depth, 
+    SO4_Conc_mM = SO4_mM,
+    Cl_Conc_mM = Cl_mM)
+
+file1_clean <- file1_clean %>%
+  mutate(Date = ymd(Date)) %>%
+  mutate(Year = year(Date),
+         Month = month(Date), 
+         Day = day(Date) )
+
+missing_columns <- setdiff(desired_columns, names(file1_clean))
+for (col in missing_columns) {
+  file1_clean[[col]] <- NA
+}
+
+head(file1_clean)
+
+file1_cols <- file1_clean[, desired_columns]
+head(file1_cols)
+```
+
+
+```{r}
+file2 <- read.csv(files[2])
+head(file2)
+
+missing_columns <- setdiff(desired_columns, names(file2))
+for (col in missing_columns) {
+  file2[[col]] <- NA
+}
+
+head(file2)
+
+file2_clean <- file2 %>%
+  mutate(
+    Project = "COMPASS: Synoptic", 
+    Region = "CB", 
+    Depth_cm = Depth, 
+    SO4_Conc_mM = SO4_mM,
+    Cl_Conc_mM = Cl_mM)
+
+file2_clean <- file2_clean %>%
+  mutate(Date = ym(Date)) %>%
+  mutate(Year = year(Date),
+         Month = month(Date))
+
+##Don't know when these samples were taken but this says June 1st for now 
+# The date column isn't in the final dataset so this should be okay 
+
+missing_columns <- setdiff(desired_columns, names(file2_clean))
+for (col in missing_columns) {
+  file2_clean[[col]] <- NA
+}
+
+head(file2_clean)
+
+file2_cols <- file2_clean[, desired_columns]
+head(file2_cols)
+```
+
+
+```{r}
+file3 <- read.csv(files[3])
+head(file3)
+
+missing_columns <- setdiff(desired_columns, names(file3))
+for (col in missing_columns) {
+  file3[[col]] <- NA
+}
+
+head(file3)
+
+file3_clean <- file3 %>%
+  mutate(
+    Project = "COMPASS: Synoptic", 
+    Region = "CB", 
+    Depth_cm = Depth, 
+    SO4_Conc_mM = SO4_mM,
+    Cl_Conc_mM = Cl_mM)
+
+file3_date <- file3_clean %>%
+  mutate(Date = ym(Date)) %>%
+  mutate(Year = year(Date),
+         Month = month(Date) )
+
+
+missing_columns <- setdiff(desired_columns, names(file3_date))
+for (col in missing_columns) {
+  file3_date[[col]] <- NA
+}
+
+head(file3_date)
+
+file3_cols <- file3_date[, desired_columns]
+head(file3_cols)
+```
+
+
+```{r}
+file4 <- read.csv(files[4])
+file5 <- read.csv(files[5])
+file6 <- read.csv(files[6])
+
+file7 <- read.csv(files[7])
+#Remove Area columns 
+file7$Cl_Area <- NULL
+file7$SO4_Area <- NULL
+
+
+
+file8 <- read.csv(files[8])
+
+##Need to format data files to look like the 2024 processed data with these column names: 
+# "Project"	"Region"	"Site"	"Zone"	"Replicate"	"Depth_cm"	"Sample_ID"	"Year"	"Month"	"Day"	"Time"	"Time_Zone"	"SO4_Conc_mM"	"SO4_Conc_flag"	"SO4_QAQC_flag"	"Cl_Conc_mM"	"Cl_Conc_flag"	"Cl_QAQC_flag"	"salinity"	"Analysis_rundate"	"Run_notes"	"Field_notes"
+
+
+
+# Read and combine all CSVs
+all_data <- files %>%
+  lapply(read.csv) %>%    # or read.csv if you prefer base R
+  bind_rows()             # combine into one data frame
+
+all_data <- all_data[ ,-1]
+
+all_data <- all_data %>%
+  mutate(Site = recode(Site, "GCrew" = "GCW")) %>%
+   mutate(Sample_ID = str_replace(Sample_ID, "GCrew", "GCW"))
+
+```
+
+#Read in selected TMP data for GCW Upland 
+```{r}
+
+gcw_up <- read.csv("COMPASS_SynopticCB_GCW_UP_TGAS_2022.csv")
+
+
+#pull out what we need 
+gcw_up1 <- gcw_up %>%
+  select( "Project", "Year","Month", "Sapflux_Tree_ID" ,
+          "Sample_ID","CH4_ppm", "CH4_Flag", "CO2_ppm", "CO2_Flag")
+head(gcw_up1)
+
+#clean it up and add necessary columns
+gcw_up1 <- gcw_up1 %>%
+  mutate(Project = "COMPASS: Synoptic", 
+         Region = "CB", 
+         Site = "GCW", 
+         Gas_Sample = "TGAS", 
+         Zone = "UP", 
+         Tree_Code = "SF") %>%
+  mutate(Replicate = str_extract(Sapflux_Tree_ID, "\\d+")) %>%
+  mutate(Tree_Info = case_when(
+    Tree_Code == "DS" ~ "Dead Standing",
+    Tree_Code == "SF" ~ "Sapflow Monitoring",
+    TRUE ~ "Other"  # Optional: handles any values that aren't DS or SF
+  )) %>%
+  mutate(Status = case_when(
+    Tree_Code == "DS" ~ "Dead Standing",
+    Tree_Code == "SF" ~ "Living",
+    TRUE ~ "Other"  
+  )) %>%
+  mutate(CH4_Flag = case_when(
+    CH4_Flag == "Needs_Dilution" ~ "Over Std Curve Range",
+    TRUE ~ "Within Std Curve Range"  
+  )) %>%
+  mutate(CO2_Flag = case_when(
+    CO2_Flag == "Needs_Dilution" ~ "Over Std Curve Range",
+    TRUE ~ "Within Std Curve Range"  
+  ))
+
+#Put them in order and grab what we need 
+final_gcw_up <- gcw_up1 %>%
+  select( "Project", "Region" , "Year","Month" ,"Site", "Zone", "Gas_Sample",
+          "Sample_ID", "Tree_Code", "Replicate", "Status", "Tree_Info",
+          "CH4_ppm", "CH4_Flag", "CO2_ppm", "CO2_Flag")
+
+#combine the TMP data with the rest of the data: 
+all_data_gcw <- rbind(all_data, final_gcw_up)
+
+```
+
+## Viz? and Write the 2022 file out to the folder 
+```{r, echo=FALSE}
+
+write.csv(all_data_gcw, "COMPASS_SynopticCB_TGAS_2022.csv")
+
+```
+
