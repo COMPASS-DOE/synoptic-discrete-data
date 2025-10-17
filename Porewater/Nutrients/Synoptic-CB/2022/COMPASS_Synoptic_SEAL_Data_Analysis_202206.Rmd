@@ -1,0 +1,463 @@
+---
+title: "COMPASS_Synoptic_SEAL_Data_Analysis_June2022"
+author: "Stephanie J. Wilson"
+date: '2023-03-03'
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Information
+```{r}
+#######################################################################################
+####### COMPASS Synoptic 
+####### Chesapeake Bay Sites
+####### Data Analysis Code: Porewater Nutrients 
+####### MONTH: August 2022
+##############################################################################################
+
+
+############################# Information ##################################
+#Author: Stephanie J. Wilson
+#Edited: 20220727
+
+#Samples taken from Lysimeters & Sippers at CB Synoptic Sites
+#Samples were filtered with 0.45 uM, kept on ice, frozen until analysis
+#Field Protocol: 
+#Samples Analyzed on a SEAL discrete auto analyzer 
+#Lab Protocol: https://docs.google.com/document/d/1VaJT7Wb9AcdmM1tgsR_9ZtQ6kwcaoNmp/edit?usp=sharing&ouid=108994740386869376571&rtpof=true&sd=true
+#NOx method = https://drive.google.com/file/d/1sicqBFnzVxmDd5I2_pu8s8pj7iNOAuhF/view?usp=sharing
+#NH4 method = https://drive.google.com/file/d/1ENGemUEvm_rffZqv3lz9BjD0pAMX5nzu/view?usp=sharing
+#PO4 method = https://drive.google.com/file/d/1m3gXDZnJoIo_QmyhvZG4HRgGShCzm9Wq/view?usp=sharing
+#Units from SEAL = mg/L and converted to uMoles/L
+
+#QAQC 
+  #R2 and Slopes 
+#These are checked for drift or differences in this code 
+
+  #Duplicates and Spikes 
+#This is checked by the SEAL software 
+#If 80% of the dups and spikes are within range we accept 
+#the only exceptions are NOx values that are below the detection limit - we do not count dups out of range that are below the detection limit 
+#these are run rouhgly every 10-12 samples per tray. 
+
+  #CCV and CCBs 
+#CCV's are 50% of the top standard checks run every 10 samples, these are checked by the softare; if 80% are within range we accept the tray 
+#CCB's are DI blanks run every 10 samples, these are checked by the software; if 80% are within range we accept the tray 
+
+  #Third Party Standard
+#This is checked within the code - must be within 20% of the peChk concentration 
+```
+
+## QAQC on Slopes
+```{r}
+library(ggplot2)
+library(data.table)
+
+#set working directory 
+#setwd("S:/Biogeochemistry/People/Wilson (Steph)/Data/SEAL/Raw Data Files")
+
+#read in datafile with all the slopes 
+qlog <- read.csv("Raw Data/SERC_SEAL_STDs_Log.csv")
+head(qlog)
+
+#pull out each method 
+qNH3 <- qlog[qlog$Analysis %like% "NH3", ]
+head(qNH3)
+
+qPO4 <- qlog[qlog$Analysis %like% "PO4", ]
+head(qPO4)
+
+qNOx <- qlog[qlog$Analysis %like% "V-Nox", ]
+head(qNOx)
+
+########### NH3
+#plot the slopes to make sure there are no crazy outliers 
+slope1 <- ggplot(data=qNH3, aes(x=Date, y=Slope)) +
+           #geom_line()+
+            geom_point(aes(size=3)) + 
+            theme_classic() + ylim(0, 5) + 
+           theme(legend.position="none") + 
+           ggtitle("NH3 Slopes")
+  
+slope1
+
+#plot the intercepts to make sure there are no crazy outliers 
+int1 <- ggplot(data=qNH3, aes(x=Date, y=Intercept)) +
+  #geom_line()+
+  geom_point(aes(size=3)) + 
+  theme_classic() + ylim(-0.5,0.5) + 
+  theme(legend.position="none")+ 
+  ggtitle("NH3 Intercepts")
+
+int1
+
+#plot the R2s to make sure there are no crazy outliers 
+Rsq1 <- ggplot(data=qNH3, aes(x=Date, y=R2)) +
+  #geom_line()+
+  geom_point(aes(size=3)) + 
+  theme_classic() + ylim(0.75, 1.25) + 
+  theme(legend.position="none")+ 
+  ggtitle("NH3 R2s")
+
+Rsq1
+
+########### PO4
+slope2 <- ggplot(data=qNH3, aes(x=Date, y=Slope)) +
+  #geom_line()+
+  geom_point(aes(size=3)) + 
+  theme_classic() + ylim(0, 5) + 
+  theme(legend.position="none")+ 
+  ggtitle("PO4 Slopes")
+
+slope2
+
+#plot the intercepts to make sure there are no crazy outliers 
+int2 <- ggplot(data=qNH3, aes(x=Date, y=Intercept)) +
+  #geom_line()+
+  geom_point(aes(size=3)) + 
+  theme_classic() + ylim(-0.5,0.5) + 
+  theme(legend.position="none")+ 
+  ggtitle("PO4 Intercepts")
+
+int2
+
+#plot the R2s to make sure there are no crazy outliers 
+Rsq2 <- ggplot(data=qNH3, aes(x=Date, y=R2)) +
+  #geom_line()+
+  geom_point(aes(size=3)) + 
+  theme_classic() + ylim(0.75, 1.25) + 
+  theme(legend.position="none")+ 
+  ggtitle("PO4 R2s")
+
+Rsq2
+
+########### NOx
+slope3 <- ggplot(data=qNH3, aes(x=Date, y=Slope)) +
+  #geom_line()+
+  geom_point(aes(size=3)) + 
+  theme_classic() + ylim(0, 5) + 
+  theme(legend.position="none")+ 
+  ggtitle("NOx Slopes")
+
+slope3
+
+#plot the intercepts to make sure there are no crazy outliers 
+int3 <- ggplot(data=qNH3, aes(x=Date, y=Intercept)) +
+  #geom_line()+
+  geom_point(aes(size=3)) + 
+  theme_classic() + ylim(-0.5,0.5) + 
+  theme(legend.position="none")+ 
+  ggtitle("NOx Intercepts")
+
+int3
+
+#plot the R2s to make sure there are no crazy outliers 
+Rsq3 <- ggplot(data=qNH3, aes(x=Date, y=R2)) +
+  #geom_line()+
+  geom_point(aes(size=3)) + 
+  theme_classic() + ylim(0.75, 1.25) + 
+  theme(legend.position="none")+ 
+  ggtitle("NOx R2s")
+
+Rsq3
+
+
+
+```
+
+## Code Set up 
+```{r}
+
+#packages:
+library(ggplot2)
+library(dplyr)
+library(data.table)
+library(matrixStats)
+library(gridExtra)
+library(ggpubr)
+library(grid)
+
+```
+
+## Ammonia & Phosphate
+```{r}
+#set working directory
+#setwd("S:/Biogeochemistry/People/Wilson (Steph)/Data/SEAL/Raw Data Files")
+
+#read in data 
+file1 <- read.csv("Raw Data/SEAL_COMPASS_Synoptic_NH3_PO4_202206_1.csv")
+
+#Quick look at dataframe
+head(file1)
+
+
+#take out only the columns that we need 
+dat1 <- file1[ ,c(1,4,6,7, 12, 13)]
+
+# assigning new names to the columns of the data frame
+colnames(dat1) <- c('Run_Info','Sample_Name','Conc', "Abs", "Units", "Test")
+head(dat1)
+
+#read in data 
+file2 <- read.csv("Raw Data/SEAL_COMPASS_Synoptic_NH3_PO4_202206_2.csv")
+
+#Quick look at dataframe
+head(file2)
+
+
+#take out only the columns that we need 
+dat2 <- file2[ ,c(1,4,6,7, 12, 13)]
+
+# assigning new names to the columns of the data frame
+colnames(dat2) <- c('Run_Info','Sample_Name','Conc', "Abs", "Units", "Test")
+head(dat2)
+
+
+alldat <- rbind(dat1, dat2)
+
+#Pull out standards 
+stds <- alldat[alldat$Sample_Name %like% "Standard", ]
+head(stds)
+
+
+#Pull out samples 
+alldat2 <- alldat[alldat$Sample_Name %like% "MSM_", ]
+alldat2 <- rbind(alldat2, (alldat[alldat$Sample_Name %like% "GWI_", ]))
+alldat2 <- rbind(alldat2, (alldat[alldat$Sample_Name %like% "GCrew_", ]))
+head(alldat2)
+
+```
+
+## NOx
+```{r}
+#set working directory
+#setwd("S:/Biogeochemistry/People/Wilson (Steph)/Data/SEAL/Raw Data Files")
+
+#read in data 
+Nfile1 <- read.csv("Raw Data/SEAL_COMPASS_Synoptic_NOx_202206_1.csv")
+
+#Quick look at dataframe
+head(Nfile1)
+
+
+#take out only the columns that we need 
+Ndat1 <- Nfile1[ ,c(1,4,6,7, 12, 13)]
+
+# assigning new names to the columns of the data frame
+colnames(Ndat1) <- c('Run_Info','Sample_Name','Conc', "Abs", "Units", "Test")
+head(Ndat1)
+
+#read in data 
+Nfile2 <- read.csv("Raw Data/SEAL_COMPASS_Synoptic_NOx_202206_2.csv")
+
+#Quick look at dataframe
+head(Nfile2)
+
+
+#take out only the columns that we need 
+Ndat2 <- Nfile2[ ,c(1,4,6,7, 12, 13)]
+
+# assigning new names to the columns of the data frame
+colnames(Ndat2) <- c('Run_Info','Sample_Name','Conc', "Abs", "Units", "Test")
+head(Ndat2)
+
+
+Nalldat <- rbind(Ndat1, Ndat2)
+
+#Pull out standards 
+Nstds <- Nalldat[Nalldat$Sample_Name %like% "Standard", ]
+head(Nstds)
+
+
+#Pull out samples 
+Nalldat2 <- Nalldat[Nalldat$Sample_Name %like% "MSM_", ]
+Nalldat2 <- rbind(Nalldat2, (Nalldat[Nalldat$Sample_Name %like% "GWI_", ]))
+Nalldat2 <- rbind(Nalldat2, (Nalldat[Nalldat$Sample_Name %like% "GCrew_", ]))
+head(Nalldat2)
+
+
+
+```
+
+## peCheck Checks 
+```{r}
+
+#pull out peChecks from alldat and Nalldat 
+chks <- alldat[alldat$Sample_Name %like% "peCheck", ]
+head(chks)
+
+Nchks <- Nalldat[Nalldat$Sample_Name %like% "peCheck", ]
+NH4chk <- subset(chks, Test == "Ammonia 2")
+NH4chk$ConcTrue <- 0.948
+NH4chk$Chk_diff <- (NH4chk$Conc - NH4chk$ConcTrue)/((NH4chk$Conc+NH4chk$ConcTrue)/2) * 100
+NH4chk$Chk_dff_flag <-  ifelse(NH4chk$Chk_diff <25, 'YES', 'NO, rerun')
+head(NH4chk)
+
+PO4chk <- subset(chks, Test == "o-PHOS 0.3")
+PO4chk$ConcTrue <- 0.818
+PO4chk$Chk_diff <- (PO4chk$Conc - PO4chk$ConcTrue)/((PO4chk$Conc+PO4chk$ConcTrue)/2) * 100
+PO4chk$Chk_dff_flag <-  ifelse(PO4chk$Chk_diff <25, 'YES', 'NO, rerun')
+head(PO4chk)
+
+NOXchk <- subset(Nchks, Test == "Vanadium NOx")
+NOXchk$ConcTrue <- 0.706
+NOXchk$Chk_diff <- (NOXchk$Conc - NOXchk$ConcTrue)/((NOXchk$Conc+NOXchk$ConcTrue)/2) * 100
+NOXchk$Chk_dff_flag <-  ifelse(NOXchk$Chk_diff <25, 'YES', 'NO, rerun')
+head(NOXchk)
+
+Allchks <- rbind(NH4chk, PO4chk)
+Allchks <- rbind(Allchks, NOXchk)
+head(Allchks)
+
+#plot dups output as a bar graph to easily check - want any over 10% to be red need to work on this 
+Chksbar <- ggplot(data = Allchks, aes(x = Sample_Name, y = Chk_diff, fill=Test)) +
+        geom_bar(stat = 'identity') + 
+        facet_wrap(~ Test) +
+        #facet_grid(cols = Allchks$Test) +
+        theme_classic() + labs(x= "Sample ID", y="peChecks Percent Difference") + 
+        theme(legend.position="right") +  
+        geom_hline(yintercept=25, linetype="dashed", color = "black", size=1) + 
+        geom_hline(yintercept=0, color = "black", size=1) + 
+        geom_hline(yintercept=-25, linetype="dashed", color = "black", size=1)
+Chksbar
+```
+
+## Constants 
+```{r}
+
+N_mw <- 14.0067   # molecular weight of N 
+
+P_mw <- 30.973762  # molecular weight of P 
+
+Con1 <- 1000       # conversion factor value
+
+Con2 <- 1000000    # conversion factor value 
+
+```
+
+## Convert Data from mg/L to uM 
+```{r}
+head(alldat2)
+head(Nalldat2)
+
+#subset by test
+NH4samples <- subset(alldat2, Test == "Ammonia 2")
+head(NH4samples)
+
+PO4samples <- subset(alldat2, Test == "o-PHOS 0.3")
+head(PO4samples)
+
+NOXsamples <- subset(Nalldat2, Test == "Vanadium NOx")
+head(NOXsamples)
+
+
+NH4samples$Conc_uM <- (((as.numeric(NH4samples$Conc))/Con1)/N_mw)*Con2
+head(NH4samples)
+
+PO4samples$Conc_uM <- (((as.numeric(PO4samples$Conc))/Con1)/N_mw)*Con2
+head(PO4samples)
+
+NOXsamples$Conc_uM_raw <- (((as.numeric(NOXsamples$Conc))/Con1)/N_mw)*Con2
+head(NOXsamples)
+
+#add step to make negative values equal to bd (below detection) and replace with zeros 
+NOXsamples$Conc_uM <- ifelse(NOXsamples$Conc_uM_raw<0, 0, (NOXsamples$Conc_uM_raw) )
+head(NOXsamples)
+```
+
+## Pull all data back together and add flags
+```{r}
+
+#pull out the columns we want from each dataframe 
+NH4_pull <- NH4samples[ ,c(2,3,7) ]
+head(NH4_pull)
+
+PO4_pull <- PO4samples[ ,c(2,3,7) ]
+head(PO4_pull)
+
+NOX_pull <- NOXsamples[ ,c(2,3,8) ]
+head(NOX_pull)
+
+
+#Bring all this data back together: 
+all_data <- merge(NH4_pull, PO4_pull, by="Sample_Name", all.x=TRUE)
+all_data <- merge(all_data, NOX_pull, by="Sample_Name", all.x=TRUE)
+head(all_data)
+
+colnames(all_data) <- c("Sample_Name", "NH3_mgL", "NH3_uM", "PO4_mgL", "PO4_uM", "NOx_mgL", "NOx_uM")
+head(all_data)
+
+
+#add in an if then statement that tells us if they are within the range of the test - check this after doing this line
+all_data$NH3_range <- ifelse(all_data$NH3_mgL<0.02, "bdl",  ifelse(all_data$NH3_mgL>2, "adl", "Within_Range")) 
+all_data$PO4_range <- ifelse(all_data$PO4_mgL<0.003, "bdl",  ifelse(all_data$PO4_mgL>3, "adl", "Within_Range")) 
+all_data$NOx_range <- ifelse(all_data$NOx_mgL<0.025, "bdl",  ifelse(all_data$NOx_mgL>1, "adl", "Within_Range"))
+head(all_data)
+```
+
+## Take an initial look at concentrations 
+```{r}
+#plot data to get a sense of any outliers 
+NH3look <- ggplot(data=all_data, aes(x=Sample_Name, y=NH3_uM)) +
+  geom_bar(stat="identity") + 
+  theme_classic() + ylim(-10, 200) + 
+  theme(legend.position="none") + 
+  ggtitle("Sample NH3 Concentrations")
+NH3look
+
+PO4look <- ggplot(data=all_data, aes(x=Sample_Name, y=PO4_uM)) +
+  geom_bar(stat="identity") + 
+  theme_classic() + ylim(-2, 50) + 
+  theme(legend.position="none") + 
+  ggtitle("Sample PO4 Concentrations")
+PO4look
+
+NOXlook <- ggplot(data=all_data, aes(x=Sample_Name, y=NOx_uM)) +
+  geom_bar(stat="identity") + 
+  theme_classic() + ylim(-2, 2) + 
+  theme(legend.position="none") + 
+  ggtitle("Sample NOx Concentrations")
+NOXlook
+
+
+```
+
+## Pull out data you need, make IDs 
+```{r}
+
+head(all_data)
+
+out <- all_data[ ,c(1,3,5,7,8,9,10)]
+head(out)
+
+#for steph <- pull out identifiers of the sample names 
+#pull the sample ID and separate it by the underscores 
+IDs <- data.frame(do.call('rbind', strsplit(as.character(out$Sample_Name),'_',fixed=TRUE)))
+colnames(IDs) <- c("Site" ,"Zone", "Replicate", "Depth")
+IDs$Date <- 202206
+IDs$Month <- "June"
+head(IDs)
+
+#rejoin them to the dataframe
+alldat <- cbind(IDs, out)
+head(alldat)
+
+
+
+```
+
+## Export final data with flags 
+```{r}
+
+#Export Data
+#setwd("S:/Biogeochemistry/People/Wilson (Steph)/Data/SEAL/Final Data Files")
+write.csv(alldat, file="Processed Data/COMPASS_SynopticCB_Nutrients_202206.csv")
+
+```
+
+
+
+
