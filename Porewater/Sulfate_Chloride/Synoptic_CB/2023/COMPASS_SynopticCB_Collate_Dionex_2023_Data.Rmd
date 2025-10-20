@@ -34,22 +34,20 @@ missing_columns <- setdiff(desired_columns, names(file1))
 for (col in missing_columns) {
   file1[[col]] <- NA
 }
+head(file1)
 
 file1_clean <- file1 %>%
   mutate(
     Project = "COMPASS: Synoptic", 
     Region = "CB", 
-    Date = Site,
-    Site = Zone,
     Depth_cm = Depth, 
     SO4_Conc_mM = SO4_mM,
     Cl_Conc_mM = Cl_mM)
 
 file1_clean <- file1_clean %>%
-  mutate(Date = ymd(Date)) %>%
+  mutate(Date = ym(Date)) %>%
   mutate(Year = year(Date),
-         Month = month(Date), 
-         Day = day(Date) )
+         Month = month(Date) )
 
 missing_columns <- setdiff(desired_columns, names(file1_clean))
 for (col in missing_columns) {
@@ -78,12 +76,14 @@ file2_clean <- file2 %>%
   mutate(
     Project = "COMPASS: Synoptic", 
     Region = "CB", 
+    Date_long = Site, 
+    Site = Date, 
     Depth_cm = Depth, 
     SO4_Conc_mM = SO4_mM,
     Cl_Conc_mM = Cl_mM)
 
 file2_clean <- file2_clean %>%
-  mutate(Date = ym(Date)) %>%
+  mutate(Date = ym(Date_long)) %>%
   mutate(Year = year(Date),
          Month = month(Date))
 
@@ -154,14 +154,12 @@ file4_clean <- file4 %>%
   mutate(
     Project = "COMPASS: Synoptic", 
     Region = "CB", 
-    Date_long = Site, 
-    Site = Date, 
     Depth_cm = Depth, 
     SO4_Conc_mM = SO4_mM,
     Cl_Conc_mM = Cl_mM)
 
 file4_date <- file4_clean %>%
-  mutate(Date = ym(Date_long)) %>%
+  mutate(Date = ym(Date)) %>%
   mutate(Year = year(Date),
          Month = month(Date) )
 
@@ -193,14 +191,12 @@ file5_clean <- file5 %>%
   mutate(
     Project = "COMPASS: Synoptic", 
     Region = "CB", 
-    Date_long = Site, 
-    Site = Date, 
     Depth_cm = Depth, 
     SO4_Conc_mM = SO4_mM,
     Cl_Conc_mM = Cl_mM)
 
 file5_date <- file5_clean %>%
-  mutate(Date = ym(Date_long)) %>%
+  mutate(Date = ym(Date)) %>%
   mutate(Year = year(Date),
          Month = month(Date) )
 
@@ -333,12 +329,90 @@ file8_cols <- file8_date[, desired_columns]
 head(file8_cols)
 ```
 
+##File 9
+```{r}
+file9 <- read.csv(files[9])
+head(file9)
+
+missing_columns <- setdiff(desired_columns, names(file9))
+for (col in missing_columns) {
+  file9[[col]] <- NA
+}
+
+head(file9)
+
+file9_clean <- file9 %>%
+  mutate(
+    Project = "COMPASS: Synoptic", 
+    Region = "CB", 
+    Depth_cm = Depth, 
+    SO4_Conc_mM = SO4_mM,
+    Cl_Conc_mM = Cl_mM)
+
+head(file9_clean)
+
+file9_date <- file9_clean %>%
+  mutate(Date = ym(Date)) %>%
+  mutate(Year = year(Date),
+         Month = month(Date) )
+
+
+missing_columns <- setdiff(desired_columns, names(file9_date))
+for (col in missing_columns) {
+  file9_date[[col]] <- NA
+}
+
+head(file9_date)
+
+file9_cols <- file9_date[, desired_columns]
+head(file9_cols)
+```
+
+##File 10
+```{r}
+file10 <- read.csv(files[10])
+head(file10)
+
+missing_columns <- setdiff(desired_columns, names(file10))
+for (col in missing_columns) {
+  file10[[col]] <- NA
+}
+
+head(file10)
+
+file10_clean <- file10 %>%
+  mutate(
+    Project = "COMPASS: Synoptic", 
+    Region = "CB", 
+    Depth_cm = Depth, 
+    SO4_Conc_mM = SO4_mM,
+    Cl_Conc_mM = Cl_mM)
+
+head(file10_clean)
+
+file10_date <- file10_clean %>%
+  mutate(Date = ym(Date)) %>%
+  mutate(Year = year(Date),
+         Month = month(Date) )
+
+
+missing_columns <- setdiff(desired_columns, names(file10_date))
+for (col in missing_columns) {
+  file10_date[[col]] <- NA
+}
+
+head(file10_date)
+
+file10_cols <- file10_date[, desired_columns]
+head(file10_cols)
+```
+
 ##Combine all data files
 ```{r}
 ##Need to format data files to look like the 2024 processed data with these column names: 
 # "Project"	"Region"	"Site"	"Zone"	"Replicate"	"Depth_cm"	"Sample_ID"	"Year"	"Month"	"Day"	"Time"	"Time_Zone"	"SO4_Conc_mM"	"SO4_Conc_flag"	"SO4_QAQC_flag"	"Cl_Conc_mM"	"Cl_Conc_flag"	"Cl_QAQC_flag"	"salinity"	"Analysis_rundate"	"Run_notes"	"Field_notes"
 
-all_data <- bind_rows(file1_cols, file2_cols, file3_cols, file4_cols, file5_cols, file6_cols, file7_cols, file8_cols)
+all_data <- bind_rows(file1_cols, file2_cols, file3_cols, file4_cols, file5_cols, file6_cols, file7_cols, file8_cols, file9_cols, file10_cols)
 
 all_data <- all_data %>%
   mutate(Site = recode(Site, "GCrew" = "GCW")) %>%
@@ -351,7 +425,7 @@ all_data <- subset(all_data, Sample_ID != "Blank")
 ## Write the 2022 file out to the folder 
 ```{r, echo=FALSE}
 
-write.csv(all_data, "COMPASS_SynopticCB_SO4_Cl_2022.csv")
+write.csv(all_data, "COMPASS_SynopticCB_SO4_Cl_2023.csv")
 
 ```
 
