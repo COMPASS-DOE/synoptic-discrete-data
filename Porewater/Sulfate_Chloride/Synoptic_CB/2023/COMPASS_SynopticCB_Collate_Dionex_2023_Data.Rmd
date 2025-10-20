@@ -1,5 +1,5 @@
 ---
-title: "COMPASS_SynopticCB_Collate_TGAS_2022_Data"
+title: "COMPASS_SynopticCB_Collate_Dionex_2023_Data"
 author: "Stephanie J. Wilson"
 date: "2025-08-29"
 output: html_document
@@ -172,6 +172,13 @@ for (col in missing_columns) {
 head(file4_date)
 
 file4_cols <- file4_date[, desired_columns]
+
+file4_cols$Month <-  ifelse(str_detect(file4_cols$Sample_ID, "202036"), 6, file4_cols$Month)
+file4_cols$Year <-  ifelse(str_detect(file4_cols$Sample_ID, "202036"), 2023, file4_cols$Year)
+
+file4_cols <- file4_cols %>%
+   mutate(Sample_ID = str_replace(Sample_ID, "202036", "202306"))
+
 head(file4_cols)
 ```
 
@@ -209,6 +216,14 @@ for (col in missing_columns) {
 head(file5_date)
 
 file5_cols <- file5_date[, desired_columns]
+
+##Fix sample date entered incorrectly
+file5_cols$Month <-  ifelse(str_detect(file5_cols$Sample_ID, "202037"), 7, file4_cols$Month)
+file5_cols$Year <-  ifelse(str_detect(file5_cols$Sample_ID, "202037"), 2023, file4_cols$Year)
+
+file5_cols <- file5_cols %>%
+   mutate(Sample_ID = str_replace(Sample_ID, "202037", "202037"))
+
 head(file5_cols)
 ```
 
@@ -418,14 +433,46 @@ all_data <- all_data %>%
   mutate(Site = recode(Site, "GCrew" = "GCW")) %>%
    mutate(Sample_ID = str_replace(Sample_ID, "GCrew", "GCW"))
 
+##Fix dates entered incorrectly
+
+##Remove Blanks
 all_data <- subset(all_data, Sample_ID != "Blank")
+
+##Remove non-Lys Samples
+Lys_SW_data <- all_data %>%  
+  filter(!str_detect(Sample_ID, "Sip"))%>%  
+  filter(!str_detect(Sample_ID, "RHZ"))%>%  
+  filter(!str_detect(Sample_ID, "JLee"))%>%  
+  filter(!str_detect(Sample_ID, "PPR"))%>%  
+  filter(!str_detect(Sample_ID, "S1"))%>%  
+  filter(!str_detect(Sample_ID, "S2"))
+
+##In 2023 SWAMP was called UP and UPLAND was called UPCON
+all_clean <- Lys_SW_data %>%
+  mutate(
+    Zone = case_when(
+      Site == "SWH" & Zone == "UP" ~ "SWAMP",
+      Site == "SWH" & Zone == "UPCON" ~ "UP",
+      TRUE ~ `Zone`
+    ))
+
+##Replace in the sample IDs as well, based on the newly-corrected Zones
+all_clean_IDs <- all_clean %>%
+  mutate(
+    Sample_ID = case_when(
+      Site == "SWH" & Zone == "SWAMP" ~ gsub(pattern = "_UP_", replacement = "_SWAMP_", x = Sample_ID),
+      Site == "SWH" & Zone == "UP" ~ gsub(pattern = "_UPCON_", replacement = "_UP_", x = Sample_ID),
+      .default = Sample_ID
+    )
+  )
+
 
 ```
 
-## Write the 2022 file out to the folder 
+## Write the 2023 file out to the folder 
 ```{r, echo=FALSE}
 
-write.csv(all_data, "COMPASS_SynopticCB_SO4_Cl_2023.csv")
+write.csv(all_clean_IDs, "COMPASS_SynopticCB_SO4_Cl_2023.csv")
 
 ```
 

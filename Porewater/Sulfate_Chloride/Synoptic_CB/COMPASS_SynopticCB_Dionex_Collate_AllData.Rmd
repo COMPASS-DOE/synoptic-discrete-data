@@ -1,0 +1,457 @@
+---
+title: "COMPASS_SynopticCB_Dionex_Collate_AllData"
+author: "Stephanie J. Wilson"
+date: "2025-10-20"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+library(dplyr)
+library(ggplot2)
+library(ggpubr)
+library(stringr)
+library(readxl)
+library(tidyr)
+library(tibble)
+library(openxlsx)
+```
+
+## Grab 2022 and 2023 All Data Files
+```{r}
+
+#read in 2022 Dionex Data:
+dat22 <- read.csv("2022/COMPASS_SynopticCB_SO4_Cl_2022.csv")
+head(dat22)
+# 1_MSM_UP_LysA_10cm 
+
+#read in 2023 Dionex Data:
+dat23 <- read.csv("2023/COMPASS_SynopticCB_SO4_Cl_2023.csv")
+head(dat23)
+# 1_GCW_202304_UP_LysA_20cm 
+
+#read in 2024 Dionex Data:
+dat24 <- read.csv("2024/COMPASS_SynopticCB_SO4_Cl_2024.csv")
+head(dat24)
+# GCW_202404_UP_LYSB_10CM 
+
+all_dat <- rbind(dat22, dat23, dat24)
+
+```
+
+##Clean data
+```{r Clean data}
+
+##Remove Lys from Replicate for SW and add to replicate for Lys
+all_dat$Replicate <- toupper(all_dat$Replicate)
+
+all_dat$Replicate <-  ifelse(all_dat$Zone == "SW" & all_dat$Replicate == "LYSA", "A", all_dat$Replicate)
+all_dat$Replicate <-  ifelse(all_dat$Zone == "SW" & all_dat$Replicate == "LYSB", "B", all_dat$Replicate)
+all_dat$Replicate <-  ifelse(all_dat$Zone == "SW" & all_dat$Replicate == "LYSC", "C", all_dat$Replicate)
+
+all_dat$Replicate <-  ifelse(all_dat$Zone != "SW" & all_dat$Replicate == "A", "LYSA", all_dat$Replicate)
+all_dat$Replicate <-  ifelse(all_dat$Zone != "SW" & all_dat$Replicate == "B", "LYSB", all_dat$Replicate)
+all_dat$Replicate <-  ifelse(all_dat$Zone != "SW" & all_dat$Replicate == "C", "LYSC", all_dat$Replicate)
+
+
+##Depths for SW samples should be 0 
+all_dat$Depth_cm <-  ifelse((all_dat$Zone == "SW"), 0, all_dat$Depth_cm)
+
+##Remove cm from Depth
+all_dat_1 <- all_dat %>%
+  mutate(Depth_cm = gsub("cm", "", as.character(Depth_cm)))%>%
+  mutate(Depth_cm = gsub("m", "", as.character(Depth_cm)))
+
+##Remake Date Column with just Year and Month for Sample ID
+all_dat_1 <- all_dat_1 %>%
+  mutate(
+    Date = if_else(
+      Month < 10,
+      # Modify the string:
+      Date <- paste(all_dat_1$Year, all_dat_1$Month, sep = "0"), 
+      Date <- paste0(all_dat_1$Year, all_dat_1$Month), 
+    )
+  )
+
+##Remake sample ID
+all_dat_1 <- all_dat_1 %>%
+  mutate(
+    Sample_ID_new = if_else(
+      Zone != "SW",
+      # Modify the string:
+      Sample_ID_new <- paste(Site, Date, Zone, Replicate, Depth_cm, sep = "_"), 
+      Sample_ID_new <- paste(Site, Date, Zone, Replicate, sep = "_"), 
+    )
+  )
+
+##Add units
+all_dat_1 <- all_dat_1 %>%
+  mutate(
+    Sample_ID_cm = if_else(
+      Zone != "SW",
+      # Modify the string:
+      Sample_ID_cm <- paste0(Sample_ID_new, "CM"), 
+      Sample_ID_cm <- Sample_ID_new
+    )
+  )
+
+```
+
+
+## Visualize Data by Plot   
+```{r Visualize Data, echo=FALSE, warning=FALSE}
+
+#Plot samples to get a first look at concentrations (sanity check)
+data_plotting <- all_dat
+
+#Keep only samples from the 4 Sites
+data_plotting <- data_plotting[data_plotting$Site %in% c("GCW", "GWI", "SWH", "MSM"), ]
+
+#Order by Zone from Upland to Surface Water
+data_plotting$Zone = factor(data_plotting$Zone, levels = c("UP", "SWAMP", "TR", "WC", "SW"))
+data_plotting <- data_plotting[order(data_plotting$Zone), ]
+
+#group the data for plotting
+data_plotting <- data_plotting %>%
+  group_by(Site, Year) %>%
+  mutate(row_num = factor(row_number())) %>%  # create row_num as factor per group
+  ungroup()
+
+#Plot data and change colors based on Zone:
+viz_cl_plot <- ggplot(data_plotting, aes(x = as.character(Year), y = Cl_Conc_mM, fill = Zone)) +
+  geom_bar(stat = "identity", position = position_dodge2(preserve = "single")) +
+  facet_grid(~ Site, scales="free") +
+  scale_fill_manual(values = c(
+    "UP" = "#20063B",
+    "TR" = "#FFBC42",
+    "SWAMP" = "darkgrey",
+    "WC" = "#419973",
+    "SW" = "#25ABE6"
+  )) +
+  theme_classic() +
+  # theme(axis.text.x = element_blank()) +
+  labs(x = " ", y = "Cl (mg/L)", title = "Samples: Chloride") +
+  # scale_x_discrete(drop = TRUE)+
+  theme(
+    panel.spacing = unit(.05, "lines"), # Adjust spacing between panels
+    panel.border = element_rect(color = "black", fill = NA, size = 1) # Add border to panels
+  )
+
+viz_cl_plot
+
+
+viz_so4_plot <-  ggplot(data_plotting, aes(x = as.character(Year), y = SO4_Conc_mM, fill = Zone)) +
+  geom_bar(stat = "identity", position = position_dodge2(preserve = "single")) +
+  facet_grid(~ Site, scales="free") +
+  scale_fill_manual(values = c(
+    "UP" = "#20063B",
+    "TR" = "#FFBC42",
+    "SWAMP" = "darkgrey",
+    "WC" = "#419973",
+    "SW" = "#25ABE6"
+  )) +
+  theme_classic() +
+  # theme(axis.text.x = element_blank()) +
+  labs(x = " ", y = "SO4 (mg/L)", title = "Samples: SO4") +
+  # scale_x_discrete(drop = TRUE)
+  theme(
+    panel.spacing = unit(.05, "lines"), # Adjust spacing between panels
+    panel.border = element_rect(color = "black", fill = NA, size = 1) # Add border to panels
+  )
+ggarrange(viz_cl_plot, viz_so4_plot, nrow=2, ncol=1)
+
+
+```
+
+```{r}
+##GCReW: 
+data_GCW <- subset(data_plotting, Site == "GCW")
+
+viz_cl_plot <- ggplot(data_GCW, aes(x = as.character(Year), y = Cl_Conc_mM, fill = Zone)) +
+  geom_bar(stat = "identity", position = position_dodge2(preserve = "single")) +
+  facet_wrap(~ Zone, scales="free", ncol = 4) +
+  scale_fill_manual(values = c(
+    "UP" = "#20063B",
+    "TR" = "#FFBC42",
+    "SWAMP" = "darkgrey",
+    "WC" = "#419973",
+    "SW" = "#25ABE6"
+  )) +
+  theme_classic() +
+  # theme(axis.text.x = element_blank()) +
+  labs(x = " ", y = "Cl (mg/L)", title = "GCReW Samples: Chloride") +
+  # scale_x_discrete(drop = TRUE)+
+  theme(
+    panel.spacing = unit(.05, "lines"), # Adjust spacing between panels
+    panel.border = element_rect(color = "black", fill = NA, size = 1) # Add border to panels
+  )
+
+viz_cl_plot
+
+
+viz_so4_plot <-  ggplot(data_GCW, aes(x = as.character(Year), y = SO4_Conc_mM, fill = Zone)) +
+  geom_bar(stat = "identity", position = position_dodge2(preserve = "single")) +
+  facet_grid(~ Zone, scales="free", ncol = 4) +
+  scale_fill_manual(values = c(
+    "UP" = "#20063B",
+    "TR" = "#FFBC42",
+    "SWAMP" = "darkgrey",
+    "WC" = "#419973",
+    "SW" = "#25ABE6"
+  )) +
+  theme_classic() +
+  # theme(axis.text.x = element_blank()) +
+  labs(x = " ", y = "SO4 (mg/L)", title = "GCReW Samples: SO4") +
+  # scale_x_discrete(drop = TRUE)
+  theme(
+    panel.spacing = unit(.05, "lines"), # Adjust spacing between panels
+    panel.border = element_rect(color = "black", fill = NA, size = 1) # Add border to panels
+    )
+viz_so4_plot
+
+ggarrange(viz_cl_plot, viz_so4_plot, nrow=2, ncol=1)
+```
+
+```{r}
+##MSM: 
+data_GCW <- subset(data_plotting, Site == "GCW")
+
+viz_cl_plot <- ggplot(data_GCW, aes(x = as.character(Year), y = Cl_Conc_mM, fill = Zone)) +
+  geom_bar(stat = "identity", position = position_dodge2(preserve = "single")) +
+  facet_wrap(~ Zone, scales="free", ncol = 4) +
+  scale_fill_manual(values = c(
+    "UP" = "#20063B",
+    "TR" = "#FFBC42",
+    "SWAMP" = "darkgrey",
+    "WC" = "#419973",
+    "SW" = "#25ABE6"
+  )) +
+  theme_classic() +
+  # theme(axis.text.x = element_blank()) +
+  labs(x = " ", y = "Cl (mg/L)", title = "GCReW Samples: Chloride") +
+  # scale_x_discrete(drop = TRUE)+
+  theme(
+    panel.spacing = unit(.05, "lines"), # Adjust spacing between panels
+    panel.border = element_rect(color = "black", fill = NA, size = 1) # Add border to panels
+  )
+
+viz_cl_plot
+
+
+viz_so4_plot <-  ggplot(data_GCW, aes(x = as.character(Year), y = SO4_Conc_mM, fill = Zone)) +
+  geom_bar(stat = "identity", position = position_dodge2(preserve = "single")) +
+  facet_wrap(~ Zone, scales="free", ncol = 4) +
+  scale_fill_manual(values = c(
+    "UP" = "#20063B",
+    "TR" = "#FFBC42",
+    "SWAMP" = "darkgrey",
+    "WC" = "#419973",
+    "SW" = "#25ABE6"
+  )) +
+  theme_classic() +
+  # theme(axis.text.x = element_blank()) +
+  labs(x = " ", y = "SO4 (mg/L)", title = "GCReW Samples: SO4") +
+  # scale_x_discrete(drop = TRUE)
+  theme(
+    panel.spacing = unit(.05, "lines"), # Adjust spacing between panels
+    panel.border = element_rect(color = "black", fill = NA, size = 1) # Add border to panels
+    )
+viz_so4_plot
+
+ggarrange(viz_cl_plot, viz_so4_plot, nrow=2, ncol=1)
+```
+
+
+## Add Tree Info and Clean Up
+```{r}
+
+#read in the tree information about species and dbh
+# tree_dat <- read.csv("TGAS Tree Info/COMPASS_SynopticCB_TGAS_TreeInfo.csv")
+# head(tree_dat)
+# 
+# #combine the tree data with the 2022 File 
+# tree_dat22 <- tree_dat %>%
+#   select(!"DBH_2023_cm")
+# dat22_wtree <- left_join(dat22, tree_dat22, by = c("Site", "Zone", "Tree_Code", "Replicate"))
+# 
+# dat22_wtree <- dat22_wtree %>%
+#   rename(DBH_cm = DBH_2022_cm)
+# 
+# #combine tree data with 2023 File 
+# tree_dat23 <- tree_dat %>%
+#   select(!"DBH_2022_cm")
+# dat23_wtree <- left_join(dat23, tree_dat23, by = c("Site", "Zone", "Tree_Code", "Replicate"))
+# 
+# dat23_wtree <- dat23_wtree %>%
+#   rename(DBH_cm = DBH_2023_cm)
+
+
+```
+
+## Grab sampling dates and add to file
+```{r}
+
+# #read in the sampling date information
+# dates <- read.csv("TGAS Tree Info/COMPASS_Synoptic_TGAS_CollectionDates.csv")
+# head(dates)
+# 
+# #add sampling date and the month # to dat22
+# dat22_wtree_dates <- dat22_wtree %>%
+#   left_join(dates %>% select(Site, Year, Month, Day),
+#             by = c("Site", "Year", "Month")) %>%
+#   mutate(Month_num = match(Month, month.name))
+# 
+# #add sampling date and the month # to dat23
+# dat23_wtree_dates <- dat23_wtree %>%
+#   left_join(dates %>% select(Site, Year, Month, Day),
+#             by = c("Site", "Year", "Month")) %>%
+#   mutate(Month_num = match(Month, month.name))
+
+
+```
+
+## Combine years and clean up
+```{r}
+#combine all the data together in one dataframe
+# all_dat <- rbind(dat22_wtree_dates, dat23_wtree_dates)
+# 
+# all_dat <- all_dat %>%
+#   mutate(CO2_ppm = if_else(CO2_ppm < 0, 0, CO2_ppm),
+#          CO2_ppm = round(CO2_ppm, 3)) %>%
+#   mutate(CH4_ppm = if_else(CH4_ppm < 0, 0, CH4_ppm),
+#          CH4_ppm = round(CH4_ppm, 3))
+# 
+# all_dat <- all_dat %>% 
+#   rename( Sapflux_ID = Replicate, 
+#           Month_name = Month, 
+#           Month = Month_num) %>%
+#   mutate(CH4_Flag = recode(CH4_Flag, "Within Std Curve Range" = "NA")) %>%
+#   mutate(CO2_Flag = recode(CO2_Flag, "Within Std Curve Range" = "NA")) %>%
+#   select("Project", "Region", "Year", "Month", "Day", "Site", "Zone", 
+#          "Sapflux_ID", "Species",
+#          "DBH_cm" ,  "Status",  "Tree_Info", "Sample_ID","CH4_ppm", 
+#          "CH4_Flag", "CO2_ppm","CO2_Flag")      
+
+
+
+```
+
+## Make Relevant Metadata Sheet
+```{r}
+
+#pull the column names from the all_dat dataframe and create a new dataframe with them 
+metadat <- data.frame(Column_Names = colnames(all_dat))
+
+metadat$Description <- ""
+metadat$Units <- ""
+metadat$Instrument_ifapplicable <- ""
+
+#add information about each line: 
+
+metadat$Description <- c("Project name: Project component", 
+                         "Region samples originated from: CB = Chesapeake Bay",
+                         "Year (YYYY) of sample collection", 
+                         "Month (#) of sample collection",
+                         "Day (#) of sample collection",
+                         "Name of sampling transect location (GCW, SWH, MSM, GWI), see dataset locations for coordinates", 
+                         "Zone within space-for-time transect (UP=upland, TR=transition)",
+                         "Sap flow (SF) id (1-8, 11, 19). The # ID for the sap flow sensor associated with the tree (only live trees)", 
+                         "USDA Species code for tree sampled", 
+                         "Diameter at breast height (DBH) for tree sampled in same year",
+                         "Tree status indicates if the tree was Living or Dead Standing", 
+                         "Tree Info indicates if the tree had sap flow monitoring during sampling, dead trees were not monitored for sap flow",
+                         "Sample identifier used in laboratory and field", 
+                         "Methane concentration of sample from tree gas well", 
+                         "Methane concentration flag: NA (data within instrument and std curve range) or Out of Std Curve Range.", 
+                         "Carbon Dioxide concentration of sample from tree gas well", 
+                         "Carbon Dioxide concentration flag: NA (data within instrument and std curve range) or Out of Std Curve Range." )
+
+metadat$Units <-      c("NA", 
+                         "NA",
+                         "NA", 
+                         "NA",
+                         "NA",
+                         "NA", 
+                         "NA",
+                         "NA", 
+                         "NA", 
+                         "cm",
+                         "NA", 
+                         "NA",
+                         "NA", 
+                         "ppm", 
+                         "NA", 
+                         "ppm", 
+                         "NA" )
+
+metadat$Instrument_ifapplicable <-  c("NA", 
+                         "NA",
+                         "NA", 
+                         "NA",
+                         "NA",
+                         "NA", 
+                         "NA",
+                         "NA", 
+                         "NA", 
+                         "DBH tape",
+                         "NA", 
+                         "NA",
+                         "NA", 
+                         "Varian 450 GC (Agilent Technologies)", 
+                         "NA", 
+                         "Varian 450 GC (Agilent Technologies)", 
+                         "NA" )
+
+
+```
+
+## Write out files
+```{r}
+
+#write out a csv of all the data to the main folder: 
+write.csv(all_dat, "COMPASS_SynopticCB_TGAS_AllData.csv")
+
+
+#write out a csv of the metadata associated with the data: 
+write.csv(metadat, "COMPASS_SynopticCB_TGAS_Metadata.csv")
+
+```
+
+
+## Viz  Raw data   
+```{r}
+
+#just plot all the data 
+ggplot(data=all_dat, aes(x=Sapflux_ID, y=CH4_ppm, fill=Zone, color=Zone))+
+  geom_point()+ 
+  facet_grid(Site~Month, scales="free_y")+ 
+  theme_bw()
+
+#Let's pull out dead trees and only plot the live ones 
+live_dat <- subset(all_dat, Status == "Living")
+
+ggplot(data=live_dat, aes(x=Sapflux_ID, y=CH4_ppm, fill=Zone, color=Zone))+
+  geom_point()+ 
+  facet_grid(Site~Month, scales="free_y")+ 
+  theme_bw()
+
+```
+
+## Summarize the data  
+```{r}
+
+TGAS_avg <- live_dat %>%
+  group_by(Month, Site, Zone) %>%
+   dplyr::summarize(mean_CH4 = mean(CH4_ppm, na.rm=TRUE), 
+            sd_CH4 = sd(CH4_ppm, na.rm=TRUE), 
+            mean_CO2 = mean(CO2_ppm, na.rm=TRUE), 
+            sd_CO2 = sd(CO2_ppm, na.rm=TRUE))
+
+
+
+ggplot(data=TGAS_avg, aes(x=Zone, y=mean_CH4, fill=Zone, color=Zone))+
+  geom_boxplot()+ 
+  facet_grid(~Site, scales="free_y")+ 
+  theme_bw()
+
+
+```
