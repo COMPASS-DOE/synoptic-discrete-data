@@ -21,7 +21,7 @@ library(lubridate)
 ##Read in list of processed data files
 files <- list.files(path = "Processed Data", pattern = "\\.csv$", full.names = TRUE)
 
-desired_columns <- c("Project",	"Region",	"Site",	"Zone",	"Replicate",	"Depth_cm",	"Tree_ID", "Sample_ID",	"Year",	"Month",	"Day",	"Time",	"Time_Zone",	"SO4_Conc_mM",	"SO4_Conc_flag",	"SO4_QAQC_flag",	"Cl_Conc_mM",	"Cl_Conc_flag",	"Cl_QAQC_flag",	"salinity",	"Analysis_rundate",	"Run_notes",	"Field_notes")
+desired_columns <- c("Project",	"Region",	"Site",	"Zone",	"Replicate",	"Depth_cm", "Sample_ID",	"Year",	"Month",	"Day",	"Time",	"Time_Zone",	"SO4_Conc_mM",	"SO4_Conc_flag",	"SO4_QAQC_flag",	"Cl_Conc_mM",	"Cl_Conc_flag",	"Cl_QAQC_flag",	"salinity",	"Analysis_rundate",	"Run_notes",	"Field_notes")
 ```
 
 ##File 1
