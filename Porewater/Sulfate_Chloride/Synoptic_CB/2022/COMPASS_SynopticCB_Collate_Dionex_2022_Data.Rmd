@@ -534,6 +534,10 @@ dionex_metadata_selected <- dionex_metadata %>%
 merged_data <- all_data_selected %>%
   left_join(dionex_metadata_selected, by = c("Sample_ID" = "Cl_SO4_ID", "Replicate" = "Lysimeter", "Year", "Month", "Depth_cm"))
 
+##Change any SO4/Cl conc's of NA to 0 
+merged_data$SO4_Conc_mM[is.na(merged_data$SO4_Conc_mM)] <- 0
+merged_data$Cl_Conc_mM[is.na(merged_data$Cl_Conc_mM)] <- 0
+
 ```
 
 
