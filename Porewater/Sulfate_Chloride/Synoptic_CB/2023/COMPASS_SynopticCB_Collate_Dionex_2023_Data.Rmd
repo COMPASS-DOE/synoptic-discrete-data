@@ -427,19 +427,10 @@ head(file10_cols)
 ##Need to format data files to look like the 2024 processed data with these column names: 
 # "Project"	"Region"	"Site"	"Zone"	"Replicate"	"Depth_cm"	"Sample_ID"	"Year"	"Month"	"Day"	"Time"	"Time_Zone"	"SO4_Conc_mM"	"SO4_Conc_flag"	"SO4_QAQC_flag"	"Cl_Conc_mM"	"Cl_Conc_flag"	"Cl_QAQC_flag"	"salinity"	"Analysis_rundate"	"Run_notes"	"Field_notes"
 
-all_data <- bind_rows(file1_cols, file2_cols, file3_cols, file4_cols, file5_cols, file6_cols, file7_cols, file8_cols, file9_cols, file10_cols)
-
-all_data <- all_data %>%
-  mutate(Site = recode(Site, "GCrew" = "GCW")) %>%
-   mutate(Sample_ID = str_replace(Sample_ID, "GCrew", "GCW"))
-
-##Fix dates entered incorrectly
-
-##Remove Blanks
-all_data <- subset(all_data, Sample_ID != "Blank")
+all_data_extra <- bind_rows(file1_cols, file2_cols, file3_cols, file4_cols, file5_cols, file6_cols, file7_cols, file8_cols, file9_cols, file10_cols)
 
 ##Remove non-Lys Samples
-Lys_SW_data <- all_data %>%  
+all_data <- all_data_extra %>%  
   filter(!str_detect(Sample_ID, "Sip"))%>%  
   filter(!str_detect(Sample_ID, "RHZ"))%>%  
   filter(!str_detect(Sample_ID, "JLee"))%>%  
@@ -447,27 +438,204 @@ Lys_SW_data <- all_data %>%
   filter(!str_detect(Sample_ID, "S1"))%>%  
   filter(!str_detect(Sample_ID, "S2"))
 
-##In 2023 SWAMP was called UP and UPLAND was called UPCON
-all_clean <- Lys_SW_data %>%
-  mutate(
-    Zone = case_when(
-      Site == "SWH" & Zone == "UP" ~ "SWAMP",
-      Site == "SWH" & Zone == "UPCON" ~ "UP",
-      TRUE ~ `Zone`
-    ))
-
-##Replace in the sample IDs as well, based on the newly-corrected Zones
-all_clean_IDs <- all_clean %>%
-  mutate(
-    Sample_ID = case_when(
-      Site == "SWH" & Zone == "SWAMP" ~ gsub(pattern = "_UP_", replacement = "_SWAMP_", x = Sample_ID),
-      Site == "SWH" & Zone == "UP" ~ gsub(pattern = "_UPCON_", replacement = "_UP_", x = Sample_ID),
-      .default = Sample_ID
-    )
-  )
+# ##In 2023 SWAMP was called UP and UPLAND was called UPCON
+# all_clean <- Lys_SW_data %>%
+#   mutate(
+#     Zone = case_when(
+#       Site == "SWH" & Zone == "UP" ~ "SWAMP",
+#       Site == "SWH" & Zone == "UPCON" ~ "UP",
+#       TRUE ~ `Zone`
+#     ))
+# 
+# ##Replace in the sample IDs as well, based on the newly-corrected Zones
+# all_clean_IDs <- all_clean %>%
+#   mutate(
+#     Sample_ID = case_when(
+#       Site == "SWH" & Zone == "SWAMP" ~ gsub(pattern = "_UP_", replacement = "_SWAMP_", x = Sample_ID),
+#       Site == "SWH" & Zone == "UP" ~ gsub(pattern = "_UPCON_", replacement = "_UP_", x = Sample_ID),
+#       .default = Sample_ID
+#     )
+#   )
 
 
 ```
+
+
+## Pull in Metadata
+```{r}
+
+Raw_Metadata = "Raw Data/COMPASS_SynopticCB_PW_SampleLog_2023.csv"
+
+#read in the raw metadata file 
+raw_metadata <- read.csv(Raw_Metadata)
+
+#make a new columns in the metadata with important info:
+metadata <- raw_metadata %>%
+  mutate(Depth = paste0(Depth_cm, "cm")) %>%
+  mutate(LysID = paste0("Lys", Lysimeter)) %>%
+  mutate(YearMonth = sprintf("%d%02d", Year, Month))  %>%
+  mutate(Zone = case_when(
+    `Transect.Location` == "Transition" ~ "TR",
+    `Transect.Location` == "Wetland"    ~ "WC",
+    `Transect.Location` == "Upland"     ~ "UP",   
+    `Transect.Location` == "Surface Water" ~ "SW",
+    TRUE                 ~ `Transect.Location`    # keep original value if no match
+  ))
+
+#Create IDs from what was collected for comparison later
+metadata <- metadata %>%
+  mutate(Cl_SO4_ID = ifelse(SO4 == "x",
+                                     paste(Site,
+                                           YearMonth,
+                                           Zone,
+                                           LysID,
+                                           Depth,
+                                           sep = "_"),
+                                     NA),  )
+
+#Change the SW lines because they don't have lysimeters or a depth  
+metadata <- metadata %>%
+  mutate(
+    Cl_SO4_ID = if_else(
+      Zone == "SW",
+      # Modify the string:
+      Cl_SO4_ID %>%
+        str_replace("_LysA", "_A") %>%                    # Replace "_LysA" with "_A"
+        str_replace("_LysB", "_B") %>%                    # Replace "_LysB" with "_B"
+        str_replace("_LysC", "_C") %>%                    # Replace "_LysC" with "_C"
+        str_replace("_0cm$", ""),                          # Remove trailing "_0cm"
+      Cl_SO4_ID  # else keep original
+    )
+  )
+
+#Take out the columns and rows that are not relevant
+dionex_metadata <- metadata %>%
+  select(Cl_SO4_ID, Year, Month, Day, YearMonth, Site, Zone, Lysimeter, LysID, Depth_cm, 
+         Depth, Time..24hr., Time.Zone_EDT.EST, Field.Notes, ) %>%        
+  # only keep specific columns
+  filter(!is.na(Cl_SO4_ID) & Cl_SO4_ID != "")  # remove missing/blank Cl_SO4_ID rows
+
+head(dionex_metadata)
+
+```
+
+## Make sample IDs match metadata
+```{r Make Sample match metadata}
+
+##Fix GCW spelling
+all_data <- all_data %>%
+  mutate(Site = recode(Site, "GCrew" = "GCW")) %>%
+  mutate(Site = recode(Site, "Gcrew" = "GCW")) %>%
+  mutate(Site = recode(Site, "GCerw" = "GCW")) %>%
+   mutate(Sample_ID = str_replace(Sample_ID, "GCrew", "GCW"))%>%
+   mutate(Sample_ID = str_replace(Sample_ID, "Gcrew", "GCW"))%>%
+   mutate(Sample_ID = str_replace(Sample_ID, "GCerw", "GCW"))
+
+##Remove Blanks
+all_data <- subset(all_data, Sample_ID != "Blank")
+
+##Depths for SW samples should be 0 
+all_data$Depth_cm <-  ifelse((all_data$Zone == "SW"), "0cm", all_data$Depth_cm)
+
+##Add cm to Depth
+all_data$Depth <- all_data$Depth_cm
+all_data <- all_data %>%
+  mutate(Depth_cm = gsub("cm", "", as.character(Depth_cm)))%>%
+  mutate(Depth_cm = gsub("m", "", as.character(Depth_cm)))
+
+##Remake Date Column with just Year and Month for Sample ID
+all_data <- all_data %>%
+  mutate(
+    Date = if_else(
+      Month < 10,
+      # Modify the string:
+      Date <- paste(all_data$Year, all_data$Month, sep = "0"), 
+      Date <- paste0(all_data$Year, all_data$Month), 
+    )
+  )
+
+##Remake sample ID
+all_data <- all_data %>%
+  mutate(
+    Sample_ID_new = if_else(
+      Zone != "SW",
+      # Modify the string:
+      Sample_ID_new <- paste(Site, Date, Zone, Replicate, Depth_cm, sep = "_"), 
+      Sample_ID_new <- paste(Site, Date, Zone, Replicate, sep = "_"), 
+    )
+  )
+
+##Add units
+all_data <- all_data %>%
+  mutate(
+    Sample_ID = if_else(
+      Zone != "SW",
+      # Modify the string:
+      Sample_ID <- paste0(Sample_ID_new, "cm"), 
+      Sample_ID <- Sample_ID_new
+    )
+  )
+```
+
+## Check to see if samples run match metadata & merge info
+```{r}
+
+#check to see if all samples are present in the metadata 
+all_data$Sample_ID <- toupper(all_data$Sample_ID)
+dionex_metadata$Cl_SO4_ID <- toupper(dionex_metadata$Cl_SO4_ID)
+
+all_present <- all(all_data$Sample_ID %in% dionex_metadata$Cl_SO4_ID)
+
+if (all_present) {
+  message("All sample IDs are present in metadata.")
+} else {
+  message("Some sample IDs are missing from metadata.")
+  
+  # Optional: Which ones are missing?
+  missing_ids <- setdiff(all_data$Sample_ID, dionex_metadata$Cl_SO4_ID)
+  print(missing_ids)
+}
+
+missing_ids <- data.frame(missing_ids)
+
+##Export missing IDs to csv
+write.csv(missing_ids, "COMPASS_SynopticCB_SO4_Cl_2023_missing_IDs.csv")
+
+##Select only necessary columns
+dionex_metadata_selected <- dionex_metadata %>%
+  select(Cl_SO4_ID, Year, Month, Day, Depth_cm, Lysimeter, Time..24hr., Time.Zone_EDT.EST,  Field.Notes) 
+
+#merge metadata with sample run data 
+merged_data <- all_data_flagged %>%
+  left_join(dionex_metadata_selected, by = c("sample_ID" = "Cl_SO4_ID"))
+
+df_all_clean <- merged_data %>%
+  #filter(str_detect(Sample_Name, "GCW|GWI|MSM|SWH")) %>%
+  #mutate(Run_Time = lubridate::mdy_hm(Run_Time)) %>%
+  separate(
+    col = sample_name,
+    sep = "_",
+    into = c("Sample_Number", "Site_Code", "Date" ,"Zone", "LysID", "Depth"),
+    remove = FALSE)
+
+############### THIS IS ONLY FOR 2023 when SWAMP was called UP and UPLAND was called UPCON ##############
+df_all_clean <- df_all_clean %>%
+  mutate(
+    Zone = case_when(
+      Site_Code == "SWH" & Zone == "UP" ~ "SWAMP",
+      Site_Code == "SWH" & Zone == "UPCON" ~ "UP",
+      TRUE ~ `Zone`
+    ))
+
+```
+
+
+## Visualize Data
+```{r}
+
+```
+
+
 
 ## Write the 2023 file out to the folder 
 ```{r, echo=FALSE}
