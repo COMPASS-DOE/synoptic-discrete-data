@@ -467,26 +467,6 @@ all_data <- all_data_extra %>%
   filter(!str_detect(Sample_ID, "S1"))%>%  
   filter(!str_detect(Sample_ID, "S2"))
 
-# ##In 2023 SWAMP was called UP and UPLAND was called UPCON
-# all_clean <- Lys_SW_data %>%
-#   mutate(
-#     Zone = case_when(
-#       Site == "SWH" & Zone == "UP" ~ "SWAMP",
-#       Site == "SWH" & Zone == "UPCON" ~ "UP",
-#       TRUE ~ `Zone`
-#     ))
-# 
-# ##Replace in the sample IDs as well, based on the newly-corrected Zones
-# all_clean_IDs <- all_clean %>%
-#   mutate(
-#     Sample_ID = case_when(
-#       Site == "SWH" & Zone == "SWAMP" ~ gsub(pattern = "_UP_", replacement = "_SWAMP_", x = Sample_ID),
-#       Site == "SWH" & Zone == "UP" ~ gsub(pattern = "_UPCON_", replacement = "_UP_", x = Sample_ID),
-#       .default = Sample_ID
-#     )
-#   )
-
-
 ```
 
 
@@ -625,36 +605,55 @@ if (all_present) {
   print(missing_ids)
 }
 
-missing_ids <- data.frame(missing_ids)
+# missing_ids <- data.frame(missing_ids)
+# 
+# ##Export missing IDs to csv
+# write.csv(missing_ids, "COMPASS_SynopticCB_SO4_Cl_2023_missing_IDs.csv")
 
-##Export missing IDs to csv
-write.csv(missing_ids, "COMPASS_SynopticCB_SO4_Cl_2023_missing_IDs.csv")
+##Remove Lys from Replicate Column
+all_data <- all_data %>%
+  mutate(Replicate = gsub("Lys", "", as.character(Replicate)))%>%
+  mutate(Replicate = gsub("lys", "", as.character(Replicate)))
+
+##Select only necessary columns
+all_data_selected <- all_data %>%
+  select(-c("Day", "Time", "Time_Zone", "Field_notes", "Depth", "Sample_ID_new", "Date"))
+
+all_data_selected$Depth_cm <- as.integer(all_data_selected$Depth_cm)
 
 ##Select only necessary columns
 dionex_metadata_selected <- dionex_metadata %>%
   select(Cl_SO4_ID, Year, Month, Day, Depth_cm, Lysimeter, Time..24hr., Time.Zone_EDT.EST,  Field.Notes) 
 
 #merge metadata with sample run data 
-merged_data <- all_data_flagged %>%
-  left_join(dionex_metadata_selected, by = c("sample_ID" = "Cl_SO4_ID"))
+merged_data <- all_data_selected %>%
+  left_join(dionex_metadata_selected, by = c("Sample_ID" = "Cl_SO4_ID", "Replicate" = "Lysimeter", "Year", "Month", "Depth_cm"))
 
-df_all_clean <- merged_data %>%
-  #filter(str_detect(Sample_Name, "GCW|GWI|MSM|SWH")) %>%
-  #mutate(Run_Time = lubridate::mdy_hm(Run_Time)) %>%
-  separate(
-    col = sample_name,
-    sep = "_",
-    into = c("Sample_Number", "Site_Code", "Date" ,"Zone", "LysID", "Depth"),
-    remove = FALSE)
 
 ############### THIS IS ONLY FOR 2023 when SWAMP was called UP and UPLAND was called UPCON ##############
-df_all_clean <- df_all_clean %>%
+##In 2023 SWAMP was called UP and UPLAND was called UPCON
+all_clean <- merged_data %>%
   mutate(
     Zone = case_when(
-      Site_Code == "SWH" & Zone == "UP" ~ "SWAMP",
-      Site_Code == "SWH" & Zone == "UPCON" ~ "UP",
+      Site == "SWH" & Zone == "UP" ~ "SWAMP",
+      Site == "SWH" & Zone == "UPCON" ~ "UP",
       TRUE ~ `Zone`
     ))
+
+##Replace in the sample IDs as well, based on the newly-corrected Zones
+all_clean_IDs <- all_clean %>%
+  mutate(
+    Sample_ID = case_when(
+      Site == "SWH" & Zone == "SWAMP" ~ gsub(pattern = "_UP_", replacement = "_SWAMP_", x = Sample_ID),
+      Site == "SWH" & Zone == "UP" ~ gsub(pattern = "_UPCON_", replacement = "_UP_", x = Sample_ID),
+      .default = Sample_ID
+    )
+  )
+
+##Change any SO4/Cl conc's of NA to 0 
+all_clean_IDs$SO4_Conc_mM[is.na(all_clean_IDs$SO4_Conc_mM)] <- 0
+all_clean_IDs$Cl_Conc_mM[is.na(all_clean_IDs$Cl_Conc_mM)] <- 0
+
 
 ```
 
