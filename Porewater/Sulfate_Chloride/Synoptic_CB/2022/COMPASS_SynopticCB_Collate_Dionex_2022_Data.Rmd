@@ -33,7 +33,11 @@ library(lubridate)
 # [56] "MSM_202211_UP_LYSB_45CM" "MSM_202211_UP_LYSC_10CM" "MSM_202211_UP_LYSC_20CM" "MSM_202211_UP_LYSC_45CM" "GCW_202211_UP_LYSB_10CM"
 # [61] "GCW_202211_UP_LYSB_20CM" "GCW_202211_UP_LYSC_10CM" "GCW_202211_UP_LYSC_20CM" "GCW_202211_UP_LYSC_45CM" "GCW_202211_TR_LYSA_20CM"
 # [66] "GCW_202211_TR_LYSA_45CM" "GCW_202211_TR_LYSB_10CM" "GCW_202211_TR_LYSB_20CM" "GCW_202211_TR_LYSB_45CM" "GCW_202211_TR_LYSC_10CM"
-# [71] "GCW_202211_TR_LYSC_20CM
+# [71] "GCW_202211_TR_LYSC_20CM" GCW_202210_TR_LYSA_10CM
+
+##There were two sets of GCW for 202210, fixed in metadata because one of them was actually GWI 202210. 
+
+##Added these to metadata. 
 ```
 
 
@@ -468,11 +472,11 @@ all_data <- all_data %>%
 ##Remake sample ID
 all_data <- all_data %>%
   mutate(
-    Sample_ID = if_else(
+    Sample_ID_new = if_else(
       Zone != "SW",
       # Modify the string:
-      Sample_ID <- paste(Site, Date, Zone, Replicate, Depth_cm, sep = "_"), 
-      Sample_ID <- paste(Site, Date, Zone, Replicate, sep = "_"), 
+      Sample_ID_new <- paste(Site, Date, Zone, Replicate, Depth_cm, sep = "_"), 
+      Sample_ID_new <- paste(Site, Date, Zone, Replicate, sep = "_"), 
     )
   )
 
@@ -482,8 +486,8 @@ all_data <- all_data %>%
     Sample_ID = if_else(
       Zone != "SW",
       # Modify the string:
-      Sample_ID <- paste0(Sample_ID, "cm"), 
-      Sample_ID <- Sample_ID
+      Sample_ID <- paste0(Sample_ID_new, "cm"), 
+      Sample_ID <- Sample_ID_new
     )
   )
 ```
@@ -507,36 +511,28 @@ if (all_present) {
   print(missing_ids)
 }
 
-missing_ids <- data.frame(missing_ids)
+# missing_ids <- data.frame(missing_ids)
+# 
+# ##Export missing IDs to csv
+# write.csv(missing_ids, "COMPASS_SynopticCB_SO4_Cl_2022_missing_IDs.csv")
 
-##Export missing IDs to csv
-write.csv(missing_ids, "COMPASS_SynopticCB_SO4_Cl_2022_missing_IDs.csv")
+##Remove Lys from Replicate Column
+all_data <- all_data %>%
+  mutate(Replicate = gsub("Lys", "", as.character(Replicate)))
+
+##Select only necessary columns
+all_data_selected <- all_data %>%
+  select(-c("Day", "Time", "Time_Zone", "Field_notes", "Depth", "Sample_ID_new", "Date"))
+
+all_data_selected$Depth_cm <- as.integer(all_data_selected$Depth_cm)
 
 ##Select only necessary columns
 dionex_metadata_selected <- dionex_metadata %>%
   select(Cl_SO4_ID, Year, Month, Day, Depth_cm, Lysimeter, Time..24hr., Time.Zone_EDT.EST,  Field.Notes) 
 
 #merge metadata with sample run data 
-merged_data <- all_data_flagged %>%
-  left_join(dionex_metadata_selected, by = c("sample_ID" = "Cl_SO4_ID"))
-
-df_all_clean <- merged_data %>%
-  #filter(str_detect(Sample_Name, "GCW|GWI|MSM|SWH")) %>%
-  #mutate(Run_Time = lubridate::mdy_hm(Run_Time)) %>%
-  separate(
-    col = sample_name,
-    sep = "_",
-    into = c("Sample_Number", "Site_Code", "Date" ,"Zone", "LysID", "Depth"),
-    remove = FALSE)
-
-############### THIS IS ONLY FOR 2023 when SWAMP was called UP and UPLAND was called UPCON ##############
-df_all_clean <- df_all_clean %>%
-  mutate(
-    Zone = case_when(
-      Site_Code == "SWH" & Zone == "UP" ~ "SWAMP",
-      Site_Code == "SWH" & Zone == "UPCON" ~ "UP",
-      TRUE ~ `Zone`
-    ))
+merged_data <- all_data_selected %>%
+  left_join(dionex_metadata_selected, by = c("Sample_ID" = "Cl_SO4_ID", "Replicate" = "Lysimeter", "Year", "Month", "Depth_cm"))
 
 ```
 
@@ -550,7 +546,26 @@ df_all_clean <- df_all_clean %>%
 ## Write the 2022 file out to the folder 
 ```{r, echo=FALSE}
 
-write.csv(Lys_SW_data, "COMPASS_SynopticCB_SO4_Cl_2022.csv")
+head(merged_data)
+
+final_data <- merged_data %>%
+  rename(
+    Time = Time..24hr.,
+    Time_Zone = Time.Zone_EDT.EST,
+    Field_notes = Field.Notes
+    # add more rename pairs as needed
+  ) %>%
+  select(
+    Project, Region, Site, Zone, Replicate, Depth_cm, 
+         Sample_ID, Year, Month, Day, Time, Time_Zone,
+         SO4_Conc_mM, SO4_Conc_flag, SO4_QAQC_flag, Cl_Conc_mM, Cl_Conc_flag, Cl_QAQC_flag, salinity,
+         Analysis_rundate,  Run_notes, Field_notes
+        # list columns in the order you want them
+  )
+
+head(final_data)
+
+write.csv(final_data, "COMPASS_SynopticCB_SO4_Cl_2022.csv")
 
 ```
 
