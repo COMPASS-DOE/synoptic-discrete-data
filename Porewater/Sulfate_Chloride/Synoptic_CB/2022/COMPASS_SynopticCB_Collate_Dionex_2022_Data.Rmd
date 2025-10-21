@@ -16,6 +16,27 @@ library(tibble)
 library(lubridate)
 ```
 
+
+```{r}
+# Some sample IDs are missing from metadata.
+#  [1] "MSM_202206_TR_LYSB_10CM" "MSM_202206_TR_LYSB_20CM" "GWI_202206_TR_LYSB_45CM" "GCW_202206_UP_LYSB_10CM" "GCW_202206_UP_LYSC_10CM"
+#  [6] "GCW_202206_UP_LYSB_20CM" "GCW_202206_TR_LYSB_10CM" "GCW_202206_TR_LYSC_10CM" "GCW_202206_TR_LYSB_20CM" "GCW_202206_TR_LYSC_20CM"
+# [11] "GCW_202206_TR_LYSB_45CM" "GCW_202206_TR_LYSC_45CM" "MSM_202206_UP_LYSB_45CM" "GCW_202207_TR_LYSC_10CM" "GCW_202208_UP_LYSB_45CM"
+# [16] "MSM_202208_UP_LYSC_45CM" "GWI_202209_UP_LYSA_45CM" "GWI_202209_UP_LYSC_20CM" "GCW_202209_TR_LYSC_10CM" "GCW_202209_TR_LYSC_20CM"
+# [21] "GCW_202209_TR_LYSC_45CM" "GWI_202210_UP_LYSA_10CM" "GWI_202210_UP_LYSA_20CM" "GWI_202210_UP_LYSA_45CM" "GWI_202210_UP_LYSB_10CM"
+# [26] "GWI_202210_UP_LYSB_20CM" "GWI_202210_UP_LYSC_10CM" "GWI_202210_UP_LYSC_20CM" "GWI_202210_TR_LYSA_10CM" "GWI_202210_TR_LYSA_20CM"
+# [31] "GWI_202210_TR_LYSA_45CM" "GWI_202210_TR_LYSB_10CM" "GWI_202210_TR_LYSB_20CM" "GWI_202210_TR_LYSB_45CM" "GWI_202210_TR_LYSC_10CM"
+# [36] "GWI_202210_TR_LYSC_20CM" "GWI_202210_TR_LYSC_45CM" "GWI_202210_SW_A"         "GWI_202210_SW_B"         "GWI_202210_SW_C"        
+# [41] "MSM_202211_UP_LYSA_10CM" "GCW_202211_TR_LYSC_45CM" "GCW_202211_SW_A"         "GCW_202211_SW_B"         "GCW_202211_SW_C"        
+# [46] "GWI_202211_UP_LYSA_45CM" "MSM_202211_TR_LYSB_10CM" "MSM_202211_TR_LYSB_20CM" "MSM_202211_TR_LYSB_45CM" "MSM_202211_UP_LYSA_20CM"
+# [51] "MSM_202211_SW_A"         "MSM_202211_SW_B"         "MSM_202211_SW_C"         "MSM_202211_UP_LYSB_10CM" "MSM_202211_UP_LYSB_20CM"
+# [56] "MSM_202211_UP_LYSB_45CM" "MSM_202211_UP_LYSC_10CM" "MSM_202211_UP_LYSC_20CM" "MSM_202211_UP_LYSC_45CM" "GCW_202211_UP_LYSB_10CM"
+# [61] "GCW_202211_UP_LYSB_20CM" "GCW_202211_UP_LYSC_10CM" "GCW_202211_UP_LYSC_20CM" "GCW_202211_UP_LYSC_45CM" "GCW_202211_TR_LYSA_20CM"
+# [66] "GCW_202211_TR_LYSA_45CM" "GCW_202211_TR_LYSB_10CM" "GCW_202211_TR_LYSB_20CM" "GCW_202211_TR_LYSB_45CM" "GCW_202211_TR_LYSC_10CM"
+# [71] "GCW_202211_TR_LYSC_20CM
+```
+
+
 #Read in and collate all the files in the Processed Data folder 
 ```{r}
 ##Read in list of processed data files
@@ -339,8 +360,80 @@ head(file8_cols)
 ##Need to format data files to look like the 2024 processed data with these column names: 
 # "Project"	"Region"	"Site"	"Zone"	"Replicate"	"Depth_cm"	"Sample_ID"	"Year"	"Month"	"Day"	"Time"	"Time_Zone"	"SO4_Conc_mM"	"SO4_Conc_flag"	"SO4_QAQC_flag"	"Cl_Conc_mM"	"Cl_Conc_flag"	"Cl_QAQC_flag"	"salinity"	"Analysis_rundate"	"Run_notes"	"Field_notes"
 
-all_data <- bind_rows(file1_cols, file2_cols, file3_cols, file4_cols, file5_cols, file6_cols, file7_cols, file8_cols)
+all_data_extra <- bind_rows(file1_cols, file2_cols, file3_cols, file4_cols, file5_cols, file6_cols, file7_cols, file8_cols)
 
+##Remove non-Lys Samples
+all_data <- all_data_extra %>%  
+  filter(!str_detect(Sample_ID, "Sip"))%>%  
+  filter(!str_detect(Sample_ID, "RHZ"))%>%  
+  filter(!str_detect(Sample_ID, "JLee"))%>%  
+  filter(!str_detect(Sample_ID, "PPR"))
+
+
+```
+
+## Pull in Metadata
+```{r}
+
+Raw_Metadata = "Raw Data/COMPASS_SynopticCB_PW_SampleLog_2022.csv"
+
+#read in the raw metadata file 
+raw_metadata <- read.csv(Raw_Metadata)
+
+#make a new columns in the metadata with important info:
+metadata <- raw_metadata %>%
+  mutate(Depth = paste0(Depth_cm, "cm")) %>%
+  mutate(LysID = paste0("Lys", Lysimeter)) %>%
+  mutate(YearMonth = sprintf("%d%02d", Year, Month))  %>%
+  mutate(Zone = case_when(
+    `Transect.Location` == "Transition" ~ "TR",
+    `Transect.Location` == "Wetland"    ~ "WC",
+    `Transect.Location` == "Upland"     ~ "UP",   
+    `Transect.Location` == "Surface Water" ~ "SW",
+    TRUE                 ~ `Transect.Location`    # keep original value if no match
+  ))
+
+#Create IDs from what was collected for comparison later
+metadata <- metadata %>%
+  mutate(Cl_SO4_ID = ifelse(SO4 == "x",
+                                     paste(Site,
+                                           YearMonth,
+                                           Zone,
+                                           LysID,
+                                           Depth,
+                                           sep = "_"),
+                                     NA),  )
+
+#Change the SW lines because they don't have lysimeters or a depth  
+metadata <- metadata %>%
+  mutate(
+    Cl_SO4_ID = if_else(
+      Zone == "SW",
+      # Modify the string:
+      Cl_SO4_ID %>%
+        str_replace("_LysA", "_A") %>%                    # Replace "_LysA" with "_A"
+        str_replace("_LysB", "_B") %>%                    # Replace "_LysB" with "_B"
+        str_replace("_LysC", "_C") %>%                    # Replace "_LysC" with "_C"
+        str_replace("_0cm$", ""),                          # Remove trailing "_0cm"
+      Cl_SO4_ID  # else keep original
+    )
+  )
+
+#Take out the columns and rows that are not relevant
+dionex_metadata <- metadata %>%
+  select(Cl_SO4_ID, Year, Month, Day, YearMonth, Site, Zone, Lysimeter, LysID, Depth_cm, 
+         Depth, Time..24hr., Time.Zone_EDT.EST, Field.Notes, ) %>%        
+  # only keep specific columns
+  filter(!is.na(Cl_SO4_ID) & Cl_SO4_ID != "")  # remove missing/blank Cl_SO4_ID rows
+
+head(dionex_metadata)
+
+```
+
+## Make sample IDs match metadata
+```{r Make Sample match metadata}
+
+##Fix GCW spelling
 all_data <- all_data %>%
   mutate(Site = recode(Site, "GCrew" = "GCW")) %>%
   mutate(Site = recode(Site, "Gcrew" = "GCW")) %>%
@@ -352,15 +445,107 @@ all_data <- all_data %>%
 ##Remove Blanks
 all_data <- subset(all_data, Sample_ID != "Blank")
 
-##Remove non-Lys Samples
-Lys_SW_data <- all_data %>%  
-  filter(!str_detect(Sample_ID, "Sip"))%>%  
-  filter(!str_detect(Sample_ID, "RHZ"))%>%  
-  filter(!str_detect(Sample_ID, "JLee"))%>%  
-  filter(!str_detect(Sample_ID, "PPR"))
+##Depths for SW samples should be 0 
+all_data$Depth_cm <-  ifelse((all_data$Zone == "SW"), 0, all_data$Depth_cm)
 
+##Add cm to Depth
+all_data$Depth <- all_data$Depth_cm
+all_data <- all_data %>%
+  mutate(Depth_cm = gsub("cm", "", as.character(Depth_cm)))%>%
+  mutate(Depth_cm = gsub("m", "", as.character(Depth_cm)))
+
+##Remake Date Column with just Year and Month for Sample ID
+all_data <- all_data %>%
+  mutate(
+    Date = if_else(
+      Month < 10,
+      # Modify the string:
+      Date <- paste(all_dat_1$Year, all_dat_1$Month, sep = "0"), 
+      Date <- paste0(all_dat_1$Year, all_dat_1$Month), 
+    )
+  )
+
+##Remake sample ID
+all_data <- all_data %>%
+  mutate(
+    Sample_ID = if_else(
+      Zone != "SW",
+      # Modify the string:
+      Sample_ID <- paste(Site, Date, Zone, Replicate, Depth_cm, sep = "_"), 
+      Sample_ID <- paste(Site, Date, Zone, Replicate, sep = "_"), 
+    )
+  )
+
+##Add units
+all_data <- all_data %>%
+  mutate(
+    Sample_ID = if_else(
+      Zone != "SW",
+      # Modify the string:
+      Sample_ID <- paste0(Sample_ID_new, "cm"), 
+      Sample_ID <- Sample_ID_new
+    )
+  )
+```
+
+## Check to see if samples run match metadata & merge info
+```{r}
+
+#check to see if all samples are present in the metadata 
+all_data$Sample_ID <- toupper(all_data$Sample_ID)
+dionex_metadata$Cl_SO4_ID <- toupper(dionex_metadata$Cl_SO4_ID)
+
+all_present <- all(all_data$Sample_ID %in% dionex_metadata$Cl_SO4_ID)
+
+if (all_present) {
+  message("All sample IDs are present in metadata.")
+} else {
+  message("Some sample IDs are missing from metadata.")
+  
+  # Optional: Which ones are missing?
+  missing_ids <- setdiff(all_data$Sample_ID, dionex_metadata$Cl_SO4_ID)
+  print(missing_ids)
+}
+
+missing_ids <- data.frame(missing_ids)
+
+##Export missing IDs to csv
+write.csv(missing_ids, "COMPASS_SynopticCB_SO4_Cl_2022_missing_IDs.csv")
+
+##Select only necessary columns
+dionex_metadata_selected <- dionex_metadata %>%
+  select(Cl_SO4_ID, Year, Month, Day, Depth_cm, Lysimeter, Time..24hr., Time.Zone_EDT.EST,  Field.Notes) 
+
+#merge metadata with sample run data 
+merged_data <- all_data_flagged %>%
+  left_join(dionex_metadata_selected, by = c("sample_ID" = "Cl_SO4_ID"))
+
+df_all_clean <- merged_data %>%
+  #filter(str_detect(Sample_Name, "GCW|GWI|MSM|SWH")) %>%
+  #mutate(Run_Time = lubridate::mdy_hm(Run_Time)) %>%
+  separate(
+    col = sample_name,
+    sep = "_",
+    into = c("Sample_Number", "Site_Code", "Date" ,"Zone", "LysID", "Depth"),
+    remove = FALSE)
+
+############### THIS IS ONLY FOR 2023 when SWAMP was called UP and UPLAND was called UPCON ##############
+df_all_clean <- df_all_clean %>%
+  mutate(
+    Zone = case_when(
+      Site_Code == "SWH" & Zone == "UP" ~ "SWAMP",
+      Site_Code == "SWH" & Zone == "UPCON" ~ "UP",
+      TRUE ~ `Zone`
+    ))
 
 ```
+
+
+## Visualize Data
+```{r}
+
+```
+
 
 ## Write the 2022 file out to the folder 
 ```{r, echo=FALSE}
