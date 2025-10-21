@@ -410,15 +410,7 @@ for (obs_group in grouped_obs_list) {
 
 ```{r model-fitting}
 
-#metadat$Obs_length <- 100
-
-#metadat$TimeOnly <- format(metadat$Time_start, "%H:%M:%S")
-  
-#dat_w_meta <- ffi_metadata_match(
-  data_timestamps = dat$TIMESTAMP,
-  start_dates = metadat$Date,
-  start_times = metadat$TimeOnly,
-  obs_lengths = metadat$Obs_length)
+#would be great to include some code to remove lines that are at the end of the measurement...? I think we aren't 
 
 #change units 
   #so we will use temp and volume from metadata 
@@ -451,259 +443,52 @@ fluxes_co2 <- ffi_compute_fluxes(combined_dat,
                      group_column = "PlotID",
                      time_column = "TIMESTAMP",
                      gas_column = "CO2_umol_m2",
-                     dead_band = 0)
-
-                             
+                     dead_band = "DEAD_BAND_SEC")
 
 
+fluxes_ch4 <- ffi_compute_fluxes(combined_dat,
+                     group_column = "PlotID",
+                     time_column = "TIMESTAMP",
+                     gas_column = "CH4_nmol_m2",
+                     dead_band = "DEAD_BAND_SEC")
 
-model_fit_error <- FALSE
-# Fit a model to units of gas per day
-fit_model <- function(df, depvar) {
-  # Metadata
-  info <- data.frame(Obs = df$Obs[1],
-                     TIMESTAMP = mean(df$TIMESTAMP),
-                     DEAD_BAND_SEC = unique(df$DEAD_BAND_SEC),
-                     MSMT_STOP_SEC = unique(df$MSMT_STOP_SEC),
-                     TZ = df$TZ[1],
-                     SN = df$SN[1],
-                     Data_file = df$Data_file[1],
-                     Gas = depvar,
-                     Volume = df$Volume[1],
-                     Temp = df$Temp[1],
-                     Area = df$Area[1]
-                     )
-  # Remove the dead band data
-  df <- df[df$ELAPSED_SECS > df$DEAD_BAND_SEC,]
-  # Remove the after-end data
-  df <- df[df$ELAPSED_SECS <= df$MSMT_STOP_SEC,]
-  # Fit a linear model
-  try(mod <- lm(df[,depvar] ~ df$ELAPSED_SECS))
-  if(!exists("mod")) {
-    message("ERROR fitting model for obs ", df$Obs[1], " ", df$Plot[1], " ", depvar)
-    model_fit_error <- model_fit_error & FALSE
-  }
-  # Model statistics
-  model_stats <- glance(mod)
-  # Slope and intercept statistics
-  slope_stats <- tidy(mod)[2,-1]
-  names(slope_stats) <- paste("slope", names(slope_stats), sep = "_")
-  intercept_stats <- tidy(mod)[1,-1]
-  names(intercept_stats) <- paste("int", names(intercept_stats), sep = "_")
-  # Add robust regression slope as a QA/QC check
-  robust <- MASS::rlm(df[,depvar] ~ df$ELAPSED_SECS)
-  slope_stats$slope_estimate_robust <- coefficients(robust)[2]
-  # Add polynomial regression R2 as a QA/QC check
-  poly <- lm(df[,depvar] ~ poly(df$ELAPSED_SECS, 3))
-  slope_stats$r.squared_poly <- summary(poly)$r.squared
-  
-  res <- cbind(info, model_stats, slope_stats, intercept_stats)
-  
-  # Round to a sensible number of digits and return
-  numerics <- sapply(res, is.numeric)
-  res[numerics] <- signif(res[numerics], 3)
-  res
-}
-results_ch4 <- lapply(split(combined_dat, combined_dat$Obs), fit_model, "CH4")
-results_ch4 <- do.call("rbind", results_ch4)
-results_co2 <- lapply(split(combined_dat, combined_dat$Obs), fit_model, "CO2")
-results_co2 <- do.call("rbind", results_co2)
+
 ```
 
-```{r}
-#| echo: false
-#| output: asis
+```{#r}
 
-if(model_fit_error) cat("**<span style='color:red'>---> At least one model didn't fit! <---</span>**")
 ```
-
-## Unit conversion
-
-```{r unit-conversion}
-required_fields <- c("Volume", "Temp")
-if(!all(required_fields %in% names(combined_dat))) {
-  stop("We need volume ('Volume') and temperature ('Temp')")  
-}
-
-# The slopes and their errors, from model-fitting above, are in ppb/s (CH4) 
-# and ppm/s (CO2). Convert them to µmol/m2/day and mmol/m2/day respectively.
-
-# CH4
-# Use known volume of chamber to convert ppb/s to liters/s:
-#   ppb CH4 * volume of chamber (m3) * 1000 L per m3
-CH4_slope_L <- with(results_ch4, (slope_estimate / 1e9) * Volume * 1000)
-CH4_slope_err_L <- with(results_ch4, (slope_std.error / 1e9) * Volume * 1000)
-
-# Use ideal gas law to calculate µmol of CH4 per m2 ground:
-# (atm pressure * L CH4) / (R [in L*atm / T[K] * mol] * T[K]) * 10^6 µmol/mol
-TEMP_K <- with(results_ch4, Temp + 273.15)
-AREA <- results_ch4$Area
-S_PER_DAY <- 60 * 60 * 24
-results_ch4$flux_estimate <- (1 * CH4_slope_L) / (0.08206 * TEMP_K) * 1e6 / AREA * S_PER_DAY
-results_ch4$flux_units <- "µmol/m2/day"
-results_ch4$flux_std.error <- (1 * CH4_slope_err_L) / (0.08206 * TEMP_K) * 1e6 / AREA * S_PER_DAY
-
-# CO2
-# Use known volume of chamber to convert ppm/s to liters/s:
-#   ppm CO2 * volume of chamber (m3) * 1000 L per m3
-CO2_slope_L <- with(results_co2, (slope_estimate / 1e9) * Volume * 1000)
-CO2_slope_err_L <- with(results_co2, (slope_std.error / 1e9) * Volume * 1000)
-# Use ideal gas law to calculate mmol of CO2 per m2 ground:
-# (atm pressure * L CO2) / (R [in L*atm / T[K] * mol] * T[K]) * 10^3 mmol/mol
-#combined_dat$`CO2 mmol/m2` <- (1 * CO2_L) / (0.08206 * TEMP_K) * 1e3 / AREA
-TEMP_K <- with(results_co2, Temp + 273.15)
-AREA <- results_co2$Area
-results_co2$flux_estimate <- (1 * CO2_slope_L) / (0.08206 * TEMP_K) * 1e6 / AREA * S_PER_DAY
-results_co2$flux_units <- "mmol/m2/day"
-results_co2$flux_std.error <- (1 * CO2_slope_err_L) / (0.08206 * TEMP_K) * 1e6 / AREA * S_PER_DAY
-
-# Combine CH4 and CO2 results and re-merge with metadata
-results <- rbind(results_co2, results_ch4)
-# Drop columns we don't need because they'll come in with the merge
-results$Area <- results$Temp <- results$Volume <- NULL
-
-# Re-merge with metadata
-results <- as_tibble(merge(results, metadat, by = "Obs"))
-```
-
-Total rows of results: `r format(nrow(results), big.mark = ",")`
 
 ## Flux summary
 
 ```{r flux-summary}
-#| fig-width: 8
 
-# Flux table and visualization
-obs_list <- split(results, results$Site)
-for (result in obs_list) {
-  
-  formatRound(datatable(result),
-              which(sapply(result, is.numeric)), digits = 3)
-  
-  print(ggplot(result, aes(x = TIMESTAMP, y = flux_estimate, color = Plot)) + 
-    geom_point() + 
-    geom_errorbar(aes(ymin = flux_estimate - flux_std.error,
-                      ymax = flux_estimate + flux_std.error)) +
-    geom_line(aes(group = Plot)) +
-    facet_wrap(~paste(Gas, flux_units) + Site, scales = "free"))
-  
-}
-```
+#make a plot of the flux estimates, error, and visualize with R2 as color
+ggplot(fluxes_co2, aes(PlotID, lin_flux.estimate, color = lin_r.squared)) +
+  geom_point(size=4) +
+  geom_linerange(aes(ymin = lin_flux.estimate - lin_flux.std.error,
+                     ymax = lin_flux.estimate + lin_flux.std.error)) +
+  geom_hline(yintercept = 0, col="darkgray", linewidth=0.5) +
+  theme_classic() +
+  ylab(expression(paste( CO [2], " Flux (umol m"^-2* " s"^-1*")"))) +
+  labs(color=expression(Adj.~R^{2})) +
+  theme(axis.title.x = element_text(size=12), axis.text = element_text(size=12),
+        axis.title.y = element_text(size=12), legend.text=element_text(size=12),
+        panel.border = element_rect(colour = "black", fill=NA, linewidth =1))
 
-# QA/QC
 
-```{r qaqc-helpers}
-#| include: false
+ggplot(fluxes_ch4, aes(PlotID, lin_flux.estimate, color = lin_r.squared)) +
+  geom_point(size=4) +
+  geom_linerange(aes(ymin = lin_flux.estimate - lin_flux.std.error,
+                     ymax = lin_flux.estimate + lin_flux.std.error)) +
+  geom_hline(yintercept = 0, col="darkgray", linewidth=0.5) +
+  theme_classic() +
+  ylab(expression(paste( CH [4], "Flux (nmol m"^-2* " s"^-1*")"))) +
+  labs(color=expression(Adj.~R^{2})) +
+  theme(axis.title.x = element_text(size=12), axis.text = element_text(size=12),
+        axis.title.y = element_text(size=12), legend.text=element_text(size=12),
+        panel.border = element_rect(colour = "black", fill=NA, linewidth =1))
 
-# General function: plot distribution of a single column,
-# identify outliers
-onecol_plot_and_flag <- function(results, col, probs = c(0.05, 0.95),
-                                 left = TRUE, right = TRUE) {
-  
-  p <- ggplot(results, aes(.data[[col]])) + 
-    geom_histogram(bins = 30) +
-    facet_wrap(Gas ~., scales = "free", ncol = 1)
-  print(p)
-  
-  # Find which ones are outside of quantiles and flag
-  q_flags <- rep(FALSE, nrow(results))
-  co2 <- results$Gas == "CO2"
-  x <- as.data.frame(results)
-  q_co2 <- quantile(x[co2, col], probs = probs)
-  q_ch4 <- quantile(x[!co2, col], probs = probs)
-  if(left) q_flags[co2] <- q_flags[co2] | x[co2, col] < min(q_co2) 
-  if(right) q_flags[co2] <- q_flags[co2] | x[co2, col] > max(q_co2)
-  if(left) q_flags[!co2] <- q_flags[!co2] | x[!co2, col] < min(q_ch4) 
-  if(right) q_flags[!co2] <- q_flags[!co2] | x[!co2, col] > max(q_ch4)
-
-  # Create plot labels for all data, then NA the ones inside the cutoff
-  results$lab <- x$Obs
-  results$lab[!q_flags] <- NA_character_
-
-  p <- ggplot(results, aes(.data[[col]], flux_estimate)) + 
-    geom_point() + 
-    facet_wrap(~Gas, scales = "free") +
-    geom_rug(sides = "b", alpha = 0.3) +
-    geom_label_repel(aes(label = lab), size = 2.5, na.rm = TRUE)
-  print(p)
-  
-  return(q_flags)
-}
-
-# General function: plot two columns against each other, coloring by
-# standardized residual. Return vector of T/F flags if s.resid > cutoff
-twocol_plot_and_flag <- function(results, col1, col2,
-                                 add_1to1_line = FALSE,
-                          rstandard_cutoff = 2) {
-  
-  results <- as.data.frame(results)
-  # Identify standardized residuals outside of our cutoff
-  m <- lm(results[,col2] ~ results[,col1])
-  results$rstandard <- round(abs(rstandard(m)), 2)
-  resid_flags <- results$rstandard > rstandard_cutoff
-  # Create plot labels for all data, then NA the ones inside the cutoff
-  results$lab <- with(results, paste(paste0("#", Obs), 
-                                     Date, "\n", 
-                                     Plot, 
-                                     "\nsresid =", rstandard))
-  results$lab[!resid_flags] <- NA_character_
-
-  p <- ggplot(results, aes(.data[[col1]], .data[[col2]])) + 
-    geom_point()
-  if(add_1to1_line) p <- p + geom_abline()
-  p <- p +
-    geom_label_repel(aes(label = lab), size = 2.5, na.rm = TRUE) +
-    facet_wrap(Gas ~., scales = "free", ncol = 1)
-  print(p)
-  
-  return(resid_flags)
-}
-
-# General function: given a results subset, reshape to long form,
-# merge with concentration data, and plot for closer inspection
-# Typically code will call twocol_plot_and_flag above to identify potential
-# issues, and then this function to plot data in detail
-plot_group <- function(results, combined_dat) {
-  
-  plotdata <- merge(results[c("Obs", "adj.r.squared")], combined_dat, by = "Obs")
-  plotdata_long <- tidyr::pivot_longer(plotdata, c("CO2", "CH4"),
-                                       names_to = "Gas")
-  model_data <- subset(plotdata_long, 
-                       ELAPSED_SECS > DEAD_BAND_SEC & ELAPSED_SECS <= MSMT_STOP_SEC)
-  
-  print(ggplot(plotdata_long, aes(ELAPSED_SECS, value, group = Obs, color = Gas)) + 
-    scale_color_manual(values = c("CH4" = "blue", "CO2" = "purple")) +
-    geom_point(na.rm = TRUE) +
-    geom_vline(aes(xintercept = DEAD_BAND_SEC), linetype = 2, color = "green") +
-    geom_vline(aes(xintercept = MSMT_STOP_SEC), linetype = 2, color = "red") +
-    facet_wrap(~paste(paste0("#", Obs), date(TIMESTAMP)) + paste(Plot, Gas), 
-               scales = "free") +
-    theme(strip.text = element_text(size = 8)) +
-    geom_smooth(data = model_data,
-                method = lm, formula = 'y ~ x', na.rm = TRUE, color = "black"))
-}
-
-# Made a function above that prints each plot in order for it to iteratively print 
-# in a loop, this is not always necessary, so this is the same function without the # print statement
-plot_without_print <- function(results, combined_dat) {
-  
-  plotdata <- merge(results[c("Obs", "adj.r.squared")], combined_dat, by = "Obs")
-  plotdata_long <- tidyr::pivot_longer(plotdata, c("CO2", "CH4"),
-                                       names_to = "Gas")
-  model_data <- subset(plotdata_long, 
-                       ELAPSED_SECS > DEAD_BAND_SEC & ELAPSED_SECS <= MSMT_STOP_SEC)
-  
-  ggplot(plotdata_long, aes(ELAPSED_SECS, value, group = Obs, color = Gas)) + 
-    scale_color_manual(values = c("CH4" = "blue", "CO2" = "purple")) +
-    geom_point(na.rm = TRUE) +
-    geom_vline(aes(xintercept = DEAD_BAND_SEC), linetype = 2, color = "green") +
-    geom_vline(aes(xintercept = MSMT_STOP_SEC), linetype = 2, color = "red") +
-    facet_wrap(~paste(paste0("#", Obs), date(TIMESTAMP)) + paste(Plot, Gas), 
-               scales = "free") +
-    theme(strip.text = element_text(size = 8)) +
-    geom_smooth(data = model_data,
-                method = lm, formula = 'y ~ x', na.rm = TRUE, color = "black")
-}
 ```
 
 ## R2 distribution
