@@ -229,7 +229,7 @@ head(all_dat)
 
 ```
 
-##Fix Sample IDs
+##Fix Sample IDs Entered Incorrectly
 ```{r Fix Sample IDs, include = FALSE}
 
 ####Fix Sample IDs####
