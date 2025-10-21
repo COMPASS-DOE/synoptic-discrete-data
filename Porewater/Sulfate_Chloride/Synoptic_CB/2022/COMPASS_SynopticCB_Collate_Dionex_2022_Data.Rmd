@@ -460,8 +460,8 @@ all_data <- all_data %>%
     Date = if_else(
       Month < 10,
       # Modify the string:
-      Date <- paste(all_dat_1$Year, all_dat_1$Month, sep = "0"), 
-      Date <- paste0(all_dat_1$Year, all_dat_1$Month), 
+      Date <- paste(all_data$Year, all_data$Month, sep = "0"), 
+      Date <- paste0(all_data$Year, all_data$Month), 
     )
   )
 
@@ -482,8 +482,8 @@ all_data <- all_data %>%
     Sample_ID = if_else(
       Zone != "SW",
       # Modify the string:
-      Sample_ID <- paste0(Sample_ID_new, "cm"), 
-      Sample_ID <- Sample_ID_new
+      Sample_ID <- paste0(Sample_ID, "cm"), 
+      Sample_ID <- Sample_ID
     )
   )
 ```
