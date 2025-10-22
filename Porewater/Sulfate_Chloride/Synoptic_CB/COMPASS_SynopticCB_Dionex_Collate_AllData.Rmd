@@ -155,7 +155,6 @@ write.csv(metadat, "COMPASS_SynopticCB_Dionex_Metadata.csv")
 ## Visualize Data by Plot   
 ```{r Visualize Data, echo=FALSE, warning=FALSE, fig.width=16, fig.height=10}
 
-#Plot samples to get a first look at concentrations (sanity check)
 data_plotting <- all_dat
 
 #Order by Zone from Upland to Surface Water
@@ -170,17 +169,18 @@ data_plotting <- data_plotting[order(data_plotting$Site), ]
 data_plotting$Site = factor(data_plotting$Site, levels = c("SWH", "GCW", "MSM", "GWI"))
 data_plotting <- data_plotting[order(data_plotting$Site), ]
 
+#Plot samples to get a first look at concentrations (sanity check)
 #group the data for plotting
-data_plotting <- data_plotting %>%
+data_plotting_all <- data_plotting %>%
   group_by(Site, Zone) %>%
   mutate(row_num = factor(row_number())) %>%  # create row_num as factor per group
   ungroup()
 
-data_plotting$Date <- as.Date(paste(data_plotting$Year, data_plotting$Month, data_plotting$Day, sep = "-"))
+data_plotting_all$Date <- as.Date(paste(data_plotting_all$Year, data_plotting_all$Month, data_plotting_all$Day, sep = "-"))
 
 
 #Plot data and change colors based on Zone:
-viz_cl_plot <- ggplot(data_plotting, aes(x = as.character(Year), y = Cl_Conc_mM, fill = Zone)) +
+viz_cl_plot <- ggplot(data_plotting_all, aes(x = as.character(Year), y = Cl_Conc_mM, fill = Zone)) +
   geom_bar(stat = "identity", position = position_dodge2(preserve = "total")) +
   facet_grid( ~ Site, scales="free") +
   scale_fill_manual(values = c(
@@ -200,7 +200,7 @@ viz_cl_plot <- ggplot(data_plotting, aes(x = as.character(Year), y = Cl_Conc_mM,
 # viz_cl_plot
 
 
-viz_so4_plot <-  ggplot(data_plotting, aes(x = as.character(Year), y = SO4_Conc_mM, fill = Zone)) +
+viz_so4_plot <-  ggplot(data_plotting_all, aes(x = as.character(Year), y = SO4_Conc_mM, fill = Zone)) +
   geom_bar(stat = "identity", position = position_dodge2(preserve = "total")) +
   facet_grid( ~ Site, scales="free") +
   scale_fill_manual(values = c(
@@ -229,13 +229,13 @@ ggarrange(viz_cl_plot, viz_so4_plot, nrow=2, ncol=1)
 ```{r Summarize and Visualize Data, echo = FALSE, fig.width=22, fig.height=10}
 
 ##Make Date Column with just Year and Month for Sample ID
-all_dat_dates <- all_dat %>%
+all_dat_dates <- data_plotting %>%
   mutate(
     YearMonth = if_else(
       Month < 10,
       # Modify the string:
-      YearMonth <- paste(all_dat$Year, all_dat$Month, sep = "0"), 
-      YearMonth <- paste0(all_dat$Year, all_dat$Month), 
+      YearMonth <- paste(data_plotting$Year, data_plotting$Month, sep = "0"), 
+      YearMonth <- paste0(data_plotting$Year, data_plotting$Month), 
     )
   )
 
@@ -260,7 +260,7 @@ viz_cl_plot_avgs <- ggplot(Dionex_avg, aes(x = YearMonth, y = mean_Cl, color = Z
     "WC" = "#419973",
     "SW" = "#25ABE6"
   )) +
-  # theme_classic() +
+  theme_classic() +
   labs(x = " ", y = "Cl (mg/L)", title = "Samples: Chloride") +
   theme(
     panel.spacing = unit(.05, "lines"), 
@@ -283,7 +283,7 @@ viz_so4_plot_avgs <- ggplot(Dionex_avg, aes(x = YearMonth, y = mean_SO4, color =
     "WC" = "#419973",
     "SW" = "#25ABE6"
   )) +
-  # theme_classic() +
+  theme_classic() +
   labs(x = " ", y = "SO4 (mg/L)", title = "Samples: Sulfate") +
   theme(
     panel.spacing = unit(.05, "lines"), 
@@ -321,7 +321,7 @@ viz_cl_plot_avgs <- ggplot(Dionex_avg_depth, aes(x = YearMonth, y = mean_Cl, col
     "WC" = "#419973",
     "SW" = "#25ABE6"
   )) +
-  # theme_classic() +
+  theme_classic() +
   labs(x = " ", y = "Cl (mg/L)", title = "Samples: Chloride") +
   theme(
     panel.spacing = unit(.05, "lines"), 
@@ -345,7 +345,7 @@ viz_so4_plot_avgs <- ggplot(Dionex_avg_depth, aes(x = YearMonth, y = mean_SO4, c
     "WC" = "#419973",
     "SW" = "#25ABE6"
   )) +
-  # theme_classic() +
+  theme_classic() +
   labs(x = " ", y = "SO4 (mg/L)", title = "Samples: Sulfate") +
   theme(
     panel.spacing = unit(.05, "lines"), 
