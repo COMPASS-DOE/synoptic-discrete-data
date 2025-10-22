@@ -18,7 +18,7 @@ cat("Setup Information")
 
 
 ###### Run information - PLEASE CHANGE
-  Date_Run = "5/26/25"  #Date that instrument was run
+  Date_Run = "07/25/25"  #Date that instrument was run
   Run_by = "Stephanie J. Wilson"  #Instrument user 
   Script_run_by = "Stephanie J. Wilson" #Code user 
   run_notes = " "  #any notes from the run
@@ -216,6 +216,9 @@ stds_all <- raw_allpeaks_name %>%
 stds_C <- stds_all %>%
   filter(!is.na(standard_C_ppm)) %>%
   mutate(run_date = as.Date(strptime(run_datetime, format = "%m/%d/%Y %I:%M:%S %p")))
+
+stds_C$area <- as.numeric(stds_C$area)
+stds_C$standard_C_ppm <- as.numeric(stds_C$standard_C_ppm)
 
 #calculate slope and r2 of cal curves
 #ic curve
@@ -415,9 +418,12 @@ blks_raw <- raw_file_name %>%
   bind_rows() 
 
 blks_raw <- blks_raw %>% 
-  mutate(rep = row_number())
+  mutate(rep = row_number())  %>%
+  filter(!is.na(ic_raw))
 
 #Check if the blanks are above the lower 25% quantile of your data 
+dat_raw <- dat_raw %>% 
+  filter(!is.na(ic_raw))
 blk_flag_c <- quantile(dat_raw$ic_raw, prob=c(.25))   #this gives you the lower 25% quantile of the data 
 blks_raw$C_diff_flag <-  ifelse(blks_raw$ic_raw <= blk_flag_c, 'YES', 'NO, rerun')
 
@@ -456,7 +462,7 @@ if (c_blks_percent <= chks_flag) {
 ```
 
 ## Assess Duplicates - None on this run 
-```{#r Check Duplicates, echo=FALSE}
+```{r Check Duplicates, echo=FALSE}
 
 cat("Assess Duplicates")
 
@@ -580,20 +586,26 @@ cat("Visualize Data")
 
 #Plot samples to get a first look at concentrations (sanity check)
 IDs <- data.frame(do.call('rbind', strsplit(as.character(dat_flagged$sample_name),'_',fixed=TRUE)))
-colnames(IDs) <- c("Date" , "Site_Code","Zone", "Lysimeter", "Depth")
+colnames(IDs) <- c("Date" , "Site_Code","Zone", "Lysimeter", "Depth", "Extra_Info")
 #head(IDs)
 
 #rejoin them to the dataframe
 dat_flagged_id <- cbind(IDs, dat_flagged)
 
+#Order by Zone from Upland to Surface Water
+dat_flagged_id$Zone = factor(dat_flagged_id$Zone, levels = c("UP",  "SWAMP", "TR", "WC", "SW"))
+dat_flagged_id <- dat_flagged_id[order(dat_flagged_id$Zone), ]
+
 #group the data for plotting
 dat_flagged_id <- dat_flagged_id %>%
   group_by(Site_Code) %>%
   mutate(row_num = factor(row_number())) %>%  # create row_num as factor per group
+  mutate(sample_name = factor(sample_name, 
+                              levels = sample_name[order(Zone)])) %>%  # create row_num as factor per group
   ungroup()
 
 #Plot data and change colors based on flags to check it: 
-viz_c_plot <- ggplot(dat_flagged_id, aes(x = factor(row_num), y = ic_raw, fill = Zone)) +
+viz_c_plot <- ggplot(dat_flagged_id, aes(x = sample_name, y = ic_raw, fill = Zone)) +
   geom_bar(stat = "identity", position = position_dodge2(preserve = "single")) +
   facet_grid(~ Site_Code, scales="free_x") +
   scale_fill_manual(values = c(
@@ -606,7 +618,8 @@ viz_c_plot <- ggplot(dat_flagged_id, aes(x = factor(row_num), y = ic_raw, fill =
   theme_classic() +
   labs(x = " ", y = "IC (mg/L)", title = "Samples: DIC") +
   theme(legend.position = "none") +
-  scale_x_discrete(drop = TRUE)
+  scale_x_discrete(drop = TRUE) +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
 
 
 print(viz_c_plot)

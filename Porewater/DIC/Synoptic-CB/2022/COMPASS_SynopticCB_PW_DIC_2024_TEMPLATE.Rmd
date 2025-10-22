@@ -1,6 +1,6 @@
 ---
-title: "Synoptic CB: Porewater DIC"
-author: "September 2025 Samples"
+title: "Synoptic CB: Porewater DIC - TEMPLATE"
+author: "Month 2025 Samples"
 date: "`r Sys.Date()`"
 output: 
   pdf_document:
@@ -18,9 +18,9 @@ cat("Setup Information")
 
 
 ###### Run information - PLEASE CHANGE
-  Date_Run = "09/22/25"  #Date that instrument was run
-  Run_by = "Stephanie J. Wilson"  #Instrument user 
-  Script_run_by = "Stephanie J. Wilson" #Code user 
+  Date_Run = "MM/DD/YY"  #Date that instrument was run
+  Run_by = "Instrument User"  #Instrument user 
+  Script_run_by = "Code User" #Code user 
   run_notes = " "  #any notes from the run
   samples <- c("GCW", "GWI", "MSM", "SWH") #whatever identifies your samples within the same names 
   samples_pattern <- paste(samples, collapse = "|") 
@@ -30,13 +30,13 @@ cat("Setup Information")
   
 ###### File Names - PLEASE CHANGE 
 #file path and name for raw summary data file 
-    raw_file_name = "Raw Data/COMPASS_SynopticCB_PW_DIC_202509.txt" 
+    raw_file_name = "Raw Data/COMPASS_SynopticCB_PW_DIC_2025MM.txt" 
     
 #file path and name for raw all peaks file 
-    raw_allpeaks_name = "Raw Data/COMPASS_SynopticCB_PW_DIC_202509_allpeaks.txt"
+    raw_allpeaks_name = "Raw Data/COMPASS_SynopticCB_PW_DIC_2025MM_allpeaks.txt"
 
 #file path and name of processed data file 
-    processed_file_name = "Processed Data/COMPASS_SynopticCB_PW_Processed_DIC_202509.csv"
+    processed_file_name = "Processed Data/COMPASS_SynopticCB_PW_Processed_DIC_2025MM.csv"
 
 
 ###### Log Files - PLEASE CHECK 
@@ -291,6 +291,7 @@ log <- bind_rows(log, new_rows)
 Slopes_chk <- ggplot(log, aes(run_date, slope, col=curve)) +
   geom_point(size=4) + 
   geom_line() + 
+  ylim(10,20) + 
   theme_bw() + labs(title="Slope Drift Assessment", x="Run Date", y="Slope") +
   scale_color_manual(values=c("darkred"))
 Slopes_chk
@@ -357,8 +358,7 @@ cat("Assess the Check Standards")
 #Pull out check standards from raw file 
 chks_raw <- raw_file_name %>% 
   map_df(read_data) %>% 
-  filter(grepl(chks_name, sample_name)) %>% 
-  filter(!str_detect(sample_name, "CRM")) %>%
+  filter(grepl(chks_name, sample_name)) %>% # filter to TMP samples only
   bind_rows() 
 
 #we don't always the same checks so we need to pull the concentration out of the name 
@@ -416,7 +416,8 @@ blks_raw <- raw_file_name %>%
   bind_rows() 
 
 blks_raw <- blks_raw %>% 
-  mutate(rep = row_number())
+  mutate(rep = row_number())  %>%
+  filter(!ic_raw < 0.001) #remove DIs that weren't actually run and are completely zero 
 
 #Check if the blanks are above the lower 25% quantile of your data 
 blk_flag_c <- quantile(dat_raw$ic_raw, prob=c(.25))   #this gives you the lower 25% quantile of the data 
@@ -456,7 +457,76 @@ if (c_blks_percent <= chks_flag) {
 
 ```
 
-## Assess Duplicates - No duplicates included on this run 
+## Assess Duplicates 
+```{r Check Duplicates, echo=FALSE}
+
+cat("Assess Duplicates")
+
+#Take a look at the raw data 
+  #head(dat_raw)
+
+#pull out any rows that have "dup" in the sample_name column
+dups <- dat_raw %>%  
+  select(!c(ic_flag)) %>%
+  filter(str_detect(sample_name, "dup"))      #have to change this to match data
+
+#create a new dataframe and remove dups from sample dataframe 
+dat_raw2 <- dat_raw %>%  
+  filter(!str_detect(sample_name, "dup")) 
+
+#remove the dup from these IDs so we will have duplicate sample names
+dups$sample_name<-gsub("_dup","",as.character(dups$sample_name))
+dups <- dups[ ,-c(3)] #remove the run date time for 
+colnames(dups) <- c('sample_name', 'ic_raw_dup')
+
+#merge with the dataframe so we have a column for the conc and the dup
+QAdups <- merge(dat_raw2, dups)
+
+#create a dataframe to compare npoc dups 
+df2 <- as.data.frame(QAdups$ic_raw)
+df2$dups <- QAdups$ic_raw_dup
+
+#calculate the cv of the duplicates
+df2$sds <- apply(df2,1,sd)
+df2$mean <- apply(df2, 1, mean)
+
+QAdups$ic_dups_cv <- (df2$sds/df2$mean) * 100
+QAdups$ic_dups_cv_flag <-  ifelse(QAdups$ic_dups_cv <10, 'YES', 'NO, rerun')
+
+#Put all the dups together and create row numbers for plotting
+QAdups <- QAdups %>%
+  mutate(row_num = row_number())
+#head(QAdups)
+
+#plot dups output as a bar graph to easily check - want any over 10% to be red need to work on this 
+C_dups <- ggplot(data =QAdups, aes(x =row_num, y =ic_dups_cv, fill=ic_dups_cv_flag)) +
+       geom_bar(stat = 'identity') + 
+        theme_classic() + labs(x= " ", y="CV of IC Duplicates") + 
+        scale_fill_manual(values = c("YES" = "darkgreen", "NO, rerun" = "red")) +
+        theme(legend.position="none") +  geom_hline(yintercept=10, linetype="dashed", 
+                color = "black", linewidth=1)  + 
+              guides(fill=guide_legend(title="CV Between Dups <10%"))
+
+C_dups
+
+#calculate the percent of check standards that are within the range based on the flag 
+c_dups_percent <- (sum(QAdups$ic_dups_cv_flag == "YES")/nrow(QAdups))*100
+
+#report out if the dups are within range
+ifelse(c_dups_percent >= chks_flag, ">60% of Carbon Duplicates have a CV <10%",
+       "<60% of Carbon Duplicates have a CV <10% - REASSESS")
+
+#write out a flag to the sample dataframe if more than 60% of the dups have CVs out of range 
+if (c_dups_percent <= chks_flag) {
+  dat_raw$ic_flag <- ifelse(
+    dat_raw$ic_flag != "",
+    paste0(dat_raw$ic_flag, "; IC dups out of range"),
+    "IC dups out of range"
+  )
+}
+
+
+```
 
 ## Sample Flagging - Are samples Within the range of the curve?  
 ```{r Sample Flagging, echo=FALSE}
@@ -512,7 +582,7 @@ cat("Visualize Data")
 
 #Plot samples to get a first look at concentrations (sanity check)
 IDs <- data.frame(do.call('rbind', strsplit(as.character(dat_flagged$sample_name),'_',fixed=TRUE)))
-colnames(IDs) <- c("Date" , "Site_Code","Zone", "Lysimeter", "Depth")
+colnames(IDs) <- c("Date" , "Site_Code","Zone", "Lysimeter", "Depth", "Excess_Info")
 #head(IDs)
 
 #rejoin them to the dataframe
@@ -572,8 +642,8 @@ cat("Check Sample IDs with Metadata")
 
 #remove duplicates from the sample dataframe bc we are just taking the first dup run
 all_data_flagged <- dat_flagged_id %>%
-  filter(!str_detect(sample_name, "dup")) #%>%
-  #select(!Excess_Info)
+  filter(!str_detect(sample_name, "dup")) %>%
+  select(!Excess_Info)
 
 #check to see if all samples are present in the metadata 
 all_present <- all(all_data_flagged$sample_name %in% dic_metadata$DIC_ID)

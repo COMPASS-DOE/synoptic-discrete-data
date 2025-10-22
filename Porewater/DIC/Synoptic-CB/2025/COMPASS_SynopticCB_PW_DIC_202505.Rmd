@@ -586,14 +586,20 @@ colnames(IDs) <- c("Date" , "Site_Code","Zone", "Lysimeter", "Depth", "Excess_In
 #rejoin them to the dataframe
 dat_flagged_id <- cbind(IDs, dat_flagged)
 
+#Order by Zone from Upland to Surface Water
+dat_flagged_id$Zone = factor(dat_flagged_id$Zone, levels = c("UP",  "SWAMP", "TR", "WC", "SW"))
+dat_flagged_id <- dat_flagged_id[order(dat_flagged_id$Zone), ]
+
 #group the data for plotting
 dat_flagged_id <- dat_flagged_id %>%
   group_by(Site_Code) %>%
   mutate(row_num = factor(row_number())) %>%  # create row_num as factor per group
+  mutate(sample_name = factor(sample_name, 
+                              levels = sample_name[order(Zone)])) %>%  # create row_num as factor per group
   ungroup()
 
 #Plot data and change colors based on flags to check it: 
-viz_c_plot <- ggplot(dat_flagged_id, aes(x = factor(row_num), y = ic_raw, fill = Zone)) +
+viz_c_plot <- ggplot(dat_flagged_id, aes(x = sample_name, y = ic_raw, fill = Zone)) +
   geom_bar(stat = "identity", position = position_dodge2(preserve = "single")) +
   facet_grid(~ Site_Code, scales="free_x") +
   scale_fill_manual(values = c(
@@ -606,7 +612,8 @@ viz_c_plot <- ggplot(dat_flagged_id, aes(x = factor(row_num), y = ic_raw, fill =
   theme_classic() +
   labs(x = " ", y = "IC (mg/L)", title = "Samples: DIC") +
   theme(legend.position = "none") +
-  scale_x_discrete(drop = TRUE)
+  scale_x_discrete(drop = TRUE) +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
 
 
 print(viz_c_plot)
