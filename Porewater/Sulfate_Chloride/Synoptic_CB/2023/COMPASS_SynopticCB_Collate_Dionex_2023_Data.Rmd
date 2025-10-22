@@ -456,7 +456,9 @@ head(file10_cols)
 ##Need to format data files to look like the 2024 processed data with these column names: 
 # "Project"	"Region"	"Site"	"Zone"	"Replicate"	"Depth_cm"	"Sample_ID"	"Year"	"Month"	"Day"	"Time"	"Time_Zone"	"SO4_Conc_mM"	"SO4_Conc_flag"	"SO4_QAQC_flag"	"Cl_Conc_mM"	"Cl_Conc_flag"	"Cl_QAQC_flag"	"salinity"	"Analysis_rundate"	"Run_notes"	"Field_notes"
 
-all_data_extra <- bind_rows(file1_cols, file2_cols, file3_cols, file4_cols, file5_cols, file6_cols, file7_cols, file8_cols, file9_cols, file10_cols)
+all_data_extra <- bind_rows(file1_cols, file2_cols, file4_cols, file5_cols, file6_cols, file7_cols, file8_cols, file9_cols, file10_cols)
+
+##Don't add file3 because it is the same as file2 but doesn't have all the samples. 
 
 ##Remove non-Lys Samples
 all_data <- all_data_extra %>%  
