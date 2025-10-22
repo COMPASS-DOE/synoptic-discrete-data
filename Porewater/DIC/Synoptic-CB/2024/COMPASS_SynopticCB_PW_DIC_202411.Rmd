@@ -1,6 +1,6 @@
 ---
-title: "Synoptic CB: Porewater DIC - TEMPLATE"
-author: "Month 2025 Samples"
+title: "Synoptic CB: Porewater DIC"
+author: "November 2024 Samples"
 date: "`r Sys.Date()`"
 output: 
   pdf_document:
@@ -18,10 +18,11 @@ cat("Setup Information")
 
 
 ###### Run information - PLEASE CHANGE
-  Date_Run = "MM/DD/YY"  #Date that instrument was run
-  Run_by = "Instrument User"  #Instrument user 
-  Script_run_by = "Code User" #Code user 
-  run_notes = " "  #any notes from the run
+  Date_Run = "11/25/2024"  #Date that instrument was run
+  Run_by = "Stephanie J. Wilsonr"  #Instrument user 
+  Script_run_by = "Stephanie J. Wilson" #Code user 
+  run_notes = "There was only one duplicate included in this run and it is out of range, 
+    accepting the run. "  #any notes from the run
   samples <- c("GCW", "GWI", "MSM", "SWH") #whatever identifies your samples within the same names 
   samples_pattern <- paste(samples, collapse = "|") 
     #samples_pattern <- "GCW" #use this instead of the line above if you have only one site code 
@@ -30,21 +31,21 @@ cat("Setup Information")
   
 ###### File Names - PLEASE CHANGE 
 #file path and name for raw summary data file 
-    raw_file_name = "Raw Data/COMPASS_SynopticCB_PW_DIC_2025MM.txt" 
+    raw_file_name = "Raw Data/TOCTN_COMPASS_Synoptic_DIC_202411.txt" 
     
 #file path and name for raw all peaks file 
-    raw_allpeaks_name = "Raw Data/COMPASS_SynopticCB_PW_DIC_2025MM_allpeaks.txt"
+    raw_allpeaks_name = "Raw Data/TOCTN_COMPASS_Synoptic_DIC_202411_allpeaks.txt"
 
 #file path and name of processed data file 
-    processed_file_name = "Processed Data/COMPASS_SynopticCB_PW_Processed_DIC_2025MM.csv"
+    processed_file_name = "Processed Data/COMPASS_SynopticCB_PW_Processed_DIC_202411.csv"
 
 
 ###### Log Files - PLEASE CHECK 
 #downloaded metadata csv - downloaded from Google drive as csv for this year
-  Raw_Metadata = "Raw Data/COMPASS_SynopticCB_PW_SampleLog_2025.csv"
+  Raw_Metadata = "Raw Data/COMPASS_SynopticCB_PW_SampleLog_2024.csv"
   
 #qaqc log file path for this year 
-  Log_path = "Raw Data/COMPASS_Synoptic_DIC_QAQClog_2025.csv"
+  Log_path = "Raw Data/COMPASS_Synoptic_DIC_QAQClog_2024.csv"
 
 ```
 
@@ -358,7 +359,8 @@ cat("Assess the Check Standards")
 #Pull out check standards from raw file 
 chks_raw <- raw_file_name %>% 
   map_df(read_data) %>% 
-  filter(grepl(chks_name, sample_name)) %>% # filter to TMP samples only
+  filter(grepl(chks_name, sample_name)) %>% 
+  filter(!str_detect(sample_name, "crm")) %>%
   bind_rows() 
 
 #we don't always the same checks so we need to pull the concentration out of the name 
@@ -457,7 +459,7 @@ if (c_blks_percent <= chks_flag) {
 
 ```
 
-## Assess Duplicates 
+## Assess Duplicates - only one dup and it is out of range... 
 ```{r Check Duplicates, echo=FALSE}
 
 cat("Assess Duplicates")

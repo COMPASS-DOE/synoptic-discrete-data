@@ -1,0 +1,143 @@
+"","Project","Region","Site","Zone","Replicate","Depth_cm","Sample_ID","Year","Month","Day","Time","Time_Zone","ic_mgL","ic_uM","ic_flag","Analysis_runtime","Run_notes","Field_notes"
+"1","COMPASS: Synoptic","CB","MSM","UP","B",10,"202407_MSM_UP_LysB_10cm",2024,7,18,"","",7.437,619.182416118558,"","7/29/2024 7:39:26 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"2","COMPASS: Synoptic","CB","MSM","UP","C",10,"202407_MSM_UP_LysC_10cm",2024,7,18,"","",8.551,711.930730164016,"","7/29/2024 7:54:21 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"3","COMPASS: Synoptic","CB","MSM","UP","C",20,"202407_MSM_UP_LysC_20cm",2024,7,18,"","",11.17,929.980850886687,"","7/29/2024 8:12:47 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"4","COMPASS: Synoptic","CB","SWH","UP","A",10,"202407_SWH_UP_LysA_10cm",2024,7,23,"","",7.368,613.437682124719,"","7/30/2024 12:57:43 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"5","COMPASS: Synoptic","CB","SWH","UP","A",20,"202407_SWH_UP_LysA_20cm",2024,7,23,"","",10.39,865.040379651986,"","7/30/2024 1:09:50 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"6","COMPASS: Synoptic","CB","SWH","UP","A",45,"202407_SWH_UP_LysA_45cm",2024,7,23,"","",38.78,3228.70701856631,"","7/30/2024 1:27:00 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"7","COMPASS: Synoptic","CB","SWH","UP","B",20,"202407_SWH_UP_LysB_20cm",2024,7,23,"","",33.33,2774.95629006744,"","7/30/2024 1:44:35 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"8","COMPASS: Synoptic","CB","SWH","UP","C",45,"202407_SWH_UP_LysC_45cm",2024,7,23,"","",36.99,3079.67696278411,"","7/30/2024 1:58:20 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"9","COMPASS: Synoptic","CB","GWI","UP","B",10,"202407_GWI_UP_LysB_10cm",2024,7,25,"","",11.82,984.097910248939,"","7/30/2024 8:50:05 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"10","COMPASS: Synoptic","CB","GWI","UP","B",20,"202407_GWI_UP_LysB_20cm",2024,7,25,"","",26.32,2191.32461909916,"","7/30/2024 9:03:42 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"11","COMPASS: Synoptic","CB","GWI","UP","B",45,"202407_GWI_UP_LysB_45cm",2024,7,25,"","",20.77,1729.24818915994,"","7/30/2024 9:17:01 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"12","COMPASS: Synoptic","CB","GWI","UP","C",20,"202407_GWI_UP_LysC_20cm",2024,7,25,"","",39.64,3300.30805095329,"","7/30/2024 9:39:00 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"13","COMPASS: Synoptic","CB","GWI","UP","A",45,"202407_GWI_UP_LysA_45cm",2024,7,25,"","",25.68,2138.04012988094,"","7/30/2024 10:06:52 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"14","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"202407_SWH_SWAMP_LysA_10cm",2024,7,23,"","",27.35,2277.07934393473,"","7/30/2024 2:11:53 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"15","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"202407_SWH_SWAMP_LysA_20cm",2024,7,23,"","",24.09,2005.66147697944,"","7/30/2024 2:25:08 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"16","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"202407_SWH_SWAMP_LysB_45cm",2024,7,23,"","",21.45,1785.86295895429,"","7/30/2024 2:53:07 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"17","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"202407_SWH_SWAMP_LysC_10cm",2024,7,23,"","",17.65,1469.48630422113,"","7/30/2024 3:06:15 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"18","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"202407_SWH_SWAMP_LysC_20cm",2024,7,23,"","",15.7,1307.13512613438,"","7/30/2024 3:19:20 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"19","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"202407_SWH_SWAMP_LysC_45cm",2024,7,23,"","",23.05,1919.07418199983,"","7/30/2024 3:32:37 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"20","COMPASS: Synoptic","CB","MSM","TR","A",10,"202407_MSM_TR_LysA_10cm",2024,7,18,"","",21.91,1824.16118557989,"","7/29/2024 8:26:03 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"21","COMPASS: Synoptic","CB","MSM","TR","A",20,"202407_MSM_TR_LysA_20cm",2024,7,18,"","",27.92,2324.5358421447,"","7/29/2024 8:39:20 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"22","COMPASS: Synoptic","CB","MSM","TR","B",10,"202407_MSM_TR_LysB_10cm",2024,7,18,"","",19.86,1653.48430605278,"","7/29/2024 8:52:25 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"23","COMPASS: Synoptic","CB","MSM","TR","B",20,"202407_MSM_TR_LysB_20cm",2024,7,18,"","",38,3163.76654733161,"","7/29/2024 9:06:12 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"24","COMPASS: Synoptic","CB","MSM","TR","C",10,"202407_MSM_TR_LysC_10cm",2024,7,18,"","",20.99,1747.5647323287,"","7/29/2024 9:19:22 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"25","COMPASS: Synoptic","CB","MSM","TR","C",20,"202407_MSM_TR_LysC_20cm",2024,7,18,"","",32.99,2746.64890517026,"","7/29/2024 9:33:03 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"26","COMPASS: Synoptic","CB","SWH","TR","A",45,"202407_SWH_TR_LysA_45cm",2024,7,24,"","",45.36,3776.5381733411,"","7/30/2024 2:39:47 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"27","COMPASS: Synoptic","CB","SWH","TR","A",10,"202407_SWH_TR_LysA_10cm",2024,7,24,"","",35.07,2919.82349512946,"","7/30/2024 4:23:10 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"28","COMPASS: Synoptic","CB","SWH","TR","A",20,"202407_SWH_TR_LysA_20cm",2024,7,24,"","",40.2,3346.93197901923,"","7/30/2024 4:37:20 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"29","COMPASS: Synoptic","CB","SWH","TR","B",10,"202407_SWH_TR_LysB_10cm",2024,7,24,"","",25.79,2147.19840146532,"","7/30/2024 4:50:54 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"30","COMPASS: Synoptic","CB","SWH","TR","B",20,"202407_SWH_TR_LysB_20cm",2024,7,24,"","",52.5,4370.99325618183,"","7/30/2024 5:05:09 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"31","COMPASS: Synoptic","CB","SWH","TR","B",45,"202407_SWH_TR_LysB_45cm",2024,7,24,"","",56.66,4717.34243610024,"","7/30/2024 5:24:20 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"32","COMPASS: Synoptic","CB","SWH","TR","C",10,"202407_SWH_TR_LysC_10cm",2024,7,24,"","",36.68,3053.86728831904,"","7/30/2024 5:39:55 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"33","COMPASS: Synoptic","CB","SWH","TR","C",20,"202407_SWH_TR_LysC_20cm",2024,7,24,"","",45.1,3754.8913495962,"","7/30/2024 5:54:16 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"34","COMPASS: Synoptic","CB","SWH","TR","C",45,"202407_SWH_TR_LysC_45cm",2024,7,24,"","",48.07,4002.16468237449,"","7/30/2024 6:08:56 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"35","COMPASS: Synoptic","CB","GWI","TR","A",10,"202407_GWI_TR_LysA_10cm",2024,7,25,"","",44.6,3713.26284239447,"","7/30/2024 9:53:28 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"36","COMPASS: Synoptic","CB","GWI","TR","B",10,"202407_GWI_TR_LysB_10cm",2024,7,25,"","",26.84,2234.61826658896,"","7/30/2024 10:20:20 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"37","COMPASS: Synoptic","CB","GWI","TR","C",10,"202407_GWI_TR_LysC_10cm",2024,7,25,"","",18.66,1553.57588876863,"","7/30/2024 10:33:17 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"38","COMPASS: Synoptic","CB","GWI","TR","C",20,"202407_GWI_TR_LysC_20cm",2024,7,25,"","",29.07,2420.28140870868,"","7/30/2024 10:46:40 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"39","COMPASS: Synoptic","CB","GCW","WC","A",10,"202407_GCW_WC_LysA_10cm",2024,7,16,"","",110.8,9224.87719590375,"","7/29/2024 3:29:12 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"40","COMPASS: Synoptic","CB","GCW","WC","A",20,"202407_GCW_WC_LysA_20cm",2024,7,16,"","",124.9,10398.8010989926,"","7/29/2024 3:47:04 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"41","COMPASS: Synoptic","CB","GCW","WC","A",45,"202407_GCW_WC_LysA_45cm",2024,7,16,"","",185.4,15435.8504704021,"","7/29/2024 4:04:53 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"42","COMPASS: Synoptic","CB","GCW","WC","B",10,"202407_GCW_WC_LysB_10cm",2024,7,16,"","",119,9907.58471401216,"","7/29/2024 4:22:47 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"43","COMPASS: Synoptic","CB","GCW","WC","B",20,"202407_GCW_WC_LysB_20cm",2024,7,16,"","",125.6,10457.081009075,"","7/29/2024 4:40:38 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"44","COMPASS: Synoptic","CB","GCW","WC","B",45,"202407_GCW_WC_LysB_45cm",2024,7,16,"","",154.4,12854.8830238948,"","7/29/2024 4:58:24 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"45","COMPASS: Synoptic","CB","GCW","WC","C",10,"202407_GCW_WC_LysC_10cm",2024,7,16,"","",82.79,6892.84822246274,"","7/29/2024 5:20:47 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"46","COMPASS: Synoptic","CB","GCW","WC","C",20,"202407_GCW_WC_LysC_20cm",2024,7,16,"","",86.05,7164.26608941803,"","7/29/2024 5:43:09 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"47","COMPASS: Synoptic","CB","GCW","WC","C",45,"202407_GCW_WC_LysC_45cm",2024,7,16,"","",103.2,8592.12388643743,"","7/29/2024 6:05:26 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"48","COMPASS: Synoptic","CB","MSM","WC","A",10,"202407_MSM_WC_LysA_10cm",2024,7,18,"","",54.58,4544.16784614104,"","7/29/2024 9:47:45 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"49","COMPASS: Synoptic","CB","MSM","WC","A",20,"202407_MSM_WC_LysA_20cm",2024,7,18,"","",103.8,8642.07809507951,"","7/29/2024 10:10:19 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"50","COMPASS: Synoptic","CB","MSM","WC","B",10,"202407_MSM_WC_LysB_10cm",2024,7,18,"","",102.4,8525.51827491466,"","7/29/2024 10:33:03 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"51","COMPASS: Synoptic","CB","MSM","WC","B",20,"202407_MSM_WC_LysB_20cm",2024,7,18,"","",102,8492.21546915328,"","7/29/2024 10:59:17 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"52","COMPASS: Synoptic","CB","MSM","WC","C",10,"202407_MSM_WC_LysC_10cm",2024,7,18,"","",84.04,6996.91949046707,"","7/29/2024 11:28:05 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"53","COMPASS: Synoptic","CB","SWH","WC","C",10,"202407_SWH_WC_LysC_10cm",2024,7,24,"","",52.91,4405.12863208725,"","7/30/2024 6:23:46 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"54","COMPASS: Synoptic","CB","SWH","WC","C",20,"202407_SWH_WC_LysC_20cm",2024,7,24,"","",84.1,7001.91491133128,"","7/30/2024 6:50:09 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"55","COMPASS: Synoptic","CB","SWH","WC","C",45,"202407_SWH_WC_LysC_45cm",2024,7,24,"","",93.05,7747.06519024228,"","7/30/2024 7:12:52 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"56","COMPASS: Synoptic","CB","GWI","WC","A",10,"202407_GWI_WC_LysA_10cm",2024,7,25,"","",29.67,2470.23561735076,"","7/30/2024 11:00:18 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"57","COMPASS: Synoptic","CB","GWI","WC","B",10,"202407_GWI_WC_LysB_10cm",2024,7,25,"","",40.1,3338.60627757889,"","7/30/2024 11:14:10 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"58","COMPASS: Synoptic","CB","GWI","WC","B",20,"202407_GWI_WC_LysB_20cm",2024,7,25,"","",42.48,3536.75797185913,"","7/30/2024 11:29:39 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"59","COMPASS: Synoptic","CB","GWI","WC","C",10,"202407_GWI_WC_LysC_10cm",2024,7,25,"","",40.27,3352.75997002747,"","7/30/2024 11:44:15 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"60","COMPASS: Synoptic","CB","GCW","SW","A",0,"202407_GCW_SW_A",2024,7,16,"","",21.58,1796.68637082674,"","7/29/2024 6:23:49 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"61","COMPASS: Synoptic","CB","GCW","SW","B",0,"202407_GCW_SW_B",2024,7,16,"","",21.22,1766.7138456415,"","7/29/2024 6:37:14 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"62","COMPASS: Synoptic","CB","GCW","SW","C",0,"202407_GCW_SW_C",2024,7,16,"","",21.24,1768.37898592956,"","7/29/2024 6:50:35 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"63","COMPASS: Synoptic","CB","MSM","SW","A",0,"202407_MSM_SW_A",2024,7,18,"","",19.17,1596.0369661144,"","7/29/2024 11:41:01 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"64","COMPASS: Synoptic","CB","MSM","SW","B",0,"202407_MSM_SW_B",2024,7,18,"","",18.95,1577.72042294563,"","7/29/2024 11:54:14 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"65","COMPASS: Synoptic","CB","MSM","SW","C",0,"202407_MSM_SW_C",2024,7,18,"","",19.04,1585.21355424194,"","7/30/2024 12:07:20 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"66","COMPASS: Synoptic","CB","SWH","SW","A",0,"202407_SWH_SW_A",2024,7,24,"","",10.36,862.542669219882,"","7/30/2024 7:32:14 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"67","COMPASS: Synoptic","CB","SWH","SW","B",0,"202407_SWH_SW_B",2024,7,24,"","",9.466,788.110898343185,"","7/30/2024 7:44:33 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"68","COMPASS: Synoptic","CB","SWH","SW","C",0,"202407_SWH_SW_C",2024,7,24,"","",9.835,818.832736658063,"","7/30/2024 7:56:47 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"69","COMPASS: Synoptic","CB","GWI","SW","A",0,"202407_GWI_SW_A",2024,7,25,"","",19.89,1655.98201648489,"","7/30/2024 11:57:33 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"70","COMPASS: Synoptic","CB","GWI","SW","B",0,"202407_GWI_SW_B",2024,7,25,"","",19.35,1611.02322870702,"","7/30/2024 12:10:39 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
+"71","COMPASS: Synoptic","CB","GWI","SW","C",0,"202407_GWI_SW_C",2024,7,25,"","",19.18,1596.86953625843,"","7/30/2024 12:23:54 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",""
