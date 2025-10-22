@@ -33,8 +33,10 @@ lapply(c(
   Date_Run = "2025-10-02"  #Date that instrument was run
   Run_by = "Zoe Read"  #Instrument user 
   Script_run_by = "Zoe Read" #Code user 
-  run_notes = "Need to rerun once the 2025 sample log is updated. 
-  Std 1 is lower than the expected concentration. 
+  run_notes = "Std 1 is lower than the expected concentration. 
+  Some sample IDs are missing from metadata: 
+  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
+  9, 10, 88, 89 (test samples for Lucie)
   " #any notes from the run
   samples <- c("GCW", "GWI", "MSM", "SWH") #whatever identifies your samples within the same names 
   samples_pattern <- paste(samples, collapse = "|") 
