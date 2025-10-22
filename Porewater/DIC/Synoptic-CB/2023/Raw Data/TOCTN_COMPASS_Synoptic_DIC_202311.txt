@@ -1,0 +1,125 @@
+[Header]	
+System	Smithsonian TCTN	
+S/W Version	1.00	
+User	sjw	
+Date/Time	11/12/2023 11:51:44 PM	
+
+[System]	
+Instrument Options	TOC/ASI/IC Unit/TN/	
+
+[Data]	
+Type	Anal.	Sample Name	Sample ID	Result(TOC)	Result(TC)	Result(IC)	Result(POC)	Result(NPOC)	Result(TN)	Unit	Vial	Date / Time	
+Unknown	IC	DI	Untitled			1.098				mg/L	0	11/10/2023 2:12:43 PM	
+Unknown	IC	DI	Untitled			1.097				mg/L	0	11/10/2023 2:21:49 PM	
+Unknown	IC	DI_Bubbled
+DI_Bubbled	Untitled			0.9970				mg/L	1	11/10/2023 2:34:49 PM	
+Unknown	IC	Chk_Std_40mgL	Untitled			32.71				mg/L	2	11/10/2023 2:49:05 PM	
+Unknown	IC	DI	Untitled			1.109				mg/L	0	11/10/2023 2:58:53 PM	
+Unknown	IC	DI	Untitled			1.069				mg/L	0	11/10/2023 4:04:25 PM	
+Standard	IC	CalCurve_IC	Untitled			200.0				mg/L	3, 4, 5, 6, 7, 8, 9, 10	11/10/2023 6:04:42 PM	
+Unknown	IC	DI	Untitled			1.410				mg/L	0	11/10/2023 6:19:25 PM	
+Unknown	IC	DI_Bubbled	Untitled			1.340				mg/L	11	11/10/2023 6:32:37 PM	
+Unknown	IC	Chk_Std_40mgL	Untitled			38.36				mg/L	12	11/10/2023 6:46:42 PM	
+Unknown	IC	DI	Untitled			1.419				mg/L	0	11/10/2023 6:57:48 PM	
+Unknown	IC	202311_MSM_UP_LysB_10cm	Untitled			13.07				mg/L	13	11/10/2023 7:14:33 PM	
+Unknown	IC	202311_MSM_UP_LysC_10cm	Untitled			9.707				mg/L	14	11/10/2023 7:30:11 PM	
+Unknown	IC	202311_MSM_UP_LysC_20cm	Untitled			16.96				mg/L	15	11/10/2023 7:43:55 PM	
+Unknown	IC	202311_MSM_TR_LysA_10cm	Untitled			12.52				mg/L	16	11/10/2023 7:59:53 PM	
+Unknown	IC	202311_MSM_TR_LysA_20cm	Untitled			41.38				mg/L	17	11/10/2023 8:17:28 PM	
+Unknown	IC	202311_MSM_TR_LysB_10cm	Untitled			27.23				mg/L	18	11/10/2023 8:31:25 PM	
+Unknown	IC	202311_MSM_TR_LysB_20cm	Untitled			49.54				mg/L	19	11/10/2023 8:45:39 PM	
+Unknown	IC	202311_MSM_TR_LysC_10cm	Untitled			21.64				mg/L	20	11/10/2023 8:59:25 PM	
+Unknown	IC	202311_MSM_TR_LysC_20cm	Untitled			36.88				mg/L	21	11/10/2023 9:13:51 PM	
+Unknown	IC	202311_MSM_WC_LysA_10cm	Untitled			37.83				mg/L	22	11/10/2023 9:28:04 PM	
+Unknown	IC	DI	Untitled			1.505				mg/L	0	11/10/2023 9:41:43 PM	
+Unknown	IC	Chk_Std_40mgL	Untitled			37.55				mg/L	23	11/10/2023 9:55:49 PM	
+Unknown	IC	DI	Untitled			1.443				mg/L	0	11/10/2023 10:07:04 PM	
+Unknown	IC	202311_MSM_WC_LysA_20cm	Untitled			52.63				mg/L	24	11/10/2023 10:21:29 PM	
+Unknown	IC	202311_MSM_WC_LysB_10cm	Untitled			84.78				mg/L	25	11/10/2023 10:36:38 PM	
+Unknown	IC	202311_MSM_WC_LysB_20cm	Untitled			107.5				mg/L	26	11/10/2023 10:59:13 PM	
+Unknown	IC	202311_MSM_WC_LysC_10cm	Untitled			100.9				mg/L	27	11/10/2023 11:21:10 PM	
+Unknown	IC	202311_MSM_WC_LysC_10cm_dup	Untitled			97.21				mg/L	28	11/10/2023 11:37:00 PM	
+Unknown	IC	202311_MSM_SW_A	Untitled			18.34				mg/L	29	11/10/2023 11:52:14 PM	
+Unknown	IC	202311_MSM_SW_B	Untitled			17.99				mg/L	30	11/11/2023 12:06:09 AM	
+Unknown	IC	202311_MSM_SW_C	Untitled			17.68				mg/L	31	11/11/2023 12:19:39 AM	
+Unknown	IC	202311_GCW_WC_LysA_10cm	Untitled			72.81				mg/L	32	11/11/2023 12:39:29 AM	
+Unknown	IC	202311_GCW_WC_LysA_20cm	Untitled			135.6				mg/L	33	11/11/2023 12:57:58 AM	
+Unknown	IC	DI	Untitled			1.546				mg/L	0	11/11/2023 1:13:40 AM	
+Unknown	IC	Chk_Std_40mgL	Untitled			38.59				mg/L	34	11/11/2023 1:28:38 AM	
+Unknown	IC	DI	Untitled			1.431				mg/L	0	11/11/2023 1:41:54 AM	
+Unknown	IC	202311_GCW_WC_LysA_45cm	Untitled			166.5				mg/L	35	11/11/2023 1:59:13 AM	
+Unknown	IC	202311_GCW_WC_LysB_10cm	Untitled			113.7				mg/L	36	11/11/2023 2:16:33 AM	
+Unknown	IC	202311_GCW_WC_LysB_20cm	Untitled			144.3				mg/L	37	11/11/2023 2:34:59 AM	
+Unknown	IC	202311_GCW_WC_LysB_45cm	Untitled			155.9				mg/L	38	11/11/2023 2:53:14 AM	
+Unknown	IC	202311_GCW_WC_LysC_10cm	Untitled			49.48				mg/L	39	11/11/2023 3:09:23 AM	
+Unknown	IC	202311_GCW_WC_LysC_20cm	Untitled			47.65				mg/L	40	11/11/2023 3:23:57 AM	
+Unknown	IC	202311_GCW_WC_LysC_45cm	Untitled			92.82				mg/L	41	11/11/2023 3:40:25 AM	
+Unknown	IC	202311_GCW_SW_A	Untitled			18.25				mg/L	42	11/11/2023 3:55:52 AM	
+Unknown	IC	202311_GCW_SW_B	Untitled			17.78				mg/L	43	11/11/2023 4:09:46 AM	
+Unknown	IC	202311_GCW_SW_C	Untitled			17.71				mg/L	44	11/11/2023 4:23:33 AM	
+Unknown	IC	DI	Untitled			1.427				mg/L	0	11/11/2023 4:34:37 AM	
+Unknown	IC	Chk_Std_40mgL	Untitled			38.15				mg/L	45	11/11/2023 4:49:28 AM	
+Unknown	IC	DI	Untitled			1.429				mg/L	0	11/11/2023 5:00:41 AM	
+Unknown	IC	202311_SWH_UPCON_LysA_10cm	Untitled			3.556				mg/L	46	11/11/2023 5:12:52 AM	
+Unknown	IC	202311_SWH_UPCON_LysA_20cm	Untitled			6.349				mg/L	47	11/11/2023 5:25:22 AM	
+Unknown	IC	202311_SWH_UPCON_LysA_45cm	Untitled			40.36				mg/L	48	11/11/2023 5:39:35 AM	
+Unknown	IC	202311_SWH_UPCON_LysB_10cm	Untitled			4.772				mg/L	49	11/11/2023 5:54:34 AM	
+Unknown	IC	202311_SWH_UPCON_LysB_20cm	Untitled			11.47				mg/L	50	11/11/2023 6:07:20 AM	
+Unknown	IC	202311_SWH_UPCON_LysB_45cm	Untitled			45.15				mg/L	51	11/11/2023 6:21:29 AM	
+Unknown	IC	202311_SWH_UPCON_LysC_20cm	Untitled			6.358				mg/L	52	11/11/2023 6:36:35 AM	
+Unknown	IC	202311_SWH_UPCON_LysC_45cm	Untitled			45.88				mg/L	53	11/11/2023 6:54:17 AM	
+Unknown	IC	202311_SWH_UP_LysA_10cm	Untitled			19.36				mg/L	54	11/11/2023 7:08:02 AM	
+Unknown	IC	202311_SWH_UP_LysA_20cm	Untitled			25.74				mg/L	55	11/11/2023 7:25:23 AM	
+Unknown	IC	202311_SWH_UP_LysA_45cm	Untitled			30.73				mg/L	56	11/11/2023 7:39:21 AM	
+Unknown	IC	202311_SWH_UP_LysB_10cm	Untitled			7.568				mg/L	57	11/11/2023 7:54:46 AM	
+Unknown	IC	202311_SWH_UP_LysB_20cm	Untitled			23.92				mg/L	58	11/11/2023 8:08:44 AM	
+Unknown	IC	202311_SWH_UP_LysB_45cm	Untitled			28.85				mg/L	59	11/11/2023 8:22:44 AM	
+Unknown	IC	202311_SWH_UP_LysC_10cm	Untitled			3.301				mg/L	60	11/11/2023 8:40:04 AM	
+Unknown	IC	202311_SWH_UP_LysC_20cm	Untitled			17.66				mg/L	61	11/11/2023 8:53:51 AM	
+Unknown	IC	202311_SWH_UP_LysC_45cm	Untitled			24.24				mg/L	62	11/11/2023 9:07:45 AM	
+Unknown	IC	202311_SWH_TR_LysA_10cm	Untitled			26.11				mg/L	63	11/11/2023 9:22:03 AM	
+Unknown	IC	202311_SWH_TR_LysA_20cm	Untitled			31.02				mg/L	64	11/11/2023 9:36:04 AM	
+Unknown	IC	202311_SWH_TR_LysA_45cm	Untitled			46.55				mg/L	65	11/11/2023 9:51:15 AM	
+Unknown	IC	DI	Untitled			1.505				mg/L	0	11/11/2023 10:04:55 AM	
+Unknown	IC	Chk_Std_40mgL	Untitled			38.32				mg/L	66	11/11/2023 10:19:12 AM	
+Unknown	IC	DI	Untitled			1.451				mg/L	0	11/11/2023 10:28:13 AM	
+Unknown	IC	202311_SWH_TR_LysB_10cm	Untitled			12.29				mg/L	67	11/11/2023 10:41:29 AM	
+Unknown	IC	202311_SWH_TR_LysB_20cm	Untitled			25.89				mg/L	68	11/11/2023 10:55:26 AM	
+Unknown	IC	202311_SWH_TR_LysB_45cm	Untitled			47.62				mg/L	69	11/11/2023 11:09:49 AM	
+Unknown	IC	202311_SWH_TR_LysC_10cm	Untitled			21.23				mg/L	70	11/11/2023 11:23:21 AM	
+Unknown	IC	202311_SWH_TR_LysC_20cm	Untitled			29.28				mg/L	71	11/11/2023 11:37:17 AM	
+Unknown	IC	202311_SWH_TR_LysC_45cm	Untitled			41.22				mg/L	72	11/11/2023 11:51:46 AM	
+Unknown	IC	202311_SWH_WC_LysC_10cm	Untitled			53.56				mg/L	73	11/11/2023 12:06:14 PM	
+Unknown	IC	202311_SWH_WC_LysC_20cm	Untitled			23.93				mg/L	74	11/11/2023 12:20:07 PM	
+Unknown	IC	202311_SWH_WC_LysC_45cm	Untitled			57.45				mg/L	75	11/11/2023 12:34:32 PM	
+Unknown	IC	202311_SWH_SW_A	Untitled			14.74				mg/L	76	11/11/2023 12:47:59 PM	
+Unknown	IC	202311_SWH_SW_B	Untitled			14.15				mg/L	77	11/11/2023 1:01:12 PM	
+Unknown	IC	202311_SWH_SW_C	Untitled			13.97				mg/L	78	11/11/2023 1:14:14 PM	
+Unknown	IC	DI	Untitled			1.464				mg/L	0	11/11/2023 1:25:19 PM	
+Unknown	IC	Chk_Std_80mgL	Untitled			76.84				mg/L	79	11/11/2023 1:40:55 PM	
+Unknown	IC	DI	Untitled			1.466				mg/L	0	11/11/2023 1:54:27 PM	
+Unknown	IC	202311_GWI_UP_LysB_10cm	Untitled			4.219				mg/L	80	11/11/2023 2:09:22 PM	
+Unknown	IC	202311_GWI_UP_LysB_20cm	Untitled			13.73				mg/L	81	11/11/2023 2:22:32 PM	
+Unknown	IC	202311_GWI_UP_LysC_10cm	Untitled			9.156				mg/L	82	11/11/2023 2:35:09 PM	
+Unknown	IC	202311_GWI_UP_LysC_20cm	Untitled			13.75				mg/L	83	11/11/2023 2:48:15 PM	
+Unknown	IC	202311_GWI_TR_LysA_10cm	Untitled			52.82				mg/L	84	11/11/2023 3:02:30 PM	
+Unknown	IC	202311_GWI_TR_LysB_10cm	Untitled			25.25				mg/L	85	11/11/2023 3:49:02 PM	
+Unknown	IC	202311_GWI_TR_LysC_10cm	Untitled			11.07				mg/L	86	11/11/2023 4:01:38 PM	
+Unknown	IC	202311_GWI_TR_LysC_20cm	Untitled			35.70				mg/L	87	11/11/2023 4:15:47 PM	
+Unknown	IC	202311_GWI_WC_LysA_10cm	Untitled			57.70				mg/L	88	11/11/2023 4:30:14 PM	
+Unknown	IC	202311_GWI_WC_LysA_45cm	Untitled			49.15				mg/L	89	11/11/2023 4:45:08 PM	
+Unknown	IC	202311_GWI_WC_LysB_10cm	Untitled			70.80				mg/L	90	11/11/2023 5:00:00 PM	
+Unknown	IC	202311_GWI_WC_LysC_10cm	Untitled			69.70				mg/L	91	11/11/2023 5:15:23 PM	
+Unknown	IC	202311_GWI_SW_A	Untitled			19.46				mg/L	92	11/11/2023 5:29:01 PM	
+Unknown	IC	202311_GWI_SW_B	Untitled			18.89				mg/L	93	11/11/2023 5:46:45 PM	
+Unknown	IC	202311_GWI_SW_C	Untitled			18.59				mg/L	1	11/11/2023 6:00:48 PM	
+Unknown	IC	DI	Untitled			1.449				mg/L	0	11/11/2023 6:14:06 PM	
+Unknown	IC	DI_Bubbled	Untitled			1.346				mg/L	2	11/11/2023 6:24:58 PM	
+Unknown	IC	Chk_Std_40mgL	Untitled			37.58				mg/L	3	11/11/2023 6:39:28 PM	
+Unknown	IC	Chk_Std_100mgL	Untitled			97.56				mg/L	4	11/11/2023 6:55:00 PM	
+Unknown	IC	Chk_Std_200mgL	Untitled			205.3				mg/L	5	11/11/2023 7:11:28 PM	
+Unknown	IC	DI	Untitled			1.445				mg/L	0	11/11/2023 7:25:00 PM	
+Unknown	IC	DI	Untitled			1.453				mg/L	0	11/11/2023 7:36:15 PM	
+Unknown	IC	DI	Untitled			1.442				mg/L	0	11/11/2023 7:47:19 PM	
+Unknown	IC	DI	Untitled			1.445				mg/L	0	11/11/2023 7:58:25 PM	
+Unknown	IC	DI	Untitled			1.446				mg/L	0	11/11/2023 8:07:19 PM	
