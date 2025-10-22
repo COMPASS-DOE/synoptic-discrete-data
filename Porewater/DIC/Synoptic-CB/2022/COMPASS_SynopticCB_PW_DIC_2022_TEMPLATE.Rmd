@@ -1,6 +1,6 @@
 ---
-title: "Synoptic CB: Porewater DIC"
-author: "May 2023 Samples"
+title: "Synoptic CB: Porewater DIC - TEMPLATE"
+author: "Month 2022 Samples"
 date: "`r Sys.Date()`"
 output: 
   pdf_document:
@@ -18,11 +18,11 @@ cat("Setup Information")
 
 
 ###### Run information - PLEASE CHANGE
-  Date_Run = "06/05/23"  #Date that instrument was run
+  Date_Run = "MM/DD/YY"  #Date that instrument was run
   Run_by = "Instrument User"  #Instrument user 
   Script_run_by = "Code User" #Code user 
-  run_notes = " The standard curve for this run was checked manually on the instrument. "  #any notes from the run
-  samples <- c("GCW", "GWI", "MSM", "SWH") #whatever identifies your samples within the same names 
+  run_notes = " "  #any notes from the run
+  samples <- c("GCW", "GWI", "MSM", "SWH", "GCrew") #whatever identifies your samples within the same names 
   samples_pattern <- paste(samples, collapse = "|") 
     #samples_pattern <- "GCW" #use this instead of the line above if you have only one site code 
   chks_name = "Chk_Std_"  #what did you name your check standards? 
@@ -30,21 +30,21 @@ cat("Setup Information")
   
 ###### File Names - PLEASE CHANGE 
 #file path and name for raw summary data file 
-    raw_file_name = "Raw Data/TOCTN_COMPASS_Synoptic_DIC_202305.txt" 
+    raw_file_name = "Raw Data/COMPASS_SynopticCB_PW_DIC_2022MM.txt" 
     
 #file path and name for raw all peaks file 
-    #raw_allpeaks_name = "Raw Data/TOCTN_COMPASS_Synoptic_DIC_202305_allpeaks.txt"
+    #raw_allpeaks_name = "Raw Data/COMPASS_SynopticCB_PW_DIC_2025MM_allpeaks.txt"
 
 #file path and name of processed data file 
-    processed_file_name = "Processed Data/COMPASS_SynopticCB_PW_Processed_DIC_202305.csv"
+    processed_file_name = "Processed Data/COMPASS_SynopticCB_PW_Processed_DIC_2022MM.csv"
 
 
 ###### Log Files - PLEASE CHECK 
 #downloaded metadata csv - downloaded from Google drive as csv for this year
-  Raw_Metadata = "Raw Data/COMPASS_SynopticCB_PW_SampleLog_2023.csv"
+  Raw_Metadata = "Raw Data/COMPASS_SynopticCB_PW_SampleLog_2022.csv"
   
 #qaqc log file path for this year 
- # Log_path = "Raw Data/COMPASS_Synoptic_DIC_QAQClog_2023.csv"
+ # Log_path = "Raw Data/COMPASS_Synoptic_DIC_QAQClog_2025.csv"
 
 ```
 
@@ -110,8 +110,7 @@ metadata <- raw_metadata %>%
   mutate(Zone = case_when(
     `Transect.Location` == "Transition" ~ "TR",
     `Transect.Location` == "Wetland"    ~ "WC",
-    `Transect.Location` == "Upland"     ~ "UP", 
-    `Transect.Location` == "UPCON"     ~ "UPCON",
+    `Transect.Location` == "Upland"     ~ "UP",   
     `Transect.Location` == "Surface Water" ~ "SW",
     TRUE                 ~ `Transect.Location`    # keep original value if no match
   )) %>%
@@ -194,19 +193,163 @@ cat("Import Sample Data")
 #Pull in data that from the raw data file based on the sample info input above 
 dat_raw <- raw_file_name %>%
   map_df(read_data) %>%
-  filter(str_detect(sample_name, samples_pattern))
-
-dat_raw <- dat_raw %>%
-  mutate(sample_name = recode(sample_name,
-                         "GWI_202305_UP_LysB_10cmm" = "GWI_202305_UP_LysB_10cm"))
-
+  filter(str_detect(sample_name, samples_pattern))%>%
+  mutate(sample_name = str_replace_all(sample_name, "GCrew", "GCW"))
 
 head(dat_raw)
 ```
 
-## Assessing Standard Curves - this was done manually on the TOC, not included here 
+## Assessing Standard Curves - done manually on the instrument
+```{r Assess Standard Curves, echo=FALSE}
 
-## CRM Check - No CRMs on this run
+cat("Assess the Standard Curves")
+
+#filter standards out of the raw data 
+stds_all <- raw_allpeaks_name %>% 
+  map_df(read_curve) %>% 
+  filter(grepl("CalCurve", sample_name)) %>% 
+  dplyr::rename(
+        standard_C_ppm = dic_raw) %>%
+  select(run_datetime,standard_C_ppm, area) %>%
+  bind_rows() 
+
+#separate by analyte 
+stds_C <- stds_all %>%
+  filter(!is.na(standard_C_ppm)) %>%
+  mutate(run_date = as.Date(strptime(run_datetime, format = "%m/%d/%Y %I:%M:%S %p")))
+
+#calculate slope and r2 of cal curves
+#ic curve
+lm_results_c <- stds_C %>%
+  group_by(run_date) %>%
+  do({
+    model = lm(area ~ standard_C_ppm, data = .)
+    tidy_model = tidy(model)             # coefficients
+    glance_model = glance(model)         # model metrics like R²
+    tibble(
+      slope = tidy_model$estimate[2],    # coefficient for standard_C_ppm
+      intercept = tidy_model$estimate[1],
+      r2 = glance_model$adj.r.squared
+    )
+  }) %>%
+  mutate(
+    analyte = "C", 
+    curve = "IC (mg/L)"
+  )
+
+#put the together in one dataframe to later add to log 
+Slopes <- rbind(lm_results_c)
+
+#store the r2's so they plot on the curve graphs
+r2_labels_c <- stds_C %>%
+  group_by(run_date) %>%
+  summarise(
+    x_pos = max(standard_C_ppm, na.rm = TRUE) * 0.8,
+    y_pos = max(area, na.rm = TRUE),
+    r_squared = round(summary(lm(area ~ standard_C_ppm))$adj.r.squared, 4),
+    .groups = "drop"
+  )
+
+##Plot standard Curve or Curves 
+#C Curve
+C_stds_plot <- ggplot(stds_C, aes(x = standard_C_ppm, y = area)) +
+  geom_point(size = 3) +
+  geom_smooth(method = "lm", se = FALSE, color = "darkred") +
+  facet_wrap(~ run_date) +
+  geom_text(
+    data = r2_labels_c,
+    aes(x = x_pos, y = y_pos, label = paste0("R² = ", r_squared)),
+    inherit.aes = FALSE,
+    hjust = 1, vjust = 1,
+    size = 4
+  ) +
+  labs(
+    title = "IC Std Curve by Date",
+    x = "Carbon Standard Concentration (ppm)",
+    y = "Peak Area"
+  ) +
+  theme_bw()
+
+C_stds_plot
+
+#compare slopes to previous runs (from log) in order to assess drift 
+log <- read.csv(Log_path)
+log <- log[ ,-c(1)]
+
+#make sure they both have dates as dates 
+log$run_date <- as.Date(log$run_date)
+log$analyte <- as.character(log$analyte)
+log$curve <- as.character(log$curve)
+Slopes$run_date <- as.Date(Slopes$run_date)
+
+# Filter to only rows in Slopes that are NOT already in log (by run_date + analyte)
+new_rows <- anti_join(Slopes, log, by = c("run_date", "analyte"))
+
+# Append the new, non-duplicate rows to log
+log <- bind_rows(log, new_rows)
+
+#plot the current slops with teh previous slopes 
+Slopes_chk <- ggplot(log, aes(run_date, slope, col=curve)) +
+  geom_point(size=4) + 
+  geom_line() + 
+  ylim(10,20) + 
+  theme_bw() + labs(title="Slope Drift Assessment", x="Run Date", y="Slope") +
+  scale_color_manual(values=c("darkred"))
+Slopes_chk
+
+#write out the log file with the added lines for this run  
+write.csv(log, Log_path)
+
+#Grab the highest r2 that is available for this run 
+r2_C = max(lm_results_c$r2)
+
+#Write out to the user whether or not the r2 is above the cutoff of 0.98
+  ifelse(r2_C <= r2_cutoff, 
+         "IC Curve r2 is below cutoff! - REASSESS", "IC Curve r2 GOOD")
+  
+#write out a flag to the sample dataframe if the r2 is above the cutoff of 0.98
+dat_raw <- dat_raw %>%
+  mutate(
+    ic_flag = if (r2_C <= r2_cutoff) {
+      "IC r2 low"
+    } else {
+      ""
+    }
+  )
+
+```
+
+## CRM Check - No CRMs included on this run 
+```{r CRM Check, echo = FALSE}
+
+cat("Assess the CRMs")
+
+#Pull out check standards from raw file 
+crm_raw <- raw_file_name %>% 
+  map_df(read_data) %>% 
+  filter(grepl(crm_name, sample_name)) %>% # filter to TMP samples only
+  bind_rows() 
+
+crm_Chk <- crm_raw %>%
+  summarise(
+    Mean_crm = mean(ic_raw, na.rm = TRUE),
+    SD_crm = sd(ic_raw, na.rm = TRUE),
+    CV = (SD_crm / Mean_crm) * 100,
+    pct_diff_Chk = abs(Mean_crm - ic_crm) / ic_crm,
+    crm_flag = ifelse(abs(pct_diff_Chk) < 25, "YES, Pass", "NO, rerun"))
+  
+
+#flag write out 
+ifelse(crm_Chk$pct_diff_Chk >= chk_flag, 
+       "IC crm has a % Difference >25% of expected - REASSESS",  
+       "IC crm has a % Difference <25% of expected - PROCEED")
+cat("Run mean =", crm_Chk$Mean_crm, "\n")
+cat("Expected  =", ic_crm, "\n\n")
+
+
+
+```
+ 
 
 ## Assess Check Standards 
 ```{r Check Standards, echo=FALSE}
@@ -251,8 +394,6 @@ ifelse(c_chks_percent >= chk_flag, ">60% of IC Check Standards are within range 
        "<60% of IC Check Standards are within range of expected concentration - REASSESS")
 
 #write out a flag to the sample dataframe if less than 60% of the checks are within the expected CV
-dat_raw$ic_flag <- ""
-
 if (c_chks_percent <= chks_flag) {
   dat_raw$ic_flag <- ifelse(
     dat_raw$ic_flag != "",
@@ -272,8 +413,7 @@ cat("Assess Blanks")
 #Pull out the blanks from raw file 
 blks_raw <- raw_file_name %>% 
   map_df(read_data) %>% 
-  filter(grepl("DI", sample_name)) %>%
-  filter(!sample_name == "CalCurve_DIC") %>%
+  filter(grepl("Cond_Blank", sample_name)) %>% # filter to TMP samples only
   bind_rows() 
 
 blks_raw <- blks_raw %>% 
@@ -436,7 +576,7 @@ c_samples_flag
 
 ```
 
-## Visualize Data by Plot  - in 2023 SWH Upland = UPCON and Swamp = UP 
+## Visualize Data by Plot   
 ```{r Visualize Data, echo=FALSE}
 
 cat("Visualize Data")
@@ -450,7 +590,7 @@ colnames(IDs) <- c("Date" , "Site_Code","Zone", "Lysimeter", "Depth", "Excess_In
 dat_flagged_id <- cbind(IDs, dat_flagged)
 
 #Order by Zone from Upland to Surface Water
-dat_flagged_id$Zone = factor(dat_flagged_id$Zone, levels = c("UPCON",  "UP", "TR", "WC", "SW"))
+dat_flagged_id$Zone = factor(dat_flagged_id$Zone, levels = c("UP",  "SWAMP", "TR", "WC", "SW"))
 dat_flagged_id <- dat_flagged_id[order(dat_flagged_id$Zone), ]
 
 #group the data for plotting
@@ -467,8 +607,8 @@ viz_c_plot <- ggplot(dat_flagged_id, aes(x = sample_name, y = ic_raw, fill = Zon
   facet_grid(~ Site_Code, scales="free_x") +
   scale_fill_manual(values = c(
     "UP" = "#20063B",
-    "UPCON" = "darkgrey",
     "TR" = "#FFBC42",
+    "SWAMP" = "darkgrey",
     "WC" = "#419973",
     "SW" = "#25ABE6"
   )) +
@@ -496,7 +636,7 @@ dat_flagged_id <- dat_flagged_id %>%
 ```
 
 
-## Check to see if samples run match metadata & merge info - 2023 data needs entered 
+## Check to see if samples run match metadata & merge info
 ```{r, check sample ids with metadata, echo=FALSE}
 
 cat("Check Sample IDs with Metadata")
