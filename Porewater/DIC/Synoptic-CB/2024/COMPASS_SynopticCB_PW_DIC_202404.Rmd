@@ -1,6 +1,6 @@
 ---
-title: "Synoptic CB: Porewater DIC - TEMPLATE"
-author: "Month 2025 Samples"
+title: "Synoptic CB: Porewater DIC"
+author: "April 2024 Samples"
 date: "`r Sys.Date()`"
 output: 
   pdf_document:
@@ -18,9 +18,9 @@ cat("Setup Information")
 
 
 ###### Run information - PLEASE CHANGE
-  Date_Run = "MM/DD/YY"  #Date that instrument was run
-  Run_by = "Instrument User"  #Instrument user 
-  Script_run_by = "Code User" #Code user 
+  Date_Run = "04/26/2024"  #Date that instrument was run
+  Run_by = "Stephanie J. Wilson"  #Instrument user 
+  Script_run_by = "Stephanie J. Wilson" #Code user 
   run_notes = " "  #any notes from the run
   samples <- c("GCW", "GWI", "MSM", "SWH") #whatever identifies your samples within the same names 
   samples_pattern <- paste(samples, collapse = "|") 
@@ -30,21 +30,21 @@ cat("Setup Information")
   
 ###### File Names - PLEASE CHANGE 
 #file path and name for raw summary data file 
-    raw_file_name = "Raw Data/COMPASS_SynopticCB_PW_DIC_2025MM.txt" 
+    raw_file_name = "Raw Data/TOCTN_COMPASS_Synoptic_DIC_202404.txt" 
     
 #file path and name for raw all peaks file 
-    raw_allpeaks_name = "Raw Data/COMPASS_SynopticCB_PW_DIC_2025MM_allpeaks.txt"
+    raw_allpeaks_name = "Raw Data/TOCTN_COMPASS_Synoptic_DIC_202404_allpeaks.txt"
 
 #file path and name of processed data file 
-    processed_file_name = "Processed Data/COMPASS_SynopticCB_PW_Processed_DIC_2025MM.csv"
+    processed_file_name = "Processed Data/COMPASS_SynopticCB_PW_Processed_DIC_202404.csv"
 
 
 ###### Log Files - PLEASE CHECK 
 #downloaded metadata csv - downloaded from Google drive as csv for this year
-  Raw_Metadata = "Raw Data/COMPASS_SynopticCB_PW_SampleLog_2025.csv"
+  Raw_Metadata = "Raw Data/COMPASS_SynopticCB_PW_SampleLog_2024.csv"
   
 #qaqc log file path for this year 
-  Log_path = "Raw Data/COMPASS_Synoptic_DIC_QAQClog_2025.csv"
+  Log_path = "Raw Data/COMPASS_Synoptic_DIC_QAQClog_2024.csv"
 
 ```
 
