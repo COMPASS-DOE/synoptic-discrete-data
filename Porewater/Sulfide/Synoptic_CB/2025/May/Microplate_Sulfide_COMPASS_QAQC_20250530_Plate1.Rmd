@@ -1011,6 +1011,8 @@ ChkStdbar+MCbar
 dat_IDs <- dat1
 
 #Read out the processed data
+# dat_IDs$Run_notes <- run_notes
+
 # head(dat_IDs)
 write.csv(dat_IDs, processed_file_name)
 

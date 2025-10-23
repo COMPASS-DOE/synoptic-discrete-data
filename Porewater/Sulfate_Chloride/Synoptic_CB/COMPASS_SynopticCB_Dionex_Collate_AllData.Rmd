@@ -165,9 +165,9 @@ data_plotting <- data_plotting[order(data_plotting$Zone), ]
 data_plotting$Site = factor(data_plotting$Site, levels = c("SWH", "GCW", "MSM", "GWI"))
 data_plotting <- data_plotting[order(data_plotting$Site), ]
 
-#Order by Year from 2022-2024
-data_plotting$Site = factor(data_plotting$Site, levels = c("SWH", "GCW", "MSM", "GWI"))
-data_plotting <- data_plotting[order(data_plotting$Site), ]
+# #Order by Year from 2022-2024
+# data_plotting$Site = factor(data_plotting$Site, levels = c("SWH", "GCW", "MSM", "GWI"))
+# data_plotting <- data_plotting[order(data_plotting$Site), ]
 
 #Plot samples to get a first look at concentrations (sanity check)
 #group the data for plotting
