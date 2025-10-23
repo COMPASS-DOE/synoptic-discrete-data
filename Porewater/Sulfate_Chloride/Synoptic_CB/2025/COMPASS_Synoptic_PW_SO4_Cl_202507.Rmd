@@ -42,6 +42,12 @@ lapply(c(
   samples_pattern <- paste(samples, collapse = "|") 
     #samples_pattern <- "GCW" #use this instead of the line above if you have only one site code 
 
+##Fix samples that were entered incorrectly
+  samples_to_remove <- "GCW_202507_TR_LysA_10cm"
+  Old_ID_1 = NA
+  New_ID_1 = NA
+  
+  
 ###### File Names - PLEASE CHANGE 
 #file path and name for raw summary data file 
   raw_file_name_cl = "Raw Data/COMPASS_Synoptic_CB_MonMon_202507_Cl.txt"
@@ -224,6 +230,16 @@ all_dat <- all_dat_merge %>%
 head(all_dat)
 
 ```
+
+##Fix samples entered incorrectly
+```{r fix sample IDs, include = FALSE}
+
+##Fix samples that were entered incorrectly
+all_dat <- all_dat %>%  
+  filter(!str_detect(sample_ID, samples_to_remove),ignore_case = TRUE)
+  
+```
+
 
 ## Assess Standard Curves
 ```{r Assess Standards, echo=FALSE, message=FALSE, warning = FALSE, fig.height = 4}

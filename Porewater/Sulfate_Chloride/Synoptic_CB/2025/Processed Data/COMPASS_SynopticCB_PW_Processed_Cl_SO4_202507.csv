@@ -134,21 +134,21 @@
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"28","COMPASS: Synoptic","CB","MSM","UP",NA,NA,"MSM_202507_UP_LYSB_20CM",NA,NA,NA,NA,NA,1.92496880848409,"Within_Range","SO4 checks perc diff out of range",14.1042115655853,"Within_Range","",0.9035157001,"2025-10-02","Std 1 is lower than the expected concentration. 
+"28","COMPASS: Synoptic","CB","MSM","UP","B",20,"MSM_202507_UP_LYSB_20CM",2025,7,15,"13:40","EDT",1.92496880848409,"Within_Range","SO4 checks perc diff out of range",14.1042115655853,"Within_Range","",0.9035157001,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
-  ",NA
-"29","COMPASS: Synoptic","CB","MSM","UP",NA,NA,"MSM_202507_UP_LYSB_45CM",NA,NA,NA,NA,NA,6.8962819713038,"Within_Range","SO4 checks perc diff out of range",64.1580112834979,"Within_Range","",4.1098695105,"2025-10-02","Std 1 is lower than the expected concentration. 
+  ",""
+"29","COMPASS: Synoptic","CB","MSM","UP","B",45,"MSM_202507_UP_LYSB_45CM",2025,7,15,"","",6.8962819713038,"Within_Range","SO4 checks perc diff out of range",64.1580112834979,"Within_Range","",4.1098695105,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
-  ",NA
-"30","COMPASS: Synoptic","CB","MSM","UP",NA,NA,"MSM_202507_UP_LYSC_10CM",NA,NA,NA,NA,NA,3.33017467248908,"Within_Range","SO4 checks perc diff out of range",23.9275007052186,"Within_Range","",1.5327774293,"2025-10-02","Std 1 is lower than the expected concentration. 
+  ",""
+"30","COMPASS: Synoptic","CB","MSM","UP","C",10,"MSM_202507_UP_LYSC_10CM",2025,7,15,"","",3.33017467248908,"Within_Range","SO4 checks perc diff out of range",23.9275007052186,"Within_Range","",1.5327774293,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
-  ",NA
+  ",""
 "31","COMPASS: Synoptic","CB","MSM","UP","C",20,"MSM_202507_UP_LYSC_20CM",2025,7,15,"","",3.42150343106675,"Within_Range","SO4 checks perc diff out of range",28.9846657263752,"Within_Range","",1.8567300648,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
@@ -559,27 +559,22 @@
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"113","COMPASS: Synoptic","CB","GCW","TR",NA,NA,"GCW_202507_TR_LYSA_10CM",NA,NA,NA,NA,NA,0,"bdl","SO4 checks perc diff out of range",0,"bdl","",2.6e-05,"2025-10-02","Std 1 is lower than the expected concentration. 
+"113","COMPASS: Synoptic","CB","9",NA,NA,NA,"9",NA,NA,NA,NA,NA,0.0109887710542732,"Within_Range","SO4 checks perc diff out of range",0.0197827926657264,"Within_Range","",0.0012932491,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",NA
-"114","COMPASS: Synoptic","CB","9",NA,NA,NA,"9",NA,NA,NA,NA,NA,0.0109887710542732,"Within_Range","SO4 checks perc diff out of range",0.0197827926657264,"Within_Range","",0.0012932491,"2025-10-02","Std 1 is lower than the expected concentration. 
+"114","COMPASS: Synoptic","CB","10",NA,NA,NA,"10",NA,NA,NA,NA,NA,0.0102495321272614,"Within_Range","SO4 checks perc diff out of range",0.0186939351198872,"Within_Range","",0.0012234989,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",NA
-"115","COMPASS: Synoptic","CB","10",NA,NA,NA,"10",NA,NA,NA,NA,NA,0.0102495321272614,"Within_Range","SO4 checks perc diff out of range",0.0186939351198872,"Within_Range","",0.0012234989,"2025-10-02","Std 1 is lower than the expected concentration. 
+"115","COMPASS: Synoptic","CB","88",NA,NA,NA,"88",NA,NA,NA,NA,NA,0.0123767935121647,"Within_Range","SO4 checks perc diff out of range",0.019083215796897,"Within_Range","",0.0012484355,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",NA
-"116","COMPASS: Synoptic","CB","88",NA,NA,NA,"88",NA,NA,NA,NA,NA,0.0123767935121647,"Within_Range","SO4 checks perc diff out of range",0.019083215796897,"Within_Range","",0.0012484355,"2025-10-02","Std 1 is lower than the expected concentration. 
-  Some sample IDs are missing from metadata: 
-  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
-  9, 10, 88, 89 (test samples for Lucie)
-  ",NA
-"117","COMPASS: Synoptic","CB","89",NA,NA,NA,"89",NA,NA,NA,NA,NA,0,"bdl","SO4 checks perc diff out of range",0.0190465444287729,"Within_Range","",0.0012460864,"2025-10-02","Std 1 is lower than the expected concentration. 
+"116","COMPASS: Synoptic","CB","89",NA,NA,NA,"89",NA,NA,NA,NA,NA,0,"bdl","SO4 checks perc diff out of range",0.0190465444287729,"Within_Range","",0.0012460864,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
