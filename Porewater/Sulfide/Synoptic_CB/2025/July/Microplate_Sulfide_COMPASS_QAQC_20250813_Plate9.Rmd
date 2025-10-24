@@ -1,6 +1,6 @@
 ---
 title: "Synoptic CB: Porewater Sulfide"
-author: "July 2025 Samples Plate 3"
+author: "July 2025 Samples Plate 9"
 date: "`r Sys.Date()`"
 output: 
   pdf_document:
@@ -27,28 +27,25 @@ lapply(c(
 ## Run Information
 ```{r Run Information, echo=TRUE, message=FALSE, warning=FALSE}
 ###### Run information - PLEASE CHANGE
-  Date_Run = "20250812"  #Date that instrument was run
-  Plate = "3"
+  Date_Run = "20250813"  #Date that instrument was run
+  Plate = "9"
   Month = "July"
   Year = "2025"
   Run_by = "Melanie Giessner"  #Instrument user 
   Script_run_by = "Zoe Read" #Code user 
   Project = "COMPASS"
-  run_notes = "Std curve R squared is slightly lower than cutoff 0.9753122. 
-  Samples 35, 37, 33, and 41 still have high CVs after one replicate removed. 
-  Dup 41 had high percent difference from sample. 
-  Spk 42 had low percent recovery. 
+  run_notes = "There were only 3 samples in this run, so no duplicates, spikes, or check standards. 
   " #any notes from the run
 
-###### STDs to remove manually - NA unless standards have high CVs
-  stds_to_remove <- c(NA) #Ex. c("A02", "B02")
+###### STDs to remove manually - NA unless standards have high CVs - CHECK THESE! 
+  stds_to_remove <- c("B01", "E01") #Ex. c("A02", "B02")
   
-  Chkstds_to_remove <- c("H11")
+  Chkstds_to_remove <- c(NA)
   
-  MCs_to_remove <- c(NA)
+  MCs_to_remove <- c("H01")
   
 ##Sample data that was entered incorrectly
-  # The Old ID is the original, incorrecly-entered ID and the New ID is the correct ID to change it to. 
+  # The Old ID is the original, incorrectly-entered ID and the New ID is the correct ID to change it to. 
 # Old_ID_1 = "17 Dup"
 # New_ID_1 = "16 Dup"
 cat(run_notes)
@@ -327,7 +324,7 @@ print("Std curve intercept is with 2 sd of previous intercepts")
 Rsq1 <- ggplot(data=qlog, aes(x=Date, y=R2)) +
   geom_hline(yintercept= (r2_cutoff), linetype="dashed", color = "red", linewidth=2)+
   geom_point(aes(size=3)) + 
-  theme_classic() + ylim(0.96, 1.01) + 
+  theme_classic()  + 
   theme(legend.position="none")+ 
   ggtitle("Sulfide R2s")+
   guides(x = guide_axis(angle = 70))+
@@ -351,7 +348,7 @@ knit_print((paste("Std Curve R squared:", round(Slopes$R2, 4))))
 
 ```
 
-```{r Assess Check Standards, echo=FALSE, warning = FALSE, include=FALSE}
+```{r Assess Check Standards, echo=FALSE, warning = FALSE, include=FALSE, eval = FALSE}
 
 #Make sure check standards are not different from standard concentration
 #subset Check Standards from the rest of the dataset
@@ -597,7 +594,7 @@ knitr::kable(statsMC10,
 if(t.test.MC10$p.value > p_value_MC){
 print("Matrix Check 10 GOOD")
 } else {
-print("Matrix Check 10 is signficantly different from Std 5 - REASSESS")
+print("Matrix Check 10 is significantly different from Std 5 - REASSESS")
 }
   
 #write out a flag to the sample dataframe if the MC is Bad
@@ -627,7 +624,7 @@ knitr::kable(statsMC20,
 if(t.test.MC20$p.value > p_value_MC){
 print("Matrix Check 20 GOOD")
 } else {
-print("Matrix Check 20 is signficantly different from Std 5 - REASSESS")
+print("Matrix Check 20 is significantly different from Std 5 - REASSESS")
 }
   
 #write out a flag to the sample dataframe if the MC is Bad
@@ -869,7 +866,7 @@ H2S_original/H2S_fixed
 
 ```
 
-```{r Assess Duplicates, echo=FALSE, fig.keep = "none", warning=FALSE, include=FALSE}
+```{r Assess Duplicates, echo=FALSE, fig.keep = "none", warning=FALSE, include=FALSE, eval = FALSE}
 
 #Show me the data that we have from the calculations 
 # head(dat1)
@@ -926,7 +923,7 @@ if (nrow(Baddups) > 0) {
 #check for any one's that would warrant reruns 
 ```
 
-```{r Assess Analytical Spikes, echo=FALSE, fig.keep = "none", include=FALSE}
+```{r Assess Analytical Spikes, echo=FALSE, fig.keep = "none", include=FALSE, eval = FALSE}
 
 #Show me the data that we have from the calculations 
 # head(dat1)
@@ -988,7 +985,7 @@ if (nrow(Badspks) > 0) {
 #check for any no's that would warrant reruns! 
 ```
 
-```{r Plot duplicates and spikes, echo = FALSE, warning = FALSE, out.width = "100%", out.height = "100%"}
+```{r Plot duplicates and spikes, echo = FALSE, warning = FALSE, out.width = "100%", out.height = "100%", eval = FALSE}
 
 ##Plot dup and spk together
 (dupsbar + spksbar)
@@ -999,7 +996,8 @@ if (nrow(Badspks) > 0) {
 ```{r Plot check standards and matrix checks, echo = FALSE, warning = FALSE, out.width = "100%", out.height = "100%"}
 
 ##Plot chk stds and MC graphs together
-ChkStdbar+MCbar
+# ChkStdbar
+MCbar
 
 ```
 

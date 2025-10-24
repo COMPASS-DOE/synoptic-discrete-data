@@ -1,6 +1,6 @@
 ---
 title: "Synoptic CB: Porewater Sulfide"
-author: "May 2025 All Plates"
+author: "July 2025 All Plates"
 date: "`r Sys.Date()`"
 output: 
   pdf_document:
@@ -9,6 +9,23 @@ output:
 geometry: "left=2cm,right=2cm,top=1cm,bottom=2cm"
 output_dir: "To Be Reviewed/PDF"
 ---
+
+##Run Notes
+```{r}
+# Some sample IDs are missing from metadata.I thik I had changed fixed these when I ran the Dionex because they were ordered/numbered incorrectly compared to their labels. 
+#70_GWI_202507_WC_LYSC_20CM was actually 70_GWI_202507_TR_LysC_20cm 
+#71_GWI_202507_WC_LysC_45cm was actually 71_GWI_202507_WC_LysA_45cm
+
+##Sample data that was entered incorrectly
+  # The Old ID is the original, incorrecly-entered ID and the New ID is the correct ID to change it to. 
+Old_ID_1 = "GWI_202507_WC_LYSC_20CM"
+New_ID_1 = "GWI_202507_TR_LysC_20cm"
+
+Old_ID_2 = "GWI_202507_WC_LYSC_45CM"
+New_ID_2 = "GWI_202507_WC_LysA_45cm"
+
+```
+
 
 ##Read in packages
 ```{r packages, include = FALSE}
@@ -37,7 +54,8 @@ files <- list.files(path = "Processed Data", pattern = "\\d\\.csv$", full.names 
 
 #Read and combine all csvs
 all_data <- files %>%
-  lapply(read.csv) %>%    # or read.csv if you prefer base R
+  lapply(read.csv, 
+        colClasses = c("IDs" = "character")) %>%    # or read.csv if you prefer base R
   bind_rows()             # combine into one data frame
 
 all_data$X <- NULL
@@ -62,8 +80,9 @@ Sample_data <- all_data %>%
   subset((!IDs %like% " Spike"))
 
 #Read in Sample IDs
-SampleIDs <- read_excel("Raw Data/20250529_COMPASS_H2S_IDs.xlsx")
+SampleIDs <- read_excel("Raw Data/202507_SampleList.xlsx")
 SampleIDs$Number <- as.character(SampleIDs$Number)
+names(SampleIDs) <- tools::toTitleCase(names(SampleIDs))
 
 ##Merge with data
 Sample_data_IDs <- Sample_data %>%
@@ -159,6 +178,13 @@ print(BDL_not_fixed)
 
 ```
 
+##Fix sample IDs entered incorrectly
+```{r Fix data entered incorrectly, include = FALSE}
+##Data entered incorrectly
+Sample_data_nodups$IDs[Sample_data_nodups$IDs == Old_ID_1] <- New_ID_1
+Sample_data_nodups$IDs[Sample_data_nodups$IDs == Old_ID_2] <- New_ID_2
+
+```
 
 ##Pull in Metadata
 ```{r Pull in Metadata, include = FALSE}
