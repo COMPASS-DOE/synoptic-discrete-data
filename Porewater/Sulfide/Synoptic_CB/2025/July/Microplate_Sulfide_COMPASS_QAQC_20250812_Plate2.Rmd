@@ -104,7 +104,7 @@ cat(run_notes)
   spkvol <- 50                  # uL volume of spike added
   spk_Conc <- (spk_std)*(spkvol/Con1)  # umoles of S2- added to each spiked sample
   sample_vol <- 250             # the sample volume without the spike is 250 uL
-  cline_vol <- 20               # the total volume without the spike is 250 uL
+  cline_vol <- 0               # the total volume without the spike is 250 uL
 
 #Top standard Concentration- Update if running different standard curve: 
    Top_STD = 100
@@ -1011,6 +1011,7 @@ dat_IDs <- dat1
 # dat_IDs$Run_notes <- run_notes
 
 # head(dat_IDs)
+dat_IDs$Analysis_rundate <- Date_Run
 write.csv(dat_IDs, processed_file_name)
 
 # write flagged data to file
