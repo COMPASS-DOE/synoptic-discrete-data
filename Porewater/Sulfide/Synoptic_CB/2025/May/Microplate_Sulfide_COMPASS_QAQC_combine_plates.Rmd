@@ -238,10 +238,10 @@ if (all_present) {
   print(missing_ids)
 }
 
-missing_ids <- data.frame(missing_ids)
-
-##Export missing IDs to csv
-write.csv(missing_ids, "20250529_COMPASS_H2S_missing_IDs.csv")
+# missing_ids <- data.frame(missing_ids)
+# 
+# ##Export missing IDs to csv
+# write.csv(missing_ids, "20250529_COMPASS_H2S_missing_IDs.csv")
 
 ##Remove Lys from Replicate Column
 Sample_data_nodups <- Sample_data_nodups %>%

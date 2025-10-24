@@ -345,8 +345,7 @@ viz_H2S_plot
 final_data <- merged_data %>% 
   mutate(
     Project = "COMPASS: Synoptic",   # new column with same value on every row
-    Region = "CB", 
-    Analysis_rundate = "20250529" #need to make it so this comes out in plate processed file
+    Region = "CB" #need to make it so this comes out in plate processed file
   ) 
 
 colnames(final_data)
@@ -369,16 +368,16 @@ final_data <- final_data %>%
 head(final_data)
 
 #Write out final data frame 
-write.csv(final_data, "COMPASS_H2S_20250529_Plate1-8_Combined.csv")
+write.csv(final_data, "COMPASS_H2S_20250813_Plate1-8_Combined.csv")
 
 #Write out samples that still have high CVs
-write.csv(HighCV, "COMPASS_H2S_20250529_Plate1-8_HighCVs.csv")
+write.csv(HighCV, "COMPASS_H2S_20250813_Plate1-8_HighCVs.csv")
 
 #Write out ADL samples
-write.csv(ADL_not_fixed, "COMPASS_H2S_20250529_Plate1-8_ADL.csv")
+write.csv(ADL_not_fixed, "COMPASS_H2S_20250813_Plate1-8_ADL.csv")
 
 #Write out BDL samples
-write.csv(BDL_not_fixed, "COMPASS_H2S_20250529_Plate1-8_BDL.csv")
+write.csv(BDL_not_fixed, "COMPASS_H2S_20250813_Plate1-8_BDL.csv")
 
 
 ```
