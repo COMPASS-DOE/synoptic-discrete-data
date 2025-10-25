@@ -1,6 +1,6 @@
 ---
 title: "Synoptic CB: Porewater DIC"
-author: "May 2023 Samples"
+author: "August 2023 Samples"
 date: "`r Sys.Date()`"
 output: 
   pdf_document:
@@ -18,10 +18,10 @@ cat("Setup Information")
 
 
 ###### Run information - PLEASE CHANGE
-  Date_Run = "06/05/23"  #Date that instrument was run
-  Run_by = "Instrument User"  #Instrument user 
-  Script_run_by = "Code User" #Code user 
-  run_notes = " The standard curve for this run was checked manually on the instrument. "  #any notes from the run
+  Date_Run = "08/18/23"  #Date that instrument was run
+  Run_by = "Stephanie J. Wilson"  #Instrument user 
+  Script_run_by = "Stephanie J. Wilson" #Code user 
+  run_notes = " "  #any notes from the run
   samples <- c("GCW", "GWI", "MSM", "SWH") #whatever identifies your samples within the same names 
   samples_pattern <- paste(samples, collapse = "|") 
     #samples_pattern <- "GCW" #use this instead of the line above if you have only one site code 
@@ -30,13 +30,15 @@ cat("Setup Information")
   
 ###### File Names - PLEASE CHANGE 
 #file path and name for raw summary data file 
-    raw_file_name = "Raw Data/TOCTN_COMPASS_Synoptic_DIC_202305.txt" 
+    raw_file_name = c("Raw Data/TOCTN_COMPASS_Synoptic_DIC_202308_1.txt", 
+                      "Raw Data/TOCTN_COMPASS_Synoptic_DIC_202308_2.txt")
     
 #file path and name for raw all peaks file 
-    #raw_allpeaks_name = "Raw Data/TOCTN_COMPASS_Synoptic_DIC_202305_allpeaks.txt"
+   # raw_allpeaks_name = c("Raw Data/COMPASS_SynopticCB_PW_DIC_202308_1_allpeaks.txt", 
+     #                     "Raw Data/COMPASS_SynopticCB_PW_DIC_202308_2_allpeaks.txt")
 
 #file path and name of processed data file 
-    processed_file_name = "Processed Data/COMPASS_SynopticCB_PW_Processed_DIC_202305.csv"
+    processed_file_name = "Processed Data/COMPASS_SynopticCB_PW_Processed_DIC_202308.csv"
 
 
 ###### Log Files - PLEASE CHECK 
@@ -44,7 +46,7 @@ cat("Setup Information")
   Raw_Metadata = "Raw Data/COMPASS_SynopticCB_PW_SampleLog_2023.csv"
   
 #qaqc log file path for this year 
- # Log_path = "Raw Data/COMPASS_Synoptic_DIC_QAQClog_2023.csv"
+  #Log_path = "Raw Data/COMPASS_Synoptic_DIC_QAQClog_2023.csv"
 
 ```
 
@@ -110,8 +112,7 @@ metadata <- raw_metadata %>%
   mutate(Zone = case_when(
     `Transect.Location` == "Transition" ~ "TR",
     `Transect.Location` == "Wetland"    ~ "WC",
-    `Transect.Location` == "Upland"     ~ "UP", 
-    `Transect.Location` == "UPCON"     ~ "UPCON",
+    `Transect.Location` == "Upland"     ~ "UP",   
     `Transect.Location` == "Surface Water" ~ "SW",
     TRUE                 ~ `Transect.Location`    # keep original value if no match
   )) %>%
@@ -196,17 +197,46 @@ dat_raw <- raw_file_name %>%
   map_df(read_data) %>%
   filter(str_detect(sample_name, samples_pattern))
 
+#a few of the sample names were input with 202038 rather than 202308 
 dat_raw <- dat_raw %>%
-  mutate(sample_name = recode(sample_name,
-                         "GWI_202305_UP_LysB_10cmm" = "GWI_202305_UP_LysB_10cm"))
-
+  mutate(sample_name = str_replace(sample_name, "202038", "202308"))
 
 head(dat_raw)
 ```
 
-## Assessing Standard Curves - this was done manually on the TOC, not included here 
+## Assessing Standard Curves - assessed on the instrument manually 
 
-## CRM Check - No CRMs on this run
+## CRM Check - Don't run chunk if no CRMs run
+```{r CRM Check, echo = FALSE}
+
+cat("Assess the CRMs")
+
+#Pull out check standards from raw file 
+crm_raw <- raw_file_name %>% 
+  map_df(read_data) %>% 
+  filter(grepl(crm_name, sample_name)) %>% # filter to TMP samples only
+  bind_rows() 
+
+crm_Chk <- crm_raw %>%
+  summarise(
+    Mean_crm = mean(ic_raw, na.rm = TRUE),
+    SD_crm = sd(ic_raw, na.rm = TRUE),
+    CV = (SD_crm / Mean_crm) * 100,
+    pct_diff_Chk = abs(Mean_crm - ic_crm) / ic_crm,
+    crm_flag = ifelse(abs(pct_diff_Chk) < 25, "YES, Pass", "NO, rerun"))
+  
+
+#flag write out 
+ifelse(crm_Chk$pct_diff_Chk >= chk_flag, 
+       "IC crm has a % Difference >25% of expected - REASSESS",  
+       "IC crm has a % Difference <25% of expected - PROCEED")
+cat("Run mean =", crm_Chk$Mean_crm, "\n")
+cat("Expected  =", ic_crm, "\n\n")
+
+
+
+```
+ 
 
 ## Assess Check Standards 
 ```{r Check Standards, echo=FALSE}
@@ -272,8 +302,7 @@ cat("Assess Blanks")
 #Pull out the blanks from raw file 
 blks_raw <- raw_file_name %>% 
   map_df(read_data) %>% 
-  filter(grepl("DI", sample_name)) %>%
-  filter(!sample_name == "CalCurve_DIC") %>%
+  filter(grepl("DI", sample_name)) %>% # filter to TMP samples only
   bind_rows() 
 
 blks_raw <- blks_raw %>% 
@@ -436,7 +465,7 @@ c_samples_flag
 
 ```
 
-## Visualize Data by Plot  - in 2023 SWH Upland = UPCON and Swamp = UP 
+## Visualize Data by Plot   
 ```{r Visualize Data, echo=FALSE}
 
 cat("Visualize Data")
@@ -450,7 +479,7 @@ colnames(IDs) <- c("Site_Code", "Date" , "Zone", "Lysimeter", "Depth", "Excess_I
 dat_flagged_id <- cbind(IDs, dat_flagged)
 
 #Order by Zone from Upland to Surface Water
-dat_flagged_id$Zone = factor(dat_flagged_id$Zone, levels = c("UPCON",  "UP", "TR", "WC", "SW"))
+dat_flagged_id$Zone = factor(dat_flagged_id$Zone, levels = c( "UPCON","UP",  "TR", "WC", "SW"))
 dat_flagged_id <- dat_flagged_id[order(dat_flagged_id$Zone), ]
 
 #group the data for plotting
@@ -467,8 +496,8 @@ viz_c_plot <- ggplot(dat_flagged_id, aes(x = sample_name, y = ic_raw, fill = Zon
   facet_grid(~ Site_Code, scales="free_x") +
   scale_fill_manual(values = c(
     "UP" = "#20063B",
-    "UPCON" = "darkgrey",
     "TR" = "#FFBC42",
+    "SWAMP" = "darkgrey",
     "WC" = "#419973",
     "SW" = "#25ABE6"
   )) +
@@ -496,7 +525,7 @@ dat_flagged_id <- dat_flagged_id %>%
 ```
 
 
-## Check to see if samples run match metadata & merge info - 2023 data needs entered 
+## Check to see if samples run match metadata & merge info
 ```{r, check sample ids with metadata, echo=FALSE}
 
 cat("Check Sample IDs with Metadata")

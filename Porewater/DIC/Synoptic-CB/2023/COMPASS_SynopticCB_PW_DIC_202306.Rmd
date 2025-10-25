@@ -194,9 +194,15 @@ dat_raw <- raw_file_name %>%
   map_df(read_data) %>%
   filter(str_detect(sample_name, samples_pattern))
 
-#Looks like one sample was run twice and we should remove it: 
+#Looks like one sample was run twice and we should remove it & one duplicate was not id'd as a dup:
 dat_raw <- dat_raw %>%
-  filter(!(sample_name == "GWI_202306_SW_A" & ic_raw == 9.863))
+  filter(!(sample_name == "GWI_202306_SW_A" & ic_raw == 9.863)) %>%
+  mutate(
+    sample_name = case_when(
+      sample_name == "MSM_202306_SW_B" & ic_raw == "19.26" ~ paste0(sample_name, "_dup"),
+      TRUE ~ sample_name
+    )
+  )
 
 head(dat_raw)
 ```

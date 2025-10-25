@@ -1,6 +1,6 @@
 ---
 title: "Synoptic CB: Porewater DIC - TEMPLATE"
-author: "Month 2025 Samples"
+author: "Month 2023 Samples"
 date: "`r Sys.Date()`"
 output: 
   pdf_document:
@@ -30,21 +30,21 @@ cat("Setup Information")
   
 ###### File Names - PLEASE CHANGE 
 #file path and name for raw summary data file 
-    raw_file_name = "Raw Data/COMPASS_SynopticCB_PW_DIC_2025MM.txt" 
+    raw_file_name = "Raw Data/COMPASS_SynopticCB_PW_DIC_2023MM.txt" 
     
 #file path and name for raw all peaks file 
-    raw_allpeaks_name = "Raw Data/COMPASS_SynopticCB_PW_DIC_2025MM_allpeaks.txt"
+    raw_allpeaks_name = "Raw Data/COMPASS_SynopticCB_PW_DIC_2023MM_allpeaks.txt"
 
 #file path and name of processed data file 
-    processed_file_name = "Processed Data/COMPASS_SynopticCB_PW_Processed_DIC_2025MM.csv"
+    processed_file_name = "Processed Data/COMPASS_SynopticCB_PW_Processed_DIC_2023MM.csv"
 
 
 ###### Log Files - PLEASE CHECK 
 #downloaded metadata csv - downloaded from Google drive as csv for this year
-  Raw_Metadata = "Raw Data/COMPASS_SynopticCB_PW_SampleLog_2025.csv"
+  Raw_Metadata = "Raw Data/COMPASS_SynopticCB_PW_SampleLog_2023.csv"
   
 #qaqc log file path for this year 
-  Log_path = "Raw Data/COMPASS_Synoptic_DIC_QAQClog_2025.csv"
+  Log_path = "Raw Data/COMPASS_Synoptic_DIC_QAQClog_2023.csv"
 
 ```
 
@@ -198,125 +198,7 @@ dat_raw <- raw_file_name %>%
 head(dat_raw)
 ```
 
-## Assessing Standard Curves 
-```{r Assess Standard Curves, echo=FALSE}
-
-cat("Assess the Standard Curves")
-
-#filter standards out of the raw data 
-stds_all <- raw_allpeaks_name %>% 
-  map_df(read_curve) %>% 
-  filter(grepl("CalCurve", sample_name)) %>% 
-  dplyr::rename(
-        standard_C_ppm = dic_raw) %>%
-  select(run_datetime,standard_C_ppm, area) %>%
-  bind_rows() 
-
-#separate by analyte 
-stds_C <- stds_all %>%
-  filter(!is.na(standard_C_ppm)) %>%
-  mutate(run_date = as.Date(strptime(run_datetime, format = "%m/%d/%Y %I:%M:%S %p")))
-
-#calculate slope and r2 of cal curves
-#ic curve
-lm_results_c <- stds_C %>%
-  group_by(run_date) %>%
-  do({
-    model = lm(area ~ standard_C_ppm, data = .)
-    tidy_model = tidy(model)             # coefficients
-    glance_model = glance(model)         # model metrics like R²
-    tibble(
-      slope = tidy_model$estimate[2],    # coefficient for standard_C_ppm
-      intercept = tidy_model$estimate[1],
-      r2 = glance_model$adj.r.squared
-    )
-  }) %>%
-  mutate(
-    analyte = "C", 
-    curve = "IC (mg/L)"
-  )
-
-#put the together in one dataframe to later add to log 
-Slopes <- rbind(lm_results_c)
-
-#store the r2's so they plot on the curve graphs
-r2_labels_c <- stds_C %>%
-  group_by(run_date) %>%
-  summarise(
-    x_pos = max(standard_C_ppm, na.rm = TRUE) * 0.8,
-    y_pos = max(area, na.rm = TRUE),
-    r_squared = round(summary(lm(area ~ standard_C_ppm))$adj.r.squared, 4),
-    .groups = "drop"
-  )
-
-##Plot standard Curve or Curves 
-#C Curve
-C_stds_plot <- ggplot(stds_C, aes(x = standard_C_ppm, y = area)) +
-  geom_point(size = 3) +
-  geom_smooth(method = "lm", se = FALSE, color = "darkred") +
-  facet_wrap(~ run_date) +
-  geom_text(
-    data = r2_labels_c,
-    aes(x = x_pos, y = y_pos, label = paste0("R² = ", r_squared)),
-    inherit.aes = FALSE,
-    hjust = 1, vjust = 1,
-    size = 4
-  ) +
-  labs(
-    title = "IC Std Curve by Date",
-    x = "Carbon Standard Concentration (ppm)",
-    y = "Peak Area"
-  ) +
-  theme_bw()
-
-C_stds_plot
-
-#compare slopes to previous runs (from log) in order to assess drift 
-log <- read.csv(Log_path)
-log <- log[ ,-c(1)]
-
-#make sure they both have dates as dates 
-log$run_date <- as.Date(log$run_date)
-log$analyte <- as.character(log$analyte)
-log$curve <- as.character(log$curve)
-Slopes$run_date <- as.Date(Slopes$run_date)
-
-# Filter to only rows in Slopes that are NOT already in log (by run_date + analyte)
-new_rows <- anti_join(Slopes, log, by = c("run_date", "analyte"))
-
-# Append the new, non-duplicate rows to log
-log <- bind_rows(log, new_rows)
-
-#plot the current slops with teh previous slopes 
-Slopes_chk <- ggplot(log, aes(run_date, slope, col=curve)) +
-  geom_point(size=4) + 
-  geom_line() + 
-  ylim(10,20) + 
-  theme_bw() + labs(title="Slope Drift Assessment", x="Run Date", y="Slope") +
-  scale_color_manual(values=c("darkred"))
-Slopes_chk
-
-#write out the log file with the added lines for this run  
-write.csv(log, Log_path)
-
-#Grab the highest r2 that is available for this run 
-r2_C = max(lm_results_c$r2)
-
-#Write out to the user whether or not the r2 is above the cutoff of 0.98
-  ifelse(r2_C <= r2_cutoff, 
-         "IC Curve r2 is below cutoff! - REASSESS", "IC Curve r2 GOOD")
-  
-#write out a flag to the sample dataframe if the r2 is above the cutoff of 0.98
-dat_raw <- dat_raw %>%
-  mutate(
-    ic_flag = if (r2_C <= r2_cutoff) {
-      "IC r2 low"
-    } else {
-      ""
-    }
-  )
-
-```
+## Assessing Standard Curves - Assessed manually on the instrument 
 
 ## CRM Check - Don't run chunk if no CRMs run
 ```{r CRM Check, echo = FALSE}

@@ -1,0 +1,194 @@
+---
+title: "COMPASS_SynopticCB_Collate_DIC_2022_Data"
+author: "Stephanie J. Wilson"
+date: "`r Sys.Date()`"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+library(dplyr)
+library(ggplot2)
+library(ggpubr)
+library(stringr)
+library(readxl)
+library(tidyr)
+library(tibble)
+library(lubridate)
+```
+
+#Read in and collate all the files in the Processed Data folder 
+```{r}
+
+files <- list.files(path = "Processed Data", pattern = "\\.csv$", full.names = TRUE)
+
+# 3. Read and combine all CSVs
+all_data <- files %>%
+  lapply(read.csv) %>%    # or read.csv if you prefer base R
+  bind_rows()             # combine into one data frame
+
+#remove the first unneeded column
+all_data <- all_data[, -which(names(all_data) == "X")]
+
+```
+
+
+##Remove sipper samples and clean up that dataframe 
+```{r}
+##Remove non-Lys Samples
+all_data_lys <- all_data %>%  
+  filter(!str_detect(Sample_ID, "Sip"))
+
+#Put sipper samples in their own dataframe 
+all_data_sip <- all_data %>%  
+  filter(str_detect(Sample_ID, "Sip"))
+
+#clean up the sipper data 
+all_data_sip <- all_data_sip %>%
+  mutate(Year = 2022) %>% 
+  mutate(Month = str_extract(Sample_ID, "(?<=2022)\\d{2}"))   %>%
+  mutate(
+    Replicate = case_when(
+      str_detect(Sample_ID, "SipA") ~ "A",
+      str_detect(Sample_ID, "SipB") ~ "B",
+      str_detect(Sample_ID, "SipC") ~ "C",
+      TRUE ~ NA_character_  # or "Unknown" if you prefer
+    )
+  ) %>% 
+    mutate(
+    Depth_cm = case_when(
+      str_detect(Sample_ID, "10cm") ~ "10",
+      str_detect(Sample_ID, "20cm") ~ "20",
+      str_detect(Sample_ID, "45cm") ~ "45",
+      str_detect(Sample_ID, "SW") ~ "0",
+      TRUE ~ NA_character_  # or "Unknown" if you prefer
+    )
+    )
+  
+#need to pull the dates from the all_data_lys 
+all_data_lys <- all_data_lys %>%
+  mutate(Month = as.numeric(Month))
+
+all_data_sip <- all_data_sip %>%
+  mutate(Month = as.numeric(Month))
+
+all_data_sip <- all_data_sip %>%
+  mutate(
+    Day = all_data_lys$Day[
+      match(
+        paste(Site, Month),
+        paste(all_data_lys$Site, all_data_lys$Month)
+      )
+    ]
+  )
+
+
+```
+
+
+
+##Remove and Collate the Sipper Samples 
+```{r}
+
+#Put together the final lysimeter data 
+final_data_lys <- all_data_lys %>%
+    rename(Analysis_rundate = Analysis_runtime) %>%
+    select(
+    Project, Region, Site, Zone, Replicate, Depth_cm, 
+         Sample_ID, Year, Month, Day, Time, Time_Zone,
+         ic_mgL, ic_uM, ic_flag,
+         Analysis_rundate,  Run_notes, Field_notes
+        # list columns in the order you want them
+  )
+
+#Put together the final sipper data 
+final_data_sip <- all_data_sip %>%
+    rename(Analysis_rundate = Analysis_runtime) %>%
+    select(
+    Project, Region, Site, Zone, Replicate, Depth_cm, 
+         Sample_ID, Year, Month, Day, Time, Time_Zone,
+         ic_mgL, ic_uM, ic_flag,
+         Analysis_rundate,  Run_notes, Field_notes
+        # list columns in the order you want them
+  )
+
+
+```
+
+
+
+## Visualize Data
+```{r Visualize Data, echo=FALSE, warning=FALSE, fig.width=16, fig.height=10}
+
+data_plotting <- rbind(all_data_lys, all_data_sip)
+
+#Order by Zone from Upland to Surface Water
+data_plotting$Zone = factor(data_plotting$Zone, levels = c("UP", "SWAMP", "TR", "WC", "SW"))
+data_plotting <- data_plotting[order(data_plotting$Zone), ]
+
+#Order by Site from SWH, GCW, MSM, GWI order, which is oligohaline to polyhaline
+data_plotting$Site = factor(data_plotting$Site, levels = c("SWH", "GCW", "MSM", "GWI"))
+data_plotting <- data_plotting[order(data_plotting$Site), ]
+
+#Plot samples to get a first look at concentrations (sanity check)
+#group the data for plotting
+data_plotting_all <- data_plotting %>%
+  group_by(Site, Zone) %>%
+  mutate(row_num = factor(row_number())) %>%  # create row_num as factor per group
+  ungroup()
+
+data_plotting_all$Date <- as.Date(paste(data_plotting_all$Year, data_plotting_all$Month, data_plotting_all$Day, sep = "-"))
+
+data_plotting_all$Month_name <- month.name[data_plotting_all$Month]
+
+#Plot data and change colors based on Zone:
+viz_dic_plot <- ggplot(data_plotting_all, aes(x = as.character(Month_name), y = ic_mgL, fill = Zone)) +
+  geom_bar(stat = "identity", position = position_dodge2(preserve = "total")) +
+  facet_grid( ~ Site, scales="free") +
+  scale_fill_manual(values = c(
+    "UP" = "#20063B",
+    "TR" = "#FFBC42",
+    "SWAMP" = "darkgrey",
+    "WC" = "#419973",
+    "SW" = "#25ABE6"
+  )) +
+  theme_classic() +
+  labs(x = " ", y = "DIC (mg/L)", title = "Samples: DIC") +
+  theme(
+    panel.spacing = unit(.05, "lines"), 
+    panel.border = element_rect(color = "black", fill = NA, linewidth = 1)) + 
+  theme(text = element_text(size = 20))
+
+print(viz_dic_plot)
+
+```
+
+
+## Write the 2022 file out to the folder 
+```{r, echo=FALSE}
+
+#write out all the lysimeter sample data 
+write.csv(final_data_lys, "COMPASS_SynopticCB_PW_DIC_2022.csv")
+
+#write out all the sipper sample data 
+write.csv(final_data_sip, "COMPASS_SynopticCB_PW_DIC_Sipper_2022.csv")
+
+```
+
+##END
+
+
+##Change SWH UPCON to Up and UP to SWAMP
+```{r}
+
+all_data_lys <- all_data_lys %>%
+  mutate(
+    Zone = case_when(
+      Site == "SWH" & Zone == "UP" ~ "SWAMP",
+      Site == "SWH" & Zone == "UPCON" ~ "UP",
+      TRUE ~ Zone  # keep everything else unchanged
+    )
+  )
+
+
+
+```
