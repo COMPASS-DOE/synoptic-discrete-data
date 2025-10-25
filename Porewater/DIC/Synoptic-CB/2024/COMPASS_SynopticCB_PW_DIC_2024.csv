@@ -1,0 +1,918 @@
+"","Project","Region","Site","Zone","Replicate","Depth_cm","Sample_ID","Year","Month","Day","Time","Time_Zone","ic_mgL","ic_uM","ic_flag","Analysis_rundate","Run_notes","Field_notes"
+"1","COMPASS: Synoptic","CB","SWH","UP","A",10,"202405_SWH_UP_LysA_10cm",2024,5,15,NA,NA,10.45,870.035800516193,"","5/28/2024 10:04:26 PM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"2","COMPASS: Synoptic","CB","SWH","UP","A",20,"202405_SWH_UP_LysA_20cm",2024,5,15,NA,NA,8.737,727.416534843061,"","5/28/2024 10:15:28 PM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"3","COMPASS: Synoptic","CB","SWH","UP","A",45,"202405_SWH_UP_LysA_45cm",2024,5,15,NA,NA,17.74,1476.97943551744,"","5/28/2024 10:27:09 PM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"4","COMPASS: Synoptic","CB","SWH","UP","B",10,"202405_SWH_UP_LysB_10cm",2024,5,15,NA,NA,11.27,938.306552327034,"","5/28/2024 10:38:17 PM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"5","COMPASS: Synoptic","CB","SWH","UP","B",20,"202405_SWH_UP_LysB_20cm",2024,5,15,NA,NA,26.53,2208.80859212389,"","5/28/2024 10:53:06 PM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"6","COMPASS: Synoptic","CB","SWH","UP","C",10,"202405_SWH_UP_LysC_10cm",2024,5,15,NA,NA,9.696,807.260011655982,"","5/28/2024 11:03:56 PM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"7","COMPASS: Synoptic","CB","SWH","UP","C",20,"202405_SWH_UP_LysC_20cm",2024,5,15,NA,NA,28.62,2382.81575222713,"","5/28/2024 11:15:44 PM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"8","COMPASS: Synoptic","CB","SWH","UP","C",45,"202405_SWH_UP_LysC_45cm",2024,5,15,NA,NA,39.26,3268.67038547998,"","5/28/2024 11:28:36 PM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"9","COMPASS: Synoptic","CB","GWI","UP","A",20,"202405_GWI_UP_LysA_20cm",2024,5,16,NA,NA,24.16,2011.48946798768,"","5/29/2024 5:45:14 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"10","COMPASS: Synoptic","CB","GWI","UP","A",45,"202405_GWI_UP_LysA_45cm",2024,5,16,NA,NA,16,1332.11223045542,"","5/29/2024 5:56:37 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"11","COMPASS: Synoptic","CB","GWI","UP","B",10,"202405_GWI_UP_LysB_10cm",2024,5,16,NA,NA,8.189,681.791690949963,"","5/29/2024 6:07:27 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"12","COMPASS: Synoptic","CB","GWI","UP","B",20,"202405_GWI_UP_LysB_20cm",2024,5,16,NA,NA,15.16,1262.17633835651,"","5/29/2024 6:18:46 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"13","COMPASS: Synoptic","CB","GWI","UP","B",45,"202405_GWI_UP_LysB_45cm",2024,5,16,NA,NA,28.49,2371.99234035467,"","5/29/2024 6:33:28 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"14","COMPASS: Synoptic","CB","GWI","UP","C",20,"202405_GWI_UP_LysC_20cm",2024,5,16,NA,NA,23.55,1960.70268920157,"","5/29/2024 6:48:11 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"15","COMPASS: Synoptic","CB","MSM","UP","C",10,"202405_MSM_UP_LysC_10cm",2024,5,21,NA,NA,20.31,1690.94996253434,"","5/29/2024 11:08:56 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"16","COMPASS: Synoptic","CB","MSM","UP","C",20,"202405_MSM_UP_LysC_20cm",2024,5,21,NA,NA,28.78,2396.13687453168,"","5/29/2024 11:24:01 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"17","COMPASS: Synoptic","CB","MSM","UP","B",10,"202405_MSM_UP_LysB_10cm",2024,5,21,NA,NA,20.76,1728.4156190159,"","5/29/2024 11:35:40 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"18","COMPASS: Synoptic","CB","MSM","UP","B",20,"202405_MSM_UP_LysB_20cm",2024,5,21,NA,NA,17.6,1465.32345350096,"","5/29/2024 11:46:48 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"19","COMPASS: Synoptic","CB","MSM","UP","A",20,"202405_MSM_UP_LysA_20cm",2024,5,21,NA,NA,30.91,2573.47431521106,"","5/29/2024 11:58:32 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"20","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"202405_SWH_SWAMP_LysA_10cm",2024,5,15,NA,NA,9.499,790.8583798185,"","5/28/2024 11:52:51 PM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"21","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"202405_SWH_SWAMP_LysA_20cm",2024,5,15,NA,NA,11.12,925.818000166514,"","5/29/2024 12:03:53 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"22","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"202405_SWH_SWAMP_LysA_45cm",2024,5,15,NA,NA,15.67,1304.63741570227,"","5/29/2024 12:15:16 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"23","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"202405_SWH_SWAMP_LysB_10cm",2024,5,15,NA,NA,26.12,2174.67321621847,"","5/29/2024 12:27:04 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"24","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"202405_SWH_SWAMP_LysB_20cm",2024,5,15,NA,NA,26.06,2169.67779535426,"","5/29/2024 12:44:44 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"25","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"202405_SWH_SWAMP_LysB_45cm",2024,5,15,NA,NA,22.38,1863.29198234951,"","5/29/2024 12:56:24 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"26","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"202405_SWH_SWAMP_LysC_10cm",2024,5,15,NA,NA,8.236,685.704770626925,"","5/29/2024 1:07:16 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"27","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"202405_SWH_SWAMP_LysC_20cm",2024,5,15,NA,NA,5.649,470.318874365165,"blank is ≥ 25% of sample value","5/29/2024 1:17:56 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"28","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"202405_SWH_SWAMP_LysC_45cm",2024,5,15,NA,NA,8.619,717.592207143452,"","5/29/2024 1:28:52 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"29","COMPASS: Synoptic","CB","SWH","TR","A",10,"202405_SWH_TR_LysA_10cm",2024,5,15,NA,NA,33.56,2794.10540338023,"","5/29/2024 1:55:00 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"30","COMPASS: Synoptic","CB","SWH","TR","A",20,"202405_SWH_TR_LysA_20cm",2024,5,15,NA,NA,25.57,2128.88185829656,"","5/29/2024 2:07:12 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"31","COMPASS: Synoptic","CB","SWH","TR","A",45,"202405_SWH_TR_LysA_45cm",2024,5,15,NA,NA,38.89,3237.8652901507,"","5/29/2024 2:20:07 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"32","COMPASS: Synoptic","CB","SWH","TR","B",10,"202405_SWH_TR_LysB_10cm",2024,5,15,NA,NA,10.55,878.36150195654,"","5/29/2024 2:31:13 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"33","COMPASS: Synoptic","CB","SWH","TR","B",20,"202405_SWH_TR_LysB_20cm",2024,5,15,NA,NA,35.52,2957.28915161102,"","5/29/2024 2:44:08 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"34","COMPASS: Synoptic","CB","SWH","TR","B",45,"202405_SWH_TR_LysB_45cm",2024,5,15,NA,NA,39.11,3256.18183331946,"","5/29/2024 2:56:59 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"35","COMPASS: Synoptic","CB","SWH","TR","C",10,"202405_SWH_TR_LysC_10cm",2024,5,15,NA,NA,12.87,1071.51777537257,"","5/29/2024 3:08:09 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"36","COMPASS: Synoptic","CB","SWH","TR","C",20,"202405_SWH_TR_LysC_20cm",2024,5,15,NA,NA,24.13,2008.99175755557,"","5/29/2024 3:20:06 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"37","COMPASS: Synoptic","CB","SWH","TR","C",45,"202405_SWH_TR_LysC_45cm",2024,5,15,NA,NA,28.83,2400.29972525185,"","5/29/2024 3:32:18 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"38","COMPASS: Synoptic","CB","GWI","TR","A",10,"202405_GWI_TR_LysA_10cm",2024,5,16,NA,NA,47.53,3957.20589459662,"","5/29/2024 7:01:07 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"39","COMPASS: Synoptic","CB","GWI","TR","A",20,"202405_GWI_TR_LysA_20cm",2024,5,16,NA,NA,54.25,4516.69303138789,"","5/29/2024 7:14:16 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"40","COMPASS: Synoptic","CB","GWI","TR","B",10,"202405_GWI_TR_LysB_10cm",2024,5,16,NA,NA,29.42,2449.4213637499,"","5/29/2024 7:26:02 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"41","COMPASS: Synoptic","CB","GWI","TR","C",10,"202405_GWI_TR_LysC_10cm",2024,5,16,NA,NA,12.88,1072.35034551661,"","5/29/2024 7:37:03 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"42","COMPASS: Synoptic","CB","GWI","TR","C",20,"202405_GWI_TR_LysC_20cm",2024,5,16,NA,NA,33.66,2802.43110482058,"","5/29/2024 7:55:20 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"43","COMPASS: Synoptic","CB","MSM","TR","A",10,"202405_MSM_TR_LysA_10cm",2024,5,21,NA,NA,41.47,3452.66838731163,"","5/29/2024 12:17:22 PM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"44","COMPASS: Synoptic","CB","MSM","TR","A",20,"202405_MSM_TR_LysA_20cm",2024,5,21,NA,NA,37.23,3099.65864624095,"","5/29/2024 12:35:21 PM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"45","COMPASS: Synoptic","CB","MSM","TR","B",10,"202405_MSM_TR_LysB_10cm",2024,5,21,NA,NA,28.36,2361.16892848222,"","5/29/2024 12:47:23 PM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"46","COMPASS: Synoptic","CB","MSM","TR","B",20,"202405_MSM_TR_LysB_20cm",2024,5,21,NA,NA,36.71,3056.36499875114,"","5/29/2024 12:59:19 PM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"47","COMPASS: Synoptic","CB","MSM","TR","C",20,"202405_MSM_TR_LysC_20cm",2024,5,21,NA,NA,27.43,2283.739905087,"","5/29/2024 1:10:41 PM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"48","COMPASS: Synoptic","CB","GCW","TR","B",10,"202405_GCW_TR_LysB_10cm",2024,5,23,NA,NA,45.2,3763.21705103655,"","5/29/2024 4:11:59 PM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"49","COMPASS: Synoptic","CB","GCW","TR","B",20,"202405_GCW_TR_LysB_20cm",2024,5,23,NA,NA,39.16,3260.34468403963,"","5/29/2024 4:30:25 PM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"50","COMPASS: Synoptic","CB","SWH","WC","B",20,"202405_SWH_WC_LysB_20cm",2024,5,15,NA,NA,69.89,5818.83273665806,"","5/29/2024 3:59:11 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"51","COMPASS: Synoptic","CB","SWH","WC","C",20,"202405_SWH_WC_LysC_20cm",2024,5,15,NA,NA,66.43,5530.76346682208,"","5/29/2024 4:12:29 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"52","COMPASS: Synoptic","CB","SWH","WC","C",45,"202405_SWH_WC_LysC_45cm",2024,5,15,NA,NA,63.75,5307.6346682208,"","5/29/2024 4:25:46 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"53","COMPASS: Synoptic","CB","GWI","WC","A",10,"202405_GWI_WC_LysA_10cm",2024,5,16,NA,NA,72.2,6011.15643993007,"","5/29/2024 8:21:57 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"54","COMPASS: Synoptic","CB","GWI","WC","A",45,"202405_GWI_WC_LysA_45cm",2024,5,16,NA,NA,37.61,3131.29631171426,"","5/29/2024 8:38:09 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"55","COMPASS: Synoptic","CB","GWI","WC","B",10,"202405_GWI_WC_LysB_10cm",2024,5,16,NA,NA,91.33,7603.86312546832,"","5/29/2024 8:52:38 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"56","COMPASS: Synoptic","CB","GWI","WC","B",20,"202405_GWI_WC_LysB_20cm",2024,5,16,NA,NA,67.41,5612.35534093747,"","5/29/2024 9:05:56 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"57","COMPASS: Synoptic","CB","GWI","WC","B",45,"202405_GWI_WC_LysB_45cm",2024,5,16,NA,NA,39.01,3247.85613187911,"","5/29/2024 9:21:53 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"58","COMPASS: Synoptic","CB","GWI","WC","C",10,"202405_GWI_WC_LysC_10cm",2024,5,16,NA,NA,76.73,6388.31071517775,"","5/29/2024 9:35:18 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"59","COMPASS: Synoptic","CB","GWI","WC","C",20,"202405_GWI_WC_LysC_20cm",2024,5,16,NA,NA,80.58,6708.85022063109,"","5/29/2024 9:48:58 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"60","COMPASS: Synoptic","CB","MSM","WC","A",10,"202405_MSM_WC_LysA_10cm",2024,5,21,NA,NA,35.93,2991.42452751644,"","5/29/2024 1:36:05 PM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"61","COMPASS: Synoptic","CB","MSM","WC","A",20,"202405_MSM_WC_LysA_20cm",2024,5,21,NA,NA,60.8,5062.02647573058,"","5/29/2024 1:49:08 PM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"62","COMPASS: Synoptic","CB","MSM","WC","B",10,"202405_MSM_WC_LysB_10cm",2024,5,21,NA,NA,97.23,8095.07951044876,"","5/29/2024 2:02:42 PM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"63","COMPASS: Synoptic","CB","MSM","WC","B",20,"202405_MSM_WC_LysB_20cm",2024,5,21,NA,NA,95.55,7955.20772625094,"","5/29/2024 2:16:16 PM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"64","COMPASS: Synoptic","CB","MSM","WC","C",10,"202405_MSM_WC_LysC_10cm",2024,5,21,NA,NA,80.78,6725.50162351178,"","5/29/2024 2:29:41 PM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"65","COMPASS: Synoptic","CB","MSM","WC","C",20,"202405_MSM_WC_LysC_20cm",2024,5,21,NA,NA,83.19,6926.15102822413,"","5/29/2024 2:43:00 PM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"66","COMPASS: Synoptic","CB","GCW","WC","A",20,"202405_GCW_WC_LysA_20cm",2024,5,23,NA,NA,103.7,8633.75239363916,"","5/29/2024 4:57:56 PM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"67","COMPASS: Synoptic","CB","GCW","WC","A",45,"202405_GCW_WC_LysA_45cm",2024,5,23,NA,NA,185.6,15452.5018732828,"","5/29/2024 5:19:31 PM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"68","COMPASS: Synoptic","CB","GCW","WC","B",10,"202405_GCW_WC_LysB_10cm",2024,5,23,NA,NA,87.09,7250.85338439764,"","5/29/2024 5:34:13 PM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"69","COMPASS: Synoptic","CB","GCW","WC","B",20,"202405_GCW_WC_LysB_20cm",2024,5,23,NA,NA,95.68,7966.03113812339,"","5/29/2024 5:48:08 PM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"70","COMPASS: Synoptic","CB","GCW","WC","B",45,"202405_GCW_WC_LysB_45cm",2024,5,23,NA,NA,160.2,13337.7737074349,"","5/29/2024 6:09:35 PM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"71","COMPASS: Synoptic","CB","GCW","WC","C",10,"202405_GCW_WC_LysC_10cm",2024,5,23,NA,NA,66.67,5550.74515027891,"","5/30/2024 9:51:38 PM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"72","COMPASS: Synoptic","CB","GCW","WC","C",20,"202405_GCW_WC_LysC_20cm",2024,5,23,NA,NA,48.05,4000.49954208642,"","5/30/2024 10:04:23 PM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"73","COMPASS: Synoptic","CB","GCW","WC","C",45,"202405_GCW_WC_LysC_45cm",2024,5,23,NA,NA,93.48,7782.86570643577,"","5/30/2024 10:17:37 PM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"74","COMPASS: Synoptic","CB","SWH","SW","A",0,"202405_SWH_SW_A",2024,5,15,NA,NA,8.326,693.197901923237,"","5/29/2024 4:41:43 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"75","COMPASS: Synoptic","CB","SWH","SW","B",0,"202405_SWH_SW_B",2024,5,15,NA,NA,7.798,649.238198318208,"","5/29/2024 4:52:37 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"76","COMPASS: Synoptic","CB","SWH","SW","C",0,"202405_SWH_SW_C",2024,5,15,NA,NA,7.886,656.564815585713,"","5/29/2024 5:03:35 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"77","COMPASS: Synoptic","CB","GWI","SW","A",0,"202405_GWI_SW_A",2024,5,16,NA,NA,19.62,1633.50262259595,"","5/29/2024 10:00:09 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"78","COMPASS: Synoptic","CB","GWI","SW","B",0,"202405_GWI_SW_B",2024,5,16,NA,NA,19.07,1587.71126467405,"","5/29/2024 10:11:22 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"79","COMPASS: Synoptic","CB","GWI","SW","C",0,"202405_GWI_SW_C",2024,5,16,NA,NA,19.02,1583.54841395388,"","5/29/2024 10:22:40 AM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"80","COMPASS: Synoptic","CB","MSM","SW","A",0,"202405_MSM_SW_A",2024,5,21,NA,NA,17.08,1422.02980601116,"","5/29/2024 2:54:12 PM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"81","COMPASS: Synoptic","CB","MSM","SW","B",0,"202405_MSM_SW_B",2024,5,21,NA,NA,16.83,1401.21555241029,"","5/29/2024 3:05:21 PM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"82","COMPASS: Synoptic","CB","MSM","SW","C",0,"202405_MSM_SW_C",2024,5,21,NA,NA,16.77,1396.22013154608,"","5/29/2024 3:16:27 PM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"83","COMPASS: Synoptic","CB","GCW","SW","A",0,"202405_GCW_SW_A",2024,5,23,NA,NA,17.24,1435.35092831571,"","5/30/2024 10:28:46 PM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"84","COMPASS: Synoptic","CB","GCW","SW","B",0,"202405_GCW_SW_B",2024,5,23,NA,NA,17.08,1422.02980601116,"","5/30/2024 10:39:54 PM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"85","COMPASS: Synoptic","CB","GCW","SW","C",0,"202405_GCW_SW_C",2024,5,23,NA,NA,16.83,1401.21555241029,"","5/30/2024 10:51:02 PM","This month MSM UP Lysimeter A and C samples were swapped, 
+  this is fixed in this code. ",NA
+"86","COMPASS: Synoptic","CB","SWH","UP","A",10,"202406_SWH_UP_LysA_10cm",2024,6,26,NA,NA,8.897,740.737657147615,"","6/28/2024 1:40:36 PM","On this run I accidentally labeled samples as 2023 instead of
+    2024, so this is changed in the code that reads in the raw data. 
+    No duplicates were included in this run.",NA
+"87","COMPASS: Synoptic","CB","SWH","UP","A",20,"202406_SWH_UP_LysA_20cm",2024,6,26,NA,NA,12.17,1013.23786529015,"","6/28/2024 1:51:52 PM","On this run I accidentally labeled samples as 2023 instead of
+    2024, so this is changed in the code that reads in the raw data. 
+    No duplicates were included in this run.",NA
+"88","COMPASS: Synoptic","CB","SWH","UP","A",45,"202406_SWH_UP_LysA_45cm",2024,6,26,NA,NA,35.05,2918.1583548414,"","6/28/2024 2:04:41 PM","On this run I accidentally labeled samples as 2023 instead of
+    2024, so this is changed in the code that reads in the raw data. 
+    No duplicates were included in this run.",NA
+"89","COMPASS: Synoptic","CB","SWH","UP","B",10,"202406_SWH_UP_LysB_10cm",2024,6,26,NA,NA,8.177,680.792606777121,"","6/28/2024 2:15:48 PM","On this run I accidentally labeled samples as 2023 instead of
+    2024, so this is changed in the code that reads in the raw data. 
+    No duplicates were included in this run.",NA
+"90","COMPASS: Synoptic","CB","SWH","UP","B",20,"202406_SWH_UP_LysB_20cm",2024,6,26,NA,NA,34.05,2834.90134043793,"","6/28/2024 2:28:34 PM","On this run I accidentally labeled samples as 2023 instead of
+    2024, so this is changed in the code that reads in the raw data. 
+    No duplicates were included in this run.",NA
+"91","COMPASS: Synoptic","CB","SWH","UP","B",45,"202406_SWH_UP_LysB_45cm",2024,6,26,NA,NA,44.46,3701.60686037799,"","6/28/2024 2:41:29 PM","On this run I accidentally labeled samples as 2023 instead of
+    2024, so this is changed in the code that reads in the raw data. 
+    No duplicates were included in this run.",NA
+"92","COMPASS: Synoptic","CB","SWH","UP","C",20,"202406_SWH_UP_LysC_20cm",2024,6,26,NA,NA,14.82,1233.86895345933,"","6/28/2024 2:52:46 PM","On this run I accidentally labeled samples as 2023 instead of
+    2024, so this is changed in the code that reads in the raw data. 
+    No duplicates were included in this run.",NA
+"93","COMPASS: Synoptic","CB","SWH","UP","C",45,"202406_SWH_UP_LysC_45cm",2024,6,26,NA,NA,44.47,3702.43943052202,"","6/28/2024 3:05:44 PM","On this run I accidentally labeled samples as 2023 instead of
+    2024, so this is changed in the code that reads in the raw data. 
+    No duplicates were included in this run.",NA
+"94","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"202406_SWH_SWAMP_LysA_10cm",2024,6,26,NA,NA,22.03,1834.1520273083,"","6/28/2024 4:01:19 PM","On this run I accidentally labeled samples as 2023 instead of
+    2024, so this is changed in the code that reads in the raw data. 
+    No duplicates were included in this run.",NA
+"95","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"202406_SWH_SWAMP_LysA_20cm",2024,6,26,NA,NA,20.68,1721.75505786363,"","6/28/2024 4:13:02 PM","On this run I accidentally labeled samples as 2023 instead of
+    2024, so this is changed in the code that reads in the raw data. 
+    No duplicates were included in this run.",NA
+"96","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"202406_SWH_SWAMP_LysA_45cm",2024,6,26,NA,NA,18.67,1554.40845891266,"","6/28/2024 4:24:29 PM","On this run I accidentally labeled samples as 2023 instead of
+    2024, so this is changed in the code that reads in the raw data. 
+    No duplicates were included in this run.",NA
+"97","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"202406_SWH_SWAMP_LysB_10cm",2024,6,26,NA,NA,27.94,2326.20098243277,"","6/28/2024 4:40:08 PM","On this run I accidentally labeled samples as 2023 instead of
+    2024, so this is changed in the code that reads in the raw data. 
+    No duplicates were included in this run.",NA
+"98","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"202406_SWH_SWAMP_LysB_20cm",2024,6,26,NA,NA,30.29,2521.85496628091,"","6/28/2024 4:52:44 PM","On this run I accidentally labeled samples as 2023 instead of
+    2024, so this is changed in the code that reads in the raw data. 
+    No duplicates were included in this run.",NA
+"99","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"202406_SWH_SWAMP_LysB_45cm",2024,6,26,NA,NA,23.59,1964.0329697777,"","6/28/2024 5:04:08 PM","On this run I accidentally labeled samples as 2023 instead of
+    2024, so this is changed in the code that reads in the raw data. 
+    No duplicates were included in this run.",NA
+"100","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"202406_SWH_SWAMP_LysC_10cm",2024,6,26,NA,NA,15.42,1283.82316210141,"","6/28/2024 5:15:24 PM","On this run I accidentally labeled samples as 2023 instead of
+    2024, so this is changed in the code that reads in the raw data. 
+    No duplicates were included in this run.",NA
+"101","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"202406_SWH_SWAMP_LysC_20cm",2024,6,26,NA,NA,18.32,1525.26850387145,"","6/28/2024 5:26:47 PM","On this run I accidentally labeled samples as 2023 instead of
+    2024, so this is changed in the code that reads in the raw data. 
+    No duplicates were included in this run.",NA
+"102","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"202406_SWH_SWAMP_LysC_45cm",2024,6,26,NA,NA,18.09,1506.11939055865,"","6/28/2024 5:38:09 PM","On this run I accidentally labeled samples as 2023 instead of
+    2024, so this is changed in the code that reads in the raw data. 
+    No duplicates were included in this run.",NA
+"103","COMPASS: Synoptic","CB","SWH","TR","A",10,"202406_SWH_TR_LysA_10cm",2024,6,26,NA,NA,40.63,3382.73249521272,"","6/28/2024 6:17:09 PM","On this run I accidentally labeled samples as 2023 instead of
+    2024, so this is changed in the code that reads in the raw data. 
+    No duplicates were included in this run.",NA
+"104","COMPASS: Synoptic","CB","SWH","TR","A",20,"202406_SWH_TR_LysA_20cm",2024,6,26,NA,NA,38.12,3173.75738906003,"","6/28/2024 6:29:56 PM","On this run I accidentally labeled samples as 2023 instead of
+    2024, so this is changed in the code that reads in the raw data. 
+    No duplicates were included in this run.",NA
+"105","COMPASS: Synoptic","CB","SWH","TR","A",45,"202406_SWH_TR_LysA_45cm",2024,6,26,NA,NA,45.3,3771.5427524769,"","6/28/2024 6:43:00 PM","On this run I accidentally labeled samples as 2023 instead of
+    2024, so this is changed in the code that reads in the raw data. 
+    No duplicates were included in this run.",NA
+"106","COMPASS: Synoptic","CB","SWH","TR","B",10,"202406_SWH_TR_LysB_10cm",2024,6,26,NA,NA,6.221,517.941886603947,"blank is ≥ 25% of sample value","6/28/2024 6:53:58 PM","On this run I accidentally labeled samples as 2023 instead of
+    2024, so this is changed in the code that reads in the raw data. 
+    No duplicates were included in this run.",NA
+"107","COMPASS: Synoptic","CB","SWH","TR","B",20,"202406_SWH_TR_LysB_20cm",2024,6,26,NA,NA,39.85,3317.79202397802,"","6/28/2024 7:06:46 PM","On this run I accidentally labeled samples as 2023 instead of
+    2024, so this is changed in the code that reads in the raw data. 
+    No duplicates were included in this run.",NA
+"108","COMPASS: Synoptic","CB","SWH","TR","B",45,"202406_SWH_TR_LysB_45cm",2024,6,26,NA,NA,51.32,4272.74997918575,"","6/28/2024 7:19:45 PM","On this run I accidentally labeled samples as 2023 instead of
+    2024, so this is changed in the code that reads in the raw data. 
+    No duplicates were included in this run.",NA
+"109","COMPASS: Synoptic","CB","SWH","TR","C",20,"202406_SWH_TR_LysC_20cm",2024,6,26,NA,NA,30.35,2526.85038714512,"","6/28/2024 7:32:21 PM","On this run I accidentally labeled samples as 2023 instead of
+    2024, so this is changed in the code that reads in the raw data. 
+    No duplicates were included in this run.",NA
+"110","COMPASS: Synoptic","CB","SWH","TR","C",45,"202406_SWH_TR_LysC_45cm",2024,6,26,NA,NA,40.31,3356.09025060361,"","6/28/2024 7:45:15 PM","On this run I accidentally labeled samples as 2023 instead of
+    2024, so this is changed in the code that reads in the raw data. 
+    No duplicates were included in this run.",NA
+"111","COMPASS: Synoptic","CB","SWH","WC","C",10,"202406_SWH_WC_LysC_10cm",2024,6,26,NA,NA,47.9,3988.0109899259,"","6/28/2024 8:25:50 PM","On this run I accidentally labeled samples as 2023 instead of
+    2024, so this is changed in the code that reads in the raw data. 
+    No duplicates were included in this run.",NA
+"112","COMPASS: Synoptic","CB","SWH","WC","C",20,"202406_SWH_WC_LysC_20cm",2024,6,26,NA,NA,74.48,6200.98243276996,"","6/28/2024 8:39:23 PM","On this run I accidentally labeled samples as 2023 instead of
+    2024, so this is changed in the code that reads in the raw data. 
+    No duplicates were included in this run.",NA
+"113","COMPASS: Synoptic","CB","SWH","WC","C",45,"202406_SWH_WC_LysC_45cm",2024,6,26,NA,NA,79.19,6593.12297061027,"","6/28/2024 8:53:07 PM","On this run I accidentally labeled samples as 2023 instead of
+    2024, so this is changed in the code that reads in the raw data. 
+    No duplicates were included in this run.",NA
+"114","COMPASS: Synoptic","CB","SWH","SW","A",0,"202406_SWH_SW_A",2024,6,26,NA,NA,9.437,785.696444925485,"","6/28/2024 9:09:21 PM","On this run I accidentally labeled samples as 2023 instead of
+    2024, so this is changed in the code that reads in the raw data. 
+    No duplicates were included in this run.",NA
+"115","COMPASS: Synoptic","CB","SWH","SW","B",0,"202406_SWH_SW_B",2024,6,26,NA,NA,8.986,748.147531429523,"","6/28/2024 9:20:30 PM","On this run I accidentally labeled samples as 2023 instead of
+    2024, so this is changed in the code that reads in the raw data. 
+    No duplicates were included in this run.",NA
+"116","COMPASS: Synoptic","CB","SWH","SW","C",0,"202406_SWH_SW_C",2024,6,26,NA,NA,8.988,748.31404545833,"","6/28/2024 9:31:40 PM","On this run I accidentally labeled samples as 2023 instead of
+    2024, so this is changed in the code that reads in the raw data. 
+    No duplicates were included in this run.",NA
+"117","COMPASS: Synoptic","CB","MSM","UP","B",10,"202407_MSM_UP_LysB_10cm",2024,7,18,NA,NA,7.437,619.182416118558,NA,"7/29/2024 7:39:26 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"118","COMPASS: Synoptic","CB","MSM","UP","C",10,"202407_MSM_UP_LysC_10cm",2024,7,18,NA,NA,8.551,711.930730164016,NA,"7/29/2024 7:54:21 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"119","COMPASS: Synoptic","CB","MSM","UP","C",20,"202407_MSM_UP_LysC_20cm",2024,7,18,NA,NA,11.17,929.980850886687,NA,"7/29/2024 8:12:47 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"120","COMPASS: Synoptic","CB","SWH","UP","A",10,"202407_SWH_UP_LysA_10cm",2024,7,23,NA,NA,7.368,613.437682124719,NA,"7/30/2024 12:57:43 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"121","COMPASS: Synoptic","CB","SWH","UP","A",20,"202407_SWH_UP_LysA_20cm",2024,7,23,NA,NA,10.39,865.040379651986,NA,"7/30/2024 1:09:50 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"122","COMPASS: Synoptic","CB","SWH","UP","A",45,"202407_SWH_UP_LysA_45cm",2024,7,23,NA,NA,38.78,3228.70701856631,NA,"7/30/2024 1:27:00 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"123","COMPASS: Synoptic","CB","SWH","UP","B",20,"202407_SWH_UP_LysB_20cm",2024,7,23,NA,NA,33.33,2774.95629006744,NA,"7/30/2024 1:44:35 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"124","COMPASS: Synoptic","CB","SWH","UP","C",45,"202407_SWH_UP_LysC_45cm",2024,7,23,NA,NA,36.99,3079.67696278411,NA,"7/30/2024 1:58:20 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"125","COMPASS: Synoptic","CB","GWI","UP","B",10,"202407_GWI_UP_LysB_10cm",2024,7,25,NA,NA,11.82,984.097910248939,NA,"7/30/2024 8:50:05 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"126","COMPASS: Synoptic","CB","GWI","UP","B",20,"202407_GWI_UP_LysB_20cm",2024,7,25,NA,NA,26.32,2191.32461909916,NA,"7/30/2024 9:03:42 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"127","COMPASS: Synoptic","CB","GWI","UP","B",45,"202407_GWI_UP_LysB_45cm",2024,7,25,NA,NA,20.77,1729.24818915994,NA,"7/30/2024 9:17:01 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"128","COMPASS: Synoptic","CB","GWI","UP","C",20,"202407_GWI_UP_LysC_20cm",2024,7,25,NA,NA,39.64,3300.30805095329,NA,"7/30/2024 9:39:00 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"129","COMPASS: Synoptic","CB","GWI","UP","A",45,"202407_GWI_UP_LysA_45cm",2024,7,25,NA,NA,25.68,2138.04012988094,NA,"7/30/2024 10:06:52 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"130","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"202407_SWH_SWAMP_LysA_10cm",2024,7,23,NA,NA,27.35,2277.07934393473,NA,"7/30/2024 2:11:53 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"131","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"202407_SWH_SWAMP_LysA_20cm",2024,7,23,NA,NA,24.09,2005.66147697944,NA,"7/30/2024 2:25:08 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"132","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"202407_SWH_SWAMP_LysB_45cm",2024,7,23,NA,NA,21.45,1785.86295895429,NA,"7/30/2024 2:53:07 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"133","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"202407_SWH_SWAMP_LysC_10cm",2024,7,23,NA,NA,17.65,1469.48630422113,NA,"7/30/2024 3:06:15 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"134","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"202407_SWH_SWAMP_LysC_20cm",2024,7,23,NA,NA,15.7,1307.13512613438,NA,"7/30/2024 3:19:20 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"135","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"202407_SWH_SWAMP_LysC_45cm",2024,7,23,NA,NA,23.05,1919.07418199983,NA,"7/30/2024 3:32:37 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"136","COMPASS: Synoptic","CB","MSM","TR","A",10,"202407_MSM_TR_LysA_10cm",2024,7,18,NA,NA,21.91,1824.16118557989,NA,"7/29/2024 8:26:03 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"137","COMPASS: Synoptic","CB","MSM","TR","A",20,"202407_MSM_TR_LysA_20cm",2024,7,18,NA,NA,27.92,2324.5358421447,NA,"7/29/2024 8:39:20 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"138","COMPASS: Synoptic","CB","MSM","TR","B",10,"202407_MSM_TR_LysB_10cm",2024,7,18,NA,NA,19.86,1653.48430605278,NA,"7/29/2024 8:52:25 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"139","COMPASS: Synoptic","CB","MSM","TR","B",20,"202407_MSM_TR_LysB_20cm",2024,7,18,NA,NA,38,3163.76654733161,NA,"7/29/2024 9:06:12 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"140","COMPASS: Synoptic","CB","MSM","TR","C",10,"202407_MSM_TR_LysC_10cm",2024,7,18,NA,NA,20.99,1747.5647323287,NA,"7/29/2024 9:19:22 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"141","COMPASS: Synoptic","CB","MSM","TR","C",20,"202407_MSM_TR_LysC_20cm",2024,7,18,NA,NA,32.99,2746.64890517026,NA,"7/29/2024 9:33:03 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"142","COMPASS: Synoptic","CB","SWH","TR","A",45,"202407_SWH_TR_LysA_45cm",2024,7,24,NA,NA,45.36,3776.5381733411,NA,"7/30/2024 2:39:47 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"143","COMPASS: Synoptic","CB","SWH","TR","A",10,"202407_SWH_TR_LysA_10cm",2024,7,24,NA,NA,35.07,2919.82349512946,NA,"7/30/2024 4:23:10 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"144","COMPASS: Synoptic","CB","SWH","TR","A",20,"202407_SWH_TR_LysA_20cm",2024,7,24,NA,NA,40.2,3346.93197901923,NA,"7/30/2024 4:37:20 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"145","COMPASS: Synoptic","CB","SWH","TR","B",10,"202407_SWH_TR_LysB_10cm",2024,7,24,NA,NA,25.79,2147.19840146532,NA,"7/30/2024 4:50:54 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"146","COMPASS: Synoptic","CB","SWH","TR","B",20,"202407_SWH_TR_LysB_20cm",2024,7,24,NA,NA,52.5,4370.99325618183,NA,"7/30/2024 5:05:09 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"147","COMPASS: Synoptic","CB","SWH","TR","B",45,"202407_SWH_TR_LysB_45cm",2024,7,24,NA,NA,56.66,4717.34243610024,NA,"7/30/2024 5:24:20 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"148","COMPASS: Synoptic","CB","SWH","TR","C",10,"202407_SWH_TR_LysC_10cm",2024,7,24,NA,NA,36.68,3053.86728831904,NA,"7/30/2024 5:39:55 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"149","COMPASS: Synoptic","CB","SWH","TR","C",20,"202407_SWH_TR_LysC_20cm",2024,7,24,NA,NA,45.1,3754.8913495962,NA,"7/30/2024 5:54:16 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"150","COMPASS: Synoptic","CB","SWH","TR","C",45,"202407_SWH_TR_LysC_45cm",2024,7,24,NA,NA,48.07,4002.16468237449,NA,"7/30/2024 6:08:56 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"151","COMPASS: Synoptic","CB","GWI","TR","A",10,"202407_GWI_TR_LysA_10cm",2024,7,25,NA,NA,44.6,3713.26284239447,NA,"7/30/2024 9:53:28 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"152","COMPASS: Synoptic","CB","GWI","TR","B",10,"202407_GWI_TR_LysB_10cm",2024,7,25,NA,NA,26.84,2234.61826658896,NA,"7/30/2024 10:20:20 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"153","COMPASS: Synoptic","CB","GWI","TR","C",10,"202407_GWI_TR_LysC_10cm",2024,7,25,NA,NA,18.66,1553.57588876863,NA,"7/30/2024 10:33:17 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"154","COMPASS: Synoptic","CB","GWI","TR","C",20,"202407_GWI_TR_LysC_20cm",2024,7,25,NA,NA,29.07,2420.28140870868,NA,"7/30/2024 10:46:40 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"155","COMPASS: Synoptic","CB","GCW","WC","A",10,"202407_GCW_WC_LysA_10cm",2024,7,16,NA,NA,110.8,9224.87719590375,NA,"7/29/2024 3:29:12 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"156","COMPASS: Synoptic","CB","GCW","WC","A",20,"202407_GCW_WC_LysA_20cm",2024,7,16,NA,NA,124.9,10398.8010989926,NA,"7/29/2024 3:47:04 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"157","COMPASS: Synoptic","CB","GCW","WC","A",45,"202407_GCW_WC_LysA_45cm",2024,7,16,NA,NA,185.4,15435.8504704021,NA,"7/29/2024 4:04:53 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"158","COMPASS: Synoptic","CB","GCW","WC","B",10,"202407_GCW_WC_LysB_10cm",2024,7,16,NA,NA,119,9907.58471401216,NA,"7/29/2024 4:22:47 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"159","COMPASS: Synoptic","CB","GCW","WC","B",20,"202407_GCW_WC_LysB_20cm",2024,7,16,NA,NA,125.6,10457.081009075,NA,"7/29/2024 4:40:38 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"160","COMPASS: Synoptic","CB","GCW","WC","B",45,"202407_GCW_WC_LysB_45cm",2024,7,16,NA,NA,154.4,12854.8830238948,NA,"7/29/2024 4:58:24 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"161","COMPASS: Synoptic","CB","GCW","WC","C",10,"202407_GCW_WC_LysC_10cm",2024,7,16,NA,NA,82.79,6892.84822246274,NA,"7/29/2024 5:20:47 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"162","COMPASS: Synoptic","CB","GCW","WC","C",20,"202407_GCW_WC_LysC_20cm",2024,7,16,NA,NA,86.05,7164.26608941803,NA,"7/29/2024 5:43:09 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"163","COMPASS: Synoptic","CB","GCW","WC","C",45,"202407_GCW_WC_LysC_45cm",2024,7,16,NA,NA,103.2,8592.12388643743,NA,"7/29/2024 6:05:26 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"164","COMPASS: Synoptic","CB","MSM","WC","A",10,"202407_MSM_WC_LysA_10cm",2024,7,18,NA,NA,54.58,4544.16784614104,NA,"7/29/2024 9:47:45 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"165","COMPASS: Synoptic","CB","MSM","WC","A",20,"202407_MSM_WC_LysA_20cm",2024,7,18,NA,NA,103.8,8642.07809507951,NA,"7/29/2024 10:10:19 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"166","COMPASS: Synoptic","CB","MSM","WC","B",10,"202407_MSM_WC_LysB_10cm",2024,7,18,NA,NA,102.4,8525.51827491466,NA,"7/29/2024 10:33:03 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"167","COMPASS: Synoptic","CB","MSM","WC","B",20,"202407_MSM_WC_LysB_20cm",2024,7,18,NA,NA,102,8492.21546915328,NA,"7/29/2024 10:59:17 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"168","COMPASS: Synoptic","CB","MSM","WC","C",10,"202407_MSM_WC_LysC_10cm",2024,7,18,NA,NA,84.04,6996.91949046707,NA,"7/29/2024 11:28:05 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"169","COMPASS: Synoptic","CB","SWH","WC","C",10,"202407_SWH_WC_LysC_10cm",2024,7,24,NA,NA,52.91,4405.12863208725,NA,"7/30/2024 6:23:46 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"170","COMPASS: Synoptic","CB","SWH","WC","C",20,"202407_SWH_WC_LysC_20cm",2024,7,24,NA,NA,84.1,7001.91491133128,NA,"7/30/2024 6:50:09 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"171","COMPASS: Synoptic","CB","SWH","WC","C",45,"202407_SWH_WC_LysC_45cm",2024,7,24,NA,NA,93.05,7747.06519024228,NA,"7/30/2024 7:12:52 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"172","COMPASS: Synoptic","CB","GWI","WC","A",10,"202407_GWI_WC_LysA_10cm",2024,7,25,NA,NA,29.67,2470.23561735076,NA,"7/30/2024 11:00:18 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"173","COMPASS: Synoptic","CB","GWI","WC","B",10,"202407_GWI_WC_LysB_10cm",2024,7,25,NA,NA,40.1,3338.60627757889,NA,"7/30/2024 11:14:10 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"174","COMPASS: Synoptic","CB","GWI","WC","B",20,"202407_GWI_WC_LysB_20cm",2024,7,25,NA,NA,42.48,3536.75797185913,NA,"7/30/2024 11:29:39 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"175","COMPASS: Synoptic","CB","GWI","WC","C",10,"202407_GWI_WC_LysC_10cm",2024,7,25,NA,NA,40.27,3352.75997002747,NA,"7/30/2024 11:44:15 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"176","COMPASS: Synoptic","CB","GCW","SW","A",0,"202407_GCW_SW_A",2024,7,16,NA,NA,21.58,1796.68637082674,NA,"7/29/2024 6:23:49 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"177","COMPASS: Synoptic","CB","GCW","SW","B",0,"202407_GCW_SW_B",2024,7,16,NA,NA,21.22,1766.7138456415,NA,"7/29/2024 6:37:14 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"178","COMPASS: Synoptic","CB","GCW","SW","C",0,"202407_GCW_SW_C",2024,7,16,NA,NA,21.24,1768.37898592956,NA,"7/29/2024 6:50:35 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"179","COMPASS: Synoptic","CB","MSM","SW","A",0,"202407_MSM_SW_A",2024,7,18,NA,NA,19.17,1596.0369661144,NA,"7/29/2024 11:41:01 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"180","COMPASS: Synoptic","CB","MSM","SW","B",0,"202407_MSM_SW_B",2024,7,18,NA,NA,18.95,1577.72042294563,NA,"7/29/2024 11:54:14 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"181","COMPASS: Synoptic","CB","MSM","SW","C",0,"202407_MSM_SW_C",2024,7,18,NA,NA,19.04,1585.21355424194,NA,"7/30/2024 12:07:20 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"182","COMPASS: Synoptic","CB","SWH","SW","A",0,"202407_SWH_SW_A",2024,7,24,NA,NA,10.36,862.542669219882,NA,"7/30/2024 7:32:14 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"183","COMPASS: Synoptic","CB","SWH","SW","B",0,"202407_SWH_SW_B",2024,7,24,NA,NA,9.466,788.110898343185,NA,"7/30/2024 7:44:33 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"184","COMPASS: Synoptic","CB","SWH","SW","C",0,"202407_SWH_SW_C",2024,7,24,NA,NA,9.835,818.832736658063,NA,"7/30/2024 7:56:47 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"185","COMPASS: Synoptic","CB","GWI","SW","A",0,"202407_GWI_SW_A",2024,7,25,NA,NA,19.89,1655.98201648489,NA,"7/30/2024 11:57:33 AM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"186","COMPASS: Synoptic","CB","GWI","SW","B",0,"202407_GWI_SW_B",2024,7,25,NA,NA,19.35,1611.02322870702,NA,"7/30/2024 12:10:39 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"187","COMPASS: Synoptic","CB","GWI","SW","C",0,"202407_GWI_SW_C",2024,7,25,NA,NA,19.18,1596.86953625843,NA,"7/30/2024 12:23:54 PM","One sample was entered into the instrument incorrectly and that is
+    fixed in this code: 202407_SWH_UP_LysB_45cm is 202407_SWH_UP_LysC_45cm",NA
+"188","COMPASS: Synoptic","CB","SWH","UP","A",10,"202408_SWH_UP_LysA_10cm",2024,8,20,NA,NA,11.89,989.925901257181,NA,"9/4/2024 6:51:04 AM",NA,NA
+"189","COMPASS: Synoptic","CB","SWH","UP","A",20,"202408_SWH_UP_LysA_20cm",2024,8,20,NA,NA,18.2,1515.27766214304,NA,"9/4/2024 7:04:55 AM",NA,NA
+"190","COMPASS: Synoptic","CB","SWH","UP","A",45,"202408_SWH_UP_LysA_45cm",2024,8,20,NA,NA,38.19,3179.58538006827,NA,"9/4/2024 7:28:27 AM",NA,NA
+"191","COMPASS: Synoptic","CB","SWH","UP","B",20,"202408_SWH_UP_LysB_20cm",2024,8,20,NA,NA,24.15,2010.65689784364,NA,"9/4/2024 7:42:56 AM",NA,NA
+"192","COMPASS: Synoptic","CB","SWH","UP","C",20,"202408_SWH_UP_LysC_20cm",2024,8,20,NA,NA,30.75,2560.1531929065,NA,"9/4/2024 8:00:37 AM",NA,NA
+"193","COMPASS: Synoptic","CB","SWH","UP","C",45,"202408_SWH_UP_LysC_45cm",2024,8,20,NA,NA,36.22,3015.56906169345,NA,"9/4/2024 9:08:07 AM",NA,NA
+"194","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"202408_SWH_SWAMP_LysA_10cm",2024,8,20,NA,NA,22.2,1848.30571975689,NA,"9/4/2024 9:22:02 AM",NA,NA
+"195","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"202408_SWH_SWAMP_LysA_20cm",2024,8,20,NA,NA,26.53,2208.80859212389,NA,"9/4/2024 9:36:47 AM",NA,NA
+"196","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"202408_SWH_SWAMP_LysA_45cm",2024,8,20,NA,NA,20.49,1705.93622512697,NA,"9/4/2024 9:50:47 AM",NA,NA
+"197","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"202408_SWH_SWAMP_LysB_20cm",2024,8,20,NA,NA,34.09,2838.23162101407,NA,"9/4/2024 10:05:44 AM",NA,NA
+"198","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"202408_SWH_SWAMP_LysB_45cm",2024,8,20,NA,NA,28.61,2381.98318208309,NA,"9/4/2024 10:20:29 AM",NA,NA
+"199","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"202408_SWH_SWAMP_LysC_10cm",2024,8,20,NA,NA,8.348,695.029556240113,NA,"9/4/2024 10:33:12 AM",NA,NA
+"200","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"202408_SWH_SWAMP_LysC_20cm",2024,8,20,NA,NA,10.77,896.678045125302,NA,"9/4/2024 10:46:33 AM",NA,NA
+"201","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"202408_SWH_SWAMP_LysC_45cm",2024,8,20,NA,NA,15.91,1324.6190991591,NA,"9/4/2024 11:00:17 AM",NA,NA
+"202","COMPASS: Synoptic","CB","SWH","TR","A",10,"202408_SWH_TR_LysA_10cm",2024,8,21,NA,NA,30.36,2527.68295728915,NA,"9/4/2024 11:14:44 AM",NA,NA
+"203","COMPASS: Synoptic","CB","SWH","TR","A",20,"202408_SWH_TR_LysA_20cm",2024,8,21,NA,NA,40.34,3358.58796103572,NA,"9/4/2024 12:13:07 PM",NA,NA
+"204","COMPASS: Synoptic","CB","SWH","TR","A",45,"202408_SWH_TR_LysA_45cm",2024,8,21,NA,NA,53.11,4421.78003496795,NA,"9/4/2024 12:39:50 PM",NA,NA
+"205","COMPASS: Synoptic","CB","SWH","TR","B",10,"202408_SWH_TR_LysB_10cm",2024,8,21,NA,NA,20.02,1666.80542835734,NA,"9/4/2024 12:53:46 PM",NA,NA
+"206","COMPASS: Synoptic","CB","SWH","TR","B",20,"202408_SWH_TR_LysB_20cm",2024,8,21,NA,NA,48.08,4002.99725251852,NA,"9/4/2024 1:08:35 PM",NA,NA
+"207","COMPASS: Synoptic","CB","SWH","TR","B",45,"202408_SWH_TR_LysB_45cm",2024,8,21,NA,NA,53.76,4475.8970943302,NA,"9/4/2024 1:23:35 PM",NA,NA
+"208","COMPASS: Synoptic","CB","SWH","TR","C",10,"202408_SWH_TR_LysC_10cm",2024,8,21,NA,NA,46.47,3868.95345932895,NA,"9/4/2024 1:50:36 PM",NA,NA
+"209","COMPASS: Synoptic","CB","SWH","TR","C",20,"202408_SWH_TR_LysC_20cm",2024,8,21,NA,NA,44.31,3689.11830821747,NA,"9/4/2024 2:23:25 PM",NA,NA
+"210","COMPASS: Synoptic","CB","SWH","TR","C",45,"202408_SWH_TR_LysC_45cm",2024,8,21,NA,NA,54.27,4518.35817167596,NA,"9/4/2024 2:46:04 PM",NA,NA
+"211","COMPASS: Synoptic","CB","SWH","WC","B",10,"202408_SWH_WC_LysB_10cm",2024,8,21,NA,NA,48.8,4062.94230288902,NA,"9/4/2024 3:08:42 PM",NA,NA
+"212","COMPASS: Synoptic","CB","SWH","WC","C",10,"202408_SWH_WC_LysC_10cm",2024,8,21,NA,NA,40.75,3392.72333694114,NA,"9/4/2024 3:29:54 PM",NA,NA
+"213","COMPASS: Synoptic","CB","SWH","WC","C",20,"202408_SWH_WC_LysC_20cm",2024,8,21,NA,NA,59.68,4968.7786195987,NA,"9/4/2024 4:40:23 PM",NA,NA
+"214","COMPASS: Synoptic","CB","SWH","WC","C",45,"202408_SWH_WC_LysC_45cm",2024,8,21,NA,NA,89.65,7463.9913412705,NA,"9/4/2024 5:03:02 PM",NA,NA
+"215","COMPASS: Synoptic","CB","SWH","SW","A",0,"202408_SWH_SW_A",2024,8,21,NA,NA,10.79,898.343185413371,NA,"9/4/2024 5:21:45 PM",NA,NA
+"216","COMPASS: Synoptic","CB","SWH","SW","B",0,"202408_SWH_SW_B",2024,8,21,NA,NA,10.2,849.221546915328,NA,"9/4/2024 5:35:18 PM",NA,NA
+"217","COMPASS: Synoptic","CB","SWH","SW","C",0,"202408_SWH_SW_C",2024,8,21,NA,NA,10.09,840.063275330947,NA,"9/4/2024 5:48:48 PM",NA,NA
+"218","COMPASS: Synoptic","CB","SWH","UP","A",10,"202409_SWH_UP_LysA_10cm",2024,9,24,"14:39","EDT",7.115,592.373657480643,"","10/5/2024 7:48:47 AM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"219","COMPASS: Synoptic","CB","SWH","UP","A",20,"202409_SWH_UP_LysA_20cm",2024,9,24,"14:45","EDT",15.56,1295.47914411789,"","10/5/2024 8:02:31 AM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"220","COMPASS: Synoptic","CB","SWH","UP","A",45,"202409_SWH_UP_LysA_45cm",2024,9,24,"14:50","EDT",33.97,2828.24077928566,"","10/5/2024 8:20:34 AM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"221","COMPASS: Synoptic","CB","SWH","UP","B",20,"202409_SWH_UP_LysB_20cm",2024,9,24,"15:00","EDT",26.25,2185.49662809092,"","10/5/2024 8:34:49 AM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"222","COMPASS: Synoptic","CB","SWH","UP","C",10,"202409_SWH_UP_LysC_10cm",2024,9,24,"15:10","EDT",5.596,465.906252601782,"blank is ≥ 25% of sample value","10/5/2024 8:53:07 AM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"223","COMPASS: Synoptic","CB","SWH","UP","C",20,"202409_SWH_UP_LysC_20cm",2024,9,24,"15:15","EDT",28.12,2341.18724502539,"","10/5/2024 9:10:43 AM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"224","COMPASS: Synoptic","CB","SWH","UP","C",45,"202409_SWH_UP_LysC_45cm",2024,9,24,"15:29","EDT",27.59,2297.06102739156,"","10/5/2024 9:24:53 AM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"225","COMPASS: Synoptic","CB","GWI","UP","A",20,"202409_GWI_UP_LysA_20cm",2024,9,26,"12:50","EDT",17.37,1446.17434018816,"","10/5/2024 5:37:22 PM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"226","COMPASS: Synoptic","CB","GWI","UP","B",10,"202409_GWI_UP_LysB_10cm",2024,9,26,"13:00","EDT",9.99,831.7375738906,"","10/5/2024 5:50:40 PM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"227","COMPASS: Synoptic","CB","GWI","UP","B",20,"202409_GWI_UP_LysB_20cm",2024,9,26,"13:05","EDT",20.23,1684.28940138207,"","10/5/2024 6:04:41 PM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"228","COMPASS: Synoptic","CB","GWI","UP","B",45,"202409_GWI_UP_LysB_45cm",2024,9,26,"13:10","EDT",18.3,1523.60336358338,"","10/5/2024 6:18:35 PM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"229","COMPASS: Synoptic","CB","GWI","UP","C",20,"202409_GWI_UP_LysC_20cm",2024,9,26,"13:20","EDT",28.51,2373.65748064274,"","10/5/2024 6:36:21 PM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"230","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"202409_SWH_SWAMP_LysA_10cm",2024,9,24,"15:36","EDT",23.46,1953.20955790525,"","10/5/2024 9:38:48 AM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"231","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"202409_SWH_SWAMP_LysA_20cm",2024,9,24,"15:40","EDT",28.31,2357.00607776205,"","10/5/2024 9:53:12 AM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"232","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"202409_SWH_SWAMP_LysA_45cm",2024,9,24,"15:45","EDT",26.82,2232.95312630089,"","10/5/2024 10:07:23 AM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"233","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"202409_SWH_SWAMP_LysB_10cm",2024,9,24,"15:50","EDT",20.53,1709.26650570311,"","10/5/2024 11:01:54 AM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"234","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"202409_SWH_SWAMP_LysB_45cm",2024,9,24,"16:00","EDT",27.77,2312.04728998418,"","10/5/2024 11:16:15 AM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"235","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"202409_SWH_SWAMP_LysC_10cm",2024,9,24,"16:05","EDT",18.48,1538.58962617601,"","10/5/2024 11:30:01 AM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"236","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"202409_SWH_SWAMP_LysC_20cm",2024,9,24,"16:10","EDT",15.25,1269.66946965282,"","10/5/2024 11:43:42 AM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"237","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"202409_SWH_SWAMP_LysC_45cm",2024,9,24,"16:22","EDT",15.93,1326.28423944717,"","10/5/2024 11:57:22 AM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"238","COMPASS: Synoptic","CB","GCW","TR","A",20,"202409_GCW_TR_LysA_20cm",2024,9,11,"13:23","EDT",10.74,894.180334693198,"","10/4/2024 8:52:54 PM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.","started collection on 9-10-24, but only got SO4 so left to sit overnight and collected some on 9-11-24 to get more water "
+"239","COMPASS: Synoptic","CB","GCW","TR","A",45,"202409_GCW_TR_LysA_45cm",2024,9,11,"13:23","EDT",28.43,2366.99691949047,"","10/4/2024 9:07:20 PM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.","started collection on 9-10-24, but only got SO4 so left to sit overnight and collected some on 9-11-24 to get more water "
+"240","COMPASS: Synoptic","CB","GCW","TR","B",20,"202409_GCW_TR_LysB_20cm",2024,9,11,"13:29","EDT",12.93,1076.51319623678,"","10/4/2024 9:20:58 PM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.","started collection on 9-10-24, but only got SO4 so left to sit overnight and collected some on 9-11-24 to get more water "
+"241","COMPASS: Synoptic","CB","GCW","TR","B",10,"202409_GCW_TR_LysB_10cm",2024,9,11,"13:29","EDT",3.44,286.404129547914,"blank is ≥ 25% of sample value","10/4/2024 10:16:41 PM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.","started collection on 9-10-24, but only got SO4 so left to sit overnight and collected some on 9-11-24 to get more water "
+"242","COMPASS: Synoptic","CB","GCW","TR","C",20,"202409_GCW_TR_LysC_20cm",2024,9,11,"13:34","EDT",4.742,394.804762301224,"blank is ≥ 25% of sample value","10/4/2024 10:29:03 PM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.","started collection on 9-10-24, but only got SO4 so left to sit overnight and collected some on 9-11-24 to get more water "
+"243","COMPASS: Synoptic","CB","MSM","TR","A",10,"202409_MSM_TR_LysA_10cm",2024,9,12,"12:51","EDT",12.9,1074.01548580468,"","10/5/2024 3:32:21 AM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"244","COMPASS: Synoptic","CB","MSM","TR","A",20,"202409_MSM_TR_LysA_20cm",2024,9,12,"12:51","EDT",32.52,2707.51810840063,"","10/5/2024 3:50:29 AM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"245","COMPASS: Synoptic","CB","MSM","TR","B",10,"202409_MSM_TR_LysB_10cm",2024,9,12,"13:06","EDT",27.23,2267.08850220631,"","10/5/2024 4:04:35 AM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"246","COMPASS: Synoptic","CB","MSM","TR","B",20,"202409_MSM_TR_LysB_20cm",2024,9,12,"13:06","EDT",42,3496.79460494547,"","10/5/2024 4:19:42 AM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"247","COMPASS: Synoptic","CB","MSM","TR","C",20,"202409_MSM_TR_LysC_20cm",2024,9,12,"13:14","EDT",37.41,3114.64490883357,"","10/5/2024 4:34:21 AM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"248","COMPASS: Synoptic","CB","SWH","TR","A",10,"202409_SWH_TR_LysA_10cm",2024,9,25,"12:11","EDT",35.45,2951.46116060278,"","10/5/2024 12:11:53 PM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"249","COMPASS: Synoptic","CB","SWH","TR","A",20,"202409_SWH_TR_LysA_20cm",2024,9,25,"12:15","EDT",47.36,3943.05220214803,"","10/5/2024 12:27:09 PM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"250","COMPASS: Synoptic","CB","SWH","TR","A",45,"202409_SWH_TR_LysA_45cm",2024,9,25,"12:20","EDT",50.45,4200.31637665473,"","10/5/2024 12:42:43 PM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"251","COMPASS: Synoptic","CB","SWH","TR","B",10,"202409_SWH_TR_LysB_10cm",2024,9,25,"12:25","EDT",17.14,1427.02522687536,"","10/5/2024 12:56:24 PM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"252","COMPASS: Synoptic","CB","SWH","TR","B",20,"202409_SWH_TR_LysB_20cm",2024,9,25,"12:30","EDT",67.75,5640.66272583465,"","10/5/2024 1:22:24 PM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"253","COMPASS: Synoptic","CB","SWH","TR","B",45,"202409_SWH_TR_LysB_45cm",2024,9,25,"12:40","EDT",66.33,5522.43776538173,"","10/5/2024 1:49:20 PM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"254","COMPASS: Synoptic","CB","SWH","TR","C",10,"202409_SWH_TR_LysC_10cm",2024,9,25,"12:50","EDT",43.48,3620.01498626259,"","10/5/2024 2:55:35 PM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"255","COMPASS: Synoptic","CB","SWH","TR","C",20,"202409_SWH_TR_LysC_20cm",2024,9,25,"13:00","EDT",47.1,3921.40537840313,"","10/5/2024 3:10:35 PM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"256","COMPASS: Synoptic","CB","SWH","TR","C",45,"202409_SWH_TR_LysC_45cm",2024,9,25,"13:11","EDT",46.09,3837.31579385563,"","10/5/2024 3:30:24 PM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"257","COMPASS: Synoptic","CB","GWI","TR","A",10,"202409_GWI_TR_LysA_10cm",2024,9,26,"12:05","EDT",36.52,3040.54616601449,"","10/5/2024 6:50:43 PM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"258","COMPASS: Synoptic","CB","GWI","TR","B",10,"202409_GWI_TR_LysB_10cm",2024,9,26,"12:15","EDT",21.58,1796.68637082674,"","10/5/2024 7:18:35 PM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"259","COMPASS: Synoptic","CB","GWI","TR","C",10,"202409_GWI_TR_LysC_10cm",2024,9,26,"12:30","EDT",16.2,1348.76363333611,"","10/5/2024 7:32:14 PM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"260","COMPASS: Synoptic","CB","GWI","TR","C",20,"202409_GWI_TR_LysC_20cm",2024,9,26,"12:35","EDT",26.44,2201.31546082757,"","10/5/2024 7:49:50 PM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"261","COMPASS: Synoptic","CB","GCW","WC","A",10,"202409_GCW_WC_LysA_10cm",2024,9,10,"11:51","EDT",108.3,9016.7346598951,"","10/4/2024 10:45:46 PM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"262","COMPASS: Synoptic","CB","GCW","WC","A",20,"202409_GCW_WC_LysA_20cm",2024,9,10,"11:51","EDT",122.5,10198.9842644243,"","10/4/2024 11:08:27 PM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"263","COMPASS: Synoptic","CB","GCW","WC","A",45,"202409_GCW_WC_LysA_45cm",2024,9,10,"11:51","EDT",188.3,15677.2958121722,"","10/4/2024 11:26:27 PM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"264","COMPASS: Synoptic","CB","GCW","WC","B",10,"202409_GCW_WC_LysB_10cm",2024,9,10,"12:05","EDT",117.3,9766.04778952627,"","10/4/2024 11:49:15 PM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"265","COMPASS: Synoptic","CB","GCW","WC","B",20,"202409_GCW_WC_LysB_20cm",2024,9,10,"12:05","EDT",140.9,11730.913329448,"","10/5/2024 12:12:23 AM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"266","COMPASS: Synoptic","CB","GCW","WC","B",45,"202409_GCW_WC_LysB_45cm",2024,9,10,"12:05","EDT",174.3,14511.6976105237,"","10/5/2024 12:35:21 AM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"267","COMPASS: Synoptic","CB","GCW","WC","C",10,"202409_GCW_WC_LysC_10cm",2024,9,10,"12:17","EDT",68.31,5687.28665390059,"","10/5/2024 12:58:26 AM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"268","COMPASS: Synoptic","CB","GCW","WC","C",20,"202409_GCW_WC_LysC_20cm",2024,9,10,"12:17","EDT",79.12,6587.29497960203,"","10/5/2024 1:21:27 AM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"269","COMPASS: Synoptic","CB","GCW","WC","C",45,"202409_GCW_WC_LysC_45cm",2024,9,10,"12:17","EDT",126.6,10540.3380234785,"","10/5/2024 1:44:25 AM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"270","COMPASS: Synoptic","CB","MSM","WC","A",10,"202409_MSM_WC_LysA_10cm",2024,9,12,"11:41","EDT",72.47,6033.635833819,"","10/5/2024 4:55:49 AM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"271","COMPASS: Synoptic","CB","MSM","WC","A",20,"202409_MSM_WC_LysA_20cm",2024,9,12,"11:41","EDT",97.08,8082.59095828824,"","10/5/2024 5:19:04 AM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"272","COMPASS: Synoptic","CB","MSM","WC","B",10,"202409_MSM_WC_LysB_10cm",2024,9,12,"11:54","EDT",92,7659.64532511864,"","10/5/2024 5:46:46 AM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"273","COMPASS: Synoptic","CB","MSM","WC","B",20,"202409_MSM_WC_LysB_20cm",2024,9,12,"11:54","EDT",108.1,9000.0832570144,"","10/5/2024 6:09:54 AM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"274","COMPASS: Synoptic","CB","SWH","WC","C",45,"202409_SWH_WC_LysC_45cm",2024,9,25,"11:34","EDT",88,7326.61726750479,"","10/5/2024 3:53:24 PM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"275","COMPASS: Synoptic","CB","GWI","WC","A",10,"202409_GWI_WC_LysA_10cm",2024,9,26,"10:45","EDT",59.25,4932.97810340521,"","10/5/2024 8:15:04 PM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"276","COMPASS: Synoptic","CB","GWI","WC","B",10,"202409_GWI_WC_LysB_10cm",2024,9,26,"10:55","EDT",68.16,5674.79810174007,"","10/5/2024 8:38:16 PM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"277","COMPASS: Synoptic","CB","GWI","WC","B",20,"202409_GWI_WC_LysB_20cm",2024,9,26,"11:00","EDT",67.08,5584.88052618433,"","10/5/2024 9:01:16 PM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"278","COMPASS: Synoptic","CB","GCW","SW","A",0,"202409_GCW_SW_A",2024,9,10,"11:05","EDT",23.01,1915.7439014237,"","10/5/2024 2:03:38 AM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"279","COMPASS: Synoptic","CB","GCW","SW","B",0,"202409_GCW_SW_B",2024,9,10,"11:05","EDT",22.95,1910.74848055949,"","10/5/2024 2:17:52 AM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"280","COMPASS: Synoptic","CB","GCW","SW","C",0,"202409_GCW_SW_C",2024,9,10,"11:05","EDT",22.96,1911.58105070352,"","10/5/2024 2:31:57 AM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"281","COMPASS: Synoptic","CB","MSM","SW","A",0,"202409_MSM_SW_A",2024,9,12,"11:15","EDT",20.1,1673.46598950962,"","10/5/2024 6:29:03 AM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"282","COMPASS: Synoptic","CB","MSM","SW","B",0,"202409_MSM_SW_B",2024,9,12,"11:15","EDT",19.7,1640.16318374823,"","10/5/2024 6:42:54 AM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"283","COMPASS: Synoptic","CB","MSM","SW","C",0,"202409_MSM_SW_C",2024,9,12,"11:15","EDT",19.56,1628.50720173175,"","10/5/2024 6:56:51 AM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"284","COMPASS: Synoptic","CB","SWH","SW","A",0,"202409_SWH_SW_A",2024,9,25,"10:10","EDT",14.94,1243.85979518774,"","10/5/2024 4:12:00 PM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"285","COMPASS: Synoptic","CB","SWH","SW","B",0,"202409_SWH_SW_B",2024,9,25,"10:10","EDT",14.38,1197.23586712181,"","10/5/2024 4:25:33 PM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"286","COMPASS: Synoptic","CB","SWH","SW","C",0,"202409_SWH_SW_C",2024,9,25,"10:10","EDT",13.87,1154.77478977604,"","10/5/2024 4:39:01 PM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"287","COMPASS: Synoptic","CB","GWI","SW","A",0,"202409_GWI_SW_A",2024,9,26,"","EDT",19.44,1618.51636000333,"","10/5/2024 9:20:21 PM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"288","COMPASS: Synoptic","CB","GWI","SW","B",0,"202409_GWI_SW_B",2024,9,26,"","EDT",18.87,1571.05986179336,"","10/5/2024 9:34:20 PM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"289","COMPASS: Synoptic","CB","GWI","SW","C",0,"202409_GWI_SW_C",2024,9,26,"","EDT",18.74,1560.23644992091,"","10/5/2024 9:48:11 PM","There is one sample: 202409_GWI_TR_LysA_45cm that is not in the metadata and 
+    There were no other samples collected from that lysimeter, so it cannot be that sample. 
+    There are two other lysimeters that could have yielded this sample, but no way to tell so 
+    we will remove this sample from the analysis - this is done in this code.",""
+"290","COMPASS: Synoptic","CB","SWH","UP","A",10,"202410_SWH_UP_LysA_10cm",2024,10,22,"14:45","EDT",5.394,449.088335692282,NA,"10/25/2024 6:06:31 PM",NA,NA
+"291","COMPASS: Synoptic","CB","SWH","UP","A",20,"202410_SWH_UP_LysA_20cm",2024,10,22,"14:45","EDT",10.35,861.710099075847,NA,"10/25/2024 6:17:33 PM",NA,NA
+"292","COMPASS: Synoptic","CB","SWH","UP","A",45,"202410_SWH_UP_LysA_45cm",2024,10,22,"14:45","EDT",35.52,2957.28915161102,NA,"10/25/2024 6:29:38 PM",NA,NA
+"293","COMPASS: Synoptic","CB","SWH","UP","B",20,"202410_SWH_UP_LysB_20cm",2024,10,22,"14:55","EDT",27.38,2279.57705436683,NA,"10/25/2024 6:41:16 PM",NA,NA
+"294","COMPASS: Synoptic","CB","SWH","UP","C",20,"202410_SWH_UP_LysC_20cm",2024,10,22,"15:05","EDT",13.87,1154.77478977604,NA,"10/25/2024 6:52:25 PM",NA,NA
+"295","COMPASS: Synoptic","CB","SWH","UP","C",45,"202410_SWH_UP_LysC_45cm",2024,10,22,"15:05","EDT",49.95,4158.687869453,NA,"10/25/2024 7:05:08 PM",NA,NA
+"296","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"202410_SWH_SWAMP_LysA_10cm",2024,10,22,"14:08","EDT",24.04,2001.49862625926,NA,"10/25/2024 7:16:49 PM",NA,NA
+"297","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"202410_SWH_SWAMP_LysC_10cm",2024,10,22,"13:52","EDT",14.55,1211.38955957039,NA,"10/25/2024 7:28:04 PM",NA,NA
+"298","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"202410_SWH_SWAMP_LysC_20cm",2024,10,22,"13:52","EDT",23.85,1985.6797935226,NA,"10/25/2024 7:42:38 PM",NA,NA
+"299","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"202410_SWH_SWAMP_LysC_45cm",2024,10,22,"13:52","EDT",28.86,2402.79743568396,NA,"10/25/2024 7:56:56 PM",NA,NA
+"300","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"202410_SWH_SWAMP_LysA_20cm",2024,10,22,"14:08","EDT",29.13,2425.27682957289,NA,"10/25/2024 8:46:47 PM",NA,NA
+"301","COMPASS: Synoptic","CB","SWH","TR","A",10,"202410_SWH_TR_LysA_10cm",2024,10,22,"9:00","EDT",25.57,2128.88185829656,NA,"10/25/2024 8:58:50 PM",NA,NA
+"302","COMPASS: Synoptic","CB","SWH","TR","A",20,"202410_SWH_TR_LysA_20cm",2024,10,22,"9:00","EDT",44.72,3723.25368412289,NA,"10/25/2024 9:11:32 PM",NA,NA
+"303","COMPASS: Synoptic","CB","SWH","TR","A",45,"202410_SWH_TR_LysA_45cm",2024,10,22,"9:00","EDT",52.2,4346.01615186079,NA,"10/25/2024 9:24:21 PM",NA,NA
+"304","COMPASS: Synoptic","CB","SWH","TR","B",10,"202410_SWH_TR_LysB_10cm",2024,10,22,"9:10","EDT",15.68,1305.46998584631,NA,"10/25/2024 9:35:33 PM",NA,NA
+"305","COMPASS: Synoptic","CB","SWH","TR","B",20,"202410_SWH_TR_LysB_20cm",2024,10,22,"9:10","EDT",54.44,4532.51186412455,NA,"10/25/2024 9:48:18 PM",NA,NA
+"306","COMPASS: Synoptic","CB","SWH","TR","B",45,"202410_SWH_TR_LysB_45cm",2024,10,22,"9:10","EDT",63.58,5293.48097577221,NA,"10/25/2024 10:01:16 PM",NA,NA
+"307","COMPASS: Synoptic","CB","SWH","TR","C",10,"202410_SWH_TR_LysC_10cm",2024,10,22,"9:20","EDT",23.11,1924.06960286404,NA,"10/25/2024 10:12:51 PM",NA,NA
+"308","COMPASS: Synoptic","CB","SWH","TR","C",20,"202410_SWH_TR_LysC_20cm",2024,10,22,"9:20","EDT",38.59,3212.88818582966,NA,"10/25/2024 10:24:55 PM",NA,NA
+"309","COMPASS: Synoptic","CB","SWH","TR","C",45,"202410_SWH_TR_LysC_45cm",2024,10,22,"9:20","EDT",54.13,4506.70218965948,NA,"10/25/2024 10:37:13 PM",NA,NA
+"310","COMPASS: Synoptic","CB","SWH","WC","B",10,"202410_SWH_WC_LysB_10cm",2024,10,22,"10:30","EDT",46.89,3903.9214053784,NA,"10/25/2024 11:23:22 PM",NA,NA
+"311","COMPASS: Synoptic","CB","SWH","WC","C",45,"202410_SWH_WC_LysC_45cm",2024,10,22,"10:10","EDT",81.92,6820.41461993173,NA,"10/25/2024 11:36:18 PM",NA,NA
+"312","COMPASS: Synoptic","CB","SWH","WC","C",10,"202410_SWH_WC_LysC_10cm",2024,10,22,"10:10","EDT",45.42,3781.53359420531,NA,"10/25/2024 11:48:30 PM",NA,NA
+"313","COMPASS: Synoptic","CB","SWH","SW","A",0,"202410_SWH_SW_A",2024,10,22,"9:50","EDT",13.38,1113.97885271834,NA,"10/25/2024 11:59:42 PM",NA,NA
+"314","COMPASS: Synoptic","CB","SWH","SW","B",0,"202410_SWH_SW_B",2024,10,22,"9:50","EDT",13.11,1091.49945882941,NA,"10/26/2024 12:10:53 AM",NA,NA
+"315","COMPASS: Synoptic","CB","SWH","SW","C",0,"202410_SWH_SW_C",2024,10,22,"9:50","EDT",12.99,1081.50861710099,NA,"10/26/2024 12:22:06 AM",NA,NA
+"316","COMPASS: Synoptic","CB","SWH","UP","A",10,"202411_SWH_UP_LysA_10cm",2024,11,12,"14:50","EDT",3.132,260.760969111648,"IC dups out of range; blank is ≥ 25% of sample value","11/26/2024 12:18:08 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"317","COMPASS: Synoptic","CB","SWH","UP","A",20,"202411_SWH_UP_LysA_20cm",2024,11,12,"14:55","EDT",5.006,416.784614103738,"IC dups out of range; blank is ≥ 25% of sample value","11/26/2024 12:28:48 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"318","COMPASS: Synoptic","CB","SWH","UP","A",45,"202411_SWH_UP_LysA_45cm",2024,11,12,"15:00","EDT",15.5,1290.48372325368,"IC dups out of range","11/26/2024 12:44:57 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"319","COMPASS: Synoptic","CB","SWH","UP","B",10,"202411_SWH_UP_LysB_10cm",2024,11,12,"15:05","EDT",3.023,251.68595454167,"IC dups out of range; blank is ≥ 25% of sample value","11/26/2024 12:55:18 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"320","COMPASS: Synoptic","CB","SWH","UP","B",20,"202411_SWH_UP_LysB_20cm",2024,11,12,"15:10","EDT",11.62,967.446507368246,"IC dups out of range","11/26/2024 1:06:21 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"321","COMPASS: Synoptic","CB","SWH","UP","C",20,"202411_SWH_UP_LysC_20cm",2024,11,12,"15:25","EDT",5.291,440.512863208725,"IC dups out of range; blank is ≥ 25% of sample value","11/26/2024 1:17:01 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"322","COMPASS: Synoptic","CB","SWH","UP","C",45,"202411_SWH_UP_LysC_45cm",2024,11,12,"15:30","EDT",20.63,1717.59220714345,"IC dups out of range","11/26/2024 1:33:16 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"323","COMPASS: Synoptic","CB","GWI","UP","A",20,"202411_GWI_UP_LysA_20cm",2024,11,14,"12:35","EDT",15.58,1297.14428440596,"IC dups out of range","11/25/2024 7:19:34 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"324","COMPASS: Synoptic","CB","GWI","UP","A",45,"202411_GWI_UP_LysA_45cm",2024,11,14,"12:40","EDT",8.909,741.736741320456,"IC dups out of range","11/25/2024 7:30:35 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"325","COMPASS: Synoptic","CB","GWI","UP","B",10,"202411_GWI_UP_LysB_10cm",2024,11,14,"12:42","EDT",4.115,342.602614270252,"IC dups out of range; blank is ≥ 25% of sample value","11/25/2024 7:41:05 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"326","COMPASS: Synoptic","CB","GWI","UP","B",20,"202411_GWI_UP_LysB_20cm",2024,11,14,"12:45","EDT",11.58,964.116226792107,"IC dups out of range","11/25/2024 7:52:07 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"327","COMPASS: Synoptic","CB","GWI","UP","B",45,"202411_GWI_UP_LysB_45cm",2024,11,14,"12:50","EDT",25.72,2141.37041045708,"IC dups out of range","11/25/2024 8:06:23 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"328","COMPASS: Synoptic","CB","MSM","UP","B",10,"202411_MSM_UP_LysB_10cm",2024,11,21,"13:30","EST",5.382,448.08925151944,"IC dups out of range; blank is ≥ 25% of sample value","11/26/2024 5:29:35 AM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"329","COMPASS: Synoptic","CB","MSM","UP","C",10,"202411_MSM_UP_LysC_10cm",2024,11,21,"13:35","EST",7.977,664.141203896428,"IC dups out of range","11/26/2024 5:40:35 AM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"330","COMPASS: Synoptic","CB","MSM","UP","C",20,"202411_MSM_UP_LysC_20cm",2024,11,21,"13:35","EST",13.42,1117.30913329448,"IC dups out of range","11/26/2024 5:51:47 AM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"331","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"202411_SWH_SWAMP_LysA_10cm",2024,11,12,"14:20","EDT",11.39,948.297394055449,"IC dups out of range","11/26/2024 1:44:21 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"332","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"202411_SWH_SWAMP_LysA_20cm",2024,11,12,"14:22","EDT",13.22,1100.65773041379,"IC dups out of range","11/26/2024 1:55:35 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"333","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"202411_SWH_SWAMP_LysA_45cm",2024,11,12,"14:25","EDT",16.84,1402.04812255433,"IC dups out of range","11/26/2024 2:06:53 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"334","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"202411_SWH_SWAMP_LysB_10cm",2024,11,12,"14:30","EDT",5.504,458.246607276663,"IC dups out of range; blank is ≥ 25% of sample value","11/26/2024 2:51:15 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"335","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"202411_SWH_SWAMP_LysB_20cm",2024,11,12,"14:32","EDT",14.33,1193.07301640163,"IC dups out of range","11/26/2024 3:02:33 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"336","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"202411_SWH_SWAMP_LysB_45cm",2024,11,12,"14:35","EDT",19.45,1619.34893014737,"IC dups out of range","11/26/2024 3:14:35 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"337","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"202411_SWH_SWAMP_LysC_10cm",2024,11,12,"14:40","EDT",7.477,622.512696694697,"IC dups out of range","11/26/2024 3:25:36 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"338","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"202411_SWH_SWAMP_LysC_20cm",2024,11,12,"14:42","EDT",11.5,957.45566563983,"IC dups out of range","11/26/2024 3:36:49 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"339","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"202411_SWH_SWAMP_LysC_45cm",2024,11,12,"14:45","EDT",13.64,1135.62567646324,"IC dups out of range","11/26/2024 3:48:06 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"340","COMPASS: Synoptic","CB","SWH","TR","A",10,"202411_SWH_TR_LysA_10cm",2024,11,12,"12:30","EDT",13.94,1160.60278078428,"IC dups out of range","11/26/2024 3:59:25 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"341","COMPASS: Synoptic","CB","SWH","TR","A",20,"202411_SWH_TR_LysA_20cm",2024,11,12,"12:35","EDT",35.59,2963.11714261927,"IC dups out of range","11/26/2024 4:12:09 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"342","COMPASS: Synoptic","CB","SWH","TR","A",45,"202411_SWH_TR_LysA_45cm",2024,11,12,"12:40","EDT",38.08,3170.42710848389,"IC dups out of range","11/26/2024 4:24:57 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"343","COMPASS: Synoptic","CB","SWH","TR","B",10,"202411_SWH_TR_LysB_10cm",2024,11,12,"12:45","EDT",8.676,722.337856964449,"IC dups out of range","11/26/2024 4:36:01 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"344","COMPASS: Synoptic","CB","SWH","TR","B",20,"202411_SWH_TR_LysB_20cm",2024,11,12,"12:50","EDT",0,0,"IC dups out of range; blank is ≥ 25% of sample value",NA,"There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"345","COMPASS: Synoptic","CB","SWH","TR","B",45,"202411_SWH_TR_LysB_45cm",2024,11,12,"12:55","EDT",61.52,5121.97152610107,"IC dups out of range","11/25/2024 4:18:17 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"346","COMPASS: Synoptic","CB","SWH","TR","C",10,"202411_SWH_TR_LysC_10cm",2024,11,12,"13:00","EDT",18.25,1519.44051286321,"IC dups out of range","11/25/2024 4:29:39 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"347","COMPASS: Synoptic","CB","SWH","TR","C",20,"202411_SWH_TR_LysC_20cm",2024,11,12,"13:05","EDT",35.73,2974.77312463575,"IC dups out of range","11/25/2024 4:42:25 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"348","COMPASS: Synoptic","CB","SWH","TR","C",45,"202411_SWH_TR_LysC_45cm",2024,11,12,"13:10","EDT",53.28,4435.93372741654,"IC dups out of range","11/25/2024 4:55:24 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"349","COMPASS: Synoptic","CB","GWI","TR","A",10,"202411_GWI_TR_LysA_10cm",2024,11,14,"12:00","EDT",28.68,2387.81117309133,"IC dups out of range","11/25/2024 8:20:41 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"350","COMPASS: Synoptic","CB","GWI","TR","B",10,"202411_GWI_TR_LysB_10cm",2024,11,14,"12:10","EDT",9.632,801.93156273416,"IC dups out of range","11/25/2024 8:31:32 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"351","COMPASS: Synoptic","CB","GWI","TR","A",20,"202411_GWI_TR_LysA_20cm",2024,11,14,"12:05","EDT",49.42,4114.56165181917,"IC dups out of range","11/25/2024 9:19:53 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"352","COMPASS: Synoptic","CB","GWI","TR","C",10,"202411_GWI_TR_LysC_10cm",2024,11,14,"12:25","EDT",10.08,839.230705186912,"IC dups out of range","11/25/2024 9:30:54 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"353","COMPASS: Synoptic","CB","GWI","TR","C",20,"202411_GWI_TR_LysC_20cm",2024,11,14,"12:29","EDT",14.7,1223.87811173091,"IC dups out of range","11/25/2024 9:42:05 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"354","COMPASS: Synoptic","CB","GCW","TR","A",20,"202411_GCW_TR_LysA_20cm",2024,11,19,"11:58","EST",6.483,539.755224377654,"IC dups out of range","11/26/2024 12:34:51 AM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ","Collected on 11-19-2024, but then left overnight and collected some also on 11-20-2024"
+"355","COMPASS: Synoptic","CB","GCW","TR","B",10,"202411_GCW_TR_LysB_10cm",2024,11,19,"12:03","EST",2.683,223.378569644493,"IC dups out of range; blank is ≥ 25% of sample value","11/26/2024 12:45:28 AM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ","Collected on 11-19-2024, but then left overnight and collected some also on 11-20-2024"
+"356","COMPASS: Synoptic","CB","GCW","TR","B",20,"202411_GCW_TR_LysB_20cm",2024,11,19,"12:03","EST",8.445,703.105486637249,"IC dups out of range","11/26/2024 12:56:27 AM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ","Collected on 11-19-2024, but then left overnight and collected some also on 11-20-2024"
+"357","COMPASS: Synoptic","CB","GCW","TR","B",45,"202411_GCW_TR_LysB_45cm",2024,11,19,"12:03","EST",23.04,1918.2416118558,"IC dups out of range","11/26/2024 1:11:25 AM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ","Collected on 11-19-2024, but then left overnight and collected some also on 11-20-2024"
+"358","COMPASS: Synoptic","CB","GCW","TR","C",20,"202411_GCW_TR_LysC_20cm",2024,11,19,"12:09","EST",5.111,425.526600616102,"IC dups out of range; blank is ≥ 25% of sample value","11/26/2024 1:24:36 AM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ","Collected on 11-19-2024, but then left overnight and collected some also on 11-20-2024"
+"359","COMPASS: Synoptic","CB","MSM","TR","A",10,"202411_MSM_TR_LysA_10cm",2024,11,21,"12:24","EST",19.3,1606.86037798685,"IC dups out of range","11/26/2024 6:03:08 AM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"360","COMPASS: Synoptic","CB","MSM","TR","A",20,"202411_MSM_TR_LysA_20cm",2024,11,21,"12:24","EST",27.31,2273.74906335859,"IC dups out of range","11/26/2024 6:15:00 AM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"361","COMPASS: Synoptic","CB","MSM","TR","B",10,"202411_MSM_TR_LysB_10cm",2024,11,21,"12:32","EST",19.5,1623.51178086754,"IC dups out of range","11/26/2024 6:26:12 AM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"362","COMPASS: Synoptic","CB","MSM","TR","B",20,"202411_MSM_TR_LysB_20cm",2024,11,21,"12:32","EST",34.76,2894.01382066439,"IC dups out of range","11/26/2024 6:41:28 AM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"363","COMPASS: Synoptic","CB","MSM","TR","C",20,"202411_MSM_TR_LysC_20cm",2024,11,21,"12:43","EST",31.84,2650.90333860628,"IC dups out of range","11/26/2024 6:53:35 AM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"364","COMPASS: Synoptic","CB","SWH","WC","A",10,"202411_SWH_WC_LysA_10cm",2024,11,12,"13:30","EDT",33.79,2813.25451669303,"IC dups out of range","11/25/2024 5:07:42 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"365","COMPASS: Synoptic","CB","SWH","WC","B",10,"202411_SWH_WC_LysB_10cm",2024,11,12,"13:45","EDT",47.87,3985.5132794938,"IC dups out of range","11/25/2024 5:20:35 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"366","COMPASS: Synoptic","CB","SWH","WC","C",10,"202411_SWH_WC_LysC_10cm",2024,11,12,"14:00","EDT",41.64,3466.82207976022,"IC dups out of range","11/25/2024 5:33:24 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"367","COMPASS: Synoptic","CB","SWH","WC","C",20,"202411_SWH_WC_LysC_20cm",2024,11,12,"14:05","EDT",48.09,4003.82982266256,"IC dups out of range","11/25/2024 5:46:22 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"368","COMPASS: Synoptic","CB","SWH","WC","C",45,"202411_SWH_WC_LysC_45cm",2024,11,12,"14:10","EDT",72.07,6000.33302805761,"IC dups out of range","11/25/2024 5:59:41 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"369","COMPASS: Synoptic","CB","GWI","WC","A",10,"202411_GWI_WC_LysA_10cm",2024,11,14,"11:35","EDT",30,2497.71043210391,"IC dups out of range","11/25/2024 9:54:18 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"370","COMPASS: Synoptic","CB","GWI","WC","A",45,"202411_GWI_WC_LysA_45cm",2024,11,14,"11:40","EDT",43.54,3625.0104071268,"IC dups out of range","11/25/2024 10:09:51 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"371","COMPASS: Synoptic","CB","GWI","WC","B",10,"202411_GWI_WC_LysB_10cm",2024,11,14,"11:42","EDT",41.41,3447.67296644742,"IC dups out of range","11/25/2024 10:22:07 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"372","COMPASS: Synoptic","CB","GWI","WC","B",20,"202411_GWI_WC_LysB_20cm",2024,11,14,"11:45","EDT",60.59,5044.54250270585,"IC dups out of range","11/25/2024 10:35:06 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"373","COMPASS: Synoptic","CB","GWI","WC","B",45,"202411_GWI_WC_LysB_45cm",2024,11,14,"11:50","EDT",53.42,4447.58970943302,"IC dups out of range","11/25/2024 10:48:05 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"374","COMPASS: Synoptic","CB","GWI","WC","C",10,"202411_GWI_WC_LysC_10cm",2024,11,14,"11:52","EDT",42.66,3551.74423445175,"IC dups out of range","11/25/2024 11:00:25 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"375","COMPASS: Synoptic","CB","GCW","WC","A",10,"202411_GCW_WC_LysA_10cm",2024,11,19,"10:42","EST",107.6,8958.45474981267,"IC dups out of range","11/26/2024 1:38:34 AM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"376","COMPASS: Synoptic","CB","GCW","WC","A",20,"202411_GCW_WC_LysA_20cm",2024,11,19,"10:42","EST",135.6,11289.6511531096,"IC dups out of range","11/26/2024 1:53:06 AM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"377","COMPASS: Synoptic","CB","GCW","WC","A",45,"202411_GCW_WC_LysA_45cm",2024,11,19,"10:42","EST",181.3,15094.4967113479,"IC dups out of range","11/26/2024 2:45:47 AM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"378","COMPASS: Synoptic","CB","GCW","WC","B",10,"202411_GCW_WC_LysB_10cm",2024,11,19,"10:50","EST",112.3,9349.76271750895,"IC dups out of range","11/26/2024 2:59:53 AM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"379","COMPASS: Synoptic","CB","GCW","WC","B",20,"202411_GCW_WC_LysB_20cm",2024,11,19,"10:50","EST",148.5,12363.6666389143,"IC dups out of range","11/26/2024 3:14:37 AM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"380","COMPASS: Synoptic","CB","GCW","WC","B",45,"202411_GCW_WC_LysB_45cm",2024,11,19,"10:50","EST",176.2,14669.8859378903,"IC dups out of range","11/26/2024 3:29:52 AM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"381","COMPASS: Synoptic","CB","GCW","WC","C",10,"202411_GCW_WC_LysC_10cm",2024,11,19,"11:05","EST",46.39,3862.29289817667,"IC dups out of range","11/26/2024 3:42:44 AM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"382","COMPASS: Synoptic","CB","GCW","WC","C",20,"202411_GCW_WC_LysC_20cm",2024,11,19,"11:05","EST",47.85,3983.84813920573,"IC dups out of range","11/26/2024 3:55:15 AM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"383","COMPASS: Synoptic","CB","GCW","WC","C",45,"202411_GCW_WC_LysC_45cm",2024,11,19,"11:05","EST",113.2,9424.69403047207,"IC dups out of range","11/26/2024 4:09:30 AM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"384","COMPASS: Synoptic","CB","MSM","WC","A",20,"202411_MSM_WC_LysA_20cm",2024,11,21,"11:28","EST",65.25,5432.52018982599,"IC dups out of range","11/26/2024 7:06:43 AM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"385","COMPASS: Synoptic","CB","MSM","WC","B",10,"202411_MSM_WC_LysB_10cm",2024,11,21,"11:41","EST",69.02,5746.39913412705,"IC dups out of range","11/26/2024 7:19:55 AM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"386","COMPASS: Synoptic","CB","MSM","WC","B",20,"202411_MSM_WC_LysB_20cm",2024,11,21,"11:41","EST",84.65,7047.70626925319,"IC dups out of range","11/26/2024 8:06:55 AM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"387","COMPASS: Synoptic","CB","MSM","WC","C",20,"202411_MSM_WC_LysC_20cm",2024,11,21,"11:45","EST",103.2,8592.12388643743,"IC dups out of range","11/26/2024 8:21:04 AM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"388","COMPASS: Synoptic","CB","SWH","SW","A",0,"202411_SWH_SW_A",2024,11,12,"13:10","EDT",12.61,1049.87095162767,"IC dups out of range","11/25/2024 6:45:55 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"389","COMPASS: Synoptic","CB","SWH","SW","B",0,"202411_SWH_SW_B",2024,11,12,"13:10","EDT",12.64,1052.36866205978,"IC dups out of range","11/25/2024 6:57:07 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"390","COMPASS: Synoptic","CB","SWH","SW","C",0,"202411_SWH_SW_C",2024,11,12,"13:10","EDT",12.67,1054.86637249188,"IC dups out of range","11/25/2024 7:08:17 PM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"391","COMPASS: Synoptic","CB","GWI","SW","A",0,"202411_GWI_SW_A",2024,11,14,"10:00","EDT",19.25,1602.69752726667,"IC dups out of range","11/26/2024 12:01:24 AM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"392","COMPASS: Synoptic","CB","GWI","SW","B",0,"202411_GWI_SW_B",2024,11,14,"10:00","EDT",19.31,1607.69294813088,"IC dups out of range","11/26/2024 12:12:43 AM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"393","COMPASS: Synoptic","CB","GWI","SW","C",0,"202411_GWI_SW_C",2024,11,14,"10:00","EDT",19.33,1609.35808841895,"IC dups out of range","11/26/2024 12:24:03 AM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"394","COMPASS: Synoptic","CB","GCW","SW","A",0,"202411_GCW_SW_A",2024,11,19,"10:14","EST",19.44,1618.51636000333,"IC dups out of range","11/26/2024 4:20:47 AM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"395","COMPASS: Synoptic","CB","GCW","SW","B",0,"202411_GCW_SW_B",2024,11,19,"10:14","EST",19.1,1590.20897510615,"IC dups out of range","11/26/2024 4:32:07 AM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"396","COMPASS: Synoptic","CB","GCW","SW","C",0,"202411_GCW_SW_C",2024,11,19,"10:14","EST",18.92,1575.22271251353,"IC dups out of range","11/26/2024 4:43:24 AM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"397","COMPASS: Synoptic","CB","MSM","SW","A",0,"202411_MSM_SW_A",2024,11,21,"12:00","EST",18.5,1540.25476646407,"IC dups out of range","11/26/2024 8:32:18 AM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"398","COMPASS: Synoptic","CB","MSM","SW","B",0,"202411_MSM_SW_B",2024,11,21,"12:00","EST",18.14,1510.28224127883,"IC dups out of range","11/26/2024 8:43:35 AM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""
+"399","COMPASS: Synoptic","CB","MSM","SW","C",0,"202411_MSM_SW_C",2024,11,21,"12:00","EST",18.21,1516.11023228707,"IC dups out of range","11/26/2024 8:54:52 AM","There was only one duplicate included in this run and it is out of range, 
+    accepting the run. ",""

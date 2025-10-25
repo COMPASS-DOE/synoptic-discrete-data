@@ -196,9 +196,9 @@ dat_raw <- raw_file_name %>%
   map_df(read_data) %>%
   filter(str_detect(sample_name, samples_pattern))
 
-#dat_raw <- dat_raw %>%
- # mutate(sample_name = recode(sample_name,
- #                        "GWI_202305_UP_LysB_10cmm" = "GWI_202305_UP_LysB_10cm"))
+#Looks like one sample was run twice and we should remove it :
+dat_raw <- dat_raw %>%
+  filter(!(sample_name == "GWI_202307_WC_LysB_10cm" & ic_raw == 18.02)) 
 
 
 head(dat_raw)
@@ -238,62 +238,7 @@ cat("Expected  =", ic_crm, "\n\n")
 ```
  
 
-
-## Assess Check Standards 
-```{r Check Standards, echo=FALSE}
-
-cat("Assess the Check Standards")
-
-#Pull out check standards from raw file 
-chks_raw <- raw_file_name %>% 
-  map_df(read_data) %>% 
-  filter(grepl(chks_name, sample_name)) %>% # filter to TMP samples only
-  bind_rows() 
-
-#we don't always the same checks so we need to pull the concentration out of the name 
-chks_raw <- chks_raw %>%
-  mutate(chk_std_conc = str_extract(sample_name, "\\d+")) %>%  # extract the number
-  mutate(chk_std_conc = as.numeric(chk_std_conc))    # convert to numeric
-
-chks_raw <- chks_raw %>% 
-  mutate(rep = row_number())
-
-#no rsv calculated for DIC because they are all different concentrations
-
-#calculate percent difference between check standards & expected concentration 
-chks_raw$C_diff <- ((chks_raw$ic_raw - chks_raw$chk_std_conc)/((chks_raw$ic_raw + chks_raw$chk_std_conc)/2)) * 100
-chks_raw$C_diff_flag <-  ifelse(abs(chks_raw$C_diff) <= chk_conc_flag, 'YES', 'NO, rerun')
-
-#Plot the check standardsvs. the expected concentration 
-c_chks <-  ggplot(data = chks_raw, aes(x = rep, y = ic_raw, fill=C_diff_flag)) +
-       geom_bar(stat = 'identity') + 
-        scale_fill_manual(values = c("YES" = "darkgreen", "NO, rerun" = "darkgrey")) +
-        theme_classic() + labs(x= " ", y="IC (mg/L)", title="Check Stds: IC") + 
-        theme(legend.position="bottom")  + 
-              guides(fill=guide_legend(title="% Difference <10%"))
-
-c_chks
-
-#calculate the percent of check standards that are within the range based on the flag 
-c_chks_percent <- (sum(chks_raw$C_diff_flag == "YES")/nrow(chks_raw))*100
-
-#report out if flags indicate need for rerun
-ifelse(c_chks_percent >= chk_flag, ">60% of IC Check Standards are within range of expected concentration",
-       "<60% of IC Check Standards are within range of expected concentration - REASSESS")
-
-#write out a flag to the sample dataframe if less than 60% of the checks are within the expected CV
-dat_raw$ic_flag <- ""
-
-if (c_chks_percent <= chks_flag) {
-  dat_raw$ic_flag <- ifelse(
-    dat_raw$ic_flag != "",
-    paste0(dat_raw$ic_flag, "; IC checks out of range"),
-    "IC checks out of range"
-  )
-}
-
-
-```
+## Assess Check Standards - Check standards were not run - DIs instead  
 
 ## Assess Blanks 
 ```{r Check Blanks, echo=FALSE}
@@ -340,6 +285,8 @@ cat("carbon blanks:")
 print(blk_avg_c)
 
 #write out a flag to the sample dataframe if more than 60% of the blanks are above the lower 25% quantile of samples
+dat_raw$ic_flag <- ""
+
 if (c_blks_percent <= chks_flag) {
   dat_raw$ic_flag <- ifelse(
     dat_raw$ic_flag != "",
@@ -528,15 +475,15 @@ dat_flagged_id <- dat_flagged_id %>%
 ```
 
 
-## Check to see if samples run match metadata & merge info - 2023 data needs entered 
+## Check to see if samples run match metadata & merge info 
 ```{r, check sample ids with metadata, echo=FALSE}
 
 cat("Check Sample IDs with Metadata")
 
 #remove duplicates from the sample dataframe bc we are just taking the first dup run
 all_data_flagged <- dat_flagged_id %>%
-  filter(!str_detect(sample_name, "dup")) %>%
-  select(!Excess_Info)
+  filter(!str_detect(sample_name, "dup"))# %>%
+  #select(!Excess_Info)
 
 #check to see if all samples are present in the metadata 
 all_present <- all(all_data_flagged$sample_name %in% dic_metadata$DIC_ID)
