@@ -298,30 +298,50 @@ viz_dic_plot_depth
 ## Boxplot summary
 ```{r Overall Boxplot, echo = FALSE, fig.width=22, fig.height=10}
 
+all_dat_dates <- all_dat_dates %>% 
+    mutate(
+    Zone_1 = case_when(
+      Zone == "UP" ~ "Upland",
+      Zone == "SWAMP" ~ "Swamp",
+      Zone == "TR" ~ "Transition",
+      Zone == "WC" ~ "Wetland",
+      Zone == "SW" ~ "Surface Water",
+      TRUE ~ Zone  # keep everything else unchanged
+    )
+  ) %>%
+  mutate(Zone_1 = factor(Zone_1, levels = c("Upland", "Swamp", "Transition", "Wetland", "Surface Water")))
+
+
 ##Summarize SO4 and Cl by Date, Site, and Zone
-viz_dic_boxplot <- ggplot(all_dat_dates, aes(x = Zone, y = ic_mgL, fill = Zone, group = Zone)) +
+viz_dic_boxplot <- ggplot(all_dat_dates, aes(x = Zone_1, y = ic_mgL, fill = Zone_1, group = Zone_1)) +
   geom_boxplot() + 
-  facet_grid( ~ Site) +
+  facet_grid( ~ Site, scales = "free_x") +
+  scale_x_discrete(drop = TRUE) +
   scale_fill_manual(values = c(
-    "UP" = "#20063B",
-    "TR" = "#FFBC42",
-    "SWAMP" = "darkgrey",
-    "WC" = "#419973",
-    "SW" = "#25ABE6"
+    "Upland" = "#20063B",
+    "Transition" = "#FFBC42",
+    "Swamp" = "darkgrey",
+    "Wetland" = "#419973",
+    "Surface Water" = "#25ABE6"
   ), labels = c("Upland", "Swamp", "Transition", "Wetland", "Surface Water")) +
   theme_classic() +
-  labs(x = " ", y = "Chloride (mM)", title = "Samples: Chloride") +
+  labs(x = " ", y = "DIC (mg/L)", title = "Synoptic CB Porewater: DIC") +
   theme(
     panel.spacing = unit(0.5, "lines"), 
     panel.border = element_rect(color = "black", fill = NA, linewidth = 1)) +
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))+ 
-  theme(text = element_text(size = 25))+
+  theme(text = element_text(size = 12))+
   theme(axis.ticks.x = element_line(linewidth = 1))+
   theme(axis.ticks.length.x = unit(0.25, "cm"))+ 
-  scale_x_discrete(labels = c("Upland", "Swamp", "Transition", "Wetland", "Surface Water"))+ 
+  #scale_x_discrete(labels = c("Upland", "Swamp", "Transition", "Wetland", "Surface Water"))+ 
   theme(legend.position = "none")
 
 viz_dic_boxplot
 
+
+# Save as a PNG
+png("COMPASS_SynopticCB_DIC_alldata.png", width = 2000, height = 1200, res = 300) 
+print(viz_dic_boxplot)  # For ggplot objects, use print()
+dev.off() 
 
 ```
