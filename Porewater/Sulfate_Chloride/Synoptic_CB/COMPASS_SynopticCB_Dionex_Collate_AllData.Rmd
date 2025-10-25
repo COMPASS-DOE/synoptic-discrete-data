@@ -451,7 +451,7 @@ viz_so4_boxplot <- ggplot(all_dat_dates, aes(x = Zone_1, y = SO4_Conc_mM, fill =
     panel.spacing = unit(0.5, "lines"), 
     panel.border = element_rect(color = "black", fill = NA, linewidth = 1)) +
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))+ 
-  theme(text = element_text(size = 25))+
+  theme(text = element_text(size = 12))+
   theme(axis.ticks.x = element_line(linewidth = 1))+
   theme(axis.ticks.length.x = unit(0.25, "cm"))+ 
   #scale_x_discrete(labels = c("Upland", "Swamp", "Transition", "Wetland", "Surface Water"))+ 
