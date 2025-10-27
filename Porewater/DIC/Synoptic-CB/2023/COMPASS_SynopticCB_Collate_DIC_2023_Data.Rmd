@@ -38,12 +38,24 @@ all_data <- all_data[, -which(names(all_data) == "X")]
 ##Change SWH UPCON to Up and UP to SWAMP
 ```{r}
 
+#rename the zone identifiers because we had renamed them starting in 2024 
 all_data <- all_data %>%
   mutate(
     Zone = case_when(
       Site == "SWH" & Zone == "UP" ~ "SWAMP",
       Site == "SWH" & Zone == "UPCON" ~ "UP",
       TRUE ~ Zone  # keep everything else unchanged
+    )
+  )
+
+
+#also change these IDs in the sample IDs so that it is not confusing later 
+all_data <- all_data %>%
+  mutate(
+    Sample_ID = case_when(
+      Site == "SWH" & Zone == "SWAMP" ~ str_replace_all(Sample_ID, "_UP_", "_SWAMP_"),
+      Site == "SWH" & Zone == "UP" ~ str_replace_all(Sample_ID, "_UPCON_", "_UP_"),
+      TRUE ~ Sample_ID  # keep everything else unchanged
     )
   )
 

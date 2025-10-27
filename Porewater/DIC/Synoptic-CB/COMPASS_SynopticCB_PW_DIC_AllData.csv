@@ -207,8 +207,8 @@
 "152","COMPASS: Synoptic","CB","GWI","SW","A",0,"GWI_202211_SW_A",2022,11,17,NA,NA,21.22,1766.7138456415,"","12/2/2022 5:32:13 PM"," The standard curve for this run was checked manually on the instrument.",NA
 "153","COMPASS: Synoptic","CB","GWI","SW","B",0,"GWI_202211_SW_B",2022,11,17,NA,NA,20.76,1728.4156190159,"","12/2/2022 5:45:46 PM"," The standard curve for this run was checked manually on the instrument.",NA
 "154","COMPASS: Synoptic","CB","GWI","SW","C",0,"GWI_202211_SW_C",2022,11,17,NA,NA,20.69,1722.58762800766,"","12/2/2022 5:59:15 PM"," The standard curve for this run was checked manually on the instrument.",NA
-"155","COMPASS: Synoptic","CB","SWH","UP","A",20,"SWH_202305_UPCON_LysA_20cm",2023,5,24,NA,NA,21.86,1819.99833485971,"IC checks out of range; IC dups out of range","6/6/2023 3:26:15 PM"," The standard curve for this run was checked manually on the instrument. ",NA
-"156","COMPASS: Synoptic","CB","SWH","UP","A",45,"SWH_202305_UPCON_LysA_45cm",2023,5,24,NA,NA,35.4,2947.29830988261,"IC checks out of range; IC dups out of range","6/6/2023 3:50:07 PM"," The standard curve for this run was checked manually on the instrument. ",NA
+"155","COMPASS: Synoptic","CB","SWH","UP","A",20,"SWH_202305_UP_LysA_20cm",2023,5,24,NA,NA,21.86,1819.99833485971,"IC checks out of range; IC dups out of range","6/6/2023 3:26:15 PM"," The standard curve for this run was checked manually on the instrument. ",NA
+"156","COMPASS: Synoptic","CB","SWH","UP","A",45,"SWH_202305_UP_LysA_45cm",2023,5,24,NA,NA,35.4,2947.29830988261,"IC checks out of range; IC dups out of range","6/6/2023 3:50:07 PM"," The standard curve for this run was checked manually on the instrument. ",NA
 "157","COMPASS: Synoptic","CB","MSM","UP","B",10,"MSM_202305_UP_LysB_10cm",2023,5,19,NA,NA,17.4,1448.67205062026,"IC checks out of range; IC dups out of range","6/5/2023 10:23:28 PM"," The standard curve for this run was checked manually on the instrument. ",NA
 "158","COMPASS: Synoptic","CB","MSM","UP","C",10,"MSM_202305_UP_LysC_10cm",2023,5,19,NA,NA,28.92,2407.79285654816,"IC checks out of range; IC dups out of range","6/5/2023 10:50:01 PM"," The standard curve for this run was checked manually on the instrument. ",NA
 "159","COMPASS: Synoptic","CB","MSM","UP","C",20,"MSM_202305_UP_LysC_20cm",2023,5,19,NA,NA,35.96,2993.92223794855,"IC checks out of range; IC dups out of range","6/5/2023 11:13:32 PM"," The standard curve for this run was checked manually on the instrument. ",NA
@@ -218,14 +218,14 @@
 "163","COMPASS: Synoptic","CB","GWI","UP","B",45,"GWI_202305_UP_LysB_45cm",2023,5,23,NA,NA,28.77,2395.30430438765,"IC checks out of range; IC dups out of range","6/6/2023 7:03:29 AM"," The standard curve for this run was checked manually on the instrument. ",NA
 "164","COMPASS: Synoptic","CB","GWI","UP","C",10,"GWI_202305_UP_LysC_10cm",2023,5,23,NA,NA,14.25,1186.41245524935,"IC checks out of range; IC dups out of range","6/6/2023 7:24:18 AM"," The standard curve for this run was checked manually on the instrument. ",NA
 "165","COMPASS: Synoptic","CB","GWI","UP","C",20,"GWI_202305_UP_LysC_20cm",2023,5,23,NA,NA,23.65,1969.02839064191,"IC checks out of range; IC dups out of range","6/6/2023 7:50:49 AM"," The standard curve for this run was checked manually on the instrument. ",NA
-"166","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202305_UP_LysA_10cm",2023,5,24,NA,NA,43.1,3588.37732078928,"IC checks out of range; IC dups out of range","6/6/2023 4:13:53 PM"," The standard curve for this run was checked manually on the instrument. ",NA
-"167","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202305_UP_LysA_20cm",2023,5,24,NA,NA,29.9,2489.38473066356,"IC checks out of range; IC dups out of range","6/6/2023 4:37:50 PM"," The standard curve for this run was checked manually on the instrument. ",NA
-"168","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202305_UP_LysA_45cm",2023,5,24,NA,NA,32.17,2678.37815335942,"IC checks out of range; IC dups out of range","6/6/2023 5:01:42 PM"," The standard curve for this run was checked manually on the instrument. ",NA
-"169","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202305_UP_LysB_20cm",2023,5,24,NA,NA,36.77,3061.36041961535,"IC checks out of range; IC dups out of range","6/6/2023 5:25:34 PM"," The standard curve for this run was checked manually on the instrument. ",NA
-"170","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202305_UP_LysB_45cm",2023,5,24,NA,NA,31.67,2636.74964615769,"IC checks out of range; IC dups out of range","6/6/2023 5:49:29 PM"," The standard curve for this run was checked manually on the instrument. ",NA
-"171","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202305_UP_LysC_10cm",2023,5,24,NA,NA,12.9,1074.01548580468,"IC checks out of range; IC dups out of range","6/6/2023 6:10:17 PM"," The standard curve for this run was checked manually on the instrument. ",NA
-"172","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202305_UP_LysC_20cm",2023,5,24,NA,NA,21.48,1788.3606693864,"IC checks out of range; IC dups out of range","6/6/2023 6:32:17 PM"," The standard curve for this run was checked manually on the instrument. ",NA
-"173","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202305_UP_LysC_45cm",2023,5,24,NA,NA,24.69,2055.61568562151,"IC checks out of range; IC dups out of range","6/6/2023 8:20:45 PM"," The standard curve for this run was checked manually on the instrument. ",NA
+"166","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202305_SWAMP_LysA_10cm",2023,5,24,NA,NA,43.1,3588.37732078928,"IC checks out of range; IC dups out of range","6/6/2023 4:13:53 PM"," The standard curve for this run was checked manually on the instrument. ",NA
+"167","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202305_SWAMP_LysA_20cm",2023,5,24,NA,NA,29.9,2489.38473066356,"IC checks out of range; IC dups out of range","6/6/2023 4:37:50 PM"," The standard curve for this run was checked manually on the instrument. ",NA
+"168","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202305_SWAMP_LysA_45cm",2023,5,24,NA,NA,32.17,2678.37815335942,"IC checks out of range; IC dups out of range","6/6/2023 5:01:42 PM"," The standard curve for this run was checked manually on the instrument. ",NA
+"169","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202305_SWAMP_LysB_20cm",2023,5,24,NA,NA,36.77,3061.36041961535,"IC checks out of range; IC dups out of range","6/6/2023 5:25:34 PM"," The standard curve for this run was checked manually on the instrument. ",NA
+"170","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202305_SWAMP_LysB_45cm",2023,5,24,NA,NA,31.67,2636.74964615769,"IC checks out of range; IC dups out of range","6/6/2023 5:49:29 PM"," The standard curve for this run was checked manually on the instrument. ",NA
+"171","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202305_SWAMP_LysC_10cm",2023,5,24,NA,NA,12.9,1074.01548580468,"IC checks out of range; IC dups out of range","6/6/2023 6:10:17 PM"," The standard curve for this run was checked manually on the instrument. ",NA
+"172","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202305_SWAMP_LysC_20cm",2023,5,24,NA,NA,21.48,1788.3606693864,"IC checks out of range; IC dups out of range","6/6/2023 6:32:17 PM"," The standard curve for this run was checked manually on the instrument. ",NA
+"173","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202305_SWAMP_LysC_45cm",2023,5,24,NA,NA,24.69,2055.61568562151,"IC checks out of range; IC dups out of range","6/6/2023 8:20:45 PM"," The standard curve for this run was checked manually on the instrument. ",NA
 "174","COMPASS: Synoptic","CB","GCW","TR","B",10,"GCW_202305_TR_LysB_10cm",2023,5,18,NA,NA,39.49,3287.81949879277,"IC checks out of range; IC dups out of range","6/5/2023 3:54:24 PM"," The standard curve for this run was checked manually on the instrument. ",NA
 "175","COMPASS: Synoptic","CB","GCW","TR","B",20,"GCW_202305_TR_LysB_20cm",2023,5,18,NA,NA,35.49,2954.79144117892,"IC checks out of range; IC dups out of range","6/5/2023 4:18:07 PM"," The standard curve for this run was checked manually on the instrument. ",NA
 "176","COMPASS: Synoptic","CB","MSM","TR","A",10,"MSM_202305_TR_LysA_10cm",2023,5,19,NA,NA,19.59,1631.00491216385,"IC checks out of range; IC dups out of range","6/5/2023 11:34:35 PM"," The standard curve for this run was checked manually on the instrument. ",NA
@@ -283,15 +283,15 @@
 "228","COMPASS: Synoptic","CB","SWH","SW","A",0,"SWH_202305_SW_A",2023,5,24,NA,NA,8.682,722.83739905087,"IC checks out of range; IC dups out of range","6/7/2023 1:01:24 AM"," The standard curve for this run was checked manually on the instrument. ",NA
 "229","COMPASS: Synoptic","CB","SWH","SW","B",0,"SWH_202305_SW_B",2023,5,24,NA,NA,8.407,699.941720089918,"IC checks out of range; IC dups out of range","6/7/2023 1:16:46 AM"," The standard curve for this run was checked manually on the instrument. ",NA
 "230","COMPASS: Synoptic","CB","SWH","SW","C",0,"SWH_202305_SW_C",2023,5,24,NA,NA,8.375,697.277495629007,"IC checks out of range; IC dups out of range","6/7/2023 1:32:18 AM"," The standard curve for this run was checked manually on the instrument. ",NA
-"231","COMPASS: Synoptic","CB","SWH","UP","A",10,"SWH_202306_UPCON_LysA_10cm",2023,6,21,NA,NA,11.27,938.306552327034,"","7/27/2023 6:33:18 PM"," The standard curve was checked manually on the instrument for this run. ",NA
-"232","COMPASS: Synoptic","CB","SWH","UP","A",20,"SWH_202306_UPCON_LysA_20cm",2023,6,21,NA,NA,9.144,761.30213970527,"","7/27/2023 6:45:18 PM"," The standard curve was checked manually on the instrument for this run. ",NA
-"233","COMPASS: Synoptic","CB","SWH","UP","A",45,"SWH_202306_UPCON_LysA_45cm",2023,6,21,NA,NA,37.97,3161.26883689951,"","7/27/2023 7:02:16 PM"," The standard curve was checked manually on the instrument for this run. ",NA
-"234","COMPASS: Synoptic","CB","SWH","UP","B",10,"SWH_202306_UPCON_LysB_10cm",2023,6,21,NA,NA,8.897,740.737657147615,"","7/27/2023 7:16:35 PM"," The standard curve was checked manually on the instrument for this run. ",NA
-"235","COMPASS: Synoptic","CB","SWH","UP","B",20,"SWH_202306_UPCON_LysB_20cm",2023,6,21,NA,NA,31.48,2620.93081342103,"","7/27/2023 7:30:15 PM"," The standard curve was checked manually on the instrument for this run. ",NA
-"236","COMPASS: Synoptic","CB","SWH","UP","B",45,"SWH_202306_UPCON_LysB_45cm",2023,6,21,NA,NA,19.75,1644.3260344684,"","7/27/2023 7:42:50 PM"," The standard curve was checked manually on the instrument for this run. ",NA
-"237","COMPASS: Synoptic","CB","SWH","UP","C",10,"SWH_202306_UPCON_LysC_10cm",2023,6,21,NA,NA,4.113,342.436100241445,"blank is ≥ 25% of sample value","7/27/2023 7:53:49 PM"," The standard curve was checked manually on the instrument for this run. ",NA
-"238","COMPASS: Synoptic","CB","SWH","UP","C",20,"SWH_202306_UPCON_LysC_20cm",2023,6,21,NA,NA,6.853,570.560319706935,"","7/27/2023 8:05:27 PM"," The standard curve was checked manually on the instrument for this run. ",NA
-"239","COMPASS: Synoptic","CB","SWH","UP","C",45,"SWH_202306_UPCON_LysC_45cm",2023,6,21,NA,NA,44.91,3739.07251685955,"","7/27/2023 8:19:41 PM"," The standard curve was checked manually on the instrument for this run. ",NA
+"231","COMPASS: Synoptic","CB","SWH","UP","A",10,"SWH_202306_UP_LysA_10cm",2023,6,21,NA,NA,11.27,938.306552327034,"","7/27/2023 6:33:18 PM"," The standard curve was checked manually on the instrument for this run. ",NA
+"232","COMPASS: Synoptic","CB","SWH","UP","A",20,"SWH_202306_UP_LysA_20cm",2023,6,21,NA,NA,9.144,761.30213970527,"","7/27/2023 6:45:18 PM"," The standard curve was checked manually on the instrument for this run. ",NA
+"233","COMPASS: Synoptic","CB","SWH","UP","A",45,"SWH_202306_UP_LysA_45cm",2023,6,21,NA,NA,37.97,3161.26883689951,"","7/27/2023 7:02:16 PM"," The standard curve was checked manually on the instrument for this run. ",NA
+"234","COMPASS: Synoptic","CB","SWH","UP","B",10,"SWH_202306_UP_LysB_10cm",2023,6,21,NA,NA,8.897,740.737657147615,"","7/27/2023 7:16:35 PM"," The standard curve was checked manually on the instrument for this run. ",NA
+"235","COMPASS: Synoptic","CB","SWH","UP","B",20,"SWH_202306_UP_LysB_20cm",2023,6,21,NA,NA,31.48,2620.93081342103,"","7/27/2023 7:30:15 PM"," The standard curve was checked manually on the instrument for this run. ",NA
+"236","COMPASS: Synoptic","CB","SWH","UP","B",45,"SWH_202306_UP_LysB_45cm",2023,6,21,NA,NA,19.75,1644.3260344684,"","7/27/2023 7:42:50 PM"," The standard curve was checked manually on the instrument for this run. ",NA
+"237","COMPASS: Synoptic","CB","SWH","UP","C",10,"SWH_202306_UP_LysC_10cm",2023,6,21,NA,NA,4.113,342.436100241445,"blank is ≥ 25% of sample value","7/27/2023 7:53:49 PM"," The standard curve was checked manually on the instrument for this run. ",NA
+"238","COMPASS: Synoptic","CB","SWH","UP","C",20,"SWH_202306_UP_LysC_20cm",2023,6,21,NA,NA,6.853,570.560319706935,"","7/27/2023 8:05:27 PM"," The standard curve was checked manually on the instrument for this run. ",NA
+"239","COMPASS: Synoptic","CB","SWH","UP","C",45,"SWH_202306_UP_LysC_45cm",2023,6,21,NA,NA,44.91,3739.07251685955,"","7/27/2023 8:19:41 PM"," The standard curve was checked manually on the instrument for this run. ",NA
 "240","COMPASS: Synoptic","CB","MSM","UP","B",10,"MSM_202306_UP_LysB_10cm",2023,6,29,NA,NA,6.477,539.255682291233,"","7/27/2023 7:01:22 AM"," The standard curve was checked manually on the instrument for this run. ",NA
 "241","COMPASS: Synoptic","CB","MSM","UP","C",10,"MSM_202306_UP_LysC_10cm",2023,6,29,NA,NA,3.397,282.824077928565,"blank is ≥ 25% of sample value","7/27/2023 7:12:24 AM"," The standard curve was checked manually on the instrument for this run. ",NA
 "242","COMPASS: Synoptic","CB","MSM","UP","C",20,"MSM_202306_UP_LysC_20cm",2023,6,29,NA,NA,5.363,446.507368245775,"","7/27/2023 7:26:09 AM"," The standard curve was checked manually on the instrument for this run. ",NA
@@ -303,15 +303,15 @@
 "248","COMPASS: Synoptic","CB","GWI","UP","C",10,"GWI_202306_UP_LysC_10cm",2023,6,22,NA,NA,13.42,1117.30913329448,"","7/27/2023 2:02:42 PM"," The standard curve was checked manually on the instrument for this run. ",NA
 "249","COMPASS: Synoptic","CB","GWI","UP","C",20,"GWI_202306_UP_LysC_20cm",2023,6,22,NA,NA,16.58,1380.40129880942,"","7/27/2023 2:17:34 PM"," The standard curve was checked manually on the instrument for this run. ",NA
 "250","COMPASS: Synoptic","CB","GWI","UP","C",45,"GWI_202306_UP_LysC_45cm",2023,6,22,NA,NA,17.27,1437.84863874781,"","7/27/2023 2:36:01 PM"," The standard curve was checked manually on the instrument for this run. ",NA
-"251","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202306_UP_LysA_10cm",2023,6,21,NA,NA,21.41,1782.53267837815,"","7/27/2023 8:38:54 PM"," The standard curve was checked manually on the instrument for this run. ",NA
-"252","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202306_UP_LysA_20cm",2023,6,21,NA,NA,33.72,2807.42652568479,"","7/27/2023 8:52:35 PM"," The standard curve was checked manually on the instrument for this run. ",NA
-"253","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202306_UP_LysA_45cm",2023,6,21,NA,NA,28.78,2396.13687453168,"","7/27/2023 9:05:57 PM"," The standard curve was checked manually on the instrument for this run. ",NA
-"254","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202306_UP_LysB_10cm",2023,6,21,NA,NA,18.1,1506.95196070269,"","7/27/2023 9:18:19 PM"," The standard curve was checked manually on the instrument for this run. ",NA
-"255","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202306_UP_LysB_20cm",2023,6,21,NA,NA,26.69,2222.12971442844,"","7/27/2023 9:34:53 PM"," The standard curve was checked manually on the instrument for this run. ",NA
-"256","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202306_UP_LysB_45cm",2023,6,21,NA,NA,22.53,1875.78053451003,"","7/27/2023 9:48:02 PM"," The standard curve was checked manually on the instrument for this run. ",NA
-"257","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202306_UP_LysC_10cm",2023,6,21,NA,NA,2.677,222.879027558072,"blank is ≥ 25% of sample value","7/28/2023 7:51:17 AM"," The standard curve was checked manually on the instrument for this run. ",NA
-"258","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202306_UP_LysC_20cm",2023,6,21,NA,NA,6.003,499.791857463991,"","7/28/2023 8:05:56 AM"," The standard curve was checked manually on the instrument for this run. ",NA
-"259","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202306_UP_LysC_45cm",2023,6,21,NA,NA,16.75,1394.55499125801,"","7/28/2023 8:23:50 AM"," The standard curve was checked manually on the instrument for this run. ",NA
+"251","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202306_SWAMP_LysA_10cm",2023,6,21,NA,NA,21.41,1782.53267837815,"","7/27/2023 8:38:54 PM"," The standard curve was checked manually on the instrument for this run. ",NA
+"252","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202306_SWAMP_LysA_20cm",2023,6,21,NA,NA,33.72,2807.42652568479,"","7/27/2023 8:52:35 PM"," The standard curve was checked manually on the instrument for this run. ",NA
+"253","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202306_SWAMP_LysA_45cm",2023,6,21,NA,NA,28.78,2396.13687453168,"","7/27/2023 9:05:57 PM"," The standard curve was checked manually on the instrument for this run. ",NA
+"254","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202306_SWAMP_LysB_10cm",2023,6,21,NA,NA,18.1,1506.95196070269,"","7/27/2023 9:18:19 PM"," The standard curve was checked manually on the instrument for this run. ",NA
+"255","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202306_SWAMP_LysB_20cm",2023,6,21,NA,NA,26.69,2222.12971442844,"","7/27/2023 9:34:53 PM"," The standard curve was checked manually on the instrument for this run. ",NA
+"256","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202306_SWAMP_LysB_45cm",2023,6,21,NA,NA,22.53,1875.78053451003,"","7/27/2023 9:48:02 PM"," The standard curve was checked manually on the instrument for this run. ",NA
+"257","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202306_SWAMP_LysC_10cm",2023,6,21,NA,NA,2.677,222.879027558072,"blank is ≥ 25% of sample value","7/28/2023 7:51:17 AM"," The standard curve was checked manually on the instrument for this run. ",NA
+"258","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202306_SWAMP_LysC_20cm",2023,6,21,NA,NA,6.003,499.791857463991,"","7/28/2023 8:05:56 AM"," The standard curve was checked manually on the instrument for this run. ",NA
+"259","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202306_SWAMP_LysC_45cm",2023,6,21,NA,NA,16.75,1394.55499125801,"","7/28/2023 8:23:50 AM"," The standard curve was checked manually on the instrument for this run. ",NA
 "260","COMPASS: Synoptic","CB","GCW","TR","A",20,"GCW_202306_TR_LysA_20cm",2023,6,28,NA,NA,54.8,4562.4843893098,"","7/26/2023 9:29:24 PM"," The standard curve was checked manually on the instrument for this run. ",NA
 "261","COMPASS: Synoptic","CB","GCW","TR","A",45,"GCW_202306_TR_LysA_45cm",2023,6,28,NA,NA,13.74,1143.95137790359,"","7/26/2023 9:41:29 PM"," The standard curve was checked manually on the instrument for this run. ",NA
 "262","COMPASS: Synoptic","CB","GCW","TR","B",10,"GCW_202306_TR_LysB_10cm",2023,6,28,NA,NA,33.44,2784.11456165182,"","7/26/2023 10:01:20 PM"," The standard curve was checked manually on the instrument for this run. ",NA
@@ -372,24 +372,24 @@
 "317","COMPASS: Synoptic","CB","SWH","SW","A",0,"SWH_202306_SW_A",2023,6,21,NA,NA,9.295,773.873948880193,"","7/28/2023 11:03:10 AM"," The standard curve was checked manually on the instrument for this run. ",NA
 "318","COMPASS: Synoptic","CB","SWH","SW","B",0,"SWH_202306_SW_B",2023,6,21,NA,NA,9.185,764.715677295812,"","7/28/2023 11:15:10 AM"," The standard curve was checked manually on the instrument for this run. ",NA
 "319","COMPASS: Synoptic","CB","SWH","SW","C",0,"SWH_202306_SW_C",2023,6,21,NA,NA,9.106,758.138373157939,"","7/28/2023 11:27:10 AM"," The standard curve was checked manually on the instrument for this run. ",NA
-"320","COMPASS: Synoptic","CB","SWH","UP","A",10,"SWH_202307_UPCON_LysA_10cm",2023,7,19,NA,NA,9.017,750.72849887603,"","7/29/2023 8:33:27 PM"," The standard curve for this run was checked manually on the instrument. ",""
-"321","COMPASS: Synoptic","CB","SWH","UP","A",20,"SWH_202307_UPCON_LysA_20cm",2023,7,19,NA,NA,20.63,1717.59220714345,"","7/29/2023 8:58:57 PM"," The standard curve for this run was checked manually on the instrument. ",""
-"322","COMPASS: Synoptic","CB","SWH","UP","B",10,"SWH_202307_UPCON_LysB_10cm",2023,7,19,NA,NA,10.41,866.705519940055,"","7/29/2023 9:21:45 PM"," The standard curve for this run was checked manually on the instrument. ",""
-"323","COMPASS: Synoptic","CB","SWH","UP","B",45,"SWH_202307_UPCON_LysB_45cm",2023,7,19,NA,NA,57.48,4785.61318791108,"","7/29/2023 10:00:51 PM"," The standard curve for this run was checked manually on the instrument. ",""
-"324","COMPASS: Synoptic","CB","SWH","UP","C",10,"SWH_202307_UPCON_LysC_10cm",2023,7,19,NA,NA,5.619,467.821163933061,"blank is ≥ 25% of sample value","7/29/2023 10:16:46 PM"," The standard curve for this run was checked manually on the instrument. ",""
-"325","COMPASS: Synoptic","CB","SWH","UP","C",20,"SWH_202307_UPCON_LysC_20cm",2023,7,19,NA,NA,24.63,2050.62026475731,"","7/29/2023 10:32:05 PM"," The standard curve for this run was checked manually on the instrument. ",""
-"326","COMPASS: Synoptic","CB","SWH","UP","C",45,"SWH_202307_UPCON_LysC_45cm",2023,7,19,NA,NA,41.72,3473.4826409125,"","7/29/2023 10:45:12 PM"," The standard curve for this run was checked manually on the instrument. ",""
+"320","COMPASS: Synoptic","CB","SWH","UP","A",10,"SWH_202307_UP_LysA_10cm",2023,7,19,NA,NA,9.017,750.72849887603,"","7/29/2023 8:33:27 PM"," The standard curve for this run was checked manually on the instrument. ",""
+"321","COMPASS: Synoptic","CB","SWH","UP","A",20,"SWH_202307_UP_LysA_20cm",2023,7,19,NA,NA,20.63,1717.59220714345,"","7/29/2023 8:58:57 PM"," The standard curve for this run was checked manually on the instrument. ",""
+"322","COMPASS: Synoptic","CB","SWH","UP","B",10,"SWH_202307_UP_LysB_10cm",2023,7,19,NA,NA,10.41,866.705519940055,"","7/29/2023 9:21:45 PM"," The standard curve for this run was checked manually on the instrument. ",""
+"323","COMPASS: Synoptic","CB","SWH","UP","B",45,"SWH_202307_UP_LysB_45cm",2023,7,19,NA,NA,57.48,4785.61318791108,"","7/29/2023 10:00:51 PM"," The standard curve for this run was checked manually on the instrument. ",""
+"324","COMPASS: Synoptic","CB","SWH","UP","C",10,"SWH_202307_UP_LysC_10cm",2023,7,19,NA,NA,5.619,467.821163933061,"blank is ≥ 25% of sample value","7/29/2023 10:16:46 PM"," The standard curve for this run was checked manually on the instrument. ",""
+"325","COMPASS: Synoptic","CB","SWH","UP","C",20,"SWH_202307_UP_LysC_20cm",2023,7,19,NA,NA,24.63,2050.62026475731,"","7/29/2023 10:32:05 PM"," The standard curve for this run was checked manually on the instrument. ",""
+"326","COMPASS: Synoptic","CB","SWH","UP","C",45,"SWH_202307_UP_LysC_45cm",2023,7,19,NA,NA,41.72,3473.4826409125,"","7/29/2023 10:45:12 PM"," The standard curve for this run was checked manually on the instrument. ",""
 "327","COMPASS: Synoptic","CB","MSM","UP","B",10,"MSM_202307_UP_LysB_10cm",2023,7,13,NA,NA,3.18,264.757305803014,"blank is ≥ 25% of sample value","7/29/2023 1:43:58 PM"," The standard curve for this run was checked manually on the instrument. ",""
 "328","COMPASS: Synoptic","CB","MSM","UP","C",10,"MSM_202307_UP_LysC_10cm",2023,7,13,NA,NA,4.184,348.347348264091,"blank is ≥ 25% of sample value","7/29/2023 1:59:34 PM"," The standard curve for this run was checked manually on the instrument. ",""
-"329","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202307_UP_LysA_10cm",2023,7,19,NA,NA,32.81,2731.66264257764,"","7/29/2023 10:58:30 PM"," The standard curve for this run was checked manually on the instrument. ",""
-"330","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202307_UP_LysA_20cm",2023,7,19,NA,NA,35.34,2942.3028890184,"","7/29/2023 11:12:01 PM"," The standard curve for this run was checked manually on the instrument. ",""
-"331","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202307_UP_LysA_45cm",2023,7,19,NA,NA,29.79,2480.22645907918,"","7/29/2023 11:25:09 PM"," The standard curve for this run was checked manually on the instrument. ",""
-"332","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202307_UP_LysB_10cm",2023,7,19,NA,NA,23.6,1964.86553992174,"","7/29/2023 11:43:41 PM"," The standard curve for this run was checked manually on the instrument. ",""
-"333","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202307_UP_LysB_20cm",2023,7,19,NA,NA,32,2664.22446091083,"","7/29/2023 11:57:19 PM"," The standard curve for this run was checked manually on the instrument. ",""
-"334","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202307_UP_LysB_45cm",2023,7,19,NA,NA,23.29,1939.05586545666,"","7/30/2023 12:10:33 AM"," The standard curve for this run was checked manually on the instrument. ",""
-"335","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202307_UP_LysC_10cm",2023,7,19,NA,NA,17.35,1444.50919990009,"","7/30/2023 12:22:57 AM"," The standard curve for this run was checked manually on the instrument. ",""
-"336","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202307_UP_LysC_20cm",2023,7,19,NA,NA,18.75,1561.06902006494,"","7/30/2023 12:41:22 AM"," The standard curve for this run was checked manually on the instrument. ",""
-"337","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202307_UP_LysC_45cm",2023,7,19,NA,NA,19.26,1603.53009741071,"","7/30/2023 12:56:43 AM"," The standard curve for this run was checked manually on the instrument. ",""
+"329","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202307_SWAMP_LysA_10cm",2023,7,19,NA,NA,32.81,2731.66264257764,"","7/29/2023 10:58:30 PM"," The standard curve for this run was checked manually on the instrument. ",""
+"330","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202307_SWAMP_LysA_20cm",2023,7,19,NA,NA,35.34,2942.3028890184,"","7/29/2023 11:12:01 PM"," The standard curve for this run was checked manually on the instrument. ",""
+"331","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202307_SWAMP_LysA_45cm",2023,7,19,NA,NA,29.79,2480.22645907918,"","7/29/2023 11:25:09 PM"," The standard curve for this run was checked manually on the instrument. ",""
+"332","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202307_SWAMP_LysB_10cm",2023,7,19,NA,NA,23.6,1964.86553992174,"","7/29/2023 11:43:41 PM"," The standard curve for this run was checked manually on the instrument. ",""
+"333","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202307_SWAMP_LysB_20cm",2023,7,19,NA,NA,32,2664.22446091083,"","7/29/2023 11:57:19 PM"," The standard curve for this run was checked manually on the instrument. ",""
+"334","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202307_SWAMP_LysB_45cm",2023,7,19,NA,NA,23.29,1939.05586545666,"","7/30/2023 12:10:33 AM"," The standard curve for this run was checked manually on the instrument. ",""
+"335","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202307_SWAMP_LysC_10cm",2023,7,19,NA,NA,17.35,1444.50919990009,"","7/30/2023 12:22:57 AM"," The standard curve for this run was checked manually on the instrument. ",""
+"336","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202307_SWAMP_LysC_20cm",2023,7,19,NA,NA,18.75,1561.06902006494,"","7/30/2023 12:41:22 AM"," The standard curve for this run was checked manually on the instrument. ",""
+"337","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202307_SWAMP_LysC_45cm",2023,7,19,NA,NA,19.26,1603.53009741071,"","7/30/2023 12:56:43 AM"," The standard curve for this run was checked manually on the instrument. ",""
 "338","COMPASS: Synoptic","CB","GWI","UP","A",20,"GWI_202307_UP_LysA_20cm",2023,7,20,NA,NA,17.22,1433.68578802764,"","7/30/2023 5:28:50 AM"," The standard curve for this run was checked manually on the instrument. ","Chewed, but fixed"
 "339","COMPASS: Synoptic","CB","GWI","UP","A",45,"GWI_202307_UP_LysA_45cm",2023,7,20,NA,NA,16.83,1401.21555241029,"","7/30/2023 5:41:02 AM"," The standard curve for this run was checked manually on the instrument. ",""
 "340","COMPASS: Synoptic","CB","GWI","UP","B",10,"GWI_202307_UP_LysB_10cm",2023,7,20,NA,NA,7.445,619.848472233786,"","7/30/2023 5:52:29 AM"," The standard curve for this run was checked manually on the instrument. ",""
@@ -455,24 +455,24 @@
 "400","COMPASS: Synoptic","CB","GWI","SW","A",0,"GWI_202307_SW_A",2023,7,20,NA,NA,3.529,293.814003829823,"blank is ≥ 25% of sample value","7/30/2023 12:10:17 PM"," The standard curve for this run was checked manually on the instrument. ",""
 "401","COMPASS: Synoptic","CB","GWI","SW","B",0,"GWI_202307_SW_B",2023,7,20,NA,NA,3.232,269.086670551994,"blank is ≥ 25% of sample value","7/30/2023 12:29:36 PM"," The standard curve for this run was checked manually on the instrument. ",""
 "402","COMPASS: Synoptic","CB","GWI","SW","C",0,"GWI_202307_SW_C",2023,7,20,NA,NA,2.951,245.691449504621,"blank is ≥ 25% of sample value","7/30/2023 12:48:33 PM"," The standard curve for this run was checked manually on the instrument. ",""
-"403","COMPASS: Synoptic","CB","SWH","UP","A",10,"SWH_202308_UPCON_LysA_10cm",2023,8,23,NA,NA,4.966,413.4543335276,"IC dups out of range; blank is ≥ 25% of sample value","9/9/2023 6:14:33 PM",NA,NA
-"404","COMPASS: Synoptic","CB","SWH","UP","A",20,"SWH_202308_UPCON_LysA_20cm",2023,8,23,NA,NA,11.93,993.256181833319,"IC dups out of range; blank is ≥ 25% of sample value","9/9/2023 6:26:41 PM",NA,NA
-"405","COMPASS: Synoptic","CB","SWH","UP","A",45,"SWH_202308_UPCON_LysA_45cm",2023,8,23,NA,NA,42.99,3579.2190492049,"IC dups out of range","9/9/2023 6:40:27 PM",NA,NA
-"406","COMPASS: Synoptic","CB","SWH","UP","B",20,"SWH_202308_UPCON_LysB_20cm",2023,8,23,NA,NA,15.74,1310.46540671052,"IC dups out of range","9/9/2023 6:53:07 PM",NA,NA
-"407","COMPASS: Synoptic","CB","SWH","UP","B",45,"SWH_202308_UPCON_LysB_45cm",2023,8,23,NA,NA,51.41,4280.24311048206,"IC dups out of range","9/9/2023 7:07:09 PM",NA,NA
-"408","COMPASS: Synoptic","CB","SWH","UP","C",20,"SWH_202308_UPCON_LysC_20cm",2023,8,23,NA,NA,8.92,742.652568478894,"IC dups out of range; blank is ≥ 25% of sample value","9/9/2023 7:18:59 PM",NA,NA
-"409","COMPASS: Synoptic","CB","SWH","UP","C",45,"SWH_202308_UPCON_LysC_45cm",2023,8,23,NA,NA,50.05,4167.01357089335,"IC dups out of range","9/9/2023 7:36:14 PM",NA,NA
+"403","COMPASS: Synoptic","CB","SWH","UP","A",10,"SWH_202308_UP_LysA_10cm",2023,8,23,NA,NA,4.966,413.4543335276,"IC dups out of range; blank is ≥ 25% of sample value","9/9/2023 6:14:33 PM",NA,NA
+"404","COMPASS: Synoptic","CB","SWH","UP","A",20,"SWH_202308_UP_LysA_20cm",2023,8,23,NA,NA,11.93,993.256181833319,"IC dups out of range; blank is ≥ 25% of sample value","9/9/2023 6:26:41 PM",NA,NA
+"405","COMPASS: Synoptic","CB","SWH","UP","A",45,"SWH_202308_UP_LysA_45cm",2023,8,23,NA,NA,42.99,3579.2190492049,"IC dups out of range","9/9/2023 6:40:27 PM",NA,NA
+"406","COMPASS: Synoptic","CB","SWH","UP","B",20,"SWH_202308_UP_LysB_20cm",2023,8,23,NA,NA,15.74,1310.46540671052,"IC dups out of range","9/9/2023 6:53:07 PM",NA,NA
+"407","COMPASS: Synoptic","CB","SWH","UP","B",45,"SWH_202308_UP_LysB_45cm",2023,8,23,NA,NA,51.41,4280.24311048206,"IC dups out of range","9/9/2023 7:07:09 PM",NA,NA
+"408","COMPASS: Synoptic","CB","SWH","UP","C",20,"SWH_202308_UP_LysC_20cm",2023,8,23,NA,NA,8.92,742.652568478894,"IC dups out of range; blank is ≥ 25% of sample value","9/9/2023 7:18:59 PM",NA,NA
+"409","COMPASS: Synoptic","CB","SWH","UP","C",45,"SWH_202308_UP_LysC_45cm",2023,8,23,NA,NA,50.05,4167.01357089335,"IC dups out of range","9/9/2023 7:36:14 PM",NA,NA
 "410","COMPASS: Synoptic","CB","MSM","UP","B",10,"MSM_202308_UP_LysB_10cm",2023,8,17,NA,NA,8.313,692.115560735992,"IC dups out of range; blank is ≥ 25% of sample value","8/19/2023 2:22:32 PM",NA,NA
 "411","COMPASS: Synoptic","CB","MSM","UP","C",10,"MSM_202308_UP_LysC_10cm",2023,8,17,NA,NA,9.244,769.627841145617,"IC dups out of range; blank is ≥ 25% of sample value","8/19/2023 2:34:25 PM",NA,NA
 "412","COMPASS: Synoptic","CB","MSM","UP","C",20,"MSM_202308_UP_LysC_20cm",2023,8,17,NA,NA,15.03,1251.35292648406,"IC dups out of range","8/19/2023 2:49:26 PM",NA,NA
-"413","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202308_UP_LysA_10cm",2023,8,23,NA,NA,11.87,988.260760969112,"IC dups out of range; blank is ≥ 25% of sample value","9/9/2023 8:01:35 PM",NA,NA
-"414","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202308_UP_LysA_20cm",2023,8,23,NA,NA,26.96,2244.60910831738,"IC dups out of range","9/9/2023 8:15:01 PM",NA,NA
-"415","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202308_UP_LysA_45cm",2023,8,23,NA,NA,27.95,2327.0335525768,"IC dups out of range","9/9/2023 8:28:29 PM",NA,NA
-"416","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202308_UP_LysB_10cm",2023,8,23,NA,NA,15.36,1278.8277412372,"IC dups out of range","9/9/2023 8:40:52 PM",NA,NA
-"417","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202308_UP_LysB_20cm",2023,8,23,NA,NA,30.72,2557.6554824744,"IC dups out of range","9/9/2023 8:54:25 PM",NA,NA
-"418","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202308_UP_LysB_45cm",2023,8,23,NA,NA,29.63,2466.90533677462,"IC dups out of range","9/9/2023 9:07:55 PM",NA,NA
-"419","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202308_UP_LysC_20cm",2023,8,23,NA,NA,4.422,368.162517692116,"IC dups out of range; blank is ≥ 25% of sample value","9/9/2023 9:19:15 PM",NA,NA
-"420","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202308_UP_LysC_45cm",2023,8,23,NA,NA,13.29,1106.48572142203,"IC dups out of range; blank is ≥ 25% of sample value","9/9/2023 9:31:38 PM",NA,NA
+"413","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202308_SWAMP_LysA_10cm",2023,8,23,NA,NA,11.87,988.260760969112,"IC dups out of range; blank is ≥ 25% of sample value","9/9/2023 8:01:35 PM",NA,NA
+"414","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202308_SWAMP_LysA_20cm",2023,8,23,NA,NA,26.96,2244.60910831738,"IC dups out of range","9/9/2023 8:15:01 PM",NA,NA
+"415","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202308_SWAMP_LysA_45cm",2023,8,23,NA,NA,27.95,2327.0335525768,"IC dups out of range","9/9/2023 8:28:29 PM",NA,NA
+"416","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202308_SWAMP_LysB_10cm",2023,8,23,NA,NA,15.36,1278.8277412372,"IC dups out of range","9/9/2023 8:40:52 PM",NA,NA
+"417","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202308_SWAMP_LysB_20cm",2023,8,23,NA,NA,30.72,2557.6554824744,"IC dups out of range","9/9/2023 8:54:25 PM",NA,NA
+"418","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202308_SWAMP_LysB_45cm",2023,8,23,NA,NA,29.63,2466.90533677462,"IC dups out of range","9/9/2023 9:07:55 PM",NA,NA
+"419","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202308_SWAMP_LysC_20cm",2023,8,23,NA,NA,4.422,368.162517692116,"IC dups out of range; blank is ≥ 25% of sample value","9/9/2023 9:19:15 PM",NA,NA
+"420","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202308_SWAMP_LysC_45cm",2023,8,23,NA,NA,13.29,1106.48572142203,"IC dups out of range; blank is ≥ 25% of sample value","9/9/2023 9:31:38 PM",NA,NA
 "421","COMPASS: Synoptic","CB","GWI","UP","A",20,"GWI_202308_UP_LysA_20cm",2023,8,24,NA,NA,13.12,1092.33202897344,"IC dups out of range; blank is ≥ 25% of sample value","9/10/2023 1:29:15 AM",NA,NA
 "422","COMPASS: Synoptic","CB","GWI","UP","B",10,"GWI_202308_UP_LysB_10cm",2023,8,24,NA,NA,4.044,336.691366247606,"IC dups out of range; blank is ≥ 25% of sample value","9/10/2023 1:40:27 AM",NA,NA
 "423","COMPASS: Synoptic","CB","GWI","UP","B",20,"GWI_202308_UP_LysB_20cm",2023,8,24,NA,NA,14.01,1166.43077179252,"IC dups out of range","9/10/2023 1:52:35 AM",NA,NA
@@ -531,25 +531,25 @@
 "476","COMPASS: Synoptic","CB","GWI","SW","A",0,"GWI_202308_SW_A",2023,8,24,NA,NA,22,1831.6543168762,"IC dups out of range","9/10/2023 5:03:14 AM",NA,NA
 "477","COMPASS: Synoptic","CB","GWI","SW","B",0,"GWI_202308_SW_B",2023,8,24,NA,NA,21.62,1800.01665140288,"IC dups out of range","9/10/2023 5:16:07 AM",NA,NA
 "478","COMPASS: Synoptic","CB","GWI","SW","C",0,"GWI_202308_SW_C",2023,8,24,NA,NA,21.86,1819.99833485971,"IC dups out of range","9/10/2023 5:28:40 AM",NA,NA
-"479","COMPASS: Synoptic","CB","SWH","UP","A",10,"202309_SWH_UPCON_LysA_10cm",2023,9,20,NA,NA,5.271,438.847722920656,"blank is ≥ 25% of sample value","9/26/2023 2:43:10 PM",NA,NA
-"480","COMPASS: Synoptic","CB","SWH","UP","A",20,"202309_SWH_UPCON_LysA_20cm",2023,9,20,NA,NA,9.73,810.0907501457,"","9/26/2023 2:54:53 PM",NA,NA
-"481","COMPASS: Synoptic","CB","SWH","UP","A",45,"202309_SWH_UPCON_LysA_45cm",2023,9,20,NA,NA,43.2,3596.70302222962,"","9/26/2023 3:08:23 PM",NA,NA
-"482","COMPASS: Synoptic","CB","SWH","UP","B",10,"202309_SWH_UPCON_LysB_10cm",2023,9,20,NA,NA,4.825,401.715094496711,"blank is ≥ 25% of sample value","9/26/2023 3:24:17 PM",NA,NA
-"483","COMPASS: Synoptic","CB","SWH","UP","B",20,"202309_SWH_UPCON_LysB_20cm",2023,9,20,NA,NA,15.41,1282.99059195737,"","9/26/2023 3:36:12 PM",NA,NA
-"484","COMPASS: Synoptic","CB","SWH","UP","B",45,"202309_SWH_UPCON_LysB_45cm",2023,9,20,NA,NA,49.1,4087.91940721006,"","9/26/2023 3:52:54 PM",NA,NA
-"485","COMPASS: Synoptic","CB","SWH","UP","C",20,"202309_SWH_UPCON_LysC_20cm",2023,9,20,NA,NA,7.488,623.428523853135,"","9/26/2023 4:04:17 PM",NA,NA
-"486","COMPASS: Synoptic","CB","SWH","UP","C",45,"202309_SWH_UPCON_LysC_45cm",2023,9,20,NA,NA,47.76,3976.35500790942,"","9/26/2023 4:17:49 PM",NA,NA
+"479","COMPASS: Synoptic","CB","SWH","UP","A",10,"202309_SWH_UP_LysA_10cm",2023,9,20,NA,NA,5.271,438.847722920656,"blank is ≥ 25% of sample value","9/26/2023 2:43:10 PM",NA,NA
+"480","COMPASS: Synoptic","CB","SWH","UP","A",20,"202309_SWH_UP_LysA_20cm",2023,9,20,NA,NA,9.73,810.0907501457,"","9/26/2023 2:54:53 PM",NA,NA
+"481","COMPASS: Synoptic","CB","SWH","UP","A",45,"202309_SWH_UP_LysA_45cm",2023,9,20,NA,NA,43.2,3596.70302222962,"","9/26/2023 3:08:23 PM",NA,NA
+"482","COMPASS: Synoptic","CB","SWH","UP","B",10,"202309_SWH_UP_LysB_10cm",2023,9,20,NA,NA,4.825,401.715094496711,"blank is ≥ 25% of sample value","9/26/2023 3:24:17 PM",NA,NA
+"483","COMPASS: Synoptic","CB","SWH","UP","B",20,"202309_SWH_UP_LysB_20cm",2023,9,20,NA,NA,15.41,1282.99059195737,"","9/26/2023 3:36:12 PM",NA,NA
+"484","COMPASS: Synoptic","CB","SWH","UP","B",45,"202309_SWH_UP_LysB_45cm",2023,9,20,NA,NA,49.1,4087.91940721006,"","9/26/2023 3:52:54 PM",NA,NA
+"485","COMPASS: Synoptic","CB","SWH","UP","C",20,"202309_SWH_UP_LysC_20cm",2023,9,20,NA,NA,7.488,623.428523853135,"","9/26/2023 4:04:17 PM",NA,NA
+"486","COMPASS: Synoptic","CB","SWH","UP","C",45,"202309_SWH_UP_LysC_45cm",2023,9,20,NA,NA,47.76,3976.35500790942,"","9/26/2023 4:17:49 PM",NA,NA
 "487","COMPASS: Synoptic","CB","MSM","UP","C",10,"202309_MSM_UP_LysC_10cm",2023,9,14,NA,NA,6.426,535.009574556656,"blank is ≥ 25% of sample value","9/16/2023 1:39:28 AM",NA,NA
 "488","COMPASS: Synoptic","CB","MSM","UP","C",20,"202309_MSM_UP_LysC_20cm",2023,9,14,NA,NA,8.023,667.971026558988,"","9/16/2023 1:53:41 AM",NA,NA
-"489","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"202309_SWH_UP_LysA_10cm",2023,9,20,NA,NA,20.22,1683.45683123803,"","9/26/2023 4:43:48 PM",NA,NA
-"490","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"202309_SWH_UP_LysA_20cm",2023,9,20,NA,NA,24.08,2004.8289068354,"","9/26/2023 5:02:18 PM",NA,NA
-"491","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"202309_SWH_UP_LysA_45cm",2023,9,20,NA,NA,33.51,2789.94255266006,"","9/26/2023 5:15:41 PM",NA,NA
-"492","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"202309_SWH_UP_LysB_10cm",2023,9,20,NA,NA,16.61,1382.89900924153,"","9/26/2023 5:27:45 PM",NA,NA
-"493","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"202309_SWH_UP_LysB_20cm",2023,9,20,NA,NA,29.57,2461.90991591042,"","9/26/2023 5:46:38 PM",NA,NA
-"494","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"202309_SWH_UP_LysB_45cm",2023,9,20,NA,NA,29.69,2471.90075763883,"","9/26/2023 5:59:33 PM",NA,NA
-"495","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"202309_SWH_UP_LysC_10cm",2023,9,20,NA,NA,4.538,377.820331362917,"blank is ≥ 25% of sample value","9/26/2023 6:10:42 PM",NA,NA
-"496","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"202309_SWH_UP_LysC_20cm",2023,9,20,NA,NA,16.2,1348.76363333611,"","9/26/2023 6:22:43 PM",NA,NA
-"497","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"202309_SWH_UP_LysC_45cm",2023,9,20,NA,NA,22.16,1844.97543918075,"","9/26/2023 6:40:46 PM",NA,NA
+"489","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"202309_SWH_SWAMP_LysA_10cm",2023,9,20,NA,NA,20.22,1683.45683123803,"","9/26/2023 4:43:48 PM",NA,NA
+"490","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"202309_SWH_SWAMP_LysA_20cm",2023,9,20,NA,NA,24.08,2004.8289068354,"","9/26/2023 5:02:18 PM",NA,NA
+"491","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"202309_SWH_SWAMP_LysA_45cm",2023,9,20,NA,NA,33.51,2789.94255266006,"","9/26/2023 5:15:41 PM",NA,NA
+"492","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"202309_SWH_SWAMP_LysB_10cm",2023,9,20,NA,NA,16.61,1382.89900924153,"","9/26/2023 5:27:45 PM",NA,NA
+"493","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"202309_SWH_SWAMP_LysB_20cm",2023,9,20,NA,NA,29.57,2461.90991591042,"","9/26/2023 5:46:38 PM",NA,NA
+"494","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"202309_SWH_SWAMP_LysB_45cm",2023,9,20,NA,NA,29.69,2471.90075763883,"","9/26/2023 5:59:33 PM",NA,NA
+"495","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"202309_SWH_SWAMP_LysC_10cm",2023,9,20,NA,NA,4.538,377.820331362917,"blank is ≥ 25% of sample value","9/26/2023 6:10:42 PM",NA,NA
+"496","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"202309_SWH_SWAMP_LysC_20cm",2023,9,20,NA,NA,16.2,1348.76363333611,"","9/26/2023 6:22:43 PM",NA,NA
+"497","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"202309_SWH_SWAMP_LysC_45cm",2023,9,20,NA,NA,22.16,1844.97543918075,"","9/26/2023 6:40:46 PM",NA,NA
 "498","COMPASS: Synoptic","CB","GWI","UP","A",20,"202309_GWI_UP_LysA_20cm",2023,9,21,NA,NA,20.75,1727.58304887187,"","9/26/2023 11:20:05 PM",NA,NA
 "499","COMPASS: Synoptic","CB","GWI","UP","A",45,"202309_GWI_UP_LysA_45cm",2023,9,21,NA,NA,21.36,1778.36982765798,"","9/26/2023 11:32:26 PM",NA,NA
 "500","COMPASS: Synoptic","CB","GWI","UP","B",10,"202309_GWI_UP_LysB_10cm",2023,9,21,NA,NA,7.18,597.785363416868,"","9/26/2023 11:43:46 PM",NA,NA
@@ -614,26 +614,26 @@
 "559","COMPASS: Synoptic","CB","GWI","SW","A",0,"202309_GWI_SW_A",2023,9,21,NA,NA,21.88,1821.66347514778,"","9/27/2023 3:37:03 AM",NA,NA
 "560","COMPASS: Synoptic","CB","GWI","SW","B",0,"202309_GWI_SW_B",2023,9,21,NA,NA,21.11,1757.55557405711,"","9/27/2023 3:49:16 AM",NA,NA
 "561","COMPASS: Synoptic","CB","GWI","SW","C",0,"202309_GWI_SW_C",2023,9,21,NA,NA,21.13,1759.22071434518,"","9/27/2023 4:01:27 AM",NA,NA
-"562","COMPASS: Synoptic","CB","SWH","UP","A",10,"202310_SWH_UPCON_LysA_10cm",2023,10,18,NA,NA,4.205,350.095745566564,"blank is ≥ 25% of sample value","10/28/2023 8:46:09 AM",NA,NA
-"563","COMPASS: Synoptic","CB","SWH","UP","A",20,"202310_SWH_UPCON_LysA_20cm",2023,10,18,NA,NA,7.21,600.283073848972,"","10/28/2023 9:00:23 AM",NA,NA
-"564","COMPASS: Synoptic","CB","SWH","UP","A",45,"202310_SWH_UPCON_LysA_45cm",2023,10,18,NA,NA,44.19,3679.12746648905,"","10/28/2023 9:26:07 AM",NA,NA
-"565","COMPASS: Synoptic","CB","SWH","UP","B",10,"202310_SWH_UPCON_LysB_10cm",2023,10,18,NA,NA,4.057,337.773707434851,"blank is ≥ 25% of sample value","10/28/2023 9:47:19 AM",NA,NA
-"566","COMPASS: Synoptic","CB","SWH","UP","B",20,"202310_SWH_UPCON_LysB_20cm",2023,10,18,NA,NA,12.51,1041.54525018733,"","10/28/2023 10:01:56 AM",NA,NA
-"567","COMPASS: Synoptic","CB","SWH","UP","B",45,"202310_SWH_UPCON_LysB_45cm",2023,10,18,NA,NA,40.33,3357.75539089168,"","10/28/2023 11:22:18 AM",NA,NA
-"568","COMPASS: Synoptic","CB","SWH","UP","C",20,"202310_SWH_UPCON_LysC_20cm",2023,10,18,NA,NA,6.851,570.393805678129,"","10/28/2023 11:41:28 AM",NA,NA
-"569","COMPASS: Synoptic","CB","SWH","UP","C",45,"202310_SWH_UPCON_LysC_45cm",2023,10,18,NA,NA,44.98,3744.90050786779,"","10/28/2023 12:37:57 PM",NA,NA
+"562","COMPASS: Synoptic","CB","SWH","UP","A",10,"202310_SWH_UP_LysA_10cm",2023,10,18,NA,NA,4.205,350.095745566564,"blank is ≥ 25% of sample value","10/28/2023 8:46:09 AM",NA,NA
+"563","COMPASS: Synoptic","CB","SWH","UP","A",20,"202310_SWH_UP_LysA_20cm",2023,10,18,NA,NA,7.21,600.283073848972,"","10/28/2023 9:00:23 AM",NA,NA
+"564","COMPASS: Synoptic","CB","SWH","UP","A",45,"202310_SWH_UP_LysA_45cm",2023,10,18,NA,NA,44.19,3679.12746648905,"","10/28/2023 9:26:07 AM",NA,NA
+"565","COMPASS: Synoptic","CB","SWH","UP","B",10,"202310_SWH_UP_LysB_10cm",2023,10,18,NA,NA,4.057,337.773707434851,"blank is ≥ 25% of sample value","10/28/2023 9:47:19 AM",NA,NA
+"566","COMPASS: Synoptic","CB","SWH","UP","B",20,"202310_SWH_UP_LysB_20cm",2023,10,18,NA,NA,12.51,1041.54525018733,"","10/28/2023 10:01:56 AM",NA,NA
+"567","COMPASS: Synoptic","CB","SWH","UP","B",45,"202310_SWH_UP_LysB_45cm",2023,10,18,NA,NA,40.33,3357.75539089168,"","10/28/2023 11:22:18 AM",NA,NA
+"568","COMPASS: Synoptic","CB","SWH","UP","C",20,"202310_SWH_UP_LysC_20cm",2023,10,18,NA,NA,6.851,570.393805678129,"","10/28/2023 11:41:28 AM",NA,NA
+"569","COMPASS: Synoptic","CB","SWH","UP","C",45,"202310_SWH_UP_LysC_45cm",2023,10,18,NA,NA,44.98,3744.90050786779,"","10/28/2023 12:37:57 PM",NA,NA
 "570","COMPASS: Synoptic","CB","MSM","UP","B",10,"202310_MSM_UP_LysB_10cm",2023,10,10,NA,NA,27.98,2329.53126300891,"","10/27/2023 8:18:39 PM",NA,NA
 "571","COMPASS: Synoptic","CB","MSM","UP","C",10,"202310_MSM_UP_LysC_10cm",2023,10,10,NA,NA,16.18,1347.09849304804,"","10/27/2023 8:33:39 PM",NA,NA
 "572","COMPASS: Synoptic","CB","MSM","UP","C",20,"202310_MSM_UP_LysC_20cm",2023,10,10,NA,NA,23.43,1950.71184747315,"","10/27/2023 8:48:54 PM",NA,NA
-"573","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"202310_SWH_UP_LysA_10cm",2023,10,18,NA,NA,19.33,1609.35808841895,"","10/28/2023 12:58:36 PM",NA,NA
-"574","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"202310_SWH_UP_LysA_20cm",2023,10,18,NA,NA,21.37,1779.20239780201,"","10/28/2023 1:14:05 PM",NA,NA
-"575","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"202310_SWH_UP_LysA_45cm",2023,10,18,NA,NA,32.48,2704.18782782449,"","10/28/2023 1:39:53 PM",NA,NA
-"576","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"202310_SWH_UP_LysB_10cm",2023,10,18,NA,NA,8.84,735.992007326617,"","10/28/2023 1:59:36 PM",NA,NA
-"577","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"202310_SWH_UP_LysB_20cm",2023,10,18,NA,NA,28.02,2332.86154358505,"","10/28/2023 2:15:25 PM",NA,NA
-"578","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"202310_SWH_UP_LysB_45cm",2023,10,18,NA,NA,31.96,2660.89418033469,"","10/28/2023 2:38:51 PM",NA,NA
-"579","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"202310_SWH_UP_LysC_10cm",2023,10,18,NA,NA,7.255,604.029639497128,"","10/28/2023 2:55:01 PM",NA,NA
-"580","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"202310_SWH_UP_LysC_20cm",2023,10,18,NA,NA,16.35,1361.25218549663,"","10/28/2023 3:10:13 PM",NA,NA
-"581","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"202310_SWH_UP_LysC_45cm",2023,10,18,NA,NA,16.81,1399.55041212222,"","10/28/2023 3:25:34 PM",NA,NA
+"573","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"202310_SWH_SWAMP_LysA_10cm",2023,10,18,NA,NA,19.33,1609.35808841895,"","10/28/2023 12:58:36 PM",NA,NA
+"574","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"202310_SWH_SWAMP_LysA_20cm",2023,10,18,NA,NA,21.37,1779.20239780201,"","10/28/2023 1:14:05 PM",NA,NA
+"575","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"202310_SWH_SWAMP_LysA_45cm",2023,10,18,NA,NA,32.48,2704.18782782449,"","10/28/2023 1:39:53 PM",NA,NA
+"576","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"202310_SWH_SWAMP_LysB_10cm",2023,10,18,NA,NA,8.84,735.992007326617,"","10/28/2023 1:59:36 PM",NA,NA
+"577","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"202310_SWH_SWAMP_LysB_20cm",2023,10,18,NA,NA,28.02,2332.86154358505,"","10/28/2023 2:15:25 PM",NA,NA
+"578","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"202310_SWH_SWAMP_LysB_45cm",2023,10,18,NA,NA,31.96,2660.89418033469,"","10/28/2023 2:38:51 PM",NA,NA
+"579","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"202310_SWH_SWAMP_LysC_10cm",2023,10,18,NA,NA,7.255,604.029639497128,"","10/28/2023 2:55:01 PM",NA,NA
+"580","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"202310_SWH_SWAMP_LysC_20cm",2023,10,18,NA,NA,16.35,1361.25218549663,"","10/28/2023 3:10:13 PM",NA,NA
+"581","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"202310_SWH_SWAMP_LysC_45cm",2023,10,18,NA,NA,16.81,1399.55041212222,"","10/28/2023 3:25:34 PM",NA,NA
 "582","COMPASS: Synoptic","CB","GWI","UP","B",10,"202310_GWI_UP_LysB_10cm",2023,10,19,NA,NA,5.009,417.034385146949,"blank is ≥ 25% of sample value","10/28/2023 10:39:47 PM",NA,NA
 "583","COMPASS: Synoptic","CB","GWI","UP","B",20,"202310_GWI_UP_LysB_20cm",2023,10,19,NA,NA,18.01,1499.45882940638,"","10/28/2023 10:58:34 PM",NA,NA
 "584","COMPASS: Synoptic","CB","GWI","UP","C",10,"202310_GWI_UP_LysC_10cm",2023,10,19,NA,NA,15.99,1331.27966031138,"","10/28/2023 11:13:28 PM",NA,NA
@@ -692,26 +692,26 @@
 "637","COMPASS: Synoptic","CB","GWI","SW","A",0,"202310_GWI_SW_A",2023,10,19,NA,NA,18.96,1578.55299308967,"","10/29/2023 4:36:01 AM",NA,NA
 "638","COMPASS: Synoptic","CB","GWI","SW","B",0,"202310_GWI_SW_B",2023,10,19,NA,NA,18.25,1519.44051286321,"","10/29/2023 4:51:02 AM",NA,NA
 "639","COMPASS: Synoptic","CB","GWI","SW","C",0,"202310_GWI_SW_C",2023,10,19,NA,NA,18.4,1531.92906502373,"","10/29/2023 5:06:10 AM",NA,NA
-"640","COMPASS: Synoptic","CB","SWH","UP","A",10,"202311_SWH_UPCON_LysA_10cm",2023,11,8,NA,NA,3.556,296.061943218716,"blank is ≥ 25% of sample value","11/11/2023 5:12:52 AM",NA,NA
-"641","COMPASS: Synoptic","CB","SWH","UP","A",20,"202311_SWH_UPCON_LysA_20cm",2023,11,8,NA,NA,6.349,528.59878444759,"","11/11/2023 5:25:22 AM",NA,NA
-"642","COMPASS: Synoptic","CB","SWH","UP","A",45,"202311_SWH_UPCON_LysA_45cm",2023,11,8,NA,NA,40.36,3360.25310132379,"","11/11/2023 5:39:35 AM",NA,NA
-"643","COMPASS: Synoptic","CB","SWH","UP","B",10,"202311_SWH_UPCON_LysB_10cm",2023,11,8,NA,NA,4.772,397.302472733328,"blank is ≥ 25% of sample value","11/11/2023 5:54:34 AM",NA,NA
-"644","COMPASS: Synoptic","CB","SWH","UP","B",20,"202311_SWH_UPCON_LysB_20cm",2023,11,8,NA,NA,11.47,954.957955207726,"","11/11/2023 6:07:20 AM",NA,NA
-"645","COMPASS: Synoptic","CB","SWH","UP","B",45,"202311_SWH_UPCON_LysB_45cm",2023,11,8,NA,NA,45.15,3759.05420031638,"","11/11/2023 6:21:29 AM",NA,NA
-"646","COMPASS: Synoptic","CB","SWH","UP","C",20,"202311_SWH_UPCON_LysC_20cm",2023,11,8,NA,NA,6.358,529.348097577221,"","11/11/2023 6:36:35 AM",NA,NA
-"647","COMPASS: Synoptic","CB","SWH","UP","C",45,"202311_SWH_UPCON_LysC_45cm",2023,11,8,NA,NA,45.88,3819.83182083091,"","11/11/2023 6:54:17 AM",NA,NA
+"640","COMPASS: Synoptic","CB","SWH","UP","A",10,"202311_SWH_UP_LysA_10cm",2023,11,8,NA,NA,3.556,296.061943218716,"blank is ≥ 25% of sample value","11/11/2023 5:12:52 AM",NA,NA
+"641","COMPASS: Synoptic","CB","SWH","UP","A",20,"202311_SWH_UP_LysA_20cm",2023,11,8,NA,NA,6.349,528.59878444759,"","11/11/2023 5:25:22 AM",NA,NA
+"642","COMPASS: Synoptic","CB","SWH","UP","A",45,"202311_SWH_UP_LysA_45cm",2023,11,8,NA,NA,40.36,3360.25310132379,"","11/11/2023 5:39:35 AM",NA,NA
+"643","COMPASS: Synoptic","CB","SWH","UP","B",10,"202311_SWH_UP_LysB_10cm",2023,11,8,NA,NA,4.772,397.302472733328,"blank is ≥ 25% of sample value","11/11/2023 5:54:34 AM",NA,NA
+"644","COMPASS: Synoptic","CB","SWH","UP","B",20,"202311_SWH_UP_LysB_20cm",2023,11,8,NA,NA,11.47,954.957955207726,"","11/11/2023 6:07:20 AM",NA,NA
+"645","COMPASS: Synoptic","CB","SWH","UP","B",45,"202311_SWH_UP_LysB_45cm",2023,11,8,NA,NA,45.15,3759.05420031638,"","11/11/2023 6:21:29 AM",NA,NA
+"646","COMPASS: Synoptic","CB","SWH","UP","C",20,"202311_SWH_UP_LysC_20cm",2023,11,8,NA,NA,6.358,529.348097577221,"","11/11/2023 6:36:35 AM",NA,NA
+"647","COMPASS: Synoptic","CB","SWH","UP","C",45,"202311_SWH_UP_LysC_45cm",2023,11,8,NA,NA,45.88,3819.83182083091,"","11/11/2023 6:54:17 AM",NA,NA
 "648","COMPASS: Synoptic","CB","MSM","UP","B",10,"202311_MSM_UP_LysB_10cm",2023,11,7,NA,NA,13.07,1088.16917825327,"","11/10/2023 7:14:33 PM",NA,NA
 "649","COMPASS: Synoptic","CB","MSM","UP","C",10,"202311_MSM_UP_LysC_10cm",2023,11,7,NA,NA,9.707,808.17583881442,"","11/10/2023 7:30:11 PM",NA,NA
 "650","COMPASS: Synoptic","CB","MSM","UP","C",20,"202311_MSM_UP_LysC_20cm",2023,11,7,NA,NA,16.96,1412.03896428274,"","11/10/2023 7:43:55 PM",NA,NA
-"651","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"202311_SWH_UP_LysA_10cm",2023,11,8,NA,NA,19.36,1611.85579885105,"","11/11/2023 7:08:02 AM",NA,NA
-"652","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"202311_SWH_UP_LysA_20cm",2023,11,8,NA,NA,25.74,2143.03555074515,"","11/11/2023 7:25:23 AM",NA,NA
-"653","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"202311_SWH_UP_LysA_45cm",2023,11,8,NA,NA,30.73,2558.48805261843,"","11/11/2023 7:39:21 AM",NA,NA
-"654","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"202311_SWH_UP_LysB_10cm",2023,11,8,NA,NA,7.568,630.089085005412,"","11/11/2023 7:54:46 AM",NA,NA
-"655","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"202311_SWH_UP_LysB_20cm",2023,11,8,NA,NA,23.92,1991.50778453085,"","11/11/2023 8:08:44 AM",NA,NA
-"656","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"202311_SWH_UP_LysB_45cm",2023,11,8,NA,NA,28.85,2401.96486553992,"","11/11/2023 8:22:44 AM",NA,NA
-"657","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"202311_SWH_UP_LysC_10cm",2023,11,8,NA,NA,3.301,274.831404545833,"blank is ≥ 25% of sample value","11/11/2023 8:40:04 AM",NA,NA
-"658","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"202311_SWH_UP_LysC_20cm",2023,11,8,NA,NA,17.66,1470.31887436517,"","11/11/2023 8:53:51 AM",NA,NA
-"659","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"202311_SWH_UP_LysC_45cm",2023,11,8,NA,NA,24.24,2018.15002913995,"","11/11/2023 9:07:45 AM",NA,NA
+"651","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"202311_SWH_SWAMP_LysA_10cm",2023,11,8,NA,NA,19.36,1611.85579885105,"","11/11/2023 7:08:02 AM",NA,NA
+"652","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"202311_SWH_SWAMP_LysA_20cm",2023,11,8,NA,NA,25.74,2143.03555074515,"","11/11/2023 7:25:23 AM",NA,NA
+"653","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"202311_SWH_SWAMP_LysA_45cm",2023,11,8,NA,NA,30.73,2558.48805261843,"","11/11/2023 7:39:21 AM",NA,NA
+"654","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"202311_SWH_SWAMP_LysB_10cm",2023,11,8,NA,NA,7.568,630.089085005412,"","11/11/2023 7:54:46 AM",NA,NA
+"655","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"202311_SWH_SWAMP_LysB_20cm",2023,11,8,NA,NA,23.92,1991.50778453085,"","11/11/2023 8:08:44 AM",NA,NA
+"656","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"202311_SWH_SWAMP_LysB_45cm",2023,11,8,NA,NA,28.85,2401.96486553992,"","11/11/2023 8:22:44 AM",NA,NA
+"657","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"202311_SWH_SWAMP_LysC_10cm",2023,11,8,NA,NA,3.301,274.831404545833,"blank is ≥ 25% of sample value","11/11/2023 8:40:04 AM",NA,NA
+"658","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"202311_SWH_SWAMP_LysC_20cm",2023,11,8,NA,NA,17.66,1470.31887436517,"","11/11/2023 8:53:51 AM",NA,NA
+"659","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"202311_SWH_SWAMP_LysC_45cm",2023,11,8,NA,NA,24.24,2018.15002913995,"","11/11/2023 9:07:45 AM",NA,NA
 "660","COMPASS: Synoptic","CB","GWI","UP","B",10,"202311_GWI_UP_LysB_10cm",2023,11,9,NA,NA,4.219,351.261343768213,"blank is ≥ 25% of sample value","11/11/2023 2:09:22 PM",NA,NA
 "661","COMPASS: Synoptic","CB","GWI","UP","B",20,"202311_GWI_UP_LysB_20cm",2023,11,9,NA,NA,13.73,1143.11880775955,"","11/11/2023 2:22:32 PM",NA,NA
 "662","COMPASS: Synoptic","CB","GWI","UP","C",10,"202311_GWI_UP_LysC_10cm",2023,11,9,NA,NA,9.156,762.301223878112,"","11/11/2023 2:35:09 PM",NA,NA
