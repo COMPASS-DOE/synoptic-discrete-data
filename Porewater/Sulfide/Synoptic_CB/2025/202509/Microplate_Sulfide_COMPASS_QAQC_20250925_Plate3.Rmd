@@ -1,6 +1,6 @@
 ---
 title: "Synoptic CB: Porewater Sulfide"
-author: "September 2025 Samples Plate 4"
+author: "September 2025 Samples Plate 3"
 date: "`r Sys.Date()`"
 output: 
   pdf_document:
@@ -28,22 +28,27 @@ lapply(c(
 ```{r Run Information, echo=TRUE, message=FALSE, warning=FALSE}
 ###### Run information - PLEASE CHANGE
   Date_Run = "20250925"  #Date that instrument was run
-  Plate = "4"
+  Plate = "3"
   Month = "Sept"
   Year = "2025"
   Run_by = "Steph Wilson and Zoe Read"  #Instrument user 
   Script_run_by = "Zoe Read" #Code user 
   Project = "COMPASS"
-  run_notes = "Samples 72, 76, and 86 still had high CVs after one replicate removed. 
-  Spk 80 had low recovery. 
+  run_notes = "Std curve intercept is 2 sd different from previous intercepts. 
+  Matrix Check 20 is significantly different from Std 5. 
+  Samples 58 and 56 still have high CVs after one replicate removed. 
+  Sample 45 needs to be diluted. 
+  Duplicate & sample had H2S values of 0. 
+  Spike 58 had high recovery. 
+  10 uL of spike added.
   " #any notes from the run
 
 ###### STDs to remove manually - NA unless standards have high CVs
-  stds_to_remove <- c("F01") #Ex. c("A02", "B02")
+  stds_to_remove <- c("B02") #Ex. c("A02", "B02")
   
   Chkstds_to_remove <- c(NA)
   
-  MCs_to_remove <- c("G03")
+  MCs_to_remove <- c("H03")
   
 ##Sample data that was entered incorrectly
   # The Old ID is the original, incorrecly-entered ID and the New ID is the correct ID to change it to. 
@@ -99,7 +104,7 @@ cat(run_notes)
   #spike for these samples was 50 uL of the 100uM standard
   Con1 <- 1000000               #conversion factor value for spike volumes (uL -> L)
   spk_std <- 100                # uM S2- standard used
-  spkvol <- 50                  # uL volume of spike added
+  spkvol <- 10                  # uL volume of spike added
   spk_Conc <- (spk_std)*(spkvol/Con1)  # umoles of S2- added to each spiked sample
   sample_vol <- 250             # the sample volume without the spike is 250 uL
   cline_vol <- 0               # the total volume without the spike is 250 uL
