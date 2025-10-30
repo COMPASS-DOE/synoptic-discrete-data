@@ -1,6 +1,6 @@
 ---
 title: "Synoptic CB: Porewater Sulfide"
-author: "September 2025 Samples Plate 2"
+author: "September 2025 Samples Plate 6"
 date: "`r Sys.Date()`"
 output: 
   pdf_document:
@@ -28,20 +28,20 @@ lapply(c(
 ```{r Run Information, echo=TRUE, message=FALSE, warning=FALSE}
 ###### Run information - PLEASE CHANGE
   Date_Run = "20250925"  #Date that instrument was run
-  Plate = "2"
+  Plate = "6"
   Month = "Sept"
   Year = "2025"
   Run_by = "Steph Wilson and Zoe Read"  #Instrument user 
   Script_run_by = "Zoe Read" #Code user 
   Project = "COMPASS"
-  run_notes = "Samples 34 and 44 still have high CVs after one replicate removed. 
-  Samples 36, 38, 39, 43, and 44 need to be diluted. 
-  Duplicate & sample had H2S values of 0. 
-  Spk had high percent recovery. 
-  " #any notes from the run
+  run_notes = "Matrix Check 10 is significantly different from Std 5. 
+  Samples 91, 19, 36, and 98 still have high CVs after one replicate removed. 
+  Sample July_42 needs dilution. 
+  Dup 38 had high percent difference. 
+  10 uL of spike added." #any notes from the run
 
 ###### STDs to remove manually - NA unless standards have high CVs
-  stds_to_remove <- c("C01") #Ex. c("A02", "B02")
+  stds_to_remove <- c(NA) #Ex. c("A02", "B02")
   
   Chkstds_to_remove <- c(NA)
   
@@ -101,7 +101,7 @@ cat(run_notes)
   #spike for these samples was 50 uL of the 100uM standard
   Con1 <- 1000000               #conversion factor value for spike volumes (uL -> L)
   spk_std <- 100                # uM S2- standard used
-  spkvol <- 50                  # uL volume of spike added
+  spkvol <- 10                  # uL volume of spike added
   spk_Conc <- (spk_std)*(spkvol/Con1)  # umoles of S2- added to each spiked sample
   sample_vol <- 250             # the sample volume without the spike is 250 uL
   cline_vol <- 0               # the total volume without the spike is 250 uL
@@ -906,7 +906,7 @@ QAdups$dups_flag <-  ifelse(QAdups$dups_chk < dups_perc_diff, 'OK', 'Rerun')
 #plot dups output as a bar graph to easily check - want any over 10% to be red need to work on this 
 dupsbar <- ggplot(data = QAdups, aes(x = IDs, y = dups_chk, fill=dups_flag)) +
         geom_bar(stat = 'identity') + 
-        scale_fill_manual(values = c("OK" = "darkgreen", "No, rerun" = "darkred"))+
+        scale_fill_manual(values = c("OK" = "darkgreen", "Rerun" = "darkred"))+
         theme_classic() + labs(x= "Sample ID", y="Difference Between Duplicates (%)") + 
         theme(legend.position="none") +  geom_hline(yintercept=15.5, linetype="dashed", 
                 color = "black", linewidth=1)+ 
@@ -1023,5 +1023,4 @@ write.csv(H2S_HighCVRerun, samples_high_cv_name)
 
 
 ```
-
 

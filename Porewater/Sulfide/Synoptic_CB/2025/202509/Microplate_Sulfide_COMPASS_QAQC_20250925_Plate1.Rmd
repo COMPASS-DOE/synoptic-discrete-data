@@ -1,6 +1,6 @@
 ---
 title: "Synoptic CB: Porewater Sulfide"
-author: "September 2025 Samples Plate 5"
+author: "September 2025 Samples Plate 1"
 date: "`r Sys.Date()`"
 output: 
   pdf_document:
@@ -28,27 +28,26 @@ lapply(c(
 ```{r Run Information, echo=TRUE, message=FALSE, warning=FALSE}
 ###### Run information - PLEASE CHANGE
   Date_Run = "20250925"  #Date that instrument was run
-  Plate = "5"
+  Plate = "1"
   Month = "Sept"
   Year = "2025"
   Run_by = "Steph Wilson and Zoe Read"  #Instrument user 
   Script_run_by = "Zoe Read" #Code user 
   Project = "COMPASS"
-  run_notes = "Matrix Check 20 is significantly different from Std 5. 
-  Samples 97, 102, 100 still had high CVs after one reprlicate was removed. 
-  Samples 91, 94, 98 need to be diluted. 
-  Spk 102 had low recovery. 
+  run_notes = "Sample 12 still has high CV after one replicate removed. 
+  Samples 12, 15, 19, 20, and 6 need to be diluted. 
+  10 uL of spike added. 
   " #any notes from the run
 
 ###### STDs to remove manually - NA unless standards have high CVs
-  stds_to_remove <- c("C01", "D03") #Ex. c("A02", "B02")
+  stds_to_remove <- c(NA) #Ex. c("A02", "B02")
   
   Chkstds_to_remove <- c(NA)
   
   MCs_to_remove <- c(NA)
   
 ##Sample data that was entered incorrectly
-  # The Old ID is the original, incorrecly-entered ID and the New ID is the correct ID to change it to. 
+  # The Old ID is the original, incorrectly-entered ID and the New ID is the correct ID to change it to. 
 # Old_ID_1 = "17 Dup"
 # New_ID_1 = "16 Dup"
 cat(run_notes)
@@ -101,7 +100,7 @@ cat(run_notes)
   #spike for these samples was 50 uL of the 100uM standard
   Con1 <- 1000000               #conversion factor value for spike volumes (uL -> L)
   spk_std <- 100                # uM S2- standard used
-  spkvol <- 50                  # uL volume of spike added
+  spkvol <- 10                  # uL volume of spike added
   spk_Conc <- (spk_std)*(spkvol/Con1)  # umoles of S2- added to each spiked sample
   sample_vol <- 250             # the sample volume without the spike is 250 uL
   cline_vol <- 0               # the total volume without the spike is 250 uL
