@@ -436,7 +436,8 @@ Slopes_chk <- ggplot(log, aes(run_date, Slope, col=Test)) +
   geom_line(aes(group = Test)) + 
   theme_bw() + 
   labs(title="Slope Drift Assessment", x="Run Date", y="Slope") +
-  scale_color_manual(values=c("coral", "darkgoldenrod", "darkkhaki"))
+  scale_color_manual(values=c("coral", "darkgoldenrod", "darkkhaki"))+
+  geom_point(data = add_log, size=4, color = "black")
 Slopes_chk
 
 #averaging the slopes from the log and printing
