@@ -1,0 +1,57 @@
+---
+title: "combine_datafiles"
+author: "giessnerm"
+date: '2024-06-11'
+output: html_document
+---
+
+#info
+
+```{r}
+#packages
+library(ggplot2)
+library(dplyr)
+library(data.table)
+library(matrixStats)
+library(gridExtra)
+library(ggpubr)
+library(grid)
+library(stringr)
+library(plater)
+library(raster)
+library(tidyverse)
+```
+
+```{r}
+#set working directory
+setwd("S:/GlobalChangeEco/porewater_r scripts & Data/Data")
+
+#read in plates
+
+plate1 <- read_csv("S:/GlobalChangeEco/porewater_r scripts & Data/Data/Sulfide Microplate/COMPASS/2024 June/QAQC'd Data/COMPASS_H2S_20240705_plate1_Summary_Data.csv")
+plate1 <- plate1[,c(2:8)]
+plate2 <- read_csv("S:/GlobalChangeEco/porewater_r scripts & Data/Data/Sulfide Microplate/COMPASS/2024 June/QAQC'd Data/COMPASS_H2S_20240705_plate2_Summary_Data.csv")
+plate2 <- plate2[,c(2:8)]
+plate3 <- read_csv("S:/GlobalChangeEco/porewater_r scripts & Data/Data/Sulfide Microplate/COMPASS/2024 June/QAQC'd Data/COMPASS_H2S_20240705_plate3_Summary_Data.csv")
+plate3 <- plate3[,c(2:8)]
+plate3_2 <- read_csv("S:/GlobalChangeEco/porewater_r scripts & Data/Data/Sulfide Microplate/COMPASS/2024 June/QAQC'd Data/COMPASS_H2S_20240705_plate3_2_Summary_Data.csv")
+plate3_2 <- plate3_2[,c(2:8)]
+
+
+```
+#combine plates 
+```{r}
+all_plate <- rbind(plate1, plate2, plate3, plate3_2)
+head(all_plate)
+```
+```{r}
+# export data
+write.csv(all_plate, file="S:/GlobalChangeEco/Porewater_R scripts & Data/Data/Sulfide Microplate/COMPASS/2024 June/QAQC'd Data/COMPASS_H2S_202406_plate1-3_Summary_Data.csv")
+```
+
+
+
+
+
+
+

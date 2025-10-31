@@ -1,0 +1,78 @@
+---
+title: "combine_datafiles"
+author: "giessnerm"
+date: '2024-06-11'
+output: html_document
+---
+
+#info
+
+```{r}
+#packages
+library(ggplot2)
+library(dplyr)
+library(data.table)
+library(matrixStats)
+library(gridExtra)
+library(ggpubr)
+library(grid)
+library(stringr)
+library(plater)
+library(raster)
+library(tidyverse)
+```
+
+```{r}
+#set working directory
+setwd("S:/GlobalChangeEco/porewater_r scripts & Data/Data")
+
+#read in plates
+
+plate1dat <- read_csv("S:/GlobalChangeEco/porewater_r scripts & Data/Data/Sulfide Microplate/COMPASS/2024 October/QAQC'd Data/COMPASS_H2S_20241028_plate1_Summary_Data.csv")
+plate1dat <- plate1dat[,c(2:8)]
+plate2dat <- read_csv("S:/GlobalChangeEco/porewater_r scripts & Data/Data/Sulfide Microplate/COMPASS/2024 October/QAQC'd Data/COMPASS_H2S_20241028_plate2_Summary_Data.csv")
+plate2dat <- plate2dat[,c(2:8)]
+plate3dat <- read_csv("S:/GlobalChangeEco/porewater_r scripts & Data/Data/Sulfide Microplate/COMPASS/2024 October/QAQC'd Data/COMPASS_H2S_20241028_plate3_Summary_Data.csv")
+plate3dat <- plate3dat[,c(2:8)]
+
+plate1dilute <- read_csv("S:/GlobalChangeEco/porewater_r scripts & Data/Data/Sulfide microplate/COMPASS/2024 October/QAQC'd Data/20241028_SamplesNeedDilution_Plate1.csv")
+plate1dilute <- plate1dilute[,c(2:8)]
+plate2dilute <- read_csv("S:/GlobalChangeEco/porewater_r scripts & Data/Data/Sulfide microplate/COMPASS/2024 October/QAQC'd Data/20241028_SamplesNeedDilution_Plate2.csv")
+plate2dilute <- plate2dilute[,c(2:8)]
+plate3dilute <- read_csv("S:/GlobalChangeEco/porewater_r scripts & Data/Data/Sulfide microplate/COMPASS/2024 October/QAQC'd Data/20241028_SamplesNeedDilution_Plate3.csv")
+plate3dilute <- plate3dilute[,c(2:8)]
+
+plate1HCV <- read_csv("S:/GlobalChangeEco/porewater_r scripts & Data/Data/Sulfide microplate/COMPASS/2024 October/QAQC'd Data/20241028_SamplesNeedRerun_Plate1.csv")
+plate1HCV <- plate1HCV[,c(2:8)]
+plate2HCV <- read_csv("S:/GlobalChangeEco/porewater_r scripts & Data/Data/Sulfide microplate/COMPASS/2024 October/QAQC'd Data/20241028_SamplesNeedRerun_Plate2.csv")
+plate2HCV <- plate2HCV[,c(2:8)]
+plate3HCV <- read_csv("S:/GlobalChangeEco/porewater_r scripts & Data/Data/Sulfide microplate/COMPASS/2024 October/QAQC'd Data/20241028_SamplesNeedRerun_Plate3.csv")
+plate3HCV <- plate3HCV[,c(2:8)]
+
+
+```
+#combine plates 
+```{r}
+all_platedat <- rbind(plate1dat, plate2dat, plate3dat)
+head(all_platedat)
+all_platedilute <- rbind(plate1dilute, plate2dilute, plate3dilute)
+head(all_platedilute)
+all_plateHCV <- rbind(plate1HCV, plate2HCV, plate3HCV)
+head(all_plateHCV)
+
+```
+```{r}
+# export data
+write.csv(all_platedat, file="S:/GlobalChangeEco/Porewater_R scripts & Data/Data/Sulfide Microplate/COMPASS/2024 October/QAQC'd Data/COMPASS_H2S_202410_plate1-3_Summary_Data.csv")
+
+write.csv(all_plateHCV, file="S:/GlobalChangeEco/Porewater_R scripts & Data/Data/Sulfide Microplate/COMPASS/2024 October/QAQC'd Data/COMPASS_H2S_202410_plate1-3_HighCVSamples_Summary_Data.csv")
+
+write.csv(all_platedilute, file="S:/GlobalChangeEco/Porewater_R scripts & Data/Data/Sulfide Microplate/COMPASS/2024 October/QAQC'd Data/COMPASS_H2S_202410_plate1-3_NeedDilute_Summary_Data.csv")
+```
+
+
+
+
+
+
+
