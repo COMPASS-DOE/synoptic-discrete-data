@@ -1,6 +1,6 @@
 ---
 title: "Synoptic CB: Porewater Nutrients"
-author: "August 2024 Samples"
+author: "November 2024 Samples"
 date: "`r Sys.Date()`"
 output: 
   pdf_document:
@@ -15,23 +15,29 @@ output_dir: "To Be Reviewed/PDF"
 ```{r run information, include=TRUE}
 cat("Run Information: NAME ") #lets you know what section you're in 
 #set the run date & user name 
-  run_date <- "XX/XX/XXX"
+  run_date <- "8/7/2025"
   sample_year <- "2024"
-  sample_month <- "MONTH"
+  sample_month <- "NOVEMBER"
   user <- "Isabelle Van Benschoten"
 
 #identify the files you want to read in 
-  #read in as a list to accommadate ultiple runs in a month
-  NOx_files <- c("Raw Data/COMPASS_Synoptic_CB_2024XX_VNOx_1.csv")
-  NH3_PO4_files <- c("Raw Data/COMPASS_Synoptic_CB_2024XX_NH3_PO4_1.csv")
+  #read in as a list to accommodate multiple runs in a month
+  NOx_files <- c("Raw Data/COMPASS_Synoptic_CB_202411_VNOx_1.csv",
+                 "Raw Data/COMPASS_Synoptic_CB_202411_VNOx_2.csv",
+                 "Raw Data/COMPASS_Synoptic_CB_202411_VNOx_3.csv")
+  NH3_PO4_files <- c("Raw Data/COMPASS_Synoptic_CB_202411_NH3_PO4_1.csv",
+                     "Raw Data/COMPASS_Synoptic_CB_202411_NH3_PO4_2.csv",
+                     "Raw Data/COMPASS_Synoptic_CB_202411_NH3_PO4_3.csv")
 
 # Define the file path for QAQC log file - NO Need to change just check year 
   file_path <- "Raw Data/SEAL_COMPASS_Synoptic_QAQC_Log_2024.csv"
-  final_path <- "Processed Data/COMPASS_Synoptic_Nutrients_2024XX.csv"
+  final_path <- "Processed Data/COMPASS_Synoptic_Nutrients_202411.csv"
 
 #record any notes about the run or anything other info here: 
-  run_notes <- "Run notes that will give users info about issues 
-  or any concerns.  "
+  run_notes <- "One PO4 check standard came back very high, all others were within range.
+                A few duplicates were out of range but still within CV.
+                SWH_202411_SWAMP_LycC_45cm, SWH_202411_TR_LysC_10cm, 
+                MSM_202411_TR_LysC_10cm, MSM_202411_TR_LysC_45cm were missing from metadata. "
   
 #Set up file path for metadata 
   #downloaded metadata csv - downloaded from Google drive as csv for this year
@@ -397,8 +403,8 @@ if (file.exists(file_path)) {
   print("QAQC log file does not exist. It has been created.")
   }
   
-  #getting rid of first "X" column
-  #stds_log <- stds_log %>%
+  #getting rid of "X" columns
+  # stds_log <- stds_log %>%
   #  select(-1)
   
 #create a dataframe that can be appended to the QAQC log 
@@ -430,7 +436,8 @@ Slopes_chk <- ggplot(log, aes(run_date, Slope, col=Test)) +
   geom_line(aes(group = Test)) + 
   theme_bw() + 
   labs(title="Slope Drift Assessment", x="Run Date", y="Slope") +
-  scale_color_manual(values=c("coral", "darkgoldenrod", "darkkhaki"))
+  scale_color_manual(values=c("coral", "darkgoldenrod", "darkkhaki"))+
+  geom_point(data = add_log, size=4, color = "black")
 Slopes_chk
 
 #averaging the slopes from the log and printing
@@ -441,7 +448,7 @@ knitr::kable(avg_slopes, caption = "Average Slope by Analyte", digits = 3)
 
 
 #write out the log file with the added lines for this run date 
-write.csv(log, file_path)
+write.csv(log, file_path, row.names = FALSE)
 
 #write out a flag to the sample dataframe if the r2 is above the cutoff of 0.98
 df_all <- df_all %>%
@@ -490,7 +497,7 @@ df_duplicates <- df_all %>%
     !startsWith(Sample_Name, "Standard ") &
     !startsWith(Sample_Name, "Nitrite ") &
     !startsWith(Sample_Name, "Nitrate ") &
-    !startsWith(Sample_Name, "Abs_Chk_") &
+    !startsWith(Sample_Name, "AbsChk_") &
     !startsWith(Sample_Name, "peChk_") &
     !grepl("^\\d{1,2}/\\d{1,2}/\\d{4}\\s+\\d{1,2}:\\d{2}$", Sample_Name) &  # Remove timestamp-like names
     !grepl("^\\d+$", Sample_Name) &  # Remove sample names that are just numbers
@@ -951,7 +958,7 @@ if (PO4_blks_percent <= chks_flag) {  # assuming you have tn_chks_percent simila
 \newpage
 
 ## Analyze Duplicates
-```{r Analyze Duplicates, echo=FALSE}
+```{r Analyze Duplicates, echo=FALSE, warning=FALSE}
 
 cat("Analyze Duplicates")
 
@@ -1099,7 +1106,7 @@ NOx_dups_plot <- ggplot(data =Nox_dup_chk, aes(x =Pair_ID, y =CV, fill=NOx_diff_
         scale_fill_manual(values = c("bdl" = "darkslateblue","YES" = "darkslateblue",  "NO, rerun" = "darkred")) +
         theme(legend.position="none") +  
         geom_hline(yintercept=10, linetype="dashed", 
-            color = "black", size=1)  + 
+            color = "black", linewidth=1)  + 
         guides(fill=guide_legend(title="<10%:"))+
         theme(axis.text.x = element_text(angle = 90, hjust = 0.5))
 
@@ -1110,7 +1117,7 @@ NH3_dups_plot <- ggplot(data = NH3_dup_chk, aes(x =Pair_ID, y =CV, fill=NH3_diff
         scale_fill_manual(values = c("YES" = "darkslateblue", "NO, rerun" = "darkred")) +
         theme(legend.position="none") +  
         geom_hline(yintercept=10, linetype="dashed", 
-              color = "black", size=1) + 
+              color = "black", linewidth=1) + 
         guides(fill=guide_legend(title="<10%:"))+
         theme(axis.text.x = element_text(angle = 90, hjust = 0.5))
 
@@ -1121,7 +1128,7 @@ PO4_dups_plot <- ggplot(data =PO4_dup_chk, aes(x =Pair_ID, y =CV, fill=PO4_diff_
        scale_fill_manual(values = c("YES" = "darkslateblue", "NO, rerun" = "darkred")) +
        theme(legend.position="none") +  
        geom_hline(yintercept=10, linetype="dashed", 
-                color = "black", size=1) + 
+                color = "black", linewidth=1) + 
         guides(fill=guide_legend(title="<10%:"))+
         theme(axis.text.x = element_text(angle = 90, hjust = 0.5))
 
@@ -1522,7 +1529,7 @@ samples_flagged <- samples %>%
 ```
 
 ## Pull out sample id information 
-```{r Sample Identification, echo=FALSE}
+```{r Sample Identification, echo=FALSE, warning=FALSE}
 
 cat("Sample Processing")
 
@@ -1542,7 +1549,7 @@ samples_flagged <- samples_flagged %>%
 ```
 
 ## Check to see if samples run match metadata & merge info
-```{r check sample ids with metadata, echo=FALSE}
+```{r check sample ids with metadata, echo=FALSE, warning=FALSE}
 
 cat("Check Sample IDs with Metadata")
 
@@ -1607,7 +1614,7 @@ viz_NOx_plot <-  ggplot(data = NOx_forplot, aes(x = factor(row_num), y = Conc, f
                                      "SW" = "#25ABE6")) +
         theme_classic() + 
         labs(x= " ", y="NOx (mg/L)", title="Porewater NOx") + 
-          theme(legend.position = "none") +
+          # theme(legend.position = "none") +
           scale_x_discrete(drop = TRUE)+
         theme(axis.text.x = element_text(angle = 90, hjust = 0.5))
 
@@ -1633,7 +1640,7 @@ viz_NH3_plot <- ggplot(data = NH3_forplot, aes(x = factor(row_num), y = Conc, fi
                                      "SW" = "#25ABE6")) +
         theme_classic() + 
         labs(x= " ", y="NH3 (mg/L)", title="Porewater NH3") + 
-          theme(legend.position = "none") +
+          # theme(legend.position = "none") +
           scale_x_discrete(drop = TRUE)+
         theme(axis.text.x = element_text(angle = 90, hjust = 0.5))
 
@@ -1659,7 +1666,7 @@ viz_PO4_plot <- ggplot(data = PO4_forplot, aes(x = factor(row_num), y = Conc, fi
                                      "SW" = "#25ABE6")) +
         theme_classic() + 
         labs(x= " ", y="PO4 (mg/L)", title="Porewater PO4") + 
-          theme(legend.position = "none") +
+          # theme(legend.position = "none") +
           scale_x_discrete(drop = TRUE)+
         theme(axis.text.x = element_text(angle = 90, hjust = 0.5))
 
