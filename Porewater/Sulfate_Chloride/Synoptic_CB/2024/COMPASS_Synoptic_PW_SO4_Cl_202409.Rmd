@@ -1134,10 +1134,18 @@ final_data <- final_data %>%
   select(
     Project, Region, Site, Zone, Replicate, Depth_cm, 
          Sample_ID, Year, Month, Day, Time, Time_Zone,
-         SO4_Conc_mM, SO4_Conc_flag, SO4_QAQC_flag, Cl_Conc_mM, Cl_Conc_flag, Cl_QAQC_flag, salinity,
+         SO4_ppm, SO4_Conc_mM, SO4_Conc_flag, SO4_QAQC_flag, Cl_ppm, Cl_Conc_mM, Cl_Conc_flag, Cl_QAQC_flag, salinity,
          Analysis_rundate,  Run_notes, Field_notes
         # list columns in the order you want them
   )
+
+##Change any SO4/Cl conc's of NA to 0 
+final_data$SO4_Conc_mM[is.na(final_data$SO4_Conc_mM)] <- 0
+final_data$Cl_Conc_mM[is.na(final_data$Cl_Conc_mM)] <- 0
+final_data$SO4_ppm[is.na(final_data$SO4_ppm)] <- 0
+final_data$Cl_ppm[is.na(final_data$Cl_ppm)] <- 0
+
+final_data$salinity <- ifelse(final_data$Cl_ppm == 0, 2.6e-05, final_data$salinity)
 
 head(final_data)
 

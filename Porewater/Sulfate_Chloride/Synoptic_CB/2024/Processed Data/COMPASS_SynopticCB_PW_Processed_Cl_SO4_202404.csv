@@ -1,181 +1,181 @@
-"","Project","Region","Site","Zone","Replicate","Depth_cm","Sample_ID","Year","Month","Day","Time","Time_Zone","SO4_Conc_mM","SO4_Conc_flag","SO4_QAQC_flag","Cl_Conc_mM","Cl_Conc_flag","Cl_QAQC_flag","salinity","Analysis_rundate","Run_notes","Field_notes"
-"1","COMPASS: Synoptic","CB","GCW","UP","B",10,"GCW_202404_UP_LYSB_10CM",2024,4,9,"","",0.101883967560823,"Within_Range","",0.0946741889985896,"Within_Range","",0.0060906534,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"","Project","Region","Site","Zone","Replicate","Depth_cm","Sample_ID","Year","Month","Day","Time","Time_Zone","SO4_ppm","SO4_Conc_mM","SO4_Conc_flag","SO4_QAQC_flag","Cl_ppm","Cl_Conc_mM","Cl_Conc_flag","Cl_QAQC_flag","salinity","Analysis_rundate","Run_notes","Field_notes"
+"1","COMPASS: Synoptic","CB","GCW","UP","B",10,"GCW_202404_UP_LYSB_10CM",2024,4,9,"","",3.2664,0.101883967560823,"Within_Range","",3.3562,0.0946741889985896,"Within_Range","",0.0060906534,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"2","COMPASS: Synoptic","CB","GCW","UP","B",20,"GCW_202404_UP_LYSB_20CM",2024,4,9,"","",0.0726699937616968,"Within_Range","",0.0624626234132581,"Within_Range","",0.0040272401,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"2","COMPASS: Synoptic","CB","GCW","UP","B",20,"GCW_202404_UP_LYSB_20CM",2024,4,9,"","",2.3298,0.0726699937616968,"Within_Range","",2.2143,0.0624626234132581,"Within_Range","",0.0040272401,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"3","COMPASS: Synoptic","CB","GCW","TR","A",20,"GCW_202404_TR_LYSA_20CM",2024,4,9,"","",0.240589519650655,"Within_Range","",1.78469111424542,"Within_Range","",0.1143500111,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"3","COMPASS: Synoptic","CB","GCW","TR","A",20,"GCW_202404_TR_LYSA_20CM",2024,4,9,"","",7.7133,0.240589519650655,"Within_Range","",63.2673,1.78469111424542,"Within_Range","",0.1143500111,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"4","COMPASS: Synoptic","CB","GCW","TR","A",45,"GCW_202404_TR_LYSA_45CM",2024,4,9,"","",0.385361821584529,"Within_Range","",0.693785613540197,"Within_Range","",0.0444686229,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"4","COMPASS: Synoptic","CB","GCW","TR","A",45,"GCW_202404_TR_LYSA_45CM",2024,4,9,"","",12.3547,0.385361821584529,"Within_Range","",24.5947,0.693785613540197,"Within_Range","",0.0444686229,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"5","COMPASS: Synoptic","CB","GCW","TR","B",10,"GCW_202404_TR_LYSB_10CM",2024,4,9,"","",0.638053649407361,"Within_Range","",0.249706629055007,"Within_Range","",0.0160217447,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"5","COMPASS: Synoptic","CB","GCW","TR","B",10,"GCW_202404_TR_LYSB_10CM",2024,4,9,"","",20.456,0.638053649407361,"Within_Range","",8.8521,0.249706629055007,"Within_Range","",0.0160217447,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"6","COMPASS: Synoptic","CB","GCW","TR","B",20,"GCW_202404_TR_LYSB_20CM",2024,4,9,"","",0.69752027448534,"Within_Range","",0.132837799717913,"Within_Range","",0.0085353437,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"6","COMPASS: Synoptic","CB","GCW","TR","B",20,"GCW_202404_TR_LYSB_20CM",2024,4,9,"","",22.3625,0.69752027448534,"Within_Range","",4.7091,0.132837799717913,"Within_Range","",0.0085353437,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"7","COMPASS: Synoptic","CB","GCW","TR","B",45,"GCW_202404_TR_LYSB_45CM",2024,4,9,"","",0.203555832813475,"Within_Range","",4.34882651622003,"Within_Range","",0.2786037813,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"7","COMPASS: Synoptic","CB","GCW","TR","B",45,"GCW_202404_TR_LYSB_45CM",2024,4,9,"","",6.526,0.203555832813475,"Within_Range","",154.1659,4.34882651622003,"Within_Range","",0.2786037813,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"8","COMPASS: Synoptic","CB","GCW","TR","C",10,"GCW_202404_TR_LYSC_10CM",2024,4,9,"","",0.584398003742982,"Within_Range","",0.198225669957687,"Within_Range","",0.0127239697,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"8","COMPASS: Synoptic","CB","GCW","TR","C",10,"GCW_202404_TR_LYSC_10CM",2024,4,9,"","",18.7358,0.584398003742982,"Within_Range","",7.0271,0.198225669957687,"Within_Range","",0.0127239697,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"9","COMPASS: Synoptic","CB","GCW","TR","C",20,"GCW_202404_TR_LYSC_20CM",2024,4,9,"","",0.627386150966937,"Within_Range","",0.652028208744711,"Within_Range","",0.0417937208,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"9","COMPASS: Synoptic","CB","GCW","TR","C",20,"GCW_202404_TR_LYSC_20CM",2024,4,9,"","",20.114,0.627386150966937,"Within_Range","",23.1144,0.652028208744711,"Within_Range","",0.0417937208,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"10","COMPASS: Synoptic","CB","GCW","WC","A",10,"GCW_202404_WC_LYSA_10CM",2024,4,9,"","",11.2891203992514,"Within_Range","",104.311297602257,"Within_Range","",6.6820147485,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"10","COMPASS: Synoptic","CB","GCW","WC","A",10,"GCW_202404_WC_LYSA_10CM",2024,4,9,"","",361.9292,11.2891203992514,"Within_Range","",3697.8355,104.311297602257,"Within_Range","",6.6820147485,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"11","COMPASS: Synoptic","CB","GCW","WC","A",20,"GCW_202404_WC_LYSA_20CM",2024,4,9,"","",12.2972800998129,"Within_Range","",135.048236953456,"Within_Range","",8.65096622,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"11","COMPASS: Synoptic","CB","GCW","WC","A",20,"GCW_202404_WC_LYSA_20CM",2024,4,9,"","",394.2508,12.2972800998129,"Within_Range","",4787.46,135.048236953456,"Within_Range","",8.65096622,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"12","COMPASS: Synoptic","CB","GCW","WC","A",45,"GCW_202404_WC_LYSA_45CM",2024,4,9,"","",5.31422021210231,"Within_Range","",160.550344146685,"Within_Range","",10.2845840279,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"12","COMPASS: Synoptic","CB","GCW","WC","A",45,"GCW_202404_WC_LYSA_45CM",2024,4,9,"","",170.3739,5.31422021210231,"Within_Range","",5691.5097,160.550344146685,"Within_Range","",10.2845840279,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"13","COMPASS: Synoptic","CB","GCW","WC","B",10,"GCW_202404_WC_LYSB_10CM",2024,4,9,"","",8.7984466625078,"Within_Range","",91.0232976022567,"Within_Range","",5.8308100513,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"13","COMPASS: Synoptic","CB","GCW","WC","B",10,"GCW_202404_WC_LYSB_10CM",2024,4,9,"","",282.0782,8.7984466625078,"Within_Range","",3226.7759,91.0232976022567,"Within_Range","",5.8308100513,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"14","COMPASS: Synoptic","CB","GCW","WC","B",20,"GCW_202404_WC_LYSB_20CM",2024,4,9,"","",11.6460636306925,"Within_Range","",126.633703808181,"Within_Range","",8.1119467936,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"14","COMPASS: Synoptic","CB","GCW","WC","B",20,"GCW_202404_WC_LYSB_20CM",2024,4,9,"","",373.3728,11.6460636306925,"Within_Range","",4489.1648,126.633703808181,"Within_Range","",8.1119467936,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"15","COMPASS: Synoptic","CB","GCW","WC","B",45,"GCW_202404_WC_LYSB_45CM",2024,4,9,"","",7.30401122894573,"Within_Range","",162.69034696756,"Within_Range","",10.4216686496,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"15","COMPASS: Synoptic","CB","GCW","WC","B",45,"GCW_202404_WC_LYSB_45CM",2024,4,9,"","",234.1666,7.30401122894573,"Within_Range","",5767.3728,162.69034696756,"Within_Range","",10.4216686496,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"16","COMPASS: Synoptic","CB","GCW","WC","C",10,"GCW_202404_WC_LYSC_10CM",2024,4,9,"","",6.29915159076731,"Within_Range","",48.1708434414669,"Within_Range","",3.0857611148,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"16","COMPASS: Synoptic","CB","GCW","WC","C",10,"GCW_202404_WC_LYSC_10CM",2024,4,9,"","",201.9508,6.29915159076731,"Within_Range","",1707.6564,48.1708434414669,"Within_Range","",3.0857611148,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"17","COMPASS: Synoptic","CB","GCW","WC","C",20,"GCW_202404_WC_LYSC_20CM",2024,4,9,"","",10.7709887710543,"Within_Range","",81.1419943582511,"Within_Range","",5.1978320459,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"17","COMPASS: Synoptic","CB","GCW","WC","C",20,"GCW_202404_WC_LYSC_20CM",2024,4,9,"","",345.3179,10.7709887710543,"Within_Range","",2876.4837,81.1419943582511,"Within_Range","",5.1978320459,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"18","COMPASS: Synoptic","CB","GCW","WC","C",45,"GCW_202404_WC_LYSC_45CM",2024,4,9,"","",18.5526356830942,"Within_Range","",175.18989280677,"Within_Range","",11.2223664319,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"18","COMPASS: Synoptic","CB","GCW","WC","C",45,"GCW_202404_WC_LYSC_45CM",2024,4,9,"","",594.7975,18.5526356830942,"Within_Range","",6210.4817,175.18989280677,"Within_Range","",11.2223664319,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"19","COMPASS: Synoptic","CB","GCW","SW","A",0,"GCW_202404_SW_A",2024,4,9,"","",10.9438022457891,"Within_Range","",69.9511170662905,"Within_Range","",4.4809651497,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"19","COMPASS: Synoptic","CB","GCW","SW","A",0,"GCW_202404_SW_A",2024,4,9,"","",350.8583,10.9438022457891,"Within_Range","",2479.7671,69.9511170662905,"Within_Range","",4.4809651497,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"20","COMPASS: Synoptic","CB","GCW","SW","B",0,"GCW_202404_SW_B",2024,4,9,"","",10.9117747972551,"Within_Range","",69.9880620592384,"Within_Range","",4.4833317776,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"20","COMPASS: Synoptic","CB","GCW","SW","B",0,"GCW_202404_SW_B",2024,4,9,"","",349.8315,10.9117747972551,"Within_Range","",2481.0768,69.9880620592384,"Within_Range","",4.4833317776,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"21","COMPASS: Synoptic","CB","GCW","SW","C",0,"GCW_202404_SW_C",2024,4,9,"","",10.738658764816,"Within_Range","",68.9256558533145,"Within_Range","",4.4152760015,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"21","COMPASS: Synoptic","CB","GCW","SW","C",0,"GCW_202404_SW_C",2024,4,9,"","",344.2814,10.738658764816,"Within_Range","",2443.4145,68.9256558533145,"Within_Range","",4.4152760015,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"22","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202404_UP_LYSA_10CM",2024,4,25,"","",0.220545851528384,"Within_Range","",0.032132581100141,"Within_Range","",0.0020843537,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"22","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202404_UP_LYSA_10CM",2024,4,25,"","",7.0707,0.220545851528384,"Within_Range","",1.1391,0.032132581100141,"Within_Range","",0.0020843537,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"23","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202404_UP_LYSA_20CM",2024,4,25,"","",0.206419213973799,"Within_Range","",0.035836389280677,"Within_Range","",0.0023216128,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"23","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202404_UP_LYSA_20CM",2024,4,25,"","",6.6178,0.206419213973799,"Within_Range","",1.2704,0.035836389280677,"Within_Range","",0.0023216128,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"24","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202404_UP_LYSA_45CM",2024,4,25,"","",0.154881472239551,"Within_Range","",0.0258251057827927,"Within_Range","",0.0016803085,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"24","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202404_UP_LYSA_45CM",2024,4,25,"","",4.9655,0.154881472239551,"Within_Range","",0.9155,0.0258251057827927,"Within_Range","",0.0016803085,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"25","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202404_UP_LYSB_10CM",2024,4,25,"","",0.182170929507174,"Within_Range","",0.0555119887165021,"Within_Range","",0.0035819953,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"25","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202404_UP_LYSB_10CM",2024,4,25,"","",5.8404,0.182170929507174,"Within_Range","",1.9679,0.0555119887165021,"Within_Range","",0.0035819953,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"26","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202404_UP_LYSB_20CM",2024,4,25,"","",0.188225202744853,"Within_Range","",0.0684823695345557,"Within_Range","",0.0044128539,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"26","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202404_UP_LYSB_20CM",2024,4,25,"","",6.0345,0.188225202744853,"Within_Range","",2.4277,0.0684823695345557,"Within_Range","",0.0044128539,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"27","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202404_UP_LYSB_45CM",2024,4,25,"","",0.19325015595758,"Within_Range","",0.151283497884344,"Within_Range","",0.009716941,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"27","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202404_UP_LYSB_45CM",2024,4,25,"","",6.1956,0.19325015595758,"Within_Range","",5.363,0.151283497884344,"Within_Range","",0.009716941,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"28","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202404_UP_LYSC_10CM",2024,4,25,"","",0.35658452900811,"Within_Range","",0.1942341325811,"Within_Range","",0.0124682792,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"28","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202404_UP_LYSC_10CM",2024,4,25,"","",11.4321,0.35658452900811,"Within_Range","",6.8856,0.1942341325811,"Within_Range","",0.0124682792,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"29","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202404_UP_LYSC_20CM",2024,4,25,"","",0.314369931378665,"Within_Range","",0.115605077574048,"Within_Range","",0.0074314474,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"29","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202404_UP_LYSC_20CM",2024,4,25,"","",10.0787,0.314369931378665,"Within_Range","",4.0982,0.115605077574048,"Within_Range","",0.0074314474,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"30","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202404_UP_LYSC_45CM",2024,4,25,"","",0.0859856519026825,"Within_Range","",0.131320169252468,"Within_Range","",0.0084381271,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"30","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202404_UP_LYSC_45CM",2024,4,25,"","",2.7567,0.0859856519026825,"Within_Range","",4.6553,0.131320169252468,"Within_Range","",0.0084381271,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"31","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202404_SWAMP_LYSA_10CM",2024,4,25,"","",0.118533998752339,"Within_Range","",0.101356840620592,"Within_Range","",0.0065187317,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"31","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202404_SWAMP_LYSA_10CM",2024,4,25,"","",3.8002,0.118533998752339,"Within_Range","",3.5931,0.101356840620592,"Within_Range","",0.0065187317,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"32","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202404_SWAMP_LYSA_20CM",2024,4,25,"","",0.117548346849657,"Within_Range","",0.105543018335684,"Within_Range","",0.0067868905,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"32","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202404_SWAMP_LYSA_20CM",2024,4,25,"","",3.7686,0.117548346849657,"Within_Range","",3.7415,0.105543018335684,"Within_Range","",0.0067868905,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"33","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202404_SWAMP_LYSA_45CM",2024,4,25,"","",0.00534622582657517,"Within_Range","",0.962682651622003,"Within_Range","",0.0616936697,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"33","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202404_SWAMP_LYSA_45CM",2024,4,25,"","",0.1714,0.00534622582657517,"Within_Range","",34.1271,0.962682651622003,"Within_Range","",0.0616936697,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"34","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202404_SWAMP_LYSB_10CM",2024,4,25,"","",0.0312975670617592,"Within_Range","",0.453495063469676,"Within_Range","",0.0290760548,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"34","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202404_SWAMP_LYSB_10CM",2024,4,25,"","",1.0034,0.0312975670617592,"Within_Range","",16.0764,0.453495063469676,"Within_Range","",0.0290760548,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"35","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202404_SWAMP_LYSB_20CM",2024,4,25,"","",0.258923892701185,"Within_Range","",0.510657263751763,"Within_Range","",0.0327377596,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"35","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202404_SWAMP_LYSB_20CM",2024,4,25,"","",8.3011,0.258923892701185,"Within_Range","",18.1028,0.510657263751763,"Within_Range","",0.0327377596,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"36","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202404_SWAMP_LYSB_45CM",2024,4,25,"","",0.0494666250779788,"Within_Range","",1.43547249647391,"Within_Range","",0.0919797125,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"36","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202404_SWAMP_LYSB_45CM",2024,4,25,"","",1.5859,0.0494666250779788,"Within_Range","",50.8875,1.43547249647391,"Within_Range","",0.0919797125,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"37","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202404_SWAMP_LYSC_10CM",2024,4,25,"","",0.156781035558328,"Within_Range","",0.0938420310296192,"Within_Range","",0.0060373469,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"37","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202404_SWAMP_LYSC_10CM",2024,4,25,"","",5.0264,0.156781035558328,"Within_Range","",3.3267,0.0938420310296192,"Within_Range","",0.0060373469,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"38","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202404_SWAMP_LYSC_20CM",2024,4,25,"","",0.332660636306924,"Within_Range","",0.0926995768688293,"Within_Range","",0.0059641634,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"38","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202404_SWAMP_LYSC_20CM",2024,4,25,"","",10.6651,0.332660636306924,"Within_Range","",3.2862,0.0926995768688293,"Within_Range","",0.0059641634,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"39","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202404_SWAMP_LYSC_45CM",2024,4,25,"","",0.302854023705552,"Within_Range","",0.0899971791255289,"Within_Range","",0.0057910528,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"39","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202404_SWAMP_LYSC_45CM",2024,4,25,"","",9.7095,0.302854023705552,"Within_Range","",3.1904,0.0899971791255289,"Within_Range","",0.0057910528,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"40","COMPASS: Synoptic","CB","SWH","TR","A",10,"SWH_202404_TR_LYSA_10CM",2024,4,25,"","",0.20268247036806,"Within_Range","",2.63588998589563,"Within_Range","",0.1688762361,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"40","COMPASS: Synoptic","CB","SWH","TR","A",10,"SWH_202404_TR_LYSA_10CM",2024,4,25,"","",6.498,0.20268247036806,"Within_Range","",93.4423,2.63588998589563,"Within_Range","",0.1688762361,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"41","COMPASS: Synoptic","CB","SWH","TR","A",20,"SWH_202404_TR_LYSA_20CM",2024,4,25,"","",0.0137585776668746,"Within_Range","",2.90735401974612,"Within_Range","",0.1862657199,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"41","COMPASS: Synoptic","CB","SWH","TR","A",20,"SWH_202404_TR_LYSA_20CM",2024,4,25,"","",0.4411,0.0137585776668746,"Within_Range","",103.0657,2.90735401974612,"Within_Range","",0.1862657199,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"42","COMPASS: Synoptic","CB","SWH","TR","A",45,"SWH_202404_TR_LYSA_45CM",2024,4,25,"","",0.0295414847161572,"Within_Range","",10.6163977433004,"Within_Range","",0.6800927991,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"42","COMPASS: Synoptic","CB","SWH","TR","A",45,"SWH_202404_TR_LYSA_45CM",2024,4,25,"","",0.9471,0.0295414847161572,"Within_Range","",376.3513,10.6163977433004,"Within_Range","",0.6800927991,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"43","COMPASS: Synoptic","CB","SWH","TR","B",10,"SWH_202404_TR_LYSB_10CM",2024,4,25,"","",0.220184029943855,"Within_Range","",2.09205923836389,"Within_Range","",0.1340394445,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"43","COMPASS: Synoptic","CB","SWH","TR","B",10,"SWH_202404_TR_LYSB_10CM",2024,4,25,"","",7.0591,0.220184029943855,"Within_Range","",74.1635,2.09205923836389,"Within_Range","",0.1340394445,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"44","COMPASS: Synoptic","CB","SWH","TR","B",20,"SWH_202404_TR_LYSB_20CM",2024,4,25,"","",0.182710542732377,"Within_Range","",2.71603385049365,"Within_Range","",0.1740101038,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"44","COMPASS: Synoptic","CB","SWH","TR","B",20,"SWH_202404_TR_LYSB_20CM",2024,4,25,"","",5.8577,0.182710542732377,"Within_Range","",96.2834,2.71603385049365,"Within_Range","",0.1740101038,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"45","COMPASS: Synoptic","CB","SWH","TR","B",45,"SWH_202404_TR_LYSB_45CM",2024,4,25,"","",0,"bdl","",9.22708039492243,"Within_Range","",0.5910957,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"45","COMPASS: Synoptic","CB","SWH","TR","B",45,"SWH_202404_TR_LYSB_45CM",2024,4,25,"","",0,0,"bdl","",327.1,9.22708039492243,"Within_Range","",0.5910957,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"46","COMPASS: Synoptic","CB","SWH","TR","C",10,"SWH_202404_TR_LYSC_10CM",2024,4,25,"","",0.164394884591391,"Within_Range","",2.82211847672779,"Within_Range","",0.1808056887,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"46","COMPASS: Synoptic","CB","SWH","TR","C",10,"SWH_202404_TR_LYSC_10CM",2024,4,25,"","",5.2705,0.164394884591391,"Within_Range","",100.0441,2.82211847672779,"Within_Range","",0.1808056887,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"47","COMPASS: Synoptic","CB","SWH","TR","C",20,"SWH_202404_TR_LYSC_20CM",2024,4,25,"","",0.18150343106675,"Within_Range","",4.57830747531735,"Within_Range","",0.293303907,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"47","COMPASS: Synoptic","CB","SWH","TR","C",20,"SWH_202404_TR_LYSC_20CM",2024,4,25,"","",5.819,0.18150343106675,"Within_Range","",162.301,4.57830747531735,"Within_Range","",0.293303907,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"48","COMPASS: Synoptic","CB","SWH","TR","C",45,"SWH_202404_TR_LYSC_45CM",2024,4,25,"","",0.0510761072988147,"Within_Range","",5.14853596614951,"Within_Range","",0.3298316892,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"48","COMPASS: Synoptic","CB","SWH","TR","C",45,"SWH_202404_TR_LYSC_45CM",2024,4,25,"","",1.6375,0.0510761072988147,"Within_Range","",182.5156,5.14853596614951,"Within_Range","",0.3298316892,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"49","COMPASS: Synoptic","CB","SWH","WC","A",10,"SWH_202404_WC_LYSA_10CM",2024,4,25,"","",0.572189644416719,"Within_Range","",6.86845980253879,"Within_Range","",0.4400068283,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"49","COMPASS: Synoptic","CB","SWH","WC","A",10,"SWH_202404_WC_LYSA_10CM",2024,4,25,"","",18.3444,0.572189644416719,"Within_Range","",243.4869,6.86845980253879,"Within_Range","",0.4400068283,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"50","COMPASS: Synoptic","CB","SWH","WC","A",20,"SWH_202404_WC_LYSA_20CM",2024,4,25,"","",0.0570430442919526,"Within_Range","",8.79616078984485,"Within_Range","",0.5634917873,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"50","COMPASS: Synoptic","CB","SWH","WC","A",20,"SWH_202404_WC_LYSA_20CM",2024,4,25,"","",1.8288,0.0570430442919526,"Within_Range","",311.8239,8.79616078984485,"Within_Range","",0.5634917873,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"51","COMPASS: Synoptic","CB","SWH","WC","A",45,"SWH_202404_WC_LYSA_45CM",2024,4,25,"","",1.17242046163444,"Within_Range","",22.4495204513399,"Within_Range","",1.4381007485,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"51","COMPASS: Synoptic","CB","SWH","WC","A",45,"SWH_202404_WC_LYSA_45CM",2024,4,25,"","",37.5878,1.17242046163444,"Within_Range","",795.8355,22.4495204513399,"Within_Range","",1.4381007485,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"52","COMPASS: Synoptic","CB","SWH","WC","B",10,"SWH_202404_WC_LYSB_10CM",2024,4,25,"","",0.01756082345602,"Within_Range","",3.23131170662905,"Within_Range","",0.20701785,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"52","COMPASS: Synoptic","CB","SWH","WC","B",10,"SWH_202404_WC_LYSB_10CM",2024,4,25,"","",0.563,0.01756082345602,"Within_Range","",114.55,3.23131170662905,"Within_Range","",0.20701785,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"53","COMPASS: Synoptic","CB","SWH","WC","B",20,"SWH_202404_WC_LYSB_20CM",2024,4,25,"","",0.106135371179039,"Within_Range","",4.8209562764457,"Within_Range","",0.3088475403,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"53","COMPASS: Synoptic","CB","SWH","WC","B",20,"SWH_202404_WC_LYSB_20CM",2024,4,25,"","",3.4027,0.106135371179039,"Within_Range","",170.9029,4.8209562764457,"Within_Range","",0.3088475403,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"54","COMPASS: Synoptic","CB","SWH","WC","B",45,"SWH_202404_WC_LYSB_45CM",2024,4,25,"","",0,"bdl","",29.5957122708039,"Within_Range","",1.895872576,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"54","COMPASS: Synoptic","CB","SWH","WC","B",45,"SWH_202404_WC_LYSB_45CM",2024,4,25,"","",0,0,"bdl","",1049.168,29.5957122708039,"Within_Range","",1.895872576,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"55","COMPASS: Synoptic","CB","SWH","WC","C",10,"SWH_202404_WC_LYSC_10CM",2024,4,25,"","",0.0375015595757954,"Within_Range","",1.83104654442877,"Within_Range","",0.1173194542,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"55","COMPASS: Synoptic","CB","SWH","WC","C",10,"SWH_202404_WC_LYSC_10CM",2024,4,25,"","",1.2023,0.0375015595757954,"Within_Range","",64.9106,1.83104654442877,"Within_Range","",0.1173194542,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"56","COMPASS: Synoptic","CB","SWH","WC","C",20,"SWH_202404_WC_LYSC_20CM",2024,4,25,"","",0.0331534622582658,"Within_Range","",5.64040902679831,"Within_Range","",0.3613401675,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"56","COMPASS: Synoptic","CB","SWH","WC","C",20,"SWH_202404_WC_LYSC_20CM",2024,4,25,"","",1.0629,0.0331534622582658,"Within_Range","",199.9525,5.64040902679831,"Within_Range","",0.3613401675,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"57","COMPASS: Synoptic","CB","SWH","WC","C",45,"SWH_202404_WC_LYSC_45CM",2024,4,25,"","",0.0708733624454149,"Within_Range","",27.169119887165,"Within_Range","",1.7404295571,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"57","COMPASS: Synoptic","CB","SWH","WC","C",45,"SWH_202404_WC_LYSC_45CM",2024,4,25,"","",2.2722,0.0708733624454149,"Within_Range","",963.1453,27.169119887165,"Within_Range","",1.7404295571,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"58","COMPASS: Synoptic","CB","SWH","SW","A",0,"SWH_202404_SW_A",2024,4,25,"","",0.302170929507174,"Within_Range","",0.412157968970381,"Within_Range","",0.026428077,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"58","COMPASS: Synoptic","CB","SWH","SW","A",0,"SWH_202404_SW_A",2024,4,25,"","",9.6876,0.302170929507174,"Within_Range","",14.611,0.412157968970381,"Within_Range","",0.026428077,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"59","COMPASS: Synoptic","CB","SWH","SW","B",0,"SWH_202404_SW_B",2024,4,25,"","",0.340948222083593,"Within_Range","",0.417283497884344,"Within_Range","",0.0267564089,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"59","COMPASS: Synoptic","CB","SWH","SW","B",0,"SWH_202404_SW_B",2024,4,25,"","",10.9308,0.340948222083593,"Within_Range","",14.7927,0.417283497884344,"Within_Range","",0.0267564089,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""
-"60","COMPASS: Synoptic","CB","SWH","SW","C",0,"SWH_202404_SW_C",2024,4,25,"","",0.317698066126014,"Within_Range","",0.408885754583921,"Within_Range","",0.026218465,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
+"60","COMPASS: Synoptic","CB","SWH","SW","C",0,"SWH_202404_SW_C",2024,4,25,"","",10.1854,0.317698066126014,"Within_Range","",14.495,0.408885754583921,"Within_Range","",0.026218465,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",""

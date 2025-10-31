@@ -1,581 +1,561 @@
-"","Project","Region","Site","Zone","Replicate","Depth_cm","Sample_ID","Year","Month","Day","Time","Time_Zone","SO4_Conc_mM","SO4_Conc_flag","SO4_QAQC_flag","Cl_Conc_mM","Cl_Conc_flag","Cl_QAQC_flag","salinity","Analysis_rundate","Run_notes","Field_notes"
-"1","COMPASS: Synoptic","CB","GCW","UP","A",20,"GCW_202507_UP_LYSA_20CM",2025,7,16,"13:39","EDT",0.0129912663755458,"Within_Range","SO4 checks perc diff out of range",0.0650719322990127,"Within_Range","",0.0041943876,"2025-10-02","Std 1 is lower than the expected concentration. 
+"","Project","Region","Site","Zone","Replicate","Depth_cm","Sample_ID","Year","Month","Day","Time","Time_Zone","SO4_ppm","SO4_Conc_mM","SO4_Conc_flag","SO4_QAQC_flag","Cl_ppm","Cl_Conc_mM","Cl_Conc_flag","Cl_QAQC_flag","salinity","Analysis_rundate","Run_notes","Field_notes"
+"1","COMPASS: Synoptic","CB","GCW","UP","A",20,"GCW_202507_UP_LYSA_20CM",2025,7,16,"13:39","EDT",0.4165,0.0129912663755458,"Within_Range","SO4 checks perc diff out of range",2.3068,0.0650719322990127,"Within_Range","",0.0041943876,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"2","COMPASS: Synoptic","CB","GCW","UP","B",10,"GCW_202507_UP_LYSB_10CM",2025,7,16,"10:40","EDT",0.0862694946974423,"Within_Range","SO4 checks perc diff out of range",0.0163159379407616,"Within_Range","",0.0010711688,"2025-10-02","Std 1 is lower than the expected concentration. 
+"2","COMPASS: Synoptic","CB","GCW","UP","B",10,"GCW_202507_UP_LYSB_10CM",2025,7,16,"10:40","EDT",2.7658,0.0862694946974423,"Within_Range","SO4 checks perc diff out of range",0.5784,0.0163159379407616,"Within_Range","",0.0010711688,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"3","COMPASS: Synoptic","CB","GCW","UP","B",20,"GCW_202507_UP_LYSB_20CM",2025,7,16,"13:43","EDT",0.0522395508421709,"Within_Range","SO4 checks perc diff out of range",0.0138279266572638,"Within_Range","",0.0009117914,"2025-10-02","Std 1 is lower than the expected concentration. 
+"3","COMPASS: Synoptic","CB","GCW","UP","B",20,"GCW_202507_UP_LYSB_20CM",2025,7,16,"13:43","EDT",1.6748,0.0522395508421709,"Within_Range","SO4 checks perc diff out of range",0.4902,0.0138279266572638,"Within_Range","",0.0009117914,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"4","COMPASS: Synoptic","CB","GCW","TR","A",20,"GCW_202507_TR_LYSA_20CM",2025,7,16,"12:56","EDT",0.736172800998129,"Within_Range","SO4 checks perc diff out of range",0.668981664315938,"Within_Range","",0.0428797278,"2025-10-02","Std 1 is lower than the expected concentration. 
+"4","COMPASS: Synoptic","CB","GCW","TR","A",20,"GCW_202507_TR_LYSA_20CM",2025,7,16,"12:56","EDT",23.6017,0.736172800998129,"Within_Range","SO4 checks perc diff out of range",23.7154,0.668981664315938,"Within_Range","",0.0428797278,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"5","COMPASS: Synoptic","CB","GCW","TR","A",45,"GCW_202507_TR_LYSA_45CM",2025,7,16,"12:59","EDT",0.191650031191516,"Within_Range","SO4 checks perc diff out of range",6.50181382228491,"Within_Range","",0.4165201651,"2025-10-02","Std 1 is lower than the expected concentration. 
+"5","COMPASS: Synoptic","CB","GCW","TR","A",45,"GCW_202507_TR_LYSA_45CM",2025,7,16,"12:59","EDT",6.1443,0.191650031191516,"Within_Range","SO4 checks perc diff out of range",230.4893,6.50181382228491,"Within_Range","",0.4165201651,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"6","COMPASS: Synoptic","CB","GCW","TR","B",10,"GCW_202507_TR_LYSB_10CM",2025,7,16,"13:01","EDT",1.30073923892701,"Within_Range","SO4 checks perc diff out of range",4.7885952045134,"Within_Range","",0.3067745499,"2025-10-02","Std 1 is lower than the expected concentration. 
+"6","COMPASS: Synoptic","CB","GCW","TR","B",10,"GCW_202507_TR_LYSB_10CM",2025,7,16,"13:01","EDT",41.7017,1.30073923892701,"Within_Range","SO4 checks perc diff out of range",169.7557,4.7885952045134,"Within_Range","",0.3067745499,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"7","COMPASS: Synoptic","CB","GCW","TR","B",20,"GCW_202507_TR_LYSB_20CM",2025,7,16,"13:04","EDT",1.24008733624454,"Within_Range","SO4 checks perc diff out of range",3.29000564174894,"Within_Range","",0.2107776749,"2025-10-02","Std 1 is lower than the expected concentration. 
+"7","COMPASS: Synoptic","CB","GCW","TR","B",20,"GCW_202507_TR_LYSB_20CM",2025,7,16,"13:04","EDT",39.7572,1.24008733624454,"Within_Range","SO4 checks perc diff out of range",116.6307,3.29000564174894,"Within_Range","",0.2107776749,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"8","COMPASS: Synoptic","CB","GCW","TR","B",45,"GCW_202507_TR_LYSB_45CM",2025,7,16,"13:07","EDT",0.268222083593263,"Within_Range","SO4 checks perc diff out of range",2.75640056417489,"Within_Range","",0.1765959208,"2025-10-02","Std 1 is lower than the expected concentration. 
+"8","COMPASS: Synoptic","CB","GCW","TR","B",45,"GCW_202507_TR_LYSB_45CM",2025,7,16,"13:07","EDT",8.5992,0.268222083593263,"Within_Range","SO4 checks perc diff out of range",97.7144,2.75640056417489,"Within_Range","",0.1765959208,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"9","COMPASS: Synoptic","CB","GCW","TR","C",10,"GCW_202507_TR_LYSC_10CM",2025,7,16,"13:10","EDT",1.09573300062383,"Within_Range","SO4 checks perc diff out of range",4.80197743300423,"Within_Range","",0.3076317907,"2025-10-02","Std 1 is lower than the expected concentration. 
+"9","COMPASS: Synoptic","CB","GCW","TR","C",10,"GCW_202507_TR_LYSC_10CM",2025,7,16,"13:10","EDT",35.1292,1.09573300062383,"Within_Range","SO4 checks perc diff out of range",170.2301,4.80197743300423,"Within_Range","",0.3076317907,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"10","COMPASS: Synoptic","CB","GCW","TR","C",20,"GCW_202507_TR_LYSC_20CM",2025,7,16,"13:13","EDT",1.84745789145352,"Within_Range","SO4 checks perc diff out of range",17.5975430183357,"Within_Range","",1.1272920503,"2025-10-02","Std 1 is lower than the expected concentration. 
+"10","COMPASS: Synoptic","CB","GCW","TR","C",20,"GCW_202507_TR_LYSC_20CM",2025,7,16,"13:13","EDT",59.2295,1.84745789145352,"Within_Range","SO4 checks perc diff out of range",623.8329,17.5975430183357,"Within_Range","",1.1272920503,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"11","COMPASS: Synoptic","CB","GCW","TR","C",45,"GCW_202507_TR_LYSC_45CM",2025,7,16,"13:15","EDT",0.864800374298191,"Within_Range","SO4 checks perc diff out of range",37.6207503526093,"Within_Range","",2.4099416692,"2025-10-02","Std 1 is lower than the expected concentration. 
+"11","COMPASS: Synoptic","CB","GCW","TR","C",45,"GCW_202507_TR_LYSC_45CM",2025,7,16,"13:15","EDT",27.7255,0.864800374298191,"Within_Range","SO4 checks perc diff out of range",1333.6556,37.6207503526093,"Within_Range","",2.4099416692,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"12","COMPASS: Synoptic","CB","GCW","WC","A",10,"GCW_202507_WC_LYSA_10CM",2025,7,16,"10:10","EDT",14.9354553961322,"Within_Range","SO4 checks perc diff out of range",139.792710860367,"Within_Range","",8.9548884412,"2025-10-02","Std 1 is lower than the expected concentration. 
+"12","COMPASS: Synoptic","CB","GCW","WC","A",10,"GCW_202507_WC_LYSA_10CM",2025,7,16,"10:10","EDT",478.8307,14.9354553961322,"Within_Range","SO4 checks perc diff out of range",4955.6516,139.792710860367,"Within_Range","",8.9548884412,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"13","COMPASS: Synoptic","CB","GCW","WC","A",20,"GCW_202507_WC_LYSA_20CM",2025,7,16,"10:16","EDT",17.8215502183406,"Within_Range","SO4 checks perc diff out of range",154.143782792666,"Within_Range","",9.8741915597,"2025-10-02","Std 1 is lower than the expected concentration. 
+"13","COMPASS: Synoptic","CB","GCW","WC","A",20,"GCW_202507_WC_LYSA_20CM",2025,7,16,"10:16","EDT",571.3589,17.8215502183406,"Within_Range","SO4 checks perc diff out of range",5464.3971,154.143782792666,"Within_Range","",9.8741915597,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"14","COMPASS: Synoptic","CB","GCW","WC","A",45,"GCW_202507_WC_LYSA_45CM",2025,7,16,"10:22","EDT",6.05781347473487,"Within_Range","SO4 checks perc diff out of range",162.425794076164,"Within_Range","",10.4047218808,"2025-10-02","Std 1 is lower than the expected concentration. 
+"14","COMPASS: Synoptic","CB","GCW","WC","A",45,"GCW_202507_WC_LYSA_45CM",2025,7,16,"10:22","EDT",194.2135,6.05781347473487,"Within_Range","SO4 checks perc diff out of range",5757.9944,162.425794076164,"Within_Range","",10.4047218808,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"15","COMPASS: Synoptic","CB","GCW","WC","B",10,"GCW_202507_WC_LYSB_10CM",2025,7,16,"10:30","EDT",12.8089270118528,"Within_Range","SO4 checks perc diff out of range",121.762815232722,"Within_Range","",7.7999266826,"2025-10-02","Std 1 is lower than the expected concentration. 
+"15","COMPASS: Synoptic","CB","GCW","WC","B",10,"GCW_202507_WC_LYSB_10CM",2025,7,16,"10:30","EDT",410.6542,12.8089270118528,"Within_Range","SO4 checks perc diff out of range",4316.4918,121.762815232722,"Within_Range","",7.7999266826,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"16","COMPASS: Synoptic","CB","GCW","WC","B",20,"GCW_202507_WC_LYSB_20CM",2025,7,16,"10:35","EDT",16.9800748596382,"Within_Range","SO4 checks perc diff out of range",133.807599435825,"Within_Range","",8.5714932758,"2025-10-02","Std 1 is lower than the expected concentration. 
+"16","COMPASS: Synoptic","CB","GCW","WC","B",20,"GCW_202507_WC_LYSB_20CM",2025,7,16,"10:35","EDT",544.3812,16.9800748596382,"Within_Range","SO4 checks perc diff out of range",4743.4794,133.807599435825,"Within_Range","",8.5714932758,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"17","COMPASS: Synoptic","CB","GCW","WC","B",45,"GCW_202507_WC_LYSB_45CM",2025,7,16,"10:44","EDT",12.0655614472863,"Within_Range","SO4 checks perc diff out of range",165.242172073343,"Within_Range","",10.585133845,"2025-10-02","Std 1 is lower than the expected concentration. 
+"17","COMPASS: Synoptic","CB","GCW","WC","B",45,"GCW_202507_WC_LYSB_45CM",2025,7,16,"10:44","EDT",386.8219,12.0655614472863,"Within_Range","SO4 checks perc diff out of range",5857.835,165.242172073343,"Within_Range","",10.585133845,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"18","COMPASS: Synoptic","CB","GCW","WC","C",10,"GCW_202507_WC_LYSC_10CM",2025,7,16,"10:53","EDT",7.59728321896444,"Within_Range","SO4 checks perc diff out of range",99.4549844851904,"Within_Range","",6.3709283144,"2025-10-02","Std 1 is lower than the expected concentration. 
+"18","COMPASS: Synoptic","CB","GCW","WC","C",10,"GCW_202507_WC_LYSC_10CM",2025,7,16,"10:53","EDT",243.5689,7.59728321896444,"Within_Range","SO4 checks perc diff out of range",3525.6792,99.4549844851904,"Within_Range","",6.3709283144,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"19","COMPASS: Synoptic","CB","GCW","WC","C",20,"GCW_202507_WC_LYSC_20CM",2025,7,16,"10:59","EDT",11.3202214597629,"Within_Range","SO4 checks perc diff out of range",98.2203864598025,"Within_Range","",6.2918422489,"2025-10-02","Std 1 is lower than the expected concentration. 
+"19","COMPASS: Synoptic","CB","GCW","WC","C",20,"GCW_202507_WC_LYSC_20CM",2025,7,16,"10:59","EDT",362.9263,11.3202214597629,"Within_Range","SO4 checks perc diff out of range",3481.9127,98.2203864598025,"Within_Range","",6.2918422489,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"20","COMPASS: Synoptic","CB","GCW","WC","C",45,"GCW_202507_WC_LYSC_45CM",2025,7,16,"11:01","EDT",17.863384279476,"Within_Range","SO4 checks perc diff out of range",154.657858956276,"Within_Range","",9.9071223277,"2025-10-02","Std 1 is lower than the expected concentration. 
+"20","COMPASS: Synoptic","CB","GCW","WC","C",45,"GCW_202507_WC_LYSC_45CM",2025,7,16,"11:01","EDT",572.7001,17.863384279476,"Within_Range","SO4 checks perc diff out of range",5482.6211,154.657858956276,"Within_Range","",9.9071223277,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"21","COMPASS: Synoptic","CB","GCW","SW","A",0,"GCW_202507_SW_A",2025,7,16,"10:30","EDT",12.9427510917031,"Within_Range","SO4 checks perc diff out of range",88.4464823695346,"Within_Range","",5.6657440346,"2025-10-02","Std 1 is lower than the expected concentration. 
+"21","COMPASS: Synoptic","CB","GCW","SW","A",0,"GCW_202507_SW_A",2025,7,16,"10:30","EDT",414.9446,12.9427510917031,"Within_Range","SO4 checks perc diff out of range",3135.4278,88.4464823695346,"Within_Range","",5.6657440346,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"22","COMPASS: Synoptic","CB","GCW","SW","B",0,"GCW_202507_SW_B",2025,7,16,"10:54","EDT",10.4562164691204,"Within_Range","SO4 checks perc diff out of range",69.5326685472496,"Within_Range","",4.4541601117,"2025-10-02","Std 1 is lower than the expected concentration. 
+"22","COMPASS: Synoptic","CB","GCW","SW","B",0,"GCW_202507_SW_B",2025,7,16,"10:54","EDT",335.2263,10.4562164691204,"Within_Range","SO4 checks perc diff out of range",2464.9331,69.5326685472496,"Within_Range","",4.4541601117,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"23","COMPASS: Synoptic","CB","GCW","SW","C",0,"GCW_202507_SW_C",2025,7,16,"10:35","EDT",12.7965221459763,"Within_Range","SO4 checks perc diff out of range",86.5954837799718,"Within_Range","",5.5471724893,"2025-10-02","Std 1 is lower than the expected concentration. 
+"23","COMPASS: Synoptic","CB","GCW","SW","C",0,"GCW_202507_SW_C",2025,7,16,"10:35","EDT",410.2565,12.7965221459763,"Within_Range","SO4 checks perc diff out of range",3069.8099,86.5954837799718,"Within_Range","",5.5471724893,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"24","COMPASS: Synoptic","CB","MSM","UP","A",10,"MSM_202507_UP_LYSA_10CM",2025,7,15,"","",4.00967872738615,"Within_Range","SO4 checks perc diff out of range",34.186047954866,"Within_Range","",2.1899209878,"2025-10-02","Std 1 is lower than the expected concentration. 
+"24","COMPASS: Synoptic","CB","MSM","UP","A",10,"MSM_202507_UP_LYSA_10CM",2025,7,15,"","",128.5503,4.00967872738615,"Within_Range","SO4 checks perc diff out of range",1211.8954,34.186047954866,"Within_Range","",2.1899209878,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"25","COMPASS: Synoptic","CB","MSM","UP","A",20,"MSM_202507_UP_LYSA_20CM",2025,7,15,"","",5.6913505926388,"Within_Range","SO4 checks perc diff out of range",50.9131029619182,"Within_Range","",3.2614251865,"2025-10-02","Std 1 is lower than the expected concentration. 
+"25","COMPASS: Synoptic","CB","MSM","UP","A",20,"MSM_202507_UP_LYSA_20CM",2025,7,15,"","",182.4647,5.6913505926388,"Within_Range","SO4 checks perc diff out of range",1804.8695,50.9131029619182,"Within_Range","",3.2614251865,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"26","COMPASS: Synoptic","CB","MSM","UP","A",45,"MSM_202507_UP_LYSA_45CM",2025,7,15,"13:42","EDT",6.07176855895196,"Within_Range","SO4 checks perc diff out of range",66.6166544428773,"Within_Range","",4.2673656428,"2025-10-02","Std 1 is lower than the expected concentration. 
+"26","COMPASS: Synoptic","CB","MSM","UP","A",45,"MSM_202507_UP_LYSA_45CM",2025,7,15,"13:42","EDT",194.6609,6.07176855895196,"Within_Range","SO4 checks perc diff out of range",2361.5604,66.6166544428773,"Within_Range","",4.2673656428,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"27","COMPASS: Synoptic","CB","MSM","UP","B",10,"MSM_202507_UP_LYSB_10CM",2025,7,15,"13:38","EDT",3.02573611977542,"Within_Range","SO4 checks perc diff out of range",16.5638279266573,"Within_Range","",1.0610741739,"2025-10-02","Std 1 is lower than the expected concentration. 
+"27","COMPASS: Synoptic","CB","MSM","UP","B",10,"MSM_202507_UP_LYSB_10CM",2025,7,15,"13:38","EDT",97.0051,3.02573611977542,"Within_Range","SO4 checks perc diff out of range",587.1877,16.5638279266573,"Within_Range","",1.0610741739,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"28","COMPASS: Synoptic","CB","MSM","UP","B",20,"MSM_202507_UP_LYSB_20CM",2025,7,15,"13:40","EDT",1.92496880848409,"Within_Range","SO4 checks perc diff out of range",14.1042115655853,"Within_Range","",0.9035157001,"2025-10-02","Std 1 is lower than the expected concentration. 
+"28","COMPASS: Synoptic","CB","MSM","UP","B",20,"MSM_202507_UP_LYSB_20CM",2025,7,15,"13:40","EDT",61.7145,1.92496880848409,"Within_Range","SO4 checks perc diff out of range",499.9943,14.1042115655853,"Within_Range","",0.9035157001,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"29","COMPASS: Synoptic","CB","MSM","UP","B",45,"MSM_202507_UP_LYSB_45CM",2025,7,15,"","",6.8962819713038,"Within_Range","SO4 checks perc diff out of range",64.1580112834979,"Within_Range","",4.1098695105,"2025-10-02","Std 1 is lower than the expected concentration. 
+"29","COMPASS: Synoptic","CB","MSM","UP","B",45,"MSM_202507_UP_LYSB_45CM",2025,7,15,"","",221.0948,6.8962819713038,"Within_Range","SO4 checks perc diff out of range",2274.4015,64.1580112834979,"Within_Range","",4.1098695105,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"30","COMPASS: Synoptic","CB","MSM","UP","C",10,"MSM_202507_UP_LYSC_10CM",2025,7,15,"","",3.33017467248908,"Within_Range","SO4 checks perc diff out of range",23.9275007052186,"Within_Range","",1.5327774293,"2025-10-02","Std 1 is lower than the expected concentration. 
+"30","COMPASS: Synoptic","CB","MSM","UP","C",10,"MSM_202507_UP_LYSC_10CM",2025,7,15,"","",106.7654,3.33017467248908,"Within_Range","SO4 checks perc diff out of range",848.2299,23.9275007052186,"Within_Range","",1.5327774293,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"31","COMPASS: Synoptic","CB","MSM","UP","C",20,"MSM_202507_UP_LYSC_20CM",2025,7,15,"","",3.42150343106675,"Within_Range","SO4 checks perc diff out of range",28.9846657263752,"Within_Range","",1.8567300648,"2025-10-02","Std 1 is lower than the expected concentration. 
+"31","COMPASS: Synoptic","CB","MSM","UP","C",20,"MSM_202507_UP_LYSC_20CM",2025,7,15,"","",109.6934,3.42150343106675,"Within_Range","SO4 checks perc diff out of range",1027.5064,28.9846657263752,"Within_Range","",1.8567300648,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"32","COMPASS: Synoptic","CB","MSM","UP","C",45,"MSM_202507_UP_LYSC_45CM",2025,7,15,"","",5.88083593262633,"Within_Range","SO4 checks perc diff out of range",53.3437376586742,"Within_Range","",3.4171271485,"2025-10-02","Std 1 is lower than the expected concentration. 
+"32","COMPASS: Synoptic","CB","MSM","UP","C",45,"MSM_202507_UP_LYSC_45CM",2025,7,15,"","",188.5396,5.88083593262633,"Within_Range","SO4 checks perc diff out of range",1891.0355,53.3437376586742,"Within_Range","",3.4171271485,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"33","COMPASS: Synoptic","CB","MSM","TR","A",10,"MSM_202507_TR_LYSA_10CM",2025,7,15,"12:14","EDT",15.2310729881472,"Within_Range","SO4 checks perc diff out of range",103.740335684062,"Within_Range","",6.6454399843,"2025-10-02","Std 1 is lower than the expected concentration. 
-  Some sample IDs are missing from metadata: 
-  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
-  9, 10, 88, 89 (test samples for Lucie)
-  ","dic duplicate"
-"34","COMPASS: Synoptic","CB","MSM","TR","A",20,"MSM_202507_TR_LYSA_20CM",2025,7,15,"12:16","EDT",24.3122894572676,"Within_Range","SO4 checks perc diff out of range",150.880758815233,"Within_Range","",9.6651682803,"2025-10-02","Std 1 is lower than the expected concentration. 
-  Some sample IDs are missing from metadata: 
-  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
-  9, 10, 88, 89 (test samples for Lucie)
-  ",""
-"35","COMPASS: Synoptic","CB","MSM","TR","A",45,"MSM_202507_TR_LYSA_45CM",2025,7,15,"12:18","EDT",20.9698752339364,"Within_Range","SO4 checks perc diff out of range",160.018138222849,"Within_Range","",10.250491901,"2025-10-02","Std 1 is lower than the expected concentration. 
-  Some sample IDs are missing from metadata: 
-  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
-  9, 10, 88, 89 (test samples for Lucie)
-  ",""
-"36","COMPASS: Synoptic","CB","MSM","TR","B",10,"MSM_202507_TR_LYSB_10CM",2025,7,15,"12:20","EDT",13.677043044292,"Within_Range","SO4 checks perc diff out of range",94.8745585331453,"Within_Range","",6.0775147017,"2025-10-02","Std 1 is lower than the expected concentration. 
-  Some sample IDs are missing from metadata: 
-  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
-  9, 10, 88, 89 (test samples for Lucie)
-  ",""
-"37","COMPASS: Synoptic","CB","MSM","TR","B",20,"MSM_202507_TR_LYSB_20CM",2025,7,15,"12:22","EDT",17.5882813474735,"Within_Range","SO4 checks perc diff out of range",142.550716502116,"Within_Range","",9.1315611803,"2025-10-02","Std 1 is lower than the expected concentration. 
-  Some sample IDs are missing from metadata: 
-  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
-  9, 10, 88, 89 (test samples for Lucie)
-  ",""
-"38","COMPASS: Synoptic","CB","MSM","TR","B",45,"MSM_202507_TR_LYSB_45CM",2025,7,15,"12:23","EDT",16.1821085464754,"Within_Range","SO4 checks perc diff out of range",173.64666854725,"Within_Range","",11.1235103408,"2025-10-02","Std 1 is lower than the expected concentration. 
-  Some sample IDs are missing from metadata: 
-  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
-  9, 10, 88, 89 (test samples for Lucie)
-  ",""
-"39","COMPASS: Synoptic","CB","MSM","TR","C",20,"MSM_202507_TR_LYSC_20CM",2025,7,15,"12:26","EDT",13.4812227074236,"Within_Range","SO4 checks perc diff out of range",129.107576868829,"Within_Range","",8.2704185252,"2025-10-02","Std 1 is lower than the expected concentration. 
-  Some sample IDs are missing from metadata: 
-  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
-  9, 10, 88, 89 (test samples for Lucie)
-  ",""
-"40","COMPASS: Synoptic","CB","MSM","TR","C",45,"MSM_202507_TR_LYSC_45CM",2025,7,15,"12:27","EDT",21.9161104179663,"Within_Range","SO4 checks perc diff out of range",176.323390691114,"Within_Range","",11.2949762094,"2025-10-02","Std 1 is lower than the expected concentration. 
-  Some sample IDs are missing from metadata: 
-  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
-  9, 10, 88, 89 (test samples for Lucie)
-  ",""
-"41","COMPASS: Synoptic","CB","MSM","WC","A",10,"MSM_202507_WC_LYSA_10CM",2025,7,15,"11:30","EDT",22.3919619463506,"Within_Range","SO4 checks perc diff out of range",183.270267983075,"Within_Range","",11.739980317,"2025-10-02","Std 1 is lower than the expected concentration. 
-  Some sample IDs are missing from metadata: 
-  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
-  9, 10, 88, 89 (test samples for Lucie)
-  ",""
-"42","COMPASS: Synoptic","CB","MSM","WC","A",20,"MSM_202507_WC_LYSA_20CM",2025,7,15,"11:32","EDT",28.7120835932626,"Within_Range","SO4 checks perc diff out of range",219.63336248237,"Within_Range","",14.0693328789,"2025-10-02","Std 1 is lower than the expected concentration. 
-  Some sample IDs are missing from metadata: 
-  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
-  9, 10, 88, 89 (test samples for Lucie)
-  ",""
-"43","COMPASS: Synoptic","CB","MSM","WC","A",45,"MSM_202507_WC_LYSA_45CM",2025,7,15,"11:35","EDT",2.75359638178415,"Within_Range","SO4 checks perc diff out of range",254.443063469676,"Within_Range","",16.2991779262,"2025-10-02","Std 1 is lower than the expected concentration. 
-  Some sample IDs are missing from metadata: 
-  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
-  9, 10, 88, 89 (test samples for Lucie)
-  ",""
-"44","COMPASS: Synoptic","CB","MSM","WC","B",10,"MSM_202507_WC_LYSB_10CM",2025,7,15,"11:17","EDT",26.1544728633812,"Within_Range","SO4 checks perc diff out of range",221.482349788434,"Within_Range","",14.1877755851,"2025-10-02","Std 1 is lower than the expected concentration. 
-  Some sample IDs are missing from metadata: 
-  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
-  9, 10, 88, 89 (test samples for Lucie)
-  ",""
-"45","COMPASS: Synoptic","CB","MSM","WC","B",20,"MSM_202507_WC_LYSB_20CM",2025,7,15,"11:22","EDT",29.6145009357455,"Within_Range","SO4 checks perc diff out of range",238.953655853315,"Within_Range","",15.3069551297,"2025-10-02","Std 1 is lower than the expected concentration. 
-  Some sample IDs are missing from metadata: 
-  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
-  9, 10, 88, 89 (test samples for Lucie)
-  ",""
-"46","COMPASS: Synoptic","CB","MSM","WC","C",10,"MSM_202507_WC_LYSC_10CM",2025,7,15,"11:07","EDT",28.4942046163444,"Within_Range","SO4 checks perc diff out of range",242.354758815233,"Within_Range","",15.5248234934,"2025-10-02","Std 1 is lower than the expected concentration. 
+"33","COMPASS: Synoptic","CB","MSM","TR","A",10,"MSM_202507_TR_LYSA_10CM",2025,7,15,"12:14","EDT",488.3082,15.2310729881472,"Within_Range","SO4 checks perc diff out of range",3677.5949,103.740335684062,"Within_Range","",6.6454399843,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ","dic duplicate"
-"47","COMPASS: Synoptic","CB","MSM","WC","C",20,"MSM_202507_WC_LYSC_20CM",2025,7,15,"11:11","EDT",28.1189238927012,"Within_Range","SO4 checks perc diff out of range",230.506755994358,"Within_Range","",14.7658623515,"2025-10-02","Std 1 is lower than the expected concentration. 
+"34","COMPASS: Synoptic","CB","MSM","TR","A",20,"MSM_202507_TR_LYSA_20CM",2025,7,15,"12:16","EDT",779.452,24.3122894572676,"Within_Range","SO4 checks perc diff out of range",5348.7229,150.880758815233,"Within_Range","",9.6651682803,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"48","COMPASS: Synoptic","CB","MSM","SW","A",0,"MSM_202507_SW_A",2025,7,15,"10:15","EDT",26.6490736119775,"Within_Range","SO4 checks perc diff out of range",173.506685472496,"Within_Range","",11.114543284,"2025-10-02","Std 1 is lower than the expected concentration. 
+"35","COMPASS: Synoptic","CB","MSM","TR","A",45,"MSM_202507_TR_LYSA_45CM",2025,7,15,"12:18","EDT",672.2942,20.9698752339364,"Within_Range","SO4 checks perc diff out of range",5672.643,160.018138222849,"Within_Range","",10.250491901,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"49","COMPASS: Synoptic","CB","MSM","SW","B",0,"MSM_202507_SW_B",2025,7,15,"10:15","EDT",26.1913194011229,"Within_Range","SO4 checks perc diff out of range",170.151723554302,"Within_Range","",10.8996306302,"2025-10-02","Std 1 is lower than the expected concentration. 
+"36","COMPASS: Synoptic","CB","MSM","TR","B",10,"MSM_202507_TR_LYSB_10CM",2025,7,15,"12:20","EDT",438.486,13.677043044292,"Within_Range","SO4 checks perc diff out of range",3363.3031,94.8745585331453,"Within_Range","",6.0775147017,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"50","COMPASS: Synoptic","CB","MSM","SW","C",0,"MSM_202507_SW_C",2025,7,15,"10:15","EDT",27.3778446662508,"Within_Range","SO4 checks perc diff out of range",178.260465444288,"Within_Range","",11.4190616345,"2025-10-02","Std 1 is lower than the expected concentration. 
+"37","COMPASS: Synoptic","CB","MSM","TR","B",20,"MSM_202507_TR_LYSB_20CM",2025,7,15,"12:22","EDT",563.8803,17.5882813474735,"Within_Range","SO4 checks perc diff out of range",5053.4229,142.550716502116,"Within_Range","",9.1315611803,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"51","COMPASS: Synoptic","CB","GWI","UP","A",20,"GWI_202507_UP_LYSA_20CM",2025,7,23,"12:42","EDT",20.4278103555833,"Within_Range","SO4 checks perc diff out of range",148.688806770099,"Within_Range","",9.5247558874,"2025-10-02","Std 1 is lower than the expected concentration. 
+"38","COMPASS: Synoptic","CB","MSM","TR","B",45,"MSM_202507_TR_LYSB_45CM",2025,7,15,"12:23","EDT",518.7984,16.1821085464754,"Within_Range","SO4 checks perc diff out of range",6155.7744,173.64666854725,"Within_Range","",11.1235103408,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"52","COMPASS: Synoptic","CB","GWI","UP","A",45,"GWI_202507_UP_LYSA_45CM",2025,7,23,"12:44","EDT",25.6295258889582,"Within_Range","SO4 checks perc diff out of range",166.519540197461,"Within_Range","",10.6669596839,"2025-10-02","Std 1 is lower than the expected concentration. 
+"39","COMPASS: Synoptic","CB","MSM","TR","C",20,"MSM_202507_TR_LYSC_20CM",2025,7,15,"12:26","EDT",432.208,13.4812227074236,"Within_Range","SO4 checks perc diff out of range",4576.8636,129.107576868829,"Within_Range","",8.2704185252,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"53","COMPASS: Synoptic","CB","GWI","UP","B",10,"GWI_202507_UP_LYSB_10CM",2025,7,23,"12:46","EDT",8.27136306924516,"Within_Range","SO4 checks perc diff out of range",47.6954217207334,"Within_Range","",3.0553064789,"2025-10-02","Std 1 is lower than the expected concentration. 
+"40","COMPASS: Synoptic","CB","MSM","TR","C",45,"MSM_202507_TR_LYSC_45CM",2025,7,15,"12:27","EDT",702.6305,21.9161104179663,"Within_Range","SO4 checks perc diff out of range",6250.6642,176.323390691114,"Within_Range","",11.2949762094,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"54","COMPASS: Synoptic","CB","GWI","UP","B",20,"GWI_202507_UP_LYSB_20CM",2025,7,23,"12:48","EDT",12.8352620087336,"Within_Range","SO4 checks perc diff out of range",75.5112750352609,"Within_Range","",4.8371385829,"2025-10-02","Std 1 is lower than the expected concentration. 
+"41","COMPASS: Synoptic","CB","MSM","WC","A",10,"MSM_202507_WC_LYSA_10CM",2025,7,15,"11:30","EDT",717.8863,22.3919619463506,"Within_Range","SO4 checks perc diff out of range",6496.931,183.270267983075,"Within_Range","",11.739980317,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"55","COMPASS: Synoptic","CB","GWI","UP","B",45,"GWI_202507_UP_LYSB_45CM",2025,7,23,"12:50","EDT",17.557217716781,"Within_Range","SO4 checks perc diff out of range",112.122409026798,"Within_Range","",7.1823800958,"2025-10-02","Std 1 is lower than the expected concentration. 
+"42","COMPASS: Synoptic","CB","MSM","WC","A",20,"MSM_202507_WC_LYSA_20CM",2025,7,15,"11:32","EDT",920.5094,28.7120835932626,"Within_Range","SO4 checks perc diff out of range",7786.0027,219.63336248237,"Within_Range","",14.0693328789,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"56","COMPASS: Synoptic","CB","GWI","UP","C",20,"GWI_202507_UP_LYSC_20CM",2025,7,23,"12:52","EDT",14.0358702432938,"Within_Range","SO4 checks perc diff out of range",100.629562764457,"Within_Range","",6.446169626,"2025-10-02","Std 1 is lower than the expected concentration. 
+"43","COMPASS: Synoptic","CB","MSM","WC","A",45,"MSM_202507_WC_LYSA_45CM",2025,7,15,"11:35","EDT",88.2803,2.75359638178415,"Within_Range","SO4 checks perc diff out of range",9020.0066,254.443063469676,"Within_Range","",16.2991779262,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"57","COMPASS: Synoptic","CB","GWI","UP","C",45,"GWI_202507_UP_LYSC_45CM",2025,7,23,"12:54","EDT",16.9203649407361,"Within_Range","SO4 checks perc diff out of range",105.366987306065,"Within_Range","",6.7496402779,"2025-10-02","Std 1 is lower than the expected concentration. 
+"44","COMPASS: Synoptic","CB","MSM","WC","B",10,"MSM_202507_WC_LYSB_10CM",2025,7,15,"11:17","EDT",838.5124,26.1544728633812,"Within_Range","SO4 checks perc diff out of range",7851.5493,221.482349788434,"Within_Range","",14.1877755851,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"58","COMPASS: Synoptic","CB","GWI","TR","A",10,"GWI_202507_TR_LYSA_10CM",2025,7,23,"11:44","EDT",45.0892202121023,"Within_Range","SO4 checks perc diff out of range",277.576936530324,"Within_Range","",17.7810910368,"2025-10-02","Std 1 is lower than the expected concentration. 
+"45","COMPASS: Synoptic","CB","MSM","WC","B",20,"MSM_202507_WC_LYSB_20CM",2025,7,15,"11:22","EDT",949.4409,29.6145009357455,"Within_Range","SO4 checks perc diff out of range",8470.9071,238.953655853315,"Within_Range","",15.3069551297,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"59","COMPASS: Synoptic","CB","GWI","TR","A",20,"GWI_202507_TR_LYSA_20CM",2025,7,23,"11:45","EDT",34.9720492825951,"Within_Range","SO4 checks perc diff out of range",287.031088857546,"Within_Range","",18.3867065447,"2025-10-02","Std 1 is lower than the expected concentration. 
-  Some sample IDs are missing from metadata: 
-  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
-  9, 10, 88, 89 (test samples for Lucie)
-  ",""
-"60","COMPASS: Synoptic","CB","GWI","TR","B",10,"GWI_202507_TR_LYSB_10CM",2025,7,23,"11:50","EDT",36.9475140361822,"Within_Range","SO4 checks perc diff out of range",228.193610719323,"Within_Range","",14.6176865445,"2025-10-02","Std 1 is lower than the expected concentration. 
-  Some sample IDs are missing from metadata: 
-  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
-  9, 10, 88, 89 (test samples for Lucie)
-  ",""
-"61","COMPASS: Synoptic","CB","GWI","TR","B",20,"GWI_202507_TR_LYSB_20CM",2025,7,23,"11:51","EDT",33.9061759201497,"Within_Range","SO4 checks perc diff out of range",273.123466854725,"Within_Range","",17.4958100083,"2025-10-02","Std 1 is lower than the expected concentration. 
-  Some sample IDs are missing from metadata: 
-  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
-  9, 10, 88, 89 (test samples for Lucie)
-  ",""
-"62","COMPASS: Synoptic","CB","GWI","TR","B",45,"GWI_202507_TR_LYSB_45CM",2025,7,23,"11:52","EDT",41.8935963817841,"Within_Range","SO4 checks perc diff out of range",285.773661495063,"Within_Range","",18.3061580741,"2025-10-02","Std 1 is lower than the expected concentration. 
-  Some sample IDs are missing from metadata: 
-  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
-  9, 10, 88, 89 (test samples for Lucie)
-  ",""
-"63","COMPASS: Synoptic","CB","GWI","TR","C",10,"GWI_202507_TR_LYSC_10CM",2025,7,23,"11:56","EDT",29.2261977542109,"Within_Range","SO4 checks perc diff out of range",182.944338504937,"Within_Range","",11.7191018776,"2025-10-02","Std 1 is lower than the expected concentration. 
-  Some sample IDs are missing from metadata: 
-  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
-  9, 10, 88, 89 (test samples for Lucie)
-  ",""
-"64","COMPASS: Synoptic","CB","GWI","TR","C",20,"GWI_202507_TR_LYSC_20CM",2025,7,23,"11:58","EDT",43.5283187772926,"Within_Range","SO4 checks perc diff out of range",255.982905500705,"Within_Range","",16.397817358,"2025-10-02","Std 1 is lower than the expected concentration. 
-  Some sample IDs are missing from metadata: 
-  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
-  9, 10, 88, 89 (test samples for Lucie)
-  ",""
-"65","COMPASS: Synoptic","CB","GWI","WC","A",10,"GWI_202507_WC_LYSA_10CM",2025,7,23,"10:58","EDT",46.3578259513412,"Within_Range","SO4 checks perc diff out of range",305.100084626234,"Within_Range","",19.544172986,"2025-10-02","Std 1 is lower than the expected concentration. 
-  Some sample IDs are missing from metadata: 
-  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
-  9, 10, 88, 89 (test samples for Lucie)
-  ",""
-"66","COMPASS: Synoptic","CB","GWI","WC","B",10,"GWI_202507_WC_LYSB_10CM",2025,7,23,"10:52","EDT",49.0465689332501,"Within_Range","SO4 checks perc diff out of range",319.133131170663,"Within_Range","",20.4431039865,"2025-10-02","Std 1 is lower than the expected concentration. 
-  Some sample IDs are missing from metadata: 
-  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
-  9, 10, 88, 89 (test samples for Lucie)
-  ",""
-"67","COMPASS: Synoptic","CB","GWI","WC","B",20,"GWI_202507_WC_LYSB_20CM",2025,7,23,"10:53","EDT",53.2943605739239,"Within_Range","SO4 checks perc diff out of range",324.247717912553,"Within_Range","",20.7707349512,"2025-10-02","Std 1 is lower than the expected concentration. 
-  Some sample IDs are missing from metadata: 
-  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
-  9, 10, 88, 89 (test samples for Lucie)
-  ",""
-"68","COMPASS: Synoptic","CB","GWI","WC","B",45,"GWI_202507_WC_LYSB_45CM",2025,7,23,"10:54","EDT",55.2330162195883,"Within_Range","SO4 checks perc diff out of range",380.098355430183,"Within_Range","",24.3484234669,"2025-10-02","Std 1 is lower than the expected concentration. 
-  Some sample IDs are missing from metadata: 
-  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
-  9, 10, 88, 89 (test samples for Lucie)
-  ",""
-"69","COMPASS: Synoptic","CB","GWI","WC","C",10,"GWI_202507_WC_LYSC_10CM",2025,7,23,"10:48","EDT",51.7270492825951,"Within_Range","SO4 checks perc diff out of range",320.364803949224,"Within_Range","",20.5220026661,"2025-10-02","Std 1 is lower than the expected concentration. 
-  Some sample IDs are missing from metadata: 
-  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
-  9, 10, 88, 89 (test samples for Lucie)
-  ",""
-"70","COMPASS: Synoptic","CB","GWI","WC","A",45,"GWI_202507_WC_LYSA_45CM",2025,7,23,"10:00","EDT",51.2877167810356,"Within_Range","SO4 checks perc diff out of range",373.970064880113,"Within_Range","",23.9558565116,"2025-10-02","Std 1 is lower than the expected concentration. 
-  Some sample IDs are missing from metadata: 
-  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
-  9, 10, 88, 89 (test samples for Lucie)
-  ",""
-"71","COMPASS: Synoptic","CB","GWI","SW","A",0,"GWI_202507_SW_A",2025,7,23,"10:00","EDT",53.1081565814099,"Within_Range","SO4 checks perc diff out of range",344.049740479549,"Within_Range","",22.0392158831,"2025-10-02","Std 1 is lower than the expected concentration. 
-  Some sample IDs are missing from metadata: 
-  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
-  9, 10, 88, 89 (test samples for Lucie)
-  ",""
-"72","COMPASS: Synoptic","CB","GWI","SW","B",0,"GWI_202507_SW_B",2025,7,23,"10:00","EDT",50.6376543980037,"Within_Range","SO4 checks perc diff out of range",325.344318758815,"Within_Range","",20.8409811727,"2025-10-02","Std 1 is lower than the expected concentration. 
-  Some sample IDs are missing from metadata: 
-  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
-  9, 10, 88, 89 (test samples for Lucie)
-  ",""
-"73","COMPASS: Synoptic","CB","GWI","SW","C",0,"GWI_202507_SW_C",2025,7,23,"10:00","EDT",51.7784435433562,"Within_Range","SO4 checks perc diff out of range",333.387599435825,"Within_Range","",21.3562188528,"2025-10-02","Std 1 is lower than the expected concentration. 
-  Some sample IDs are missing from metadata: 
-  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
-  9, 10, 88, 89 (test samples for Lucie)
-  ",""
-"74","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202507_UP_LYSA_10CM",2025,7,21,"15:21","EDT",0.0200124766063631,"Within_Range","SO4 checks perc diff out of range",0.0860225669957687,"Within_Range","",0.0055364465,"2025-10-02","Std 1 is lower than the expected concentration. 
-  Some sample IDs are missing from metadata: 
-  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
-  9, 10, 88, 89 (test samples for Lucie)
-  ",""
-"75","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202507_UP_LYSA_20CM",2025,7,21,"12:23","EDT",0,"bdl","SO4 checks perc diff out of range",0.102654442877292,"Within_Range","",0.0066018537,"2025-10-02","Std 1 is lower than the expected concentration. 
-  Some sample IDs are missing from metadata: 
-  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
-  9, 10, 88, 89 (test samples for Lucie)
-  ",""
-"76","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202507_UP_LYSA_45CM",2025,7,21,"15:25","EDT",0.00699001871490954,"Within_Range","SO4 checks perc diff out of range",0.115433004231312,"Within_Range","",0.0074204247,"2025-10-02","Std 1 is lower than the expected concentration. 
-  Some sample IDs are missing from metadata: 
-  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
-  9, 10, 88, 89 (test samples for Lucie)
-  ",""
-"77","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202507_UP_LYSB_10CM",2025,7,21,"15:26","EDT",0.634360573923893,"Within_Range","SO4 checks perc diff out of range",0.0498251057827927,"Within_Range","",0.0032177041,"2025-10-02","Std 1 is lower than the expected concentration. 
-  Some sample IDs are missing from metadata: 
-  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
-  9, 10, 88, 89 (test samples for Lucie)
-  ",""
-"78","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202507_UP_LYSB_20CM",2025,7,21,"15:28","EDT",0.0159575795383656,"Within_Range","SO4 checks perc diff out of range",0.0845303244005642,"Within_Range","",0.0054408562,"2025-10-02","Std 1 is lower than the expected concentration. 
-  Some sample IDs are missing from metadata: 
-  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
-  9, 10, 88, 89 (test samples for Lucie)
-  ",""
-"79","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202507_UP_LYSB_45CM",2025,7,21,"15:29","EDT",0.00489082969432314,"Within_Range","SO4 checks perc diff out of range",0.114313117066291,"Within_Range","",0.0073486868,"2025-10-02","Std 1 is lower than the expected concentration. 
-  Some sample IDs are missing from metadata: 
-  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
-  9, 10, 88, 89 (test samples for Lucie)
-  ",""
-"80","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202507_UP_LYSC_10CM",2025,7,21,"15:31","EDT",0.016662507797879,"Within_Range","SO4 checks perc diff out of range",0.160919605077574,"Within_Range","",0.0103342122,"2025-10-02","Std 1 is lower than the expected concentration. 
-  Some sample IDs are missing from metadata: 
-  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
-  9, 10, 88, 89 (test samples for Lucie)
-  ",""
-"81","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202507_UP_LYSC_20CM",2025,7,21,"15:33","EDT",0,"bdl","SO4 checks perc diff out of range",0.157184767277856,"Within_Range","",0.0100949654,"2025-10-02","Std 1 is lower than the expected concentration. 
-  Some sample IDs are missing from metadata: 
-  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
-  9, 10, 88, 89 (test samples for Lucie)
-  ",""
-"82","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202507_UP_LYSC_45CM",2025,7,21,"15:35","EDT",0.0040455396132252,"Within_Range","SO4 checks perc diff out of range",0.478174894217207,"Within_Range","",0.0306569991,"2025-10-02","Std 1 is lower than the expected concentration. 
-  Some sample IDs are missing from metadata: 
-  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
-  9, 10, 88, 89 (test samples for Lucie)
-  ",""
-"83","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202507_SWAMP_LYSA_10CM",2025,7,21,"","",0,"bdl","SO4 checks perc diff out of range",0.146440056417489,"Within_Range","",0.0094066791,"2025-10-02","Std 1 is lower than the expected concentration. 
-  Some sample IDs are missing from metadata: 
-  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
-  9, 10, 88, 89 (test samples for Lucie)
-  ",""
-"84","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202507_SWAMP_LYSA_20CM",2025,7,21,"","",0,"bdl","SO4 checks perc diff out of range",0.143624823695346,"Within_Range","",0.0092263405,"2025-10-02","Std 1 is lower than the expected concentration. 
+"46","COMPASS: Synoptic","CB","MSM","WC","C",10,"MSM_202507_WC_LYSC_10CM",2025,7,15,"11:07","EDT",913.5242,28.4942046163444,"Within_Range","SO4 checks perc diff out of range",8591.4762,242.354758815233,"Within_Range","",15.5248234934,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ","dic duplicate"
-"85","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202507_SWAMP_LYSA_45CM",2025,7,21,"15:57","EDT",0.00553961322520274,"Within_Range","SO4 checks perc diff out of range",0.600307475317348,"Within_Range","",0.0384805863,"2025-10-02","Std 1 is lower than the expected concentration. 
+"47","COMPASS: Synoptic","CB","MSM","WC","C",20,"MSM_202507_WC_LYSC_20CM",2025,7,15,"11:11","EDT",901.4927,28.1189238927012,"Within_Range","SO4 checks perc diff out of range",8171.4645,230.506755994358,"Within_Range","",14.7658623515,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"86","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202507_SWAMP_LYSB_10CM",2025,7,21,"","",0.00801933873986276,"Within_Range","SO4 checks perc diff out of range",0.266665726375176,"Within_Range","",0.0171081131,"2025-10-02","Std 1 is lower than the expected concentration. 
+"48","COMPASS: Synoptic","CB","MSM","SW","A",0,"MSM_202507_SW_A",2025,7,15,"10:15","EDT",854.3693,26.6490736119775,"Within_Range","SO4 checks perc diff out of range",6150.812,173.506685472496,"Within_Range","",11.114543284,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"87","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202507_SWAMP_LYSB_20CM",2025,7,21,"","",0.00381472239550842,"Within_Range","SO4 checks perc diff out of range",0.219751763046544,"Within_Range","",0.0141028914,"2025-10-02","Std 1 is lower than the expected concentration. 
+"49","COMPASS: Synoptic","CB","MSM","SW","B",0,"MSM_202507_SW_B",2025,7,15,"10:15","EDT",839.6937,26.1913194011229,"Within_Range","SO4 checks perc diff out of range",6031.8786,170.151723554302,"Within_Range","",10.8996306302,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"88","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202507_SWAMP_LYSB_45CM",2025,7,21,"","",0,"bdl","SO4 checks perc diff out of range",0.775258110014104,"Within_Range","",0.0496876003,"2025-10-02","Std 1 is lower than the expected concentration. 
+"50","COMPASS: Synoptic","CB","MSM","SW","C",0,"MSM_202507_SW_C",2025,7,15,"10:15","EDT",877.7337,27.3778446662508,"Within_Range","SO4 checks perc diff out of range",6319.3335,178.260465444288,"Within_Range","",11.4190616345,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"89","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202507_SWAMP_LYSC_10CM",2025,7,21,"","",0.0168371802869619,"Within_Range","SO4 checks perc diff out of range",0.0805669957686883,"Within_Range","",0.0051869727,"2025-10-02","Std 1 is lower than the expected concentration. 
+"51","COMPASS: Synoptic","CB","GWI","UP","A",20,"GWI_202507_UP_LYSA_20CM",2025,7,23,"12:42","EDT",654.9156,20.4278103555833,"Within_Range","SO4 checks perc diff out of range",5271.0182,148.688806770099,"Within_Range","",9.5247558874,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"90","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202507_SWAMP_LYSC_20CM",2025,7,21,"","",0.553178415470992,"Within_Range","SO4 checks perc diff out of range",0.0722990126939351,"Within_Range","",0.004657341,"2025-10-02","Std 1 is lower than the expected concentration. 
+"52","COMPASS: Synoptic","CB","GWI","UP","A",45,"GWI_202507_UP_LYSA_45CM",2025,7,23,"12:44","EDT",821.6826,25.6295258889582,"Within_Range","SO4 checks perc diff out of range",5903.1177,166.519540197461,"Within_Range","",10.6669596839,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"91","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202507_SWAMP_LYSC_45CM",2025,7,21,"","",0.00585776668746101,"Within_Range","SO4 checks perc diff out of range",0.0908349788434415,"Within_Range","",0.0058447207,"2025-10-02","Std 1 is lower than the expected concentration. 
+"53","COMPASS: Synoptic","CB","GWI","UP","B",10,"GWI_202507_UP_LYSB_10CM",2025,7,23,"12:46","EDT",265.1799,8.27136306924516,"Within_Range","SO4 checks perc diff out of range",1690.8027,47.6954217207334,"Within_Range","",3.0553064789,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"92","COMPASS: Synoptic","CB","SWH","TR","A",10,"SWH_202507_TR_LYSA_10CM",2025,7,21,"12:45","EDT",0.0896412975670618,"Within_Range","SO4 checks perc diff out of range",3.32745275035261,"Within_Range","",0.2131764674,"2025-10-02","Std 1 is lower than the expected concentration. 
+"54","COMPASS: Synoptic","CB","GWI","UP","B",20,"GWI_202507_UP_LYSB_20CM",2025,7,23,"12:48","EDT",411.4985,12.8352620087336,"Within_Range","SO4 checks perc diff out of range",2676.8747,75.5112750352609,"Within_Range","",4.8371385829,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"93","COMPASS: Synoptic","CB","SWH","TR","A",20,"SWH_202507_TR_LYSA_20CM",2025,7,21,"12:47","EDT",0,"bdl","SO4 checks perc diff out of range",2.30673906911142,"Within_Range","",0.1477914373,"2025-10-02","Std 1 is lower than the expected concentration. 
+"55","COMPASS: Synoptic","CB","GWI","UP","B",45,"GWI_202507_UP_LYSB_45CM",2025,7,23,"12:50","EDT",562.8844,17.557217716781,"Within_Range","SO4 checks perc diff out of range",3974.7394,112.122409026798,"Within_Range","",7.1823800958,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"94","COMPASS: Synoptic","CB","SWH","TR","A",45,"SWH_202507_TR_LYSA_45CM",2025,7,21,"12:43","EDT",0,"bdl","SO4 checks perc diff out of range",6.34566995768688,"Within_Range","",0.406517878,"2025-10-02","Std 1 is lower than the expected concentration. 
+"56","COMPASS: Synoptic","CB","GWI","UP","C",20,"GWI_202507_UP_LYSC_20CM",2025,7,23,"12:52","EDT",449.99,14.0358702432938,"Within_Range","SO4 checks perc diff out of range",3567.318,100.629562764457,"Within_Range","",6.446169626,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"95","COMPASS: Synoptic","CB","SWH","TR","B",10,"SWH_202507_TR_LYSB_10CM",2025,7,21,"12:51","EDT",0.0438459139114161,"Within_Range","SO4 checks perc diff out of range",1.38053314527504,"Within_Range","",0.0884603993,"2025-10-02","Std 1 is lower than the expected concentration. 
+"57","COMPASS: Synoptic","CB","GWI","UP","C",45,"GWI_202507_UP_LYSC_45CM",2025,7,23,"12:54","EDT",542.4669,16.9203649407361,"Within_Range","SO4 checks perc diff out of range",3735.2597,105.366987306065,"Within_Range","",6.7496402779,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"96","COMPASS: Synoptic","CB","SWH","TR","B",20,"SWH_202507_TR_LYSB_20CM",2025,7,21,"12:53","EDT",0,"bdl","SO4 checks perc diff out of range",1.7636389280677,"Within_Range","",0.113001447,"2025-10-02","Std 1 is lower than the expected concentration. 
+"58","COMPASS: Synoptic","CB","GWI","TR","A",10,"GWI_202507_TR_LYSA_10CM",2025,7,23,"11:44","EDT",1445.5604,45.0892202121023,"Within_Range","SO4 checks perc diff out of range",9840.1024,277.576936530324,"Within_Range","",17.7810910368,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"97","COMPASS: Synoptic","CB","SWH","TR","B",45,"SWH_202507_TR_LYSB_45CM",2025,7,21,"12:55","EDT",0,"bdl","SO4 checks perc diff out of range",6.55010437235543,"Within_Range","",0.4196135684,"2025-10-02","Std 1 is lower than the expected concentration. 
+"59","COMPASS: Synoptic","CB","GWI","TR","A",20,"GWI_202507_TR_LYSA_20CM",2025,7,23,"11:45","EDT",1121.2039,34.9720492825951,"Within_Range","SO4 checks perc diff out of range",10175.2521,287.031088857546,"Within_Range","",18.3867065447,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"98","COMPASS: Synoptic","CB","SWH","TR","C",10,"SWH_202507_TR_LYSC_10CM",2025,7,21,"13:00","EDT",0.401634435433562,"Within_Range","SO4 checks perc diff out of range",2.18641748942172,"Within_Range","",0.1400838595,"2025-10-02","Std 1 is lower than the expected concentration. 
+"60","COMPASS: Synoptic","CB","GWI","TR","B",10,"GWI_202507_TR_LYSB_10CM",2025,7,23,"11:50","EDT",1184.5373,36.9475140361822,"Within_Range","SO4 checks perc diff out of range",8089.4635,228.193610719323,"Within_Range","",14.6176865445,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"99","COMPASS: Synoptic","CB","SWH","TR","C",20,"SWH_202507_TR_LYSC_20CM",2025,7,21,"13:02","EDT",0.0350810979413599,"Within_Range","SO4 checks perc diff out of range",2.46575458392102,"Within_Range","",0.157977677,"2025-10-02","Std 1 is lower than the expected concentration. 
+"61","COMPASS: Synoptic","CB","GWI","TR","B",20,"GWI_202507_TR_LYSB_20CM",2025,7,23,"11:51","EDT",1087.032,33.9061759201497,"Within_Range","SO4 checks perc diff out of range",9682.2269,273.123466854725,"Within_Range","",17.4958100083,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"100","COMPASS: Synoptic","CB","SWH","TR","C",45,"SWH_202507_TR_LYSC_45CM",2025,7,21,"13:05","EDT",0.0336338116032439,"Within_Range","SO4 checks perc diff out of range",2.60366431593794,"Within_Range","",0.1668119193,"2025-10-02","Std 1 is lower than the expected concentration. 
+"62","COMPASS: Synoptic","CB","GWI","TR","B",45,"GWI_202507_TR_LYSB_45CM",2025,7,23,"11:52","EDT",1343.1087,41.8935963817841,"Within_Range","SO4 checks perc diff out of range",10130.6763,285.773661495063,"Within_Range","",18.3061580741,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"101","COMPASS: Synoptic","CB","SWH","WC","A",10,"SWH_202507_WC_LYSA_10CM",2025,7,21,"13:20","EDT",0.0100343106674984,"Within_Range","SO4 checks perc diff out of range",3.52034978843441,"Within_Range","",0.2255330948,"2025-10-02","Std 1 is lower than the expected concentration. 
+"63","COMPASS: Synoptic","CB","GWI","TR","C",10,"GWI_202507_TR_LYSC_10CM",2025,7,23,"11:56","EDT",936.9919,29.2261977542109,"Within_Range","SO4 checks perc diff out of range",6485.3768,182.944338504937,"Within_Range","",11.7191018776,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"102","COMPASS: Synoptic","CB","SWH","WC","A",20,"SWH_202507_WC_LYSA_20CM",2025,7,21,"13:23","EDT",0.0110667498440424,"Within_Range","SO4 checks perc diff out of range",7.37475035260931,"Within_Range","",0.4724388643,"2025-10-02","Std 1 is lower than the expected concentration. 
+"64","COMPASS: Synoptic","CB","GWI","TR","C",20,"GWI_202507_TR_LYSC_20CM",2025,7,23,"11:58","EDT",1395.5179,43.5283187772926,"Within_Range","SO4 checks perc diff out of range",9074.594,255.982905500705,"Within_Range","",16.397817358,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"103","COMPASS: Synoptic","CB","SWH","WC","A",45,"SWH_202507_WC_LYSA_45CM",2025,7,21,"13:25","EDT",0.0115782907049283,"Within_Range","SO4 checks perc diff out of range",9.65863187588152,"Within_Range","",0.6187400895,"2025-10-02","Std 1 is lower than the expected concentration. 
+"65","COMPASS: Synoptic","CB","GWI","WC","A",10,"GWI_202507_WC_LYSA_10CM",2025,7,23,"10:58","EDT",1486.2319,46.3578259513412,"Within_Range","SO4 checks perc diff out of range",10815.798,305.100084626234,"Within_Range","",19.544172986,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"104","COMPASS: Synoptic","CB","SWH","WC","B",10,"SWH_202507_WC_LYSB_10CM",2025,7,21,"13:26","EDT",0.0132314410480349,"Within_Range","SO4 checks perc diff out of range",2.35103808180536,"Within_Range","",0.1506291501,"2025-10-02","Std 1 is lower than the expected concentration. 
+"66","COMPASS: Synoptic","CB","GWI","WC","B",10,"GWI_202507_WC_LYSB_10CM",2025,7,23,"10:52","EDT",1572.433,49.0465689332501,"Within_Range","SO4 checks perc diff out of range",11313.2695,319.133131170663,"Within_Range","",20.4431039865,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"105","COMPASS: Synoptic","CB","SWH","WC","B",20,"SWH_202507_WC_LYSB_20CM",2025,7,21,"13:28","EDT",0,"bdl","SO4 checks perc diff out of range",4.95716784203103,"Within_Range","",0.3175730012,"2025-10-02","Std 1 is lower than the expected concentration. 
+"67","COMPASS: Synoptic","CB","GWI","WC","B",20,"GWI_202507_WC_LYSB_20CM",2025,7,23,"10:53","EDT",1708.6172,53.2943605739239,"Within_Range","SO4 checks perc diff out of range",11494.5816,324.247717912553,"Within_Range","",20.7707349512,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"106","COMPASS: Synoptic","CB","SWH","WC","B",45,"SWH_202507_WC_LYSB_45CM",2025,7,21,"13:31","EDT",0,"bdl","SO4 checks perc diff out of range",11.7324287729196,"Within_Range","",0.7515836822,"2025-10-02","Std 1 is lower than the expected concentration. 
+"68","COMPASS: Synoptic","CB","GWI","WC","B",45,"GWI_202507_WC_LYSB_45CM",2025,7,23,"10:54","EDT",1770.7705,55.2330162195883,"Within_Range","SO4 checks perc diff out of range",13474.4867,380.098355430183,"Within_Range","",24.3484234669,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"107","COMPASS: Synoptic","CB","SWH","WC","C",10,"SWH_202507_WC_LYSC_10CM",2025,7,21,"13:35","EDT",0,"bdl","SO4 checks perc diff out of range",2.84164739069111,"Within_Range","",0.1820566748,"2025-10-02","Std 1 is lower than the expected concentration. 
+"69","COMPASS: Synoptic","CB","GWI","WC","C",10,"GWI_202507_WC_LYSC_10CM",2025,7,23,"10:48","EDT",1658.3692,51.7270492825951,"Within_Range","SO4 checks perc diff out of range",11356.9323,320.364803949224,"Within_Range","",20.5220026661,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"108","COMPASS: Synoptic","CB","SWH","WC","C",20,"SWH_202507_WC_LYSC_20CM",2025,7,21,"13:37","EDT",0.0604335620711167,"Within_Range","SO4 checks perc diff out of range",4.74909449929478,"Within_Range","",0.3042442078,"2025-10-02","Std 1 is lower than the expected concentration. 
+"70","COMPASS: Synoptic","CB","GWI","WC","A",45,"GWI_202507_WC_LYSA_45CM",2025,7,23,"10:00","EDT",1644.2842,51.2877167810356,"Within_Range","SO4 checks perc diff out of range",13257.2388,373.970064880113,"Within_Range","",23.9558565116,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"109","COMPASS: Synoptic","CB","SWH","WC","C",45,"SWH_202507_WC_LYSC_45CM",2025,7,21,"13:39","EDT",0,"bdl","SO4 checks perc diff out of range",14.7130409026798,"Within_Range","",0.9425161811,"2025-10-02","Std 1 is lower than the expected concentration. 
+"71","COMPASS: Synoptic","CB","GWI","SW","A",0,"GWI_202507_SW_A",2025,7,23,"10:00","EDT",1702.6475,53.1081565814099,"Within_Range","SO4 checks perc diff out of range",12196.5633,344.049740479549,"Within_Range","",22.0392158831,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"110","COMPASS: Synoptic","CB","SWH","SW","A",0,"SWH_202507_SW_A",2025,7,21,"12:00","EDT",0.119497816593886,"Within_Range","SO4 checks perc diff out of range",0.296307475317348,"Within_Range","",0.0190069087,"2025-10-02","Std 1 is lower than the expected concentration. 
+"72","COMPASS: Synoptic","CB","GWI","SW","B",0,"GWI_202507_SW_B",2025,7,23,"10:00","EDT",1623.4432,50.6376543980037,"Within_Range","SO4 checks perc diff out of range",11533.4561,325.344318758815,"Within_Range","",20.8409811727,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"111","COMPASS: Synoptic","CB","SWH","SW","B",0,"SWH_202507_SW_B",2025,7,21,"12:00","EDT",0.125926388022458,"Within_Range","SO4 checks perc diff out of range",0.328022566995769,"Within_Range","",0.0210385188,"2025-10-02","Std 1 is lower than the expected concentration. 
+"73","COMPASS: Synoptic","CB","GWI","SW","C",0,"GWI_202507_SW_C",2025,7,23,"10:00","EDT",1660.0169,51.7784435433562,"Within_Range","SO4 checks perc diff out of range",11818.5904,333.387599435825,"Within_Range","",21.3562188528,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"112","COMPASS: Synoptic","CB","SWH","SW","C",0,"SWH_202507_SW_C",2025,7,21,"12:00","EDT",0.120155957579538,"Within_Range","SO4 checks perc diff out of range",0.226160789844852,"Within_Range","",0.0145134418,"2025-10-02","Std 1 is lower than the expected concentration. 
+"74","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202507_UP_LYSA_10CM",2025,7,21,"15:21","EDT",0.6416,0.0200124766063631,"Within_Range","SO4 checks perc diff out of range",3.0495,0.0860225669957687,"Within_Range","",0.0055364465,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"113","COMPASS: Synoptic","CB","9",NA,NA,NA,"9",NA,NA,NA,NA,NA,0.0109887710542732,"Within_Range","SO4 checks perc diff out of range",0.0197827926657264,"Within_Range","",0.0012932491,"2025-10-02","Std 1 is lower than the expected concentration. 
+"75","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202507_UP_LYSA_20CM",2025,7,21,"12:23","EDT",0,0,"bdl","SO4 checks perc diff out of range",3.6391,0.102654442877292,"Within_Range","",0.0066018537,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
-  ",NA
-"114","COMPASS: Synoptic","CB","10",NA,NA,NA,"10",NA,NA,NA,NA,NA,0.0102495321272614,"Within_Range","SO4 checks perc diff out of range",0.0186939351198872,"Within_Range","",0.0012234989,"2025-10-02","Std 1 is lower than the expected concentration. 
+  ",""
+"76","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202507_UP_LYSA_45CM",2025,7,21,"15:25","EDT",0.2241,0.00699001871490954,"Within_Range","SO4 checks perc diff out of range",4.0921,0.115433004231312,"Within_Range","",0.0074204247,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
-  ",NA
-"115","COMPASS: Synoptic","CB","88",NA,NA,NA,"88",NA,NA,NA,NA,NA,0.0123767935121647,"Within_Range","SO4 checks perc diff out of range",0.019083215796897,"Within_Range","",0.0012484355,"2025-10-02","Std 1 is lower than the expected concentration. 
+  ",""
+"77","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202507_UP_LYSB_10CM",2025,7,21,"15:26","EDT",20.3376,0.634360573923893,"Within_Range","SO4 checks perc diff out of range",1.7663,0.0498251057827927,"Within_Range","",0.0032177041,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
-  ",NA
-"116","COMPASS: Synoptic","CB","89",NA,NA,NA,"89",NA,NA,NA,NA,NA,0,"bdl","SO4 checks perc diff out of range",0.0190465444287729,"Within_Range","",0.0012460864,"2025-10-02","Std 1 is lower than the expected concentration. 
+  ",""
+"78","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202507_UP_LYSB_20CM",2025,7,21,"15:28","EDT",0.5116,0.0159575795383656,"Within_Range","SO4 checks perc diff out of range",2.9966,0.0845303244005642,"Within_Range","",0.0054408562,"2025-10-02","Std 1 is lower than the expected concentration. 
   Some sample IDs are missing from metadata: 
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
-  ",NA
+  ",""
+"79","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202507_UP_LYSB_45CM",2025,7,21,"15:29","EDT",0.1568,0.00489082969432314,"Within_Range","SO4 checks perc diff out of range",4.0524,0.114313117066291,"Within_Range","",0.0073486868,"2025-10-02","Std 1 is lower than the expected concentration. 
+  Some sample IDs are missing from metadata: 
+  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
+  9, 10, 88, 89 (test samples for Lucie)
+  ",""
+"80","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202507_UP_LYSC_10CM",2025,7,21,"15:31","EDT",0.5342,0.016662507797879,"Within_Range","SO4 checks perc diff out of range",5.7046,0.160919605077574,"Within_Range","",0.0103342122,"2025-10-02","Std 1 is lower than the expected concentration. 
+  Some sample IDs are missing from metadata: 
+  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
+  9, 10, 88, 89 (test samples for Lucie)
+  ",""
+"81","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202507_UP_LYSC_20CM",2025,7,21,"15:33","EDT",0,0,"bdl","SO4 checks perc diff out of range",5.5722,0.157184767277856,"Within_Range","",0.0100949654,"2025-10-02","Std 1 is lower than the expected concentration. 
+  Some sample IDs are missing from metadata: 
+  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
+  9, 10, 88, 89 (test samples for Lucie)
+  ",""
+"82","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202507_UP_LYSC_45CM",2025,7,21,"15:35","EDT",0.1297,0.0040455396132252,"Within_Range","SO4 checks perc diff out of range",16.9513,0.478174894217207,"Within_Range","",0.0306569991,"2025-10-02","Std 1 is lower than the expected concentration. 
+  Some sample IDs are missing from metadata: 
+  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
+  9, 10, 88, 89 (test samples for Lucie)
+  ",""
+"83","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202507_SWAMP_LYSA_10CM",2025,7,21,"","",0,0,"bdl","SO4 checks perc diff out of range",5.1913,0.146440056417489,"Within_Range","",0.0094066791,"2025-10-02","Std 1 is lower than the expected concentration. 
+  Some sample IDs are missing from metadata: 
+  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
+  9, 10, 88, 89 (test samples for Lucie)
+  ",""
+"84","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202507_SWAMP_LYSA_20CM",2025,7,21,"","",0,0,"bdl","SO4 checks perc diff out of range",5.0915,0.143624823695346,"Within_Range","",0.0092263405,"2025-10-02","Std 1 is lower than the expected concentration. 
+  Some sample IDs are missing from metadata: 
+  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
+  9, 10, 88, 89 (test samples for Lucie)
+  ","dic duplicate"
+"85","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202507_SWAMP_LYSA_45CM",2025,7,21,"15:57","EDT",0.1776,0.00553961322520274,"Within_Range","SO4 checks perc diff out of range",21.2809,0.600307475317348,"Within_Range","",0.0384805863,"2025-10-02","Std 1 is lower than the expected concentration. 
+  Some sample IDs are missing from metadata: 
+  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
+  9, 10, 88, 89 (test samples for Lucie)
+  ",""
+"86","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202507_SWAMP_LYSB_10CM",2025,7,21,"","",0.2571,0.00801933873986276,"Within_Range","SO4 checks perc diff out of range",9.4533,0.266665726375176,"Within_Range","",0.0171081131,"2025-10-02","Std 1 is lower than the expected concentration. 
+  Some sample IDs are missing from metadata: 
+  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
+  9, 10, 88, 89 (test samples for Lucie)
+  ",""
+"87","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202507_SWAMP_LYSB_20CM",2025,7,21,"","",0.1223,0.00381472239550842,"Within_Range","SO4 checks perc diff out of range",7.7902,0.219751763046544,"Within_Range","",0.0141028914,"2025-10-02","Std 1 is lower than the expected concentration. 
+  Some sample IDs are missing from metadata: 
+  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
+  9, 10, 88, 89 (test samples for Lucie)
+  ",""
+"88","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202507_SWAMP_LYSB_45CM",2025,7,21,"","",0,0,"bdl","SO4 checks perc diff out of range",27.4829,0.775258110014104,"Within_Range","",0.0496876003,"2025-10-02","Std 1 is lower than the expected concentration. 
+  Some sample IDs are missing from metadata: 
+  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
+  9, 10, 88, 89 (test samples for Lucie)
+  ",""
+"89","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202507_SWAMP_LYSC_10CM",2025,7,21,"","",0.5398,0.0168371802869619,"Within_Range","SO4 checks perc diff out of range",2.8561,0.0805669957686883,"Within_Range","",0.0051869727,"2025-10-02","Std 1 is lower than the expected concentration. 
+  Some sample IDs are missing from metadata: 
+  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
+  9, 10, 88, 89 (test samples for Lucie)
+  ",""
+"90","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202507_SWAMP_LYSC_20CM",2025,7,21,"","",17.7349,0.553178415470992,"Within_Range","SO4 checks perc diff out of range",2.563,0.0722990126939351,"Within_Range","",0.004657341,"2025-10-02","Std 1 is lower than the expected concentration. 
+  Some sample IDs are missing from metadata: 
+  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
+  9, 10, 88, 89 (test samples for Lucie)
+  ",""
+"91","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202507_SWAMP_LYSC_45CM",2025,7,21,"","",0.1878,0.00585776668746101,"Within_Range","SO4 checks perc diff out of range",3.2201,0.0908349788434415,"Within_Range","",0.0058447207,"2025-10-02","Std 1 is lower than the expected concentration. 
+  Some sample IDs are missing from metadata: 
+  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
+  9, 10, 88, 89 (test samples for Lucie)
+  ",""
+"92","COMPASS: Synoptic","CB","SWH","TR","A",10,"SWH_202507_TR_LYSA_10CM",2025,7,21,"12:45","EDT",2.8739,0.0896412975670618,"Within_Range","SO4 checks perc diff out of range",117.9582,3.32745275035261,"Within_Range","",0.2131764674,"2025-10-02","Std 1 is lower than the expected concentration. 
+  Some sample IDs are missing from metadata: 
+  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
+  9, 10, 88, 89 (test samples for Lucie)
+  ",""
+"93","COMPASS: Synoptic","CB","SWH","TR","A",20,"SWH_202507_TR_LYSA_20CM",2025,7,21,"12:47","EDT",0,0,"bdl","SO4 checks perc diff out of range",81.7739,2.30673906911142,"Within_Range","",0.1477914373,"2025-10-02","Std 1 is lower than the expected concentration. 
+  Some sample IDs are missing from metadata: 
+  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
+  9, 10, 88, 89 (test samples for Lucie)
+  ",""
+"94","COMPASS: Synoptic","CB","SWH","TR","A",45,"SWH_202507_TR_LYSA_45CM",2025,7,21,"12:43","EDT",0,0,"bdl","SO4 checks perc diff out of range",224.954,6.34566995768688,"Within_Range","",0.406517878,"2025-10-02","Std 1 is lower than the expected concentration. 
+  Some sample IDs are missing from metadata: 
+  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
+  9, 10, 88, 89 (test samples for Lucie)
+  ",""
+"95","COMPASS: Synoptic","CB","SWH","TR","B",10,"SWH_202507_TR_LYSB_10CM",2025,7,21,"12:51","EDT",1.4057,0.0438459139114161,"Within_Range","SO4 checks perc diff out of range",48.9399,1.38053314527504,"Within_Range","",0.0884603993,"2025-10-02","Std 1 is lower than the expected concentration. 
+  Some sample IDs are missing from metadata: 
+  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
+  9, 10, 88, 89 (test samples for Lucie)
+  ",""
+"96","COMPASS: Synoptic","CB","SWH","TR","B",20,"SWH_202507_TR_LYSB_20CM",2025,7,21,"12:53","EDT",0,0,"bdl","SO4 checks perc diff out of range",62.521,1.7636389280677,"Within_Range","",0.113001447,"2025-10-02","Std 1 is lower than the expected concentration. 
+  Some sample IDs are missing from metadata: 
+  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
+  9, 10, 88, 89 (test samples for Lucie)
+  ",""
+"97","COMPASS: Synoptic","CB","SWH","TR","B",45,"SWH_202507_TR_LYSB_45CM",2025,7,21,"12:55","EDT",0,0,"bdl","SO4 checks perc diff out of range",232.2012,6.55010437235543,"Within_Range","",0.4196135684,"2025-10-02","Std 1 is lower than the expected concentration. 
+  Some sample IDs are missing from metadata: 
+  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
+  9, 10, 88, 89 (test samples for Lucie)
+  ",""
+"98","COMPASS: Synoptic","CB","SWH","TR","C",10,"SWH_202507_TR_LYSC_10CM",2025,7,21,"13:00","EDT",12.8764,0.401634435433562,"Within_Range","SO4 checks perc diff out of range",77.5085,2.18641748942172,"Within_Range","",0.1400838595,"2025-10-02","Std 1 is lower than the expected concentration. 
+  Some sample IDs are missing from metadata: 
+  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
+  9, 10, 88, 89 (test samples for Lucie)
+  ",""
+"99","COMPASS: Synoptic","CB","SWH","TR","C",20,"SWH_202507_TR_LYSC_20CM",2025,7,21,"13:02","EDT",1.1247,0.0350810979413599,"Within_Range","SO4 checks perc diff out of range",87.411,2.46575458392102,"Within_Range","",0.157977677,"2025-10-02","Std 1 is lower than the expected concentration. 
+  Some sample IDs are missing from metadata: 
+  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
+  9, 10, 88, 89 (test samples for Lucie)
+  ",""
+"100","COMPASS: Synoptic","CB","SWH","TR","C",45,"SWH_202507_TR_LYSC_45CM",2025,7,21,"13:05","EDT",1.0783,0.0336338116032439,"Within_Range","SO4 checks perc diff out of range",92.2999,2.60366431593794,"Within_Range","",0.1668119193,"2025-10-02","Std 1 is lower than the expected concentration. 
+  Some sample IDs are missing from metadata: 
+  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
+  9, 10, 88, 89 (test samples for Lucie)
+  ",""
+"101","COMPASS: Synoptic","CB","SWH","WC","A",10,"SWH_202507_WC_LYSA_10CM",2025,7,21,"13:20","EDT",0.3217,0.0100343106674984,"Within_Range","SO4 checks perc diff out of range",124.7964,3.52034978843441,"Within_Range","",0.2255330948,"2025-10-02","Std 1 is lower than the expected concentration. 
+  Some sample IDs are missing from metadata: 
+  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
+  9, 10, 88, 89 (test samples for Lucie)
+  ",""
+"102","COMPASS: Synoptic","CB","SWH","WC","A",20,"SWH_202507_WC_LYSA_20CM",2025,7,21,"13:23","EDT",0.3548,0.0110667498440424,"Within_Range","SO4 checks perc diff out of range",261.4349,7.37475035260931,"Within_Range","",0.4724388643,"2025-10-02","Std 1 is lower than the expected concentration. 
+  Some sample IDs are missing from metadata: 
+  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
+  9, 10, 88, 89 (test samples for Lucie)
+  ",""
+"103","COMPASS: Synoptic","CB","SWH","WC","A",45,"SWH_202507_WC_LYSA_45CM",2025,7,21,"13:25","EDT",0.3712,0.0115782907049283,"Within_Range","SO4 checks perc diff out of range",342.3985,9.65863187588152,"Within_Range","",0.6187400895,"2025-10-02","Std 1 is lower than the expected concentration. 
+  Some sample IDs are missing from metadata: 
+  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
+  9, 10, 88, 89 (test samples for Lucie)
+  ",""
+"104","COMPASS: Synoptic","CB","SWH","WC","B",10,"SWH_202507_WC_LYSB_10CM",2025,7,21,"13:26","EDT",0.4242,0.0132314410480349,"Within_Range","SO4 checks perc diff out of range",83.3443,2.35103808180536,"Within_Range","",0.1506291501,"2025-10-02","Std 1 is lower than the expected concentration. 
+  Some sample IDs are missing from metadata: 
+  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
+  9, 10, 88, 89 (test samples for Lucie)
+  ",""
+"105","COMPASS: Synoptic","CB","SWH","WC","B",20,"SWH_202507_WC_LYSB_20CM",2025,7,21,"13:28","EDT",0,0,"bdl","SO4 checks perc diff out of range",175.7316,4.95716784203103,"Within_Range","",0.3175730012,"2025-10-02","Std 1 is lower than the expected concentration. 
+  Some sample IDs are missing from metadata: 
+  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
+  9, 10, 88, 89 (test samples for Lucie)
+  ",""
+"106","COMPASS: Synoptic","CB","SWH","WC","B",45,"SWH_202507_WC_LYSB_45CM",2025,7,21,"13:31","EDT",0,0,"bdl","SO4 checks perc diff out of range",415.9146,11.7324287729196,"Within_Range","",0.7515836822,"2025-10-02","Std 1 is lower than the expected concentration. 
+  Some sample IDs are missing from metadata: 
+  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
+  9, 10, 88, 89 (test samples for Lucie)
+  ",""
+"107","COMPASS: Synoptic","CB","SWH","WC","C",10,"SWH_202507_WC_LYSC_10CM",2025,7,21,"13:35","EDT",0,0,"bdl","SO4 checks perc diff out of range",100.7364,2.84164739069111,"Within_Range","",0.1820566748,"2025-10-02","Std 1 is lower than the expected concentration. 
+  Some sample IDs are missing from metadata: 
+  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
+  9, 10, 88, 89 (test samples for Lucie)
+  ",""
+"108","COMPASS: Synoptic","CB","SWH","WC","C",20,"SWH_202507_WC_LYSC_20CM",2025,7,21,"13:37","EDT",1.9375,0.0604335620711167,"Within_Range","SO4 checks perc diff out of range",168.3554,4.74909449929478,"Within_Range","",0.3042442078,"2025-10-02","Std 1 is lower than the expected concentration. 
+  Some sample IDs are missing from metadata: 
+  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
+  9, 10, 88, 89 (test samples for Lucie)
+  ",""
+"109","COMPASS: Synoptic","CB","SWH","WC","C",45,"SWH_202507_WC_LYSC_45CM",2025,7,21,"13:39","EDT",0,0,"bdl","SO4 checks perc diff out of range",521.5773,14.7130409026798,"Within_Range","",0.9425161811,"2025-10-02","Std 1 is lower than the expected concentration. 
+  Some sample IDs are missing from metadata: 
+  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
+  9, 10, 88, 89 (test samples for Lucie)
+  ",""
+"110","COMPASS: Synoptic","CB","SWH","SW","A",0,"SWH_202507_SW_A",2025,7,21,"12:00","EDT",3.8311,0.119497816593886,"Within_Range","SO4 checks perc diff out of range",10.5041,0.296307475317348,"Within_Range","",0.0190069087,"2025-10-02","Std 1 is lower than the expected concentration. 
+  Some sample IDs are missing from metadata: 
+  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
+  9, 10, 88, 89 (test samples for Lucie)
+  ",""
+"111","COMPASS: Synoptic","CB","SWH","SW","B",0,"SWH_202507_SW_B",2025,7,21,"12:00","EDT",4.0372,0.125926388022458,"Within_Range","SO4 checks perc diff out of range",11.6284,0.328022566995769,"Within_Range","",0.0210385188,"2025-10-02","Std 1 is lower than the expected concentration. 
+  Some sample IDs are missing from metadata: 
+  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
+  9, 10, 88, 89 (test samples for Lucie)
+  ",""
+"112","COMPASS: Synoptic","CB","SWH","SW","C",0,"SWH_202507_SW_C",2025,7,21,"12:00","EDT",3.8522,0.120155957579538,"Within_Range","SO4 checks perc diff out of range",8.0174,0.226160789844852,"Within_Range","",0.0145134418,"2025-10-02","Std 1 is lower than the expected concentration. 
+  Some sample IDs are missing from metadata: 
+  MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
+  9, 10, 88, 89 (test samples for Lucie)
+  ",""

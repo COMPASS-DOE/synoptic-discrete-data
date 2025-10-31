@@ -1,545 +1,545 @@
-"","Project","Region","Site","Zone","Replicate","Depth_cm","Sample_ID","Year","Month","Day","Time","Time_Zone","SO4_Conc_mM","SO4_Conc_flag","SO4_QAQC_flag","Cl_Conc_mM","Cl_Conc_flag","Cl_QAQC_flag","salinity","Analysis_rundate","Run_notes","Field_notes"
-"1","COMPASS: Synoptic","CB","GCW","TR","A",20,"GCW_202407_TR_LYSA_20CM",2024,7,16,"","",0.0689519650655022,"Within_Range","SO4 checks perc diff out of range",0.176005641748942,"Within_Range","",0.0113005958,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"","Project","Region","Site","Zone","Replicate","Depth_cm","Sample_ID","Year","Month","Day","Time","Time_Zone","SO4_ppm","SO4_Conc_mM","SO4_Conc_flag","SO4_QAQC_flag","Cl_ppm","Cl_Conc_mM","Cl_Conc_flag","Cl_QAQC_flag","salinity","Analysis_rundate","Run_notes","Field_notes"
+"1","COMPASS: Synoptic","CB","GCW","TR","A",20,"GCW_202407_TR_LYSA_20CM",2024,7,16,"","",2.2106,0.0689519650655022,"Within_Range","SO4 checks perc diff out of range",6.2394,0.176005641748942,"Within_Range","",0.0113005958,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"2","COMPASS: Synoptic","CB","GCW","TR","A",45,"GCW_202407_TR_LYSA_45CM",2024,7,16,"","",0.15117903930131,"Within_Range","SO4 checks perc diff out of range",0.277743300423131,"Within_Range","",0.017817722,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"2","COMPASS: Synoptic","CB","GCW","TR","A",45,"GCW_202407_TR_LYSA_45CM",2024,7,16,"","",4.8468,0.15117903930131,"Within_Range","SO4 checks perc diff out of range",9.846,0.277743300423131,"Within_Range","",0.017817722,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"3","COMPASS: Synoptic","CB","GCW","TR","B",10,"GCW_202407_TR_LYSB_10CM",2024,7,16,"","",1.12554273237679,"Within_Range","SO4 checks perc diff out of range",0.902107193229901,"Within_Range","",0.0578133179,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"3","COMPASS: Synoptic","CB","GCW","TR","B",10,"GCW_202407_TR_LYSB_10CM",2024,7,16,"","",36.0849,1.12554273237679,"Within_Range","SO4 checks perc diff out of range",31.9797,0.902107193229901,"Within_Range","",0.0578133179,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"4","COMPASS: Synoptic","CB","GCW","TR","B",20,"GCW_202407_TR_LYSB_20CM",2024,7,16,"","",0.167635683094198,"Within_Range","SO4 checks perc diff out of range",0.180002820874471,"Within_Range","",0.0115566477,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"4","COMPASS: Synoptic","CB","GCW","TR","B",20,"GCW_202407_TR_LYSB_20CM",2024,7,16,"","",5.3744,0.167635683094198,"Within_Range","SO4 checks perc diff out of range",6.3811,0.180002820874471,"Within_Range","",0.0115566477,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"5","COMPASS: Synoptic","CB","GCW","TR","B",45,"GCW_202407_TR_LYSB_45CM",2024,7,16,"","",0.074544603867748,"Within_Range","SO4 checks perc diff out of range",0.379283497884344,"Within_Range","",0.0243221992,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"5","COMPASS: Synoptic","CB","GCW","TR","B",45,"GCW_202407_TR_LYSB_45CM",2024,7,16,"","",2.3899,0.074544603867748,"Within_Range","SO4 checks perc diff out of range",13.4456,0.379283497884344,"Within_Range","",0.0243221992,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"6","COMPASS: Synoptic","CB","GCW","TR","C",20,"GCW_202407_TR_LYSC_20CM",2024,7,16,"","",0.240670617592015,"Within_Range","SO4 checks perc diff out of range",0.470462623413258,"Within_Range","",0.0301629653,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"6","COMPASS: Synoptic","CB","GCW","TR","C",20,"GCW_202407_TR_LYSC_20CM",2024,7,16,"","",7.7159,0.240670617592015,"Within_Range","SO4 checks perc diff out of range",16.6779,0.470462623413258,"Within_Range","",0.0301629653,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"7","COMPASS: Synoptic","CB","GCW","TR","C",45,"GCW_202407_TR_LYSC_45CM",2024,7,16,"","",0.0713661883967561,"Within_Range","SO4 checks perc diff out of range",2.81116784203103,"Within_Range","",0.1801042113,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"7","COMPASS: Synoptic","CB","GCW","TR","C",45,"GCW_202407_TR_LYSC_45CM",2024,7,16,"","",2.288,0.0713661883967561,"Within_Range","SO4 checks perc diff out of range",99.6559,2.81116784203103,"Within_Range","",0.1801042113,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"8","COMPASS: Synoptic","CB","GCW","WC","A",10,"GCW_202407_WC_LYSA_10CM",2024,7,16,"","",21.187956955708,"Within_Range","SO4 checks perc diff out of range",158.439630465444,"Within_Range","",10.1493756143,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"8","COMPASS: Synoptic","CB","GCW","WC","A",10,"GCW_202407_WC_LYSA_10CM",2024,7,16,"","",679.2859,21.187956955708,"Within_Range","SO4 checks perc diff out of range",5616.6849,158.439630465444,"Within_Range","",10.1493756143,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"9","COMPASS: Synoptic","CB","GCW","WC","A",20,"GCW_202407_WC_LYSA_20CM",2024,7,16,"","",16.3387211478478,"Within_Range","SO4 checks perc diff out of range",151.056064880113,"Within_Range","",9.6763980625,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"9","COMPASS: Synoptic","CB","GCW","WC","A",20,"GCW_202407_WC_LYSA_20CM",2024,7,16,"","",523.8194,16.3387211478478,"Within_Range","SO4 checks perc diff out of range",5354.9375,151.056064880113,"Within_Range","",9.6763980625,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"10","COMPASS: Synoptic","CB","GCW","WC","A",45,"GCW_202407_WC_LYSA_45CM",2024,7,16,"","",4.00416406737367,"Within_Range","SO4 checks perc diff out of range",162.739613540197,"Within_Range","",10.4248245751,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"10","COMPASS: Synoptic","CB","GCW","WC","A",45,"GCW_202407_WC_LYSA_45CM",2024,7,16,"","",128.3735,4.00416406737367,"Within_Range","SO4 checks perc diff out of range",5769.1193,162.739613540197,"Within_Range","",10.4248245751,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"11","COMPASS: Synoptic","CB","GCW","WC","B",10,"GCW_202407_WC_LYSB_10CM",2024,7,16,"","",11.4694291952589,"Within_Range","SO4 checks perc diff out of range",114.309102961918,"Within_Range","",7.3224556639,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"11","COMPASS: Synoptic","CB","GCW","WC","B",10,"GCW_202407_WC_LYSB_10CM",2024,7,16,"","",367.7099,11.4694291952589,"Within_Range","SO4 checks perc diff out of range",4052.2577,114.309102961918,"Within_Range","",7.3224556639,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"12","COMPASS: Synoptic","CB","GCW","WC","B",20,"GCW_202407_WC_LYSB_20CM",2024,7,16,"","",6.10234560199626,"Within_Range","SO4 checks perc diff out of range",120.545658674189,"Within_Range","",7.7219578852,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"12","COMPASS: Synoptic","CB","GCW","WC","B",20,"GCW_202407_WC_LYSB_20CM",2024,7,16,"","",195.6412,6.10234560199626,"Within_Range","SO4 checks perc diff out of range",4273.3436,120.545658674189,"Within_Range","",7.7219578852,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"13","COMPASS: Synoptic","CB","GCW","WC","B",45,"GCW_202407_WC_LYSB_45CM",2024,7,16,"","",5.69855895196507,"Within_Range","SO4 checks perc diff out of range",158.698256699577,"Within_Range","",10.1659427324,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"13","COMPASS: Synoptic","CB","GCW","WC","B",45,"GCW_202407_WC_LYSB_45CM",2024,7,16,"","",182.6958,5.69855895196507,"Within_Range","SO4 checks perc diff out of range",5625.8532,158.698256699577,"Within_Range","",10.1659427324,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"14","COMPASS: Synoptic","CB","GCW","WC","C",10,"GCW_202407_WC_LYSC_10CM",2024,7,16,"","",19.5060885839052,"Within_Range","SO4 checks perc diff out of range",154.462753173484,"Within_Range","",9.8946242122,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"14","COMPASS: Synoptic","CB","GCW","WC","C",10,"GCW_202407_WC_LYSC_10CM",2024,7,16,"","",625.3652,19.5060885839052,"Within_Range","SO4 checks perc diff out of range",5475.7046,154.462753173484,"Within_Range","",9.8946242122,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"15","COMPASS: Synoptic","CB","GCW","WC","C",20,"GCW_202407_WC_LYSC_20CM",2024,7,16,"","",11.3675795383656,"Within_Range","SO4 checks perc diff out of range",115.774973201693,"Within_Range","",7.4163565996,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"15","COMPASS: Synoptic","CB","GCW","WC","C",20,"GCW_202407_WC_LYSC_20CM",2024,7,16,"","",364.4446,11.3675795383656,"Within_Range","SO4 checks perc diff out of range",4104.2228,115.774973201693,"Within_Range","",7.4163565996,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"16","COMPASS: Synoptic","CB","GCW","WC","C",45,"GCW_202407_WC_LYSC_45CM",2024,7,16,"","",11.0825452276981,"Within_Range","SO4 checks perc diff out of range",140.772527503526,"Within_Range","",9.0176536827,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"16","COMPASS: Synoptic","CB","GCW","WC","C",45,"GCW_202407_WC_LYSC_45CM",2024,7,16,"","",355.3064,11.0825452276981,"Within_Range","SO4 checks perc diff out of range",4990.3861,140.772527503526,"Within_Range","",9.0176536827,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"17","COMPASS: Synoptic","CB","GCW","SW","A",0,"GCW_202407_SW_A",2024,7,16,"","",18.7547223955084,"Within_Range","SO4 checks perc diff out of range",130.245864598025,"Within_Range","",8.3433351313,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"17","COMPASS: Synoptic","CB","GCW","SW","A",0,"GCW_202407_SW_A",2024,7,16,"","",601.2764,18.7547223955084,"Within_Range","SO4 checks perc diff out of range",4617.2159,130.245864598025,"Within_Range","",8.3433351313,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"18","COMPASS: Synoptic","CB","GCW","SW","B",0,"GCW_202407_SW_B",2024,7,16,"","",19.0792389270119,"Within_Range","SO4 checks perc diff out of range",131.945029619182,"Within_Range","",8.4521804991,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"18","COMPASS: Synoptic","CB","GCW","SW","B",0,"GCW_202407_SW_B",2024,7,16,"","",611.6804,19.0792389270119,"Within_Range","SO4 checks perc diff out of range",4677.4513,131.945029619182,"Within_Range","",8.4521804991,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"19","COMPASS: Synoptic","CB","GCW","SW","C",0,"GCW_202407_SW_C",2024,7,16,"","",19.3460511540861,"Within_Range","SO4 checks perc diff out of range",133.50722425952,"Within_Range","",8.5522517977,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"19","COMPASS: Synoptic","CB","GCW","SW","C",0,"GCW_202407_SW_C",2024,7,16,"","",620.2344,19.3460511540861,"Within_Range","SO4 checks perc diff out of range",4732.8311,133.50722425952,"Within_Range","",8.5522517977,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"20","COMPASS: Synoptic","CB","MSM","UP","A",20,"MSM_202407_UP_LYSA_20CM",2024,7,18,"","",5.04070492825951,"Within_Range","SO4 checks perc diff out of range",55.3356502115656,"Within_Range","",3.5447253816,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"20","COMPASS: Synoptic","CB","MSM","UP","A",20,"MSM_202407_UP_LYSA_20CM",2024,7,18,"","",161.605,5.04070492825951,"Within_Range","SO4 checks perc diff out of range",1961.6488,55.3356502115656,"Within_Range","",3.5447253816,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"21","COMPASS: Synoptic","CB","MSM","UP","A",45,"MSM_202407_UP_LYSA_45CM",2024,7,18,"","",4.21765751715533,"Within_Range","SO4 checks perc diff out of range",52.1667108603667,"Within_Range","",3.3417289893,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"21","COMPASS: Synoptic","CB","MSM","UP","A",45,"MSM_202407_UP_LYSA_45CM",2024,7,18,"","",135.2181,4.21765751715533,"Within_Range","SO4 checks perc diff out of range",1849.3099,52.1667108603667,"Within_Range","",3.3417289893,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"22","COMPASS: Synoptic","CB","MSM","UP","B",10,"MSM_202407_UP_LYSB_10CM",2024,7,18,"","",2.1734466625078,"Within_Range","SO4 checks perc diff out of range",20.2424710860367,"Within_Range","",1.2967212492,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"22","COMPASS: Synoptic","CB","MSM","UP","B",10,"MSM_202407_UP_LYSB_10CM",2024,7,18,"","",69.6807,2.1734466625078,"Within_Range","SO4 checks perc diff out of range",717.5956,20.2424710860367,"Within_Range","",1.2967212492,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"23","COMPASS: Synoptic","CB","MSM","UP","B",45,"MSM_202407_UP_LYSB_45CM",2024,7,18,"","",4.92843418590143,"Within_Range","SO4 checks perc diff out of range",47.6805133991537,"Within_Range","",3.0543514794,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"23","COMPASS: Synoptic","CB","MSM","UP","B",45,"MSM_202407_UP_LYSB_45CM",2024,7,18,"","",158.0056,4.92843418590143,"Within_Range","SO4 checks perc diff out of range",1690.2742,47.6805133991537,"Within_Range","",3.0543514794,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"24","COMPASS: Synoptic","CB","MSM","UP","C",10,"MSM_202407_UP_LYSC_10CM",2024,7,18,"","",3.43441048034934,"Within_Range","SO4 checks perc diff out of range",24.1344203102962,"Within_Range","",1.5460323164,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"24","COMPASS: Synoptic","CB","MSM","UP","C",10,"MSM_202407_UP_LYSC_10CM",2024,7,18,"","",110.1072,3.43441048034934,"Within_Range","SO4 checks perc diff out of range",855.5652,24.1344203102962,"Within_Range","",1.5460323164,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"25","COMPASS: Synoptic","CB","MSM","UP","C",20,"MSM_202407_UP_LYSC_20CM",2024,7,18,"","",3.50862445414847,"Within_Range","SO4 checks perc diff out of range",26.9982961918195,"Within_Range","",1.7294869072,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"25","COMPASS: Synoptic","CB","MSM","UP","C",20,"MSM_202407_UP_LYSC_20CM",2024,7,18,"","",112.4865,3.50862445414847,"Within_Range","SO4 checks perc diff out of range",957.0896,26.9982961918195,"Within_Range","",1.7294869072,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"26","COMPASS: Synoptic","CB","MSM","UP","C",45,"MSM_202407_UP_LYSC_45CM",2024,7,18,"","",4.89705864004991,"Within_Range","SO4 checks perc diff out of range",44.656928067701,"Within_Range","",2.8606661967,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"26","COMPASS: Synoptic","CB","MSM","UP","C",45,"MSM_202407_UP_LYSC_45CM",2024,7,18,"","",156.9997,4.89705864004991,"Within_Range","SO4 checks perc diff out of range",1583.0881,44.656928067701,"Within_Range","",2.8606661967,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"27","COMPASS: Synoptic","CB","MSM","TR","A",10,"MSM_202407_TR_LYSA_10CM",2024,7,18,"","",21.6857797878977,"Within_Range","SO4 checks perc diff out of range",128.684431593794,"Within_Range","",8.2433126217,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"27","COMPASS: Synoptic","CB","MSM","TR","A",10,"MSM_202407_TR_LYSA_10CM",2024,7,18,"","",695.2461,21.6857797878977,"Within_Range","SO4 checks perc diff out of range",4561.8631,128.684431593794,"Within_Range","",8.2433126217,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"28","COMPASS: Synoptic","CB","MSM","TR","A",20,"MSM_202407_TR_LYSA_20CM",2024,7,18,"","",18.0375951341235,"Within_Range","SO4 checks perc diff out of range",130.976296191819,"Within_Range","",8.3901252279,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"28","COMPASS: Synoptic","CB","MSM","TR","A",20,"MSM_202407_TR_LYSA_20CM",2024,7,18,"","",578.2853,18.0375951341235,"Within_Range","SO4 checks perc diff out of range",4643.1097,130.976296191819,"Within_Range","",8.3901252279,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"29","COMPASS: Synoptic","CB","MSM","TR","A",45,"MSM_202407_TR_LYSA_45CM",2024,7,18,"","",17.9064597629445,"Within_Range","SO4 checks perc diff out of range",131.023421720733,"Within_Range","",8.3931440021,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"29","COMPASS: Synoptic","CB","MSM","TR","A",45,"MSM_202407_TR_LYSA_45CM",2024,7,18,"","",574.0811,17.9064597629445,"Within_Range","SO4 checks perc diff out of range",4644.7803,131.023421720733,"Within_Range","",8.3931440021,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"30","COMPASS: Synoptic","CB","MSM","TR","B",10,"MSM_202407_TR_LYSB_10CM",2024,7,18,"","",21.0123518402994,"Within_Range","SO4 checks perc diff out of range",136.240795486601,"Within_Range","",8.7273593134,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"30","COMPASS: Synoptic","CB","MSM","TR","B",10,"MSM_202407_TR_LYSB_10CM",2024,7,18,"","",673.656,21.0123518402994,"Within_Range","SO4 checks perc diff out of range",4829.7362,136.240795486601,"Within_Range","",8.7273593134,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"31","COMPASS: Synoptic","CB","MSM","TR","B",20,"MSM_202407_TR_LYSB_20CM",2024,7,18,"","",13.0004335620711,"Within_Range","SO4 checks perc diff out of range",148.530685472496,"Within_Range","",9.5146269296,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"31","COMPASS: Synoptic","CB","MSM","TR","B",20,"MSM_202407_TR_LYSB_20CM",2024,7,18,"","",416.7939,13.0004335620711,"Within_Range","SO4 checks perc diff out of range",5265.4128,148.530685472496,"Within_Range","",9.5146269296,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"32","COMPASS: Synoptic","CB","MSM","TR","B",45,"MSM_202407_TR_LYSB_45CM",2024,7,18,"","",10.8840517779164,"Within_Range","SO4 checks perc diff out of range",151.087252468265,"Within_Range","",9.6783958817,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"32","COMPASS: Synoptic","CB","MSM","TR","B",45,"MSM_202407_TR_LYSB_45CM",2024,7,18,"","",348.9427,10.8840517779164,"Within_Range","SO4 checks perc diff out of range",5356.0431,151.087252468265,"Within_Range","",9.6783958817,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"33","COMPASS: Synoptic","CB","MSM","TR","C",10,"MSM_202407_TR_LYSC_10CM",2024,7,18,"","",28.6926044915783,"Within_Range","SO4 checks perc diff out of range",163.757342736248,"Within_Range","",10.4900184246,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"33","COMPASS: Synoptic","CB","MSM","TR","C",10,"MSM_202407_TR_LYSC_10CM",2024,7,18,"","",919.8849,28.6926044915783,"Within_Range","SO4 checks perc diff out of range",5805.1978,163.757342736248,"Within_Range","",10.4900184246,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"34","COMPASS: Synoptic","CB","MSM","TR","C",20,"MSM_202407_TR_LYSC_20CM",2024,7,18,"","",16.3504460386775,"Within_Range","SO4 checks perc diff out of range",152.423196050776,"Within_Range","",9.7639739561,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"34","COMPASS: Synoptic","CB","MSM","TR","C",20,"MSM_202407_TR_LYSC_20CM",2024,7,18,"","",524.1953,16.3504460386775,"Within_Range","SO4 checks perc diff out of range",5403.4023,152.423196050776,"Within_Range","",9.7639739561,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"35","COMPASS: Synoptic","CB","MSM","TR","C",45,"MSM_202407_TR_LYSC_45CM",2024,7,18,"","",17.7514660012477,"Within_Range","SO4 checks perc diff out of range",149.863909732017,"Within_Range","",9.6000308092,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"35","COMPASS: Synoptic","CB","MSM","TR","C",45,"MSM_202407_TR_LYSC_45CM",2024,7,18,"","",569.112,17.7514660012477,"Within_Range","SO4 checks perc diff out of range",5312.6756,149.863909732017,"Within_Range","",9.6000308092,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"36","COMPASS: Synoptic","CB","MSM","WC","A",10,"MSM_202407_WC_LYSA_10CM",2024,7,18,"","",23.9119900187149,"Within_Range","SO4 checks perc diff out of range",173.916076163611,"Within_Range","",11.1407680943,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"36","COMPASS: Synoptic","CB","MSM","WC","A",10,"MSM_202407_WC_LYSA_10CM",2024,7,18,"","",766.6184,23.9119900187149,"Within_Range","SO4 checks perc diff out of range",6165.3249,173.916076163611,"Within_Range","",11.1407680943,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"37","COMPASS: Synoptic","CB","MSM","WC","A",20,"MSM_202407_WC_LYSA_20CM",2024,7,18,"","",22.2442264504055,"Within_Range","SO4 checks perc diff out of range",194.213497884344,"Within_Range","",12.4409833795,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"37","COMPASS: Synoptic","CB","MSM","WC","A",20,"MSM_202407_WC_LYSA_20CM",2024,7,18,"","",713.1499,22.2442264504055,"Within_Range","SO4 checks perc diff out of range",6884.8685,194.213497884344,"Within_Range","",12.4409833795,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"38","COMPASS: Synoptic","CB","MSM","WC","A",45,"MSM_202407_WC_LYSA_45CM",2024,7,18,"","",2.35093574547723,"Within_Range","SO4 checks perc diff out of range",251.200685472496,"Within_Range","",16.0914771901,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"38","COMPASS: Synoptic","CB","MSM","WC","A",45,"MSM_202407_WC_LYSA_45CM",2024,7,18,"","",75.371,2.35093574547723,"Within_Range","SO4 checks perc diff out of range",8905.0643,251.200685472496,"Within_Range","",16.0914771901,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"39","COMPASS: Synoptic","CB","MSM","WC","B",10,"MSM_202407_WC_LYSB_10CM",2024,7,18,"","",24.0939550842171,"Within_Range","SO4 checks perc diff out of range",195.566183356841,"Within_Range","",12.5276339084,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"39","COMPASS: Synoptic","CB","MSM","WC","B",10,"MSM_202407_WC_LYSB_10CM",2024,7,18,"","",772.4522,24.0939550842171,"Within_Range","SO4 checks perc diff out of range",6932.8212,195.566183356841,"Within_Range","",12.5276339084,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"40","COMPASS: Synoptic","CB","MSM","WC","B",20,"MSM_202407_WC_LYSB_20CM",2024,7,18,"","",22.4539270118528,"Within_Range","SO4 checks perc diff out of range",193.952033850494,"Within_Range","",12.4242344772,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"40","COMPASS: Synoptic","CB","MSM","WC","B",20,"MSM_202407_WC_LYSB_20CM",2024,7,18,"","",719.8729,22.4539270118528,"Within_Range","SO4 checks perc diff out of range",6875.5996,193.952033850494,"Within_Range","",12.4242344772,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"41","COMPASS: Synoptic","CB","MSM","WC","C",10,"MSM_202407_WC_LYSC_10CM",2024,7,18,"","",21.5634653774173,"Within_Range","SO4 checks perc diff out of range",187.641737658674,"Within_Range","",12.0200085772,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"41","COMPASS: Synoptic","CB","MSM","WC","C",10,"MSM_202407_WC_LYSC_10CM",2024,7,18,"","",691.3247,21.5634653774173,"Within_Range","SO4 checks perc diff out of range",6651.8996,187.641737658674,"Within_Range","",12.0200085772,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"42","COMPASS: Synoptic","CB","MSM","WC","C",20,"MSM_202407_WC_LYSC_20CM",2024,7,18,"","",14.5686837180287,"Within_Range","SO4 checks perc diff out of range",181.774781382228,"Within_Range","",11.644182212,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"42","COMPASS: Synoptic","CB","MSM","WC","C",20,"MSM_202407_WC_LYSC_20CM",2024,7,18,"","",467.072,14.5686837180287,"Within_Range","SO4 checks perc diff out of range",6443.916,181.774781382228,"Within_Range","",11.644182212,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"43","COMPASS: Synoptic","CB","MSM","WC","C",45,"MSM_202407_WC_LYSC_45CM",2024,7,18,"","",2.88343730505303,"Within_Range","SO4 checks perc diff out of range",214.720087447109,"Within_Range","",13.7545975697,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"43","COMPASS: Synoptic","CB","MSM","WC","C",45,"MSM_202407_WC_LYSC_45CM",2024,7,18,"","",92.443,2.88343730505303,"Within_Range","SO4 checks perc diff out of range",7611.8271,214.720087447109,"Within_Range","",13.7545975697,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"44","COMPASS: Synoptic","CB","MSM","SW","A",0,"MSM_202407_SW_A",2024,7,18,"","",25.8863849033063,"Within_Range","SO4 checks perc diff out of range",174.49232157969,"Within_Range","",11.1776813096,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"44","COMPASS: Synoptic","CB","MSM","SW","A",0,"MSM_202407_SW_A",2024,7,18,"","",829.9175,25.8863849033063,"Within_Range","SO4 checks perc diff out of range",6185.7528,174.49232157969,"Within_Range","",11.1776813096,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"45","COMPASS: Synoptic","CB","MSM","SW","B",0,"MSM_202407_SW_B",2024,7,18,"","",25.5208983156581,"Within_Range","SO4 checks perc diff out of range",172.229912552891,"Within_Range","",11.0327555728,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"45","COMPASS: Synoptic","CB","MSM","SW","B",0,"MSM_202407_SW_B",2024,7,18,"","",818.2,25.5208983156581,"Within_Range","SO4 checks perc diff out of range",6105.5504,172.229912552891,"Within_Range","",11.0327555728,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"46","COMPASS: Synoptic","CB","MSM","SW","C",0,"MSM_202407_SW_C",2024,7,18,"","",25.5714597629445,"Within_Range","SO4 checks perc diff out of range",171.959779971791,"Within_Range","",11.0154513794,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"46","COMPASS: Synoptic","CB","MSM","SW","C",0,"MSM_202407_SW_C",2024,7,18,"","",819.821,25.5714597629445,"Within_Range","SO4 checks perc diff out of range",6095.9742,171.959779971791,"Within_Range","",11.0154513794,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"47","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202407_UP_LYSA_10CM",2024,7,23,"","",0.0986743605739239,"Within_Range","SO4 checks perc diff out of range",0.304084626234133,"Within_Range","",0.0195050986,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"47","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202407_UP_LYSA_10CM",2024,7,23,"","",3.1635,0.0986743605739239,"Within_Range","SO4 checks perc diff out of range",10.7798,0.304084626234133,"Within_Range","",0.0195050986,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"48","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202407_UP_LYSA_20CM",2024,7,23,"","",0.387772925764192,"Within_Range","SO4 checks perc diff out of range",0.277314527503526,"Within_Range","",0.0177902556,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"48","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202407_UP_LYSA_20CM",2024,7,23,"","",12.432,0.387772925764192,"Within_Range","SO4 checks perc diff out of range",9.8308,0.277314527503526,"Within_Range","",0.0177902556,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"49","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202407_UP_LYSA_45CM",2024,7,23,"","",0.060495945102932,"Within_Range","SO4 checks perc diff out of range",0.322203102961918,"Within_Range","",0.0206657347,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"49","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202407_UP_LYSA_45CM",2024,7,23,"","",1.9395,0.060495945102932,"Within_Range","SO4 checks perc diff out of range",11.4221,0.322203102961918,"Within_Range","",0.0206657347,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"50","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202407_UP_LYSB_10CM",2024,7,23,"","",0.171877729257642,"Within_Range","SO4 checks perc diff out of range",0.170448519040903,"Within_Range","",0.0109446168,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"50","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202407_UP_LYSB_10CM",2024,7,23,"","",5.5104,0.171877729257642,"Within_Range","SO4 checks perc diff out of range",6.0424,0.170448519040903,"Within_Range","",0.0109446168,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"51","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202407_UP_LYSB_20CM",2024,7,23,"","",0.480436681222707,"Within_Range","SO4 checks perc diff out of range",0.156533145275035,"Within_Range","",0.0100532237,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"51","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202407_UP_LYSB_20CM",2024,7,23,"","",15.4028,0.480436681222707,"Within_Range","SO4 checks perc diff out of range",5.5491,0.156533145275035,"Within_Range","",0.0100532237,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"52","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202407_UP_LYSB_45CM",2024,7,23,"","",0.0549968808484092,"Within_Range","SO4 checks perc diff out of range",0.294645980253879,"Within_Range","",0.0189004764,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"52","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202407_UP_LYSB_45CM",2024,7,23,"","",1.7632,0.0549968808484092,"Within_Range","SO4 checks perc diff out of range",10.4452,0.294645980253879,"Within_Range","",0.0189004764,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"53","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202407_UP_LYSC_10CM",2024,7,23,"","",0.454338739862757,"Within_Range","SO4 checks perc diff out of range",0.247475317348378,"Within_Range","",0.015878811,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"53","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202407_UP_LYSC_10CM",2024,7,23,"","",14.5661,0.454338739862757,"Within_Range","SO4 checks perc diff out of range",8.773,0.247475317348378,"Within_Range","",0.015878811,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"54","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202407_UP_LYSC_20CM",2024,7,23,"","",0.363328134747349,"Within_Range","SO4 checks perc diff out of range",0.184456981664316,"Within_Range","",0.011841973,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"54","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202407_UP_LYSC_20CM",2024,7,23,"","",11.6483,0.363328134747349,"Within_Range","SO4 checks perc diff out of range",6.539,0.184456981664316,"Within_Range","",0.011841973,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"55","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202407_SWAMP_LYSA_10CM",2024,7,23,"","",0.0445071740486588,"Within_Range","SO4 checks perc diff out of range",0.213007052186178,"Within_Range","",0.0136708377,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"55","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202407_SWAMP_LYSA_10CM",2024,7,23,"","",1.4269,0.0445071740486588,"Within_Range","SO4 checks perc diff out of range",7.5511,0.213007052186178,"Within_Range","",0.0136708377,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"56","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202407_SWAMP_LYSA_20CM",2024,7,23,"","",0.117411104179663,"Within_Range","SO4 checks perc diff out of range",0.296375176304654,"Within_Range","",0.0190112455,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"56","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202407_SWAMP_LYSA_20CM",2024,7,23,"","",3.7642,0.117411104179663,"Within_Range","SO4 checks perc diff out of range",10.5065,0.296375176304654,"Within_Range","",0.0190112455,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"57","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202407_SWAMP_LYSA_45CM",2024,7,23,"","",0.0402432938240798,"Within_Range","SO4 checks perc diff out of range",0.299988716502116,"Within_Range","",0.0192427222,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"57","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202407_SWAMP_LYSA_45CM",2024,7,23,"","",1.2902,0.0402432938240798,"Within_Range","SO4 checks perc diff out of range",10.6346,0.299988716502116,"Within_Range","",0.0192427222,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"58","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202407_SWAMP_LYSB_10CM",2024,7,23,"","",0.0315751715533375,"Within_Range","SO4 checks perc diff out of range",0.313066290550071,"Within_Range","",0.0200804474,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"58","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202407_SWAMP_LYSB_10CM",2024,7,23,"","",1.0123,0.0315751715533375,"Within_Range","SO4 checks perc diff out of range",11.0982,0.313066290550071,"Within_Range","",0.0200804474,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"59","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202407_SWAMP_LYSB_20CM",2024,7,23,"","",0.0219962570180911,"Within_Range","SO4 checks perc diff out of range",0.244581100141044,"Within_Range","",0.0156934128,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"59","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202407_SWAMP_LYSB_20CM",2024,7,23,"","",0.7052,0.0219962570180911,"Within_Range","SO4 checks perc diff out of range",8.6704,0.244581100141044,"Within_Range","",0.0156934128,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"60","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202407_SWAMP_LYSB_45CM",2024,7,23,"","",0.039101684341859,"Within_Range","SO4 checks perc diff out of range",0.460124118476728,"Within_Range","",0.0295006998,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"60","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202407_SWAMP_LYSB_45CM",2024,7,23,"","",1.2536,0.039101684341859,"Within_Range","SO4 checks perc diff out of range",16.3114,0.460124118476728,"Within_Range","",0.0295006998,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"61","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202407_SWAMP_LYSC_10CM",2024,7,23,"","",0.0560979413599501,"Within_Range","SO4 checks perc diff out of range",0.185929478138223,"Within_Range","",0.0119362984,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"61","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202407_SWAMP_LYSC_10CM",2024,7,23,"","",1.7985,0.0560979413599501,"Within_Range","SO4 checks perc diff out of range",6.5912,0.185929478138223,"Within_Range","",0.0119362984,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"62","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202407_SWAMP_LYSC_20CM",2024,7,23,"","",0.0498471615720524,"Within_Range","SO4 checks perc diff out of range",0.170713681241185,"Within_Range","",0.0109616026,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"62","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202407_SWAMP_LYSC_20CM",2024,7,23,"","",1.5981,0.0498471615720524,"Within_Range","SO4 checks perc diff out of range",6.0518,0.170713681241185,"Within_Range","",0.0109616026,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"63","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202407_SWAMP_LYSC_45CM",2024,7,23,"","",0,"bdl","SO4 checks perc diff out of range",0.275850493653032,"Within_Range","",0.0176964723,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"63","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202407_SWAMP_LYSC_45CM",2024,7,23,"","",0,0,"bdl","SO4 checks perc diff out of range",9.7789,0.275850493653032,"Within_Range","",0.0176964723,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"64","COMPASS: Synoptic","CB","SWH","TR","A",10,"SWH_202407_TR_LYSA_10CM",2024,7,24,"","",0.0860293200249532,"Within_Range","SO4 checks perc diff out of range",9.86640338504936,"Within_Range","",0.632049548,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"64","COMPASS: Synoptic","CB","SWH","TR","A",10,"SWH_202407_TR_LYSA_10CM",2024,7,24,"","",2.7581,0.0860293200249532,"Within_Range","SO4 checks perc diff out of range",349.764,9.86640338504936,"Within_Range","",0.632049548,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"65","COMPASS: Synoptic","CB","SWH","TR","A",20,"SWH_202407_TR_LYSA_20CM",2024,7,24,"","",0.0147286338116032,"Within_Range","SO4 checks perc diff out of range",8.6569365303244,"Within_Range","",0.5545733388,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"65","COMPASS: Synoptic","CB","SWH","TR","A",20,"SWH_202407_TR_LYSA_20CM",2024,7,24,"","",0.4722,0.0147286338116032,"Within_Range","SO4 checks perc diff out of range",306.8884,8.6569365303244,"Within_Range","",0.5545733388,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"66","COMPASS: Synoptic","CB","SWH","TR","A",45,"SWH_202407_TR_LYSA_45CM",2024,7,24,"","",0.019731752963194,"Within_Range","SO4 checks perc diff out of range",10.4890832157969,"Within_Range","",0.671937266,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"66","COMPASS: Synoptic","CB","SWH","TR","A",45,"SWH_202407_TR_LYSA_45CM",2024,7,24,"","",0.6326,0.019731752963194,"Within_Range","SO4 checks perc diff out of range",371.838,10.4890832157969,"Within_Range","",0.671937266,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"67","COMPASS: Synoptic","CB","SWH","TR","B",10,"SWH_202407_TR_LYSB_10CM",2024,7,24,"","",0.138281347473487,"Within_Range","SO4 checks perc diff out of range",8.06110578279267,"Within_Range","",0.5164055234,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"67","COMPASS: Synoptic","CB","SWH","TR","B",10,"SWH_202407_TR_LYSB_10CM",2024,7,24,"","",4.4333,0.138281347473487,"Within_Range","SO4 checks perc diff out of range",285.7662,8.06110578279267,"Within_Range","",0.5164055234,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"68","COMPASS: Synoptic","CB","SWH","TR","B",20,"SWH_202407_TR_LYSB_20CM",2024,7,24,"","",0.0276419213973799,"Within_Range","SO4 checks perc diff out of range",8.9460197461213,"Within_Range","",0.5730914748,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"68","COMPASS: Synoptic","CB","SWH","TR","B",20,"SWH_202407_TR_LYSB_20CM",2024,7,24,"","",0.8862,0.0276419213973799,"Within_Range","SO4 checks perc diff out of range",317.1364,8.9460197461213,"Within_Range","",0.5730914748,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"69","COMPASS: Synoptic","CB","SWH","TR","B",45,"SWH_202407_TR_LYSB_45CM",2024,7,24,"","",0.0277947598253275,"Within_Range","SO4 checks perc diff out of range",8.55676727785614,"Within_Range","",0.5481566818,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"69","COMPASS: Synoptic","CB","SWH","TR","B",45,"SWH_202407_TR_LYSB_45CM",2024,7,24,"","",0.8911,0.0277947598253275,"Within_Range","SO4 checks perc diff out of range",303.3374,8.55676727785614,"Within_Range","",0.5481566818,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"70","COMPASS: Synoptic","CB","SWH","TR","C",10,"SWH_202407_TR_LYSC_10CM",2024,7,24,"","",0.58138178415471,"Within_Range","SO4 checks perc diff out of range",10.9594696755994,"Within_Range","",0.7020693524,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"70","COMPASS: Synoptic","CB","SWH","TR","C",10,"SWH_202407_TR_LYSC_10CM",2024,7,24,"","",18.6391,0.58138178415471,"Within_Range","SO4 checks perc diff out of range",388.5132,10.9594696755994,"Within_Range","",0.7020693524,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"71","COMPASS: Synoptic","CB","SWH","TR","C",20,"SWH_202407_TR_LYSC_20CM",2024,7,24,"","",0.021796631316282,"Within_Range","SO4 checks perc diff out of range",7.82388434414668,"Within_Range","",0.5012095569,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"71","COMPASS: Synoptic","CB","SWH","TR","C",20,"SWH_202407_TR_LYSC_20CM",2024,7,24,"","",0.6988,0.021796631316282,"Within_Range","SO4 checks perc diff out of range",277.3567,7.82388434414668,"Within_Range","",0.5012095569,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"72","COMPASS: Synoptic","CB","SWH","TR","C",45,"SWH_202407_TR_LYSC_45CM",2024,7,24,"","",0.0208328134747349,"Within_Range","SO4 checks perc diff out of range",7.87726093088857,"Within_Range","",0.5046287623,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"72","COMPASS: Synoptic","CB","SWH","TR","C",45,"SWH_202407_TR_LYSC_45CM",2024,7,24,"","",0.6679,0.0208328134747349,"Within_Range","SO4 checks perc diff out of range",279.2489,7.87726093088857,"Within_Range","",0.5046287623,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"73","COMPASS: Synoptic","CB","SWH","WC","A",10,"SWH_202407_WC_LYSA_10CM",2024,7,24,"","",0.0188427947598253,"Within_Range","SO4 checks perc diff out of range",16.3086516220028,"Within_Range","",1.0447280519,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"73","COMPASS: Synoptic","CB","SWH","WC","A",10,"SWH_202407_WC_LYSA_10CM",2024,7,24,"","",0.6041,0.0188427947598253,"Within_Range","SO4 checks perc diff out of range",578.1417,16.3086516220028,"Within_Range","",1.0447280519,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"74","COMPASS: Synoptic","CB","SWH","WC","A",20,"SWH_202407_WC_LYSA_20CM",2024,7,24,"","",0.0211478477854024,"Within_Range","SO4 checks perc diff out of range",10.4250578279267,"Within_Range","",0.6678359181,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"74","COMPASS: Synoptic","CB","SWH","WC","A",20,"SWH_202407_WC_LYSA_20CM",2024,7,24,"","",0.678,0.0211478477854024,"Within_Range","SO4 checks perc diff out of range",369.5683,10.4250578279267,"Within_Range","",0.6678359181,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"75","COMPASS: Synoptic","CB","SWH","WC","A",45,"SWH_202407_WC_LYSA_45CM",2024,7,24,"","",0.0179912663755459,"Within_Range","SO4 checks perc diff out of range",13.3352806770099,"Within_Range","",0.8542594099,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"75","COMPASS: Synoptic","CB","SWH","WC","A",45,"SWH_202407_WC_LYSA_45CM",2024,7,24,"","",0.5768,0.0179912663755459,"Within_Range","SO4 checks perc diff out of range",472.7357,13.3352806770099,"Within_Range","",0.8542594099,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"76","COMPASS: Synoptic","CB","SWH","WC","B",10,"SWH_202407_WC_LYSB_10CM",2024,7,24,"","",0.0158858390517779,"Within_Range","SO4 checks perc diff out of range",16.8696925246827,"Within_Range","",1.0806672942,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"76","COMPASS: Synoptic","CB","SWH","WC","B",10,"SWH_202407_WC_LYSB_10CM",2024,7,24,"","",0.5093,0.0158858390517779,"Within_Range","SO4 checks perc diff out of range",598.0306,16.8696925246827,"Within_Range","",1.0806672942,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"77","COMPASS: Synoptic","CB","SWH","WC","B",20,"SWH_202407_WC_LYSB_20CM",2024,7,24,"","",0,"bdl","SO4 checks perc diff out of range",16.7876389280677,"Within_Range","",1.0754110926,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"77","COMPASS: Synoptic","CB","SWH","WC","B",20,"SWH_202407_WC_LYSB_20CM",2024,7,24,"","",0,0,"bdl","SO4 checks perc diff out of range",595.1218,16.7876389280677,"Within_Range","",1.0754110926,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"78","COMPASS: Synoptic","CB","SWH","WC","B",45,"SWH_202407_WC_LYSB_45CM",2024,7,24,"","",0.0107080474111042,"Within_Range","SO4 checks perc diff out of range",16.6925528913963,"Within_Range","",1.069320057,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"78","COMPASS: Synoptic","CB","SWH","WC","B",45,"SWH_202407_WC_LYSB_45CM",2024,7,24,"","",0.3433,0.0107080474111042,"Within_Range","SO4 checks perc diff out of range",591.751,16.6925528913963,"Within_Range","",1.069320057,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"79","COMPASS: Synoptic","CB","SWH","WC","C",10,"SWH_202407_WC_LYSC_10CM",2024,7,24,"","",0.0666126013724267,"Within_Range","SO4 checks perc diff out of range",18.4597235543018,"Within_Range","",1.1825217404,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"79","COMPASS: Synoptic","CB","SWH","WC","C",10,"SWH_202407_WC_LYSC_10CM",2024,7,24,"","",2.1356,0.0666126013724267,"Within_Range","SO4 checks perc diff out of range",654.3972,18.4597235543018,"Within_Range","",1.1825217404,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"80","COMPASS: Synoptic","CB","SWH","WC","C",20,"SWH_202407_WC_LYSC_20CM",2024,7,24,"","",0,"bdl","SO4 checks perc diff out of range",9.96464315937941,"Within_Range","",0.6383426062,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"80","COMPASS: Synoptic","CB","SWH","WC","C",20,"SWH_202407_WC_LYSC_20CM",2024,7,24,"","",0,0,"bdl","SO4 checks perc diff out of range",353.2466,9.96464315937941,"Within_Range","",0.6383426062,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"81","COMPASS: Synoptic","CB","SWH","WC","C",45,"SWH_202407_WC_LYSC_45CM",2024,7,24,"","",0,"bdl","SO4 checks perc diff out of range",14.8024344146685,"Within_Range","",0.9482425641,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"81","COMPASS: Synoptic","CB","SWH","WC","C",45,"SWH_202407_WC_LYSC_45CM",2024,7,24,"","",0,0,"bdl","SO4 checks perc diff out of range",524.7463,14.8024344146685,"Within_Range","",0.9482425641,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"82","COMPASS: Synoptic","CB","SWH","SW","A",0,"SWH_202407_SW_A",2024,7,24,"","",2.23489394884591,"Within_Range","SO4 checks perc diff out of range",15.0788998589563,"Within_Range","",0.965952429,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"82","COMPASS: Synoptic","CB","SWH","SW","A",0,"SWH_202407_SW_A",2024,7,24,"","",71.6507,2.23489394884591,"Within_Range","SO4 checks perc diff out of range",534.547,15.0788998589563,"Within_Range","",0.965952429,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"83","COMPASS: Synoptic","CB","SWH","SW","B",0,"SWH_202407_SW_B",2024,7,24,"","",2.27582033686837,"Within_Range","SO4 checks perc diff out of range",15.3767249647391,"Within_Range","",0.9850305543,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"83","COMPASS: Synoptic","CB","SWH","SW","B",0,"SWH_202407_SW_B",2024,7,24,"","",72.9628,2.27582033686837,"Within_Range","SO4 checks perc diff out of range",545.1049,15.3767249647391,"Within_Range","",0.9850305543,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"84","COMPASS: Synoptic","CB","SWH","SW","C",0,"SWH_202407_SW_C",2024,7,24,"","",2.20419213973799,"Within_Range","SO4 checks perc diff out of range",15.0437630465444,"Within_Range","",0.9637016298,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"84","COMPASS: Synoptic","CB","SWH","SW","C",0,"SWH_202407_SW_C",2024,7,24,"","",70.6664,2.20419213973799,"Within_Range","SO4 checks perc diff out of range",533.3014,15.0437630465444,"Within_Range","",0.9637016298,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"85","COMPASS: Synoptic","CB","GWI","UP","A",10,"GWI_202407_UP_LYSA_10CM",2024,7,25,"","",15.7584872114785,"Within_Range","SO4 checks perc diff out of range",107.359317348378,"Within_Range","",6.8772652546,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"85","COMPASS: Synoptic","CB","GWI","UP","A",10,"GWI_202407_UP_LYSA_10CM",2024,7,25,"","",505.2171,15.7584872114785,"Within_Range","SO4 checks perc diff out of range",3805.8878,107.359317348378,"Within_Range","",6.8772652546,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"86","COMPASS: Synoptic","CB","GWI","UP","A",45,"GWI_202407_UP_LYSA_45CM",2024,7,25,"","",19.0720492825951,"Within_Range","SO4 checks perc diff out of range",131.877249647391,"Within_Range","",8.4478386395,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"86","COMPASS: Synoptic","CB","GWI","UP","A",45,"GWI_202407_UP_LYSA_45CM",2024,7,25,"","",611.4499,19.0720492825951,"Within_Range","SO4 checks perc diff out of range",4675.0485,131.877249647391,"Within_Range","",8.4478386395,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"87","COMPASS: Synoptic","CB","GWI","UP","B",10,"GWI_202407_UP_LYSB_10CM",2024,7,25,"","",4.76215221459763,"Within_Range","SO4 checks perc diff out of range",35.7244118476728,"Within_Range","",2.2884657328,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"87","COMPASS: Synoptic","CB","GWI","UP","B",10,"GWI_202407_UP_LYSB_10CM",2024,7,25,"","",152.6746,4.76215221459763,"Within_Range","SO4 checks perc diff out of range",1266.4304,35.7244118476728,"Within_Range","",2.2884657328,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"88","COMPASS: Synoptic","CB","GWI","UP","B",20,"GWI_202407_UP_LYSB_20CM",2024,7,25,"","",13.1772832189644,"Within_Range","SO4 checks perc diff out of range",83.7417912552891,"Within_Range","",5.3643702255,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"88","COMPASS: Synoptic","CB","GWI","UP","B",20,"GWI_202407_UP_LYSB_20CM",2024,7,25,"","",422.4637,13.1772832189644,"Within_Range","SO4 checks perc diff out of range",2968.6465,83.7417912552891,"Within_Range","",5.3643702255,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"89","COMPASS: Synoptic","CB","GWI","UP","B",45,"GWI_202407_UP_LYSB_45CM",2024,7,25,"","",15.7965439800374,"Within_Range","SO4 checks perc diff out of range",114.16562764457,"Within_Range","",7.3132649005,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"89","COMPASS: Synoptic","CB","GWI","UP","B",45,"GWI_202407_UP_LYSB_45CM",2024,7,25,"","",506.4372,15.7965439800374,"Within_Range","SO4 checks perc diff out of range",4047.1715,114.16562764457,"Within_Range","",7.3132649005,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"90","COMPASS: Synoptic","CB","GWI","UP","C",20,"GWI_202407_UP_LYSC_20CM",2024,7,25,"","",18.8256425452277,"Within_Range","SO4 checks perc diff out of range",134.033985895628,"Within_Range","",8.5859951736,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"90","COMPASS: Synoptic","CB","GWI","UP","C",20,"GWI_202407_UP_LYSC_20CM",2024,7,25,"","",603.5501,18.8256425452277,"Within_Range","SO4 checks perc diff out of range",4751.5048,134.033985895628,"Within_Range","",8.5859951736,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"91","COMPASS: Synoptic","CB","GWI","TR","A",10,"GWI_202407_TR_LYSA_10CM",2024,7,25,"","",55.1437398627573,"Within_Range","SO4 checks perc diff out of range",319.685201692525,"Within_Range","",20.4784686028,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"91","COMPASS: Synoptic","CB","GWI","TR","A",10,"GWI_202407_TR_LYSA_10CM",2024,7,25,"","",1767.9083,55.1437398627573,"Within_Range","SO4 checks perc diff out of range",11332.8404,319.685201692525,"Within_Range","",20.4784686028,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"92","COMPASS: Synoptic","CB","GWI","TR","A",20,"GWI_202407_TR_LYSA_20CM",2024,7,25,"","",38.1022239550842,"Within_Range","SO4 checks perc diff out of range",354.725176304654,"Within_Range","",22.7230645525,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"92","COMPASS: Synoptic","CB","GWI","TR","A",20,"GWI_202407_TR_LYSA_20CM",2024,7,25,"","",1221.5573,38.1022239550842,"Within_Range","SO4 checks perc diff out of range",12575.0075,354.725176304654,"Within_Range","",22.7230645525,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"93","COMPASS: Synoptic","CB","GWI","TR","B",10,"GWI_202407_TR_LYSB_10CM",2024,7,25,"","",20.3073799126638,"Within_Range","SO4 checks perc diff out of range",127.012019746121,"Within_Range","",8.1361810127,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"93","COMPASS: Synoptic","CB","GWI","TR","B",10,"GWI_202407_TR_LYSB_10CM",2024,7,25,"","",651.0546,20.3073799126638,"Within_Range","SO4 checks perc diff out of range",4502.5761,127.012019746121,"Within_Range","",8.1361810127,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"94","COMPASS: Synoptic","CB","GWI","TR","B",20,"GWI_202407_TR_LYSB_20CM",2024,7,25,"","",38.2009794135995,"Within_Range","SO4 checks perc diff out of range",285.078662905501,"Within_Range","",18.2616377502,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"94","COMPASS: Synoptic","CB","GWI","TR","B",20,"GWI_202407_TR_LYSB_20CM",2024,7,25,"","",1224.7234,38.2009794135995,"Within_Range","SO4 checks perc diff out of range",10106.0386,285.078662905501,"Within_Range","",18.2616377502,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"95","COMPASS: Synoptic","CB","GWI","TR","B",45,"GWI_202407_TR_LYSB_45CM",2024,7,25,"","",34.2256144728634,"Within_Range","SO4 checks perc diff out of range",265.750087447109,"Within_Range","",17.0234849642,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"95","COMPASS: Synoptic","CB","GWI","TR","B",45,"GWI_202407_TR_LYSB_45CM",2024,7,25,"","",1097.2732,34.2256144728634,"Within_Range","SO4 checks perc diff out of range",9420.8406,265.750087447109,"Within_Range","",17.0234849642,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"96","COMPASS: Synoptic","CB","GWI","TR","C",10,"GWI_202407_TR_LYSC_10CM",2024,7,25,"","",12.335343106675,"Within_Range","SO4 checks perc diff out of range",81.5060733427362,"Within_Range","",5.2211542721,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"96","COMPASS: Synoptic","CB","GWI","TR","C",10,"GWI_202407_TR_LYSC_10CM",2024,7,25,"","",395.4711,12.335343106675,"Within_Range","SO4 checks perc diff out of range",2889.3903,81.5060733427362,"Within_Range","",5.2211542721,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"97","COMPASS: Synoptic","CB","GWI","TR","C",20,"GWI_202407_TR_LYSC_20CM",2024,7,25,"","",47.010205864005,"Within_Range","SO4 checks perc diff out of range",260.005190409027,"Within_Range","",16.655477488,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"97","COMPASS: Synoptic","CB","GWI","TR","C",20,"GWI_202407_TR_LYSC_20CM",2024,7,25,"","",1507.1472,47.010205864005,"Within_Range","SO4 checks perc diff out of range",9217.184,260.005190409027,"Within_Range","",16.655477488,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"98","COMPASS: Synoptic","CB","GWI","WC","A",10,"GWI_202407_WC_LYSA_10CM",2024,7,25,"","",54.0800155957579,"Within_Range","SO4 checks perc diff out of range",205.391393511989,"Within_Range","",13.1570186943,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"98","COMPASS: Synoptic","CB","GWI","WC","A",10,"GWI_202407_WC_LYSA_10CM",2024,7,25,"","",1733.8053,54.0800155957579,"Within_Range","SO4 checks perc diff out of range",7281.1249,205.391393511989,"Within_Range","",13.1570186943,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"99","COMPASS: Synoptic","CB","GWI","WC","A",20,"GWI_202407_WC_LYSA_20CM",2024,7,25,"","",57.1806300686213,"Within_Range","SO4 checks perc diff out of range",359.601083215797,"Within_Range","",23.0354061288,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"99","COMPASS: Synoptic","CB","GWI","WC","A",20,"GWI_202407_WC_LYSA_20CM",2024,7,25,"","",1833.211,57.1806300686213,"Within_Range","SO4 checks perc diff out of range",12747.8584,359.601083215797,"Within_Range","",23.0354061288,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"100","COMPASS: Synoptic","CB","GWI","WC","A",45,"GWI_202407_WC_LYSA_45CM",2024,7,25,"","",42.0804148471616,"Within_Range","SO4 checks perc diff out of range",339.545935119887,"Within_Range","",21.7507104438,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"100","COMPASS: Synoptic","CB","GWI","WC","A",45,"GWI_202407_WC_LYSA_45CM",2024,7,25,"","",1349.0981,42.0804148471616,"Within_Range","SO4 checks perc diff out of range",12036.9034,339.545935119887,"Within_Range","",21.7507104438,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"101","COMPASS: Synoptic","CB","GWI","WC","B",10,"GWI_202407_WC_LYSB_10CM",2024,7,25,"","",47.5172208359326,"Within_Range","SO4 checks perc diff out of range",192.76210719323,"Within_Range","",12.3480099769,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"101","COMPASS: Synoptic","CB","GWI","WC","B",10,"GWI_202407_WC_LYSB_10CM",2024,7,25,"","",1523.4021,47.5172208359326,"Within_Range","SO4 checks perc diff out of range",6833.4167,192.76210719323,"Within_Range","",12.3480099769,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"102","COMPASS: Synoptic","CB","GWI","WC","B",20,"GWI_202407_WC_LYSB_20CM",2024,7,25,"","",69.6057361197754,"Within_Range","SO4 checks perc diff out of range",320.726913963329,"Within_Range","",20.5451987637,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"102","COMPASS: Synoptic","CB","GWI","WC","B",20,"GWI_202407_WC_LYSB_20CM",2024,7,25,"","",2231.5599,69.6057361197754,"Within_Range","SO4 checks perc diff out of range",11369.7691,320.726913963329,"Within_Range","",20.5451987637,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"103","COMPASS: Synoptic","CB","GWI","WC","B",45,"GWI_202407_WC_LYSB_45CM",2024,7,25,"","",46.8674578914535,"Within_Range","SO4 checks perc diff out of range",364.737706629055,"Within_Range","",23.3644487219,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"103","COMPASS: Synoptic","CB","GWI","WC","B",45,"GWI_202407_WC_LYSB_45CM",2024,7,25,"","",1502.5707,46.8674578914535,"Within_Range","SO4 checks perc diff out of range",12929.9517,364.737706629055,"Within_Range","",23.3644487219,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"104","COMPASS: Synoptic","CB","GWI","WC","C",10,"GWI_202407_WC_LYSC_10CM",2024,7,25,"","",87.3131503431067,"Within_Range","SO4 checks perc diff out of range",319.164064880113,"Within_Range","",20.4450855427,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"104","COMPASS: Synoptic","CB","GWI","WC","C",10,"GWI_202407_WC_LYSC_10CM",2024,7,25,"","",2799.2596,87.3131503431067,"Within_Range","SO4 checks perc diff out of range",11314.3661,319.164064880113,"Within_Range","",20.4450855427,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"105","COMPASS: Synoptic","CB","GWI","WC","C",20,"GWI_202407_WC_LYSC_20CM",2024,7,25,"","",62.8183562071117,"Within_Range","SO4 checks perc diff out of range",382.950200282087,"Within_Range","",24.5311073722,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"105","COMPASS: Synoptic","CB","GWI","WC","C",20,"GWI_202407_WC_LYSC_20CM",2024,7,25,"","",2013.9565,62.8183562071117,"Within_Range","SO4 checks perc diff out of range",13575.5846,382.950200282087,"Within_Range","",24.5311073722,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"106","COMPASS: Synoptic","CB","GWI","WC","C",45,"GWI_202407_WC_LYSC_45CM",2024,7,25,"","",42.2505708047411,"Within_Range","SO4 checks perc diff out of range",343.17791819464,"Within_Range","",21.9833685604,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"106","COMPASS: Synoptic","CB","GWI","WC","C",45,"GWI_202407_WC_LYSC_45CM",2024,7,25,"","",1354.5533,42.2505708047411,"Within_Range","SO4 checks perc diff out of range",12165.6572,343.17791819464,"Within_Range","",21.9833685604,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"107","COMPASS: Synoptic","CB","GWI","SW","A",0,"GWI_202407_SW_A",2024,7,25,"","",48.0031441048035,"Within_Range","SO4 checks perc diff out of range",313.873159379408,"Within_Range","",20.1061599245,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"107","COMPASS: Synoptic","CB","GWI","SW","A",0,"GWI_202407_SW_A",2024,7,25,"","",1538.9808,48.0031441048035,"Within_Range","SO4 checks perc diff out of range",11126.8035,313.873159379408,"Within_Range","",20.1061599245,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"108","COMPASS: Synoptic","CB","GWI","SW","B",0,"GWI_202407_SW_B",2024,7,25,"","",47.5574048658765,"Within_Range","SO4 checks perc diff out of range",309.700998589563,"Within_Range","",19.8388990228,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"108","COMPASS: Synoptic","CB","GWI","SW","B",0,"GWI_202407_SW_B",2024,7,25,"","",1524.6904,47.5574048658765,"Within_Range","SO4 checks perc diff out of range",10978.9004,309.700998589563,"Within_Range","",19.8388990228,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
   ",""
-"109","COMPASS: Synoptic","CB","GWI","SW","C",0,"GWI_202407_SW_C",2024,7,25,"","",47.2553462258266,"Within_Range","SO4 checks perc diff out of range",308.508112834979,"Within_Range","",19.7624849682,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
+"109","COMPASS: Synoptic","CB","GWI","SW","C",0,"GWI_202407_SW_C",2024,7,25,"","",1515.0064,47.2553462258266,"Within_Range","SO4 checks perc diff out of range",10936.6126,308.508112834979,"Within_Range","",19.7624849682,"2024-08-08","<80% of Sulfate Check Standards are within range of expected concentration - REASSESS; 
   Check standards 1 and 2 are lower than the expected concentrations. 
   Some SWH samples had no SO4 (bdl). 
   Some sample IDs are missing from metadata: MSM_202407_UP_A_20CM
