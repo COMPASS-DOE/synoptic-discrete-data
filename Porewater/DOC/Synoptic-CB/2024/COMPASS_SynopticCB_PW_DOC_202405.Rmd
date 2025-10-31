@@ -1,8 +1,8 @@
 ---
-title: "COMPASS_SynopticCB_PW_DOC_2025_Template"
-author: "Stephanie J. Wilson"
+title: "COMPASS Synoptic CB Porewater: DOC"
+author: "May 2024 Samples"
 date: "`r Sys.Date()`"
-output: html_document
+output: pdf_document
 ---
 
 ##Setup - Change things here & write any notes
@@ -13,35 +13,36 @@ cat("Setup Information")
 
 
 ###### Run information - PLEASE CHANGE
-  Date_Run = "5/26/25"  #Date that instrument was run
+  Date_Run = "6/03/24"  #Date that instrument was run
   Run_by = "Stephanie J. Wilson"  #Instrument user 
   Script_run_by = "Stephanie J. Wilson" #Code user 
-  run_notes = "NPOC Check Standard remade during run as 60mgL, so checks are within range"  #any notes from the run
+  run_notes = "Second NPOC Curve did not look good. One duplicate out of range and some checks 
+  below expected concentration, but not by much - run okay."  #any notes from the run
   samples <- c("GCW", "GWI", "MSM", "SWH") #whatever identifies your samples within the same names 
   samples_pattern <- paste(samples, collapse = "|") 
     #samples_pattern <- "GCW" #use this instead of the line above if you have only one site code 
-  chks_name = "Chk_Std_50C_2N"  #what did you name your check standards? 
+  chks_name = "Chk_Std_50mgC_2mgN"  #what did you name your check standards? 
   
 ###### File Names - PLEASE CHANGE 
 #file path and name for raw summary data file 
     #raw_file_name = "Raw Data/COMPASS_SynopticCB_PW_DOC_202505.txt" #example
-    raw_file_name = "Raw Data/FILE_NAME.txt"
+    raw_file_name = "Raw Data/COMPASS_SynopticCB_PW_DOC_202405.txt"
     
 #file path and name for raw all peaks file 
     #raw_allpeaks_name = "Raw Data/COMPASS_SynopticCB_PW_DOC_202505_allpeaks.txt" #example
-    raw_allpeaks_name = "Raw Data/FILE_NAME.txt" 
+    raw_allpeaks_name = "Raw Data/COMPASS_SynopticCB_PW_DOC_202405_allpeaks.txt" 
 
 #file path and name of processed data file 
     #processed_file_name = "Processed Data/COMPASS_SynopticCB_PW_Processed_DOC_202505.csv" #example
-    processed_file_name = "Processed Data/FILE_NAME.csv" #example
+    processed_file_name = "Processed Data/COMPASS_SynopticCB_PW_Processed_DOC_202405.csv" #example
 
 
 ###### Log Files - PLEASE CHECK 
 #downloaded metadata csv - downloaded from Google drive as csv for this year
-  Raw_Metadata = "Raw Data/COMPASS_SynopticCB_PW_SampleLog_2025.csv"
+  Raw_Metadata = "Raw Data/COMPASS_SynopticCB_PW_SampleLog_2024.csv"
   
 #qaqc log file path for this year 
-  Log_path = "Raw Data/COMPASS_Synoptic_TOCTN_QAQClog_2025.csv"
+  Log_path = "Raw Data/COMPASS_Synoptic_TOCTN_QAQClog_2024.csv"
 
 ```
 
@@ -195,6 +196,11 @@ cat("Import Sample Data")
 dat_raw <- raw_file_name %>%
   map_df(read_data) %>%
   filter(str_detect(sample_name, samples_pattern))
+
+dat_raw <- dat_raw %>% 
+    mutate(sample_name = if_else(sample_name == "202405_MSM_UP_LysA_10cm", 
+                               "202405_MSM_UP_LysC_10cm", 
+                               sample_name))
 
 head(dat_raw)
 ```
@@ -729,14 +735,20 @@ colnames(IDs) <- c("Date" , "Site_Code","Zone", "Lysimeter", "Depth", "Excess_In
 #rejoin them to the dataframe
 dat_flagged_id <- cbind(IDs, dat_flagged)
 
+#Order by Zone from Upland to Surface Water
+dat_flagged_id$Zone = factor(dat_flagged_id$Zone, levels = c("UP",  "SWAMP", "TR", "WC", "SW"))
+dat_flagged_id <- dat_flagged_id[order(dat_flagged_id$Zone), ]
+
 #group the data for plotting
 dat_flagged_id <- dat_flagged_id %>%
   group_by(Site_Code) %>%
   mutate(row_num = factor(row_number())) %>%  # create row_num as factor per group
+  mutate(sample_name = factor(sample_name, 
+                              levels = sample_name[order(Zone)])) %>%  # create row_num as factor per group
   ungroup()
 
 #Plot data and change colors based on flags to check it: 
-viz_c_plot <- ggplot(dat_flagged_id, aes(x = factor(row_num), y = npoc_raw, fill = Zone)) +
+viz_c_plot <- ggplot(dat_flagged_id, aes(x = sample_name, y = npoc_raw, fill = Zone)) +
   geom_bar(stat = "identity", position = position_dodge2(preserve = "single")) +
   facet_grid(~ Site_Code, scales="free_x") +
   scale_fill_manual(values = c(
@@ -749,10 +761,11 @@ viz_c_plot <- ggplot(dat_flagged_id, aes(x = factor(row_num), y = npoc_raw, fill
   theme_classic() +
   labs(x = " ", y = "NPOC (mg/L)", title = "Samples: NPOC") +
   theme(legend.position = "none") +
-  scale_x_discrete(drop = TRUE)
+  scale_x_discrete(drop = TRUE) +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
 
 
-viz_n_plot <-  ggplot(dat_flagged_id, aes(x = row_num, y = tdn_raw, fill = Zone)) +
+viz_n_plot <-  ggplot(dat_flagged_id, aes(x = sample_name, y = tdn_raw, fill = Zone)) +
   geom_bar(stat = "identity", position = position_dodge2(preserve = "single")) +
   facet_grid(~ Site_Code, scales="free_x") +
   scale_fill_manual(values = c(
@@ -764,13 +777,14 @@ viz_n_plot <-  ggplot(dat_flagged_id, aes(x = row_num, y = tdn_raw, fill = Zone)
   )) +
   theme_classic() +
   labs(x = " ", y = "TN (mg/L)", title = "Samples: TN") +
-  theme(legend.position = "none") +
-  scale_x_discrete(drop = TRUE)
+  theme(legend.position = "none")  +
+  scale_x_discrete(drop = TRUE) +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
 
-#print(viz_c_plot)
-#print(viz_n_plot)
+print(viz_c_plot)
+print(viz_n_plot)
 
-ggarrange(viz_c_plot, viz_n_plot, nrow=2, ncol=1)
+#ggarrange(viz_c_plot, viz_n_plot, nrow=2, ncol=1)
 
 ```
 

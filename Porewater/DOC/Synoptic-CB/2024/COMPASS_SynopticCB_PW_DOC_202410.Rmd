@@ -1,8 +1,8 @@
 ---
-title: "COMPASS_SynopticCB_PW_DOC_2025_Template"
-author: "Stephanie J. Wilson"
+title: "COMPASS Synoptic CB Porewater: DOC"
+author: "October 2024 Samples"
 date: "`r Sys.Date()`"
-output: html_document
+output: pdf_document
 ---
 
 ##Setup - Change things here & write any notes
@@ -13,10 +13,10 @@ cat("Setup Information")
 
 
 ###### Run information - PLEASE CHANGE
-  Date_Run = "6/03/24"  #Date that instrument was run
+  Date_Run = "10/28/24"  #Date that instrument was run
   Run_by = "Stephanie J. Wilson"  #Instrument user 
-  Script_run_by = "Isabelle E. Van Benschoten" #Code user 
- # run_notes = "NPOC Check Standard remade during run as 60mgL, so checks are within range"  #any notes from the run
+  Script_run_by = "Stephanie J. Wilson" #Code user 
+  run_notes = "NA "  #any notes from the run
   samples <- c("GCW", "GWI", "MSM", "SWH") #whatever identifies your samples within the same names 
   samples_pattern <- paste(samples, collapse = "|") 
     #samples_pattern <- "GCW" #use this instead of the line above if you have only one site code 
@@ -25,15 +25,15 @@ cat("Setup Information")
 ###### File Names - PLEASE CHANGE 
 #file path and name for raw summary data file 
     #raw_file_name = "Raw Data/COMPASS_SynopticCB_PW_DOC_202505.txt" #example
-    raw_file_name = "Raw Data/COMPASS_SynopticCB_PW_DOC_202405.txt"
+    raw_file_name = "Raw Data/COMPASS_SynopticCB_PW_DOC_202410.txt"
     
 #file path and name for raw all peaks file 
     #raw_allpeaks_name = "Raw Data/COMPASS_SynopticCB_PW_DOC_202505_allpeaks.txt" #example
-    raw_allpeaks_name = "Raw Data/COMPASS_SynopticCB_PW_DOC_202405_allpeaks.txt" 
+    raw_allpeaks_name = "Raw Data/COMPASS_SynopticCB_PW_DOC_202410_allpeaks.txt" 
 
 #file path and name of processed data file 
     #processed_file_name = "Processed Data/COMPASS_SynopticCB_PW_Processed_DOC_202505.csv" #example
-    processed_file_name = "Processed Data/COMPASS_SynopticCB_PW_Processed_DOC_202405.csv" #example
+    processed_file_name = "Processed Data/COMPASS_SynopticCB_PW_Processed_DOC_202410.csv" #example
 
 
 ###### Log Files - PLEASE CHECK 
@@ -196,6 +196,15 @@ dat_raw <- raw_file_name %>%
   map_df(read_data) %>%
   filter(str_detect(sample_name, samples_pattern))
 
+dat_raw <- dat_raw %>% 
+    #mutate(sample_name = if_else(sample_name == "202407_MSM_TR_LysA_10cm_dup" & npoc_raw == 36.620, 
+                         #      "202407_MSM_TR_LysA_10cm_rerun", 
+                          #     sample_name)) %>%
+    filter(!str_detect(sample_name, "LatT"))  #%>%
+    #filter(!sample_name == "202407_MSM_TR_LysA_10cm_rerun")
+  
+  #mutate(sample_name = str_replace_all(sample_name, "2023", "2024"))
+
 head(dat_raw)
 ```
 
@@ -293,7 +302,7 @@ C_stds_plot <- ggplot(stds_C, aes(x = standard_C_ppm, y = area)) +
   facet_wrap(~ run_date) +
   geom_text(
     data = r2_labels_c,
-    aes(x = x_pos, y = y_pos, label = paste0("R² = ", r_squared)),
+    aes(x = x_pos, y = y_pos, label = paste0("R^2 = ", r_squared)),
     inherit.aes = FALSE,
     hjust = 1, vjust = 1,
     size = 4
@@ -314,7 +323,7 @@ N_stds_plot <- ggplot(stds_N, aes(x = standard_N_ppm, y = area)) +
   facet_wrap(~ run_date) +
     geom_text(
     data = r2_labels_n,
-    aes(x = x_pos, y = y_pos, label = paste0("R² = ", r_squared)),
+    aes(x = x_pos, y = y_pos, label = paste0("R^2 = ", r_squared)),
     inherit.aes = FALSE,
     hjust = 1, vjust = 1,
     size = 4
@@ -329,23 +338,23 @@ N_stds_plot <- ggplot(stds_N, aes(x = standard_N_ppm, y = area)) +
 N_stds_plot
 
 #compare slopes to previous runs (from log) in order to assess drift 
-log_p <- read.csv(Log_path)
-log_p <- log_p[ ,-c(1)]
+log <- read.csv(Log_path)
+log <- log[ ,-c(1)]
 
 #make sure they both have dates as dates 
-log_p$run_date <- as.Date(log_p$run_date)
-log_p$analyte <- as.character(log_p$analyte)
-log_p$curve <- as.character(log_p$curve)
+log$run_date <- as.Date(log$run_date)
+log$analyte <- as.character(log$analyte)
+log$curve <- as.character(log$curve)
 Slopes$run_date <- as.Date(Slopes$run_date)
 
 # Filter to only rows in Slopes that are NOT already in log (by run_date + analyte)
-new_rows <- anti_join(Slopes, log_p, by = c("run_date", "analyte"))
+new_rows <- anti_join(Slopes, log, by = c("run_date", "analyte"))
 
 # Append the new, non-duplicate rows to log
-log_p <- bind_rows(log_p, new_rows)
+log <- bind_rows(log, new_rows)
 
 #plot the current slops with teh previous slopes 
-Slopes_chk <- ggplot(log_p, aes(run_date, slope, col=curve)) +
+Slopes_chk <- ggplot(log, aes(run_date, slope, col=curve)) +
   geom_point(size=4) + 
   geom_line() + 
   theme_bw() + labs(title="Slope Drift Assessment", x="Run Date", y="Slope") +
@@ -387,12 +396,8 @@ dat_raw <- dat_raw %>%
 cat("Assess the Check Standards")
 
 #Pull out check standards from raw file 
-#chks_raw <- raw_file_name %>% 
-#  map_df(read_data) %>% 
-#  filter(grepl(chks_name, sample_name)) %>% # filter to TMP samples only
-#  bind_rows() 
-
-chks_raw <- dat_raw %>% 
+chks_raw <- raw_file_name %>% 
+  map_df(read_data) %>% 
   filter(grepl(chks_name, sample_name)) %>% # filter to TMP samples only
   bind_rows() 
 
@@ -733,14 +738,20 @@ colnames(IDs) <- c("Date" , "Site_Code","Zone", "Lysimeter", "Depth", "Excess_In
 #rejoin them to the dataframe
 dat_flagged_id <- cbind(IDs, dat_flagged)
 
+#Order by Zone from Upland to Surface Water
+dat_flagged_id$Zone = factor(dat_flagged_id$Zone, levels = c("UP",  "SWAMP", "TR", "WC", "SW"))
+dat_flagged_id <- dat_flagged_id[order(dat_flagged_id$Zone), ]
+
 #group the data for plotting
 dat_flagged_id <- dat_flagged_id %>%
   group_by(Site_Code) %>%
   mutate(row_num = factor(row_number())) %>%  # create row_num as factor per group
+  mutate(sample_name = factor(sample_name, 
+                              levels = sample_name[order(Zone)])) %>%  # create row_num as factor per group
   ungroup()
 
 #Plot data and change colors based on flags to check it: 
-viz_c_plot <- ggplot(dat_flagged_id, aes(x = factor(row_num), y = npoc_raw, fill = Zone)) +
+viz_c_plot <- ggplot(dat_flagged_id, aes(x = sample_name, y = npoc_raw, fill = Zone)) +
   geom_bar(stat = "identity", position = position_dodge2(preserve = "single")) +
   facet_grid(~ Site_Code, scales="free_x") +
   scale_fill_manual(values = c(
@@ -753,10 +764,11 @@ viz_c_plot <- ggplot(dat_flagged_id, aes(x = factor(row_num), y = npoc_raw, fill
   theme_classic() +
   labs(x = " ", y = "NPOC (mg/L)", title = "Samples: NPOC") +
   theme(legend.position = "none") +
-  scale_x_discrete(drop = TRUE)
+  scale_x_discrete(drop = TRUE) +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
 
 
-viz_n_plot <-  ggplot(dat_flagged_id, aes(x = row_num, y = tdn_raw, fill = Zone)) +
+viz_n_plot <-  ggplot(dat_flagged_id, aes(x = sample_name, y = tdn_raw, fill = Zone)) +
   geom_bar(stat = "identity", position = position_dodge2(preserve = "single")) +
   facet_grid(~ Site_Code, scales="free_x") +
   scale_fill_manual(values = c(
@@ -768,13 +780,14 @@ viz_n_plot <-  ggplot(dat_flagged_id, aes(x = row_num, y = tdn_raw, fill = Zone)
   )) +
   theme_classic() +
   labs(x = " ", y = "TN (mg/L)", title = "Samples: TN") +
-  theme(legend.position = "none") +
-  scale_x_discrete(drop = TRUE)
+  theme(legend.position = "none")  +
+  scale_x_discrete(drop = TRUE) +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
 
-#print(viz_c_plot)
-#print(viz_n_plot)
+print(viz_c_plot)
+print(viz_n_plot)
 
-ggarrange(viz_c_plot, viz_n_plot, nrow=2, ncol=1)
+#ggarrange(viz_c_plot, viz_n_plot, nrow=2, ncol=1)
 
 ```
 

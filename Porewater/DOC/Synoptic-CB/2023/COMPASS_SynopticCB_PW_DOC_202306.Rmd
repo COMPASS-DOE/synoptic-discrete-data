@@ -1,8 +1,8 @@
 ---
-title: "COMPASS_SynopticCB_PW_DOC_2025_Template"
-author: "Stephanie J. Wilson"
+title: "COMPASS Synoptic CB Porewater: DOC"
+author: "June 2023 Samples"
 date: "`r Sys.Date()`"
-output: html_document
+output: pdf_document
 ---
 
 ##Setup - Change things here & write any notes
@@ -13,35 +13,36 @@ cat("Setup Information")
 
 
 ###### Run information - PLEASE CHANGE
-  Date_Run = "5/26/25"  #Date that instrument was run
+  Date_Run = "06/25/23"  #Date that instrument was run
   Run_by = "Stephanie J. Wilson"  #Instrument user 
-  Script_run_by = "Isabelle I. Van BEnschoten" #Code user 
-  run_notes = "NPOC Check Standard remade during run as 60mgL, so checks are within range"  #any notes from the run
+  Script_run_by = "Stephanie J. Wilson" #Code user 
+  run_notes = "NA"  #any notes from the run
   samples <- c("GCW", "GWI", "MSM", "SWH") #whatever identifies your samples within the same names 
   samples_pattern <- paste(samples, collapse = "|") 
     #samples_pattern <- "GCW" #use this instead of the line above if you have only one site code 
-  chks_name = "Chk_Std_50C_2N"  #what did you name your check standards? 
+  chks_name = "Std_Chk_1ppmCN"  #what did you name your check standards? 
   
 ###### File Names - PLEASE CHANGE 
 #file path and name for raw summary data file 
-    raw_file_name = "Raw Data/COMPASS_SynopticCB_PW_DOC_202505.txt" #example
-    #raw_file_name = "Raw Data/FILE_NAME.txt"
+    #raw_file_name = "Raw Data/COMPASS_SynopticCB_PW_DOC_202505.txt" #example
+    raw_file_name = c("Raw Data/TOCTN_COMPASS_Synoptic_TCTN_202306_1.txt", 
+      "Raw Data/TOCTN_COMPASS_Synoptic_TCTN_202306_2.txt")
     
 #file path and name for raw all peaks file 
-    raw_allpeaks_name = "Raw Data/COMPASS_SynopticCB_PW_DOC_202505_allpeaks.txt" #example
-    #raw_allpeaks_name = "Raw Data/FILE_NAME.txt" 
+    #raw_allpeaks_name = "Raw Data/COMPASS_SynopticCB_PW_DOC_202505_allpeaks.txt" #example
+   # raw_allpeaks_name = "Raw Data/COMPASS_SynopticCB_PW_DOC_202411_allpeaks.txt" 
 
 #file path and name of processed data file 
-    processed_file_name = "Processed Data/COMPASS_SynopticCB_PW_Processed_DOC_202505.csv" #example
-    #processed_file_name = "Processed Data/FILE_NAME.csv" #example
+    #processed_file_name = "Processed Data/COMPASS_SynopticCB_PW_Processed_DOC_202505.csv" #example
+    processed_file_name = "Processed Data/COMPASS_SynopticCB_PW_Processed_DOC_202306.csv" #example
 
 
 ###### Log Files - PLEASE CHECK 
 #downloaded metadata csv - downloaded from Google drive as csv for this year
-  Raw_Metadata = "Raw Data/COMPASS_SynopticCB_PW_SampleLog_2025.csv"
+  Raw_Metadata = "Raw Data/COMPASS_SynopticCB_PW_SampleLog_2023.csv"
   
 #qaqc log file path for this year 
-  Log_path = "Raw Data/COMPASS_Synoptic_TOCTN_QAQClog_2025.csv"
+  #Log_path = "Raw Data/COMPASS_Synoptic_TOCTN_QAQClog_2024.csv"
 
 ```
 
@@ -77,9 +78,9 @@ lapply(c(
 
 #check standard concentrations - Update if running different checks: 
    chk_std_low_c = 1
-   chk_std_high_c = 50
+   chk_std_high_c = 30
    chk_std_low_n = 1
-   chk_std_high_n = 2
+   chk_std_high_n = 3
    
 #Top standard Concentrations- Update if running different standard curve: 
    top_std_c = 100
@@ -196,190 +197,22 @@ dat_raw <- raw_file_name %>%
   map_df(read_data) %>%
   filter(str_detect(sample_name, samples_pattern))
 
+dat_raw <- dat_raw %>% 
+  mutate(sample_name = str_remove(sample_name, "^[0-9]+_")) %>% 
+    mutate(
+    sample_name = if_else(
+      str_detect(sample_name, "^202306_"),  # if it already starts with "202306_"
+      sample_name,                          # keep as is
+      paste0("202306_", sample_name)        # otherwise add prefix
+    )
+  )
+  #mutate(sample_name = if_else(sample_name == "02305_SWH_UP_LysC_20cm",
+                              # "202305_SWH_UP_LysC_20cm", sample_name) )
+
 head(dat_raw)
 ```
 
-## Assessing Standard Curves 
-```{r Assess Standard Curves, echo=FALSE}
-
-cat("Assess the Standard Curves")
-
-#filter standards out of the raw data 
-stds_all <- raw_allpeaks_name %>% 
-  map_df(read_curve) %>% 
-  filter(grepl("CalCurve", sample_name)) %>% 
-  dplyr::rename(
-        standard_C_ppm = npoc_raw,
-        standard_N_ppm = tdn_raw) %>%
-  select(run_datetime,standard_C_ppm,standard_N_ppm, area) %>%
-  bind_rows() 
-
-#separate by analyte 
-stds_C <- stds_all %>%
-  filter(!is.na(standard_C_ppm)) %>%
-  select(-standard_N_ppm) %>%
-  mutate(run_date = as.Date(strptime(run_datetime, format = "%m/%d/%Y %I:%M:%S %p")))
-
-stds_N <- stds_all %>%
-  filter(!is.na(standard_N_ppm)) %>%
-  select(-standard_C_ppm) %>%
-  mutate(run_date = as.Date(strptime(run_datetime, format = "%m/%d/%Y %I:%M:%S %p")))
-
-#calculate slope and r2 of cal curves
-#npoc curve
-lm_results_c <- stds_C %>%
-  group_by(run_date) %>%
-  do({
-    model = lm(area ~ standard_C_ppm, data = .)
-    tidy_model = tidy(model)             # coefficients
-    glance_model = glance(model)         # model metrics like R²
-    tibble(
-      slope = tidy_model$estimate[2],    # coefficient for standard_C_ppm
-      intercept = tidy_model$estimate[1],
-      r2 = glance_model$adj.r.squared
-    )
-  }) %>%
-  mutate(
-    analyte = "C", 
-    curve = "NPOC (mg/L)"
-  )
-
-#tn curve
-lm_results_n <- stds_N %>%
-  group_by(run_date) %>%
-  do({
-    model = lm(area ~ standard_N_ppm, data = .)
-    tidy_model = tidy(model)             # coefficients
-    glance_model = glance(model)         # model metrics like R²
-    tibble(
-      slope = tidy_model$estimate[2],    # coefficient for standard_C_ppm
-      intercept = tidy_model$estimate[1],
-      r2 = glance_model$adj.r.squared
-    )
-  }) %>%
-  mutate(
-    analyte = "N", 
-    curve = "TN (mg/L)"
-  )
-
-#put the together in one dataframe to later add to log 
-Slopes <- rbind(lm_results_c, lm_results_n)
-
-#store the r2's so they plot on the curve graphs
-r2_labels_c <- stds_C %>%
-  group_by(run_date) %>%
-  summarise(
-    x_pos = max(standard_C_ppm, na.rm = TRUE) * 0.8,
-    y_pos = max(area, na.rm = TRUE),
-    r_squared = round(summary(lm(area ~ standard_C_ppm))$adj.r.squared, 4),
-    .groups = "drop"
-  )
-
-r2_labels_n <- stds_N %>%
-  group_by(run_date) %>%
-  summarise(
-    x_pos = max(standard_N_ppm, na.rm = TRUE) * 0.8,
-    y_pos = max(area, na.rm = TRUE),
-    r_squared = round(summary(lm(area ~ standard_N_ppm))$adj.r.squared, 4),
-    .groups = "drop"
-  )
-
-
-##Plot standard Curve or Curves 
-#C Curve
-C_stds_plot <- ggplot(stds_C, aes(x = standard_C_ppm, y = area)) +
-  geom_point(size = 3) +
-  geom_smooth(method = "lm", se = FALSE, color = "blue") +
-  facet_wrap(~ run_date) +
-  geom_text(
-    data = r2_labels_c,
-    aes(x = x_pos, y = y_pos, label = paste0("R² = ", r_squared)),
-    inherit.aes = FALSE,
-    hjust = 1, vjust = 1,
-    size = 4
-  ) +
-  labs(
-    title = "NPOC Std Curve by Date",
-    x = "Carbon Standard Concentration (ppm)",
-    y = "Peak Area"
-  ) +
-  theme_bw()
-
-C_stds_plot
-
-#N Curve
-N_stds_plot <- ggplot(stds_N, aes(x = standard_N_ppm, y = area)) +
-  geom_point(size = 3) +
-  geom_smooth(method = "lm", se = FALSE, color = "purple") +
-  facet_wrap(~ run_date) +
-    geom_text(
-    data = r2_labels_n,
-    aes(x = x_pos, y = y_pos, label = paste0("R² = ", r_squared)),
-    inherit.aes = FALSE,
-    hjust = 1, vjust = 1,
-    size = 4
-  ) +
-  labs(
-    title = "TN Std Curve by Date",
-    x = "Nitrogen Standard Concentration (ppm)",
-    y = "Peak Area"
-  ) +
-  theme_bw()
-
-N_stds_plot
-
-#compare slopes to previous runs (from log) in order to assess drift 
-log <- read.csv(Log_path)
-log <- log[ ,-c(1)]
-
-#make sure they both have dates as dates 
-log$run_date <- as.Date(log$run_date)
-log$analyte <- as.character(log$analyte)
-log$curve <- as.character(log$curve)
-Slopes$run_date <- as.Date(Slopes$run_date)
-
-# Filter to only rows in Slopes that are NOT already in log (by run_date + analyte)
-new_rows <- anti_join(Slopes, log, by = c("run_date", "analyte"))
-
-# Append the new, non-duplicate rows to log
-log <- bind_rows(log, new_rows)
-
-#plot the current slops with teh previous slopes 
-Slopes_chk <- ggplot(log, aes(run_date, slope, col=curve)) +
-  geom_point(size=4) + 
-  geom_line() + 
-  theme_bw() + labs(title="Slope Drift Assessment", x="Run Date", y="Slope") +
-  scale_color_manual(values=c("blue", "purple"))
-Slopes_chk
-
-#write out the log file with the added lines for this run  
-write.csv(log, Log_path)
-
-#Grab the highest r2 that is available for this run 
-r2_C = max(lm_results_c$r2)
-r2_N = max(lm_results_n$r2)
-
-#Write out to the user whether or not the r2 is above the cutoff of 0.98
-  ifelse(r2_C <= r2_cutoff, 
-         "NPOC Curve r2 is below cutoff! - REASSESS", "NPOC Curve r2 GOOD")
-  ifelse(r2_N <= r2_cutoff, 
-         "TN Curve r2 is below cutoff! - REASSESS", "TN Curve r2 GOOD")
-  
-#write out a flag to the sample dataframe if the r2 is above the cutoff of 0.98
-dat_raw <- dat_raw %>%
-  mutate(
-    npoc_flag = if (r2_C <= r2_cutoff) {
-      "NPOC r2 low"
-    } else {
-      ""
-    },
-    tdn_flag = if (r2_N <= r2_cutoff) {
-      "TN r2 low"
-    } else {
-      ""
-    }
-  )
-```
+## Assessing Standard Curves - assessed manually on the instrument 
 
 ## Assess Check Standards 
 ```{r Check Standards, echo=FALSE}
@@ -389,7 +222,8 @@ cat("Assess the Check Standards")
 #Pull out check standards from raw file 
 chks_raw <- raw_file_name %>% 
   map_df(read_data) %>% 
-  filter(grepl(chks_name, sample_name)) %>% # filter to TMP samples only
+  filter(grepl(chks_name, sample_name)) %>% 
+  filter(!npoc_raw == 0.00) %>%
   bind_rows() 
 
 chks_raw <- chks_raw %>% 
@@ -404,10 +238,10 @@ ifelse(chks_C_rsv >= chk_flag, "Carbon CHECK STANDARD RSD TOO HIGH - REASSESS", 
 ifelse(chks_N_rsv >= chk_flag, "Nitrogen CHECK STANDARD RSD TOO HIGH - REASSESS", "Nitrogen Check Standard RSD within Range")
 
 #calculate percent difference between check standards & expected concentration 
-chks_raw$C_diff <- ((chks_raw$npoc_raw - chk_std_high_c)/((chks_raw$npoc_raw + chk_std_high_c)/2)) * 100
+chks_raw$C_diff <- ((chks_raw$npoc_raw - chk_std_low_c)/((chks_raw$npoc_raw + chk_std_low_c)/2)) * 100
 chks_raw$C_diff_flag <-  ifelse(chks_raw$C_diff <= chk_conc_flag, 'YES', 'NO, rerun')
 
-chks_raw$N_diff <- ((chks_raw$tdn_raw - chk_std_high_n)/((chks_raw$tdn_raw + chk_std_high_n)/2)) * 100
+chks_raw$N_diff <- ((chks_raw$tdn_raw - chk_std_low_n)/((chks_raw$tdn_raw + chk_std_low_n)/2)) * 100
 chks_raw$N_diff_flag <-  ifelse(chks_raw$N_diff <= chk_conc_flag, 'YES', 'NO, rerun')
 
 #Plot the check standardsvs. the expected concentration 
@@ -415,7 +249,7 @@ c_chks <-  ggplot(data = chks_raw, aes(x = rep, y = npoc_raw, fill=C_diff_flag))
        geom_bar(stat = 'identity') + 
         scale_fill_manual(values = c("YES" = "darkgreen", "NO, rerun" = "darkgrey")) +
         theme_classic() + labs(x= " ", y="NPOC (mg/L)", title="Check Stds: NPOC") + 
-        theme(legend.position="bottom") +  geom_hline(yintercept=chk_std_high_c,
+        theme(legend.position="bottom") +  geom_hline(yintercept=chk_std_low_c,
               linetype="dashed", color = "black", linewidth=1) + 
               guides(fill=guide_legend(title="% Difference <10%"))
 
@@ -424,7 +258,7 @@ n_chks <-  ggplot(data = chks_raw, aes(x = rep, y = tdn_raw, fill=N_diff_flag)) 
        geom_bar(stat = 'identity') + 
        scale_fill_manual(values = c("YES" = "darkgreen", "NO, rerun" = "darkgrey")) +
         theme_classic() + labs(x= " ", y="TN  (mg/L)", title="Check Stds: TN") + 
-        theme(legend.position="bottom") +  geom_hline(yintercept=chk_std_high_n,
+        theme(legend.position="bottom") +  geom_hline(yintercept=chk_std_low_n,
               linetype="dashed",  color = "black", linewidth=1) + 
               guides(fill=guide_legend(title="% Difference <10%"))
 
@@ -441,6 +275,9 @@ ifelse(n_chks_percent >= chk_flag,">60% of Nitrogen Check Standards are within r
        "<60% of Nitrogen Check Standards are within range of expected concentration - REASSESS")
 
 #write out a flag to the sample dataframe if less than 60% of the checks are within the expected CV
+dat_raw$npoc_flag <- ""
+dat_raw$tdn_flag <- ""
+
 if (c_chks_percent <= chks_flag) {
   dat_raw$npoc_flag <- ifelse(
     dat_raw$npoc_flag != "",
@@ -729,14 +566,20 @@ colnames(IDs) <- c("Date" , "Site_Code","Zone", "Lysimeter", "Depth", "Excess_In
 #rejoin them to the dataframe
 dat_flagged_id <- cbind(IDs, dat_flagged)
 
+#Order by Zone from Upland to Surface Water
+dat_flagged_id$Zone = factor(dat_flagged_id$Zone, levels = c("UP",  "SWAMP", "TR", "WC", "SW"))
+dat_flagged_id <- dat_flagged_id[order(dat_flagged_id$Zone), ]
+
 #group the data for plotting
 dat_flagged_id <- dat_flagged_id %>%
   group_by(Site_Code) %>%
   mutate(row_num = factor(row_number())) %>%  # create row_num as factor per group
+  mutate(sample_name = factor(sample_name, 
+                              levels = sample_name[order(Zone)])) %>%  # create row_num as factor per group
   ungroup()
 
 #Plot data and change colors based on flags to check it: 
-viz_c_plot <- ggplot(dat_flagged_id, aes(x = factor(row_num), y = npoc_raw, fill = Zone)) +
+viz_c_plot <- ggplot(dat_flagged_id, aes(x = sample_name, y = npoc_raw, fill = Zone)) +
   geom_bar(stat = "identity", position = position_dodge2(preserve = "single")) +
   facet_grid(~ Site_Code, scales="free_x") +
   scale_fill_manual(values = c(
@@ -749,10 +592,11 @@ viz_c_plot <- ggplot(dat_flagged_id, aes(x = factor(row_num), y = npoc_raw, fill
   theme_classic() +
   labs(x = " ", y = "NPOC (mg/L)", title = "Samples: NPOC") +
   theme(legend.position = "none") +
-  scale_x_discrete(drop = TRUE)
+  scale_x_discrete(drop = TRUE) +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
 
 
-viz_n_plot <-  ggplot(dat_flagged_id, aes(x = row_num, y = tdn_raw, fill = Zone)) +
+viz_n_plot <-  ggplot(dat_flagged_id, aes(x = sample_name, y = tdn_raw, fill = Zone)) +
   geom_bar(stat = "identity", position = position_dodge2(preserve = "single")) +
   facet_grid(~ Site_Code, scales="free_x") +
   scale_fill_manual(values = c(
@@ -764,13 +608,14 @@ viz_n_plot <-  ggplot(dat_flagged_id, aes(x = row_num, y = tdn_raw, fill = Zone)
   )) +
   theme_classic() +
   labs(x = " ", y = "TN (mg/L)", title = "Samples: TN") +
-  theme(legend.position = "none") +
-  scale_x_discrete(drop = TRUE)
+  theme(legend.position = "none")  +
+  scale_x_discrete(drop = TRUE) +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
 
-#print(viz_c_plot)
-#print(viz_n_plot)
+print(viz_c_plot)
+print(viz_n_plot)
 
-ggarrange(viz_c_plot, viz_n_plot, nrow=2, ncol=1)
+#ggarrange(viz_c_plot, viz_n_plot, nrow=2, ncol=1)
 
 ```
 
