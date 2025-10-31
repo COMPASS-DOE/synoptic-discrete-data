@@ -1009,7 +1009,10 @@ MCbar
 
 ```{r Export final data and samples to rerun, echo=FALSE, include = FALSE}
 
-dat_IDs <- dat1
+##Remove aquifer samples 
+Non_COMPASS_IDs <- c("116", "117", "118", "119", "120", "121", "122", "123", "124")
+dat_IDs <- dat1 %>%
+  filter(!(IDs %in% Non_COMPASS_IDs))
 
 #Read out the processed data
 # dat_IDs$Run_notes <- run_notes
