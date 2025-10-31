@@ -1,12 +1,11 @@
 ---
 title: "Synoptic CB: Porewater Nutrients"
-author: "JULY 2024 Samples"
+author: "July 2024 Samples"
 date: "`r Sys.Date()`"
 output: 
   pdf_document:
     toc: true
     number_sections: true
-    latex_engine: xelatex
 output_dir: "To Be Reviewed/PDF"
 
 ---
@@ -17,13 +16,13 @@ output_dir: "To Be Reviewed/PDF"
 ```{r run information, include=TRUE}
 cat("Run Information: NAME ") #lets you know what section you're in 
 #set the run date & user name 
-  run_date <- "05/20/2025"
+  run_date <- "5/20/2025"
   sample_year <- "2024"
   sample_month <- "JULY"
   user <- "Isabelle Van Benschoten"
 
 #identify the files you want to read in 
-  #read in as a list to accommadate ultiple runs in a month
+  #read in as a list to accommodate multiple runs in a month
   NOx_files <- c("Raw Data/COMPASS_Synoptic_CB_202407_VNOx_1.csv", 
                  "Raw Data/COMPASS_Synoptic_CB_202407_VNOx_2.csv",
                  "Raw Data/COMPASS_Synoptic_CB_202407_VNOx_3.csv")
@@ -36,12 +35,12 @@ cat("Run Information: NAME ") #lets you know what section you're in
   final_path <- "Processed Data/COMPASS_Synoptic_Nutrients_202407.csv"
 
 #record any notes about the run or anything other info here: 
-  run_notes <- "Reduction Effieciency was not ran for all of the runs included within this month.
-                One NH3 check standard was ut of range but CV was within. 
-                One PO4 blank was out of range but CV was within.
-                PO4 duplicates out of range.
-                Metadata is missing:
-                MSM_202407_TR_LysC_45cm, SWH_202407_UP_LysC_10cm, and SWH_202407_WC_LysA_45cm" 
+  run_notes <- "Reduction Efficiency was not ran for all of the runs included within this month.
+                One NH3 check standard had high CV. 
+                One PO4 blank had high CV. 
+                Over 60% of PO4 Duplicates have a CV less than 10%. 
+                Some sample IDs are missing from metadata: 
+                SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm" 
   
 #Set up file path for metadata 
   #downloaded metadata csv - downloaded from Google drive as csv for this year
@@ -205,13 +204,35 @@ df_all <- df_combo %>%
 #Checking column headers
 head(df_all)
 
+library(textclean)
+df_all <- df_all %>%
+  mutate(Sample_Name = replace_non_ascii(str_trim(Sample_Name)))%>%
+  mutate(Run_Number= replace_non_ascii(str_trim(Run_Number)))%>%
+  mutate(Conc= replace_non_ascii(str_trim(Conc)))%>%
+  mutate(Absorbance = replace_non_ascii(str_trim(Absorbance)))%>%
+  mutate(Dilution = replace_non_ascii(str_trim(Dilution)))%>%
+  mutate(Unit = replace_non_ascii(str_trim(Unit)))%>%
+  mutate(Test = replace_non_ascii(str_trim(Test)))%>%
+  mutate(Run_Time = replace_non_ascii(str_trim(Run_Time)))
+
+
+df_all <- df_all %>%
+  mutate(
+    Sample_Name = as.character(Sample_Name),
+    Run_Number = as.numeric(Run_Number),
+    Conc = as.numeric(Conc),
+    Absorbance = as.numeric(Absorbance),
+    Dilution = as.integer(Dilution),
+    Unit = as.character(Unit),
+    Test = as.character(Test),
+    Run_Time = as.character(Run_Time)
+  )
 
 ```
 
 
 
 ## Assessing standard Curves
-  #Pull out standards data  
 ```{r Pull out Standard Curves, echo=FALSE}
 cat("Assess Standard Curves")
 
@@ -267,13 +288,13 @@ stds_PO4 <- stds_PO4 %>%
   mutate(`Conc` = case_when(
     Sample_Name == "Standard 0" ~  0.0,
     Sample_Name == "Standard 1" ~  0.0,
-    Sample_Name == "Standard 90" ~ 0.0060,
-    Sample_Name == "Standard 91" ~ 0.0150,
-    Sample_Name == "Standard 92" ~ 0.0300,
-    Sample_Name == "Standard 93" ~ 0.0750,
-    Sample_Name == "Standard 94" ~ 0.1500,
-    Sample_Name == "Standard 95" ~ 0.2250,
-    Sample_Name == "Standard 96" ~ 0.3000,
+    Sample_Name == "Standard .006" ~ 0.0060,
+    Sample_Name == "Standard .0150" ~ 0.0150,
+    Sample_Name == "Standard .03" ~ 0.0300, 
+    Sample_Name == "Standard .075" ~ 0.0750,
+    Sample_Name == "Standard .15" ~ 0.1500,
+    Sample_Name == "Standard .225" ~ 0.2250,
+    Sample_Name == "Standard .3" ~ 0.3000,
     TRUE ~ `Conc`),  # leave unchanged if no match
     Run_Date = format(lubridate::mdy_hm(Run_Time), "%m-%d-%Y"))
 
@@ -330,7 +351,7 @@ std_curve_combo <- bind_rows(std_curve_NOx_1, std_curve_NH3_1, std_curve_PO4_1)
 
 
 ```
-  #Plot standards data 
+#Plot standards data 
 ```{r Assess Standard Curves, echo=FALSE}
 cat("Assess Standard Curves")
 
@@ -451,7 +472,7 @@ knitr::kable(avg_slopes, caption = "Average Slope by Analyte", digits = 3)
 
 
 #write out the log file with the added lines for this run date 
-write.csv(log, file_path)
+write.csv(log, file_path, row.names = FALSE)
 
 #write out a flag to the sample dataframe if the r2 is above the cutoff of 0.98
 df_all <- df_all %>%
@@ -477,8 +498,6 @@ df_all <- df_all %>%
 
 ```
  
- \newpage
-
 
 ## Dilution Corrections - ensure the latest dilution is kept
 ```{r Dilution Corrections, echo=FALSE}
@@ -504,7 +523,7 @@ df_duplicates <- df_all %>%
     !startsWith(Sample_Name, "peChk_") &
     !grepl("^\\d{1,2}/\\d{1,2}/\\d{4}\\s+\\d{1,2}:\\d{2}$", Sample_Name) &  # Remove timestamp-like names
     !grepl("^\\d+$", Sample_Name) &  # Remove sample names that are just numbers
-    !is.na(Sample_Name) & Sample_Name != ""  # 🔍 Remove blank or missing names
+    !is.na(Sample_Name) & Sample_Name != ""  # Remove blank or missing names
   ) %>%
   group_by(Test, Sample_Name) %>%  # Group by test and sample
   filter(n() > 1) %>%              # Keep only those that appear more than once
@@ -1618,7 +1637,7 @@ viz_NOx_plot <-  ggplot(data = NOx_forplot, aes(x = factor(row_num), y = Conc, f
                                      "SW" = "#25ABE6")) +
         theme_classic() + 
         labs(x= " ", y="NOx (mg/L)", title="Porewater NOx") + 
-          theme(legend.position = "none") +
+          # theme(legend.position = "none") +
           scale_x_discrete(drop = TRUE)+
         theme(axis.text.x = element_text(angle = 90, hjust = 0.5))
 
@@ -1644,7 +1663,7 @@ viz_NH3_plot <- ggplot(data = NH3_forplot, aes(x = factor(row_num), y = Conc, fi
                                      "SW" = "#25ABE6")) +
         theme_classic() + 
         labs(x= " ", y="NH3 (mg/L)", title="Porewater NH3") + 
-          theme(legend.position = "none") +
+          # theme(legend.position = "none") +
           scale_x_discrete(drop = TRUE)+
         theme(axis.text.x = element_text(angle = 90, hjust = 0.5))
 
@@ -1670,7 +1689,7 @@ viz_PO4_plot <- ggplot(data = PO4_forplot, aes(x = factor(row_num), y = Conc, fi
                                      "SW" = "#25ABE6")) +
         theme_classic() + 
         labs(x= " ", y="PO4 (mg/L)", title="Porewater PO4") + 
-          theme(legend.position = "none") +
+          # theme(legend.position = "none") +
           scale_x_discrete(drop = TRUE)+
         theme(axis.text.x = element_text(angle = 90, hjust = 0.5))
 
@@ -1781,6 +1800,3 @@ final_data <- final_data_labeled %>%
 
 
 #end
-
-
-
