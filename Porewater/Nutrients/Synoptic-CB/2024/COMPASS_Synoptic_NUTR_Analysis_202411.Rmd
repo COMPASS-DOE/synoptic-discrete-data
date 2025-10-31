@@ -263,13 +263,13 @@ stds_PO4 <- stds_PO4 %>%
   mutate(`Conc` = case_when(
     Sample_Name == "Standard 0" ~  0.0,
     Sample_Name == "Standard 1" ~  0.0,
-    Sample_Name == "Standard 90" ~ 0.0060,
-    Sample_Name == "Standard 91" ~ 0.0150,
-    Sample_Name == "Standard 92" ~ 0.0300,
-    Sample_Name == "Standard 93" ~ 0.0750,
-    Sample_Name == "Standard 94" ~ 0.1500,
-    Sample_Name == "Standard 95" ~ 0.2250,
-    Sample_Name == "Standard 96" ~ 0.3000,
+    Sample_Name == "Standard .006" ~ 0.0060,
+    Sample_Name == "Standard .0150" ~ 0.0150,
+    Sample_Name == "Standard .03" ~ 0.0300, 
+    Sample_Name == "Standard .075" ~ 0.0750,
+    Sample_Name == "Standard .15" ~ 0.1500,
+    Sample_Name == "Standard .225" ~ 0.2250,
+    Sample_Name == "Standard .3" ~ 0.3000,
     TRUE ~ `Conc`),  # leave unchanged if no match
     Run_Date = format(lubridate::mdy_hm(Run_Time), "%m-%d-%Y"))
 
