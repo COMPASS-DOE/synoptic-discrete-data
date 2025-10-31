@@ -38,9 +38,7 @@ cat("Run Information: NAME ") #lets you know what section you're in
   run_notes <- "Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
-                Over 60% of PO4 Duplicates have a CV less than 10%. 
-                Some sample IDs are missing from metadata: 
-                SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm" 
+                Over 60% of PO4 Duplicates have a CV less than 10%."
   
 #Set up file path for metadata 
   #downloaded metadata csv - downloaded from Google drive as csv for this year
