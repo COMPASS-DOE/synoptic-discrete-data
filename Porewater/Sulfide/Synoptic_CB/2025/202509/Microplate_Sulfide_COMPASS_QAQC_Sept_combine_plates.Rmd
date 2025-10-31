@@ -63,7 +63,8 @@ all_data <- all_data %>%
 ##Remove Dups and Spikes
 Sample_data <- all_data %>% 
   subset((!IDs %like% " Dup")) %>% 
-  subset((!IDs %like% " Spike"))
+  subset((!IDs %like% " Spike"))%>% 
+  subset((!IDs %like% "July"))
 
 ```
 
