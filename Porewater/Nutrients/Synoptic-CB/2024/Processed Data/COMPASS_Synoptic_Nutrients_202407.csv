@@ -1,617 +1,617 @@
 "","Project","Region","Site","Zone","Replicate","Depth_cm","Sample_ID","Year","Month","Day","Time","Time_Zone","NOx_Conc_mgL","NOx_Conc_uM","NOx_Conc_Flag","NOx_QAQC_Flag","NH3_Conc_mgL","NH3_Conc_uM","NH3_Conc_Flag","NH3_QAQC_Flag","PO4_Conc_mgL","PO4_Conc_uM","PO4_Conc_Flag","PO4_QAQC_Flag","Analysis_rundate","Run_notes","Field_notes"
-"1","COMPASS: Synoptic","CB","GCW","SW","A",0,"GCW_202407_SW_A",2024,7,16,"","",0,0,"bdl","",0.047044,3.35867834679118,"Within_Range","",0.070354,2.27140636000238,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"1","COMPASS: Synoptic","CB","GCW","SW","A",0,"GCW_202407_SW_A",2024,7,16,"","",0,0,"bdl","",0.047044,3.35867834679118,"Within_Range","",0.070354,2.27140636000238,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"2","COMPASS: Synoptic","CB","GCW","SW","B",0,"GCW_202407_SW_B",2024,7,16,"","",0,0,"bdl","",0.040844,2.91603304133022,"Within_Range","",0.063934,2.06413415328755,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"2","COMPASS: Synoptic","CB","GCW","SW","B",0,"GCW_202407_SW_B",2024,7,16,"","",0,0,"bdl","",0.040844,2.91603304133022,"Within_Range","",0.063934,2.06413415328755,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"3","COMPASS: Synoptic","CB","GCW","SW","C",0,"GCW_202407_SW_C",2024,7,16,"","",0.006481,0.462707133014914,"bdl","",0.038722,2.764534115816,"Within_Range","",0.039355,1.2705915413181,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"3","COMPASS: Synoptic","CB","GCW","SW","C",0,"GCW_202407_SW_C",2024,7,16,"","",0.006481,0.462707133014914,"bdl","",0.038722,2.764534115816,"Within_Range","",0.039355,1.2705915413181,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"4","COMPASS: Synoptic","CB","GCW","TR","A",20,"GCW_202407_TR_LysA_20cm",2024,7,16,"","",0,0,"bdl","",0.122758,8.76423425931875,"Within_Range","",0.008876,0.286565125669914,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"4","COMPASS: Synoptic","CB","GCW","TR","A",20,"GCW_202407_TR_LysA_20cm",2024,7,16,"","",0,0,"bdl","",0.122758,8.76423425931875,"Within_Range","",0.008876,0.286565125669914,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"5","COMPASS: Synoptic","CB","GCW","TR","A",45,"GCW_202407_TR_LysA_45cm",2024,7,16,"","",0,0,"bdl","",0.159022,11.3532809298407,"Within_Range","",0.006751,0.217958670955114,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"5","COMPASS: Synoptic","CB","GCW","TR","A",45,"GCW_202407_TR_LysA_45cm",2024,7,16,"","",0,0,"bdl","",0.159022,11.3532809298407,"Within_Range","",0.006751,0.217958670955114,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"6","COMPASS: Synoptic","CB","GCW","TR","B",20,"GCW_202407_TR_LysB_20cm",2024,7,16,"","",0.008774,0.626414501631362,"bdl","",NA,NA,NA,"",NA,NA,NA,"PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"6","COMPASS: Synoptic","CB","GCW","TR","B",20,"GCW_202407_TR_LysB_20cm",2024,7,16,"","",0.008774,0.626414501631362,"bdl","",NA,NA,NA,"",NA,NA,NA,"PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"7","COMPASS: Synoptic","CB","GCW","TR","B",45,"GCW_202407_TR_LysB_45cm",2024,7,16,"","",0.011633,0.830531102972149,"bdl","",0.121408,8.66785181377483,"Within_Range","",0.008067,0.260446244792609,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"7","COMPASS: Synoptic","CB","GCW","TR","B",45,"GCW_202407_TR_LysB_45cm",2024,7,16,"","",0.011633,0.830531102972149,"bdl","",0.121408,8.66785181377483,"Within_Range","",0.008067,0.260446244792609,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"8","COMPASS: Synoptic","CB","GCW","TR","C",20,"GCW_202407_TR_LysC_20cm",2024,7,16,"","",0,0,"bdl","",0.110952,7.92135192443616,"Within_Range","",0.054163,1.74867360316128,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"8","COMPASS: Synoptic","CB","GCW","TR","C",20,"GCW_202407_TR_LysC_20cm",2024,7,16,"","",0,0,"bdl","",0.110952,7.92135192443616,"Within_Range","",0.054163,1.74867360316128,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"9","COMPASS: Synoptic","CB","GCW","WC","A",10,"GCW_202407_WC_LysA_10cm",2024,7,16,"","",0.001368,0.0976675448178372,"bdl","",0.345873,24.6933967315642,"Within_Range","",0.207025,6.68388295874424,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"9","COMPASS: Synoptic","CB","GCW","WC","A",10,"GCW_202407_WC_LysA_10cm",2024,7,16,"","",0.001368,0.0976675448178372,"bdl","",0.345873,24.6933967315642,"Within_Range","",0.207025,6.68388295874424,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"10","COMPASS: Synoptic","CB","GCW","WC","A",20,"GCW_202407_WC_LysA_20cm",2024,7,16,"","",0.010527,0.751568892030243,"bdl","",0.849751,60.6674662839927,"Within_Range","",0.253635,8.18870500780628,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"10","COMPASS: Synoptic","CB","GCW","WC","A",20,"GCW_202407_WC_LysA_20cm",2024,7,16,"","",0.010527,0.751568892030243,"bdl","",0.849751,60.6674662839927,"Within_Range","",0.253635,8.18870500780628,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"11","COMPASS: Synoptic","CB","GCW","WC","A",45,"GCW_202407_WC_LysA_45cm",2024,7,16,"","",0.000976,0.0696809384080476,"bdl","",1.895756,135.346369951523,"Within_Range","",0.214143,6.91369036799598,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"11","COMPASS: Synoptic","CB","GCW","WC","A",45,"GCW_202407_WC_LysA_45cm",2024,7,16,"","",0.000976,0.0696809384080476,"bdl","",1.895756,135.346369951523,"Within_Range","",0.214143,6.91369036799598,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"12","COMPASS: Synoptic","CB","GCW","WC","B",10,"GCW_202407_WC_LysB_10cm",2024,7,16,"","",0,0,"bdl","",0.431195,30.784910078748,"Within_Range","",0.234998,7.58700218591465,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"12","COMPASS: Synoptic","CB","GCW","WC","B",10,"GCW_202407_WC_LysB_10cm",2024,7,16,"","",0,0,"bdl","",0.431195,30.784910078748,"Within_Range","",0.234998,7.58700218591465,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"13","COMPASS: Synoptic","CB","GCW","WC","B",20,"GCW_202407_WC_LysB_20cm",2024,7,16,"","",0,0,"bdl","",1.518412,108.40611992832,"Within_Range","",0.266832,8.61477530562803,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"13","COMPASS: Synoptic","CB","GCW","WC","B",20,"GCW_202407_WC_LysB_20cm",2024,7,16,"","",0,0,"bdl","",1.518412,108.40611992832,"Within_Range","",0.266832,8.61477530562803,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"14","COMPASS: Synoptic","CB","GCW","WC","B",45,"GCW_202407_WC_LysB_45cm",2024,7,16,"","",0.000919,0.065611457373971,"bdl","",1.533932,109.514161080055,"Within_Range","",0.233948,7.55310252593792,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"14","COMPASS: Synoptic","CB","GCW","WC","B",45,"GCW_202407_WC_LysB_45cm",2024,7,16,"","",0.000919,0.065611457373971,"bdl","",1.533932,109.514161080055,"Within_Range","",0.233948,7.55310252593792,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"15","COMPASS: Synoptic","CB","GCW","WC","C",10,"GCW_202407_WC_LysC_10cm",2024,7,16,"","",0,0,"bdl","",0.363242,25.9334461364918,"Within_Range","",0.090482,2.92124669906097,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"15","COMPASS: Synoptic","CB","GCW","WC","C",10,"GCW_202407_WC_LysC_10cm",2024,7,16,"","",0,0,"bdl","",0.363242,25.9334461364918,"Within_Range","",0.090482,2.92124669906097,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"16","COMPASS: Synoptic","CB","GCW","WC","C",20,"GCW_202407_WC_LysC_20cm",2024,7,16,"","",0,0,"bdl","",0.099614,7.11188217067546,"Within_Range","",0.126146,4.07267286421327,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"16","COMPASS: Synoptic","CB","GCW","WC","C",20,"GCW_202407_WC_LysC_20cm",2024,7,16,"","",0,0,"bdl","",0.099614,7.11188217067546,"Within_Range","",0.126146,4.07267286421327,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"17","COMPASS: Synoptic","CB","GCW","WC","C",45,"GCW_202407_WC_LysC_45cm",2024,7,16,"","",0,0,"bdl","",0.730617,52.1619653451562,"Within_Range","",0.207029,6.68401210030606,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"17","COMPASS: Synoptic","CB","GCW","WC","C",45,"GCW_202407_WC_LysC_45cm",2024,7,16,"","",0,0,"bdl","",0.730617,52.1619653451562,"Within_Range","",0.207029,6.68401210030606,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"18","COMPASS: Synoptic","CB","GWI","SW","A",0,"GWI_202407_SW_A",2024,7,25,"","",0,0,"bdl","",0.467966,33.410153712152,"Within_Range","",0.026132,0.843681823344546,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"18","COMPASS: Synoptic","CB","GWI","SW","A",0,"GWI_202407_SW_A",2024,7,25,"","",0,0,"bdl","",0.467966,33.410153712152,"Within_Range","",0.026132,0.843681823344546,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"19","COMPASS: Synoptic","CB","GWI","SW","B",0,"GWI_202407_SW_B",2024,7,25,"","",0.008565,0.611493071173081,"bdl","",0.2754,19.6620188909593,"Within_Range","",0.016893,0.545397100939821,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"19","COMPASS: Synoptic","CB","GWI","SW","B",0,"GWI_202407_SW_B",2024,7,25,"","",0.008565,0.611493071173081,"bdl","",0.2754,19.6620188909593,"Within_Range","",0.016893,0.545397100939821,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"20","COMPASS: Synoptic","CB","GWI","SW","C",0,"GWI_202407_SW_C",2024,7,25,"","",0,0,"bdl","",0.297188,21.2175601676341,"Within_Range","",0.015248,0.492287633642952,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"20","COMPASS: Synoptic","CB","GWI","SW","C",0,"GWI_202407_SW_C",2024,7,25,"","",0,0,"bdl","",0.297188,21.2175601676341,"Within_Range","",0.015248,0.492287633642952,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"21","COMPASS: Synoptic","CB","GWI","TR","A",10,"GWI_202407_TR_LysA_10cm",2024,7,25,"","",0,0,"bdl","",0.608939,43.4748370422726,"Within_Range","",0.008823,0.284853999975851,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"21","COMPASS: Synoptic","CB","GWI","TR","A",10,"GWI_202407_TR_LysA_10cm",2024,7,25,"","",0,0,"bdl","",0.608939,43.4748370422726,"Within_Range","",0.008823,0.284853999975851,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"22","COMPASS: Synoptic","CB","GWI","TR","A",20,"GWI_202407_TR_LysA_20cm",2024,7,25,"","",0,0,"bdl","",0.836501,59.7214904295801,"Within_Range","",0.008318,0.268549877796569,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"22","COMPASS: Synoptic","CB","GWI","TR","A",20,"GWI_202407_TR_LysA_20cm",2024,7,25,"","",0,0,"bdl","",0.836501,59.7214904295801,"Within_Range","",0.008318,0.268549877796569,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"23","COMPASS: Synoptic","CB","GWI","TR","B",10,"GWI_202407_TR_LysB_10cm",2024,7,25,"","",0.007061,0.504115887396746,"bdl","",0.040009,2.8564187139012,"Within_Range","",0.01587,0.512369146505355,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"23","COMPASS: Synoptic","CB","GWI","TR","B",10,"GWI_202407_TR_LysB_10cm",2024,7,25,"","",0.007061,0.504115887396746,"bdl","",0.040009,2.8564187139012,"Within_Range","",0.01587,0.512369146505355,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"24","COMPASS: Synoptic","CB","GWI","TR","B",20,"GWI_202407_TR_LysB_20cm",2024,7,25,"","",0,0,"bdl","",0.48164,34.3864007939058,"Within_Range","",0.011532,0.372315122715801,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"24","COMPASS: Synoptic","CB","GWI","TR","B",20,"GWI_202407_TR_LysB_20cm",2024,7,25,"","",0,0,"bdl","",0.48164,34.3864007939058,"Within_Range","",0.011532,0.372315122715801,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"25","COMPASS: Synoptic","CB","GWI","TR","B",45,"GWI_202407_TR_LysB_45cm",2024,7,25,"","",0,0,"bdl","",0.354663,25.3209535436612,"Within_Range","",0.009994,0.322660192197512,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"25","COMPASS: Synoptic","CB","GWI","TR","B",45,"GWI_202407_TR_LysB_45cm",2024,7,25,"","",0,0,"bdl","",0.354663,25.3209535436612,"Within_Range","",0.009994,0.322660192197512,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"26","COMPASS: Synoptic","CB","GWI","TR","C",10,"GWI_202407_TR_LysC_10cm",2024,7,25,"","",0.00244,0.174202346020119,"bdl","",0.047034,3.35796440275011,"Within_Range","",0.012868,0.415448404362376,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"26","COMPASS: Synoptic","CB","GWI","TR","C",10,"GWI_202407_TR_LysC_10cm",2024,7,25,"","",0.00244,0.174202346020119,"bdl","",0.047034,3.35796440275011,"Within_Range","",0.012868,0.415448404362376,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"27","COMPASS: Synoptic","CB","GWI","TR","C",20,"GWI_202407_TR_LysC_20cm",2024,7,25,"","",0,0,"bdl","",0.30925,22.0787194699679,"Within_Range","",0.007071,0.228289995900401,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"27","COMPASS: Synoptic","CB","GWI","TR","C",20,"GWI_202407_TR_LysC_20cm",2024,7,25,"","",0,0,"bdl","",0.30925,22.0787194699679,"Within_Range","",0.007071,0.228289995900401,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"28","COMPASS: Synoptic","CB","GWI","TR","C",45,"GWI_202407_TR_LysC_45cm",2024,7,25,"","",0,0,"bdl","",0.90539,64.6397795340801,"Within_Range","",0.017176,0.55453386643831,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"28","COMPASS: Synoptic","CB","GWI","TR","C",45,"GWI_202407_TR_LysC_45cm",2024,7,25,"","",0,0,"bdl","",0.90539,64.6397795340801,"Within_Range","",0.017176,0.55453386643831,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"29","COMPASS: Synoptic","CB","GWI","UP","A",10,"GWI_202407_UP_LysA_10cm",2024,7,25,"","",0.002142,0.15292681359635,"bdl","",0.063775,4.5531781218988,"Within_Range","",0.00734,0.236974765932533,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"29","COMPASS: Synoptic","CB","GWI","UP","A",10,"GWI_202407_UP_LysA_10cm",2024,7,25,"","",0.002142,0.15292681359635,"bdl","",0.063775,4.5531781218988,"Within_Range","",0.00734,0.236974765932533,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"30","COMPASS: Synoptic","CB","GWI","UP","A",45,"GWI_202407_UP_LysA_45cm",2024,7,25,"","",0,0,"bdl","",0.253474,18.0966251865179,"Within_Range","",0.014254,0.460195955531653,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"30","COMPASS: Synoptic","CB","GWI","UP","A",45,"GWI_202407_UP_LysA_45cm",2024,7,25,"","",0,0,"bdl","",0.253474,18.0966251865179,"Within_Range","",0.014254,0.460195955531653,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"31","COMPASS: Synoptic","CB","GWI","UP","B",10,"GWI_202407_UP_LysB_10cm",2024,7,25,"","",0,0,"bdl","",0.042465,3.03176337038703,"Within_Range","",0.048003,1.5497955979645,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"31","COMPASS: Synoptic","CB","GWI","UP","B",10,"GWI_202407_UP_LysB_10cm",2024,7,25,"","",0,0,"bdl","",0.042465,3.03176337038703,"Within_Range","",0.048003,1.5497955979645,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"32","COMPASS: Synoptic","CB","GWI","UP","B",20,"GWI_202407_UP_LysB_20cm",2024,7,25,"","",0,0,"bdl","",0.199048,14.2109133486117,"Within_Range","",0.012603,0.40689277589206,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"32","COMPASS: Synoptic","CB","GWI","UP","B",20,"GWI_202407_UP_LysB_20cm",2024,7,25,"","",0,0,"bdl","",0.199048,14.2109133486117,"Within_Range","",0.012603,0.40689277589206,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"33","COMPASS: Synoptic","CB","GWI","UP","B",45,"GWI_202407_UP_LysB_45cm",2024,7,25,"","",0.28722,20.5059007474994,"Within_Range","",NA,NA,NA,"",NA,NA,NA,"PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"33","COMPASS: Synoptic","CB","GWI","UP","B",45,"GWI_202407_UP_LysB_45cm",2024,7,25,"","",0.28722,20.5059007474994,"Within_Range","",NA,NA,NA,"",NA,NA,NA,"PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"34","COMPASS: Synoptic","CB","GWI","UP","C",20,"GWI_202407_UP_LysC_20cm",2024,7,25,"","",0,0,"bdl","",0.269649,19.2514296729422,"Within_Range","",0.019696,0.63589305038245,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"34","COMPASS: Synoptic","CB","GWI","UP","C",20,"GWI_202407_UP_LysC_20cm",2024,7,25,"","",0,0,"bdl","",0.269649,19.2514296729422,"Within_Range","",0.019696,0.63589305038245,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"35","COMPASS: Synoptic","CB","GWI","WC","A",10,"GWI_202407_WC_LysA_10cm",2024,7,25,"","",0,0,"bdl","",0.164153,11.7196056173117,"Within_Range","",0.008402,0.271261850594707,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"35","COMPASS: Synoptic","CB","GWI","WC","A",10,"GWI_202407_WC_LysA_10cm",2024,7,25,"","",0,0,"bdl","",0.164153,11.7196056173117,"Within_Range","",0.008402,0.271261850594707,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"36","COMPASS: Synoptic","CB","GWI","WC","A",45,"GWI_202407_WC_LysA_45cm",2024,7,25,"","",0,0,"bdl","",0.936821,66.8837770495549,"Within_Range","",0.008966,0.289470810810776,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"36","COMPASS: Synoptic","CB","GWI","WC","A",45,"GWI_202407_WC_LysA_45cm",2024,7,25,"","",0,0,"bdl","",0.936821,66.8837770495549,"Within_Range","",0.008966,0.289470810810776,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"37","COMPASS: Synoptic","CB","GWI","WC","B",10,"GWI_202407_WC_LysB_10cm",2024,7,25,"","",0,0,"bdl","",0.298589,21.3175837277874,"Within_Range","",0.008728,0.281786887882718,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"37","COMPASS: Synoptic","CB","GWI","WC","B",10,"GWI_202407_WC_LysB_10cm",2024,7,25,"","",0,0,"bdl","",0.298589,21.3175837277874,"Within_Range","",0.008728,0.281786887882718,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"38","COMPASS: Synoptic","CB","GWI","WC","B",20,"GWI_202407_WC_LysB_20cm",2024,7,25,"","",0,0,"bdl","",0.552909,39.4746085801795,"Within_Range","",0.009531,0.307712056417299,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"38","COMPASS: Synoptic","CB","GWI","WC","B",20,"GWI_202407_WC_LysB_20cm",2024,7,25,"","",0,0,"bdl","",0.552909,39.4746085801795,"Within_Range","",0.009531,0.307712056417299,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"39","COMPASS: Synoptic","CB","GWI","WC","B",45,"GWI_202407_WC_LysB_45cm",2024,7,25,"","",0,0,"bdl","",0.645917,46.1148593173267,"Within_Range","",0.006082,0.196359744741372,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"39","COMPASS: Synoptic","CB","GWI","WC","B",45,"GWI_202407_WC_LysB_45cm",2024,7,25,"","",0,0,"bdl","",0.645917,46.1148593173267,"Within_Range","",0.006082,0.196359744741372,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"40","COMPASS: Synoptic","CB","GWI","WC","C",10,"GWI_202407_WC_LysC_10cm",2024,7,25,"","",0,0,"bdl","",0.86047,61.4327429016114,"Within_Range","",0.008716,0.28139946319727,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"40","COMPASS: Synoptic","CB","GWI","WC","C",10,"GWI_202407_WC_LysC_10cm",2024,7,25,"","",0,0,"bdl","",0.86047,61.4327429016114,"Within_Range","",0.008716,0.28139946319727,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"41","COMPASS: Synoptic","CB","GWI","WC","C",20,"GWI_202407_WC_LysC_20cm",2024,7,25,"","",0.002543,0.181555969643099,"bdl","",0.841783,60.0985956720712,"Within_Range","",0.005941,0.191807504687354,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"41","COMPASS: Synoptic","CB","GWI","WC","C",20,"GWI_202407_WC_LysC_20cm",2024,7,25,"","",0.002543,0.181555969643099,"bdl","",0.841783,60.0985956720712,"Within_Range","",0.005941,0.191807504687354,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"42","COMPASS: Synoptic","CB","MSM","SW","A",0,"MSM_202407_SW_A",2024,7,18,"","",0.013414,0.957684536686014,"bdl","",0.123056,8.78550979174252,"Within_Range","",0.006147,0.198458295120883,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"42","COMPASS: Synoptic","CB","MSM","SW","A",0,"MSM_202407_SW_A",2024,7,18,"","",0.013414,0.957684536686014,"bdl","",0.123056,8.78550979174252,"Within_Range","",0.006147,0.198458295120883,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"43","COMPASS: Synoptic","CB","MSM","SW","B",0,"MSM_202407_SW_B",2024,7,18,"","",0.014023,1.00116372878694,"bdl","",0.156245,11.1550186696367,"Within_Range","",0.005352,0.172791409709934,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"43","COMPASS: Synoptic","CB","MSM","SW","B",0,"MSM_202407_SW_B",2024,7,18,"","",0.014023,1.00116372878694,"bdl","",0.156245,11.1550186696367,"Within_Range","",0.005352,0.172791409709934,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"44","COMPASS: Synoptic","CB","MSM","SW","C",0,"MSM_202407_SW_C",2024,7,18,"","",0.002664,0.190194692539999,"bdl","",0.0578,4.12659655736183,"Within_Range","",0.00408,0.131724393052416,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"44","COMPASS: Synoptic","CB","MSM","SW","C",0,"MSM_202407_SW_C",2024,7,18,"","",0.002664,0.190194692539999,"bdl","",0.0578,4.12659655736183,"Within_Range","",0.00408,0.131724393052416,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"45","COMPASS: Synoptic","CB","MSM","TR","A",10,"MSM_202407_TR_LysA_10cm",2024,7,18,"","",0.07677,5.48094840326415,"Within_Range","",0.401855,28.6901982622602,"Within_Range","",0.00795,0.256668854109488,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"45","COMPASS: Synoptic","CB","MSM","TR","A",10,"MSM_202407_TR_LysA_10cm",2024,7,18,"","",0.07677,5.48094840326415,"Within_Range","",0.401855,28.6901982622602,"Within_Range","",0.00795,0.256668854109488,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"46","COMPASS: Synoptic","CB","MSM","TR","A",20,"MSM_202407_TR_LysA_20cm",2024,7,18,"","",0.008287,0.591645426831445,"bdl","",2.740306,195.642513939757,"adl","",0.013273,0.428523987496256,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"46","COMPASS: Synoptic","CB","MSM","TR","A",20,"MSM_202407_TR_LysA_20cm",2024,7,18,"","",0.008287,0.591645426831445,"bdl","",2.740306,195.642513939757,"adl","",0.013273,0.428523987496256,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"47","COMPASS: Synoptic","CB","MSM","TR","A",45,"MSM_202407_TR_LysA_45cm",2024,7,18,"","",0.014642,1.04535686492893,"bdl","",1.68111,120.021846687657,"Within_Range","",0.012716,0.410541025013365,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"47","COMPASS: Synoptic","CB","MSM","TR","A",45,"MSM_202407_TR_LysA_45cm",2024,7,18,"","",0.014642,1.04535686492893,"bdl","",1.68111,120.021846687657,"Within_Range","",0.012716,0.410541025013365,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"48","COMPASS: Synoptic","CB","MSM","TR","B",10,"MSM_202407_TR_LysB_10cm",2024,7,18,"","",0.017849,1.27431871889881,"bdl","",1.116704,79.7264166434635,"Within_Range","",0.008919,0.287953397459437,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"48","COMPASS: Synoptic","CB","MSM","TR","B",10,"MSM_202407_TR_LysB_10cm",2024,7,18,"","",0.017849,1.27431871889881,"bdl","",1.116704,79.7264166434635,"Within_Range","",0.008919,0.287953397459437,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"49","COMPASS: Synoptic","CB","MSM","TR","B",20,"MSM_202407_TR_LysB_20cm",2024,7,18,"","",0.004345,0.310208685843204,"bdl","",2.266006,161.780148071994,"adl","",0.008333,0.269034158653379,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"49","COMPASS: Synoptic","CB","MSM","TR","B",20,"MSM_202407_TR_LysB_20cm",2024,7,18,"","",0.004345,0.310208685843204,"bdl","",2.266006,161.780148071994,"adl","",0.008333,0.269034158653379,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"50","COMPASS: Synoptic","CB","MSM","TR","B",45,"MSM_202407_TR_LysB_45cm",2024,7,18,"","",0.011543,0.824105606602554,"bdl","",3.173889,226.597913855512,"adl","",0.015197,0.490641078729797,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"50","COMPASS: Synoptic","CB","MSM","TR","B",45,"MSM_202407_TR_LysB_45cm",2024,7,18,"","",0.011543,0.824105606602554,"bdl","",3.173889,226.597913855512,"adl","",0.015197,0.490641078729797,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"51","COMPASS: Synoptic","CB","MSM","TR","C",10,"MSM_202407_TR_LysC_10cm",2024,7,18,"","",0.034312,2.44968479370587,"Within_Range","",1.211996,86.5297321995902,"Within_Range","",0.005832,0.188288397127866,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"51","COMPASS: Synoptic","CB","MSM","TR","C",10,"MSM_202407_TR_LysC_10cm",2024,7,18,"","",0.034312,2.44968479370587,"Within_Range","",1.211996,86.5297321995902,"Within_Range","",0.005832,0.188288397127866,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"52","COMPASS: Synoptic","CB","MSM","TR","C",20,"MSM_202407_TR_LysC_20cm",2024,7,18,"","",0.006916,0.493763698801288,"bdl","",2.372685,169.396431707683,"adl","",0.009077,0.293054489151173,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"52","COMPASS: Synoptic","CB","MSM","TR","C",20,"MSM_202407_TR_LysC_20cm",2024,7,18,"","",0.006916,0.493763698801288,"bdl","",2.372685,169.396431707683,"adl","",0.009077,0.293054489151173,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"53","COMPASS: Synoptic","CB","MSM","TR","C",45,"MSM_202407_TR_LysC_45cm",2024,7,18,"","",0.007237,0.516681302519509,"bdl","",2.418911,172.696709431915,"adl","",0.018806,0.607159052878368,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"53","COMPASS: Synoptic","CB","MSM","TR","C",45,"MSM_202407_TR_LysC_45cm",2024,7,18,"","",0.007237,0.516681302519509,"bdl","",2.418911,172.696709431915,"adl","",0.018806,0.607159052878368,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"54","COMPASS: Synoptic","CB","MSM","UP","A",20,"MSM_202407_UP_LysA_20cm",2024,7,18,"","",0.014396,1.0277938415187,"bdl","",0.03173,2.26534444230261,"Within_Range","",0.007074,0.228386852071763,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"54","COMPASS: Synoptic","CB","MSM","UP","A",20,"MSM_202407_UP_LysA_20cm",2024,7,18,"","",0.014396,1.0277938415187,"bdl","",0.03173,2.26534444230261,"Within_Range","",0.007074,0.228386852071763,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"55","COMPASS: Synoptic","CB","MSM","UP","A",45,"MSM_202407_UP_LysA_45cm",2024,7,18,"","",0.187412,13.3801680624273,"Within_Range","",0.997051,71.1838620088958,"Within_Range","",0.004618,0.149093933116681,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"55","COMPASS: Synoptic","CB","MSM","UP","A",45,"MSM_202407_UP_LysA_45cm",2024,7,18,"","",0.187412,13.3801680624273,"Within_Range","",0.997051,71.1838620088958,"Within_Range","",0.004618,0.149093933116681,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"56","COMPASS: Synoptic","CB","MSM","UP","B",10,"MSM_202407_UP_LysB_10cm",2024,7,18,"","",0.01027,0.733220530174845,"bdl","",0.015898,1.13502823648682,"bdl","",0.004194,0.135404927564175,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"56","COMPASS: Synoptic","CB","MSM","UP","B",10,"MSM_202407_UP_LysB_10cm",2024,7,18,"","",0.01027,0.733220530174845,"bdl","",0.015898,1.13502823648682,"bdl","",0.004194,0.135404927564175,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"57","COMPASS: Synoptic","CB","MSM","UP","C",10,"MSM_202407_UP_LysC_10cm",2024,7,18,"","",0.032782,2.34045135542276,"Within_Range","",0.026338,1.88038581535979,"Within_Range","",0.005718,0.184607862616107,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"57","COMPASS: Synoptic","CB","MSM","UP","C",10,"MSM_202407_UP_LysC_10cm",2024,7,18,"","",0.032782,2.34045135542276,"Within_Range","",0.026338,1.88038581535979,"Within_Range","",0.005718,0.184607862616107,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"58","COMPASS: Synoptic","CB","MSM","UP","C",20,"MSM_202407_UP_LysC_20cm",2024,7,18,"","",0.04338,3.09708925014457,"Within_Range","",0.029847,2.13090877936987,"Within_Range","",0.005767,0.186189846748354,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"58","COMPASS: Synoptic","CB","MSM","UP","C",20,"MSM_202407_UP_LysC_20cm",2024,7,18,"","",0.04338,3.09708925014457,"Within_Range","",0.029847,2.13090877936987,"Within_Range","",0.005767,0.186189846748354,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"59","COMPASS: Synoptic","CB","MSM","WC","A",10,"MSM_202407_WC_LysA_10cm",2024,7,18,"","",0.010912,0.779055737611286,"bdl","",0.274759,19.616255077927,"Within_Range","",0.033276,1.07432865274809,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"59","COMPASS: Synoptic","CB","MSM","WC","A",10,"MSM_202407_WC_LysA_10cm",2024,7,18,"","",0.010912,0.779055737611286,"bdl","",0.274759,19.616255077927,"Within_Range","",0.033276,1.07432865274809,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"60","COMPASS: Synoptic","CB","MSM","WC","A",20,"MSM_202407_WC_LysA_20cm",2024,7,18,"","",0.015076,1.07634203631119,"bdl","",0.538935,38.4769431771938,"Within_Range","",0.038352,1.23820929469271,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"60","COMPASS: Synoptic","CB","MSM","WC","A",20,"MSM_202407_WC_LysA_20cm",2024,7,18,"","",0.015076,1.07634203631119,"bdl","",0.538935,38.4769431771938,"Within_Range","",0.038352,1.23820929469271,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"61","COMPASS: Synoptic","CB","MSM","WC","B",10,"MSM_202407_WC_LysB_10cm",2024,7,18,"","",0.015417,1.10068752811155,"bdl","",0.88335,63.0662468675705,"Within_Range","",0.084919,2.74164307196523,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"61","COMPASS: Synoptic","CB","MSM","WC","B",10,"MSM_202407_WC_LysB_10cm",2024,7,18,"","",0.015417,1.10068752811155,"bdl","",0.88335,63.0662468675705,"Within_Range","",0.084919,2.74164307196523,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"62","COMPASS: Synoptic","CB","MSM","WC","B",20,"MSM_202407_WC_LysB_20cm",2024,7,18,"","",0.008234,0.587861523413795,"bdl","",0.594453,42.4406177043843,"Within_Range","",0.05746,1.8551185354882,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"62","COMPASS: Synoptic","CB","MSM","WC","B",20,"MSM_202407_WC_LysB_20cm",2024,7,18,"","",0.008234,0.587861523413795,"bdl","",0.594453,42.4406177043843,"Within_Range","",0.05746,1.8551185354882,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"63","COMPASS: Synoptic","CB","MSM","WC","C",10,"MSM_202407_WC_LysC_10cm",2024,7,18,"","",0.016809,1.20006853862794,"bdl","",1.350335,96.406362669294,"Within_Range","",0.066665,2.15230555461749,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"63","COMPASS: Synoptic","CB","MSM","WC","C",10,"MSM_202407_WC_LysC_10cm",2024,7,18,"","",0.016809,1.20006853862794,"bdl","",1.350335,96.406362669294,"Within_Range","",0.066665,2.15230555461749,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"64","COMPASS: Synoptic","CB","MSM","WC","C",20,"MSM_202407_WC_LysC_20cm",2024,7,18,"","",0.005798,0.413944755010102,"bdl","",1.067967,76.2468675705198,"Within_Range","",0.062986,2.03352760313713,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"64","COMPASS: Synoptic","CB","MSM","WC","C",20,"MSM_202407_WC_LysC_20cm",2024,7,18,"","",0.005798,0.413944755010102,"bdl","",1.067967,76.2468675705198,"Within_Range","",0.062986,2.03352760313713,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"65","COMPASS: Synoptic","CB","MSM","WC","C",45,"MSM_202407_WC_LysC_45cm",2024,7,18,"","",0.029916,2.13583499325323,"Within_Range","",1.417473,101.199640172203,"Within_Range","",0.005132,0.165688623810049,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"65","COMPASS: Synoptic","CB","MSM","WC","C",45,"MSM_202407_WC_LysC_45cm",2024,7,18,"","",0.029916,2.13583499325323,"Within_Range","",1.417473,101.199640172203,"Within_Range","",0.005132,0.165688623810049,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"66","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202407_SWAMP_LysA_10cm",2024,7,23,"","",0,0,"bdl","",NA,NA,NA,"",NA,NA,NA,"PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"66","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202407_SWAMP_LysA_10cm",2024,7,23,"","",0,0,"bdl","",NA,NA,NA,"",NA,NA,NA,"PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"67","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202407_SWAMP_LysA_20cm",2024,7,23,"","",0,0,"bdl","",0.364693,26.0370394168505,"Within_Range","",0.150617,4.86272865401368,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"67","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202407_SWAMP_LysA_20cm",2024,7,23,"","",0,0,"bdl","",0.364693,26.0370394168505,"Within_Range","",0.150617,4.86272865401368,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"68","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202407_SWAMP_LysA_45cm",2024,7,23,"","",0,0,"bdl","",0.422822,30.1871247331634,"Within_Range","",0.290373,9.3748056823062,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"68","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202407_SWAMP_LysA_45cm",2024,7,23,"","",0,0,"bdl","",0.422822,30.1871247331634,"Within_Range","",0.290373,9.3748056823062,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"69","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202407_SWAMP_LysB_20cm",2024,7,23,"","",0,0,"bdl","",0.27894,19.9147550814967,"Within_Range","",0.137064,4.4251647571903,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"69","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202407_SWAMP_LysB_20cm",2024,7,23,"","",0,0,"bdl","",0.27894,19.9147550814967,"Within_Range","",0.137064,4.4251647571903,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"70","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202407_SWAMP_LysB_45cm",2024,7,23,"","",0,0,"bdl","",0.134362,9.59269492457181,"Within_Range","",0.012869,0.41548068975283,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"70","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202407_SWAMP_LysB_45cm",2024,7,23,"","",0,0,"bdl","",0.134362,9.59269492457181,"Within_Range","",0.012869,0.41548068975283,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"71","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202407_SWAMP_LysC_10cm",2024,7,23,"","",0,0,"bdl","",0.278325,19.8708475229712,"Within_Range","",0.023378,0.754767858034164,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"71","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202407_SWAMP_LysC_10cm",2024,7,23,"","",0,0,"bdl","",0.278325,19.8708475229712,"Within_Range","",0.023378,0.754767858034164,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"72","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202407_SWAMP_LysC_20cm",2024,7,23,"","",0,0,"bdl","",0.363482,25.9505807934774,"Within_Range","",0.022048,0.711828288730313,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"72","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202407_SWAMP_LysC_20cm",2024,7,23,"","",0,0,"bdl","",0.363482,25.9505807934774,"Within_Range","",0.022048,0.711828288730313,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"73","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202407_SWAMP_LysC_45cm",2024,7,23,"","",0,0,"bdl","",0.35815,25.569905830781,"Within_Range","",0.0542,1.74986816260808,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"73","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202407_SWAMP_LysC_45cm",2024,7,23,"","",0,0,"bdl","",0.35815,25.569905830781,"Within_Range","",0.0542,1.74986816260808,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"74","COMPASS: Synoptic","CB","SWH","SW","A",0,"SWH_202407_SW_A",2024,7,24,"","",0,0,"bdl","",0.027566,1.9680581436027,"Within_Range","",0.021036,0.679155473590841,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"74","COMPASS: Synoptic","CB","SWH","SW","A",0,"SWH_202407_SW_A",2024,7,24,"","",0,0,"bdl","",0.027566,1.9680581436027,"Within_Range","",0.021036,0.679155473590841,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"75","COMPASS: Synoptic","CB","SWH","SW","B",0,"SWH_202407_SW_B",2024,7,24,"","",0,0,"bdl","",0.021464,1.53240948974419,"Within_Range","",0.018733,0.604802219375225,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"75","COMPASS: Synoptic","CB","SWH","SW","B",0,"SWH_202407_SW_B",2024,7,24,"","",0,0,"bdl","",0.021464,1.53240948974419,"Within_Range","",0.018733,0.604802219375225,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"76","COMPASS: Synoptic","CB","SWH","SW","C",0,"SWH_202407_SW_C",2024,7,24,"","",0,0,"bdl","",0.025014,1.78585962432265,"Within_Range","",0.017973,0.580265322630167,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"76","COMPASS: Synoptic","CB","SWH","SW","C",0,"SWH_202407_SW_C",2024,7,24,"","",0,0,"bdl","",0.025014,1.78585962432265,"Within_Range","",0.017973,0.580265322630167,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"77","COMPASS: Synoptic","CB","SWH","TR","A",10,"SWH_202407_TR_LysA_10cm",2024,7,24,"","",0,0,"bdl","",NA,NA,NA,"",NA,NA,NA,"PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"77","COMPASS: Synoptic","CB","SWH","TR","A",10,"SWH_202407_TR_LysA_10cm",2024,7,24,"","",0,0,"bdl","",NA,NA,NA,"",NA,NA,NA,"PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"78","COMPASS: Synoptic","CB","SWH","TR","A",20,"SWH_202407_TR_LysA_20cm",2024,7,24,"","",0,0,"bdl","",2.472222,176.502816509242,"adl","",0.819322,26.4521306775716,"adl","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"78","COMPASS: Synoptic","CB","SWH","TR","A",20,"SWH_202407_TR_LysA_20cm",2024,7,24,"","",0,0,"bdl","",2.472222,176.502816509242,"adl","",0.819322,26.4521306775716,"adl","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"79","COMPASS: Synoptic","CB","SWH","TR","A",45,"SWH_202407_TR_LysA_45cm",2024,7,24,"","",0,0,"bdl","",1.729524,123.478335368074,"Within_Range","",0.475811,15.3617439173194,"adl","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"79","COMPASS: Synoptic","CB","SWH","TR","A",45,"SWH_202407_TR_LysA_45cm",2024,7,24,"","",0,0,"bdl","",1.729524,123.478335368074,"Within_Range","",0.475811,15.3617439173194,"adl","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"80","COMPASS: Synoptic","CB","SWH","TR","B",10,"SWH_202407_TR_LysB_10cm",2024,7,24,"","",0,0,"bdl","",0.539838,38.541412324102,"Within_Range","",0.111229,3.59107169481059,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"80","COMPASS: Synoptic","CB","SWH","TR","B",10,"SWH_202407_TR_LysB_10cm",2024,7,24,"","",0,0,"bdl","",0.539838,38.541412324102,"Within_Range","",0.111229,3.59107169481059,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"81","COMPASS: Synoptic","CB","SWH","TR","B",20,"SWH_202407_TR_LysB_20cm",2024,7,24,"","",0,0,"bdl","",1.653849,118.075563837306,"Within_Range","",0.991705,32.0175831402075,"adl","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"81","COMPASS: Synoptic","CB","SWH","TR","B",20,"SWH_202407_TR_LysB_20cm",2024,7,24,"","",0,0,"bdl","",1.653849,118.075563837306,"Within_Range","",0.991705,32.0175831402075,"adl","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"82","COMPASS: Synoptic","CB","SWH","TR","B",45,"SWH_202407_TR_LysB_45cm",2024,7,24,"","",0,0,"bdl","",2.489874,177.763070530532,"adl","",0.983305,31.7463858603937,"adl","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"82","COMPASS: Synoptic","CB","SWH","TR","B",45,"SWH_202407_TR_LysB_45cm",2024,7,24,"","",0,0,"bdl","",2.489874,177.763070530532,"adl","",0.983305,31.7463858603937,"adl","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"83","COMPASS: Synoptic","CB","SWH","TR","C",10,"SWH_202407_TR_LysC_10cm",2024,7,24,"","",0,0,"bdl","",0.082096,5.86119499953594,"Within_Range","",0.011046,0.356624422955145,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"83","COMPASS: Synoptic","CB","SWH","TR","C",10,"SWH_202407_TR_LysC_10cm",2024,7,24,"","",0,0,"bdl","",0.082096,5.86119499953594,"Within_Range","",0.011046,0.356624422955145,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"84","COMPASS: Synoptic","CB","SWH","TR","C",20,"SWH_202407_TR_LysC_20cm",2024,7,24,"","",0,0,"bdl","",1.292287,92.2620602997137,"Within_Range","",0.549854,17.7522510827067,"adl","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"84","COMPASS: Synoptic","CB","SWH","TR","C",20,"SWH_202407_TR_LysC_20cm",2024,7,24,"","",0,0,"bdl","",1.292287,92.2620602997137,"Within_Range","",0.549854,17.7522510827067,"adl","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"85","COMPASS: Synoptic","CB","SWH","TR","C",45,"SWH_202407_TR_LysC_45cm",2024,7,24,"","",0,0,"bdl","",1.555349,111.043215032806,"Within_Range","",0.576112,18.6000008652485,"adl","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"85","COMPASS: Synoptic","CB","SWH","TR","C",45,"SWH_202407_TR_LysC_45cm",2024,7,24,"","",0,0,"bdl","",1.555349,111.043215032806,"Within_Range","",0.576112,18.6000008652485,"adl","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"86","COMPASS: Synoptic","CB","SWH","UP","A",10,"SWH_202407_UP_LysA_10cm",2024,7,23,"","",0,0,"bdl","",0.085444,6.10022346448485,"Within_Range","",0.004064,0.131207826805152,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"86","COMPASS: Synoptic","CB","SWH","UP","A",10,"SWH_202407_UP_LysA_10cm",2024,7,23,"","",0,0,"bdl","",0.085444,6.10022346448485,"Within_Range","",0.004064,0.131207826805152,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"87","COMPASS: Synoptic","CB","SWH","UP","A",20,"SWH_202407_UP_LysA_20cm",2024,7,23,"","",0,0,"bdl","",0.020717,1.47907786987656,"Within_Range","",0.004043,0.130529833605618,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"87","COMPASS: Synoptic","CB","SWH","UP","A",20,"SWH_202407_UP_LysA_20cm",2024,7,23,"","",0,0,"bdl","",0.020717,1.47907786987656,"Within_Range","",0.004043,0.130529833605618,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"88","COMPASS: Synoptic","CB","SWH","UP","A",45,"SWH_202407_UP_LysA_45cm",2024,7,23,"","",0,0,"bdl","",0.037593,2.68392983357964,"Within_Range","",0.002548,0.0822631748768522,"bdl","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"88","COMPASS: Synoptic","CB","SWH","UP","A",45,"SWH_202407_UP_LysA_45cm",2024,7,23,"","",0,0,"bdl","",0.037593,2.68392983357964,"Within_Range","",0.002548,0.0822631748768522,"bdl","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"89","COMPASS: Synoptic","CB","SWH","UP","B",10,"SWH_202407_UP_LysB_10cm",2024,7,23,"","",0,0,"bdl","",0.083492,5.96086158766876,"Within_Range","",0.009959,0.321530203531621,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"89","COMPASS: Synoptic","CB","SWH","UP","B",10,"SWH_202407_UP_LysB_10cm",2024,7,23,"","",0,0,"bdl","",0.083492,5.96086158766876,"Within_Range","",0.009959,0.321530203531621,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"90","COMPASS: Synoptic","CB","SWH","UP","B",20,"SWH_202407_UP_LysB_20cm",2024,7,23,"","",0,0,"bdl","",0.034738,2.48009880985528,"Within_Range","",0.005123,0.165398055295963,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"90","COMPASS: Synoptic","CB","SWH","UP","B",20,"SWH_202407_UP_LysB_20cm",2024,7,23,"","",0,0,"bdl","",0.034738,2.48009880985528,"Within_Range","",0.005123,0.165398055295963,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"91","COMPASS: Synoptic","CB","SWH","UP","B",45,"SWH_202407_UP_LysB_45cm",2024,7,23,"","",0,0,"bdl","",0.027343,1.95213719148693,"Within_Range","",0.005661,0.182767595360228,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"91","COMPASS: Synoptic","CB","SWH","UP","B",45,"SWH_202407_UP_LysB_45cm",2024,7,23,"","",0,0,"bdl","",0.027343,1.95213719148693,"Within_Range","",0.005661,0.182767595360228,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"92","COMPASS: Synoptic","CB","SWH","UP",NA,NA,"SWH_202407_UP_LysC_10cm",NA,NA,NA,NA,NA,NA,NA,NA,"",0.030531,2.17974255177879,"Within_Range","",0.005808,0.187513547756969,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"92","COMPASS: Synoptic","CB","SWH","UP",NA,NA,"SWH_202407_UP_LysC_10cm",NA,NA,NA,NA,NA,NA,NA,NA,"",0.030531,2.17974255177879,"Within_Range","",0.005808,0.187513547756969,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",NA
-"93","COMPASS: Synoptic","CB","SWH","UP","C",20,"SWH_202407_UP_LysC_20cm",2024,7,23,"","",0,0,"bdl","",0.32727,23.365246631969,"Within_Range","",0.070428,2.27379547889598,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"93","COMPASS: Synoptic","CB","SWH","UP","C",20,"SWH_202407_UP_LysC_20cm",2024,7,23,"","",0,0,"bdl","",0.32727,23.365246631969,"Within_Range","",0.070428,2.27379547889598,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"94","COMPASS: Synoptic","CB","SWH","UP","C",45,"SWH_202407_UP_LysC_45cm",2024,7,23,"","",NA,NA,NA,"",0.310178,22.1449734769789,"Within_Range","",0.080005,2.58299266327416,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"94","COMPASS: Synoptic","CB","SWH","UP","C",45,"SWH_202407_UP_LysC_45cm",2024,7,23,"","",NA,NA,NA,"",0.310178,22.1449734769789,"Within_Range","",0.080005,2.58299266327416,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"95","COMPASS: Synoptic","CB","SWH","WC","A",10,"SWH_202407_WC_LysA_10cm",2024,7,24,"","",0,0,"bdl","",NA,NA,NA,"",NA,NA,NA,"PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"95","COMPASS: Synoptic","CB","SWH","WC","A",10,"SWH_202407_WC_LysA_10cm",2024,7,24,"","",0,0,"bdl","",NA,NA,NA,"",NA,NA,NA,"PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"96","COMPASS: Synoptic","CB","SWH","WC","A",20,"SWH_202407_WC_LysA_20cm",2024,7,24,"","",0,0,"bdl","",0.030863,2.20344549394218,"Within_Range","",0.06266,2.02300256584912,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"96","COMPASS: Synoptic","CB","SWH","WC","A",20,"SWH_202407_WC_LysA_20cm",2024,7,24,"","",0,0,"bdl","",0.030863,2.20344549394218,"Within_Range","",0.06266,2.02300256584912,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"97","COMPASS: Synoptic","CB","SWH","WC",NA,NA,"SWH_202407_WC_LysA_45cm",NA,NA,NA,NA,NA,NA,NA,NA,"",0.054202,3.86971949138626,"Within_Range","",0.176998,5.71444953958127,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"97","COMPASS: Synoptic","CB","SWH","WC",NA,NA,"SWH_202407_WC_LysA_45cm",NA,NA,NA,NA,NA,NA,NA,NA,"",0.054202,3.86971949138626,"Within_Range","",0.176998,5.71444953958127,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",NA
-"98","COMPASS: Synoptic","CB","SWH","WC","B",10,"SWH_202407_WC_LysB_10cm",2024,7,24,"","",0,0,"bdl","",0.037535,2.67978895814146,"Within_Range","",0.187978,6.06894312676645,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"98","COMPASS: Synoptic","CB","SWH","WC","B",10,"SWH_202407_WC_LysB_10cm",2024,7,24,"","",0,0,"bdl","",0.037535,2.67978895814146,"Within_Range","",0.187978,6.06894312676645,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"99","COMPASS: Synoptic","CB","SWH","WC","B",20,"SWH_202407_WC_LysB_20cm",2024,7,24,"","",0,0,"bdl","",0.031574,2.25420691526198,"Within_Range","",0.070665,2.28144711643358,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"99","COMPASS: Synoptic","CB","SWH","WC","B",20,"SWH_202407_WC_LysB_20cm",2024,7,24,"","",0,0,"bdl","",0.031574,2.25420691526198,"Within_Range","",0.070665,2.28144711643358,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"100","COMPASS: Synoptic","CB","SWH","WC","B",45,"SWH_202407_WC_LysB_45cm",2024,7,24,"","",0,0,"bdl","",0.011957,0.853662889902689,"bdl","",0.097167,3.13707453424611,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"100","COMPASS: Synoptic","CB","SWH","WC","B",45,"SWH_202407_WC_LysB_45cm",2024,7,24,"","",0,0,"bdl","",0.011957,0.853662889902689,"bdl","",0.097167,3.13707453424611,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"101","COMPASS: Synoptic","CB","SWH","WC","C",10,"SWH_202407_WC_LysC_10cm",2024,7,24,"","",0,0,"bdl","",0.095561,6.82252065083139,"Within_Range","",0.14235,4.59582533113027,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"101","COMPASS: Synoptic","CB","SWH","WC","C",10,"SWH_202407_WC_LysC_10cm",2024,7,24,"","",0,0,"bdl","",0.095561,6.82252065083139,"Within_Range","",0.14235,4.59582533113027,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"102","COMPASS: Synoptic","CB","SWH","WC","C",20,"SWH_202407_WC_LysC_20cm",2024,7,24,"","",0,0,"bdl","",0.045258,3.23116794105678,"Within_Range","",0.198627,6.41275024971135,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"102","COMPASS: Synoptic","CB","SWH","WC","C",20,"SWH_202407_WC_LysC_20cm",2024,7,24,"","",0,0,"bdl","",0.045258,3.23116794105678,"Within_Range","",0.198627,6.41275024971135,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
                 Some sample IDs are missing from metadata: 
                 SWH_202407_UP_LysC_10cm, SWH_202407_WC_LysA_45cm",""
-"103","COMPASS: Synoptic","CB","SWH","WC","C",45,"SWH_202407_WC_LysC_45cm",2024,7,24,"","",0,0,"bdl","",0.055123,3.93547373756845,"Within_Range","",0.213608,6.89641768410308,"Within_Range","PO4 dups out of range","5/20/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"103","COMPASS: Synoptic","CB","SWH","WC","C",45,"SWH_202407_WC_LysC_45cm",2024,7,24,"","",0,0,"bdl","",0.055123,3.93547373756845,"Within_Range","",0.213608,6.89641768410308,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%. 
