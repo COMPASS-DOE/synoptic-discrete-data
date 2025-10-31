@@ -21,7 +21,7 @@ library(lubridate)
 ##Read in list of processed data files
 files <- list.files(path = "Processed Data", pattern = "\\.csv$", full.names = TRUE)
 
-desired_columns <- c("Project",	"Region",	"Site",	"Zone",	"Replicate",	"Depth_cm", "Sample_ID",	"Year",	"Month",	"Day",	"Time",	"Time_Zone",	"SO4_Conc_mM",	"SO4_Conc_flag",	"SO4_QAQC_flag",	"Cl_Conc_mM",	"Cl_Conc_flag",	"Cl_QAQC_flag",	"salinity",	"Analysis_rundate",	"Run_notes",	"Field_notes")
+desired_columns <- c("Project",	"Region",	"Site",	"Zone",	"Replicate",	"Depth_cm", "Sample_ID",	"Year",	"Month",	"Day",	"Time",	"Time_Zone",	"SO4_ppm", "SO4_Conc_mM",	"SO4_Conc_flag",	"SO4_QAQC_flag",	"Cl_ppm", "Cl_Conc_mM",	"Cl_Conc_flag",	"Cl_QAQC_flag",	"salinity",	"Analysis_rundate",	"Run_notes",	"Field_notes")
 ```
 
 ```{r}
@@ -655,7 +655,10 @@ all_clean_IDs <- all_clean %>%
 ##Change any SO4/Cl conc's of NA to 0 
 all_clean_IDs$SO4_Conc_mM[is.na(all_clean_IDs$SO4_Conc_mM)] <- 0
 all_clean_IDs$Cl_Conc_mM[is.na(all_clean_IDs$Cl_Conc_mM)] <- 0
+all_clean_IDs$SO4_ppm[is.na(all_clean_IDs$SO4_ppm)] <- 0
+all_clean_IDs$Cl_ppm[is.na(all_clean_IDs$Cl_ppm)] <- 0
 
+all_clean_IDs$salinity <- ifelse(all_clean_IDs$Cl_ppm == 0, 2.6e-05, all_clean_IDs$salinity)
 
 ```
 
@@ -682,7 +685,7 @@ final_data <- all_clean_IDs %>%
   select(
     Project, Region, Site, Zone, Replicate, Depth_cm, 
          Sample_ID, Year, Month, Day, Time, Time_Zone,
-         SO4_Conc_mM, SO4_Conc_flag, SO4_QAQC_flag, Cl_Conc_mM, Cl_Conc_flag, Cl_QAQC_flag, salinity,
+         SO4_ppm, SO4_Conc_mM, SO4_Conc_flag, SO4_QAQC_flag, Cl_ppm, Cl_Conc_mM, Cl_Conc_flag, Cl_QAQC_flag, salinity,
          Analysis_rundate,  Run_notes, Field_notes
         # list columns in the order you want them
   )

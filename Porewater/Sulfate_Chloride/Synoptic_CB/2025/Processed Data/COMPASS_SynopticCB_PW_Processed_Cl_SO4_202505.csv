@@ -1,5 +1,5 @@
-"","Project","Region","Site","Zone","Replicate","Depth_cm","Sample_ID","Year","Month","Day","Time","Time_Zone","SO4_Conc_mM","SO4_Conc_flag","SO4_QAQC_flag","Cl_Conc_mM","Cl_Conc_flag","Cl_QAQC_flag","salinity","Analysis_rundate","Run_notes","Field_notes"
-"1","COMPASS: Synoptic","CB","GCW","UP","A",10,"GCW_202505_UP_LYSA_10CM",2025,5,14,"13:21","EDT",0.0405832813474735,"Within_Range","SO4 checks perc diff out of range",0.212699576868829,"Within_Range","",0.0136511414,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"","Project","Region","Site","Zone","Replicate","Depth_cm","Sample_ID","Year","Month","Day","Time","Time_Zone","SO4_ppm","SO4_Conc_mM","SO4_Conc_flag","SO4_QAQC_flag","Cl_ppm","Cl_Conc_mM","Cl_Conc_flag","Cl_QAQC_flag","salinity","Analysis_rundate","Run_notes","Field_notes"
+"1","COMPASS: Synoptic","CB","GCW","UP","A",10,"GCW_202505_UP_LYSA_10CM",2025,5,14,"13:21","EDT",1.3011,0.0405832813474735,"Within_Range","SO4 checks perc diff out of range",7.5402,0.212699576868829,"Within_Range","",0.0136511414,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -9,7 +9,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"2","COMPASS: Synoptic","CB","GCW","UP","A",20,"GCW_202505_UP_LYSA_20CM",2025,5,14,"13:25","EDT",0.0103275109170306,"Within_Range","SO4 checks perc diff out of range",0.0166911142454161,"Within_Range","",0.0010952019,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"2","COMPASS: Synoptic","CB","GCW","UP","A",20,"GCW_202505_UP_LYSA_20CM",2025,5,14,"13:25","EDT",0.3311,0.0103275109170306,"Within_Range","SO4 checks perc diff out of range",0.5917,0.0166911142454161,"Within_Range","",0.0010952019,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -19,7 +19,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"3","COMPASS: Synoptic","CB","GCW","UP","B",10,"GCW_202505_UP_LYSB_10CM",2025,5,14,"13:28","EDT",0.0492295695570805,"Within_Range","SO4 checks perc diff out of range",0.0200310296191819,"Within_Range","",0.0013091507,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"3","COMPASS: Synoptic","CB","GCW","UP","B",10,"GCW_202505_UP_LYSB_10CM",2025,5,14,"13:28","EDT",1.5783,0.0492295695570805,"Within_Range","SO4 checks perc diff out of range",0.7101,0.0200310296191819,"Within_Range","",0.0013091507,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -29,7 +29,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"4","COMPASS: Synoptic","CB","GCW","UP","B",20,"GCW_202505_UP_LYSB_20CM",2025,5,14,"13:30","EDT",0.0508515283842795,"Within_Range","SO4 checks perc diff out of range",0.00595204513399154,"Within_Range","",0.000407277,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"4","COMPASS: Synoptic","CB","GCW","UP","B",20,"GCW_202505_UP_LYSB_20CM",2025,5,14,"13:30","EDT",1.6303,0.0508515283842795,"Within_Range","SO4 checks perc diff out of range",0.211,0.00595204513399154,"Within_Range","",0.000407277,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -39,7 +39,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"5","COMPASS: Synoptic","CB","GCW","UP","C",10,"GCW_202505_UP_LYSC_10CM",2025,5,14,"13:35","EDT",0.00728945726762321,"Within_Range","SO4 checks perc diff out of range",0.0174301833568406,"Within_Range","",0.0011425453,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"5","COMPASS: Synoptic","CB","GCW","UP","C",10,"GCW_202505_UP_LYSC_10CM",2025,5,14,"13:35","EDT",0.2337,0.00728945726762321,"Within_Range","SO4 checks perc diff out of range",0.6179,0.0174301833568406,"Within_Range","",0.0011425453,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -49,7 +49,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"6","COMPASS: Synoptic","CB","GCW","UP","C",20,"GCW_202505_UP_LYSC_20CM",2025,5,14,"13:37","EDT",0.50788521522146,"Within_Range","SO4 checks perc diff out of range",0.0479153737658674,"Within_Range","",0.0030953702,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"6","COMPASS: Synoptic","CB","GCW","UP","C",20,"GCW_202505_UP_LYSC_20CM",2025,5,14,"13:37","EDT",16.2828,0.50788521522146,"Within_Range","SO4 checks perc diff out of range",1.6986,0.0479153737658674,"Within_Range","",0.0030953702,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -59,7 +59,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"7","COMPASS: Synoptic","CB","GCW","TR","A",20,"GCW_202505_TR_LYSA_20CM",2025,5,14,"12:59","EDT",0.863484092326887,"Within_Range","SO4 checks perc diff out of range",2.60151763046544,"Within_Range","",0.1666744066,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"7","COMPASS: Synoptic","CB","GCW","TR","A",20,"GCW_202505_TR_LYSA_20CM",2025,5,14,"12:59","EDT",27.6833,0.863484092326887,"Within_Range","SO4 checks perc diff out of range",92.2238,2.60151763046544,"Within_Range","",0.1666744066,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -69,7 +69,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"8","COMPASS: Synoptic","CB","GCW","TR","A",45,"GCW_202505_TR_LYSA_45CM",2025,5,14,"13:02","EDT",0.0906581409856519,"Within_Range","SO4 checks perc diff out of range",22.3869365303244,"Within_Range","",1.4340917383,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"8","COMPASS: Synoptic","CB","GCW","TR","A",45,"GCW_202505_TR_LYSA_45CM",2025,5,14,"13:02","EDT",2.9065,0.0906581409856519,"Within_Range","SO4 checks perc diff out of range",793.6169,22.3869365303244,"Within_Range","",1.4340917383,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -79,7 +79,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"9","COMPASS: Synoptic","CB","GCW","TR","B",10,"GCW_202505_TR_LYSB_10CM",2025,5,14,"12:41","EDT",1.1494260761073,"Within_Range","SO4 checks perc diff out of range",6.09483215796897,"Within_Range","",0.3904496726,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"9","COMPASS: Synoptic","CB","GCW","TR","B",10,"GCW_202505_TR_LYSB_10CM",2025,5,14,"12:41","EDT",36.8506,1.1494260761073,"Within_Range","SO4 checks perc diff out of range",216.0618,6.09483215796897,"Within_Range","",0.3904496726,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -89,7 +89,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"10","COMPASS: Synoptic","CB","GCW","TR","B",20,"GCW_202505_TR_LYSB_20CM",2025,5,14,"12:44","EDT",1.37184965689332,"Within_Range","SO4 checks perc diff out of range",5.42988434414668,"Within_Range","",0.3478543458,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"10","COMPASS: Synoptic","CB","GCW","TR","B",20,"GCW_202505_TR_LYSB_20CM",2025,5,14,"12:44","EDT",43.9815,1.37184965689332,"Within_Range","SO4 checks perc diff out of range",192.4894,5.42988434414668,"Within_Range","",0.3478543458,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -99,7 +99,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"11","COMPASS: Synoptic","CB","GCW","TR","B",45,"GCW_202505_TR_LYSB_45CM",2025,5,14,"12:47","EDT",0.569051777916407,"Within_Range","SO4 checks perc diff out of range",15.7886149506347,"Within_Range","",1.0114154648,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"11","COMPASS: Synoptic","CB","GCW","TR","B",45,"GCW_202505_TR_LYSB_45CM",2025,5,14,"12:47","EDT",18.2438,0.569051777916407,"Within_Range","SO4 checks perc diff out of range",559.7064,15.7886149506347,"Within_Range","",1.0114154648,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -109,7 +109,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"12","COMPASS: Synoptic","CB","GCW","TR","C",10,"GCW_202505_TR_LYSC_10CM",2025,5,14,"12:49","EDT",1.20679351216469,"Within_Range","SO4 checks perc diff out of range",5.31634414668547,"Within_Range","",0.3405811708,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"12","COMPASS: Synoptic","CB","GCW","TR","C",10,"GCW_202505_TR_LYSC_10CM",2025,5,14,"12:49","EDT",38.6898,1.20679351216469,"Within_Range","SO4 checks perc diff out of range",188.4644,5.31634414668547,"Within_Range","",0.3405811708,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -119,7 +119,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"13","COMPASS: Synoptic","CB","GCW","TR","C",20,"GCW_202505_TR_LYSC_20CM",2025,5,14,"12:53","EDT",2.5078384279476,"Within_Range","SO4 checks perc diff out of range",12.6693455571227,"Within_Range","",0.8116008381,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"13","COMPASS: Synoptic","CB","GCW","TR","C",20,"GCW_202505_TR_LYSC_20CM",2025,5,14,"12:53","EDT",80.4013,2.5078384279476,"Within_Range","SO4 checks perc diff out of range",449.1283,12.6693455571227,"Within_Range","",0.8116008381,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -129,7 +129,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"14","COMPASS: Synoptic","CB","GCW","TR","C",45,"GCW_202505_TR_LYSC_45CM",2025,5,14,"12:56","EDT",0.408465377417342,"Within_Range","SO4 checks perc diff out of range",69.9480677009873,"Within_Range","",4.480769813,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"14","COMPASS: Synoptic","CB","GCW","TR","C",45,"GCW_202505_TR_LYSC_45CM",2025,5,14,"12:56","EDT",13.0954,0.408465377417342,"Within_Range","SO4 checks perc diff out of range",2479.659,69.9480677009873,"Within_Range","",4.480769813,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -139,7 +139,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"15","COMPASS: Synoptic","CB","GCW","WC","A",10,"GCW_202505_WC_LYSA_10CM",2025,5,14,"10:40","EDT",29.0647629444791,"Within_Range","SO4 checks perc diff out of range",155.62082651622,"Within_Range","",9.9688082481,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"15","COMPASS: Synoptic","CB","GCW","WC","A",10,"GCW_202505_WC_LYSA_10CM",2025,5,14,"10:40","EDT",931.8163,29.0647629444791,"Within_Range","SO4 checks perc diff out of range",5516.7583,155.62082651622,"Within_Range","",9.9688082481,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -149,7 +149,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"16","COMPASS: Synoptic","CB","GCW","WC","A",20,"GCW_202505_WC_LYSA_20CM",2025,5,14,"10:50","EDT",20.8798721147848,"Within_Range","SO4 checks perc diff out of range",165.70447954866,"Within_Range","",10.6147484066,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"16","COMPASS: Synoptic","CB","GCW","WC","A",20,"GCW_202505_WC_LYSA_20CM",2025,5,14,"10:50","EDT",669.4087,20.8798721147848,"Within_Range","SO4 checks perc diff out of range",5874.2238,165.70447954866,"Within_Range","",10.6147484066,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -159,7 +159,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"17","COMPASS: Synoptic","CB","GCW","WC","A",45,"GCW_202505_WC_LYSA_45CM",2025,5,14,"10:55","EDT",5.5797972551466,"Within_Range","SO4 checks perc diff out of range",174.670812411848,"Within_Range","",11.1891151021,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"17","COMPASS: Synoptic","CB","GCW","WC","A",45,"GCW_202505_WC_LYSA_45CM",2025,5,14,"10:55","EDT",178.8883,5.5797972551466,"Within_Range","SO4 checks perc diff out of range",6192.0803,174.670812411848,"Within_Range","",11.1891151021,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -169,7 +169,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"18","COMPASS: Synoptic","CB","GCW","WC","B",10,"GCW_202505_WC_LYSB_10CM",2025,5,14,"11:15","EDT",22.3093075483468,"Within_Range","SO4 checks perc diff out of range",130.215379407616,"Within_Range","",8.3413823064,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"18","COMPASS: Synoptic","CB","GCW","WC","B",10,"GCW_202505_WC_LYSB_10CM",2025,5,14,"11:15","EDT",715.2364,22.3093075483468,"Within_Range","SO4 checks perc diff out of range",4616.1352,130.215379407616,"Within_Range","",8.3413823064,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -179,7 +179,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"19","COMPASS: Synoptic","CB","GCW","WC","B",20,"GCW_202505_WC_LYSB_20CM",2025,5,14,"11:21","EDT",20.4795945102932,"Within_Range","SO4 checks perc diff out of range",156.469686882934,"Within_Range","",10.0231846728,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"19","COMPASS: Synoptic","CB","GCW","WC","B",20,"GCW_202505_WC_LYSB_20CM",2025,5,14,"11:21","EDT",656.5758,20.4795945102932,"Within_Range","SO4 checks perc diff out of range",5546.8504,156.469686882934,"Within_Range","",10.0231846728,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -189,7 +189,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"20","COMPASS: Synoptic","CB","GCW","WC","B",45,"GCW_202505_WC_LYSB_45CM",2025,5,14,"11:26","EDT",9.64536494073612,"Within_Range","SO4 checks perc diff out of range",157.987032440056,"Within_Range","",10.1203830221,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"20","COMPASS: Synoptic","CB","GCW","WC","B",45,"GCW_202505_WC_LYSB_45CM",2025,5,14,"11:26","EDT",309.2304,9.64536494073612,"Within_Range","SO4 checks perc diff out of range",5600.6403,157.987032440056,"Within_Range","",10.1203830221,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -199,7 +199,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"21","COMPASS: Synoptic","CB","GCW","WC","C",10,"GCW_202505_WC_LYSC_10CM",2025,5,14,"11:30","EDT",21.6341734248284,"Within_Range","SO4 checks perc diff out of range",115.681929478138,"Within_Range","",7.4103963908,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"21","COMPASS: Synoptic","CB","GCW","WC","C",10,"GCW_202505_WC_LYSC_10CM",2025,5,14,"11:30","EDT",693.5916,21.6341734248284,"Within_Range","SO4 checks perc diff out of range",4100.9244,115.681929478138,"Within_Range","",7.4103963908,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -209,7 +209,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"22","COMPASS: Synoptic","CB","GCW","WC","C",20,"GCW_202505_WC_LYSC_20CM",2025,5,14,"11:34","EDT",23.9834872114785,"Within_Range","SO4 checks perc diff out of range",141.513004231312,"Within_Range","",9.065087252,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"22","COMPASS: Synoptic","CB","GCW","WC","C",20,"GCW_202505_WC_LYSC_20CM",2025,5,14,"11:34","EDT",768.9106,23.9834872114785,"Within_Range","SO4 checks perc diff out of range",5016.636,141.513004231312,"Within_Range","",9.065087252,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -219,7 +219,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"23","COMPASS: Synoptic","CB","GCW","SW","A",0,"GCW_202505_SW_A",2025,5,14,"9:30","EDT",21.8862164691204,"Within_Range","SO4 checks perc diff out of range",140.24922425952,"Within_Range","",8.984131845,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"23","COMPASS: Synoptic","CB","GCW","SW","A",0,"GCW_202505_SW_A",2025,5,14,"9:30","EDT",701.6721,21.8862164691204,"Within_Range","SO4 checks perc diff out of range",4971.835,140.24922425952,"Within_Range","",8.984131845,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -229,7 +229,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"24","COMPASS: Synoptic","CB","GCW","SW","B",0,"GCW_202505_SW_B",2025,5,14,"9:30","EDT",20.235739238927,"Within_Range","SO4 checks perc diff out of range",129.784245416079,"Within_Range","",8.3137646605,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"24","COMPASS: Synoptic","CB","GCW","SW","B",0,"GCW_202505_SW_B",2025,5,14,"9:30","EDT",648.7578,20.235739238927,"Within_Range","SO4 checks perc diff out of range",4600.8515,129.784245416079,"Within_Range","",8.3137646605,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -239,7 +239,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"25","COMPASS: Synoptic","CB","GCW","SW","C",0,"GCW_202505_SW_C",2025,5,14,"9:30","EDT",21.1935589519651,"Within_Range","SO4 checks perc diff out of range",135.914724964739,"Within_Range","",8.706471839,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"25","COMPASS: Synoptic","CB","GCW","SW","C",0,"GCW_202505_SW_C",2025,5,14,"9:30","EDT",679.4655,21.1935589519651,"Within_Range","SO4 checks perc diff out of range",4818.177,135.914724964739,"Within_Range","",8.706471839,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -249,7 +249,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"26","COMPASS: Synoptic","CB","MSM","UP","A",20,"MSM_202505_UP_LYSA_20CM",2025,5,15,"14:09","EDT",5.92579538365564,"Within_Range","SO4 checks perc diff out of range",53.4497771509168,"Within_Range","",3.4239198422,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"26","COMPASS: Synoptic","CB","MSM","UP","A",20,"MSM_202505_UP_LYSA_20CM",2025,5,15,"14:09","EDT",189.981,5.92579538365564,"Within_Range","SO4 checks perc diff out of range",1894.7946,53.4497771509168,"Within_Range","",3.4239198422,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -259,7 +259,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"27","COMPASS: Synoptic","CB","MSM","UP","A",45,"MSM_202505_UP_LYSA_45CM",2025,5,15,"14:11","EDT",6.3076013724267,"Within_Range","SO4 checks perc diff out of range",67.5775317348378,"Within_Range","",4.3289176645,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"27","COMPASS: Synoptic","CB","MSM","UP","A",45,"MSM_202505_UP_LYSA_45CM",2025,5,15,"14:11","EDT",202.2217,6.3076013724267,"Within_Range","SO4 checks perc diff out of range",2395.6235,67.5775317348378,"Within_Range","",4.3289176645,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -269,7 +269,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ","NUTR is only 2.5 mL"
-"28","COMPASS: Synoptic","CB","MSM","UP","B",10,"MSM_202505_UP_LYSB_10CM",2025,5,15,"14:13","EDT",4.82194323144105,"Within_Range","SO4 checks perc diff out of range",0,"bdl","",2.6e-05,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"28","COMPASS: Synoptic","CB","MSM","UP","B",10,"MSM_202505_UP_LYSB_10CM",2025,5,15,"14:13","EDT",154.5915,4.82194323144105,"Within_Range","SO4 checks perc diff out of range",0,0,"bdl","",2.6e-05,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -279,7 +279,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"29","COMPASS: Synoptic","CB","MSM","UP","B",20,"MSM_202505_UP_LYSB_20CM",2025,5,15,"14:16","EDT",2.73542420461634,"Within_Range","SO4 checks perc diff out of range",18.3828913963329,"Within_Range","",1.1776000145,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"29","COMPASS: Synoptic","CB","MSM","UP","B",20,"MSM_202505_UP_LYSB_20CM",2025,5,15,"14:16","EDT",87.6977,2.73542420461634,"Within_Range","SO4 checks perc diff out of range",651.6735,18.3828913963329,"Within_Range","",1.1776000145,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -289,7 +289,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"30","COMPASS: Synoptic","CB","MSM","UP","B",45,"MSM_202505_UP_LYSB_45CM",2025,5,15,"14:18","EDT",7.21666250779788,"Within_Range","SO4 checks perc diff out of range",68.9459266572637,"Within_Range","",4.4165745117,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"30","COMPASS: Synoptic","CB","MSM","UP","B",45,"MSM_202505_UP_LYSB_45CM",2025,5,15,"14:18","EDT",231.3662,7.21666250779788,"Within_Range","SO4 checks perc diff out of range",2444.1331,68.9459266572637,"Within_Range","",4.4165745117,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -299,7 +299,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"31","COMPASS: Synoptic","CB","MSM","UP","C",10,"MSM_202505_UP_LYSC_10CM",2025,5,15,"14:22","EDT",3.5750343106675,"Within_Range","SO4 checks perc diff out of range",0,"bdl","",2.6e-05,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"31","COMPASS: Synoptic","CB","MSM","UP","C",10,"MSM_202505_UP_LYSC_10CM",2025,5,15,"14:22","EDT",114.6156,3.5750343106675,"Within_Range","SO4 checks perc diff out of range",0,0,"bdl","",2.6e-05,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -309,7 +309,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"32","COMPASS: Synoptic","CB","MSM","UP","C",20,"MSM_202505_UP_LYSC_20CM",2025,5,15,"14:24","EDT",3.48403306300686,"Within_Range","SO4 checks perc diff out of range",27.741317348378,"Within_Range","",1.7770834679,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"32","COMPASS: Synoptic","CB","MSM","UP","C",20,"MSM_202505_UP_LYSC_20CM",2025,5,15,"14:24","EDT",111.6981,3.48403306300686,"Within_Range","SO4 checks perc diff out of range",983.4297,27.741317348378,"Within_Range","",1.7770834679,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -319,7 +319,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"33","COMPASS: Synoptic","CB","MSM","UP","C",45,"MSM_202505_UP_LYSC_45CM",2025,5,15,"14:26","EDT",6.11256394260761,"Within_Range","SO4 checks perc diff out of range",53.7891311706629,"Within_Range","",3.4456582329,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"33","COMPASS: Synoptic","CB","MSM","UP","C",45,"MSM_202505_UP_LYSC_45CM",2025,5,15,"14:26","EDT",195.9688,6.11256394260761,"Within_Range","SO4 checks perc diff out of range",1906.8247,53.7891311706629,"Within_Range","",3.4456582329,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -329,7 +329,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"34","COMPASS: Synoptic","CB","MSM","TR","A",10,"MSM_202505_TR_LYSA_10CM",2025,5,15,"13:05","EDT",10.2292576419214,"Within_Range","SO4 checks perc diff out of range",64.2581636107193,"Within_Range","",4.1162850833,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"34","COMPASS: Synoptic","CB","MSM","TR","A",10,"MSM_202505_TR_LYSA_10CM",2025,5,15,"13:05","EDT",327.95,10.2292576419214,"Within_Range","SO4 checks perc diff out of range",2277.9519,64.2581636107193,"Within_Range","",4.1162850833,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -339,7 +339,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"35","COMPASS: Synoptic","CB","MSM","TR","A",20,"MSM_202505_TR_LYSA_20CM",2025,5,15,"13:09","EDT",23.3592014971928,"Within_Range","SO4 checks perc diff out of range",143.715610719323,"Within_Range","",9.2061821488,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"35","COMPASS: Synoptic","CB","MSM","TR","A",20,"MSM_202505_TR_LYSA_20CM",2025,5,15,"13:09","EDT",748.896,23.3592014971928,"Within_Range","SO4 checks perc diff out of range",5094.7184,143.715610719323,"Within_Range","",9.2061821488,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -349,7 +349,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"36","COMPASS: Synoptic","CB","MSM","TR","A",45,"MSM_202505_TR_LYSA_45CM",2025,5,15,"13:12","EDT",20.6814628820961,"Within_Range","SO4 checks perc diff out of range",157.714146685472,"Within_Range","",10.1029024655,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"36","COMPASS: Synoptic","CB","MSM","TR","A",45,"MSM_202505_TR_LYSA_45CM",2025,5,15,"13:12","EDT",663.0477,20.6814628820961,"Within_Range","SO4 checks perc diff out of range",5590.9665,157.714146685472,"Within_Range","",10.1029024655,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -359,7 +359,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"37","COMPASS: Synoptic","CB","MSM","TR","B",10,"MSM_202505_TR_LYSB_10CM",2025,5,15,"13:16","EDT",10.7552027448534,"Within_Range","SO4 checks perc diff out of range",68.4137376586742,"Within_Range","",4.382483469,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"37","COMPASS: Synoptic","CB","MSM","TR","B",10,"MSM_202505_TR_LYSB_10CM",2025,5,15,"13:16","EDT",344.8118,10.7552027448534,"Within_Range","SO4 checks perc diff out of range",2425.267,68.4137376586742,"Within_Range","",4.382483469,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -369,7 +369,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"38","COMPASS: Synoptic","CB","MSM","TR","B",20,"MSM_202505_TR_LYSB_20CM",2025,5,15,"13:20","EDT",21.2922520274485,"Within_Range","SO4 checks perc diff out of range",148.702660084626,"Within_Range","",9.5256433051,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"38","COMPASS: Synoptic","CB","MSM","TR","B",20,"MSM_202505_TR_LYSB_20CM",2025,5,15,"13:20","EDT",682.6296,21.2922520274485,"Within_Range","SO4 checks perc diff out of range",5271.5093,148.702660084626,"Within_Range","",9.5256433051,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -379,7 +379,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"39","COMPASS: Synoptic","CB","MSM","TR","B",45,"MSM_202505_TR_LYSB_45CM",2025,5,15,"13:25","EDT",16.9029444791017,"Within_Range","SO4 checks perc diff out of range",179.462507757405,"Within_Range","",11.4960622413,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"39","COMPASS: Synoptic","CB","MSM","TR","B",45,"MSM_202505_TR_LYSB_45CM",2025,5,15,"13:25","EDT",541.9084,16.9029444791017,"Within_Range","SO4 checks perc diff out of range",6361.9459,179.462507757405,"Within_Range","",11.4960622413,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -389,7 +389,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"40","COMPASS: Synoptic","CB","MSM","TR","C",20,"MSM_202505_TR_LYSC_20CM",2025,5,15,"13:30","EDT",14.6054616344354,"Within_Range","SO4 checks perc diff out of range",113.878036671368,"Within_Range","",7.2948423548,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"40","COMPASS: Synoptic","CB","MSM","TR","C",20,"MSM_202505_TR_LYSC_20CM",2025,5,15,"13:30","EDT",468.2511,14.6054616344354,"Within_Range","SO4 checks perc diff out of range",4036.9764,113.878036671368,"Within_Range","",7.2948423548,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -399,7 +399,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"41","COMPASS: Synoptic","CB","MSM","TR","C",45,"MSM_202505_TR_LYSC_45CM",2025,5,15,"13:33","EDT",22.6498003742982,"Within_Range","SO4 checks perc diff out of range",181.342377997179,"Within_Range","",11.6164832511,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"41","COMPASS: Synoptic","CB","MSM","TR","C",45,"MSM_202505_TR_LYSC_45CM",2025,5,15,"13:33","EDT",726.1526,22.6498003742982,"Within_Range","SO4 checks perc diff out of range",6428.5873,181.342377997179,"Within_Range","",11.6164832511,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -409,7 +409,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"42","COMPASS: Synoptic","CB","MSM","WC","A",10,"MSM_202505_WC_LYSA_10CM",2025,5,15,"12:01","EDT",42.2758047411104,"Within_Range","SO4 checks perc diff out of range",225.290403385049,"Within_Range","",14.4317124536,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"42","COMPASS: Synoptic","CB","MSM","WC","A",10,"MSM_202505_WC_LYSA_10CM",2025,5,15,"12:01","EDT",1355.3623,42.2758047411104,"Within_Range","SO4 checks perc diff out of range",7986.5448,225.290403385049,"Within_Range","",14.4317124536,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -419,7 +419,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"43","COMPASS: Synoptic","CB","MSM","WC","A",20,"MSM_202505_WC_LYSA_20CM",2025,5,15,"12:07","EDT",33.6679132875858,"Within_Range","SO4 checks perc diff out of range",195.252981664316,"Within_Range","",12.5075707874,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"43","COMPASS: Synoptic","CB","MSM","WC","A",20,"MSM_202505_WC_LYSA_20CM",2025,5,15,"12:07","EDT",1079.3933,33.6679132875858,"Within_Range","SO4 checks perc diff out of range",6921.7182,195.252981664316,"Within_Range","",12.5075707874,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -429,7 +429,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"44","COMPASS: Synoptic","CB","MSM","WC","A",45,"MSM_202505_WC_LYSA_45CM",2025,5,15,"12:09","EDT",3.18834061135371,"Within_Range","SO4 checks perc diff out of range",249.15338787024,"Within_Range","",15.9603310932,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"44","COMPASS: Synoptic","CB","MSM","WC","A",45,"MSM_202505_WC_LYSA_45CM",2025,5,15,"12:09","EDT",102.2182,3.18834061135371,"Within_Range","SO4 checks perc diff out of range",8832.4876,249.15338787024,"Within_Range","",15.9603310932,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -439,7 +439,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"45","COMPASS: Synoptic","CB","MSM","WC","B",10,"MSM_202505_WC_LYSB_10CM",2025,5,15,"12:13","EDT",36.2393543356207,"Within_Range","SO4 checks perc diff out of range",206.727029619182,"Within_Range","",13.2425770724,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"45","COMPASS: Synoptic","CB","MSM","WC","B",10,"MSM_202505_WC_LYSB_10CM",2025,5,15,"12:13","EDT",1161.8337,36.2393543356207,"Within_Range","SO4 checks perc diff out of range",7328.4732,206.727029619182,"Within_Range","",13.2425770724,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -449,7 +449,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"46","COMPASS: Synoptic","CB","MSM","WC","B",20,"MSM_202505_WC_LYSB_20CM",2025,5,15,"12:18","EDT",34.308041172801,"Within_Range","SO4 checks perc diff out of range",213.1062651622,"Within_Range","",13.6512190997,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"46","COMPASS: Synoptic","CB","MSM","WC","B",20,"MSM_202505_WC_LYSB_20CM",2025,5,15,"12:18","EDT",1099.9158,34.308041172801,"Within_Range","SO4 checks perc diff out of range",7554.6171,213.1062651622,"Within_Range","",13.6512190997,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -459,7 +459,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"47","COMPASS: Synoptic","CB","MSM","WC","C",10,"MSM_202505_WC_LYSC_10CM",2025,5,15,"12:21","EDT",41.268574547723,"Within_Range","SO4 checks perc diff out of range",222.068643159379,"Within_Range","",14.2253324538,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"47","COMPASS: Synoptic","CB","MSM","WC","C",10,"MSM_202505_WC_LYSC_10CM",2025,5,15,"12:21","EDT",1323.0705,41.268574547723,"Within_Range","SO4 checks perc diff out of range",7872.3334,222.068643159379,"Within_Range","",14.2253324538,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -469,7 +469,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"48","COMPASS: Synoptic","CB","MSM","WC","C",20,"MSM_202505_WC_LYSC_20CM",2025,5,15,"12:24","EDT",29.4480817217717,"Within_Range","SO4 checks perc diff out of range",201.246124118477,"Within_Range","",12.8914804057,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"48","COMPASS: Synoptic","CB","MSM","WC","C",20,"MSM_202505_WC_LYSC_20CM",2025,5,15,"12:24","EDT",944.1055,29.4480817217717,"Within_Range","SO4 checks perc diff out of range",7134.1751,201.246124118477,"Within_Range","",12.8914804057,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -479,7 +479,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"49","COMPASS: Synoptic","CB","MSM","WC","C",45,"MSM_202505_WC_LYSC_45CM",2025,5,15,"12:27","EDT",4.6917903930131,"Within_Range","SO4 checks perc diff out of range",217.799246826516,"Within_Range","",13.9518428231,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"49","COMPASS: Synoptic","CB","MSM","WC","C",45,"MSM_202505_WC_LYSC_45CM",2025,5,15,"12:27","EDT",150.4188,4.6917903930131,"Within_Range","SO4 checks perc diff out of range",7720.9833,217.799246826516,"Within_Range","",13.9518428231,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -489,7 +489,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"50","COMPASS: Synoptic","CB","MSM","SW","A",0,"MSM_202505_SW_A",2025,5,15,"10:45","EDT",33.3808390517779,"Within_Range","SO4 checks perc diff out of range",213.696160789845,"Within_Range","",13.6890067223,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"50","COMPASS: Synoptic","CB","MSM","SW","A",0,"MSM_202505_SW_A",2025,5,15,"10:45","EDT",1070.1897,33.3808390517779,"Within_Range","SO4 checks perc diff out of range",7575.5289,213.696160789845,"Within_Range","",13.6890067223,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -499,7 +499,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"51","COMPASS: Synoptic","CB","MSM","SW","B",0,"MSM_202505_SW_B",2025,5,15,"10:45","EDT",34.6081690580162,"Within_Range","SO4 checks perc diff out of range",221.124016925247,"Within_Range","",14.1648214448,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"51","COMPASS: Synoptic","CB","MSM","SW","B",0,"MSM_202505_SW_B",2025,5,15,"10:45","EDT",1109.5379,34.6081690580162,"Within_Range","SO4 checks perc diff out of range",7838.8464,221.124016925247,"Within_Range","",14.1648214448,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -509,7 +509,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"52","COMPASS: Synoptic","CB","MSM","SW","C",0,"MSM_202505_SW_C",2025,5,15,"10:45","EDT",33.767835308796,"Within_Range","SO4 checks perc diff out of range",215.659923836389,"Within_Range","",13.8148017501,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"52","COMPASS: Synoptic","CB","MSM","SW","C",0,"MSM_202505_SW_C",2025,5,15,"10:45","EDT",1082.5968,33.767835308796,"Within_Range","SO4 checks perc diff out of range",7645.1443,215.659923836389,"Within_Range","",13.8148017501,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -519,7 +519,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"53","COMPASS: Synoptic","CB","GWI","UP","A",10,"GWI_202505_UP_LYSA_10CM",2025,5,20,"14:02","EDT",19.7771802869619,"Within_Range","SO4 checks perc diff out of range",110.069794076164,"Within_Range","",7.0508933794,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"53","COMPASS: Synoptic","CB","GWI","UP","A",10,"GWI_202505_UP_LYSA_10CM",2025,5,20,"14:02","EDT",634.0564,19.7771802869619,"Within_Range","SO4 checks perc diff out of range",3901.9742,110.069794076164,"Within_Range","",7.0508933794,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -529,7 +529,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"54","COMPASS: Synoptic","CB","GWI","UP","A",20,"GWI_202505_UP_LYSA_20CM",2025,5,20,"13:45","EDT",19.9308702432938,"Within_Range","SO4 checks perc diff out of range",145.223878702398,"Within_Range","",9.3027990055,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"54","COMPASS: Synoptic","CB","GWI","UP","A",20,"GWI_202505_UP_LYSA_20CM",2025,5,20,"13:45","EDT",638.9837,19.9308702432938,"Within_Range","SO4 checks perc diff out of range",5148.1865,145.223878702398,"Within_Range","",9.3027990055,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -539,7 +539,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"55","COMPASS: Synoptic","CB","GWI","UP","A",45,"GWI_202505_UP_LYSA_45CM",2025,5,20,"13:48","EDT",21.9071958827199,"Within_Range","SO4 checks perc diff out of range",131.383534555712,"Within_Range","",8.4162121641,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"55","COMPASS: Synoptic","CB","GWI","UP","A",45,"GWI_202505_UP_LYSA_45CM",2025,5,20,"13:48","EDT",702.3447,21.9071958827199,"Within_Range","SO4 checks perc diff out of range",4657.5463,131.383534555712,"Within_Range","",8.4162121641,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -549,7 +549,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"56","COMPASS: Synoptic","CB","GWI","UP","B",10,"GWI_202505_UP_LYSB_10CM",2025,5,20,"13:51","EDT",6.57069868995633,"Within_Range","SO4 checks perc diff out of range",35.7754696755994,"Within_Range","",2.2917364028,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"56","COMPASS: Synoptic","CB","GWI","UP","B",10,"GWI_202505_UP_LYSB_10CM",2025,5,20,"13:51","EDT",210.6566,6.57069868995633,"Within_Range","SO4 checks perc diff out of range",1268.2404,35.7754696755994,"Within_Range","",2.2917364028,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -559,7 +559,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"57","COMPASS: Synoptic","CB","GWI","UP","B",20,"GWI_202505_UP_LYSB_20CM",2025,5,20,"13:53","EDT",13.3182002495321,"Within_Range","SO4 checks perc diff out of range",71.7374471086037,"Within_Range","",4.5953941475,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"57","COMPASS: Synoptic","CB","GWI","UP","B",20,"GWI_202505_UP_LYSB_20CM",2025,5,20,"13:53","EDT",426.9815,13.3182002495321,"Within_Range","SO4 checks perc diff out of range",2543.0925,71.7374471086037,"Within_Range","",4.5953941475,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -569,7 +569,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"58","COMPASS: Synoptic","CB","GWI","UP","B",45,"GWI_202505_UP_LYSB_45CM",2025,5,20,"13:55","EDT",15.8579850280724,"Within_Range","SO4 checks perc diff out of range",103.987258110014,"Within_Range","",6.6612573781,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"58","COMPASS: Synoptic","CB","GWI","UP","B",45,"GWI_202505_UP_LYSB_45CM",2025,5,20,"13:55","EDT",508.407,15.8579850280724,"Within_Range","SO4 checks perc diff out of range",3686.3483,103.987258110014,"Within_Range","",6.6612573781,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -579,7 +579,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"59","COMPASS: Synoptic","CB","GWI","UP","C",20,"GWI_202505_UP_LYSC_20CM",2025,5,20,"13:41","EDT",10.8311759201497,"Within_Range","SO4 checks perc diff out of range",70.0929167842031,"Within_Range","",4.4900485773,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"59","COMPASS: Synoptic","CB","GWI","UP","C",20,"GWI_202505_UP_LYSC_20CM",2025,5,20,"13:41","EDT",347.2475,10.8311759201497,"Within_Range","SO4 checks perc diff out of range",2484.7939,70.0929167842031,"Within_Range","",4.4900485773,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -589,7 +589,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"60","COMPASS: Synoptic","CB","GWI","TR","A",10,"GWI_202505_TR_LYSA_10CM",2025,5,20,"13:08","EDT",28.7387086712414,"Within_Range","SO4 checks perc diff out of range",175.677142454161,"Within_Range","",11.2535787429,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"60","COMPASS: Synoptic","CB","GWI","TR","A",10,"GWI_202505_TR_LYSA_10CM",2025,5,20,"13:08","EDT",921.363,28.7387086712414,"Within_Range","SO4 checks perc diff out of range",6227.7547,175.677142454161,"Within_Range","",11.2535787429,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -599,7 +599,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"61","COMPASS: Synoptic","CB","GWI","TR","A",20,"GWI_202505_TR_LYSA_20CM",2025,5,20,"13:10","EDT",36.8981253898939,"Within_Range","SO4 checks perc diff out of range",271.134332863188,"Within_Range","",17.3683897647,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"61","COMPASS: Synoptic","CB","GWI","TR","A",20,"GWI_202505_TR_LYSA_20CM",2025,5,20,"13:10","EDT",1182.9539,36.8981253898939,"Within_Range","SO4 checks perc diff out of range",9611.7121,271.134332863188,"Within_Range","",17.3683897647,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -609,7 +609,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"62","COMPASS: Synoptic","CB","GWI","TR","B",10,"GWI_202505_TR_LYSB_10CM",2025,5,20,"13:13","EDT",22.8696943231441,"Within_Range","SO4 checks perc diff out of range",127.790045133992,"Within_Range","",8.1860198797,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"62","COMPASS: Synoptic","CB","GWI","TR","B",10,"GWI_202505_TR_LYSB_10CM",2025,5,20,"13:13","EDT",733.2024,22.8696943231441,"Within_Range","SO4 checks perc diff out of range",4530.1571,127.790045133992,"Within_Range","",8.1860198797,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -619,7 +619,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"63","COMPASS: Synoptic","CB","GWI","TR","B",20,"GWI_202505_TR_LYSB_20CM",2025,5,20,"13:20","EDT",26.5739644416719,"Within_Range","SO4 checks perc diff out of range",190.230301833568,"Within_Range","",12.1858272094,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"63","COMPASS: Synoptic","CB","GWI","TR","B",20,"GWI_202505_TR_LYSB_20CM",2025,5,20,"13:20","EDT",851.9613,26.5739644416719,"Within_Range","SO4 checks perc diff out of range",6743.6642,190.230301833568,"Within_Range","",12.1858272094,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -629,7 +629,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"64","COMPASS: Synoptic","CB","GWI","TR","B",45,"GWI_202505_TR_LYSB_45CM",2025,5,20,"","",41.309192139738,"Within_Range","SO4 checks perc diff out of range",286.612456981664,"Within_Range","",18.3598897612,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"64","COMPASS: Synoptic","CB","GWI","TR","B",45,"GWI_202505_TR_LYSB_45CM",2025,5,20,"","",1324.3727,41.309192139738,"Within_Range","SO4 checks perc diff out of range",10160.4116,286.612456981664,"Within_Range","",18.3598897612,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -639,7 +639,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"65","COMPASS: Synoptic","CB","GWI","TR","C",10,"GWI_202505_TR_LYSC_10CM",2025,5,20,"13:00","EDT",14.5986930754835,"Within_Range","SO4 checks perc diff out of range",83.1370465444288,"Within_Range","",5.3256313981,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"65","COMPASS: Synoptic","CB","GWI","TR","C",10,"GWI_202505_TR_LYSC_10CM",2025,5,20,"13:00","EDT",468.0341,14.5986930754835,"Within_Range","SO4 checks perc diff out of range",2947.2083,83.1370465444288,"Within_Range","",5.3256313981,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -649,7 +649,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"66","COMPASS: Synoptic","CB","GWI","TR","C",20,"GWI_202505_TR_LYSC_20CM",2025,5,20,"13:02","EDT",25.3317623206488,"Within_Range","SO4 checks perc diff out of range",146.682448519041,"Within_Range","",9.3962322896,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"66","COMPASS: Synoptic","CB","GWI","TR","C",20,"GWI_202505_TR_LYSC_20CM",2025,5,20,"13:02","EDT",812.1363,25.3317623206488,"Within_Range","SO4 checks perc diff out of range",5199.8928,146.682448519041,"Within_Range","",9.3962322896,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -659,7 +659,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"67","COMPASS: Synoptic","CB","GWI","WC","A",10,"GWI_202505_WC_LYSA_10CM",2025,5,20,"","",49.8044603867748,"Within_Range","SO4 checks perc diff out of range",181.624380818054,"Within_Range","",11.6345478301,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"67","COMPASS: Synoptic","CB","GWI","WC","A",10,"GWI_202505_WC_LYSA_10CM",2025,5,20,"","",1596.731,49.8044603867748,"Within_Range","SO4 checks perc diff out of range",6438.5843,181.624380818054,"Within_Range","",11.6345478301,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -669,7 +669,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"68","COMPASS: Synoptic","CB","GWI","WC","A",20,"GWI_202505_WC_LYSA_20CM",2025,5,20,"","",53.850480349345,"Within_Range","SO4 checks perc diff out of range",299.969715091678,"Within_Range","",19.2155310048,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"68","COMPASS: Synoptic","CB","GWI","WC","A",20,"GWI_202505_WC_LYSA_20CM",2025,5,20,"","",1726.4464,53.850480349345,"Within_Range","SO4 checks perc diff out of range",10633.9264,299.969715091678,"Within_Range","",19.2155310048,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -679,7 +679,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"69","COMPASS: Synoptic","CB","GWI","WC","A",45,"GWI_202505_WC_LYSA_45CM",2025,5,20,"","",45.8154990642545,"Within_Range","SO4 checks perc diff out of range",345.15066854725,"Within_Range","",22.1097392984,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"69","COMPASS: Synoptic","CB","GWI","WC","A",45,"GWI_202505_WC_LYSA_45CM",2025,5,20,"","",1468.8449,45.8154990642545,"Within_Range","SO4 checks perc diff out of range",12235.5912,345.15066854725,"Within_Range","",22.1097392984,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -689,7 +689,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"70","COMPASS: Synoptic","CB","GWI","WC","B",10,"GWI_202505_WC_LYSB_10CM",2025,5,20,"","",52.1496069868996,"Within_Range","SO4 checks perc diff out of range",206.98589280677,"Within_Range","",13.2591593693,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"70","COMPASS: Synoptic","CB","GWI","WC","B",10,"GWI_202505_WC_LYSB_10CM",2025,5,20,"","",1671.9164,52.1496069868996,"Within_Range","SO4 checks perc diff out of range",7337.6499,206.98589280677,"Within_Range","",13.2591593693,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -699,7 +699,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"71","COMPASS: Synoptic","CB","GWI","WC","B",20,"GWI_202505_WC_LYSB_20CM",2025,5,20,"","",50.0351621958827,"Within_Range","SO4 checks perc diff out of range",243.528868829337,"Within_Range","",15.6000348088,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"71","COMPASS: Synoptic","CB","GWI","WC","B",20,"GWI_202505_WC_LYSB_20CM",2025,5,20,"","",1604.1273,50.0351621958827,"Within_Range","SO4 checks perc diff out of range",8633.0984,243.528868829337,"Within_Range","",15.6000348088,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -709,7 +709,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"72","COMPASS: Synoptic","CB","GWI","WC","B",45,"GWI_202505_WC_LYSB_45CM",2025,5,20,"","",57.8896101060512,"Within_Range","SO4 checks perc diff out of range",399.760739069111,"Within_Range","",25.6079593874,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"72","COMPASS: Synoptic","CB","GWI","WC","B",45,"GWI_202505_WC_LYSB_45CM",2025,5,20,"","",1855.9409,57.8896101060512,"Within_Range","SO4 checks perc diff out of range",14171.5182,399.760739069111,"Within_Range","",25.6079593874,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -719,7 +719,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"73","COMPASS: Synoptic","CB","GWI","WC","C",10,"GWI_202505_WC_LYSC_10CM",2025,5,20,"","",46.9958983156581,"Within_Range","SO4 checks perc diff out of range",214.44250493653,"Within_Range","",13.7368161476,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"73","COMPASS: Synoptic","CB","GWI","WC","C",10,"GWI_202505_WC_LYSC_10CM",2025,5,20,"","",1506.6885,46.9958983156581,"Within_Range","SO4 checks perc diff out of range",7601.9868,214.44250493653,"Within_Range","",13.7368161476,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -729,7 +729,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"74","COMPASS: Synoptic","CB","GWI","SW","A",0,"GWI_202505_SW_A",2025,5,20,"","",47.6806456643793,"Within_Range","SO4 checks perc diff out of range",307.12074471086,"Within_Range","",19.6736127328,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"74","COMPASS: Synoptic","CB","GWI","SW","A",0,"GWI_202505_SW_A",2025,5,20,"","",1528.6415,47.6806456643793,"Within_Range","SO4 checks perc diff out of range",10887.4304,307.12074471086,"Within_Range","",19.6736127328,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -739,7 +739,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"75","COMPASS: Synoptic","CB","GWI","SW","B",0,"GWI_202505_SW_B",2025,5,20,"","",50.3611883967561,"Within_Range","SO4 checks perc diff out of range",323.20295909732,"Within_Range","",20.7038096343,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"75","COMPASS: Synoptic","CB","GWI","SW","B",0,"GWI_202505_SW_B",2025,5,20,"","",1614.5797,50.3611883967561,"Within_Range","SO4 checks perc diff out of range",11457.5449,323.20295909732,"Within_Range","",20.7038096343,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -749,7 +749,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"76","COMPASS: Synoptic","CB","GWI","SW","C",0,"GWI_202505_SW_C",2025,5,20,"","",51.4611946350593,"Within_Range","SO4 checks perc diff out of range",331.429086036671,"Within_Range","",21.2307601077,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"76","COMPASS: Synoptic","CB","GWI","SW","C",0,"GWI_202505_SW_C",2025,5,20,"","",1649.8459,51.4611946350593,"Within_Range","SO4 checks perc diff out of range",11749.1611,331.429086036671,"Within_Range","",21.2307601077,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -759,7 +759,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"77","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202505_UP_LYSA_10CM",2025,5,21,"10:20","EDT",0.0801684341859014,"Within_Range","SO4 checks perc diff out of range",0.0642820874471086,"Within_Range","",0.0041437916,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"77","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202505_UP_LYSA_10CM",2025,5,21,"10:20","EDT",2.5702,0.0801684341859014,"Within_Range","SO4 checks perc diff out of range",2.2788,0.0642820874471086,"Within_Range","",0.0041437916,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -769,7 +769,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"78","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202505_UP_LYSA_20CM",2025,5,21,"10:24","EDT",0.428247036805989,"Within_Range","SO4 checks perc diff out of range",0.0707277856135402,"Within_Range","",0.0045566911,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"78","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202505_UP_LYSA_20CM",2025,5,21,"10:24","EDT",13.7296,0.428247036805989,"Within_Range","SO4 checks perc diff out of range",2.5073,0.0707277856135402,"Within_Range","",0.0045566911,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -779,7 +779,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"79","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202505_UP_LYSA_45CM",2025,5,21,"10:26","EDT",0.0434217092950717,"Within_Range","SO4 checks perc diff out of range",0.0956248236953455,"Within_Range","",0.0061515493,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"79","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202505_UP_LYSA_45CM",2025,5,21,"10:26","EDT",1.3921,0.0434217092950717,"Within_Range","SO4 checks perc diff out of range",3.3899,0.0956248236953455,"Within_Range","",0.0061515493,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -789,7 +789,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"80","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202505_UP_LYSB_10CM",2025,5,21,"10:28","EDT",0.0719931378665003,"Within_Range","SO4 checks perc diff out of range",0.0493624823695346,"Within_Range","",0.0031880693,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"80","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202505_UP_LYSB_10CM",2025,5,21,"10:28","EDT",2.3081,0.0719931378665003,"Within_Range","SO4 checks perc diff out of range",1.7499,0.0493624823695346,"Within_Range","",0.0031880693,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -799,7 +799,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"81","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202505_UP_LYSB_20CM",2025,5,21,"10:31","EDT",0.0913100436681223,"Within_Range","SO4 checks perc diff out of range",0.0543864598025388,"Within_Range","",0.003509896,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"81","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202505_UP_LYSB_20CM",2025,5,21,"10:31","EDT",2.9274,0.0913100436681223,"Within_Range","SO4 checks perc diff out of range",1.928,0.0543864598025388,"Within_Range","",0.003509896,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -809,7 +809,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"82","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202505_UP_LYSB_45CM",2025,5,21,"10:34","EDT",0.0198721147847785,"Within_Range","SO4 checks perc diff out of range",0.115260930888575,"Within_Range","",0.007409402,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"82","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202505_UP_LYSB_45CM",2025,5,21,"10:34","EDT",0.6371,0.0198721147847785,"Within_Range","SO4 checks perc diff out of range",4.086,0.115260930888575,"Within_Range","",0.007409402,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -819,7 +819,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"83","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202505_UP_LYSC_10CM",2025,5,21,"10:36","EDT",0.0325140361821585,"Within_Range","SO4 checks perc diff out of range",0.234600846262341,"Within_Range","",0.0150540962,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"83","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202505_UP_LYSC_10CM",2025,5,21,"10:36","EDT",1.0424,0.0325140361821585,"Within_Range","SO4 checks perc diff out of range",8.3166,0.234600846262341,"Within_Range","",0.0150540962,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -829,7 +829,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"84","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202505_UP_LYSC_20CM",2025,5,21,"10:39","EDT",0.0231659388646288,"Within_Range","SO4 checks perc diff out of range",0.126885754583921,"Within_Range","",0.0081540667,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"84","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202505_UP_LYSC_20CM",2025,5,21,"10:39","EDT",0.7427,0.0231659388646288,"Within_Range","SO4 checks perc diff out of range",4.4981,0.126885754583921,"Within_Range","",0.0081540667,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -839,7 +839,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"85","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202505_UP_LYSC_45CM",2025,5,21,"10:43","EDT",0.0299656893325016,"Within_Range","SO4 checks perc diff out of range",0.251912552891396,"Within_Range","",0.0161630521,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"85","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202505_UP_LYSC_45CM",2025,5,21,"10:43","EDT",0.9607,0.0299656893325016,"Within_Range","SO4 checks perc diff out of range",8.9303,0.251912552891396,"Within_Range","",0.0161630521,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -849,7 +849,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"86","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202505_SWAMP_LYSA_10CM",2025,5,21,"11:29","EDT",0.388262632563943,"Within_Range","SO4 checks perc diff out of range",0.529709449929478,"Within_Range","",0.0339582074,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"86","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202505_SWAMP_LYSA_10CM",2025,5,21,"11:29","EDT",12.4477,0.388262632563943,"Within_Range","SO4 checks perc diff out of range",18.7782,0.529709449929478,"Within_Range","",0.0339582074,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -859,7 +859,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"87","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202505_SWAMP_LYSA_20CM",2025,5,21,"11:34","EDT",0.0222832189644417,"Within_Range","SO4 checks perc diff out of range",0.372820874471086,"Within_Range","",0.0239082155,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"87","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202505_SWAMP_LYSA_20CM",2025,5,21,"11:34","EDT",0.7144,0.0222832189644417,"Within_Range","SO4 checks perc diff out of range",13.2165,0.372820874471086,"Within_Range","",0.0239082155,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -869,7 +869,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"88","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202505_SWAMP_LYSA_45CM",2025,5,21,"11:36","EDT",0.295355583281347,"Within_Range","SO4 checks perc diff out of range",1.31389844851904,"Within_Range","",0.0841919039,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"88","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202505_SWAMP_LYSA_45CM",2025,5,21,"11:36","EDT",9.4691,0.295355583281347,"Within_Range","SO4 checks perc diff out of range",46.5777,1.31389844851904,"Within_Range","",0.0841919039,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -879,7 +879,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"89","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202505_SWAMP_LYSB_10CM",2025,5,21,"11:37","EDT",0.267891453524641,"Within_Range","SO4 checks perc diff out of range",1.00900141043724,"Within_Range","",0.0646607637,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"89","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202505_SWAMP_LYSB_10CM",2025,5,21,"11:37","EDT",8.5886,0.267891453524641,"Within_Range","SO4 checks perc diff out of range",35.7691,1.00900141043724,"Within_Range","",0.0646607637,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -889,7 +889,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"90","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202505_SWAMP_LYSB_20CM",2025,5,21,"11:40","EDT",0.403721147847785,"Within_Range","SO4 checks perc diff out of range",0.595260930888575,"Within_Range","",0.038157314,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"90","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202505_SWAMP_LYSB_20CM",2025,5,21,"11:40","EDT",12.9433,0.403721147847785,"Within_Range","SO4 checks perc diff out of range",21.102,0.595260930888575,"Within_Range","",0.038157314,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -899,7 +899,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"91","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202505_SWAMP_LYSB_45CM",2025,5,21,"11:42","EDT",0.374061135371179,"Within_Range","SO4 checks perc diff out of range",1.17133991537377,"Within_Range","",0.075059868,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"91","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202505_SWAMP_LYSB_45CM",2025,5,21,"11:42","EDT",11.9924,0.374061135371179,"Within_Range","SO4 checks perc diff out of range",41.524,1.17133991537377,"Within_Range","",0.075059868,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -909,7 +909,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"92","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202505_SWAMP_LYSC_10CM",2025,5,21,"11:48","EDT",0.0336805988771054,"Within_Range","SO4 checks perc diff out of range",0.982558533145275,"Within_Range","",0.0629668819,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"92","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202505_SWAMP_LYSC_10CM",2025,5,21,"11:48","EDT",1.0798,0.0336805988771054,"Within_Range","SO4 checks perc diff out of range",34.8317,0.982558533145275,"Within_Range","",0.0629668819,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -919,7 +919,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"93","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202505_SWAMP_LYSC_20CM",2025,5,21,"11:51","EDT",0.0341453524641298,"Within_Range","SO4 checks perc diff out of range",0.0963864598025388,"Within_Range","",0.0062003383,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"93","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202505_SWAMP_LYSC_20CM",2025,5,21,"11:51","EDT",1.0947,0.0341453524641298,"Within_Range","SO4 checks perc diff out of range",3.4169,0.0963864598025388,"Within_Range","",0.0062003383,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -929,7 +929,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"94","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202505_SWAMP_LYSC_45CM",2025,5,21,"11:53","EDT",0.0281316281971304,"Within_Range","SO4 checks perc diff out of range",0.115173483779972,"Within_Range","",0.0074038003,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"94","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202505_SWAMP_LYSC_45CM",2025,5,21,"11:53","EDT",0.9019,0.0281316281971304,"Within_Range","SO4 checks perc diff out of range",4.0829,0.115173483779972,"Within_Range","",0.0074038003,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -939,7 +939,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"95","COMPASS: Synoptic","CB","SWH","TR","A",10,"SWH_202505_TR_LYSA_10CM",2025,5,21,"10:21","EDT",0.199154709918902,"Within_Range","SO4 checks perc diff out of range",3.22380818053597,"Within_Range","",0.206537188,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"95","COMPASS: Synoptic","CB","SWH","TR","A",10,"SWH_202505_TR_LYSA_10CM",2025,5,21,"10:21","EDT",6.3849,0.199154709918902,"Within_Range","SO4 checks perc diff out of range",114.284,3.22380818053597,"Within_Range","",0.206537188,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -949,7 +949,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"96","COMPASS: Synoptic","CB","SWH","TR","A",20,"SWH_202505_TR_LYSA_20CM",2025,5,21,"10:29","EDT",0.0144853399875234,"Within_Range","SO4 checks perc diff out of range",4.50593229901269,"Within_Range","",0.2886676871,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"96","COMPASS: Synoptic","CB","SWH","TR","A",20,"SWH_202505_TR_LYSA_20CM",2025,5,21,"10:29","EDT",0.4644,0.0144853399875234,"Within_Range","SO4 checks perc diff out of range",159.7353,4.50593229901269,"Within_Range","",0.2886676871,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -959,7 +959,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"97","COMPASS: Synoptic","CB","SWH","TR","A",45,"SWH_202505_TR_LYSA_45CM",2025,5,21,"10:35","EDT",0,"bdl","SO4 checks perc diff out of range",15.7920648801128,"Within_Range","",1.0116364609,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"97","COMPASS: Synoptic","CB","SWH","TR","A",45,"SWH_202505_TR_LYSA_45CM",2025,5,21,"10:35","EDT",0,0,"bdl","SO4 checks perc diff out of range",559.8287,15.7920648801128,"Within_Range","",1.0116364609,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -969,7 +969,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"98","COMPASS: Synoptic","CB","SWH","TR","B",10,"SWH_202505_TR_LYSB_10CM",2025,5,21,"10:42","EDT",0.347738615096694,"Within_Range","SO4 checks perc diff out of range",0.910747531734838,"Within_Range","",0.058366802,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"98","COMPASS: Synoptic","CB","SWH","TR","B",10,"SWH_202505_TR_LYSB_10CM",2025,5,21,"10:42","EDT",11.1485,0.347738615096694,"Within_Range","SO4 checks perc diff out of range",32.286,0.910747531734838,"Within_Range","",0.058366802,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -979,7 +979,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"99","COMPASS: Synoptic","CB","SWH","TR","B",20,"SWH_202505_TR_LYSB_20CM",2025,5,21,"10:50","EDT",0,"bdl","SO4 checks perc diff out of range",4.71697320169252,"Within_Range","",0.3021865769,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"99","COMPASS: Synoptic","CB","SWH","TR","B",20,"SWH_202505_TR_LYSB_20CM",2025,5,21,"10:50","EDT",0,0,"bdl","SO4 checks perc diff out of range",167.2167,4.71697320169252,"Within_Range","",0.3021865769,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -989,7 +989,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"100","COMPASS: Synoptic","CB","SWH","TR","B",45,"SWH_202505_TR_LYSB_45CM",2025,5,21,"10:55","EDT",0,"bdl","SO4 checks perc diff out of range",14.3982115655853,"Within_Range","",0.9223487962,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"100","COMPASS: Synoptic","CB","SWH","TR","B",45,"SWH_202505_TR_LYSB_45CM",2025,5,21,"10:55","EDT",0,0,"bdl","SO4 checks perc diff out of range",510.4166,14.3982115655853,"Within_Range","",0.9223487962,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -999,7 +999,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ","Two samples (FE, NUTR) not checked off on the datasheet, but I think they were taken "
-"101","COMPASS: Synoptic","CB","SWH","TR","C",10,"SWH_202505_TR_LYSC_10CM",2025,5,21,"11:19","EDT",0.437354959451029,"Within_Range","SO4 checks perc diff out of range",1.80911706629055,"Within_Range","",0.1159146924,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"101","COMPASS: Synoptic","CB","SWH","TR","C",10,"SWH_202505_TR_LYSC_10CM",2025,5,21,"11:19","EDT",14.0216,0.437354959451029,"Within_Range","SO4 checks perc diff out of range",64.1332,1.80911706629055,"Within_Range","",0.1159146924,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -1009,7 +1009,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"102","COMPASS: Synoptic","CB","SWH","TR","C",20,"SWH_202505_TR_LYSC_20CM",2025,5,21,"11:25","EDT",0.160315034310667,"Within_Range","SO4 checks perc diff out of range",3.34665162200282,"Within_Range","",0.2144063116,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"102","COMPASS: Synoptic","CB","SWH","TR","C",20,"SWH_202505_TR_LYSC_20CM",2025,5,21,"11:25","EDT",5.1397,0.160315034310667,"Within_Range","SO4 checks perc diff out of range",118.6388,3.34665162200282,"Within_Range","",0.2144063116,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -1019,7 +1019,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ","NUTR label came off and had to get a new vial and label "
-"103","COMPASS: Synoptic","CB","SWH","TR","C",45,"SWH_202505_TR_LYSC_45CM",2025,5,21,"11:30","EDT",0,"bdl","SO4 checks perc diff out of range",5.89693088857546,"Within_Range","",0.3777724834,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"103","COMPASS: Synoptic","CB","SWH","TR","C",45,"SWH_202505_TR_LYSC_45CM",2025,5,21,"11:30","EDT",0,0,"bdl","SO4 checks perc diff out of range",209.0462,5.89693088857546,"Within_Range","",0.3777724834,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -1029,7 +1029,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"104","COMPASS: Synoptic","CB","SWH","WC","A",10,"SWH_202505_WC_LYSA_10CM",2025,5,21,"11:56","EDT",0.468215845290081,"Within_Range","SO4 checks perc diff out of range",4.65174047954866,"Within_Range","",0.2980078894,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"104","COMPASS: Synoptic","CB","SWH","WC","A",10,"SWH_202505_WC_LYSA_10CM",2025,5,21,"11:56","EDT",15.011,0.468215845290081,"Within_Range","SO4 checks perc diff out of range",164.9042,4.65174047954866,"Within_Range","",0.2980078894,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -1039,7 +1039,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"105","COMPASS: Synoptic","CB","SWH","WC","A",20,"SWH_202505_WC_LYSA_20CM",2025,5,21,"11:59","EDT",0.0194541484716157,"Within_Range","SO4 checks perc diff out of range",11.5351114245416,"Within_Range","",0.7389438979,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"105","COMPASS: Synoptic","CB","SWH","WC","A",20,"SWH_202505_WC_LYSA_20CM",2025,5,21,"11:59","EDT",0.6237,0.0194541484716157,"Within_Range","SO4 checks perc diff out of range",408.9197,11.5351114245416,"Within_Range","",0.7389438979,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -1049,7 +1049,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"106","COMPASS: Synoptic","CB","SWH","WC","A",45,"SWH_202505_WC_LYSA_45CM",2025,5,21,"12:02","EDT",0.0961322520274485,"Within_Range","SO4 checks perc diff out of range",15.7863074753173,"Within_Range","",1.0112676522,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"106","COMPASS: Synoptic","CB","SWH","WC","A",45,"SWH_202505_WC_LYSA_45CM",2025,5,21,"12:02","EDT",3.082,0.0961322520274485,"Within_Range","SO4 checks perc diff out of range",559.6246,15.7863074753173,"Within_Range","",1.0112676522,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -1059,7 +1059,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"107","COMPASS: Synoptic","CB","SWH","WC","B",10,"SWH_202505_WC_LYSB_10CM",2025,5,21,"12:04","EDT",0.240508421709295,"Within_Range","SO4 checks perc diff out of range",3.3431904090268,"Within_Range","",0.2141845927,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"107","COMPASS: Synoptic","CB","SWH","WC","B",10,"SWH_202505_WC_LYSB_10CM",2025,5,21,"12:04","EDT",7.7107,0.240508421709295,"Within_Range","SO4 checks perc diff out of range",118.5161,3.3431904090268,"Within_Range","",0.2141845927,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -1069,7 +1069,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"108","COMPASS: Synoptic","CB","SWH","WC","B",20,"SWH_202505_WC_LYSB_20CM",2025,5,21,"12:06","EDT",0.0246600124766064,"Within_Range","SO4 checks perc diff out of range",6.08150352609309,"Within_Range","",0.3895958651,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"108","COMPASS: Synoptic","CB","SWH","WC","B",20,"SWH_202505_WC_LYSB_20CM",2025,5,21,"12:06","EDT",0.7906,0.0246600124766064,"Within_Range","SO4 checks perc diff out of range",215.5893,6.08150352609309,"Within_Range","",0.3895958651,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -1079,7 +1079,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"109","COMPASS: Synoptic","CB","SWH","WC","B",45,"SWH_202505_WC_LYSB_45CM",2025,5,21,"12:09","EDT",0,"bdl","SO4 checks perc diff out of range",17.8530211565585,"Within_Range","",1.1436575072,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"109","COMPASS: Synoptic","CB","SWH","WC","B",45,"SWH_202505_WC_LYSB_45CM",2025,5,21,"12:09","EDT",0,0,"bdl","SO4 checks perc diff out of range",632.8896,17.8530211565585,"Within_Range","",1.1436575072,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -1089,7 +1089,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"110","COMPASS: Synoptic","CB","SWH","WC","C",10,"SWH_202505_WC_LYSC_10CM",2025,5,21,"12:12","EDT",0,"bdl","SO4 checks perc diff out of range",3.63212411847673,"Within_Range","",0.2326931516,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"110","COMPASS: Synoptic","CB","SWH","WC","C",10,"SWH_202505_WC_LYSC_10CM",2025,5,21,"12:12","EDT",0,0,"bdl","SO4 checks perc diff out of range",128.7588,3.63212411847673,"Within_Range","",0.2326931516,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -1099,7 +1099,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"111","COMPASS: Synoptic","CB","SWH","WC","C",20,"SWH_202505_WC_LYSC_20CM",2025,5,21,"12:14","EDT",0.153100436681223,"Within_Range","SO4 checks perc diff out of range",5.82120169252468,"Within_Range","",0.3729214112,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"111","COMPASS: Synoptic","CB","SWH","WC","C",20,"SWH_202505_WC_LYSC_20CM",2025,5,21,"12:14","EDT",4.9084,0.153100436681223,"Within_Range","SO4 checks perc diff out of range",206.3616,5.82120169252468,"Within_Range","",0.3729214112,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -1109,7 +1109,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"112","COMPASS: Synoptic","CB","SWH","WC","C",45,"SWH_202505_WC_LYSC_45CM",2025,5,21,"12:20","EDT",0.0262164691203992,"Within_Range","SO4 checks perc diff out of range",21.0167559943582,"Within_Range","",1.346320508,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"112","COMPASS: Synoptic","CB","SWH","WC","C",45,"SWH_202505_WC_LYSC_45CM",2025,5,21,"12:20","EDT",0.8405,0.0262164691203992,"Within_Range","SO4 checks perc diff out of range",745.044,21.0167559943582,"Within_Range","",1.346320508,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -1119,7 +1119,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ","also collected a DIC dup"
-"113","COMPASS: Synoptic","CB","SWH","SW","A",0,"SWH_202505_SW_A",2025,5,21,"10:25","EDT",0.253181534622583,"Within_Range","SO4 checks perc diff out of range",0.907119887165021,"Within_Range","",0.0581344218,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"113","COMPASS: Synoptic","CB","SWH","SW","A",0,"SWH_202505_SW_A",2025,5,21,"10:25","EDT",8.117,0.253181534622583,"Within_Range","SO4 checks perc diff out of range",32.1574,0.907119887165021,"Within_Range","",0.0581344218,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -1129,7 +1129,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"114","COMPASS: Synoptic","CB","SWH","SW","B",0,"SWH_202505_SW_B",2025,5,21,"10:30","EDT",0.250667498440424,"Within_Range","SO4 checks perc diff out of range",0.969229901269393,"Within_Range","",0.0621130744,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"114","COMPASS: Synoptic","CB","SWH","SW","B",0,"SWH_202505_SW_B",2025,5,21,"10:30","EDT",8.0364,0.250667498440424,"Within_Range","SO4 checks perc diff out of range",34.3592,0.969229901269393,"Within_Range","",0.0621130744,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -1139,7 +1139,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"115","COMPASS: Synoptic","CB","SWH","SW","C",0,"SWH_202505_SW_C",2025,5,21,"10:38","EDT",0.281359950093575,"Within_Range","SO4 checks perc diff out of range",1.14332016925247,"Within_Range","",0.0732649749,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"115","COMPASS: Synoptic","CB","SWH","SW","C",0,"SWH_202505_SW_C",2025,5,21,"10:38","EDT",9.0204,0.281359950093575,"Within_Range","SO4 checks perc diff out of range",40.5307,1.14332016925247,"Within_Range","",0.0732649749,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -1149,7 +1149,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",""
-"116","COMPASS: Synoptic","CB","TEMPEST","20250904",NA,NA,"TEMPEST_AQWELL_20250904_1300_B",NA,NA,NA,NA,NA,0.131266375545852,"Within_Range","SO4 checks perc diff out of range",0.116473906911142,"Within_Range","",0.007487103,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"116","COMPASS: Synoptic","CB","TEMPEST","20250904",NA,NA,"TEMPEST_AQWELL_20250904_1300_B",NA,NA,NA,NA,NA,4.2084,0.131266375545852,"Within_Range","SO4 checks perc diff out of range",4.129,0.116473906911142,"Within_Range","",0.007487103,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -1159,7 +1159,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",NA
-"117","COMPASS: Synoptic","CB","TEMPEST","20250904",NA,NA,"TEMPEST_AQWELL_20250904_1225_B",NA,NA,NA,NA,NA,0.298490330630069,"Within_Range","SO4 checks perc diff out of range",0.0215712270803949,"Within_Range","",0.0014078129,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"117","COMPASS: Synoptic","CB","TEMPEST","20250904",NA,NA,"TEMPEST_AQWELL_20250904_1225_B",NA,NA,NA,NA,NA,9.5696,0.298490330630069,"Within_Range","SO4 checks perc diff out of range",0.7647,0.0215712270803949,"Within_Range","",0.0014078129,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -1169,7 +1169,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",NA
-"118","COMPASS: Synoptic","CB","TEMPEST","20250904",NA,NA,"TEMPEST_AQWELL_20250904_1400_B",NA,NA,NA,NA,NA,0,"bdl","SO4 checks perc diff out of range",0.0352863187588152,"Within_Range","",0.0022863763,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"118","COMPASS: Synoptic","CB","TEMPEST","20250904",NA,NA,"TEMPEST_AQWELL_20250904_1400_B",NA,NA,NA,NA,NA,0,0,"bdl","SO4 checks perc diff out of range",1.2509,0.0352863187588152,"Within_Range","",0.0022863763,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -1179,7 +1179,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",NA
-"119","COMPASS: Synoptic","CB","TEMPEST","20250904",NA,NA,"TEMPEST_AQWELL_20250904_1400_A",NA,NA,NA,NA,NA,0.0158234560199626,"Within_Range","SO4 checks perc diff out of range",0.0382679830747532,"Within_Range","",0.0024773762,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"119","COMPASS: Synoptic","CB","TEMPEST","20250904",NA,NA,"TEMPEST_AQWELL_20250904_1400_A",NA,NA,NA,NA,NA,0.5073,0.0158234560199626,"Within_Range","SO4 checks perc diff out of range",1.3566,0.0382679830747532,"Within_Range","",0.0024773762,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -1189,7 +1189,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",NA
-"120","COMPASS: Synoptic","CB","TEMPEST","20250904",NA,NA,"TEMPEST_AQWELL_20250904_1225_C",NA,NA,NA,NA,NA,0.296718652526513,"Within_Range","SO4 checks perc diff out of range",0.0240789844851904,"Within_Range","",0.0015684552,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"120","COMPASS: Synoptic","CB","TEMPEST","20250904",NA,NA,"TEMPEST_AQWELL_20250904_1225_C",NA,NA,NA,NA,NA,9.5128,0.296718652526513,"Within_Range","SO4 checks perc diff out of range",0.8536,0.0240789844851904,"Within_Range","",0.0015684552,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -1199,7 +1199,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",NA
-"121","COMPASS: Synoptic","CB","TEMPEST","20250904",NA,NA,"TEMPEST_AQWELL_20250904_1400_C",NA,NA,NA,NA,NA,0,"bdl","SO4 checks perc diff out of range",0.0317799717912553,"Within_Range","",0.0020617662,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"121","COMPASS: Synoptic","CB","TEMPEST","20250904",NA,NA,"TEMPEST_AQWELL_20250904_1400_C",NA,NA,NA,NA,NA,0,0,"bdl","SO4 checks perc diff out of range",1.1266,0.0317799717912553,"Within_Range","",0.0020617662,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -1209,7 +1209,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",NA
-"122","COMPASS: Synoptic","CB","TEMPEST","20250904",NA,NA,"TEMPEST_AQWELL_20250904_1225_A",NA,NA,NA,NA,NA,0.251824703680599,"Within_Range","SO4 checks perc diff out of range",0.0231424541607898,"Within_Range","",0.0015084628,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"122","COMPASS: Synoptic","CB","TEMPEST","20250904",NA,NA,"TEMPEST_AQWELL_20250904_1225_A",NA,NA,NA,NA,NA,8.0735,0.251824703680599,"Within_Range","SO4 checks perc diff out of range",0.8204,0.0231424541607898,"Within_Range","",0.0015084628,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -1219,7 +1219,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",NA
-"123","COMPASS: Synoptic","CB","TEMPEST","20250904",NA,NA,"TEMPEST_AQWELL_20250904_1300_A",NA,NA,NA,NA,NA,0.128069245165315,"Within_Range","SO4 checks perc diff out of range",0.117066290550071,"Within_Range","",0.00752505,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"123","COMPASS: Synoptic","CB","TEMPEST","20250904",NA,NA,"TEMPEST_AQWELL_20250904_1300_A",NA,NA,NA,NA,NA,4.1059,0.128069245165315,"Within_Range","SO4 checks perc diff out of range",4.15,0.117066290550071,"Within_Range","",0.00752505,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm
@@ -1229,7 +1229,7 @@
   TEMPEST_AQWELL_20250904_1400_C, TEMPEST_AQWELL_20250904_1225_A,
   TEMPEST_AQWELL_20250904_1300_A, TEMPEST_AQWELL_20250904_1300_C
   ",NA
-"124","COMPASS: Synoptic","CB","TEMPEST","20250904",NA,NA,"TEMPEST_AQWELL_20250904_1300_C",NA,NA,NA,NA,NA,0.0768309419837804,"Within_Range","SO4 checks perc diff out of range",0.076197461212976,"Within_Range","",0.0049070684,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
+"124","COMPASS: Synoptic","CB","TEMPEST","20250904",NA,NA,"TEMPEST_AQWELL_20250904_1300_C",NA,NA,NA,NA,NA,2.4632,0.0768309419837804,"Within_Range","SO4 checks perc diff out of range",2.7012,0.076197461212976,"Within_Range","",0.0049070684,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
   1 spk had high recovery (122% compared to the 120% cutoff): 101_SWH_202505_TR_LysC_10cm

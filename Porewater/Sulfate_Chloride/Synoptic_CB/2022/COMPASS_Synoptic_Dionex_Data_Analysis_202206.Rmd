@@ -147,14 +147,12 @@ head(dups)
 sampledat2 <- sampledat %>%  
   filter(!str_detect(Sample_ID, "dup")) %>%  
   filter(!str_detect(Sample_ID, "spk")) 
-sampledat2 <- sampledat2[ ,-c(2:4)]
 head(sampledat2)
 
 
 #remove the dup from these IDs so we will have duplicate sample names
 dups$Sample_ID<-gsub("_dup","",as.character(dups$Sample_ID))
-dups <- dups[ ,-c(2:5)]
-colnames(dups) <- c('Sample_ID', 'SO4_mM_dup', "Cl_mM_dup", "salinity_dup")
+colnames(dups) <- c('Sample_ID', 'SO4_ppm_dup','SO4_Area_dup', 'Cl_ppm_dup','Cl_Area_dup','SO4_mM_dup', "Cl_mM_dup", "salinity_dup")
 head(dups)
 
 #put it back together with the old data set and look for duplicates 
@@ -273,8 +271,8 @@ head(spks)
 
 #remove the dup from these IDs so we will have duplicate sample names
 spks$Sample_ID<-gsub("_spk","",as.character(spks$Sample_ID))
-spks <- spks[ ,-c(2:5, 7,8)]
-colnames(spks) <- c('Sample_ID', 'SO4_mM_spk')
+# spks <- spks[ ,-c(2:5, 7,8)]
+colnames(spks) <- c('Sample_ID', 'SO4_ppm_spk', 'SO4_Area_spk', 'Cl_ppm_spk', 'Cl_Area_spk', 'SO4_mM_spk', "Cl_mM_spk", "salinity_spk")
 head(spks)
 
 #put it back together with the old data set and look for duplicates 

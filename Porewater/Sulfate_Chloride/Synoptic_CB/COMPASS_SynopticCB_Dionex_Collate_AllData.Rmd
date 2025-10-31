@@ -42,10 +42,14 @@ all_dat <- all_dat %>%
   select(
     Project, Region, Sample_ID, Year, Month, Day, Time, Time_Zone,
     Site, Zone, Replicate, Depth_cm, 
-    SO4_Conc_mM, SO4_Conc_flag, SO4_QAQC_flag, Cl_Conc_mM, Cl_Conc_flag, Cl_QAQC_flag, salinity,
+    SO4_ppm, SO4_Conc_mM, SO4_Conc_flag, SO4_QAQC_flag, Cl_ppm, Cl_Conc_mM, Cl_Conc_flag, Cl_QAQC_flag, salinity,
     Analysis_rundate,  Run_notes, Field_notes
         # list columns in the order you want them
   )
+
+##Set 4 decimal points max
+all_dat <- all_dat %>%
+  mutate(across(where(is.numeric), round, digits = 4)) ##This does make all salnities 0 when Cl_ppm is 0 instead of 0.000026
 
 ```
 

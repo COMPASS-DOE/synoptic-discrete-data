@@ -1,5 +1,5 @@
-"","Project","Region","Site","Zone","Replicate","Depth_cm","Sample_ID","Year","Month","Day","Time","Time_Zone","SO4_Conc_mM","SO4_Conc_flag","SO4_QAQC_flag","Cl_Conc_mM","Cl_Conc_flag","Cl_QAQC_flag","salinity","Analysis_rundate","Run_notes","Field_notes"
-"1","COMPASS: Synoptic","CB","GWI","UP","A",20,"GWI_202411_UP_LYSA_20CM",2024,11,14,"12:35","EDT",17.6358265751715,"Within_Range","",135.5898674189,"Within_Range","",8.6856620656,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"","Project","Region","Site","Zone","Replicate","Depth_cm","Sample_ID","Year","Month","Day","Time","Time_Zone","SO4_ppm","SO4_Conc_mM","SO4_Conc_flag","SO4_QAQC_flag","Cl_ppm","Cl_Conc_mM","Cl_Conc_flag","Cl_QAQC_flag","salinity","Analysis_rundate","Run_notes","Field_notes"
+"1","COMPASS: Synoptic","CB","GWI","UP","A",20,"GWI_202411_UP_LYSA_20CM",2024,11,14,"12:35","EDT",565.4046,17.6358265751715,"Within_Range","",4806.6608,135.5898674189,"Within_Range","",8.6856620656,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -7,7 +7,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"2","COMPASS: Synoptic","CB","GWI","UP","A",45,"GWI_202411_UP_LYSA_45CM",2024,11,14,"12:40","EDT",29.4403649407361,"Within_Range","",235.922047954866,"Within_Range","",15.1127559362,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"2","COMPASS: Synoptic","CB","GWI","UP","A",45,"GWI_202411_UP_LYSA_45CM",2024,11,14,"12:40","EDT",943.8581,29.4403649407361,"Within_Range","",8363.4366,235.922047954866,"Within_Range","",15.1127559362,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -15,7 +15,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"3","COMPASS: Synoptic","CB","GWI","UP","B",10,"GWI_202411_UP_LYSB_10CM",2024,11,14,"12:42","EDT",22.0159887710543,"Within_Range","",175.928078984485,"Within_Range","",11.2696532728,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"3","COMPASS: Synoptic","CB","GWI","UP","B",10,"GWI_202411_UP_LYSB_10CM",2024,11,14,"12:42","EDT",705.8326,22.0159887710543,"Within_Range","",6236.6504,175.928078984485,"Within_Range","",11.2696532728,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -23,7 +23,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"4","COMPASS: Synoptic","CB","GWI","UP","B",20,"GWI_202411_UP_LYSB_20CM",2024,11,14,"12:45","EDT",19.214984404242,"Within_Range","",152.84674471086,"Within_Range","",9.7911056997,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"4","COMPASS: Synoptic","CB","GWI","UP","B",20,"GWI_202411_UP_LYSB_20CM",2024,11,14,"12:45","EDT",616.0324,19.214984404242,"Within_Range","",5418.4171,152.84674471086,"Within_Range","",9.7911056997,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -31,7 +31,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"5","COMPASS: Synoptic","CB","GWI","UP","B",45,"GWI_202411_UP_LYSB_45CM",2024,11,14,"12:50","EDT",21.8366531503431,"Within_Range","",165.514868829337,"Within_Range","",10.6026022947,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"5","COMPASS: Synoptic","CB","GWI","UP","B",45,"GWI_202411_UP_LYSB_45CM",2024,11,14,"12:50","EDT",700.0831,21.8366531503431,"Within_Range","",5867.5021,165.514868829337,"Within_Range","",10.6026022947,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -39,7 +39,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"6","COMPASS: Synoptic","CB","GWI","UP","C",20,"GWI_202411_UP_LYSC_20CM",2024,11,14,"12:55","EDT",26.050945102932,"Within_Range","",216.79367842031,"Within_Range","",13.8874279713,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"6","COMPASS: Synoptic","CB","GWI","UP","C",20,"GWI_202411_UP_LYSC_20CM",2024,11,14,"12:55","EDT",835.1933,26.050945102932,"Within_Range","",7685.3359,216.79367842031,"Within_Range","",13.8874279713,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -47,7 +47,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"7","COMPASS: Synoptic","CB","GWI","TR","A",10,"GWI_202411_TR_LYSA_10CM",2024,11,14,"12:00","EDT",48.4136774797255,"Within_Range","",339.527709449929,"Within_Range","",21.7495429411,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"7","COMPASS: Synoptic","CB","GWI","TR","A",10,"GWI_202411_TR_LYSA_10CM",2024,11,14,"12:00","EDT",1552.1425,48.4136774797255,"Within_Range","",12036.2573,339.527709449929,"Within_Range","",21.7495429411,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -55,7 +55,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"8","COMPASS: Synoptic","CB","GWI","TR","A",20,"GWI_202411_TR_LYSA_20CM",2024,11,14,"12:05","EDT",31.9170648783531,"Within_Range","",318.593314527503,"Within_Range","",20.408524331,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"8","COMPASS: Synoptic","CB","GWI","TR","A",20,"GWI_202411_TR_LYSA_20CM",2024,11,14,"12:05","EDT",1023.2611,31.9170648783531,"Within_Range","",11294.133,318.593314527503,"Within_Range","",20.408524331,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -63,7 +63,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"9","COMPASS: Synoptic","CB","GWI","TR","A",45,"GWI_202411_TR_LYSA_45CM",2024,11,14,"12:07","EDT",25.8090517779164,"Within_Range","",265.589960507757,"Within_Range","",17.0132275287,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"9","COMPASS: Synoptic","CB","GWI","TR","A",45,"GWI_202411_TR_LYSA_45CM",2024,11,14,"12:07","EDT",827.4382,25.8090517779164,"Within_Range","",9415.1641,265.589960507757,"Within_Range","",17.0132275287,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -71,7 +71,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"10","COMPASS: Synoptic","CB","GWI","TR","B",10,"GWI_202411_TR_LYSB_10CM",2024,11,14,"12:10","EDT",60.1086650031191,"Within_Range","",390.376380818054,"Within_Range","",25.0068147589,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"10","COMPASS: Synoptic","CB","GWI","TR","B",10,"GWI_202411_TR_LYSB_10CM",2024,11,14,"12:10","EDT",1927.0838,60.1086650031191,"Within_Range","",13838.8427,390.376380818054,"Within_Range","",25.0068147589,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -79,7 +79,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"11","COMPASS: Synoptic","CB","GWI","TR","B",20,"GWI_202411_TR_LYSB_20CM",2024,11,14,"12:15","EDT",37.6652900810979,"Within_Range","",328.04885190409,"Within_Range","",21.0142285626,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"11","COMPASS: Synoptic","CB","GWI","TR","B",20,"GWI_202411_TR_LYSB_20CM",2024,11,14,"12:15","EDT",1207.5492,37.6652900810979,"Within_Range","",11629.3318,328.04885190409,"Within_Range","",21.0142285626,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -87,7 +87,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"12","COMPASS: Synoptic","CB","GWI","TR","B",45,"GWI_202411_TR_LYSB_45CM",2024,11,14,"12:20","EDT",36.4341515907673,"Within_Range","",274.250462623413,"Within_Range","",17.5680032723,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"12","COMPASS: Synoptic","CB","GWI","TR","B",45,"GWI_202411_TR_LYSB_45CM",2024,11,14,"12:20","EDT",1168.0789,36.4341515907673,"Within_Range","",9722.1789,274.250462623413,"Within_Range","",17.5680032723,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -95,7 +95,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"13","COMPASS: Synoptic","CB","GWI","TR","C",10,"GWI_202411_TR_LYSC_10CM",2024,11,14,"12:25","EDT",54.7965658140986,"Within_Range","",363.200524682652,"Within_Range","",23.2659796902,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"13","COMPASS: Synoptic","CB","GWI","TR","C",10,"GWI_202411_TR_LYSC_10CM",2024,11,14,"12:25","EDT",1756.7779,54.7965658140986,"Within_Range","",12875.4586,363.200524682652,"Within_Range","",23.2659796902,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -103,7 +103,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"14","COMPASS: Synoptic","CB","GWI","TR","C",20,"GWI_202411_TR_LYSC_20CM",2024,11,14,"12:29","EDT",49.3234591391142,"Within_Range","",336.188944992948,"Within_Range","",21.5356678667,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"14","COMPASS: Synoptic","CB","GWI","TR","C",20,"GWI_202411_TR_LYSC_20CM",2024,11,14,"12:29","EDT",1581.3101,49.3234591391142,"Within_Range","",11917.8981,336.188944992948,"Within_Range","",21.5356678667,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -111,7 +111,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"15","COMPASS: Synoptic","CB","GWI","WC","A",10,"GWI_202411_WC_LYSA_10CM",2024,11,14,"11:35","EDT",60.5310729881472,"Within_Range","",389.791856135402,"Within_Range","",24.9693711891,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"15","COMPASS: Synoptic","CB","GWI","WC","A",10,"GWI_202411_WC_LYSA_10CM",2024,11,14,"11:35","EDT",1940.6262,60.5310729881472,"Within_Range","",13818.1213,389.791856135402,"Within_Range","",24.9693711891,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -119,7 +119,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"16","COMPASS: Synoptic","CB","GWI","WC","A",20,"GWI_202411_WC_LYSA_20CM",2024,11,14,"11:37","EDT",55.312370555209,"Within_Range","",359.13533145275,"Within_Range","",23.0055709325,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"16","COMPASS: Synoptic","CB","GWI","WC","A",20,"GWI_202411_WC_LYSA_20CM",2024,11,14,"11:37","EDT",1773.3146,55.312370555209,"Within_Range","",12731.3475,359.13533145275,"Within_Range","",23.0055709325,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -127,7 +127,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"17","COMPASS: Synoptic","CB","GWI","WC","A",45,"GWI_202411_WC_LYSA_45CM",2024,11,14,"11:40","EDT",42.219847161572,"Within_Range","",350.94498448519,"Within_Range","",22.4809124579,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"17","COMPASS: Synoptic","CB","GWI","WC","A",45,"GWI_202411_WC_LYSA_45CM",2024,11,14,"11:40","EDT",1353.5683,42.219847161572,"Within_Range","",12440.9997,350.94498448519,"Within_Range","",22.4809124579,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -135,7 +135,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"18","COMPASS: Synoptic","CB","GWI","WC","B",10,"GWI_202411_WC_LYSB_10CM",2024,11,14,"11:42","EDT",64.1264628820961,"Within_Range","",421.240369534556,"Within_Range","",26.9839047777,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"18","COMPASS: Synoptic","CB","GWI","WC","B",10,"GWI_202411_WC_LYSB_10CM",2024,11,14,"11:42","EDT",2055.8944,64.1264628820961,"Within_Range","",14932.9711,421.240369534556,"Within_Range","",26.9839047777,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -143,7 +143,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"19","COMPASS: Synoptic","CB","GWI","WC","B",20,"GWI_202411_WC_LYSB_20CM",2024,11,14,"11:45","EDT",61.0117311291329,"Within_Range","",379.934581100141,"Within_Range","",24.3379323863,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"19","COMPASS: Synoptic","CB","GWI","WC","B",20,"GWI_202411_WC_LYSB_20CM",2024,11,14,"11:45","EDT",1956.0361,61.0117311291329,"Within_Range","",13468.6809,379.934581100141,"Within_Range","",24.3379323863,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -151,7 +151,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"20","COMPASS: Synoptic","CB","GWI","WC","B",45,"GWI_202411_WC_LYSB_45CM",2024,11,14,"11:50","EDT",50.8016469120399,"Within_Range","",380.814925246826,"Within_Range","",24.3943256037,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"20","COMPASS: Synoptic","CB","GWI","WC","B",45,"GWI_202411_WC_LYSB_45CM",2024,11,14,"11:50","EDT",1628.7008,50.8016469120399,"Within_Range","",13499.8891,380.814925246826,"Within_Range","",24.3943256037,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -159,7 +159,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"21","COMPASS: Synoptic","CB","GWI","WC","C",10,"GWI_202411_WC_LYSC_10CM",2024,11,14,"11:52","EDT",64.7207641921397,"Within_Range","",397.094792665726,"Within_Range","",25.4371837928,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"21","COMPASS: Synoptic","CB","GWI","WC","C",10,"GWI_202411_WC_LYSC_10CM",2024,11,14,"11:52","EDT",2074.9477,64.7207641921397,"Within_Range","",14077.0104,397.094792665726,"Within_Range","",25.4371837928,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -167,7 +167,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"22","COMPASS: Synoptic","CB","GWI","WC","C",45,"GWI_202411_WC_LYSC_45CM",2024,11,14,"11:55","EDT",44.9691110417966,"Within_Range","",372.174383638928,"Within_Range","",23.8408284933,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"22","COMPASS: Synoptic","CB","GWI","WC","C",45,"GWI_202411_WC_LYSC_45CM",2024,11,14,"11:55","EDT",1441.7097,44.9691110417966,"Within_Range","",13193.5819,372.174383638928,"Within_Range","",23.8408284933,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -175,7 +175,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"23","COMPASS: Synoptic","CB","GWI","SW","A",0,"GWI_202411_SW_A",2024,11,14,"10:00","EDT",50.7950405489707,"Within_Range","",342.472708039492,"Within_Range","",21.9381941025,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"23","COMPASS: Synoptic","CB","GWI","SW","A",0,"GWI_202411_SW_A",2024,11,14,"10:00","EDT",1628.489,50.7950405489707,"Within_Range","",12140.6575,342.472708039492,"Within_Range","",21.9381941025,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -183,7 +183,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"24","COMPASS: Synoptic","CB","GWI","SW","B",0,"GWI_202411_SW_B",2024,11,14,"10:00","EDT",51.0099968808484,"Within_Range","",344.654163610719,"Within_Range","",22.0779341107,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"24","COMPASS: Synoptic","CB","GWI","SW","B",0,"GWI_202411_SW_B",2024,11,14,"10:00","EDT",1635.3805,51.0099968808484,"Within_Range","",12217.9901,344.654163610719,"Within_Range","",22.0779341107,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -191,7 +191,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"25","COMPASS: Synoptic","CB","GWI","SW","C",0,"GWI_202411_SW_C",2024,11,14,"10:00","EDT",51.445670617592,"Within_Range","",344.313215796897,"Within_Range","",22.0560936245,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"25","COMPASS: Synoptic","CB","GWI","SW","C",0,"GWI_202411_SW_C",2024,11,14,"10:00","EDT",1649.3482,51.445670617592,"Within_Range","",12205.9035,344.313215796897,"Within_Range","",22.0560936245,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -199,7 +199,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"26","COMPASS: Synoptic","CB","SWH","UP","A",10,"SWH_202411_UP_LYSA_10CM",2024,11,12,"14:50","EDT",0.541088583905178,"Within_Range","",0.409444287729196,"Within_Range","",0.0262542436,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"26","COMPASS: Synoptic","CB","SWH","UP","A",10,"SWH_202411_UP_LYSA_10CM",2024,11,12,"14:50","EDT",17.3473,0.541088583905178,"Within_Range","",14.5148,0.409444287729196,"Within_Range","",0.0262542436,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -207,7 +207,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"27","COMPASS: Synoptic","CB","SWH","UP","A",20,"SWH_202411_UP_LYSA_20CM",2024,11,12,"14:55","EDT",0.623022457891453,"Within_Range","",0.272425952045134,"Within_Range","",0.0174771025,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"27","COMPASS: Synoptic","CB","SWH","UP","A",20,"SWH_202411_UP_LYSA_20CM",2024,11,12,"14:55","EDT",19.9741,0.623022457891453,"Within_Range","",9.6575,0.272425952045134,"Within_Range","",0.0174771025,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -215,7 +215,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"28","COMPASS: Synoptic","CB","SWH","UP","A",45,"SWH_202411_UP_LYSA_45CM",2024,11,12,"15:00","EDT",0.355470991890206,"Within_Range","",0.291689703808181,"Within_Range","",0.0187111028,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"28","COMPASS: Synoptic","CB","SWH","UP","A",45,"SWH_202411_UP_LYSA_45CM",2024,11,12,"15:00","EDT",11.3964,0.355470991890206,"Within_Range","",10.3404,0.291689703808181,"Within_Range","",0.0187111028,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -223,7 +223,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"29","COMPASS: Synoptic","CB","SWH","UP","B",10,"SWH_202411_UP_LYSB_10CM",2024,11,12,"15:05","EDT",1.11940736119775,"Within_Range","",7.7294442877292,"Within_Range","",0.4951599016,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"29","COMPASS: Synoptic","CB","SWH","UP","B",10,"SWH_202411_UP_LYSB_10CM",2024,11,12,"15:05","EDT",35.8882,1.11940736119775,"Within_Range","",274.0088,7.7294442877292,"Within_Range","",0.4951599016,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -231,7 +231,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"30","COMPASS: Synoptic","CB","SWH","UP","B",20,"SWH_202411_UP_LYSB_20CM",2024,11,12,"15:10","EDT",0.582751091703057,"Within_Range","",4.39855853314528,"Within_Range","",0.2817895223,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"30","COMPASS: Synoptic","CB","SWH","UP","B",20,"SWH_202411_UP_LYSB_20CM",2024,11,12,"15:10","EDT",18.683,0.582751091703057,"Within_Range","",155.9289,4.39855853314528,"Within_Range","",0.2817895223,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -239,7 +239,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"31","COMPASS: Synoptic","CB","SWH","UP","B",45,"SWH_202411_UP_LYSB_45CM",2024,11,12,"15:15","EDT",0.0386088583905178,"Within_Range","",0.859088857545839,"Within_Range","",0.0550576429,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"31","COMPASS: Synoptic","CB","SWH","UP","B",45,"SWH_202411_UP_LYSB_45CM",2024,11,12,"15:15","EDT",1.2378,0.0386088583905178,"Within_Range","",30.4547,0.859088857545839,"Within_Range","",0.0550576429,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -247,7 +247,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"32","COMPASS: Synoptic","CB","SWH","UP","C",10,"SWH_202411_UP_LYSC_10CM",2024,11,12,"15:20","EDT",0.967270742358079,"Within_Range","",10.0647165021157,"Within_Range","",0.6447531194,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"32","COMPASS: Synoptic","CB","SWH","UP","C",10,"SWH_202411_UP_LYSC_10CM",2024,11,12,"15:20","EDT",31.0107,0.967270742358079,"Within_Range","",356.7942,10.0647165021157,"Within_Range","",0.6447531194,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -255,7 +255,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"33","COMPASS: Synoptic","CB","SWH","UP","C",20,"SWH_202411_UP_LYSC_20CM",2024,11,12,"15:25","EDT",0.592679351216469,"Within_Range","",4.66333427362482,"Within_Range","",0.2987505664,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"33","COMPASS: Synoptic","CB","SWH","UP","C",20,"SWH_202411_UP_LYSC_20CM",2024,11,12,"15:25","EDT",19.0013,0.592679351216469,"Within_Range","",165.3152,4.66333427362482,"Within_Range","",0.2987505664,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -263,7 +263,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"34","COMPASS: Synoptic","CB","SWH","UP","C",45,"SWH_202411_UP_LYSC_45CM",2024,11,12,"15:30","EDT",0.00381472239550842,"Within_Range","",2.03474471086037,"Within_Range","",0.1303679819,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"34","COMPASS: Synoptic","CB","SWH","UP","C",45,"SWH_202411_UP_LYSC_45CM",2024,11,12,"15:30","EDT",0.1223,0.00381472239550842,"Within_Range","",72.1317,2.03474471086037,"Within_Range","",0.1303679819,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -271,7 +271,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"35","COMPASS: Synoptic","CB","SWH","TR","A",10,"SWH_202411_TR_LYSA_10CM",2024,11,12,"12:30","EDT",6.00903930131004,"Within_Range","",34.8659492242595,"Within_Range","",2.2334742053,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"35","COMPASS: Synoptic","CB","SWH","TR","A",10,"SWH_202411_TR_LYSA_10CM",2024,11,12,"12:30","EDT",192.6498,6.00903930131004,"Within_Range","",1235.9979,34.8659492242595,"Within_Range","",2.2334742053,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -279,7 +279,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"36","COMPASS: Synoptic","CB","SWH","TR","A",20,"SWH_202411_TR_LYSA_20CM",2024,11,12,"12:35","EDT",0.96796631316282,"Within_Range","",30.7314894217207,"Within_Range","",1.9686283591,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"36","COMPASS: Synoptic","CB","SWH","TR","A",20,"SWH_202411_TR_LYSA_20CM",2024,11,12,"12:35","EDT",31.033,0.96796631316282,"Within_Range","",1089.4313,30.7314894217207,"Within_Range","",1.9686283591,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -287,7 +287,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"37","COMPASS: Synoptic","CB","SWH","TR","A",45,"SWH_202411_TR_LYSA_45CM",2024,11,12,"12:40","EDT",0.0331940112289457,"Within_Range","",30.0336784203103,"Within_Range","",1.9239278773,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"37","COMPASS: Synoptic","CB","SWH","TR","A",45,"SWH_202411_TR_LYSA_45CM",2024,11,12,"12:40","EDT",1.0642,0.0331940112289457,"Within_Range","",1064.6939,30.0336784203103,"Within_Range","",1.9239278773,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -295,7 +295,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"38","COMPASS: Synoptic","CB","SWH","TR","B",10,"SWH_202411_TR_LYSB_10CM",2024,11,12,"12:45","EDT",6.99792888334373,"Within_Range","",24.2042566995769,"Within_Range","",1.5505059063,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"38","COMPASS: Synoptic","CB","SWH","TR","B",10,"SWH_202411_TR_LYSB_10CM",2024,11,12,"12:45","EDT",224.3536,6.99792888334373,"Within_Range","",858.0409,24.2042566995769,"Within_Range","",1.5505059063,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -303,7 +303,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"39","COMPASS: Synoptic","CB","SWH","TR","B",20,"SWH_202411_TR_LYSB_20CM",2024,11,12,"12:50","EDT",0.529129756706176,"Within_Range","",25.7965077574048,"Within_Range","",1.6525025634,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"39","COMPASS: Synoptic","CB","SWH","TR","B",20,"SWH_202411_TR_LYSB_20CM",2024,11,12,"12:50","EDT",16.9639,0.529129756706176,"Within_Range","",914.4862,25.7965077574048,"Within_Range","",1.6525025634,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -311,7 +311,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"40","COMPASS: Synoptic","CB","SWH","TR","B",45,"SWH_202411_TR_LYSB_45CM",2024,11,12,"12:55","EDT",0.0196412975670618,"Within_Range","",25.9875317348378,"Within_Range","",1.664739206,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"40","COMPASS: Synoptic","CB","SWH","TR","B",45,"SWH_202411_TR_LYSB_45CM",2024,11,12,"12:55","EDT",0.6297,0.0196412975670618,"Within_Range","",921.258,25.9875317348378,"Within_Range","",1.664739206,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -319,7 +319,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"41","COMPASS: Synoptic","CB","SWH","TR","C",10,"SWH_202411_TR_LYSC_10CM",2024,11,12,"13:00","EDT",4.5932096069869,"Within_Range","",23.9544174894217,"Within_Range","",1.5345016687,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"41","COMPASS: Synoptic","CB","SWH","TR","C",10,"SWH_202411_TR_LYSC_10CM",2024,11,12,"13:00","EDT",147.2583,4.5932096069869,"Within_Range","",849.1841,23.9544174894217,"Within_Range","",1.5345016687,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -327,7 +327,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"42","COMPASS: Synoptic","CB","SWH","TR","C",20,"SWH_202411_TR_LYSC_20CM",2024,11,12,"13:05","EDT",0.864978165938865,"Within_Range","",24.2066262341326,"Within_Range","",1.5506576943,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"42","COMPASS: Synoptic","CB","SWH","TR","C",20,"SWH_202411_TR_LYSC_20CM",2024,11,12,"13:05","EDT",27.7312,0.864978165938865,"Within_Range","",858.1249,24.2066262341326,"Within_Range","",1.5506576943,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -335,7 +335,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"43","COMPASS: Synoptic","CB","SWH","TR","C",45,"SWH_202411_TR_LYSC_45CM",2024,11,12,"13:10","EDT",0.036890205864005,"Within_Range","",32.6042595204513,"Within_Range","",2.088594547,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"43","COMPASS: Synoptic","CB","SWH","TR","C",45,"SWH_202411_TR_LYSC_45CM",2024,11,12,"13:10","EDT",1.1827,0.036890205864005,"Within_Range","",1155.821,32.6042595204513,"Within_Range","",2.088594547,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -343,7 +343,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"44","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202411_SWAMP_LYSA_10CM",2024,11,12,"14:20","EDT",0.548075483468497,"Within_Range","",13.5806572637518,"Within_Range","",0.8699777801,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"44","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202411_SWAMP_LYSA_10CM",2024,11,12,"14:20","EDT",17.5713,0.548075483468497,"Within_Range","",481.4343,13.5806572637518,"Within_Range","",0.8699777801,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -351,7 +351,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"45","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202411_SWAMP_LYSA_20CM",2024,11,12,"14:22","EDT",0.358611977542108,"Within_Range","",12.0222002820874,"Within_Range","",0.770145909,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"45","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202411_SWAMP_LYSA_20CM",2024,11,12,"14:22","EDT",11.4971,0.358611977542108,"Within_Range","",426.187,12.0222002820874,"Within_Range","",0.770145909,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -359,7 +359,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"46","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202411_SWAMP_LYSA_45CM",2024,11,12,"14:25","EDT",0.00276980661260137,"Within_Range","",3.0501269393512,"Within_Range","",0.195411489,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"46","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202411_SWAMP_LYSA_45CM",2024,11,12,"14:25","EDT",0.0888,0.00276980661260137,"Within_Range","",108.127,3.0501269393512,"Within_Range","",0.195411489,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -367,7 +367,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"47","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202411_SWAMP_LYSB_10CM",2024,11,12,"14:30","EDT",1.50271678103556,"Within_Range","",19.7960141043724,"Within_Range","",1.2681220409,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"47","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202411_SWAMP_LYSB_10CM",2024,11,12,"14:30","EDT",48.1771,1.50271678103556,"Within_Range","",701.7687,19.7960141043724,"Within_Range","",1.2681220409,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -375,7 +375,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"48","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202411_SWAMP_LYSB_20CM",2024,11,12,"14:32","EDT",0.0125389893948846,"Within_Range","",6.24377433004231,"Within_Range","",0.3999906326,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"48","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202411_SWAMP_LYSB_20CM",2024,11,12,"14:32","EDT",0.402,0.0125389893948846,"Within_Range","",221.3418,6.24377433004231,"Within_Range","",0.3999906326,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -383,7 +383,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"49","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202411_SWAMP_LYSB_45CM",2024,11,12,"14:35","EDT",0.0316001247660636,"Within_Range","",0.310149506346968,"Within_Range","",0.0198936036,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"49","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202411_SWAMP_LYSB_45CM",2024,11,12,"14:35","EDT",1.0131,0.0316001247660636,"Within_Range","",10.9948,0.310149506346968,"Within_Range","",0.0198936036,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -391,7 +391,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"50","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202411_SWAMP_LYSC_10CM",2024,11,12,"14:40","EDT",2.0025327510917,"Within_Range","",9.04355712270804,"Within_Range","",0.5793395387,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"50","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202411_SWAMP_LYSC_10CM",2024,11,12,"14:40","EDT",64.2012,2.0025327510917,"Within_Range","",320.5941,9.04355712270804,"Within_Range","",0.5793395387,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -399,7 +399,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"51","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202411_SWAMP_LYSC_20CM",2024,11,12,"14:42","EDT",0.167875857766687,"Within_Range","",4.75583638928068,"Within_Range","",0.3046760808,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"51","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202411_SWAMP_LYSC_20CM",2024,11,12,"14:42","EDT",5.3821,0.167875857766687,"Within_Range","",168.5944,4.75583638928068,"Within_Range","",0.3046760808,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -407,7 +407,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"52","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202411_SWAMP_LYSC_45CM",2024,11,12,"14:45","EDT",0.0318621334996881,"Within_Range","",6.04721861777151,"Within_Range","",0.3873996373,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"52","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202411_SWAMP_LYSC_45CM",2024,11,12,"14:45","EDT",1.0215,0.0318621334996881,"Within_Range","",214.3739,6.04721861777151,"Within_Range","",0.3873996373,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -415,7 +415,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"53","COMPASS: Synoptic","CB","SWH","WC","A",10,"SWH_202411_WC_LYSA_10CM",2024,11,12,"13:30","EDT",1.82568309419838,"Within_Range","",37.8727588152327,"Within_Range","",2.4260848651,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"53","COMPASS: Synoptic","CB","SWH","WC","A",10,"SWH_202411_WC_LYSA_10CM",2024,11,12,"13:30","EDT",58.5314,1.82568309419838,"Within_Range","",1342.5893,37.8727588152327,"Within_Range","",2.4260848651,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -423,7 +423,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"54","COMPASS: Synoptic","CB","SWH","WC","A",20,"SWH_202411_WC_LYSA_20CM",2024,11,12,"13:35","EDT",0.0241391141609482,"Within_Range","",24.4431452750353,"Within_Range","",1.5658086665,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"54","COMPASS: Synoptic","CB","SWH","WC","A",20,"SWH_202411_WC_LYSA_20CM",2024,11,12,"13:35","EDT",0.7739,0.0241391141609482,"Within_Range","",866.5095,24.4431452750353,"Within_Range","",1.5658086665,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -431,7 +431,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"55","COMPASS: Synoptic","CB","SWH","WC","A",45,"SWH_202411_WC_LYSA_45CM",2024,11,12,"13:40","EDT",0.246534622582658,"Within_Range","",25.0496220028209,"Within_Range","",1.6046584437,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"55","COMPASS: Synoptic","CB","SWH","WC","A",45,"SWH_202411_WC_LYSA_45CM",2024,11,12,"13:40","EDT",7.9039,0.246534622582658,"Within_Range","",888.0091,25.0496220028209,"Within_Range","",1.6046584437,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -439,7 +439,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"56","COMPASS: Synoptic","CB","SWH","WC","B",10,"SWH_202411_WC_LYSB_10CM",2024,11,12,"13:45","EDT",2.88713661883968,"Within_Range","",39.8148631875881,"Within_Range","",2.5504924783,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"56","COMPASS: Synoptic","CB","SWH","WC","B",10,"SWH_202411_WC_LYSB_10CM",2024,11,12,"13:45","EDT",92.5616,2.88713661883968,"Within_Range","",1411.4369,39.8148631875881,"Within_Range","",2.5504924783,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -447,7 +447,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"57","COMPASS: Synoptic","CB","SWH","WC","B",20,"SWH_202411_WC_LYSB_20CM",2024,11,12,"13:50","EDT",0.057935121646912,"Within_Range","",33.6637658674189,"Within_Range","",2.1564645635,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"57","COMPASS: Synoptic","CB","SWH","WC","B",20,"SWH_202411_WC_LYSB_20CM",2024,11,12,"13:50","EDT",1.8574,0.057935121646912,"Within_Range","",1193.3805,33.6637658674189,"Within_Range","",2.1564645635,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -455,7 +455,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"58","COMPASS: Synoptic","CB","SWH","WC","B",45,"SWH_202411_WC_LYSB_45CM",2024,11,12,"13:55","EDT",0.00723331253898939,"Within_Range","",19.9512750352609,"Within_Range","",1.2780677689,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"58","COMPASS: Synoptic","CB","SWH","WC","B",45,"SWH_202411_WC_LYSB_45CM",2024,11,12,"13:55","EDT",0.2319,0.00723331253898939,"Within_Range","",707.2727,19.9512750352609,"Within_Range","",1.2780677689,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -463,7 +463,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"59","COMPASS: Synoptic","CB","SWH","WC","C",10,"SWH_202411_WC_LYSC_10CM",2024,11,12,"14:00","EDT",0.970053025577043,"Within_Range","",39.0421946403385,"Within_Range","",2.5009967606,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"59","COMPASS: Synoptic","CB","SWH","WC","C",10,"SWH_202411_WC_LYSC_10CM",2024,11,12,"14:00","EDT",31.0999,0.970053025577043,"Within_Range","",1384.0458,39.0421946403385,"Within_Range","",2.5009967606,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -471,7 +471,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"60","COMPASS: Synoptic","CB","SWH","WC","C",20,"SWH_202411_WC_LYSC_20CM",2024,11,12,"14:05","EDT",1.68204304429195,"Within_Range","",34.7741156558533,"Within_Range","",2.2275915168,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"60","COMPASS: Synoptic","CB","SWH","WC","C",20,"SWH_202411_WC_LYSC_20CM",2024,11,12,"14:05","EDT",53.9263,1.68204304429195,"Within_Range","",1232.7424,34.7741156558533,"Within_Range","",2.2275915168,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -479,7 +479,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"61","COMPASS: Synoptic","CB","SWH","WC","C",45,"SWH_202411_WC_LYSC_45CM",2024,11,12,"14:10","EDT",0,"bdl","",17.0906657263752,"Within_Range","",1.0948224287,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"61","COMPASS: Synoptic","CB","SWH","WC","C",45,"SWH_202411_WC_LYSC_45CM",2024,11,12,"14:10","EDT",0,0,"bdl","",605.8641,17.0906657263752,"Within_Range","",1.0948224287,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -487,7 +487,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"62","COMPASS: Synoptic","CB","SWH","SW","A",0,"SWH_202411_SW_A",2024,11,12,"13:10","EDT",7.45598877105427,"Within_Range","",50.6107588152327,"Within_Range","",3.2420575798,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"62","COMPASS: Synoptic","CB","SWH","SW","A",0,"SWH_202411_SW_A",2024,11,12,"13:10","EDT",239.039,7.45598877105427,"Within_Range","",1794.1514,50.6107588152327,"Within_Range","",3.2420575798,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -495,7 +495,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"63","COMPASS: Synoptic","CB","SWH","SW","B",0,"SWH_202411_SW_B",2024,11,12,"13:10","EDT",7.64407985028072,"Within_Range","",51.6985359661495,"Within_Range","",3.3117385717,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"63","COMPASS: Synoptic","CB","SWH","SW","B",0,"SWH_202411_SW_B",2024,11,12,"13:10","EDT",245.0692,7.64407985028072,"Within_Range","",1832.7131,51.6985359661495,"Within_Range","",3.3117385717,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -503,7 +503,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"64","COMPASS: Synoptic","CB","SWH","SW","C",0,"SWH_202411_SW_C",2024,11,12,"13:10","EDT",7.59856519026825,"Within_Range","",51.3118110014104,"Within_Range","",3.2869656859,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"64","COMPASS: Synoptic","CB","SWH","SW","C",0,"SWH_202411_SW_C",2024,11,12,"13:10","EDT",243.61,7.59856519026825,"Within_Range","",1819.0037,51.3118110014104,"Within_Range","",3.2869656859,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -511,7 +511,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"65","COMPASS: Synoptic","CB","GCW","TR","A",20,"GCW_202411_TR_LYSA_20CM",2024,11,19,"11:58","EST",4.09448222083593,"Within_Range","",76.9380169252468,"Within_Range","",4.9285330289,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"65","COMPASS: Synoptic","CB","GCW","TR","A",20,"GCW_202411_TR_LYSA_20CM",2024,11,19,"11:58","EST",131.2691,4.09448222083593,"Within_Range","",2727.4527,76.9380169252468,"Within_Range","",4.9285330289,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -519,7 +519,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.","Collected on 11-19-2024, but then left overnight and collected some also on 11-20-2024"
-"66","COMPASS: Synoptic","CB","GCW","TR","A",45,"GCW_202411_TR_LYSA_45CM",2024,11,19,"11:58","EST",0.123512164691204,"Within_Range","",19.2541297602257,"Within_Range","",1.2334099323,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"66","COMPASS: Synoptic","CB","GCW","TR","A",45,"GCW_202411_TR_LYSA_45CM",2024,11,19,"11:58","EST",3.9598,0.123512164691204,"Within_Range","",682.5589,19.2541297602257,"Within_Range","",1.2334099323,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -527,7 +527,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.","Collected on 11-19-2024, but then left overnight and collected some also on 11-20-2024"
-"67","COMPASS: Synoptic","CB","GCW","TR","B",10,"GCW_202411_TR_LYSB_10CM",2024,11,19,"12:03","EST",19.4570648783531,"Within_Range","",141.829447108604,"Within_Range","",9.0853579973,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"67","COMPASS: Synoptic","CB","GCW","TR","B",10,"GCW_202411_TR_LYSB_10CM",2024,11,19,"12:03","EST",623.7935,19.4570648783531,"Within_Range","",5027.8539,141.829447108604,"Within_Range","",9.0853579973,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -535,7 +535,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.","Collected on 11-19-2024, but then left overnight and collected some also on 11-20-2024"
-"68","COMPASS: Synoptic","CB","GCW","TR","B",20,"GCW_202411_TR_LYSB_20CM",2024,11,19,"12:03","EST",8.78716781035558,"Within_Range","",108.194564174894,"Within_Range","",6.9307696211,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"68","COMPASS: Synoptic","CB","GCW","TR","B",20,"GCW_202411_TR_LYSB_20CM",2024,11,19,"12:03","EST",281.7166,8.78716781035558,"Within_Range","",3835.4973,108.194564174894,"Within_Range","",6.9307696211,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -543,7 +543,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.","Collected on 11-19-2024, but then left overnight and collected some also on 11-20-2024"
-"69","COMPASS: Synoptic","CB","GCW","TR","B",45,"GCW_202411_TR_LYSB_45CM",2024,11,19,"12:03","EST",0.0521272613849033,"Within_Range","",44.5671368124118,"Within_Range","",2.854914335,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"69","COMPASS: Synoptic","CB","GCW","TR","B",45,"GCW_202411_TR_LYSB_45CM",2024,11,19,"12:03","EST",1.6712,0.0521272613849033,"Within_Range","",1579.905,44.5671368124118,"Within_Range","",2.854914335,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -551,7 +551,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.","Collected on 11-19-2024, but then left overnight and collected some also on 11-20-2024"
-"70","COMPASS: Synoptic","CB","GCW","TR","C",10,"GCW_202411_TR_LYSC_10CM",2024,11,19,"12:09","EST",15.0255832813475,"Within_Range","",125.213322990127,"Within_Range","",8.0209598261,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"70","COMPASS: Synoptic","CB","GCW","TR","C",10,"GCW_202411_TR_LYSC_10CM",2024,11,19,"12:09","EST",481.7202,15.0255832813475,"Within_Range","",4438.8123,125.213322990127,"Within_Range","",8.0209598261,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -559,7 +559,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.","Collected on 11-19-2024, but then left overnight and collected some also on 11-20-2024"
-"71","COMPASS: Synoptic","CB","GCW","TR","C",20,"GCW_202411_TR_LYSC_20CM",2024,11,19,"12:09","EST",6.78490018714909,"Within_Range","",91.7053286318759,"Within_Range","",5.8744996973,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"71","COMPASS: Synoptic","CB","GCW","TR","C",20,"GCW_202411_TR_LYSC_20CM",2024,11,19,"12:09","EST",217.5239,6.78490018714909,"Within_Range","",3250.9539,91.7053286318759,"Within_Range","",5.8744996973,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -567,7 +567,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.","Collected on 11-19-2024, but then left overnight and collected some also on 11-20-2024"
-"72","COMPASS: Synoptic","CB","GCW","TR","C",45,"GCW_202411_TR_LYSC_45CM",2024,11,19,"12:09","EST",0.050670617592015,"Within_Range","",60.3206093088858,"Within_Range","",3.8640526392,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"72","COMPASS: Synoptic","CB","GCW","TR","C",45,"GCW_202411_TR_LYSC_45CM",2024,11,19,"12:09","EST",1.6245,0.050670617592015,"Within_Range","",2138.3656,60.3206093088858,"Within_Range","",3.8640526392,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -575,7 +575,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"73","COMPASS: Synoptic","CB","GCW","WC","A",10,"GCW_202411_WC_LYSA_10CM",2024,11,19,"10:42","EST",17.2299906425452,"Within_Range","",184.565991537377,"Within_Range","",11.8229819708,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"73","COMPASS: Synoptic","CB","GCW","WC","A",10,"GCW_202411_WC_LYSA_10CM",2024,11,19,"10:42","EST",552.3935,17.2299906425452,"Within_Range","",6542.8644,184.565991537377,"Within_Range","",11.8229819708,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -583,7 +583,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"74","COMPASS: Synoptic","CB","GCW","WC","A",20,"GCW_202411_WC_LYSA_20CM",2024,11,19,"10:42","EST",13.0815938864629,"Within_Range","",179.932674188999,"Within_Range","",11.5261802331,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"74","COMPASS: Synoptic","CB","GCW","WC","A",20,"GCW_202411_WC_LYSA_20CM",2024,11,19,"10:42","EST",419.3959,13.0815938864629,"Within_Range","",6378.6133,179.932674188999,"Within_Range","",11.5261802331,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -591,7 +591,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"75","COMPASS: Synoptic","CB","GCW","WC","A",45,"GCW_202411_WC_LYSA_45CM",2024,11,19,"10:42","EST",3.52511540860886,"Within_Range","",172.56690832158,"Within_Range","",11.0543428983,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"75","COMPASS: Synoptic","CB","GCW","WC","A",45,"GCW_202411_WC_LYSA_45CM",2024,11,19,"10:42","EST",113.0152,3.52511540860886,"Within_Range","",6117.4969,172.56690832158,"Within_Range","",11.0543428983,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -599,7 +599,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"76","COMPASS: Synoptic","CB","GCW","WC","B",10,"GCW_202411_WC_LYSB_10CM",2024,11,19,"10:50","EST",16.9262819713038,"Within_Range","",176.809813822285,"Within_Range","",11.3261355753,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"76","COMPASS: Synoptic","CB","GCW","WC","B",10,"GCW_202411_WC_LYSB_10CM",2024,11,19,"10:50","EST",542.6566,16.9262819713038,"Within_Range","",6267.9079,176.809813822285,"Within_Range","",11.3261355753,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -607,7 +607,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"77","COMPASS: Synoptic","CB","GCW","WC","B",20,"GCW_202411_WC_LYSB_20CM",2024,11,19,"10:50","EST",11.4965502183406,"Within_Range","",180.273540197461,"Within_Range","",11.548015479,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"77","COMPASS: Synoptic","CB","GCW","WC","B",20,"GCW_202411_WC_LYSB_20CM",2024,11,19,"10:50","EST",368.5794,11.4965502183406,"Within_Range","",6390.697,180.273540197461,"Within_Range","",11.548015479,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -615,7 +615,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"78","COMPASS: Synoptic","CB","GCW","WC","B",45,"GCW_202411_WC_LYSB_45CM",2024,11,19,"10:50","EST",2.41637866500312,"Within_Range","",161.742973201693,"Within_Range","",10.3609816388,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"78","COMPASS: Synoptic","CB","GCW","WC","B",45,"GCW_202411_WC_LYSB_45CM",2024,11,19,"10:50","EST",77.4691,2.41637866500312,"Within_Range","",5733.7884,161.742973201693,"Within_Range","",10.3609816388,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -623,7 +623,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"79","COMPASS: Synoptic","CB","GCW","WC","C",10,"GCW_202411_WC_LYSC_10CM",2024,11,19,"11:05","EST",32.5663256394261,"Within_Range","",220.016614950635,"Within_Range","",14.093883323,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"79","COMPASS: Synoptic","CB","GCW","WC","C",10,"GCW_202411_WC_LYSC_10CM",2024,11,19,"11:05","EST",1044.0764,32.5663256394261,"Within_Range","",7799.589,220.016614950635,"Within_Range","",14.093883323,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -631,7 +631,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"80","COMPASS: Synoptic","CB","GCW","WC","C",20,"GCW_202411_WC_LYSC_20CM",2024,11,19,"11:05","EST",30.8962944479102,"Within_Range","",226.517241184767,"Within_Range","",14.5103014134,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"80","COMPASS: Synoptic","CB","GCW","WC","C",20,"GCW_202411_WC_LYSC_20CM",2024,11,19,"11:05","EST",990.5352,30.8962944479102,"Within_Range","",8030.0362,226.517241184767,"Within_Range","",14.5103014134,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -639,7 +639,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"81","COMPASS: Synoptic","CB","GCW","WC","C",45,"GCW_202411_WC_LYSC_45CM",2024,11,19,"11:05","EST",12.7513630692452,"Within_Range","",152.15525528914,"Within_Range","",9.7468101666,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"81","COMPASS: Synoptic","CB","GCW","WC","C",45,"GCW_202411_WC_LYSC_45CM",2024,11,19,"11:05","EST",408.8087,12.7513630692452,"Within_Range","",5393.9038,152.15525528914,"Within_Range","",9.7468101666,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -647,7 +647,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"82","COMPASS: Synoptic","CB","GCW","SW","A",0,"GCW_202411_SW_A",2024,11,19,"10:14","EST",38.524809731753,"Within_Range","",259.939086036671,"Within_Range","",16.6512429642,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"82","COMPASS: Synoptic","CB","GCW","SW","A",0,"GCW_202411_SW_A",2024,11,19,"10:14","EST",1235.1054,38.524809731753,"Within_Range","",9214.8406,259.939086036671,"Within_Range","",16.6512429642,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -655,7 +655,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"83","COMPASS: Synoptic","CB","GCW","SW","B",0,"GCW_202411_SW_B",2024,11,19,"10:14","EST",37.4921802869619,"Within_Range","",252.550022566996,"Within_Range","",16.1779132281,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"83","COMPASS: Synoptic","CB","GCW","SW","B",0,"GCW_202411_SW_B",2024,11,19,"10:14","EST",1201.9993,37.4921802869619,"Within_Range","",8952.8983,252.550022566996,"Within_Range","",16.1779132281,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -663,7 +663,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"84","COMPASS: Synoptic","CB","GCW","SW","C",0,"GCW_202411_SW_C",2024,11,19,"10:14","EST",36.1886650031191,"Within_Range","",242.547297602257,"Within_Range","",15.5371571719,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"84","COMPASS: Synoptic","CB","GCW","SW","C",0,"GCW_202411_SW_C",2024,11,19,"10:14","EST",1160.2086,36.1886650031191,"Within_Range","",8598.3017,242.547297602257,"Within_Range","",15.5371571719,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -671,7 +671,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"85","COMPASS: Synoptic","CB","MSM","UP","A",20,"MSM_202411_UP_LYSA_20CM",2024,11,21,"13:28","EST",7.18240174672489,"Within_Range","",91.9223018335684,"Within_Range","",5.8883985992,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"85","COMPASS: Synoptic","CB","MSM","UP","A",20,"MSM_202411_UP_LYSA_20CM",2024,11,21,"13:28","EST",230.2678,7.18240174672489,"Within_Range","",3258.6456,91.9223018335684,"Within_Range","",5.8883985992,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -679,7 +679,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"86","COMPASS: Synoptic","CB","MSM","UP","A",45,"MSM_202411_UP_LYSA_45CM",2024,11,21,"13:28","EST",5.53820648783531,"Within_Range","",73.083221438646,"Within_Range","",4.6816019614,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"86","COMPASS: Synoptic","CB","MSM","UP","A",45,"MSM_202411_UP_LYSA_45CM",2024,11,21,"13:28","EST",177.5549,5.53820648783531,"Within_Range","",2590.8002,73.083221438646,"Within_Range","",4.6816019614,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -687,7 +687,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"87","COMPASS: Synoptic","CB","MSM","UP","B",10,"MSM_202411_UP_LYSB_10CM",2024,11,21,"13:30","EST",5.4206425452277,"Within_Range","",70.6732073342736,"Within_Range","",4.5272209164,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"87","COMPASS: Synoptic","CB","MSM","UP","B",10,"MSM_202411_UP_LYSB_10CM",2024,11,21,"13:30","EST",173.7858,5.4206425452277,"Within_Range","",2505.3652,70.6732073342736,"Within_Range","",4.5272209164,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -695,7 +695,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"88","COMPASS: Synoptic","CB","MSM","UP","B",45,"MSM_202411_UP_LYSB_45CM",2024,11,21,"13:30","EST",6.92957891453525,"Within_Range","",74.3233032440056,"Within_Range","",4.7610393077,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"88","COMPASS: Synoptic","CB","MSM","UP","B",45,"MSM_202411_UP_LYSB_45CM",2024,11,21,"13:30","EST",222.1623,6.92957891453525,"Within_Range","",2634.7611,74.3233032440056,"Within_Range","",4.7610393077,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -703,7 +703,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"89","COMPASS: Synoptic","CB","MSM","UP","C",10,"MSM_202411_UP_LYSC_10CM",2024,11,21,"13:35","EST",6.22053337492202,"Within_Range","",61.6322425952045,"Within_Range","",3.948073441,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"89","COMPASS: Synoptic","CB","MSM","UP","C",10,"MSM_202411_UP_LYSC_10CM",2024,11,21,"13:35","EST",199.4303,6.22053337492202,"Within_Range","",2184.863,61.6322425952045,"Within_Range","",3.948073441,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -711,7 +711,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"90","COMPASS: Synoptic","CB","MSM","UP","C",20,"MSM_202411_UP_LYSC_20CM",2024,11,21,"13:35","EST",4.10171553337492,"Within_Range","",36.2978053596615,"Within_Range","",2.3251962604,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"90","COMPASS: Synoptic","CB","MSM","UP","C",20,"MSM_202411_UP_LYSC_20CM",2024,11,21,"13:35","EST",131.501,4.10171553337492,"Within_Range","",1286.7572,36.2978053596615,"Within_Range","",2.3251962604,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -719,7 +719,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"91","COMPASS: Synoptic","CB","MSM","UP","C",45,"MSM_202411_UP_LYSC_45CM",2024,11,21,"13:35","EST",5.87714909544604,"Within_Range","",53.9354894217207,"Within_Range","",3.4550336717,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"91","COMPASS: Synoptic","CB","MSM","UP","C",45,"MSM_202411_UP_LYSC_45CM",2024,11,21,"13:35","EST",188.4214,5.87714909544604,"Within_Range","",1912.0131,53.9354894217207,"Within_Range","",3.4550336717,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -727,7 +727,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"92","COMPASS: Synoptic","CB","MSM","TR","A",10,"MSM_202411_TR_LYSA_10CM",2024,11,21,"12:24","EST",35.8724703680599,"adl","",255.560073342736,"Within_Range","",16.3707315122,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"92","COMPASS: Synoptic","CB","MSM","TR","A",10,"MSM_202411_TR_LYSA_10CM",2024,11,21,"12:24","EST",1150.0714,35.8724703680599,"adl","",9059.6046,255.560073342736,"Within_Range","",16.3707315122,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -735,7 +735,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"93","COMPASS: Synoptic","CB","MSM","TR","A",20,"MSM_202411_TR_LYSA_20CM",2024,11,21,"12:24","EST",25.1098877105427,"Within_Range","",193.879557122708,"Within_Range","",12.4195917521,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"93","COMPASS: Synoptic","CB","MSM","TR","A",20,"MSM_202411_TR_LYSA_20CM",2024,11,21,"12:24","EST",805.023,25.1098877105427,"Within_Range","",6873.0303,193.879557122708,"Within_Range","",12.4195917521,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -743,7 +743,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"94","COMPASS: Synoptic","CB","MSM","TR","A",45,"MSM_202411_TR_LYSA_45CM",2024,11,21,"12:24","EST",19.4306425452277,"Within_Range","",154.570705218618,"Within_Range","",9.9015394205,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"94","COMPASS: Synoptic","CB","MSM","TR","A",45,"MSM_202411_TR_LYSA_45CM",2024,11,21,"12:24","EST",622.9464,19.4306425452277,"Within_Range","",5479.5315,154.570705218618,"Within_Range","",9.9015394205,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -751,7 +751,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"95","COMPASS: Synoptic","CB","MSM","TR","B",10,"MSM_202411_TR_LYSB_10CM",2024,11,21,"12:32","EST",34.6394853399875,"adl","",246.697802538787,"Within_Range","",15.8030308397,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"95","COMPASS: Synoptic","CB","MSM","TR","B",10,"MSM_202411_TR_LYSB_10CM",2024,11,21,"12:32","EST",1110.5419,34.6394853399875,"adl","",8745.4371,246.697802538787,"Within_Range","",15.8030308397,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -759,7 +759,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"96","COMPASS: Synoptic","CB","MSM","TR","B",20,"MSM_202411_TR_LYSB_20CM",2024,11,21,"12:32","EST",24.8129382407985,"Within_Range","",217.407543018336,"Within_Range","",13.9267510018,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"96","COMPASS: Synoptic","CB","MSM","TR","B",20,"MSM_202411_TR_LYSB_20CM",2024,11,21,"12:32","EST",795.5028,24.8129382407985,"Within_Range","",7707.0974,217.407543018336,"Within_Range","",13.9267510018,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -767,7 +767,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"97","COMPASS: Synoptic","CB","MSM","TR","B",45,"MSM_202411_TR_LYSB_45CM",2024,11,21,"12:32","EST",14.4449407361198,"Within_Range","",182.829929478138,"Within_Range","",11.711773047,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"97","COMPASS: Synoptic","CB","MSM","TR","B",45,"MSM_202411_TR_LYSB_45CM",2024,11,21,"12:32","EST",463.1048,14.4449407361198,"Within_Range","",6481.321,182.829929478138,"Within_Range","",11.711773047,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -775,7 +775,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"98","COMPASS: Synoptic","CB","MSM","TR","C",10,"MSM_202411_TR_LYSC_10CM",2024,11,21,"12:43","EST",35.8138677479726,"adl","",251.459218617772,"Within_Range","",16.1080383451,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"98","COMPASS: Synoptic","CB","MSM","TR","C",10,"MSM_202411_TR_LYSC_10CM",2024,11,21,"12:43","EST",1148.1926,35.8138677479726,"adl","",8914.2293,251.459218617772,"Within_Range","",16.1080383451,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -783,7 +783,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"99","COMPASS: Synoptic","CB","MSM","TR","C",20,"MSM_202411_TR_LYSC_20CM",2024,11,21,"12:43","EST",22.3073362445415,"Within_Range","",203.246629055007,"Within_Range","",13.019629051,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"99","COMPASS: Synoptic","CB","MSM","TR","C",20,"MSM_202411_TR_LYSC_20CM",2024,11,21,"12:43","EST",715.1732,22.3073362445415,"Within_Range","",7205.093,203.246629055007,"Within_Range","",13.019629051,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -791,7 +791,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"100","COMPASS: Synoptic","CB","MSM","TR","C",45,"MSM_202411_TR_LYSC_45CM",2024,11,21,"12:43","EST",21.7072832189644,"Within_Range","",189.991472496474,"Within_Range","",12.1705282439,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"100","COMPASS: Synoptic","CB","MSM","TR","C",45,"MSM_202411_TR_LYSC_45CM",2024,11,21,"12:43","EST",695.9355,21.7072832189644,"Within_Range","",6735.1977,189.991472496474,"Within_Range","",12.1705282439,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -799,7 +799,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"101","COMPASS: Synoptic","CB","MSM","WC","A",20,"MSM_202411_WC_LYSA_20CM",2024,11,21,"11:28","EST",34.7520492825951,"Within_Range","",261.348617771509,"Within_Range","",16.7415349595,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"101","COMPASS: Synoptic","CB","MSM","WC","A",20,"MSM_202411_WC_LYSA_20CM",2024,11,21,"11:28","EST",1114.1507,34.7520492825951,"Within_Range","",9264.8085,261.348617771509,"Within_Range","",16.7415349595,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -807,7 +807,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"102","COMPASS: Synoptic","CB","MSM","WC","A",45,"MSM_202411_WC_LYSA_45CM",2024,11,21,"12:10","EST",2.03412975670618,"Within_Range","",273.272220028209,"Within_Range","",17.5053388614,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"102","COMPASS: Synoptic","CB","MSM","WC","A",45,"MSM_202411_WC_LYSA_45CM",2024,11,21,"12:10","EST",65.2142,2.03412975670618,"Within_Range","",9687.5002,273.272220028209,"Within_Range","",17.5053388614,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -815,7 +815,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"103","COMPASS: Synoptic","CB","MSM","WC","B",10,"MSM_202411_WC_LYSB_10CM",2024,11,21,"11:41","EST",33.5534653774173,"Within_Range","",253.681390691114,"Within_Range","",16.2503865771,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"103","COMPASS: Synoptic","CB","MSM","WC","B",10,"MSM_202411_WC_LYSB_10CM",2024,11,21,"11:41","EST",1075.7241,33.5534653774173,"Within_Range","",8993.0053,253.681390691114,"Within_Range","",16.2503865771,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -823,7 +823,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"104","COMPASS: Synoptic","CB","MSM","WC","B",20,"MSM_202411_WC_LYSB_20CM",2024,11,21,"11:41","EST",27.1442794759825,"Within_Range","",233.616899858956,"Within_Range","",14.9650924137,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"104","COMPASS: Synoptic","CB","MSM","WC","B",20,"MSM_202411_WC_LYSB_20CM",2024,11,21,"11:41","EST",870.2456,27.1442794759825,"Within_Range","",8281.7191,233.616899858956,"Within_Range","",14.9650924137,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -831,7 +831,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"105","COMPASS: Synoptic","CB","MSM","WC","C",20,"MSM_202411_WC_LYSC_20CM",2024,11,21,"11:45","EST",21.2360511540861,"Within_Range","",243.665534555712,"Within_Range","",15.6087893624,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"105","COMPASS: Synoptic","CB","MSM","WC","C",20,"MSM_202411_WC_LYSC_20CM",2024,11,21,"11:45","EST",680.8278,21.2360511540861,"Within_Range","",8637.9432,243.665534555712,"Within_Range","",15.6087893624,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -839,7 +839,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"106","COMPASS: Synoptic","CB","MSM","SW","A",0,"MSM_202411_SW_A",2024,11,21,"12:00","EST",39.6246849656893,"Within_Range","",268.36325528914,"Within_Range","",17.1908796618,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"106","COMPASS: Synoptic","CB","MSM","SW","A",0,"MSM_202411_SW_A",2024,11,21,"12:00","EST",1270.3674,39.6246849656893,"Within_Range","",9513.4774,268.36325528914,"Within_Range","",17.1908796618,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -847,7 +847,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"107","COMPASS: Synoptic","CB","MSM","SW","B",0,"MSM_202411_SW_B",2024,11,21,"12:00","EST",41.0087461010605,"Within_Range","",277.220445698166,"Within_Range","",17.7582548936,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"107","COMPASS: Synoptic","CB","MSM","SW","B",0,"MSM_202411_SW_B",2024,11,21,"12:00","EST",1314.7404,41.0087461010605,"Within_Range","",9827.4648,277.220445698166,"Within_Range","",17.7582548936,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
@@ -855,7 +855,7 @@
   Another note: These samples These samples came to room temperature during storage 
   due to the refrigerator dying. 
   The data does not appear to be impacted, but is noted here.",""
-"108","COMPASS: Synoptic","CB","MSM","SW","C",0,"MSM_202411_SW_C",2024,11,21,"12:00","EST",39.3274173424828,"Within_Range","",266.124205923836,"Within_Range","",17.0474503017,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
+"108","COMPASS: Synoptic","CB","MSM","SW","C",0,"MSM_202411_SW_C",2024,11,21,"12:00","EST",1260.837,39.3274173424828,"Within_Range","",9434.1031,266.124205923836,"Within_Range","",17.0474503017,"2025-06-23","Some sample IDs are missing from metadata: GCW_202411_TR_LYSC_45CM,
   MSM_202411_WC_LYSC_10CM; 
   One Cl chk std and several SO4 chk stds are lower than the expected concentration; 
   One SO4 dup had high CV; 
