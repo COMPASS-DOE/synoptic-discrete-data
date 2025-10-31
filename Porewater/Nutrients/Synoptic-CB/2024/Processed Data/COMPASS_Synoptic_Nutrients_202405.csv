@@ -1,0 +1,1189 @@
+"","Project","Region","Site","Zone","Replicate","Depth_cm","Sample_ID","Year","Month","Day","Time","Time_Zone","NOx_Conc_mgL","NOx_Conc_uM","NOx_Conc_Flag","NOx_QAQC_Flag","NH3_Conc_mgL","NH3_Conc_uM","NH3_Conc_Flag","NH3_QAQC_Flag","PO4_Conc_mgL","PO4_Conc_uM","PO4_Conc_Flag","PO4_QAQC_Flag","Analysis_rundate","Run_notes","Field_notes"
+"1","COMPASS: Synoptic","CB","GCW","SW","A",0,"GCW_202405_SW_A",2024,5,23,"","",0.013321,0.9510448571041,"bdl","NOx blanks out of range",0.062276,4.446157910143,"Within_Range","",0.037678,1.2164489415267,"Within_Range","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"2","COMPASS: Synoptic","CB","GCW","SW","B",0,"GCW_202405_SW_B",2024,5,23,"","",0.017195,1.22762677861309,"bdl","NOx blanks out of range",0.058668,4.18856690012637,"Within_Range","",0.051697,1.66905783030166,"Within_Range","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"3","COMPASS: Synoptic","CB","GCW","SW","C",0,"GCW_202405_SW_C",2024,5,23,"","",0.033271,2.37536321903089,"Within_Range","NOx blanks out of range",0.072053,5.14418099909329,"Within_Range","",0.046873,1.51331310675145,"Within_Range","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"4","COMPASS: Synoptic","CB","GCW","TR","A",20,"GCW_202405_TR_LysA_20cm",2024,5,23,"","",0.014281,1.01958348504644,"bdl","NOx blanks out of range",0.300635,21.4636566785895,"Within_Range","",0.004993,0.16120095453694,"Within_Range","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"5","COMPASS: Synoptic","CB","GCW","TR","A",45,"GCW_202405_TR_LysA_45cm",2024,5,23,"","",0.023094,1.64878236843796,"bdl","NOx blanks out of range",0.18828,13.4421384051918,"Within_Range","",0.003744,0.120876501859864,"Within_Range","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"6","COMPASS: Synoptic","CB","GCW","TR","B",10,"GCW_202405_TR_LysB_10cm",2024,5,23,"","",0.016481,1.17665117408098,"bdl","NOx blanks out of range",0.129936,9.27670329199597,"Within_Range","",0.010518,0.339577736795421,"Within_Range","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"7","COMPASS: Synoptic","CB","GCW","TR","B",20,"GCW_202405_TR_LysB_20cm",2024,5,23,"","",0.026606,1.89951951566036,"Within_Range","NOx blanks out of range",0.464146,33.1374270884648,"Within_Range","",0.020121,0.64961434132541,"Within_Range","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"8","COMPASS: Synoptic","CB","GCW","TR","B",45,"GCW_202405_TR_LysB_45cm",2024,5,23,"","",0.023599,1.6848365425118,"bdl","NOx blanks out of range",0.205353,14.6610550665039,"Within_Range","",0.017225,0.556115850570557,"Within_Range","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"9","COMPASS: Synoptic","CB","GCW","TR","C",10,"GCW_202405_TR_LysC_10cm",2024,5,23,"","",0.023409,1.67127160573154,"bdl","NOx blanks out of range",0.106272,7.58722611321725,"Within_Range","",0.004378,0.141345439407715,"Within_Range","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"10","COMPASS: Synoptic","CB","GCW","TR","C",20,"GCW_202405_TR_LysC_20cm",2024,5,23,"","",0.02225,1.58852549137199,"bdl","NOx blanks out of range",0.373811,26.6880135934945,"Within_Range","",0.006326,0.204237380012153,"Within_Range","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"11","COMPASS: Synoptic","CB","GCW","TR","C",45,"GCW_202405_TR_LysC_45cm",2024,5,23,"","",0.025113,1.7929276703292,"Within_Range","NOx blanks out of range",0.150505,10.7452147900648,"Within_Range","",0.006195,0.200007993862676,"Within_Range","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"12","COMPASS: Synoptic","CB","GCW","UP","B",10,"GCW_202405_UP_LysB_10cm",2024,5,23,"","",0.017271,1.23305275332519,"bdl","NOx blanks out of range",0.070667,5.04522835500153,"Within_Range","",0.009844,0.317817383629409,"Within_Range","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"13","COMPASS: Synoptic","CB","GCW","WC","A",10,"GCW_202405_WC_LysA_10cm",2024,5,23,"","",0.036631,2.61524841682909,"Within_Range","NOx blanks out of range",0.510503,36.4470574796347,"Within_Range","",0.242414,7.82643064152168,"Within_Range","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"14","COMPASS: Synoptic","CB","GCW","WC","A",20,"GCW_202405_WC_LysA_20cm",2024,5,23,"","",0.068294,4.87580943405656,"Within_Range","NOx blanks out of range",0.321191,22.9312400494049,"Within_Range","",0.007529,0.243076704728344,"Within_Range","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"15","COMPASS: Synoptic","CB","GCW","WC","A",45,"GCW_202405_WC_LysA_45cm",2024,5,23,"","",0.025049,1.78835842846638,"Within_Range","NOx blanks out of range",1.099133,78.4719455689063,"Within_Range","",0.233038,7.52372282062476,"Within_Range","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"16","COMPASS: Synoptic","CB","GCW","WC","B",10,"GCW_202405_WC_LysB_10cm",2024,5,23,"","",0.056141,4.00815324094897,"Within_Range","NOx blanks out of range",0.544897,38.9025966144774,"Within_Range","",0.36846,11.8958749666895,"adl","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"17","COMPASS: Synoptic","CB","GCW","WC","B",20,"GCW_202405_WC_LysB_20cm",2024,5,23,"","",0.052926,3.77862023174624,"Within_Range","NOx blanks out of range",0.503457,35.9440125082996,"Within_Range","",0.263637,8.51162348312743,"Within_Range","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"18","COMPASS: Synoptic","CB","GCW","WC","B",45,"GCW_202405_WC_LysB_45cm",2024,5,23,"","",0.026306,1.87810119442838,"Within_Range","NOx blanks out of range",0.725339,51.7851456802816,"Within_Range","",0.275868,8.90650609377059,"Within_Range","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"19","COMPASS: Synoptic","CB","GCW","WC","C",10,"GCW_202405_WC_LysC_10cm",2024,5,23,"","",0.029828,2.12955228569185,"Within_Range","NOx blanks out of range",0.080378,5.73853941328079,"Within_Range","",0.1708,5.51434468954724,"Within_Range","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"20","COMPASS: Synoptic","CB","GCW","WC","C",20,"GCW_202405_WC_LysC_20cm",2024,5,23,"","",0.034527,2.46503459058879,"Within_Range","NOx blanks out of range",0.060679,4.33214104678475,"Within_Range","",0.170137,5.49293947567622,"Within_Range","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"21","COMPASS: Synoptic","CB","GCW","WC","C",45,"GCW_202405_WC_LysC_45cm",2024,5,23,"","",0.010655,0.760707375755888,"bdl","NOx blanks out of range",0.243701,17.398887675184,"Within_Range","",0.17772,5.73775959148908,"Within_Range","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"22","COMPASS: Synoptic","CB","GWI","SW","A",0,"GWI_202405_SW_A",2024,5,16,"","",0.055739,3.97945269049812,"Within_Range","NOx blanks out of range",NA,NA,NA,"",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"23","COMPASS: Synoptic","CB","GWI","SW","B",0,"GWI_202405_SW_B",2024,5,16,"","",0.041984,2.99742266201175,"Within_Range","NOx blanks out of range",NA,NA,NA,"",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"24","COMPASS: Synoptic","CB","GWI","SW","C",0,"GWI_202405_SW_C",2024,5,16,"","",0.039293,2.80530032056087,"Within_Range","NOx blanks out of range",NA,NA,NA,"",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"25","COMPASS: Synoptic","CB","GWI","TR","A",10,"GWI_202405_TR_LysA_10cm",2024,5,16,"","",0.049431,3.52909678939365,"Within_Range","NOx blanks out of range",NA,NA,NA,"",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"26","COMPASS: Synoptic","CB","GWI","TR","A",20,"GWI_202405_TR_LysA_20cm",2024,5,16,"","",0.049065,3.50296643749063,"Within_Range","NOx blanks out of range",NA,NA,NA,"",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"27","COMPASS: Synoptic","CB","GWI","TR","B",10,"GWI_202405_TR_LysB_10cm",2024,5,16,"","",0.043678,3.11836478256834,"Within_Range","NOx blanks out of range",NA,NA,NA,"",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"28","COMPASS: Synoptic","CB","GWI","TR","B",20,"GWI_202405_TR_LysB_20cm",2024,5,16,"","",0.055251,3.9446122212941,"Within_Range","NOx blanks out of range",NA,NA,NA,"",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"29","COMPASS: Synoptic","CB","GWI","TR","B",45,"GWI_202405_TR_LysB_45cm",2024,5,16,"","",0.043313,3.09230582506943,"Within_Range","NOx blanks out of range",NA,NA,NA,"",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"30","COMPASS: Synoptic","CB","GWI","TR","C",10,"GWI_202405_TR_LysC_10cm",2024,5,16,"","",0.053415,3.81353209535437,"Within_Range","NOx blanks out of range",NA,NA,NA,"",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"31","COMPASS: Synoptic","CB","GWI","TR","C",20,"GWI_202405_TR_LysC_20cm",2024,5,16,"","",0.041752,2.98085916025902,"Within_Range","NOx blanks out of range",NA,NA,NA,"",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"32","COMPASS: Synoptic","CB","GWI","TR",NA,NA,"GWI_202405_TR_LysC_45cm",NA,NA,NA,NA,NA,0.054965,3.92419342171961,"Within_Range","NOx blanks out of range",NA,NA,NA,"",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",NA
+"33","COMPASS: Synoptic","CB","GWI","UP","A",10,"GWI_202405_UP_LysA_10cm",2024,5,16,"","",0.054009,3.85594037139369,"Within_Range","NOx blanks out of range",NA,NA,NA,"",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"34","COMPASS: Synoptic","CB","GWI","UP","A",20,"GWI_202405_UP_LysA_20cm",2024,5,16,"","",0.051822,3.69980080961254,"Within_Range","NOx blanks out of range",NA,NA,NA,"",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"35","COMPASS: Synoptic","CB","GWI","UP","A",45,"GWI_202405_UP_LysA_45cm",2024,5,16,"","",0.053283,3.80410803401229,"Within_Range","NOx blanks out of range",NA,NA,NA,"",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"36","COMPASS: Synoptic","CB","GWI","UP","B",10,"GWI_202405_UP_LysB_10cm",2024,5,16,"","",0.059586,4.25410696309623,"Within_Range","NOx blanks out of range",NA,NA,NA,"",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"37","COMPASS: Synoptic","CB","GWI","UP","B",20,"GWI_202405_UP_LysB_20cm",2024,5,16,"","",0.053046,3.78718756023903,"Within_Range","NOx blanks out of range",NA,NA,NA,"",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"38","COMPASS: Synoptic","CB","GWI","UP","B",45,"GWI_202405_UP_LysB_45cm",2024,5,16,"","",0.051633,3.68630726723639,"Within_Range","NOx blanks out of range",NA,NA,NA,"",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"39","COMPASS: Synoptic","CB","GWI","UP","C",20,"GWI_202405_UP_LysC_20cm",2024,5,16,"","",0.058361,4.16664881806564,"Within_Range","NOx blanks out of range",NA,NA,NA,"",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"40","COMPASS: Synoptic","CB","GWI","WC","A",10,"GWI_202405_WC_LysA_10cm",2024,5,16,"","",0.042953,3.06660383959105,"Within_Range","NOx blanks out of range",NA,NA,NA,"",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"41","COMPASS: Synoptic","CB","GWI","WC","A",20,"GWI_202405_WC_LysA_20cm",2024,5,16,"","",0.042238,3.01555684065483,"Within_Range","NOx blanks out of range",NA,NA,NA,"",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"42","COMPASS: Synoptic","CB","GWI","WC","A",45,"GWI_202405_WC_LysA_45cm",2024,5,16,"","",0.038724,2.76467690462422,"Within_Range","NOx blanks out of range",NA,NA,NA,"",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"43","COMPASS: Synoptic","CB","GWI","WC","B",10,"GWI_202405_WC_LysB_10cm",2024,5,16,"","",0.051109,3.64889659948453,"Within_Range","NOx blanks out of range",NA,NA,NA,"",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"44","COMPASS: Synoptic","CB","GWI","WC","B",20,"GWI_202405_WC_LysB_20cm",2024,5,16,"","",0.041355,2.9525155818287,"Within_Range","NOx blanks out of range",NA,NA,NA,"",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"45","COMPASS: Synoptic","CB","GWI","WC","B",45,"GWI_202405_WC_LysB_45cm",2024,5,16,"","",0.045726,3.26458052217867,"Within_Range","NOx blanks out of range",NA,NA,NA,"",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"46","COMPASS: Synoptic","CB","GWI","WC","C",10,"GWI_202405_WC_LysC_10cm",2024,5,16,"","",0.050064,3.57428944719313,"Within_Range","NOx blanks out of range",NA,NA,NA,"",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"47","COMPASS: Synoptic","CB","GWI","WC","C",20,"GWI_202405_WC_LysC_20cm",2024,5,16,"","",0.051769,3.69601690619489,"Within_Range","NOx blanks out of range",NA,NA,NA,"",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"48","COMPASS: Synoptic","CB","MSM","SW","A",0,"MSM_202405_SW_A",2024,5,21,"","",0.027726,1.97948124825976,"Within_Range","NOx blanks out of range",0.127745,9.1202781525984,"Within_Range","",0.004087,0.131950390785595,"Within_Range","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"49","COMPASS: Synoptic","CB","MSM","SW","B",0,"MSM_202405_SW_B",2024,5,21,"","",0.040761,2.91010730578937,"Within_Range","NOx blanks out of range",0.103456,7.38617947125304,"Within_Range","",0.003689,0.119100805384893,"Within_Range","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"50","COMPASS: Synoptic","CB","MSM","SW","C",0,"MSM_202405_SW_C",2024,5,21,"","",0.037477,2.67564808270328,"Within_Range","NOx blanks out of range",0.169742,12.1186289418635,"Within_Range","",0.004401,0.142088003388158,"Within_Range","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"51","COMPASS: Synoptic","CB","MSM","TR","A",10,"MSM_202405_TR_LysA_10cm",2024,5,21,"","",0.046238,3.30113445708125,"Within_Range","NOx blanks out of range",1.091808,77.9489815588254,"Within_Range","",0.009145,0.295249895702046,"Within_Range","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"52","COMPASS: Synoptic","CB","MSM","TR","A",20,"MSM_202405_TR_LysA_20cm",2024,5,21,"","",0.034976,2.49709067803266,"Within_Range","NOx blanks out of range",2.53199,180.769917253886,"adl","",0.013116,0.423455181194974,"Within_Range","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"53","COMPASS: Synoptic","CB","MSM","TR","A",45,"MSM_202405_TR_LysA_45cm",2024,5,21,"","",0.011461,0.818251265465813,"bdl","NOx blanks out of range",1.455099,103.885926021118,"Within_Range","",0.013388,0.432236807398468,"Within_Range","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"54","COMPASS: Synoptic","CB","MSM","TR","B",10,"MSM_202405_TR_LysB_10cm",2024,5,21,"","",0.037493,2.67679039316898,"Within_Range","NOx blanks out of range",0.713567,50.9446907551386,"Within_Range","",0.006484,0.209338471703889,"Within_Range","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"55","COMPASS: Synoptic","CB","MSM","TR","B",20,"MSM_202405_TR_LysB_20cm",2024,5,21,"","",0.011931,0.851806635395918,"bdl","NOx blanks out of range",1.892771,135.133257655265,"Within_Range","",0.008478,0.273715540269212,"Within_Range","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"56","COMPASS: Synoptic","CB","MSM","TR","B",45,"MSM_202405_TR_LysB_45cm",2024,5,21,"","",0.027009,1.92829146051532,"Within_Range","NOx blanks out of range",2.653751,189.46297129231,"adl","",0.012433,0.401404259514876,"Within_Range","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"57","COMPASS: Synoptic","CB","MSM","TR","C",20,"MSM_202405_TR_LysC_20cm",2024,5,21,"","",0.014608,1.0429294551893,"bdl","NOx blanks out of range",1.319927,94.2354016292203,"Within_Range","",0.00653,0.210823599664774,"Within_Range","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"58","COMPASS: Synoptic","CB","MSM","TR","C",45,"MSM_202405_TR_LysC_45cm",2024,5,21,"","",0.020676,1.47615069930819,"bdl","NOx blanks out of range",2.33082,166.40750497976,"adl","",0.017433,0.562831211784994,"Within_Range","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"59","COMPASS: Synoptic","CB","MSM","UP",NA,NA,"MSM_202405_UP_LysA_10cm",NA,NA,NA,NA,NA,0.047635,3.40087243961818,"Within_Range","NOx blanks out of range",0.203875,14.5555341372343,"Within_Range","",0.005724,0.184801574958831,"Within_Range","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",NA
+"60","COMPASS: Synoptic","CB","MSM","UP",NA,NA,"MSM_202405_UP_LysA_20cm",NA,NA,NA,NA,NA,0.021917,1.56475115480449,"bdl","NOx blanks out of range",0.214703,15.3285927449007,"Within_Range","",0.005086,0.164203495849164,"Within_Range","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",NA
+"61","COMPASS: Synoptic","CB","MSM","UP","A",45,"MSM_202405_UP_LysA_45cm",2024,5,21,"","",0.027885,1.99083295851271,"Within_Range","NOx blanks out of range",0.94485,67.4570027201268,"Within_Range","",0.004129,0.133306377184664,"Within_Range","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"62","COMPASS: Synoptic","CB","MSM","UP","B",10,"MSM_202405_UP_LysB_10cm",2024,5,21,"","",0.018864,1.34678403906702,"bdl","NOx blanks out of range",0.151816,10.8388128538485,"Within_Range","",0.005764,0.186092990576992,"Within_Range","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"63","COMPASS: Synoptic","CB","MSM","UP","B",20,"MSM_202405_UP_LysB_20cm",2024,5,21,"","",0.036042,2.5731971128103,"Within_Range","NOx blanks out of range",0.07558,5.39598906237729,"Within_Range","",0.00402,0.129787269625175,"Within_Range","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"64","COMPASS: Synoptic","CB","MSM","UP","B",45,"MSM_202405_UP_LysB_45cm",2024,5,21,"","",0.017673,1.26175330377605,"bdl","NOx blanks out of range",0.474949,33.9087008360285,"Within_Range","",0.005471,0.176633371173963,"Within_Range","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"65","COMPASS: Synoptic","CB","MSM","UP","C",45,"MSM_202405_UP_LysC_45cm",2024,5,21,"","",0.02202,1.57210477842747,"bdl","NOx blanks out of range",0.832737,59.4527618925229,"Within_Range","",0.005396,0.174211966889912,"Within_Range","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"66","COMPASS: Synoptic","CB","MSM","WC","A",10,"MSM_202405_WC_LysA_10cm",2024,5,21,"","",0.024253,1.73152848279752,"bdl","NOx blanks out of range",0.147959,10.5634446372093,"Within_Range","",0.02253,0.727389846929153,"Within_Range","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"67","COMPASS: Synoptic","CB","MSM","WC","A",20,"MSM_202405_WC_LysA_20cm",2024,5,21,"","",0.028113,2.00711088264902,"Within_Range","NOx blanks out of range",0.417804,29.8288676133565,"Within_Range","",0.037573,1.21305897552903,"Within_Range","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"68","COMPASS: Synoptic","CB","MSM","WC","A",45,"MSM_202405_WC_LysA_45cm",2024,5,21,"","",0.02928,2.09042815224143,"Within_Range","NOx blanks out of range",0.22276,15.9038174587876,"Within_Range","",0.007977,0.257540559651746,"Within_Range","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"69","COMPASS: Synoptic","CB","MSM","WC","B",10,"MSM_202405_WC_LysB_10cm",2024,5,21,"","",0.040781,2.9115351938715,"Within_Range","NOx blanks out of range",0.16348,11.671557183348,"Within_Range","",0.044416,1.43398790240591,"Within_Range","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"70","COMPASS: Synoptic","CB","MSM","WC","B",20,"MSM_202405_WC_LysB_20cm",2024,5,21,"","",0.03527,2.51808063284,"Within_Range","NOx blanks out of range",0.373598,26.6728065854198,"Within_Range","",0.055739,1.79955537851682,"Within_Range","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"71","COMPASS: Synoptic","CB","MSM","WC","C",10,"MSM_202405_WC_LysC_10cm",2024,5,21,"","",0.049153,3.50924914505201,"Within_Range","NOx blanks out of range",0.602798,43.036404006654,"Within_Range","",0.061482,1.98497037589428,"Within_Range","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"72","COMPASS: Synoptic","CB","MSM","WC",NA,NA,"MSM_202405_WC_LysC_20cm",NA,NA,NA,NA,NA,0.02756,1.96762977717806,"Within_Range","NOx blanks out of range",1.002572,71.5780305139683,"Within_Range","",0.05868,1.89450671184211,"Within_Range","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",NA
+"73","COMPASS: Synoptic","CB","MSM","WC","C",45,"MSM_202405_WC_LysC_45cm",2024,5,21,"","",0.033178,2.36872353944898,"Within_Range","NOx blanks out of range",0.734697,52.4532545139112,"Within_Range","",0.003526,0.113838286740887,"Within_Range","","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"74","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202405_SWAMP_LysA_10cm",2024,5,15,"","",0.005791,0.413444994181356,"bdl","NOx blanks out of range",0.078133,5.57825897606146,"Within_Range","",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"75","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202405_SWAMP_LysA_20cm",2024,5,15,"","",0.025446,1.8167020068967,"Within_Range","NOx blanks out of range",0.09474,6.76390584505986,"Within_Range","",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"76","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202405_SWAMP_LysA_45cm",2024,5,15,"","",0.021921,1.56503673242091,"bdl","NOx blanks out of range",0.331302,23.6531088693268,"Within_Range","",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"77","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202405_SWAMP_LysB_10cm",2024,5,15,"","",0.047023,3.35717906430494,"Within_Range","NOx blanks out of range",0.077627,5.54213340758351,"Within_Range","",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"78","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202405_SWAMP_LysB_20cm",2024,5,15,"","",0.028201,2.0133935902104,"Within_Range","NOx blanks out of range",0.279882,19.9820086101651,"Within_Range","",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"79","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202405_SWAMP_LysB_45cm",2024,5,15,"","",0.019277,1.37626992796305,"bdl","NOx blanks out of range",0.327413,23.3754560317562,"Within_Range","",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"80","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202405_SWAMP_LysC_10cm",2024,5,15,"","",0.201675,14.3984664481998,"Within_Range","NOx blanks out of range",0.353416,25.2319247217403,"Within_Range","",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"81","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202405_SWAMP_LysC_20cm",2024,5,15,"","",0.006268,0.447500124940207,"bdl","NOx blanks out of range",0.083513,5.962360870155,"Within_Range","",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"82","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202405_SWAMP_LysC_45cm",2024,5,15,"","",0.015668,1.1186075235423,"bdl","NOx blanks out of range",0.163865,11.699044028929,"Within_Range","",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"83","COMPASS: Synoptic","CB","SWH","SW","A",0,"SWH_202405_SW_A",2024,5,15,"","",0.08375,5.97928134392826,"Within_Range","NOx blanks out of range",NA,NA,NA,"",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"84","COMPASS: Synoptic","CB","SWH","SW","B",0,"SWH_202405_SW_B",2024,5,15,"","",0.066124,4.72088357714522,"Within_Range","NOx blanks out of range",NA,NA,NA,"",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"85","COMPASS: Synoptic","CB","SWH","SW","C",0,"SWH_202405_SW_C",2024,5,15,"","",0.06913,4.93549515588968,"Within_Range","NOx blanks out of range",NA,NA,NA,"",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"86","COMPASS: Synoptic","CB","SWH","TR","A",10,"SWH_202405_TR_LysA_10cm",2024,5,15,"","",0.033706,2.40641978481727,"Within_Range","NOx blanks out of range",0.291275,20.7954050561517,"Within_Range","",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"87","COMPASS: Synoptic","CB","SWH","TR","A",20,"SWH_202405_TR_LysA_20cm",2024,5,15,"","",0.003113,0.222250779983865,"bdl","NOx blanks out of range",1.198748,85.5838991339859,"Within_Range","",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"88","COMPASS: Synoptic","CB","SWH","TR","A",45,"SWH_202405_TR_LysA_45cm",2024,5,15,"","",0.026543,1.89502166820165,"Within_Range","NOx blanks out of range",1.273941,90.9522585619739,"Within_Range","",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"89","COMPASS: Synoptic","CB","SWH","TR","B",10,"SWH_202405_TR_LysB_10cm",2024,5,15,"","",0.020006,1.42831644855676,"bdl","NOx blanks out of range",0.057002,4.06962382288476,"Within_Range","",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"90","COMPASS: Synoptic","CB","SWH","TR","B",20,"SWH_202405_TR_LysB_20cm",2024,5,15,"","",0.030509,2.17817187488845,"Within_Range","NOx blanks out of range",1.038298,74.1286669950809,"Within_Range","",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"91","COMPASS: Synoptic","CB","SWH","TR","B",45,"SWH_202405_TR_LysB_45cm",2024,5,15,"","",0.006387,0.455996059028893,"bdl","NOx blanks out of range",1.546285,110.396096153983,"Within_Range","",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"92","COMPASS: Synoptic","CB","SWH","TR","C",10,"SWH_202405_TR_LysC_10cm",2024,5,15,"","",0.061036,4.35762884905081,"Within_Range","NOx blanks out of range",0.04679,3.3405441681481,"Within_Range","",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"93","COMPASS: Synoptic","CB","SWH","TR","C",20,"SWH_202405_TR_LysC_20cm",2024,5,15,"","",0.01593,1.13731285741824,"bdl","NOx blanks out of range",0.695606,49.6623758629799,"Within_Range","",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"94","COMPASS: Synoptic","CB","SWH","TR","C",45,"SWH_202405_TR_LysC_45cm",2024,5,15,"","",0.014825,1.05842204088044,"bdl","NOx blanks out of range",0.725484,51.795497868877,"Within_Range","",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"95","COMPASS: Synoptic","CB","SWH","UP","A",10,"SWH_202405_UP_LysA_10cm",2024,5,15,"","",0.027606,1.97091391976697,"Within_Range","NOx blanks out of range",0.09948,7.10231532052518,"Within_Range","",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"96","COMPASS: Synoptic","CB","SWH","UP","A",20,"SWH_202405_UP_LysA_20cm",2024,5,15,"","",0.026172,1.8685343442781,"Within_Range","NOx blanks out of range",0.086041,6.1428459237365,"Within_Range","",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"97","COMPASS: Synoptic","CB","SWH","UP","A",45,"SWH_202405_UP_LysA_45cm",2024,5,15,"","",0.021642,1.54511769367517,"bdl","NOx blanks out of range",0.080659,5.75860124083474,"Within_Range","",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"98","COMPASS: Synoptic","CB","SWH","UP","B",10,"SWH_202405_UP_LysB_10cm",2024,5,15,"","",0.027721,1.97912427623923,"Within_Range","NOx blanks out of range",0.030869,2.20387386036682,"Within_Range","",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"99","COMPASS: Synoptic","CB","SWH","UP","B",20,"SWH_202405_UP_LysB_20cm",2024,5,15,"","",0.01347,0.961682623315984,"bdl","NOx blanks out of range",0.106562,7.60793049040816,"Within_Range","",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"100","COMPASS: Synoptic","CB","SWH","UP","C",10,"SWH_202405_UP_LysC_10cm",2024,5,15,"","",0.024019,1.71482219223657,"bdl","NOx blanks out of range",0.094259,6.72956513668459,"Within_Range","",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"101","COMPASS: Synoptic","CB","SWH","UP","C",20,"SWH_202405_UP_LysC_20cm",2024,5,15,"","",0.008428,0.601712037810476,"bdl","NOx blanks out of range",0.082759,5.90852948945862,"Within_Range","",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"102","COMPASS: Synoptic","CB","SWH","UP","C",45,"SWH_202405_UP_LysC_45cm",2024,5,15,"","",0.028923,2.06494034997537,"Within_Range","NOx blanks out of range",0.053881,3.84680188766804,"Within_Range","",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"103","COMPASS: Synoptic","CB","SWH","WC","A",10,"SWH_202405_WC_LysA_10cm",2024,5,15,"","",0.001232,0.0879579058593387,"bdl","NOx blanks out of range",0.044689,3.19054452512012,"Within_Range","",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"104","COMPASS: Synoptic","CB","SWH","WC","A",45,"SWH_202405_WC_LysA_45cm",2024,5,15,"","",0.020691,1.47722161536979,"bdl","NOx blanks out of range",0.030189,2.15532566557433,"Within_Range","",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"105","COMPASS: Synoptic","CB","SWH","WC","B",10,"SWH_202405_WC_LysB_10cm",2024,5,15,"","",0,0,"bdl","NOx blanks out of range",0.037524,2.67900361969629,"Within_Range","",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"106","COMPASS: Synoptic","CB","SWH","WC","B",20,"SWH_202405_WC_LysB_20cm",2024,5,15,"","",0.023116,1.65035304532831,"bdl","NOx blanks out of range",0.040482,2.89018826704363,"Within_Range","",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"107","COMPASS: Synoptic","CB","SWH","WC","C",20,"SWH_202405_WC_LysC_20cm",2024,5,15,"","",0,0,"bdl","NOx blanks out of range",0.303356,21.6579208521636,"Within_Range","",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
+"108","COMPASS: Synoptic","CB","SWH","WC","C",45,"SWH_202405_WC_LysC_45cm",2024,5,15,"","",0.014392,1.02750826390228,"bdl","NOx blanks out of range",0.042245,3.01605660148358,"Within_Range","",NA,NA,NA,"","5/12/2025","Some sample IDs are missing from metadata: 
+  MSM_202405_UP_LysA_10cm
+  MSM_202405_UP_LysA_20cm
+  MSM_202405_WC_LysC_20cm
+  GWI_202405_TR_LysC_45cm. 
+  It looks like NH3 was only ran for GCW, MSM, and SWH. 
+  It looks like PO4 was only ran for GCW and MSM. 
+  Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
+  Most of the NOx blanks are above the lower 25% quartile of samples. 
+  3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
+  2 NOx spikes have high CVs, but more than 60% have low CVs.",""
