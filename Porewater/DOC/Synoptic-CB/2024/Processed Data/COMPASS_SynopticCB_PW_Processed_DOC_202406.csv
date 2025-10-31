@@ -1,0 +1,75 @@
+"","Project","Region","Site","Zone","Replicate","Depth_cm","Sample_ID","Year","Month","Day","Time","Time_Zone","npoc_mgL","npoc_uM","npoc_flag","tdn_mgL","tdn_uM","tdn_flag","Analysis_runtime","Run_notes","Field_notes"
+"1","COMPASS: Synoptic","CB","SWH","UP","A",10,"202406_SWH_UP_LysA_10cm",2024,6,26,"","",10.25,853.384397635501,"",0.4833,34.5049155047227,"","6/29/2024 6:44:46 PM","Couple of samples are above the top standard. Accidentally put in 2023 rather
+    than 2024, so that is changed programmatically in this code.",""
+"2","COMPASS: Synoptic","CB","SWH","UP","A",20,"202406_SWH_UP_LysA_20cm",2024,6,26,"","",8.057,670.801765048705,"",0.4038,28.8290603782476,"","6/29/2024 7:09:08 PM","Couple of samples are above the top standard. Accidentally put in 2023 rather
+    than 2024, so that is changed programmatically in this code.",""
+"3","COMPASS: Synoptic","CB","SWH","UP","A",45,"202406_SWH_UP_LysA_45cm",2024,6,26,"","",14.69,1223.04554158688,"",0.541,38.6243726216739,"","6/29/2024 7:34:09 PM","Couple of samples are above the top standard. Accidentally put in 2023 rather
+    than 2024, so that is changed programmatically in this code.",""
+"4","COMPASS: Synoptic","CB","SWH","UP","B",10,"202406_SWH_UP_LysB_10cm",2024,6,26,"","",20.5,1706.768795271,"",0.7361,52.5534208628728,"","6/29/2024 7:56:34 PM","Couple of samples are above the top standard. Accidentally put in 2023 rather
+    than 2024, so that is changed programmatically in this code.",""
+"5","COMPASS: Synoptic","CB","SWH","UP","B",20,"202406_SWH_UP_LysB_20cm",2024,6,26,"","",17.9,1490.300557822,"",0.8948,63.8837127945912,"","6/29/2024 8:18:55 PM","Couple of samples are above the top standard. Accidentally put in 2023 rather
+    than 2024, so that is changed programmatically in this code.",""
+"6","COMPASS: Synoptic","CB","SWH","UP","B",45,"202406_SWH_UP_LysB_45cm",2024,6,26,"","",29.69,2471.90075763883,"",0.9551,68.1887953622195,"","6/29/2024 8:44:15 PM","Couple of samples are above the top standard. Accidentally put in 2023 rather
+    than 2024, so that is changed programmatically in this code.",""
+"7","COMPASS: Synoptic","CB","SWH","UP","C",10,"202406_SWH_UP_LysC_10cm",2024,6,26,"","",24.11,2007.3266172675,"",0.8482,60.5567335632233,"","6/29/2024 9:08:45 PM","Couple of samples are above the top standard. Accidentally put in 2023 rather
+    than 2024, so that is changed programmatically in this code.",""
+"8","COMPASS: Synoptic","CB","SWH","UP","C",20,"202406_SWH_UP_LysC_20cm",2024,6,26,"","",21.23,1767.54641578553,"",0.9012,64.3406369808734,"","6/29/2024 9:36:28 PM","Couple of samples are above the top standard. Accidentally put in 2023 rather
+    than 2024, so that is changed programmatically in this code.",""
+"9","COMPASS: Synoptic","CB","SWH","UP","C",45,"202406_SWH_UP_LysC_45cm",2024,6,26,"","",25.8,2148.03097160936,"",0.9094,64.9260710945476,"","6/29/2024 9:53:04 PM","Couple of samples are above the top standard. Accidentally put in 2023 rather
+    than 2024, so that is changed programmatically in this code.",""
+"10","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"202406_SWH_SWAMP_LysA_10cm",2024,6,26,"","",13.84,1152.27707934393,"",0.6162,43.9932318104907,"","6/29/2024 11:22:31 PM","Couple of samples are above the top standard. Accidentally put in 2023 rather
+    than 2024, so that is changed programmatically in this code.",""
+"11","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"202406_SWH_SWAMP_LysA_20cm",2024,6,26,"","",10.65,886.687203396886,"",0.6169,44.0432078933653,"","6/29/2024 11:45:44 PM","Couple of samples are above the top standard. Accidentally put in 2023 rather
+    than 2024, so that is changed programmatically in this code.",""
+"12","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"202406_SWH_SWAMP_LysA_45cm",2024,6,26,"","",17.22,1433.68578802764,"",1.007,71.8941649353524,"","6/30/2024 12:08:58 AM","Couple of samples are above the top standard. Accidentally put in 2023 rather
+    than 2024, so that is changed programmatically in this code.",""
+"13","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"202406_SWH_SWAMP_LysB_10cm",2024,6,26,"","",116.5,9699.4421780035,"value above cal curve",4.385,313.064462007468,"value above cal curve","6/30/2024 12:26:51 AM","Couple of samples are above the top standard. Accidentally put in 2023 rather
+    than 2024, so that is changed programmatically in this code.",""
+"14","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"202406_SWH_SWAMP_LysB_20cm",2024,6,26,"","",25.1,2089.75106152693,"",1.498,106.948817351696,"","6/30/2024 12:51:28 AM","Couple of samples are above the top standard. Accidentally put in 2023 rather
+    than 2024, so that is changed programmatically in this code.",""
+"15","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"202406_SWH_SWAMP_LysB_45cm",2024,6,26,"","",7.031,585.380068270752,"",0.7005,50.0117800766776,"","6/30/2024 1:14:27 AM","Couple of samples are above the top standard. Accidentally put in 2023 rather
+    than 2024, so that is changed programmatically in this code.",""
+"16","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"202406_SWH_SWAMP_LysC_10cm",2024,6,26,"","",9.689,806.677212555158,"",0.4293,30.649617682966,"","6/30/2024 1:38:37 AM","Couple of samples are above the top standard. Accidentally put in 2023 rather
+    than 2024, so that is changed programmatically in this code.",""
+"17","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"202406_SWH_SWAMP_LysC_20cm",2024,6,26,"","",12.84,1069.02006494047,"",0.6491,46.342107705598,"","6/30/2024 2:01:53 AM","Couple of samples are above the top standard. Accidentally put in 2023 rather
+    than 2024, so that is changed programmatically in this code.",""
+"18","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"202406_SWH_SWAMP_LysC_45cm",2024,6,26,"","",15.93,1326.28423944717,"",0.8413,60.0641121748877,"","6/30/2024 2:26:41 AM","Couple of samples are above the top standard. Accidentally put in 2023 rather
+    than 2024, so that is changed programmatically in this code.",""
+"19","COMPASS: Synoptic","CB","SWH","TR","A",10,"202406_SWH_TR_LysA_10cm",2024,6,26,"","",20.53,1709.26650570311,"",1.747,124.726023974241,"","6/30/2024 3:55:40 AM","Couple of samples are above the top standard. Accidentally put in 2023 rather
+    than 2024, so that is changed programmatically in this code.",""
+"20","COMPASS: Synoptic","CB","SWH","TR","A",20,"202406_SWH_TR_LysA_20cm",2024,6,26,"","",17.21,1432.85321788361,"",4.026,287.433870933196,"value above cal curve","6/30/2024 4:37:55 AM","Couple of samples are above the top standard. Accidentally put in 2023 rather
+    than 2024, so that is changed programmatically in this code.",""
+"21","COMPASS: Synoptic","CB","SWH","TR","A",45,"202406_SWH_TR_LysA_45cm",2024,6,26,"","",16.74,1393.72242111398,"",3.844,274.440089385794,"value above cal curve","6/30/2024 4:54:35 AM","Couple of samples are above the top standard. Accidentally put in 2023 rather
+    than 2024, so that is changed programmatically in this code.",""
+"22","COMPASS: Synoptic","CB","SWH","TR","B",10,"202406_SWH_TR_LysB_10cm",2024,6,26,"","",14.84,1235.5340937474,"",0.9902,70.6947389463614,"","6/30/2024 5:18:18 AM","Couple of samples are above the top standard. Accidentally put in 2023 rather
+    than 2024, so that is changed programmatically in this code.",""
+"23","COMPASS: Synoptic","CB","SWH","TR","B",20,"202406_SWH_TR_LysB_20cm",2024,6,26,"","",22.18,1846.64057946882,"",4.469,319.061591952423,"value above cal curve","6/30/2024 5:38:32 AM","Couple of samples are above the top standard. Accidentally put in 2023 rather
+    than 2024, so that is changed programmatically in this code.",""
+"24","COMPASS: Synoptic","CB","SWH","TR","B",45,"202406_SWH_TR_LysB_45cm",2024,6,26,"","",27.19,2263.75822163017,"",4.266,304.568527918782,"value above cal curve","6/30/2024 5:55:37 AM","Couple of samples are above the top standard. Accidentally put in 2023 rather
+    than 2024, so that is changed programmatically in this code.",""
+"25","COMPASS: Synoptic","CB","SWH","TR","C",10,"202406_SWH_TR_LysC_10cm",2024,6,26,"","",8.53,710.182332861544,"",0.5225,37.3035761457017,"","6/30/2024 6:19:44 AM","Couple of samples are above the top standard. Accidentally put in 2023 rather
+    than 2024, so that is changed programmatically in this code.",""
+"26","COMPASS: Synoptic","CB","SWH","TR","C",20,"202406_SWH_TR_LysC_20cm",2024,6,26,"","",15.44,1285.48830238948,"",2.325,165.991989547859,"","6/30/2024 6:39:52 AM","Couple of samples are above the top standard. Accidentally put in 2023 rather
+    than 2024, so that is changed programmatically in this code.",""
+"27","COMPASS: Synoptic","CB","SWH","TR","C",45,"202406_SWH_TR_LysC_45cm",2024,6,26,"","",19.11,1591.04154525019,"",2.651,189.266565286613,"","6/30/2024 7:04:11 AM","Couple of samples are above the top standard. Accidentally put in 2023 rather
+    than 2024, so that is changed programmatically in this code.",""
+"28","COMPASS: Synoptic","CB","SWH","WC","A",10,"202406_SWH_WC_LysA_10cm",2024,6,26,"","",19.6,1631.83748230788,"",1.006,71.8227705312458,"","6/30/2024 8:32:08 AM","Couple of samples are above the top standard. Accidentally put in 2023 rather
+    than 2024, so that is changed programmatically in this code.",""
+"29","COMPASS: Synoptic","CB","SWH","WC","A",45,"202406_SWH_WC_LysA_45cm",2024,6,26,"","",13.59,1131.46282574307,"",0.5882,41.9941884955057,"","6/30/2024 8:54:47 AM","Couple of samples are above the top standard. Accidentally put in 2023 rather
+    than 2024, so that is changed programmatically in this code.",""
+"30","COMPASS: Synoptic","CB","SWH","WC","B",10,"202406_SWH_WC_LysB_10cm",2024,6,26,"","",10.04,835.900424610773,"",0.5226,37.3107155861124,"","6/30/2024 9:17:20 AM","Couple of samples are above the top standard. Accidentally put in 2023 rather
+    than 2024, so that is changed programmatically in this code.",""
+"31","COMPASS: Synoptic","CB","SWH","WC","B",20,"202406_SWH_WC_LysB_20cm",2024,6,26,"","",15.97,1329.61452002331,"",0.6925,49.4406248438247,"","6/30/2024 9:41:21 AM","Couple of samples are above the top standard. Accidentally put in 2023 rather
+    than 2024, so that is changed programmatically in this code.",""
+"32","COMPASS: Synoptic","CB","SWH","WC","C",10,"202406_SWH_WC_LysC_10cm",2024,6,26,"","",10.42,867.53809008409,"",1.141,81.4610150856376,"","6/30/2024 10:05:31 AM","Couple of samples are above the top standard. Accidentally put in 2023 rather
+    than 2024, so that is changed programmatically in this code.",""
+"33","COMPASS: Synoptic","CB","SWH","WC","C",20,"202406_SWH_WC_LysC_20cm",2024,6,26,"","",18.56,1545.25018732828,"",0.8912,63.6266929398074,"","6/30/2024 10:49:21 AM","Couple of samples are above the top standard. Accidentally put in 2023 rather
+    than 2024, so that is changed programmatically in this code.",""
+"34","COMPASS: Synoptic","CB","SWH","WC","C",45,"202406_SWH_WC_LysC_45cm",2024,6,26,"","",15.88,1322.121388727,"",0.7257,51.8109190601641,"","6/30/2024 11:14:27 AM","Couple of samples are above the top standard. Accidentally put in 2023 rather
+    than 2024, so that is changed programmatically in this code.",""
+"35","COMPASS: Synoptic","CB","SWH","SW","A",0,"202406_SWH_SW_A",2024,6,26,"","",5.713,475.647323286987,"",0.4738,33.82666866571,"","6/30/2024 11:36:43 AM","Couple of samples are above the top standard. Accidentally put in 2023 rather
+    than 2024, so that is changed programmatically in this code.",""
+"36","COMPASS: Synoptic","CB","SWH","SW","B",0,"202406_SWH_SW_B",2024,6,26,"","",5.974,497.377404046291,"",0.4971,35.4901582813939,"","6/30/2024 11:59:18 AM","Couple of samples are above the top standard. Accidentally put in 2023 rather
+    than 2024, so that is changed programmatically in this code.",""
+"37","COMPASS: Synoptic","CB","SWH","SW","C",0,"202406_SWH_SW_C",2024,6,26,"","",5.902,491.382899009242,"",0.4867,34.7476564786852,"","6/30/2024 12:22:32 PM","Couple of samples are above the top standard. Accidentally put in 2023 rather
+    than 2024, so that is changed programmatically in this code.",""
