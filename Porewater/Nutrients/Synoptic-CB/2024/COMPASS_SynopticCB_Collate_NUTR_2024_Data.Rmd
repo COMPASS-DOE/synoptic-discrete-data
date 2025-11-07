@@ -1,0 +1,38 @@
+---
+title: "COMPASS_SynopticCB_Collate_NUTR_2024_Data"
+author: "Stephanie J. Wilson"
+date: "2025-11-07"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(dplyr)
+library(ggplot2)
+library(ggpubr)
+library(stringr)
+library(readxl)
+library(tidyr)
+library(tibble)
+```
+
+#Read in and collate all the files in the Processed Data folder 
+```{r}
+
+files <- list.files(path = "Processed Data", pattern = "\\.csv$", full.names = TRUE)
+
+# 3. Read and combine all CSVs
+all_data <- files %>%
+  lapply(read.csv) %>%    # or read.csv if you prefer base R
+  bind_rows()             # combine into one data frame
+
+all_data <- all_data[, -which(names(all_data) == "X")]
+
+```
+
+## Write the 2023 file out to the folder 
+```{r, echo=FALSE}
+
+write.csv(all_data, "COMPASS_SynopticCB_SO4_Cl_2024.csv")
+
+```
+
