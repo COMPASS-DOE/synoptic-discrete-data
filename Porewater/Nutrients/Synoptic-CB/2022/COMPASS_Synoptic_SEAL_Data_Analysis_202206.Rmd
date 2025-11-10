@@ -430,7 +430,8 @@ NOXlook
 
 head(all_data)
 
-out <- all_data[ ,c(1,3,5,7,8,9,10)]
+# out <- all_data[ ,c(1,3,5,7,8,9,10)]
+out <- all_data
 head(out)
 
 #for steph <- pull out identifiers of the sample names 
