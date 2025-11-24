@@ -1,0 +1,211 @@
+"","Project","Region","Site","Zone","Replicate","Depth_cm","Sample_ID","Year","Month","Day","Time","Time_Zone","SO4_ppm","SO4_Conc_mM","SO4_Conc_flag","SO4_QAQC_flag","Cl_ppm","Cl_Conc_mM","Cl_Conc_flag","Cl_QAQC_flag","salinity","Analysis_rundate","Run_notes","Field_notes"
+"1","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202511_UP_LYSA_10CM",2025,11,5,"10:25","EST",7.8721,0.245542732376793,"Within_Range","",63.4854,1.79084344146685,"Within_Range","",0.1147441178,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"2","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202511_UP_LYSA_20CM",2025,11,5,"10:25","EST",3.0869,0.0962850904553961,"Within_Range","",16.7962,0.473799717912553,"Within_Range","",0.0303767334,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"3","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202511_UP_LYSA_45CM",2025,11,5,"10:25","EST",1.5042,0.0469182782283219,"Within_Range","",11.0936,0.312936530324401,"Within_Range","",0.0200721352,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"4","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202511_UP_LYSB_10CM",2025,11,5,"10:36","EST",18.101,0.564597629444791,"Within_Range","",167.8123,4.73377433004231,"Within_Range","",0.3032628261,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"5","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202511_UP_LYSB_20CM",2025,11,5,"10:36","EST",9.8565,0.30743917654398,"Within_Range","",80.2279,2.26312834978843,"Within_Range","",0.1449978153,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"6","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202511_UP_LYSB_45CM",2025,11,5,"10:36","EST",1.278,0.0398627573300062,"Within_Range","",19.1515,0.540239774330042,"Within_Range","",0.0346327605,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"7","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202511_UP_LYSC_10CM",2025,11,5,"10:43","EST",64.4674,2.01083593262633,"Within_Range","",586.1864,16.5355825105783,"Within_Range","",1.0592648248,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"8","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202511_UP_LYSC_20CM",2025,11,5,"10:43","EST",5.1416,0.160374298190892,"Within_Range","",172.1407,4.8558730606488,"Within_Range","",0.3110842449,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"9","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202511_UP_LYSC_45CM",2025,11,5,"10:43","EST",0.1834,0.00572052401746725,"Within_Range","",28.4106,0.801427362482369,"Within_Range","",0.0513639542,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"10","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202511_SWAMP_LYSA_10CM",2025,11,5,"11:50","EST",3.1831,0.0992857142857143,"Within_Range","",257.318,7.25861777150917,"Within_Range","",0.464999626,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"11","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202511_SWAMP_LYSA_20CM",2025,11,5,"11:50","EST",2.304,0.0718652526512788,"Within_Range","",180.6357,5.09550634696756,"Within_Range","",0.3264347099,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"12","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202511_SWAMP_LYSA_45CM",2025,11,5,"11:50","EST",0,0,"bdl","",83.3932,2.35241748942172,"Within_Range","",0.1507175124,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"13","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202511_SWAMP_LYSB_10CM",2025,11,5,"11:30","EST",12.6549,0.394725514660012,"Within_Range","",230.1861,6.49326093088858,"Within_Range","",0.4159722827,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"14","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202511_SWAMP_LYSB_20CM",2025,11,5,"11:30","EST",1.1653,0.0363474734872115,"Within_Range","",38.3291,1.08121579689704,"Within_Range","",0.0692866837,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"15","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202511_SWAMP_LYSB_45CM",2025,11,5,"11:30","EST",0,0,"bdl","",16.7603,0.472787023977433,"Within_Range","",0.0303118621,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"16","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202511_SWAMP_LYSC_10CM",2025,11,5,"11:18","EST",2.4115,0.0752183406113537,"Within_Range","",112.0197,3.15993511988716,"Within_Range","",0.2024455979,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ","In fridge 11/7"
+"17","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202511_SWAMP_LYSC_20CM",2025,11,5,"11:18","EST",1.6983,0.0529725514660012,"Within_Range","",119.0375,3.35789844851904,"Within_Range","",0.2151267625,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"18","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202511_SWAMP_LYSC_45CM",2025,11,5,"11:18","EST",1.4524,0.0453025577043044,"Within_Range","",91.0562,2.56858110014104,"Within_Range","",0.1645645534,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"19","COMPASS: Synoptic","CB","SWH","TR","A",10,"SWH_202511_TR_LYSA_10CM",2025,11,4,"12:42","EST",157.0069,4.89728321896444,"Within_Range","",1337.5528,37.7306854724965,"Within_Range","",2.4169839096,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"20","COMPASS: Synoptic","CB","SWH","TR","A",20,"SWH_202511_TR_LYSA_20CM",2025,11,4,"12:45","EST",102.8406,3.20775421085465,"Within_Range","",1713.7587,48.3429816643159,"Within_Range","",3.0967879709,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"21","COMPASS: Synoptic","CB","SWH","TR","A",45,"SWH_202511_TR_LYSA_45CM",2025,11,4,"12:48","EST",2.0868,0.0650904553961323,"Within_Range","",878.4201,24.7791283497884,"Within_Range","",1.5873311207,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"22","COMPASS: Synoptic","CB","SWH","TR","B",10,"SWH_202511_TR_LYSB_10CM",2025,11,4,"12:53","EST",114.7392,3.57888958203369,"Within_Range","",1384.7967,39.0633765867419,"Within_Range","",2.5023536369,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"23","COMPASS: Synoptic","CB","SWH","TR","B",20,"SWH_202511_TR_LYSB_20CM",2025,11,4,"12:53","EST",38.4806,1.20026824703681,"Within_Range","",1570.92,44.3136812411848,"Within_Range","",2.83867844,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"24","COMPASS: Synoptic","CB","SWH","TR","B",45,"SWH_202511_TR_LYSB_45CM",2025,11,4,"12:53","EST",2.253,0.0702744853399875,"Within_Range","",0,0,"bdl","",2.6e-05,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"25","COMPASS: Synoptic","CB","SWH","TR","C",10,"SWH_202511_TR_LYSC_10CM",2025,11,4,"12:30","EST",129.9428,4.05311291328759,"Within_Range","",1013.9787,28.6030662905501,"Within_Range","",1.8322855109,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"26","COMPASS: Synoptic","CB","SWH","TR","C",20,"SWH_202511_TR_LYSC_20CM",2025,11,4,"12:35","EST",84.7693,2.64408296943231,"Within_Range","",874.3849,24.6653004231312,"Within_Range","",1.5800395143,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"27","COMPASS: Synoptic","CB","SWH","TR","C",45,"SWH_202511_TR_LYSC_45CM",2025,11,4,"12:37","EST",25.6562,0.800255770430443,"Within_Range","",1141.8078,32.2089647390691,"Within_Range","",2.0632726946,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"28","COMPASS: Synoptic","CB","SWH","WC","A",10,"SWH_202511_WC_LYSA_10CM",2025,11,4,"11:18","EST",173.9881,5.42695258889582,"Within_Range","",1798.779,50.7412976022567,"Within_Range","",3.250419653,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"29","COMPASS: Synoptic","CB","SWH","WC","A",45,"SWH_202511_WC_LYSA_45CM",2025,11,4,"11:18","EST",4.7219,0.147283218964442,"Within_Range","",533.7137,15.0553935119887,"Within_Range","",0.9644466559,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"30","COMPASS: Synoptic","CB","SWH","WC","B",10,"SWH_202511_WC_LYSB_10CM",2025,11,4,"11:25","EST",174.4949,5.44276044915783,"Within_Range","",1847.2474,52.1085303244006,"Within_Range","",3.3380020518,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"31","COMPASS: Synoptic","CB","SWH","WC","B",20,"SWH_202511_WC_LYSB_20CM",2025,11,4,"11:25","EST",1.8604,0.0580286961946351,"Within_Range","",696.2648,19.6407559943583,"Within_Range","",1.2581764936,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"32","COMPASS: Synoptic","CB","SWH","WC","B",45,"SWH_202511_WC_LYSB_45CM",2025,11,4,"11:25","EST",1.3981,0.0436088583905178,"Within_Range","",539.3677,15.2148857545839,"Within_Range","",0.9746634339,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"33","COMPASS: Synoptic","CB","SWH","WC","C",10,"SWH_202511_WC_LYSC_10CM",2025,11,4,"11:07","EST",168.5243,5.25652838427948,"Within_Range","",1981.0086,55.8817658674189,"Within_Range","",3.5797085402,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ","broken at second pull"
+"34","COMPASS: Synoptic","CB","SWH","WC","C",20,"SWH_202511_WC_LYSC_20CM",2025,11,4,"11:07","EST",42.7689,1.33402682470368,"Within_Range","",0,0,"bdl","",2.6e-05,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"35","COMPASS: Synoptic","CB","SWH","WC","C",45,"SWH_202511_WC_LYSC_45CM",2025,11,4,"11:07","EST",0.7633,0.0238084840923269,"Within_Range","",445.4022,12.5642369534556,"Within_Range","",0.8048677754,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"36","COMPASS: Synoptic","CB","SWH","SW","A",0,"SWH_202511_SW_A",2025,11,4,"12:00","EST",361.6786,11.2813038053649,"Within_Range","",2566.1004,72.3864710860367,"Within_Range","",4.6369694228,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"37","COMPASS: Synoptic","CB","SWH","SW","B",0,"SWH_202511_SW_B",2025,11,4,"12:03","EST",378.3646,11.8017654398004,"Within_Range","",2694.0579,75.9959915373766,"Within_Range","",4.8681886253,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"38","COMPASS: Synoptic","CB","SWH","SW","C",0,"SWH_202511_SW_C",2025,11,4,"12:10","EST",370.1383,11.5451746724891,"Within_Range","",2630.5878,74.2055796897038,"Within_Range","",4.7534981546,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"39","COMPASS: Synoptic","CB","GWI","UP","A",20,"GWI_202511_UP_LYSA_20CM",2025,11,6,"13:36","EST",630.2512,19.6584903306301,"Within_Range","",4806.4794,135.584750352609,"Within_Range","",8.6853342758,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"40","COMPASS: Synoptic","CB","GWI","UP","A",45,"GWI_202511_UP_LYSA_45CM",2025,11,6,"13:36","EST",767.4973,23.9394042420462,"Within_Range","",5849.4439,165.005469675599,"Within_Range","",10.5699711273,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"41","COMPASS: Synoptic","CB","GWI","UP","B",10,"GWI_202511_UP_LYSB_10CM",2025,11,6,"13:40","EST",788.6535,24.5992981908921,"Within_Range","",6132.8212,172.999187588152,"Within_Range","",11.0820339084,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"42","COMPASS: Synoptic","CB","GWI","UP","B",20,"GWI_202511_UP_LYSB_20CM",2025,11,6,"13:40","EST",366.6683,11.4369401122895,"Within_Range","",3664.603,103.373850493653,"Within_Range","",6.621963621,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"43","COMPASS: Synoptic","CB","GWI","UP","B",45,"GWI_202511_UP_LYSB_45CM",2025,11,6,"13:40","EST",387.5023,12.0867841547099,"Within_Range","",3247.7243,91.6142256699577,"Within_Range","",5.8686638101,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"44","COMPASS: Synoptic","CB","GWI","UP","C",20,"GWI_202511_UP_LYSC_20CM",2025,11,6,"13:45","EST",551.1467,17.1911010605115,"Within_Range","",5328.5683,150.312222849083,"Within_Range","",9.6287489181,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"45","COMPASS: Synoptic","CB","GWI","TR","A",10,"GWI_202511_TR_LYSA_10CM",2025,11,6,"13:00","EST",1231.1564,38.4016344354336,"Within_Range","",10956.9647,309.082220028209,"Within_Range","",19.7992612129,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"46","COMPASS: Synoptic","CB","GWI","TR","A",20,"GWI_202511_TR_LYSA_20CM",2025,11,6,"13:00","EST",951.8342,29.6891515907673,"Within_Range","",11213.6913,316.324155148096,"Within_Range","",20.2631661791,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"47","COMPASS: Synoptic","CB","GWI","TR","A",45,"GWI_202511_TR_LYSA_45CM",2025,11,6,"13:00","EST",964.1951,30.0747067997505,"Within_Range","",10486.0693,295.79885190409,"Within_Range","",18.9483532251,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"48","COMPASS: Synoptic","CB","GWI","TR","B",10,"GWI_202511_TR_LYSB_10CM",2025,11,6,"13:10","EST",1439.3863,44.8966406737367,"Within_Range","",10837.1229,305.701633286319,"Within_Range","",19.5827070803,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"49","COMPASS: Synoptic","CB","GWI","TR","B",20,"GWI_202511_TR_LYSB_20CM",2025,11,6,"13:10","EST",1032.1965,32.1957735495945,"Within_Range","",10144.3823,286.16029055007,"Within_Range","",18.3309248161,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ","Got DOC"
+"50","COMPASS: Synoptic","CB","GWI","TR","B",45,"GWI_202511_TR_LYSB_45CM",2025,11,6,"13:10","EST",1265.2112,39.4638552713662,"Within_Range","",9572.8052,270.036818053597,"Within_Range","",17.2980849964,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ","Got DOC"
+"51","COMPASS: Synoptic","CB","GWI","TR","C",10,"GWI_202511_TR_LYSC_10CM",2025,11,6,"13:15","EST",1541.9347,48.0952807236432,"Within_Range","",11332.54,319.676727785614,"Within_Range","",20.47792578,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"52","COMPASS: Synoptic","CB","GWI","TR","C",20,"GWI_202511_TR_LYSC_20CM",2025,11,6,"13:15","EST",1304.5479,40.6908265751715,"Within_Range","",10241.7079,288.905723554302,"Within_Range","",18.5067921753,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"53","COMPASS: Synoptic","CB","GWI","WC","A",10,"GWI_202511_WC_LYSA_10CM",2025,11,6,"10:57","EST",1204.8593,37.5813880224579,"Within_Range","",11377.5863,320.947427362482,"Within_Range","",20.5593244441,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"54","COMPASS: Synoptic","CB","GWI","WC","A",45,"GWI_202511_WC_LYSA_45CM",2025,11,6,"10:57","EST",1543.1394,48.1328571428571,"Within_Range","",12252.233,345.620112834979,"Within_Range","",22.139811031,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"55","COMPASS: Synoptic","CB","GWI","WC","B",10,"GWI_202511_WC_LYSB_10CM",2025,11,6,"11:02","EST",1354.5207,42.2495539613225,"Within_Range","",12166.0339,343.188544428773,"Within_Range","",21.9840492573,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"56","COMPASS: Synoptic","CB","GWI","WC","B",20,"GWI_202511_WC_LYSB_20CM",2025,11,6,"11:02","EST",1211.2301,37.7801029320025,"Within_Range","",12465.7223,351.642377997179,"Within_Range","",22.5255861961,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"57","COMPASS: Synoptic","CB","GWI","WC","B",45,"GWI_202511_WC_LYSB_45CM",2025,11,6,"11:02","EST",1676.9119,52.3054242046163,"Within_Range","",13192.4457,372.142332863188,"Within_Range","",23.8387753799,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"58","COMPASS: Synoptic","CB","GWI","WC","C",10,"GWI_202511_WC_LYSC_10CM",2025,11,6,"11:10","EST",1282.8474,40.0139550842171,"Within_Range","",12633.3432,356.370753173484,"Within_Range","",22.8284771624,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ","dup DIC"
+"59","COMPASS: Synoptic","CB","GWI","WC","C",45,"GWI_202511_WC_LYSC_45CM",2025,11,6,"11:10","EST",1730.0157,53.9618122270742,"Within_Range","",13167.858,371.44874471086,"Within_Range","",23.794345406,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"60","COMPASS: Synoptic","CB","GWI","SW","A",0,"GWI_202511_SW_A",2025,11,6,"10:30","EST",1903.3581,59.3686244541485,"Within_Range","",13467.0453,379.888442877292,"Within_Range","",24.3349768571,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"61","COMPASS: Synoptic","CB","GWI","SW","B",0,"GWI_202511_SW_B",2025,11,6,"10:30","EST",1928.9461,60.166752963194,"Within_Range","",13604.9843,383.779528913963,"Within_Range","",24.5842326301,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"62","COMPASS: Synoptic","CB","GWI","SW","C",0,"GWI_202511_SW_C",2025,11,6,"10:30","EST",1939.1951,60.4864348097317,"Within_Range","",13745.1504,387.73343864598,"Within_Range","",24.8375127728,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"63","COMPASS: Synoptic","CB","GCW","TR","A",20,"GCW_202511_TR_LYSA_20CM",2025,11,12,"13:13","EST",89.9922,2.8069931378665,"Within_Range","",2217.0635,62.5405782792666,"Within_Range","",4.0062597445,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"64","COMPASS: Synoptic","CB","GCW","TR","A",45,"GCW_202511_TR_LYSA_45CM",2025,11,12,"13:13","EST",11.4254,0.356375545851528,"Within_Range","",510.7375,14.407263751763,"Within_Range","",0.9229286625,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"65","COMPASS: Synoptic","CB","GCW","TR","B",10,"GCW_202511_TR_LYSB_10CM",2025,11,12,"13:18","EST",766.8754,23.9200062383032,"Within_Range","",5788.8372,163.295830747532,"Within_Range","",10.4604548204,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"66","COMPASS: Synoptic","CB","GCW","TR","B",20,"GCW_202511_TR_LYSB_20CM",2025,11,12,"13:18","EST",520.6013,16.2383437305053,"Within_Range","",4799.3341,135.383190409027,"Within_Range","",8.6724227187,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"67","COMPASS: Synoptic","CB","GCW","TR","B",45,"GCW_202511_TR_LYSB_45CM",2025,11,12,"13:18","EST",60.4818,1.8865190268247,"Within_Range","",2891.2196,81.5576755994358,"Within_Range","",5.2244598172,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ","Got nutr"
+"68","COMPASS: Synoptic","CB","GCW","TR","C",10,"GCW_202511_TR_LYSC_10CM",2025,11,12,"13:26","EST",505.9217,15.780464753587,"Within_Range","",4358.9129,122.959461212976,"Within_Range","",7.8765816103,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"69","COMPASS: Synoptic","CB","GCW","TR","C",20,"GCW_202511_TR_LYSC_20CM",2025,11,12,"13:26","EST",436.7353,13.6224360573924,"Within_Range","",4230.8906,119.348112834979,"Within_Range","",7.6452453142,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"70","COMPASS: Synoptic","CB","GCW","WC","A",10,"GCW_202511_WC_LYSA_10CM",2025,11,12,"11:08","EST",614.047,19.153056768559,"Within_Range","",6811.0802,192.132022566996,"Within_Range","",12.3076479214,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"71","COMPASS: Synoptic","CB","GCW","WC","A",20,"GCW_202511_WC_LYSA_20CM",2025,11,12,"11:08","EST",444.0529,13.8506830941984,"Within_Range","",6322.9256,178.361794076164,"Within_Range","",11.4255525592,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"72","COMPASS: Synoptic","CB","GCW","WC","A",45,"GCW_202511_WC_LYSA_45CM",2025,11,12,"11:08","EST",164.1129,5.11893013100437,"Within_Range","",5651.5682,159.423644569817,"Within_Range","",10.2124097374,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"73","COMPASS: Synoptic","CB","GCW","WC","B",10,"GCW_202511_WC_LYSB_10CM",2025,11,12,"11:19","EST",254.9076,7.95095446038677,"Within_Range","",5400.0293,152.328047954866,"Within_Range","",9.7578789451,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"74","COMPASS: Synoptic","CB","GCW","WC","B",20,"GCW_202511_WC_LYSB_20CM",2025,11,12,"11:19","EST",303.2613,9.45917966313163,"Within_Range","",5679.9976,160.2256022567,"Within_Range","",10.2637816632,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"75","COMPASS: Synoptic","CB","GCW","WC","B",45,"GCW_202511_WC_LYSB_45CM",2025,11,12,"11:19","EST",191.687,5.97900810979414,"Within_Range","",5833.8067,164.564363892807,"Within_Range","",10.5417147069,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"76","COMPASS: Synoptic","CB","GCW","WC","C",10,"GCW_202511_WC_LYSC_10CM",2025,11,12,"11:30","EST",983.5205,30.6774953212726,"Within_Range","",7590.6572,214.122911142454,"Within_Range","",13.7163435604,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"77","COMPASS: Synoptic","CB","GCW","WC","C",20,"GCW_202511_WC_LYSC_20CM",2025,11,12,"11:30","EST",956.2161,29.8258296943231,"Within_Range","",7597.5215,214.316544428773,"Within_Range","",13.7287473505,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"78","COMPASS: Synoptic","CB","GCW","WC","C",45,"GCW_202511_WC_LYSC_45CM",2025,11,12,"11:30","EST",467.0154,14.5669182782283,"Within_Range","",5608.6918,158.214155148096,"Within_Range","",10.1349320826,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"79","COMPASS: Synoptic","CB","GCW","SW","A",0,"GCW_202511_SW_A",2025,11,12,"10:30","EST",1091.6482,34.0501621958827,"Within_Range","",8058.4536,227.318860366714,"Within_Range","",14.5616516552,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"80","COMPASS: Synoptic","CB","GCW","SW","B",0,"GCW_202511_SW_B",2025,11,12,"10:30","EST",1073.0937,33.4714192139738,"Within_Range","",7888.6129,222.5278674189,"Within_Range","",14.2547495103,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"81","COMPASS: Synoptic","CB","GCW","SW","C",0,"GCW_202511_SW_C",2025,11,12,"10:30","EST",1061.849,33.1206799750468,"Within_Range","",7792.146,219.806657263752,"Within_Range","",14.080433822,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"82","COMPASS: Synoptic","CB","MSM","UP","A",20,"MSM_202511_UP_LYSA_20CM",2025,11,13,"14:30","EST",209.7505,6.54243605739239,"Within_Range","",2112.9145,59.6026657263752,"Within_Range","",3.8180625015,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ","Got DOC"
+"83","COMPASS: Synoptic","CB","MSM","UP","A",45,"MSM_202511_UP_LYSA_45CM",2025,11,13,"14:30","EST",218.6679,6.82058328134747,"Within_Range","",2680.8689,75.623946403385,"Within_Range","",4.8443561023,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ","No DOC"
+"84","COMPASS: Synoptic","CB","MSM","UP","B",10,"MSM_202511_UP_LYSB_10CM",2025,11,13,"14:40","EST",221.7991,6.91825015595758,"Within_Range","",2329.5687,65.7142087447108,"Within_Range","",4.2095566409,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"85","COMPASS: Synoptic","CB","MSM","UP","B",20,"MSM_202511_UP_LYSB_20CM",2025,11,13,"14:40","EST",386.0512,12.0415221459763,"Within_Range","",3696.9521,104.286377997179,"Within_Range","",6.6804184447,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"86","COMPASS: Synoptic","CB","MSM","UP","B",45,"MSM_202511_UP_LYSB_45CM",2025,11,13,"14:40","EST",258.4136,8.06031191515908,"Within_Range","",2910.0901,82.0899887165021,"Within_Range","",5.2585588107,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"87","COMPASS: Synoptic","CB","MSM","UP","C",10,"MSM_202511_UP_LYSC_10CM",2025,11,13,"14:45","EST",182.8154,5.70228945726762,"Within_Range","",2079.0179,58.646485190409,"Within_Range","",3.7568113453,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"88","COMPASS: Synoptic","CB","MSM","UP","C",20,"MSM_202511_UP_LYSC_20CM",2025,11,13,"14:45","EST",189.6092,5.91419837804117,"Within_Range","",1974.5164,55.698629055007,"Within_Range","",3.5679771348,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"89","COMPASS: Synoptic","CB","MSM","TR","A",10,"MSM_202511_TR_LYSA_10CM",2025,11,13,"13:12","EST",729.4738,22.7533936369308,"Within_Range","",7081.3284,199.755385049365,"Within_Range","",12.7959864188,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"90","COMPASS: Synoptic","CB","MSM","TR","A",20,"MSM_202511_TR_LYSA_20CM",2025,11,13,"13:12","EST",747.6475,23.320258889582,"Within_Range","",5935.5995,167.43581100141,"Within_Range","",10.7256542965,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"91","COMPASS: Synoptic","CB","MSM","TR","A",45,"MSM_202511_TR_LYSA_45CM",2025,11,13,"13:12","EST",711.044,22.1785402370555,"Within_Range","",5703.7543,160.895748942172,"Within_Range","",10.3067100201,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"92","COMPASS: Synoptic","CB","MSM","TR","B",10,"MSM_202511_TR_LYSB_10CM",2025,11,13,"13:20","EST",850.438,26.5264504054897,"Within_Range","",7384.9865,208.32119887165,"Within_Range","",13.3446966055,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"93","COMPASS: Synoptic","CB","MSM","TR","B",20,"MSM_202511_TR_LYSB_20CM",2025,11,13,"13:20","EST",328.8854,10.2584341859014,"Within_Range","",5434.1934,153.291774330042,"Within_Range","",9.8196134738,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"94","COMPASS: Synoptic","CB","MSM","TR","B",45,"MSM_202511_TR_LYSB_45CM",2025,11,13,"13:20","EST",380.1196,11.8565065502183,"Within_Range","",5968.3985,168.361029619182,"Within_Range","",10.7849220895,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"95","COMPASS: Synoptic","CB","MSM","TR","C",20,"MSM_202511_TR_LYSC_20CM",2025,11,13,"13:30","EST",501.3538,15.6379850280724,"Within_Range","",6693.686,188.82047954866,"Within_Range","",12.095516602,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"96","COMPASS: Synoptic","CB","MSM","TR","C",45,"MSM_202511_TR_LYSC_45CM",2025,11,13,"13:30","EST",702.5397,21.9132782283219,"Within_Range","",6089.0741,171.765136812412,"Within_Range","",11.0029828987,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"97","COMPASS: Synoptic","CB","MSM","WC","A",10,"MSM_202511_WC_LYSA_10CM",2025,11,13,"11:39","EST",1122.4274,35.0102121023082,"Within_Range","",8164.4983,230.310248236953,"Within_Range","",14.7532744281,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"98","COMPASS: Synoptic","CB","MSM","WC","A",20,"MSM_202511_WC_LYSA_20CM",2025,11,13,"11:39","EST",885.1264,27.6084341859014,"Within_Range","",8430.3073,237.808386459803,"Within_Range","",15.2335912911,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"99","COMPASS: Synoptic","CB","MSM","WC","B",10,"MSM_202511_WC_LYSB_10CM",2025,11,13,"11:46","EST",756.2499,23.5885807860262,"Within_Range","",7849.1126,221.413613540197,"Within_Range","",14.1833724682,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"100","COMPASS: Synoptic","CB","MSM","WC","B",20,"MSM_202511_WC_LYSB_20CM",2025,11,13,"11:46","EST",726.5167,22.6611572052402,"Within_Range","",8123.009,229.139887165021,"Within_Range","",14.678303263,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"101","COMPASS: Synoptic","CB","MSM","WC","C",10,"MSM_202511_WC_LYSC_10CM",2025,11,13,"11:56","EST",922.2334,28.7658577666875,"Within_Range","",8694.232,245.253370944993,"Within_Range","",15.710503224,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"102","COMPASS: Synoptic","CB","MSM","WC","C",20,"MSM_202511_WC_LYSC_20CM",2025,11,13,"11:56","EST",517.5542,16.143300062383,"Within_Range","",7858.626,221.68197461213,"Within_Range","",14.200563182,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"103","COMPASS: Synoptic","CB","MSM","SW","A",0,"MSM_202511_SW_A",2025,11,13,"11:19","EST",1360.3492,42.4313537117904,"Within_Range","",9826.806,277.201861777151,"Within_Range","",17.757064442,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"104","COMPASS: Synoptic","CB","MSM","SW","B",0,"MSM_202511_SW_B",2025,11,13,"11:19","EST",1411.73,44.0339987523394,"Within_Range","",10203.5354,287.828925246826,"Within_Range","",18.4378144678,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
+"105","COMPASS: Synoptic","CB","MSM","SW","C",0,"MSM_202511_SW_C",2025,11,13,"11:19","EST",1414.2302,44.1119837804117,"Within_Range","",10208.9872,287.982713681241,"Within_Range","",18.4476658704,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
+  ",""
