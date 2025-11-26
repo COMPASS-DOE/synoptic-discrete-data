@@ -1,0 +1,151 @@
+Inj.	Injection Name	Type 	Ret.Time	Amount	Rel.Area 	Area	Height
+No.	Selected Peak:		min	µg/mL	%	µS*min	µS
+			CD	CD	CD	CD	CD
+			IC-Cl	IC-Cl	IC-Cl	IC-Cl	IC-Cl
+1	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+2	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+3	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+4	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+5	Standard 1	Calibration Standard	3.277	5.0876	92.81	5.9988	58.5
+6	Standard 2	Calibration Standard	3.27	9.8111	93.07	11.5683	112.19
+7	Standard 3	Calibration Standard	3.27	19.7953	93.02	23.3408	224.36
+8	Standard 4	Calibration Standard	3.253	100.9261	93.09	119.0027	1098.78
+9	Standard 5	Calibration Standard	3.257	199.5647	92.97	235.3082	2074.72
+10	Lab Blank	Unknown	3.283	0.0226	100	0.0267	0.23
+11	Lab Blank	Unknown	3.277	0.0109	100	0.0129	0.11
+12	Lucie_7	Unknown	3.273	36.495	72.49	8.6063	84.06
+13	Lucie_8	Unknown	3.273	35.3217	72.33	8.3296	81.32
+14	Lucie_9	Unknown	3.273	35.6221	72.18	8.4004	82.09
+15	Lucie_10	Unknown	3.273	35.7613	72.01	8.4333	82.37
+16	Lucie_11	Unknown	3.273	36.4889	68.6	8.6049	83.85
+17	Lucie_12	Unknown	3.273	36.3726	68.53	8.5774	83.72
+18	Lucie_13	Unknown	3.273	35.7978	68.95	8.4419	82.34
+19	Lucie_14	Unknown	3.273	36.0958	70.63	8.5122	82.23
+20	Lucie_15	Unknown	3.273	35.5692	71.25	8.388	81.86
+21	Lucie_16	Unknown	3.27	36.0279	70.74	8.4962	82.82
+22	Lucie_16_dup	Unknown	3.273	35.9638	70.73	8.481	82.68
+23	Lucie_17	Unknown	3.277	36.7596	61.29	8.6687	83.79
+24	Lucie_17_spk	Spiked	3.273	36.2307	54.29	8.544	82.65
+25	Standard 1	Check Standard	3.273	5.2326	92.63	6.1698	60.31
+26	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+27	Lucie_18	Unknown	3.273	36.8478	61.65	8.6895	84.19
+28	Lucie_19	Unknown	3.27	36.4198	61.25	8.5886	83.32
+29	Lucie_20	Unknown	3.273	37.1402	58.79	8.7585	84.46
+30	Lucie_21	Unknown	3.27	35.9949	57.07	8.4884	81.86
+31	Lucie_22	Unknown	3.273	37.1757	58.12	8.7668	84.59
+32	Lucie_23	Unknown	3.273	37.3616	65.51	8.8107	86.13
+33	Lucie_24	Unknown	3.273	36.4329	60.72	8.5917	83.91
+34	Lucie_25	Unknown	3.27	36.3955	65.39	8.5828	83.92
+35	Lucie_26	Unknown	3.27	36.7217	70.94	8.6598	83.81
+36	Lucie_26_dup	Unknown	3.27	36.2419	70.89	8.5466	82.89
+37	Lucie_27	Unknown	3.273	37.3266	67.66	8.8024	85.03
+38	Lucie_27_spk	Spiked	3.27	36.6295	60.46	8.638	83.52
+39	Standard 2	Check Standard	3.273	10.0452	93.17	11.8444	115.34
+40	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+41	Lucie_28	Unknown	3.27	36.3334	71.97	8.5682	84.05
+42	Lucie_29	Unknown	3.273	36.912	59.33	8.7046	83.88
+43	Lucie_30	Unknown	3.273	36.4873	59.43	8.6045	82.95
+44	Lucie_31	Unknown	3.27	36.6708	59.16	8.6478	83.39
+45	Lucie_32	Unknown	3.273	36.9944	57.49	8.7241	83.56
+46	Lucie_33	Unknown	3.27	36.4028	56.77	8.5846	82.3
+47	Lucie_34	Unknown	3.27	36.7348	57.06	8.6628	83.12
+48	Lucie_35	Unknown	3.27	36.1496	63.41	8.5248	83.39
+49	Lucie_36	Unknown	3.27	35.8139	64.81	8.4457	82.65
+50	Lucie_36_dup	Unknown	3.27	35.6347	64.83	8.4034	82.33
+51	Lucie_37	Unknown	3.27	36.1297	64.69	8.5202	83.47
+52	Lucie_37_spk	Spiked	3.27	35.801	57.03	8.4426	82.8
+53	Standard 3	Check Standard	3.267	20.0294	93.07	23.6168	227.73
+54	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+55	Lucie_38	Unknown	3.273	36.1033	67.39	8.5139	82.31
+56	Lucie_39	Unknown	3.27	36.8552	65.45	8.6912	83.98
+57	Lucie_40	Unknown	3.267	36.2804	66.99	8.5557	82.67
+58	Lucie_41	Unknown	3.27	36.8314	65.56	8.6856	83.5
+59	Lucie_42	Unknown	3.27	37.1727	65.6	8.7661	84.22
+60	Lucie_43	Unknown	3.267	37.1175	64.69	8.7531	84.12
+61	Lucie_44	Unknown	3.27	37.0254	62.16	8.7314	83.66
+62	Lucie_45	Unknown	3.27	36.8637	61.39	8.6933	83.22
+63	Lucie_46	Unknown	3.267	37.4084	61.39	8.8217	84.2
+64	Lucie_46_dup	Unknown	3.27	37.2364	61.39	8.7811	83.79
+65	Lucie_47	Unknown	3.27	37.4243	58	8.8254	85.12
+66	Lucie_47_spk	Spiked	3.267	37.2437	51.98	8.7829	84.73
+67	Standard 4	Check Standard	3.253	101.4515	93.08	119.6222	1103.56
+68	Lab Blank	Unknown	3.27	0.0094	100	0.011	0.09
+69	Lucie_48	Unknown	3.27	37.8699	58.49	8.9305	86.09
+70	Lucie_49	Unknown	3.27	37.0158	52.56	8.7291	85.11
+71	Lucie_50	Unknown	3.267	37.8031	58.92	8.9148	86.16
+72	Lucie_51	Unknown	3.267	37.3611	58.17	8.8106	85.13
+73	Lucie_52	Unknown	3.27	38.07	58.62	8.9777	86.68
+74	Lucie_53	Unknown	3.267	37.2605	70.86	8.7868	84.42
+75	Lucie_54	Unknown	3.27	37.2733	70.85	8.7898	84.44
+76	Lucie_55	Unknown	3.267	38.2028	71.18	9.009	86.58
+77	Lucie_56	Unknown	3.267	37.557	75.15	8.8568	85.17
+78	Lucie_56_dup	Unknown	3.267	36.5466	75.1	8.6185	82.78
+79	Lucie_57	Unknown	3.267	39.419	75.76	9.2959	89.34
+80	Lucie_57_spk	Spiked	3.267	39.0111	66.49	9.1997	88.41
+81	Standard 5	Check Standard	3.25	199.3533	92.96	235.0589	2077.68
+82	Lab Blank	Unknown	3.267	0.0169	100	0.02	0.17
+83	Lucie_58	Unknown	3.267	38.1432	72.11	8.995	85.6
+84	Lucie_59	Unknown	3.267	37.5556	37.38	8.8564	86.47
+85	Lucie_60	Unknown	3.267	37.8975	44.57	8.937	86.14
+86	Lucie_61	Unknown	3.267	38.428	46.2	9.0621	85.99
+87	Lucie_62	Unknown	3.267	37.7543	42.7	8.9033	86.99
+88	Lucie_63	Unknown	3.267	36.7046	42.5	8.6557	84.68
+89	Lucie_64	Unknown	3.267	36.56	45.42	8.6216	84.43
+90	Lucie_65	Unknown	3.267	37.8973	70.82	8.937	85.72
+91	Lucie_66	Unknown	3.267	37.9691	70.61	8.9539	85.88
+92	Lucie_66_dup	Unknown	3.27	37.2839	70.57	8.7924	84.44
+93	Lucie_67	Unknown	3.267	37.5365	70.28	8.8519	84.77
+94	Lucie_67_spk	Spiked	3.267	37.466	62.04	8.8353	84.56
+95	Standard 1	Check Standard	3.267	5.2262	93.06	6.1622	60.48
+96	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+97	Lucie_68	Unknown	3.267	37.685	75.5	8.8869	85.19
+98	Lucie_69	Unknown	3.263	37.2513	74.24	8.7847	84.3
+99	Lucie_70	Unknown	3.263	38.1469	71.83	8.9958	85.6
+100	Lucie_71	Unknown	3.267	36.5557	35.6	8.6206	84.11
+101	Lucie_72	Unknown	3.267	36.7465	37.94	8.6656	84.66
+102	Lucie_73	Unknown	3.267	36.9698	40.21	8.7183	85.07
+103	Lucie_74	Unknown	3.263	36.5575	43.26	8.621	84.37
+104	Lucie_75	Unknown	3.267	36.6404	42.59	8.6406	84.56
+105	Lucie_76	Unknown	3.263	36.6813	47.19	8.6502	84.73
+106	Lucie_76_dup	Unknown	3.263	36.4172	47.16	8.5879	84.16
+107	Lucie_77	Unknown	3.267	38.1534	71.32	8.9974	86.25
+108	Lucie_77_spk	Spiked	3.263	37.8059	63.06	8.9154	85.42
+109	Standard 2	Check Standard	3.263	10.067	93.17	11.87	115.63
+110	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+111	Lucie_78	Unknown	3.263	39.8576	70.2	9.3993	90.28
+112	Lucie_79	Unknown	3.263	37.5371	69.32	8.8521	84.82
+113	Lucie_80	Unknown	3.267	38.0426	67.32	8.9713	86.24
+114	Lucie_81	Unknown	3.263	38.1356	68.75	8.9932	86.37
+115	Lucie_82	Unknown	3.263	38.3685	65.34	9.0481	86.15
+116	Lucie_83	Unknown	3.263	37.5181	38.13	8.8476	86.53
+117	Lucie_84	Unknown	3.263	37.4071	37.78	8.8214	86.23
+118	Lucie_85	Unknown	3.263	37.4901	37.13	8.841	86.42
+119	Lucie_86	Unknown	3.263	37.3677	45.36	8.8121	86.2
+120	Lucie_86_dup	Unknown	3.263	37.2064	45.34	8.7741	85.86
+121	Lucie_87	Unknown	3.263	37.1038	43.62	8.7499	85.68
+122	Lucie_87_spk	Spiked	3.263	36.7357	40.29	8.6631	84.78
+123	Standard 3	Check Standard	3.263	20.1401	93.09	23.7473	228.58
+124	Lab Blank	Unknown	3.263	0.0192	22.84	0.0226	0.09
+125	Lucie_88	Unknown	3.263	37.1989	47.71	8.7723	85.82
+126	Lucie_89	Unknown	3.26	37.0448	79.15	8.736	85.26
+127	Lucie_90	Unknown	3.267	37.7773	82.37	8.9087	87.22
+128	Lucie_91	Unknown	3.263	37.4329	91.73	8.8275	86.56
+129	Lucie_92	Unknown	3.263	37.6096	75.63	8.8692	86.31
+130	Lucie_93	Unknown	3.263	36.8424	67.19	8.6882	84.51
+131	Lucie_93_dup	Unknown	3.263	36.8344	67.22	8.6863	84.4
+132	Lucie_94	Unknown	3.263	38.0688	56.13	8.9774	86.92
+133	Lucie_94_spk	Spiked	3.263	37.712	50.91	8.8933	86.04
+134	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+135	Standard 1	Check Standard	3.263	5.2245	93.23	6.1602	60.32
+136	Standard 2	Check Standard	3.26	10.0367	93.16	11.8344	115.21
+137	Standard 3	Check Standard	3.26	20.0658	93.07	23.6598	227.71
+138	Standard 4	Check Standard	3.247	101.6353	93.08	119.8389	1106.12
+139	Standard 5	Check Standard	3.243	199.297	92.95	234.9925	2078.68
+140	Lab Blank	Unknown	3.267	0.0278	100	0.0328	0.29
+141	Lab Blank	Unknown	3.263	0.0088	100	0.0104	0.08
+142	Lab Blank	Unknown	n.a.	n.a.	n.a.	n.a.	n.a.
+Maximum			3.283	199.5647	100	235.3082	2078.68
+Average			3.267	37.9497	67.19	16.4604	153.56
+Minimum			3.243	0.0088	22.84	0.0104	0.08
+Standard Deviation			0.006	28.9816	17.13	37.6435	334.37
+Relative Standard Deviation			0.17%	76.37%	25.50%	228.69%	217.74%
