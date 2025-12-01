@@ -33,7 +33,7 @@ lapply(c(
   Date_Run = "2025-11-18"  #Date that instrument was run
   Run_by = "Zoe Read"  #Instrument user 
   Script_run_by = "Zoe Read" #Code user 
-  run_notes = "Spks 71 and 81 had low percent recovery, but >80% of spks had good recovery. 
+  run_notes = "Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   " #any notes from the run
   samples <- c("GCW", "GWI", "MSM", "SWH") #whatever identifies your samples within the same names 
