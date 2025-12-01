@@ -1,5 +1,5 @@
 ---
-title: "COMPASS Lucie's Samples: SO4/Cl"
+title: "Lucie Stetten Incubation Samples: SO4/Cl"
 author: "2025 Samples"
 date: "`r Sys.Date()`"
 output: 
@@ -33,7 +33,7 @@ lapply(c(
   Date_Run = "2025-11-24"  #Date that instrument was run
   Run_by = "Zoe Read"  #Instrument user 
   Script_run_by = "Zoe Read" #Code user 
-  run_notes = "
+  run_notes = "No issues. 
   " #any notes from the run
   samples <- c("GCW", "GWI", "MSM", "SWH") #whatever identifies your samples within the same names 
   samples_pattern <- paste(samples, collapse = "|") 
@@ -958,118 +958,6 @@ knitr::kable(Perc_Cl_flagged, caption = "Cl samples")
 
 ```
 
-## Check to see if samples run match metadata & merge info
-```{r check sample ids with metadata, echo=FALSE, warning = FALSE}
-
-#remove duplicates from the sample dataframe bc we are just taking the first dup run
-all_data_flagged <- dat_flagged %>%
-  filter(!str_detect(sample_ID, "dup")) %>%
-  filter(!str_detect(sample_ID, "Lab Blank")) %>%
-  filter(!str_detect(sample_ID, "spk")) %>%
-  mutate(sample_ID = sub("^[^_]+_", "", sample_ID))
-  #select(!Excess_Info)
-
-#check to see if all samples are present in the metadata 
-all_data_flagged$sample_ID <- toupper(all_data_flagged$sample_ID)
-dionex_metadata$Cl_SO4_ID <- toupper(dionex_metadata$Cl_SO4_ID)
-
-all_present <- all(all_data_flagged$sample_ID %in% dionex_metadata$Cl_SO4_ID)
-
-if (all_present) {
-  message("All sample IDs are present in metadata.")
-} else {
-  message("Some sample IDs are missing from metadata.")
-  
-  # Optional: Which ones are missing?
-  missing_ids <- setdiff(all_data_flagged$sample_ID, dionex_metadata$Cl_SO4_ID)
-  print(missing_ids)
-}
-
-dionex_metadata_selected <- dionex_metadata %>%
-  select(Cl_SO4_ID, Year, Month, Day, Depth_cm, Lysimeter, Time..24hr., Time.Zone_EDT.EST,  Field.Notes) 
-
-#merge metadata with sample run data 
-merged_data <- all_data_flagged %>%
-  left_join(dionex_metadata_selected, by = c("sample_ID" = "Cl_SO4_ID"))
-
-df_all_clean <- merged_data %>%
-  #filter(str_detect(Sample_Name, "GCW|GWI|MSM|SWH")) %>%
-  #mutate(Run_Time = lubridate::mdy_hm(Run_Time)) %>%
-  separate(
-    col = sample_name,
-    sep = "_",
-    into = c("Sample_Number", "Site_Code", "Date" ,"Zone", "LysID", "Depth"),
-    remove = FALSE)
-
-############### THIS IS ONLY FOR 2023 when SWAMP was called UP and UPLAND was called UPCON ##############
-df_all_clean <- df_all_clean %>%
-  mutate(
-    Zone = case_when(
-      Site_Code == "SWH" & Zone == "UP" ~ "SWAMP",
-      Site_Code == "SWH" & Zone == "UPCON" ~ "UP",
-      TRUE ~ `Zone`
-    ))
-
-
-```
-
-## Visualize Data by Plot   
-```{r Visualize Data, echo=FALSE, warning=FALSE}
-
-#Plot samples to get a first look at concentrations (sanity check)
-data_plotting <- df_all_clean
-
-#Remove Lucie's test samples
-data_plotting <- data_plotting %>%  
-  filter(!str_detect(sample_name, "Lucie")) 
-
-#Order by Zone from Upland to Surface Water
-data_plotting$Zone = factor(data_plotting$Zone, levels = c("UP",  "SWAMP", "TR", "WC", "SW"))
-data_plotting <- data_plotting[order(data_plotting$Zone), ]
-
-#group the data for plotting
-data_plotting <- data_plotting %>%
-  group_by(Site_Code) %>%
-  mutate(row_num = factor(row_number())) %>%  # create row_num as factor per group
-  ungroup()
-
-#Plot data and change colors based on Zone:
-viz_cl_plot <- ggplot(data_plotting, aes(x = row_num, y = Cl_ppm, fill = Zone)) +
-  geom_bar(stat = "identity", position = position_dodge2(preserve = "single")) +
-  facet_grid(~ Site_Code, scales="free_x") +
-  scale_fill_manual(values = c(
-    "UP" = "#20063B",
-    "SWAMP" = "darkgrey",
-    "TR" = "#FFBC42",
-    "WC" = "#419973",
-    "SW" = "#25ABE6"
-  )) +
-  theme_classic() +
-  theme(axis.text.x = element_blank()) +
-  labs(x = " ", y = "Cl (mg/L)", title = "Samples: Chloride") +
-  scale_x_discrete(drop = TRUE)
-
-
-viz_so4_plot <-  ggplot(data_plotting, aes(x = row_num, y = SO4_ppm, fill = Zone)) +
-  geom_bar(stat = "identity", position = position_dodge2(preserve = "single")) +
-  facet_grid(~ Site_Code, scales="free_x") +
-  scale_fill_manual(values = c(
-    "UP" = "#20063B",
-    "SWAMP" = "darkgrey",
-    "TR" = "#FFBC42",
-    "WC" = "#419973",
-    "SW" = "#25ABE6"
-  )) +
-  theme_classic() +
-  theme(axis.text.x = element_blank()) +
-  labs(x = " ", y = "SO4 (mg/L)", title = "Samples: SO4") +
-  scale_x_discrete(drop = TRUE)
-
-ggarrange(viz_cl_plot, viz_so4_plot, nrow=2, ncol=1)
-
-
-```
-
 ## Export Processed Data  
 ```{r Export Processed Data, echo=FALSE, include = FALSE}
 
@@ -1077,11 +965,12 @@ ggarrange(viz_cl_plot, viz_so4_plot, nrow=2, ncol=1)
 #Add any necessary identifiers to the samples  ### VERY IMPORTANT AND STANDARD FOR PROJECT ####
   #example read in sample IDs list and merge 
   #create required ID columns in R, etc. 
-final_data <- df_all_clean %>% 
-  filter(str_detect(sample_name, "GCW|GWI|MSM|SWH")) %>%
+final_data <- dat_flagged %>% 
+  filter(!str_detect(sample_ID, "dup")) %>%  
+  filter(!str_detect(sample_ID, "spk")) %>% 
+  separate(sample_ID, into = c("Name", "Sample_number"), sep = "_")   %>%
   mutate(
-    Project = "COMPASS: Synoptic",   # new column with same value on every row
-    Region = "CB",
+    Project = "Lucie Stetten Incubation Samples",   # new column with same value on every row
     Run_notes = run_notes,     # new column with notes about the run
     Analysis_rundate = print(Date_Run)
   ) 
@@ -1089,20 +978,11 @@ final_data <- df_all_clean %>%
 colnames(final_data)
 
 final_data <- final_data %>%
-  rename(
-    Time = Time..24hr.,
-    Time_Zone = Time.Zone_EDT.EST,
-    Replicate = Lysimeter,
-    Sample_ID = sample_ID,
-    Field_notes = Field.Notes,
-    Site = Site_Code
-    # add more rename pairs as needed
-  ) %>%
-  select(
-    Project, Region, Site, Zone, Replicate, Depth_cm, 
-         Sample_ID, Year, Month, Day, Time, Time_Zone,
-         SO4_ppm, SO4_Conc_mM, SO4_Conc_flag, SO4_QAQC_flag, Cl_ppm, Cl_Conc_mM, Cl_Conc_flag, Cl_QAQC_flag, salinity,
-         Analysis_rundate,  Run_notes, Field_notes
+    select(
+         Project, Sample_number,
+         SO4_ppm, SO4_Conc_mM, SO4_Conc_flag, SO4_QAQC_flag, 
+         Cl_ppm, Cl_Conc_mM, Cl_Conc_flag, Cl_QAQC_flag, salinity,
+         Analysis_rundate,  Run_notes
         # list columns in the order you want them
   )
 
