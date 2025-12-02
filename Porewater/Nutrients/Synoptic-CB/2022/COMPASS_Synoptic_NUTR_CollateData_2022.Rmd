@@ -1,0 +1,325 @@
+---
+title: 'Synoptic CB: Collate Porewater Nutrients 2022'
+author: "Stephanie J. Wilson and Zoe Read"
+date: "2025-12-02"
+output: pdf_document
+---
+
+##Notes
+```{r}
+# Some sample IDs are missing from metadata.
+#  [1] "GCW_202206_TR_LYSB_10CM"    "GCW_202206_TR_LYSB_20CM"    "GCW_202206_TR_LYSB_45CM"    "GCW_202206_TR_LYSC_10CM"    "GCW_202206_TR_LYSC_20CM"   
+#  [6] "GCW_202206_TR_LYSC_45CM"    "GCW_202206_UP_LYSB_10CM"    "GCW_202206_UP_LYSB_20CM"    "MSM_202206_TR_LYSB_20CM"    "MSM_202206_UP_LYSB_45CM"   
+# [11] "GCW_202208_TR_LYSC_45CM"    "GCW_202208_UP_LYSA_10CM"    "GCW_202208_UP_LYSB_NACM"    "GCW_202209_TR_LYSB_45CM"    "GCW_202209_TR_LYSC_10CM"   
+# [16] "GCW_202209_TR_LYSC_20CM"    "GCW_202209_TR_LYSC_45CM"    "GCW_202209_UP_LYSA_10CM"    "GWI_202209_TR_10CM_EXTRACM" "GWI_202209_TR_LYSC_10CM"   
+# [21] "GWI_202209_UP_LYSA_45CM"    "GWI_202209_UP_LYSC_20CM"    "GWI_202210_TR_LYSB_20CM"    "GWI_202210_TR_LYSB_45CM"    "GWI_202210_TR_LYSC_10CM"   
+# [26] "GWI_202210_UP_LYSB_20CM"    "GWI_202210_UP_LYSC_10CM"    "GWI_202210_UP_LYSC_20CM"    "GCW_202211_SW_A"            "GCW_202211_SW_B"           
+# [31] "GCW_202211_SW_C"            "GCW_202211_TR_LYSA_20CM"    "GCW_202211_TR_LYSA_45CM"    "GCW_202211_TR_LYSB_10CM"    "GCW_202211_TR_LYSB_20CM"   
+# [36] "GCW_202211_TR_LYSB_45CM"    "GCW_202211_TR_LYSC_10CM"    "GCW_202211_TR_LYSC_20CM"    "GCW_202211_TR_LYSC_45CM"    "GCW_202211_UP_LYSB_10CM"   
+# [41] "GCW_202211_UP_LYSB_20CM"    "GCW_202211_UP_LYSC_10CM"    "GCW_202211_UP_LYSC_20CM"    "GWI_202211_TR_LYSA_45CM"    "GWI_202211_UP_LYSA_45CM"   
+# [46] "MSM_202211_SW_A"            "MSM_202211_SW_B"            "MSM_202211_SW_C"            "MSM_202211_TR_LYSB_10CM"    "MSM_202211_TR_LYSB_20CM"   
+# [51] "MSM_202211_TR_LYSB_45CM"    "MSM_202211_TR_LYSC_10CM"    "MSM_202211_TR_LYSC_20CM"    "MSM_202211_TR_LYSC_45CM"    "MSM_202211_UP_LYSA_10CM"   
+# [56] "MSM_202211_UP_LYSA_20CM"    "MSM_202211_UP_LYSB_10CM"    "MSM_202211_UP_LYSB_20CM"    "MSM_202211_UP_LYSB_45CM"    "MSM_202211_UP_LYSC_10CM"   
+# [61] "MSM_202211_UP_LYSC_20CM"    "MSM_202211_UP_LYSC_45CM"  
+
+```
+
+
+## Set up 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(dplyr)
+library(readr)
+library(lubridate)
+library(stringr)
+```
+
+## Pull In Data
+```{r}
+
+#read in all data from processed data folder 
+files <- list.files(path = "Processed Data", pattern = "\\.csv$", full.names = TRUE)
+list_of_dfs <- lapply(files, read_csv)
+
+#combine those files together into one dataframe 
+combined_df <- bind_rows(list_of_dfs)
+
+combined_df <- combined_df %>%
+  select(-1)
+
+head(combined_df)
+```
+
+## Pull in Metadata
+```{r}
+
+Raw_Metadata = "Raw Data/COMPASS_SynopticCB_PW_SampleLog_2022.csv"
+
+#read in the raw metadata file 
+raw_metadata <- read.csv(Raw_Metadata)
+
+#make a new columns in the metadata with important info:
+metadata <- raw_metadata %>%
+  mutate(Depth = paste0(Depth_cm, "cm")) %>%
+  mutate(LysID = paste0("Lys", Lysimeter)) %>%
+  mutate(YearMonth = sprintf("%d%02d", Year, Month))  %>%
+  mutate(Zone = case_when(
+    `Transect.Location` == "Transition" ~ "TR",
+    `Transect.Location` == "Wetland"    ~ "WC",
+    `Transect.Location` == "Upland"     ~ "UP",   
+    `Transect.Location` == "Surface Water" ~ "SW",
+    TRUE                 ~ `Transect.Location`    # keep original value if no match
+  ))
+
+#Create IDs from what was collected for comparison later
+metadata <- metadata %>%
+  mutate(Nutr_ID = ifelse(NUTR == "x",
+                                     paste(Site,
+                                           YearMonth,
+                                           Zone,
+                                           LysID,
+                                           Depth,
+                                           sep = "_"),
+                                     NA),  )
+
+#Change the SW lines because they don't have lysimeters or a depth  
+metadata <- metadata %>%
+  mutate(
+    Nutr_ID = if_else(
+      Zone == "SW",
+      # Modify the string:
+      Nutr_ID %>%
+        str_replace("_LysA", "_A") %>%                    # Replace "_LysA" with "_A"
+        str_replace("_LysB", "_B") %>%                    # Replace "_LysB" with "_B"
+        str_replace("_LysC", "_C") %>%                    # Replace "_LysC" with "_C"
+        str_replace("_0cm$", ""),                          # Remove trailing "_0cm"
+      Nutr_ID  # else keep original
+    )
+  )
+
+#Take out the columns and rows that are not relevant
+nutr_metadata <- metadata %>%
+  select(Nutr_ID, Year, Month, Day, YearMonth, Site, Zone, Lysimeter, LysID, Depth_cm, 
+         Depth, Time..24hr., Time.Zone_EDT.EST, Field.Notes, ) %>%        
+  # only keep specific columns
+  filter(!is.na(Nutr_ID) & Nutr_ID != "")  # remove missing/blank Nutr_ID rows
+
+head(nutr_metadata)
+
+```
+
+## Make sample IDs match metadata
+```{r Make Sample match metadata}
+
+#Remove Sip and RHZ samples
+all_data <- combined_df %>%
+  filter(!str_detect(Sample_Name, "Sip|RHZ|PPR|SIPA")) %>%
+  mutate(
+    Project = "COMPASS: Synoptic", 
+    Region = "CB", 
+    Depth_cm = Depth)%>%
+  rename(
+    Sample_ID = Sample_Name, 
+    NH3_Conc_Flag = NH3_range,
+    PO4_Conc_Flag = PO4_range,
+    NOx_Conc_Flag = NOx_range)
+
+##Fix GCW spelling
+all_data <- all_data %>%
+  mutate(Site = recode(Site, "GCrew" = "GCW")) %>%
+  mutate(Site = recode(Site, "Gcrew" = "GCW")) %>%
+  mutate(Site = recode(Site, "GCerw" = "GCW")) %>%
+   mutate(Sample_ID = str_replace(Sample_ID, "GCrew", "GCW"))%>%
+   mutate(Sample_ID = str_replace(Sample_ID, "Gcrew", "GCW"))%>%
+   mutate(Sample_ID = str_replace(Sample_ID, "GCerw", "GCW"))
+
+##Remove Blanks
+all_data <- subset(all_data, Sample_ID != "Blank")
+
+##Depths for SW samples should be 0 
+all_data$Depth_cm <-  ifelse((all_data$Zone == "SW"), 0, all_data$Depth_cm)
+
+##Add cm to Depth
+all_data$Depth <- all_data$Depth_cm
+all_data <- all_data %>%
+  mutate(Depth_cm = gsub("cm", "", as.character(Depth_cm)))%>%
+  mutate(Depth_cm = gsub("m", "", as.character(Depth_cm)))
+
+all_data
+
+##Remake sample ID
+all_data <- all_data %>%
+  mutate(
+    Sample_ID_new = if_else(
+      Zone != "SW",
+      # Modify the string:
+      Sample_ID_new <- paste(Site, Date, Zone, Replicate, Depth_cm, sep = "_"), 
+      Sample_ID_new <- paste(Site, Date, Zone, Replicate, sep = "_"), 
+    )
+  )
+
+##Add units
+all_data <- all_data %>%
+  mutate(
+    Sample_ID = if_else(
+      Zone != "SW",
+      # Modify the string:
+      Sample_ID <- paste0(Sample_ID_new, "cm"), 
+      Sample_ID <- Sample_ID_new
+    )
+  )
+
+all_data <- all_data %>%
+  filter(!str_detect(Sample_ID, "MSM_202211_WC_SIPA_45CM"))
+
+```
+
+## Check to see if samples run match metadata & merge info
+```{r}
+
+#check to see if all samples are present in the metadata 
+all_data$Sample_ID <- toupper(all_data$Sample_ID)
+nutr_metadata$Nutr_ID <- toupper(nutr_metadata$Nutr_ID)
+
+all_present <- all(all_data$Sample_ID %in% nutr_metadata$Nutr_ID)
+
+if (all_present) {
+  message("All sample IDs are present in metadata.")
+} else {
+  message("Some sample IDs are missing from metadata.")
+  
+  # Optional: Which ones are missing?
+  missing_ids <- setdiff(all_data$Sample_ID, nutr_metadata$Nutr_ID)
+  print(missing_ids)
+}
+
+# missing_ids <- data.frame(missing_ids)
+# 
+# ##Export missing IDs to csv
+# write.csv(missing_ids, "COMPASS_SynopticCB_SO4_Cl_2022_missing_IDs.csv")
+
+##Remove Lys from Replicate Column
+all_data <- all_data %>%
+  mutate(Replicate = gsub("Lys", "", as.character(Replicate)))%>%
+  mutate(Replicate = gsub("LyS", "", as.character(Replicate)))
+
+##Select only necessary columns
+all_data_selected <- all_data %>%
+  select(-c("Depth", "Sample_ID_new", "Date", "Month", "Type", "Sampling"))
+
+all_data_selected$Depth_cm <- as.integer(all_data_selected$Depth_cm)
+
+##Select only necessary columns
+nutr_metadata_selected <- nutr_metadata %>%
+  select(Nutr_ID, Year, Month, Day, Depth_cm, Lysimeter, Time..24hr., Time.Zone_EDT.EST,  Field.Notes) 
+
+#merge metadata with sample run data 
+merged_data <- all_data_selected %>%
+  left_join(nutr_metadata_selected, by = c("Sample_ID" = "Nutr_ID", "Replicate" = "Lysimeter", "Depth_cm"))
+
+head(merged_data)
+
+##Change any negative conc's to 0 
+merged_data[merged_data$NH3_mgL < 0, "NH3_mgL"] <- 0
+merged_data[merged_data$NH3_uM  < 0, "NH3_uM"] <- 0
+merged_data[merged_data$PO4_mgL < 0, "PO4_mgL"] <- 0
+merged_data[merged_data$PO4_uM  < 0, "PO4_uM"] <- 0
+merged_data$NOx_mgL[merged_data$NOx_mgL < 0] <- 0
+merged_data$NOx_uM[merged_data$NOx_uM < 0] <- 0
+
+```
+
+
+## Might be worth calculating some averages and plotting through time as a quick viz?
+
+```{r, echo=FALSE}
+
+data_plotting <- merged_data %>%
+  mutate(Zone = factor(Zone, levels = c("UP","SWAMP","TR","WC","SW")))
+
+levels(data_plotting$Zone) 
+
+#boxplots of all 2023 data 
+NOx <- ggplot(data = data_plotting, aes(Zone, NOx_uM, color = Zone)) + 
+  geom_boxplot() + 
+  facet_grid(~ Site, scales="free_x") +
+        scale_color_manual(values = c("UP" = "#20063B", 
+                                     "TR" = "#FFBC42", 
+                                     "SWAMP" = "darkgrey",
+                                     "WC" = "#419973", 
+                                     "SW" = "#25ABE6")) +
+        theme_classic() + 
+        labs(x= " ", y="Nitrate + Nitrite (uM)", title="Synoptic CB: Porewater NOx") + 
+          theme(legend.position = "none") +
+          scale_x_discrete(drop = TRUE)
+NOx
+
+NH4 <- ggplot(data = data_plotting, aes(Zone, NH3_uM, color = Zone)) + 
+  geom_boxplot() + 
+  facet_grid(~ Site, scales="free_x") +
+        scale_color_manual(values = c("UP" = "#20063B", 
+                                     "TR" = "#FFBC42", 
+                                     "SWAMP" = "darkgrey",
+                                     "WC" = "#419973", 
+                                     "SW" = "#25ABE6")) +
+        theme_classic() + 
+        labs(x= " ", y="Ammonium (uM)", title="Synoptic CB: Porewater Ammonium") + 
+          theme(legend.position = "none") +
+          scale_x_discrete(drop = TRUE)
+NH4
+
+PO4 <- ggplot(data = data_plotting, aes(Zone, PO4_uM, color = Zone)) + 
+  geom_boxplot() + 
+  facet_grid(~ Site, scales="free_x") +
+        scale_color_manual(values = c("UP" = "#20063B", 
+                                     "TR" = "#FFBC42", 
+                                     "SWAMP" = "darkgrey",
+                                     "WC" = "#419973", 
+                                     "SW" = "#25ABE6")) +
+        theme_classic() + 
+        labs(x= " ", y="Phosphate (uM)", title="Synoptic CB: Porewater Phosphate") + 
+          theme(legend.position = "none") +
+          scale_x_discrete(drop = TRUE)
+PO4
+
+```
+
+
+## Write out the final file with all of the data 
+
+```{r, echo=FALSE}
+
+#write out the csv to the main folder 
+
+final_data <- merged_data %>%
+  rename(
+    Time = Time..24hr.,
+    Time_Zone = Time.Zone_EDT.EST,
+    Field_notes = Field.Notes, 
+    NH3_Conc_mgL = NH3_mgL, 
+    NH3_Conc_uM = NH3_uM, 
+    PO4_Conc_mgL = PO4_mgL, 
+    PO4_Conc_uM = PO4_uM,  
+    NOx_Conc_mgL = NOx_mgL, 
+    NOx_Conc_uM = NOx_uM
+    # add more rename pairs as needed
+  ) %>%
+  select(
+    Project, Region, Site, Zone, Replicate, Depth_cm, 
+         Sample_ID, Year, Month, Day, Time, Time_Zone,
+         NH3_Conc_mgL, NH3_Conc_uM, PO4_Conc_mgL, PO4_Conc_uM,  NOx_Conc_mgL, NOx_Conc_uM, NH3_Conc_Flag, PO4_Conc_Flag, NOx_Conc_Flag,
+         Field_notes
+        # list columns in the order you want them
+  )
+
+
+write.csv(final_data, "COMPASS_Synoptic_CB_Nutrients_2022.csv")
+
+```
+
+
+
+
+
+

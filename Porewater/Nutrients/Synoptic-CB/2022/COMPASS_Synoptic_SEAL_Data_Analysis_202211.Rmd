@@ -369,20 +369,21 @@ NOXlook
 
 head(all_data)
 
-out <- all_data[ ,c(1,3,5,7,8,9,10)]
+# out <- all_data[ ,c(1,3,5,7,8,9,10)]
+out <- all_data
 head(out)
 
 #for steph <- pull out identifiers of the sample names 
 #pull the sample ID and separate it by the underscores 
 IDs <- data.frame(do.call('rbind', strsplit(as.character(out$Sample_Name),'_',fixed=TRUE)))
-colnames(IDs) <- c("Site" , "Date","Zone", "Replicate", "Depth")
-IDs$Month <- "November"
+colnames(IDs) <- c("Site", "Date", "Zone", "Replicate", "Depth")
+IDs$Month <- "August"
 head(IDs)
+IDs$"NA" <- NULL
 
 #rejoin them to the dataframe
 alldat <- cbind(IDs, out)
 head(alldat)
-
 
 
 ```
