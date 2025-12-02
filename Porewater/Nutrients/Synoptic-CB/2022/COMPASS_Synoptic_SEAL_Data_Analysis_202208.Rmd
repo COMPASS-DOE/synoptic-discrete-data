@@ -380,6 +380,7 @@ IDs <- data.frame(do.call('rbind', strsplit(as.character(out$Sample_Name),'_',fi
 colnames(IDs) <- c("Site", "Date", "Zone", "Replicate", "Depth")
 IDs$Month <- "August"
 head(IDs)
+IDs$"NA" <- NULL
 
 #rejoin them to the dataframe
 alldat <- cbind(IDs, out)
