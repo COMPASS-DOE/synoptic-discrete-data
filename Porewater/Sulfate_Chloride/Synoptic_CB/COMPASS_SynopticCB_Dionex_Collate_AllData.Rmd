@@ -1,6 +1,6 @@
 ---
 title: "Synoptic CB: Porewater SO4/Cl"
-author: "2022-2024 Samples"
+author: "2022-2025 Samples"
 date: "`r Sys.Date()`"
 output: 
   pdf_document:
@@ -36,7 +36,11 @@ dat23 <- read.csv("2023/COMPASS_SynopticCB_SO4_Cl_2023.csv")
 dat24 <- read.csv("2024/COMPASS_SynopticCB_SO4_Cl_2024.csv")
 # head(dat24)
 
-all_dat <- rbind(dat22, dat23, dat24)
+#read in 2025 Dionex Data:
+dat25 <- read.csv("2025/COMPASS_SynopticCB_SO4_Cl_2025.csv")
+# head(dat24)
+
+all_dat <- rbind(dat22, dat23, dat24, dat25)
 
 all_dat <- all_dat %>%
   select(
@@ -79,10 +83,12 @@ metadat$Description <- c("Project name",
                          "Zone within space-for-time transect (UP=Upland, SWAMP=Swamp, TR=Transition, WC=Wetland Control, SW=Surface Water)",
                          "Lysimeter or sample replicate id (A-C)", 
                          "Depth in centimeters from which water sample was taken", 
+                         "Sulfate concentration in ppm", 
                          "Sulfate concentration in mM", 
                          "Sulfate concentration flag base on standard curve (bdl=below detection limit (0), adl=above detection limit (highest   
                          standard), Within_Range=within detection range)", 
-                         "Sulfate QAQC Flags generated during checks of standards, blanks, dups, and spks", 
+                         "Sulfate QAQC Flags generated during checks of standards, blanks, dups, and spks",
+                         "Chloride concentration in ppm", 
                          "Chloride concentration in mM", 
                          "Chloride concentration flag base on standard curve (bdl=below detection limit (0), adl=above detection limit (highest   
                          standard), Within_Range=within detection range)", 
@@ -104,9 +110,11 @@ metadat$Units <-       c("NA",
                          "NA",
                          "NA", 
                          "cm",
+                         "ppm", 
                          "mM", 
                          "NA", 
                          "NA", 
+                         "ppm", 
                          "mM", 
                          "NA", 
                          "NA", 
@@ -130,8 +138,10 @@ metadat$Instrument_ifapplicable <-
                          "NA", 
                          "NA",
                          "Dionex Integrion HPIC (Thermo Fisher)", 
+                         "Dionex Integrion HPIC (Thermo Fisher)", 
                          "NA", 
                          "NA", 
+                         "Dionex Integrion HPIC (Thermo Fisher)", 
                          "Dionex Integrion HPIC (Thermo Fisher)", 
                          "NA", 
                          "NA", 
@@ -259,7 +269,7 @@ Dionex_avg$Date <- paste0(Dionex_avg$YearMonth, "-01")
 Dionex_avg$Date <- as.Date(Dionex_avg$Date)
 
 # Define the specific date breaks you want to display
-specific_breaks <- as.Date(c("2022-01-01", "2023-01-01", "2024-01-01"))
+specific_breaks <- as.Date(c("2022-01-01", "2023-01-01", "2024-01-01", "2025-01-01"))
 
 viz_cl_plot_avgs <- ggplot(Dionex_avg, aes(x = Date, y = mean_Cl, color = Zone, group = Zone)) +
   geom_point(size = 3) + 
