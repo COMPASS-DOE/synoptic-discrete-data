@@ -1013,6 +1013,7 @@ all_data_flagged <- dat_flagged %>%
   filter(!str_detect(sample_ID, "dup")) %>%
   filter(!str_detect(sample_ID, "Lab Blank")) %>%
   filter(!str_detect(sample_ID, "spk")) %>%
+  filter(!str_detect(sample_ID, "TEMPEST")) %>%
   mutate(sample_ID = sub("^[^_]+_", "", sample_ID))
   #select(!Excess_Info)
 

@@ -1,0 +1,48 @@
+---
+title: "COMPASS_SynopticCB_Collate_Dionex_2025_Data"
+author: "Stephanie J. Wilson"
+date: "2025-08-29"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(dplyr)
+library(ggplot2)
+library(ggpubr)
+library(stringr)
+library(readxl)
+library(tidyr)
+library(tibble)
+```
+
+#Read in and collate all the files in the Processed Data folder 
+```{r}
+
+files <- list.files(path = "Processed Data", pattern = "\\.csv$", full.names = TRUE)
+
+# 3. Read and combine all CSVs
+all_data <- files %>%
+  lapply(read.csv) %>%    # or read.csv if you prefer base R
+  bind_rows()             # combine into one data frame
+
+all_data <- all_data[, -which(names(all_data) == "X")]
+
+final_data <- all_data %>%
+    select(
+    Project, Region, Site, Zone, Replicate, Depth_cm, 
+         Sample_ID, Year, Month, Day, Time, Time_Zone,
+         SO4_ppm, SO4_Conc_mM, SO4_Conc_flag, SO4_QAQC_flag, Cl_ppm, Cl_Conc_mM, Cl_Conc_flag, Cl_QAQC_flag, salinity,
+         Analysis_rundate,  Run_notes, Field_notes
+        # list columns in the order you want them
+  )
+
+
+```
+
+## Write the 2023 file out to the folder 
+```{r, echo=FALSE}
+
+write.csv(final_data, "COMPASS_SynopticCB_SO4_Cl_2025.csv")
+
+```
+
