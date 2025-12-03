@@ -160,8 +160,8 @@ all_data <- all_data %>%
     )
   )
 
-all_data <- all_data %>%
-  filter(!str_detect(Sample_ID, "MSM_202211_WC_SIPA_45CM"))
+all_data <- subset(all_data, Sample_ID != "MSM_202211_WC_SIPA_45CM")
+all_data <- subset(all_data, Sample_ID != "GWI_202209_TR_10CM_EXTRACM")
 
 ```
 
@@ -282,10 +282,13 @@ PO4
 
 #write out the csv to the main folder 
 
+#write out a run notes to data frame
+merged_data$Run_notes <- ifelse(
+    is.na(merged_data$Run_notes),
+    paste0("", run_notes), 
+    paste0(merged_data$Run_notes, "; ", run_notes))
+
 final_data <- merged_data %>%
-  mutate(
-    Run_notes = run_notes
-  ) %>%
   rename(
     Time = Time..24hr.,
     Time_Zone = Time.Zone_EDT.EST, 

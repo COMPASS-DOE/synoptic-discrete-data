@@ -9,6 +9,11 @@ output: pdf_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+##Run notes
+```{r}
+Run_notes = "Several GCrew samples were duplicated without a dilution for Vanadium NOx."
+```
+
 ## Information
 ```{r}
 #######################################################################################
@@ -189,9 +194,10 @@ file1 <- read.csv("Raw Data/SEAL_COMPASS_Synoptic_NH3_PO4_202207_1.csv")
 #Quick look at dataframe
 head(file1)
 #take out only the columns that we need 
-dat1 <- file1[ ,c(1,4,6,7, 12, 13)]
+dat1 <- file1[ ,c(1,4,6,7, 9, 12, 13)]
 # assigning new names to the columns of the data frame
-colnames(dat1) <- c('Run_Info','Sample_Name','Conc', "Abs", "Units", "Test")
+colnames(dat1) <- c('Run_Info','Sample_Name','Conc', "Abs", "Dilution", "Units", "Test")
+dat1$Run_Number <- "1"
 head(dat1)
 
 
@@ -200,9 +206,10 @@ file2 <- read.csv("Raw Data/SEAL_COMPASS_Synoptic_NH3_PO4_202207_2.csv")
 #Quick look at dataframe
 head(file2)
 #take out only the columns that we need 
-dat2 <- file2[ ,c(1,4,6,7, 12, 13)]
+dat2 <- file2[ ,c(1,4,6,7, 9, 12, 13)]
 # assigning new names to the columns of the data frame
-colnames(dat2) <- c('Run_Info','Sample_Name','Conc', "Abs", "Units", "Test")
+colnames(dat2) <- c('Run_Info','Sample_Name','Conc', "Abs", "Dilution", "Units", "Test")
+dat2$Run_Number <- "2"
 head(dat2)
 
 
@@ -211,9 +218,10 @@ file3 <- read.csv("Raw Data/SEAL_COMPASS_Synoptic_NH3_PO4_202207_3.csv")
 #Quick look at dataframe
 head(file3)
 #take out only the columns that we need 
-dat3 <- file3[ ,c(1,4,6,7, 12, 13)]
+dat3 <- file3[ ,c(1,4,6,7, 9, 12, 13)]
 # assigning new names to the columns of the data frame
-colnames(dat3) <- c('Run_Info','Sample_Name','Conc', "Abs", "Units", "Test")
+colnames(dat3) <- c('Run_Info','Sample_Name','Conc', "Abs", "Dilution", "Units", "Test")
+dat3$Run_Number <- "3"
 head(dat3)
 
 
@@ -229,6 +237,7 @@ alldat2 <- alldat[alldat$Sample_Name %like% "MSM_", ]
 alldat2 <- rbind(alldat2, (alldat[alldat$Sample_Name %like% "GWI_", ]))
 alldat2 <- rbind(alldat2, (alldat[alldat$Sample_Name %like% "GCrew_", ]))
 head(alldat2)
+alldat3 <- alldat2
 
 ```
 
@@ -240,9 +249,10 @@ Nfile1 <- read.csv("Raw Data/SEAL_COMPASS_Synoptic_NOx_202207_1.csv")
 #Quick look at dataframe
 head(Nfile1)
 #take out only the columns that we need 
-Ndat1 <- Nfile1[ ,c(1,4,6,7, 12, 13)]
+Ndat1 <- Nfile1[ ,c(1,4,6,7, 9, 12, 13)]
 # assigning new names to the columns of the data frame
-colnames(Ndat1) <- c('Run_Info','Sample_Name','Conc', "Abs", "Units", "Test")
+colnames(Ndat1) <- c('Run_Info','Sample_Name','Conc', "Abs", "Dilution", "Units", "Test")
+Ndat1$Run_Number <- "1"
 head(Ndat1)
 
 
@@ -251,9 +261,10 @@ Nfile2 <- read.csv("Raw Data/SEAL_COMPASS_Synoptic_NOx_202207_2.csv")
 #Quick look at dataframe
 head(Nfile2)
 #take out only the columns that we need 
-Ndat2 <- Nfile2[ ,c(1,4,6,7, 12, 13)]
+Ndat2 <- Nfile2[ ,c(1,4,6,7, 9, 12, 13)]
 # assigning new names to the columns of the data frame
-colnames(Ndat2) <- c('Run_Info','Sample_Name','Conc', "Abs", "Units", "Test")
+colnames(Ndat2) <- c('Run_Info','Sample_Name','Conc', "Abs", "Dilution", "Units", "Test")
+Ndat2$Run_Number <- "2"
 head(Ndat2)
 
 
@@ -262,9 +273,10 @@ Nfile3 <- read.csv("Raw Data/SEAL_COMPASS_Synoptic_NOx_202207_3.csv")
 #Quick look at dataframe
 head(Nfile3)
 #take out only the columns that we need 
-Ndat3 <- Nfile3[ ,c(1,4,6,7, 12, 13)]
+Ndat3 <- Nfile3[ ,c(1,4,6,7, 9, 12, 13)]
 # assigning new names to the columns of the data frame
-colnames(Ndat3) <- c('Run_Info','Sample_Name','Conc', "Abs", "Units", "Test")
+colnames(Ndat3) <- c('Run_Info','Sample_Name','Conc', "Abs", "Dilution", "Units", "Test")
+Ndat3$Run_Number <- "3"
 head(Ndat3)
 
 
@@ -281,7 +293,7 @@ Nalldat2 <- rbind(Nalldat2, (Nalldat[Nalldat$Sample_Name %like% "GWI_", ]))
 Nalldat2 <- rbind(Nalldat2, (Nalldat[Nalldat$Sample_Name %like% "GCrew_", ]))
 head(Nalldat2)
 
-
+Nalldat3 <- Nalldat2
 
 ```
 
@@ -331,6 +343,191 @@ Chksbar <- ggplot(data = Allchks, aes(x = Sample_Name, y = Chk_diff, fill=Test))
 Chksbar
 ```
 
+
+## Dilution Corrections - ensure the latest dilution is kept
+```{r Dilution Corrections, echo=FALSE}
+
+cat("Dilution Corrections")
+
+#Calculate the concentration when accounting for the dilution factor if applicable
+
+#checking to see if duplicate samples (mislabeled/wrongly inputted/reran)
+df_duplicates <- alldat3 %>%
+  filter(!if_all(everything(), is.na)) %>%  # Remove rows that are entirely NA
+
+  # Exclude common QC sample names and standard patterns
+  filter(
+    !(Sample_Name %in% c(
+      "Duplicate", "CCV", "CCB", "1mg/L ammonia", "DI",
+      "Blank", "Auto Spike", "0.15 mg/L"
+    )) &
+    !startsWith(Sample_Name, "Standard ") &
+    !startsWith(Sample_Name, "Nitrite ") &
+    !startsWith(Sample_Name, "Nitrate ") &
+    !startsWith(Sample_Name, "Abs_Chk_") &
+    !startsWith(Sample_Name, "peChk_") &
+    !grepl("^\\d{1,2}/\\d{1,2}/\\d{4}\\s+\\d{1,2}:\\d{2}$", Sample_Name) &  # Remove timestamp-like names
+    !grepl("^\\d+$", Sample_Name) &  # Remove sample names that are just numbers
+    !is.na(Sample_Name) & Sample_Name != ""  # 🔍 Remove blank or missing names
+  ) %>%
+  group_by(Test, Sample_Name) %>%  # Group by test and sample
+  filter(n() > 1) %>%              # Keep only those that appear more than once
+  ungroup()
+
+#pulling them out into a string and printing them out
+dil_dups_string <- df_duplicates %>%
+  distinct(Sample_Name) %>%
+  pull(Sample_Name) %>%
+  paste(collapse = ", ")
+
+# Make sure Dilution is numeric
+df_duplicates$Dilution <- as.numeric(df_duplicates$Dilution)
+
+# Report duplicated samples
+if (dil_dups_string != "") {
+  message("Duplicated samples: ", dil_dups_string)
+
+  bad_dups <- df_duplicates %>%
+    group_by(Test, Sample_Name) %>%
+    summarise(
+      n_dups = n(),
+      any_dilution = any(Dilution > 1, na.rm = TRUE),
+      .groups = "drop"
+    ) %>%
+    filter(!any_dilution)
+
+  if (nrow(bad_dups) > 0) {
+    cat("\nWARNING: Duplicated samples with NO dilution (possible input error):\n")
+    print(bad_dups)
+  } else {
+    cat("\n All duplicated samples have valid dilutions. No naming issues detected.\n")
+  }
+
+} else {
+  message("No duplicated samples.")
+}
+
+
+
+
+
+alldat2 <- alldat3 %>%
+  arrange(row_number()) %>%
+  mutate(
+    Dilution = case_when(
+      Dilution == "0" ~ 1.0,
+      TRUE ~ as.numeric(Dilution)
+    ),
+    Pair_ID = ifelse(
+      grepl("Duplicate", Sample_Name, ignore.case = TRUE),
+      paste0(lag(Sample_Name), "_", lag(Run_Number)),  # pair only if same run
+      paste0(Sample_Name, "_", Run_Number)
+    ),
+    Original_Name = Sample_Name
+  ) %>%
+  group_by(Pair_ID, Test, Run_Number) %>%  # group by Pair_ID, Test, and Run_Number
+  filter(
+    Dilution == ifelse(any(Dilution > 1, na.rm = TRUE), max(Dilution, na.rm = TRUE), 1)
+  ) %>%
+  ungroup()
+
+
+
+
+```
+
+
+## Dilution Corrections NOx - ensure the latest dilution is kept
+```{r Dilution Corrections, echo=FALSE}
+
+cat("Dilution Corrections")
+
+#Calculate the concentration when accounting for the dilution factor if applicable
+
+#checking to see if duplicate samples (mislabeled/wrongly inputted/reran)
+df_duplicates <- Nalldat3 %>%
+  filter(!if_all(everything(), is.na)) %>%  # Remove rows that are entirely NA
+
+  # Exclude common QC sample names and standard patterns
+  filter(
+    !(Sample_Name %in% c(
+      "Duplicate", "CCV", "CCB", "1mg/L ammonia", "DI",
+      "Blank", "Auto Spike", "0.15 mg/L"
+    )) &
+    !startsWith(Sample_Name, "Standard ") &
+    !startsWith(Sample_Name, "Nitrite ") &
+    !startsWith(Sample_Name, "Nitrate ") &
+    !startsWith(Sample_Name, "Abs_Chk_") &
+    !startsWith(Sample_Name, "peChk_") &
+    !grepl("^\\d{1,2}/\\d{1,2}/\\d{4}\\s+\\d{1,2}:\\d{2}$", Sample_Name) &  # Remove timestamp-like names
+    !grepl("^\\d+$", Sample_Name) &  # Remove sample names that are just numbers
+    !is.na(Sample_Name) & Sample_Name != ""  # 🔍 Remove blank or missing names
+  ) %>%
+  group_by(Test, Sample_Name) %>%  # Group by test and sample
+  filter(n() > 1) %>%              # Keep only those that appear more than once
+  ungroup()
+
+#pulling them out into a string and printing them out
+dil_dups_string <- df_duplicates %>%
+  distinct(Sample_Name) %>%
+  pull(Sample_Name) %>%
+  paste(collapse = ", ")
+
+# Make sure Dilution is numeric
+df_duplicates$Dilution <- as.numeric(df_duplicates$Dilution)
+
+# Report duplicated samples
+if (dil_dups_string != "") {
+  message("Duplicated samples: ", dil_dups_string)
+
+  bad_dups <- df_duplicates %>%
+    group_by(Test, Sample_Name) %>%
+    summarise(
+      n_dups = n(),
+      any_dilution = any(Dilution > 1, na.rm = TRUE),
+      .groups = "drop"
+    ) %>%
+    filter(!any_dilution)
+
+  if (nrow(bad_dups) > 0) {
+    cat("\nWARNING: Duplicated samples with NO dilution (possible input error):\n")
+    print(bad_dups)
+  } else {
+    cat("\n All duplicated samples have valid dilutions. No naming issues detected.\n")
+  }
+
+} else {
+  message("No duplicated samples.")
+}
+
+
+
+
+
+Nalldat2 <- Nalldat3 %>%
+  arrange(row_number()) %>%
+  mutate(
+    Dilution = case_when(
+      Dilution == "0" ~ 1.0,
+      TRUE ~ as.numeric(Dilution)
+    ),
+    Pair_ID = ifelse(
+      grepl("Duplicate", Sample_Name, ignore.case = TRUE),
+      paste0(lag(Sample_Name), "_", lag(Run_Number)),  # pair only if same run
+      paste0(Sample_Name, "_", Run_Number)
+    ),
+    Original_Name = Sample_Name
+  ) %>%
+  group_by(Pair_ID, Test, Run_Number) %>%  # group by Pair_ID, Test, and Run_Number
+  filter(
+    Dilution == ifelse(any(Dilution > 1, na.rm = TRUE), max(Dilution, na.rm = TRUE), 1)
+  ) %>%
+  ungroup()
+
+
+```
+
+
 ## Constants 
 ```{r}
 
@@ -378,13 +575,13 @@ head(NOXsamples)
 ```{r}
 
 #pull out the columns we want from each dataframe 
-NH4_pull <- NH4samples[ ,c(2,3,7) ]
+NH4_pull <- NH4samples[ ,c(2,3,11) ]
 head(NH4_pull)
 
-PO4_pull <- PO4samples[ ,c(2,3,7) ]
+PO4_pull <- PO4samples[ ,c(2,3,11) ]
 head(PO4_pull)
 
-NOX_pull <- NOXsamples[ ,c(2,3,8) ]
+NOX_pull <- NOXsamples[ ,c(2,3,12) ]
 head(NOX_pull)
 
 
@@ -461,6 +658,9 @@ head(alldat)
 
 #Export Data
 #setwd("S:/Biogeochemistry/People/Wilson (Steph)/Data/SEAL/Final Data Files")
+
+alldat$Run_notes = Run_notes
+
 write.csv(alldat, file="Processed Data/COMPASS_SynopticCB_Nutrients_202207.csv")
 
 ```
