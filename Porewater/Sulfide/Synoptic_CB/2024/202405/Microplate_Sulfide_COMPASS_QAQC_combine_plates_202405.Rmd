@@ -12,7 +12,7 @@ output_dir: "To Be Reviewed/PDF"
 
 ##Run Notes
 ```{r}
-run_notes = "Some sample IDs are missing from metadata: MSM_202405_UP_LYSA_10CM."
+run_notes = ""
 ```
 
 
@@ -64,6 +64,12 @@ Sample_data <- all_data %>%
 SampleIDs <- read_excel("202405_SampleList.xlsx")
 SampleIDs$Number <- as.character(SampleIDs$Number)
 names(SampleIDs) <- tools::toTitleCase(names(SampleIDs))
+
+##Sample ID that was entered incorrectly
+## MSM_202405_UP_LYSA_10CM to MSM_202405_UP_LYSC_10CM 
+SampleIDs$Replicate <- ifelse(SampleIDs$Site == "MSM" & SampleIDs$Zone == "UP" & SampleIDs$Depth == "10cm" & SampleIDs$Replicate == "LysA", "LysC",
+                              SampleIDs$Replicate)
+
 
 ```
 
