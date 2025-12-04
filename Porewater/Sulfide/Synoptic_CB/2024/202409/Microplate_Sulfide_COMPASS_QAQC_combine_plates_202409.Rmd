@@ -12,7 +12,7 @@ output_dir: "To Be Reviewed/PDF"
 
 ##Run Notes
 ```{r}
-run_notes = "Some sample IDs are missing from metadata: GWI_202410_UP_LYSA_20CM, GWI_202410_TR_LYSC_45CM"
+run_notes = ""
 ```
 
 
@@ -71,6 +71,8 @@ names(SampleIDs) <- tools::toTitleCase(names(SampleIDs))
 
 SampleIDs <- SampleIDs %>%
   rename(Replicate = Lys)
+
+SampleIDs$Date <- "202409"
 
 ```
 
