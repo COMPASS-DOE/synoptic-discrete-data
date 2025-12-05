@@ -28,21 +28,21 @@ lapply(c(
 ```{r Run Information, echo=TRUE, message=FALSE, warning=FALSE}
 ###### Run information - PLEASE CHANGE
   Date_Run = "20251114"  #Date that instrument was run
-  Plate = "5"
+  Plate = "4"
   Month = "Nov"
   Year = "2025"
   Run_by = "Zoe Read"  #Instrument user 
   Script_run_by = "Zoe Read" #Code user 
   Project = "COMPASS"
-  run_notes = "Std curve slope is 2 sd different from previous slopes. 
-  MC 20 was bad. 
-  Samples 10, 32, and 8 still have high CV after one rep removed. 
-  Both the dup and respective sample had H2S values of 0. 
+  run_notes = "MC 10 was bad. 
+  Samples 25, 27, and 30 still had high CVs after one replicate was removed. 
+  Sup and respective sample both had H2S values of 0. 
+  Spk was bad. 
   50 uL of spike added. 
   " #any notes from the run
 
 ###### STDs to remove manually - NA unless standards have high CVs
-  stds_to_remove <- c("D02") #Ex. c("A02", "B02")
+  stds_to_remove <- c("C02", "D03", "E03") #Ex. c("A02", "B02")
   
   Chkstds_to_remove <- c(NA)
   

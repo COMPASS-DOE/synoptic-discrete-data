@@ -1,6 +1,6 @@
 ---
 title: "Synoptic CB: Porewater Sulfide"
-author: "November 2025 Samples Plate 4 20251114"
+author: "November 2025 Samples Plate 3 20251114"
 date: "`r Sys.Date()`"
 output: 
   pdf_document:
@@ -28,21 +28,22 @@ lapply(c(
 ```{r Run Information, echo=TRUE, message=FALSE, warning=FALSE}
 ###### Run information - PLEASE CHANGE
   Date_Run = "20251114"  #Date that instrument was run
-  Plate = "4"
+  Plate = "3"
   Month = "Nov"
   Year = "2025"
   Run_by = "Zoe Read"  #Instrument user 
   Script_run_by = "Zoe Read" #Code user 
   Project = "COMPASS"
-  run_notes = "MC 10 was bad. 
-  Samples 25, 27, and 30 still had high CVs after one replicate was removed. 
-  Sup and respective sample both had H2S values of 0. 
-  Spk was bad. 
+  run_notes = "Std curve is slightly below cutoff (0.979 vs 0.98). 
+  Std curve slope is 2 sd different from previous slopes. 
+  Samples 15, 35, 38, 12, and 16 still have high CVs after one replicate was removed. 
+  Sample 10 needs to be diluted. 
+  Dup and spk was bad. 
   50 uL of spike added. 
   " #any notes from the run
 
 ###### STDs to remove manually - NA unless standards have high CVs
-  stds_to_remove <- c("C02", "D03", "E03") #Ex. c("A02", "B02")
+  stds_to_remove <- c("D10") #Ex. c("A02", "B02")
   
   Chkstds_to_remove <- c(NA)
   
