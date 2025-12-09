@@ -10,10 +10,7 @@ geometry: "left=2cm,right=2cm,top=1cm,bottom=2cm"
 output_dir: "To Be Reviewed/PDF"
 ---
 
-####Need to work on automatically creating the Tidy files and creating a clean output - also can add metadata in here since all the plates are together!####
-
-## Code Set up 
-```{r setup, include=FALSE}
+```{r Add Required Packages, include=FALSE}
 
 library(dplyr)
 library(broom)
@@ -31,12 +28,12 @@ library(plater)
 library(raster)
 library(knitr)  
 library(readxl)
-
+library(patchwork)
 
 ```
 
-## run information
-```{r Information to be changed}
+## Run Information
+```{r Run Information, echo=TRUE, message=FALSE, warning=FALSE}
 
 ###things that need to be changed
 Date_Run = "20251110"
@@ -48,35 +45,44 @@ Run_by = "Zoe Read"  #Instrument user
 Script_run_by = "Zoe Read" #Code user 
 Project = "COMPASS"
 
-Run_notes="Plate 3 had high R2; majority of spikes were too low;Plate 1 Std curve used for all plates"#any notes from run
+Run_notes="Plate 1 had low MC 20 and Plate 4 had low MC 10. Plate 1 and 4 dups were bad. 
+Majority of spikes were bad. Plate 3 Std curve used for all plates."#any notes from run
 
 #Stds that should be excluded
-stds_to_remove<-data.frame(Plate=c("Plate6"),IDs=c("Std 3"))
+# stds_to_remove<-data.frame(Plate=c("Plate6"),IDs=c("Std 3"))
+stds_to_remove<-NA
 
 ```
 
 
-```{r, echo=FALSE}
+```{r File Names, echo=TRUE, message=FALSE, warning=FALSE, include = FALSE}
+
 ###### File Names - - PLEASE CHECK, should automatically update based on Date and Plate Number
 
 #read in all the Tidy data files
-# folder_path_tidydata <- paste0("2025/",Experiment,"/Tidy Data")
 file_paths_tidydata <- list.files(path = "Tidy Data", full.names = TRUE)
 head(file_paths_tidydata)
 
 #file path name for processed data
-summarizeddata_path=paste0("Processed Data/COMPASS_H2S_", Date_Run,"_",file_name,"_Summary_Data.csv")
-fulldata_path=paste0("Processed Data/COMPASS_H2S_", Date_Run,"_",file_name,"_Data.csv")
-shortdata_path=paste0("Processed Data/COMPASS_H2S_", Date_Run,"_",file_name,"_short_Data.csv")
-Need_dilute=paste0("Processed Data/COMPASS_H2S_", "_",file_name,"_Need_dilute_Data.csv")
-high_CV=paste0("Processed Data/COMPASS_H2S_", Date_Run,"_",file_name,"_high_CV_Data.csv")
+#Write out final data frame 
+final_data_path <- "COMPASS_H2S_202511_Plates_Combined.csv"
+HighCV_path <- "COMPASS_H2S_202511_Plates_HighCVs.csv"
+ADL_not_fixed_path <- "COMPASS_H2S_202511_Plates_ADL.csv"
+BDL_not_fixed_path <- "COMPASS_H2S_202511_Plates_BDL.csv"
 
 #QAQC log path
 log_path="Raw Data/Sulfide_STD_QAQC.csv"
 
+#Sample ID Path
+SampleIDs1=paste0("Raw Data/COMPASS_Nov2025_SampleIDs_20251110.xlsx")
+SampleIDs2=paste0("Raw Data/COMPASS_Nov2025_SampleIDs_20251114.xlsx")
+
+#Metadata path
+Raw_Metadata = "Raw Data/COMPASS_SynopticCB_PW_SampleLog_2025.csv"
+
 ```
 
-```{r Set Up Code - constants and QAQC cutoffs, include=FALSE}
+```{r Set Up Code - constants and QAQC cutoffs, echo=TRUE, message=FALSE, warning=FALSE, include = FALSE}
 
 #Flag cutoffs
   r2_cutoff = 0.98            #this is the level below which we want to rerun or consider a curve 
@@ -112,8 +118,7 @@ log_path="Raw Data/Sulfide_STD_QAQC.csv"
 ```
 
 
-## read in data
-```{r read in plates,echo=FALSE,include=FALSE}
+```{r Read in tidy data, echo=TRUE, message=FALSE, warning=FALSE, include = FALSE, results = 'hide'}
 
 #read in the csv files
 file_paths_tidydata
@@ -135,9 +140,19 @@ head(dat)
   
 ```
 
+```{r Fix data entered incorrectly, echo=TRUE, message=FALSE, warning=FALSE, include = FALSE, results = 'hide'}
+##Data entered incorrectly
+# dat$IDs[dat$IDs == Old_ID_1] <- New_ID_1
+# dat$IDs[dat$IDs == Old_ID_2] <- New_ID_2
+# dat$IDs[dat$IDs == Old_ID_3] <- New_ID_3
+# dat$IDs[dat$IDs == Old_ID_4] <- New_ID_4
+# dat$IDs[dat$IDs == Old_ID_5] <- New_ID_5
+# dat$IDs[dat$IDs == Old_ID_6] <- New_ID_6
 
-#Standards
-```{r first look at Stds,echo=FALSE,fig.keep='none',include=FALSE}
+```
+
+
+```{r first look at Stds,echo=FALSE,fig.keep='none',include=FALSE, message=FALSE, warning=FALSE, results = 'hide'}
 #subset by H2s Stds
 H2S_stds_all <- dat %>% subset(IDs %like% "Std"|IDs %like% "MC") 
 head(H2S_stds_all)
@@ -153,7 +168,7 @@ H2S
 ```
 
 
-```{r Remove high cv stds,echo=FALSE,fig.keep='none',include=FALSE}
+```{r Remove high cv stds,echo=FALSE,fig.keep='none',include=FALSE, results = 'hide'}
 
 H2S_stds_all_fixed<-H2S_stds_all
 #make a data frame for the averages 
@@ -228,7 +243,7 @@ head(stds_HCV)
 ```
 
 
-```{r Plot all Standard Curves together, echo=FALSE,message=FALSE,fig.keep='none'}
+```{r Plot all Standard Curves together, echo=FALSE,message=FALSE,fig.keep='none', results = 'hide'}
 ##this is to see if there are any stds or plates that look off
 #Remove check standards which have NAs in the Conc column
 H2S_stds <- na.omit(H2S_stds_all_fixed)
@@ -242,7 +257,7 @@ H2S
 ```
 
 
-```{r R2 of all Standard Curves together, echo=FALSE,message=FALSE,fig.keep='none',include=FALSE}
+```{r R2 of all Standard Curves together, echo=FALSE,message=FALSE,fig.keep='none',include=FALSE, results = 'hide'}
 H2S_lm <- lm(H2S_stds$Abs ~ H2S_stds$Conc)
 summary(H2S_lm)
 cf <- coef(H2S_lm)
@@ -257,13 +272,13 @@ print(Slopes)
 
 ```
 
-```{r Plot the Std Curve for each curve,echo=FALSE, message=FALSE, fig.show='hold', fig.keep='last'}
+```{r Plot the Std Curve for each plate, echo=FALSE, message=FALSE, results = 'hide', warning=FALSE, fig.keep='last'}
 #make a qaqc flag column
 dat$QAQC_flag<-"" 
 
 #delete stds that are off for each plate
-for(i in 1:nrow(stds_to_remove)){
-H2S_stds<-H2S_stds %>% subset(!(Plate %in% stds_to_remove$Plate[i] & IDs%in%stds_to_remove$IDs[i]))}
+# for(i in 1:nrow(stds_to_remove)){
+# H2S_stds<-H2S_stds %>% subset(!(Plate %in% stds_to_remove$Plate[i] & IDs%in%stds_to_remove$IDs[i]))}
 
 #create a graph for each plate's std curves
 curves<-function(plate_names){
@@ -275,7 +290,8 @@ H2S <- ggplot(H2S_stds, aes(Conc, Abs)) + geom_point() + geom_smooth(method = "l
 #apply the function
 lapply(plates,curves)
 
-H2S <- ggplot(H2S_stds, aes(Conc, Abs)) + geom_point() + geom_smooth(method = "lm", se = FALSE)+ labs(y="Concentration (uM)", x="Absorbance",title = paste("STD Curve"))+facet_wrap(~Plate)+ theme_classic()+ 
+H2S <- ggplot(H2S_stds, aes(Conc, Abs)) + geom_point() + geom_smooth(method = "lm", se = FALSE)+ 
+  labs(y="Concentration (uM)", x="Absorbance",title = paste("STD Curves"))+facet_wrap(~Plate)+ theme_classic()+ 
   stat_regline_equation(label.x = 15, label.y = 1) + # Add the equation
   stat_regline_equation(aes(label = ..adj.rr.label..), label.x = 15, label.y = 0.8) # Add R squared
 H2S
@@ -325,10 +341,8 @@ head(std_curve_cv)
 ###Should I print out flag for high cv?
 ```
 
-
 ## Checking STD Data against QAQC file
-
-```{r,message=FALSE, warning = FALSE, echo=FALSE,fig.keep='none'}
+```{r Checking STD Data against QAQC file,message=FALSE, warning = FALSE, echo=FALSE,fig.keep='none', results = 'hide'}
 
 #read in datafile with all the slopes
 qlogO <- read.csv(log_path)
@@ -401,15 +415,17 @@ for(i in 1:nrow(qplate)){
 
 ```
 
-```{r Plot standard graphs, echo = FALSE, warning = FALSE, message = FALSE, fig.width=8, fig.height=12}
+
+```{r Plot standard graphs and pick the best std curve, echo = FALSE, warning = FALSE, message = FALSE, fig.width=8, fig.height=12}
 
 ##Plot std graphs together
-ggarrange(slope1,int1,Rsq1, nrow=2, ncol=2)
+ggarrange(slope1,int1,Rsq1, nrow=3, ncol=1)
 
 #pick the best std curve
 std_curve<-qplate %>% filter(Intercept<(mean(qlog$Intercept)+ (2*sd(qlog$Intercept)))&Intercept>(mean(qlog$Intercept)- (2*sd(qlog$Intercept))))%>% filter(Slope<(mean(qlog$Slope)+ (2*sd(qlog$Slope)))&Slope>(mean(qlog$Slope)- (2*sd(qlog$Slope)))) %>% filter(R2 == max(R2))
 
-knit_print(std_curve)
+knitr::kable(std_curve, caption = "Best std curve to use: ")
+
 #stop knit if no Std curve satisfies the conditions
 if (nrow(std_curve)==0) {
   stop("Error: No Std Curve is good -Reassess. Exiting early.")
@@ -417,7 +433,7 @@ if (nrow(std_curve)==0) {
 ```
 
 ## Matrix Check QAQC
-```{r Matrix Checks,echo=FALSE,warning=FALSE}
+```{r Matrix Checks,echo=FALSE,warning=FALSE, message=FALSE, results = 'hide'}
 
 #filter out matrix stds
 H2S_MC <- H2S_stds_all %>%  
@@ -528,8 +544,8 @@ MCbar
 
 ```
 
-## Calculate Sulfide Concentrations
-```{r Calculate Sulfide Concentrations,echo=FALSE,include=FALSE}
+
+```{r Calculate Sulfide Concentrations,echo=FALSE,include=FALSE, results = 'hide', message=FALSE}
 
 #filter out stds
 dat <- dat %>%  
@@ -549,7 +565,7 @@ head(dat)
 ```
 
   
-```{r Calculate Averages across wells and sd,echo=FALSE}
+```{r Calculate Averages across wells and sd,echo=FALSE, fig.keep='last', message=FALSE, warning=FALSE, fig.width=8, fig.height=12, results = 'hide'}
 
 #summarize by Plate, Dilution, and sampleID so that we can calculate the mean and std. dev. of the three wells 
 dat1 <- dat %>%
@@ -584,7 +600,7 @@ H2S_original <- ggplot(dat1, aes(x=IDs, y=H2S_mean, color = H2S_cv_flag))+
   geom_errorbar(aes(ymin=H2S_mean-H2S_sd,
                     ymax=H2S_mean+H2S_sd),width=0.3,position=position_dodge(.1))+
   guides(x = guide_axis(angle = 70)) + 
-  facet_wrap(~Plate, scales = "free") + 
+  facet_wrap(~Plate, scales = "free", ncol = 2) + 
   ggtitle("Sample triplicate means and sd dev before bad reps removed") 
 H2S_original
 
@@ -592,8 +608,7 @@ H2S_original
 
 
 ## Remove bad reps
-
-```{r remove bad reps,echo=FALSE}
+```{r remove bad reps,echo=FALSE, results = 'hide', fig.width=8, fig.height=12}
 
 ##Need to make it so it groups by Plate and Dilution so that reruns of the same ID don't count towards the CV
 dat1$ID_full <- paste(dat1$Plate, dat1$Dilution, dat1$IDs, sep = "_")
@@ -666,7 +681,7 @@ H2S_fixed <- ggplot(dat1, aes(x=ID_full, y=H2S_mean, color = H2S_cv_flag))+
   geom_point(size=4) +  theme_classic() + 
   scale_color_manual(values = c("Within Range" = "darkgreen", "High CV" = "darkred"))+
   labs(y="Sulfide (uM)", x="Sample ID") + 
-  facet_wrap(~Plate, scales = "free") + 
+  facet_wrap(~Plate, scales = "free", ncol = 2) + 
   geom_errorbar(aes(ymin=H2S_mean-H2S_sd,
                     ymax=H2S_mean+H2S_sd),width=0.3,position=position_dodge(.1))+
   guides(x = guide_axis(angle = 70)) + 
@@ -675,6 +690,7 @@ H2S_fixed
 
 #If samples with cv >10 rerun those samples 
 H2S_HighCVRerun <- subset(dat1, H2S_cv_flag == "High CV")
+H2S_HighCVRerun$QAQC_flag <- NULL
 
 #filter the samples that need to be run at a higher dilution 
 H2S_DiluteRerun <- subset(dat1, H2S_flag == "adl")
@@ -836,57 +852,391 @@ ifelse(spks_percent >= 60  , ">60% of Spikes are within range",
        "<60% of Spikes are out of range - REASSESS")
 ```
 
-## Export full data then just final data 
-```{r,echo=FALSE,include=FALSE}
-dat_IDs <- dat1
+```{r Format data 20251110, include=FALSE}
 
-#Read out the summarized data
-head(dat_IDs)
-write.csv(dat_IDs, file= summarizeddata_path)
+all_data1 <- dat1 %>%
+  rename(
+    H2S_Conc_flag = H2S_flag,
+    H2S_QAQC_flag = QAQC_flag)
 
-#Read out all the data in dat 
-head(dat)
-write.csv(dat, file= fulldata_path)
+##Remove Dups and Spikes
+Sample_data1 <- all_data1 %>% 
+  subset((!IDs %like% "Dup")) %>% 
+  subset((!IDs %like% "Spike"))%>% 
+  subset((!IDs %like% "TMP"))%>% 
+  subset((!Plate %like% "Plate4"))%>% 
+  subset((!Plate %like% "Plate5"))%>% 
+  subset((!Plate %like% "Plate6"))
 
-#Now take out the absorbance and stuff 
-head(dat)
-#Add project information 
-final_data_labeled <- final_data4 %>% 
+```
+
+```{r Read in and Fix Sample IDs 20251110, include = FALSE}
+
+#Read in Sample IDs
+SampleIDs1 <- read_excel(SampleIDs1)
+SampleIDs1$Number <- as.character(SampleIDs1$Number)
+names(SampleIDs1) <- tools::toTitleCase(names(SampleIDs1))
+
+```
+
+
+```{r Convert Sample Numbers to Sample IDs 20251110, include = FALSE}
+##Merge with data
+Sample_data_IDs1 <- Sample_data1 %>%
+  left_join(SampleIDs1, by = c("IDs" = "Number"))
+
+##Make full sample IDs
+##Depths for SW samples should be 0 
+Sample_data_IDs1$Depth <-  ifelse((Sample_data_IDs1$Zone == "SW"), "0cm", Sample_data_IDs1$Depth)
+
+#Create IDs from what was collected for comparison later
+Sample_data_IDs1 <- Sample_data_IDs1 %>%
+  mutate(Sample_ID = paste(Site, Date, Zone, Replicate, Depth, sep = "_"))
+
+#Change the SW lines because they don't have lysimeters or a depth  
+Sample_data_IDs1 <- Sample_data_IDs1 %>%
   mutate(
-    Project = "COMPASS: Synoptic",   # new column with same value on every row
-    Region = "CB",
-    Run_notes = run_notes, 
-    Analysis_rundate = print(run_date)# new column with notes about the run
-  ) 
+    Sample_ID = if_else(
+      Zone == "SW",
+      # Modify the string:
+      Sample_ID %>%
+        str_replace("_LysA", "_A") %>%                    # Replace "_LysA" with "_A"
+        str_replace("_LysB", "_B") %>%                    # Replace "_LysB" with "_B"
+        str_replace("_LysC", "_C") %>%                    # Replace "_LysC" with "_C"
+        str_replace("_0cm$", ""),                          # Remove trailing "_0cm"
+      Sample_ID  # else keep original
+    )
+  )
 
-#Prepare data to be exported 
-final_data <- final_data_labeled %>%
-    rename(
-    Site = Site,
-    Sample_ID = Sample_Name, 
-    Time = Time..24hr., 
-    Time_Zone = Time.Zone_EDT.EST,
-    Replicate = Lysimeter,
-    # add more rename pairs as needed
-  ) %>%
-  select(Project, Region, Site, Zone, Replicate, Depth_cm, 
-         Sample_ID, Year, Month, Day, Time, Time_Zone,
-         NOx_Conc_mgL, NOx_Conc_uM, NOx_Conc_Flag, NOx_QAQC_Flag,
-         NH3_Conc_mgL, NH3_Conc_uM, NH3_Conc_Flag, NH3_QAQC_Flag,
-         PO4_Conc_mgL, PO4_Conc_uM, PO4_Conc_Flag, PO4_QAQC_Flag,
-         Analysis_rundate,  Run_notes, Field_notes)
+##Capitalize all sample IDs
+Sample_data_IDs1$Sample_ID <- toupper(Sample_data_IDs1$Sample_ID)
+  
+```
 
-dat3 <- dat[ ,c(1,4,6,8)]
-head(dat3)
-write.csv(dat3, file= shortdata_path)
 
-write.csv(H2S_DiluteRerun, Need_dilute)
-write.csv(H2S_HighCVRerun, high_CV)
+```{r Format data 20251114, include=FALSE}
 
-#save to QAQC Data to QAQC File
-#write.csv(qlog, file= log_path)
+all_data2 <- dat2 %>%
+  rename(
+    H2S_Conc_flag = H2S_flag,
+    H2S_QAQC_flag = QAQC_flag)
+
+##Remove Dups and Spikes
+Sample_data2 <- all_data2 %>% 
+  subset((!IDs %like% "Dup")) %>% 
+  subset((!IDs %like% "Spike"))%>% 
+  subset((!IDs %like% "TMP"))%>% 
+  subset((!Plate %like% "Plate1"))%>% 
+  subset((!Plate %like% "Plate2"))%>% 
+  subset((!Plate %like% "Plate3"))
+
+```
+
+```{r Read in and Fix Sample IDs 20251114, include = FALSE}
+
+#Read in Sample IDs
+SampleIDs2 <- read_excel(SampleIDs2)
+SampleIDs2$Number <- as.character(SampleIDs2$Number)
+names(SampleIDs2) <- tools::toTitleCase(names(SampleIDs2))
+
+```
+
+```{r Convert Sample Numbers to Sample IDs 20251114, include = FALSE}
+##Merge with data
+Sample_data_IDs2 <- Sample_data2 %>%
+  left_join(SampleIDs2, by = c("IDs" = "Number"))
+
+##Make full sample IDs
+##Depths for SW samples should be 0 
+Sample_data_IDs2$Depth <-  ifelse((Sample_data_IDs2$Zone == "SW"), "0cm", Sample_data_IDs2$Depth)
+
+#Create IDs from what was collected for comparison later
+Sample_data_IDs2 <- Sample_data_IDs2 %>%
+  mutate(Sample_ID = paste(Site, Date, Zone, Replicate, Depth, sep = "_"))
+
+#Change the SW lines because they don't have lysimeters or a depth  
+Sample_data_IDs2 <- Sample_data_IDs2 %>%
+  mutate(
+    Sample_ID = if_else(
+      Zone == "SW",
+      # Modify the string:
+      Sample_ID %>%
+        str_replace("_LysA", "_A") %>%                    # Replace "_LysA" with "_A"
+        str_replace("_LysB", "_B") %>%                    # Replace "_LysB" with "_B"
+        str_replace("_LysC", "_C") %>%                    # Replace "_LysC" with "_C"
+        str_replace("_0cm$", ""),                          # Remove trailing "_0cm"
+      Sample_ID  # else keep original
+    )
+  )
+
+##Capitalize all sample IDs
+Sample_data_IDs2$Sample_ID <- toupper(Sample_data_IDs2$Sample_ID)
+  
+```
+
+```{r combine samples from 20251114 and 20251110, include=FALSE}
+Sample_data_IDs <- rbind(Sample_data_IDs1, Sample_data_IDs2)
+Sample_data_IDs$IDs <- NULL
+```
+
+
+```{r Remove ADL/BDL samples that were later diluted differently, include = FALSE}
+
+#filter the high CV data in to one table
+HighCV<-filter(Sample_data_IDs, H2S_cv_flag=="High CV")
+
+#filter out the samples that need to be run at a higher dilution
+ADL<-filter(Sample_data_IDs, H2S_Conc_flag=="adl")
+
+#remove the samples that have already been run at a higher dilution 
+ww_ADL<-subset(Sample_data_IDs, (Sample_ID %in% ADL$Sample_ID))
+ww_ADL<-filter(ww_ADL, H2S_Conc_flag=="Within Range") 
+ADL_not_fixed<-ADL %>% 
+  subset((!Sample_ID %in% ww_ADL$Sample_ID)) %>% 
+  subset((!Sample_ID %like% " Dup")) %>% 
+  subset((!Sample_ID %like% " Spike"))
+
+#filter out the samples that need to be run at a lower dilution
+BDL<-filter(Sample_data_IDs, H2S_Conc_flag=="bdl"& Dilution!=1)
+
+#remove the samples that have already been run at a lower dilution 
+ww_BDL<-subset(Sample_data_IDs, (Sample_ID %in% BDL$Sample_ID))
+ww_BDL<-filter(ww_BDL,H2S_Conc_flag=="Within Range") 
+BDL_not_fixed<-BDL %>% 
+  subset((!Sample_ID %in% ww_BDL$Sample_ID)) %>% 
+  subset((!Sample_ID %like% " Dup")) %>% 
+  subset((!Sample_ID %like% " Spike"))
+
+
+##Remove samples that were ADL/BDL and are now fixed
+ADL_fixed<-ADL %>% 
+  subset((Sample_ID %in% ww_ADL$Sample_ID)) %>% 
+  subset((!Sample_ID %like% " Dup")) %>% 
+  subset((!Sample_ID %like% " Spike"))
+ADL_fixed$ID_conc <- paste(ADL_fixed$Sample_ID, ADL_fixed$H2S_Conc_flag, sep = "_")
+
+BDL_fixed<-BDL %>% 
+  subset((Sample_ID %in% ww_BDL$Sample_ID)) %>% 
+  subset((!Sample_ID %like% " Dup")) %>% 
+  subset((!Sample_ID %like% " Spike"))
+BDL_fixed$ID_conc <- paste(BDL_fixed$Sample_ID, BDL_fixed$H2S_Conc_flag, sep = "_")
+
+
+Sample_data_IDs$ID_conc <- paste(Sample_data_IDs$Sample_ID, Sample_data_IDs$H2S_Conc_flag, sep = "_")
+
+Sample_data_wr <- Sample_data_IDs %>% 
+  subset(!ID_conc %in% BDL_fixed$ID_conc) %>% 
+  subset(!ID_conc %in% ADL_fixed$ID_conc)
+
+##If there are duplicates, remove the one with the lowest CV
+Sample_data_nodups <- Sample_data_wr %>%
+  arrange(Sample_ID, H2S_cv) %>% # Sort by ID ascending, Value ascending
+  distinct(Sample_ID, .keep_all = TRUE) # Keep distinct IDs, retaining all other columns
+
+print(HighCV)
+print(ADL_not_fixed)
+print(BDL_not_fixed)
+
+```
+
+```{r Pull in Metadata, include = FALSE}
+
+#read in the raw metadata file 
+raw_metadata <- read.csv(Raw_Metadata)
+
+#make a new columns in the metadata with important info:
+metadata <- raw_metadata %>%
+  mutate(Depth = paste0(Depth_cm, "cm")) %>%
+  mutate(LysID = paste0("Lys", Lysimeter)) %>%
+  mutate(YearMonth = sprintf("%d%02d", Year, Month))  %>%
+  mutate(Zone = case_when(
+    `Transect.Location` == "Transition" ~ "TR",
+    `Transect.Location` == "Wetland"    ~ "WC",
+    `Transect.Location` == "Upland"     ~ "UP",   
+    `Transect.Location` == "Surface Water" ~ "SW",
+    TRUE                 ~ `Transect.Location`    # keep original value if no match
+  ))
+
+#Create IDs from what was collected for comparison later
+metadata <- metadata %>%
+  mutate(H2S_ID = ifelse(SO4 == "x",
+                                     paste(Site,
+                                           YearMonth,
+                                           Zone,
+                                           LysID,
+                                           Depth,
+                                           sep = "_"),
+                                     NA),  )
+
+#Change the SW lines because they don't have lysimeters or a depth  
+metadata <- metadata %>%
+  mutate(
+    H2S_ID = if_else(
+      Zone == "SW",
+      # Modify the string:
+      H2S_ID %>%
+        str_replace("_LysA", "_A") %>%                    # Replace "_LysA" with "_A"
+        str_replace("_LysB", "_B") %>%                    # Replace "_LysB" with "_B"
+        str_replace("_LysC", "_C") %>%                    # Replace "_LysC" with "_C"
+        str_replace("_0cm$", ""),                          # Remove trailing "_0cm"
+      H2S_ID  # else keep original
+    )
+  )
+
+#Take out the columns and rows that are not relevant
+sulfide_metadata <- metadata %>%
+  dplyr::select(H2S_ID, Year, Month, Day, YearMonth, Site, Zone, Lysimeter, LysID, Depth_cm, 
+         Depth, Time..24hr., Time.Zone_EDT.EST, Field.Notes, ) %>%        
+  # only keep specific columns
+  filter(!is.na(H2S_ID) & H2S_ID != "")  # remove missing/blank Cl_SO4_ID rows
+
+head(sulfide_metadata)
+
+```
+
+
+## Check to see if samples run match metadata & merge info
+```{r Check to see if samples run match metadata & merge info, echo = FALSE}
+
+#check to see if all samples are present in the metadata 
+Sample_data_nodups$Sample_ID <- toupper(Sample_data_nodups$Sample_ID)
+sulfide_metadata$H2S_ID <- toupper(sulfide_metadata$H2S_ID)
+
+all_present <- all(Sample_data_nodups$Sample_ID %in% sulfide_metadata$H2S_ID)
+
+if (all_present) {
+  message("***All sample IDs are present in metadata.***")
+} else {
+  message("***Some sample IDs are missing from metadata.***")
+  
+  # Optional: Which ones are missing?
+  missing_ids <- setdiff(Sample_data_nodups$Sample_ID, sulfide_metadata$H2S_ID)
+  print(missing_ids)
+}
+
+# missing_ids <- data.frame(missing_ids)
+# 
+# ##Export missing IDs to csv
+# write.csv(missing_ids, "20250529_COMPASS_H2S_missing_IDs.csv")
+
+##Remove Lys from Replicate Column
+Sample_data_nodups <- Sample_data_nodups %>%
+  mutate(Replicate = gsub("Lys", "", as.character(Replicate)))%>%
+  mutate(Replicate = gsub("lys", "", as.character(Replicate)))
+
+##Remove cm units from Depth
+Sample_data_nodups$Depth_cm <- gsub("cm", "", Sample_data_nodups$Depth)
+
+##Select only necessary columns
+all_data_selected <- Sample_data_nodups %>%
+  dplyr::select(-c("ID_conc", "Depth"))
+
+all_data_selected$Depth_cm <- as.integer(all_data_selected$Depth_cm)
+
+##Select only necessary columns
+sulfide_metadata_selected <- sulfide_metadata %>%
+  dplyr::select(H2S_ID, Year, Month, Day, Depth_cm, Lysimeter, Time..24hr., Time.Zone_EDT.EST,  Field.Notes) 
+
+#merge metadata with sample run data 
+merged_data <- all_data_selected %>%
+  left_join(sulfide_metadata_selected, by = c("Sample_ID" = "H2S_ID", "Replicate" = "Lysimeter", "Depth_cm"))
 
 
 ```
 
-### END
+
+## Visualize Data by Plot   
+```{r Visualize Data, echo=FALSE, warning=FALSE}
+
+#Plot samples to get a first look at concentrations (sanity check)
+data_plotting <- merged_data
+
+#Order by Zone from Upland to Surface Water
+data_plotting$Zone = factor(data_plotting$Zone, levels = c("UP",  "SWAMP","TR", "WC", "SW"))
+data_plotting <- data_plotting[order(data_plotting$Zone), ]
+
+#Order by Site from SWH, GCW, MSM, GWI order, which is oligohaline to polyhaline
+data_plotting$Site = factor(data_plotting$Site, levels = c("SWH", "GCW", "MSM", "GWI"))
+data_plotting <- data_plotting[order(data_plotting$Site), ]
+
+#group the data for plotting
+data_plotting <- data_plotting %>%
+  group_by(Site) %>%
+  mutate(row_num = factor(row_number())) %>%  # create row_num as factor per group
+  ungroup()
+
+#Plot data and change colors based on Zone:
+viz_H2S_plot <- ggplot(data_plotting, aes(x = row_num, y = H2S_mean, fill = Zone)) +
+  geom_bar(stat = "identity", position = position_dodge2(preserve = "single")) +
+  facet_grid(~ Site, scales="free") +
+  scale_fill_manual(values = c(
+    "UP" = "#20063B",
+    "SWAMP" = "darkgrey",
+    "TR" = "#FFBC42",
+    "WC" = "#419973",
+    "SW" = "#25ABE6"
+  )) +
+  theme_classic() +
+  theme(axis.text.x = element_blank()) +
+  labs(x = " ", y = "Sulfide (uM)", title = "Samples: Sulfide") +
+  scale_x_discrete(drop = TRUE)+
+  geom_text(aes(label = ifelse(H2S_mean == 0, "0", "")), vjust = -0.5)+
+  theme(
+    panel.spacing = unit(.05, "lines"), 
+    panel.border = element_rect(color = "black", fill = NA, linewidth = 0.1))
+
+viz_H2S_plot
+
+```
+
+
+```{r Export Combined Data, include = FALSE}
+
+#Prepare data to be exported - if there is anything else to add 
+#Add any necessary identifiers to the samples  ### VERY IMPORTANT AND STANDARD FOR PROJECT ####
+  #example read in sample IDs list and merge 
+  #create required ID columns in R, etc. 
+final_data <- merged_data %>% 
+  mutate(
+    Project = "COMPASS: Synoptic",   # new column with same value on every row
+    Region = "CB", 
+    Analysis_rundate = Date_Run, #need to make it so this comes out in plate processed file
+    Run_notes = Run_notes
+  ) 
+
+colnames(final_data)
+
+final_data <- final_data %>%
+  rename(
+    Time = Time..24hr.,
+    Time_Zone = Time.Zone_EDT.EST,
+    Field_notes = Field.Notes
+    # add more rename pairs as needed
+  ) %>%
+  dplyr::select(
+    Project, Region, Site, Zone, Replicate, Depth_cm, 
+         Sample_ID, Year, Month, Day, Time, Time_Zone,
+         H2S_mean, H2S_sd, H2S_cv, H2S_Conc_flag, H2S_cv_flag, H2S_QAQC_flag, Dilution, 
+         Analysis_rundate, Run_notes, Field_notes
+        # list columns in the order you want them
+  )
+
+head(final_data)
+
+#Write out final data frame 
+write.csv(final_data, final_data_path)
+
+#Write out samples that still have high CVs
+write.csv(HighCV, HighCV_path)
+
+#Write out ADL samples
+write.csv(ADL_not_fixed, ADL_not_fixed_path)
+
+#Write out BDL samples
+write.csv(BDL_not_fixed, BDL_not_fixed_path)
+
+
+```
+
+
+###END
