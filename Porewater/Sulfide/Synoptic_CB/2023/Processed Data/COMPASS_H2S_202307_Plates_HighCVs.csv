@@ -1,0 +1,5 @@
+"","ID_full","H2S_mean","H2S_sd","H2S_cv","IDs","Plate","H2S_QAQC_flag","Dilution","H2S_cv_flag","H2S_Conc_flag"
+"1","Plate3_1_GWI_TR_LysC_10cm",1.18766639713944,0.198749065574972,16.7344185247364,"GWI_TR_LysC_10cm","Plate3","",1,"High CV","Within Range"
+"2","Plate3_1_GWI_UP_LysC_10cm",9.19826468242491,0.993745327874857,10.8036174450775,"GWI_UP_LysC_10cm","Plate3","",1,"High CV","Within Range"
+"3","Plate7_25_SWH_TR_LysB_45cm",325.697320250986,58.3825380126478,17.9253971041756,"SWH_TR_LysB_45cm","Plate7","Std curve r2 low; Spk recovery out of range",25,"High CV","Within Range"
+"4","Plate7_25_SWH_WC_LysA_10cm",833.386553682456,120.491621004826,14.4580711642652,"SWH_WC_LysA_10cm","Plate7","Std curve r2 low; Spk recovery out of range",25,"High CV","Within Range"

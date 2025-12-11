@@ -1,0 +1,8 @@
+"","ID_full","H2S_mean","H2S_sd","H2S_cv","IDs","Plate","H2S_QAQC_flag","Dilution","H2S_cv_flag","H2S_Conc_flag"
+"1","Plate1_1_GCW_UP_LysA_20cm",0.00888235777728702,0.0125615508344894,141.42135623731,"GCW_UP_LysA_20cm","Plate1","Std curve r2 low; Dup perc diff out of range; Spk recovery out of range",1,"High CV","Within Range"
+"2","Plate3_1_MSM_WC_LysB_45cm",0.676697555052276,0.103541306478963,15.300972451565,"MSM_WC_LysB_45cm","Plate3","Std curve r2 low",1,"High CV","Within Range"
+"3","Plate3_1_SWH_UPCON_LysA_20cm",0.78651969496856,0.155311959718444,19.7467349784105,"SWH_UPCON_LysA_20cm","Plate3","Std curve r2 low",1,"High CV","Within Range"
+"4","Plate4_1_SWH_UP_LysB_10cm",0.0454897377493816,0.0643322040739709,141.42135623731,"SWH_UP_LysB_10cm","Plate4","Spk recovery out of range",1,"High CV","Within Range"
+"5","Plate4_1_SWH_UP_LysB_45cm",12.8669550857598,1.60489025042392,12.4729606944855,"SWH_UP_LysB_45cm","Plate4","Spk recovery out of range",1,"High CV","Within Range"
+"6","Plate5_1_GWI_TR_LysB_10cm",0.457053275219709,0.207082612957925,45.308200200158,"GWI_TR_LysB_10cm","Plate5","Std curve r2 low; Spk recovery out of range",1,"High CV","Within Range"
+"7","Plate5_1_GWI_WC_LysC_20cm",0.603482795108087,0.103541306478963,17.1572921909759,"GWI_WC_LysC_20cm","Plate5","Std curve r2 low; Spk recovery out of range",1,"High CV","Within Range"
