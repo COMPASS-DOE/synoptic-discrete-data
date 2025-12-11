@@ -1,0 +1,247 @@
+"","Project","Region","Site","Zone","Replicate","Depth_cm","Sample_ID","Year","Month","Day","Time","Time_Zone","H2S_mean_uM","H2S_sd_uM","H2S_cv","H2S_Conc_flag","H2S_cv_flag","H2S_QAQC_flag","Dilution","Analysis_rundate","Run_notes","Field_notes"
+"1","COMPASS: Synoptic","CB","GCW","SW","A",0,"GCW_202304_SW_A",2023,4,19,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"2","COMPASS: Synoptic","CB","GCW","SW","B",0,"GCW_202304_SW_B",2023,4,19,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"3","COMPASS: Synoptic","CB","GCW","SW","C",0,"GCW_202304_SW_C",2023,4,19,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"4","COMPASS: Synoptic","CB","GCW","TR","A",20,"GCW_202304_TR_LYSA_20CM",2023,4,19,NA,NA,0,0,0,"bdl","Within Range","",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"5","COMPASS: Synoptic","CB","GCW","TR","A",45,"GCW_202304_TR_LYSA_45CM",2023,4,19,NA,NA,0,0,0,"bdl","Within Range","",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"6","COMPASS: Synoptic","CB","GCW","TR","B",10,"GCW_202304_TR_LYSB_10CM",2023,4,19,NA,NA,6.61114904296398,0.345178130386213,5.22115184732636,"Within Range","Within Range","",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"7","COMPASS: Synoptic","CB","GCW","TR","B",20,"GCW_202304_TR_LYSB_20CM",2023,4,19,NA,NA,0,0,0,"bdl","Within Range","",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"8","COMPASS: Synoptic","CB","GCW","TR","B",45,"GCW_202304_TR_LYSB_45CM",2023,4,19,NA,NA,0,0,0,"bdl","Within Range","",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"9","COMPASS: Synoptic","CB","GCW","TR","C",10,"GCW_202304_TR_LYSC_10CM",2023,4,19,NA,NA,6.39370725938775,0.591905132351497,9.25762016211197,"Within Range","Within Range","",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"10","COMPASS: Synoptic","CB","GCW","TR","C",20,"GCW_202304_TR_LYSC_20CM",2023,4,19,NA,NA,0,0,0,"bdl","Within Range","",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"11","COMPASS: Synoptic","CB","GCW","TR","C",45,"GCW_202304_TR_LYSC_45CM",2023,4,19,NA,NA,0,0,0,"bdl","Within Range","",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"12","COMPASS: Synoptic","CB","GCW","UP","A",20,"GCW_202304_UP_LYSA_20CM",2023,4,19,NA,NA,0,0,0,"bdl","Within Range","",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"13","COMPASS: Synoptic","CB","GCW","UP","B",10,"GCW_202304_UP_LYSB_10CM",2023,4,19,NA,NA,0,0,0,"bdl","Within Range","",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"14","COMPASS: Synoptic","CB","GCW","UP","B",20,"GCW_202304_UP_LYSB_20CM",2023,4,19,NA,NA,0,0,0,"bdl","Within Range","",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"15","COMPASS: Synoptic","CB","GCW","UP","C",10,"GCW_202304_UP_LYSC_10CM",2023,4,19,NA,NA,0,0,0,"bdl","Within Range","",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"16","COMPASS: Synoptic","CB","GCW","UP","C",20,"GCW_202304_UP_LYSC_20CM",2023,4,19,NA,NA,0,0,0,"bdl","Within Range","",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"17","COMPASS: Synoptic","CB","GCW","UP","C",45,"GCW_202304_UP_LYSC_45CM",2023,4,19,NA,NA,0,0,0,"bdl","Within Range","",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"18","COMPASS: Synoptic","CB","GCW","WC","A",10,"GCW_202304_WC_LYSA_10CM",2023,4,19,NA,NA,201.591196375765,4.45161272735817,2.20823766483353,"adl","Within Range","",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"19","COMPASS: Synoptic","CB","GCW","WC","A",20,"GCW_202304_WC_LYSA_20CM",2023,4,19,NA,NA,1616.47140732813,103.183629952304,6.38326353837938,"adl","Within Range","",10,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"20","COMPASS: Synoptic","CB","GCW","WC","A",45,"GCW_202304_WC_LYSA_45CM",2023,4,19,NA,NA,167.126673678934,9.36361481385707,5.60270518627414,"adl","Within Range","",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"21","COMPASS: Synoptic","CB","GCW","WC","B",10,"GCW_202304_WC_LYSB_10CM",2023,4,19,NA,NA,199.482011075076,1.74590993708522,0.875221744394857,"adl","Within Range","",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"22","COMPASS: Synoptic","CB","GCW","WC","B",20,"GCW_202304_WC_LYSB_20CM",2023,4,19,NA,NA,1582.33304730666,14.4300108244639,0.91194523485594,"adl","Within Range","",10,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"23","COMPASS: Synoptic","CB","GCW","WC","B",45,"GCW_202304_WC_LYSB_45CM",2023,4,19,NA,NA,166.278650722986,3.93689743525802,2.36765057819523,"adl","Within Range","",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"24","COMPASS: Synoptic","CB","GCW","WC","C",10,"GCW_202304_WC_LYSC_10CM",2023,4,19,NA,NA,806.718205290263,51.0330816783767,6.3260109098461,"Within Range","Within Range","",10,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"25","COMPASS: Synoptic","CB","GCW","WC","C",20,"GCW_202304_WC_LYSC_20CM",2023,4,19,NA,NA,651.682213600415,26.7718435379799,4.10811327657245,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",10,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"26","COMPASS: Synoptic","CB","GCW","WC","C",45,"GCW_202304_WC_LYSC_45CM",2023,4,19,NA,NA,1677.35510672947,53.5026102098631,3.18970085673649,"adl","Within Range","",10,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"27","COMPASS: Synoptic","CB","GWI","SW","A",0,"GWI_202304_SW_A",2023,4,25,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"28","COMPASS: Synoptic","CB","GWI","SW","B",0,"GWI_202304_SW_B",2023,4,25,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"29","COMPASS: Synoptic","CB","GWI","SW","C",0,"GWI_202304_SW_C",2023,4,25,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"30","COMPASS: Synoptic","CB","GWI","TR","A",10,"GWI_202304_TR_LYSA_10CM",2023,4,25,NA,NA,0,0,0,"bdl","Within Range","",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"31","COMPASS: Synoptic","CB","GWI","TR","A",20,"GWI_202304_TR_LYSA_20CM",2023,4,25,NA,NA,0,0,0,"bdl","Within Range","",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"32","COMPASS: Synoptic","CB","GWI","TR","A",45,"GWI_202304_TR_LYSA_45CM",2023,4,25,NA,NA,0,0,0,"bdl","Within Range","",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"33","COMPASS: Synoptic","CB","GWI","TR","B",10,"GWI_202304_TR_LYSB_10CM",2023,4,25,NA,NA,0,0,0,"bdl","Within Range","",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"34","COMPASS: Synoptic","CB","GWI","TR","B",20,"GWI_202304_TR_LYSB_20CM",2023,4,25,NA,NA,562.748524117738,26.516310052486,4.7119288485132,"Within Range","Within Range","",10,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"35","COMPASS: Synoptic","CB","GWI","TR","B",45,"GWI_202304_TR_LYSB_45CM",2023,4,25,NA,NA,5.04556820121516,0.46126367904014,9.14195707292295,"Within Range","Within Range","MC 10 out of range",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"36","COMPASS: Synoptic","CB","GWI","TR","C",10,"GWI_202304_TR_LYSC_10CM",2023,4,25,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"37","COMPASS: Synoptic","CB","GWI","TR","C",20,"GWI_202304_TR_LYSC_20CM",2023,4,25,NA,NA,3.31690602178416,0.138379103712041,4.17193320531905,"Within Range","Within Range","MC 10 out of range",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"38","COMPASS: Synoptic","CB","GWI","UP","A",20,"GWI_202304_UP_LYSA_20CM",2023,4,25,NA,NA,0,0,0,"bdl","Within Range","",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+","No water "
+"39","COMPASS: Synoptic","CB","GWI","UP","A",45,"GWI_202304_UP_LYSA_45CM",2023,4,25,NA,NA,0,0,0,"bdl","Within Range","",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"40","COMPASS: Synoptic","CB","GWI","UP","B",10,"GWI_202304_UP_LYSB_10CM",2023,4,25,NA,NA,0,0,0,"bdl","Within Range","",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"41","COMPASS: Synoptic","CB","GWI","UP","B",20,"GWI_202304_UP_LYSB_20CM",2023,4,25,NA,NA,0,0,0,"bdl","Within Range","",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"42","COMPASS: Synoptic","CB","GWI","UP","B",45,"GWI_202304_UP_LYSB_45CM",2023,4,25,NA,NA,0,0,0,"bdl","Within Range","",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"43","COMPASS: Synoptic","CB","GWI","UP","C",10,"GWI_202304_UP_LYSC_10CM",2023,4,25,NA,NA,0,0,0,"bdl","Within Range","",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"44","COMPASS: Synoptic","CB","GWI","UP","C",20,"GWI_202304_UP_LYSC_20CM",2023,4,25,NA,NA,0,0,0,"bdl","Within Range","",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"45","COMPASS: Synoptic","CB","GWI","UP","C",45,"GWI_202304_UP_LYSC_45CM",2023,4,25,NA,NA,0,0,0,"bdl","Within Range","",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"46","COMPASS: Synoptic","CB","GWI","WC","A",10,"GWI_202304_WC_LYSA_10CM",2023,4,25,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"47","COMPASS: Synoptic","CB","GWI","WC","A",20,"GWI_202304_WC_LYSA_20CM",2023,4,25,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"48","COMPASS: Synoptic","CB","GWI","WC","A",45,"GWI_202304_WC_LYSA_45CM",2023,4,25,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"49","COMPASS: Synoptic","CB","GWI","WC","B",10,"GWI_202304_WC_LYSB_10CM",2023,4,25,NA,NA,3.30603393260535,0.13579235032017,4.10740945460162,"Within Range","Within Range","MC 10 out of range",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"50","COMPASS: Synoptic","CB","GWI","WC","B",20,"GWI_202304_WC_LYSB_20CM",2023,4,25,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"51","COMPASS: Synoptic","CB","GWI","WC","B",45,"GWI_202304_WC_LYSB_45CM",2023,4,25,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"52","COMPASS: Synoptic","CB","GWI","WC","C",10,"GWI_202304_WC_LYSC_10CM",2023,4,25,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"53","COMPASS: Synoptic","CB","GWI","WC","C",20,"GWI_202304_WC_LYSC_20CM",2023,4,25,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"54","COMPASS: Synoptic","CB","GWI","WC","C",45,"GWI_202304_WC_LYSC_45CM",NA,NA,NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",NA
+"55","COMPASS: Synoptic","CB","MSM","SW","A",0,"MSM_202304_SW_A",2023,4,24,NA,NA,0,0,0,"bdl","Within Range","",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"56","COMPASS: Synoptic","CB","MSM","SW","B",0,"MSM_202304_SW_B",2023,4,24,NA,NA,0,0,0,"bdl","Within Range","",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"57","COMPASS: Synoptic","CB","MSM","SW","C",0,"MSM_202304_SW_C",2023,4,24,NA,NA,0,0,0,"bdl","Within Range","",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"58","COMPASS: Synoptic","CB","MSM","TR","A",10,"MSM_202304_TR_LYSA_10CM",2023,4,24,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"59","COMPASS: Synoptic","CB","MSM","TR","A",20,"MSM_202304_TR_LYSA_20CM",2023,4,24,NA,NA,3.51260362700277,0.138379103712042,3.93950238644257,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"60","COMPASS: Synoptic","CB","MSM","TR","A",45,"MSM_202304_TR_LYSA_45CM",2023,4,24,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"61","COMPASS: Synoptic","CB","MSM","TR","B",10,"MSM_202304_TR_LYSB_10CM",2023,4,24,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"62","COMPASS: Synoptic","CB","MSM","TR","B",20,"MSM_202304_TR_LYSB_20CM",2023,4,24,NA,NA,12.2646354159458,1.02382527872554,8.34778404741179,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"63","COMPASS: Synoptic","CB","MSM","TR","B",45,"MSM_202304_TR_LYSB_45CM",2023,4,24,NA,NA,9.22045044587868,0.848022955947279,9.19719661121681,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"64","COMPASS: Synoptic","CB","MSM","TR","C",10,"MSM_202304_TR_LYSC_10CM",2023,4,24,NA,NA,2.39277844158521,0.229089134316185,9.57418916581406,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"65","COMPASS: Synoptic","CB","MSM","TR","C",20,"MSM_202304_TR_LYSC_20CM",2023,4,24,NA,NA,6.74161411310971,0.363199384075772,5.38742470248328,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"66","COMPASS: Synoptic","CB","MSM","TR","C",45,"MSM_202304_TR_LYSC_45CM",2023,4,24,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"67","COMPASS: Synoptic","CB","MSM","UP","A",20,"MSM_202304_UP_LYSA_20CM",2023,4,24,NA,NA,0.283593140895821,0,0,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"68","COMPASS: Synoptic","CB","MSM","UP","A",45,"MSM_202304_UP_LYSA_45CM",2023,4,24,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"69","COMPASS: Synoptic","CB","MSM","UP","B",10,"MSM_202304_UP_LYSB_10CM",2023,4,24,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"70","COMPASS: Synoptic","CB","MSM","UP","B",20,"MSM_202304_UP_LYSB_20CM",2023,4,24,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"71","COMPASS: Synoptic","CB","MSM","UP","B",45,"MSM_202304_UP_LYSB_45CM",2023,4,24,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"72","COMPASS: Synoptic","CB","MSM","UP","C",10,"MSM_202304_UP_LYSC_10CM",2023,4,24,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"73","COMPASS: Synoptic","CB","MSM","UP","C",20,"MSM_202304_UP_LYSC_20CM",2023,4,24,NA,NA,4.24103360198312,0.164164946531048,3.87087115872611,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"74","COMPASS: Synoptic","CB","MSM","WC","A",10,"MSM_202304_WC_LYSA_10CM",2023,4,24,NA,NA,87.8039110303265,5.68397147796073,6.47348325520209,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"75","COMPASS: Synoptic","CB","MSM","WC","A",20,"MSM_202304_WC_LYSA_20CM",2023,4,24,NA,NA,136.097731162606,9.14093810276594,6.71645149752318,"adl","Within Range","Std curve r2 low; Spk recovery out of range",1,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"76","COMPASS: Synoptic","CB","MSM","WC","A",45,"MSM_202304_WC_LYSA_45CM",2023,4,24,NA,NA,0,0,0,"bdl","Within Range","",10,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"77","COMPASS: Synoptic","CB","MSM","WC","B",10,"MSM_202304_WC_LYSB_10CM",2023,4,24,NA,NA,600.800836243578,16.8134671009498,2.7985092707383,"Within Range","Within Range","",10,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"78","COMPASS: Synoptic","CB","MSM","WC","B",20,"MSM_202304_WC_LYSB_20CM",2023,4,24,NA,NA,803.45657853662,68.4858778290415,8.52390529352297,"Within Range","Within Range","",10,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"79","COMPASS: Synoptic","CB","MSM","WC","B",45,"MSM_202304_WC_LYSB_45CM",2023,4,24,NA,NA,0,0,0,"bdl","Within Range","",10,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"80","COMPASS: Synoptic","CB","MSM","WC","C",10,"MSM_202304_WC_LYSC_10CM",2023,4,24,NA,NA,538.612486140777,8.88057374161961,1.64878720232611,"Within Range","Within Range","",10,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"81","COMPASS: Synoptic","CB","MSM","WC","C",20,"MSM_202304_WC_LYSC_20CM",2023,4,24,NA,NA,986.325118524225,17.4590993708522,1.77011606446515,"adl","Within Range","",10,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
+"82","COMPASS: Synoptic","CB","MSM","WC","C",45,"MSM_202304_WC_LYSC_45CM",2023,4,24,NA,NA,0,0,0,"bdl","Within Range","",10,202304,"Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
+1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+",""
