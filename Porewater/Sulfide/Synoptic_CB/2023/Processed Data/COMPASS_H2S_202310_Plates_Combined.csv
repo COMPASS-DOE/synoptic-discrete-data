@@ -1,0 +1,661 @@
+"","Project","Region","Site","Zone","Replicate","Depth_cm","Sample_ID","Year","Month","Day","Time","Time_Zone","H2S_mean_uM","H2S_sd_uM","H2S_cv","H2S_Conc_flag","H2S_cv_flag","H2S_QAQC_flag","Dilution","Analysis_rundate","Run_notes","Field_notes"
+"1","COMPASS: Synoptic","CB","GCW","SW","A",0,"GCW_202310_SW_A",2023,10,12,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"2","COMPASS: Synoptic","CB","GCW","SW","B",0,"GCW_202310_SW_B",2023,10,12,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"3","COMPASS: Synoptic","CB","GCW","SW","C",0,"GCW_202310_SW_C",2023,10,12,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"4","COMPASS: Synoptic","CB","GCW","TR","A",20,"GCW_202310_TR_LYSA_20CM",2023,10,12,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"5","COMPASS: Synoptic","CB","GCW","TR","A",45,"GCW_202310_TR_LYSA_45CM",2023,10,12,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"6","COMPASS: Synoptic","CB","GCW","TR","B",10,"GCW_202310_TR_LYSB_10CM",2023,10,12,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"7","COMPASS: Synoptic","CB","GCW","TR","B",20,"GCW_202310_TR_LYSB_20CM",2023,10,12,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"8","COMPASS: Synoptic","CB","GCW","TR","B",45,"GCW_202310_TR_LYSB_45CM",2023,10,12,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"9","COMPASS: Synoptic","CB","GCW","TR","C",20,"GCW_202310_TR_LYSC_20CM",2023,10,12,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"10","COMPASS: Synoptic","CB","GCW","TR","C",45,"GCW_202310_TR_LYSC_45CM",2023,10,12,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"11","COMPASS: Synoptic","CB","GCW","WC","A",10,"GCW_202310_WC_LYSA_10CM",2023,10,12,NA,NA,1852.60574098445,119.123131767198,6.43003144877966,"Within Range","Within Range","Std curve r2 low",25,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"12","COMPASS: Synoptic","CB","GCW","WC","A",20,"GCW_202310_WC_LYSA_20CM",2023,10,12,NA,NA,2346.71886854857,114.343401996904,4.87247976437947,"Within Range","Within Range","Std curve r2 low",25,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"13","COMPASS: Synoptic","CB","GCW","WC","A",45,"GCW_202310_WC_LYSA_45CM",2023,10,12,NA,NA,2637.46626384387,96.2731219333152,3.65021245022508,"adl","Within Range","Std curve r2 low",25,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"14","COMPASS: Synoptic","CB","GCW","WC","B",10,"GCW_202310_WC_LYSB_10CM",2023,10,12,NA,NA,2567.66589638128,162.544385107522,6.33043361819788,"adl","Within Range","Std curve r2 low",25,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"15","COMPASS: Synoptic","CB","GCW","WC","B",20,"GCW_202310_WC_LYSB_20CM",2023,10,12,NA,NA,2685.22441000248,153.751030127982,5.72581679040524,"adl","Within Range","Std curve r2 low",25,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"16","COMPASS: Synoptic","CB","GCW","WC","B",45,"GCW_202310_WC_LYSB_45CM",2023,10,12,NA,NA,2639.04070822272,18.1573783509776,0.688029490958697,"adl","Within Range","Std curve r2 low",25,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"17","COMPASS: Synoptic","CB","GCW","WC","C",10,"GCW_202310_WC_LYSC_10CM",2023,10,12,NA,NA,1182.67965778147,88.2391449172394,7.46095059103008,"Within Range","Within Range","Std curve r2 low",25,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"18","COMPASS: Synoptic","CB","GCW","WC","C",20,"GCW_202310_WC_LYSC_20CM",2023,10,12,NA,NA,1188.9774352969,37.8522100942498,3.18359364698943,"Within Range","Within Range","Std curve r2 low",25,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"19","COMPASS: Synoptic","CB","GCW","WC","C",45,"GCW_202310_WC_LYSC_45CM",2023,10,12,NA,NA,2265.89739043399,155.862041564557,6.87860104444998,"Within Range","Within Range","Std curve r2 low",25,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"20","COMPASS: Synoptic","CB","GWI","SW","A",0,"GWI_202310_SW_A",2023,10,19,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"21","COMPASS: Synoptic","CB","GWI","SW","B",0,"GWI_202310_SW_B",2023,10,19,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"22","COMPASS: Synoptic","CB","GWI","SW","C",0,"GWI_202310_SW_C",2023,10,19,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"23","COMPASS: Synoptic","CB","GWI","TR","A",10,"GWI_202310_TR_LYSA_10CM",2023,10,19,NA,NA,8.22947682806779,0.400788106880292,4.87015293017593,"Within Range","Within Range","Std curve r2 low; MC 10 out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"24","COMPASS: Synoptic","CB","GWI","TR","A",20,"GWI_202310_TR_LYSA_20CM",2023,10,19,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"25","COMPASS: Synoptic","CB","GWI","TR","A",45,"GWI_202310_TR_LYSA_45CM",2023,10,19,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"26","COMPASS: Synoptic","CB","GWI","TR","B",10,"GWI_202310_TR_LYSB_10CM",2023,10,19,NA,NA,3.31721036603892,0.0445320118755881,1.34245365719039,"Within Range","Within Range","Std curve r2 low; MC 10 out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"27","COMPASS: Synoptic","CB","GWI","TR","B",20,"GWI_202310_TR_LYSB_20CM",2023,10,19,NA,NA,71.9314963965575,1.14923655284885,1.59768197579698,"Within Range","Within Range","Std curve r2 low; MC 10 out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"28","COMPASS: Synoptic","CB","GWI","TR","B",45,"GWI_202310_TR_LYSB_45CM",2023,10,19,NA,NA,9.96136564480873,0.356256095004705,3.57637805605865,"Within Range","Within Range","Std curve r2 low; MC 10 out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"29","COMPASS: Synoptic","CB","GWI","TR","C",10,"GWI_202310_TR_LYSC_10CM",2023,10,19,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"30","COMPASS: Synoptic","CB","GWI","TR","C",20,"GWI_202310_TR_LYSC_20CM",2023,10,19,NA,NA,9.4260545559979,1.1133002968897,11.8108832308985,"Within Range","High CV","Std curve r2 low; MC 10 out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"31","COMPASS: Synoptic","CB","GWI","TR","C",45,"GWI_202310_TR_LYSC_45CM",2023,10,19,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"32","COMPASS: Synoptic","CB","GWI","UP","A",45,"GWI_202310_UP_LYSA_45CM",2023,10,19,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 20 out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"33","COMPASS: Synoptic","CB","GWI","UP","B",10,"GWI_202310_UP_LYSB_10CM",2023,10,19,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 20 out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"34","COMPASS: Synoptic","CB","GWI","UP","B",20,"GWI_202310_UP_LYSB_20CM",2023,10,19,NA,NA,1.01852157291003,0.089064023751176,8.74444156314827,"Within Range","Within Range","Std curve r2 low; MC 20 out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"35","COMPASS: Synoptic","CB","GWI","UP","C",10,"GWI_202310_UP_LYSC_10CM",2023,10,19,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"36","COMPASS: Synoptic","CB","GWI","UP","C",20,"GWI_202310_UP_LYSC_20CM",2023,10,19,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"37","COMPASS: Synoptic","CB","GWI","WC","A",10,"GWI_202310_WC_LYSA_10CM",2023,10,19,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"38","COMPASS: Synoptic","CB","GWI","WC","A",20,"GWI_202310_WC_LYSA_20CM",2023,10,19,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"39","COMPASS: Synoptic","CB","GWI","WC","A",45,"GWI_202310_WC_LYSA_45CM",2023,10,19,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"40","COMPASS: Synoptic","CB","GWI","WC","B",10,"GWI_202310_WC_LYSB_10CM",2023,10,19,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"41","COMPASS: Synoptic","CB","GWI","WC","B",20,"GWI_202310_WC_LYSB_20CM",2023,10,19,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"42","COMPASS: Synoptic","CB","GWI","WC","B",45,"GWI_202310_WC_LYSB_45CM",2023,10,19,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"43","COMPASS: Synoptic","CB","GWI","WC","C",10,"GWI_202310_WC_LYSC_10CM",2023,10,19,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"44","COMPASS: Synoptic","CB","GWI","WC","C",20,"GWI_202310_WC_LYSC_20CM",2023,10,19,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"45","COMPASS: Synoptic","CB","MSM","SW","A",0,"MSM_202310_SW_A",2023,10,10,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"46","COMPASS: Synoptic","CB","MSM","SW","B",0,"MSM_202310_SW_B",2023,10,10,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"47","COMPASS: Synoptic","CB","MSM","SW","C",0,"MSM_202310_SW_C",2023,10,10,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"48","COMPASS: Synoptic","CB","MSM","TR","A",10,"MSM_202310_TR_LYSA_10CM",2023,10,10,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"49","COMPASS: Synoptic","CB","MSM","TR","A",20,"MSM_202310_TR_LYSA_20CM",2023,10,10,NA,NA,1.86872153749195,0.22266005937794,11.9151010415804,"Within Range","High CV","Std curve r2 low; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"50","COMPASS: Synoptic","CB","MSM","TR","A",45,"MSM_202310_TR_LYSA_45CM",2023,10,10,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"51","COMPASS: Synoptic","CB","MSM","TR","B",10,"MSM_202310_TR_LYSB_10CM",2023,10,10,NA,NA,2.34105485114857,0.178128047502351,7.60887970715242,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"52","COMPASS: Synoptic","CB","MSM","TR","B",20,"MSM_202310_TR_LYSB_20CM",2023,10,10,NA,NA,19.2820763676327,0.726295134039102,3.76668528944463,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"53","COMPASS: Synoptic","CB","MSM","TR","B",45,"MSM_202310_TR_LYSB_45CM",2023,10,10,NA,NA,10.4651878460425,0.44532011875588,4.25525203471893,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"54","COMPASS: Synoptic","CB","MSM","TR","C",10,"MSM_202310_TR_LYSC_10CM",2023,10,10,NA,NA,2.40403262630279,0.227069597533168,9.44536255659654,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"55","COMPASS: Synoptic","CB","MSM","TR","C",20,"MSM_202310_TR_LYSC_20CM",2023,10,10,NA,NA,27.1962834453459,1.97587019499818,7.26522136367977,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"56","COMPASS: Synoptic","CB","MSM","TR","C",45,"MSM_202310_TR_LYSC_45CM",2023,10,10,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"57","COMPASS: Synoptic","CB","MSM","UP","A",20,"MSM_202310_UP_LYSA_20CM",2023,10,10,NA,NA,2.8448770523823,0.534384142507056,18.7840856623158,"Within Range","High CV","Std curve r2 low; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"58","COMPASS: Synoptic","CB","MSM","UP","A",45,"MSM_202310_UP_LYSA_45CM",2023,10,10,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"59","COMPASS: Synoptic","CB","MSM","UP","B",10,"MSM_202310_UP_LYSB_10CM",2023,10,10,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"60","COMPASS: Synoptic","CB","MSM","UP","B",45,"MSM_202310_UP_LYSB_45CM",2023,10,10,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"61","COMPASS: Synoptic","CB","MSM","UP","C",10,"MSM_202310_UP_LYSC_10CM",2023,10,10,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"62","COMPASS: Synoptic","CB","MSM","UP","C",20,"MSM_202310_UP_LYSC_20CM",2023,10,10,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"63","COMPASS: Synoptic","CB","MSM","UP","C",45,"MSM_202310_UP_LYSC_45CM",2023,10,10,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"64","COMPASS: Synoptic","CB","MSM","WC","A",10,"MSM_202310_WC_LYSA_10CM",2023,10,10,NA,NA,423.797467173168,13.3596035626764,3.15235568815174,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",25,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"65","COMPASS: Synoptic","CB","MSM","WC","A",20,"MSM_202310_WC_LYSA_20CM",2023,10,10,NA,NA,922.896335270332,31.1724083129117,3.37767169741559,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",25,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"66","COMPASS: Synoptic","CB","MSM","WC","A",45,"MSM_202310_WC_LYSA_45CM",2023,10,10,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"67","COMPASS: Synoptic","CB","MSM","WC","B",10,"MSM_202310_WC_LYSB_10CM",2023,10,10,NA,NA,1625.62334303279,39.0237825485416,2.40054270355998,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",25,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"68","COMPASS: Synoptic","CB","MSM","WC","B",20,"MSM_202310_WC_LYSB_20CM",2023,10,10,NA,NA,2122.62295195815,305.044281347778,14.3711006736439,"Within Range","High CV","Std curve r2 low; Spk recovery out of range",25,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"69","COMPASS: Synoptic","CB","MSM","WC","C",10,"MSM_202310_WC_LYSC_10CM",2023,10,10,NA,NA,2057.02110283918,203.007696564118,9.86901380272277,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",25,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"70","COMPASS: Synoptic","CB","MSM","WC","C",20,"MSM_202310_WC_LYSC_20CM",2023,10,10,NA,NA,2090.08443479514,202.402362212402,9.68393232554935,"Within Range","Within Range","Std curve r2 low",25,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"71","COMPASS: Synoptic","CB","MSM","WC","C",45,"MSM_202310_WC_LYSC_45CM",2023,10,10,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"72","COMPASS: Synoptic","CB","SWH","SW","A",0,"SWH_202310_SW_A",2023,10,18,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 20 out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"73","COMPASS: Synoptic","CB","SWH","SW","B",0,"SWH_202310_SW_B",2023,10,18,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 20 out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"74","COMPASS: Synoptic","CB","SWH","SW","C",0,"SWH_202310_SW_C",2023,10,18,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 20 out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"75","COMPASS: Synoptic","CB","SWH","TR","A",10,"SWH_202310_TR_LYSA_10CM",2023,10,18,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"76","COMPASS: Synoptic","CB","SWH","TR","A",20,"SWH_202310_TR_LYSA_20CM",2023,10,18,NA,NA,350.585803556392,16.6995044533455,4.76331451072557,"Within Range","Within Range","Std curve r2 low",25,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"77","COMPASS: Synoptic","CB","SWH","TR","A",45,"SWH_202310_TR_LYSA_45CM",2023,10,18,NA,NA,602.234496776781,10.4831672787147,1.74071185473793,"Within Range","Within Range","Std curve r2 low",25,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"78","COMPASS: Synoptic","CB","SWH","TR","B",10,"SWH_202310_TR_LYSB_10CM",2023,10,18,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 20 out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"79","COMPASS: Synoptic","CB","SWH","TR","B",20,"SWH_202310_TR_LYSB_20CM",2023,10,18,NA,NA,18.0645060479846,1.36871054055784,7.57679472066465,"Within Range","Within Range","Std curve r2 low; MC 20 out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"80","COMPASS: Synoptic","CB","SWH","TR","B",45,"SWH_202310_TR_LYSB_45CM",2023,10,18,NA,NA,698.275603886961,53.9998464051642,7.73331419636793,"Within Range","Within Range","Std curve r2 low",25,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"81","COMPASS: Synoptic","CB","SWH","TR","C",10,"SWH_202310_TR_LYSC_10CM",2023,10,18,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 20 out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"82","COMPASS: Synoptic","CB","SWH","TR","C",20,"SWH_202310_TR_LYSC_20CM",2023,10,18,NA,NA,3.44316591634735,0.400788106880292,11.6401043869958,"Within Range","High CV","Std curve r2 low; MC 20 out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"83","COMPASS: Synoptic","CB","SWH","TR","C",45,"SWH_202310_TR_LYSC_45CM",2023,10,18,NA,NA,278.161362129043,3.3399008906691,1.20070626096505,"Within Range","Within Range","Std curve r2 low",25,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"84","COMPASS: Synoptic","CB","SWH","UPCON","A",10,"SWH_202310_UPCON_LYSA_10CM",2023,10,18,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"85","COMPASS: Synoptic","CB","SWH","UPCON","A",20,"SWH_202310_UPCON_LYSA_20CM",2023,10,18,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"86","COMPASS: Synoptic","CB","SWH","UPCON","A",45,"SWH_202310_UPCON_LYSA_45CM",2023,10,18,NA,NA,24.2573206048158,1.24689633251646,5.14028879293832,"Within Range","Within Range","MC 10 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"87","COMPASS: Synoptic","CB","SWH","UPCON","B",10,"SWH_202310_UPCON_LYSB_10CM",2023,10,18,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"88","COMPASS: Synoptic","CB","SWH","UPCON","B",20,"SWH_202310_UPCON_LYSB_20CM",2023,10,18,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"89","COMPASS: Synoptic","CB","SWH","UPCON","B",45,"SWH_202310_UPCON_LYSB_45CM",2023,10,18,NA,NA,22.7248614093966,1.27416558325106,5.6069234495934,"Within Range","Within Range","MC 10 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"90","COMPASS: Synoptic","CB","SWH","UPCON","C",10,"SWH_202310_UPCON_LYSC_10CM",2023,10,18,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"91","COMPASS: Synoptic","CB","SWH","UPCON","C",20,"SWH_202310_UPCON_LYSC_20CM",2023,10,18,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"92","COMPASS: Synoptic","CB","SWH","UPCON","C",45,"SWH_202310_UPCON_LYSC_45CM",2023,10,18,NA,NA,20.2897207701002,1.15783230876529,5.70649700843354,"Within Range","Within Range","MC 10 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"93","COMPASS: Synoptic","CB","SWH","UP","A",10,"SWH_202310_UP_LYSA_10CM",2023,10,18,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"94","COMPASS: Synoptic","CB","SWH","UP","A",20,"SWH_202310_UP_LYSA_20CM",2023,10,18,NA,NA,14.9051209944147,0.133596035626764,0.896309635304711,"Within Range","Within Range","MC 10 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"95","COMPASS: Synoptic","CB","SWH","UP","A",45,"SWH_202310_UP_LYSA_45CM",2023,10,18,NA,NA,5.95178062665697,0.428680853592011,7.20256475300897,"Within Range","Within Range","MC 10 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"96","COMPASS: Synoptic","CB","SWH","UP","B",10,"SWH_202310_UP_LYSB_10CM",2023,10,18,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"97","COMPASS: Synoptic","CB","SWH","UP","B",20,"SWH_202310_UP_LYSB_20CM",2023,10,18,NA,NA,16.1016987223448,0.846108225636171,5.2547761588782,"Within Range","Within Range","MC 10 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"98","COMPASS: Synoptic","CB","SWH","UP","B",45,"SWH_202310_UP_LYSB_45CM",2023,10,18,NA,NA,3.28572147846181,0.327242118944254,9.95952094811915,"Within Range","Within Range","MC 10 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"99","COMPASS: Synoptic","CB","SWH","UP","C",10,"SWH_202310_UP_LYSC_10CM",2023,10,18,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"100","COMPASS: Synoptic","CB","SWH","UP","C",20,"SWH_202310_UP_LYSC_20CM",2023,10,18,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"101","COMPASS: Synoptic","CB","SWH","UP","C",45,"SWH_202310_UP_LYSC_45CM",2023,10,18,NA,NA,43.9903568198036,2.48848558801322,5.65688884545023,"Within Range","Within Range","MC 10 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"102","COMPASS: Synoptic","CB","SWH","WC","A",10,"SWH_202310_WC_LYSA_10CM",2023,10,18,NA,NA,5.99376581009311,0.801576213760583,13.3734990514775,"Within Range","High CV","Std curve r2 low; MC 20 out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"103","COMPASS: Synoptic","CB","SWH","WC","A",20,"SWH_202310_WC_LYSA_20CM",2023,10,18,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 20 out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"104","COMPASS: Synoptic","CB","SWH","WC","A",45,"SWH_202310_WC_LYSA_45CM",2023,10,18,NA,NA,3.28572147846181,0.227069597533169,6.91079870955678,"Within Range","Within Range","Std curve r2 low; MC 20 out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"105","COMPASS: Synoptic","CB","SWH","WC","B",10,"SWH_202310_WC_LYSB_10CM",2023,10,18,NA,NA,35.8872164166277,1.05632585532567,2.94345998603624,"Within Range","Within Range","Std curve r2 low; MC 20 out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"106","COMPASS: Synoptic","CB","SWH","WC","B",20,"SWH_202310_WC_LYSB_20CM",2023,10,18,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 20 out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"107","COMPASS: Synoptic","CB","SWH","WC","B",45,"SWH_202310_WC_LYSB_45CM",2023,10,18,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 20 out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"108","COMPASS: Synoptic","CB","SWH","WC","C",10,"SWH_202310_WC_LYSC_10CM",2023,10,18,NA,NA,278.948584318471,64.5714172196026,23.1481430089935,"Within Range","High CV","Std curve r2 low",25,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"109","COMPASS: Synoptic","CB","SWH","WC","C",20,"SWH_202310_WC_LYSC_20CM",2023,10,18,NA,NA,3.60061035423289,0.267192071253528,7.4207438452599,"Within Range","Within Range","Std curve r2 low; MC 20 out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""
+"110","COMPASS: Synoptic","CB","SWH","WC","C",45,"SWH_202310_WC_LYSC_45CM",2023,10,18,NA,NA,11.5358100236641,1.09262356242939,9.47158075755425,"Within Range","Within Range","Std curve r2 low; MC 20 out of range; Spk recovery out of range",1,"202310","Plate 6 std curve used for all plates. 
+Some sample IDs are missing from metadata: MSM_202310_UP_WC_LYSC. 
+2/7 plates had bad MC 10s and 1/8 plates had bad MC 20. 
+1/7 plates had bad dups. 
+5/7 plates had bad spks. 
+",""

@@ -1,0 +1,331 @@
+"","Project","Region","Site","Zone","Replicate","Depth_cm","Sample_ID","Year","Month","Day","Time","Time_Zone","H2S_mean_uM","H2S_sd_uM","H2S_cv","H2S_Conc_flag","H2S_cv_flag","H2S_QAQC_flag","Dilution","Analysis_rundate","Run_notes","Field_notes"
+"1","COMPASS: Synoptic","CB","GCW","SW","A",0,"GCW_202311_SW_A",2023,11,8,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"2","COMPASS: Synoptic","CB","GCW","SW","B",0,"GCW_202311_SW_B",2023,11,8,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"3","COMPASS: Synoptic","CB","GCW","SW","C",0,"GCW_202311_SW_C",2023,11,8,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"4","COMPASS: Synoptic","CB","GCW","TR","A",20,"GCW_202311_TR_LYSA_20CM",2023,11,8,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"5","COMPASS: Synoptic","CB","GCW","TR","A",45,"GCW_202311_TR_LYSA_45CM",2023,11,8,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"6","COMPASS: Synoptic","CB","GCW","TR","B",10,"GCW_202311_TR_LYSB_10CM",2023,11,8,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"7","COMPASS: Synoptic","CB","GCW","TR","B",20,"GCW_202311_TR_LYSB_20CM",2023,11,8,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"8","COMPASS: Synoptic","CB","GCW","TR","C",45,"GCW_202311_TR_LYSC_45CM",2023,11,8,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"9","COMPASS: Synoptic","CB","GCW","WC","A",10,"GCW_202311_WC_LYSA_10CM",2023,11,8,NA,NA,1411.29397459798,120.52649756627,8.5401411566717,"Within Range","Within Range","Std curve r2 low",25,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"10","COMPASS: Synoptic","CB","GCW","WC","A",20,"GCW_202311_WC_LYSA_20CM",2023,11,8,NA,NA,2175.30309044237,151.405488280463,6.96020195740511,"Within Range","Within Range","Std curve r2 low",25,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"11","COMPASS: Synoptic","CB","GCW","WC","A",45,"GCW_202311_WC_LYSA_45CM",2023,11,8,NA,NA,2519.72312621295,62.1444946667066,2.46632235185726,"adl","Within Range","Std curve r2 low",25,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"12","COMPASS: Synoptic","CB","GCW","WC","B",10,"GCW_202311_WC_LYSB_10CM",2023,11,8,NA,NA,2126.02839919344,119.348734868261,5.61369429089182,"Within Range","Within Range","Std curve r2 low",25,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"13","COMPASS: Synoptic","CB","GCW","WC","B",20,"GCW_202311_WC_LYSB_20CM",2023,11,8,NA,NA,2490.56055384114,183.456261782286,7.36606309368169,"adl","Within Range","Std curve r2 low",25,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"14","COMPASS: Synoptic","CB","GCW","WC","B",45,"GCW_202311_WC_LYSB_45CM",2023,11,8,NA,NA,2429.21859126594,193.596121210469,7.96948129355374,"adl","Within Range","Std curve r2 low",25,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"15","COMPASS: Synoptic","CB","GCW","WC","C",10,"GCW_202311_WC_LYSC_10CM",2023,11,8,NA,NA,848.657449010695,37.3312160603489,4.39885564003085,"Within Range","Within Range","Std curve r2 low",25,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"16","COMPASS: Synoptic","CB","GCW","WC","C",20,"GCW_202311_WC_LYSC_20CM",2023,11,8,NA,NA,852.428471300154,41.5018092992593,4.86865592792311,"Within Range","Within Range","Std curve r2 low",25,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"17","COMPASS: Synoptic","CB","GCW","WC","C",45,"GCW_202311_WC_LYSC_45CM",2023,11,8,NA,NA,1841.94472005419,134.392377817256,7.29622210449955,"Within Range","Within Range","Std curve r2 low",25,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"18","COMPASS: Synoptic","CB","GWI","SW","A",0,"GWI_202311_SW_A",2023,11,9,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"19","COMPASS: Synoptic","CB","GWI","SW","B",0,"GWI_202311_SW_B",2023,11,9,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"20","COMPASS: Synoptic","CB","GWI","SW","C",0,"GWI_202311_SW_C",2023,11,9,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"21","COMPASS: Synoptic","CB","GWI","TR","A",10,"GWI_202311_TR_LYSA_10CM",2023,11,9,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"22","COMPASS: Synoptic","CB","GWI","TR","A",20,"GWI_202311_TR_LYSA_20CM",2023,11,9,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"23","COMPASS: Synoptic","CB","GWI","TR","A",45,"GWI_202311_TR_LYSA_45CM",2023,11,9,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"24","COMPASS: Synoptic","CB","GWI","TR","B",10,"GWI_202311_TR_LYSB_10CM",2023,11,9,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"25","COMPASS: Synoptic","CB","GWI","TR","B",20,"GWI_202311_TR_LYSB_20CM",2023,11,9,NA,NA,52.8315775860384,0.725292197743921,1.3728384252065,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"26","COMPASS: Synoptic","CB","GWI","TR","B",45,"GWI_202311_TR_LYSB_45CM",2023,11,9,NA,NA,1.27416084455513,0,0,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"27","COMPASS: Synoptic","CB","GWI","TR","C",10,"GWI_202311_TR_LYSC_10CM",2023,11,9,NA,NA,1.27416084455513,0.0853284938522252,6.69683848917968,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"28","COMPASS: Synoptic","CB","GWI","TR","C",20,"GWI_202311_TR_LYSC_20CM",2023,11,9,NA,NA,22.6633992703665,1.15193466700505,5.08279739178961,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"29","COMPASS: Synoptic","CB","GWI","TR","C",45,"GWI_202311_TR_LYSC_45CM",2023,11,9,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"30","COMPASS: Synoptic","CB","GWI","UP","A",20,"GWI_202311_UP_LYSA_20CM",2023,11,9,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"31","COMPASS: Synoptic","CB","GWI","UP","A",45,"GWI_202311_UP_LYSA_45CM",2023,11,9,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"32","COMPASS: Synoptic","CB","GWI","UP","B",10,"GWI_202311_UP_LYSB_10CM",2023,11,9,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"33","COMPASS: Synoptic","CB","GWI","UP","B",20,"GWI_202311_UP_LYSB_20CM",2023,11,9,NA,NA,2.02836530244693,0.0426642469261132,2.10338082960919,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"34","COMPASS: Synoptic","CB","GWI","UP","C",10,"GWI_202311_UP_LYSC_10CM",2023,11,9,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"35","COMPASS: Synoptic","CB","GWI","UP","C",20,"GWI_202311_UP_LYSC_20CM",2023,11,9,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"36","COMPASS: Synoptic","CB","GWI","UP","C",45,"GWI_202311_UP_LYSC_45CM",2023,11,9,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"37","COMPASS: Synoptic","CB","GWI","WC","A",10,"GWI_202311_WC_LYSA_10CM",2023,11,9,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"38","COMPASS: Synoptic","CB","GWI","WC","A",20,"GWI_202311_WC_LYSA_20CM",2023,11,9,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"39","COMPASS: Synoptic","CB","GWI","WC","A",45,"GWI_202311_WC_LYSA_45CM",2023,11,9,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"40","COMPASS: Synoptic","CB","GWI","WC","B",10,"GWI_202311_WC_LYSB_10CM",2023,11,9,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"41","COMPASS: Synoptic","CB","GWI","WC","B",20,"GWI_202311_WC_LYSB_20CM",2023,11,9,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"42","COMPASS: Synoptic","CB","GWI","WC","B",45,"GWI_202311_WC_LYSB_45CM",2023,11,9,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"43","COMPASS: Synoptic","CB","GWI","WC","C",10,"GWI_202311_WC_LYSC_10CM",2023,11,9,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"44","COMPASS: Synoptic","CB","GWI","WC","C",20,"GWI_202311_WC_LYSC_20CM",2023,11,9,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"45","COMPASS: Synoptic","CB","MSM","SW","A",0,"MSM_202311_SW_A",2023,11,7,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"46","COMPASS: Synoptic","CB","MSM","SW","B",0,"MSM_202311_SW_B",2023,11,7,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"47","COMPASS: Synoptic","CB","MSM","SW","C",0,"MSM_202311_SW_C",2023,11,7,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"48","COMPASS: Synoptic","CB","MSM","TR","A",10,"MSM_202311_TR_LYSA_10CM",2023,11,7,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"49","COMPASS: Synoptic","CB","MSM","TR","A",20,"MSM_202311_TR_LYSA_20CM",2023,11,7,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"50","COMPASS: Synoptic","CB","MSM","TR","A",45,"MSM_202311_TR_LYSA_45CM",2023,11,7,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"51","COMPASS: Synoptic","CB","MSM","TR","B",10,"MSM_202311_TR_LYSB_10CM",2023,11,7,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"52","COMPASS: Synoptic","CB","MSM","TR","B",20,"MSM_202311_TR_LYSB_20CM",2023,11,7,NA,NA,0.851806348135729,0.341313975408905,40.0694331705684,"Within Range","High CV","Std curve r2 low",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"53","COMPASS: Synoptic","CB","MSM","TR","B",45,"MSM_202311_TR_LYSB_45CM",2023,11,7,NA,NA,3.32559697002082,0.170656987704453,5.13161965333953,"Within Range","Within Range","Std curve r2 low",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"54","COMPASS: Synoptic","CB","MSM","TR","C",10,"MSM_202311_TR_LYSC_10CM",2023,11,7,NA,NA,4.89434224243576,0.255985481556678,5.2302325598972,"Within Range","Within Range","Std curve r2 low",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"55","COMPASS: Synoptic","CB","MSM","TR","C",20,"MSM_202311_TR_LYSC_20CM",2023,11,7,NA,NA,19.2342830018185,1.28890283449202,6.70107034595553,"Within Range","Within Range","Std curve r2 low",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"56","COMPASS: Synoptic","CB","MSM","TR","C",45,"MSM_202311_TR_LYSC_45CM",2023,11,7,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"57","COMPASS: Synoptic","CB","MSM","UP","A",20,"MSM_202311_UP_LYSA_20CM",2023,11,7,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"58","COMPASS: Synoptic","CB","MSM","UP","A",45,"MSM_202311_UP_LYSA_45CM",2023,11,7,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"59","COMPASS: Synoptic","CB","MSM","UP","B",10,"MSM_202311_UP_LYSB_10CM",2023,11,7,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"60","COMPASS: Synoptic","CB","MSM","UP","B",45,"MSM_202311_UP_LYSB_45CM",2023,11,7,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"61","COMPASS: Synoptic","CB","MSM","UP","C",10,"MSM_202311_UP_LYSC_10CM",2023,11,7,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"62","COMPASS: Synoptic","CB","MSM","UP","C",20,"MSM_202311_UP_LYSC_20CM",2023,11,7,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"63","COMPASS: Synoptic","CB","MSM","UP","C",45,"MSM_202311_UP_LYSC_45CM",2023,11,7,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"64","COMPASS: Synoptic","CB","MSM","WC","A",10,"MSM_202311_WC_LYSA_10CM",2023,11,7,NA,NA,254.344336191959,13.8658802509868,5.45161746417735,"Within Range","Within Range","Std curve r2 low",25,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"65","COMPASS: Synoptic","CB","MSM","WC","A",20,"MSM_202311_WC_LYSA_20CM",2023,11,7,NA,NA,707.621215384929,61.8631580428639,8.74241143394943,"Within Range","Within Range","Std curve r2 low",25,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"66","COMPASS: Synoptic","CB","MSM","WC","B",10,"MSM_202311_WC_LYSB_10CM",2023,11,7,NA,NA,1293.88948065282,50.0812962126297,3.87060077089132,"Within Range","Within Range","Std curve r2 low",25,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"67","COMPASS: Synoptic","CB","MSM","WC","B",20,"MSM_202311_WC_LYSB_20CM",2023,11,7,NA,NA,1485.45741295734,86.0895013961425,5.79548768246074,"Within Range","Within Range","Std curve r2 low",25,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"68","COMPASS: Synoptic","CB","MSM","WC","B",45,"MSM_202311_WC_LYSB_45CM",2023,11,7,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"69","COMPASS: Synoptic","CB","MSM","WC","C",10,"MSM_202311_WC_LYSC_10CM",2023,11,7,NA,NA,1837.41949330684,115.232963861515,6.27145647911508,"Within Range","Within Range","Std curve r2 low",25,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"70","COMPASS: Synoptic","CB","MSM","WC","C",20,"MSM_202311_WC_LYSC_20CM",2023,11,7,NA,NA,1911.33153018024,150.863516015391,7.89311083049859,"Within Range","Within Range","Std curve r2 low",25,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"71","COMPASS: Synoptic","CB","MSM","WC","C",45,"MSM_202311_WC_LYSC_45CM",2023,11,7,NA,NA,3.4261575644064,0.243846482201194,7.11719988404683,"Within Range","Within Range","Std curve r2 low",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"72","COMPASS: Synoptic","CB","SWH","SW","A",0,"SWH_202311_SW_A",2023,11,8,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"73","COMPASS: Synoptic","CB","SWH","SW","B",0,"SWH_202311_SW_B",2023,11,8,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"74","COMPASS: Synoptic","CB","SWH","SW","C",0,"SWH_202311_SW_C",2023,11,8,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"75","COMPASS: Synoptic","CB","SWH","TR","A",10,"SWH_202311_TR_LYSA_10CM",2023,11,8,NA,NA,21.2253827706528,0.436483952073275,2.05642440840585,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"76","COMPASS: Synoptic","CB","SWH","TR","A",20,"SWH_202311_TR_LYSA_20CM",2023,11,8,NA,NA,271.69103872347,29.8649728482792,10.992255390019,"Within Range","High CV","Std curve r2 low; Spk recovery out of range",25,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"77","COMPASS: Synoptic","CB","SWH","TR","A",45,"SWH_202311_TR_LYSA_45CM",2023,11,8,NA,NA,600.524182364294,54.8654584952685,9.13626130412607,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",25,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"78","COMPASS: Synoptic","CB","SWH","TR","B",10,"SWH_202311_TR_LYSB_10CM",2023,11,8,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"79","COMPASS: Synoptic","CB","SWH","TR","B",20,"SWH_202311_TR_LYSB_20CM",2023,11,8,NA,NA,52.9717459348487,0,0,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",25,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"80","COMPASS: Synoptic","CB","SWH","TR","B",45,"SWH_202311_TR_LYSB_45CM",2023,11,8,NA,NA,750.359467998798,45.1851773439919,6.02180411803164,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",25,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"81","COMPASS: Synoptic","CB","SWH","TR","C",10,"SWH_202311_TR_LYSC_10CM",2023,11,8,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"82","COMPASS: Synoptic","CB","SWH","TR","C",20,"SWH_202311_TR_LYSC_20CM",2023,11,8,NA,NA,2.390383442235,0.298649728482792,12.4938000826995,"Within Range","High CV","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"83","COMPASS: Synoptic","CB","SWH","TR","C",45,"SWH_202311_TR_LYSC_45CM",2023,11,8,NA,NA,238.506042576231,19.1989111167509,8.04965396657174,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",25,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"84","COMPASS: Synoptic","CB","SWH","UPCON","A",10,"SWH_202311_UPCON_LYSA_10CM",2023,11,8,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"85","COMPASS: Synoptic","CB","SWH","UPCON","A",20,"SWH_202311_UPCON_LYSA_20CM",2023,11,8,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"86","COMPASS: Synoptic","CB","SWH","UPCON","A",45,"SWH_202311_UPCON_LYSA_45CM",2023,11,8,NA,NA,27.6411486924524,2.64518330941901,9.5697300385396,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"87","COMPASS: Synoptic","CB","SWH","UPCON","B",10,"SWH_202311_UPCON_LYSB_10CM",2023,11,8,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"88","COMPASS: Synoptic","CB","SWH","UPCON","B",20,"SWH_202311_UPCON_LYSB_20CM",2023,11,8,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"89","COMPASS: Synoptic","CB","SWH","UPCON","B",45,"SWH_202311_UPCON_LYSB_45CM",2023,11,8,NA,NA,23.4578279660125,2.24977221887557,9.59070985657842,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"90","COMPASS: Synoptic","CB","SWH","UPCON","C",10,"SWH_202311_UPCON_LYSC_10CM",2023,11,8,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"91","COMPASS: Synoptic","CB","SWH","UPCON","C",20,"SWH_202311_UPCON_LYSC_20CM",2023,11,8,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"92","COMPASS: Synoptic","CB","SWH","UPCON","C",45,"SWH_202311_UPCON_LYSC_45CM",2023,11,8,NA,NA,18.3292376523483,0.719834060222584,3.92724495080329,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"93","COMPASS: Synoptic","CB","SWH","UP","A",10,"SWH_202311_UP_LYSA_10CM",2023,11,8,NA,NA,5.0753513123298,0.255985481556678,5.04369975207037,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"94","COMPASS: Synoptic","CB","SWH","UP","A",20,"SWH_202311_UP_LYSA_20CM",2023,11,8,NA,NA,11.0486506188328,0.511970963113357,4.63378724493907,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"95","COMPASS: Synoptic","CB","SWH","UP","A",45,"SWH_202311_UP_LYSA_45CM",2023,11,8,NA,NA,7.02622684340991,0.699311995324098,9.95288098305568,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"96","COMPASS: Synoptic","CB","SWH","UP","B",10,"SWH_202311_UP_LYSB_10CM",2023,11,8,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"97","COMPASS: Synoptic","CB","SWH","UP","B",20,"SWH_202311_UP_LYSB_20CM",2023,11,8,NA,NA,15.1314107508871,0.982822269709296,6.49524545919604,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"98","COMPASS: Synoptic","CB","SWH","UP","B",45,"SWH_202311_UP_LYSB_45CM",2023,11,8,NA,NA,2.66189704707604,0.341313975408905,12.822207973213,"Within Range","High CV","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"99","COMPASS: Synoptic","CB","SWH","UP","C",10,"SWH_202311_UP_LYSC_10CM",2023,11,8,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"100","COMPASS: Synoptic","CB","SWH","UP","C",20,"SWH_202311_UP_LYSC_20CM",2023,11,8,NA,NA,8.43407516480793,0.285138496999555,3.38079150858561,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"101","COMPASS: Synoptic","CB","SWH","UP","C",45,"SWH_202311_UP_LYSC_45CM",2023,11,8,NA,NA,74.3616008439896,2.68773468559713,3.61441208243484,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"102","COMPASS: Synoptic","CB","SWH","WC","A",10,"SWH_202311_WC_LYSA_10CM",2023,11,8,NA,NA,6.12118149393975,0.452857752659359,7.39820822348935,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"103","COMPASS: Synoptic","CB","SWH","WC","A",20,"SWH_202311_WC_LYSA_20CM",2023,11,8,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"104","COMPASS: Synoptic","CB","SWH","WC","A",45,"SWH_202311_WC_LYSA_45CM",2023,11,8,NA,NA,1.24399266623946,0.127992740778338,10.2888661848188,"Within Range","High CV","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"105","COMPASS: Synoptic","CB","SWH","WC","B",10,"SWH_202311_WC_LYSB_10CM",2023,11,8,NA,NA,40.6738017248226,2.86391205761808,7.04117130971377,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"106","COMPASS: Synoptic","CB","SWH","WC","B",20,"SWH_202311_WC_LYSB_20CM",2023,11,8,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"107","COMPASS: Synoptic","CB","SWH","WC","B",45,"SWH_202311_WC_LYSB_45CM",2023,11,8,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"108","COMPASS: Synoptic","CB","SWH","WC","C",10,"SWH_202311_WC_LYSC_10CM",2023,11,8,NA,NA,172.136050281753,8.5328493852226,4.95703797737662,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",25,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"109","COMPASS: Synoptic","CB","SWH","WC","C",20,"SWH_202311_WC_LYSC_20CM",2023,11,8,NA,NA,2.23954255065664,0.255985481556679,11.4302575533394,"Within Range","High CV","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""
+"110","COMPASS: Synoptic","CB","SWH","WC","C",45,"SWH_202311_WC_LYSC_45CM",2023,11,8,NA,NA,16.1571288136199,1.5100170280908,9.34582527322492,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",1,"202311","Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
+",""

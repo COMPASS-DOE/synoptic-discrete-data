@@ -1,0 +1,571 @@
+"","Project","Region","Site","Zone","Replicate","Depth_cm","Sample_ID","Year","Month","Day","Time","Time_Zone","H2S_mean_uM","H2S_sd_uM","H2S_cv","H2S_Conc_flag","H2S_cv_flag","H2S_QAQC_flag","Dilution","Analysis_rundate","Run_notes","Field_notes"
+"1","COMPASS: Synoptic","CB","GCW","SW","A",0,"GCW_202308_SW_A",2023,8,15,NA,NA,0,0,0,"bdl","Within Range","",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"2","COMPASS: Synoptic","CB","GCW","SW","B",0,"GCW_202308_SW_B",2023,8,15,NA,NA,0,0,0,"bdl","Within Range","",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"3","COMPASS: Synoptic","CB","GCW","SW","C",0,"GCW_202308_SW_C",2023,8,15,NA,NA,0,0,0,"bdl","Within Range","",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"4","COMPASS: Synoptic","CB","GCW","TR","A",20,"GCW_202308_TR_LYSA_20CM",2023,8,15,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"5","COMPASS: Synoptic","CB","GCW","TR","A",45,"GCW_202308_TR_LYSA_45CM",2023,8,15,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"6","COMPASS: Synoptic","CB","GCW","TR","B",10,"GCW_202308_TR_LYSB_10CM",2023,8,15,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"7","COMPASS: Synoptic","CB","GCW","TR","B",20,"GCW_202308_TR_LYSB_20CM",2023,8,15,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"8","COMPASS: Synoptic","CB","GCW","TR","B",45,"GCW_202308_TR_LYSB_45CM",2023,8,15,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"9","COMPASS: Synoptic","CB","GCW","TR","C",10,"GCW_202308_TR_LYSC_10CM",2023,8,15,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"10","COMPASS: Synoptic","CB","GCW","TR","C",20,"GCW_202308_TR_LYSC_20CM",2023,8,15,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"11","COMPASS: Synoptic","CB","GCW","TR","C",45,"GCW_202308_TR_LYSC_45CM",2023,8,15,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"12","COMPASS: Synoptic","CB","GCW","UP","A",20,"GCW_202308_UP_LYSA_20CM",2023,8,15,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"13","COMPASS: Synoptic","CB","GCW","UP","B",20,"GCW_202308_UP_LYSB_20CM",2023,8,15,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"14","COMPASS: Synoptic","CB","GCW","WC","A",10,"GCW_202308_WC_LYSA_10CM",2023,8,15,NA,NA,3439.58725188242,322.55484782077,9.37771959831059,"adl","Within Range","Std curve r2 low; Spk recovery out of range",25,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"15","COMPASS: Synoptic","CB","GCW","WC","A",20,"GCW_202308_WC_LYSA_20CM",2023,8,15,NA,NA,3204.02883365812,161.148223630883,5.02954973245031,"adl","Within Range","Std curve r2 low; Spk recovery out of range",25,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"16","COMPASS: Synoptic","CB","GCW","WC","A",45,"GCW_202308_WC_LYSA_45CM",2023,8,15,NA,NA,3528.01008154619,89.2648501607646,2.53017559750405,"adl","Within Range","Std curve r2 low; Spk recovery out of range",25,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"17","COMPASS: Synoptic","CB","GCW","WC","B",10,"GCW_202308_WC_LYSB_10CM",2023,8,15,NA,NA,4391.72428170195,212.218328076772,4.83223250059155,"adl","Within Range","Std curve r2 low; Spk recovery out of range",25,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"18","COMPASS: Synoptic","CB","GCW","WC","B",20,"GCW_202308_WC_LYSB_20CM",2023,8,15,NA,NA,3789.74165735097,200.678607054919,5.29531100532045,"adl","Within Range","Std curve r2 low; Spk recovery out of range",25,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"19","COMPASS: Synoptic","CB","GCW","WC","B",45,"GCW_202308_WC_LYSB_45CM",2023,8,15,NA,NA,3348.3348916694,284.592088197177,8.49951087345645,"adl","Within Range","Std curve r2 low; Spk recovery out of range",25,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"20","COMPASS: Synoptic","CB","GCW","WC","C",10,"GCW_202308_WC_LYSC_10CM",2023,8,15,NA,NA,3311.55099452927,34.1087555430485,1.02999336562827,"adl","Within Range","Std curve r2 low; Spk recovery out of range",25,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"21","COMPASS: Synoptic","CB","GCW","WC","C",20,"GCW_202308_WC_LYSC_20CM",2023,8,15,NA,NA,2784.55092973317,147.31742317858,5.29052715845627,"adl","Within Range","",25,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"22","COMPASS: Synoptic","CB","GCW","WC","C",45,"GCW_202308_WC_LYSC_45CM",2023,8,15,NA,NA,2695.42071743209,132.051495770216,4.89910517182714,"adl","Within Range","",25,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"23","COMPASS: Synoptic","CB","GWI","SW","A",0,"GWI_202308_SW_A",2023,8,24,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"24","COMPASS: Synoptic","CB","GWI","SW","B",0,"GWI_202308_SW_B",2023,8,24,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"25","COMPASS: Synoptic","CB","GWI","SW","C",0,"GWI_202308_SW_C",2023,8,24,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"26","COMPASS: Synoptic","CB","GWI","TR","A",10,"GWI_202308_TR_LYSA_10CM",2023,8,24,NA,NA,38.2952631024372,1.66990253663529,4.36059815588265,"Within Range","Within Range","Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"27","COMPASS: Synoptic","CB","GWI","TR","A",20,"GWI_202308_TR_LYSA_20CM",2023,8,24,NA,NA,8.16076275302272,0.306060524423385,3.75039115443003,"Within Range","Within Range","Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"28","COMPASS: Synoptic","CB","GWI","TR","A",45,"GWI_202308_TR_LYSA_45CM",2023,8,24,NA,NA,0,0,0,"bdl","Within Range","Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"29","COMPASS: Synoptic","CB","GWI","TR","B",10,"GWI_202308_TR_LYSB_10CM",2023,8,24,NA,NA,0,0,0,"bdl","Within Range","Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"30","COMPASS: Synoptic","CB","GWI","TR","B",20,"GWI_202308_TR_LYSB_20CM",2023,8,24,NA,NA,353.27680529802,28.8903244392878,8.17781524459731,"Within Range","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range; Dup perc diff out of range",25,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"31","COMPASS: Synoptic","CB","GWI","TR","B",45,"GWI_202308_TR_LYSB_45CM",2023,8,24,NA,NA,32.6079066984632,2.8140673550894,8.6300153552084,"Within Range","Within Range","Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"32","COMPASS: Synoptic","CB","GWI","TR","C",10,"GWI_202308_TR_LYSC_10CM",2023,8,24,NA,NA,0,0,0,"bdl","Within Range","Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"33","COMPASS: Synoptic","CB","GWI","TR","C",20,"GWI_202308_TR_LYSC_20CM",2023,8,24,NA,NA,35.0413029708103,3.05156703734999,8.70848621094934,"Within Range","Within Range","Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"34","COMPASS: Synoptic","CB","GWI","TR","C",45,"GWI_202308_TR_LYSC_45CM",2023,8,24,NA,NA,0,0,0,"bdl","Within Range","Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"35","COMPASS: Synoptic","CB","GWI","UP","A",20,"GWI_202308_UP_LYSA_20CM",2023,8,24,NA,NA,0,0,0,"bdl","Within Range","Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"36","COMPASS: Synoptic","CB","GWI","UP","A",45,"GWI_202308_UP_LYSA_45CM",2023,8,24,NA,NA,0,0,0,"bdl","Within Range","Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"37","COMPASS: Synoptic","CB","GWI","UP","B",10,"GWI_202308_UP_LYSB_10CM",2023,8,24,NA,NA,0,0,0,"bdl","Within Range","Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"38","COMPASS: Synoptic","CB","GWI","UP","B",20,"GWI_202308_UP_LYSB_20CM",2023,8,24,NA,NA,10.9337026912787,0.858705416419918,7.85374763395448,"Within Range","Within Range","Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"39","COMPASS: Synoptic","CB","GWI","UP","C",10,"GWI_202308_UP_LYSC_10CM",2023,8,24,NA,NA,0,0,0,"bdl","Within Range","Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"40","COMPASS: Synoptic","CB","GWI","UP","C",20,"GWI_202308_UP_LYSC_20CM",2023,8,24,NA,NA,0.521030270072573,0,0,"Within Range","Within Range","Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"41","COMPASS: Synoptic","CB","GWI","WC","A",10,"GWI_202308_WC_LYSA_10CM",2023,8,24,NA,NA,0,0,0,"bdl","Within Range","Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"42","COMPASS: Synoptic","CB","GWI","WC","A",20,"GWI_202308_WC_LYSA_20CM",2023,8,24,NA,NA,4.65214487196413,0.353408252328318,7.59667340667122,"Within Range","Within Range","Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"43","COMPASS: Synoptic","CB","GWI","WC","A",45,"GWI_202308_WC_LYSA_45CM",2023,8,24,NA,NA,3.57692326325263,0.2940534403712,8.22084844235115,"Within Range","Within Range","Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"44","COMPASS: Synoptic","CB","GWI","WC","B",10,"GWI_202308_WC_LYSB_10CM",2023,8,24,NA,NA,0,0,0,"bdl","Within Range","Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"45","COMPASS: Synoptic","CB","GWI","WC","B",20,"GWI_202308_WC_LYSB_20CM",2023,8,24,NA,NA,0.478587311833961,0.0600234071682799,12.5417882346836,"Within Range","High CV","Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"46","COMPASS: Synoptic","CB","GWI","WC","B",45,"GWI_202308_WC_LYSB_45CM",2023,8,24,NA,NA,0.775688019504243,0,0,"Within Range","Within Range","Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"47","COMPASS: Synoptic","CB","GWI","WC","C",10,"GWI_202308_WC_LYSC_10CM",2023,8,24,NA,NA,0,0,0,"bdl","Within Range","Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"48","COMPASS: Synoptic","CB","GWI","WC","C",20,"GWI_202308_WC_LYSC_20CM",2023,8,24,NA,NA,0.733245061265632,0.0600234071682791,8.18599542486854,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"49","COMPASS: Synoptic","CB","MSM","SW","A",0,"MSM_202308_SW_A",2023,8,17,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"50","COMPASS: Synoptic","CB","MSM","SW","B",0,"MSM_202308_SW_B",2023,8,17,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"51","COMPASS: Synoptic","CB","MSM","SW","C",0,"MSM_202308_SW_C",2023,8,17,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"52","COMPASS: Synoptic","CB","MSM","TR","A",10,"MSM_202308_TR_LYSA_10CM",2023,8,17,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"53","COMPASS: Synoptic","CB","MSM","TR","A",20,"MSM_202308_TR_LYSA_20CM",2023,8,17,NA,NA,3.85987631817671,0.0980178134570667,2.53940295950642,"Within Range","Within Range","MC 10 out of range; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"54","COMPASS: Synoptic","CB","MSM","TR","A",45,"MSM_202308_TR_LYSA_45CM",2023,8,17,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"55","COMPASS: Synoptic","CB","MSM","TR","B",10,"MSM_202308_TR_LYSB_10CM",2023,8,17,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"56","COMPASS: Synoptic","CB","MSM","TR","B",20,"MSM_202308_TR_LYSB_20CM",2023,8,17,NA,NA,21.7425093893785,0.662980201655275,3.0492349791931,"Within Range","Within Range","MC 10 out of range; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"57","COMPASS: Synoptic","CB","MSM","TR","B",45,"MSM_202308_TR_LYSB_45CM",2023,8,17,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"58","COMPASS: Synoptic","CB","MSM","TR","C",10,"MSM_202308_TR_LYSC_10CM",2023,8,17,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"59","COMPASS: Synoptic","CB","MSM","TR","C",20,"MSM_202308_TR_LYSC_20CM",2023,8,17,NA,NA,12.4616491878687,0.802310381073678,6.4382359748557,"Within Range","Within Range","MC 10 out of range; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"60","COMPASS: Synoptic","CB","MSM","TR","C",45,"MSM_202308_TR_LYSC_45CM",2023,8,17,NA,NA,1.36988943484481,0.24009362867312,17.5264968519389,"Within Range","High CV","MC 10 out of range; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"61","COMPASS: Synoptic","CB","MSM","UP","A",20,"MSM_202308_UP_LYSA_20CM",2023,8,17,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"62","COMPASS: Synoptic","CB","MSM","UP","A",45,"MSM_202308_UP_LYSA_45CM",2023,8,17,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"63","COMPASS: Synoptic","CB","MSM","UP","B",10,"MSM_202308_UP_LYSB_10CM",2023,8,17,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"64","COMPASS: Synoptic","CB","MSM","UP","B",45,"MSM_202308_UP_LYSB_45CM",2023,8,17,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"65","COMPASS: Synoptic","CB","MSM","UP","C",10,"MSM_202308_UP_LYSC_10CM",2023,8,17,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"66","COMPASS: Synoptic","CB","MSM","UP","C",20,"MSM_202308_UP_LYSC_20CM",2023,8,17,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"67","COMPASS: Synoptic","CB","MSM","UP","C",45,"MSM_202308_UP_LYSC_45CM",2023,8,17,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"68","COMPASS: Synoptic","CB","MSM","WC","A",10,"MSM_202308_WC_LYSA_10CM",2023,8,17,NA,NA,1024.22923678674,19.507607329691,1.90461340382073,"Within Range","Within Range","MC 10 out of range; Spk recovery out of range",25,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"69","COMPASS: Synoptic","CB","MSM","WC","A",20,"MSM_202308_WC_LYSA_20CM",2023,8,17,NA,NA,1391.36082555074,100.539207006869,7.22596217750151,"Within Range","Within Range","MC 10 out of range; Spk recovery out of range",25,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"70","COMPASS: Synoptic","CB","MSM","WC","A",45,"MSM_202308_WC_LYSA_45CM",2023,8,17,NA,NA,0.903016894220079,0.18007022150484,19.9409582099085,"Within Range","High CV","MC 10 out of range; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"71","COMPASS: Synoptic","CB","MSM","WC","B",10,"MSM_202308_WC_LYSB_10CM",2023,8,17,NA,NA,3061.84492355877,96.2560380502742,3.14372675473048,"adl","Within Range","MC 10 out of range; Spk recovery out of range",25,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"72","COMPASS: Synoptic","CB","MSM","WC","B",20,"MSM_202308_WC_LYSB_20CM",2023,8,17,NA,NA,2413.17504514532,197.815605258048,8.19731687744748,"Within Range","Within Range","MC 10 out of range; Spk recovery out of range",25,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"73","COMPASS: Synoptic","CB","MSM","WC","C",10,"MSM_202308_WC_LYSC_10CM",2023,8,17,NA,NA,3236.56843497439,156.060858637527,4.82180005684824,"adl","Within Range","MC 10 out of range; Spk recovery out of range",25,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"74","COMPASS: Synoptic","CB","MSM","WC","C",20,"MSM_202308_WC_LYSC_20CM",2023,8,17,NA,NA,2477.54686514055,109.498171108029,4.41962057907701,"adl","Within Range","Std curve r2 low; Spk recovery out of range",25,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"75","COMPASS: Synoptic","CB","MSM","WC","C",45,"MSM_202308_WC_LYSC_45CM",2023,8,17,NA,NA,2.21874859961705,0.12004681433656,5.41056406107837,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"76","COMPASS: Synoptic","CB","SWH","SW","A",0,"SWH_202308_SW_A",2023,8,23,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 20 out of range; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"77","COMPASS: Synoptic","CB","SWH","SW","B",0,"SWH_202308_SW_B",2023,8,23,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 20 out of range; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"78","COMPASS: Synoptic","CB","SWH","SW","C",0,"SWH_202308_SW_C",2023,8,23,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 20 out of range; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"79","COMPASS: Synoptic","CB","SWH","TR","A",10,"SWH_202308_TR_LYSA_10CM",2023,8,23,NA,NA,5.35952750927433,0.24009362867312,4.47975363980598,"Within Range","Within Range","Std curve r2 low; MC 20 out of range; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"80","COMPASS: Synoptic","CB","SWH","TR","A",20,"SWH_202308_TR_LYSA_20CM",2023,8,23,NA,NA,71.712018888971,4.99337991513918,6.96310045721938,"Within Range","Within Range","Std curve r2 low; MC 20 out of range; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"81","COMPASS: Synoptic","CB","SWH","TR","A",45,"SWH_202308_TR_LYSA_45CM",2023,8,23,NA,NA,301.637872774375,12.004681433656,3.97983228141761,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",25,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"82","COMPASS: Synoptic","CB","SWH","TR","B",10,"SWH_202308_TR_LYSB_10CM",2023,8,23,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 20 out of range; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"83","COMPASS: Synoptic","CB","SWH","TR","B",20,"SWH_202308_TR_LYSB_20CM",2023,8,23,NA,NA,58.8942455009102,0.837464565285013,1.42198029393563,"Within Range","Within Range","Std curve r2 low; MC 20 out of range; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"84","COMPASS: Synoptic","CB","SWH","TR","B",45,"SWH_202308_TR_LYSB_45CM",2023,8,23,NA,NA,234.790213548562,1.50058517920696,0.63911743020609,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",25,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"85","COMPASS: Synoptic","CB","SWH","TR","C",10,"SWH_202308_TR_LYSC_10CM",2023,8,23,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 20 out of range; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"86","COMPASS: Synoptic","CB","SWH","TR","C",20,"SWH_202308_TR_LYSC_20CM",2023,8,23,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 20 out of range; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"87","COMPASS: Synoptic","CB","SWH","TR","C",45,"SWH_202308_TR_LYSC_45CM",2023,8,23,NA,NA,74.8527977986283,4.73868231728506,6.33066826711439,"Within Range","Within Range","Std curve r2 low; MC 20 out of range; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"88","COMPASS: Synoptic","CB","SWH","UPCON","A",10,"SWH_202308_UPCON_LYSA_10CM",2023,8,23,NA,NA,0,0,0,"bdl","Within Range","",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"89","COMPASS: Synoptic","CB","SWH","UPCON","A",20,"SWH_202308_UPCON_LYSA_20CM",2023,8,23,NA,NA,0,0,0,"bdl","Within Range","",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"90","COMPASS: Synoptic","CB","SWH","UPCON","A",45,"SWH_202308_UPCON_LYSA_45CM",2023,8,23,NA,NA,7.94854796182966,0.420163850177959,5.28604535313444,"Within Range","Within Range","",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"91","COMPASS: Synoptic","CB","SWH","UPCON","B",10,"SWH_202308_UPCON_LYSB_10CM",2023,8,23,NA,NA,0,0,0,"bdl","Within Range","",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"92","COMPASS: Synoptic","CB","SWH","UPCON","B",20,"SWH_202308_UPCON_LYSB_20CM",2023,8,23,NA,NA,0,0,0,"bdl","Within Range","",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"93","COMPASS: Synoptic","CB","SWH","UPCON","B",45,"SWH_202308_UPCON_LYSB_45CM",2023,8,23,NA,NA,7.43923246296632,0.900351107524199,12.1027419428858,"Within Range","High CV","",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"94","COMPASS: Synoptic","CB","SWH","UPCON","C",10,"SWH_202308_UPCON_LYSC_10CM",2023,8,23,NA,NA,0,0,0,"bdl","Within Range","",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"95","COMPASS: Synoptic","CB","SWH","UPCON","C",20,"SWH_202308_UPCON_LYSC_20CM",2023,8,23,NA,NA,0,0,0,"bdl","Within Range","",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"96","COMPASS: Synoptic","CB","SWH","UPCON","C",45,"SWH_202308_UPCON_LYSC_45CM",2023,8,23,NA,NA,20.3560394202505,1.07484923758043,5.28024737715508,"Within Range","Within Range","",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"97","COMPASS: Synoptic","CB","SWH","UP","A",10,"SWH_202308_UP_LYSA_10CM",2023,8,23,NA,NA,0,0,0,"bdl","Within Range","",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"98","COMPASS: Synoptic","CB","SWH","UP","A",20,"SWH_202308_UP_LYSA_20CM",2023,8,23,NA,NA,0,0,0,"bdl","Within Range","",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"99","COMPASS: Synoptic","CB","SWH","UP","A",45,"SWH_202308_UP_LYSA_45CM",2023,8,23,NA,NA,3.74669509620708,0.12004681433656,3.20407215570031,"Within Range","Within Range","",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"100","COMPASS: Synoptic","CB","SWH","UP","B",10,"SWH_202308_UP_LYSB_10CM",2023,8,23,NA,NA,0,0,0,"bdl","Within Range","",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"101","COMPASS: Synoptic","CB","SWH","UP","B",20,"SWH_202308_UP_LYSB_20CM",2023,8,23,NA,NA,0.351258437118125,0.12004681433656,34.1762080710361,"Within Range","High CV","",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"102","COMPASS: Synoptic","CB","SWH","UP","B",45,"SWH_202308_UP_LYSB_45CM",2023,8,23,NA,NA,1.08693637992073,0.0980178134570667,9.01780594225901,"Within Range","Within Range","",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"103","COMPASS: Synoptic","CB","SWH","UP","C",10,"SWH_202308_UP_LYSC_10CM",2023,8,23,NA,NA,0,0,0,"bdl","Within Range","",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"104","COMPASS: Synoptic","CB","SWH","UP","C",20,"SWH_202308_UP_LYSC_20CM",2023,8,23,NA,NA,0,0,0,"bdl","Within Range","",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"105","COMPASS: Synoptic","CB","SWH","UP","C",45,"SWH_202308_UP_LYSC_45CM",2023,8,23,NA,NA,0.266372520640901,0,0,"Within Range","Within Range","Std curve r2 low; MC 20 out of range; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"106","COMPASS: Synoptic","CB","SWH","WC","A",10,"SWH_202308_WC_LYSA_10CM",2023,8,23,NA,NA,2.94027888967345,0.780304293187639,26.5384449049423,"Within Range","High CV","Std curve r2 low; MC 20 out of range; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"107","COMPASS: Synoptic","CB","SWH","WC","A",20,"SWH_202308_WC_LYSA_20CM",2023,8,23,NA,NA,3.19493663910512,0.0600234071682801,1.87870414810768,"Within Range","Within Range","Std curve r2 low; MC 20 out of range; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"108","COMPASS: Synoptic","CB","SWH","WC","A",45,"SWH_202308_WC_LYSA_45CM",2023,8,23,NA,NA,4.31260120605524,0.321372893015608,7.45195017254029,"Within Range","Within Range","Std curve r2 low; MC 20 out of range; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"109","COMPASS: Synoptic","CB","SWH","WC","B",10,"SWH_202308_WC_LYSB_10CM",2023,8,23,NA,NA,14.3857299613525,1.07819594802773,7.49489911825348,"Within Range","Within Range","Std curve r2 low; MC 20 out of range; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"110","COMPASS: Synoptic","CB","SWH","WC","B",20,"SWH_202308_WC_LYSB_20CM",2023,8,23,NA,NA,1.15767464365175,0.3001170358414,25.9241262203615,"Within Range","High CV","Std curve r2 low; MC 20 out of range; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"111","COMPASS: Synoptic","CB","SWH","WC","B",45,"SWH_202308_WC_LYSB_45CM",2023,8,23,NA,NA,0.860573935981467,0,0,"Within Range","Within Range","Std curve r2 low; MC 20 out of range; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"112","COMPASS: Synoptic","CB","SWH","WC","C",10,"SWH_202308_WC_LYSC_10CM",2023,8,23,NA,NA,100.743002324182,6.55346397086006,6.50513069857858,"adl","Within Range","Std curve r2 low; MC 20 out of range; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"113","COMPASS: Synoptic","CB","SWH","WC","C",20,"SWH_202308_WC_LYSC_20CM",2023,8,23,NA,NA,8.33053458597717,0.673761074431604,8.08784919476535,"Within Range","Within Range","Std curve r2 low; MC 20 out of range; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""
+"114","COMPASS: Synoptic","CB","SWH","WC","C",45,"SWH_202308_WC_LYSC_45CM",2023,8,23,NA,NA,21.1907509322766,0.420163850177957,1.98276999017522,"Within Range","Within Range","Std curve r2 low; MC 20 out of range; Spk recovery out of range",1,"202308","Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
+",""

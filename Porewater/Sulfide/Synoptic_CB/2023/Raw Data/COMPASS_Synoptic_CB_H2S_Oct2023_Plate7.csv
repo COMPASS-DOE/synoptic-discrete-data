@@ -1,0 +1,29 @@
+,1,2,3,4,5,6,7,8,9,10,11,12
+A,0.055,0.06,0.057,0.365,0.35,0.238,0.058,0.053,0.058,0.045,0.045,0.044
+B,0.141,0.126,0.166,0.525,0.513,0.514,0.411,0.46,0.604,0.045,0.044,0.044
+C,0.327,0.384,0.367,0.602,0.594,0.539,0.044,0.044,0.044,0.044,0.044,0.045
+D,0.543,0.688,0.608,0.415,0.313,0.31,0.044,0.044,0.044,0.044,0.044,0.044
+E,1.21,0.98,0.972,0.341,0.283,0.219,0.044,0.044,0.044,0.044,0.044,0.044
+F,1.385,1.515,1.418,0.059,0.055,0.056,0.045,0.044,0.044,0.044,0.044,0.044
+G,1.446,1.553,0.396,0.056,0.057,0.054,0.045,0.044,0.044,0.045,0.045,0.044
+H,1.524,1.562,0.09,0.056,0.056,0.056,0.045,0.045,0.047,0.045,0.045,0.044
+,,,,,,,,,,,,
+IDs,1,2,3,4,5,6,7,8,9,10,11,12
+A,Std 0,Std 0,Std 0,SWH_TR_LysA_20cm,SWH_TR_LysA_20cm,SWH_TR_LysA_20cm,TEMPEST_Aquifer_A_dup,TEMPEST_Aquifer_A_dup,TEMPEST_Aquifer_A_dup,,,
+B,Std 1,Std 1,Std 1,SWH_TR_LysA_45cm,SWH_TR_LysA_45cm,SWH_TR_LysA_45cm,TEMPEST_Aquifer_B_spk,TEMPEST_Aquifer_B_spk,TEMPEST_Aquifer_B_spk,,,
+C,Std 2,Std 2,Std 2,SWH_TR_LysB_45cm,SWH_TR_LysB_45cm,SWH_TR_LysB_45cm,,,,,,
+D,Std 3,Std 3,Std 3,SWH_TR_LysC_45cm,SWH_TR_LysC_45cm,SWH_TR_LysC_45cm,,,,,,
+E,Std 4,Std 4,Std 4,SWH_WC_LysC_10cm,SWH_WC_LysC_10cm,SWH_WC_LysC_10cm,,,,,,
+F,Std 5,Std 5,Std 5,TEMPEST_Aquifer_A,TEMPEST_Aquifer_A,TEMPEST_Aquifer_A,,,,,,
+G,MC: 10ppt,MC: 10ppt,MC: 10ppt,TEMPEST_Aquifer_B,TEMPEST_Aquifer_B,TEMPEST_Aquifer_B,,,,,,
+H,MC: 20ppt,MC: 20ppt,MC: 20ppt,TEMPEST_Aquifer_C,TEMPEST_Aquifer_C,TEMPEST_Aquifer_C,,,,,,
+,,,,,,,,,,,,
+Dilutions,1,2,3,4,5,6,7,8,9,10,11,12
+A,1,1,1,25,25,25,1,1,1,,,
+B,1,1,1,25,25,25,1,1,1,,,
+C,1,1,1,25,25,25,,,,,,
+D,1,1,1,25,25,25,,,,,,
+E,1,1,1,25,25,25,,,,,,
+F,1,1,1,1,1,1,,,,,,
+G,1,1,1,1,1,1,,,,,,
+H,1,1,1,1,1,1,,,,,,
