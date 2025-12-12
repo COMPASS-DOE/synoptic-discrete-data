@@ -1,6 +1,6 @@
 ---
 title: "Synoptic CB: Porewater Sulfide"
-author: "July 2023 Samples"
+author: "September 2023 Samples"
 date: "`r Sys.Date()`"
 output: 
   pdf_document:
@@ -36,27 +36,20 @@ library(patchwork)
 ```{r Run Information, echo=TRUE, message=FALSE, warning=FALSE}
 
 ###things that need to be changed
-Date_Run = "202307"
+Date_Run = "202309"
 plates<- c("Plate1","Plate2","Plate3","Plate4","Plate5","Plate6","Plate7")
-file_name<-"202307_allplates"
-Month = "July"
+file_name<-"202309_allplates"
+Month = "Sept"
 Year = "2023"
-yearmonth = "202307"
+yearmonth = "202309"
 Run_by = "Stephanie Wilson"  #Instrument user 
 Script_run_by = "Zoe Read" #Code user 
 Project = "COMPASS"
 
-Run_notes="A few of the samples were adl. 
-Some sample IDs are missing from metadata: 
- GCW_202307_TR_LYSB_45CM, GCW_202307_TR_LYSC_10CM, GCW_202307_TR_LYSC_20CM, 
- GCW_202307_TR_LYSC_45CM, GCW_202307_UP_LYSA_20CM, GCW_202307_UP_LYSB_10CM,
- GCW_202307_UP_LYSB_20CM, GCW_202307_UP_LYSC_20CM, SWH_202307_WC_LYSA_10CM, 
- SWH_202307_WC_LYSA_20CM, SWH_202307_WC_LYSA_45CM, , SWH_202307_WC_LYSB_10CM, 
- SWH_202307_WC_LYSB_20CM, SWH_202307_WC_LYSC_10CM, SWH_202307_WC_LYSC_20CM, 
- SWH_202307_WC_LYSC_45CM
-Used Std curve from Plate 4. 
-MC 20 from Plate 2 was bad. 
-1/9 plates had bad dup, 4/9 plates had bad spk. 
+Run_notes="Plate 1 std curve used. 
+MC's both bad on Plate 7, MC 10 bad on Plate 1, MC 20 bad on plate 4. 
+1/8 plates had a bad dup. 
+4/8 plates had a bad spk. 
 "#any notes from run
 
 #Stds that should be excluded
@@ -64,8 +57,8 @@ MC 20 from Plate 2 was bad.
 stds_to_remove<-NA
 
 ##Data Entered Incorrectly
-Old_ID_1 = "SWH_WC_LysB45cm"
-New_ID_1 = "SWH_WC_LysB_45cm"
+Old_ID_1 = "SHW_WC_LysB_10cm"
+New_ID_1 = "SWH_WC_LysB_10cm"
 
 
 ```
@@ -83,17 +76,17 @@ head(file_paths_tidydata)
 
 #file path name for processed data
 #Write out final data frame 
-final_data_path <- "Processed Data/COMPASS_H2S_202307_Plates_Combined.csv"
-HighCV_path <- "Processed Data/COMPASS_H2S_202307_Plates_HighCVs.csv"
-ADL_not_fixed_path <- "Processed Data/COMPASS_H2S_202307_Plates_ADL.csv"
-BDL_not_fixed_path <- "Processed Data/COMPASS_H2S_202307_Plates_BDL.csv"
+final_data_path <- "Processed Data/COMPASS_H2S_202309_Plates_Combined.csv"
+HighCV_path <- "Processed Data/COMPASS_H2S_202309_Plates_HighCVs.csv"
+ADL_not_fixed_path <- "Processed Data/COMPASS_H2S_202309_Plates_ADL.csv"
+BDL_not_fixed_path <- "Processed Data/COMPASS_H2S_202309_Plates_BDL.csv"
 
 #QAQC log path
 log_path="Raw Data/Sulfide_STD_QAQC.csv"
 
 #Sample ID Path
-SampleIDs1=paste0("Raw Data/COMPASS_SampleIDs_202307.xlsx")
-SampleIDs2=paste0("Raw Data/COMPASS_SampleIDs_202307.xlsx")
+SampleIDs1=paste0("Raw Data/COMPASS_SampleIDs_202309.xlsx")
+SampleIDs2=paste0("Raw Data/COMPASS_SampleIDs_202309.xlsx")
 
 #Metadata path
 Raw_Metadata = "Raw Data/COMPASS_SynopticCB_PW_SampleLog_2023.csv"
@@ -169,8 +162,8 @@ for (file_path in file_paths_rawdata) {
 }
 
 dat<-read_plates(
-  files = paste0("Tidy Data/", file_paths_tidydata),            #list of all file paths
-  plate_names = file_paths_tidydata,     #list of plate names          
+  files = paste0("Tidy Data/", file_paths_rawdata),            #list of all file paths
+  plate_names = file_paths_rawdata,     #list of plate names          
   well_ids_column = "Wells",              # name to give column of well IDs (optional)
   sep = ","                               # separator used in the csv file (optional)
 ) %>%
@@ -1119,6 +1112,10 @@ if (all_present) {
 # 
 # ##Export missing IDs to csv
 # write.csv(missing_ids, "20250529_COMPASS_H2S_missing_IDs.csv")
+
+##Remove non-COMPASS Syn sample IDs
+samples_flagged_all <- samples_flagged_all %>%
+  filter(str_detect(IDs, "GWI|SWH|MSM|GCW"))
 
 ##Remove Lys from Replicate Column
 samples_flagged_all <- samples_flagged_all %>%

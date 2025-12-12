@@ -1,6 +1,6 @@
 ---
 title: "Synoptic CB: Porewater Sulfide"
-author: "July 2023 Samples"
+author: "November 2023 Samples"
 date: "`r Sys.Date()`"
 output: 
   pdf_document:
@@ -36,27 +36,18 @@ library(patchwork)
 ```{r Run Information, echo=TRUE, message=FALSE, warning=FALSE}
 
 ###things that need to be changed
-Date_Run = "202307"
+Date_Run = "202311"
 plates<- c("Plate1","Plate2","Plate3","Plate4","Plate5","Plate6","Plate7")
-file_name<-"202307_allplates"
-Month = "July"
+file_name<-"202311_allplates"
+Month = "Nov"
 Year = "2023"
-yearmonth = "202307"
+yearmonth = "202311"
 Run_by = "Stephanie Wilson"  #Instrument user 
 Script_run_by = "Zoe Read" #Code user 
 Project = "COMPASS"
 
-Run_notes="A few of the samples were adl. 
-Some sample IDs are missing from metadata: 
- GCW_202307_TR_LYSB_45CM, GCW_202307_TR_LYSC_10CM, GCW_202307_TR_LYSC_20CM, 
- GCW_202307_TR_LYSC_45CM, GCW_202307_UP_LYSA_20CM, GCW_202307_UP_LYSB_10CM,
- GCW_202307_UP_LYSB_20CM, GCW_202307_UP_LYSC_20CM, SWH_202307_WC_LYSA_10CM, 
- SWH_202307_WC_LYSA_20CM, SWH_202307_WC_LYSA_45CM, , SWH_202307_WC_LYSB_10CM, 
- SWH_202307_WC_LYSB_20CM, SWH_202307_WC_LYSC_10CM, SWH_202307_WC_LYSC_20CM, 
- SWH_202307_WC_LYSC_45CM
-Used Std curve from Plate 4. 
-MC 20 from Plate 2 was bad. 
-1/9 plates had bad dup, 4/9 plates had bad spk. 
+Run_notes="Plate 5 std curve used for all plates. 
+4/7 plates had bad spks. 
 "#any notes from run
 
 #Stds that should be excluded
@@ -64,9 +55,11 @@ MC 20 from Plate 2 was bad.
 stds_to_remove<-NA
 
 ##Data Entered Incorrectly
-Old_ID_1 = "SWH_WC_LysB45cm"
-New_ID_1 = "SWH_WC_LysB_45cm"
+Old_ID_1 = "MSM_TR_RHZ_SF7spk"
+New_ID_1 = "MSM_TR_RHZ_SF7_spk"
 
+Old_ID_2 = "GCW_TR_LysA_20m"
+New_ID_2 = "GCW_TR_LysA_20cm"
 
 ```
 
@@ -83,17 +76,17 @@ head(file_paths_tidydata)
 
 #file path name for processed data
 #Write out final data frame 
-final_data_path <- "Processed Data/COMPASS_H2S_202307_Plates_Combined.csv"
-HighCV_path <- "Processed Data/COMPASS_H2S_202307_Plates_HighCVs.csv"
-ADL_not_fixed_path <- "Processed Data/COMPASS_H2S_202307_Plates_ADL.csv"
-BDL_not_fixed_path <- "Processed Data/COMPASS_H2S_202307_Plates_BDL.csv"
+final_data_path <- "Processed Data/COMPASS_H2S_202311_Plates_Combined.csv"
+HighCV_path <- "Processed Data/COMPASS_H2S_202311_Plates_HighCVs.csv"
+ADL_not_fixed_path <- "Processed Data/COMPASS_H2S_202311_Plates_ADL.csv"
+BDL_not_fixed_path <- "Processed Data/COMPASS_H2S_202311_Plates_BDL.csv"
 
 #QAQC log path
 log_path="Raw Data/Sulfide_STD_QAQC.csv"
 
 #Sample ID Path
-SampleIDs1=paste0("Raw Data/COMPASS_SampleIDs_202307.xlsx")
-SampleIDs2=paste0("Raw Data/COMPASS_SampleIDs_202307.xlsx")
+SampleIDs1=paste0("Raw Data/COMPASS_SampleIDs_202311.xlsx")
+SampleIDs2=paste0("Raw Data/COMPASS_SampleIDs_202311.xlsx")
 
 #Metadata path
 Raw_Metadata = "Raw Data/COMPASS_SynopticCB_PW_SampleLog_2023.csv"
@@ -153,8 +146,7 @@ for (file_path in file_paths_rawdata) {
     mutate(across(where(is.character), ~ str_remove_all(., pattern = fixed('Abs1'))))%>%
     mutate(across(where(is.character), ~ str_remove_all(., pattern = fixed('IDs'))))%>%
     mutate(across(where(is.character), ~ str_remove_all(., pattern = fixed('Dilutions'))))%>%
-    mutate(...14 = NULL)%>%
-    rename("NA" = Abs1)
+    mutate(...14 = NULL)
   # Note: `fixed()` ensures a literal match, preventing regex issues.
 
   # Re-export the modified data to the original file path, overwriting the old file
@@ -169,12 +161,12 @@ for (file_path in file_paths_rawdata) {
 }
 
 dat<-read_plates(
-  files = paste0("Tidy Data/", file_paths_tidydata),            #list of all file paths
-  plate_names = file_paths_tidydata,     #list of plate names          
+  files = paste0("Tidy Data/", file_paths_rawdata),            #list of all file paths
+  plate_names = file_paths_rawdata,     #list of plate names          
   well_ids_column = "Wells",              # name to give column of well IDs (optional)
   sep = ","                               # separator used in the csv file (optional)
 ) %>%
-  rename("Abs"="NA",
+  rename("Abs"="...2",
          "IDs"=values,
          "Dilution"=values.3)
 
@@ -188,7 +180,7 @@ head(dat)
 ```{r Fix data entered incorrectly, echo=TRUE, message=FALSE, warning=FALSE, include = FALSE, results = 'hide'}
 ##Data entered incorrectly
 dat$IDs[dat$IDs == Old_ID_1] <- New_ID_1
-# dat$IDs[dat$IDs == Old_ID_2] <- New_ID_2
+dat$IDs[dat$IDs == Old_ID_2] <- New_ID_2
 # dat$IDs[dat$IDs == Old_ID_3] <- New_ID_3
 # dat$IDs[dat$IDs == Old_ID_4] <- New_ID_4
 # dat$IDs[dat$IDs == Old_ID_5] <- New_ID_5
@@ -197,7 +189,7 @@ dat$IDs[dat$IDs == Old_ID_1] <- New_ID_1
 ```
 
 
-```{r first look at Stds,echo=FALSE,fig.keep='none',include=FALSE, message=FALSE, warning=FALSE, results = 'hide'}
+```{r First look at Stds,echo=FALSE,fig.keep='none',include=FALSE, message=FALSE, warning=FALSE, results = 'hide'}
 
 #subset by H2s Stds
 H2S_stds_all <- dat %>% subset(IDs %like% "Std"|IDs %like% "MC") 
@@ -338,8 +330,8 @@ lapply(plates,curves)
 
 H2S <- ggplot(H2S_stds, aes(Conc, Abs)) + geom_point() + geom_smooth(method = "lm", se = FALSE)+ 
   labs(y="Concentration (uM)", x="Absorbance",title = paste("STD Curves"))+facet_wrap(~Plate)+ theme_classic()+ 
-  stat_regline_equation(label.x = 15, label.y = 1.4) + # Add the equation
-  stat_regline_equation(aes(label = ..adj.rr.label..), label.x = 15, label.y = 1.1) # Add R squared
+  stat_regline_equation(label.x = 15, label.y = 1.7) + # Add the equation
+  stat_regline_equation(aes(label = ..adj.rr.label..), label.x = 15, label.y = 1.4) # Add R squared
 H2S
 
 #make dataframe for the slope and intercept
@@ -672,7 +664,7 @@ H2S_original
 ```
 
 
-```{r remove bad reps,echo=FALSE, results = 'hide', fig.width=8, fig.height=12}
+```{r Remove bad reps,echo=FALSE, results = 'hide', fig.width=8, fig.height=12}
 
 ##Need to make it so it groups by Plate and Dilution so that reruns of the same ID don't count towards the CV
 dat1$ID_full <- paste(dat1$Plate, dat1$Dilution, dat1$IDs, sep = "_")
@@ -851,7 +843,7 @@ ifelse(dups_percent >= 60  , ">60% of Duplicates are within <10%",
 ```
 
 ## Check the spks for QAQC
-```{r check spks,echo=FALSE}
+```{r Check spks,echo=FALSE}
 
 #pull out any rows that have "d" in the SampleID column
 spks <- dat1 %>%  filter(str_detect(ID_full, "spk")) 
@@ -934,12 +926,6 @@ Sample_data1 <- all_data1 %>%
 
 
 ```{r Remove ADL/BDL samples that were later diluted differently, include = FALSE}
-
-##Remove "redo" from sample IDs
-Sample_data1 <- Sample_data1 %>%
-  mutate(across(where(is.character), ~ gsub("_redo", "", .)))%>%
-  mutate(across(where(is.character), ~ gsub("_redi", "", .)))
-
 
 #filter the high CV data in to one table
 HighCV<-filter(Sample_data1, H2S_cv_flag=="High CV")
@@ -1119,6 +1105,10 @@ if (all_present) {
 # 
 # ##Export missing IDs to csv
 # write.csv(missing_ids, "20250529_COMPASS_H2S_missing_IDs.csv")
+
+##Remove non-COMPASS Syn sample IDs
+samples_flagged_all <- samples_flagged_all %>%
+  filter(str_detect(IDs, "GWI|SWH|MSM|GCW"))
 
 ##Remove Lys from Replicate Column
 samples_flagged_all <- samples_flagged_all %>%

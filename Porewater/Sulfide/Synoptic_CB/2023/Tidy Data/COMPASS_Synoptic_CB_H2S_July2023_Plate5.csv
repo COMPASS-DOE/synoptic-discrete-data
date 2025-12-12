@@ -9,14 +9,14 @@ G,1.397,1.324,1.473,0.057,0.057,0.056,0.061,0.056,0.056,1.716,1.479,1.271
 H,1.348,1.346,1.302,0.058,0.053,0.059,0.254,0.205,0.222,1.24,1.122,1.011
 ,,,,,,,,,,,,
 ,1,2,3,4,5,6,7,8,9,10,11,12
-A,Std 0,Std 0,Std 0,MSM_WC_LysC_10cm_redo,,,GCW_UP_LysB_20cm,,,GCW_TR_LysC_10cm,,
-B,Std 1,Std 1,Std 1,MSM_WC_LysC_20cm_redo,,,GCW_UP_LysC_20cm,,,GCW_TR_LysC_20cm,,
-C,Std 2,Std 2,Std 2,MSM_WC_LysC_45cm,,,GCW_TR_LysA_20cm,,,GCW_TR_LysC_45cm,,
-D,Std 3,Std 3,Std 3,MSM_SW_A,,,GCW_TR_LysA_45cm,,,GCW_WC_LysA_10cm,,
-E,Std 4,Std 4,Std 4,MSM_SW_B,,,GCW_TR_LysB_10cm,,,GCW_WC_LysA_20cm,,
-F,Std 5,Std 5,Std 5,MSM_SW_C,,,GCW_TR_LysB_10cm_dup,,,GCW_WC_LysA_45cm,,
-G,MC: 10ppt,MC: 10ppt,MC: 10ppt,GCW_UP_LysA_20cm,,,GCW_TR_LysB_45cm,,,GCW_WC_LysB_10cm,,
-H,MC: 20ppt,MC: 20ppt,MC: 20ppt,GCW_UP_LysB_10cm,,,GCW_TR_LysB_45cm_spk,,,GCW_WC_LysB_20cm,,
+A,Std 0,Std 0,Std 0,MSM_WC_LysC_10cm_redo,MSM_WC_LysC_10cm_redo,MSM_WC_LysC_10cm_redo,GCW_UP_LysB_20cm,GCW_UP_LysB_20cm,GCW_UP_LysB_20cm,GCW_TR_LysC_10cm,GCW_TR_LysC_10cm,GCW_TR_LysC_10cm
+B,Std 1,Std 1,Std 1,MSM_WC_LysC_20cm_redo,MSM_WC_LysC_20cm_redo,MSM_WC_LysC_20cm_redo,GCW_UP_LysC_20cm,GCW_UP_LysC_20cm,GCW_UP_LysC_20cm,GCW_TR_LysC_20cm,GCW_TR_LysC_20cm,GCW_TR_LysC_20cm
+C,Std 2,Std 2,Std 2,MSM_WC_LysC_45cm,MSM_WC_LysC_45cm,MSM_WC_LysC_45cm,GCW_TR_LysA_20cm,GCW_TR_LysA_20cm,GCW_TR_LysA_20cm,GCW_TR_LysC_45cm,GCW_TR_LysC_45cm,GCW_TR_LysC_45cm
+D,Std 3,Std 3,Std 3,MSM_SW_A,MSM_SW_A,MSM_SW_A,GCW_TR_LysA_45cm,GCW_TR_LysA_45cm,GCW_TR_LysA_45cm,GCW_WC_LysA_10cm,GCW_WC_LysA_10cm,GCW_WC_LysA_10cm
+E,Std 4,Std 4,Std 4,MSM_SW_B,MSM_SW_B,MSM_SW_B,GCW_TR_LysB_10cm,GCW_TR_LysB_10cm,GCW_TR_LysB_10cm,GCW_WC_LysA_20cm,GCW_WC_LysA_20cm,GCW_WC_LysA_20cm
+F,Std 5,Std 5,Std 5,MSM_SW_C,MSM_SW_C,MSM_SW_C,GCW_TR_LysB_10cm_dup,GCW_TR_LysB_10cm_dup,GCW_TR_LysB_10cm_dup,GCW_WC_LysA_45cm,GCW_WC_LysA_45cm,GCW_WC_LysA_45cm
+G,MC: 10ppt,MC: 10ppt,MC: 10ppt,GCW_UP_LysA_20cm,GCW_UP_LysA_20cm,GCW_UP_LysA_20cm,GCW_TR_LysB_45cm,GCW_TR_LysB_45cm,GCW_TR_LysB_45cm,GCW_WC_LysB_10cm,GCW_WC_LysB_10cm,GCW_WC_LysB_10cm
+H,MC: 20ppt,MC: 20ppt,MC: 20ppt,GCW_UP_LysB_10cm,GCW_UP_LysB_10cm,GCW_UP_LysB_10cm,GCW_TR_LysB_45cm_spk,GCW_TR_LysB_45cm_spk,GCW_TR_LysB_45cm_spk,GCW_WC_LysB_20cm,GCW_WC_LysB_20cm,GCW_WC_LysB_20cm
 ,,,,,,,,,,,,
 ,1,2,3,4,5,6,7,8,9,10,11,12
 A,1,1,1,1,1,1,1,1,1,1,1,1
