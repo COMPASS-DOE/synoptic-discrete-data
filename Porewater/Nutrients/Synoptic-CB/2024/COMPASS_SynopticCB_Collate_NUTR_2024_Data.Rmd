@@ -32,7 +32,7 @@ all_data <- all_data[, -which(names(all_data) == "X")]
 ## Write the 2023 file out to the folder 
 ```{r, echo=FALSE}
 
-write.csv(all_data, "COMPASS_SynopticCB_SO4_Cl_2024.csv")
+write.csv(all_data, "COMPASS_SynopticCB_NUTR_2024.csv")
 
 ```
 

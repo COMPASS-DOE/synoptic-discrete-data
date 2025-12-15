@@ -11,7 +11,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ##Run notes
 ```{r}
-Run_notes = "GWI_202209_TR_LysC_10cm was duplicated without a dilution for Vanadium NOx."
+Run_notes = "GWI_202209_TR_LysC_10cm was duplicated without a dilution for Vanadium NOx. Appears to be run twice by accident, 
+            measured concentrations are essentially equal, removed second run (duplicate) in this code."
 ```
 
 
@@ -242,12 +243,18 @@ head(Ndat1)
 Nfile2 <- read.csv("Raw Data/SEAL_COMPASS_Synoptic_NOx_202209_2.csv")
 #Quick look at dataframe
 head(Nfile2)
+
+#There is a duplicate in this run for no reason, we remove the 2nd one here because the numbers are essentially equal for both 
+Nfile2 <- Nfile2 %>%
+  filter(!X1.15.2023.13.28 == "U28")
+
 #take out only the columns that we need 
 Ndat2 <- Nfile2[ ,c(1,4,6,7, 9, 12, 13)]
 # assigning new names to the columns of the data frame
 colnames(Ndat2) <- c('Run_Info','Sample_Name','Conc', "Abs", "Dilution", "Units", "Test")
 Ndat2$Run_Number <- "2"
 head(Ndat2)
+
 
 
 #read in data 
@@ -374,7 +381,7 @@ alldat2 <- alldat3 %>%
 
 
 ## Dilution Corrections NOx - ensure the latest dilution is kept
-```{r Dilution Corrections, echo=FALSE}
+```{r NOx Dilution Corrections, echo=FALSE}
 
 cat("Dilution Corrections")
 
