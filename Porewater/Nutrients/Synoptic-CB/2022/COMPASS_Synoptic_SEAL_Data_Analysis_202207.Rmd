@@ -11,7 +11,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ##Run notes
 ```{r}
-Run_notes = "Several GCrew samples were duplicated without a dilution for Vanadium NOx."
+Run_notes = "Several GCrew samples were duplicated without a dilution for Vanadium NOx, appears to be instrumentation issue with reruns.
+            Subsetted dataframe in this code to remove samples run orginially and keep the reruns."
 ```
 
 ## Information
@@ -248,6 +249,13 @@ alldat3 <- alldat2
 Nfile1 <- read.csv("Raw Data/SEAL_COMPASS_Synoptic_NOx_202207_1.csv")
 #Quick look at dataframe
 head(Nfile1)
+
+library(lubridate)
+#This run was stopped and restarted... need to take out the rows that are not needed: 
+Nfile1 <- Nfile1 %>%
+  mutate(X.8 = mdy_hm(X.8)) %>%        # parse timestamp
+  filter(format(X.8, "%H:%M") >= "11:26")
+
 #take out only the columns that we need 
 Ndat1 <- Nfile1[ ,c(1,4,6,7, 9, 12, 13)]
 # assigning new names to the columns of the data frame
@@ -437,8 +445,8 @@ alldat2 <- alldat3 %>%
 ```
 
 
-## Dilution Corrections NOx - ensure the latest dilution is kept
-```{r Dilution Corrections, echo=FALSE}
+## NOx Dilution Corrections - ensure the latest dilution is kept
+```{r NOx Dilution Corrections, echo=FALSE}
 
 cat("Dilution Corrections")
 
@@ -648,6 +656,9 @@ head(IDs)
 #rejoin them to the dataframe
 alldat <- cbind(IDs, out)
 head(alldat)
+
+alldat <- alldat %>% 
+  filter(!Sample_Name == "GCrew_WC_SipA_45cm_2")
 
 
 
