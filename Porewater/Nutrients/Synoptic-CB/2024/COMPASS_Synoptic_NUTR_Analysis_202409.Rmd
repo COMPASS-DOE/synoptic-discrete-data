@@ -11,6 +11,13 @@ output_dir: "To Be Reviewed/PDF"
 
 \newpage
 
+```{r Fix incorrect sample IDs}
+Old_ID_1 <- "SWH_202409_SWAMP_LycC_45cm"
+New_ID_1 <- "SWH_202409_SWAMP_LysC_45cm"
+
+```
+
+
 ##Run Information 
 ```{r run information, include=TRUE}
 cat("Run Information: NAME ") #lets you know what section you're in 
@@ -34,7 +41,8 @@ cat("Run Information: NAME ") #lets you know what section you're in
   final_path <- "Processed Data/COMPASS_Synoptic_Nutrients_202409.csv"
 
 #record any notes about the run or anything other info here: 
-  run_notes <- "Reduction efficiency check was only ran for some of the runs within this month's data."
+  run_notes <- "Some sample IDs are missing from metadata: MSM_202409_UP_LysA_45cm. 
+  Reduction efficiency check was only ran for some of the runs within this month's data."
   
 #Set up file path for metadata 
   #downloaded metadata csv - downloaded from Google drive as csv for this year
@@ -200,6 +208,17 @@ head(df_all)
 
 ```
 
+
+```{r Fix data entered incorrectly, include = FALSE}
+##Data entered incorrectly
+df_all$Sample_Name[df_all$Sample_Name == Old_ID_1] <- New_ID_1
+# dat$IDs[dat$IDs == Old_ID_2] <- New_ID_2
+# dat$IDs[dat$IDs == Old_ID_3] <- New_ID_3
+# dat$IDs[dat$IDs == Old_ID_4] <- New_ID_4
+# dat$IDs[dat$IDs == Old_ID_5] <- New_ID_5
+# dat$IDs[dat$IDs == Old_ID_6] <- New_ID_6
+
+```
 
 
 ## Assessing standard Curves
