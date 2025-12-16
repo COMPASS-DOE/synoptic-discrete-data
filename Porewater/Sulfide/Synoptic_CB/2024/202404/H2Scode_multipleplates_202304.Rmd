@@ -1,6 +1,6 @@
 ---
 title: "Synoptic CB: Porewater Sulfide"
-author: "May 2023 Samples"
+author: "April 2024 Samples"
 date: "`r Sys.Date()`"
 output: 
   pdf_document:
@@ -36,30 +36,30 @@ library(patchwork)
 ```{r Run Information, echo=TRUE, message=FALSE, warning=FALSE}
 
 ###things that need to be changed
-Date_Run = "202305"
-plates<- c("Plate1","Plate2","Plate3","Plate4","Plate5","Plate6","Plate7")
-file_name<-"202305_allplates"
-Month = "May"
-Year = "2023"
-yearmonth = "202305"
+Date_Run = "202404"
+plates<- c("Plate1","Plate2","Plate3")
+file_name<-"202404_allplates"
+Month = "April"
+Year = "2024"
+yearmonth = "202404"
 Run_by = "Stephanie Wilson"  #Instrument user 
 Script_run_by = "Zoe Read" #Code user 
 Project = "COMPASS"
 
-Run_notes="Some sample IDs are missing from metadata: SHW_202305_UPCON_LYSB_45CM. 
-Plate 3 MC 10 and 20 were bad. 
-1/7 plates had a bad dup. 
-4/7 plates had a bad spike. 
+Run_notes="Plate 2 std curve used. 
+MC's both bad on Plate 3, MC 10 bad on Plate 1.  
+Plate 1 had a bad dup and spk. 
+Some samples were still adl after dilution. 
 "#any notes from run
 
 #Stds that should be excluded
-# stds_to_remove<-data.frame(Plate=c("Plate3"),IDs=c("Std 3"))
-stds_to_remove<-NA
-
+stds_to_remove<-data.frame(Plate=c("Plate1", "Plate3"),IDs=c("Std 3", "Std 1"))
+# stds_to_remove<-NA
 
 ##Data Entered Incorrectly
-Old_ID_1 = "SHW_UPCON_LysB_45cm"
-New_ID_1 = "SWH_UPCON_LysB_45cm"
+# Old_ID_1 = "SHW_WC_LysB_10cm"
+# New_ID_1 = "SWH_WC_LysB_10cm"
+
 
 ```
 
@@ -69,25 +69,23 @@ New_ID_1 = "SWH_UPCON_LysB_45cm"
 ###### File Names - - PLEASE CHECK, should automatically update based on Date and Plate Number
 
 #read in all the Tidy data files
-file_paths_tidydata <- list.files(path = "Tidy Data", pattern = Month, full.names = TRUE)
+file_paths_rawdata <- list.files(path = "Raw Data", pattern = yearmonth, full.names = FALSE)
+
+file_paths_tidydata <- list.files(path = "Tidy Data", pattern = yearmonth, full.names = FALSE)
 head(file_paths_tidydata)
 
 #file path name for processed data
 #Write out final data frame 
-final_data_path <- "Processed Data/COMPASS_H2S_202305_Plates_Combined.csv"
-HighCV_path <- "Processed Data/COMPASS_H2S_202305_Plates_HighCVs.csv"
-ADL_not_fixed_path <- "Processed Data/COMPASS_H2S_202305_Plates_ADL.csv"
-BDL_not_fixed_path <- "Processed Data/COMPASS_H2S_202305_Plates_BDL.csv"
+final_data_path <- "Processed Data/COMPASS_H2S_202404_Plates_Combined.csv"
+HighCV_path <- "Processed Data/COMPASS_H2S_202404_Plates_HighCVs.csv"
+ADL_not_fixed_path <- "Processed Data/COMPASS_H2S_202404_Plates_ADL.csv"
+BDL_not_fixed_path <- "Processed Data/COMPASS_H2S_202404_Plates_BDL.csv"
 
 #QAQC log path
 log_path="Raw Data/Sulfide_STD_QAQC.csv"
 
-#Sample ID Path
-SampleIDs1=paste0("Raw Data/COMPASS_SampleIDs_202305.xlsx")
-SampleIDs2=paste0("Raw Data/COMPASS_SampleIDs_202305.xlsx")
-
 #Metadata path
-Raw_Metadata = "Raw Data/COMPASS_SynopticCB_PW_SampleLog_2023.csv"
+Raw_Metadata = "Raw Data/COMPASS_SynopticCB_PW_SampleLog_2024.csv"
 
 ```
 
@@ -130,16 +128,42 @@ Raw_Metadata = "Raw Data/COMPASS_SynopticCB_PW_SampleLog_2023.csv"
 ```{r Read in tidy data, echo=TRUE, message=FALSE, warning=FALSE, include = FALSE, results = 'hide'}
 
 #read in the csv files
-file_paths_tidydata
+file_paths_rawdata
+
+# 2. Loop through each file, process the data, and re-export
+for (file_path in file_paths_rawdata) {
+  # Read the data file (adjust read function based on file type, e.g., read_excel, read.csv)
+  data_frame <- read_csv(paste0("Raw Data/", file_path))
+
+  # Apply string removal across all character columns
+  # `across(where(is.character), ...)` selects all columns that are character type
+  # `str_remove_all(., pattern = fixed(word_to_remove))` removes all occurrences of the word
+  modified_data_frame <- data_frame %>%
+    mutate(across(where(is.character), ~ str_remove_all(., pattern = fixed('Abs1'))))%>%
+    mutate(across(where(is.character), ~ str_remove_all(., pattern = fixed('IDs'))))%>%
+    mutate(across(where(is.character), ~ str_remove_all(., pattern = fixed('Dilutions'))))%>%
+    mutate(...14 = NULL)
+  # Note: `fixed()` ensures a literal match, preventing regex issues.
+
+  # Re-export the modified data to the original file path, overwriting the old file
+  # (adjust write function based on file type, e.g., write_excel_csv, write.csv)
+  write.table(modified_data_frame, 
+              na = "", 
+              file = paste0("Tidy Data/", file_path), 
+              sep = ",",           # Use a comma as the separator for CSV format
+              col.names = TRUE,   # Exclude column names
+              row.names = FALSE, 
+              quote = FALSE)   # Exclude row names 
+}
 
 dat<-read_plates(
-  files = file_paths_tidydata,            #list of all file paths
-  plate_names = file_paths_tidydata,     #list of plate names          
+  files = paste0("Tidy Data/", file_paths_rawdata),            #list of all file paths
+  plate_names = file_paths_rawdata,     #list of plate names          
   well_ids_column = "Wells",              # name to give column of well IDs (optional)
   sep = ","                               # separator used in the csv file (optional)
 ) %>%
-  rename("Abs"=values,
-         "IDs"=values.2,
+  rename("Abs"="...2",
+         "IDs"=values,
          "Dilution"=values.3)
 
 dat <- dat %>%
@@ -151,7 +175,7 @@ head(dat)
 
 ```{r Fix data entered incorrectly, echo=TRUE, message=FALSE, warning=FALSE, include = FALSE, results = 'hide'}
 ##Data entered incorrectly
-dat$IDs[dat$IDs == Old_ID_1] <- New_ID_1
+# dat$IDs[dat$IDs == Old_ID_1] <- New_ID_1
 # dat$IDs[dat$IDs == Old_ID_2] <- New_ID_2
 # dat$IDs[dat$IDs == Old_ID_3] <- New_ID_3
 # dat$IDs[dat$IDs == Old_ID_4] <- New_ID_4
@@ -159,6 +183,7 @@ dat$IDs[dat$IDs == Old_ID_1] <- New_ID_1
 # dat$IDs[dat$IDs == Old_ID_6] <- New_ID_6
 
 ```
+
 
 ```{r first look at Stds,echo=FALSE,fig.keep='none',include=FALSE, message=FALSE, warning=FALSE, results = 'hide'}
 
@@ -204,6 +229,7 @@ for(y in 1:length(plates)){
               Conc = first(Conc))
   #Flag high cvs
   std_plate1$H2S_cv_flag <- ifelse(std_plate1$H2S_cv > cv_flag_stds, 'High CV', 'Within range')
+  std_plate1$H2S_cv_flag <- as.character(std_plate1$H2S_cv_flag)
   
   #add each plate to std average dataframe
   H2S_stds1_all<-rbind(H2S_stds1_all,std_plate1)
@@ -239,6 +265,8 @@ for(y in 1:length(plates)){
   #bind fixed dataframes back together with non high cv points
   #averaged stds
   H2S_stds1_all <- subset(H2S_stds1_all, (!(IDs %in% H2S_stds1_all_fixed$IDs & Plate %in% H2S_stds1_all_fixed$Plate)))
+  H2S_stds1_all_fixed$H2S_cv_flag <- as.character(H2S_stds1_all_fixed$H2S_cv_flag)
+  H2S_stds1_all$H2S_cv_flag <- as.character(H2S_stds1_all$H2S_cv_flag)
   H2S_stds1_all <- rbind(H2S_stds1_all_fixed, H2S_stds1_all) 
   #all points  
   H2S_stds_all_fixed <- subset(H2S_stds_all_fixed, (!(IDs %in% H2S_stds_HCV_fixed$IDs & Plate %in% H2S_stds_HCV_fixed$Plate)))
@@ -286,8 +314,8 @@ print(Slopes)
 dat$QAQC_flag<-"" 
 
 #delete stds that are off for each plate
-# for(i in 1:nrow(stds_to_remove)){
-# H2S_stds<-H2S_stds %>% subset(!(Plate %in% stds_to_remove$Plate[i] & IDs%in%stds_to_remove$IDs[i]))}
+for(i in 1:nrow(stds_to_remove)){
+H2S_stds<-H2S_stds %>% subset(!(Plate %in% stds_to_remove$Plate[i] & IDs%in%stds_to_remove$IDs[i]))}
 
 #create a graph for each plate's std curves
 curves<-function(plate_names){
@@ -301,8 +329,8 @@ lapply(plates,curves)
 
 H2S <- ggplot(H2S_stds, aes(Conc, Abs)) + geom_point() + geom_smooth(method = "lm", se = FALSE)+ 
   labs(y="Concentration (uM)", x="Absorbance",title = paste("STD Curves"))+facet_wrap(~Plate)+ theme_classic()+ 
-  stat_regline_equation(label.x = 15, label.y = 1.4) + # Add the equation
-  stat_regline_equation(aes(label = ..adj.rr.label..), label.x = 15, label.y = 1.1) # Add R squared
+  stat_regline_equation(label.x = 15, label.y = 1.6) + # Add the equation
+  stat_regline_equation(aes(label = ..adj.rr.label..), label.x = 15, label.y = 1.3) # Add R squared
 H2S
 
 #make dataframe for the slope and intercept
@@ -403,7 +431,7 @@ int1 <- ggplot(data=qlog, aes(x=Date, y=Intercept)) +
           geom_hline(yintercept= (mean(qlog$Intercept)+ (2*sd(qlog$Intercept))), linetype="dashed", color = "red", linewidth=2)+
           geom_hline(yintercept= (mean(qlog$Intercept)- (2*sd(qlog$Intercept))), linetype="dashed", color = "red", linewidth=2)+
           geom_point() + 
-          theme_classic() + ylim(0.05,0.125) + 
+          theme_classic() +
           theme(legend.position="none")+ 
           ggtitle("Sulfide Intercepts")+
           guides(x = guide_axis(angle = 70)) +
@@ -414,7 +442,7 @@ int1
 Rsq1 <- ggplot(data=qlog, aes(x=Date, y=R2)) +
           geom_hline(yintercept= (0.98), linetype="dashed", color = "red", linewidth=2)+
           geom_point() + 
-          theme_classic() + ylim(0.96, 1.01) + 
+          theme_classic() +
           theme(legend.position="none")+ 
           ggtitle("Sulfide R2s")+
           guides(x = guide_axis(angle = 70))+
@@ -814,7 +842,7 @@ ifelse(dups_percent >= 60  , ">60% of Duplicates are within <10%",
 ```
 
 ## Check the spks for QAQC
-```{r,echo=FALSE}
+```{r check spks,echo=FALSE}
 
 #pull out any rows that have "d" in the SampleID column
 spks <- dat1 %>%  filter(str_detect(ID_full, "spk")) 
@@ -897,6 +925,12 @@ Sample_data1 <- all_data1 %>%
 
 
 ```{r Remove ADL/BDL samples that were later diluted differently, include = FALSE}
+
+##Remove "redo" from sample IDs
+Sample_data1 <- Sample_data1 %>%
+  mutate(across(where(is.character), ~ gsub("_redo", "", .)))%>%
+  mutate(across(where(is.character), ~ gsub("_redi", "", .)))
+
 
 #filter the high CV data in to one table
 HighCV<-filter(Sample_data1, H2S_cv_flag=="High CV")
@@ -1076,6 +1110,10 @@ if (all_present) {
 # 
 # ##Export missing IDs to csv
 # write.csv(missing_ids, "20250529_COMPASS_H2S_missing_IDs.csv")
+
+##Remove non-COMPASS Syn sample IDs
+samples_flagged_all <- samples_flagged_all %>%
+  filter(str_detect(IDs, "GWI|SWH|MSM|GCW"))
 
 ##Remove Lys from Replicate Column
 samples_flagged_all <- samples_flagged_all %>%
