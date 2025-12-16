@@ -690,7 +690,7 @@ final_data <- final_data %>%
     Replicate = Lysimeter.y,
     npoc_mgL = npoc_raw, 
     tdn_mgL = tdn_raw,
-    Sample_ID = sample_name,
+    Sample_ID = sample_name, 
     Analysis_runtime = run_datetime, 
     Field_notes = Field.Notes
     # add more rename pairs as needed

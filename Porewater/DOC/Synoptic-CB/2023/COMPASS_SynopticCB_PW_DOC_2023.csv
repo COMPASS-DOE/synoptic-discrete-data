@@ -1,0 +1,476 @@
+"","Project","Region","Site","Zone","Replicate","Depth_cm","Sample_ID","Year","Month","Day","Time","Time_Zone","npoc_mgL","npoc_uM","npoc_flag","tdn_mgL","tdn_uM","tdn_flag","Analysis_rundate","Run_notes","Field_notes"
+"1","COMPASS: Synoptic","CB","MSM","UP","A",20,"202305_MSM_UP_LysA_20cm",2023,5,19,NA,NA,58.74,4890.51702605945,"NPOC checks out of range",3.33,237.743365674998,"value above cal curve","6/3/2023 8:10:25 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"2","COMPASS: Synoptic","CB","MSM","UP","B",10,"202305_MSM_UP_LysB_10cm",2023,5,19,NA,NA,78.95,6573.14128715344,"NPOC checks out of range",1.586,113.231524913077,"","6/3/2023 8:37:43 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"3","COMPASS: Synoptic","CB","MSM","UP","B",20,"202305_MSM_UP_LysB_20cm",2023,5,19,NA,NA,71.11,5920.40629423029,"NPOC checks out of range",1.958,139.790243240735,"","6/3/2023 9:04:39 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"4","COMPASS: Synoptic","CB","MSM","UP","C",10,"202305_MSM_UP_LysC_10cm",2023,5,19,NA,NA,88.78,7391.55773873949,"NPOC checks out of range",2.395,170.989597835322,"","6/3/2023 9:31:29 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"5","COMPASS: Synoptic","CB","MSM","UP","C",20,"202305_MSM_UP_LysC_20cm",2023,5,19,NA,NA,87.99,7325.78469736075,"NPOC checks out of range",3.892,277.867020782911,"value above cal curve","6/3/2023 9:50:38 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"6","COMPASS: Synoptic","CB","GWI","UP","A",20,"202305_GWI_UP_LysA_20cm",2023,5,23,NA,NA,28.82,2399.46715510782,"NPOC checks out of range",0.8315,59.364447014643,"","6/3/2023 7:11:59 PM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"7","COMPASS: Synoptic","CB","GWI","UP","A",45,"202305_GWI_UP_LysA_45cm",2023,5,23,NA,NA,18.19,1514.445091999,"NPOC checks out of range",0.6729,48.0412945233353,"","6/3/2023 7:38:37 PM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"8","COMPASS: Synoptic","CB","GWI","UP","B",10,"202305_GWI_UP_LysB_10cm",2023,5,23,NA,NA,28.99,2413.62084755641,"NPOC checks out of range",0.7714,55.073643327836,"","6/3/2023 8:05:28 PM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"9","COMPASS: Synoptic","CB","GWI","UP","B",20,"202305_GWI_UP_LysB_20cm",2023,5,23,NA,NA,39.43,3282.82407792857,"NPOC checks out of range",1.032,73.6790250380175,"","6/3/2023 8:32:10 PM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"10","COMPASS: Synoptic","CB","GWI","UP","B",45,"202305_GWI_UP_LysB_45cm",2023,5,23,NA,NA,46.58,3878.11173091333,"NPOC checks out of range",1.188,84.8165520786481,"","6/3/2023 8:59:01 PM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"11","COMPASS: Synoptic","CB","GWI","UP","C",10,"202305_GWI_UP_LysC_10cm",2023,5,23,NA,NA,52.29,4353.50928315711,"NPOC checks out of range",1.468,104.806985228498,"","6/3/2023 9:26:47 PM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"12","COMPASS: Synoptic","CB","GWI","UP","C",20,"202305_GWI_UP_LysC_20cm",2023,5,23,NA,NA,73.54,6122.72083923071,"NPOC checks out of range",1.804,128.795505008317,"","6/3/2023 9:54:08 PM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"13","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"202305_SWH_SWAMP_LysA_10cm",2023,5,24,NA,NA,43.61,3630.83839813504,"NPOC checks out of range",3.206,228.890459565779,"value above cal curve","6/4/2023 9:49:50 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"14","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"202305_SWH_SWAMP_LysA_20cm",2023,5,24,NA,NA,23.04,1918.2416118558,"NPOC checks out of range",2.039,145.57318997337,"","6/4/2023 10:16:49 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"15","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"202305_SWH_SWAMP_LysA_45cm",2023,5,24,NA,NA,14.45,1203.06385813005,"NPOC checks out of range",1.562,111.518059214519,"","6/4/2023 10:39:13 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"16","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"202305_SWH_SWAMP_LysB_10cm",2023,5,24,NA,NA,132.8,11056.53151278,"NPOC checks out of range; value above cal curve",4.827,344.620788622588,"value above cal curve","6/4/2023 11:02:08 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"17","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"202305_SWH_SWAMP_LysB_20cm",2023,5,24,NA,NA,52.21,4346.84872200483,"NPOC checks out of range",1.866,133.221958062927,"","6/4/2023 11:29:48 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"18","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"202305_SWH_SWAMP_LysB_45cm",2023,5,24,NA,NA,5.2,432.93647489801,"NPOC checks out of range",1.389,99.1668273040759,"","6/4/2023 11:54:45 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"19","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"202305_SWH_SWAMP_LysC_10cm",2023,5,24,NA,NA,14.06,1170.5936225127,"NPOC checks out of range",1.412,100.808898598528,"","6/4/2023 12:43:24 PM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"20","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"202305_SWH_SWAMP_LysC_20cm",2023,5,24,NA,NA,16.64,1385.39671967363,"NPOC checks out of range",1.06,75.6780683530025,"","6/4/2023 1:10:07 PM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"21","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"202305_SWH_SWAMP_LysC_45cm",2023,5,24,NA,NA,18.33,1526.10107401549,"NPOC checks out of range",1.287,91.8845980852021,"","6/4/2023 1:36:24 PM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"22","COMPASS: Synoptic","CB","GCW","TR","A",20,"202305_GCW_TR_LysA_20cm",2023,5,18,NA,NA,36.34,3025.55990342186,"NPOC checks out of range",1.919,137.005861480577,"","6/3/2023 12:12:25 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"23","COMPASS: Synoptic","CB","GCW","TR","B",10,"202305_GCW_TR_LysB_10cm",2023,5,18,NA,NA,20.86,1736.74132045625,"NPOC checks out of range",0.8044,57.429658663354,"","6/3/2023 12:37:36 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"24","COMPASS: Synoptic","CB","GCW","TR","B",20,"202305_GCW_TR_LysB_20cm",2023,5,18,NA,NA,22.08,1838.31487802847,"NPOC checks out of range",1.46,104.235829995645,"","6/3/2023 1:04:36 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"25","COMPASS: Synoptic","CB","GCW","TR","C",10,"202305_GCW_TR_LysC_10cm",2023,5,18,NA,NA,83.88,6983.59836816252,"NPOC checks out of range",2.241,159.994859602904,"","6/3/2023 1:23:43 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"26","COMPASS: Synoptic","CB","MSM","TR","A",10,"202305_MSM_TR_LysA_10cm",2023,5,19,NA,NA,21.86,1819.99833485971,"NPOC checks out of range",0.7861,56.1231410682031,"","6/3/2023 10:17:24 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"27","COMPASS: Synoptic","CB","MSM","TR","A",20,"202305_MSM_TR_LysA_20cm",2023,5,19,NA,NA,26.55,2210.47373241196,"NPOC checks out of range",2.206,157.496055459173,"","6/3/2023 10:36:24 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"28","COMPASS: Synoptic","CB","MSM","TR","B",10,"202305_MSM_TR_LysB_10cm",2023,5,19,NA,NA,23.98,1996.50320539505,"NPOC checks out of range",0.9902,70.6947389463614,"","6/3/2023 10:59:57 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"29","COMPASS: Synoptic","CB","MSM","TR","B",20,"202305_MSM_TR_LysB_20cm",2023,5,19,NA,NA,42.95,3575.88876862876,"NPOC checks out of range",2.042,145.78737318569,"","6/3/2023 11:27:16 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"30","COMPASS: Synoptic","CB","MSM","TR","B",45,"202305_MSM_TR_LysB_45cm",2023,5,19,NA,NA,31.22,2599.28398967613,"NPOC checks out of range",2.275,162.422269342529,"","6/3/2023 11:46:19 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"31","COMPASS: Synoptic","CB","MSM","TR","C",10,"202305_MSM_TR_LysC_10cm",2023,5,19,NA,NA,18.37,1529.43135459162,"NPOC checks out of range",1.021,72.8936865928449,"","6/3/2023 12:37:43 PM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"32","COMPASS: Synoptic","CB","MSM","TR","C",20,"202305_MSM_TR_LysC_20cm",2023,5,19,NA,NA,26.8,2231.28798601282,"NPOC checks out of range",2.559,182.698280108805,"","6/3/2023 12:56:24 PM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"33","COMPASS: Synoptic","CB","MSM","TR","C",45,"202305_MSM_TR_LysC_45cm",2023,5,19,NA,NA,14.63,1218.05012072267,"NPOC checks out of range",1.606,114.659412995209,"","6/3/2023 1:23:51 PM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"34","COMPASS: Synoptic","CB","GWI","TR","A",10,"202305_GWI_TR_LysA_10cm",2023,5,23,NA,NA,48.99,4078.76113562568,"NPOC checks out of range",1.543,110.161565536493,"","6/3/2023 10:21:57 PM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"35","COMPASS: Synoptic","CB","GWI","TR","A",20,"202305_GWI_TR_LysA_20cm",2023,5,23,NA,NA,64.33,5355.92373657481,"NPOC checks out of range",1.758,125.511362419414,"","6/3/2023 11:19:59 PM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"36","COMPASS: Synoptic","CB","GWI","TR","B",10,"202305_GWI_TR_LysB_10cm",2023,5,23,NA,NA,35.39,2946.46573973857,"NPOC checks out of range",1.098,78.3910557090535,"","6/3/2023 11:43:50 PM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"37","COMPASS: Synoptic","CB","GWI","TR","B",20,"202305_GWI_TR_LysB_20cm",2023,5,23,NA,NA,64.7,5386.72883190409,"NPOC checks out of range",2.603,185.839633889496,"","6/4/2023 12:03:32 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"38","COMPASS: Synoptic","CB","GWI","TR","C",10,"202305_GWI_TR_LysC_10cm",2023,5,23,NA,NA,35.54,2958.95429189909,"NPOC checks out of range",1.06,75.6780683530025,"","6/4/2023 12:30:48 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"39","COMPASS: Synoptic","CB","GWI","TR","C",20,"202305_GWI_TR_LysC_20cm",2023,5,23,NA,NA,34.73,2891.51611023229,"NPOC checks out of range",1.019,72.7508977846316,"","6/4/2023 12:59:27 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"40","COMPASS: Synoptic","CB","SWH","TR","A",10,"202305_SWH_TR_LysA_10cm",2023,5,24,NA,NA,57.23,4764.79893431022,"NPOC checks out of range",2.291,163.564579808235,"","6/4/2023 2:38:53 PM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"41","COMPASS: Synoptic","CB","SWH","TR","A",20,"202305_SWH_TR_LysA_20cm",2023,5,24,NA,NA,20.46,1703.43851469486,"NPOC checks out of range",2.251,160.70880364397,"","6/4/2023 2:58:02 PM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"42","COMPASS: Synoptic","CB","SWH","TR","A",45,"202305_SWH_TR_LysA_45cm",2023,5,24,NA,NA,15.96,1328.78194987928,"NPOC checks out of range",2.362,168.633582499804,"","6/4/2023 3:17:05 PM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"43","COMPASS: Synoptic","CB","SWH","TR","B",10,"202305_SWH_TR_LysB_10cm",2023,5,24,NA,NA,12.13,1009.90758471401,"NPOC checks out of range",0.6374,45.5067931775507,"","6/4/2023 3:43:56 PM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"44","COMPASS: Synoptic","CB","SWH","TR","B",20,"202305_SWH_TR_LysB_20cm",2023,5,24,NA,NA,19.88,1655.14944634085,"NPOC checks out of range",1.259,89.8855547702171,"","6/4/2023 4:13:18 PM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"45","COMPASS: Synoptic","CB","SWH","TR","B",45,"202305_SWH_TR_LysB_45cm",2023,5,24,NA,NA,18.68,1555.2410290567,"NPOC checks out of range",2.92,208.47165999129,"","6/4/2023 4:35:54 PM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"46","COMPASS: Synoptic","CB","SWH","TR","C",10,"202305_SWH_TR_LysC_10cm",2023,5,24,NA,NA,8.638,719.174090417118,"NPOC checks out of range",0.5642,40.2807227969472,"","6/4/2023 5:01:35 PM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"47","COMPASS: Synoptic","CB","SWH","TR","C",20,"202305_SWH_TR_LysC_20cm",2023,5,24,NA,NA,11.24,935.80884189493,"NPOC checks out of range",0.8795,62.7913784117601,"","6/4/2023 5:23:34 PM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"48","COMPASS: Synoptic","CB","SWH","TR","C",45,"202305_SWH_TR_LysC_45cm",2023,5,24,NA,NA,17.34,1443.67662975606,"NPOC checks out of range",2.483,177.272305396703,"","6/4/2023 5:51:01 PM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"49","COMPASS: Synoptic","CB","GCW","WC","A",10,"202305_GCW_WC_LysA_10cm",2023,5,18,NA,NA,9.111,758.554658229956,"NPOC checks out of range",0.6783,48.4268243055109,"","6/3/2023 1:50:02 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"50","COMPASS: Synoptic","CB","GCW","WC","A",20,"202305_GCW_WC_LysA_20cm",2023,5,18,NA,NA,12.09,1006.57730413787,"NPOC checks out of range",2.014,143.788329870705,"","6/3/2023 2:32:49 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"51","COMPASS: Synoptic","CB","GCW","WC","A",45,"202305_GCW_WC_LysA_45cm",2023,5,18,NA,NA,11.77,979.935059528765,"NPOC checks out of range",2.151,153.56936323331,"","6/3/2023 2:56:09 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"52","COMPASS: Synoptic","CB","GCW","WC","B",10,"202305_GCW_WC_LysB_10cm",2023,5,18,NA,NA,9.461,787.694613271168,"NPOC checks out of range",0.7046,50.3044971335147,"","6/3/2023 3:13:48 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"53","COMPASS: Synoptic","CB","GCW","WC","B",20,"202305_GCW_WC_LysB_20cm",2023,5,18,NA,NA,8.825,734.743152110565,"NPOC checks out of range",1.053,75.1783075242562,"","6/3/2023 3:39:32 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"54","COMPASS: Synoptic","CB","GCW","WC","B",45,"202305_GCW_WC_LysB_45cm",2023,5,18,NA,NA,12.53,1043.2103904754,"NPOC checks out of range",4.341,309.923108226777,"value above cal curve","6/3/2023 4:38:04 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"55","COMPASS: Synoptic","CB","GCW","WC","C",10,"202305_GCW_WC_LysC_10cm",2023,5,18,NA,NA,6.801,566.230954957955,"NPOC checks out of range",0.5245,37.4463649539149,"","6/3/2023 4:55:32 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"56","COMPASS: Synoptic","CB","GCW","WC","C",20,"202305_GCW_WC_LysC_20cm",2023,5,18,NA,NA,5.497,457.663808175839,"NPOC checks out of range",0.461,32.9128202931454,"","6/3/2023 5:20:36 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"57","COMPASS: Synoptic","CB","GCW","WC","C",45,"202305_GCW_WC_LysC_45cm",2023,5,18,NA,NA,8.257,687.453167929398,"NPOC checks out of range",1.294,92.3843589139483,"","6/3/2023 5:42:12 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"58","COMPASS: Synoptic","CB","MSM","WC","A",10,"202305_MSM_WC_LysA_10cm",2023,5,19,NA,NA,10.76,895.845474981267,"NPOC checks out of range",0.6143,43.8575824426881,"","6/3/2023 2:22:52 PM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"59","COMPASS: Synoptic","CB","MSM","WC","A",20,"202305_MSM_WC_LysA_20cm",2023,5,19,NA,NA,13.88,1155.60735992007,"NPOC checks out of range",0.848,60.542454682402,"","6/3/2023 2:45:53 PM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"60","COMPASS: Synoptic","CB","MSM","WC","B",10,"202305_MSM_WC_LysB_10cm",2023,5,19,NA,NA,12.82,1067.3549246524,"NPOC checks out of range",0.7501,53.5529425203652,"","6/3/2023 3:26:46 PM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"61","COMPASS: Synoptic","CB","MSM","WC","B",20,"202305_MSM_WC_LysB_20cm",2023,5,19,NA,NA,18.83,1567.72958121722,"NPOC checks out of range",1.153,82.3177479349169,"","6/3/2023 3:53:54 PM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"62","COMPASS: Synoptic","CB","MSM","WC","C",10,"202305_MSM_WC_LysC_10cm",2023,5,19,NA,NA,12.68,1055.69894263592,"NPOC checks out of range",1.025,73.1792642092713,"","6/3/2023 4:21:33 PM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"63","COMPASS: Synoptic","CB","MSM","WC","C",20,"202305_MSM_WC_LysC_20cm",2023,5,19,NA,NA,30.38,2529.34809757722,"NPOC checks out of range",2.798,199.761542690284,"","6/3/2023 4:40:20 PM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"64","COMPASS: Synoptic","CB","GWI","WC","A",10,"202305_GWI_WC_LysA_10cm",2023,5,23,NA,NA,24.65,2052.28540504537,"NPOC checks out of range",1.15,82.103564722597,"","6/4/2023 2:08:48 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"65","COMPASS: Synoptic","CB","GWI","WC","A",20,"202305_GWI_WC_LysA_20cm",2023,5,23,NA,NA,48.77,4060.44459245691,"NPOC checks out of range",1.793,128.010166563145,"","6/4/2023 2:37:57 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"66","COMPASS: Synoptic","CB","GWI","WC","A",45,"202305_GWI_WC_LysA_45cm",2023,5,23,NA,NA,34.22,2849.05503288652,"NPOC checks out of range",1.374,98.0959112424768,"","6/4/2023 3:06:55 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"67","COMPASS: Synoptic","CB","GWI","WC","B",10,"202305_GWI_WC_LysB_10cm",2023,5,23,NA,NA,25.09,2088.9184913829,"NPOC checks out of range",1.221,87.1725674141661,"","6/4/2023 3:26:21 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"68","COMPASS: Synoptic","CB","GWI","WC","B",20,"202305_GWI_WC_LysB_20cm",2023,5,23,NA,NA,31.05,2585.13029722754,"NPOC checks out of range",0.06975,4.97975968643578,"blank is ≥ 25% of sample value","6/4/2023 3:53:43 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"69","COMPASS: Synoptic","CB","GWI","WC","B",45,"202305_GWI_WC_LysB_45cm",2023,5,23,NA,NA,45.63,3799.01756723004,"NPOC checks out of range",1.521,108.590888646148,"","6/4/2023 4:12:53 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"70","COMPASS: Synoptic","CB","GWI","WC","C",10,"202305_GWI_WC_LysC_10cm",2023,5,23,NA,NA,26.35,2193.82232953126,"NPOC checks out of range",1.174,83.8170304211556,"","6/4/2023 4:39:40 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"71","COMPASS: Synoptic","CB","GWI","WC","C",20,"202305_GWI_WC_LysC_20cm",2023,5,23,NA,NA,38.11,3172.92481891599,"NPOC checks out of range",1.412,100.808898598528,"","6/4/2023 5:08:40 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"72","COMPASS: Synoptic","CB","SWH","WC","B",10,"202305_SWH_WC_LysB_10cm",2023,5,24,NA,NA,12.19,1014.90300557822,"NPOC checks out of range",0.6204,44.2930883077384,"","6/4/2023 6:36:31 PM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"73","COMPASS: Synoptic","CB","SWH","WC","C",10,"202305_SWH_WC_LysC_10cm",2023,5,24,NA,NA,10.67,888.352343684955,"NPOC checks out of range",0.4873,34.7904931211492,"","6/4/2023 7:04:16 PM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"74","COMPASS: Synoptic","CB","SWH","WC","C",20,"202305_SWH_WC_LysC_20cm",2023,5,24,NA,NA,10.9,907.501456997752,"NPOC checks out of range",0.4811,34.3478478156882,"","6/4/2023 7:31:43 PM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"75","COMPASS: Synoptic","CB","SWH","WC","C",45,"202305_SWH_WC_LysC_45cm",2023,5,24,NA,NA,10.04,835.900424610773,"NPOC checks out of range",0.4914,35.0832101779863,"","6/4/2023 7:58:52 PM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"76","COMPASS: Synoptic","CB","GCW","SW","A",0,"202305_GCW_SW_A",2023,5,18,NA,NA,5.998,499.375572391974,"NPOC checks out of range",0.71,50.6900269156903,"","6/3/2023 6:07:01 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"77","COMPASS: Synoptic","CB","GCW","SW","B",0,"202305_GCW_SW_B",2023,5,18,NA,NA,6.294,524.019648655399,"NPOC checks out of range",0.6882,49.1336289061663,"","6/3/2023 6:28:34 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"78","COMPASS: Synoptic","CB","GCW","SW","C",0,"202305_GCW_SW_C",2023,5,18,NA,NA,5.967,496.794604945467,"NPOC checks out of range",0.6197,44.2431122248638,"","6/3/2023 6:54:30 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"79","COMPASS: Synoptic","CB","MSM","SW","A",0,"202305_MSM_SW_A",2023,5,19,NA,NA,4.488,373.657480642744,"NPOC checks out of range",0.456,32.5558482726124,"","6/3/2023 4:57:50 PM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"80","COMPASS: Synoptic","CB","MSM","SW","B",0,"202305_MSM_SW_B",2023,5,19,NA,NA,4.506,375.156106902007,"NPOC checks out of range",0.4563,32.5772665938444,"","6/3/2023 5:23:46 PM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"81","COMPASS: Synoptic","CB","MSM","SW","C",0,"202305_MSM_SW_C",2023,5,19,NA,NA,4.417,367.746232620098,"NPOC checks out of range",0.4533,32.3630833815246,"","6/3/2023 5:50:50 PM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"82","COMPASS: Synoptic","CB","GWI","SW","A",0,"202305_GWI_SW_A",2023,5,23,NA,NA,3.988,332.028973441012,"NPOC checks out of range",0.3459,24.6953243804751,"","6/4/2023 5:29:12 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"83","COMPASS: Synoptic","CB","GWI","SW","B",0,"202305_GWI_SW_B",2023,5,23,NA,NA,3.907,325.285155274332,"NPOC checks out of range",0.06779,4.83982665438683,"blank is ≥ 25% of sample value","6/4/2023 5:54:17 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"84","COMPASS: Synoptic","CB","GWI","SW","C",0,"202305_GWI_SW_C",2023,5,23,NA,NA,5.197,432.6867038548,"NPOC checks out of range",0.3885,27.7367259954165,"","6/4/2023 6:19:37 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"85","COMPASS: Synoptic","CB","SWH","SW","A",0,"202305_SWH_SW_A",2023,5,24,NA,NA,5.889,490.300557821997,"NPOC checks out of range",0.4949,35.3330905923594,"","6/4/2023 8:24:29 PM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"86","COMPASS: Synoptic","CB","SWH","SW","B",0,"202305_SWH_SW_B",2023,5,24,NA,NA,5.881,489.634501706769,"NPOC checks out of range",0.4735,33.805250344478,"","6/4/2023 8:52:35 PM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"87","COMPASS: Synoptic","CB","SWH","SW","C",0,"202305_SWH_SW_C",2023,5,24,NA,NA,6.09,507.035217717093,"NPOC checks out of range",0.6054,43.2221722461394,"","6/4/2023 9:13:19 PM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"88","COMPASS: Synoptic","CB","SWH","UP","A",10,"202305_SWH_UP_LysA_10cm",2023,5,24,NA,NA,101.3,8433.93555907085,"NPOC checks out of range; value above cal curve",1.834,130.937337131516,"","6/4/2023 7:48:39 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"89","COMPASS: Synoptic","CB","SWH","UP","A",20,"202305_SWH_UP_LysA_20cm",2023,5,24,NA,NA,56.32,4689.03505120306,"NPOC checks out of range",1.124,80.2473102158253,"","6/4/2023 8:18:01 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"90","COMPASS: Synoptic","CB","SWH","UP","A",45,"202305_SWH_UP_LysA_45cm",2023,5,24,NA,NA,114,9491.29964199484,"NPOC checks out of range; value above cal curve",1.318,94.0978246125069,"","6/4/2023 8:47:06 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"91","COMPASS: Synoptic","CB","SWH","UP","B",20,"202305_SWH_UP_LysB_20cm",2023,5,24,NA,NA,77,6410.79010906669,"NPOC checks out of range",1.269,90.5994988112832,"","6/4/2023 9:10:31 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"92","COMPASS: Synoptic","CB","SWH","UP","C",20,"202305_SWH_UP_LysC_20cm",2023,5,24,NA,NA,82.37,6857.88027641329,"NPOC checks out of range",2.267,161.851114109676,"","6/4/2023 9:30:08 AM","Standard Curve was assessed manually on the instrument.
+    One duplicate out of range. A few samples above standard curve top standard.",NA
+"93","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"202306_SWH_SWAMP_LysA_10cm",2023,6,21,NA,NA,23.26,1936.55815502456,"NPOC checks out of range",2.627,187.553099588054,"","6/25/2023 5:47:47 AM",NA,NA
+"94","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"202306_SWH_SWAMP_LysA_20cm",2023,6,21,NA,NA,17.85,1486.13770710182,"NPOC checks out of range",2.161,154.283307274376,"","6/25/2023 6:10:54 AM",NA,NA
+"95","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"202306_SWH_SWAMP_LysA_45cm",2023,6,21,NA,NA,12.23,1018.23328615436,"NPOC checks out of range",1.538,109.80459351596,"","6/25/2023 6:37:24 AM",NA,NA
+"96","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"202306_SWH_SWAMP_LysB_10cm",2023,6,21,NA,NA,54.44,4532.51186412455,"NPOC checks out of range",2.569,183.412224149871,"","6/25/2023 6:56:26 AM",NA,NA
+"97","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"202306_SWH_SWAMP_LysB_20cm",2023,6,21,NA,NA,33,2747.4814753143,"NPOC checks out of range",1.854,132.365225213648,"","6/25/2023 7:20:01 AM",NA,NA
+"98","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"202306_SWH_SWAMP_LysB_45cm",2023,6,21,NA,NA,6.256,520.855882108068,"NPOC checks out of range",1.306,93.2410917632276,"","6/25/2023 7:45:46 AM",NA,NA
+"99","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"202306_SWH_SWAMP_LysC_10cm",2023,6,21,NA,NA,7.092,590.458746149363,"NPOC checks out of range",0.541,38.6243726216739,"","6/25/2023 8:03:11 AM",NA,NA
+"100","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"202306_SWH_SWAMP_LysC_20cm",2023,6,21,NA,NA,7.62,634.418449754392,"NPOC checks out of range",0.9164,65.4258319232938,"","6/25/2023 8:55:59 AM",NA,NA
+"101","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"202306_SWH_SWAMP_LysC_45cm",2023,6,21,NA,NA,8.619,717.592207143452,"NPOC checks out of range",1.617,115.444751440382,"","6/25/2023 9:17:28 AM",NA,NA
+"102","COMPASS: Synoptic","CB","GWI","UP","A",10,"202306_GWI_UP_LysA_10cm",2023,6,22,NA,NA,40.86,3401.88160852552,"NPOC checks out of range",1.127,80.4614934281451,"","6/25/2023 3:29:43 PM",NA,NA
+"103","COMPASS: Synoptic","CB","GWI","UP","A",20,"202306_GWI_UP_LysA_20cm",2023,6,22,NA,NA,28.84,2401.13229539589,"NPOC checks out of range",0.8919,63.676669022682,"","6/25/2023 3:56:02 PM",NA,NA
+"104","COMPASS: Synoptic","CB","GWI","UP","A",45,"202306_GWI_UP_LysA_45cm",2023,6,22,NA,NA,16.04,1335.44251103155,"NPOC checks out of range",0.6045,43.1579172824434,"","6/25/2023 4:22:07 PM",NA,NA
+"105","COMPASS: Synoptic","CB","GWI","UP","B",10,"202306_GWI_UP_LysB_10cm",2023,6,22,NA,NA,33.02,2749.14661560236,"NPOC checks out of range",0.9114,65.0688599027608,"","6/25/2023 4:48:39 PM",NA,NA
+"106","COMPASS: Synoptic","CB","GWI","UP","B",20,"202306_GWI_UP_LysB_20cm",2023,6,22,NA,NA,36.25,3018.06677212555,"NPOC checks out of range",1.055,75.3210963324695,"","6/25/2023 5:15:54 PM",NA,NA
+"107","COMPASS: Synoptic","CB","GWI","UP","B",45,"202306_GWI_UP_LysB_45cm",2023,6,22,NA,NA,39.15,3259.5121138956,"NPOC checks out of range",1.115,79.6047605788658,"","6/25/2023 5:43:16 PM",NA,NA
+"108","COMPASS: Synoptic","CB","GWI","UP","C",10,"202306_GWI_UP_LysC_10cm",2023,6,22,NA,NA,55.31,4604.94546665557,"NPOC checks out of range",1.642,117.229611543047,"","6/25/2023 6:25:39 PM",NA,NA
+"109","COMPASS: Synoptic","CB","GWI","UP","C",20,"202306_GWI_UP_LysC_20cm",2023,6,22,NA,NA,60.01,4996.25343435184,"NPOC checks out of range",1.747,124.726023974241,"","6/25/2023 6:45:10 PM",NA,NA
+"110","COMPASS: Synoptic","CB","GWI","UP","C",45,"202306_GWI_UP_LysC_45cm",2023,6,22,NA,NA,49.31,4105.40338023478,"NPOC checks out of range",1.993,142.289047384466,"","6/25/2023 7:12:22 PM",NA,NA
+"111","COMPASS: Synoptic","CB","GCW","UP","A",20,"202306_GCW_UP_LysA_20cm",2023,6,28,NA,NA,14.29,1189.74273582549,"NPOC checks out of range",0.4624,33.0127724588947,"","7/1/2023 6:21:58 PM",NA,NA
+"112","COMPASS: Synoptic","CB","GCW","UP","C",10,"202306_GCW_UP_LysC_10cm",2023,6,28,NA,NA,21.33,1775.87211722588,"NPOC checks out of range",0.5342,38.138890673749,"","7/1/2023 6:49:33 PM",NA,NA
+"113","COMPASS: Synoptic","CB","GCW","UP","C",20,"202306_GCW_UP_LysC_20cm",2023,6,28,NA,NA,7.732,643.74323536758,"NPOC checks out of range",0.1922,13.7220044692897,"blank is ≥ 25% of sample value","7/1/2023 7:09:45 PM",NA,NA
+"114","COMPASS: Synoptic","CB","MSM","UP","B",10,"202306_MSM_UP_LysB_10cm",2023,6,29,NA,NA,27,2247.93938889351,"NPOC checks out of range",0.7034,50.2188238485868,"","7/2/2023 6:23:52 AM",NA,NA
+"115","COMPASS: Synoptic","CB","MSM","UP","C",10,"202306_MSM_UP_LysC_10cm",2023,6,29,NA,NA,31.88,2654.23361918242,"NPOC checks out of range",1.391,99.3096161122891,"","7/2/2023 6:49:26 AM",NA,NA
+"116","COMPASS: Synoptic","CB","MSM","UP","C",20,"202306_MSM_UP_LysC_20cm",2023,6,29,NA,NA,31.01,2581.8000166514,"NPOC checks out of range",3.296,235.315955935374,"value above cal curve","7/2/2023 7:07:03 AM",NA,NA
+"117","COMPASS: Synoptic","CB","SWH","TR","A",10,"202306_SWH_TR_LysA_10cm",2023,6,21,NA,NA,39.6,3296.97777037715,"NPOC checks out of range",2.168,154.783068103122,"","6/25/2023 1:25:10 AM",NA,NA
+"118","COMPASS: Synoptic","CB","SWH","TR","A",20,"202306_SWH_TR_LysA_20cm",2023,6,21,NA,NA,14.87,1238.0318041795,"NPOC checks out of range",3.898,278.295387207551,"value above cal curve","6/25/2023 1:53:44 AM",NA,NA
+"119","COMPASS: Synoptic","CB","SWH","TR","A",45,"202306_SWH_TR_LysA_45cm",2023,6,21,NA,NA,12.02,1000.74931312963,"NPOC checks out of range",3.409,243.38352359942,"value above cal curve","6/25/2023 2:34:44 AM",NA,NA
+"120","COMPASS: Synoptic","CB","SWH","TR","B",10,"202306_SWH_TR_LysB_10cm",2023,6,21,NA,NA,8.684,723.003913079677,"NPOC checks out of range",0.5406,38.5958148600313,"","6/25/2023 3:00:23 AM",NA,NA
+"121","COMPASS: Synoptic","CB","SWH","TR","B",20,"202306_SWH_TR_LysB_20cm",2023,6,21,NA,NA,13.26,1103.98801098993,"NPOC checks out of range",1.671,119.300049262139,"","6/25/2023 3:28:44 AM",NA,NA
+"122","COMPASS: Synoptic","CB","SWH","TR","B",45,"202306_SWH_TR_LysB_45cm",2023,6,21,NA,NA,15.92,1325.45166930314,"NPOC checks out of range",3.933,280.794191351282,"value above cal curve","6/25/2023 3:51:27 AM",NA,NA
+"123","COMPASS: Synoptic","CB","SWH","TR","C",10,"202306_SWH_TR_LysC_10cm",2023,6,21,NA,NA,6.955,579.052535176089,"NPOC checks out of range",0.576,41.1231767654051,"","6/25/2023 4:09:26 AM",NA,NA
+"124","COMPASS: Synoptic","CB","SWH","TR","C",20,"202306_SWH_TR_LysC_20cm",2023,6,21,NA,NA,8.702,724.502539338939,"NPOC checks out of range",0.9586,68.4386757765926,"","6/25/2023 4:27:51 AM",NA,NA
+"125","COMPASS: Synoptic","CB","SWH","TR","C",45,"202306_SWH_TR_LysC_45cm",2023,6,21,NA,NA,12.71,1058.19665306802,"NPOC checks out of range",3.087,220.394525477093,"value above cal curve","6/25/2023 4:46:41 AM",NA,NA
+"126","COMPASS: Synoptic","CB","GWI","TR","A",10,"202306_GWI_TR_LysA_10cm",2023,6,22,NA,NA,47.05,3917.24252768296,"NPOC checks out of range",1.489,106.306267714737,"","6/25/2023 8:37:13 PM",NA,NA
+"127","COMPASS: Synoptic","CB","GWI","TR","A",20,"202306_GWI_TR_LysA_20cm",2023,6,22,NA,NA,64.96,5408.37565564899,"NPOC checks out of range",1.942,138.647932775029,"","6/25/2023 9:04:55 PM",NA,NA
+"128","COMPASS: Synoptic","CB","GWI","TR","B",10,"202306_GWI_TR_LysB_10cm",2023,6,22,NA,NA,21.51,1790.8583798185,"NPOC checks out of range",0.8766,62.5843346398509,"","6/25/2023 9:31:56 PM",NA,NA
+"129","COMPASS: Synoptic","CB","GWI","TR","B",20,"202306_GWI_TR_LysB_20cm",2023,6,22,NA,NA,62.3,5186.91199733578,"NPOC checks out of range",2.647,188.980987670186,"","6/25/2023 10:24:02 PM",NA,NA
+"130","COMPASS: Synoptic","CB","GWI","TR","B",45,"202306_GWI_TR_LysB_45cm",2023,6,22,NA,NA,30.45,2535.17608858546,"NPOC checks out of range",1.118,79.8189437911856,"","6/25/2023 10:50:47 PM",NA,NA
+"131","COMPASS: Synoptic","CB","GWI","TR","C",10,"202306_GWI_TR_LysC_10cm",2023,6,22,NA,NA,18.7,1556.90616934477,"NPOC checks out of range",0.7754,55.3592209442624,"","6/25/2023 11:13:26 PM",NA,NA
+"132","COMPASS: Synoptic","CB","GWI","TR","C",20,"202306_GWI_TR_LysC_20cm",2023,6,22,NA,NA,25.36,2111.39788527183,"NPOC checks out of range",1.044,74.5357578872968,"","6/25/2023 11:40:08 PM",NA,NA
+"133","COMPASS: Synoptic","CB","GCW","TR","A",20,"202306_GCW_TR_LysA_20cm",2023,6,28,NA,NA,39.15,3259.5121138956,"NPOC checks out of range",2.101,149.999643027979,"","7/1/2023 7:28:40 PM",NA,NA
+"134","COMPASS: Synoptic","CB","GCW","TR","A",45,"202306_GCW_TR_LysA_45cm",2023,6,28,NA,NA,9.943,827.824494213638,"NPOC checks out of range",0.4123,29.4359128131537,"","7/1/2023 7:49:40 PM",NA,NA
+"135","COMPASS: Synoptic","CB","GCW","TR","B",10,"202306_GCW_TR_LysB_10cm",2023,6,28,NA,NA,16.91,1407.87611356257,"NPOC checks out of range",0.8027,57.3082881763727,"","7/1/2023 8:15:31 PM",NA,NA
+"136","COMPASS: Synoptic","CB","GCW","TR","B",20,"202306_GCW_TR_LysB_20cm",2023,6,28,NA,NA,30.74,2559.32062276247,"NPOC checks out of range",1.945,138.862115987349,"","7/1/2023 9:04:00 PM",NA,NA
+"137","COMPASS: Synoptic","CB","GCW","TR","B",45,"202306_GCW_TR_LysB_45cm",2023,6,28,NA,NA,30.19,2513.52926484056,"NPOC checks out of range",0.9846,70.2949302833644,"","7/1/2023 9:22:33 PM",NA,NA
+"138","COMPASS: Synoptic","CB","GCW","TR","C",10,"202306_GCW_TR_LysC_10cm",2023,6,28,NA,NA,24.33,2025.64316043627,"NPOC checks out of range",0.9088,64.8832344520837,"","7/1/2023 9:48:34 PM",NA,NA
+"139","COMPASS: Synoptic","CB","GCW","TR","C",20,"202306_GCW_TR_LysC_20cm",2023,6,28,NA,NA,78.38,6525.68478894347,"NPOC checks out of range",2.977,212.541141025366,"","7/1/2023 10:11:03 PM",NA,NA
+"140","COMPASS: Synoptic","CB","GCW","TR","C",45,"202306_GCW_TR_LysC_45cm",2023,6,28,NA,NA,17.93,1492.7982682541,"NPOC checks out of range",0.5865,41.8728180085245,"","7/1/2023 10:37:59 PM",NA,NA
+"141","COMPASS: Synoptic","CB","MSM","TR","A",10,"202306_MSM_TR_LysA_10cm",2023,6,29,NA,NA,17.91,1491.13312796603,"NPOC checks out of range",1.121,80.0331270035055,"","7/2/2023 7:32:54 AM",NA,NA
+"142","COMPASS: Synoptic","CB","MSM","TR","A",20,"202306_MSM_TR_LysA_20cm",2023,6,29,NA,NA,26.99,2247.10681874948,"NPOC checks out of range",2.629,187.695888396267,"","7/2/2023 7:59:30 AM",NA,NA
+"143","COMPASS: Synoptic","CB","MSM","TR","A",45,"202306_MSM_TR_LysA_45cm",2023,6,29,NA,NA,11.93,993.256181833319,"NPOC checks out of range",1.217,86.8869897977397,"","7/2/2023 8:24:14 AM",NA,NA
+"144","COMPASS: Synoptic","CB","MSM","TR","B",10,"202306_MSM_TR_LysB_10cm",2023,6,29,NA,NA,30.25,2518.52468570477,"NPOC checks out of range",2.23,159.209521157732,"","7/2/2023 8:45:54 AM",NA,NA
+"145","COMPASS: Synoptic","CB","MSM","TR","B",20,"202306_MSM_TR_LysB_20cm",2023,6,29,NA,NA,23.68,1971.52610107402,"NPOC checks out of range",3.305,235.958505572333,"value above cal curve","7/2/2023 9:12:02 AM",NA,NA
+"146","COMPASS: Synoptic","CB","MSM","TR","B",45,"202306_MSM_TR_LysB_45cm",2023,6,29,NA,NA,14.9,1240.52951461161,"NPOC checks out of range",1.832,130.794548323302,"","7/2/2023 9:37:08 AM",NA,NA
+"147","COMPASS: Synoptic","CB","MSM","TR","C",10,"202306_MSM_TR_LysC_10cm",2023,6,29,NA,NA,38.47,3202.89734410124,"NPOC checks out of range",2.123,151.570319918325,"","7/2/2023 10:03:52 AM",NA,NA
+"148","COMPASS: Synoptic","CB","MSM","TR","C",20,"202306_MSM_TR_LysC_20cm",2023,6,29,NA,NA,39.73,3307.8011822496,"NPOC checks out of range",2.234,159.495098774158,"","7/2/2023 10:32:22 AM",NA,NA
+"149","COMPASS: Synoptic","CB","MSM","TR","C",45,"202306_MSM_TR_LysC_45cm",2023,6,29,NA,NA,34.83,2899.84181167263,"NPOC checks out of range",2.508,179.057165499368,"","7/2/2023 12:13:06 PM",NA,NA
+"150","COMPASS: Synoptic","CB","GWI","WC","A",10,"202306_GWI_WC_LysA_10cm",2023,6,22,NA,NA,31.43,2616.76796270086,"NPOC checks out of range",1.646,117.515189159474,"","6/26/2023 1:04:01 AM",NA,NA
+"151","COMPASS: Synoptic","CB","GWI","WC","A",20,"202306_GWI_WC_LysA_20cm",2023,6,22,NA,NA,51.88,4319.37390725169,"NPOC checks out of range",2.074,148.071994117101,"","6/26/2023 1:29:35 AM",NA,NA
+"152","COMPASS: Synoptic","CB","GWI","WC","A",45,"202306_GWI_WC_LysA_45cm",2023,6,22,NA,NA,34.35,2859.87844475897,"NPOC checks out of range",1.628,116.230089885555,"","6/26/2023 1:56:34 AM",NA,NA
+"153","COMPASS: Synoptic","CB","GWI","WC","B",10,"202306_GWI_WC_LysB_10cm",2023,6,22,NA,NA,33.94,2825.74306885355,"NPOC checks out of range",1.52,108.519494242041,"","6/26/2023 2:49:43 AM",NA,NA
+"154","COMPASS: Synoptic","CB","GWI","WC","B",20,"202306_GWI_WC_LysB_20cm",2023,6,22,NA,NA,34.15,2843.22704187828,"NPOC checks out of range",1.604,114.516624186996,"","6/26/2023 3:15:20 AM",NA,NA
+"155","COMPASS: Synoptic","CB","GWI","WC","B",45,"202306_GWI_WC_LysB_45cm",2023,6,22,NA,NA,45.77,3810.67354924652,"NPOC checks out of range",1.796,128.224349775465,"","6/26/2023 3:38:54 AM",NA,NA
+"156","COMPASS: Synoptic","CB","GWI","WC","C",10,"202306_GWI_WC_LysC_10cm",2023,6,22,NA,NA,35.36,2943.96802930647,"NPOC checks out of range",1.785,127.439011330292,"","6/26/2023 4:06:17 AM",NA,NA
+"157","COMPASS: Synoptic","CB","GWI","WC","C",20,"202306_GWI_WC_LysC_20cm",2023,6,22,NA,NA,52.52,4372.6583964699,"NPOC checks out of range",1.897,135.435184590232,"","6/26/2023 4:31:15 AM",NA,NA
+"158","COMPASS: Synoptic","CB","GCW","WC","A",10,"202306_GCW_WC_LysA_10cm",2023,6,27,NA,NA,11.53,959.953376071934,"NPOC checks out of range",0.7899,56.3944398038082,"","7/1/2023 11:02:36 PM",NA,NA
+"159","COMPASS: Synoptic","CB","GCW","WC","A",20,"202306_GCW_WC_LysA_20cm",2023,6,27,NA,NA,11.8,982.432769960869,"NPOC checks out of range",1.028,73.3934474215911,"","7/2/2023 12:31:21 AM",NA,NA
+"160","COMPASS: Synoptic","CB","GCW","WC","A",45,"202306_GCW_WC_LysA_45cm",2023,6,27,NA,NA,30.69,2555.15777204229,"NPOC checks out of range",4.041,288.504786994795,"value above cal curve","7/2/2023 12:57:15 AM",NA,NA
+"161","COMPASS: Synoptic","CB","GCW","WC","B",10,"202306_GCW_WC_LysB_10cm",2023,6,27,NA,NA,9.323,776.20514528349,"NPOC checks out of range",0.8476,60.5138969207594,"","7/2/2023 1:18:27 AM",NA,NA
+"162","COMPASS: Synoptic","CB","GCW","WC","B",20,"202306_GCW_WC_LysB_20cm",2023,6,27,NA,NA,9.515,792.190492048955,"NPOC checks out of range",0.9714,69.3525241491572,"","7/2/2023 1:43:21 AM",NA,NA
+"163","COMPASS: Synoptic","CB","GCW","WC","B",45,"202306_GCW_WC_LysB_45cm",2023,6,27,NA,NA,12.9,1074.01548580468,"NPOC checks out of range",3.897,278.223992803444,"value above cal curve","7/2/2023 2:08:30 AM",NA,NA
+"164","COMPASS: Synoptic","CB","GCW","WC","C",10,"202306_GCW_WC_LysC_10cm",2023,6,27,NA,NA,8.139,677.628840229789,"NPOC checks out of range",0.6442,45.9922751254757,"","7/2/2023 2:32:13 AM",NA,NA
+"165","COMPASS: Synoptic","CB","GCW","WC","C",20,"202306_GCW_WC_LysC_20cm",2023,6,27,NA,NA,5.774,480.726001165598,"NPOC checks out of range",0.4383,31.2921673199255,"","7/2/2023 2:52:37 AM",NA,NA
+"166","COMPASS: Synoptic","CB","GCW","WC","C",45,"202306_GCW_WC_LysC_45cm",2023,6,27,NA,NA,7.906,658.229955873783,"NPOC checks out of range",0.9422,67.2678075492443,"","7/2/2023 3:13:44 AM",NA,NA
+"167","COMPASS: Synoptic","CB","MSM","WC","A",10,"202306_MSM_WC_LysA_10cm",2023,6,29,NA,NA,10.4,865.87294979602,"NPOC checks out of range",0.6766,48.3054538185297,"","7/2/2023 12:37:24 PM",NA,NA
+"168","COMPASS: Synoptic","CB","MSM","WC","A",20,"202306_MSM_WC_LysA_20cm",2023,6,29,NA,NA,12.07,1004.9121638498,"NPOC checks out of range",0.9257,66.0897998814853,"","7/2/2023 1:00:30 PM",NA,NA
+"169","COMPASS: Synoptic","CB","MSM","WC","A",45,"202306_MSM_WC_LysA_45cm",2023,6,29,NA,NA,75.21,6261.76005328449,"NPOC checks out of range",1.838,131.222914747942,"","7/2/2023 1:26:30 PM",NA,NA
+"170","COMPASS: Synoptic","CB","MSM","WC","B",10,"202306_MSM_WC_LysB_10cm",2023,6,29,NA,NA,21.95,1827.49146615602,"NPOC checks out of range",1.231,87.8865114552322,"","7/2/2023 1:50:26 PM",NA,NA
+"171","COMPASS: Synoptic","CB","MSM","WC","B",20,"202306_MSM_WC_LysB_20cm",2023,6,29,NA,NA,19.95,1660.9774373491,"NPOC checks out of range",1.213,86.6014121813132,"","7/2/2023 2:16:06 PM",NA,NA
+"172","COMPASS: Synoptic","CB","MSM","WC","C",10,"202306_MSM_WC_LysC_10cm",2023,6,29,NA,NA,15.21,1266.33918907668,"NPOC checks out of range",1.547,110.44714315292,"","7/2/2023 2:41:56 PM",NA,NA
+"173","COMPASS: Synoptic","CB","MSM","WC","C",20,"202306_MSM_WC_LysC_20cm",2023,6,29,NA,NA,21.66,1803.34693197902,"NPOC checks out of range",3.187,227.533965887754,"value above cal curve","7/2/2023 3:06:27 PM",NA,NA
+"174","COMPASS: Synoptic","CB","MSM","WC","C",45,"202306_MSM_WC_LysC_45cm",2023,6,29,NA,NA,84.71,7052.70169011739,"NPOC checks out of range",4.623,330.05633018484,"value above cal curve","7/2/2023 3:29:14 PM",NA,NA
+"175","COMPASS: Synoptic","CB","GWI","SW","A",0,"202306_GWI_SW_A",2023,6,22,NA,NA,3.463,288.319040879194,"NPOC checks out of range",0.5004,35.7257598149457,"","6/26/2023 4:55:41 AM",NA,NA
+"176","COMPASS: Synoptic","CB","GWI","SW","B",0,"202306_GWI_SW_B",2023,6,22,NA,NA,3.326,276.91282990592,"NPOC checks out of range",0.4513,32.2202945733113,"","6/26/2023 5:20:37 AM",NA,NA
+"177","COMPASS: Synoptic","CB","GWI","SW","C",0,"202306_GWI_SW_C",2023,6,22,NA,NA,3.228,268.75364249438,"NPOC checks out of range",0.4387,31.3207250815681,"","6/26/2023 5:44:23 AM",NA,NA
+"178","COMPASS: Synoptic","CB","GCW","SW","A",0,"202306_GCW_SW_A",2023,6,27,NA,NA,7.384,614.769794355174,"NPOC checks out of range",0.6324,45.1498211570177,"","7/2/2023 5:09:48 AM",NA,NA
+"179","COMPASS: Synoptic","CB","GCW","SW","B",0,"202306_GCW_SW_B",2023,6,27,NA,NA,7.527,626.67554741487,"NPOC checks out of range",0.5968,42.6081803708225,"","7/2/2023 5:32:05 AM",NA,NA
+"180","COMPASS: Synoptic","CB","GCW","SW","C",0,"202306_GCW_SW_C",2023,6,27,NA,NA,7.422,617.933560902506,"NPOC checks out of range",0.5578,39.8237986106649,"","7/2/2023 5:58:08 AM",NA,NA
+"181","COMPASS: Synoptic","CB","MSM","SW","A",0,"202306_MSM_SW_A",2023,6,29,NA,NA,6.8,566.147697943552,"NPOC checks out of range",0.4816,34.3835450177415,"","7/2/2023 3:46:59 PM",NA,NA
+"182","COMPASS: Synoptic","CB","MSM","SW","B",0,"202306_MSM_SW_B",2023,6,29,NA,NA,6.575,547.414869702773,"NPOC checks out of range",0.493,35.1974412245568,"","7/2/2023 5:47:15 PM",NA,NA
+"183","COMPASS: Synoptic","CB","SWH","UP","A",10,"202306_SWH_UP_LysA_10cm",2023,6,21,NA,NA,24.73,2058.94596619765,"NPOC checks out of range",0.9685,69.145480377248,"","6/25/2023 10:40:02 AM",NA,NA
+"184","COMPASS: Synoptic","CB","SWH","UP","A",20,"202306_SWH_UP_LysA_20cm",2023,6,21,NA,NA,115.6,9624.51086504038,"NPOC checks out of range; value above cal curve",3.533,252.236429708639,"value above cal curve","6/25/2023 11:03:28 AM",NA,NA
+"185","COMPASS: Synoptic","CB","SWH","UP","A",45,"202306_SWH_UP_LysA_45cm",2023,6,21,NA,NA,112.6,9374.73982182999,"NPOC checks out of range; value above cal curve",2.37,169.204737732657,"","6/25/2023 11:23:04 AM",NA,NA
+"186","COMPASS: Synoptic","CB","SWH","UP","B",10,"202306_SWH_UP_LysB_10cm",2023,6,21,NA,NA,96.91,8068.43726583965,"NPOC checks out of range",2.976,212.46974662126,"","6/25/2023 11:49:12 AM",NA,NA
+"187","COMPASS: Synoptic","CB","SWH","UP","B",20,"202306_SWH_UP_LysB_20cm",2023,6,21,NA,NA,171.8,14303.555074515,"NPOC checks out of range; value above cal curve",4.84,345.548915875974,"value above cal curve","6/25/2023 12:08:40 PM",NA,NA
+"188","COMPASS: Synoptic","CB","SWH","UP","B",45,"202306_SWH_UP_LysB_45cm",2023,6,21,NA,NA,77.01,6411.62267921072,"NPOC checks out of range",1.934,138.076777542176,"","6/25/2023 12:35:58 PM",NA,NA
+"189","COMPASS: Synoptic","CB","SWH","UP","C",10,"202306_SWH_UP_LysC_10cm",2023,6,21,NA,NA,50.77,4226.95862126384,"NPOC checks out of range",1.605,114.588018591103,"","6/25/2023 1:01:32 PM",NA,NA
+"190","COMPASS: Synoptic","CB","SWH","UP","C",20,"202306_SWH_UP_LysC_20cm",2023,6,21,NA,NA,56.49,4703.18874365165,"NPOC checks out of range",1.792,127.938772159038,"","6/25/2023 1:30:58 PM",NA,NA
+"191","COMPASS: Synoptic","CB","SWH","UP","C",45,"202306_SWH_UP_LysC_45cm",2023,6,21,NA,NA,80.55,6706.35251019898,"NPOC checks out of range",2.323,165.849200739646,"","6/25/2023 1:54:24 PM",NA,NA
+"192","COMPASS: Synoptic","CB","GCW","UP","A",20,"GCW_202307_UP_LysA_20cm",2023,7,11,NA,NA,49.11,4088.75197735409,"",2.079,148.428966137634,"","7/31/2023 4:45:43 AM",NA,NA
+"193","COMPASS: Synoptic","CB","MSM","UP","B",10,"MSM_202307_UP_LysB_10cm",2023,7,13,NA,NA,30.78,2562.65090333861,"",0.7295,52.0822177957692,"","7/31/2023 8:01:46 PM",NA,NA
+"194","COMPASS: Synoptic","CB","MSM","UP","C",10,"MSM_202307_UP_LysC_10cm",2023,7,13,NA,NA,40.37,3361.08567146782,"",1.193,85.1735240991811,"","7/31/2023 8:27:29 PM",NA,NA
+"195","COMPASS: Synoptic","CB","MSM","UP","C",20,"MSM_202307_UP_LysC_20cm",2023,7,13,NA,NA,32.37,2695.02955624011,"",4.067,290.361041501567,"value above cal curve","7/31/2023 8:55:18 PM",NA,NA
+"196","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202307_SWAMP_LysA_10cm",2023,7,19,NA,NA,40.26,3351.92739988344,"",3.052,217.895721333362,"value above cal curve","8/1/2023 10:57:17 AM",NA,NA
+"197","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202307_SWAMP_LysA_20cm",2023,7,19,NA,NA,17.49,1456.16518191658,"",2.249,160.566014835757,"","8/1/2023 11:22:30 AM",NA,NA
+"198","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202307_SWAMP_LysA_45cm",2023,7,19,NA,NA,12.54,1044.04296061943,"",1.601,114.302440974676,"","8/1/2023 11:39:27 AM",NA,NA
+"199","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202307_SWAMP_LysB_10cm",2023,7,19,NA,NA,50.64,4216.13520939139,"",2.562,182.912463321125,"","8/1/2023 12:06:55 PM",NA,NA
+"200","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202307_SWAMP_LysB_20cm",2023,7,19,NA,NA,21.48,1788.3606693864,"",1.905,136.006339823085,"","8/1/2023 12:27:46 PM",NA,NA
+"201","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202307_SWAMP_LysB_45cm",2023,7,19,NA,NA,7.521,626.176005328449,"",1.196,85.3877073115009,"","8/1/2023 12:44:42 PM",NA,NA
+"202","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202307_SWAMP_LysC_10cm",2023,7,19,NA,NA,32.77,2728.3323620015,"",0.9616,68.6528589889125,"","8/1/2023 1:11:00 PM",NA,NA
+"203","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202307_SWAMP_LysC_20cm",2023,7,19,NA,NA,24.67,2053.95054533344,"",1.179,84.1740024416886,"","8/1/2023 1:31:48 PM",NA,NA
+"204","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202307_SWAMP_LysC_45cm",2023,7,19,NA,NA,14.02,1167.26334193656,"",1.367,97.5961504137306,"","8/1/2023 1:56:43 PM",NA,NA
+"205","COMPASS: Synoptic","CB","GWI","UP","A",10,"GWI_202307_UP_LysA_10cm",2023,7,20,NA,NA,28.41,2365.3317792024,"",0.7404,52.8604168005312,"","8/1/2023 10:37:24 PM",NA,NA
+"206","COMPASS: Synoptic","CB","GWI","UP","A",45,"GWI_202307_UP_LysA_45cm",2023,7,20,NA,NA,22.26,1853.3011406211,"",0.6976,49.8047363047684,"","8/1/2023 10:55:08 PM",NA,NA
+"207","COMPASS: Synoptic","CB","GWI","UP","B",10,"GWI_202307_UP_LysB_10cm",2023,7,20,NA,NA,58.92,4905.50328865207,"",1.104,78.8194221336932,"","8/1/2023 11:13:30 PM",NA,NA
+"208","COMPASS: Synoptic","CB","GWI","UP","B",20,"GWI_202307_UP_LysB_20cm",2023,7,20,NA,NA,57.19,4761.46865373408,"",1.339,95.5971070987456,"","8/1/2023 11:31:59 PM",NA,NA
+"209","COMPASS: Synoptic","CB","GWI","UP","C",10,"GWI_202307_UP_LysC_10cm",2023,7,20,NA,NA,84.48,7033.5525768046,"",2.057,146.858289247289,"","8/1/2023 11:50:25 PM",NA,NA
+"210","COMPASS: Synoptic","CB","GWI","UP","C",20,"GWI_202307_UP_LysC_20cm",2023,7,20,NA,NA,121.5,10115.7272500208,"value above cal curve",2.599,185.554056273069,"","8/2/2023 12:08:51 AM",NA,NA
+"211","COMPASS: Synoptic","CB","GWI","UP","C",45,"GWI_202307_UP_LysC_45cm",2023,7,20,NA,NA,63.09,5252.68503871451,"",1.915,136.720283864151,"","8/2/2023 1:37:15 AM",NA,NA
+"212","COMPASS: Synoptic","CB","GCW","TR","A",20,"GCW_202307_TR_LysA_20cm",2023,7,11,NA,NA,13.98,1163.93306136042,"",0.3713,26.5087422447829,"","7/31/2023 5:07:12 AM",NA,NA
+"213","COMPASS: Synoptic","CB","GCW","TR","A",45,"GCW_202307_TR_LysA_45cm",2023,7,11,NA,NA,44.32,3689.9508783615,"",2.101,149.999643027979,"","7/31/2023 5:36:14 AM",NA,NA
+"214","COMPASS: Synoptic","CB","GCW","TR","B",10,"GCW_202307_TR_LysB_10cm",2023,7,11,NA,NA,11.43,951.627674631588,"",0.4102,29.2859845645298,"","7/31/2023 6:01:31 AM",NA,NA
+"215","COMPASS: Synoptic","CB","GCW","TR","B",45,"GCW_202307_TR_LysB_45cm",2023,7,11,NA,NA,4.383,364.91549413038,"",0.4576,32.670079319183,"","7/31/2023 6:23:05 AM",NA,NA
+"216","COMPASS: Synoptic","CB","GCW","TR","C",10,"GCW_202307_TR_LysC_10cm",2023,7,11,NA,NA,-0.04784,-3.98301556906169,"blank is ≥ 25% of sample value",0.03846,2.74582878194007,"blank is ≥ 25% of sample value","7/31/2023 10:49:23 AM",NA,NA
+"217","COMPASS: Synoptic","CB","GCW","TR","C",20,"GCW_202307_TR_LysC_20cm",2023,7,11,NA,NA,14.15,1178.08675380901,"",0.3389,24.1955635517288,"","7/31/2023 11:14:48 AM",NA,NA
+"218","COMPASS: Synoptic","CB","GCW","TR","C",45,"GCW_202307_TR_LysC_45cm",2023,7,11,NA,NA,115.7,9632.83656648073,"value above cal curve",3.604,257.305432400208,"value above cal curve","7/31/2023 11:34:03 AM",NA,NA
+"219","COMPASS: Synoptic","CB","MSM","TR","A",10,"MSM_202307_TR_LysA_10cm",2023,7,13,NA,NA,21.05,1752.56015319291,"",1.948,139.076299199669,"","7/31/2023 9:20:41 PM",NA,NA
+"220","COMPASS: Synoptic","CB","MSM","TR","A",20,"MSM_202307_TR_LysA_20cm",2023,7,13,NA,NA,27.41,2282.07476479893,"",2.621,187.124733163415,"","7/31/2023 9:42:02 PM",NA,NA
+"221","COMPASS: Synoptic","CB","MSM","TR","B",10,"MSM_202307_TR_LysB_10cm",2023,7,13,NA,NA,36.26,3018.89934226959,"",2.972,212.184169004833,"","7/31/2023 10:10:14 PM",NA,NA
+"222","COMPASS: Synoptic","CB","MSM","TR","B",20,"MSM_202307_TR_LysB_20cm",2023,7,13,NA,NA,27.75,2310.38214969611,"",3.683,262.94559032463,"value above cal curve","7/31/2023 10:36:20 PM",NA,NA
+"223","COMPASS: Synoptic","CB","MSM","TR","B",45,"MSM_202307_TR_LysB_45cm",2023,7,13,NA,NA,16.01,1332.94480059945,"",1.851,132.151042001328,"","7/31/2023 11:02:26 PM",NA,NA
+"224","COMPASS: Synoptic","CB","MSM","TR","C",10,"MSM_202307_TR_LysC_10cm",2023,7,13,NA,NA,48.34,4024.64407626343,"",3.33,237.743365674998,"value above cal curve","7/31/2023 11:29:26 PM",NA,NA
+"225","COMPASS: Synoptic","CB","MSM","TR","C",20,"MSM_202307_TR_LysC_20cm",2023,7,13,NA,NA,41.1,3421.86329198235,"",2.565,183.126646533445,"","7/31/2023 11:56:24 PM",NA,NA
+"226","COMPASS: Synoptic","CB","MSM","TR","C",45,"MSM_202307_TR_LysC_45cm",2023,7,13,NA,NA,30.97,2578.46973607526,"",2.39,170.632625814789,"","8/1/2023 1:30:00 AM",NA,NA
+"227","COMPASS: Synoptic","CB","SWH","TR","A",10,"SWH_202307_TR_LysA_10cm",2023,7,19,NA,NA,38.18,3178.75280992424,"",2.531,180.69923679382,"","8/1/2023 2:47:49 PM",NA,NA
+"228","COMPASS: Synoptic","CB","SWH","TR","A",20,"SWH_202307_TR_LysA_20cm",2023,7,19,NA,NA,23.36,1944.88385646491,"",4.949,353.330905923594,"value above cal curve","8/1/2023 4:08:42 PM",NA,NA
+"229","COMPASS: Synoptic","CB","SWH","TR","A",45,"SWH_202307_TR_LysA_45cm",2023,7,19,NA,NA,14.16,1178.91932395304,"",4.327,308.923586569285,"value above cal curve","8/1/2023 4:26:08 PM",NA,NA
+"230","COMPASS: Synoptic","CB","SWH","TR","B",10,"SWH_202307_TR_LysB_10cm",2023,7,19,NA,NA,17.75,1477.81200566148,"",1.766,126.082517652266,"","8/1/2023 4:51:48 PM",NA,NA
+"231","COMPASS: Synoptic","CB","SWH","TR","B",20,"SWH_202307_TR_LysB_20cm",2023,7,19,NA,NA,24.41,2032.30372158854,"",4.614,329.413780547881,"value above cal curve","8/1/2023 5:13:37 PM",NA,NA
+"232","COMPASS: Synoptic","CB","SWH","TR","B",45,"SWH_202307_TR_LysB_45cm",2023,7,19,NA,NA,17.84,1485.30513695779,"",4.208,300.427652480599,"value above cal curve","8/1/2023 5:35:12 PM",NA,NA
+"233","COMPASS: Synoptic","CB","SWH","TR","C",10,"SWH_202307_TR_LysC_10cm",2023,7,19,NA,NA,14.97,1246.35750561985,"",1.227,87.6009338388057,"","8/1/2023 6:00:06 PM",NA,NA
+"234","COMPASS: Synoptic","CB","SWH","TR","C",20,"SWH_202307_TR_LysC_20cm",2023,7,19,NA,NA,20.2,1681.79169094996,"",2.206,157.496055459173,"","8/1/2023 6:20:39 PM",NA,NA
+"235","COMPASS: Synoptic","CB","SWH","TR","C",45,"SWH_202307_TR_LysC_45cm",2023,7,19,NA,NA,18.8,1565.23187078511,"",3.686,263.15977353695,"value above cal curve","8/1/2023 6:46:30 PM",NA,NA
+"236","COMPASS: Synoptic","CB","GWI","TR","A",10,"GWI_202307_TR_LysA_10cm",2023,7,20,NA,NA,69.69,5802.18133377737,"",1.918,136.934467076471,"","8/2/2023 2:03:48 AM",NA,NA
+"237","COMPASS: Synoptic","CB","GWI","TR","A",20,"GWI_202307_TR_LysA_20cm",2023,7,20,NA,NA,81.58,6792.10723503455,"",2.021,144.288090699451,"","8/2/2023 2:25:14 AM",NA,NA
+"238","COMPASS: Synoptic","CB","GWI","TR","B",10,"GWI_202307_TR_LysB_10cm",2023,7,20,NA,NA,44.54,3708.26742153026,"",1.212,86.5300177772066,"","8/2/2023 2:42:57 AM",NA,NA
+"239","COMPASS: Synoptic","CB","GWI","TR","B",20,"GWI_202307_TR_LysB_20cm",2023,7,20,NA,NA,75.14,6255.93206227625,"",2.582,184.340351403257,"","8/2/2023 3:05:33 AM",NA,NA
+"240","COMPASS: Synoptic","CB","GWI","TR","B",45,"GWI_202307_TR_LysB_45cm",2023,7,20,NA,NA,38.9,3238.69786029473,"",1.086,77.5343228597742,"","8/2/2023 3:31:24 AM",NA,NA
+"241","COMPASS: Synoptic","CB","GWI","TR","C",10,"GWI_202307_TR_LysC_10cm",2023,7,20,NA,NA,47.74,3974.68986762135,"",1.219,87.0297786059529,"","8/2/2023 3:58:11 AM",NA,NA
+"242","COMPASS: Synoptic","CB","GWI","TR","C",20,"GWI_202307_TR_LysC_20cm",2023,7,20,NA,NA,39.38,3278.66122720839,"",1.035,73.8932082503373,"","8/2/2023 4:23:32 AM",NA,NA
+"243","COMPASS: Synoptic","CB","GCW","WC","A",10,"GCW_202307_WC_LysA_10cm",2023,7,11,NA,NA,15.84,1318.79110815086,"",0.5605,40.0165635017527,"","7/31/2023 11:52:09 AM",NA,NA
+"244","COMPASS: Synoptic","CB","GCW","WC","A",20,"GCW_202307_WC_LysA_20cm",2023,7,11,NA,NA,14.27,1188.07759553742,"",0.8588,61.3135142467533,"","7/31/2023 12:20:22 PM",NA,NA
+"245","COMPASS: Synoptic","CB","GCW","WC","A",45,"GCW_202307_WC_LysA_45cm",2023,7,11,NA,NA,50.18,4177.8369827658,"",2.667,190.408875752318,"","7/31/2023 1:54:22 PM",NA,NA
+"246","COMPASS: Synoptic","CB","GCW","WC","B",10,"GCW_202307_WC_LysB_10cm",2023,7,11,NA,NA,15.59,1297.97685455,"",4.855,346.619831937573,"value above cal curve","7/31/2023 2:18:59 PM",NA,NA
+"247","COMPASS: Synoptic","CB","GCW","WC","B",20,"GCW_202307_WC_LysB_20cm",2023,7,11,NA,NA,11.46,954.125385063692,"",1.215,86.7442009895264,"","7/31/2023 2:45:57 PM",NA,NA
+"248","COMPASS: Synoptic","CB","GCW","WC","B",45,"GCW_202307_WC_LysB_45cm",2023,7,11,NA,NA,11.27,938.306552327034,"",1.074,76.677590010495,"","7/31/2023 3:09:16 PM",NA,NA
+"249","COMPASS: Synoptic","CB","GCW","WC","C",10,"GCW_202307_WC_LysC_10cm",2023,7,11,NA,NA,14.08,1172.25876280077,"",3.78,269.870847522971,"value above cal curve","7/31/2023 3:35:02 PM",NA,NA
+"250","COMPASS: Synoptic","CB","GCW","WC","C",20,"GCW_202307_WC_LysC_20cm",2023,7,11,NA,NA,9.149,761.718424777287,"",0.7532,53.7742651730957,"","7/31/2023 3:55:57 PM",NA,NA
+"251","COMPASS: Synoptic","CB","GCW","WC","C",45,"GCW_202307_WC_LysC_45cm",2023,7,11,NA,NA,6.621,551.244692365332,"",0.4433,31.6491393404585,"","7/31/2023 4:20:20 PM",NA,NA
+"252","COMPASS: Synoptic","CB","MSM","WC","A",10,"MSM_202307_WC_LysA_10cm",2023,7,13,NA,NA,14.03,1168.09591208059,"",0.8394,59.9284628070852,"","8/1/2023 1:53:36 AM",NA,NA
+"253","COMPASS: Synoptic","CB","MSM","WC","A",20,"MSM_202307_WC_LysA_20cm",2023,7,13,NA,NA,14.86,1237.19923403547,"",1.052,75.1069131201496,"","8/1/2023 2:20:29 AM",NA,NA
+"254","COMPASS: Synoptic","CB","MSM","WC","A",45,"MSM_202307_WC_LysA_45cm",2023,7,13,NA,NA,85.19,7092.66505703106,"",2.029,144.859245932304,"","8/1/2023 2:48:02 AM",NA,NA
+"255","COMPASS: Synoptic","CB","MSM","WC","B",10,"MSM_202307_WC_LysB_10cm",2023,7,13,NA,NA,25.55,2127.21671800849,"",1.495,106.734634139376,"","8/1/2023 3:14:59 AM",NA,NA
+"256","COMPASS: Synoptic","CB","MSM","WC","B",20,"MSM_202307_WC_LysB_20cm",2023,7,13,NA,NA,24.99,2080.59278994255,"",1.427,101.879814660127,"","8/1/2023 3:42:07 AM",NA,NA
+"257","COMPASS: Synoptic","CB","MSM","WC","C",10,"MSM_202307_WC_LysC_10cm",2023,7,13,NA,NA,18.99,1581.05070352177,"",2.26,161.35135328093,"","8/1/2023 4:03:28 AM",NA,NA
+"258","COMPASS: Synoptic","CB","MSM","WC","C",20,"MSM_202307_WC_LysC_20cm",2023,7,13,NA,NA,35.23,2933.14461743402,"",3.443,245.810933339045,"value above cal curve","8/1/2023 4:30:06 AM",NA,NA
+"259","COMPASS: Synoptic","CB","SWH","WC","B",10,"SWH_202307_WC_LysB_10cm",2023,7,19,NA,NA,13.25,1103.15544084589,"",1.181,84.3167912499018,"","8/1/2023 7:13:01 PM",NA,NA
+"260","COMPASS: Synoptic","CB","SWH","WC","C",10,"SWH_202307_WC_LysC_10cm",2023,7,19,NA,NA,11.36,945.799683623345,"",0.5132,36.6396081875103,"","8/1/2023 7:38:35 PM",NA,NA
+"261","COMPASS: Synoptic","CB","SWH","WC","C",45,"SWH_202307_WC_LysC_45cm",2023,7,19,NA,NA,9.535,793.855632337024,"",0.43,30.6995937658406,"","8/1/2023 8:22:14 PM",NA,NA
+"262","COMPASS: Synoptic","CB","GWI","WC","A",10,"GWI_202307_WC_LysA_10cm",2023,7,20,NA,NA,77.7,6469.07001914911,"",2.772,197.905288183512,"","8/2/2023 4:45:37 AM",NA,NA
+"263","COMPASS: Synoptic","CB","GWI","WC","A",20,"GWI_202307_WC_LysA_20cm",2023,7,20,NA,NA,72.12,6004.49587877779,"",2.245,160.280437219331,"","8/2/2023 6:12:13 AM",NA,NA
+"264","COMPASS: Synoptic","CB","GWI","WC","A",45,"GWI_202307_WC_LysA_45cm",2023,7,20,NA,NA,45.89,3820.66439097494,"",1.595,113.874074550037,"","8/2/2023 6:30:36 AM",NA,NA
+"265","COMPASS: Synoptic","CB","GWI","WC","B",10,"GWI_202307_WC_LysB_10cm",2023,7,20,NA,NA,82.69,6884.5225210224,"",2.906,207.472138333797,"","8/2/2023 6:49:24 AM",NA,NA
+"266","COMPASS: Synoptic","CB","GWI","WC","B",20,"GWI_202307_WC_LysB_20cm",2023,7,20,NA,NA,67.84,5648.15585713096,"",2.187,156.139561781148,"","8/2/2023 7:07:43 AM",NA,NA
+"267","COMPASS: Synoptic","CB","GWI","WC","B",45,"GWI_202307_WC_LysB_45cm",2023,7,20,NA,NA,67.83,5647.32328698693,"",1.958,139.790243240735,"","8/2/2023 7:26:10 AM",NA,NA
+"268","COMPASS: Synoptic","CB","GWI","WC","C",10,"GWI_202307_WC_LysC_10cm",2023,7,20,NA,NA,89.08,7416.53484306053,"",3.05,217.752932525149,"value above cal curve","8/2/2023 7:52:37 AM",NA,NA
+"269","COMPASS: Synoptic","CB","GWI","WC","C",20,"GWI_202307_WC_LysC_20cm",2023,7,20,NA,NA,98.74,8220.79760219799,"",2.851,203.545446107934,"","8/2/2023 8:14:44 AM",NA,NA
+"270","COMPASS: Synoptic","CB","GCW","SW","A",0,"GCW_202307_SW_A",2023,7,11,NA,NA,8.815,733.910581966531,"",0.9115,65.0759993431715,"","7/31/2023 4:43:10 PM",NA,NA
+"271","COMPASS: Synoptic","CB","GCW","SW","B",0,"GCW_202307_SW_B",2023,7,11,NA,NA,6.345,528.265756389976,"",0.4568,32.6129637958977,"","7/31/2023 6:45:23 PM",NA,NA
+"272","COMPASS: Synoptic","CB","GCW","SW","C",0,"GCW_202307_SW_C",2023,7,11,NA,NA,6.311,525.435017900258,"",0.4695,33.5196727280516,"","7/31/2023 7:09:45 PM",NA,NA
+"273","COMPASS: Synoptic","CB","MSM","SW","A",0,"MSM_202307_SW_A",2023,7,13,NA,NA,6.753,562.234618266589,"",0.5344,38.1531695545703,"","8/1/2023 4:49:45 AM",NA,NA
+"274","COMPASS: Synoptic","CB","MSM","SW","B",0,"MSM_202307_SW_B",2023,7,13,NA,NA,6.82,567.812838231621,"",0.5078,36.2540784053346,"","8/1/2023 5:13:49 AM",NA,NA
+"275","COMPASS: Synoptic","CB","MSM","SW","C",0,"MSM_202307_SW_C",2023,7,13,NA,NA,6.76,562.817417367413,"",0.5577,39.8166591702542,"","8/1/2023 6:46:11 AM",NA,NA
+"276","COMPASS: Synoptic","CB","SWH","SW","A",0,"SWH_202307_SW_A",2023,7,19,NA,NA,5.947,495.129464657397,"",0.3093,22.0822891901733,"","8/1/2023 9:28:30 PM",NA,NA
+"277","COMPASS: Synoptic","CB","SWH","SW","B",0,"SWH_202307_SW_B",2023,7,19,NA,NA,5.746,478.394804762301,"",0.3358,23.9742408989983,"","8/1/2023 9:52:31 PM",NA,NA
+"278","COMPASS: Synoptic","CB","SWH","SW","C",0,"SWH_202307_SW_C",2023,7,19,NA,NA,5.843,486.470735159437,"",0.3322,23.7172210442146,"","8/1/2023 10:12:03 PM",NA,NA
+"279","COMPASS: Synoptic","CB","GWI","SW","A",0,"GWI_202307_SW_A",2023,7,20,NA,NA,4.169,347.098493048039,"",0.3504,25.0165991989548,"","8/2/2023 8:37:40 AM",NA,NA
+"280","COMPASS: Synoptic","CB","GWI","SW","B",0,"GWI_202307_SW_B",2023,7,20,NA,NA,3.937,327.782865706436,"",0.37,26.4159295194443,"","8/2/2023 9:02:07 AM",NA,NA
+"281","COMPASS: Synoptic","CB","GWI","SW","C",0,"GWI_202307_SW_C",2023,7,20,NA,NA,4.217,351.094829739406,"",0.3878,27.6867499125419,"","8/2/2023 9:24:45 AM",NA,NA
+"282","COMPASS: Synoptic","CB","SWH","UP","A",10,"SWH_202307_UP_LysA_10cm",2023,7,19,NA,NA,24.83,2067.271667638,"",0.9826,70.1521414751512,"","8/1/2023 7:12:46 AM",NA,NA
+"283","COMPASS: Synoptic","CB","SWH","UP","A",20,"SWH_202307_UP_LysA_20cm",2023,7,19,NA,NA,62.1,5170.26059445508,"",1.781,127.153433713865,"","8/1/2023 7:38:32 AM",NA,NA
+"284","COMPASS: Synoptic","CB","SWH","UP","A",45,"SWH_202307_UP_LysA_45cm",2023,7,19,NA,NA,98.18,8174.17367413205,"",2.005,143.145780233745,"","8/1/2023 8:02:26 AM",NA,NA
+"285","COMPASS: Synoptic","CB","SWH","UP","B",10,"SWH_202307_UP_LysB_10cm",2023,7,19,NA,NA,66.12,5504.95379235701,"",2.058,146.929683651395,"","8/1/2023 8:24:33 AM",NA,NA
+"286","COMPASS: Synoptic","CB","SWH","UP","B",20,"SWH_202307_UP_LysB_20cm",2023,7,19,NA,NA,68.51,5703.93805678128,"",1.885,134.578451740953,"","8/1/2023 8:51:44 AM",NA,NA
+"287","COMPASS: Synoptic","CB","SWH","UP","B",45,"SWH_202307_UP_LysB_45cm",2023,7,19,NA,NA,80.35,6689.70110731829,"",2.038,145.501795569263,"","8/1/2023 9:13:57 AM",NA,NA
+"288","COMPASS: Synoptic","CB","SWH","UP","C",10,"SWH_202307_UP_LysC_10cm",2023,7,19,NA,NA,23.53,1959.0375489135,"",0.7453,53.2102493806535,"","8/1/2023 9:31:45 AM",NA,NA
+"289","COMPASS: Synoptic","CB","SWH","UP","C",20,"SWH_202307_UP_LysC_20cm",2023,7,19,NA,NA,55.24,4599.11747564732,"",1.536,109.661804707747,"","8/1/2023 9:58:31 AM",NA,NA
+"290","COMPASS: Synoptic","CB","SWH","UP","C",45,"SWH_202307_UP_LysC_45cm",2023,7,19,NA,NA,71.68,5967.86279244026,"",1.901,135.720762206658,"","8/1/2023 10:20:23 AM",NA,NA
+"291","COMPASS: Synoptic","CB","MSM","UP","B",10,"202308_MSM_UP_LysB_10cm",2023,8,17,NA,NA,32.22,2682.54100407959,"",0.7694,54.9308545196227,"","9/2/2023 8:17:35 AM",NA,NA
+"292","COMPASS: Synoptic","CB","MSM","UP","B",20,"202308_MSM_UP_LysB_20cm",2023,8,17,NA,NA,24.39,2030.63858130047,"",1.783,127.296222522079,"","9/2/2023 8:42:06 AM",NA,NA
+"293","COMPASS: Synoptic","CB","MSM","UP","B",45,"202308_MSM_UP_LysB_45cm",2023,8,17,NA,NA,24.96,2078.09507951045,"",1.75,124.940207186561,"","9/2/2023 9:08:28 AM",NA,NA
+"294","COMPASS: Synoptic","CB","MSM","UP","C",10,"202308_MSM_UP_LysC_10cm",2023,8,17,NA,NA,42.87,3569.22820747648,"",1.125,80.3187046199319,"","9/2/2023 9:34:14 AM",NA,NA
+"295","COMPASS: Synoptic","CB","MSM","UP","C",20,"202308_MSM_UP_LysC_20cm",2023,8,17,NA,NA,35.41,2948.13088002664,"",2.929,209.114209628249,"","9/2/2023 11:04:12 AM",NA,NA
+"296","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"202308_SWH_SWAMP_LysA_10cm",2023,8,23,NA,NA,9.022,751.144783948048,"",0.9562,68.2673292067368,"","9/3/2023 12:08:57 AM",NA,NA
+"297","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"202308_SWH_SWAMP_LysA_20cm",2023,8,23,NA,NA,9.002,749.479643659979,"",1.812,129.36666024117,"","9/3/2023 12:19:03 AM",NA,NA
+"298","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"202308_SWH_SWAMP_LysA_45cm",2023,8,23,NA,NA,10.55,878.36150195654,"",1.72,122.798375063363,"","9/3/2023 3:00:00 AM",NA,NA
+"299","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"202308_SWH_SWAMP_LysB_10cm",2023,8,23,NA,NA,12.32,1025.72641745067,"",1.456,103.950252379219,"","9/3/2023 3:20:47 AM",NA,NA
+"300","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"202308_SWH_SWAMP_LysB_20cm",2023,8,23,NA,NA,18.42,1533.5942053118,"",1.831,130.723153919196,"","9/3/2023 3:38:14 AM",NA,NA
+"301","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"202308_SWH_SWAMP_LysB_45cm",2023,8,23,NA,NA,6.641,552.909832653401,"",1.031,73.6076306339109,"","9/3/2023 4:02:54 AM",NA,NA
+"302","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"202308_SWH_SWAMP_LysC_20cm",2023,8,23,NA,NA,8.416,700.691033219549,"",0.9859,70.387743008703,"","9/3/2023 5:22:04 AM",NA,NA
+"303","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"202308_SWH_SWAMP_LysC_45cm",2023,8,23,NA,NA,12.65,1053.20123220381,"",1.497,106.877422947589,"","9/3/2023 5:47:55 AM",NA,NA
+"304","COMPASS: Synoptic","CB","GWI","UP","A",20,"202308_GWI_UP_LysA_20cm",2023,8,24,NA,NA,28.93,2408.6254266922,"",0.8969,64.033641043215,"","9/3/2023 12:42:33 PM",NA,NA
+"305","COMPASS: Synoptic","CB","GWI","UP","A",45,"202308_GWI_UP_LysA_45cm",2023,8,24,NA,NA,18.01,1499.45882940638,"",0.713,50.9042101280102,"","9/3/2023 1:07:20 PM",NA,NA
+"306","COMPASS: Synoptic","CB","GWI","UP","B",10,"202308_GWI_UP_LysB_10cm",2023,8,24,NA,NA,28.75,2393.63916409958,"",0.9153,65.3472980787766,"","9/3/2023 1:32:28 PM",NA,NA
+"307","COMPASS: Synoptic","CB","GWI","UP","B",20,"202308_GWI_UP_LysB_20cm",2023,8,24,NA,NA,53.86,4484.22279577054,"",1.443,103.022125125833,"","9/3/2023 1:59:38 PM",NA,NA
+"308","COMPASS: Synoptic","CB","GWI","UP","C",10,"202308_GWI_UP_LysC_10cm",2023,8,24,NA,NA,48.74,4057.94688202481,"",1.473,105.163957249031,"","9/3/2023 3:25:24 PM",NA,NA
+"309","COMPASS: Synoptic","CB","GWI","UP","C",20,"202308_GWI_UP_LysC_20cm",2023,8,24,NA,NA,115.8,9641.16226792107,"value above cal curve",3.056,218.181298949788,"value above cal curve","9/3/2023 3:53:35 PM",NA,NA
+"310","COMPASS: Synoptic","CB","GCW","TR","A",20,"202308_GCW_TR_LysA_20cm",2023,8,15,NA,NA,52.45,4366.83040546166,"",2.412,172.203302705134,"","9/2/2023 12:52:17 AM",NA,NA
+"311","COMPASS: Synoptic","CB","GCW","TR","B",10,"202308_GCW_TR_LysB_10cm",2023,8,15,NA,NA,4.747,395.221047373241,"",0.3571,25.494941706469,"","9/2/2023 1:17:30 AM",NA,NA
+"312","COMPASS: Synoptic","CB","GCW","TR","B",20,"202308_GCW_TR_LysB_20cm",2023,8,15,NA,NA,15.16,1262.17633835651,"",1.739,124.154868741388,"","9/2/2023 1:42:02 AM",NA,NA
+"313","COMPASS: Synoptic","CB","GCW","TR","C",10,"202308_GCW_TR_LysC_10cm",2023,8,15,NA,NA,21.4,1781.70010823412,"",0.5961,42.5582042879479,"","9/2/2023 2:08:49 AM",NA,NA
+"314","COMPASS: Synoptic","CB","MSM","TR","A",10,"202308_MSM_TR_LysA_10cm",2023,8,17,NA,NA,26.33,2192.15718924319,"",1.536,109.661804707747,"","9/2/2023 11:29:07 AM",NA,NA
+"315","COMPASS: Synoptic","CB","MSM","TR","A",20,"202308_MSM_TR_LysA_20cm",2023,8,17,NA,NA,30.65,2551.82749146616,"",3.137,223.964245682423,"value above cal curve","9/2/2023 11:54:40 AM",NA,NA
+"316","COMPASS: Synoptic","CB","MSM","TR","B",10,"202308_MSM_TR_LysB_10cm",2023,8,17,NA,NA,31.61,2631.75422529348,"",2.73,194.906723211035,"","9/2/2023 12:12:00 PM",NA,NA
+"317","COMPASS: Synoptic","CB","MSM","TR","B",20,"202308_MSM_TR_LysB_20cm",2023,8,17,NA,NA,28.23,2350.34551660977,"",3.899,278.366781611657,"value above cal curve","9/2/2023 12:29:32 PM",NA,NA
+"318","COMPASS: Synoptic","CB","MSM","TR","B",45,"202308_MSM_TR_LysB_45cm",2023,8,17,NA,NA,17.47,1454.50004162851,"",1.919,137.005861480577,"","9/2/2023 12:47:05 PM",NA,NA
+"319","COMPASS: Synoptic","CB","MSM","TR","C",10,"202308_MSM_TR_LysC_10cm",2023,8,17,NA,NA,46.59,3878.94430105737,"",3.199,228.390698737033,"value above cal curve","9/2/2023 1:05:39 PM",NA,NA
+"320","COMPASS: Synoptic","CB","MSM","TR","C",20,"202308_MSM_TR_LysC_20cm",2023,8,17,NA,NA,45.96,3826.49238198318,"",3.393,242.241213133715,"value above cal curve","9/2/2023 2:32:26 PM",NA,NA
+"321","COMPASS: Synoptic","CB","MSM","TR","C",45,"202308_MSM_TR_LysC_45cm",2023,8,17,NA,NA,35,2913.99550412122,"",2.83,202.046163621695,"","9/2/2023 2:49:56 PM",NA,NA
+"322","COMPASS: Synoptic","CB","SWH","TR","A",10,"202308_SWH_TR_LysA_10cm",2023,8,23,NA,NA,24.35,2027.30830072434,"",1.573,112.303397659691,"","9/3/2023 6:14:39 AM",NA,NA
+"323","COMPASS: Synoptic","CB","SWH","TR","A",20,"202308_SWH_TR_LysA_20cm",2023,8,23,NA,NA,15.2,1265.50661893265,"",5.518,393.954321860253,"value above cal curve","9/3/2023 6:31:13 AM",NA,NA
+"324","COMPASS: Synoptic","CB","SWH","TR","A",45,"202308_SWH_TR_LysA_45cm",2023,8,23,NA,NA,12.56,1045.7081009075,"",4.924,351.546045820929,"value above cal curve","9/3/2023 6:48:27 AM",NA,NA
+"325","COMPASS: Synoptic","CB","SWH","TR","B",10,"202308_SWH_TR_LysB_10cm",2023,8,23,NA,NA,11.31,941.636832903172,"",1.075,76.7489844146016,"","9/3/2023 7:13:59 AM",NA,NA
+"326","COMPASS: Synoptic","CB","SWH","TR","B",20,"202308_SWH_TR_LysB_20cm",2023,8,23,NA,NA,17.25,1436.18349845975,"",3.449,246.239299763684,"value above cal curve","9/3/2023 7:35:06 AM",NA,NA
+"327","COMPASS: Synoptic","CB","SWH","TR","B",45,"202308_SWH_TR_LysB_45cm",2023,8,23,NA,NA,18.1,1506.95196070269,"",5.45,389.099502381003,"value above cal curve","9/3/2023 7:52:48 AM",NA,NA
+"328","COMPASS: Synoptic","CB","SWH","TR","C",10,"202308_SWH_TR_LysC_10cm",2023,8,23,NA,NA,10.78,897.510615269336,"",0.86,61.3991875316813,"","9/3/2023 8:17:13 AM",NA,NA
+"329","COMPASS: Synoptic","CB","SWH","TR","C",20,"202308_SWH_TR_LysC_20cm",2023,8,23,NA,NA,14.58,1213.8872700025,"",2.165,154.568884890802,"","9/3/2023 8:37:47 AM",NA,NA
+"330","COMPASS: Synoptic","CB","SWH","TR","C",45,"202308_SWH_TR_LysC_45cm",2023,8,23,NA,NA,16.14,1343.7682124719,"",3.342,238.600098524278,"value above cal curve","9/3/2023 9:57:49 AM",NA,NA
+"331","COMPASS: Synoptic","CB","GWI","TR","A",10,"202308_GWI_TR_LysA_10cm",2023,8,24,NA,NA,71.02,5912.91316293398,"",2.248,160.494620431651,"","9/3/2023 4:20:43 PM",NA,NA
+"332","COMPASS: Synoptic","CB","GWI","TR","A",20,"202308_GWI_TR_LysA_20cm",2023,8,24,NA,NA,93.4,7776.20514528349,"",2.523,180.128081560967,"","9/3/2023 4:46:08 PM",NA,NA
+"333","COMPASS: Synoptic","CB","GWI","TR","B",10,"202308_GWI_TR_LysB_10cm",2023,8,24,NA,NA,37.51,3122.97061027392,"",1.293,92.3129645098417,"","9/3/2023 5:04:02 PM",NA,NA
+"334","COMPASS: Synoptic","CB","GWI","TR","B",20,"202308_GWI_TR_LysB_20cm",2023,8,24,NA,NA,78.52,6537.34077095995,"",2.897,206.829588696838,"","9/3/2023 5:22:34 PM",NA,NA
+"335","COMPASS: Synoptic","CB","GWI","TR","B",45,"202308_GWI_TR_LysB_45cm",2023,8,24,NA,NA,35.5,2955.62401132295,"",1.231,87.8865114552322,"","9/3/2023 5:48:29 PM",NA,NA
+"336","COMPASS: Synoptic","CB","GWI","TR","C",10,"202308_GWI_TR_LysC_10cm",2023,8,24,NA,NA,43.33,3607.52643410207,"",1.629,116.301484289661,"","9/3/2023 6:15:24 PM",NA,NA
+"337","COMPASS: Synoptic","CB","GWI","TR","C",20,"202308_GWI_TR_LysC_20cm",2023,8,24,NA,NA,39.32,3273.66580634418,"",1.311,93.5980637837606,"","9/3/2023 6:42:37 PM",NA,NA
+"338","COMPASS: Synoptic","CB","GCW","WC","A",10,"202308_GCW_WC_LysA_10cm",2023,8,15,NA,NA,17.36,1445.34177004413,"",1.319,94.1692190166135,"","9/2/2023 2:29:56 AM",NA,NA
+"339","COMPASS: Synoptic","CB","GCW","WC","A",20,"202308_GCW_WC_LysA_20cm",2023,8,15,NA,NA,15.3,1273.83232037299,"",1.399,99.880771345142,"","9/2/2023 2:47:00 AM",NA,NA
+"340","COMPASS: Synoptic","CB","GCW","WC","A",45,"202308_GCW_WC_LysA_45cm",2023,8,15,NA,NA,15.77,1312.96311714262,"",3.884,277.295865550058,"value above cal curve","9/2/2023 3:08:14 AM",NA,NA
+"341","COMPASS: Synoptic","CB","GCW","WC","B",10,"202308_GCW_WC_LysB_10cm",2023,8,15,NA,NA,31.24,2600.9491299642,"",3.37,240.599141839263,"value above cal curve","9/2/2023 3:33:33 AM",NA,NA
+"342","COMPASS: Synoptic","CB","GCW","WC","B",20,"202308_GCW_WC_LysB_20cm",2023,8,15,NA,NA,13.64,1135.62567646324,"",1.651,117.872161180007,"","9/2/2023 3:54:44 AM",NA,NA
+"343","COMPASS: Synoptic","CB","GCW","WC","B",45,"202308_GCW_WC_LysB_45cm",2023,8,15,NA,NA,14.02,1167.26334193656,"",3.524,251.59388007168,"value above cal curve","9/2/2023 4:20:18 AM",NA,NA
+"344","COMPASS: Synoptic","CB","GCW","WC","C",10,"202308_GCW_WC_LysC_10cm",2023,8,15,NA,NA,6.596,549.163267005245,"",0.948,67.6818950930626,"","9/2/2023 4:43:44 AM",NA,NA
+"345","COMPASS: Synoptic","CB","GCW","WC","C",20,"202308_GCW_WC_LysC_20cm",2023,8,15,NA,NA,7.419,617.683789859296,"",0.6336,45.2354944419456,"","9/2/2023 6:11:47 AM",NA,NA
+"346","COMPASS: Synoptic","CB","GCW","WC","C",45,"202308_GCW_WC_LysC_45cm",2023,8,15,NA,NA,9.075,755.557405711431,"",1.171,83.6028472088358,"","9/2/2023 6:36:09 AM",NA,NA
+"347","COMPASS: Synoptic","CB","MSM","WC","A",10,"202308_MSM_WC_LysA_10cm",2023,8,17,NA,NA,14.14,1177.25418366497,"",1.074,76.677590010495,"","9/2/2023 3:15:13 PM",NA,NA
+"348","COMPASS: Synoptic","CB","MSM","WC","A",20,"202308_MSM_WC_LysA_20cm",2023,8,17,NA,NA,16.4,1365.4150362168,"",1.622,115.801723460915,"","9/2/2023 3:41:53 PM",NA,NA
+"349","COMPASS: Synoptic","CB","MSM","WC","A",45,"202308_MSM_WC_LysA_45cm",2023,8,17,NA,NA,86.12,7170.09408042628,"",2.493,177.986249437769,"","9/2/2023 5:12:16 PM",NA,NA
+"350","COMPASS: Synoptic","CB","MSM","WC","B",10,"202308_MSM_WC_LysB_10cm",2023,8,17,NA,NA,15.02,1250.52035634002,"",1.589,113.445708125397,"","9/2/2023 5:35:56 PM",NA,NA
+"351","COMPASS: Synoptic","CB","MSM","WC","C",10,"202308_MSM_WC_LysC_10cm",2023,8,17,NA,NA,22.64,1884.93880609441,"",3.993,285.077855597678,"value above cal curve","9/2/2023 5:57:13 PM",NA,NA
+"352","COMPASS: Synoptic","CB","MSM","WC","C",20,"202308_MSM_WC_LysC_20cm",2023,8,17,NA,NA,34.85,2901.5069519607,"",4.291,306.353388021447,"value above cal curve","9/2/2023 6:22:57 PM",NA,NA
+"353","COMPASS: Synoptic","CB","SWH","WC","B",10,"202308_SWH_WC_LysB_10cm",2023,8,23,NA,NA,10.54,877.528931812505,"",0.553,39.4811054709532,"","9/3/2023 10:22:29 AM",NA,NA
+"354","COMPASS: Synoptic","CB","SWH","WC","C",10,"202308_SWH_WC_LysC_10cm",2023,8,23,NA,NA,7.805,649.820997419033,"",0.4812,34.3549872560989,"","9/3/2023 10:48:45 AM",NA,NA
+"355","COMPASS: Synoptic","CB","SWH","WC","C",45,"202308_SWH_WC_LysC_45cm",2023,8,23,NA,NA,7.477,622.512696694697,"",0.3556,25.3878501003091,"","9/3/2023 11:12:27 AM",NA,NA
+"356","COMPASS: Synoptic","CB","GWI","WC","A",10,"202308_GWI_WC_LysA_10cm",2023,8,24,NA,NA,18.62,1550.24560819249,"",1.103,78.7480277295866,"","9/3/2023 7:03:16 PM",NA,NA
+"357","COMPASS: Synoptic","CB","GWI","WC","A",20,"202308_GWI_WC_LysA_20cm",2023,8,24,NA,NA,63.09,5252.68503871451,"",2.361,168.562188095697,"","9/3/2023 8:23:21 PM",NA,NA
+"358","COMPASS: Synoptic","CB","GWI","WC","A",45,"202308_GWI_WC_LysA_45cm",2023,8,24,NA,NA,40.06,3335.27599700275,"",1.654,118.086344392327,"","9/3/2023 8:49:20 PM",NA,NA
+"359","COMPASS: Synoptic","CB","GWI","WC","B",10,"202308_GWI_WC_LysB_10cm",2023,8,24,NA,NA,23.4,1948.21413704105,"",1.282,91.527626064669,"","9/3/2023 9:09:39 PM",NA,NA
+"360","COMPASS: Synoptic","CB","GWI","WC","B",20,"202308_GWI_WC_LysB_20cm",2023,8,24,NA,NA,46.6,3879.7768712014,"",1.923,137.291439097004,"","9/3/2023 9:28:04 PM",NA,NA
+"361","COMPASS: Synoptic","CB","GWI","WC","B",45,"202308_GWI_WC_LysB_45cm",2023,8,24,NA,NA,60.83,5064.52418616268,"",2.111,150.713587069046,"","9/3/2023 9:54:22 PM",NA,NA
+"362","COMPASS: Synoptic","CB","GWI","WC","C",10,"202308_GWI_WC_LysC_10cm",2023,8,24,NA,NA,32.01,2665.05703105487,"",1.457,104.021646783325,"","9/3/2023 10:21:23 PM",NA,NA
+"363","COMPASS: Synoptic","CB","GWI","WC","C",20,"202308_GWI_WC_LysC_20cm",2023,8,24,NA,NA,64.04,5331.7792023978,"",2.267,161.851114109676,"","9/3/2023 10:39:35 PM",NA,NA
+"364","COMPASS: Synoptic","CB","GCW","SW","A",0,"202308_GCW_SW_A",2023,8,15,NA,NA,5.169,430.355507451503,"",0.5282,37.7105242491094,"","9/2/2023 7:00:57 AM",NA,NA
+"365","COMPASS: Synoptic","CB","GCW","SW","B",0,"202308_GCW_SW_B",2023,8,15,NA,NA,5.216,434.268587128466,"",0.5446,38.8813924764577,"","9/2/2023 7:25:53 AM",NA,NA
+"366","COMPASS: Synoptic","CB","GCW","SW","C",0,"202308_GCW_SW_C",2023,8,15,NA,NA,5.259,437.848638747815,"",0.5754,41.0803401229412,"","9/2/2023 7:51:07 AM",NA,NA
+"367","COMPASS: Synoptic","CB","MSM","SW","A",0,"202308_MSM_SW_A",2023,8,17,NA,NA,6.585,548.247439846807,"",0.6158,43.964674048848,"","9/2/2023 6:49:05 PM",NA,NA
+"368","COMPASS: Synoptic","CB","MSM","SW","B",0,"202308_MSM_SW_B",2023,8,17,NA,NA,6.598,549.329781034052,"",0.726,51.832337381396,"","9/2/2023 7:14:12 PM",NA,NA
+"369","COMPASS: Synoptic","CB","MSM","SW","C",0,"202308_MSM_SW_C",2023,8,17,NA,NA,6.657,554.241944883856,"",0.7616,54.3739781675912,"","9/2/2023 7:39:05 PM",NA,NA
+"370","COMPASS: Synoptic","CB","SWH","SW","A",0,"202308_SWH_SW_A",2023,8,23,NA,NA,6.076,505.869619515444,"",0.404,28.8433392590689,"","9/3/2023 11:37:11 AM",NA,NA
+"371","COMPASS: Synoptic","CB","SWH","SW","B",0,"202308_SWH_SW_B",2023,8,23,NA,NA,6.008,500.208142536009,"",0.3808,27.1869890837956,"","9/3/2023 11:52:59 AM",NA,NA
+"372","COMPASS: Synoptic","CB","SWH","SW","C",0,"202308_SWH_SW_C",2023,8,23,NA,NA,6.029,501.956539838481,"",0.3897,27.8223992803444,"","9/3/2023 12:17:22 PM",NA,NA
+"373","COMPASS: Synoptic","CB","GWI","SW","A",0,"202308_GWI_SW_A",2023,8,24,NA,NA,4.45,370.493714095413,"",0.4838,34.540612706776,"","9/3/2023 11:05:52 PM",NA,NA
+"374","COMPASS: Synoptic","CB","GWI","SW","B",0,"202308_GWI_SW_B",2023,8,24,NA,NA,4.093,340.770959953376,"",0.4626,33.027051339716,"","9/3/2023 11:28:50 PM",NA,NA
+"375","COMPASS: Synoptic","CB","GWI","SW","C",0,"202308_GWI_SW_C",2023,8,24,NA,NA,3.756,312.713346099409,"",0.3789,27.0513397159931,"","9/3/2023 11:48:08 PM",NA,NA
+"376","COMPASS: Synoptic","CB","SWH","UP","A",10,"202308_SWH_UP_LysA_10cm",2023,8,23,NA,NA,9.423,784.530846723837,"",0.5419,38.6886275853699,"","9/2/2023 7:55:33 PM",NA,NA
+"377","COMPASS: Synoptic","CB","SWH","UP","A",20,"202308_SWH_UP_LysA_20cm",2023,8,23,NA,NA,9.206,766.464074598285,"",0.5203,37.1465084566672,"","9/2/2023 8:11:59 PM",NA,NA
+"378","COMPASS: Synoptic","CB","SWH","UP","A",45,"202308_SWH_UP_LysA_45cm",2023,8,23,NA,NA,40.87,3402.71417866955,"",1.285,91.7418092769889,"","9/2/2023 8:30:15 PM",NA,NA
+"379","COMPASS: Synoptic","CB","SWH","UP","B",10,"202308_SWH_UP_LysB_10cm",2023,8,23,NA,NA,30.7,2555.99034218633,"",1.531,109.304832687214,"","9/2/2023 10:07:43 PM",NA,NA
+"380","COMPASS: Synoptic","CB","SWH","UP","B",20,"202308_SWH_UP_LysB_20cm",2023,8,23,NA,NA,13.74,1143.95137790359,"",0.7489,53.4672692354373,"","9/2/2023 10:33:35 PM",NA,NA
+"381","COMPASS: Synoptic","CB","SWH","UP","B",45,"202308_SWH_UP_LysB_45cm",2023,8,23,NA,NA,71.58,5959.53709099992,"",2.048,146.215739610329,"","9/2/2023 11:00:36 PM",NA,NA
+"382","COMPASS: Synoptic","CB","SWH","UP","C",20,"202308_SWH_UP_LysC_20cm",2023,8,23,NA,NA,21.37,1779.20239780201,"",0.8887,63.4482069295409,"","9/2/2023 11:25:13 PM",NA,NA
+"383","COMPASS: Synoptic","CB","SWH","UP","C",45,"202308_SWH_UP_LysC_45cm",2023,8,23,NA,NA,53.54,4457.58055116144,"",1.525,108.876466262574,"","9/2/2023 11:52:43 PM",NA,NA

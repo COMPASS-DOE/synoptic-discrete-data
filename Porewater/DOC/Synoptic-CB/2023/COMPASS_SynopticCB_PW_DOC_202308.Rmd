@@ -112,7 +112,8 @@ metadata <- raw_metadata %>%
     `Transect.Location` == "Transition" ~ "TR",
     `Transect.Location` == "Wetland"    ~ "WC",
     `Transect.Location` == "Upland"     ~ "UP",   
-    `Transect.Location` == "Surface Water" ~ "SW",
+    `Transect.Location` == "Surface Water" ~ "SW",   
+    `Transect.Location` == "UPCON" ~ "UPCON", 
     TRUE                 ~ `Transect.Location`    # keep original value if no match
   ))
 
@@ -569,7 +570,7 @@ colnames(IDs) <- c("Date" , "Site_Code","Zone", "Lysimeter", "Depth", "Excess_In
 dat_flagged_id <- cbind(IDs, dat_flagged)
 
 #Order by Zone from Upland to Surface Water
-dat_flagged_id$Zone = factor(dat_flagged_id$Zone, levels = c("UP",  "SWAMP", "TR", "WC", "SW"))
+dat_flagged_id$Zone = factor(dat_flagged_id$Zone, levels = c("UPCON", "UP", "TR", "WC", "SW"))
 dat_flagged_id <- dat_flagged_id[order(dat_flagged_id$Zone), ]
 
 #group the data for plotting
@@ -705,9 +706,10 @@ final_data <- final_data %>%
 
 head(final_data)
 
+
 #will put final data in processed data folder 
 #Write out data frame 
-  write.csv(final_data, processed_file_name)
+  # write.csv(final_data, processed_file_name)
 
 ```
 
