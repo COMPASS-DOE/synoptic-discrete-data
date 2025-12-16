@@ -1,0 +1,727 @@
+---
+title: "Microplate_FE_Code"
+author: "Stephanie J. Wilson"
+date: "2023-01-10"
+output:
+  word_document: default
+  pdf_document: default
+  html_document: default
+---
+
+## Information
+```{r}
+#######################################################################################
+####### GENX2
+####### Brackish
+####### Data Analysis Code: Porewater iron 
+####### MONTH: 
+##############################################################################################
+
+
+############################# Information ##################################
+#Author: Alia N. Al-Haj
+#Edited: 20241023
+
+#Samples taken from porewater peepers
+#Samples were filtered with 0.2 uM into HCl, kept on ice and then in fridge until analysis
+#Field Protocol: 
+#Samples Analyzed using GENX2 microplate method 
+#Lab Protocol:
+#
+##Edited 20241104 by Melanie Giessner for
+#high Fe curves typos
+#graph read ability
+#correcting the recombination of the high cv and okay data
+```
+
+## Code Set up 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+Date_Run = "20241213"
+Run_by = "Melanie Giessner"
+Project = "COMPASS"
+Top_STD_Fe2_low = 60
+Top_STD_Fe3_low = 60
+
+Top_STD_Fe2_high = 500
+Top_STD_Fe3_high = 100
+
+
+library(ggplot2)
+library(dplyr)
+library(data.table)
+library(matrixStats)
+library(gridExtra)
+library(ggpubr)
+library(grid)
+library(stringr)
+library(raster)
+library(plater)
+#take out of sci notation
+options(scipen = 999)
+setwd("S:/GlobalChangeEco/Porewater_R scripts & Data/Data")
+```
+
+## R Markdown
+
+#notes I don't have a system yet to compare old slopes to current slopes for that day 
+#I don't have a system for eliminating wells if the sd is high - if you think one of your sample wells was off you would need to remove it manually... 
+
+#Files Required: 
+#csv of standards see template
+#csv of samples see template
+
+
+## Read in Standards and subset 
+```{r}
+stds <- read_plate(
+  file = "S:/GlobalChangeEco/Porewater_R scripts & Data/Data/Fe/COMPASS/Synoptic/Tidy Data/20241213_COMPASS_Fe_STD.csv",             # full path to the .csv file
+  well_ids_column = "Wells",    # name to give column of well IDs (optional)
+  sep = ","                     # separator used in the csv file (optional)
+)
+str(stds)
+head(stds)
+
+#subset by FE_2 and FE_Total
+FE_2_stds <- stds %>%  
+  filter(str_detect(stds$IDs, "Fe_2"))  
+head(FE_2_stds)
+
+#subset by FE_2 and FE_Total
+FE_Tot_stds <- stds %>%  
+  filter(str_detect(IDs, "Fe_3"))  
+head(FE_Tot_stds)
+
+#subset Fe3 STD with in their linear range
+FE_Tot_stds_abs1<- FE_Tot_stds
+FE_Tot_stds_high <- FE_Tot_stds[!(FE_Tot_stds$Conc_uM > 100),]
+
+#Subset the low standard curve from all 
+FE_2_stds_low <- FE_2_stds[!(FE_2_stds$Conc_uM > 60),]
+FE_Tot_stds_low <- FE_Tot_stds[!(FE_Tot_stds$Conc_uM > 60),]
+
+#subset Fe2 abs2 to 100um 
+FE_2_stds_high <-FE_2_stds
+FE_2_stds_abs2<-FE_2_stds[!(FE_2_stds$Conc_uM > 100),]
+FE_2_stds_diff<-FE_2_stds_abs2
+
+
+
+```
+
+## Calculate Reduction Efficiency 
+```{r}
+
+#pull out Fe_2 and Fe_3 standards at 60uM to check reduction efficiency
+
+#subset by FE_2 and FE_Total
+FE_2_60uM <- stds %>%  
+  filter(str_detect(stds$IDs, "60 uM Fe_2 A"))  
+head(FE_2_60uM)
+
+#subset by FE_2 and FE_Total
+FE_3_60 <- stds %>%  
+  filter(str_detect(IDs, "60 uM Fe_3 A"))  
+head(FE_3_60)
+
+
+#create data frame with 0 rows and 3 columns
+Fe_Red_eff <- data.frame(matrix(ncol = 0, nrow = 3))
+
+Fe_Red_eff$ID <- seq.int(nrow(Fe_Red_eff))
+Fe_Red_eff$FE2 <- (FE_2_60uM$Abs1)
+Fe_Red_eff$FE3 <- FE_3_60$Abs2
+Fe_Red_eff$Eff <- ((Fe_Red_eff$FE3)/Fe_Red_eff$FE2)*100
+Fe_Red_eff$Eff1 <- ((Fe_Red_eff$FE3/0.8)/Fe_Red_eff$FE2)*100 #this one accounts for dilution of the reagents 
+head(Fe_Red_eff)
+
+#plot spk recoveries output as a bar graph to easily check - want any over 10% to be red need to work on this 
+redeffbar <- ggplot(data = Fe_Red_eff, aes(x = ID, y = Eff1)) +
+        geom_bar(stat = 'identity') + 
+        scale_fill_manual(values=c("gray48")) + 
+        theme_classic() + labs(x= "Sample ID", y="Reduction Efficiency (%)") + 
+        theme(legend.position="none") +  
+        geom_hline(yintercept=85, linetype="dashed", color = "black", size=1) + 
+        geom_hline(yintercept=120, linetype="dashed", color = "black", size=1)
+
+redeffbar
+
+```
+
+## Method Minimum Detection Limit (MDL) Calculation
+I use the lowest standard to calculate MDL
+How to calculate MDL https://www.epa.gov/sites/default/files/2016-12/documents/mdl-procedure_rev2_12-13-2016.pdf
+Look at Table 1 on page 5
+The Student's t-value used to calculate the method detection limit (MDL) is the one appropriate for a 99% confidence level and a standard deviation estimate with n-1 degrees of freedom
+
+```{r}
+#make a dataframe of just 0.6 uM Fe2 samples from standard dataframe
+MDL_dat <- subset(FE_2_stds, Conc_uM == 0.6)
+
+#calculate the standard deviation of abs 1
+stddev <- sd(MDL_dat$Abs1)
+
+#calculate n (number of 0.6 uM samples)
+n <- nrow(MDL_dat)
+
+#Identify the proper Student's T for n-1 from the table link above
+StudentsT <- 2.528
+
+#Multiply Standard deviation by Student's T
+MDL <- stddev*StudentsT
+MDL
+```
+
+#grab slope intercept from qaqc file
+```{r}
+#read in datafile with all the slopes
+qlogO <- read.csv("S:/GlobalChangeEco/porewater_r scripts & Data/BGC_GCE_PorewaterAnalysis/Fe/Fe_STD_QAQC.csv")
+qlog <- qlogO[,c(1:7)]
+colnames(qlog) <- c("Date", "Project", "Curve", "R2", "Slope", "Intercept", "Top_STD")
+head(qlog)
+
+
+#Separate out by slope type for QAQC
+qlog_Fe2_low <- subset(qlog, Curve == "FE_2_low")
+qlog_Fe2_high <- subset(qlog, Curve == "FE_2_high")
+qlog_FeTot_low <- subset(qlog, Curve == "FE_Tot_low")
+qlog_FeTot_high <- subset(qlog, Curve == "FE_Tot_high")
+qlog_Fe2_abs2 <- subset(qlog, Curve == "FE_2_abs2")
+qlog_Fe3_abs1 <- subset(qlog, Curve == "FE_3_abs1")
+qlog_Fe2_diff <- subset(qlog, Curve == "FE_2_diff")
+
+# pull date run
+qlog_Fe2_low_Date <- subset(qlog_Fe2_low, Date == Date_Run)
+qlog_Fe2_high_Date <- subset(qlog_Fe2_high, Date == Date_Run)
+qlog_FeTot_low_Date <- subset(qlog_FeTot_low, Date == Date_Run)
+qlog_FeTot_high_Date <- subset(qlog_FeTot_high, Date == Date_Run)
+qlog_Fe2_abs2_Date <- subset(qlog_Fe2_abs2, Date == Date_Run)
+qlog_Fe3_abs1_Date <- subset(qlog_Fe3_abs1, Date == Date_Run)
+qlog_Fe2_diff_Date <- subset(qlog_Fe2_diff, Date == Date_Run)
+
+# get the slopes and intercepts from QAQC document
+Fe2_low_intercept<- qlog_Fe2_low_Date$Intercept
+Fe2_low_slope<- qlog_Fe2_low_Date$Slope
+Fe2_high_intercept<- qlog_Fe2_high_Date$Intercept
+Fe2_high_slope<- qlog_Fe2_high_Date$Slope
+FeTot_low_intercept<- qlog_FeTot_low_Date$Intercept
+FeTot_low_slope<- qlog_FeTot_low_Date$Slope
+FeTot_high_intercept<- qlog_FeTot_high_Date$Intercept
+FeTot_high_slope<- qlog_FeTot_high_Date$Slope
+Fe2_abs2_intercept<- qlog_Fe2_abs2_Date$Intercept
+Fe2_abs2_slope<- qlog_Fe2_abs2_Date$Slope
+Fe3_abs1_intercept<- qlog_Fe3_abs1_Date$Intercept
+Fe3_abs1_slope<- qlog_Fe3_abs1_Date$Slope
+Fe2_diff_intercept<- qlog_Fe2_diff_Date$Intercept
+Fe2_diff_slope<- qlog_Fe2_abs2_Date$Slope
+
+```
+
+
+## Read in Sample Data subset 
+```{r}
+setwd("S:/GlobalChangeEco/Porewater_R scripts & Data/Data/Fe")
+
+dat <- read_plate(
+  file = "S:/GlobalChangeEco/Porewater_R scripts & Data/Data/Fe/COMPASS/Synoptic/Tidy Data/20241213_COMPASS_Fe_Plate2.csv",             # full path to the .csv file
+  well_ids_column = "Wells",    # name to give column of well IDs (optional)
+  sep = ","                     # separator used in the csv file (optional)
+)
+str(dat)
+head(dat)
+
+## remove any lines that say stds in IDs
+dat1 <- dat %>%  filter(!str_detect(IDs, "Fe_2"))
+head(dat1)
+dat1 <- dat1 %>%  filter(!str_detect(IDs, "Fe_3"))
+head(dat1)
+dat1 <- dat1 %>%  filter(!str_detect(IDs, "HCl"))
+head(dat1)
+
+#Now flag any Abs1 that are above the 60uM standard absorbance
+#dat1$FE_2_Curve <- ifelse(dat1$Abs1 > mean(FE_2_60uM$Abs1), "High", "Within range")
+#Now flag any Abs1 that are above the 500uM standard absorbance
+FE_2_500uM<- FE_2_stds_high %>%  filter(str_detect(IDs, "500 uM Fe_2 A"))
+
+dat1$FE_2_Curve <- ifelse(dat1$Abs1 > mean(FE_2_500uM$Abs1), "High", "Within range")
+
+#and flag any that are below the MDL
+dat1$FE_2_Curve <- ifelse(dat1$Abs1 < MDL, "Below MDL", dat1$FE_2_Curve)
+
+head(dat1)
+
+#Now flag any Abs2 that are above the 60uM standard absorbance
+#dat1$FE_Tot_Curve <- ifelse(dat1$Abs2 > mean(FE_3_60$Abs2), "High", "Within range")
+#Now flag any Abs2 that are above the 500uM standard absorbance
+FE_2_100uM<- FE_2_stds %>%  filter(str_detect(IDs, "100 uM Fe_2 C"))
+
+dat1$FE_Tot_Curve <- ifelse(dat1$Abs2 > mean(FE_2_100uM$Abs2), "High", "Within range")
+#and flag any that are below the MDL
+dat1$FE_Tot_Curve <- ifelse(dat1$Abs2 < MDL, "Below MDL", dat1$FE_Tot_Curve)
+
+
+head(dat1)
+
+#Make a list of samples to dilute and rerun
+Fe_DiluteRerun <- subset(dat1, FE_2_Curve == "High"|FE_Tot_Curve == "High")
+
+#Export the list of samples to rerun
+write.csv(Fe_DiluteRerun, "S:/GlobalChangeEco/Porewater_R scripts & Data/Data/Fe/COMPASS/Synoptic/QAQC'd Data/20241213_SamplesNeedDilution_Plate2.csv")
+```
+
+
+## Check standards QAQC
+
+```{r}
+#Make sure check standards are not different from standard concentration
+#subset Check Standards from the rest of the dataset
+Fe2_std_Chk <- dat %>%  filter(str_detect(IDs, "Fe_2"))
+head(Fe2_std_Chk)
+FeTot_std_Chk <- dat %>%  filter(str_detect(IDs, "Fe_3"))
+head(FeTot_std_Chk)
+
+
+#Calculate Check standard Concentration
+Fe2_std_Chk$Conc_uM <- (Fe2_std_Chk$Abs1-Fe2_low_intercept)/Fe2_low_slope
+FeTot_std_Chk$Conc_uM <- (FeTot_std_Chk$Abs2-FeTot_low_intercept)/FeTot_low_slope
+
+
+#Are the check standards significantly different from the standards?
+#subset datasets for comparison
+Fe2_std0.6 <- subset(FE_2_stds_low, Conc_uM == 0.6)
+Fe2_Chkstd0.6 <- subset(Fe2_std_Chk, IDs %like% "0.6")
+Fe2_std9 <- subset(FE_2_stds_low, Conc_uM == 9.0)
+Fe2_Chkstd9 <- subset(Fe2_std_Chk, IDs %like% "9")
+Fe2_std60 <- subset(FE_2_stds_low, Conc_uM == 60.0)
+Fe2_Chkstd60 <- subset(Fe2_std_Chk, IDs %like% "60")
+
+FeTot_std0.6 <- subset(FE_Tot_stds_low, Conc_uM == 0.6)
+FeTot_Chkstd0.6 <- subset(FeTot_std_Chk, IDs %like% "0.6")
+FeTot_std9 <- subset(FE_Tot_stds_low, Conc_uM == 9.0)
+FeTot_Chkstd9 <- subset(FeTot_std_Chk, IDs %like% "9")
+FeTot_std60 <- subset(FE_Tot_stds_low, Conc_uM == 60.0)
+FeTot_Chkstd60 <- subset(FeTot_std_Chk, IDs %like% "60")
+
+
+Fe2.t.test.std0.6 <- t.test(Fe2_std0.6$Abs1,Fe2_Chkstd0.6$Abs1,var.equal = T)
+Fe2.t.test.std0.6
+
+if(Fe2.t.test.std0.6$p.value > 0.05){
+print("Continue")
+} else {
+print("Rerun plate")
+}
+
+Fe2.t.test.std9 <- t.test(Fe2_std9$Abs1,Fe2_Chkstd9$Abs1,var.equal = T)
+Fe2.t.test.std9
+
+if(Fe2.t.test.std9$p.value > 0.05){
+print("Continue")
+} else {
+print("Rerun plate")
+}
+
+Fe2.t.test.std60 <- t.test(Fe2_std60$Abs1,Fe2_Chkstd60$Abs1,var.equal = T)
+Fe2.t.test.std60
+
+if(Fe2.t.test.std60$p.value > 0.05){
+print("Continue")
+} else {
+print("Rerun plate")
+}
+
+FeTot.t.test.std0.6 <- t.test(FeTot_std0.6$Abs2,FeTot_Chkstd0.6$Abs2,var.equal = T)
+FeTot.t.test.std0.6
+
+if(FeTot.t.test.std0.6$p.value > 0.05){
+print("Continue")
+} else {
+print("Rerun plate")
+}
+
+FeTot.t.test.std9 <- t.test(FeTot_std9$Abs2,FeTot_Chkstd9$Abs2,var.equal = T)
+FeTot.t.test.std9
+
+if(FeTot.t.test.std9$p.value > 0.05){
+print("Continue")
+} else {
+print("Rerun plate")
+}
+
+FeTot.t.test.std60 <- t.test(FeTot_std60$Abs2,FeTot_Chkstd60$Abs2,var.equal = T)
+FeTot.t.test.std60
+
+if(FeTot.t.test.std60$p.value > 0.05){
+print("Continue")
+} else {
+print("Rerun plate")
+}
+```
+
+#No Matrix Checks
+We do not use matrix checks for the Fe samples because our matrix checks are not made with Trace metal grade reagents. If we want to do this in the future, we need to use trace metal grade sodium chloride and sodium bicarbonate for making the matrix checks
+
+## Subset Data and Calculate Concentrations 
+```{r}
+###Calculate concentrations of Fe(II)
+dat1$FE_2_Conc <- ifelse(dat1$Abs1 > mean(Fe2_std60$Abs1), (dat1$Abs1-Fe2_high_intercept)/Fe2_high_slope, (dat1$Abs1-Fe2_low_intercept)/Fe2_low_slope)
+
+head(dat1)
+#Calculate the expected absorbance 2 for just Fe 2
+#Expected_diff=m*conc+b
+### abs2=abs1+diff
+dat1$CalcAbs2<-dat1$Abs1+(dat1$FE_2_Conc*Fe2_diff_slope+Fe2_diff_intercept)
+
+#subtract expected absorbance from actual absorbance this should leave you with the absorbance caused by the Fe3 reducing to Fe2
+dat1$Abs2_diff<-dat1$Abs2-dat1$CalcAbs2
+
+#using the slope from Fe 2 slope calculate Fe3 
+dat1$FE_3_Conc <-ifelse(dat1$Abs2 > mean(FeTot_std60$Abs2), (dat1$Abs2_diff)/(FeTot_high_slope-Fe3_abs1_slope), (dat1$Abs2_diff)/(FeTot_low_slope-Fe3_abs1_slope))
+
+#zeroAbs<-data.frame(IDs=dat$IDs,Conc_uM=dat$Conc_uM)
+#zeroAbs$zero<- (dat1$CalcAbs2*Fe2_abs2_slope-dat1$Abs2*Fe3_abs1_slope)/(Fe2_abs2_slope*(Fe2_abs2_slope-Fe3_abs1_slope))
+#zeroAbs<-zeroAbs %>%  filter(Conc_uM== 0.0)#Hcl with normal plate
+#If samples have >45uM Fe3 recalculate Fe2 with Fe3 interference 
+#have to do some tests with this
+#dat1$FE_2_Conc_2<-ifelse(dat1$FE_3_Conc>45,((dat1$CalcAbs2*Fe2_abs2_slope-dat1$Abs2*Fe3_abs1_slope)/(Fe2_abs2_slope*(Fe2_abs2_slope-Fe3_abs1_slope)))-mean(zeroAbs$zero), dat1$FE_2_Conc)
+
+head(dat1)
+```
+
+
+## Calculate dilutions and samples below the detection limit
+```{r}
+
+#Account for the dilution factor
+dat1$FE_2_Conc_DilCorr <- dat1$FE_2_Conc*dat1$Dilutions
+
+dat1$FE_3_Conc_DilCorr <- (dat1$FE_3_Conc*dat1$Dilutions)
+
+head(dat1)
+
+#Use ifelse to make any negative values equal to zero 
+dat1$FE_2_Conc_Final <- ifelse(dat1$FE_2_Conc_DilCorr <0, 0, dat1$FE_2_Conc_DilCorr)
+
+dat1$FE_3_Conc_Final <- ifelse(dat1$FE_3_Conc_DilCorr <0, 0, dat1$FE_3_Conc_DilCorr)
+
+#Use ifelse to flag out of range values 
+dat1$FE_2_Info <- ifelse(dat1$FE_2_Conc_DilCorr < MDL, 'bdl', ifelse( dat1$FE_2_Conc > Top_STD_Fe2_high,'high','within range'))
+
+#Use ifelse to flag out of range values 
+dat1$FE_3_Info <- ifelse(dat1$FE_3_Conc < MDL, 'bdl', ifelse( dat1$FE_3_Conc > Top_STD_Fe3_high,'high','within range'))
+
+head(dat1)
+```
+
+
+## Calculate Averages across wells, std. dev, and cv.  
+```{r}
+head(dat1)
+
+#summarize by sampleID so that we can calculate the mean and std. dev. of the three wells 
+dat2 <- dat1 %>%
+  group_by(IDs) %>%
+  summarise(FE_2_mean = mean(FE_2_Conc_Final), FE_2_sd = sd(FE_2_Conc_Final), FE_2_cv = cv(FE_2_Conc_Final),
+            FE_3_mean = mean(FE_3_Conc_Final), FE_3_sd = sd(FE_3_Conc_Final), FE_3_cv = cv(FE_3_Conc_Final),
+            FE_2_flag = first(FE_2_Info), FE_3_flag = first(FE_3_Info), 
+            Dilution = first(Dilutions))
+
+head(dat2)
+
+#plot data and sd's just to check and see what they look like - just a quick first look 
+Fe2 <- ggplot(dat2, aes(x=IDs, y=FE_2_mean))+ 
+  geom_point(size=4) +  theme_classic() + 
+  labs(y="Fe(II) (uM)", x="Sample ID")+
+  guides(x = guide_axis(angle = 70)) + 
+  geom_errorbar(aes(ymin=FE_2_mean-FE_2_sd,
+                    ymax=FE_2_mean+FE_2_sd),width=0.3,position=position_dodge(.1))
+Fe2
+
+Fe3 <- ggplot(dat2, aes(x=IDs, y=FE_3_mean))+ 
+  geom_point(size=4) +  theme_classic() + 
+  labs(y="Fe(III) (uM)", x="Sample ID")+
+  guides(x = guide_axis(angle = 70)) + 
+  geom_errorbar(aes(ymin=FE_3_mean-FE_3_sd,
+                    ymax=FE_3_mean+FE_3_sd),width=0.3,position=position_dodge(.1))
+Fe3
+
+dat2$FE_2_cv_flag <- ifelse(dat2$FE_2_cv > 10, "High cv rerun", "ok")
+dat2$FE_3_cv_flag <- ifelse(dat2$FE_3_cv > 10, "High cv rerun", "ok")
+
+#Make a list of samples to rerun
+HighCVSamples <- subset(dat2, FE_2_cv_flag == "High cv rerun"|FE_3_cv_flag == "High cv rerun")
+HighCVSamplesFe2 <- subset(dat2, FE_2_cv_flag == "High cv rerun")
+HighCVSamplesFe3 <- subset(dat2, FE_3_cv_flag == "High cv rerun")
+```
+
+
+## Remove bad reps
+```{r}
+
+#auto remove bad reps
+dat_HCV <- subset(dat1, (IDs %in% HighCVSamples$IDs ))
+head(dat_HCV)
+
+#Columns 4 7 10
+Column1= c("A04", "A07","A10", "B04", "B07", "B10" ,"C04" , "C07", "C10",
+"D04", "D07", "D10", "E04","E07", "E10" ,"F04" , "F07" ,"F10", "G04","G07" ,"G10" ,"H04","H07","H10")
+
+#Columns 5,8,11
+Column2= c("A05", "A08","A11", "B05", "B08", "B11" ,"C05" , "C08", "C11",
+"D05","D08", "D11", "E05","E08", "E11" ,"F05" , "F08", "F11" ,"G05","G08" ,"G11" ,"H05","H08", "H11")
+
+#Columns 6,9,12
+Column3= c("A06", "A09","A12", "B06", "B09" ,"B12" ,"C06" , "C09", "C12",
+"D06","D09", "D12", "E06","E09", "E12" ,"F06" , "F09", "F12" ,"G06","G09" ,"G12" ,"H06","H09", "H12")
+
+
+#delete Column one
+dat_HCV1 <- subset(dat_HCV, !(Wells %in% Column1 ))
+#delete Column two
+dat_HCV2 <- subset(dat_HCV, !(Wells %in% Column2 ))
+#delete Column three
+dat_HCV3 <- subset(dat_HCV, !(Wells %in% Column3 ))
+
+##Find CV for each Data set
+#W/out column1
+dat_HCV1 <- dat_HCV1 %>%
+  group_by(IDs) %>%
+  summarise(FE_2_mean = mean(FE_2_Conc_Final), FE_2_sd = sd(FE_2_Conc_Final), FE_2_cv = cv(FE_2_Conc_Final),
+            FE_3_mean = mean(FE_3_Conc_Final), FE_3_sd = sd(FE_3_Conc_Final), FE_3_cv = cv(FE_3_Conc_Final),
+            FE_2_flag = first(FE_2_Info),
+            FE_3_flag = first(FE_3_Info),
+            Dilution = first(Dilutions))
+dat_HCV1$FE_2_cv_flag <- ifelse(dat_HCV1$FE_2_cv > 10, 'High CV', 'within range')
+dat_HCV1$FE_3_cv_flag <- ifelse(dat_HCV1$FE_3_cv > 10, 'High CV', 'within range')
+#W/out column2
+dat_HCV2 <- dat_HCV2 %>%
+  group_by(IDs) %>%
+  summarise(FE_2_mean = mean(FE_2_Conc_Final), FE_2_sd = sd(FE_2_Conc_Final), FE_2_cv = cv(FE_2_Conc_Final),
+            FE_3_mean = mean(FE_3_Conc_Final), FE_3_sd = sd(FE_3_Conc_Final), FE_3_cv = cv(FE_3_Conc_Final),
+            FE_2_flag = first(FE_2_Info),
+            FE_3_flag = first(FE_3_Info),
+            Dilution = first(Dilutions))
+dat_HCV2$FE_2_cv_flag <- ifelse(dat_HCV2$FE_2_cv > 10, 'High CV', 'within range')
+dat_HCV2$FE_3_cv_flag <- ifelse(dat_HCV2$FE_3_cv > 10, 'High CV', 'within range')
+#W/out column3
+dat_HCV3 <- dat_HCV3 %>%
+  group_by(IDs) %>%
+  summarise(FE_2_mean = mean(FE_2_Conc_Final), FE_2_sd = sd(FE_2_Conc_Final), FE_2_cv = cv(FE_2_Conc_Final),
+            FE_3_mean = mean(FE_3_Conc_Final), FE_3_sd = sd(FE_3_Conc_Final), FE_3_cv = cv(FE_3_Conc_Final),
+            FE_2_flag = first(FE_2_Info),
+            FE_3_flag = first(FE_3_Info),
+            Dilution = first(Dilutions))
+dat_HCV3$FE_2_cv_flag <- ifelse(dat_HCV3$FE_2_cv > 10, 'High CV', 'within range')
+dat_HCV3$FE_3_cv_flag <- ifelse(dat_HCV3$FE_3_cv > 10, 'High CV', 'within range')
+
+#find lowest CVs
+dat_HCV1_Fe2 <- subset(dat_HCV1, dat_HCV1$FE_2_cv < dat_HCV2$FE_2_cv & dat_HCV1$FE_2_cv < dat_HCV3$FE_2_cv)
+head(dat_HCV1_Fe2)
+dat_HCV1_Fe3 <- subset(dat_HCV1, dat_HCV1$FE_3_cv < dat_HCV2$FE_3_cv & dat_HCV1$FE_3_cv < dat_HCV3$FE_3_cv)
+head(dat_HCV1_Fe3)
+
+dat_HCV2_Fe2 <- subset(dat_HCV2, dat_HCV2$FE_2_cv < dat_HCV1$FE_2_cv & dat_HCV2$FE_2_cv < dat_HCV3$FE_2_cv)
+head(dat_HCV2_Fe2)
+dat_HCV2_Fe3 <- subset(dat_HCV2, dat_HCV2$FE_3_cv < dat_HCV1$FE_3_cv & dat_HCV2$FE_3_cv < dat_HCV3$FE_3_cv)
+head(dat_HCV2_Fe3)
+
+dat_HCV3_Fe2 <- subset(dat_HCV3, dat_HCV3$FE_2_cv < dat_HCV1$FE_2_cv & dat_HCV3$FE_2_cv < dat_HCV2$FE_2_cv)
+head(dat_HCV3_Fe2)
+dat_HCV3_Fe3 <- subset(dat_HCV3, dat_HCV3$FE_3_cv < dat_HCV1$FE_3_cv & dat_HCV3$FE_3_cv < dat_HCV2$FE_3_cv)
+head(dat_HCV3_Fe3)
+
+#recombine data frames
+HCV_Fe2_recalc <- rbind(dat_HCV1_Fe2, dat_HCV2_Fe2, dat_HCV3_Fe2)
+HCV_Fe3_recalc <- rbind(dat_HCV1_Fe3, dat_HCV2_Fe3, dat_HCV3_Fe3)
+
+#order the dataframes and make sure sample lists are the same size
+HighCVSamples1<-HighCVSamples[order(HighCVSamples$IDs),]
+HighCVSamplesFe2_1 <-subset(HighCVSamples1, (!IDs %in% HCV_Fe2_recalc$IDs ))
+HighCVSamplesFe2_1 <- rbind(HCV_Fe2_recalc, HighCVSamplesFe2_1 )
+HighCVSamplesFe2_1 <-HighCVSamplesFe2_1[order(HighCVSamplesFe2_1$IDs),]
+
+HighCVSamples1<-HighCVSamples[order(HighCVSamples$IDs),]
+HighCVSamplesFe3_1 <-subset(HighCVSamples1, (!IDs %in% HCV_Fe3_recalc$IDs ))
+HighCVSamplesFe3_1 <- rbind(HighCVSamplesFe3_1, HCV_Fe3_recalc)
+HighCVSamplesFe3_1 <-HighCVSamplesFe3_1[order(HighCVSamplesFe3_1$IDs),]
+
+
+#correct mean, sd, cv for combined Fe2 and Fe3
+HighCVSamples1$FE_2_mean <- ifelse(HighCVSamples$IDs %in% HighCVSamplesFe2$IDs, HighCVSamplesFe2_1$FE_2_mean,HighCVSamples$FE_2_mean)
+HighCVSamples1$FE_2_sd <- ifelse(HighCVSamples$IDs %in% HighCVSamplesFe2$IDs, HighCVSamplesFe2_1$FE_2_sd, HighCVSamples$FE_2_sd )
+HighCVSamples1$FE_2_cv <- ifelse(HighCVSamples$IDs %in% HighCVSamplesFe2$IDs, HighCVSamplesFe2_1$FE_2_cv,HighCVSamples$FE_2_cv )
+
+HighCVSamples1$FE_3_mean <- ifelse(HighCVSamples$IDs %in% HighCVSamplesFe3$IDs, HighCVSamplesFe3_1$FE_3_mean,HighCVSamples1$FE_3_mean )
+HighCVSamples1$FE_3_sd <- ifelse(HighCVSamples$IDs %in% HighCVSamplesFe3$IDs, HighCVSamplesFe3_1$FE_3_sd,HighCVSamples1$FE_3_sd )
+HighCVSamples1$FE_3_cv <- ifelse(HighCVSamples$IDs %in% HighCVSamplesFe3$IDs, HighCVSamplesFe3_1$FE_3_cv,HighCVSamples1$FE_3_cv )
+
+#rerun CV flag
+HighCVSamples1$FE_2_cv_flag <- ifelse(HighCVSamples1$FE_2_cv > 10, "High cv rerun", "ok")
+HighCVSamples1$FE_3_cv_flag <- ifelse(HighCVSamples1$FE_3_cv > 10, "High cv rerun", "ok")
+
+#recombine corrected means with original data
+dat2 <- subset(dat2, (!IDs %in% HighCVSamples1$IDs ))
+dat2 <- rbind(HighCVSamples1, dat2)
+head(dat2)
+
+Fe2 <- ggplot(dat2, aes(x=IDs, y=FE_2_mean))+ 
+  geom_point(size=4) +  theme_classic() + 
+  labs(y="Fe(II) (uM)", x="Sample ID")+
+  guides(x = guide_axis(angle = 70)) + 
+  geom_errorbar(aes(ymin=FE_2_mean-FE_2_sd,
+                    ymax=FE_2_mean+FE_2_sd),width=0.3,position=position_dodge(.1))
+Fe2
+
+Fe3 <- ggplot(dat2, aes(x=IDs, y=FE_3_mean))+ 
+  geom_point(size=4) +  theme_classic() + 
+  labs(y="Fe(III) (uM)", x="Sample ID")+
+  guides(x = guide_axis(angle = 70)) + 
+  geom_errorbar(aes(ymin=FE_3_mean-FE_3_sd,
+                    ymax=FE_3_mean+FE_3_sd),width=0.3,position=position_dodge(.1))
+Fe3
+
+#Make a list of samples to rerun
+HighCVSamples2 <- subset(dat2, FE_2_cv_flag == "High cv rerun"|FE_3_cv_flag == "High cv rerun")
+
+#If samples with cv >10 rerun those samples 
+#Export the list of samples to rerun
+write.csv(HighCVSamples2, "S:/GlobalChangeEco/Porewater_R scripts & Data/Data/Fe/COMPASS/Synoptic/QAQC'd Data/20241213_HighCVrerun_Plate2.csv")
+```
+
+
+## Check the dups for QAQC 
+```{r}
+
+#Show me the data that we have from the calculations 
+head(dat2)
+
+#pull out any rows that have "d" in the SampleID column
+dups <- dat2 %>%  
+  filter(str_detect(IDs, "dup")) 
+head(dups)
+
+#remove these from dat2
+dat3 <- dat2 %>%  
+  filter(!str_detect(IDs, "dup")) %>%  
+  filter(!str_detect(IDs, "spk")) 
+head(dat3)
+
+#remove the d from these IDs so we will have duplicates 
+dups$IDs<-gsub(" dup","",as.character(dups$IDs))
+dups <- dups[ ,-c(3,4,6:12)]
+head(dups)
+colnames(dups) <- c('IDs', 'FE_2_mean_dup', "FE_3_mean_dup")
+
+
+#put it back together with the old data set and look for duplicates 
+QAdups <- merge(dat3, dups)
+head(QAdups)
+
+QAdups$FE_2_dups_chk <- ((abs(QAdups$FE_2_mean-QAdups$FE_2_mean_dup))/((QAdups$FE_2_mean+QAdups$FE_2_mean_dup)/2))*100
+QAdups$FE_2_dups_flag <-  ifelse(QAdups$FE_2_dups_chk <10, 'YES', 'NO, rerun')
+
+QAdups$FE_3_dups_chk <- ((abs(QAdups$FE_3_mean-QAdups$FE_3_mean_dup))/((QAdups$FE_3_mean+QAdups$FE_3_mean_dup)/2))*100
+QAdups$FE_3_dups_flag <-  ifelse(QAdups$FE_3_dups_chk <10, 'YES', 'NO, rerun')
+head(QAdups)
+
+#plot dups output as a bar graph to easily check - want any over 10% to be red need to work on this 
+dupsbar_Fe2 <- ggplot(data = QAdups, aes(x = IDs, y = FE_2_dups_chk, fill=FE_2_dups_chk)) +
+       geom_bar(stat = 'identity') + 
+        scale_fill_gradient2(low='darkgreen', mid='darkgreen', high='darkgrey', space='Lab') + 
+        theme_classic() + labs(x= "Sample ID", y="Difference Between Duplicates (%)") + 
+        theme(legend.position="none") +  geom_hline(yintercept=10, linetype="dashed", 
+                color = "black", size=1)
+
+dupsbar_Fe2
+
+dupsbar_Fe3 <- ggplot(data = QAdups, aes(x = IDs, y = FE_3_dups_chk, fill=FE_3_dups_chk)) +
+       geom_bar(stat = 'identity') + 
+        scale_fill_gradient2(low='darkgreen', mid='darkgreen', high='darkgrey', space='Lab') + 
+        theme_classic() + labs(x= "Sample ID", y="Difference Between Duplicates (%)") + 
+        theme(legend.position="none") +  geom_hline(yintercept=10, linetype="dashed", 
+                color = "black", size=1)
+
+dupsbar_Fe3
+
+
+#check for any no's that would warrant reruns
+Baddups <- subset(QAdups, FE_2_dups_flag == "NO, rerun"|FE_3_dups_flag == "NO, rerun")
+
+#Export the list of samples to rerun
+write.csv(Baddups, "S:/GlobalChangeEco/Porewater_R scripts & Data/Data/Fe/COMPASS/Synoptic/QAQC'd Data/20241213_Baddups_Plate2.csv")
+```
+
+
+## Check the spks for QAQC 
+```{r}
+
+#pull out any rows that have "spk" in the SampleID column
+spks <- dat2 %>%  
+  filter(str_detect(IDs, "spk")) 
+head(spks)
+
+#remove the spk from these IDs so we will have duplicates 
+spks$IDs<-gsub(" spk","",as.character(spks$IDs))
+spks <- spks[ ,-c(3:12)]
+head(spks)
+colnames(spks) <- c('IDs', 'FE_2_mean_spk')
+
+
+#put it back together with the old data set and look for duplicates 
+QAspks <- merge(dat3, spks)
+head(QAspks)
+
+#now we need to calculate the spike concentration and calculate the spike recovery 
+#spike for these samples was 55uL of the 60uM standard
+QAspks$FE_2_spk_Conc <- (60*(55/1000000))                        # this would be in umoles of FE in the spk 
+QAspks$FE_Total_unspkd <- (QAspks$FE_2_mean/QAspks$Dilution)*(160/1000000) #gives us the total fe in the sample in umoles
+QAspks$FE_Total_spkd <-    (QAspks$FE_2_mean_spk/QAspks$Dilution)*((160+55)/1000000)        ##total fe in spiked sample in umoles 
+QAspks$FE_expctd_spkd <-  (QAspks$FE_Total_unspkd + QAspks$FE_2_spk_Conc)
+QAspks$spk_recovery <-    (QAspks$FE_Total_spkd/QAspks$FE_expctd_spkd)*100
+QAspks$FE_spks_flag <-  ifelse(QAspks$spk_recovery >80 & QAspks$spk_recovery < 120, 'YES', 'NO, rerun') 
+
+head(QAspks)
+
+#plot spk recoveries output as a bar graph to easily check - want any over 10% to be red need to work on this 
+spksbar <- ggplot(data = QAspks, aes(x = IDs, y = spk_recovery)) +
+        geom_bar(stat = 'identity') + 
+        scale_fill_manual(values=c("gray48")) + 
+        theme_classic() + labs(x= "Sample ID", y="Spike Recovery (%)") + 
+        theme(legend.position="none") +  
+        geom_hline(yintercept=80, linetype="dashed", color = "black", size=1) + 
+        geom_hline(yintercept=120, linetype="dashed", color = "black", size=1)
+
+spksbar
+
+#check for any no's that would warrant reruns!
+Badspks <- subset(QAspks, FE_spks_flag == "No, rerun")
+
+#Export the list of samples to rerun
+write.csv(Badspks, "S:/GlobalChangeEco/Porewater_R scripts & Data/Data/Fe/COMPASS/Synoptic/QAQC'd Data/20241213_Badspks_Plate2.csv")
+```
+
+
+
+## Export full data then just final data 
+```{r}
+
+
+#Read out the data with all flags 
+head(dat3)
+write.csv(dat3, file="S:/GlobalChangeEco/Porewater_R scripts & Data/Data/Fe/COMPASS/Synoptic/QAQC'd Data/COMAPSS_Fe_20241213_Plate2_Flagdat.csv")
+
+#Now take out everything but the means and remove any samples that did not pass QAQC 
+head(dat3)
+dat4 <- subset(dat3, FE_2_cv_flag == "ok" & FE_3_cv_flag == "ok")
+dat4 <- dat4[ ,-c(3,4,6:12)]
+head(dat4)
+write.csv(dat4, file="S:/GlobalChangeEco/Porewater_R scripts & Data/Data/Fe/COMPASS/Synoptic/QAQC'd Data/COMPASS_Fe_20241213_Plate2_shortdata.csv")
+
+
+```
+
+### END
+
+
+

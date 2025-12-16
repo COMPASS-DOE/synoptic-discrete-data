@@ -1,0 +1,1105 @@
+---
+title: "Microplate_FE_Code"
+author: "Stephanie J. Wilson"
+date: "2023-01-10"
+output:
+  word_document: default
+  pdf_document: default
+  html_document: default
+---
+
+## Information
+```{r}
+#######################################################################################
+####### GENX2
+####### Brackish
+####### Data Analysis Code: Porewater iron 
+####### MONTH: 
+##############################################################################################
+
+
+############################# Information ##################################
+#Author: Alia N. Al-Haj
+#Edited: 20241023
+
+#Samples taken from porewater peepers
+#Samples were filtered with 0.2 uM into HCl, kept on ice and then in fridge until analysis
+#Field Protocol: 
+#Samples Analyzed using GENX2 microplate method 
+#Lab Protocol:
+#
+##Edited 20241104 by Melanie Giessner for
+#high Fe curves typos
+#graph read ability
+#correcting the recombination of the high cv and okay data
+```
+
+## Code Set up 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+Date_Run = "20241213"
+Run_by = "Melanie Giessner"
+Project = "COMPASS"
+Top_STD_Fe2_low = 60
+Top_STD_Fe3_low = 60
+
+Top_STD_Fe2_high = 500
+Top_STD_Fe3_high = 100
+
+
+library(ggplot2)
+library(dplyr)
+library(data.table)
+library(matrixStats)
+library(gridExtra)
+library(ggpubr)
+library(grid)
+library(stringr)
+library(raster)
+library(plater)
+
+setwd("S:/GlobalChangeEco/Porewater_R scripts & Data/Data")
+```
+
+## R Markdown
+
+#notes I don't have a system yet to compare old slopes to current slopes for that day 
+#I don't have a system for eliminating wells if the sd is high - if you think one of your sample wells was off you would need to remove it manually... 
+
+#Files Required: 
+#csv of standards see template
+#csv of samples see template
+
+
+## Read in Standards and subset 
+```{r}
+
+stds <- read_plate(
+  file = "S:/GlobalChangeEco/Porewater_R scripts & Data/Data/Fe/COMPASS/Synoptic/Tidy Data/20241213_COMPASS_Fe_STD.csv",             # full path to the .csv file
+  well_ids_column = "Wells",    # name to give column of well IDs (optional)
+  sep = ","                     # separator used in the csv file (optional)
+)
+str(stds)
+head(stds)
+
+#subset by FE_2 and FE_Total
+FE_2_stds <- stds %>%  
+  filter(str_detect(stds$IDs, "Fe_2"))  
+head(FE_2_stds)
+
+#subset by FE_2 and FE_Total
+FE_Tot_stds <- stds %>%  
+  filter(str_detect(IDs, "Fe_3"))  
+head(FE_Tot_stds)
+
+#subset Fe3 STD with in their linear range
+FE_Tot_stds_abs1<- FE_Tot_stds
+FE_Tot_stds_high <- FE_Tot_stds[!(FE_Tot_stds$Conc_uM > 100),]
+
+#Subset the low standard curve from all 
+FE_2_stds_low <- FE_2_stds[!(FE_2_stds$Conc_uM > 60),]
+FE_Tot_stds_low <- FE_Tot_stds[!(FE_Tot_stds$Conc_uM > 60),]
+
+#subset Fe2 abs2 to 100um 
+FE_2_stds_high <-FE_2_stds
+FE_2_stds_abs2<-FE_2_stds[!(FE_2_stds$Conc_uM > 100),]
+FE_2_stds_diff<-FE_2_stds_abs2
+
+```
+
+## Plot standards 
+```{r}
+#Plot each of these and calculate the slope, intercept, and R2 
+library(ggplot2)
+
+#Low curve for Fe(II)
+FE_2_low <- ggplot(FE_2_stds_low, aes(Conc_uM, Abs1)) + geom_point() + geom_smooth(method = "lm", se = FALSE)+ggtitle("Low Fe(II) Absorbance 1 Curve")
+FE_2_low
+
+FE_2_low_lm <- lm(FE_2_stds_low$Abs1 ~ FE_2_stds_low$Conc_uM)
+summary(FE_2_low_lm)
+cf <- coef(FE_2_low_lm)
+
+#create data frame with 1 rows and 0 columns
+Slopes1 <- data.frame(matrix(ncol = 0, nrow = 1))
+Slopes1$Date <- Date_Run
+Slopes1$Project <- Project
+Slopes1$Curve <- "FE_2_low"
+Slopes1$R2 <- summary(FE_2_low_lm)$adj.r.squared
+Slopes1$Slope <- cf[2]
+Slopes1$Intercept <- cf[1]
+Slopes1$Top_STD <- Top_STD_Fe2_low
+head(Slopes1)
+
+
+#High curve for Fe2
+ FE_2_high <- ggplot(FE_2_stds, aes(Conc_uM, Abs1)) + geom_point() + geom_smooth(method = "lm", se = FALSE)+ggtitle("High Fe(II) Absorbance 1 Curve")
+ FE_2_high
+ 
+ FE_2_high_lm <- lm(FE_2_stds$Abs1 ~ FE_2_stds$Conc_uM)
+ summary(FE_2_high_lm)
+ cf <- coef(FE_2_high_lm)
+ 
+#create data frame with 1 rows and 0 columns
+ Slopes2 <- data.frame(matrix(ncol = 0, nrow = 1))
+ Slopes2$Date <- Date_Run
+ Slopes2$Project <- Project
+ Slopes2$Curve <- "FE_2_high"
+ Slopes2$R2 <- summary(FE_2_high_lm)$adj.r.squared
+ Slopes2$Slope <- cf[2]
+ Slopes2$Intercept <- cf[1]
+ Slopes2$Top_STD <- Top_STD_Fe2_high
+ head(Slopes2)
+ 
+
+#Low curve for Fe(Total)
+FE_Tot_low <- ggplot(FE_Tot_stds_low, aes(Conc_uM, Abs2)) + geom_point() + geom_smooth(method = "lm", se = FALSE)+ggtitle("Low Fe(III) Absorbance 2 Curve")
+FE_Tot_low
+
+FE_Tot_low_lm <- lm(FE_Tot_stds_low$Abs2 ~ FE_Tot_stds_low$Conc_uM)
+summary(FE_Tot_low_lm)
+cf <- coef(FE_Tot_low_lm)
+
+#create data frame with 1 rows and 0 columns
+Slopes3 <- data.frame(matrix(ncol = 0, nrow = 1))
+Slopes3$Date <- Date_Run
+Slopes3$Project <- Project
+Slopes3$Curve <- "FE_Tot_low"
+Slopes3$R2 <- summary(FE_Tot_low_lm)$adj.r.squared
+Slopes3$Slope <- cf[2]
+Slopes3$Intercept <- cf[1]
+Slopes3$Top_STD <- Top_STD_Fe3_low
+head(Slopes3)
+
+
+ #High curve for Fe(III)
+ FE_Tot_high <- ggplot(FE_Tot_stds_high, aes(Conc_uM, Abs2)) + geom_point() + geom_smooth(method = "lm", se = FALSE)+ggtitle("High Fe(III) Absorbance 2 Curve")
+FE_Tot_high
+ 
+FE_Tot_high_lm <- lm(FE_Tot_stds_high$Abs2 ~ FE_Tot_stds_high$Conc_uM)
+summary(FE_Tot_high_lm)
+cf <- coef(FE_Tot_high_lm)
+ 
+ #create data frame with 1 rows and 0 columns
+Slopes4 <- data.frame(matrix(ncol = 0, nrow = 1))
+Slopes4$Date <- Date_Run
+Slopes4$Project <- Project
+Slopes4$Curve <- "FE_Tot_high"
+Slopes4$R2 <- summary(FE_Tot_high_lm)$adj.r.squared
+Slopes4$Slope <- cf[2]
+Slopes4$Intercept <- cf[1]
+Slopes4$Top_STD <- Top_STD_Fe3_high
+head(Slopes4)
+
+#curve for Fe(II) Abs2
+FE_2_abs2 <- ggplot(FE_2_stds_abs2, aes(Conc_uM, Abs2)) + geom_point() + geom_smooth(method = "lm", se = FALSE)+ggtitle("Fe(II) Absorbance 2 Curve")
+FE_2_abs2
+
+FE_2_stds_abs2_lm <- lm(FE_2_stds_abs2$Abs2 ~ FE_2_stds_abs2$Conc_uM)
+summary(FE_2_stds_abs2_lm)
+cf <- coef(FE_2_stds_abs2_lm)
+
+#create data frame with 1 rows and 0 columns
+Slopes5 <- data.frame(matrix(ncol = 0, nrow = 1))
+Slopes5$Date <- Date_Run
+Slopes5$Project <- Project
+Slopes5$Curve <- "FE_2_abs2"
+Slopes5$R2 <- summary(FE_2_stds_abs2_lm)$adj.r.squared
+Slopes5$Slope <- cf[2]
+Slopes5$Intercept <- cf[1]
+Slopes5$Top_STD <- 100
+head(Slopes5)
+
+#curve for Fe(III) Abs1
+FE_3_abs1 <- ggplot(FE_Tot_stds_abs1, aes(Conc_uM,Abs1 )) + geom_point() + geom_smooth(method = "lm", se = FALSE)+ggtitle("Fe(III) Absorbance 1 Curve")
+FE_3_abs1
+
+FE_3_abs1_lm <- lm(FE_Tot_stds_abs1$Abs1 ~ FE_Tot_stds_abs1$Conc_uM )
+summary(FE_3_abs1_lm)
+cf <- coef(FE_3_abs1_lm)
+
+#create data frame with 1 rows and 0 columns
+Slopes6 <- data.frame(matrix(ncol = 0, nrow = 1))
+Slopes6$Date <- Date_Run
+Slopes6$Project <- Project
+Slopes6$Curve <- "FE_3_abs1"
+Slopes6$R2 <- summary(FE_3_abs1_lm)$adj.r.squared
+Slopes6$Slope <- cf[2]
+Slopes6$Intercept <- cf[1]
+Slopes6$Top_STD <- 500
+head(Slopes6)
+
+#This slope should be small e-6
+
+
+#curve for Fe(II) Abs2-Abs1
+
+FE_2_stds_diff$FE_2_Diff<-FE_2_stds_diff$Abs2-FE_2_stds_diff$Abs1
+
+FE_2 <- ggplot(FE_2_stds_diff, aes(Conc_uM,FE_2_Diff)) + geom_point() + geom_smooth(method = "lm", se = FALSE)+ggtitle("Fe(II) Absorbance Difference Curve")
+FE_2
+
+FE_2_diff_lm <- lm(FE_2_stds_diff$FE_2_Diff ~ FE_2_stds_diff$Conc_uM)
+summary(FE_2_diff_lm)
+cf <- coef(FE_2_diff_lm)
+
+#create data frame with 1 rows and 0 columns
+Slopes7 <- data.frame(matrix(ncol = 0, nrow = 1))
+Slopes7$Date <- Date_Run
+Slopes7$Project <- Project
+Slopes7$Curve <- "FE_2_diff"
+Slopes7$R2 <- summary(FE_2_diff_lm)$adj.r.squared
+Slopes7$Slope <- cf[2]
+Slopes7$Intercept <- cf[1]
+Slopes7$Top_STD <- 100
+
+head(Slopes7)
+
+
+####
+```
+##Slope QAQC
+```{r}
+##Calculate cv for STDs
+#low Fe_2 Curve
+FE_2_stds_low1 <- FE_2_stds_low %>%
+ group_by(IDs) %>%
+ summarise(Abs1_mean = mean(Abs1), Abs1_sd = sd(Abs1), Abs1_cv = cv(Abs1), 
+           Dilution = first(Dilutions))
+
+head(FE_2_stds_low1)
+##High Fe_2 Curve
+FE_2_stds_high1 <- FE_2_stds_high %>%
+ group_by(IDs) %>%
+ summarise(Abs1_mean = mean(Abs1), Abs1_sd = sd(Abs1), Abs1_cv = cv(Abs1), 
+    Dilution = first(Dilutions))
+
+head(FE_2_stds_high1)
+
+#low Fe_Tot Curve
+FE_Tot_stds_low1 <- FE_Tot_stds_low %>%
+  group_by(IDs) %>%
+  summarise(Abs2_mean = mean(Abs2), Abs2_sd = sd(Abs2), Abs2_cv = cv(Abs2), 
+         Dilution = first(Dilutions))
+
+head(FE_Tot_stds_low1)
+
+##high Fe_Tot Curve
+ FE_Tot_stds_high1 <- FE_Tot_stds_high %>%
+ group_by(IDs) %>%
+ summarise(Abs2_mean = mean(Abs2), Abs2_sd = sd(Abs2), Abs2_cv = cv(Abs2), 
+     Dilution = first(Dilutions))
+ 
+head(FE_Tot_stds_high1)
+
+#Fe_2 abs2 Curve
+FE_2_stds_abs2_1 <- FE_2_stds_abs2 %>%
+  group_by(IDs) %>%
+  summarise(Abs2_mean = mean(Abs2), Abs2_sd = sd(Abs2), Abs2_cv = cv(Abs2), 
+            Dilution = first(Dilutions))
+
+head(FE_2_stds_abs2_1)
+
+
+#Fe_2 diff Curve
+FE_2_stds_diff_1 <- FE_2_stds_diff %>%
+  group_by(IDs) %>%
+  summarise(Abs_dif_mean = mean(FE_2_Diff), Abs_dif = sd(FE_2_Diff), Abs_dif_cv = cv(FE_2_Diff), 
+            Dilution = first(Dilutions))
+head(FE_2_stds_diff_1)
+
+
+#Flag high cvs
+FE_2_stds_low1$FE_2_cv_flag <- ifelse(FE_2_stds_low1$Abs1_cv > 10, 'High CV', 'within range')
+head(FE_2_stds_low1)
+
+FE_2_stds_high1$FE_2_cv_flag <- ifelse(FE_2_stds_high1$Abs1_cv > 10, 'High CV', 'within range')
+head(FE_2_stds_high1)
+
+FE_Tot_stds_low1$FE_Tot_cv_flag <- ifelse(FE_Tot_stds_low1$Abs2_cv > 10, 'High CV', 'within range')
+head(FE_Tot_stds_low1)
+
+FE_Tot_stds_high1$FE_Tot_cv_flag <- ifelse(FE_Tot_stds_high1$Abs2_cv > 10, 'High CV', 'within range')
+head(FE_Tot_stds_high1)
+
+FE_2_stds_abs2_1$FE_2_cv_flag <- ifelse(FE_2_stds_abs2_1$Abs2_cv > 10, 'High CV', 'within range')
+head(FE_2_stds_abs2_1)
+
+#flag high cv
+FE_2_stds_diff_1$FE_2_cv_flag <- ifelse(FE_2_stds_diff_1$Abs_dif_cv > 10, 'High CV', 'within range')
+head(FE_2_stds_diff_1)
+
+#Was the standard curve ok for this plate? Do we need to rerun the plate? Continue means plate is ok. Rerun plate means the R2 is too low.
+if(Slopes1$R2 > 0.985){
+print("Continue")
+} else {
+print("Rerun plate")
+}
+
+if(Slopes2$R2 > 0.985){
+print("Continue")
+} else {
+print("Rerun plate")
+}
+
+if(Slopes3$R2 > 0.985){
+print("Continue")
+} else {
+print("Rerun plate")
+}
+
+if(Slopes4$R2 > 0.985){
+print("Continue")
+} else {
+print("Rerun plate")
+}
+
+if(Slopes5$R2 > 0.985){
+  print("Continue")
+} else {
+  print("Rerun plate")
+}
+
+if(Slopes7$R2 > 0.985){
+  print("Continue")
+} else {
+  print("Rerun plate")
+}
+
+```
+
+#remove high cv
+
+```{r}
+#FE_2_low
+#manualy remove high cv points
+FE_2_stds_low <- subset(FE_2_stds_low, !(Wells %in% c( "A09","C08" )))
+{
+##Plot stds and calculate the slope, intercept, and R2 
+FE_2_low <- ggplot(FE_2_stds_low, aes(Conc_uM, Abs1)) + geom_point() + geom_smooth(method = "lm", se = FALSE)+ggtitle("Low Fe(II) Absorbance 1 Curve")
+print(FE_2_low)
+
+FE_2_low_lm <- lm(FE_2_stds_low$Abs1 ~ FE_2_stds_low$Conc_uM)
+summary(FE_2_low_lm)
+cf <- coef(FE_2_low_lm)
+
+#create data frame with 1 rows and 0 columns
+Slopes1 <- data.frame(matrix(ncol = 0, nrow = 1))
+Slopes1$Date <- Date_Run
+Slopes1$Project <- Project
+Slopes1$Curve <- "FE_2_low"
+Slopes1$R2 <- summary(FE_2_low_lm)$adj.r.squared
+Slopes1$Slope <- cf[2]
+Slopes1$Intercept <- cf[1]
+Slopes1$Top_STD <- Top_STD_Fe2_low
+head(Slopes1)
+
+##Calculate cv for STDs
+
+FE_2_stds_low1 <- FE_2_stds_low %>%
+  group_by(IDs) %>%
+  summarise(Abs1_mean = mean(Abs1), Abs1_sd = sd(Abs1), Abs1_cv = cv(Abs1), 
+           Dilution = first(Dilutions))
+
+head(FE_2_stds_low1)
+
+##Flag high cvs
+FE_2_stds_low1$FE_2_cv_flag <- ifelse(FE_2_stds_low1$Abs1_cv > 10, 'High CV', 'within range')
+print(FE_2_stds_low1)
+
+
+#Was the standard curve ok for this plate? Do we need to rerun the plate? Continue means plate is ok. Rerun plate means the R2 is too low.
+if(Slopes1$R2 > 0.985){
+print("Continue")
+} else {
+print("Rerun plate")
+}
+}
+
+#FE_2_high
+##manualy remove high cv points
+FE_2_stds_high <- subset(FE_2_stds_high, !(Wells %in% c("A09", "B11", "C11","A12","C08")))
+{ 
+ #Plot stds and calculate the slope, intercept, and R2 
+ FE_2_high <- ggplot(FE_2_stds_high, aes(Conc_uM, Abs1)) + geom_point() + geom_smooth(method = "lm", se = FALSE)+ggtitle("High Fe(II) Absorbance 1 Curve")
+ print(FE_2_high)
+ 
+ FE_2_high_lm <- lm(FE_2_stds_high$Abs1 ~ FE_2_stds_high$Conc_uM)
+ summary(FE_2_high_lm)
+ cf <- coef(FE_2_high_lm)
+ 
+ #create data frame with 1 rows and 0 columns
+Slopes2 <- data.frame(matrix(ncol = 0, nrow = 1))
+Slopes2$Date <- Date_Run
+Slopes2$Project <- Project
+Slopes2$Curve <- "FE_2_high"
+Slopes2$R2 <- summary(FE_2_high_lm)$adj.r.squared
+Slopes2$Slope <- cf[2]
+Slopes2$Intercept <- cf[1]
+Slopes2$Top_STD <- Top_STD_Fe2_high
+head(Slopes2)
+ 
+ 
+# #Calculate cv for STDs
+ 
+ FE_2_stds_high1 <- FE_2_stds_high %>%
+   group_by(IDs) %>%
+   summarise(Abs1_mean = mean(Abs1), Abs1_sd = sd(Abs1), Abs1_cv = cv(Abs1), 
+             Dilution = first(Dilutions))
+ 
+ head(FE_2_stds_high1)
+ 
+ #Flag high cvs
+ FE_2_stds_high1$FE_2_cv_flag <- ifelse(FE_2_stds_high1$Abs1_cv > 10, 'High CV', 'within range')
+
+ print(FE_2_stds_high1)
+
+ #Was the standard curve ok for this plate? Do we need to rerun the plate? 
+#Continue means plate is ok. Rerun plate means the R2 is too high.
+ if(Slopes2$R2 > 0.985){
+print("Continue")
+} else {
+print("Rerun plate")
+}
+}
+
+ #FE_Tot_low
+##manualy remove high cv points
+#FE_Tot_stds_low <- subset(FE_Tot_stds_low, !(Wells %in% c( "G03", "H08","F07","G07","H07")))
+{ 
+#Plot stds and calculate the slope, intercept, and R2 
+FE_Tot_low <- ggplot(FE_Tot_stds_low, aes(Conc_uM, Abs2)) + geom_point() + geom_smooth(method = "lm", se = FALSE)+ggtitle("Low Fe(III) Absorbance 2 Curve")
+ print(FE_Tot_low)
+ 
+ FE_Tot_low_lm <- lm(FE_Tot_stds_low$Abs2 ~ FE_Tot_stds_low$Conc_uM)
+ summary(FE_Tot_low_lm)
+ cf <- coef(FE_Tot_low_lm)
+ 
+Slopes3 <- data.frame(matrix(ncol = 0, nrow = 1))
+ Slopes3$Date <- Date_Run
+ Slopes3$Project <- Project
+ Slopes3$Curve <- "FE_Tot_low"
+ Slopes3$R2 <- summary(FE_Tot_low_lm)$adj.r.squared
+ Slopes3$Slope <- cf[2]
+ Slopes3$Intercept <- cf[1]
+ Slopes3$Top_STD <- Top_STD_Fe3_low
+ head(Slopes2)
+
+ #Calculate cv for STDs
+ 
+ FE_Tot_stds_low1 <- FE_Tot_stds_low %>%
+   group_by(IDs) %>%
+   summarise(Abs2_mean = mean(Abs2), Abs2_sd = sd(Abs2), Abs2_cv = cv(Abs2), 
+             Dilution = first(Dilutions))
+
+head(FE_Tot_stds_low1)
+ 
+ #Flag high cvs
+FE_Tot_stds_low1$FE_Tot_cv_flag <- ifelse(FE_Tot_stds_low1$Abs2_cv > 10, 'High CV', 'within range')
+ print(FE_Tot_stds_low1)
+ 
+ 
+ #Was the standard curve ok for this plate? Do we need to rerun the plate? Continue means plate is ok. Rerun plate means the R2 is too low.
+if(Slopes3$R2 > 0.985){
+print("Continue")
+} else {
+print("Rerun plate")
+ }
+}
+
+##FE_Tot_high
+##manualy remove high cv points
+#FE_Tot_stds_high <- subset(FE_Tot_stds_high, !(Wells %in% c("G03", "H08","F07","G07","H07")))
+{ 
+ #Plot stds and calculate the slope, intercept, and R2 
+FE_Tot_high <- ggplot(FE_Tot_stds_high, aes(Conc_uM, Abs2)) + geom_point() + geom_smooth(method = "lm", se = FALSE)+ggtitle("High Fe(III) Absorbance 2 Curve")
+ print(FE_Tot_high)
+ 
+FE_Tot_high_lm <- lm(FE_Tot_stds_high$Abs2 ~ FE_Tot_stds_high$Conc_uM)
+summary(FE_Tot_high_lm)
+cf <- coef(FE_Tot_high_lm)
+ 
+ #create data frame with 1 rows and 0 columns
+Slopes4 <- data.frame(matrix(ncol = 0, nrow = 1))
+Slopes4$Date <- Date_Run
+Slopes4$Project <- Project
+Slopes4$Curve <- "FE_Tot_high"
+Slopes4$R2 <- summary(FE_Tot_high_lm)$adj.r.squared
+Slopes4$Slope <- cf[2]
+Slopes4$Intercept <- cf[1]
+Slopes4$Top_STD <- Top_STD_Fe3_high
+head(Slopes4)
+ 
+ #Calculate cv for STDs
+ 
+FE_Tot_stds_high1 <- FE_Tot_stds_high %>%
+ group_by(IDs) %>%
+  summarise(Abs2_mean = mean(Abs2), Abs2_sd = sd(Abs2), Abs2_cv = cv(Abs2), 
+            Dilution = first(Dilutions))
+ 
+head(FE_Tot_stds_high1)
+
+ #Flag high cvs
+FE_Tot_stds_high1$FE_Tot_cv_flag <- ifelse(FE_Tot_stds_high1$Abs2_cv > 10, 'High CV', 'within range')
+print(FE_Tot_stds_high1)
+ 
+ 
+#Was the standard curve ok for this plate? Do we need to rerun the plate? Continue means plate is ok. Rerun plate means the R2 is too high. 
+if(Slopes4$R2 > 0.985)
+{
+print("Continue")
+} else {
+print("Rerun plate")
+}
+}
+
+#Fe2 Absorbance 2
+#manualy remove high cv points for Fe2 abs2
+#FE_2_stds_abs2 <- subset(FE_2_stds_abs2, !(Wells %in% c( "A01" )))
+{
+##Plot stds and calculate the slope, intercept, and R2 
+FE_2_abs2 <- ggplot(FE_2_stds_abs2, aes(Conc_uM, Abs2)) + geom_point() + geom_smooth(method = "lm", se = FALSE)+ggtitle("Fe(II) Absorbance 2 Curve")
+print(FE_2_abs2)
+
+FE_2_stds_abs2_lm <- lm(FE_2_stds_abs2$Abs2 ~ FE_2_stds_abs2$Conc_uM)
+summary(FE_2_stds_abs2_lm)
+cf <- coef(FE_2_stds_abs2_lm)
+
+#create data frame with 1 rows and 0 columns
+Slopes5 <- data.frame(matrix(ncol = 0, nrow = 1))
+Slopes5$Date <- Date_Run
+Slopes5$Project <- Project
+Slopes5$Curve <- "FE_2_abs2"
+Slopes5$R2 <- summary(FE_2_stds_abs2_lm)$adj.r.squared
+Slopes5$Slope <- cf[2]
+Slopes5$Intercept <- cf[1]
+Slopes5$Top_STD <- 100
+head(Slopes5)
+
+##Calculate cv for STDs
+#Fe_2 abs2 Curve
+FE_2_stds_abs2_1 <- FE_2_stds_abs2 %>%
+  group_by(IDs) %>%
+  summarise(Abs2_mean = mean(Abs2), Abs2_sd = sd(Abs2), Abs2_cv = cv(Abs2), 
+            Dilution = first(Dilutions))
+head(FE_2_stds_abs2_1)
+
+#flag high cv
+FE_2_stds_abs2_1$FE_2_cv_flag <- ifelse(FE_2_stds_abs2_1$Abs2_cv > 10, 'High CV', 'within range')
+print(FE_2_stds_abs2_1)
+
+
+if(Slopes5$R2 > 0.985){
+  print("Continue")
+} else {
+  print("Rerun plate")
+}
+}
+
+#curve for Fe(III) Abs1
+#Remove outliers
+FE_Tot_stds_abs1<- subset(FE_Tot_stds, !(Wells %in% c("H04")))
+{
+FE_3_abs1 <- ggplot(FE_Tot_stds_abs1, aes(Conc_uM,Abs1 )) + geom_point() + geom_smooth(method = "lm", se = FALSE)+ggtitle(" Fe(III) Absorbance 1 Curve")
+print(FE_3_abs1)
+
+FE_3_abs1_lm <- lm(FE_Tot_stds_abs1$Abs1 ~ FE_Tot_stds_abs1$Conc_uM )
+summary(FE_3_abs1_lm)
+cf <- coef(FE_3_abs1_lm)
+
+#create data frame with 1 rows and 0 columns
+Slopes6 <- data.frame(matrix(ncol = 0, nrow = 1))
+Slopes6$Date <- Date_Run
+Slopes6$Project <- Project
+Slopes6$Curve <- "FE_3_abs1"
+Slopes6$R2 <- summary(FE_3_abs1_lm)$adj.r.squared
+Slopes6$Slope <- cf[2]
+Slopes6$Intercept <- cf[1]
+Slopes6$Top_STD <- 500
+head(Slopes6)
+
+#This slope should be small e-5 to e-6
+}
+
+#curve for Fe(II) Difference (Abs2-Abs1)
+#manually remove points
+FE_2_stds_diff <- subset(FE_2_stds_diff, !(Wells %in% c("B07","B04","A06","A09","C10","A08","B08","C08")))
+{
+FE_2_stds_diff$FE_2_Diff<-FE_2_stds_diff$Abs2-FE_2_stds_diff$Abs1
+
+
+FE_2 <- ggplot(FE_2_stds_diff, aes(Conc_uM,FE_2_Diff)) + geom_point() + geom_smooth(method = "lm", se = FALSE)+ggtitle(" Fe(II) Absorbance Difference Curve")
+print(FE_2)
+
+FE_2_diff_lm <- lm(FE_2_stds_diff$FE_2_Diff ~ FE_2_stds_diff$Conc_uM)
+summary(FE_2_diff_lm)
+cf <- coef(FE_2_diff_lm)
+
+#create data frame with 1 rows and 0 columns
+Slopes7 <- data.frame(matrix(ncol = 0, nrow = 1))
+Slopes7$Date <- Date_Run
+Slopes7$Project <- Project
+Slopes7$Curve <- "FE_2_diff"
+Slopes7$R2 <- summary(FE_2_diff_lm)$adj.r.squared
+Slopes7$Slope <- cf[2]
+Slopes7$Intercept <- cf[1]
+Slopes7$Top_STD <- 100
+head(Slopes7)
+
+FE_2_stds_diff_1 <- FE_2_stds_diff %>%
+  group_by(IDs) %>%
+  summarise(Abs_dif_mean = mean(FE_2_Diff), Abs_dif = sd(FE_2_Diff), Abs_dif_cv = cv(FE_2_Diff), 
+            Dilution = first(Dilutions))
+head(FE_2_stds_diff_1)
+
+#flag high cv
+FE_2_stds_diff_1$FE_2_cv_flag <- ifelse(FE_2_stds_diff_1$Abs_dif_cv > 10, 'High CV', 'within range')
+print(FE_2_stds_diff_1)
+
+if(Slopes7$R2 > 0.985){
+  print("Continue")
+} else {
+  print("Rerun plate")
+}
+}
+
+#pull all the slopes together into one dataframe 
+Slopes <- rbind(Slopes1, Slopes2, Slopes3, Slopes4, Slopes5, Slopes6, Slopes7)
+print(Slopes)
+
+```
+
+# Checking STD Data against QAQC file
+
+```{r}
+#read in datafile with all the slopes
+qlogO <- read.csv("S:/GlobalChangeEco/porewater_r scripts & Data/BGC_GCE_PorewaterAnalysis/Fe/Fe_STD_QAQC.csv")
+qlogO <- qlogO[,c(1:7)]
+colnames(qlogO) <- c("Date", "Project", "Curve", "R2", "Slope", "Intercept", "Top_STD")
+head(qlogO)
+
+#add data to file
+qlog <- rbind(Slopes, qlogO)
+head(qlog)
+
+
+#Separate out by slope type for QAQC
+qlog_Fe2_low <- subset(qlog, Curve == "FE_2_low")
+qlog_Fe2_high <- subset(qlog, Curve == "FE_2_high")
+qlog_FeTot_low <- subset(qlog, Curve == "FE_Tot_low")
+qlog_FeTot_high <- subset(qlog, Curve == "FE_Tot_high")
+qlog_Fe2_abs2 <- subset(qlog, Curve == "FE_2_abs2")
+qlog_Fe3_abs1 <- subset(qlog, Curve == "FE_3_abs1")
+qlog_Fe2_diff <- subset(qlog, Curve == "FE_2_diff")
+
+# pull date run
+qlog_Fe2_low_Date <- subset(qlog_Fe2_low, Date == Date_Run)
+qlog_Fe2_high_Date <- subset(qlog_Fe2_high, Date == Date_Run)
+qlog_FeTot_low_Date <- subset(qlog_FeTot_low, Date == Date_Run)
+qlog_FeTot_high_Date <- subset(qlog_FeTot_high, Date == Date_Run)
+qlog_Fe2_abs2_Date <- subset(qlog_Fe2_abs2, Date == Date_Run)
+qlog_Fe3_abs1_Date <- subset(qlog_Fe3_abs1, Date == Date_Run)
+qlog_Fe2_diff_Date <- subset(qlog_Fe2_diff, Date == Date_Run)
+```
+
+#Check Slopes against QAQC file
+```{r}
+##plot the slopes to make sure there are no crazy outliers 
+#Fe2 low curve
+slope_Fe2_low <- ggplot(data=qlog_Fe2_low, aes(x=Date, y=Slope)) +
+           geom_hline(yintercept= (mean(qlog_Fe2_low$Slope)+ (2*sd(qlog_Fe2_low$Slope))), linetype="dashed", color = "red", size=2)+
+            geom_hline(yintercept= (mean(qlog_Fe2_low$Slope)- (2*sd(qlog_Fe2_low$Slope))), linetype="dashed", color = "red", size=2)+
+            geom_point(aes(size=3)) + 
+            theme_classic() + ylim(0.001, 0.004) + 
+           theme(legend.position="none") + 
+           ggtitle("Fe2_low Slopes")+
+  guides(x = guide_axis(angle = 70))
+  
+slope_Fe2_low
+#Fe2 high curve
+ slope_Fe2_high <- ggplot(data=qlog_Fe2_high, aes(x=Date, y=Slope)) +
+            geom_hline(yintercept= (mean(qlog_Fe2_high$Slope)+ (2*sd(qlog_Fe2_high$Slope))), linetype="dashed", color = "red", size=2)+
+             geom_hline(yintercept= (mean(qlog_Fe2_high$Slope)- (2*sd(qlog_Fe2_high$Slope))), linetype="dashed", color = "red", size=2)+
+             geom_point(aes(size=3)) + 
+             theme_classic() + ylim(0.0, 0.003) + 
+            theme(legend.position="none") + 
+            ggtitle("Fe2_high Slopes")+
+  guides(x = guide_axis(angle = 70))
+   
+slope_Fe2_high
+#Fe3 low curve
+slope_FeTot_low <- ggplot(data=qlog_FeTot_low, aes(x=Date, y=Slope)) +
+           geom_hline(yintercept= (mean(qlog_FeTot_low$Slope)+ (2*sd(qlog_FeTot_low$Slope))), linetype="dashed", color = "red", size=2)+
+            geom_hline(yintercept= (mean(qlog_FeTot_low$Slope)- (2*sd(qlog_FeTot_low$Slope))), linetype="dashed", color = "red", size=2)+
+            geom_point(aes(size=3)) + 
+            theme_classic() + ylim(0.0, 0.0075) + 
+           theme(legend.position="none") + 
+           ggtitle("FeTot_low Slopes")+
+  guides(x = guide_axis(angle = 70))
+  
+slope_FeTot_low
+#Fe3 high curve
+ slope_FeTot_high <- ggplot(data=qlog_FeTot_high, aes(x=Date, y=Slope)) +
+            geom_hline(yintercept= (mean(qlog_FeTot_high$Slope)+ (2*sd(qlog_FeTot_high$Slope))), linetype="dashed", color = "red", size=2)+
+             geom_hline(yintercept= (mean(qlog_FeTot_high$Slope)- (2*sd(qlog_FeTot_high$Slope))), linetype="dashed", color = "red", size=2)+
+             geom_point(aes(size=3)) + 
+             theme_classic() + ylim(0.0, 0.003) + 
+            theme(legend.position="none") + 
+            ggtitle("FeTot_high Slopes")+
+  guides(x = guide_axis(angle = 70))
+   
+ slope_FeTot_high
+#Fe2 abs2
+ slope_Fe2_abs2 <- ggplot(data=qlog_Fe2_abs2, aes(x=Date, y=Slope)) +
+  geom_hline(yintercept= (mean(qlog_Fe2_abs2$Slope)+ (2*sd(qlog_Fe2_abs2$Slope))), linetype="dashed", color = "red", size=2)+
+  geom_hline(yintercept= (mean(qlog_Fe2_abs2$Slope)- (2*sd(qlog_Fe2_abs2$Slope))), linetype="dashed", color = "red", size=2)+
+  geom_point(aes(size=3)) + 
+  theme_classic() + ylim(0.002, 0.006) + 
+  theme(legend.position="none") + 
+  ggtitle("Fe2_abs2 Slopes")+
+  guides(x = guide_axis(angle = 70))
+
+slope_Fe2_abs2
+#Fe3 abs1
+ slope_Fe3_abs1 <- ggplot(data=qlog_Fe3_abs1, aes(x=Date, y=Slope)) +
+  geom_hline(yintercept= (mean(qlog_Fe3_abs1$Slope)+ (2*sd(qlog_Fe3_abs1$Slope))), linetype="dashed", color = "red", size=2)+
+  geom_hline(yintercept= (mean(qlog_Fe3_abs1$Slope)- (2*sd(qlog_Fe3_abs1$Slope))), linetype="dashed", color = "red", size=2)+
+  geom_point(aes(size=3)) + 
+  theme_classic() + ylim(0, 0.00002) + 
+  theme(legend.position="none") + 
+  ggtitle("Fe3_abs1 Slopes")+
+  guides(x = guide_axis(angle = 70))
+
+slope_Fe3_abs1
+#Fe2 difference
+ slope_Fe2_diff <- ggplot(data=qlog_Fe2_diff, aes(x=Date, y=Slope)) +
+  geom_hline(yintercept= (mean(qlog_Fe2_diff$Slope)+ (2*sd(qlog_Fe2_diff$Slope))), linetype="dashed", color = "red", size=2)+
+  geom_hline(yintercept= (mean(qlog_Fe2_diff$Slope)- (2*sd(qlog_Fe2_diff$Slope))), linetype="dashed", color = "red", size=2)+
+  geom_point(aes(size=3)) + 
+  theme_classic() + ylim(0.001, 0.002) + 
+  theme(legend.position="none") + 
+  ggtitle("Fe2_diff Slopes")+
+  guides(x = guide_axis(angle = 70))
+
+slope_Fe2_diff
+
+if (qlog_Fe2_low_Date$Slope[1] > (mean(qlog_Fe2_low$Slope)+ (2*sd(qlog_Fe2_low$Slope)))| qlog_Fe2_low_Date$Slope[1] < (mean(qlog_Fe2_low$Slope)- (2*sd(qlog_Fe2_low$Slope)))) {
+print("rerun Plate")
+} else {
+print("continue")
+}
+
+ if (qlog_Fe2_high_Date$Slope[1] > (mean(qlog_Fe2_high$Slope)+ (2*sd(qlog_Fe2_high$Slope)))| qlog_Fe2_high_Date$Slope[1] < (mean(qlog_Fe2_high$Slope)- (2*sd(qlog_Fe2_high$Slope)))) {
+ print("rerun Plate")
+ } else {
+ print("continue")
+ }
+
+if (qlog_FeTot_low_Date$Slope[1] > (mean(qlog_FeTot_low$Slope)+ (2*sd(qlog_FeTot_low$Slope)))| qlog_FeTot_low_Date$Slope[1] < (mean(qlog_FeTot_low$Slope)- (2*sd(qlog_FeTot_low$Slope)))) {
+print("rerun Plate")
+} else {
+print("continue")
+}
+
+ if (qlog_FeTot_high_Date$Slope[1] > (mean(qlog_FeTot_high$Slope)+ (2*sd(qlog_FeTot_high$Slope)))| qlog_FeTot_high_Date$Slope[1] < (mean(qlog_FeTot_high$Slope)- (2*sd(qlog_FeTot_high$Slope)))) {
+ print("rerun Plate")
+ } else {
+ print("continue")
+ }
+
+if (qlog_Fe2_abs2_Date$Slope[1] > (mean(qlog_Fe2_abs2$Slope)+ (2*sd(qlog_Fe2_abs2$Slope)))| qlog_Fe2_abs2_Date$Slope[1] < (mean(qlog_Fe2_abs2$Slope)- (2*sd(qlog_Fe2_abs2$Slope)))) {
+  print("rerun Plate")
+} else {
+  print("continue")
+}
+
+if (qlog_Fe3_abs1_Date$Slope[1] > (mean(qlog_Fe3_abs1$Slope)+ (2*sd(qlog_Fe3_abs1$Slope)))| qlog_Fe3_abs1_Date$Slope[1] < (mean(qlog_Fe3_abs1$Slope)- (2*sd(qlog_Fe3_abs1$Slope)))) {
+  print("rerun Plate")
+} else {
+  print("continue")
+}
+
+if (qlog_Fe2_diff_Date$Slope[1] > (mean(qlog_Fe2_diff$Slope)+ (2*sd(qlog_Fe2_diff$Slope)))| qlog_Fe2_diff_Date$Slope[1] < (mean(qlog_Fe2_diff$Slope)- (2*sd(qlog_Fe2_diff$Slope)))) {
+  print("rerun Plate")
+} else {
+  print("continue")
+}
+#Rerun if outside of red lines
+```
+# Check Intercepts against QAQC file
+
+```{r}
+##plot the intercepts to make sure there are no crazy outliers 
+#Fe2 low
+int_Fe2_low <- ggplot(data=qlog_Fe2_low, aes(x=Date, y=Intercept)) +
+  geom_hline(yintercept= (mean(qlog_Fe2_low$Intercept)+ (2*sd(qlog_Fe2_low$Intercept))), linetype="dashed", color = "red", size=2)+
+  geom_hline(yintercept= (mean(qlog_Fe2_low$Intercept)- (2*sd(qlog_Fe2_low$Intercept))), linetype="dashed", color = "red", size=2)+
+  geom_point(aes(size=3)) + 
+  theme_classic() + ylim(0.03,0.05) + 
+  theme(legend.position="none")+ 
+  ggtitle("Fe2_low Intercepts")+
+  guides(x = guide_axis(angle = 70))
+
+int_Fe2_low
+#Fe2 high
+ int_Fe2_high <- ggplot(data=qlog_Fe2_high, aes(x=Date, y=Intercept)) +
+   geom_hline(yintercept= (mean(qlog_Fe2_high$Intercept)+ (2*sd(qlog_Fe2_high$Intercept))), linetype="dashed", color = "red", size=2)+
+   geom_hline(yintercept= (mean(qlog_Fe2_high$Intercept)- (2*sd(qlog_Fe2_high$Intercept))), linetype="dashed", color = "red", size=2)+
+   geom_point(aes(size=3)) + 
+   theme_classic() + ylim(0.03,0.06) + 
+   theme(legend.position="none")+ 
+   ggtitle("Fe2_high Intercepts")+
+  guides(x = guide_axis(angle = 70))
+ 
+ int_Fe2_high
+#fe3 low
+int_FeTot_low <- ggplot(data=qlog_FeTot_low, aes(x=Date, y=Intercept)) +
+  geom_hline(yintercept= (mean(qlog_FeTot_low$Intercept)+ (2*sd(qlog_FeTot_low$Intercept))), linetype="dashed", color = "red", size=2)+
+  geom_hline(yintercept= (mean(qlog_FeTot_low$Intercept)- (2*sd(qlog_FeTot_low$Intercept))), linetype="dashed", color = "red", size=2)+
+  geom_point(aes(size=3)) + 
+  theme_classic() + ylim(0.03,0.05) + 
+  theme(legend.position="none")+ 
+  ggtitle("FeTot_low Intercepts")+
+  guides(x = guide_axis(angle = 70))
+
+int_FeTot_low
+#fe3 high
+ int_FeTot_high <- ggplot(data=qlog_FeTot_high, aes(x=Date, y=Intercept)) +
+   geom_hline(yintercept= (mean(qlog_FeTot_high$Intercept)+ (2*sd(qlog_FeTot_high$Intercept))), linetype="dashed", color = "red", size=2)+
+   geom_hline(yintercept= (mean(qlog_FeTot_high$Intercept)- (2*sd(qlog_FeTot_high$Intercept))), linetype="dashed", color = "red", size=2)+
+   geom_point(aes(size=3)) + 
+   theme_classic() + ylim(0.03,0.05) + 
+   theme(legend.position="none")+ 
+   ggtitle("FeTot_high Intercepts")+
+  guides(x = guide_axis(angle = 70))
+ 
+ int_FeTot_high
+#Fe2 abs2
+ int_Fe2_abs2 <- ggplot(data=qlog_Fe2_abs2, aes(x=Date, y=Intercept)) +
+  geom_hline(yintercept= (mean(qlog_Fe2_abs2$Intercept)+ (2*sd(qlog_Fe2_abs2$Intercept))), linetype="dashed", color = "red", size=2)+
+  geom_hline(yintercept= (mean(qlog_Fe2_abs2$Intercept)- (2*sd(qlog_Fe2_abs2$Intercept))), linetype="dashed", color = "red", size=2)+
+  geom_point(aes(size=3)) + 
+  theme_classic() + ylim(0.03,0.05) + 
+  theme(legend.position="none")+ 
+  ggtitle("Fe2_abs2 Intercepts")+
+  guides(x = guide_axis(angle = 70))
+
+int_Fe2_abs2
+#Fe3 abs1
+ int_Fe3_abs1 <- ggplot(data=qlog_Fe3_abs1, aes(x=Date, y=Intercept)) +
+  geom_hline(yintercept= (mean(qlog_Fe3_abs1$Intercept)+ (2*sd(qlog_Fe3_abs1$Intercept))), linetype="dashed", color = "red", size=2)+
+  geom_hline(yintercept= (mean(qlog_Fe3_abs1$Intercept)- (2*sd(qlog_Fe3_abs1$Intercept))), linetype="dashed", color = "red", size=2)+
+  geom_point(aes(size=3)) + 
+  theme_classic() + ylim(0.03,0.05) + 
+  theme(legend.position="none")+ 
+  ggtitle("Fe3_abs1 Intercepts")+
+  guides(x = guide_axis(angle = 70))
+
+int_Fe3_abs1
+#Fe2 diff
+ int_Fe2_diff <- ggplot(data=qlog_Fe2_diff, aes(x=Date, y=Intercept)) +
+  geom_hline(yintercept= (mean(qlog_Fe2_diff$Intercept)+ (2*sd(qlog_Fe2_diff$Intercept))), linetype="dashed", color = "red", size=2)+
+  geom_hline(yintercept= (mean(qlog_Fe2_diff$Intercept)- (2*sd(qlog_Fe2_diff$Intercept))), linetype="dashed", color = "red", size=2)+
+  geom_point(aes(size=3)) + 
+  theme_classic() + ylim(0,0.01) + 
+  theme(legend.position="none")+ 
+  ggtitle("Fe2_diff Intercepts")+
+  guides(x = guide_axis(angle = 70))
+
+int_Fe2_diff
+
+if (qlog_Fe2_low_Date$Intercept[1] > (mean(qlog_Fe2_low$Intercept)+ (2*sd(qlog_Fe2_low$Intercept)))| qlog_Fe2_low_Date$Intercept[1] < (mean(qlog_Fe2_low$Intercept)- (2*sd(qlog_Fe2_low$Intercept)))) {
+print("rerun Plate")
+} else {
+print("continue")
+}
+
+ if (qlog_Fe2_high_Date$Intercept[1] > (mean(qlog_Fe2_high$Intercept)+ (2*sd(qlog_Fe2_high$Intercept)))| qlog_Fe2_high_Date$Intercept[1] < (mean(qlog_Fe2_high$Intercept)- (2*sd(qlog_Fe2_high$Intercept)))) {
+ print("rerun Plate")
+ } else {
+ print("continue")
+ }
+
+if (qlog_FeTot_low_Date$Intercept[1] > (mean(qlog_FeTot_low$Intercept)+ (2*sd(qlog_FeTot_low$Intercept)))| qlog_FeTot_low_Date$Intercept[1] < (mean(qlog_FeTot_low$Intercept)- (2*sd(qlog_FeTot_low$Intercept)))) {
+print("rerun Plate")
+} else {
+print("continue")
+}
+
+ if (qlog_FeTot_high_Date$Intercept[1] > (mean(qlog_FeTot_high$Intercept)+ (2*sd(qlog_FeTot_high$Intercept)))| qlog_FeTot_high_Date$Intercept[1] < (mean(qlog_FeTot_high$Intercept)- (2*sd(qlog_FeTot_high$Intercept)))) {
+ print("rerun Plate")
+ } else {
+ print("continue")
+ }
+
+if (qlog_Fe2_abs2_Date$Intercept[1] > (mean(qlog_Fe2_abs2$Intercept)+ (2*sd(qlog_Fe2_abs2$Intercept)))| qlog_Fe2_abs2_Date$Intercept[1] < (mean(qlog_Fe2_abs2$Intercept)- (2*sd(qlog_Fe2_abs2$Intercept)))) {
+  print("rerun Plate")
+} else {
+  print("continue")
+}
+
+if (qlog_Fe3_abs1_Date$Intercept[1] > (mean(qlog_Fe3_abs1$Intercept)+ (2*sd(qlog_Fe3_abs1$Intercept)))| qlog_Fe3_abs1_Date$Intercept[1] < (mean(qlog_Fe3_abs1$Intercept)- (2*sd(qlog_Fe3_abs1$Intercept)))) {
+  print("rerun Plate")
+} else {
+  print("continue")
+}
+
+if (qlog_Fe2_diff_Date$Intercept[1] > (mean(qlog_Fe2_diff$Intercept)+ (2*sd(qlog_Fe2_diff$Intercept)))| qlog_Fe2_diff_Date$Intercept[1] < (mean(qlog_Fe2_diff$Intercept)- (2*sd(qlog_Fe2_diff$Intercept)))) {
+  print("rerun Plate")
+} else {
+  print("continue")
+}
+```
+# Check R2s against QAQC file
+
+```{r}
+#plot the R2s to make sure there are no crazy outliers 
+#Fe2 low
+Rsq1_Fe2_low <- ggplot(data=qlog_Fe2_low, aes(x=Date, y=R2)) +
+  geom_hline(yintercept= (0.98), linetype="dashed", color = "red", size=2)+
+  geom_point(aes(size=3)) + 
+  theme_classic() + ylim(0.96, 1.01) + 
+  theme(legend.position="none")+ 
+  ggtitle("Fe2_low R2s")+
+  guides(x = guide_axis(angle = 70))
+
+Rsq1_Fe2_low
+#Fe2 high
+ Rsq1_Fe2_high <- ggplot(data=qlog_Fe2_high, aes(x=Date, y=R2)) +
+   geom_hline(yintercept= (0.98), linetype="dashed", color = "red", size=2)+
+   geom_point(aes(size=3)) + 
+   theme_classic() + ylim(0.96, 1.01) + 
+   theme(legend.position="none")+ 
+   ggtitle("Fe2_high R2s")+
+  guides(x = guide_axis(angle = 70))
+
+ Rsq1_Fe2_high
+#Fe3 low
+Rsq1_FeTot_low <- ggplot(data=qlog_FeTot_low, aes(x=Date, y=R2)) +
+  geom_hline(yintercept= (0.98), linetype="dashed", color = "red", size=2)+
+  geom_point(aes(size=3)) + 
+  theme_classic() + ylim(0.96, 1.01) + 
+  theme(legend.position="none")+ 
+  ggtitle("FeTot_low R2s")+
+  guides(x = guide_axis(angle = 70))
+
+Rsq1_FeTot_low
+#Fe3 high
+ Rsq1_FeTot_high <- ggplot(data=qlog_FeTot_high, aes(x=Date, y=R2)) +
+   geom_hline(yintercept= (0.98), linetype="dashed", color = "red", size=2)+
+   geom_point(aes(size=3)) + 
+   theme_classic() + ylim(0.96, 1.01) + 
+   theme(legend.position="none")+ 
+   ggtitle("FeTot_high R2s")+
+  guides(x = guide_axis(angle = 70))
+ 
+ Rsq1_FeTot_high
+#Fe2 abs2 
+ Rsq1_Fe2_abs2 <- ggplot(data=qlog_Fe2_abs2, aes(x=Date, y=R2)) +
+  geom_hline(yintercept= (0.98), linetype="dashed", color = "red", size=2)+
+  geom_point(aes(size=3)) + 
+  theme_classic() + ylim(0.96, 1.01) + 
+  theme(legend.position="none")+ 
+  ggtitle("Fe2_abs2 R2s")+
+  guides(x = guide_axis(angle = 70))
+
+Rsq1_Fe2_abs2
+#Fe3 abs1
+ Rsq1_Fe3_abs1 <- ggplot(data=qlog_Fe3_abs1, aes(x=Date, y=R2)) +
+  geom_hline(yintercept= (0.98), linetype="dashed", color = "red", size=2)+
+  geom_point(aes(size=3)) + 
+  theme_classic() + ylim(0, 1.0) + 
+  theme(legend.position="none")+ 
+  ggtitle("Fe3_abs1 R2s")+
+  guides(x = guide_axis(angle = 70))
+
+Rsq1_Fe3_abs1
+#Fe2 diff
+ Rsq1_Fe2_diff <- ggplot(data=qlog_Fe2_diff, aes(x=Date, y=R2)) +
+  geom_hline(yintercept= (0.98), linetype="dashed", color = "red", size=2)+
+  geom_point(aes(size=3)) + 
+  theme_classic() + ylim(0.96, 1.01) + 
+  theme(legend.position="none")+ 
+  ggtitle("Fe2_diff R2s")+
+  guides(x = guide_axis(angle = 70))
+
+Rsq1_Fe2_diff
+```
+
+## Calculate Reduction Efficiency 
+```{r}
+#pull out Fe_2 and Fe_3 standards at 60uM to check reduction efficiency
+
+#subset by FE_2 and FE_Total
+FE_2_60uM <- stds %>%  
+  filter(str_detect(stds$IDs, "60 uM Fe_2 A"))  
+head(FE_2_60uM)
+
+#subset by FE_2 and FE_Total
+FE_3_60 <- stds %>%  
+  filter(str_detect(IDs, "60 uM Fe_3 A"))  
+head(FE_3_60)
+
+
+#create data frame with 0 rows and 3 columns
+Fe_Red_eff <- data.frame(matrix(ncol = 0, nrow = 3))
+
+Fe_Red_eff$ID <- seq.int(nrow(Fe_Red_eff))
+Fe_Red_eff$FE2 <- (FE_2_60uM$Abs1)
+Fe_Red_eff$FE3 <- FE_3_60$Abs2
+Fe_Red_eff$Eff <- ((Fe_Red_eff$FE3)/Fe_Red_eff$FE2)*100
+Fe_Red_eff$Eff1 <- ((Fe_Red_eff$FE3/0.8)/Fe_Red_eff$FE2)*100 #this one accounts for dilution of the reagents 
+head(Fe_Red_eff)
+
+#plot spk recoveries output as a bar graph to easily check - want any over 10% to be red need to work on this 
+redeffbar <- ggplot(data = Fe_Red_eff, aes(x = ID, y = Eff1)) +
+        geom_bar(stat = 'identity') + 
+        scale_fill_manual(values=c("gray48")) + 
+        theme_classic() + labs(x= "Sample ID", y="Reduction Efficiency (%)") + 
+        theme(legend.position="none") +  
+        geom_hline(yintercept=85, linetype="dashed", color = "black", size=1) + 
+        geom_hline(yintercept=120, linetype="dashed", color = "black", size=1)
+
+redeffbar
+
+```
+
+## Method Minimum Detection Limit (MDL) Calculation
+I use the lowest standard to calculate MDL
+How to calculate MDL https://www.epa.gov/sites/default/files/2016-12/documents/mdl-procedure_rev2_12-13-2016.pdf
+Look at Table 1 on page 5
+The Student's t-value used to calculate the method detection limit (MDL) is the one appropriate for a 99% confidence level and a standard deviation estimate with n-1 degrees of freedom
+
+```{r}
+#make a dataframe of just 0.6 uM Fe2 samples from standard dataframe
+MDL_dat <- subset(FE_2_stds, Conc_uM == 0.6)
+
+#calculate the standard deviation of abs 1
+stddev <- sd(MDL_dat$Abs1)
+
+#calculate n (number of 0.6 uM samples)
+n <- nrow(MDL_dat)
+
+#Identify the proper Student's T for n-1 from the table link above
+StudentsT <- 2.528
+
+#Multiply Standard deviation by Student's T
+MDL <- stddev*StudentsT
+MDL
+```
+#save QAQC Data to QAQC File
+
+```{r}
+#save QAQC Data to QAQC File
+#write.csv(qlog, file="S:/GlobalChangeEco/porewater_r scripts & Data/BGC_GCE_PorewaterAnalysis/Fe/Fe_STD_QAQC.csv", row.names=FALSE)
+```
+
+
+
+```
+
+### END
+
+
+
