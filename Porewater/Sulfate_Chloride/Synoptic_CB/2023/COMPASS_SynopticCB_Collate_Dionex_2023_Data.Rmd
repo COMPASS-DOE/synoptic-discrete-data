@@ -25,7 +25,7 @@ desired_columns <- c("Project",	"Region",	"Site",	"Zone",	"Replicate",	"Depth_cm
 ```
 
 ```{r}
-# Some sample IDs are missing from metadata.
+# Some sample IDs were missing from metadata. These have been added. 
 #   [1] "GWI_202304_UP_LYSA_20CM"    "GCW_202305_UP_LYSA_20CM"    "SWH_202305_UPCON_LYSA_20CM" "SWH_202305_UPCON_LYSA_45CM" "SWH_202305_UPCON_LYSC_45CM"
 #   [6] "GCW_202305_TR_LYSC_45CM"    "SWH_202305_WC_LYSA_10CM"    "SWH_202305_WC_LYSA_20CM"    "SWH_202305_WC_LYSA_45CM"    "SWH_202305_WC_LYSB_10CM"   
 #  [11] "SWH_202305_WC_LYSB_20CM"    "SWH_202305_WC_LYSB_45CM"    "GCW_202305_UP_LYSB_10CM"    "GCW_202305_UP_LYSB_20CM"    "MSM_202305_UP_LYSC_45CM"   

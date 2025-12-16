@@ -205,6 +205,23 @@ dat_raw <- dat_raw %>%
 head(dat_raw)
 ```
 
+#Note from Steph: Check all sample IDs from MSM Upland in 2023 May samples. Samples were labeled LysA, but are actually LysC from this month and zone only and need documented. If there are samples from MSM UP LysA 10cm listed, then the samples were NOT corrected and that would mean that all of the LysA samples should be LysC and we should document and correct. We know this because we hardly ever get water from LysA 10cm at MSM. This is a one time issue from May 2023 as far as I am aware. 
+```{r Check and fix MSM Up Lys sample IDs, echo = FALSE}
+
+string_to_find <- "MSM_UP_LysA_10cm"
+found <- any(sapply(dat_raw, function(x) any(grepl(string_to_find, x))))
+
+# Print the result
+if (found) {
+  print(paste("The string '", string_to_find, "' was found in the dataframe.", sep = ""))
+} else {
+  print(paste("The string '", string_to_find, "' was not found in the dataframe.", sep = ""))
+}
+
+
+```
+
+
 ## Assessing Standard Curves - assessed manually on the instrument 
 
 ## Assess Check Standards 

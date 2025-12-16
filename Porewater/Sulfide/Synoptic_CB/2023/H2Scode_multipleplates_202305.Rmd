@@ -46,8 +46,7 @@ Run_by = "Stephanie Wilson"  #Instrument user
 Script_run_by = "Zoe Read" #Code user 
 Project = "COMPASS"
 
-Run_notes="Some sample IDs are missing from metadata: SHW_202305_UPCON_LYSB_45CM. 
-Plate 3 MC 10 and 20 were bad. 
+Run_notes="Plate 3 MC 10 and 20 were bad. 
 1/7 plates had a bad dup. 
 4/7 plates had a bad spike. 
 "#any notes from run
@@ -157,6 +156,22 @@ dat$IDs[dat$IDs == Old_ID_1] <- New_ID_1
 # dat$IDs[dat$IDs == Old_ID_4] <- New_ID_4
 # dat$IDs[dat$IDs == Old_ID_5] <- New_ID_5
 # dat$IDs[dat$IDs == Old_ID_6] <- New_ID_6
+
+```
+
+#Note from Steph: Check all sample IDs from MSM Upland in 2023 May samples. Samples were labeled LysA, but are actually LysC from this month and zone only and need documented. If there are samples from MSM UP LysA 10cm listed, then the samples were NOT corrected and that would mean that all of the LysA samples should be LysC and we should document and correct. We know this because we hardly ever get water from LysA 10cm at MSM. This is a one time issue from May 2023 as far as I am aware. 
+```{r Check and fix MSM Up Lys sample IDs, echo = FALSE}
+
+string_to_find <- "MSM_UP_LysA_10cm"
+found <- any(sapply(dat, function(x) any(grepl(string_to_find, x))))
+
+# Print the result
+if (found) {
+  print(paste("The string '", string_to_find, "' was found in the dataframe.", sep = ""))
+} else {
+  print(paste("The string '", string_to_find, "' was not found in the dataframe.", sep = ""))
+}
+
 
 ```
 
