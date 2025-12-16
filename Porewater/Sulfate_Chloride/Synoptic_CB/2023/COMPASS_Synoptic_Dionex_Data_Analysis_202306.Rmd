@@ -76,6 +76,16 @@ all_dat[is.na(all_dat)] <- 0
 ```
 
 
+##Fix Sample ID's Entered Incorrectly
+```{r Fix data entered incorrectly, include = FALSE}
+##Data entered incorrectly
+all_dat$Sample_ID <- as.character(all_dat$Sample_ID)
+all_dat <- all_dat %>%
+  mutate(across(where(is.character), ~ str_replace_all(., "_202036_", "_202306_")))
+
+```
+
+
 ## Pull out standards  - could do some checks here if we want
 ```{r}
 stds <- all_dat[grepl("Standard", all_dat$Sample_ID),]

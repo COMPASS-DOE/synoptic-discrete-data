@@ -1,5 +1,5 @@
 ---
-title: "Dionex_COMPASS_June2023"
+title: "Dionex_COMPASS_April2023"
 author: "Stephanie J. Wilson"
 date: "2023-06-23"
 output: 
@@ -378,7 +378,8 @@ head(alldat)
 
 ## Make final dataframe with IDs  
 ```{r}
-
+colnames(alldat)
+alldat$'NA' <- NULL
 write.csv(alldat, file="Processed Data/COMPASS_SynopticCB_PW_Processed_Cl_SO4_202304.csv")           #Change file name
 
 

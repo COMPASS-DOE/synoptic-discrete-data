@@ -1,5 +1,5 @@
 ---
-title: "Dionex_COMPASS_June2023"
+title: "Dionex_COMPASS_July2023"
 author: "Stephanie J. Wilson"
 date: '2023-06-23'
 output: pdf_document
@@ -283,33 +283,33 @@ head(QAspks)
 #if your samples are all the same dilution just use the first line 
 #for Steph / COMPASS this depends on the site so... 
 QAspks$Dilution <- 1
-QAspks$Dilution <-  ifelse(str_detect(QAspks$Sample_ID, "MSM_202306_UP"), 50, QAspks$Dilution)
-QAspks$Dilution <-  ifelse(str_detect(QAspks$Sample_ID, "MSM_202306_TR"), 50, QAspks$Dilution)
-QAspks$Dilution <-  ifelse(str_detect(QAspks$Sample_ID, "MSM_202306_WC"), 100, QAspks$Dilution)
-QAspks$Dilution <-  ifelse(str_detect(QAspks$Sample_ID, "GCrew_202306_UP"), 50, QAspks$Dilution)
-QAspks$Dilution <-  ifelse(str_detect(QAspks$Sample_ID, "GCrew_202306_TR"), 50, QAspks$Dilution)
-QAspks$Dilution <-  ifelse(str_detect(QAspks$Sample_ID, "GCrew_202306_WC"), 100, QAspks$Dilution)
-QAspks$Dilution <-  ifelse(str_detect(QAspks$Sample_ID, "GWI_202306_UP"), 100, QAspks$Dilution)
-QAspks$Dilution <-  ifelse(str_detect(QAspks$Sample_ID, "GWI_202306_TR"), 100, QAspks$Dilution)
-QAspks$Dilution <-  ifelse(str_detect(QAspks$Sample_ID, "GWI_202306_WC"), 200, QAspks$Dilution)
-QAspks$Dilution <-  ifelse(str_detect(QAspks$Sample_ID, "SWH_202306_UP"), 50, QAspks$Dilution)
-QAspks$Dilution <-  ifelse(str_detect(QAspks$Sample_ID, "SWH_202306_TR"), 50, QAspks$Dilution)
-QAspks$Dilution <-  ifelse(str_detect(QAspks$Sample_ID, "SWH_202306_WC"), 50, QAspks$Dilution)
+QAspks$Dilution <-  ifelse(str_detect(QAspks$Sample_ID, "MSM_202307_UP"), 50, QAspks$Dilution)
+QAspks$Dilution <-  ifelse(str_detect(QAspks$Sample_ID, "MSM_202307_TR"), 50, QAspks$Dilution)
+QAspks$Dilution <-  ifelse(str_detect(QAspks$Sample_ID, "MSM_202307_WC"), 100, QAspks$Dilution)
+QAspks$Dilution <-  ifelse(str_detect(QAspks$Sample_ID, "GCrew_202307_UP"), 50, QAspks$Dilution)
+QAspks$Dilution <-  ifelse(str_detect(QAspks$Sample_ID, "GCrew_202307_TR"), 50, QAspks$Dilution)
+QAspks$Dilution <-  ifelse(str_detect(QAspks$Sample_ID, "GCrew_202307_WC"), 100, QAspks$Dilution)
+QAspks$Dilution <-  ifelse(str_detect(QAspks$Sample_ID, "GWI_202307_UP"), 100, QAspks$Dilution)
+QAspks$Dilution <-  ifelse(str_detect(QAspks$Sample_ID, "GWI_202307_TR"), 100, QAspks$Dilution)
+QAspks$Dilution <-  ifelse(str_detect(QAspks$Sample_ID, "GWI_202307_WC"), 200, QAspks$Dilution)
+QAspks$Dilution <-  ifelse(str_detect(QAspks$Sample_ID, "SWH_202307_UP"), 50, QAspks$Dilution)
+QAspks$Dilution <-  ifelse(str_detect(QAspks$Sample_ID, "SWH_202307_TR"), 50, QAspks$Dilution)
+QAspks$Dilution <-  ifelse(str_detect(QAspks$Sample_ID, "SWH_202307_WC"), 50, QAspks$Dilution)
 
 #Set Sample volumes in uL 
 QAspks$SampleVol <- 1
-QAspks$SampleVol <-  ifelse(str_detect(QAspks$Sample_ID, "MSM_202306_UP"), 1501, QAspks$SampleVol)
-QAspks$SampleVol <-  ifelse(str_detect(QAspks$Sample_ID, "MSM_202306_TR"), 1501, QAspks$SampleVol)
-QAspks$SampleVol <-  ifelse(str_detect(QAspks$Sample_ID, "MSM_202306_WC"), 1475, QAspks$SampleVol)
-QAspks$SampleVol <-  ifelse(str_detect(QAspks$Sample_ID, "GCrew_202306_UP"), 1501, QAspks$SampleVol)
-QAspks$SampleVol <-  ifelse(str_detect(QAspks$Sample_ID, "GCrew_202306_TR"), 1501, QAspks$SampleVol)
-QAspks$SampleVol <-  ifelse(str_detect(QAspks$Sample_ID, "GCrew_202306_WC"), 1475, QAspks$SampleVol)
-QAspks$SampleVol <-  ifelse(str_detect(QAspks$Sample_ID, "GWI_202306_UP"), 1475, QAspks$SampleVol)
-QAspks$SampleVol <-  ifelse(str_detect(QAspks$Sample_ID, "GWI_202306_TR"), 1475, QAspks$SampleVol)
-QAspks$SampleVol <-  ifelse(str_detect(QAspks$Sample_ID, "GWI_202306_WC"), 1462, QAspks$SampleVol)
-QAspks$SampleVol <-  ifelse(str_detect(QAspks$Sample_ID, "SWH_202306_UP"), 1501, QAspks$SampleVol)
-QAspks$SampleVol <-  ifelse(str_detect(QAspks$Sample_ID, "SWH_202306_TR"), 1501, QAspks$SampleVol)
-QAspks$SampleVol <-  ifelse(str_detect(QAspks$Sample_ID, "SWH_202306_WC"), 1501, QAspks$SampleVol)
+QAspks$SampleVol <-  ifelse(str_detect(QAspks$Sample_ID, "MSM_202307_UP"), 1501, QAspks$SampleVol)
+QAspks$SampleVol <-  ifelse(str_detect(QAspks$Sample_ID, "MSM_202307_TR"), 1501, QAspks$SampleVol)
+QAspks$SampleVol <-  ifelse(str_detect(QAspks$Sample_ID, "MSM_202307_WC"), 1475, QAspks$SampleVol)
+QAspks$SampleVol <-  ifelse(str_detect(QAspks$Sample_ID, "GCrew_202307_UP"), 1501, QAspks$SampleVol)
+QAspks$SampleVol <-  ifelse(str_detect(QAspks$Sample_ID, "GCrew_202307_TR"), 1501, QAspks$SampleVol)
+QAspks$SampleVol <-  ifelse(str_detect(QAspks$Sample_ID, "GCrew_202307_WC"), 1475, QAspks$SampleVol)
+QAspks$SampleVol <-  ifelse(str_detect(QAspks$Sample_ID, "GWI_202307_UP"), 1475, QAspks$SampleVol)
+QAspks$SampleVol <-  ifelse(str_detect(QAspks$Sample_ID, "GWI_202307_TR"), 1475, QAspks$SampleVol)
+QAspks$SampleVol <-  ifelse(str_detect(QAspks$Sample_ID, "GWI_202307_WC"), 1462, QAspks$SampleVol)
+QAspks$SampleVol <-  ifelse(str_detect(QAspks$Sample_ID, "SWH_202307_UP"), 1501, QAspks$SampleVol)
+QAspks$SampleVol <-  ifelse(str_detect(QAspks$Sample_ID, "SWH_202307_TR"), 1501, QAspks$SampleVol)
+QAspks$SampleVol <-  ifelse(str_detect(QAspks$Sample_ID, "SWH_202307_WC"), 1501, QAspks$SampleVol)
 
 #change sample volume to L 
 QAspks$SampleVol <- QAspks$SampleVol/1000000
@@ -367,6 +367,8 @@ head(alldat)
 
 ## Make final dataframe with IDs  
 ```{r}
+alldat$'NA' <- NULL
+alldat$'NA.1' <- NULL
 write.csv(alldat, file="Processed Data/COMPASS_SynopticCB_PW_Processed_Cl_SO4_202307.csv")           #Change file name
 
 ```
