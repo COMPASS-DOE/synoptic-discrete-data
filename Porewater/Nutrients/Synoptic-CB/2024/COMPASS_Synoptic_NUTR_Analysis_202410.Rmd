@@ -11,6 +11,13 @@ output_dir: "To Be Reviewed/PDF"
 
 \newpage
 
+```{r Fix incorrect sample IDs}
+Old_ID_1 <- "SWH_202410_SWAMP_LycC_45cm"
+New_ID_1 <- "SWH_202410_SWAMP_LysC_45cm"
+
+```
+
+
 ##Run Information 
 ```{r run information, include=TRUE}
 cat("Run Information: Isabelle Van Benschoten ") #lets you know what section you're in 
@@ -30,7 +37,8 @@ cat("Run Information: Isabelle Van Benschoten ") #lets you know what section you
   final_path <- "Processed Data/COMPASS_Synoptic_Nutrients_202410.csv"
 
 #record any notes about the run or anything other info here: 
-  run_notes <- "Nitrate and nitrite reduction efficiency is okay, graph off 
+  run_notes <- "Some sample IDs are missing from metadata: SWH_202410_UP_LysC_10cm
+  Nitrate and nitrite reduction efficiency is okay, graph off 
   because only one run for this month. 
   Performance check for NOx looks like DI was run instead of the peCheck.
   ** Something up with the phosphate on this run... needs looked at. "
@@ -209,6 +217,17 @@ df_all <- df %>%
   mutate(Run_Number = as.numeric(Run_Number))
 ```
 
+
+```{r Fix data entered incorrectly, include = FALSE}
+##Data entered incorrectly
+df_all$Sample_Name[df_all$Sample_Name == Old_ID_1] <- New_ID_1
+# dat$IDs[dat$IDs == Old_ID_2] <- New_ID_2
+# dat$IDs[dat$IDs == Old_ID_3] <- New_ID_3
+# dat$IDs[dat$IDs == Old_ID_4] <- New_ID_4
+# dat$IDs[dat$IDs == Old_ID_5] <- New_ID_5
+# dat$IDs[dat$IDs == Old_ID_6] <- New_ID_6
+
+```
 
 
 ## Assessing standard Curves

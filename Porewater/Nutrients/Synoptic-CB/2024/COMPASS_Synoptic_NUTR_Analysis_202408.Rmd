@@ -11,6 +11,16 @@ output_dir: "To Be Reviewed/PDF"
 
 \newpage
 
+
+```{r Fix incorrect sample IDs}
+Old_ID_1 <- "SWH_202408_SWAMP_LycC_45cm"
+New_ID_1 <- "SWH_202408_SWAMP_LysC_45cm"
+
+Old_ID_2 <- "SWH_202408_TR_LysC_45"
+New_ID_2 <- "SWH_202408_TR_LysC_45cm"
+
+```
+
 ##Run Information 
 ```{r run information, include=TRUE}
 cat("Run Information: NAME ") #lets you know what section you're in 
@@ -197,6 +207,17 @@ head(df_all)
 
 ```
 
+
+```{r Fix data entered incorrectly, include = FALSE}
+##Data entered incorrectly
+df_all$Sample_Name[df_all$Sample_Name == Old_ID_1] <- New_ID_1
+df_all$Sample_Name[df_all$Sample_Name == Old_ID_2] <- New_ID_2
+# dat$IDs[dat$IDs == Old_ID_3] <- New_ID_3
+# dat$IDs[dat$IDs == Old_ID_4] <- New_ID_4
+# dat$IDs[dat$IDs == Old_ID_5] <- New_ID_5
+# dat$IDs[dat$IDs == Old_ID_6] <- New_ID_6
+
+```
 
 
 ## Assessing standard Curves

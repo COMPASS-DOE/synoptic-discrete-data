@@ -8,7 +8,6 @@ output: pdf_document
 ##Notes
 ```{r}
 # Some sample IDs are missing from metadata: GWI_202209_TR_10CM_EXTRACM
-
 run_notes <- "Dups, spks, CCVs, and CCBs were checked in the SEAL software."
 
 ```
@@ -104,7 +103,7 @@ head(nutr_metadata)
 
 #Remove Sip and RHZ samples
 all_data <- combined_df %>%
-  filter(!str_detect(Sample_Name, "Sip|RHZ|PPR|SIPA")) %>%
+  filter(!str_detect(Sample_Name, "Sip|RHZ|PPR|SIpA|extra")) %>%
   mutate(
     Project = "COMPASS: Synoptic", 
     Region = "CB", 
@@ -159,9 +158,6 @@ all_data <- all_data %>%
       Sample_ID <- Sample_ID_new
     )
   )
-
-all_data <- subset(all_data, Sample_ID != "MSM_202211_WC_SIPA_45CM")
-all_data <- subset(all_data, Sample_ID != "GWI_202209_TR_10CM_EXTRACM")
 
 ```
 
