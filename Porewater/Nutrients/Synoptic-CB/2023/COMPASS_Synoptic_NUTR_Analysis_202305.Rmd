@@ -10,7 +10,7 @@ output_dir: "Run Summaries To Review"
 ---
 
 ##Run Information 
-```#{r run information, include=TRUE}
+```{r run information, include=TRUE}
 cat("Run Information: Isabelle Van Benschoten") #lets you know what section you're in 
 #set the run date & user name 
   run_date <- "20230603/20230111"
