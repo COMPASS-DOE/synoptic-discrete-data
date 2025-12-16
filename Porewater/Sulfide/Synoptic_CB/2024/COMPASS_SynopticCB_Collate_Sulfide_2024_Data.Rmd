@@ -30,10 +30,14 @@ all_data <- all_data[, -which(names(all_data) == "X")]
 head(all_data)
 
 final_data <- all_data %>%
+    rename(
+    H2S_mean_uM = H2S_mean, 
+    H2S_sd_uM = H2S_sd
+    ) %>%
     select(
     Project, Region, Site, Zone, Replicate, Depth_cm, 
          Sample_ID, Year, Month, Day, Time, Time_Zone,
-         H2S_mean, H2S_sd, H2S_cv, H2S_Conc_flag, H2S_cv_flag, Dilution,
+         H2S_mean_uM, H2S_sd_uM, H2S_cv, H2S_Conc_flag, H2S_cv_flag, Dilution,
          Analysis_rundate,  Run_notes, Field_notes
         # list columns in the order you want them
   )
@@ -44,7 +48,7 @@ final_data <- all_data %>%
 ## Write the 2024 file out to the folder 
 ```{r, echo=FALSE}
 
-write.csv(final_data, "COMPASS_SynopticCB_Sulfide_2024.csv")
+write.csv(final_data, "COMPASS_SynopticCB_Sulfide_2024.csv", row.names = FALSE)
 
 ```
 

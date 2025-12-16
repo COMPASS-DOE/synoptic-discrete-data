@@ -1,5 +1,5 @@
 ---
-title: "COMPASS_SynopticCB_Collate_Sulfide_2025_Data"
+title: "COMPASS_SynopticCB_Collate_Sulfide_2023_Data"
 author: "Stephanie J. Wilson and Zoe Read"
 date: "2025-12-04"
 output: html_document
@@ -29,11 +29,24 @@ all_data <- all_data[, -which(names(all_data) == "X")]
 
 head(all_data)
 
+############### THIS IS ONLY FOR 2023 when SWAMP was called UP and UPLAND was called UPCON ##############
+##In 2023 SWAMP was called UP and UPLAND was called UPCON
 final_data <- all_data %>%
-    rename(
-    H2S_mean_uM = H2S_mean, 
-    H2S_sd_uM = H2S_sd
-    ) %>%
+  mutate(
+    Zone = case_when(
+      Site == "SWH" & Zone == "UP" ~ "SWAMP",
+      Site == "SWH" & Zone == "UPCON" ~ "UP",
+      TRUE ~ `Zone`
+    ))%>%
+  mutate(
+    Sample_ID = case_when(
+      Site == "SWH" & Zone == "SWAMP" ~ gsub(pattern = "_UP_", replacement = "_SWAMP_", x = Sample_ID),
+      Site == "SWH" & Zone == "UP" ~ gsub(pattern = "_UPCON_", replacement = "_UP_", x = Sample_ID),
+      .default = Sample_ID
+    )
+  )
+
+final_data <- final_data %>%
     select(
     Project, Region, Site, Zone, Replicate, Depth_cm, 
          Sample_ID, Year, Month, Day, Time, Time_Zone,
@@ -42,13 +55,12 @@ final_data <- all_data %>%
         # list columns in the order you want them
   )
 
-
 ```
 
-## Write the 2024 file out to the folder 
+## Write the 2023 file out to the folder 
 ```{r, echo=FALSE}
 
-write.csv(final_data, "COMPASS_SynopticCB_Sulfide_2025.csv", row.names = FALSE)
+write.csv(final_data, "COMPASS_SynopticCB_Sulfide_2023.csv", row.names = FALSE)
 
 ```
 
