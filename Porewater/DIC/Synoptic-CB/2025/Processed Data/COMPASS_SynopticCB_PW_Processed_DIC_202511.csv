@@ -1,0 +1,223 @@
+"","Project","Region","Site","Zone","Replicate","Depth_cm","Sample_ID","Year","Month","Day","Time","Time_Zone","ic_mgL","ic_uM","ic_flag","Analysis_runtime","Run_notes","Field_notes"
+"1","COMPASS: Synoptic","CB","SWH","UP","A",10,"202511_SWH_UP_LysA_10cm",2025,11,5,"10:25","EST",24.28,2021.48030971609,"IC checks out of range","11/21/2025 4:47:39 AM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"2","COMPASS: Synoptic","CB","SWH","UP","A",20,"202511_SWH_UP_LysA_20cm",2025,11,5,"10:25","EST",33.31,2773.29114977937,"IC checks out of range","11/21/2025 5:15:43 AM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"3","COMPASS: Synoptic","CB","SWH","UP","A",45,"202511_SWH_UP_LysA_45cm",2025,11,5,"10:25","EST",37.27,3102.98892681709,"IC checks out of range","11/21/2025 5:43:35 AM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"4","COMPASS: Synoptic","CB","SWH","UP","B",20,"202511_SWH_UP_LysB_20cm",2025,11,5,"10:36","EST",31.14,2592.62342852385,"IC checks out of range","11/21/2025 6:06:40 AM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"5","COMPASS: Synoptic","CB","SWH","UP","C",10,"202511_SWH_UP_LysC_10cm",2025,11,5,"10:43","EST",6.159,512.779951710932,"IC checks out of range; blank is ≥ 25% of sample value","11/21/2025 6:29:43 AM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"6","COMPASS: Synoptic","CB","SWH","UP","C",20,"202511_SWH_UP_LysC_20cm",2025,11,5,"10:43","EST",37.56,3127.13346099409,"IC checks out of range","11/21/2025 6:55:38 AM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"7","COMPASS: Synoptic","CB","SWH","UP","C",45,"202511_SWH_UP_LysC_45cm",2025,11,5,"10:43","EST",33.35,2776.62143035551,"IC checks out of range","11/21/2025 7:22:46 AM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"8","COMPASS: Synoptic","CB","GWI","UP","A",20,"202511_GWI_UP_LysA_20cm",2025,11,6,"13:36","EST",50.5,4204.47922737491,"IC checks out of range","11/21/2025 7:31:45 PM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"9","COMPASS: Synoptic","CB","GWI","UP","A",45,"202511_GWI_UP_LysA_45cm",2025,11,6,"13:36","EST",26.95,2243.77653817334,"IC checks out of range","11/21/2025 7:54:26 PM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"10","COMPASS: Synoptic","CB","GWI","UP","B",10,"202511_GWI_UP_LysB_10cm",2025,11,6,"13:40","EST",12.64,1052.36866205978,"IC checks out of range; blank is ≥ 25% of sample value","11/21/2025 8:15:26 PM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"11","COMPASS: Synoptic","CB","GWI","UP","B",20,"202511_GWI_UP_LysB_20cm",2025,11,6,"13:40","EST",26.49,2205.47831154775,"IC checks out of range","11/21/2025 8:38:11 PM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"12","COMPASS: Synoptic","CB","GWI","UP","B",45,"202511_GWI_UP_LysB_45cm",2025,11,6,"13:40","EST",40.08,3336.94113729082,"IC checks out of range","11/21/2025 8:58:11 PM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"13","COMPASS: Synoptic","CB","GWI","UP","C",20,"202511_GWI_UP_LysC_20cm",2025,11,6,"13:45","EST",33.99,2829.90591957372,"IC checks out of range","11/21/2025 9:21:02 PM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"14","COMPASS: Synoptic","CB","MSM","UP","B",10,"202511_MSM_UP_LysB_10cm",2025,11,13,"14:40","EST",24.85,2068.93680792607,"IC checks out of range","11/22/2025 10:32:14 AM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"15","COMPASS: Synoptic","CB","MSM","UP","B",20,"202511_MSM_UP_LysB_20cm",2025,11,13,"14:40","EST",23.58,1963.20039963367,"IC checks out of range","11/22/2025 10:54:28 AM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"16","COMPASS: Synoptic","CB","MSM","UP","C",10,"202511_MSM_UP_LysC_10cm",2025,11,13,"14:45","EST",32.23,2683.37357422363,"IC checks out of range","11/22/2025 11:17:25 AM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"17","COMPASS: Synoptic","CB","MSM","UP","C",20,"202511_MSM_UP_LysC_20cm",2025,11,13,"14:45","EST",3.95,328.865206893681,"IC checks out of range; blank is ≥ 25% of sample value","11/22/2025 11:41:05 AM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"18","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"202511_SWH_SWAMP_LysA_10cm",2025,11,5,"11:50","EST",24.92,2074.76479893431,"IC checks out of range","11/21/2025 7:50:40 AM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"19","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"202511_SWH_SWAMP_LysA_20cm",2025,11,5,"11:50","EST",29.27,2436.93281158938,"IC checks out of range","11/21/2025 8:18:08 AM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"20","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"202511_SWH_SWAMP_LysA_45cm",2025,11,5,"11:50","EST",27.91,2323.70327200067,"IC checks out of range","11/21/2025 8:45:38 AM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"21","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"202511_SWH_SWAMP_LysB_10cm",2025,11,5,"11:30","EST",23.27,1937.3907251686,"IC checks out of range","11/21/2025 10:13:29 AM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"22","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"202511_SWH_SWAMP_LysB_20cm",2025,11,5,"11:30","EST",32.22,2682.54100407959,"IC checks out of range","11/21/2025 10:36:14 AM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"23","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"202511_SWH_SWAMP_LysB_45cm",2025,11,5,"11:30","EST",31.5,2622.5959537091,"IC checks out of range","11/21/2025 10:59:04 AM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"24","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"202511_SWH_SWAMP_LysC_20cm",2025,11,5,"11:18","EST",17.36,1445.34177004413,"IC checks out of range; blank is ≥ 25% of sample value","11/21/2025 11:29:38 AM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"25","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"202511_SWH_SWAMP_LysC_45cm",2025,11,5,"11:18","EST",18.53,1542.75247689618,"IC checks out of range; blank is ≥ 25% of sample value","11/21/2025 11:47:18 AM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"26","COMPASS: Synoptic","CB","SWH","TR","A",10,"202511_SWH_TR_LysA_10cm",2025,11,4,"12:42","EST",14.1,1173.92390308884,"IC checks out of range; blank is ≥ 25% of sample value","11/21/2025 12:01:16 PM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"27","COMPASS: Synoptic","CB","SWH","TR","A",20,"202511_SWH_TR_LysA_20cm",2025,11,4,"12:45","EST",51.11,4255.26600616102,"IC checks out of range","11/21/2025 12:27:11 PM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"28","COMPASS: Synoptic","CB","SWH","TR","A",45,"202511_SWH_TR_LysA_45cm",2025,11,4,"12:48","EST",62.61,5212.72167180085,"IC checks out of range","11/21/2025 12:54:37 PM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"29","COMPASS: Synoptic","CB","SWH","TR","B",10,"202511_SWH_TR_LysB_10cm",2025,11,4,"12:53","EST",45.94,3824.82724169511,"IC checks out of range","11/21/2025 1:17:47 PM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"30","COMPASS: Synoptic","CB","SWH","TR","B",20,"202511_SWH_TR_LysB_20cm",2025,11,4,"12:53","EST",86.4,7193.40604445925,"IC checks out of range","11/21/2025 2:47:02 PM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"31","COMPASS: Synoptic","CB","SWH","TR","B",45,"202511_SWH_TR_LysB_45cm",2025,11,4,"12:53","EST",102,8492.21546915328,"IC checks out of range","11/21/2025 3:16:20 PM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"32","COMPASS: Synoptic","CB","SWH","TR","C",10,"202511_SWH_TR_LysC_10cm",2025,11,4,"12:30","EST",25,2081.42536008659,"IC checks out of range","11/21/2025 4:02:25 PM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"33","COMPASS: Synoptic","CB","SWH","TR","C",20,"202511_SWH_TR_LysC_20cm",2025,11,4,"12:35","EST",33.7,2805.76138539672,"IC checks out of range","11/21/2025 4:18:06 PM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"34","COMPASS: Synoptic","CB","SWH","TR","C",45,"202511_SWH_TR_LysC_45cm",2025,11,4,"12:37","EST",72.83,6063.60835900425,"IC checks out of range","11/21/2025 4:39:32 PM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"35","COMPASS: Synoptic","CB","GWI","TR","A",10,"202511_GWI_TR_LysA_10cm",2025,11,6,"13:00","EST",85.88,7150.11239696945,"IC checks out of range","11/21/2025 9:46:31 PM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"36","COMPASS: Synoptic","CB","GWI","TR","A",20,"202511_GWI_TR_LysA_20cm",2025,11,6,"13:00","EST",90.36,7523.10382149696,"IC checks out of range","11/21/2025 10:08:16 PM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"37","COMPASS: Synoptic","CB","GWI","TR","B",10,"202511_GWI_TR_LysB_10cm",2025,11,6,"13:10","EST",42.92,3573.39105819665,"IC checks out of range","11/21/2025 10:31:45 PM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"38","COMPASS: Synoptic","CB","GWI","TR","B",20,"202511_GWI_TR_LysB_20cm",2025,11,6,"13:10","EST",49.31,4105.40338023478,"IC checks out of range","11/22/2025 12:25:27 AM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ","Got DOC"
+"39","COMPASS: Synoptic","CB","GWI","TR","C",10,"202511_GWI_TR_LysC_10cm",2025,11,6,"13:15","EST",20.68,1721.75505786363,"IC checks out of range; blank is ≥ 25% of sample value","11/22/2025 12:45:19 AM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"40","COMPASS: Synoptic","CB","GCW","TR","B",10,"202511_GCW_TR_LysB_10cm",2025,11,12,"13:18","EST",6.221,517.941886603947,"IC checks out of range; blank is ≥ 25% of sample value","11/22/2025 5:17:10 AM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"41","COMPASS: Synoptic","CB","MSM","TR","A",10,"202511_MSM_TR_LysA_10cm",2025,11,13,"13:12","EST",52.84,4399.30064107901,"IC checks out of range","11/22/2025 11:56:20 AM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"42","COMPASS: Synoptic","CB","MSM","TR","A",20,"202511_MSM_TR_LysA_20cm",2025,11,13,"13:12","EST",48.78,4061.27716260095,"IC checks out of range","11/22/2025 12:20:15 PM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"43","COMPASS: Synoptic","CB","MSM","TR","B",10,"202511_MSM_TR_LysB_10cm",2025,11,13,"13:20","EST",31.41,2615.10282241279,"IC checks out of range","11/22/2025 1:33:34 PM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"44","COMPASS: Synoptic","CB","MSM","TR","B",20,"202511_MSM_TR_LysB_20cm",2025,11,13,"13:20","EST",89.34,7438.18166680543,"IC checks out of range","11/22/2025 1:58:27 PM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"45","COMPASS: Synoptic","CB","MSM","TR","C",20,"202511_MSM_TR_LysC_20cm",2025,11,13,"13:30","EST",53.73,4473.39938389809,"IC checks out of range","11/22/2025 2:14:54 PM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"46","COMPASS: Synoptic","CB","SWH","WC","A",10,"202511_SWH_WC_LysA_10cm",2025,11,4,"11:18","EST",35.81,2981.43368578803,"IC checks out of range","11/21/2025 4:54:44 PM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"47","COMPASS: Synoptic","CB","SWH","WC","B",10,"202511_SWH_WC_LysB_10cm",2025,11,4,"11:25","EST",61.72,5138.62292898177,"IC checks out of range","11/21/2025 5:15:41 PM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"48","COMPASS: Synoptic","CB","SWH","WC","C",45,"202511_SWH_WC_LysC_45cm",2025,11,4,"11:07","EST",96.22,8010.98992590126,"IC checks out of range","11/21/2025 5:37:39 PM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"49","COMPASS: Synoptic","CB","GWI","WC","A",10,"202511_GWI_WC_LysA_10cm",2025,11,6,"10:57","EST",3.947,328.61543585047,"IC checks out of range; blank is ≥ 25% of sample value","11/22/2025 1:30:03 AM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"50","COMPASS: Synoptic","CB","GWI","WC","B",20,"202511_GWI_WC_LysB_20cm",2025,11,6,"11:02","EST",100.5,8367.32994754808,"IC checks out of range","11/22/2025 2:04:53 AM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"51","COMPASS: Synoptic","CB","GWI","WC","C",10,"202511_GWI_WC_LysC_10cm",2025,11,6,"11:10","EST",85.15,7089.33477645492,"IC checks out of range","11/22/2025 2:31:18 AM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ","dup DIC"
+"52","COMPASS: Synoptic","CB","GCW","WC","A",10,"202511_GCW_WC_LysA_10cm",2025,11,12,"11:08","EST",122.4,10190.6585629839,"IC checks out of range","11/22/2025 5:40:40 AM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"53","COMPASS: Synoptic","CB","GCW","WC","A",20,"202511_GCW_WC_LysA_20cm",2025,11,12,"11:08","EST",144.3,12013.9871784198,"IC checks out of range","11/22/2025 5:59:19 AM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"54","COMPASS: Synoptic","CB","GCW","WC","A",45,"202511_GCW_WC_LysA_45cm",2025,11,12,"11:08","EST",291.7,24286.0711014903,"IC checks out of range; value above cal curve","11/22/2025 6:18:35 AM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"55","COMPASS: Synoptic","CB","GCW","WC","B",10,"202511_GCW_WC_LysB_10cm",2025,11,12,"11:19","EST",241.3,20089.9175755557,"IC checks out of range; value above cal curve","11/22/2025 6:37:09 AM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"56","COMPASS: Synoptic","CB","GCW","WC","B",20,"202511_GCW_WC_LysB_20cm",2025,11,12,"11:19","EST",177,14736.491549413,"IC checks out of range","11/22/2025 7:00:58 AM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"57","COMPASS: Synoptic","CB","GCW","WC","B",45,"202511_GCW_WC_LysB_45cm",2025,11,12,"11:19","EST",215.1,17908.583798185,"IC checks out of range; value above cal curve","11/22/2025 7:36:07 AM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"58","COMPASS: Synoptic","CB","GCW","WC","C",10,"202511_GCW_WC_LysC_10cm",2025,11,12,"11:30","EST",31.25,2601.78170010823,"IC checks out of range","11/22/2025 8:10:31 AM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"59","COMPASS: Synoptic","CB","GCW","WC","C",20,"202511_GCW_WC_LysC_20cm",2025,11,12,"11:30","EST",34.48,2870.70185663142,"IC checks out of range","11/22/2025 9:29:51 AM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"60","COMPASS: Synoptic","CB","MSM","WC","A",10,"202511_MSM_WC_LysA_10cm",2025,11,13,"11:39","EST",80.51,6703.02222962285,"IC checks out of range","11/22/2025 2:31:44 PM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"61","COMPASS: Synoptic","CB","MSM","WC","A",20,"202511_MSM_WC_LysA_20cm",2025,11,13,"11:39","EST",110.7,9216.55149446341,"IC checks out of range","11/22/2025 2:48:48 PM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"62","COMPASS: Synoptic","CB","MSM","WC","B",10,"202511_MSM_WC_LysB_10cm",2025,11,13,"11:46","EST",105.8,8808.59212388644,"IC checks out of range","11/22/2025 3:15:06 PM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"63","COMPASS: Synoptic","CB","MSM","WC","B",20,"202511_MSM_WC_LysB_20cm",2025,11,13,"11:46","EST",113.4,9441.34543335276,"IC checks out of range","11/22/2025 3:41:48 PM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"64","COMPASS: Synoptic","CB","MSM","WC","C",10,"202511_MSM_WC_LysC_10cm",2025,11,13,"11:56","EST",126.6,10540.3380234785,"IC checks out of range","11/22/2025 3:58:51 PM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"65","COMPASS: Synoptic","CB","MSM","WC","C",20,"202511_MSM_WC_LysC_20cm",2025,11,13,"11:56","EST",162.6,13537.5905420032,"IC checks out of range","11/22/2025 4:28:09 PM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"66","COMPASS: Synoptic","CB","SWH","SW","A",0,"202511_SWH_SW_A",2025,11,4,"12:00","EST",19.6,1631.83748230788,"IC checks out of range; blank is ≥ 25% of sample value","11/21/2025 6:00:35 PM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"67","COMPASS: Synoptic","CB","SWH","SW","B",0,"202511_SWH_SW_B",2025,11,4,"12:03","EST",21.61,1799.18408125885,"IC checks out of range; blank is ≥ 25% of sample value","11/21/2025 6:18:32 PM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"68","COMPASS: Synoptic","CB","SWH","SW","C",0,"202511_SWH_SW_C",2025,11,4,"12:10","EST",21.61,1799.18408125885,"IC checks out of range; blank is ≥ 25% of sample value","11/21/2025 7:16:04 PM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"69","COMPASS: Synoptic","CB","GWI","SW","A",0,"202511_GWI_SW_A",2025,11,6,"10:30","EST",12,999.084172841562,"IC checks out of range; blank is ≥ 25% of sample value","11/22/2025 3:22:16 AM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"70","COMPASS: Synoptic","CB","GWI","SW","B",0,"202511_GWI_SW_B",2025,11,6,"10:30","EST",3.947,328.61543585047,"IC checks out of range; blank is ≥ 25% of sample value","11/22/2025 4:46:24 AM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"71","COMPASS: Synoptic","CB","GWI","SW","C",0,"202511_GWI_SW_C",2025,11,6,"10:30","EST",33.41,2781.61685121972,"IC checks out of range","11/22/2025 5:01:33 AM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"72","COMPASS: Synoptic","CB","GCW","SW","C",0,"202511_GCW_SW_C",2025,11,12,"10:30","EST",46.7,3888.10257264175,"IC checks out of range","11/22/2025 10:14:04 AM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"73","COMPASS: Synoptic","CB","MSM","SW","A",0,"202511_MSM_SW_A",2025,11,13,"11:19","EST",27.36,2277.91191407876,"IC checks out of range","11/22/2025 4:51:04 PM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""
+"74","COMPASS: Synoptic","CB","MSM","SW","B",0,"202511_MSM_SW_B",2025,11,13,"11:19","EST",14.38,1197.23586712181,"IC checks out of range; blank is ≥ 25% of sample value","11/22/2025 5:13:59 PM","The second standard curve run had a very high end standard - concentration calculations were done with first standard curve.
+                The instrument was having some issues during this run and some samples had no peaks as a result - these were removed in this code.
+               Background concentrations were high on this run - we may need to consider subtracting the DI values. ",""

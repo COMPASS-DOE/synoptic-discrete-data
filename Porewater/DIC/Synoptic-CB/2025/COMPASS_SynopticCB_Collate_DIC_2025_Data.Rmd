@@ -99,18 +99,20 @@ viz_dic_plot <- ggplot(data_plotting_all, aes(x = months_factor, y = ic_mgL, fil
   theme(
     panel.spacing = unit(.05, "lines"), 
     panel.border = element_rect(color = "black", fill = NA, linewidth = 1)) + 
-  theme(text = element_text(size = 20))
+  theme(text = element_text(size = 10))
 
 print(viz_dic_plot)
+
+
 
 ```
 
 
-## Write the 2023 file out to the folder 
+## Write the 2025 file out to the folder 
 ```{r, echo=FALSE}
 
 #write out all the lysimeter sample data 
-  #write.csv(final_data_lys, "COMPASS_SynopticCB_PW_DIC_2025.csv")
+  write.csv(final_data_lys, "COMPASS_SynopticCB_PW_DIC_2025.csv")
 
 ```
 
