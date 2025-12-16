@@ -1,9 +1,18 @@
 ---
 title: "COMPASS_SynopticCB_Collate_Dionex_2023_Data"
 author: "Stephanie J. Wilson"
-date: "2025-08-29"
+date: "2023-08-29"
 output: html_document
 ---
+
+```{r Notes}
+# Some sample IDs are missing from metadata.
+#  [1] "GCW_202307_UP_LYSA_20CM" "GCW_202307_TR_LYSC_20CM" "SWH_202307_WC_LYSA_10CM" "SWH_202307_WC_LYSA_20CM" "SWH_202307_WC_LYSA_45CM"
+#  [6] "SWH_202307_WC_LYSB_10CM" "GCW_202307_TR_LYSC_45CM" "SWH_202307_WC_LYSB_20CM" "SWH_202307_WC_LYSB_45CM" "SWH_202307_WC_LYSC_10CM"
+# [11] "SWH_202307_WC_LYSC_20CM" "SWH_202307_WC_LYSC_45CM" "GCW_202307_UP_LYSB_10CM" "GCW_202307_UP_LYSB_20CM" "GCW_202307_UP_LYSC_20CM"
+# [16] "MSM_202037_WC_LYSC_20CM" "GCW_202307_TR_LYSB_45CM" "GCW_202307_TR_LYSC_10CM"
+```
+
 
 ```{r setup, include=FALSE}
 library(dplyr)
@@ -13,464 +22,28 @@ library(stringr)
 library(readxl)
 library(tidyr)
 library(tibble)
-library(lubridate)
 ```
 
 #Read in and collate all the files in the Processed Data folder 
 ```{r}
-##Read in list of processed data files
 files <- list.files(path = "Processed Data", pattern = "\\.csv$", full.names = TRUE)
 
-desired_columns <- c("Project",	"Region",	"Site",	"Zone",	"Replicate",	"Depth_cm", "Sample_ID",	"Year",	"Month",	"Day",	"Time",	"Time_Zone",	"SO4_ppm", "SO4_Conc_mM",	"SO4_Conc_flag",	"SO4_QAQC_flag",	"Cl_ppm", "Cl_Conc_mM",	"Cl_Conc_flag",	"Cl_QAQC_flag",	"salinity",	"Analysis_rundate",	"Run_notes",	"Field_notes")
-```
-
-```{r}
-# Some sample IDs were missing from metadata. These have been added. 
-#   [1] "GWI_202304_UP_LYSA_20CM"    "GCW_202305_UP_LYSA_20CM"    "SWH_202305_UPCON_LYSA_20CM" "SWH_202305_UPCON_LYSA_45CM" "SWH_202305_UPCON_LYSC_45CM"
-#   [6] "GCW_202305_TR_LYSC_45CM"    "SWH_202305_WC_LYSA_10CM"    "SWH_202305_WC_LYSA_20CM"    "SWH_202305_WC_LYSA_45CM"    "SWH_202305_WC_LYSB_10CM"   
-#  [11] "SWH_202305_WC_LYSB_20CM"    "SWH_202305_WC_LYSB_45CM"    "GCW_202305_UP_LYSB_10CM"    "GCW_202305_UP_LYSB_20CM"    "MSM_202305_UP_LYSC_45CM"   
-#  [16] "GCW_202305_UP_LYSC_10CM"    "MSM_202305_TR_LYSC_45CM"    "MSM_202305_WC_LYSA_45CM"    "MSM_202305_WC_LYSB_45CM"    "GCW_202305_UP_LYSC_20CM"   
-#  [21] "GWI_202306_WC_LYSA_10CM"    "GWI_202306_WC_LYSA_20CM"    "GWI_202306_WC_LYSA_45CM"    "GWI_202306_WC_LYSB_10CM"    "GWI_202306_WC_LYSB_20CM"   
-#  [26] "GWI_202306_WC_LYSB_45CM"    "GWI_202306_WC_LYSC_10CM"    "GWI_202306_WC_LYSC_20CM"    "GWI_202306_SW_A"            "GWI_202306_SW_B"           
-#  [31] "GWI_202306_SW_C"            "MSM_202306_UP_LYSA_20CM"    "MSM_202306_UP_LYSA_45CM"    "MSM_202306_UP_LYSC_45CM"    "SWH_202306_UPCON_LYSA_10CM"
-#  [36] "SWH_202306_UPCON_LYSA_20CM" "SWH_202306_UPCON_LYSA_45CM" "SWH_202306_UPCON_LYSB_10CM" "SWH_202306_UPCON_LYSB_20CM" "SWH_202306_UPCON_LYSB_45CM"
-#  [41] "SWH_202306_UPCON_LYSC_10CM" "SWH_202306_UPCON_LYSC_20CM" "SWH_202306_UPCON_LYSC_45CM" "SWH_202306_UP_LYSA_10CM"    "SWH_202306_UP_LYSA_20CM"   
-#  [46] "SWH_202306_UP_LYSA_45CM"    "SWH_202306_UP_LYSB_10CM"    "SWH_202306_UP_LYSB_20CM"    "SWH_202306_UP_LYSB_45CM"    "SWH_202306_UP_LYSC_10CM"   
-#  [51] "SWH_202306_UP_LYSC_20CM"    "SWH_202306_UP_LYSC_45CM"    "SWH_202306_TR_LYSA_10CM"    "SWH_202306_TR_LYSA_20CM"    "SWH_202306_TR_LYSA_45CM"   
-#  [56] "SWH_202306_TR_LYSB_10CM"    "SWH_202306_TR_LYSB_20CM"    "SWH_202306_TR_LYSB_45CM"    "SWH_202306_TR_LYSC_10CM"    "SWH_202306_TR_LYSC_20CM"   
-#  [61] "SWH_202306_TR_LYSC_45CM"    "GWI_202306_UP_LYSA_10CM"    "GWI_202306_UP_LYSA_20CM"    "GWI_202306_UP_LYSA_45CM"    "GWI_202306_UP_LYSB_10CM"   
-#  [66] "GWI_202306_UP_LYSB_20CM"    "GWI_202306_UP_LYSB_45CM"    "GWI_202306_UP_LYSC_10CM"    "GWI_202306_UP_LYSC_20CM"    "GWI_202306_UP_LYSC_45CM"   
-#  [71] "GWI_202306_TR_LYSA_10CM"    "GWI_202306_TR_LYSA_20CM"    "GWI_202306_TR_LYSA_45CM"    "GWI_202306_TR_LYSB_10CM"    "GWI_202306_TR_LYSB_20CM"   
-#  [76] "GWI_202306_TR_LYSB_45CM"    "GWI_202306_TR_LYSC_10CM"    "GWI_202306_TR_LYSC_20CM"    "GWI_202306_TR_LYSC_45CM"    "SWH_202306_WC_LYSA_10CM"   
-#  [81] "SWH_202306_WC_LYSA_20CM"    "SWH_202306_WC_LYSA_45CM"    "SWH_202306_WC_LYSB_10CM"    "SWH_202306_WC_LYSB_20CM"    "SWH_202306_WC_LYSB_45CM"   
-#  [86] "SWH_202306_WC_LYSC_10CM"    "SWH_202306_WC_LYSC_20CM"    "SWH_202306_WC_LYSC_45CM"    "SWH_202306_SW_A"            "SWH_202306_SW_B"           
-#  [91] "SWH_202306_SW_C"            "GCW_202306_UP_LYSB_20CM"    "MSM_202308_TR_LYSB_10CM"    "GCW_202308_UP_LYSA_20CM"    "GCW_202308_UP_LYSB_20CM"   
-#  [96] "MSM_202308_UP_LYSB_45CM"    "SWH_202308_WC_LYSC_20CM"    "SWH_202308_WC_LYSB_20CM"    "SWH_202308_WC_LYSB_45CM"    "GWI_202308_TR_LYSA_45CM"   
-# [101] "SWH_202309_WC_LYSA_10CM"    "SWH_202309_WC_LYSA_20CM"    "SWH_202309_WC_LYSA_45CM"    "GCW_202310_TR_LYSA_45CM"    "GCW_202310_TR_LYSB_45CM"   
-# [106] "GCW_202310_TR_LYSC_45CM"    "SWH_202310_WC_LYSA_10CM"    "SWH_202310_WC_LYSA_20CM"    "SWH_202310_WC_LYSA_45CM"    "SWH_202310_WC_LYSB_10CM"   
-# [111] "SWH_202310_WC_LYSB_20CM"    "SWH_202310_WC_LYSB_45CM"    "GWI_202310_UP_LYSC_45CM"    "MSM_202311_WC_LYSB_45CM"    "MSM_202311_WC_LYSC_45CM"   
-# [116] "MSM_202311_UP_LYSC_45CM"  
-```
-
-
-##File 1
-```{r}
-##Read in each data file
-file1 <- read.csv(files[1])
-head(file1)
-
-missing_columns <- setdiff(desired_columns, names(file1))
-for (col in missing_columns) {
-  file1[[col]] <- NA
-}
-head(file1)
-
-file1_clean <- file1 %>%
-  mutate(
-    Project = "COMPASS: Synoptic", 
-    Region = "CB", 
-    Depth_cm = Depth, 
-    SO4_Conc_mM = SO4_mM,
-    Cl_Conc_mM = Cl_mM)
-
-file1_clean <- file1_clean %>%
-  mutate(Date = ym(Date)) %>%
-  mutate(Year = year(Date),
-         Month = month(Date) )
-
-missing_columns <- setdiff(desired_columns, names(file1_clean))
-for (col in missing_columns) {
-  file1_clean[[col]] <- NA
-}
-
-head(file1_clean)
-
-file1_cols <- file1_clean[, desired_columns]
-head(file1_cols)
-```
-
-##File 2
-```{r}
-file2 <- read.csv(files[2])
-head(file2)
-
-missing_columns <- setdiff(desired_columns, names(file2))
-for (col in missing_columns) {
-  file2[[col]] <- NA
-}
-
-head(file2)
-
-file2_clean <- file2 %>%
-  mutate(
-    Project = "COMPASS: Synoptic", 
-    Region = "CB", 
-    Date_long = Site, 
-    Site = Date, 
-    Depth_cm = Depth, 
-    SO4_Conc_mM = SO4_mM,
-    Cl_Conc_mM = Cl_mM)
-
-file2_clean <- file2_clean %>%
-  mutate(Date = ym(Date_long)) %>%
-  mutate(Year = year(Date),
-         Month = month(Date))
-
-##Don't know when these samples were taken but this says June 1st for now 
-# The date column isn't in the final dataset so this should be okay 
-
-missing_columns <- setdiff(desired_columns, names(file2_clean))
-for (col in missing_columns) {
-  file2_clean[[col]] <- NA
-}
-
-head(file2_clean)
-
-file2_cols <- file2_clean[, desired_columns]
-head(file2_cols)
-```
-
-##File 3
-```{r}
-file3 <- read.csv(files[3])
-head(file3)
-
-missing_columns <- setdiff(desired_columns, names(file3))
-for (col in missing_columns) {
-  file3[[col]] <- NA
-}
-
-head(file3)
-
-file3_clean <- file3 %>%
-  mutate(
-    Project = "COMPASS: Synoptic", 
-    Region = "CB", 
-    Depth_cm = Depth, 
-    SO4_Conc_mM = SO4_mM,
-    Cl_Conc_mM = Cl_mM)
-
-file3_date <- file3_clean %>%
-  mutate(Date = ym(Date)) %>%
-  mutate(Year = year(Date),
-         Month = month(Date) )
-
-
-missing_columns <- setdiff(desired_columns, names(file3_date))
-for (col in missing_columns) {
-  file3_date[[col]] <- NA
-}
-
-head(file3_date)
-
-file3_cols <- file3_date[, desired_columns]
-head(file3_cols)
-```
-
-##File 4
-```{r}
-file4 <- read.csv(files[4])
-head(file4)
-
-missing_columns <- setdiff(desired_columns, names(file4))
-for (col in missing_columns) {
-  file4[[col]] <- NA
-}
-
-head(file4)
-
-file4_clean <- file4 %>%
-  mutate(
-    Project = "COMPASS: Synoptic", 
-    Region = "CB", 
-    Depth_cm = Depth, 
-    SO4_Conc_mM = SO4_mM,
-    Cl_Conc_mM = Cl_mM)
-
-file4_date <- file4_clean %>%
-  mutate(Date = ym(Date)) %>%
-  mutate(Year = year(Date),
-         Month = month(Date) )
-
-
-missing_columns <- setdiff(desired_columns, names(file4_date))
-for (col in missing_columns) {
-  file4_date[[col]] <- NA
-}
-
-head(file4_date)
-
-file4_cols <- file4_date[, desired_columns]
-
-file4_cols$Month <-  ifelse(str_detect(file4_cols$Sample_ID, "202036"), 6, file4_cols$Month)
-file4_cols$Year <-  ifelse(str_detect(file4_cols$Sample_ID, "202036"), 2023, file4_cols$Year)
-
-file4_cols <- file4_cols %>%
-   mutate(Sample_ID = str_replace(Sample_ID, "202036", "202306"))
-
-head(file4_cols)
-```
-
-##File 5
-```{r}
-file5 <- read.csv(files[5])
-head(file5)
-
-missing_columns <- setdiff(desired_columns, names(file5))
-for (col in missing_columns) {
-  file5[[col]] <- NA
-}
-
-head(file5)
-
-file5_clean <- file5 %>%
-  mutate(
-    Project = "COMPASS: Synoptic", 
-    Region = "CB", 
-    Depth_cm = Depth, 
-    SO4_Conc_mM = SO4_mM,
-    Cl_Conc_mM = Cl_mM)
-
-file5_date <- file5_clean %>%
-  mutate(Date = ym(Date)) %>%
-  mutate(Year = year(Date),
-         Month = month(Date) )
-
-
-missing_columns <- setdiff(desired_columns, names(file5_date))
-for (col in missing_columns) {
-  file5_date[[col]] <- NA
-}
-
-head(file5_date)
-
-file5_cols <- file5_date[, desired_columns]
-
-##Fix sample date entered incorrectly
-file5_cols$Month <-  ifelse(str_detect(file5_cols$Sample_ID, "202037"), 7, file4_cols$Month)
-file5_cols$Year <-  ifelse(str_detect(file5_cols$Sample_ID, "202037"), 2023, file4_cols$Year)
-
-file5_cols <- file5_cols %>%
-   mutate(Sample_ID = str_replace(Sample_ID, "202037", "202037"))
-
-head(file5_cols)
-```
-
-##File 6
-```{r}
-file6 <- read.csv(files[6])
-head(file6)
-
-missing_columns <- setdiff(desired_columns, names(file6))
-for (col in missing_columns) {
-  file6[[col]] <- NA
-}
-
-head(file6)
-
-file6_clean <- file6 %>%
-  mutate(
-    Project = "COMPASS: Synoptic", 
-    Region = "CB", 
-    Depth_cm = Depth, 
-    SO4_Conc_mM = SO4_mM,
-    Cl_Conc_mM = Cl_mM)
-
-head(file6_clean)
-
-file6_date <- file6_clean %>%
-  mutate(Date = ym(Date)) %>%
-  mutate(Year = year(Date),
-         Month = month(Date) )
-
-
-missing_columns <- setdiff(desired_columns, names(file6_date))
-for (col in missing_columns) {
-  file6_date[[col]] <- NA
-}
-
-head(file6_date)
-
-file6_cols <- file6_date[, desired_columns]
-head(file6_cols)
-```
-
-##File 7
-```{r}
-file7 <- read.csv(files[7])
-head(file7)
-
-missing_columns <- setdiff(desired_columns, names(file7))
-for (col in missing_columns) {
-  file7[[col]] <- NA
-}
-
-head(file7)
-
-file7_clean <- file7 %>%
-  mutate(
-    Project = "COMPASS: Synoptic", 
-    Region = "CB", 
-    Depth_cm = Depth, 
-    SO4_Conc_mM = SO4_mM,
-    Cl_Conc_mM = Cl_mM)
-
-head(file7_clean)
-
-file7_date <- file7_clean %>%
-  mutate(Date = ym(Date)) %>%
-  mutate(Year = year(Date),
-         Month = month(Date) )
-
-
-missing_columns <- setdiff(desired_columns, names(file7_date))
-for (col in missing_columns) {
-  file7_date[[col]] <- NA
-}
-
-head(file7_date)
-
-file7_cols <- file7_date[, desired_columns]
-head(file7_cols)
-```
-
-##File 8
-```{r}
-file8 <- read.csv(files[8])
-head(file8)
-
-missing_columns <- setdiff(desired_columns, names(file8))
-for (col in missing_columns) {
-  file8[[col]] <- NA
-}
-
-head(file8)
-
-file8_clean <- file8 %>%
-  mutate(
-    Project = "COMPASS: Synoptic", 
-    Region = "CB", 
-    Depth_cm = Depth, 
-    SO4_Conc_mM = SO4_mM,
-    Cl_Conc_mM = Cl_mM)
-
-head(file8_clean)
-
-file8_date <- file8_clean %>%
-  mutate(Date = ym(Date)) %>%
-  mutate(Year = year(Date),
-         Month = month(Date) )
-
-
-missing_columns <- setdiff(desired_columns, names(file8_date))
-for (col in missing_columns) {
-  file8_date[[col]] <- NA
-}
-
-head(file8_date)
-
-file8_cols <- file8_date[, desired_columns]
-head(file8_cols)
-```
-
-##File 9
-```{r}
-file9 <- read.csv(files[9])
-head(file9)
-
-missing_columns <- setdiff(desired_columns, names(file9))
-for (col in missing_columns) {
-  file9[[col]] <- NA
-}
-
-head(file9)
-
-file9_clean <- file9 %>%
-  mutate(
-    Project = "COMPASS: Synoptic", 
-    Region = "CB", 
-    Depth_cm = Depth, 
-    SO4_Conc_mM = SO4_mM,
-    Cl_Conc_mM = Cl_mM)
-
-head(file9_clean)
-
-file9_date <- file9_clean %>%
-  mutate(Date = ym(Date)) %>%
-  mutate(Year = year(Date),
-         Month = month(Date) )
-
-
-missing_columns <- setdiff(desired_columns, names(file9_date))
-for (col in missing_columns) {
-  file9_date[[col]] <- NA
-}
-
-head(file9_date)
-
-file9_cols <- file9_date[, desired_columns]
-head(file9_cols)
-```
-
-##File 10
-```{r}
-file10 <- read.csv(files[10])
-head(file10)
-
-missing_columns <- setdiff(desired_columns, names(file10))
-for (col in missing_columns) {
-  file10[[col]] <- NA
-}
-
-head(file10)
-
-file10_clean <- file10 %>%
-  mutate(
-    Project = "COMPASS: Synoptic", 
-    Region = "CB", 
-    Depth_cm = Depth, 
-    SO4_Conc_mM = SO4_mM,
-    Cl_Conc_mM = Cl_mM)
-
-head(file10_clean)
-
-file10_date <- file10_clean %>%
-  mutate(Date = ym(Date)) %>%
-  mutate(Year = year(Date),
-         Month = month(Date) )
-
-
-missing_columns <- setdiff(desired_columns, names(file10_date))
-for (col in missing_columns) {
-  file10_date[[col]] <- NA
-}
-
-head(file10_date)
-
-file10_cols <- file10_date[, desired_columns]
-head(file10_cols)
-```
-
-##Combine all data files
-```{r}
-##Need to format data files to look like the 2024 processed data with these column names: 
-# "Project"	"Region"	"Site"	"Zone"	"Replicate"	"Depth_cm"	"Sample_ID"	"Year"	"Month"	"Day"	"Time"	"Time_Zone"	"SO4_Conc_mM"	"SO4_Conc_flag"	"SO4_QAQC_flag"	"Cl_Conc_mM"	"Cl_Conc_flag"	"Cl_QAQC_flag"	"salinity"	"Analysis_rundate"	"Run_notes"	"Field_notes"
-
-all_data_extra <- bind_rows(file1_cols, file2_cols, file4_cols, file5_cols, file6_cols, file7_cols, file8_cols, file9_cols, file10_cols)
-
-##Don't add file3 because it is the same as file2 but doesn't have all the samples. 
+# 3. Read and combine all CSVs
+all_data <- files %>%
+  lapply(read.csv, colClasses = c(rep('character', 8), rep('numeric', 5))) %>%    # or read.csv if you prefer base R
+  bind_rows()             # combine into one data frame
+
+all_data <- all_data[, -which(names(all_data) == "X")]
 
 ##Remove non-Lys Samples
-all_data <- all_data_extra %>%  
+all_data <- all_data %>%  
   filter(!str_detect(Sample_ID, "Sip"))%>%  
   filter(!str_detect(Sample_ID, "RHZ"))%>%  
   filter(!str_detect(Sample_ID, "JLee"))%>%  
   filter(!str_detect(Sample_ID, "PPR"))%>%  
   filter(!str_detect(Sample_ID, "S1"))%>%  
   filter(!str_detect(Sample_ID, "S2"))
-
 ```
-
 
 ## Pull in Metadata
 ```{r}
@@ -546,24 +119,14 @@ all_data <- all_data %>%
 all_data <- subset(all_data, Sample_ID != "Blank")
 
 ##Depths for SW samples should be 0 
+all_data$Depth_cm <- all_data$Depth
 all_data$Depth_cm <-  ifelse((all_data$Zone == "SW"), "0cm", all_data$Depth_cm)
 
 ##Add cm to Depth
-all_data$Depth <- all_data$Depth_cm
 all_data <- all_data %>%
   mutate(Depth_cm = gsub("cm", "", as.character(Depth_cm)))%>%
   mutate(Depth_cm = gsub("m", "", as.character(Depth_cm)))
 
-##Remake Date Column with just Year and Month for Sample ID
-all_data <- all_data %>%
-  mutate(
-    Date = if_else(
-      Month < 10,
-      # Modify the string:
-      Date <- paste(all_data$Year, all_data$Month, sep = "0"), 
-      Date <- paste0(all_data$Year, all_data$Month), 
-    )
-  )
 
 ##Remake sample ID
 all_data <- all_data %>%
@@ -586,11 +149,16 @@ all_data <- all_data %>%
       Sample_ID <- Sample_ID_new
     )
   )
+
+##Remove Lys from Replicate Column
+all_data <- all_data %>%
+  mutate(Replicate = gsub("Lys", "", as.character(Replicate)))%>%
+  mutate(Replicate = gsub("lys", "", as.character(Replicate)))
+
 ```
 
 ## Check to see if samples run match metadata & merge info
 ```{r}
-
 #check to see if all samples are present in the metadata 
 all_data$Sample_ID <- toupper(all_data$Sample_ID)
 dionex_metadata$Cl_SO4_ID <- toupper(dionex_metadata$Cl_SO4_ID)
@@ -611,15 +179,14 @@ if (all_present) {
 # 
 # ##Export missing IDs to csv
 # write.csv(missing_ids, "COMPASS_SynopticCB_SO4_Cl_2023_missing_IDs.csv")
+```
 
-##Remove Lys from Replicate Column
-all_data <- all_data %>%
-  mutate(Replicate = gsub("Lys", "", as.character(Replicate)))%>%
-  mutate(Replicate = gsub("lys", "", as.character(Replicate)))
+
+```{r Format Data}
 
 ##Select only necessary columns
 all_data_selected <- all_data %>%
-  select(-c("Day", "Time", "Time_Zone", "Field_notes", "Depth", "Sample_ID_new", "Date"))
+  select(-c("Depth", "Sample_ID_new", "Date"))
 
 all_data_selected$Depth_cm <- as.integer(all_data_selected$Depth_cm)
 
@@ -629,7 +196,7 @@ dionex_metadata_selected <- dionex_metadata %>%
 
 #merge metadata with sample run data 
 merged_data <- all_data_selected %>%
-  left_join(dionex_metadata_selected, by = c("Sample_ID" = "Cl_SO4_ID", "Replicate" = "Lysimeter", "Year", "Month", "Depth_cm"))
+  left_join(dionex_metadata_selected, by = c("Sample_ID" = "Cl_SO4_ID", "Replicate" = "Lysimeter", "Depth_cm"))
 
 
 ############### THIS IS ONLY FOR 2023 when SWAMP was called UP and UPLAND was called UPCON ##############
@@ -662,20 +229,22 @@ all_clean_IDs$salinity <- ifelse(all_clean_IDs$Cl_ppm == 0, 2.6e-05, all_clean_I
 
 ```
 
-
-## Visualize Data
-```{r}
-
-```
-
-
-
 ## Write the 2023 file out to the folder 
 ```{r, echo=FALSE}
 
 head(all_clean_IDs)
 
 final_data <- all_clean_IDs %>%
+  mutate(
+    Project = "COMPASS: Synoptic", 
+    Region = "CB", 
+    SO4_Conc_flag = NA, 
+    SO4_QAQC_flag = NA, 
+    Cl_Conc_flag = NA, 
+    Cl_QAQC_flag = NA, 
+    Analysis_rundate = NA, 
+    Run_notes = NA
+    ) %>%
   rename(
     Time = Time..24hr.,
     Time_Zone = Time.Zone_EDT.EST,
@@ -685,14 +254,18 @@ final_data <- all_clean_IDs %>%
   select(
     Project, Region, Site, Zone, Replicate, Depth_cm, 
          Sample_ID, Year, Month, Day, Time, Time_Zone,
-         SO4_ppm, SO4_Conc_mM, SO4_Conc_flag, SO4_QAQC_flag, Cl_ppm, Cl_Conc_mM, Cl_Conc_flag, Cl_QAQC_flag, salinity,
+         SO4_ppm, SO4_mM, SO4_Conc_flag, SO4_QAQC_flag, Cl_ppm, Cl_mM, Cl_Conc_flag, Cl_QAQC_flag, salinity,
          Analysis_rundate,  Run_notes, Field_notes
         # list columns in the order you want them
   )
 
 
+```
+
+## Write the 2023 file out to the folder 
+```{r, echo=FALSE}
+
 write.csv(final_data, "COMPASS_SynopticCB_SO4_Cl_2023.csv")
 
 ```
 
-##END

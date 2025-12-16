@@ -356,7 +356,7 @@ head(Perc_spks)
 #for steph <- pull out identifiers of the sample names 
 #pull the sample ID and separate it by the underscores 
 IDs <- data.frame(do.call('rbind', strsplit(as.character(sampledat2$Sample_ID),'_',fixed=TRUE)))
-colnames(IDs) <- c("Analysis_No" ,"Site", "Date", "Zone", "Replicate", "Depth", "RHZ", "RHZ_Rep")
+colnames(IDs) <- c("Analysis_No" ,"Site", "Date", "Zone", "Replicate", "Depth") #, "RHZ", "RHZ_Rep"
 head(IDs)
 
 #rejoin them to the dataframe
@@ -367,7 +367,9 @@ head(alldat)
 
 ## Make final dataframe with IDs  
 ```{r}
-
+alldat$'NA' <- NULL
+alldat$'NA' <- NULL
+alldat$'NA.1' <- NULL
 write.csv(alldat, file="Processed Data/COMPASS_SynopticCB_PW_Processed_Cl_SO4_202311.csv")           #Change file name
 
 

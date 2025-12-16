@@ -369,7 +369,7 @@ head(Perc_spks)
 #for steph <- pull out identifiers of the sample names 
 #pull the sample ID and separate it by the underscores 
 IDs <- data.frame(do.call('rbind', strsplit(as.character(sampledat2$Sample_ID),'_',fixed=TRUE)))
-colnames(IDs) <- c("Analysis_No" , "Date","Site", "Zone", "Replicate", "Depth")
+colnames(IDs) <- c("Analysis_No" , "Site", "Date", "Zone", "Replicate", "Depth")
 head(IDs)
 
 #rejoin them to the dataframe
