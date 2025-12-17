@@ -12,7 +12,10 @@ output_dir: "To Be Reviewed/PDF"
 
 ##Run Notes
 ```{r}
-run_notes = ""
+run_notes = "Samples were put in the wrong vials, so 
+  _MSM_202405_UP_LysA_ was switched to _MSM_202405_UP_LysB_, 
+  _MSM_202405_UP_LysB_ was switched to _MSM_202405_UP_LysC_, 
+  _MSM_202405_UP_LysC_ was switched to _MSM_202405_UP_LysA_."
 ```
 
 
@@ -31,7 +34,6 @@ library(plater)
 library(raster)
 library(tidyverse)
 library(readxl)
-library(dplyr)
 
 ```
 
@@ -57,7 +59,7 @@ Sample_data <- all_data %>%
 
 ```
 
-##Read in and Fix Sample IDs
+##Read in Sample IDs
 ```{r Read in and Fix Sample IDs, include = FALSE}
 
 #Read in Sample IDs
@@ -65,14 +67,44 @@ SampleIDs <- read_excel("202405_SampleList.xlsx")
 SampleIDs$Number <- as.character(SampleIDs$Number)
 names(SampleIDs) <- tools::toTitleCase(names(SampleIDs))
 
-##Sample ID that was entered incorrectly
-## MSM_202405_UP_LYSA_10CM to MSM_202405_UP_LYSC_10CM 
-SampleIDs$Replicate <- ifelse(SampleIDs$Site == "MSM" & SampleIDs$Zone == "UP" & SampleIDs$Depth == "10cm" & SampleIDs$Replicate == "LysA", "LysC",
-                              SampleIDs$Replicate)
-
-
 ```
 
+
+#Note from Zoe and Steph: It looks like we did not get any samples for MSM_202405_UP_LysA_10cm. According to the corrections on the scanned datasheets, it looks like for Upland, B samples were accidentally put in the A vials, C samples were put in B vials, and A samples were put in C vials. So, I'm thinking I can check if any analytes have MSM_202405_UP_LysA_10cm, then all the samples need to be corrected A -->B, B --> C and C-->A. 
+```{r Check and fix MSM Up Lys sample IDs, echo = FALSE}
+
+SampleIDs <- SampleIDs %>%
+  mutate(Sample_ID_old = paste(Site, Date, Zone, Replicate, Depth, sep = "_"))
+
+string_to_find <- "MSM_202405_UP_LysA_10cm"
+found <- any(sapply(SampleIDs, function(x) any(grepl(string_to_find, x))))
+
+# Print the result
+if (found) {
+  print(paste("The string '", string_to_find, "' was found in the dataframe.", sep = ""))
+} else {
+  print(paste("The string '", string_to_find, "' was not found in the dataframe.", sep = ""))
+}
+
+base_cond <- with(SampleIDs,
+  Site == "MSM" & Date == "202405" & Zone == "UP")
+
+if (any(base_cond & SampleIDs$Replicate == "LysA" & SampleIDs$Depth == "10cm")) {
+
+  SampleIDs <- SampleIDs %>%
+    mutate(
+      Replicate = case_when(
+        base_cond & Replicate == "LysA" ~ "LysB",
+        base_cond & Replicate == "LysB" ~ "LysC",
+        base_cond & Replicate == "LysC" ~ "LysA",
+        TRUE ~ Replicate
+      )
+    )
+}
+
+SampleIDs$Sample_ID_old <- NULL
+
+```
 
 ##Convert Sample Numbers to Sample IDs
 ```{r Convert Sample Numbers to Sample IDs, include = FALSE}
@@ -102,11 +134,10 @@ Sample_data_IDs <- Sample_data_IDs %>%
       Sample_ID  # else keep original
     )
   )
-
-##Capitalize all sample IDs
-Sample_data_IDs$Sample_ID <- toupper(Sample_data_IDs$Sample_ID)
   
 ```
+
+
 
 ##Remove ADL/BDL samples that were later diluted differently
 ```{r Remove ADL/BDL samples that were later diluted differently, include = FALSE}
