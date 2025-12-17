@@ -1,0 +1,23 @@
+ID,Concentration,Fe_2_Low,Fe_2_High,Fe_3
+0.5 HCL,0,Yes,Yes,Yes
+Fe(II) A,60,Yes,Yes,No
+Fe(II) B,45,Yes,Yes,No
+Fe(II) C,30,Yes,Yes,No
+Fe(II) D,18,Yes,Yes,No
+Fe(II) E,9,Yes,Yes,No
+Fe(II) F,6,Yes,Yes,No
+Fe(II) G,3,Yes,Yes,No
+Fe(II) H,0.6,Yes,Yes,No
+Fe(II) 100,100,No,Yes,No
+Fe(II) 250,250,No,Yes,No
+Fe(II) 500,500,No,Yes,No
+Fe(III) A,60,No,No,Yes
+Fe(III) B,45,No,No,Yes
+Fe(III) C,30,No,No,Yes
+Fe(III) D,18,No,No,Yes
+Fe(III) E,9,No,No,Yes
+Fe(III) F,6,No,No,Yes
+Fe(III) G,3,No,No,Yes
+Fe(III) H,0.6,No,No,Yes
+Fe(III) 100,100,No,No,Yes
+Fe(III) 500,500,No,No,Yes

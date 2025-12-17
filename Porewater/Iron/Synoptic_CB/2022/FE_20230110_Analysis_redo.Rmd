@@ -1,0 +1,250 @@
+---
+title: "COMPASS_FE_20221220"
+author: "Stephanie J. Wilson"
+date: '2023-01-10'
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+## R Markdown
+
+#notes I don't have a system yet to compare old slopes to current slopes for that day 
+#I don't have a system for eliminating wells if the sd is high - if you think one of your sample wells was off you would need to remove it manually... 
+
+#Files Required: 
+#csv of standards as list not plate with columns: Fe(II), Abs,	Curve,	FE ; these are: Known std concentration, Absorbance, Curve type (High or Low), and FE Curve (FE_2 or FE_Total)
+#csv of samples as list not plate with columns: Date,	Plate,	Well_ID,	SampleID,	Dil_Factor,	Abs1,	Abs2 ; these are Date of run, Plate ID, Well ID, Sample ID, Dilution factor, Absorbance 1 (Fe2 or first read), and Absorbance 2 (feTot or second read)
+# I save these files in a folder for each day of FE runs 
+
+
+## Read in Standards and subset 
+```{r}
+
+stds <- read.csv("Raw Data/FE_20230110_Stds.csv")
+head(stds)
+
+stdid <- read.csv("Raw Data/Stds_IDs_20230110.csv")
+head(stdid)
+
+stds1 <- merge(stdid, stds)
+head(stds1)
+
+#subset by FE_2 and FE_Total
+FE_2_stds <- stds1[stds1$Fe_2_High == "Yes", ]                               # One factor level
+head(FE_2_stds) 
+
+FE_Tot_stds <- stds1[stds1$Fe_3 == "Yes", ]                               # One factor level
+head(FE_Tot_stds)
+
+#subset curves for high and low 
+FE_2_stds_high <-  FE_2_stds[FE_2_stds$Fe_2_High == "Yes", ]                               # One factor level
+head(FE_2_stds_high) 
+
+FE_2_stds_low <-  FE_2_stds[FE_2_stds$Fe_2_Low == "Yes", ]                               # One factor level
+head(FE_2_stds_low)
+
+#FE_Tot_stds_high <-  FE_Tot_stds[FE_Tot_stds$Curve == "High", ]                               # One factor level
+#head(FE_Tot_stds_high) 
+
+#FE_Tot_stds_low <-  FE_Tot_stds[FE_Tot_stds$Curve == "Low", ]                               # One factor level
+#head(FE_Tot_stds_low)
+
+```
+
+## Plot standards 
+```{r}
+#Plot each of these and calculate the slope, intercept, and R2 
+library(ggplot2)
+
+#Low curve for Fe(II)
+FE_2_Low <- ggplot(FE_2_stds_low, aes(Concentration, Abs1)) + geom_point() + geom_smooth(method = "lm", se = FALSE)
+FE_2_Low
+
+FE_2_Low_lm <- lm(FE_2_stds_low$Abs1 ~ FE_2_stds_low$Concentration)
+summary(FE_2_Low_lm)
+cf <- coef(FE_2_Low_lm)
+
+#create data frame with 1 rows and 0 columns
+Slopes1 <- data.frame(matrix(ncol = 0, nrow = 1))
+Slopes1$Curve <- "FE_2_Low"
+Slopes1$R2 <- summary(FE_2_Low_lm)$adj.r.squared
+Slopes1$Slope <- cf[2]
+Slopes1$Intercept <- cf[1]
+head(Slopes1)
+
+
+#High curve for Fe(III)
+FE_2_High <- ggplot(FE_2_stds_high, aes(Concentration, Abs1)) + geom_point() + geom_smooth(method = "lm", se = FALSE)
+FE_2_High
+
+FE_2_High_lm <- lm(FE_2_stds_high$Abs1 ~ FE_2_stds_high$Concentration)
+summary(FE_2_High_lm)
+cf <- coef(FE_2_High_lm)
+
+#create data frame with 1 rows and 0 columns
+Slopes2 <- data.frame(matrix(ncol = 0, nrow = 1))
+Slopes2$Curve <- "FE_2_High"
+Slopes2$R2 <- summary(FE_2_High_lm)$adj.r.squared
+Slopes2$Slope <- cf[2]
+Slopes2$Intercept <- cf[1]
+head(Slopes2)
+
+
+#Low curve for Fe(Total)
+FE_Tot_Low <- ggplot(FE_2_stds_low, aes(Concentration, Abs2)) + geom_point() + geom_smooth(method = "lm", se = FALSE)
+FE_Tot_Low
+
+FE_Tot_Low_lm <- lm(FE_2_stds_low$Abs2 ~ FE_2_stds_low$Concentration)
+summary(FE_Tot_Low_lm)
+cf <- coef(FE_Tot_Low_lm)
+
+#create data frame with 1 rows and 0 columns
+Slopes3 <- data.frame(matrix(ncol = 0, nrow = 1))
+Slopes3$Curve <- "FE_Tot_Low"
+Slopes3$R2 <- summary(FE_Tot_Low_lm)$adj.r.squared
+Slopes3$Slope <- cf[2]
+Slopes3$Intercept <- cf[1]
+head(Slopes3)
+
+
+#High curve for Fe(III)
+FE_Tot_High <- ggplot(FE_2_stds_high, aes(Concentration, Abs2)) + geom_point() + geom_smooth(method = "lm", se = FALSE)
+FE_Tot_High
+
+FE_Tot_High_lm <- lm(FE_2_stds_high$Abs2 ~ FE_2_stds_high$Concentration)
+summary(FE_Tot_High_lm)
+cf <- coef(FE_Tot_High_lm)
+
+#create data frame with 1 rows and 0 columns
+Slopes4 <- data.frame(matrix(ncol = 0, nrow = 1))
+Slopes4$Curve <- "FE_Tot_High"
+Slopes4$R2 <- summary(FE_Tot_High_lm)$adj.r.squared
+Slopes4$Slope <- cf[2]
+Slopes4$Intercept <- cf[1]
+head(Slopes4)
+
+
+#pull all the slopes together into one dataframe 
+Slopes <- rbind(Slopes1, Slopes2, Slopes3, Slopes4)
+head(Slopes)
+
+####
+```
+
+## Read in Sample Data subset 
+```{r}
+
+dat <- read.csv("Raw Data/FE_20230110_Samples.csv")
+head(dat)
+
+## remove any lines that say stds in SampleID
+library(dplyr)
+
+dat <- dat %>%  filter(!SampleID =='stds')
+head(dat)
+
+#Now flag any Abs1 that are above the 60uM standard absorbance (0.2)
+dat$FE_2_Curve <- ifelse(dat$Abs1 >0.2, "High", "Low")
+head(dat)
+
+#Now flag any Abs2 that are above the 60uM standard absorbance (0.3)
+dat$FE_Tot_Curve <- ifelse(dat$Abs2 >0.3, "High", "Low")
+head(dat)
+
+
+```
+
+
+## Subset Data and Calculate Concentrations 
+```{r}
+#Calculate concentrations of Fe(II)
+dat$FE_2_Conc <- ifelse(dat$Abs1 >0.2, (dat$Abs1-Slopes2$Intercept)/Slopes2$Slope, (dat$Abs1-Slopes1$Intercept)/Slopes1$Slope )
+head(dat)
+
+#calculate concentrations of Fe(total)
+dat$FE_Tot_Conc <- ifelse(dat$Abs2 >0.3, (dat$Abs2-Slopes4$Intercept)/Slopes4$Slope,                                       (dat$Abs2-Slopes3$Intercept)/Slopes3$Slope )
+head(dat)
+
+
+#Account for the dilution factor
+dat$FE_2_Conc_DilCorr <- dat$FE_2_Conc*dat$dilution.factor
+
+dat$FE_Tot_Conc_DilCorr <- dat$FE_Tot_Conc*dat$dilution.factor
+
+head(dat)
+```
+
+
+## Calculate Fe(III) 
+```{r}
+#Calculate concentrations of Fe(III)
+dat$FE_3_Conc <- dat$FE_Tot_Conc_DilCorr-dat$FE_2_Conc_DilCorr
+
+#Use ifelse to make any negative values equal to zero 
+dat$FE_2_Conc_Final <- ifelse(dat$FE_2_Conc_DilCorr <0, 0, dat$FE_2_Conc_DilCorr)
+
+dat$FE_3_Conc_Final <- ifelse(dat$FE_3_Conc <0, 0, dat$FE_3_Conc)
+
+#Use ifelse to make any negative values equal to zero 
+dat$FE_2_Info <- ifelse(dat$FE_2_Conc_DilCorr <0, 'bdl', 'within range')
+
+#Use ifelse to make any negative values equal to zero 
+dat$FE_3_Info <- ifelse(dat$FE_3_Conc <0, 'bdl', 'within range')
+
+head(dat)
+```
+
+
+## Calculate Averages across wells and std. dev.  
+```{r}
+head(dat)
+
+#summarize by sampleID so that we can calculate the mean and std. dev. of the three wells 
+dat1 <- dat %>%
+  group_by(SampleID) %>%
+  summarise(FE_2_mean = mean(FE_2_Conc_Final), FE_2_sd = sd(FE_2_Conc_Final), 
+            FE_3_mean = mean(FE_3_Conc_Final), FE_3_sd = sd(FE_3_Conc_Final), 
+            FE_2_flag = first(FE_2_Info), FE_3_flag = first(FE_3_Info))
+
+head(dat1)
+
+
+```
+
+
+## Export full data then just final data 
+```{r}
+
+#Read in meta-data and sample IDs
+IDs <- read.csv("Raw Data/FE_SampleIDs_2022.csv")
+head(IDs)
+
+dat_IDs <- merge(IDs, dat1)
+head(dat_IDs)
+
+#Read out the summarized data
+head(dat_IDs)
+write.csv(dat_IDs, file="Processed Data/FE_20230110_Summary_Data.csv")
+
+#Read out all the data in dat 
+head(dat)
+write.csv(dat, file="Processed Data/FE_20230110_Data.csv")
+
+
+#Now take out the absorbance and stuff 
+head(dat)
+dat2 <- dat[ ,-(2:3)]
+dat2 <- dat2[ ,-(3:12)]
+head(dat2)
+write.csv(dat2, file="Processed Data/FE_20230110_short_Data.csv")
+
+```
+
+### END
+
+
+
