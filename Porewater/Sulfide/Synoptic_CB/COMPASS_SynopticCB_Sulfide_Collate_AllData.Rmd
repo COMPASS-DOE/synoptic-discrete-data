@@ -45,7 +45,7 @@ colnames(dat25)
 all_dat <- rbind(dat23, dat24, dat25)
 
 all_dat <- all_dat %>%
-  select(
+  dplyr::select(
     Project, Region, Sample_ID, Year, Month, Day, Time, Time_Zone,
     Site, Zone, Replicate, Depth_cm, 
     H2S_mean_uM, H2S_sd_uM, H2S_cv, H2S_Conc_flag, H2S_cv_flag, H2S_QAQC_flag, Dilution,

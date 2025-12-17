@@ -75,6 +75,17 @@ head(all_dat)
 ```
 
 
+##Fix sample IDs
+```{r}
+all_dat$Sample_ID <- gsub(
+  "MSM_202037_WC_LysC_20cm",
+  "MSM_202307_WC_LysC_20cm",
+  all_dat$Sample_ID,
+  ignore.case = TRUE
+)
+```
+
+
 ## Pull out standards  - could do some checks here if we want
 ```{r}
 stds <- all_dat[grepl("Standard", all_dat$Sample_ID),]
@@ -367,6 +378,7 @@ head(alldat)
 
 ## Make final dataframe with IDs  
 ```{r}
+alldat$'NA' <- NULL
 alldat$'NA' <- NULL
 alldat$'NA.1' <- NULL
 write.csv(alldat, file="Processed Data/COMPASS_SynopticCB_PW_Processed_Cl_SO4_202307.csv")           #Change file name

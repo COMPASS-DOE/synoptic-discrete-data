@@ -34,7 +34,7 @@ final_data <- all_data %>%
     H2S_mean_uM = H2S_mean, 
     H2S_sd_uM = H2S_sd
     ) %>%
-    select(
+    dplyr::select(
     Project, Region, Site, Zone, Replicate, Depth_cm, 
          Sample_ID, Year, Month, Day, Time, Time_Zone,
          H2S_mean_uM, H2S_sd_uM, H2S_cv, H2S_Conc_flag, H2S_cv_flag, Dilution,

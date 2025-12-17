@@ -1,4 +1,4 @@
-"","Project","Region","Site","Zone","Replicate","Depth_cm","Sample_ID","Year","Month","Day","Time","Time_Zone","SO4_ppm","SO4_Conc_mM","SO4_Conc_flag","SO4_QAQC_flag","Cl_ppm","Cl_Conc_mM","Cl_Conc_flag","Cl_QAQC_flag","salinity","Analysis_rundate","Run_notes","Field_notes"
+"","Project","Region","Site","Zone","Replicate","Depth_cm","Sample_ID","Year","Month","Day","Time","Time_Zone","SO4_ppm","SO4_mM","SO4_Conc_flag","SO4_QAQC_flag","Cl_ppm","Cl_mM","Cl_Conc_flag","Cl_QAQC_flag","salinity","Analysis_rundate","Run_notes","Field_notes"
 "1","COMPASS: Synoptic","CB","MSM","UP","A",10,"MSM_202206_UP_LYSA_10CM",2022,6,6,NA,NA,126.0804,3.93263880224579,NA,NA,1568.6751,44.2503554301834,NA,NA,2.8346219057,NA,NA,""
 "2","COMPASS: Synoptic","CB","MSM","TR","A",10,"MSM_202206_TR_LYSA_10CM",2022,6,6,NA,NA,331.4201,10.3374953212726,NA,NA,2755.8535,77.739167842031,NA,NA,4.9798532745,NA,NA,""
 "3","COMPASS: Synoptic","CB","MSM","TR","B",10,"MSM_202206_TR_LYSB_10CM",2022,6,6,NA,NA,367.1323,11.4514129756706,NA,NA,3027.1985,85.3934696755994,NA,NA,5.4701736895,NA,NA,""

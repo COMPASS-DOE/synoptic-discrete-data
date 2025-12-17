@@ -27,23 +27,27 @@ library(openxlsx)
 #read in 2022 Dionex Data:
 dat22 <- read.csv("2022/COMPASS_SynopticCB_SO4_Cl_2022.csv")
 # head(dat22)
+colnames(dat22)
 
 #read in 2023 Dionex Data:
 dat23 <- read.csv("2023/COMPASS_SynopticCB_SO4_Cl_2023.csv")
 # head(dat23)
+colnames(dat23)
 
 #read in 2024 Dionex Data:
 dat24 <- read.csv("2024/COMPASS_SynopticCB_SO4_Cl_2024.csv")
 # head(dat24)
+colnames(dat24)
 
 #read in 2025 Dionex Data:
 dat25 <- read.csv("2025/COMPASS_SynopticCB_SO4_Cl_2025.csv")
-# head(dat24)
+# head(dat25)
+colnames(dat25)
 
-all_dat <- rbind(dat22, dat23, dat24, dat25)
+all_dat <- bind_rows(dat22, dat23, dat24, dat25)
 
 all_dat <- all_dat %>%
-  select(
+  dplyr::select(
     Project, Region, Sample_ID, Year, Month, Day, Time, Time_Zone,
     Site, Zone, Replicate, Depth_cm, 
     SO4_ppm, SO4_Conc_mM, SO4_Conc_flag, SO4_QAQC_flag, Cl_ppm, Cl_Conc_mM, Cl_Conc_flag, Cl_QAQC_flag, salinity,
