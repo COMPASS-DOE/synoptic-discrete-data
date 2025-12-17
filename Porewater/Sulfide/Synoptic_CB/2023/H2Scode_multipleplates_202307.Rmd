@@ -47,13 +47,6 @@ Script_run_by = "Zoe Read" #Code user
 Project = "COMPASS"
 
 Run_notes="A few of the samples were adl. 
-Some sample IDs are missing from metadata: 
- GCW_202307_TR_LYSB_45CM, GCW_202307_TR_LYSC_10CM, GCW_202307_TR_LYSC_20CM, 
- GCW_202307_TR_LYSC_45CM, GCW_202307_UP_LYSA_20CM, GCW_202307_UP_LYSB_10CM,
- GCW_202307_UP_LYSB_20CM, GCW_202307_UP_LYSC_20CM, SWH_202307_WC_LYSA_10CM, 
- SWH_202307_WC_LYSA_20CM, SWH_202307_WC_LYSA_45CM, , SWH_202307_WC_LYSB_10CM, 
- SWH_202307_WC_LYSB_20CM, SWH_202307_WC_LYSC_10CM, SWH_202307_WC_LYSC_20CM, 
- SWH_202307_WC_LYSC_45CM
 Used Std curve from Plate 4. 
 MC 20 from Plate 2 was bad. 
 1/9 plates had bad dup, 4/9 plates had bad spk. 
