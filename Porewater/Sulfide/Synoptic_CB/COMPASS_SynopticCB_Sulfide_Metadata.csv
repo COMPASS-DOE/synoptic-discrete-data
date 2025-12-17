@@ -17,7 +17,7 @@
 "16","H2S_Conc_flag","Sulfide concentration flag based on standard curve (bdl=below detection limit (0), adl=above detection limit (highest   
                          standard), Within Range=within detection range)","NA","NA"
 "17","H2S_cv_flag","Sulfide flag based on triplicate cv compared to QAQC cutoff value (Within Range or High CV)","NA","NA"
-"18","H2S_QAQC_flag","Sulfate QAQC Flags generated during checks of standards, blanks, dups, and spks","NA","NA"
+"18","H2S_QAQC_flag","Sulfide QAQC Flags generated during checks of standards, blanks, dups, and spks","NA","NA"
 "19","Dilution","Dilution factor used for sample when ran on microplate","NA","NA"
 "20","Analysis_rundate","The date that samples were run on the microplate reader","NA","NA"
 "21","Run_notes","Any notes generated during QAQC","NA","NA"

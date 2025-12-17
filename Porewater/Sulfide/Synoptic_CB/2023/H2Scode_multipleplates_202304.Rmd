@@ -46,13 +46,16 @@ Run_by = "Stephanie Wilson"  #Instrument user
 Script_run_by = "Zoe Read" #Code user 
 Project = "COMPASS"
 
-Run_notes="Some sample IDs are missing from metadata: GWI_202304_WC_LYSC_45CM. 
-1/6 plates had a bad dup. 2/6 plates had a bad spk. 
+Run_notes="1/6 plates had a bad dup. 2/6 plates had a bad spk. 
 "#any notes from run
 
 #Stds that should be excluded
 stds_to_remove<-data.frame(Plate=c("Plate3"),IDs=c("Std 3"))
 # stds_to_remove<-NA
+
+##Data Entered Incorrectly
+Old_ID_1 = "GWI_WC_LysC_45cm"
+New_ID_1 = "GWI_TR_LysC_45cm"
 
 ```
 
@@ -144,7 +147,7 @@ head(dat)
 
 ```{r Fix data entered incorrectly, echo=TRUE, message=FALSE, warning=FALSE, include = FALSE, results = 'hide'}
 ##Data entered incorrectly
-# dat$IDs[dat$IDs == Old_ID_1] <- New_ID_1
+dat$IDs[dat$IDs == Old_ID_1] <- New_ID_1
 # dat$IDs[dat$IDs == Old_ID_2] <- New_ID_2
 # dat$IDs[dat$IDs == Old_ID_3] <- New_ID_3
 # dat$IDs[dat$IDs == Old_ID_4] <- New_ID_4
