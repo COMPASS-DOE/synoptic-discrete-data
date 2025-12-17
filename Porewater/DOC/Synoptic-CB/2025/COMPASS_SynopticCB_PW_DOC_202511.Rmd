@@ -16,7 +16,7 @@ cat("Setup Information")
   Date_Run = "11/10/25"  #Date that instrument was run
   Run_by = "Stephanie J. Wilson"  #Instrument user 
   Script_run_by = "Stephanie J. Wilson" #Code user 
-  run_notes = "xxx"  #any notes from the run
+  run_notes = "One sample from SWH was not refridgerated and has been removed from the analysis in this code."  #any notes from the run
   samples <- c("GCW", "GWI", "MSM", "SWH") #whatever identifies your samples within the same names 
   samples_pattern <- paste(samples, collapse = "|") 
     #samples_pattern <- "GCW" #use this instead of the line above if you have only one site code 
@@ -191,7 +191,8 @@ cat("Import Sample Data")
 #Pull in data that from the raw data file based on the sample info input above 
 dat_raw <- raw_file_name %>%
   map_df(read_data) %>%
-  filter(str_detect(sample_name, samples_pattern))
+  filter(str_detect(sample_name, samples_pattern)) %>% 
+  filter(!sample_name == "202511_SWH_SWAMP_LysC_10cm_WARM")
 
 head(dat_raw)
 ```
