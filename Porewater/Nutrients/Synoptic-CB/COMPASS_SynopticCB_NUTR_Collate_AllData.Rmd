@@ -612,3 +612,86 @@ print(viz_PO4_boxplot)  # For ggplot objects, use print()
 dev.off() 
 
 ```
+
+## Calculate summary metrics
+```{r Additional summary metrics}
+# It would also be great to add to our collation codes a summary chunk that will calculate value ranges, means, and standard deviations (and errors) for each site, zone, depth for each year; also for each site zone, depth overall; and for each site and zone overall so that we have some easy access to metrics. Was just thinking this might be helpful today when re-collating the DIC data.
+
+colnames(all_dat)
+
+##Metrics for each site, zone, depth for each year
+summary_by_year <- all_dat %>%
+  group_by(Year, Site, Zone, Depth_cm) %>%
+   reframe(
+     min_NOx_mgL = min(NOx_Conc_mgL, na.rm=TRUE),
+     max_NOx_mgL = max(NOx_Conc_mgL, na.rm=TRUE), 
+     mean_NOx_mgL = mean(NOx_Conc_mgL, na.rm=TRUE), 
+     sd_NOx_mgL = sd(NOx_Conc_mgL, na.rm=TRUE), 
+
+     min_NH3_mgL = min(NH3_Conc_mgL, na.rm=TRUE),
+     max_NH3_mgL = max(NH3_Conc_mgL, na.rm=TRUE), 
+     mean_NH3_mgL = mean(NH3_Conc_mgL, na.rm=TRUE), 
+     sd_NH3_mgL = sd(NH3_Conc_mgL, na.rm=TRUE), 
+     
+     min_PO4_mgL = min(PO4_Conc_mgL, na.rm=TRUE),
+     max_PO4_mgL = max(PO4_Conc_mgL, na.rm=TRUE), 
+     mean_PO4_mgL = mean(PO4_Conc_mgL, na.rm=TRUE), 
+     sd_PO4_mgL = sd(PO4_Conc_mgL, na.rm=TRUE))
+
+##Metrics for each site, zone, depth for all years
+summary_all_years <- all_dat %>%
+  group_by(Site, Zone, Depth_cm) %>%
+   reframe(
+     min_NOx_mgL = min(NOx_Conc_mgL, na.rm=TRUE),
+     max_NOx_mgL = max(NOx_Conc_mgL, na.rm=TRUE), 
+     mean_NOx_mgL = mean(NOx_Conc_mgL, na.rm=TRUE), 
+     sd_NOx_mgL = sd(NOx_Conc_mgL, na.rm=TRUE), 
+
+     min_NH3_mgL = min(NH3_Conc_mgL, na.rm=TRUE),
+     max_NH3_mgL = max(NH3_Conc_mgL, na.rm=TRUE), 
+     mean_NH3_mgL = mean(NH3_Conc_mgL, na.rm=TRUE), 
+     sd_NH3_mgL = sd(NH3_Conc_mgL, na.rm=TRUE), 
+     
+     min_PO4_mgL = min(PO4_Conc_mgL, na.rm=TRUE),
+     max_PO4_mgL = max(PO4_Conc_mgL, na.rm=TRUE), 
+     mean_PO4_mgL = mean(PO4_Conc_mgL, na.rm=TRUE), 
+     sd_PO4_mgL = sd(PO4_Conc_mgL, na.rm=TRUE))
+
+##Metrics for each site and zone for all depths and years
+summary_all_depths_years <- all_dat %>%
+  group_by(Site, Zone) %>%
+   reframe(
+     min_NOx_mgL = min(NOx_Conc_mgL, na.rm=TRUE),
+     max_NOx_mgL = max(NOx_Conc_mgL, na.rm=TRUE), 
+     mean_NOx_mgL = mean(NOx_Conc_mgL, na.rm=TRUE), 
+     sd_NOx_mgL = sd(NOx_Conc_mgL, na.rm=TRUE), 
+
+     min_NH3_mgL = min(NH3_Conc_mgL, na.rm=TRUE),
+     max_NH3_mgL = max(NH3_Conc_mgL, na.rm=TRUE), 
+     mean_NH3_mgL = mean(NH3_Conc_mgL, na.rm=TRUE), 
+     sd_NH3_mgL = sd(NH3_Conc_mgL, na.rm=TRUE), 
+     
+     min_PO4_mgL = min(PO4_Conc_mgL, na.rm=TRUE),
+     max_PO4_mgL = max(PO4_Conc_mgL, na.rm=TRUE), 
+     mean_PO4_mgL = mean(PO4_Conc_mgL, na.rm=TRUE), 
+     sd_PO4_mgL = sd(PO4_Conc_mgL, na.rm=TRUE))
+
+```
+
+## Write out summarized data
+```{r write out combined data and metadata}
+
+#write out a csv of all the data to the main folder: 
+write.csv(summary_by_year, "COMPASS_SynopticCB_PW_Nutrient_Summarized_By_Year.csv")
+
+
+#write out a csv of the metadata associated with the data: 
+write.csv(summary_all_years, "COMPASS_SynopticCB_PW_Nutrient_Summarized_Years_Combined.csv")
+
+
+#write out a csv of the metadata associated with the data: 
+write.csv(summary_all_depths_years, "COMPASS_SynopticCB_PW_Nutrient_Summarized_Years_and_Depths_Combined.csv")
+```
+
+
+

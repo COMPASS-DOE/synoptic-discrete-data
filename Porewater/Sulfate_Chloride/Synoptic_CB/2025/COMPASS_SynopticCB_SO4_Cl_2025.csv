@@ -1,4 +1,4 @@
-"","Project","Region","Site","Zone","Replicate","Depth_cm","Sample_ID","Year","Month","Day","Time","Time_Zone","SO4_ppm","SO4_Conc_mM","SO4_Conc_flag","SO4_QAQC_flag","Cl_ppm","Cl_Conc_mM","Cl_Conc_flag","Cl_QAQC_flag","salinity","Analysis_rundate","Run_notes","Field_notes"
+"","Project","Region","Site","Zone","Replicate","Depth_cm","Sample_ID","Year","Month","Day","Time","Time_Zone","SO4_ppm","SO4_mM","SO4_Conc_flag","SO4_QAQC_flag","Cl_ppm","Cl_mM","Cl_Conc_flag","Cl_QAQC_flag","salinity","Analysis_rundate","Run_notes","Field_notes"
 "1","COMPASS: Synoptic","CB","GCW","UP","A",10,"GCW_202505_UP_LYSA_10CM",2025,5,14,"13:21","EDT",1.3011,0.0405832813474735,"Within_Range","SO4 checks perc diff out of range",7.5402,0.212699576868829,"Within_Range",NA,0.0136511414,"2025-09-24","Std 1 values are lower than the expected concentration - why is this? 
   I have seen this with most of our recent runs. 
   2 dups had high CV for Cl: 120_TEMPEST_AqWell_20250904_1225_C, 80_SWH_202505_UP_LysB_10cm
@@ -1709,334 +1709,334 @@
   MSM_202507_UP_LYSB_20CM, MSM_202507_UP_LYSB_45CM, MSM_202507_UP_LYSC_10CM, GCW_202507_TR_LYSA_10CM, 
   9, 10, 88, 89 (test samples for Lucie)
   ",""
-"228","COMPASS: Synoptic","CB","GCW","TR","B",45,"GCW_202509_TR_LYSB_45CM",2025,9,9,"13:10","EDT",8.2731,0.25805053025577,"Within_Range",NA,353.8576,9.98187870239774,"Within_Range",NA,0.6394466832,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"228","COMPASS: Synoptic","CB","GCW","TR","B",45,"GCW_202509_TR_LYSB_45CM",2025,9,9,"13:10","EDT",8.2731,0.25805053,"Within_Range",NA,353.8576,9.981878702,"Within_Range",NA,0.639446683,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"229","COMPASS: Synoptic","CB","GCW","TR","B",20,"GCW_202509_TR_LYSB_20CM",2025,9,9,"13:09","EDT",28.8957,0.90130068621335,"Within_Range",NA,693.382,19.5594358251058,"Within_Range",NA,1.252967274,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"229","COMPASS: Synoptic","CB","GCW","TR","B",20,"GCW_202509_TR_LYSB_20CM",2025,9,9,"13:09","EDT",28.8957,0.901300686,"Within_Range",NA,693.382,19.55943583,"Within_Range",NA,1.252967274,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"230","COMPASS: Synoptic","CB","GCW","TR","B",10,"GCW_202509_TR_LYSB_10CM",2025,9,9,"12:09","EDT",302.2874,9.42880224578914,"Within_Range",NA,2711.1142,76.4771283497884,"Within_Range",NA,4.8990093594,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"230","COMPASS: Synoptic","CB","GCW","TR","B",10,"GCW_202509_TR_LYSB_10CM",2025,9,9,"12:09","EDT",302.2874,9.428802246,"Within_Range",NA,2711.1142,76.47712835,"Within_Range",NA,4.899009359,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"231","COMPASS: Synoptic","CB","GCW","TR","A",45,"GCW_202509_TR_LYSA_45CM",2025,9,9,"12:56","EDT",15.5329,0.484494697442296,"Within_Range",NA,189.8518,5.35548095909732,"Within_Range",NA,0.3430882026,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"231","COMPASS: Synoptic","CB","GCW","TR","A",45,"GCW_202509_TR_LYSA_45CM",2025,9,9,"12:56","EDT",15.5329,0.484494697,"Within_Range",NA,189.8518,5.355480959,"Within_Range",NA,0.343088203,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"232","COMPASS: Synoptic","CB","GCW","TR","A",20,"GCW_202509_TR_LYSA_20CM",2025,9,9,"12:52","EDT",11.8962,0.371060511540861,"Within_Range",NA,231.6573,6.53476163610719,"Within_Range",NA,0.4186307411,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"232","COMPASS: Synoptic","CB","GCW","TR","A",20,"GCW_202509_TR_LYSA_20CM",2025,9,9,"12:52","EDT",11.8962,0.371060512,"Within_Range",NA,231.6573,6.534761636,"Within_Range",NA,0.418630741,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"233","COMPASS: Synoptic","CB","GCW","WC","A",20,"GCW_202509_WC_LYSA_20CM",2025,9,9,"10:22","EDT",137.8943,4.30113225202745,"Within_Range",NA,5812.039,163.950324400564,"Within_Range",NA,10.502380473,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"233","COMPASS: Synoptic","CB","GCW","WC","A",20,"GCW_202509_WC_LYSA_20CM",2025,9,9,"10:22","EDT",137.8943,4.301132252,"Within_Range",NA,5812.039,163.9503244,"Within_Range",NA,10.50238047,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"234","COMPASS: Synoptic","CB","GCW","WC","A",10,"GCW_202509_WC_LYSA_10CM",2025,9,9,"10:22","EDT",31.6015,0.985698689956332,"Within_Range",NA,6043.0791,170.467675599436,"Within_Range",NA,10.9198699337,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"234","COMPASS: Synoptic","CB","GCW","WC","A",10,"GCW_202509_WC_LYSA_10CM",2025,9,9,"10:22","EDT",31.6015,0.98569869,"Within_Range",NA,6043.0791,170.4676756,"Within_Range",NA,10.91986993,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"235","COMPASS: Synoptic","CB","GCW","TR","C",45,"GCW_202509_TR_LYSC_45CM",2025,9,9,"13:16","EDT",46.0185,1.43538677479726,"Within_Range",NA,774.5324,21.84858674189,"Within_Range",NA,1.3996060468,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"235","COMPASS: Synoptic","CB","GCW","TR","C",45,"GCW_202509_TR_LYSC_45CM",2025,9,9,"13:16","EDT",46.0185,1.435386775,"Within_Range",NA,774.5324,21.84858674,"Within_Range",NA,1.399606047,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"236","COMPASS: Synoptic","CB","GCW","TR","C",20,"GCW_202509_TR_LYSC_20CM",2025,9,9,"13:15","EDT",76.8295,2.39642857142857,"Within_Range",NA,1271.4205,35.8651763046544,"Within_Range",NA,2.2974828435,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"236","COMPASS: Synoptic","CB","GCW","TR","C",20,"GCW_202509_TR_LYSC_20CM",2025,9,9,"13:15","EDT",76.8295,2.396428571,"Within_Range",NA,1271.4205,35.8651763,"Within_Range",NA,2.297482844,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"237","COMPASS: Synoptic","CB","GCW","TR","C",10,"GCW_202509_TR_LYSC_10CM",2025,9,9,"13:13","EDT",106.4247,3.31954772301934,"Within_Range",NA,1825.1122,51.4841241184767,"Within_Range",NA,3.2980037454,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"237","COMPASS: Synoptic","CB","GCW","TR","C",10,"GCW_202509_TR_LYSC_10CM",2025,9,9,"13:13","EDT",106.4247,3.319547723,"Within_Range",NA,1825.1122,51.48412412,"Within_Range",NA,3.298003745,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"238","COMPASS: Synoptic","CB","GCW","WC","C",10,"GCW_202509_WC_LYSC_10CM",2025,9,9,"10:43","EDT",434.4382,13.5507860262009,"Within_Range",NA,5419.9249,152.889277856135,"Within_Range",NA,9.7938302943,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"238","COMPASS: Synoptic","CB","GCW","WC","C",10,"GCW_202509_WC_LYSC_10CM",2025,9,9,"10:43","EDT",434.4382,13.55078603,"Within_Range",NA,5419.9249,152.8892779,"Within_Range",NA,9.793830294,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"239","COMPASS: Synoptic","CB","GCW","WC","B",45,"GCW_202509_WC_LYSB_45CM",2025,9,9,"10:32","EDT",317.6301,9.9073643169058,"Within_Range",NA,5761.9499,162.537373765867,"Within_Range",NA,10.4118694693,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"239","COMPASS: Synoptic","CB","GCW","WC","B",45,"GCW_202509_WC_LYSB_45CM",2025,9,9,"10:32","EDT",317.6301,9.907364317,"Within_Range",NA,5761.9499,162.5373738,"Within_Range",NA,10.41186947,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"240","COMPASS: Synoptic","CB","GCW","WC","B",20,"GCW_202509_WC_LYSB_20CM",2025,9,9,"10:32","EDT",252.7764,7.88447910168434,"Within_Range",NA,5148.6701,145.23752045134,"Within_Range",NA,9.3036728707,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"240","COMPASS: Synoptic","CB","GCW","WC","B",20,"GCW_202509_WC_LYSB_20CM",2025,9,9,"10:32","EDT",252.7764,7.884479102,"Within_Range",NA,5148.6701,145.2375205,"Within_Range",NA,9.303672871,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"241","COMPASS: Synoptic","CB","GCW","WC","B",10,"GCW_202509_WC_LYSB_10CM",2025,9,9,"10:32","EDT",40.7312,1.27046787273861,"Within_Range",NA,4987.0654,140.678854724965,"Within_Range",NA,9.0116531778,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"241","COMPASS: Synoptic","CB","GCW","WC","B",10,"GCW_202509_WC_LYSB_10CM",2025,9,9,"10:32","EDT",40.7312,1.270467873,"Within_Range",NA,4987.0654,140.6788547,"Within_Range",NA,9.011653178,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"242","COMPASS: Synoptic","CB","GCW","WC","A",45,"GCW_202509_WC_LYSA_45CM",2025,9,9,"10:22","EDT",193.7325,6.04281035558328,"Within_Range",NA,6205.736,175.056022566996,"Within_Range",NA,11.213790952,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"242","COMPASS: Synoptic","CB","GCW","WC","A",45,"GCW_202509_WC_LYSA_45CM",2025,9,9,"10:22","EDT",193.7325,6.042810356,"Within_Range",NA,6205.736,175.0560226,"Within_Range",NA,11.21379095,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"243","COMPASS: Synoptic","CB","GCW","SW","C",0,"GCW_202509_SW_C",2025,9,9,"9:45","EDT",924.1266,28.8249095446039,"Within_Range",NA,6651.0209,187.616950634697,"Within_Range",NA,12.0184207663,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"243","COMPASS: Synoptic","CB","GCW","SW","C",0,"GCW_202509_SW_C",2025,9,9,"9:45","EDT",924.1266,28.82490954,"Within_Range",NA,6651.0209,187.6169506,"Within_Range",NA,12.01842077,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"244","COMPASS: Synoptic","CB","GCW","SW","B",0,"GCW_202509_SW_B",2025,9,9,"9:45","EDT",961.9767,30.0055115408609,"Within_Range",NA,6959.9326,196.330961918195,"Within_Range",NA,12.5766242082,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"244","COMPASS: Synoptic","CB","GCW","SW","B",0,"GCW_202509_SW_B",2025,9,9,"9:45","EDT",961.9767,30.00551154,"Within_Range",NA,6959.9326,196.3309619,"Within_Range",NA,12.57662421,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"245","COMPASS: Synoptic","CB","GCW","SW","A",0,"GCW_202509_SW_A",2025,9,9,"9:45","EDT",1021.4045,31.8591547099189,"Within_Range",NA,7384.2766,208.30117348378,"Within_Range",NA,13.3434138162,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"245","COMPASS: Synoptic","CB","GCW","SW","A",0,"GCW_202509_SW_A",2025,9,9,"9:45","EDT",1021.4045,31.85915471,"Within_Range",NA,7384.2766,208.3011735,"Within_Range",NA,13.34341382,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"246","COMPASS: Synoptic","CB","GCW","WC","C",45,"GCW_202509_WC_LYSC_45CM",2025,9,9,"10:43","EDT",479.7771,14.9649750467873,"Within_Range",NA,5438.6381,153.417153737659,"Within_Range",NA,9.8276450467,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"246","COMPASS: Synoptic","CB","GCW","WC","C",45,"GCW_202509_WC_LYSC_45CM",2025,9,9,"10:43","EDT",479.7771,14.96497505,"Within_Range",NA,5438.6381,153.4171537,"Within_Range",NA,9.827645047,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"247","COMPASS: Synoptic","CB","GCW","WC","C",20,"GCW_202509_WC_LYSC_20CM",2025,9,9,"10:43","EDT",430.7199,13.4348066126014,"Within_Range",NA,4973.7061,140.302005641749,"Within_Range",NA,8.9875129227,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"247","COMPASS: Synoptic","CB","GCW","WC","C",20,"GCW_202509_WC_LYSC_20CM",2025,9,9,"10:43","EDT",430.7199,13.43480661,"Within_Range",NA,4973.7061,140.3020056,"Within_Range",NA,8.987512923,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"248","COMPASS: Synoptic","CB","MSM","UP","B",45,"MSM_202509_UP_LYSB_45CM",2025,9,11,"14:10","EDT",226.4723,7.06401434809732,"Within_Range",NA,2481.869,70.0104090267983,"Within_Range",NA,4.484763283,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"248","COMPASS: Synoptic","CB","MSM","UP","B",45,"MSM_202509_UP_LYSB_45CM",2025,9,11,"14:10","EDT",226.4723,7.064014348,"Within_Range",NA,2481.869,70.01040903,"Within_Range",NA,4.484763283,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"249","COMPASS: Synoptic","CB","MSM","UP","B",20,"MSM_202509_UP_LYSB_20CM",2025,9,11,"14:09","EDT",141.1628,4.40308172177168,"Within_Range",NA,1928.9906,54.4144033850494,"Within_Range",NA,3.4857120142,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"249","COMPASS: Synoptic","CB","MSM","UP","B",20,"MSM_202509_UP_LYSB_20CM",2025,9,11,"14:09","EDT",141.1628,4.403081722,"Within_Range",NA,1928.9906,54.41440339,"Within_Range",NA,3.485712014,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"250","COMPASS: Synoptic","CB","MSM","UP","B",10,"MSM_202509_UP_LYSB_10CM",2025,9,11,"14:07","EDT",125.6132,3.91806612601372,"Within_Range",NA,1010.3851,28.5016953455571,"Within_Range",NA,1.8257918757,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"250","COMPASS: Synoptic","CB","MSM","UP","B",10,"MSM_202509_UP_LYSB_10CM",2025,9,11,"14:07","EDT",125.6132,3.918066126,"Within_Range",NA,1010.3851,28.50169535,"Within_Range",NA,1.825791876,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"251","COMPASS: Synoptic","CB","MSM","UP","A",45,"MSM_202509_UP_LYSA_45CM",2025,9,11,"14:15","EDT",184.7541,5.76276044915783,"Within_Range",NA,2458.1049,69.3400535966149,"Within_Range",NA,4.4418215543,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"251","COMPASS: Synoptic","CB","MSM","UP","A",45,"MSM_202509_UP_LYSA_45CM",2025,9,11,"14:15","EDT",184.7541,5.762760449,"Within_Range",NA,2458.1049,69.3400536,"Within_Range",NA,4.441821554,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"252","COMPASS: Synoptic","CB","MSM","UP","A",20,"MSM_202509_UP_LYSA_20CM",2025,9,11,"14:14","EDT",195.443,6.09616344354336,"Within_Range",NA,1835.3656,51.7733596614951,"Within_Range",NA,3.3165316392,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"252","COMPASS: Synoptic","CB","MSM","UP","A",20,"MSM_202509_UP_LYSA_20CM",2025,9,11,"14:14","EDT",195.443,6.096163444,"Within_Range",NA,1835.3656,51.77335966,"Within_Range",NA,3.316531639,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"253","COMPASS: Synoptic","CB","MSM","TR","A",20,"MSM_202509_TR_LYSA_20CM",2025,9,11,"12:25","EDT",735.9902,22.9566500311915,"Within_Range",NA,5423.2072,152.9818674189,"Within_Range",NA,9.7997614104,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"253","COMPASS: Synoptic","CB","MSM","TR","A",20,"MSM_202509_TR_LYSA_20CM",2025,9,11,"12:25","EDT",735.9902,22.95665003,"Within_Range",NA,5423.2072,152.9818674,"Within_Range",NA,9.79976141,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"254","COMPASS: Synoptic","CB","MSM","TR","A",10,"MSM_202509_TR_LYSA_10CM",2025,9,11,"12:23","EDT",714.7996,22.2956830941984,"Within_Range",NA,7009.7475,197.736177715092,"Within_Range",NA,12.6666397325,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"254","COMPASS: Synoptic","CB","MSM","TR","A",10,"MSM_202509_TR_LYSA_10CM",2025,9,11,"12:23","EDT",714.7996,22.29568309,"Within_Range",NA,7009.7475,197.7361777,"Within_Range",NA,12.66663973,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"255","COMPASS: Synoptic","CB","MSM","UP","C",45,"MSM_202509_UP_LYSC_45CM",2025,9,11,"13:59","EDT",199.5684,6.22484092326887,"Within_Range",NA,2135.6191,60.2431339915374,"Within_Range",NA,3.8590897137,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"255","COMPASS: Synoptic","CB","MSM","UP","C",45,"MSM_202509_UP_LYSC_45CM",2025,9,11,"13:59","EDT",199.5684,6.224840923,"Within_Range",NA,2135.6191,60.24313399,"Within_Range",NA,3.859089714,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ","cloudy; leak or crack??"
-"256","COMPASS: Synoptic","CB","MSM","UP","C",20,"MSM_202509_UP_LYSC_20CM",2025,9,11,"13:57","EDT",150.2753,4.68731441048035,"Within_Range",NA,1575.3658,44.4390916784203,"Within_Range",NA,2.8467120006,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"256","COMPASS: Synoptic","CB","MSM","UP","C",20,"MSM_202509_UP_LYSC_20CM",2025,9,11,"13:57","EDT",150.2753,4.68731441,"Within_Range",NA,1575.3658,44.43909168,"Within_Range",NA,2.846712001,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"257","COMPASS: Synoptic","CB","MSM","UP","C",10,"MSM_202509_UP_LYSC_10CM",2025,9,11,"13:55","EDT",151.192,4.71590767311291,"Within_Range",NA,1488.1446,41.9786911142454,"Within_Range",NA,2.6891032922,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"257","COMPASS: Synoptic","CB","MSM","UP","C",10,"MSM_202509_UP_LYSC_10CM",2025,9,11,"13:55","EDT",151.192,4.715907673,"Within_Range",NA,1488.1446,41.97869111,"Within_Range",NA,2.689103292,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"258","COMPASS: Synoptic","CB","MSM","TR","C",20,"MSM_202509_TR_LYSC_20CM",2025,9,11,"12:42","EDT",376.6367,11.7478696194635,"Within_Range",NA,5565.6106,156.998888575458,"Within_Range",NA,10.0570843542,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"258","COMPASS: Synoptic","CB","MSM","TR","C",20,"MSM_202509_TR_LYSC_20CM",2025,9,11,"12:42","EDT",376.6367,11.74786962,"Within_Range",NA,5565.6106,156.9988886,"Within_Range",NA,10.05708435,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"259","COMPASS: Synoptic","CB","MSM","TR","B",45,"MSM_202509_TR_LYSB_45CM",2025,9,11,"12:40","EDT",426.2861,13.2965096693699,"Within_Range",NA,6018.083,169.762566995769,"Within_Range",NA,10.874701981,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"259","COMPASS: Synoptic","CB","MSM","TR","B",45,"MSM_202509_TR_LYSB_45CM",2025,9,11,"12:40","EDT",426.2861,13.29650967,"Within_Range",NA,6018.083,169.762567,"Within_Range",NA,10.87470198,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"260","COMPASS: Synoptic","CB","MSM","TR","B",20,"MSM_202509_TR_LYSB_20CM",2025,9,11,"12:35","EDT",376.2041,11.7343761696818,"Within_Range",NA,4916.7552,138.695492242595,"Within_Range",NA,8.8846026464,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"260","COMPASS: Synoptic","CB","MSM","TR","B",20,"MSM_202509_TR_LYSB_20CM",2025,9,11,"12:35","EDT",376.2041,11.73437617,"Within_Range",NA,4916.7552,138.6954922,"Within_Range",NA,8.884602646,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"261","COMPASS: Synoptic","CB","MSM","TR","B",10,"MSM_202509_TR_LYSB_10CM",2025,9,11,"12:32","EDT",699.3411,21.8135090455396,"Within_Range",NA,7105.067,200.425021156559,"Within_Range",NA,12.838882069,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"261","COMPASS: Synoptic","CB","MSM","TR","B",10,"MSM_202509_TR_LYSB_10CM",2025,9,11,"12:32","EDT",699.3411,21.81350905,"Within_Range",NA,7105.067,200.4250212,"Within_Range",NA,12.83888207,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"262","COMPASS: Synoptic","CB","MSM","TR","A",45,"MSM_202509_TR_LYSA_45CM",2025,9,11,"12:30","EDT",681.496,21.2568933250156,"Within_Range",NA,5684.8655,160.362919605078,"Within_Range",NA,10.2725779585,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"262","COMPASS: Synoptic","CB","MSM","TR","A",45,"MSM_202509_TR_LYSA_45CM",2025,9,11,"12:30","EDT",681.496,21.25689333,"Within_Range",NA,5684.8655,160.3629196,"Within_Range",NA,10.27257796,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"263","COMPASS: Synoptic","CB","MSM","WC","B",10,"MSM_202509_WC_LYSB_10CM",2025,9,11,"11:09","EDT",367.5355,11.4639893948846,"Within_Range",NA,7293.8378,205.750008462623,"Within_Range",NA,13.1799909046,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"263","COMPASS: Synoptic","CB","MSM","WC","B",10,"MSM_202509_WC_LYSB_10CM",2025,9,11,"11:09","EDT",367.5355,11.46398939,"Within_Range",NA,7293.8378,205.7500085,"Within_Range",NA,13.1799909,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"264","COMPASS: Synoptic","CB","MSM","WC","A",45,"MSM_202509_WC_LYSA_45CM",2025,9,11,"11:21","EDT",44.6958,1.39412975670618,"Within_Range",NA,9423.4028,265.822363892807,"Within_Range",NA,17.0281148596,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"264","COMPASS: Synoptic","CB","MSM","WC","A",45,"MSM_202509_WC_LYSA_45CM",2025,9,11,"11:21","EDT",44.6958,1.394129757,"Within_Range",NA,9423.4028,265.8223639,"Within_Range",NA,17.02811486,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ","debris in water; leak?"
-"265","COMPASS: Synoptic","CB","MSM","WC","A",20,"MSM_202509_WC_LYSA_20CM",2025,9,11,"11:17","EDT",930.5658,29.0257579538366,"Within_Range",NA,8692.1783,245.19543864598,"Within_Range",NA,15.7067921881,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"265","COMPASS: Synoptic","CB","MSM","WC","A",20,"MSM_202509_WC_LYSA_20CM",2025,9,11,"11:17","EDT",930.5658,29.02575795,"Within_Range",NA,8692.1783,245.1954386,"Within_Range",NA,15.70679219,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"266","COMPASS: Synoptic","CB","MSM","WC","A",10,"MSM_202509_WC_LYSA_10CM",2025,9,11,"11:15","EDT",1074.9795,33.5302401746725,"Within_Range",NA,8878.1438,250.441291960508,"Within_Range",NA,16.0428318466,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"266","COMPASS: Synoptic","CB","MSM","WC","A",10,"MSM_202509_WC_LYSA_10CM",2025,9,11,"11:15","EDT",1074.9795,33.53024017,"Within_Range",NA,8878.1438,250.441292,"Within_Range",NA,16.04283185,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"267","COMPASS: Synoptic","CB","MSM","TR","C",45,"MSM_202509_TR_LYSC_45CM",2025,9,11,"12:43","EDT",693.0987,21.6187991266376,"Within_Range",NA,6134.4008,173.043746121298,"Within_Range",NA,11.0848882456,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"267","COMPASS: Synoptic","CB","MSM","TR","C",45,"MSM_202509_TR_LYSC_45CM",2025,9,11,"12:43","EDT",693.0987,21.61879913,"Within_Range",NA,6134.4008,173.0437461,"Within_Range",NA,11.08488825,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"268","COMPASS: Synoptic","CB","MSM","SW","B",0,"MSM_202509_SW_B",2025,9,11,"10:30","EDT",1244.7172,38.8246163443543,"Within_Range",NA,8908.1795,251.28856135402,"Within_Range",NA,16.0971063565,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"268","COMPASS: Synoptic","CB","MSM","SW","B",0,"MSM_202509_SW_B",2025,9,11,"10:30","EDT",1244.7172,38.82461634,"Within_Range",NA,8908.1795,251.2885614,"Within_Range",NA,16.09710636,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"269","COMPASS: Synoptic","CB","MSM","SW","A",0,"MSM_202509_SW_A",2025,9,11,"10:30","EDT",1237.9734,38.6142669993762,"Within_Range",NA,8901.0983,251.088809590973,"Within_Range",NA,16.0843106281,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"269","COMPASS: Synoptic","CB","MSM","SW","A",0,"MSM_202509_SW_A",2025,9,11,"10:30","EDT",1237.9734,38.614267,"Within_Range",NA,8901.0983,251.0888096,"Within_Range",NA,16.08431063,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"270","COMPASS: Synoptic","CB","MSM","WC","C",20,"MSM_202509_WC_LYSC_20CM",2025,9,11,"11:23","EDT",513.3027,16.0106893325016,"Within_Range",NA,8108.3705,228.726953455571,"Within_Range",NA,14.6518514935,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"270","COMPASS: Synoptic","CB","MSM","WC","C",20,"MSM_202509_WC_LYSC_20CM",2025,9,11,"11:23","EDT",513.3027,16.01068933,"Within_Range",NA,8108.3705,228.7269535,"Within_Range",NA,14.65185149,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ","replace stopcock and luer"
-"271","COMPASS: Synoptic","CB","MSM","WC","C",10,"MSM_202509_WC_LYSC_10CM",2025,9,11,"11:04","EDT",517.5972,16.1446412975671,"Within_Range",NA,8476.0176,239.097816643159,"Within_Range",NA,15.3161898032,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"271","COMPASS: Synoptic","CB","MSM","WC","C",10,"MSM_202509_WC_LYSC_10CM",2025,9,11,"11:04","EDT",517.5972,16.1446413,"Within_Range",NA,8476.0176,239.0978166,"Within_Range",NA,15.3161898,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"272","COMPASS: Synoptic","CB","MSM","WC","B",20,"MSM_202509_WC_LYSB_20CM",2025,9,11,"11:12","EDT",505.6073,15.7706581409857,"Within_Range",NA,7791.5724,219.790476727786,"Within_Range",NA,14.0793973268,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"272","COMPASS: Synoptic","CB","MSM","WC","B",20,"MSM_202509_WC_LYSB_20CM",2025,9,11,"11:12","EDT",505.6073,15.77065814,"Within_Range",NA,7791.5724,219.7904767,"Within_Range",NA,14.07939733,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"273","COMPASS: Synoptic","CB","GWI","UP","B",10,"GWI_202509_UP_LYSB_10CM",2025,9,17,"12:44","EDT",184.5884,5.75759201497193,"Within_Range",NA,1513.6664,42.6986290550071,"Within_Range",NA,2.7352211848,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"273","COMPASS: Synoptic","CB","GWI","UP","B",10,"GWI_202509_UP_LYSB_10CM",2025,9,17,"12:44","EDT",184.5884,5.757592015,"Within_Range",NA,1513.6664,42.69862906,"Within_Range",NA,2.735221185,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"274","COMPASS: Synoptic","CB","GWI","UP","A",45,"GWI_202509_UP_LYSA_45CM",2025,9,17,"12:32","EDT",620.7882,19.3633250155958,"Within_Range",NA,4701.3603,132.619472496474,"Within_Range",NA,8.4953840621,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"274","COMPASS: Synoptic","CB","GWI","UP","A",45,"GWI_202509_UP_LYSA_45CM",2025,9,17,"12:32","EDT",620.7882,19.36332502,"Within_Range",NA,4701.3603,132.6194725,"Within_Range",NA,8.495384062,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"275","COMPASS: Synoptic","CB","GWI","UP","A",20,"GWI_202509_UP_LYSA_20CM",2025,9,17,"12:32","EDT",587.5225,18.3257174048659,"Within_Range",NA,4652.5361,131.242203102962,"Within_Range",NA,8.4071587327,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"275","COMPASS: Synoptic","CB","GWI","UP","A",20,"GWI_202509_UP_LYSA_20CM",2025,9,17,"12:32","EDT",587.5225,18.3257174,"Within_Range",NA,4652.5361,131.2422031,"Within_Range",NA,8.407158733,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"276","COMPASS: Synoptic","CB","GWI","UP","A",10,"GWI_202509_UP_LYSA_10CM",2025,9,17,"12:32","EDT",492.0947,15.3491796631316,"Within_Range",NA,3709.2538,104.633393511989,"Within_Range",NA,6.7026476166,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"276","COMPASS: Synoptic","CB","GWI","UP","A",10,"GWI_202509_UP_LYSA_10CM",2025,9,17,"12:32","EDT",492.0947,15.34917966,"Within_Range",NA,3709.2538,104.6333935,"Within_Range",NA,6.702647617,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"277","COMPASS: Synoptic","CB","MSM","SW","C",0,"MSM_202509_SW_C",2025,9,11,"10:30","EDT",1191.9976,37.1802121023082,"Within_Range",NA,8580.1214,242.03445416079,"Within_Range",NA,15.5043053698,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"277","COMPASS: Synoptic","CB","MSM","SW","C",0,"MSM_202509_SW_C",2025,9,11,"10:30","EDT",1191.9976,37.1802121,"Within_Range",NA,8580.1214,242.0344542,"Within_Range",NA,15.50430537,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"278","COMPASS: Synoptic","CB","GWI","TR","A",20,"GWI_202509_TR_LYSA_20CM",2025,9,17,"13:08","EDT",956.9061,29.8473518402994,"Within_Range",NA,10357.6793,292.177131170663,"Within_Range",NA,18.7163524951,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"278","COMPASS: Synoptic","CB","GWI","TR","A",20,"GWI_202509_TR_LYSA_20CM",2025,9,17,"13:08","EDT",956.9061,29.84735184,"Within_Range",NA,10357.6793,292.1771312,"Within_Range",NA,18.7163525,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"279","COMPASS: Synoptic","CB","GWI","TR","A",10,"GWI_202509_TR_LYSA_10CM",2025,9,17,"13:08","EDT",1341.9591,41.8577386150967,"Within_Range",NA,11173.0715,315.17832157969,"Within_Range",NA,20.1897662005,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"279","COMPASS: Synoptic","CB","GWI","TR","A",10,"GWI_202509_TR_LYSA_10CM",2025,9,17,"13:08","EDT",1341.9591,41.85773862,"Within_Range",NA,11173.0715,315.1783216,"Within_Range",NA,20.1897662,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"280","COMPASS: Synoptic","CB","GWI","UP","C",20,"GWI_202509_UP_LYSC_20CM",2025,9,17,"12:51","EDT",498.4347,15.5469338739863,"Within_Range",NA,4647.1196,131.089410437236,"Within_Range",NA,8.3973711172,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"280","COMPASS: Synoptic","CB","GWI","UP","C",20,"GWI_202509_UP_LYSC_20CM",2025,9,17,"12:51","EDT",498.4347,15.54693387,"Within_Range",NA,4647.1196,131.0894104,"Within_Range",NA,8.397371117,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"281","COMPASS: Synoptic","CB","GWI","UP","B",45,"GWI_202509_UP_LYSB_45CM",2025,9,17,"12:44","EDT",439.0638,13.6950655021834,"Within_Range",NA,3364.3235,94.9033427362482,"Within_Range",NA,6.0793585645,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"281","COMPASS: Synoptic","CB","GWI","UP","B",45,"GWI_202509_UP_LYSB_45CM",2025,9,17,"12:44","EDT",439.0638,13.6950655,"Within_Range",NA,3364.3235,94.90334274,"Within_Range",NA,6.079358565,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"282","COMPASS: Synoptic","CB","GWI","UP","B",20,"GWI_202509_UP_LYSB_20CM",2025,9,17,"12:44","EDT",314.9923,9.82508733624454,"Within_Range",NA,2254.2953,63.5908406205924,"Within_Range",NA,4.0735376071,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"282","COMPASS: Synoptic","CB","GWI","UP","B",20,"GWI_202509_UP_LYSB_20CM",2025,9,17,"12:44","EDT",314.9923,9.825087336,"Within_Range",NA,2254.2953,63.59084062,"Within_Range",NA,4.073537607,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"283","COMPASS: Synoptic","CB","GWI","TR","C",20,"GWI_202509_TR_LYSC_20CM",2025,9,17,"13:20","EDT",1351.2007,42.145998128509,"Within_Range",NA,10299.2622,290.529258110014,"Within_Range",NA,18.6107927954,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"283","COMPASS: Synoptic","CB","GWI","TR","C",20,"GWI_202509_TR_LYSC_20CM",2025,9,17,"13:20","EDT",1351.2007,42.14599813,"Within_Range",NA,10299.2622,290.5292581,"Within_Range",NA,18.6107928,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"284","COMPASS: Synoptic","CB","GWI","TR","C",10,"GWI_202509_TR_LYSC_10CM",2025,9,17,"13:20","EDT",985.04,30.7248908296943,"Within_Range",NA,7292.4866,205.71189280677,"Within_Range",NA,13.1775492862,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"284","COMPASS: Synoptic","CB","GWI","TR","C",10,"GWI_202509_TR_LYSC_10CM",2025,9,17,"13:20","EDT",985.04,30.72489083,"Within_Range",NA,7292.4866,205.7118928,"Within_Range",NA,13.17754929,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"285","COMPASS: Synoptic","CB","GWI","TR","B",45,"GWI_202509_TR_LYSB_45CM",2025,9,17,"13:13","EDT",1358.7693,42.3820742358079,"Within_Range",NA,10488.1464,295.857444287729,"Within_Range",NA,18.9521065448,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"285","COMPASS: Synoptic","CB","GWI","TR","B",45,"GWI_202509_TR_LYSB_45CM",2025,9,17,"13:13","EDT",1358.7693,42.38207424,"Within_Range",NA,10488.1464,295.8574443,"Within_Range",NA,18.95210654,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"286","COMPASS: Synoptic","CB","GWI","TR","B",20,"GWI_202509_TR_LYSB_20CM",2025,9,17,"13:13","EDT",1048.0388,32.6899189020586,"Within_Range",NA,10623.425,299.673483779972,"Within_Range",NA,19.196554975,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"286","COMPASS: Synoptic","CB","GWI","TR","B",20,"GWI_202509_TR_LYSB_20CM",2025,9,17,"13:13","EDT",1048.0388,32.6899189,"Within_Range",NA,10623.425,299.6734838,"Within_Range",NA,19.19655498,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"287","COMPASS: Synoptic","CB","GWI","TR","B",10,"GWI_202509_TR_LYSB_10CM",2025,9,17,"13:13","EDT",1007.522,31.4261384903306,"Within_Range",NA,7574.0582,213.654674188999,"Within_Range",NA,13.6863491674,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"287","COMPASS: Synoptic","CB","GWI","TR","B",10,"GWI_202509_TR_LYSB_10CM",2025,9,17,"13:13","EDT",1007.522,31.42613849,"Within_Range",NA,7574.0582,213.6546742,"Within_Range",NA,13.68634917,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"288","COMPASS: Synoptic","CB","GWI","WC","B",20,"GWI_202509_WC_LYSB_20CM",2025,9,17,"11:37","EDT",1241.7617,38.7324298190892,"Within_Range",NA,11998.9383,338.474987306065,"Within_Range",NA,21.6821075081,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"288","COMPASS: Synoptic","CB","GWI","WC","B",20,"GWI_202509_WC_LYSB_20CM",2025,9,17,"11:37","EDT",1241.7617,38.73242982,"Within_Range",NA,11998.9383,338.4749873,"Within_Range",NA,21.68210751,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"289","COMPASS: Synoptic","CB","GWI","WC","B",10,"GWI_202509_WC_LYSB_10CM",2025,9,17,"11:37","EDT",1351.0976,42.142782283219,"Within_Range",NA,12853.7103,362.587032440056,"Within_Range",NA,23.2266805121,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"289","COMPASS: Synoptic","CB","GWI","WC","B",10,"GWI_202509_WC_LYSB_10CM",2025,9,17,"11:37","EDT",1351.0976,42.14278228,"Within_Range",NA,12853.7103,362.5870324,"Within_Range",NA,23.22668051,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"290","COMPASS: Synoptic","CB","GWI","WC","A",45,"GWI_202509_WC_LYSA_45CM",2025,9,17,"11:29","EDT",1578.5174,49.2363505926388,"Within_Range",NA,12710.6978,358.552829337094,"Within_Range",NA,22.9682569246,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"290","COMPASS: Synoptic","CB","GWI","WC","A",45,"GWI_202509_WC_LYSA_45CM",2025,9,17,"11:29","EDT",1578.5174,49.23635059,"Within_Range",NA,12710.6978,358.5528293,"Within_Range",NA,22.96825692,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"291","COMPASS: Synoptic","CB","GWI","WC","A",10,"GWI_202509_WC_LYSA_10CM",2025,9,17,"11:29","EDT",1148.3741,35.8195290081098,"Within_Range",NA,12062.8461,340.277746121298,"Within_Range",NA,21.7975889027,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"291","COMPASS: Synoptic","CB","GWI","WC","A",10,"GWI_202509_WC_LYSA_10CM",2025,9,17,"11:29","EDT",1148.3741,35.81952901,"Within_Range",NA,12062.8461,340.2777461,"Within_Range",NA,21.7975889,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"292","COMPASS: Synoptic","CB","GWI","TR","C",45,"GWI_202509_TR_LYSC_45CM",2025,9,17,"13:20","EDT",1242.8187,38.7653992514036,"Within_Range",NA,9733.9416,274.582273624824,"Within_Range",NA,17.5892584712,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"292","COMPASS: Synoptic","CB","GWI","TR","C",45,"GWI_202509_TR_LYSC_45CM",2025,9,17,"13:20","EDT",1242.8187,38.76539925,"Within_Range",NA,9733.9416,274.5822736,"Within_Range",NA,17.58925847,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"293","COMPASS: Synoptic","CB","GWI","SW","B",0,"GWI_202509_SW_B",2025,9,17,"11:10","EDT",1333.7349,41.6012133499688,"Within_Range",NA,9593.7827,270.628566995769,"Within_Range",NA,17.3359913389,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"293","COMPASS: Synoptic","CB","GWI","SW","B",0,"GWI_202509_SW_B",2025,9,17,"11:10","EDT",1333.7349,41.60121335,"Within_Range",NA,9593.7827,270.628567,"Within_Range",NA,17.33599134,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"294","COMPASS: Synoptic","CB","GWI","SW","A",0,"GWI_202509_SW_A",2025,9,17,"11:04","EDT",1455.8186,45.4091890205864,"Within_Range",NA,10531.4102,297.077861777151,"Within_Range",NA,19.0302842314,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"294","COMPASS: Synoptic","CB","GWI","SW","A",0,"GWI_202509_SW_A",2025,9,17,"11:04","EDT",1455.8186,45.40918902,"Within_Range",NA,10531.4102,297.0778618,"Within_Range",NA,19.03028423,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"295","COMPASS: Synoptic","CB","GWI","WC","C",45,"GWI_202509_WC_LYSC_45CM",2025,9,17,"11:47","EDT",1841.0002,57.4235870243294,"Within_Range",NA,14192.2435,400.345373765867,"Within_Range",NA,25.6454100045,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"295","COMPASS: Synoptic","CB","GWI","WC","C",45,"GWI_202509_WC_LYSC_45CM",2025,9,17,"11:47","EDT",1841.0002,57.42358702,"Within_Range",NA,14192.2435,400.3453738,"Within_Range",NA,25.64541,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"296","COMPASS: Synoptic","CB","GWI","WC","C",10,"GWI_202509_WC_LYSC_10CM",2025,9,17,"11:47","EDT",1268.2357,39.5581940112289,"Within_Range",NA,12929.1612,364.715407616361,"Within_Range",NA,23.3630202884,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"296","COMPASS: Synoptic","CB","GWI","WC","C",10,"GWI_202509_WC_LYSC_10CM",2025,9,17,"11:47","EDT",1268.2357,39.55819401,"Within_Range",NA,12929.1612,364.7154076,"Within_Range",NA,23.36302029,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"297","COMPASS: Synoptic","CB","GWI","WC","B",45,"GWI_202509_WC_LYSB_45CM",2025,9,17,"11:37","EDT",1777.2807,55.4360792264504,"Within_Range",NA,13825.664,390.004626234133,"Within_Range",NA,24.983000848,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"297","COMPASS: Synoptic","CB","GWI","WC","B",45,"GWI_202509_WC_LYSB_45CM",2025,9,17,"11:37","EDT",1777.2807,55.43607923,"Within_Range",NA,13825.664,390.0046262,"Within_Range",NA,24.98300085,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"298","COMPASS: Synoptic","CB","GWI","UP","B",10,"GWI_202509_UP_LYSB_10CM",2025,9,17,"12:44","EDT",7.2678,0.226693699313787,"Within_Range",NA,48.8513,1.37803385049365,"Within_Range",NA,0.0883002991,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"298","COMPASS: Synoptic","CB","GWI","UP","B",10,"GWI_202509_UP_LYSB_10CM",2025,9,17,"12:44","EDT",7.2678,0.226693699,"Within_Range",NA,48.8513,1.37803385,"Within_Range",NA,0.088300299,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"299","COMPASS: Synoptic","CB","GWI","UP","A",45,"GWI_202509_UP_LYSA_45CM",2025,9,17,"12:32","EDT",2.3004,0.0717529631940112,"Within_Range",NA,7.0467,0.19877856135402,"Within_Range",NA,0.0127593869,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"299","COMPASS: Synoptic","CB","GWI","UP","A",45,"GWI_202509_UP_LYSA_45CM",2025,9,17,"12:32","EDT",2.3004,0.071752963,"Within_Range",NA,7.0467,0.198778561,"Within_Range",NA,0.012759387,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"300","COMPASS: Synoptic","CB","GWI","UP","A",20,"GWI_202509_UP_LYSA_20CM",2025,9,17,"12:32","EDT",1.8771,0.0585495945102932,"Within_Range",NA,6.9319,0.195540197461213,"Within_Range",NA,0.0125519433,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"300","COMPASS: Synoptic","CB","GWI","UP","A",20,"GWI_202509_UP_LYSA_20CM",2025,9,17,"12:32","EDT",1.8771,0.058549595,"Within_Range",NA,6.9319,0.195540197,"Within_Range",NA,0.012551943,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"301","COMPASS: Synoptic","CB","GWI","UP","A",10,"GWI_202509_UP_LYSA_10CM",2025,9,17,"12:32","EDT",2.0995,0.0654865876481597,"Within_Range",NA,13.0059,0.366880112834979,"Within_Range",NA,0.0235276613,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"301","COMPASS: Synoptic","CB","GWI","UP","A",10,"GWI_202509_UP_LYSA_10CM",2025,9,17,"12:32","EDT",2.0995,0.065486588,"Within_Range",NA,13.0059,0.366880113,"Within_Range",NA,0.023527661,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"302","COMPASS: Synoptic","CB","GWI","SW","C",0,"GWI_202509_SW_C",2025,9,17,"11:15","EDT",1327.0975,41.3941827822832,"Within_Range",NA,9560.7062,269.69552045134,"Within_Range",NA,17.2762221034,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"302","COMPASS: Synoptic","CB","GWI","SW","C",0,"GWI_202509_SW_C",2025,9,17,"11:15","EDT",1327.0975,41.39418278,"Within_Range",NA,9560.7062,269.6955205,"Within_Range",NA,17.2762221,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"303","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202509_UP_LYSC_45CM",2025,9,18,"10:30","EDT",0.5679,0.0177136618839676,"Within_Range",NA,22.3877,0.631528913963329,"Within_Range",NA,0.0404805739,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"303","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202509_UP_LYSC_45CM",2025,9,18,"10:30","EDT",0.5679,0.017713662,"Within_Range",NA,22.3877,0.631528914,"Within_Range",NA,0.040480574,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"304","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202509_UP_LYSC_20CM",2025,9,18,"10:30","EDT",4.2713,0.133228321896444,"Within_Range",NA,68.9894,1.94610437235543,"Within_Range",NA,0.1246898458,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"304","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202509_UP_LYSC_20CM",2025,9,18,"10:30","EDT",4.2713,0.133228322,"Within_Range",NA,68.9894,1.946104372,"Within_Range",NA,0.124689846,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"305","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202509_UP_LYSC_10CM",2025,9,18,"10:30","EDT",6.565,0.204772301933874,"Within_Range",NA,57.6349,1.62580818053597,"Within_Range",NA,0.1041722643,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"305","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202509_UP_LYSC_10CM",2025,9,18,"10:30","EDT",6.565,0.204772302,"Within_Range",NA,57.6349,1.625808181,"Within_Range",NA,0.104172264,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"306","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202509_UP_LYSB_45CM",2025,9,18,"10:23","EDT",0.1452,0.00452900810979414,"Within_Range",NA,13.405,0.378138222849083,"Within_Range",NA,0.024248835,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"306","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202509_UP_LYSB_45CM",2025,9,18,"10:23","EDT",0.1452,0.004529008,"Within_Range",NA,13.405,0.378138223,"Within_Range",NA,0.024248835,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"307","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202509_UP_LYSB_20CM",2025,9,18,"10:23","EDT",2.8108,0.0876731129132876,"Within_Range",NA,26.0585,0.735077574047955,"Within_Range",NA,0.0471137095,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"307","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202509_UP_LYSB_20CM",2025,9,18,"10:23","EDT",2.8108,0.087673113,"Within_Range",NA,26.0585,0.735077574,"Within_Range",NA,0.04711371,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"308","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202509_SWAMP_LYSB_20CM",2025,9,18,"11:08","EDT",0.7852,0.0244915782907049,"Within_Range",NA,13.2166,0.372823695345557,"Within_Range",NA,0.0239083962,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"308","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202509_SWAMP_LYSB_20CM",2025,9,18,"11:08","EDT",0.7852,0.024491578,"Within_Range",NA,13.2166,0.372823695,"Within_Range",NA,0.023908396,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"309","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202509_SWAMP_LYSB_10CM",2025,9,18,"11:08","EDT",11.5586,0.36053025577043,"Within_Range",NA,111.751,3.15235543018336,"Within_Range",NA,0.201960057,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"309","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202509_SWAMP_LYSB_10CM",2025,9,18,"11:08","EDT",11.5586,0.360530256,"Within_Range",NA,111.751,3.15235543,"Within_Range",NA,0.201960057,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"310","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202509_SWAMP_LYSA_45CM",2025,9,18,"11:00","EDT",0.2777,0.00866188396756082,"Within_Range",NA,39.5354,1.11524400564175,"Within_Range",NA,0.0714664678,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"310","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202509_SWAMP_LYSA_45CM",2025,9,18,"11:00","EDT",0.2777,0.008661884,"Within_Range",NA,39.5354,1.115244006,"Within_Range",NA,0.071466468,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"311","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202509_SWAMP_LYSA_20CM",2025,9,18,"11:00","EDT",10.9502,0.341553337492202,"Within_Range",NA,62.4697,1.76219181946403,"Within_Range",NA,0.1129087479,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"311","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202509_SWAMP_LYSA_20CM",2025,9,18,"11:00","EDT",10.9502,0.341553337,"Within_Range",NA,62.4697,1.762191819,"Within_Range",NA,0.112908748,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"312","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202509_SWAMP_LYSA_10CM",2025,9,18,"11:00","EDT",11.6561,0.363571428571429,"Within_Range",NA,62.3439,1.75864315937941,"Within_Range",NA,0.1126814273,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"312","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202509_SWAMP_LYSA_10CM",2025,9,18,"11:00","EDT",11.6561,0.363571429,"Within_Range",NA,62.3439,1.758643159,"Within_Range",NA,0.112681427,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"313","COMPASS: Synoptic","CB","SWH","TR","A",10,"SWH_202509_TR_LYSA_10CM",2025,9,16,"14:49","EDT",121.6433,3.79423892701185,"Within_Range",NA,1440.5551,40.6362510578279,"Within_Range",NA,2.6031090657,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"313","COMPASS: Synoptic","CB","SWH","TR","A",10,"SWH_202509_TR_LYSA_10CM",2025,9,16,"14:49","EDT",121.6433,3.794238927,"Within_Range",NA,1440.5551,40.63625106,"Within_Range",NA,2.603109066,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"314","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202509_SWAMP_LYSC_45CM",2025,9,18,"9:57","EDT",11.0782,0.345545851528384,"Within_Range",NA,43.4733,1.22632722143865,"Within_Range",NA,0.0785822531,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"314","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202509_SWAMP_LYSC_45CM",2025,9,18,"9:57","EDT",11.0782,0.345545852,"Within_Range",NA,43.4733,1.226327221,"Within_Range",NA,0.078582253,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"315","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202509_SWAMP_LYSC_20CM",2025,9,18,"9:57","EDT",12.3062,0.383849033063007,"Within_Range",NA,52.9218,1.49285754583921,"Within_Range",NA,0.0956556926,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"315","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202509_SWAMP_LYSC_20CM",2025,9,18,"9:57","EDT",12.3062,0.383849033,"Within_Range",NA,52.9218,1.492857546,"Within_Range",NA,0.095655693,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"316","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202509_SWAMP_LYSC_10CM",2025,9,18,"9:57","EDT",13.4977,0.421013724266999,"Within_Range",NA,48.7462,1.37506911142454,"Within_Range",NA,0.0881103834,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"316","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202509_SWAMP_LYSC_10CM",2025,9,18,"9:57","EDT",13.4977,0.421013724,"Within_Range",NA,48.7462,1.375069111,"Within_Range",NA,0.088110383,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"317","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202509_SWAMP_LYSB_45CM",2025,9,18,"11:08","EDT",0,0,"bdl",NA,23.5662,0.664772919605077,"Within_Range",NA,0.0426101234,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"317","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202509_SWAMP_LYSB_45CM",2025,9,18,"11:08","EDT",0,0,"bdl",NA,23.5662,0.66477292,"Within_Range",NA,0.042610123,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"318","COMPASS: Synoptic","CB","SWH","TR","B",45,"SWH_202509_TR_LYSB_45CM",2025,9,16,"14:59","EDT",0.4595,0.0143325015595758,"Within_Range",NA,333.5985,9.41039492242595,"Within_Range",NA,0.6028384895,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"318","COMPASS: Synoptic","CB","SWH","TR","B",45,"SWH_202509_TR_LYSB_45CM",2025,9,16,"14:59","EDT",0.4595,0.014332502,"Within_Range",NA,333.5985,9.410394922,"Within_Range",NA,0.60283849,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"319","COMPASS: Synoptic","CB","SWH","TR","B",20,"SWH_202509_TR_LYSB_20CM",2025,9,16,"14:59","EDT",36.1821,1.12857454772302,"Within_Range",NA,1173.0736,33.0909337094499,"Within_Range",NA,2.1197699952,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"319","COMPASS: Synoptic","CB","SWH","TR","B",20,"SWH_202509_TR_LYSB_20CM",2025,9,16,"14:59","EDT",36.1821,1.128574548,"Within_Range",NA,1173.0736,33.09093371,"Within_Range",NA,2.119769995,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"320","COMPASS: Synoptic","CB","SWH","TR","B",10,"SWH_202509_TR_LYSB_10CM",2025,9,16,"14:59","EDT",94.7356,2.95494697442296,"Within_Range",NA,1392.7899,39.2888547249647,"Within_Range",NA,2.5167973493,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"320","COMPASS: Synoptic","CB","SWH","TR","B",10,"SWH_202509_TR_LYSB_10CM",2025,9,16,"14:59","EDT",94.7356,2.954946974,"Within_Range",NA,1392.7899,39.28885472,"Within_Range",NA,2.516797349,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"321","COMPASS: Synoptic","CB","SWH","TR","A",45,"SWH_202509_TR_LYSA_45CM",2025,9,16,"14:49","EDT",0.8073,0.0251809107922645,"Within_Range",NA,597.4568,16.8535063469676,"Within_Range",NA,1.0796304376,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"321","COMPASS: Synoptic","CB","SWH","TR","A",45,"SWH_202509_TR_LYSA_45CM",2025,9,16,"14:49","EDT",0.8073,0.025180911,"Within_Range",NA,597.4568,16.85350635,"Within_Range",NA,1.079630438,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"322","COMPASS: Synoptic","CB","SWH","TR","A",20,"SWH_202509_TR_LYSA_20CM",2025,9,16,"14:49","EDT",84.0236,2.62082345601996,"Within_Range",NA,1203.0597,33.9368039492243,"Within_Range",NA,2.1739548779,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"322","COMPASS: Synoptic","CB","SWH","TR","A",20,"SWH_202509_TR_LYSA_20CM",2025,9,16,"14:49","EDT",84.0236,2.620823456,"Within_Range",NA,1203.0597,33.93680395,"Within_Range",NA,2.173954878,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"323","COMPASS: Synoptic","CB","SWH","WC","A",20,"SWH_202509_WC_LYSA_20CM",2025,9,16,"13:28","EDT",0.9937,0.0309950093574548,"Within_Range",NA,252.5917,7.12529478138223,"Within_Range",NA,0.4564592019,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"323","COMPASS: Synoptic","CB","SWH","WC","A",20,"SWH_202509_WC_LYSA_20CM",2025,9,16,"13:28","EDT",0.9937,0.030995009,"Within_Range",NA,252.5917,7.125294781,"Within_Range",NA,0.456459202,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"324","COMPASS: Synoptic","CB","SWH","WC","A",10,"SWH_202509_WC_LYSA_10CM",2025,9,16,"13:28","EDT",107.1421,3.3419245165315,"Within_Range",NA,1380.9915,38.9560366713681,"Within_Range",NA,2.4954776405,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"324","COMPASS: Synoptic","CB","SWH","WC","A",10,"SWH_202509_WC_LYSA_10CM",2025,9,16,"13:28","EDT",107.1421,3.341924517,"Within_Range",NA,1380.9915,38.95603667,"Within_Range",NA,2.495477641,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"325","COMPASS: Synoptic","CB","SWH","TR","C",45,"SWH_202509_TR_LYSC_45CM",2025,9,16,"15:10","EDT",3.7927,0.118300062383032,"Within_Range",NA,618.617,17.4504090267983,"Within_Range",NA,1.117866919,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"325","COMPASS: Synoptic","CB","SWH","TR","C",45,"SWH_202509_TR_LYSC_45CM",2025,9,16,"15:10","EDT",3.7927,0.118300062,"Within_Range",NA,618.617,17.45040903,"Within_Range",NA,1.117866919,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"326","COMPASS: Synoptic","CB","SWH","TR","C",20,"SWH_202509_TR_LYSC_20CM",2025,9,16,"15:10","EDT",139.5681,4.35334061135371,"Within_Range",NA,1398.1465,39.4399576868829,"Within_Range",NA,2.5264767255,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"326","COMPASS: Synoptic","CB","SWH","TR","C",20,"SWH_202509_TR_LYSC_20CM",2025,9,16,"15:10","EDT",139.5681,4.353340611,"Within_Range",NA,1398.1465,39.43995769,"Within_Range",NA,2.526476726,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"327","COMPASS: Synoptic","CB","SWH","TR","C",10,"SWH_202509_TR_LYSC_10CM",2025,9,16,"15:10","EDT",138.978,4.33493449781659,"Within_Range",NA,1444.1948,40.738922425952,"Within_Range",NA,2.6096860036,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"327","COMPASS: Synoptic","CB","SWH","TR","C",10,"SWH_202509_TR_LYSC_10CM",2025,9,16,"15:10","EDT",138.978,4.334934498,"Within_Range",NA,1444.1948,40.73892243,"Within_Range",NA,2.609686004,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"328","COMPASS: Synoptic","CB","SWH","WC","C",10,"SWH_202509_WC_LYSC_10CM",2025,9,16,"13:11","EDT",164.7002,5.13724890829694,"Within_Range",NA,1579.1535,44.5459379407616,"Within_Range",NA,2.8535563745,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"328","COMPASS: Synoptic","CB","SWH","WC","C",10,"SWH_202509_WC_LYSC_10CM",2025,9,16,"13:11","EDT",164.7002,5.137248908,"Within_Range",NA,1579.1535,44.54593794,"Within_Range",NA,2.853556375,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"329","COMPASS: Synoptic","CB","SWH","WC","B",45,"SWH_202509_WC_LYSB_45CM",2025,9,16,"13:20","EDT",1.7906,0.0558515283842795,"Within_Range",NA,451.6465,12.7403808180536,"Within_Range",NA,0.8161512255,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"329","COMPASS: Synoptic","CB","SWH","WC","B",45,"SWH_202509_WC_LYSB_45CM",2025,9,16,"13:20","EDT",1.7906,0.055851528,"Within_Range",NA,451.6465,12.74038082,"Within_Range",NA,0.816151226,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"330","COMPASS: Synoptic","CB","SWH","WC","B",20,"SWH_202509_WC_LYSB_20CM",2025,9,16,"13:20","EDT",0.8394,0.0261821584529008,"Within_Range",NA,301.8238,8.51407052186178,"Within_Range",NA,0.5454216066,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"330","COMPASS: Synoptic","CB","SWH","WC","B",20,"SWH_202509_WC_LYSB_20CM",2025,9,16,"13:20","EDT",0.8394,0.026182158,"Within_Range",NA,301.8238,8.514070522,"Within_Range",NA,0.545421607,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"331","COMPASS: Synoptic","CB","SWH","WC","B",10,"SWH_202509_WC_LYSB_10CM",2025,9,16,"13:20","EDT",47.9149,1.49453836556457,"Within_Range",NA,1121.7816,31.6440507757405,"Within_Range",NA,2.0270853512,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"331","COMPASS: Synoptic","CB","SWH","WC","B",10,"SWH_202509_WC_LYSB_10CM",2025,9,16,"13:20","EDT",47.9149,1.494538366,"Within_Range",NA,1121.7816,31.64405078,"Within_Range",NA,2.027085351,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"332","COMPASS: Synoptic","CB","SWH","WC","A",45,"SWH_202509_WC_LYSA_45CM",2025,9,16,"13:28","EDT",0,0,"bdl",NA,318.1925,8.97581100141044,"Within_Range",NA,0.5749998475,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"332","COMPASS: Synoptic","CB","SWH","WC","A",45,"SWH_202509_WC_LYSA_45CM",2025,9,16,"13:28","EDT",0,0,"bdl",NA,318.1925,8.975811001,"Within_Range",NA,0.574999848,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"333","COMPASS: Synoptic","CB","SWH","SW","C",0,"SWH_202509_SW_C",2025,9,16,"13:05","EDT",355.4011,11.0854990642545,"Within_Range",NA,2549.1759,71.9090521861777,"Within_Range",NA,4.6063868513,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"333","COMPASS: Synoptic","CB","SWH","SW","C",0,"SWH_202509_SW_C",2025,9,16,"13:05","EDT",355.4011,11.08549906,"Within_Range",NA,2549.1759,71.90905219,"Within_Range",NA,4.606386851,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"334","COMPASS: Synoptic","CB","SWH","SW","B",0,"SWH_202509_SW_B",2025,9,16,"13:00","EDT",369.8082,11.534878353088,"Within_Range",NA,2650.8088,74.7759887165021,"Within_Range",NA,4.7900375016,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"334","COMPASS: Synoptic","CB","SWH","SW","B",0,"SWH_202509_SW_B",2025,9,16,"13:00","EDT",369.8082,11.53487835,"Within_Range",NA,2650.8088,74.77598872,"Within_Range",NA,4.790037502,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"335","COMPASS: Synoptic","CB","SWH","SW","A",0,"SWH_202509_SW_A",2025,9,16,"12:57","EDT",379.701,11.8434497816594,"Within_Range",NA,2702.2359,76.226682651622,"Within_Range",NA,4.8829662713,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"335","COMPASS: Synoptic","CB","SWH","SW","A",0,"SWH_202509_SW_A",2025,9,16,"12:57","EDT",379.701,11.84344978,"Within_Range",NA,2702.2359,76.22668265,"Within_Range",NA,4.882966271,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"336","COMPASS: Synoptic","CB","SWH","WC","C",45,"SWH_202509_WC_LYSC_45CM",2025,9,16,"13:11","EDT",0.6984,0.0217841547099189,"Within_Range",NA,525.4085,14.8211142454161,"Within_Range",NA,0.9494391595,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"336","COMPASS: Synoptic","CB","SWH","WC","C",45,"SWH_202509_WC_LYSC_45CM",2025,9,16,"13:11","EDT",0.6984,0.021784155,"Within_Range",NA,525.4085,14.82111425,"Within_Range",NA,0.94943916,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
-"337","COMPASS: Synoptic","CB","SWH","WC","C",20,"SWH_202509_WC_LYSC_20CM",2025,9,16,"13:11","EDT",8.1311,0.253621334996881,"Within_Range",NA,553.7092,15.6194414668547,"Within_Range",NA,1.0005785244,"2025-11-18","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
+"337","COMPASS: Synoptic","CB","SWH","WC","C",20,"SWH_202509_WC_LYSC_20CM",2025,9,16,"13:11","EDT",8.1311,0.253621335,"Within_Range",NA,553.7092,15.61944147,"Within_Range",NA,1.000578524,"11/18/2025","Spk 71 had low percent recovery, but >80% of spks had good recovery. 
   All sample IDs are present in metadata. 
   ",""
 "338","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202511_UP_LYSA_10CM",2025,11,5,"10:25","EST",7.8721,0.245542732376793,"Within_Range",NA,63.4854,1.79084344146685,"Within_Range",NA,0.1147441178,"2025-11-20","No issues with this run. All sample IDs are present in metadata.
