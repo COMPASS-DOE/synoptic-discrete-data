@@ -3,10 +3,9 @@ title: "Synoptic CB: Porewater Sulfide"
 author: "2022-2025 Samples"
 date: "`r Sys.Date()`"
 output: 
-  pdf_document:
+  pdf_document: 
     toc: true
     number_sections: true
-
 output_dir: "To Be Reviewed/PDF"
 ---
 
@@ -23,7 +22,7 @@ library(ggh4x)
 ```
 
 ## Grab 2022 and 2023 All Data Files
-```{r Pull in 2022-2024 data files, message=FALSE}
+```{r Pull in 2022-2024 data files, message=FALSE, include=FALSE}
 
 #read in 2022 Sulfide Data:
 # dat22 <- read.csv("2022/COMPASS_SynopticCB_H2S_Cl_2022.csv")
@@ -150,7 +149,7 @@ metadat$Instrument_ifapplicable <-
 ```
 
 ## Write out files
-```{r write out combined data and metadata}
+```{r write out combined data and metadata, include=FALSE}
 
 #write out a csv of all the data to the main folder: 
 write.csv(all_dat, "COMPASS_SynopticCB_Sulfide_AllData.csv")
@@ -163,7 +162,7 @@ write.csv(metadat, "COMPASS_SynopticCB_Sulfide_Metadata.csv")
 
 
 ## Visualize Data by Plot   
-```{r Visualize Data, echo=FALSE, warning=FALSE, fig.width=16, fig.height=10}
+```{r Visualize Data, echo=FALSE, warning=FALSE, message = FALSE, fig.width=16, fig.height=10, dpi = 400}
 
 data_plotting <- all_dat
 
@@ -215,7 +214,7 @@ viz_H2S_plot
 
 
 ## Summarized data for Site and Zone 
-```{r Summarize and Visualize Data, echo = FALSE, fig.width=22, fig.height=10}
+```{r Summarized data for Site and Zone, echo=FALSE, warning=FALSE, message = FALSE, fig.width=16, fig.height=10, dpi = 300}
 
 ##Make Date Column with just Year and Month for Sample ID
 all_dat_dates <- data_plotting %>%
@@ -273,7 +272,7 @@ viz_H2S_plot_avgs
 
 
 ## Summarized data for Depth, Site and Zone 
-```{r Depth Data, echo = FALSE, fig.width=22, fig.height=10}
+```{r Summarize and Visualize Data, echo=FALSE, warning=FALSE, message = FALSE, fig.width=16, fig.height=10, dpi = 300}
 
 ##Summarize H2S and Cl by Date, Site, and Zone
 Sulfide_avg_depth <- all_dat_dates %>%
@@ -322,7 +321,7 @@ viz_H2S_plot_depth
 
 
 ## Boxplot summary
-```{r Overall Boxplot, echo = FALSE, fig.width=22, fig.height=10}
+```{r Overall Boxplot, echo=FALSE, warning=FALSE, message = FALSE, fig.width=16, fig.height=10, dpi = 400}
 
 all_dat_dates <- all_dat_dates %>% 
     mutate(
@@ -356,7 +355,7 @@ viz_H2S_boxplot <- ggplot(all_dat_dates, aes(x = Zone_1, y = H2S_mean_uM, fill =
     panel.spacing = unit(0.5, "lines"), 
     panel.border = element_rect(color = "black", fill = NA, linewidth = 1)) +
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))+ 
-  theme(text = element_text(size = 12))+
+  theme(text = element_text(size = 30))+
   theme(axis.ticks.x = element_line(linewidth = 1))+
   theme(axis.ticks.length.x = unit(0.25, "cm"))+ 
   #scale_x_discrete(labels = c("Upland", "Swamp", "Transition", "Wetland", "Surface Water"))+ 
@@ -368,7 +367,7 @@ viz_H2S_boxplot
 # ggarrange(viz_cl_plot, viz_H2S_plot, nrow=2, ncol=1)
 
 # Save as a PNG
-png("COMPASS_SynopticCB_H2S_alldata.png", width = 2000, height = 1200, res = 200) 
+png("COMPASS_SynopticCB_H2S_alldata.png", width = 2000, height = 1200, res = 100) 
 print(viz_H2S_boxplot)  # For ggplot objects, use print()
 dev.off() 
 
@@ -376,7 +375,7 @@ dev.off()
 
 
 ## Calculate summary metrics
-```{r Additional summary metrics}
+```{r Additional summary metrics, include=FALSE, dpi = 300}
 # It would also be great to add to our collation codes a summary chunk that will calculate value ranges, means, and standard deviations (and errors) for each site, zone, depth for each year; also for each site zone, depth overall; and for each site and zone overall so that we have some easy access to metrics. Was just thinking this might be helpful today when re-collating the DIC data.
 
 ##There might be an issue here because the H2S_mean value already has a sd from the triplicates (or duplicates) on the plate. 
@@ -412,8 +411,37 @@ summary_all_depths_years <- all_dat %>%
 
 ```
 
+## Summary Tables
+```{r Summary table metrics, echo = FALSE, message = FALSE, dpi = 100}
+
+library(kableExtra)
+
+#Order by Zone from Upland to Surface Water
+summary_all_depths_years$Zone = factor(summary_all_depths_years$Zone, levels = c("UP", "SWAMP", "TR", "WC", "SW"))
+summary_all_depths_years <- summary_all_depths_years[order(summary_all_depths_years$Zone), ]
+
+#Order by Site from SWH, GCW, MSM, GWI order, which is oligohaline to polyhaline
+summary_all_depths_years$Site = factor(summary_all_depths_years$Site, levels = c("SWH", "GCW", "MSM", "GWI"))
+summary_all_depths_years <- summary_all_depths_years[order(summary_all_depths_years$Site), ]
+
+kable(
+  summary_all_depths_years[, c("Site", "Zone", "min_H2S_mM",	"max_H2S_mM",	"mean_H2S_mM", "sd_H2S_mM")],  
+  format = "latex",
+  booktabs = TRUE,
+  caption = "Summary Statistics"
+) %>%
+  kable_styling(
+    latex_options = c("hold_position", "striped", "scale_down"),
+    font_size = 12
+  ) %>%
+  row_spec(0, bold = TRUE) %>%   # header
+  column_spec(1, bold = TRUE)
+
+
+```
+
 ## Write out summarized data
-```{r write out combined data and metadata}
+```{r write out summarized data, include=FALSE}
 
 #write out a csv of all the data to the main folder: 
 write.csv(summary_by_year, "COMPASS_SynopticCB_PW_Sulfide_Summarized_By_Year.csv")

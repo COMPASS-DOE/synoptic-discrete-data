@@ -19,10 +19,11 @@ library(readxl)
 library(tidyr)
 library(tibble)
 library(openxlsx)
+library(knitr)
 ```
 
-## Grab 2022 and 2023 All Data Files
-```{r Pull in 2022-2024 data files, message=FALSE}
+##Grab 2022 and 2023 All Data Files
+```{r Pull in 2022-2024 data files, message=FALSE, include=FALSE}
 
 #read in 2022 Dionex Data:
 dat22 <- read.csv("2022/COMPASS_SynopticCB_SO4_Cl_2022.csv")
@@ -157,8 +158,8 @@ metadat$Instrument_ifapplicable <-
 
 ```
 
-## Write out files
-```{r write out combined data and metadata}
+##Write out files
+```{r write out combined data and metadata, include=FALSE}
 
 #write out a csv of all the data to the main folder: 
 write.csv(all_dat, "COMPASS_SynopticCB_SO4_Cl_AllData.csv")
@@ -171,7 +172,7 @@ write.csv(metadat, "COMPASS_SynopticCB_SO4_Cl_Metadata.csv")
 
 
 ## Visualize Data by Plot   
-```{r Visualize Data, echo=FALSE, warning=FALSE, fig.width=16, fig.height=10}
+```{r Visualize Data, echo=FALSE, warning=FALSE, message = FALSE, fig.width=16, fig.height=10, dpi = 300}
 
 data_plotting <- all_dat
 
@@ -244,7 +245,7 @@ ggarrange(viz_cl_plot, viz_so4_plot, nrow=2, ncol=1)
 
 
 ## Summarized data for Site and Zone 
-```{r Summarize and Visualize Data, echo = FALSE, fig.width=22, fig.height=10}
+```{r Summarize and Visualize Data, echo=FALSE, warning=FALSE, message = FALSE, fig.width=16, fig.height=10, dpi = 300}
 
 ##Make Date Column with just Year and Month for Sample ID
 all_dat_dates <- data_plotting %>%
@@ -298,7 +299,7 @@ viz_cl_plot_avgs <- ggplot(Dionex_avg, aes(x = Date, y = mean_Cl, color = Zone, 
   theme(axis.ticks.x = element_line(linewidth = 1))+
   theme(axis.ticks.length.x = unit(0.25, "cm"))
 
-viz_cl_plot_avgs
+# viz_cl_plot_avgs
 
 
 viz_so4_plot_avgs <- ggplot(Dionex_avg, aes(x = Date, y = mean_SO4, color = Zone, group = Zone)) +
@@ -324,14 +325,15 @@ viz_so4_plot_avgs <- ggplot(Dionex_avg, aes(x = Date, y = mean_SO4, color = Zone
   theme(axis.ticks.x = element_line(linewidth = 1))+
   theme(axis.ticks.length.x = unit(0.25, "cm"))
 
-viz_so4_plot_avgs
-# ggarrange(viz_cl_plot, viz_so4_plot, nrow=2, ncol=1)
+# viz_so4_plot_avgs
+
+ggarrange(viz_cl_plot, viz_so4_plot, nrow=2, ncol=1)
 
 ```
 
 
 ## Summarized data for Depth, Site and Zone 
-```{r Depth Data, echo = FALSE, fig.width=22, fig.height=10}
+```{r Depth Data, echo=FALSE, warning=FALSE, message = FALSE, fig.width=22, fig.height=10, dpi = 300}
 
 ##Summarize SO4 and Cl by Date, Site, and Zone
 Dionex_avg_depth <- all_dat_dates %>%
@@ -409,7 +411,7 @@ viz_so4_plot_depth
 
 
 ## Boxplot summary
-```{r Overall Boxplot, echo = FALSE, fig.width=22, fig.height=10}
+```{r Overall Boxplot, echo=FALSE, warning=FALSE, message = FALSE, fig.width=16, fig.height=10, dpi = 300}
 
 all_dat_dates <- all_dat_dates %>% 
     mutate(
@@ -443,7 +445,7 @@ viz_cl_boxplot <- ggplot(all_dat_dates, aes(x = Zone_1, y = Cl_mM, fill = Zone_1
     panel.spacing = unit(0.5, "lines"), 
     panel.border = element_rect(color = "black", fill = NA, linewidth = 1)) +
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))+ 
-  theme(text = element_text(size = 12))+
+  theme(text = element_text(size = 30))+
   theme(axis.ticks.x = element_line(linewidth = 1))+
   theme(axis.ticks.length.x = unit(0.25, "cm"))+ 
   #scale_x_discrete(labels = c("Upland", "Swamp", "Transition", "Wetland", "Surface Water"))+ 
@@ -469,7 +471,7 @@ viz_so4_boxplot <- ggplot(all_dat_dates, aes(x = Zone_1, y = SO4_mM, fill = Zone
     panel.spacing = unit(0.5, "lines"), 
     panel.border = element_rect(color = "black", fill = NA, linewidth = 1)) +
   theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))+ 
-  theme(text = element_text(size = 12))+
+  theme(text = element_text(size = 30))+
   theme(axis.ticks.x = element_line(linewidth = 1))+
   theme(axis.ticks.length.x = unit(0.25, "cm"))+ 
   #scale_x_discrete(labels = c("Upland", "Swamp", "Transition", "Wetland", "Surface Water"))+ 
@@ -477,22 +479,22 @@ viz_so4_boxplot <- ggplot(all_dat_dates, aes(x = Zone_1, y = SO4_mM, fill = Zone
 
 viz_so4_boxplot
 
-# ggarrange(viz_cl_plot, viz_so4_plot, nrow=2, ncol=1)
+# ggarrange(viz_cl_boxplot, viz_so4_boxplot, nrow=2, ncol=1)
 
 # Save as a PNG
-png("COMPASS_SynopticCB_Cl_alldata.png", width = 2000, height = 1200, res = 300) 
+png("COMPASS_SynopticCB_Cl_alldata.png", width = 2000, height = 1200, res = 100) 
 print(viz_cl_boxplot)  # For ggplot objects, use print()
 dev.off() 
 
 # Save as a PNG
-png("COMPASS_SynopticCB_SO4_alldata.png", width = 2000, height = 1200, res = 300) 
+png("COMPASS_SynopticCB_SO4_alldata.png", width = 2000, height = 1200, res = 100) 
 print(viz_so4_boxplot)  # For ggplot objects, use print()
 dev.off() 
 
 ```
 
-## Calculate summary metrics
-```{r Additional summary metrics}
+##Calculate summary metrics
+```{r Additional summary metrics, include=FALSE, dpi = 300}
 # It would also be great to add to our collation codes a summary chunk that will calculate value ranges, means, and standard deviations (and errors) for each site, zone, depth for each year; also for each site zone, depth overall; and for each site and zone overall so that we have some easy access to metrics. Was just thinking this might be helpful today when re-collating the DIC data.
 
 colnames(all_dat)
@@ -541,8 +543,37 @@ summary_all_depths_years <- all_dat %>%
 
 ```
 
-## Write out summarized data
-```{r write out combined data and metadata}
+## Summary Tables
+```{r Summary table metrics, echo = FALSE, message = FALSE, dpi = 100}
+
+library(kableExtra)
+
+#Order by Zone from Upland to Surface Water
+summary_all_depths_years$Zone = factor(summary_all_depths_years$Zone, levels = c("UP", "SWAMP", "TR", "WC", "SW"))
+summary_all_depths_years <- summary_all_depths_years[order(summary_all_depths_years$Zone), ]
+
+#Order by Site from SWH, GCW, MSM, GWI order, which is oligohaline to polyhaline
+summary_all_depths_years$Site = factor(summary_all_depths_years$Site, levels = c("SWH", "GCW", "MSM", "GWI"))
+summary_all_depths_years <- summary_all_depths_years[order(summary_all_depths_years$Site), ]
+
+kable(
+  summary_all_depths_years[, c("Site", "Zone", "min_Cl_ppm",	"max_Cl_ppm",	"mean_Cl_ppm", "min_SO4_ppm",	"max_SO4_ppm",	"mean_SO4_ppm")],  
+  format = "latex",
+  booktabs = TRUE,
+  caption = "Summary Statistics"
+) %>%
+  kable_styling(
+    latex_options = c("hold_position", "striped", "scale_down"),
+    font_size = 12
+  ) %>%
+  row_spec(0, bold = TRUE) %>%   # header
+  column_spec(1, bold = TRUE)
+
+
+```
+
+##Write out summarized data
+```{r write out summarized data, include=FALSE}
 
 #write out a csv of all the data to the main folder: 
 write.csv(summary_by_year, "COMPASS_SynopticCB_PW_SO4_Cl_Summarized_By_Year.csv")
