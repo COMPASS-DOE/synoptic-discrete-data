@@ -1,0 +1,334 @@
+---
+title: "COMPASS_SynopticCB_Collate_Iron_2024_Data"
+author: "Stephanie J. Wilson and Zoe Read"
+date: "2025-12-04"
+output: html_document
+---
+
+##Run Notes
+```{r}
+run_notes = "Sample IDs for May 2024 MSM seem to have already been fixed, since there is no MSM_202405_UP_LysA_10cm sample ID."
+```
+
+
+##Read in packages
+```{r packages, include = FALSE}
+#packages
+library(ggplot2)
+library(dplyr)
+library(data.table)
+library(matrixStats)
+library(gridExtra)
+library(ggpubr)
+library(grid)
+library(stringr)
+library(plater)
+library(raster)
+library(tidyverse)
+library(readxl)
+library(dplyr)
+
+```
+
+#Read in and collate all the files in the Processed Data folder 
+```{r}
+files <- list.files(path = "QAQC'd Data", pattern = "\\_shortdata.csv$", full.names = TRUE, recursive =  TRUE)
+
+read_csv_filename <- function(filename) {
+  # Read the CSV file
+  data <- read.csv(filename)
+  # Add a new column 'SourceFile' with only the filename (using basename)
+  data$SourceFile <- basename(filename)
+  # Return the modified data frame
+  return(data)
+}
+
+# 3. Use lapply to apply the function to all files
+list_of_dfs <- lapply(files, read_csv_filename)
+
+# 4. Combine the list of data frames into a single data frame
+#    This uses base R's do.call and rbind
+all_data <- do.call(rbind, list_of_dfs)
+
+##Extract Analysis date from file name
+all_data <- all_data %>%
+  mutate(Analysis_rundate = str_extract(SourceFile, "\\d{8}"))
+
+all_data <- all_data %>%
+  mutate(Plate = str_extract(SourceFile, "Plate[0-9]+"))
+
+all_data <- all_data[, -which(names(all_data) == "X")]
+all_data <- all_data[, -which(names(all_data) == "SourceFile")]
+
+head(all_data)
+```
+
+##Read in and Fix Sample IDs
+```{r Read in and Fix Sample IDs, include = FALSE}
+#Read in Sample IDs
+SampleIDs <- read.csv("COMPASS_CBSyn_PW_Fe_2024_SampleList.csv", skip = 1)
+```
+
+##Convert Sample Numbers to Sample IDs
+```{r Convert Sample Numbers to Sample IDs, include = FALSE}
+##Merge with data
+Sample_data_IDs <- all_data %>%
+  left_join(SampleIDs, by = c("IDs" = "Sample.No."))
+
+head(Sample_data_IDs)
+
+#Remove Part of Sample ID we don't need
+Sample_data_IDs$Sample.ID <- gsub("_PW_MonMon_FE_", "_", Sample_data_IDs$Sample.ID)
+Sample_data_IDs$Sample.ID <- gsub("_MonMon_FE_", "_", Sample_data_IDs$Sample.ID)
+
+head(Sample_data_IDs)
+
+##Separate sample IDs 
+Sample_data_IDs <- Sample_data_IDs %>%
+    separate(
+    col = "Sample.ID",
+    sep = "_",
+    into = c("Site", "Zone", "Date", "Replicate", "Depth"),
+    remove = FALSE) 
+
+Sample_data_IDs$`Sample.ID` <- NULL
+
+##Make full sample IDs
+##Depths for SW samples should be 0 
+Sample_data_IDs$Depth <-  ifelse((Sample_data_IDs$Zone == "SW"), "0cm", Sample_data_IDs$Depth)
+
+#Create IDs from what was collected for comparison later
+Sample_data_IDs <- Sample_data_IDs %>%
+  mutate(Sample_ID = paste(Site, Date, Zone, Replicate, Depth, sep = "_"))
+
+#Change the SW lines because they don't have lysimeters or a depth  
+Sample_data_IDs <- Sample_data_IDs %>%
+  mutate(
+    Sample_ID = if_else(
+      Zone == "SW",
+      # Modify the string:
+      Sample_ID %>%
+        str_replace("_LysA", "_A") %>%                    # Replace "_LysA" with "_A"
+        str_replace("_LysB", "_B") %>%                    # Replace "_LysB" with "_B"
+        str_replace("_LysC", "_C") %>%                    # Replace "_LysC" with "_C"
+        str_replace("_0cm$", ""),                          # Remove trailing "_0cm"
+      Sample_ID  # else keep original
+    )
+  )
+
+#Remove Lys from Replicate Column
+Sample_data_IDs <- Sample_data_IDs %>%
+  mutate(Replicate = gsub("Lys", "", as.character(Replicate)))%>%
+  mutate(Replicate = gsub("lys", "", as.character(Replicate)))
+
+```
+
+
+#Note from Zoe and Steph: It looks like we did not get any samples for MSM_202405_UP_LysA_10cm. According to the corrections on the scanned datasheets, it looks like for Upland, B samples were accidentally put in the A vials, C samples were put in B vials, and A samples were put in C vials. So, I'm thinking I can check if any analytes have MSM_202405_UP_LysA_10cm, then all the samples need to be corrected A -->B, B --> C and C-->A. 
+```{r Check and fix MSM Up Lys sample IDs, echo = FALSE}
+
+string_to_find <- "MSM_202405_UP_LysA_10cm"
+found <- any(sapply(Sample_data_IDs, function(x) any(grepl(string_to_find, x))))
+
+# Print the result
+if (found) {
+  print(paste("The string '", string_to_find, "' was found in the dataframe.", sep = ""))
+} else {
+  print(paste("The string '", string_to_find, "' was not found in the dataframe.", sep = ""))
+}
+
+```
+
+##Pull in Metadata
+```{r Pull in Metadata, include = FALSE}
+
+Raw_Metadata = "COMPASS_SynopticCB_PW_SampleLog_2024.csv"
+
+#read in the raw metadata file 
+raw_metadata <- read.csv(Raw_Metadata)
+
+#make a new columns in the metadata with important info:
+metadata <- raw_metadata %>%
+  mutate(Depth = paste0(Depth_cm, "cm")) %>%
+  mutate(LysID = paste0("Lys", Lysimeter)) %>%
+  mutate(YearMonth = sprintf("%d%02d", Year, Month))  %>%
+  mutate(Zone = case_when(
+    `Transect.Location` == "Transition" ~ "TR",
+    `Transect.Location` == "Wetland"    ~ "WC",
+    `Transect.Location` == "Upland"     ~ "UP",   
+    `Transect.Location` == "Surface Water" ~ "SW",
+    TRUE                 ~ `Transect.Location`    # keep original value if no match
+  ))
+
+#Create IDs from what was collected for comparison later
+metadata <- metadata %>%
+  mutate(Iron_ID = ifelse(SO4 == "x",
+                                     paste(Site,
+                                           YearMonth,
+                                           Zone,
+                                           LysID,
+                                           Depth,
+                                           sep = "_"),
+                                     NA),  )
+
+#Change the SW lines because they don't have lysimeters or a depth  
+metadata <- metadata %>%
+  mutate(
+    Iron_ID = if_else(
+      Zone == "SW",
+      # Modify the string:
+      Iron_ID %>%
+        str_replace("_LysA", "_A") %>%                    # Replace "_LysA" with "_A"
+        str_replace("_LysB", "_B") %>%                    # Replace "_LysB" with "_B"
+        str_replace("_LysC", "_C") %>%                    # Replace "_LysC" with "_C"
+        str_replace("_0cm$", ""),                          # Remove trailing "_0cm"
+      Iron_ID  # else keep original
+    )
+  )
+
+#Take out the columns and rows that are not relevant
+iron_metadata <- metadata %>%
+  dplyr::select(Iron_ID, Year, Month, Day, YearMonth, Site, Zone, Lysimeter, LysID, Depth_cm, 
+         Depth, Time..24hr., Time.Zone_EDT.EST, Field.Notes, ) %>%        
+  # only keep specific columns
+  filter(!is.na(Iron_ID) & Iron_ID != "")  # remove missing/blank Cl_SO4_ID rows
+
+head(iron_metadata)
+
+```
+
+##Check to see if samples run match metadata & merge info
+```{r Check to see if samples run match metadata & merge info, echo = FALSE}
+
+#check to see if all samples are present in the metadata 
+Sample_data_IDs$Sample_ID <- toupper(Sample_data_IDs$Sample_ID)
+iron_metadata$Iron_ID <- toupper(iron_metadata$Iron_ID)
+
+all_present <- all(Sample_data_IDs$Sample_ID %in% iron_metadata$Iron_ID)
+
+if (all_present) {
+  message("All sample IDs are present in metadata.")
+} else {
+  message("Some sample IDs are missing from metadata.")
+  
+  # Optional: Which ones are missing?
+  missing_ids <- setdiff(Sample_data_IDs$Sample_ID, iron_metadata$Iron_ID)
+  print(missing_ids)
+}
+
+# missing_ids <- data.frame(missing_ids)
+# 
+# ##Export missing IDs to csv
+# write.csv(missing_ids, "20250529_COMPASS_Iron_missing_IDs.csv")
+
+##Remove cm units from Depth
+Sample_data_IDs$Depth_cm <- gsub("cm", "", Sample_data_IDs$Depth)
+
+##Select only necessary columns
+all_data_selected <- Sample_data_IDs %>%
+  dplyr::select(-c("RUN.", "Month", "Y.N", "Depth"))
+
+all_data_selected$Depth_cm <- as.integer(all_data_selected$Depth_cm)
+
+##Select only necessary columns
+iron_metadata_selected <- iron_metadata %>%
+  dplyr::select(Iron_ID, Year, Month, Day, Time..24hr., Time.Zone_EDT.EST,  Field.Notes) 
+
+#merge metadata with sample run data 
+merged_data <- all_data_selected %>%
+  left_join(iron_metadata_selected, by = c("Sample_ID" = "Iron_ID"))
+
+```
+
+## Visualize Data by Plot   
+```{r Visualize Data, echo=FALSE, warning=FALSE}
+
+#Plot samples to get a first look at concentrations (sanity check)
+data_plotting <- merged_data
+
+#Order by Zone from Upland to Surface Water
+data_plotting$Zone = factor(data_plotting$Zone, levels = c("UP",  "SWAMP","TR", "WC", "SW"))
+data_plotting <- data_plotting[order(data_plotting$Zone), ]
+
+#Order by Site from SWH, GCW, MSM, GWI order, which is oligohaline to polyhaline
+data_plotting$Site = factor(data_plotting$Site, levels = c("SWH", "GCW", "MSM", "GWI"))
+data_plotting <- data_plotting[order(data_plotting$Site), ]
+
+#group the data for plotting
+data_plotting <- data_plotting %>%
+  group_by(Site) %>%
+  mutate(row_num = factor(row_number())) %>%  # create row_num as factor per group
+  ungroup()
+
+#Plot data and change colors based on Zone:
+viz_Iron_plot <- ggplot(data_plotting, aes(x = row_num, y = FE_3_mean, fill = Zone)) +
+  geom_bar(stat = "identity", position = position_dodge2(preserve = "single")) +
+  facet_wrap(~ Site, scales="free") +
+  scale_fill_manual(values = c(
+    "UP" = "#20063B",
+    "SWAMP" = "darkgrey",
+    "TR" = "#FFBC42",
+    "WC" = "#419973",
+    "SW" = "#25ABE6"
+  )) +
+  theme_classic() +
+  theme(axis.text.x = element_blank()) +
+  labs(x = " ", y = "Iron II (uM)", title = "Samples: Iron") +
+  scale_x_discrete(drop = TRUE)+
+  theme(
+    panel.spacing = unit(.05, "lines"), 
+    panel.border = element_rect(color = "black", fill = NA, linewidth = 0.1))
+
+viz_Iron_plot
+
+```
+
+##Export Combined Data
+```{r Export Combined Data, include = FALSE}
+
+#Prepare data to be exported - if there is anything else to add 
+#Add any necessary identifiers to the samples  ### VERY IMPORTANT AND STANDARD FOR PROJECT ####
+  #example read in sample IDs list and merge 
+  #create required ID columns in R, etc. 
+final_data <- merged_data %>% 
+  mutate(
+    Project = "COMPASS: Synoptic",   # new column with same value on every row
+    Region = "CB", 
+    Run_notes  = run_notes
+  ) 
+
+colnames(final_data)
+
+final_data <- final_data %>%
+  rename(
+    Time = Time..24hr.,
+    Time_Zone = Time.Zone_EDT.EST,
+    Field_notes = Field.Notes
+    # add more rename pairs as needed
+  ) %>%
+  dplyr::select(
+    Project, Region, Site, Zone, Replicate, Depth_cm, 
+         Sample_ID, Year, Month, Day, Time, Time_Zone,
+         FE_3_mean, Analysis_rundate, Field_notes, Run_notes
+        # list columns in the order you want them
+  )
+
+head(final_data)
+
+#Write out final data frame 
+write.csv(final_data, "COMPASS_Iron_202410_Plates_Combined_Data.csv")
+
+# #Write out samples that still have high CVs
+# write.csv(HighCV, "COMPASS_Iron_202410_Plates_Combined_HighCVs.csv")
+# 
+# #Write out ADL samples
+# write.csv(ADL_not_fixed, "COMPASS_Iron_202410_Plates_Combined_ADL.csv")
+# 
+# #Write out BDL samples
+# write.csv(BDL_not_fixed, "COMPASS_Iron_202410_Plates_Combined_BDL.csv")
+
+
+```
+
+
+##END
