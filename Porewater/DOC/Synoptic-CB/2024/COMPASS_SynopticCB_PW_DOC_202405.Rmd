@@ -16,7 +16,11 @@ cat("Setup Information")
   Date_Run = "6/03/24"  #Date that instrument was run
   Run_by = "Stephanie J. Wilson"  #Instrument user 
   Script_run_by = "Stephanie J. Wilson" #Code user 
-  run_notes = "Second NPOC Curve did not look good. One duplicate out of range and some checks 
+  run_notes = "Samples were put in the wrong vials, so 
+  MSM_202405_UP_LysA_ was switched to MSM_202405_UP_LysB_, 
+  MSM_202405_UP_LysB_ was switched to MSM_202405_UP_LysC_, 
+  MSM_202405_UP_LysC_ was switched to MSM_202405_UP_LysA_.
+  Second NPOC Curve did not look good. One duplicate out of range and some checks 
   below expected concentration, but not by much - run okay."  #any notes from the run
   samples <- c("GCW", "GWI", "MSM", "SWH") #whatever identifies your samples within the same names 
   samples_pattern <- paste(samples, collapse = "|") 
@@ -197,13 +201,41 @@ dat_raw <- raw_file_name %>%
   map_df(read_data) %>%
   filter(str_detect(sample_name, samples_pattern))
 
-dat_raw <- dat_raw %>% 
-    mutate(sample_name = if_else(sample_name == "202405_MSM_UP_LysA_10cm", 
-                               "202405_MSM_UP_LysC_10cm", 
-                               sample_name))
-
 head(dat_raw)
 ```
+
+#Note from Zoe and Steph: It looks like we did not get any samples for MSM_202405_UP_LysA_10cm. According to the corrections on the scanned datasheets, it looks like for Upland, B samples were accidentally put in the A vials, C samples were put in B vials, and A samples were put in C vials. So, I'm thinking I can check if any analytes have MSM_202405_UP_LysA_10cm, then all the samples need to be corrected A -->B, B --> C and C-->A. 
+```{r Check and fix MSM Up Lys sample IDs, echo = FALSE}
+
+string_to_find <- "202405_MSM_UP_LysA_10cm"
+found <- any(sapply(dat_raw, function(x) any(grepl(string_to_find, x))))
+
+# Print the result
+if (found) {
+  print(paste("The string '", string_to_find, "' was found in the dataframe.", sep = ""))
+} else {
+  print(paste("The string '", string_to_find, "' was not found in the dataframe.", sep = ""))
+}
+
+dat_raw$sample_name_old <- dat_raw$sample_name
+
+if (any(grepl("202405_MSM_UP_LysA_10", dat_raw$sample_name))) {
+  dat_raw <- dat_raw %>%
+    mutate(
+      sample_name = case_when(
+        grepl("202405_MSM_UP_LysA_", sample_name) ~ sub("LysA_", "LysB_", sample_name),
+        grepl("202405_MSM_UP_LysB_", sample_name) ~ sub("LysB_", "LysC_", sample_name),
+        grepl("202405_MSM_UP_LysC_", sample_name) ~ sub("LysC_", "LysA_", sample_name),
+        TRUE ~ sample_name
+      )
+    )
+}
+
+dat_raw$sample_name_old <- NULL
+```
+
+
+
 
 ## Assessing Standard Curves 
 ```{r Assess Standard Curves, echo=FALSE}
