@@ -37,11 +37,10 @@ New_ID_1 <- "SWH_202405_SWAMP_LysA_10cm"
   final_path <- "Processed Data/COMPASS_Synoptic_Nutrients_202405.csv"
 
 #record any notes about the run or anything other info here: 
-  run_notes <- "Some sample IDs are missing from metadata: 
-  MSM_202405_UP_LysA_10cm
-  MSM_202405_UP_LysA_20cm
-  MSM_202405_WC_LysC_20cm
-  GWI_202405_TR_LysC_45cm. 
+  run_notes <- "Samples were put in the wrong vials, so 
+  MSM_202405_UP_LysA_ was switched to MSM_202405_UP_LysB_, 
+  MSM_202405_UP_LysB_ was switched to MSM_202405_UP_LysC_, 
+  MSM_202405_UP_LysC_ was switched to MSM_202405_UP_LysA_.
   It looks like NH3 was only ran for GCW, MSM, and SWH. 
   It looks like PO4 was only ran for GCW and MSM. 
   Mean NOx Reduction Efficiency is less than 95% (94.18327%). 
@@ -53,7 +52,6 @@ New_ID_1 <- "SWH_202405_SWAMP_LysA_10cm"
   #downloaded metadata csv - downloaded from Google drive as csv for this year
   Raw_Metadata = "Raw Data/COMPASS_SynopticCB_PW_SampleLog_2024.csv"
 
-  cat(run_notes)
 ```
 
 ##Setup
@@ -221,6 +219,38 @@ head(df_all)
 df_all$Sample_Name[df_all$Sample_Name == Old_ID_1] <- New_ID_1
 
 ```
+
+
+#Note from Zoe and Steph: It looks like we did not get any samples for MSM_202405_UP_LysA_10cm. According to the corrections on the scanned datasheets, it looks like for Upland, B samples were accidentally put in the A vials, C samples were put in B vials, and A samples were put in C vials. So, I'm thinking I can check if any analytes have MSM_202405_UP_LysA_10cm, then all the samples need to be corrected A -->B, B --> C and C-->A. 
+```{r Check and fix MSM Up Lys sample IDs, echo = FALSE}
+
+string_to_find <- "MSM_UP_202405_LysA_10cm"
+found <- any(sapply(df_all, function(x) any(grepl(string_to_find, x))))
+
+# Print the result
+if (found) {
+  print(paste("The string '", string_to_find, "' was found in the dataframe.", sep = ""))
+} else {
+  print(paste("The string '", string_to_find, "' was not found in the dataframe.", sep = ""))
+}
+
+df_all$Sample_Name_old <- df_all$Sample_Name
+
+if (any(grepl("MSM_UP_202405_LysA_10", df_all$Sample_Name))) {
+  df_all <- df_all %>%
+    mutate(
+      Sample_Name = case_when(
+        grepl("MSM_UP_202405_LysA_", Sample_Name) ~ sub("LysA_", "LysB_", Sample_Name),
+        grepl("MSM_UP_202405_LysB_", Sample_Name) ~ sub("LysB_", "LysC_", Sample_Name),
+        grepl("MSM_UP_202405_LysC_", Sample_Name) ~ sub("LysC_", "LysA_", Sample_Name),
+        TRUE ~ Sample_Name
+      )
+    )
+}
+
+df_all$Sample_Name_old <- NULL
+```
+
 
 
 ## Assessing standard Curves
