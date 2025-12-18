@@ -12,12 +12,12 @@
 "11","Replicate","Lysimeter or sample replicate id (A-C)","NA","NA"
 "12","Depth_cm","Depth in centimeters from which water sample was taken","cm","NA"
 "13","SO4_ppm","Sulfate concentration in ppm","ppm","Dionex Integrion HPIC (Thermo Fisher)"
-"14","SO4_Conc_mM","Sulfate concentration in mM","mM","Dionex Integrion HPIC (Thermo Fisher)"
+"14","SO4_mM","Sulfate concentration in mM","mM","Dionex Integrion HPIC (Thermo Fisher)"
 "15","SO4_Conc_flag","Sulfate concentration flag base on standard curve (bdl=below detection limit (0), adl=above detection limit (highest   
                          standard), Within_Range=within detection range)","NA","NA"
 "16","SO4_QAQC_flag","Sulfate QAQC Flags generated during checks of standards, blanks, dups, and spks","NA","NA"
 "17","Cl_ppm","Chloride concentration in ppm","ppm","Dionex Integrion HPIC (Thermo Fisher)"
-"18","Cl_Conc_mM","Chloride concentration in mM","mM","Dionex Integrion HPIC (Thermo Fisher)"
+"18","Cl_mM","Chloride concentration in mM","mM","Dionex Integrion HPIC (Thermo Fisher)"
 "19","Cl_Conc_flag","Chloride concentration flag base on standard curve (bdl=below detection limit (0), adl=above detection limit (highest   
                          standard), Within_Range=within detection range)","NA","NA"
 "20","Cl_QAQC_flag","Chloride QAQC Flags generated during checks of standards, blanks, dups, and spks","NA","NA"

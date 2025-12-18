@@ -1,4 +1,4 @@
-"","Project","Region","Site","Zone","Replicate","Depth_cm","Sample_ID","Year","Month","Day","Time","Time_Zone","SO4_ppm","SO4_Conc_mM","SO4_Conc_flag","SO4_QAQC_flag","Cl_ppm","Cl_Conc_mM","Cl_Conc_flag","Cl_QAQC_flag","salinity","Analysis_rundate","Run_notes","Field_notes"
+"","Project","Region","Site","Zone","Replicate","Depth_cm","Sample_ID","Year","Month","Day","Time","Time_Zone","SO4_ppm","SO4_mM","SO4_Conc_flag","SO4_QAQC_flag","Cl_ppm","Cl_mM","Cl_Conc_flag","Cl_QAQC_flag","salinity","Analysis_rundate","Run_notes","Field_notes"
 "1","COMPASS: Synoptic","CB","GCW","UP","B",10,"GCW_202404_UP_LYSB_10CM",2024,4,9,NA,NA,3.2664,0.101883967560823,"Within_Range",NA,3.3562,0.0946741889985896,"Within_Range",NA,0.0060906534,"2024-05-29","Std curve slopes higher than other 2024 runs because this run was put on 
       before major changes to the dionex. The output values have been checked against those run
       at later dates and look good / comparable. We are accepting this slope deviation.",NA

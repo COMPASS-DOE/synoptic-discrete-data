@@ -373,3 +373,56 @@ print(viz_H2S_boxplot)  # For ggplot objects, use print()
 dev.off() 
 
 ```
+
+
+## Calculate summary metrics
+```{r Additional summary metrics}
+# It would also be great to add to our collation codes a summary chunk that will calculate value ranges, means, and standard deviations (and errors) for each site, zone, depth for each year; also for each site zone, depth overall; and for each site and zone overall so that we have some easy access to metrics. Was just thinking this might be helpful today when re-collating the DIC data.
+
+##There might be an issue here because the H2S_mean value already has a sd from the triplicates (or duplicates) on the plate. 
+
+colnames(all_dat)
+
+##Metrics for each site, zone, depth for each year
+summary_by_year <- all_dat %>%
+  group_by(Year, Site, Zone, Depth_cm) %>%
+   reframe(
+     min_H2S_mM = min(H2S_mean_uM, na.rm=TRUE),
+     max_H2S_mM = max(H2S_mean_uM, na.rm=TRUE), 
+     mean_H2S_mM = mean(H2S_mean_uM, na.rm=TRUE), 
+     sd_H2S_mM = sd(H2S_mean_uM, na.rm=TRUE))
+
+##Metrics for each site, zone, depth for all years
+summary_all_years <- all_dat %>%
+  group_by(Site, Zone, Depth_cm) %>%
+   reframe(
+     min_H2S_mM = min(H2S_mean_uM, na.rm=TRUE),
+     max_H2S_mM = max(H2S_mean_uM, na.rm=TRUE), 
+     mean_H2S_mM = mean(H2S_mean_uM, na.rm=TRUE), 
+     sd_H2S_mM = sd(H2S_mean_uM, na.rm=TRUE))
+
+##Metrics for each site and zone for all depths and years
+summary_all_depths_years <- all_dat %>%
+  group_by(Site, Zone) %>%
+   reframe(
+     min_H2S_mM = min(H2S_mean_uM, na.rm=TRUE),
+     max_H2S_mM = max(H2S_mean_uM, na.rm=TRUE), 
+     mean_H2S_mM = mean(H2S_mean_uM, na.rm=TRUE), 
+     sd_H2S_mM = sd(H2S_mean_uM, na.rm=TRUE))
+
+```
+
+## Write out summarized data
+```{r write out combined data and metadata}
+
+#write out a csv of all the data to the main folder: 
+write.csv(summary_by_year, "COMPASS_SynopticCB_PW_Sulfide_Summarized_By_Year.csv")
+
+
+#write out a csv of the metadata associated with the data: 
+write.csv(summary_all_years, "COMPASS_SynopticCB_PW_Sulfide_Summarized_Years_Combined.csv")
+
+
+#write out a csv of the metadata associated with the data: 
+write.csv(summary_all_depths_years, "COMPASS_SynopticCB_PW_Sulfide_Summarized_Years_and_Depths_Combined.csv")
+```
