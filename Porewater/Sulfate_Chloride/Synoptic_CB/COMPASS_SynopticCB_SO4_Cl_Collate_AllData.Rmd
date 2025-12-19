@@ -58,7 +58,7 @@ all_dat <- all_dat %>%
 
 ##Set 4 decimal points max
 all_dat <- all_dat %>%
-  mutate(across(where(is.numeric), round, digits = 4)) ##This does make all salnities 0 when Cl_ppm is 0 instead of 0.000026
+  mutate(across(where(is.numeric), round, digits = 4)) ##This does make all salinities 0 when Cl_ppm is 0 instead of 0.000026
 
 ```
 
@@ -511,7 +511,8 @@ summary_by_year <- all_dat %>%
      min_SO4_mM = min(SO4_mM, na.rm=TRUE),
      max_SO4_mM = max(SO4_mM, na.rm=TRUE), 
      mean_SO4_mM = mean(SO4_mM, na.rm=TRUE), 
-     sd_SO4_mM = sd(SO4_mM, na.rm=TRUE))
+     sd_SO4_mM = sd(SO4_mM, na.rm=TRUE)) %>%
+  mutate(across(where(is.numeric), round, digits = 4)) 
 
 ##Metrics for each site, zone, depth for all years
 summary_all_years <- all_dat %>%
@@ -525,7 +526,8 @@ summary_all_years <- all_dat %>%
      min_SO4_ppm = min(SO4_ppm, na.rm=TRUE),
      max_SO4_ppm = max(SO4_ppm, na.rm=TRUE), 
      mean_SO4_ppm = mean(SO4_ppm, na.rm=TRUE), 
-     sd_SO4_ppm = sd(SO4_ppm, na.rm=TRUE))
+     sd_SO4_ppm = sd(SO4_ppm, na.rm=TRUE)) %>%
+  mutate(across(where(is.numeric), round, digits = 4)) 
 
 ##Metrics for each site and zone for all depths and years
 summary_all_depths_years <- all_dat %>%
@@ -539,7 +541,8 @@ summary_all_depths_years <- all_dat %>%
      min_SO4_ppm = min(SO4_ppm, na.rm=TRUE),
      max_SO4_ppm = max(SO4_ppm, na.rm=TRUE), 
      mean_SO4_ppm = mean(SO4_ppm, na.rm=TRUE), 
-     sd_SO4_ppm = sd(SO4_ppm, na.rm=TRUE))
+     sd_SO4_ppm = sd(SO4_ppm, na.rm=TRUE)) %>%
+  mutate(across(where(is.numeric), round, digits = 4)) 
 
 ```
 
