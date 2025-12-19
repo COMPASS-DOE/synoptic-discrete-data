@@ -72,6 +72,11 @@ head(all_dat)
 
 ```
 
+## Fix Sample IDs
+```{r Fix sample IDs}
+all_dat$Sample_ID[all_dat$Sample_ID == "13_202207_GCrew_TR_LysA_45"] <- "13_202207_GCrew_TR_LysA_45_cm"
+```
+
 
 ## Pull out standards  - could do some checks here if we want
 ```{r}

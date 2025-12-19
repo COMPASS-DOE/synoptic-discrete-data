@@ -1,9 +1,14 @@
 ---
-title: "COMPASS_SynopticCB_Collate_Dionex_2022_Data"
+title: "COMPASS_SynopticCB_Collate_Dionex_2023_Data"
 author: "Stephanie J. Wilson"
-date: "2025-08-29"
+date: "2023-08-29"
 output: html_document
 ---
+
+```{r Notes}
+# 
+```
+
 
 ```{r setup, include=FALSE}
 library(dplyr)
@@ -13,63 +18,33 @@ library(stringr)
 library(readxl)
 library(tidyr)
 library(tibble)
-library(lubridate)
-library(tidyverse)
 ```
-
-
-```{r}
-# Some sample IDs are missing from metadata.
-#  [1] "MSM_202206_TR_LYSB_10CM" "MSM_202206_TR_LYSB_20CM" "GWI_202206_TR_LYSB_45CM" "GCW_202206_UP_LYSB_10CM" "GCW_202206_UP_LYSC_10CM"
-#  [6] "GCW_202206_UP_LYSB_20CM" "GCW_202206_TR_LYSB_10CM" "GCW_202206_TR_LYSC_10CM" "GCW_202206_TR_LYSB_20CM" "GCW_202206_TR_LYSC_20CM"
-# [11] "GCW_202206_TR_LYSB_45CM" "GCW_202206_TR_LYSC_45CM" "MSM_202206_UP_LYSB_45CM" "GCW_202207_TR_LYSC_10CM" "GCW_202208_UP_LYSB_45CM"
-# [16] "MSM_202208_UP_LYSC_45CM" "GWI_202209_UP_LYSA_45CM" "GWI_202209_UP_LYSC_20CM" "GCW_202209_TR_LYSC_10CM" "GCW_202209_TR_LYSC_20CM"
-# [21] "GCW_202209_TR_LYSC_45CM" "GWI_202210_UP_LYSA_10CM" "GWI_202210_UP_LYSA_20CM" "GWI_202210_UP_LYSA_45CM" "GWI_202210_UP_LYSB_10CM"
-# [26] "GWI_202210_UP_LYSB_20CM" "GWI_202210_UP_LYSC_10CM" "GWI_202210_UP_LYSC_20CM" "GWI_202210_TR_LYSA_10CM" "GWI_202210_TR_LYSA_20CM"
-# [31] "GWI_202210_TR_LYSA_45CM" "GWI_202210_TR_LYSB_10CM" "GWI_202210_TR_LYSB_20CM" "GWI_202210_TR_LYSB_45CM" "GWI_202210_TR_LYSC_10CM"
-# [36] "GWI_202210_TR_LYSC_20CM" "GWI_202210_TR_LYSC_45CM" "GWI_202210_SW_A"         "GWI_202210_SW_B"         "GWI_202210_SW_C"        
-# [41] "MSM_202211_UP_LYSA_10CM" "GCW_202211_TR_LYSC_45CM" "GCW_202211_SW_A"         "GCW_202211_SW_B"         "GCW_202211_SW_C"        
-# [46] "GWI_202211_UP_LYSA_45CM" "MSM_202211_TR_LYSB_10CM" "MSM_202211_TR_LYSB_20CM" "MSM_202211_TR_LYSB_45CM" "MSM_202211_UP_LYSA_20CM"
-# [51] "MSM_202211_SW_A"         "MSM_202211_SW_B"         "MSM_202211_SW_C"         "MSM_202211_UP_LYSB_10CM" "MSM_202211_UP_LYSB_20CM"
-# [56] "MSM_202211_UP_LYSB_45CM" "MSM_202211_UP_LYSC_10CM" "MSM_202211_UP_LYSC_20CM" "MSM_202211_UP_LYSC_45CM" "GCW_202211_UP_LYSB_10CM"
-# [61] "GCW_202211_UP_LYSB_20CM" "GCW_202211_UP_LYSC_10CM" "GCW_202211_UP_LYSC_20CM" "GCW_202211_UP_LYSC_45CM" "GCW_202211_TR_LYSA_20CM"
-# [66] "GCW_202211_TR_LYSA_45CM" "GCW_202211_TR_LYSB_10CM" "GCW_202211_TR_LYSB_20CM" "GCW_202211_TR_LYSB_45CM" "GCW_202211_TR_LYSC_10CM"
-# [71] "GCW_202211_TR_LYSC_20CM" GCW_202210_TR_LYSA_10CM
-
-##There were two sets of GCW for 202210, fixed in metadata because one of them was actually GWI 202210. 
-
-##Added these to metadata. 
-```
-
 
 #Read in and collate all the files in the Processed Data folder 
 ```{r}
-files <- list.files(path = "Processed Data", pattern = "\\.csv$", full.names = TRUE) 
+files <- list.files(path = "Processed Data", pattern = "\\.csv$", full.names = TRUE)
 
-all_data_cols <- files %>%
-  map_dfr(~read_csv(.x, col_types = cols(.default = "c")))
+# 3. Read and combine all CSVs
+all_data <- files %>%
+  lapply(read.csv, colClasses = c(rep('character', 8), rep('numeric', 5))) %>%    # or read.csv if you prefer base R
+  bind_rows()             # combine into one data frame
 
-colnames(all_data_cols)
-
-all_data_extra <- all_data_cols %>%
-  select(
-    Date, Site, Zone, Replicate, Depth, 
-         Sample_ID, SO4_ppm, SO4_mM, Cl_ppm, Cl_mM, salinity)
+all_data <- all_data[, -which(names(all_data) == "X")]
 
 ##Remove non-Lys Samples
-all_data <- all_data_extra %>%  
-  filter(!str_detect(Sample_ID, "Sip")) %>%  
-  filter(!str_detect(Sample_ID, "JLee")) %>%  
-  filter(!str_detect(Sample_ID, "RHZ")) %>%  
-  filter(!str_detect(Sample_ID, "PPR")) %>%  
-  filter(!str_detect(Sample_ID, "Blank"))
-
+all_data <- all_data %>%  
+  filter(!str_detect(Sample_ID, "Sip"))%>%  
+  filter(!str_detect(Sample_ID, "RHZ"))%>%  
+  filter(!str_detect(Sample_ID, "JLee"))%>%  
+  filter(!str_detect(Sample_ID, "PPR"))%>%  
+  filter(!str_detect(Sample_ID, "S1"))%>%  
+  filter(!str_detect(Sample_ID, "S2"))
 ```
 
 ## Pull in Metadata
 ```{r}
 
-Raw_Metadata = "Raw Data/COMPASS_SynopticCB_PW_SampleLog_2022.csv"
+Raw_Metadata = "Raw Data/COMPASS_SynopticCB_PW_SampleLog_2023.csv"
 
 #read in the raw metadata file 
 raw_metadata <- read.csv(Raw_Metadata)
@@ -140,30 +115,47 @@ all_data <- all_data %>%
 all_data <- subset(all_data, Sample_ID != "Blank")
 
 ##Depths for SW samples should be 0 
-all_data$Depth_cm <-  ifelse((all_data$Zone == "SW"), "0cm", all_data$Depth)
+all_data$Depth_cm <- all_data$Depth
+all_data$Depth_cm <-  ifelse((all_data$Zone == "SW"), "0cm", all_data$Depth_cm)
 
-##Remove cm from Depth
+##Add cm to Depth
 all_data <- all_data %>%
   mutate(Depth_cm = gsub("cm", "", as.character(Depth_cm)))%>%
   mutate(Depth_cm = gsub("m", "", as.character(Depth_cm)))
 
+
 ##Remake sample ID
+all_data <- all_data %>%
+  mutate(
+    Sample_ID_new = if_else(
+      Zone != "SW",
+      # Modify the string:
+      Sample_ID_new <- paste(Site, Date, Zone, Replicate, Depth_cm, sep = "_"), 
+      Sample_ID_new <- paste(Site, Date, Zone, Replicate, sep = "_"), 
+    )
+  )
+
+##Add units
 all_data <- all_data %>%
   mutate(
     Sample_ID = if_else(
       Zone != "SW",
       # Modify the string:
-      Sample_ID_new <- paste(Site, Date, Zone, Replicate, Depth, sep = "_"), 
-      Sample_ID_new <- paste(Site, Date, Zone, Replicate, sep = "_"), 
+      Sample_ID <- paste0(Sample_ID_new, "cm"), 
+      Sample_ID <- Sample_ID_new
     )
   )
+
+##Remove Lys from Replicate Column
+all_data <- all_data %>%
+  mutate(Replicate = gsub("Lys", "", as.character(Replicate)))%>%
+  mutate(Replicate = gsub("lys", "", as.character(Replicate)))
 
 ```
 
 ## Check to see if samples run match metadata & merge info
 ```{r}
-
-#check to see if all samples are present in the metadata
+#check to see if all samples are present in the metadata 
 all_data$Sample_ID <- toupper(all_data$Sample_ID)
 dionex_metadata$Cl_SO4_ID <- toupper(dionex_metadata$Cl_SO4_ID)
 
@@ -182,15 +174,15 @@ if (all_present) {
 # missing_ids <- data.frame(missing_ids)
 # 
 # ##Export missing IDs to csv
-# write.csv(missing_ids, "COMPASS_SynopticCB_SO4_Cl_2022_missing_IDs.csv")
+# write.csv(missing_ids, "COMPASS_SynopticCB_SO4_Cl_2023_missing_IDs.csv")
+```
 
-##Remove Lys from Replicate Column
-all_data <- all_data %>%
-  mutate(Replicate = gsub("Lys", "", as.character(Replicate)))
+
+```{r Format Data}
 
 ##Select only necessary columns
 all_data_selected <- all_data %>%
-  select(-c("Depth", "Date"))
+  select(-c("Depth", "Sample_ID_new", "Date"))
 
 all_data_selected$Depth_cm <- as.integer(all_data_selected$Depth_cm)
 
@@ -202,38 +194,52 @@ dionex_metadata_selected <- dionex_metadata %>%
 merged_data <- all_data_selected %>%
   left_join(dionex_metadata_selected, by = c("Sample_ID" = "Cl_SO4_ID", "Replicate" = "Lysimeter", "Depth_cm"))
 
+
+############### THIS IS ONLY FOR 2023 when SWAMP was called UP and UPLAND was called UPCON ##############
+##In 2023 SWAMP was called UP and UPLAND was called UPCON
+all_clean <- merged_data %>%
+  mutate(
+    Zone = case_when(
+      Site == "SWH" & Zone == "UP" ~ "SWAMP",
+      Site == "SWH" & Zone == "UPCON" ~ "UP",
+      TRUE ~ `Zone`
+    ))
+
+##Replace in the sample IDs as well, based on the newly-corrected Zones
+all_clean_IDs <- all_clean %>%
+  mutate(
+    Sample_ID = case_when(
+      Site == "SWH" & Zone == "SWAMP" ~ gsub(pattern = "_UP_", replacement = "_SWAMP_", x = Sample_ID),
+      Site == "SWH" & Zone == "UP" ~ gsub(pattern = "_UPCON_", replacement = "_UP_", x = Sample_ID),
+      .default = Sample_ID
+    )
+  )
+
 ##Change any SO4/Cl conc's of NA to 0 
-merged_data$SO4_mM[is.na(merged_data$SO4_mM)] <- 0
-merged_data$Cl_mM[is.na(merged_data$Cl_mM)] <- 0
-merged_data$SO4_ppm[is.na(merged_data$SO4_ppm)] <- 0
-merged_data$Cl_ppm[is.na(merged_data$Cl_ppm)] <- 0
+all_clean_IDs$SO4_mM[is.na(all_clean_IDs$SO4_mM)] <- 0
+all_clean_IDs$Cl_mM[is.na(all_clean_IDs$Cl_mM)] <- 0
+all_clean_IDs$SO4_ppm[is.na(all_clean_IDs$SO4_ppm)] <- 0
+all_clean_IDs$Cl_ppm[is.na(all_clean_IDs$Cl_ppm)] <- 0
 
-merged_data$salinity <- ifelse(merged_data$Cl_ppm == 0, 2.6e-05, merged_data$salinity)
-
-```
-
-
-## Visualize Data
-```{r}
+all_clean_IDs$salinity <- ifelse(all_clean_IDs$Cl_ppm == 0, 2.6e-05, all_clean_IDs$salinity)
 
 ```
 
-
-## Write the 2022 file out to the folder 
+## Write the 2023 file out to the folder 
 ```{r, echo=FALSE}
 
-head(merged_data)
+head(all_clean_IDs)
 
-final_data <- merged_data %>%
+final_data <- all_clean_IDs %>%
   mutate(
-    Project = "COMPASS", 
+    Project = "COMPASS: Synoptic", 
     Region = "CB", 
-    SO4_Conc_flag = "NA", 
-    SO4_QAQC_flag = "NA", 
-    Cl_Conc_flag = "NA", 
-    Cl_QAQC_flag = "NA", 
-    Analysis_rundate = "NA",  
-    Run_notes = "NA"
+    SO4_Conc_flag = NA, 
+    SO4_QAQC_flag = NA, 
+    Cl_Conc_flag = NA, 
+    Cl_QAQC_flag = NA, 
+    Analysis_rundate = NA, 
+    Run_notes = NA
     ) %>%
   rename(
     Time = Time..24hr.,
@@ -249,10 +255,13 @@ final_data <- merged_data %>%
         # list columns in the order you want them
   )
 
-head(final_data)
-
-write.csv(final_data, "COMPASS_SynopticCB_SO4_Cl_2022.csv")
 
 ```
 
-##END
+## Write the 2023 file out to the folder 
+```{r, echo=FALSE}
+
+write.csv(final_data, "COMPASS_SynopticCB_SO4_Cl_2023.csv")
+
+```
+
