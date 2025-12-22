@@ -518,13 +518,13 @@ head(NOXsamples)
 ```{r}
 
 #pull out the columns we want from each dataframe 
-NH4_pull <- NH4samples[ ,c(2,3,11) ]
+NH4_pull <- NH4samples[ ,c(2,3,5,11) ]
 head(NH4_pull)
 
-PO4_pull <- PO4samples[ ,c(2,3,11) ]
+PO4_pull <- PO4samples[ ,c(2,3,5,11) ]
 head(PO4_pull)
 
-NOX_pull <- NOXsamples[ ,c(2,3,12) ]
+NOX_pull <- NOXsamples[ ,c(2,3,5,12) ]
 head(NOX_pull)
 
 
@@ -533,14 +533,17 @@ all_data <- merge(NH4_pull, PO4_pull, by="Sample_Name", all.x=TRUE)
 all_data <- merge(all_data, NOX_pull, by="Sample_Name", all.x=TRUE)
 head(all_data)
 
-colnames(all_data) <- c("Sample_Name", "NH3_mgL", "NH3_uM", "PO4_mgL", "PO4_uM", "NOx_mgL", "NOx_uM")
+colnames(all_data) <- c("Sample_Name", "NH3_mgL", "NH3_dil", "NH3_uM", "PO4_mgL", "PO4_dil", "PO4_uM", "NOx_mgL", "NOx_dil", "NOx_uM")
 head(all_data)
 
+all_data$NH3_mgL <- as.numeric(all_data$NH3_mgL)
+all_data$PO4_mgL <- as.numeric(all_data$PO4_mgL)
+all_data$NOx_mgL <- as.numeric(all_data$NOx_mgL)
 
 #add in an if then statement that tells us if they are within the range of the test - check this after doing this line
-all_data$NH3_range <- ifelse(all_data$NH3_mgL<0.02, "bdl",  ifelse(all_data$NH3_mgL>2, "adl", "Within_Range")) 
-all_data$PO4_range <- ifelse(all_data$PO4_mgL<0.003, "bdl",  ifelse(all_data$PO4_mgL>3, "adl", "Within_Range")) 
-all_data$NOx_range <- ifelse(all_data$NOx_mgL<0.025, "bdl",  ifelse(all_data$NOx_mgL>1, "adl", "Within_Range"))
+all_data$NH3_range <- ifelse(all_data$NH3_mgL/all_data$NH3_dil<0.02, "bdl",  ifelse(all_data$NH3_mgL/all_data$NH3_dil>2, "adl", "Within_Range")) 
+all_data$PO4_range <- ifelse(all_data$PO4_mgL/all_data$PO4_dil<0.003, "bdl",  ifelse(all_data$PO4_mgL/all_data$PO4_dil>3, "adl", "Within_Range")) 
+all_data$NOx_range <- ifelse(all_data$NOx_mgL/all_data$NOx_dil<0.025, "bdl",  ifelse(all_data$NOx_mgL/all_data$NOx_dil>1, "adl", "Within_Range"))
 head(all_data)
 ```
 
@@ -576,8 +579,8 @@ NOXlook
 
 head(all_data)
 
-# out <- all_data[ ,c(1,3,5,7,8,9,10)]
-out <- all_data
+out <- all_data[ ,c(1,2,4,5,7,8,10,11,12,13)]
+# out <- all_data
 head(out)
 
 #for steph <- pull out identifiers of the sample names 

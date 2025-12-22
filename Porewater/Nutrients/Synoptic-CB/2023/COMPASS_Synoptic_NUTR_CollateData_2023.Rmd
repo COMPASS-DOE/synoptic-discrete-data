@@ -11,6 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 library(dplyr)
 library(readr)
 library(lubridate)
+library(ggplot2)
 ```
 
 ## Pull In Data
