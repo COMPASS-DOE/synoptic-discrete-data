@@ -129,7 +129,7 @@
   Most of the NOx blanks are above the lower 25% quartile of samples. 
   3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
   2 NOx spikes have high CVs, but more than 60% have low CVs.",NA
-"14","COMPASS: Synoptic","CB","GCW","WC","A",20,"GCW_202405_WC_LysA_20cm",2024,5,23,NA,NA,0.068294,4.87580943405656,"Within_Range","NOx blanks out of range",0.321191,22.9312400494049,"Within_Range",NA,0.007529,0.243076704728344,"Within_Range",NA,"5/12/2025","Samples were put in the wrong vials, so 
+"14","COMPASS: Synoptic","CB","GCW","WC","A",20,"GCW_202405_WC_LysA_20cm",2024,5,23,NA,NA,0.068294,4.87580943405656,"Within_Range","NOx blanks out of range",0.321191,22.9312400494049,"Within_Range",NA,0.007529,0.243076704728344,"bdl",NA,"5/12/2025","Samples were put in the wrong vials, so 
   MSM_202405_UP_LysA_ was switched to MSM_202405_UP_LysB_, 
   MSM_202405_UP_LysB_ was switched to MSM_202405_UP_LysC_, 
   MSM_202405_UP_LysC_ was switched to MSM_202405_UP_LysA_.
@@ -149,7 +149,7 @@
   Most of the NOx blanks are above the lower 25% quartile of samples. 
   3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
   2 NOx spikes have high CVs, but more than 60% have low CVs.",NA
-"16","COMPASS: Synoptic","CB","GCW","WC","B",10,"GCW_202405_WC_LysB_10cm",2024,5,23,NA,NA,0.056141,4.00815324094897,"Within_Range","NOx blanks out of range",0.544897,38.9025966144774,"Within_Range",NA,0.36846,11.8958749666895,"adl",NA,"5/12/2025","Samples were put in the wrong vials, so 
+"16","COMPASS: Synoptic","CB","GCW","WC","B",10,"GCW_202405_WC_LysB_10cm",2024,5,23,NA,NA,0.056141,4.00815324094897,"Within_Range","NOx blanks out of range",0.544897,38.9025966144774,"Within_Range",NA,0.36846,11.8958749666895,"Within_Range",NA,"5/12/2025","Samples were put in the wrong vials, so 
   MSM_202405_UP_LysA_ was switched to MSM_202405_UP_LysB_, 
   MSM_202405_UP_LysB_ was switched to MSM_202405_UP_LysC_, 
   MSM_202405_UP_LysC_ was switched to MSM_202405_UP_LysA_.
@@ -509,7 +509,7 @@
   Most of the NOx blanks are above the lower 25% quartile of samples. 
   3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
   2 NOx spikes have high CVs, but more than 60% have low CVs.",NA
-"52","COMPASS: Synoptic","CB","MSM","TR","A",20,"MSM_202405_TR_LysA_20cm",2024,5,21,NA,NA,0.034976,2.49709067803266,"Within_Range","NOx blanks out of range",2.53199,180.769917253886,"adl",NA,0.013116,0.423455181194974,"Within_Range",NA,"5/12/2025","Samples were put in the wrong vials, so 
+"52","COMPASS: Synoptic","CB","MSM","TR","A",20,"MSM_202405_TR_LysA_20cm",2024,5,21,NA,NA,0.034976,2.49709067803266,"Within_Range","NOx blanks out of range",2.53199,180.769917253886,"Within_Range",NA,0.013116,0.423455181194974,"Within_Range",NA,"5/12/2025","Samples were put in the wrong vials, so 
   MSM_202405_UP_LysA_ was switched to MSM_202405_UP_LysB_, 
   MSM_202405_UP_LysB_ was switched to MSM_202405_UP_LysC_, 
   MSM_202405_UP_LysC_ was switched to MSM_202405_UP_LysA_.
@@ -549,7 +549,7 @@
   Most of the NOx blanks are above the lower 25% quartile of samples. 
   3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
   2 NOx spikes have high CVs, but more than 60% have low CVs.",NA
-"56","COMPASS: Synoptic","CB","MSM","TR","B",45,"MSM_202405_TR_LysB_45cm",2024,5,21,NA,NA,0.027009,1.92829146051532,"Within_Range","NOx blanks out of range",2.653751,189.46297129231,"adl",NA,0.012433,0.401404259514876,"Within_Range",NA,"5/12/2025","Samples were put in the wrong vials, so 
+"56","COMPASS: Synoptic","CB","MSM","TR","B",45,"MSM_202405_TR_LysB_45cm",2024,5,21,NA,NA,0.027009,1.92829146051532,"Within_Range","NOx blanks out of range",2.653751,189.46297129231,"Within_Range",NA,0.012433,0.401404259514876,"Within_Range",NA,"5/12/2025","Samples were put in the wrong vials, so 
   MSM_202405_UP_LysA_ was switched to MSM_202405_UP_LysB_, 
   MSM_202405_UP_LysB_ was switched to MSM_202405_UP_LysC_, 
   MSM_202405_UP_LysC_ was switched to MSM_202405_UP_LysA_.
@@ -569,7 +569,7 @@
   Most of the NOx blanks are above the lower 25% quartile of samples. 
   3 NOx dups and one NH3 dup have high CVs, but more than 60% have low CVs. 
   2 NOx spikes have high CVs, but more than 60% have low CVs.",NA
-"58","COMPASS: Synoptic","CB","MSM","TR","C",45,"MSM_202405_TR_LysC_45cm",2024,5,21,NA,NA,0.020676,1.47615069930819,"bdl","NOx blanks out of range",2.33082,166.40750497976,"adl",NA,0.017433,0.562831211784994,"Within_Range",NA,"5/12/2025","Samples were put in the wrong vials, so 
+"58","COMPASS: Synoptic","CB","MSM","TR","C",45,"MSM_202405_TR_LysC_45cm",2024,5,21,NA,NA,0.020676,1.47615069930819,"bdl","NOx blanks out of range",2.33082,166.40750497976,"Within_Range",NA,0.017433,0.562831211784994,"Within_Range",NA,"5/12/2025","Samples were put in the wrong vials, so 
   MSM_202405_UP_LysA_ was switched to MSM_202405_UP_LysB_, 
   MSM_202405_UP_LysB_ was switched to MSM_202405_UP_LysC_, 
   MSM_202405_UP_LysC_ was switched to MSM_202405_UP_LysA_.
@@ -1085,9 +1085,9 @@
   SWH_TR_LysC_10cm has a very high CV between duplicates ",NA
 "111","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202406_SWAMP_LysA_45cm",2024,6,26,NA,NA,0,0,"bdl",NA,0.350136,24.9977510762706,"Within_Range",NA,0.260134,8.39852776036698,"Within_Range",NA,"5/20/2025","Some sample IDs are missing from metadata: SWH_202406_WC_LysA_45cm. 
   SWH_TR_LysC_10cm has a very high CV between duplicates ",NA
-"112","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202406_SWAMP_LysB_10cm",2024,6,26,NA,NA,0.083457,5.95836278352503,"Within_Range",NA,0.198419,14.1660062684287,"Within_Range",NA,0.45901,14.8193170723014,"adl",NA,"5/20/2025","Some sample IDs are missing from metadata: SWH_202406_WC_LysA_45cm. 
+"112","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202406_SWAMP_LysB_10cm",2024,6,26,NA,NA,0.083457,5.95836278352503,"Within_Range",NA,0.198419,14.1660062684287,"Within_Range",NA,0.45901,14.8193170723014,"Within_Range",NA,"5/20/2025","Some sample IDs are missing from metadata: SWH_202406_WC_LysA_45cm. 
   SWH_TR_LysC_10cm has a very high CV between duplicates ",NA
-"113","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202406_SWAMP_LysB_20cm",2024,6,26,NA,NA,0,0,"bdl",NA,0.360717,25.7531752661226,"Within_Range",NA,0.343205,11.0805074307732,"adl",NA,"5/20/2025","Some sample IDs are missing from metadata: SWH_202406_WC_LysA_45cm. 
+"113","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202406_SWAMP_LysB_20cm",2024,6,26,NA,NA,0,0,"bdl",NA,0.360717,25.7531752661226,"Within_Range",NA,0.343205,11.0805074307732,"Within_Range",NA,"5/20/2025","Some sample IDs are missing from metadata: SWH_202406_WC_LysA_45cm. 
   SWH_TR_LysC_10cm has a very high CV between duplicates ",NA
 "114","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202406_SWAMP_LysB_45cm",2024,6,26,NA,NA,0,0,"bdl",NA,0.309325,22.0840740502759,"Within_Range",NA,0.140579,4.53864790463619,"Within_Range",NA,"5/20/2025","Some sample IDs are missing from metadata: SWH_202406_WC_LysA_45cm. 
   SWH_TR_LysC_10cm has a very high CV between duplicates ",NA
@@ -1105,21 +1105,21 @@
   SWH_TR_LysC_10cm has a very high CV between duplicates ",NA
 "121","COMPASS: Synoptic","CB","SWH","TR","A",10,"SWH_202406_TR_LysA_10cm",2024,6,26,NA,NA,0.005142,0.367110025916169,"bdl",NA,0.598017,42.6950673606203,"Within_Range",NA,0.120099,3.87744310813778,"Within_Range",NA,"5/20/2025","Some sample IDs are missing from metadata: SWH_202406_WC_LysA_45cm. 
   SWH_TR_LysC_10cm has a very high CV between duplicates ",NA
-"122","COMPASS: Synoptic","CB","SWH","TR","A",20,"SWH_202406_TR_LysA_20cm",2024,6,26,NA,NA,0,0,"bdl",NA,1.84253,131.546331398545,"Within_Range",NA,0.526861,17.0099130999973,"adl",NA,"5/20/2025","Some sample IDs are missing from metadata: SWH_202406_WC_LysA_45cm. 
+"122","COMPASS: Synoptic","CB","SWH","TR","A",20,"SWH_202406_TR_LysA_20cm",2024,6,26,NA,NA,0,0,"bdl",NA,1.84253,131.546331398545,"Within_Range",NA,0.526861,17.0099130999973,"Within_Range",NA,"5/20/2025","Some sample IDs are missing from metadata: SWH_202406_WC_LysA_45cm. 
   SWH_TR_LysC_10cm has a very high CV between duplicates ",NA
-"123","COMPASS: Synoptic","CB","SWH","TR","A",45,"SWH_202406_TR_LysA_45cm",2024,6,26,NA,NA,0,0,"bdl",NA,1.905451,136.038538699337,"Within_Range",NA,0.812794,26.2413716486877,"adl",NA,"5/20/2025","Some sample IDs are missing from metadata: SWH_202406_WC_LysA_45cm. 
+"123","COMPASS: Synoptic","CB","SWH","TR","A",45,"SWH_202406_TR_LysA_45cm",2024,6,26,NA,NA,0,0,"bdl",NA,1.905451,136.038538699337,"Within_Range",NA,0.812794,26.2413716486877,"Within_Range",NA,"5/20/2025","Some sample IDs are missing from metadata: SWH_202406_WC_LysA_45cm. 
   SWH_TR_LysC_10cm has a very high CV between duplicates ",NA
 "124","COMPASS: Synoptic","CB","SWH","TR","B",10,"SWH_202406_TR_LysB_10cm",2024,6,26,NA,NA,0.20176,14.4045349725489,"Within_Range",NA,0.061137,4.36483968386558,"Within_Range",NA,0.013127,0.423810320489968,"Within_Range",NA,"5/20/2025","Some sample IDs are missing from metadata: SWH_202406_WC_LysA_45cm. 
   SWH_TR_LysC_10cm has a very high CV between duplicates ",NA
-"125","COMPASS: Synoptic","CB","SWH","TR","B",20,"SWH_202406_TR_LysB_20cm",2024,6,26,NA,NA,0.001729,0.123440924700322,"bdl",NA,2.18785,156.200247024638,"adl",NA,0.825872,26.6635999850454,"adl",NA,"5/20/2025","Some sample IDs are missing from metadata: SWH_202406_WC_LysA_45cm. 
+"125","COMPASS: Synoptic","CB","SWH","TR","B",20,"SWH_202406_TR_LysB_20cm",2024,6,26,NA,NA,0.001729,0.123440924700322,"bdl",NA,2.18785,156.200247024638,"Within_Range",NA,0.825872,26.6635999850454,"Within_Range",NA,"5/20/2025","Some sample IDs are missing from metadata: SWH_202406_WC_LysA_45cm. 
   SWH_TR_LysC_10cm has a very high CV between duplicates ",NA
-"126","COMPASS: Synoptic","CB","SWH","TR","B",45,"SWH_202406_TR_LysB_45cm",2024,6,26,NA,NA,0,0,"bdl",NA,1.838417,131.252686214455,"Within_Range",NA,1.005383,32.4591827108376,"adl",NA,"5/20/2025","Some sample IDs are missing from metadata: SWH_202406_WC_LysA_45cm. 
+"126","COMPASS: Synoptic","CB","SWH","TR","B",45,"SWH_202406_TR_LysB_45cm",2024,6,26,NA,NA,0,0,"bdl",NA,1.838417,131.252686214455,"Within_Range",NA,1.005383,32.4591827108376,"Within_Range",NA,"5/20/2025","Some sample IDs are missing from metadata: SWH_202406_WC_LysA_45cm. 
   SWH_TR_LysC_10cm has a very high CV between duplicates ",NA
 "127","COMPASS: Synoptic","CB","SWH","TR","C",10,"SWH_202406_TR_LysC_10cm",2024,6,26,NA,NA,0.020902,1.49228583463628,"bdl",NA,0.026673,1.90430294073551,"Within_Range",NA,0.013056,0.421518057767733,"Within_Range",NA,"5/20/2025","Some sample IDs are missing from metadata: SWH_202406_WC_LysA_45cm. 
   SWH_TR_LysC_10cm has a very high CV between duplicates ",NA
-"128","COMPASS: Synoptic","CB","SWH","TR","C",20,"SWH_202406_TR_LysC_20cm",2024,6,26,NA,NA,0,0,"bdl",NA,1.028928,73.459701428602,"Within_Range",NA,0.468479,15.1250274345105,"adl",NA,"5/20/2025","Some sample IDs are missing from metadata: SWH_202406_WC_LysA_45cm. 
+"128","COMPASS: Synoptic","CB","SWH","TR","C",20,"SWH_202406_TR_LysC_20cm",2024,6,26,NA,NA,0,0,"bdl",NA,1.028928,73.459701428602,"Within_Range",NA,0.468479,15.1250274345105,"Within_Range",NA,"5/20/2025","Some sample IDs are missing from metadata: SWH_202406_WC_LysA_45cm. 
   SWH_TR_LysC_10cm has a very high CV between duplicates ",NA
-"129","COMPASS: Synoptic","CB","SWH","TR","C",45,"SWH_202406_TR_LysC_45cm",2024,6,26,NA,NA,0.00238,0.169918681773723,"bdl",NA,1.179234,84.1907087322496,"Within_Range",NA,0.813342,26.2590640426565,"adl",NA,"5/20/2025","Some sample IDs are missing from metadata: SWH_202406_WC_LysA_45cm. 
+"129","COMPASS: Synoptic","CB","SWH","TR","C",45,"SWH_202406_TR_LysC_45cm",2024,6,26,NA,NA,0.00238,0.169918681773723,"bdl",NA,1.179234,84.1907087322496,"Within_Range",NA,0.813342,26.2590640426565,"Within_Range",NA,"5/20/2025","Some sample IDs are missing from metadata: SWH_202406_WC_LysA_45cm. 
   SWH_TR_LysC_10cm has a very high CV between duplicates ",NA
 "130","COMPASS: Synoptic","CB","SWH","UP","A",10,"SWH_202406_UP_LysA_10cm",2024,6,26,NA,NA,0.011989,0.855947510834101,"bdl",NA,0.024754,1.76729707925493,"Within_Range",NA,0.007209,0.232745379783056,"Within_Range",NA,"5/20/2025","Some sample IDs are missing from metadata: SWH_202406_WC_LysA_45cm. 
   SWH_TR_LysC_10cm has a very high CV between duplicates ",NA
@@ -1141,13 +1141,13 @@
   SWH_TR_LysC_10cm has a very high CV between duplicates ",NA
 "139","COMPASS: Synoptic","CB","SWH","WC","A",45,"SWH_202406_WC_LysA_45cm",2024,6,26,NA,NA,0,0,"bdl",NA,0.018732,1.33735997772495,"bdl",NA,0.192717,6.22194359212807,"Within_Range",NA,"5/20/2025","Some sample IDs are missing from metadata: SWH_202406_WC_LysA_45cm. 
   SWH_TR_LysC_10cm has a very high CV between duplicates ",NA
-"140","COMPASS: Synoptic","CB","SWH","WC","B",10,"SWH_202406_WC_LysB_10cm",2024,6,26,NA,NA,0,0,"bdl",NA,0.037575,2.68264473430572,"Within_Range",NA,0.457493,14.7703401349826,"adl",NA,"5/20/2025","Some sample IDs are missing from metadata: SWH_202406_WC_LysA_45cm. 
+"140","COMPASS: Synoptic","CB","SWH","WC","B",10,"SWH_202406_WC_LysB_10cm",2024,6,26,NA,NA,0,0,"bdl",NA,0.037575,2.68264473430572,"Within_Range",NA,0.457493,14.7703401349826,"Within_Range",NA,"5/20/2025","Some sample IDs are missing from metadata: SWH_202406_WC_LysA_45cm. 
   SWH_TR_LysC_10cm has a very high CV between duplicates ",NA
 "141","COMPASS: Synoptic","CB","SWH","WC","B",20,"SWH_202406_WC_LysB_20cm",2024,6,26,NA,NA,0,0,"bdl",NA,0.025489,1.81977196627328,"Within_Range",NA,0.232834,7.51713660097214,"Within_Range",NA,"5/20/2025","Some sample IDs are missing from metadata: SWH_202406_WC_LysA_45cm. 
   SWH_TR_LysC_10cm has a very high CV between duplicates ",NA
 "142","COMPASS: Synoptic","CB","SWH","WC","C",10,"SWH_202406_WC_LysC_10cm",2024,6,26,NA,NA,0,0,"bdl",NA,0.472882,33.7611286027401,"Within_Range",NA,0.297826,9.61542869736004,"Within_Range",NA,"5/20/2025","Some sample IDs are missing from metadata: SWH_202406_WC_LysA_45cm. 
   SWH_TR_LysC_10cm has a very high CV between duplicates ",NA
-"143","COMPASS: Synoptic","CB","SWH","WC","C",20,"SWH_202406_WC_LysC_20cm",2024,6,26,NA,NA,0,0,"bdl",NA,0.073708,5.26233873788972,"Within_Range",NA,0.532693,17.1982014971252,"adl",NA,"5/20/2025","Some sample IDs are missing from metadata: SWH_202406_WC_LysA_45cm. 
+"143","COMPASS: Synoptic","CB","SWH","WC","C",20,"SWH_202406_WC_LysC_20cm",2024,6,26,NA,NA,0,0,"bdl",NA,0.073708,5.26233873788972,"Within_Range",NA,0.532693,17.1982014971252,"Within_Range",NA,"5/20/2025","Some sample IDs are missing from metadata: SWH_202406_WC_LysA_45cm. 
   SWH_TR_LysC_10cm has a very high CV between duplicates ",NA
 "144","COMPASS: Synoptic","CB","SWH","WC","C",45,"SWH_202406_WC_LysC_45cm",2024,6,26,NA,NA,0,0,"bdl",NA,0.023893,1.70582649731914,"Within_Range",NA,0.144606,4.66866117199454,"Within_Range",NA,"5/20/2025","Some sample IDs are missing from metadata: SWH_202406_WC_LysA_45cm. 
   SWH_TR_LysC_10cm has a very high CV between duplicates ",NA
@@ -1175,7 +1175,7 @@
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%.",NA
-"151","COMPASS: Synoptic","CB","GCW","TR","B",45,"GCW_202407_TR_LysB_45cm",2024,7,16,NA,NA,0.011633,0.830531102972149,"bdl",NA,0.121408,8.66785181377483,"Within_Range",NA,0.008067,0.260446244792609,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"151","COMPASS: Synoptic","CB","GCW","TR","B",45,"GCW_202407_TR_LysB_45cm",2024,7,16,NA,NA,0.011633,0.830531102972149,"bdl",NA,0.121408,8.66785181377483,"Within_Range",NA,0.008067,0.260446244792609,"bdl","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%.",NA
@@ -1331,7 +1331,7 @@
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%.",NA
-"190","COMPASS: Synoptic","CB","MSM","TR","A",20,"MSM_202407_TR_LysA_20cm",2024,7,18,NA,NA,0.008287,0.591645426831445,"bdl",NA,2.740306,195.642513939757,"adl",NA,0.013273,0.428523987496256,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"190","COMPASS: Synoptic","CB","MSM","TR","A",20,"MSM_202407_TR_LysA_20cm",2024,7,18,NA,NA,0.008287,0.591645426831445,"bdl",NA,2.740306,195.642513939757,"Within_Range",NA,0.013273,0.428523987496256,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%.",NA
@@ -1343,11 +1343,11 @@
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%.",NA
-"193","COMPASS: Synoptic","CB","MSM","TR","B",20,"MSM_202407_TR_LysB_20cm",2024,7,18,NA,NA,0.004345,0.310208685843204,"bdl",NA,2.266006,161.780148071994,"adl",NA,0.008333,0.269034158653379,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"193","COMPASS: Synoptic","CB","MSM","TR","B",20,"MSM_202407_TR_LysB_20cm",2024,7,18,NA,NA,0.004345,0.310208685843204,"bdl",NA,2.266006,161.780148071994,"Within_Range",NA,0.008333,0.269034158653379,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%.",NA
-"194","COMPASS: Synoptic","CB","MSM","TR","B",45,"MSM_202407_TR_LysB_45cm",2024,7,18,NA,NA,0.011543,0.824105606602554,"bdl",NA,3.173889,226.597913855512,"adl",NA,0.015197,0.490641078729797,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"194","COMPASS: Synoptic","CB","MSM","TR","B",45,"MSM_202407_TR_LysB_45cm",2024,7,18,NA,NA,0.011543,0.824105606602554,"bdl",NA,3.173889,226.597913855512,"Within_Range",NA,0.015197,0.490641078729797,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%.",NA
@@ -1355,11 +1355,11 @@
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%.",NA
-"196","COMPASS: Synoptic","CB","MSM","TR","C",20,"MSM_202407_TR_LysC_20cm",2024,7,18,NA,NA,0.006916,0.493763698801288,"bdl",NA,2.372685,169.396431707683,"adl",NA,0.009077,0.293054489151173,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"196","COMPASS: Synoptic","CB","MSM","TR","C",20,"MSM_202407_TR_LysC_20cm",2024,7,18,NA,NA,0.006916,0.493763698801288,"bdl",NA,2.372685,169.396431707683,"Within_Range",NA,0.009077,0.293054489151173,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%.",NA
-"197","COMPASS: Synoptic","CB","MSM","TR","C",45,"MSM_202407_TR_LysC_45cm",2024,7,18,NA,NA,0.007237,0.516681302519509,"bdl",NA,2.418911,172.696709431915,"adl",NA,0.018806,0.607159052878368,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"197","COMPASS: Synoptic","CB","MSM","TR","C",45,"MSM_202407_TR_LysC_45cm",2024,7,18,NA,NA,0.007237,0.516681302519509,"bdl",NA,2.418911,172.696709431915,"Within_Range",NA,0.018806,0.607159052878368,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%.",NA
@@ -1459,11 +1459,11 @@
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%.",NA
-"222","COMPASS: Synoptic","CB","SWH","TR","A",20,"SWH_202407_TR_LysA_20cm",2024,7,24,NA,NA,0,0,"bdl",NA,2.472222,176.502816509242,"adl",NA,0.819322,26.4521306775716,"adl","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"222","COMPASS: Synoptic","CB","SWH","TR","A",20,"SWH_202407_TR_LysA_20cm",2024,7,24,NA,NA,0,0,"bdl",NA,2.472222,176.502816509242,"Within_Range",NA,0.819322,26.4521306775716,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%.",NA
-"223","COMPASS: Synoptic","CB","SWH","TR","A",45,"SWH_202407_TR_LysA_45cm",2024,7,24,NA,NA,0,0,"bdl",NA,1.729524,123.478335368074,"Within_Range",NA,0.475811,15.3617439173194,"adl","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"223","COMPASS: Synoptic","CB","SWH","TR","A",45,"SWH_202407_TR_LysA_45cm",2024,7,24,NA,NA,0,0,"bdl",NA,1.729524,123.478335368074,"Within_Range",NA,0.475811,15.3617439173194,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%.",NA
@@ -1471,11 +1471,11 @@
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%.",NA
-"225","COMPASS: Synoptic","CB","SWH","TR","B",20,"SWH_202407_TR_LysB_20cm",2024,7,24,NA,NA,0,0,"bdl",NA,1.653849,118.075563837306,"Within_Range",NA,0.991705,32.0175831402075,"adl","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"225","COMPASS: Synoptic","CB","SWH","TR","B",20,"SWH_202407_TR_LysB_20cm",2024,7,24,NA,NA,0,0,"bdl",NA,1.653849,118.075563837306,"Within_Range",NA,0.991705,32.0175831402075,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%.",NA
-"226","COMPASS: Synoptic","CB","SWH","TR","B",45,"SWH_202407_TR_LysB_45cm",2024,7,24,NA,NA,0,0,"bdl",NA,2.489874,177.763070530532,"adl",NA,0.983305,31.7463858603937,"adl","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"226","COMPASS: Synoptic","CB","SWH","TR","B",45,"SWH_202407_TR_LysB_45cm",2024,7,24,NA,NA,0,0,"bdl",NA,2.489874,177.763070530532,"Within_Range",NA,0.983305,31.7463858603937,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%.",NA
@@ -1483,11 +1483,11 @@
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%.",NA
-"228","COMPASS: Synoptic","CB","SWH","TR","C",20,"SWH_202407_TR_LysC_20cm",2024,7,24,NA,NA,0,0,"bdl",NA,1.292287,92.2620602997137,"Within_Range",NA,0.549854,17.7522510827067,"adl","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"228","COMPASS: Synoptic","CB","SWH","TR","C",20,"SWH_202407_TR_LysC_20cm",2024,7,24,NA,NA,0,0,"bdl",NA,1.292287,92.2620602997137,"Within_Range",NA,0.549854,17.7522510827067,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%.",NA
-"229","COMPASS: Synoptic","CB","SWH","TR","C",45,"SWH_202407_TR_LysC_45cm",2024,7,24,NA,NA,0,0,"bdl",NA,1.555349,111.043215032806,"Within_Range",NA,0.576112,18.6000008652485,"adl","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
+"229","COMPASS: Synoptic","CB","SWH","TR","C",45,"SWH_202407_TR_LysC_45cm",2024,7,24,NA,NA,0,0,"bdl",NA,1.555349,111.043215032806,"Within_Range",NA,0.576112,18.6000008652485,"Within_Range","PO4 dups out of range","6/2/2025","Reduction Efficiency was not ran for all of the runs included within this month.
                 One NH3 check standard had high CV. 
                 One PO4 blank had high CV. 
                 Over 60% of PO4 Duplicates have a CV less than 10%.",NA
@@ -1569,7 +1569,7 @@
                 Would reccommend rerunning the PO4 for this SWH run. ",NA
 "250","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202408_SWAMP_LysA_45cm",2024,8,20,NA,NA,0.051598,3.68380846309266,"Within_Range","PO4 matrix check out of range",0.469728,33.5359506521879,"Within_Range",NA,0.099256,3.20451871490457,"Within_Range","PO4 dups out of range; PO4 spikes out of range","6/24/2025","PO4 pe check was out of range as well as it's duplicates and spikes. 
                 Would reccommend rerunning the PO4 for this SWH run. ",NA
-"251","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202408_SWAMP_LysB_10cm",2024,8,20,NA,NA,0.051083,3.64704034497776,"Within_Range","PO4 matrix check out of range",0.305243,21.7926420927128,"Within_Range",NA,0.461552,14.9013865348355,"adl","PO4 dups out of range; PO4 spikes out of range","6/24/2025","PO4 pe check was out of range as well as it's duplicates and spikes. 
+"251","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202408_SWAMP_LysB_10cm",2024,8,20,NA,NA,0.051083,3.64704034497776,"Within_Range","PO4 matrix check out of range",0.305243,21.7926420927128,"Within_Range",NA,0.461552,14.9013865348355,"Within_Range","PO4 dups out of range; PO4 spikes out of range","6/24/2025","PO4 pe check was out of range as well as it's duplicates and spikes. 
                 Would reccommend rerunning the PO4 for this SWH run. ",NA
 "252","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202408_SWAMP_LysB_20cm",2024,8,20,NA,NA,0.005527,0.394596871497212,"bdl","PO4 matrix check out of range",0.58008,41.4144659341601,"Within_Range",NA,0.272923,8.81142561888349,"Within_Range","PO4 dups out of range; PO4 spikes out of range","6/24/2025","PO4 pe check was out of range as well as it's duplicates and spikes. 
                 Would reccommend rerunning the PO4 for this SWH run. ",NA
@@ -1597,13 +1597,13 @@
                 Would reccommend rerunning the PO4 for this SWH run. ",NA
 "264","COMPASS: Synoptic","CB","SWH","TR","B",20,"SWH_202408_TR_LysB_20cm",2024,8,21,NA,NA,0.000181,0.0129223871432957,"bdl","PO4 matrix check out of range",0.781731,55.8112189166613,"Within_Range",NA,6.790253,219.225969386605,"adl","PO4 dups out of range; PO4 spikes out of range","6/24/2025","PO4 pe check was out of range as well as it's duplicates and spikes. 
                 Would reccommend rerunning the PO4 for this SWH run. ",NA
-"265","COMPASS: Synoptic","CB","SWH","TR","B",45,"SWH_202408_TR_LysB_45cm",2024,8,21,NA,NA,0.001543,0.110161565536493,"bdl","PO4 matrix check out of range",2.136399,152.526933538949,"adl",NA,7.386092,238.46286414934,"adl","PO4 dups out of range; PO4 spikes out of range","6/24/2025","PO4 pe check was out of range as well as it's duplicates and spikes. 
+"265","COMPASS: Synoptic","CB","SWH","TR","B",45,"SWH_202408_TR_LysB_45cm",2024,8,21,NA,NA,0.001543,0.110161565536493,"bdl","PO4 matrix check out of range",2.136399,152.526933538949,"Within_Range",NA,7.386092,238.46286414934,"adl","PO4 dups out of range; PO4 spikes out of range","6/24/2025","PO4 pe check was out of range as well as it's duplicates and spikes. 
                 Would reccommend rerunning the PO4 for this SWH run. ",NA
 "266","COMPASS: Synoptic","CB","SWH","TR","C",10,"SWH_202408_TR_LysC_10cm",2024,8,21,NA,NA,0.007725,0.551521771723532,"bdl","PO4 matrix check out of range",0.145398,10.3806035682923,"Within_Range",NA,0.012293,0.396884304851313,"Within_Range","PO4 dups out of range; PO4 spikes out of range","6/24/2025","PO4 pe check was out of range as well as it's duplicates and spikes. 
                 Would reccommend rerunning the PO4 for this SWH run. ",NA
 "267","COMPASS: Synoptic","CB","SWH","TR","C",20,"SWH_202408_TR_LysC_20cm",2024,8,21,NA,NA,0.002802,0.20004712030671,"bdl","PO4 matrix check out of range",1.552417,110.833886639965,"Within_Range",NA,0.175769,5.67477079471328,"Within_Range","PO4 dups out of range; PO4 spikes out of range","6/24/2025","PO4 pe check was out of range as well as it's duplicates and spikes. 
                 Would reccommend rerunning the PO4 for this SWH run. ",NA
-"268","COMPASS: Synoptic","CB","SWH","TR","C",45,"SWH_202408_TR_LysC_45cm",2024,8,21,NA,NA,0.0021,0.149928248623873,"bdl","PO4 matrix check out of range",11.784543,841.350425153676,"adl",NA,0.480218,15.5040256330503,"adl","PO4 dups out of range; PO4 spikes out of range","6/24/2025","PO4 pe check was out of range as well as it's duplicates and spikes. 
+"268","COMPASS: Synoptic","CB","SWH","TR","C",45,"SWH_202408_TR_LysC_45cm",2024,8,21,NA,NA,0.0021,0.149928248623873,"bdl","PO4 matrix check out of range",11.784543,841.350425153676,"adl",NA,0.480218,15.5040256330503,"Within_Range","PO4 dups out of range; PO4 spikes out of range","6/24/2025","PO4 pe check was out of range as well as it's duplicates and spikes. 
                 Would reccommend rerunning the PO4 for this SWH run. ",NA
 "269","COMPASS: Synoptic","CB","SWH","UP","A",10,"SWH_202408_UP_LysA_10cm",2024,8,20,NA,NA,0.014596,1.04207272234002,"bdl","PO4 matrix check out of range",0.078865,5.63051967986749,"Within_Range",NA,0.004764,0.153807600122969,"Within_Range","PO4 dups out of range; PO4 spikes out of range","6/24/2025","PO4 pe check was out of range as well as it's duplicates and spikes. 
                 Would reccommend rerunning the PO4 for this SWH run. ",NA
@@ -1671,7 +1671,7 @@
   Reduction efficiency check was only ran for some of the runs within this month's data.",""
 "301","COMPASS: Synoptic","CB","GCW","WC","B",20,"GCW_202409_WC_LysB_20cm",2024,9,10,"12:05","EDT",0.012769,0.911635146037254,"bdl",NA,0.802815,57.316498532845,"Within_Range",NA,0.226241,7.30427902170876,"Within_Range",NA,"7/10/2025","Some sample IDs are missing from metadata: MSM_202409_UP_LysA_45cm. 
   Reduction efficiency check was only ran for some of the runs within this month's data.",""
-"302","COMPASS: Synoptic","CB","GCW","WC","B",45,"GCW_202409_WC_LysB_45cm",2024,9,10,"12:05","EDT",0.004992,0.356400865300178,"bdl",NA,1.428582,101.992760607424,"Within_Range",NA,0.329634,10.6423623969216,"adl",NA,"7/10/2025","Some sample IDs are missing from metadata: MSM_202409_UP_LysA_45cm. 
+"302","COMPASS: Synoptic","CB","GCW","WC","B",45,"GCW_202409_WC_LysB_45cm",2024,9,10,"12:05","EDT",0.004992,0.356400865300178,"bdl",NA,1.428582,101.992760607424,"Within_Range",NA,0.329634,10.6423623969216,"Within_Range",NA,"7/10/2025","Some sample IDs are missing from metadata: MSM_202409_UP_LysA_45cm. 
   Reduction efficiency check was only ran for some of the runs within this month's data.",""
 "303","COMPASS: Synoptic","CB","GCW","WC","C",10,"GCW_202409_WC_LysC_10cm",2024,9,10,"12:17","EDT",0.006133,0.437861880385815,"bdl",NA,0.128541,9.17710809826726,"Within_Range",NA,0.052653,1.69992266357571,"Within_Range",NA,"7/10/2025","Some sample IDs are missing from metadata: MSM_202409_UP_LysA_45cm. 
   Reduction efficiency check was only ran for some of the runs within this month's data.",""
@@ -1733,23 +1733,23 @@
   Reduction efficiency check was only ran for some of the runs within this month's data.",""
 "332","COMPASS: Synoptic","CB","MSM","TR","A",10,"MSM_202409_TR_LysA_10cm",2024,9,12,"12:51","EDT",0.15451,11.0311493785117,"Within_Range",NA,0.625985,44.6918260546738,"Within_Range",NA,0.012177,0.393139199558646,"Within_Range",NA,"7/10/2025","Some sample IDs are missing from metadata: MSM_202409_UP_LysA_45cm. 
   Reduction efficiency check was only ran for some of the runs within this month's data.",""
-"333","COMPASS: Synoptic","CB","MSM","TR","A",20,"MSM_202409_TR_LysA_20cm",2024,9,12,"12:51","EDT",0,0,"bdl",NA,2.887438,206.146915404771,"adl",NA,0.015226,0.491577355052964,"Within_Range",NA,"7/10/2025","Some sample IDs are missing from metadata: MSM_202409_UP_LysA_45cm. 
+"333","COMPASS: Synoptic","CB","MSM","TR","A",20,"MSM_202409_TR_LysA_20cm",2024,9,12,"12:51","EDT",0,0,"bdl",NA,2.887438,206.146915404771,"Within_Range",NA,0.015226,0.491577355052964,"Within_Range",NA,"7/10/2025","Some sample IDs are missing from metadata: MSM_202409_UP_LysA_45cm. 
   Reduction efficiency check was only ran for some of the runs within this month's data.",""
-"334","COMPASS: Synoptic","CB","MSM","TR","B",10,"MSM_202409_TR_LysB_10cm",2024,9,12,"13:06","EDT",0.049928,3.56457980823463,"Within_Range",NA,2.393903,170.911278174017,"adl",NA,0.010324,0.33331437104734,"Within_Range",NA,"7/10/2025","Some sample IDs are missing from metadata: MSM_202409_UP_LysA_45cm. 
+"334","COMPASS: Synoptic","CB","MSM","TR","B",10,"MSM_202409_TR_LysB_10cm",2024,9,12,"13:06","EDT",0.049928,3.56457980823463,"Within_Range",NA,2.393903,170.911278174017,"Within_Range",NA,0.010324,0.33331437104734,"Within_Range",NA,"7/10/2025","Some sample IDs are missing from metadata: MSM_202409_UP_LysA_45cm. 
   Reduction efficiency check was only ran for some of the runs within this month's data.",""
-"335","COMPASS: Synoptic","CB","MSM","TR","B",20,"MSM_202409_TR_LysB_20cm",2024,9,12,"13:06","EDT",0.001184,0.0845309744622216,"bdl",NA,2.664904,190.259233081311,"adl",NA,0.011406,0.368247163518594,"Within_Range",NA,"7/10/2025","Some sample IDs are missing from metadata: MSM_202409_UP_LysA_45cm. 
+"335","COMPASS: Synoptic","CB","MSM","TR","B",20,"MSM_202409_TR_LysB_20cm",2024,9,12,"13:06","EDT",0.001184,0.0845309744622216,"bdl",NA,2.664904,190.259233081311,"Within_Range",NA,0.011406,0.368247163518594,"Within_Range",NA,"7/10/2025","Some sample IDs are missing from metadata: MSM_202409_UP_LysA_45cm. 
   Reduction efficiency check was only ran for some of the runs within this month's data.",""
-"336","COMPASS: Synoptic","CB","MSM","TR","B",45,"MSM_202409_TR_LysB_45cm",2024,9,12,"13:06","EDT",0.002696,0.19247931347141,"bdl",NA,2.676905,191.116037324994,"adl",NA,0.013739,0.443568979447831,"Within_Range",NA,"7/10/2025","Some sample IDs are missing from metadata: MSM_202409_UP_LysA_45cm. 
+"336","COMPASS: Synoptic","CB","MSM","TR","B",45,"MSM_202409_TR_LysB_45cm",2024,9,12,"13:06","EDT",0.002696,0.19247931347141,"bdl",NA,2.676905,191.116037324994,"Within_Range",NA,0.013739,0.443568979447831,"Within_Range",NA,"7/10/2025","Some sample IDs are missing from metadata: MSM_202409_UP_LysA_45cm. 
   Reduction efficiency check was only ran for some of the runs within this month's data.",""
 "337","COMPASS: Synoptic","CB","MSM","TR","C",10,"MSM_202409_TR_LysC_10cm",2024,9,12,"13:14","EDT",0.017175,1.22619889053096,"bdl",NA,1.872902,133.714722240071,"Within_Range",NA,0.007964,0.257120849575844,"Within_Range",NA,"7/10/2025","Some sample IDs are missing from metadata: MSM_202409_UP_LysA_45cm. 
   Reduction efficiency check was only ran for some of the runs within this month's data.",""
-"338","COMPASS: Synoptic","CB","MSM","TR","C",20,"MSM_202409_TR_LysC_20cm",2024,9,12,"13:14","EDT",0.002845,0.203117079683294,"bdl",NA,2.617577,186.880350118158,"adl",NA,0.012196,0.393752621977272,"Within_Range",NA,"7/10/2025","Some sample IDs are missing from metadata: MSM_202409_UP_LysA_45cm. 
+"338","COMPASS: Synoptic","CB","MSM","TR","C",20,"MSM_202409_TR_LysC_20cm",2024,9,12,"13:14","EDT",0.002845,0.203117079683294,"bdl",NA,2.617577,186.880350118158,"Within_Range",NA,0.012196,0.393752621977272,"Within_Range",NA,"7/10/2025","Some sample IDs are missing from metadata: MSM_202409_UP_LysA_45cm. 
   Reduction efficiency check was only ran for some of the runs within this month's data.",""
-"339","COMPASS: Synoptic","CB","MSM","TR","C",45,"MSM_202409_TR_LysC_45cm",2024,9,12,"13:14","EDT",0,0,"bdl",NA,2.709679,193.455917525184,"adl",NA,0.020807,0.67176211917687,"Within_Range",NA,"7/10/2025","Some sample IDs are missing from metadata: MSM_202409_UP_LysA_45cm. 
+"339","COMPASS: Synoptic","CB","MSM","TR","C",45,"MSM_202409_TR_LysC_45cm",2024,9,12,"13:14","EDT",0,0,"bdl",NA,2.709679,193.455917525184,"Within_Range",NA,0.020807,0.67176211917687,"Within_Range",NA,"7/10/2025","Some sample IDs are missing from metadata: MSM_202409_UP_LysA_45cm. 
   Reduction efficiency check was only ran for some of the runs within this month's data.",""
 "340","COMPASS: Synoptic","CB","MSM","UP","A",45,"MSM_202409_UP_LysA_45cm",2024,9,12,"13:43","EDT",0.687645,49.0940050118872,"Within_Range",NA,0.223494,15.9562209514018,"Within_Range",NA,0.007265,0.234553361648482,"Within_Range",NA,"7/10/2025","Some sample IDs are missing from metadata: MSM_202409_UP_LysA_45cm. 
   Reduction efficiency check was only ran for some of the runs within this month's data.",""
-"341","COMPASS: Synoptic","CB","MSM","UP","C",20,"MSM_202409_UP_LysC_20cm",2024,9,12,"13:48","EDT",1.817703,129.77382252779,"adl",NA,0.148077,10.5718691768939,"Within_Range",NA,0.010834,0.349779920178892,"Within_Range",NA,"7/10/2025","Some sample IDs are missing from metadata: MSM_202409_UP_LysA_45cm. 
+"341","COMPASS: Synoptic","CB","MSM","UP","C",20,"MSM_202409_UP_LysC_20cm",2024,9,12,"13:48","EDT",1.817703,129.77382252779,"Within_Range",NA,0.148077,10.5718691768939,"Within_Range",NA,0.010834,0.349779920178892,"Within_Range",NA,"7/10/2025","Some sample IDs are missing from metadata: MSM_202409_UP_LysA_45cm. 
   Reduction efficiency check was only ran for some of the runs within this month's data.",""
 "342","COMPASS: Synoptic","CB","MSM","WC","A",10,"MSM_202409_WC_LysA_10cm",2024,9,12,"11:41","EDT",0.01465,1.04592802016178,"bdl",NA,0.727375,51.9305046870426,"Within_Range",NA,0.053718,1.73430660440924,"Within_Range",NA,"7/10/2025","Some sample IDs are missing from metadata: MSM_202409_UP_LysA_45cm. 
   Reduction efficiency check was only ran for some of the runs within this month's data.",""
@@ -1789,21 +1789,21 @@
   Reduction efficiency check was only ran for some of the runs within this month's data.",""
 "360","COMPASS: Synoptic","CB","SWH","TR","A",10,"SWH_202409_TR_LysA_10cm",2024,9,25,"12:11","EDT",0,0,"bdl",NA,0.398552,28.4543825454961,"Within_Range",NA,0.074023,2.38986145757819,"Within_Range",NA,"7/10/2025","Some sample IDs are missing from metadata: MSM_202409_UP_LysA_45cm. 
   Reduction efficiency check was only ran for some of the runs within this month's data.",""
-"361","COMPASS: Synoptic","CB","SWH","TR","A",20,"SWH_202409_TR_LysA_20cm",2024,9,25,"12:15","EDT",0,0,"bdl",NA,0.822596,58.7287512404778,"Within_Range",NA,0.375967,12.1382413928279,"adl",NA,"7/10/2025","Some sample IDs are missing from metadata: MSM_202409_UP_LysA_45cm. 
+"361","COMPASS: Synoptic","CB","SWH","TR","A",20,"SWH_202409_TR_LysA_20cm",2024,9,25,"12:15","EDT",0,0,"bdl",NA,0.822596,58.7287512404778,"Within_Range",NA,0.375967,12.1382413928279,"Within_Range",NA,"7/10/2025","Some sample IDs are missing from metadata: MSM_202409_UP_LysA_45cm. 
   Reduction efficiency check was only ran for some of the runs within this month's data.",""
 "362","COMPASS: Synoptic","CB","SWH","TR","A",45,"SWH_202409_TR_LysA_45cm",2024,9,25,"12:20","EDT",0.009422,0.672678075492443,"bdl",NA,0.795695,56.808170375606,"Within_Range",NA,0.281468,9.08730428031312,"Within_Range",NA,"7/10/2025","Some sample IDs are missing from metadata: MSM_202409_UP_LysA_45cm. 
   Reduction efficiency check was only ran for some of the runs within this month's data.",""
 "363","COMPASS: Synoptic","CB","SWH","TR","B",10,"SWH_202409_TR_LysB_10cm",2024,9,25,"12:25","EDT",0.008077,0.576652601969058,"bdl",NA,0.148523,10.6037110811255,"Within_Range",NA,0.08947,2.88857388392149,"Within_Range",NA,"7/10/2025","Some sample IDs are missing from metadata: MSM_202409_UP_LysA_45cm. 
   Reduction efficiency check was only ran for some of the runs within this month's data.",""
-"364","COMPASS: Synoptic","CB","SWH","TR","B",20,"SWH_202409_TR_LysB_20cm",2024,9,25,"12:30","EDT",0,0,"bdl",NA,1.028399,73.4219337888296,"Within_Range",NA,0.567263,18.3143074451208,"adl",NA,"7/10/2025","Some sample IDs are missing from metadata: MSM_202409_UP_LysA_45cm. 
+"364","COMPASS: Synoptic","CB","SWH","TR","B",20,"SWH_202409_TR_LysB_20cm",2024,9,25,"12:30","EDT",0,0,"bdl",NA,1.028399,73.4219337888296,"Within_Range",NA,0.567263,18.3143074451208,"Within_Range",NA,"7/10/2025","Some sample IDs are missing from metadata: MSM_202409_UP_LysA_45cm. 
   Reduction efficiency check was only ran for some of the runs within this month's data.",""
-"365","COMPASS: Synoptic","CB","SWH","TR","B",45,"SWH_202409_TR_LysB_45cm",2024,9,25,"12:40","EDT",0.0034,0.242740973962461,"bdl",NA,2.704113,193.058536271927,"adl",NA,1.020498,32.9471763875502,"adl",NA,"7/10/2025","Some sample IDs are missing from metadata: MSM_202409_UP_LysA_45cm. 
+"365","COMPASS: Synoptic","CB","SWH","TR","B",45,"SWH_202409_TR_LysB_45cm",2024,9,25,"12:40","EDT",0.0034,0.242740973962461,"bdl",NA,2.704113,193.058536271927,"Within_Range",NA,1.020498,32.9471763875502,"Within_Range",NA,"7/10/2025","Some sample IDs are missing from metadata: MSM_202409_UP_LysA_45cm. 
   Reduction efficiency check was only ran for some of the runs within this month's data.",""
 "366","COMPASS: Synoptic","CB","SWH","TR","C",10,"SWH_202409_TR_LysC_10cm",2024,9,25,"12:50","EDT",0,0,"bdl",NA,0.230545,16.4596228947575,"Within_Range",NA,0.015971,0.515629970941211,"Within_Range",NA,"7/10/2025","Some sample IDs are missing from metadata: MSM_202409_UP_LysA_45cm. 
   Reduction efficiency check was only ran for some of the runs within this month's data.",""
 "367","COMPASS: Synoptic","CB","SWH","TR","C",20,"SWH_202409_TR_LysC_20cm",2024,9,25,"13:00","EDT",0,0,"bdl",NA,1.368595,97.7100244882806,"Within_Range",NA,0.240923,7.77829312435474,"Within_Range",NA,"7/10/2025","Some sample IDs are missing from metadata: MSM_202409_UP_LysA_45cm. 
   Reduction efficiency check was only ran for some of the runs within this month's data.",""
-"368","COMPASS: Synoptic","CB","SWH","TR","C",45,"SWH_202409_TR_LysC_45cm",2024,9,25,"13:11","EDT",0,0,"bdl",NA,1.530143,109.243647682895,"Within_Range",NA,0.436051,14.0780767928675,"adl",NA,"7/10/2025","Some sample IDs are missing from metadata: MSM_202409_UP_LysA_45cm. 
+"368","COMPASS: Synoptic","CB","SWH","TR","C",45,"SWH_202409_TR_LysC_45cm",2024,9,25,"13:11","EDT",0,0,"bdl",NA,1.530143,109.243647682895,"Within_Range",NA,0.436051,14.0780767928675,"Within_Range",NA,"7/10/2025","Some sample IDs are missing from metadata: MSM_202409_UP_LysA_45cm. 
   Reduction efficiency check was only ran for some of the runs within this month's data.",""
 "369","COMPASS: Synoptic","CB","SWH","UP","A",10,"SWH_202409_UP_LysA_10cm",2024,9,24,"14:39","EDT",0,0,"bdl",NA,0.046216,3.29956378019091,"Within_Range",NA,0.006081,0.196327459350918,"Within_Range",NA,"7/10/2025","Some sample IDs are missing from metadata: MSM_202409_UP_LysA_45cm. 
   Reduction efficiency check was only ran for some of the runs within this month's data.",""
@@ -1905,7 +1905,7 @@
   because only one run for this month. 
   Performance check for NOx looks like DI was run instead of the peCheck.
   ** Something up with the phosphate on this run... needs looked at. ",NA
-"398","COMPASS: Synoptic","CB","SWH","TR","A",20,"SWH_202410_TR_LysA_20cm",2024,10,22,"9:00","EDT",0.006675,0.476557647411596,"bdl",NA,0.908491,64.8611735812147,"Within_Range",NA,0.783549,25.2971854048598,"adl",NA,"7/1/2025","Some sample IDs are missing from metadata: SWH_202410_UP_LysC_10cm
+"398","COMPASS: Synoptic","CB","SWH","TR","A",20,"SWH_202410_TR_LysA_20cm",2024,10,22,"9:00","EDT",0.006675,0.476557647411596,"bdl",NA,0.908491,64.8611735812147,"Within_Range",NA,0.783549,25.2971854048598,"Within_Range",NA,"7/1/2025","Some sample IDs are missing from metadata: SWH_202410_UP_LysC_10cm
   Nitrate and nitrite reduction efficiency is okay, graph off 
   because only one run for this month. 
   Performance check for NOx looks like DI was run instead of the peCheck.
@@ -1920,12 +1920,12 @@
   because only one run for this month. 
   Performance check for NOx looks like DI was run instead of the peCheck.
   ** Something up with the phosphate on this run... needs looked at. ",NA
-"401","COMPASS: Synoptic","CB","SWH","TR","B",20,"SWH_202410_TR_LysB_20cm",2024,10,22,"9:10","EDT",0.002787,0.198976204245111,"bdl",NA,1.394323,99.5468597171354,"Within_Range",NA,0.869305,28.065851348635,"adl",NA,"7/1/2025","Some sample IDs are missing from metadata: SWH_202410_UP_LysC_10cm
+"401","COMPASS: Synoptic","CB","SWH","TR","B",20,"SWH_202410_TR_LysB_20cm",2024,10,22,"9:10","EDT",0.002787,0.198976204245111,"bdl",NA,1.394323,99.5468597171354,"Within_Range",NA,0.869305,28.065851348635,"Within_Range",NA,"7/1/2025","Some sample IDs are missing from metadata: SWH_202410_UP_LysC_10cm
   Nitrate and nitrite reduction efficiency is okay, graph off 
   because only one run for this month. 
   Performance check for NOx looks like DI was run instead of the peCheck.
   ** Something up with the phosphate on this run... needs looked at. ",NA
-"402","COMPASS: Synoptic","CB","SWH","TR","B",45,"SWH_202410_TR_LysB_45cm",2024,10,22,"9:10","EDT",0.010053,0.717727944483711,"bdl",NA,1.747026,124.727880228748,"Within_Range",NA,0.773674,24.9783671741263,"adl",NA,"7/1/2025","Some sample IDs are missing from metadata: SWH_202410_UP_LysC_10cm
+"402","COMPASS: Synoptic","CB","SWH","TR","B",45,"SWH_202410_TR_LysB_45cm",2024,10,22,"9:10","EDT",0.010053,0.717727944483711,"bdl",NA,1.747026,124.727880228748,"Within_Range",NA,0.773674,24.9783671741263,"Within_Range",NA,"7/1/2025","Some sample IDs are missing from metadata: SWH_202410_UP_LysC_10cm
   Nitrate and nitrite reduction efficiency is okay, graph off 
   because only one run for this month. 
   Performance check for NOx looks like DI was run instead of the peCheck.
@@ -1935,12 +1935,12 @@
   because only one run for this month. 
   Performance check for NOx looks like DI was run instead of the peCheck.
   ** Something up with the phosphate on this run... needs looked at. ",NA
-"404","COMPASS: Synoptic","CB","SWH","TR","C",20,"SWH_202410_TR_LysC_20cm",2024,10,22,"9:20","EDT",0.005634,0.402236072736619,"bdl",NA,1.245388,88.913734141518,"Within_Range",NA,0.369097,11.9164407604088,"adl",NA,"7/1/2025","Some sample IDs are missing from metadata: SWH_202410_UP_LysC_10cm
+"404","COMPASS: Synoptic","CB","SWH","TR","C",20,"SWH_202410_TR_LysC_20cm",2024,10,22,"9:20","EDT",0.005634,0.402236072736619,"bdl",NA,1.245388,88.913734141518,"Within_Range",NA,0.369097,11.9164407604088,"Within_Range",NA,"7/1/2025","Some sample IDs are missing from metadata: SWH_202410_UP_LysC_10cm
   Nitrate and nitrite reduction efficiency is okay, graph off 
   because only one run for this month. 
   Performance check for NOx looks like DI was run instead of the peCheck.
   ** Something up with the phosphate on this run... needs looked at. ",NA
-"405","COMPASS: Synoptic","CB","SWH","TR","C",45,"SWH_202410_TR_LysC_45cm",2024,10,22,"9:20","EDT",0,0,"bdl",NA,1.682207,120.100166348962,"Within_Range",NA,0.564298,18.2185812624246,"adl",NA,"7/1/2025","Some sample IDs are missing from metadata: SWH_202410_UP_LysC_10cm
+"405","COMPASS: Synoptic","CB","SWH","TR","C",45,"SWH_202410_TR_LysC_45cm",2024,10,22,"9:20","EDT",0,0,"bdl",NA,1.682207,120.100166348962,"Within_Range",NA,0.564298,18.2185812624246,"Within_Range",NA,"7/1/2025","Some sample IDs are missing from metadata: SWH_202410_UP_LysC_10cm
   Nitrate and nitrite reduction efficiency is okay, graph off 
   because only one run for this month. 
   Performance check for NOx looks like DI was run instead of the peCheck.
@@ -2068,7 +2068,7 @@
                 A few duplicates were out of range but still within CV.
                 SWH_202411_SWAMP_LycC_45cm, SWH_202411_TR_LysC_10cm, 
                 MSM_202411_TR_LysC_10cm, MSM_202411_TR_LysC_45cm were missing from metadata. ",""
-"433","COMPASS: Synoptic","CB","GCW","WC","A",45,"GCW_202411_WC_LysA_45cm",2024,11,19,"10:42","EST",0.005274,0.376534087258241,"bdl",NA,2.385411,170.304996894343,"adl",NA,0.111898,3.61267062102434,"Within_Range",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
+"433","COMPASS: Synoptic","CB","GCW","WC","A",45,"GCW_202411_WC_LysA_45cm",2024,11,19,"10:42","EST",0.005274,0.376534087258241,"bdl",NA,2.385411,170.304996894343,"Within_Range",NA,0.111898,3.61267062102434,"Within_Range",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
                 A few duplicates were out of range but still within CV.
                 SWH_202411_SWAMP_LycC_45cm, SWH_202411_TR_LysC_10cm, 
                 MSM_202411_TR_LysC_10cm, MSM_202411_TR_LysC_45cm were missing from metadata. ",""
@@ -2204,7 +2204,7 @@
                 A few duplicates were out of range but still within CV.
                 SWH_202411_SWAMP_LycC_45cm, SWH_202411_TR_LysC_10cm, 
                 MSM_202411_TR_LysC_10cm, MSM_202411_TR_LysC_45cm were missing from metadata. ",""
-"467","COMPASS: Synoptic","CB","MSM","TR","A",20,"MSM_202411_TR_LysA_20cm",2024,11,21,"12:24","EST",0,0,"bdl",NA,3.104101,221.61544118172,"adl",NA,0.016006,0.516759959607102,"Within_Range",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
+"467","COMPASS: Synoptic","CB","MSM","TR","A",20,"MSM_202411_TR_LysA_20cm",2024,11,21,"12:24","EST",0,0,"bdl",NA,3.104101,221.61544118172,"Within_Range",NA,0.016006,0.516759959607102,"Within_Range",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
                 A few duplicates were out of range but still within CV.
                 SWH_202411_SWAMP_LycC_45cm, SWH_202411_TR_LysC_10cm, 
                 MSM_202411_TR_LysC_10cm, MSM_202411_TR_LysC_45cm were missing from metadata. ",""
@@ -2216,11 +2216,11 @@
                 A few duplicates were out of range but still within CV.
                 SWH_202411_SWAMP_LycC_45cm, SWH_202411_TR_LysC_10cm, 
                 MSM_202411_TR_LysC_10cm, MSM_202411_TR_LysC_45cm were missing from metadata. ",""
-"470","COMPASS: Synoptic","CB","MSM","TR","B",20,"MSM_202411_TR_LysB_20cm",2024,11,21,"12:32","EST",0,0,"bdl",NA,2.90819,207.628492078791,"adl",NA,0.009356,0.302062113087845,"Within_Range",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
+"470","COMPASS: Synoptic","CB","MSM","TR","B",20,"MSM_202411_TR_LysB_20cm",2024,11,21,"12:32","EST",0,0,"bdl",NA,2.90819,207.628492078791,"Within_Range",NA,0.009356,0.302062113087845,"Within_Range",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
                 A few duplicates were out of range but still within CV.
                 SWH_202411_SWAMP_LycC_45cm, SWH_202411_TR_LysC_10cm, 
                 MSM_202411_TR_LysC_10cm, MSM_202411_TR_LysC_45cm were missing from metadata. ",""
-"471","COMPASS: Synoptic","CB","MSM","TR","B",45,"MSM_202411_TR_LysB_45cm",2024,11,21,"12:32","EST",0.00242,0.172774457937987,"bdl",NA,3.265114,233.110868370137,"adl",NA,0.014356,0.463489065357963,"Within_Range",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
+"471","COMPASS: Synoptic","CB","MSM","TR","B",45,"MSM_202411_TR_LysB_45cm",2024,11,21,"12:32","EST",0.00242,0.172774457937987,"bdl",NA,3.265114,233.110868370137,"Within_Range",NA,0.014356,0.463489065357963,"Within_Range",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
                 A few duplicates were out of range but still within CV.
                 SWH_202411_SWAMP_LycC_45cm, SWH_202411_TR_LysC_10cm, 
                 MSM_202411_TR_LysC_10cm, MSM_202411_TR_LysC_45cm were missing from metadata. ",""
@@ -2228,11 +2228,11 @@
                 A few duplicates were out of range but still within CV.
                 SWH_202411_SWAMP_LycC_45cm, SWH_202411_TR_LysC_10cm, 
                 MSM_202411_TR_LysC_10cm, MSM_202411_TR_LysC_45cm were missing from metadata. ",""
-"473","COMPASS: Synoptic","CB","MSM","TR","C",20,"MSM_202411_TR_LysC_20cm",2024,11,21,"12:43","EST",0.003001,0.214254606723925,"bdl",NA,2.376663,169.680438647219,"adl",NA,0.007458,0.240784442006108,"Within_Range",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
+"473","COMPASS: Synoptic","CB","MSM","TR","C",20,"MSM_202411_TR_LysC_20cm",2024,11,21,"12:43","EST",0.003001,0.214254606723925,"bdl",NA,2.376663,169.680438647219,"Within_Range",NA,0.007458,0.240784442006108,"Within_Range",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
                 A few duplicates were out of range but still within CV.
                 SWH_202411_SWAMP_LycC_45cm, SWH_202411_TR_LysC_10cm, 
                 MSM_202411_TR_LysC_10cm, MSM_202411_TR_LysC_45cm were missing from metadata. ",""
-"474","COMPASS: Synoptic","CB","MSM","TR","C",45,"MSM_202411_TR_LysC_45cm",2024,11,21,"12:43","EST",0.000382,0.0272726623687235,"bdl",NA,2.781786,198.603953822099,"adl",NA,0.02632,0.849751476749902,"Within_Range",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
+"474","COMPASS: Synoptic","CB","MSM","TR","C",45,"MSM_202411_TR_LysC_45cm",2024,11,21,"12:43","EST",0.000382,0.0272726623687235,"bdl",NA,2.781786,198.603953822099,"Within_Range",NA,0.02632,0.849751476749902,"Within_Range",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
                 A few duplicates were out of range but still within CV.
                 SWH_202411_SWAMP_LycC_45cm, SWH_202411_TR_LysC_10cm, 
                 MSM_202411_TR_LysC_10cm, MSM_202411_TR_LysC_45cm were missing from metadata. ",""
