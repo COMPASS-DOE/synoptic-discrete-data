@@ -16,517 +16,299 @@ library(tibble)
 library(lubridate)
 ```
 
-
-```{r}
-
-```
-
-
 #Read in and collate all the files in the Processed Data folder 
 ```{r}
-##Read in list of processed data files
 files <- list.files(path = "Processed Data", pattern = "\\.csv$", full.names = TRUE)
 
-desired_columns <- c("Project",	"Region",	"Site",	"Zone",	"Replicate",	"Depth_cm",	"Sample_ID",	"Year",	"Month",	"Day",	"Time",	"Time_Zone", "SO4_ppm",	"SO4_Conc_mM",	"SO4_Conc_flag",	"SO4_QAQC_flag", "Cl_ppm", "Cl_Conc_mM",	"Cl_Conc_flag",	"Cl_QAQC_flag",	"salinity",	"Analysis_rundate",	"Run_notes",	"Field_notes")
-```
+# 3. Read and combine all CSVs
+all_data <- files %>%
+  lapply(read.csv, colClasses = "character") %>%    # or read.csv if you prefer base R
+  bind_rows()             # combine into one data frame
+
+all_data <- all_data %>%
+  select("Date" ,"Site", "Replicate",   "Depth" ,      "Sample_ID" ,  "SO4_ppm" ,    "Cl_ppm"   ,   "SO4_mM"  ,    "Cl_mM"    ,"salinity", "Zone"  )
+
+colnames(all_data)
+
+all_data$SO4_ppm <- as.numeric(all_data$SO4_ppm)
+all_data$Cl_ppm <- as.numeric(all_data$Cl_ppm)
+all_data$SO4_mM <- as.numeric(all_data$SO4_mM)
+all_data$Cl_mM <- as.numeric(all_data$Cl_mM)
+all_data$salinity <- as.numeric(all_data$salinity)
+
+##Fix sample IDs
+all_data$Site <- gsub("GCerw", "GCW", all_data$Site)
+all_data$Site <- gsub("Gcrew", "GCW", all_data$Site)
+all_data$Site <- gsub("GCrew", "GCW", all_data$Site)
 
-##File 1
-```{r}
-##Read in each data file
-file1 <- read.csv(files[1])
-head(file1)
-
-missing_columns <- setdiff(desired_columns, names(file1))
-for (col in missing_columns) {
-  file1[[col]] <- NA
-}
-
-file1_clean <- file1 %>%
-  mutate(
-    Project = "COMPASS: Synoptic", 
-    Region = "CB", 
-    Date = Site,
-    Site = Zone,
-    Depth_cm = Depth, 
-    SO4_Conc_mM = SO4_mM,
-    Cl_Conc_mM = Cl_mM)
-
-file1_clean <- file1_clean %>%
-  mutate(Date = ymd(Date)) %>%
-  mutate(Year = year(Date),
-         Month = month(Date), 
-         Day = day(Date) )
-
-missing_columns <- setdiff(desired_columns, names(file1_clean))
-for (col in missing_columns) {
-  file1_clean[[col]] <- NA
-}
-
-head(file1_clean)
-
-file1_cols <- file1_clean[, desired_columns]
-head(file1_cols)
-```
-
-##File 2
-```{r}
-file2 <- read.csv(files[2])
-head(file2)
-
-missing_columns <- setdiff(desired_columns, names(file2))
-for (col in missing_columns) {
-  file2[[col]] <- NA
-}
-
-head(file2)
-
-file2_clean <- file2 %>%
-  mutate(
-    Project = "COMPASS: Synoptic", 
-    Region = "CB", 
-    Depth_cm = Depth, 
-    SO4_Conc_mM = SO4_mM,
-    Cl_Conc_mM = Cl_mM)
-
-file2_clean <- file2_clean %>%
-  mutate(Date = ym(Date)) %>%
-  mutate(Year = year(Date),
-         Month = month(Date))
-
-##Don't know when these samples were taken but this says June 1st for now 
-# The date column isn't in the final dataset so this should be okay 
-
-missing_columns <- setdiff(desired_columns, names(file2_clean))
-for (col in missing_columns) {
-  file2_clean[[col]] <- NA
-}
-
-head(file2_clean)
-
-file2_cols <- file2_clean[, desired_columns]
-head(file2_cols)
-```
-
-##File 3
-```{r}
-file3 <- read.csv(files[3])
-head(file3)
-
-missing_columns <- setdiff(desired_columns, names(file3))
-for (col in missing_columns) {
-  file3[[col]] <- NA
-}
-
-head(file3)
-
-file3_clean <- file3 %>%
-  mutate(
-    Project = "COMPASS: Synoptic", 
-    Region = "CB", 
-    Depth_cm = Depth, 
-    SO4_Conc_mM = SO4_mM,
-    Cl_Conc_mM = Cl_mM)
-
-file3_date <- file3_clean %>%
-  mutate(Date = ym(Date)) %>%
-  mutate(Year = year(Date),
-         Month = month(Date) )
-
-
-missing_columns <- setdiff(desired_columns, names(file3_date))
-for (col in missing_columns) {
-  file3_date[[col]] <- NA
-}
-
-head(file3_date)
-
-file3_cols <- file3_date[, desired_columns]
-head(file3_cols)
-```
-
-##File 4
-```{r}
-file4 <- read.csv(files[4])
-head(file4)
-
-missing_columns <- setdiff(desired_columns, names(file4))
-for (col in missing_columns) {
-  file4[[col]] <- NA
-}
-
-head(file4)
-
-file4_clean <- file4 %>%
-  mutate(
-    Project = "COMPASS: Synoptic", 
-    Region = "CB", 
-    Date_long = Site, 
-    Site = Date, 
-    Depth_cm = Depth, 
-    SO4_Conc_mM = SO4_mM,
-    Cl_Conc_mM = Cl_mM)
-
-file4_date <- file4_clean %>%
-  mutate(Date = ym(Date_long)) %>%
-  mutate(Year = year(Date),
-         Month = month(Date) )
-
-
-missing_columns <- setdiff(desired_columns, names(file4_date))
-for (col in missing_columns) {
-  file4_date[[col]] <- NA
-}
-
-head(file4_date)
-
-file4_cols <- file4_date[, desired_columns]
-
-head(file4_cols)
-```
-
-##File 5
-```{r}
-file5 <- read.csv(files[5])
-head(file5)
-
-missing_columns <- setdiff(desired_columns, names(file5))
-for (col in missing_columns) {
-  file5[[col]] <- NA
-}
-
-head(file5)
-
-file5_clean <- file5 %>%
-  mutate(
-    Project = "COMPASS: Synoptic", 
-    Region = "CB", 
-    Date_long = Site, 
-    Site = Date, 
-    Depth_cm = Depth, 
-    SO4_Conc_mM = SO4_mM,
-    Cl_Conc_mM = Cl_mM)
-
-file5_date <- file5_clean %>%
-  mutate(Date = ym(Date_long)) %>%
-  mutate(Year = year(Date),
-         Month = month(Date) )
-
-
-missing_columns <- setdiff(desired_columns, names(file5_date))
-for (col in missing_columns) {
-  file5_date[[col]] <- NA
-}
-
-head(file5_date)
-
-file5_cols <- file5_date[, desired_columns]
-head(file5_cols)
-```
-
-##File 6
-```{r}
-file6 <- read.csv(files[6])
-head(file6)
-
-missing_columns <- setdiff(desired_columns, names(file6))
-for (col in missing_columns) {
-  file6[[col]] <- NA
-}
-
-head(file6)
-
-file6_clean <- file6 %>%
-  mutate(
-    Project = "COMPASS: Synoptic", 
-    Region = "CB", 
-    Depth_cm = Depth, 
-    SO4_Conc_mM = SO4_mM,
-    Cl_Conc_mM = Cl_mM)
-
-head(file6_clean)
-
-file6_date <- file6_clean %>%
-  mutate(Date = ym(Date)) %>%
-  mutate(Year = year(Date),
-         Month = month(Date) )
-
-
-missing_columns <- setdiff(desired_columns, names(file6_date))
-for (col in missing_columns) {
-  file6_date[[col]] <- NA
-}
-
-head(file6_date)
-
-file6_cols <- file6_date[, desired_columns]
-head(file6_cols)
-```
-
-##File 7
-```{r}
-file7 <- read.csv(files[7])
-head(file7)
-
-missing_columns <- setdiff(desired_columns, names(file7))
-for (col in missing_columns) {
-  file7[[col]] <- NA
-}
-
-head(file7)
-
-file7_clean <- file7 %>%
-  mutate(
-    Project = "COMPASS: Synoptic", 
-    Region = "CB", 
-    Depth_cm = Depth, 
-    SO4_Conc_mM = SO4_mM,
-    Cl_Conc_mM = Cl_mM)
-
-head(file7_clean)
-
-file7_date <- file7_clean %>%
-  mutate(Date = ym(Date)) %>%
-  mutate(Year = year(Date),
-         Month = month(Date) )
-
-
-missing_columns <- setdiff(desired_columns, names(file7_date))
-for (col in missing_columns) {
-  file7_date[[col]] <- NA
-}
-
-head(file7_date)
-
-file7_cols <- file7_date[, desired_columns]
-head(file7_cols)
-```
-
-##File 8
-```{r}
-file8 <- read.csv(files[8])
-head(file8)
-
-missing_columns <- setdiff(desired_columns, names(file8))
-for (col in missing_columns) {
-  file8[[col]] <- NA
-}
-
-head(file8)
-
-file8_clean <- file8 %>%
-  mutate(
-    Project = "COMPASS: Synoptic", 
-    Region = "CB", 
-    Depth_cm = Depth, 
-    SO4_Conc_mM = SO4_mM,
-    Cl_Conc_mM = Cl_mM)
-
-head(file8_clean)
-
-file8_date <- file8_clean %>%
-  mutate(Date = ym(Date)) %>%
-  mutate(Year = year(Date),
-         Month = month(Date) )
-
-
-missing_columns <- setdiff(desired_columns, names(file8_date))
-for (col in missing_columns) {
-  file8_date[[col]] <- NA
-}
-
-head(file8_date)
-
-file8_cols <- file8_date[, desired_columns]
-head(file8_cols)
-```
-
-##Combine all data files
-```{r}
-##Need to format data files to look like the 2024 processed data with these column names: 
-# "Project"	"Region"	"Site"	"Zone"	"Replicate"	"Depth_cm"	"Sample_ID"	"Year"	"Month"	"Day"	"Time"	"Time_Zone"	"SO4_Conc_mM"	"SO4_Conc_flag"	"SO4_QAQC_flag"	"Cl_Conc_mM"	"Cl_Conc_flag"	"Cl_QAQC_flag"	"salinity"	"Analysis_rundate"	"Run_notes"	"Field_notes"
-
-all_data_extra <- bind_rows(file1_cols, file2_cols, file3_cols, file4_cols, file5_cols, file6_cols, file7_cols, file8_cols)
 
 ##Remove non-Sip Samples
-all_data <- all_data_extra %>%  
-  filter(str_detect(Replicate, "Sip"))
+all_data_sip <- all_data %>%  
+  filter(str_detect(Replicate, "Sip"))%>%  
+  rename(
+    Replicate_sip = Replicate, 
+    Sample_ID_sip = Sample_ID, 
+    SO4_ppm_sip = SO4_ppm, 
+    Cl_ppm_sip = Cl_ppm, 
+    SO4_mM_sip = SO4_mM, 
+    Cl_mM_sip = Cl_mM, 
+    salinity_sip = salinity
+  )%>%  
+  mutate(Replicate = gsub("Sip", "", Replicate_sip))
+
+##Remove non-Lys Samples
+all_data_lys <- all_data %>%  
+  filter(str_detect(Replicate, "Lys"))%>%  
+  rename(
+    Replicate_lys = Replicate, 
+    Sample_ID_lys = Sample_ID, 
+    SO4_ppm_lys = SO4_ppm, 
+    Cl_ppm_lys = Cl_ppm, 
+    SO4_mM_lys = SO4_mM, 
+    Cl_mM_lys = Cl_mM, 
+    salinity_lys = salinity
+  )%>%  
+  mutate(Replicate = gsub("Lys", "", Replicate_lys))
+
+##Merge Datasets by Date, Site, Depth, and Zone
+all_data_combined <- merge(all_data_lys, all_data_sip, by = c("Date", "Site", "Depth", "Zone"))
 
 ```
 
-## Pull in Metadata
+
 ```{r}
-
-Raw_Metadata = "Raw Data/COMPASS_SynopticCB_PW_SampleLog_2022.csv"
-
-#read in the raw metadata file 
-raw_metadata <- read.csv(Raw_Metadata)
-
-#make a new columns in the metadata with important info:
-metadata <- raw_metadata %>%
-  mutate(Depth = paste0(Depth_cm, "cm")) %>%
-  mutate(LysID = paste0("Lys", Lysimeter)) %>%
-  mutate(YearMonth = sprintf("%d%02d", Year, Month))  %>%
-  mutate(Zone = case_when(
-    `Transect.Location` == "Transition" ~ "TR",
-    `Transect.Location` == "Wetland"    ~ "WC",
-    `Transect.Location` == "Upland"     ~ "UP",   
-    `Transect.Location` == "Surface Water" ~ "SW",
-    TRUE                 ~ `Transect.Location`    # keep original value if no match
-  ))
-
-#Create IDs from what was collected for comparison later
-metadata <- metadata %>%
-  mutate(Cl_SO4_ID = ifelse(SO4 == "x",
-                                     paste(Site,
-                                           YearMonth,
-                                           Zone,
-                                           LysID,
-                                           Depth,
-                                           sep = "_"),
-                                     NA),  )
-
-#Change the SW lines because they don't have lysimeters or a depth  
-metadata <- metadata %>%
-  mutate(
-    Cl_SO4_ID = if_else(
-      Zone == "SW",
-      # Modify the string:
-      Cl_SO4_ID %>%
-        str_replace("_LysA", "_A") %>%                    # Replace "_LysA" with "_A"
-        str_replace("_LysB", "_B") %>%                    # Replace "_LysB" with "_B"
-        str_replace("_LysC", "_C") %>%                    # Replace "_LysC" with "_C"
-        str_replace("_0cm$", ""),                          # Remove trailing "_0cm"
-      Cl_SO4_ID  # else keep original
-    )
+df_long <- all_data_combined %>%
+  pivot_longer(
+    cols = c(Cl_ppm_lys, Cl_ppm_sip),
+    names_to = "Source",
+    values_to = "Cl_ppm"
   )
 
-#Take out the columns and rows that are not relevant
-dionex_metadata <- metadata %>%
-  select(Cl_SO4_ID, Year, Month, Day, YearMonth, Site, Zone, Lysimeter, LysID, Depth_cm, 
-         Depth, Time..24hr., Time.Zone_EDT.EST, Field.Notes, ) %>%        
-  # only keep specific columns
-  filter(!is.na(Cl_SO4_ID) & Cl_SO4_ID != "")  # remove missing/blank Cl_SO4_ID rows
+ggplot(df_long, aes(
+  x = Depth,
+  y = Cl_ppm,
+  fill = Source
+)) +
+  geom_boxplot(position = position_dodge(width = 0.8)) +
+  facet_wrap(~ Date) +
+  labs(
+    y = "Cl (ppm)",
+    fill = "Measurement"
+  ) +
+  theme_bw()
 
-head(dionex_metadata)
+
+df_long <- all_data_combined %>%
+  pivot_longer(
+    cols = c(SO4_ppm_lys, SO4_ppm_sip),
+    names_to = "Source",
+    values_to = "SO4_ppm"
+  )
+
+ggplot(df_long, aes(
+  x = Depth,
+  y = SO4_ppm,
+  fill = Source
+)) +
+  geom_boxplot(position = position_dodge(width = 0.8)) +
+  facet_wrap(~ Date) +
+  labs(
+    y = "SO4 (ppm)",
+    fill = "Measurement"
+  ) +
+  theme_bw()
 
 ```
 
-## Make sample IDs match metadata
-```{r Make Sample match metadata}
 
-##Fix GCW spelling
-all_data <- all_data %>%
-  mutate(Site = recode(Site, "GCrew" = "GCW")) %>%
-  mutate(Site = recode(Site, "Gcrew" = "GCW")) %>%
-  mutate(Site = recode(Site, "GCerw" = "GCW")) %>%
-   mutate(Sample_ID = str_replace(Sample_ID, "GCrew", "GCW"))%>%
-   mutate(Sample_ID = str_replace(Sample_ID, "Gcrew", "GCW"))%>%
-   mutate(Sample_ID = str_replace(Sample_ID, "GCerw", "GCW"))
 
-##Remove Blanks
-all_data <- subset(all_data, Sample_ID != "Blank")
 
-##Depths for SW samples should be 0 
-all_data$Depth_cm <-  ifelse((all_data$Zone == "SW"), 0, all_data$Depth_cm)
 
-##Add cm to Depth
-all_data$Depth <- all_data$Depth_cm
-all_data <- all_data %>%
-  mutate(Depth_cm = gsub("cm", "", as.character(Depth_cm)))%>%
-  mutate(Depth_cm = gsub("m", "", as.character(Depth_cm)))
 
-##Remake Date Column with just Year and Month for Sample ID
-all_data <- all_data %>%
-  mutate(
-    Date = if_else(
-      Month < 10,
-      # Modify the string:
-      Date <- paste(all_data$Year, all_data$Month, sep = "0"), 
-      Date <- paste0(all_data$Year, all_data$Month), 
-    )
-  )
 
-##Remake sample ID
-all_data <- all_data %>%
-  mutate(
-    Sample_ID_new = if_else(
-      Zone != "SW",
-      # Modify the string:
-      Sample_ID_new <- paste(Site, Date, Zone, Replicate, Depth_cm, sep = "_"), 
-      Sample_ID_new <- paste(Site, Date, Zone, Replicate, sep = "_"), 
-    )
-  )
-
-##Add units
-all_data <- all_data %>%
-  mutate(
-    Sample_ID = if_else(
-      Zone != "SW",
-      # Modify the string:
-      Sample_ID <- paste0(Sample_ID_new, "cm"), 
-      Sample_ID <- Sample_ID_new
-    )
-  )
-```
-
-## Check to see if samples run match metadata & merge info
 ```{r}
+##Metrics for each site, zone, depth for each year
+summary_by_year_sip <- all_data_sip %>%
+  group_by(Date, Site, Zone, Depth) %>%
+   reframe(
+     min_Cl_mM  = min(Cl_mM_sip , na.rm=TRUE),
+     max_Cl_mM  = max(Cl_mM_sip , na.rm=TRUE), 
+     mean_Cl_mM  = mean(Cl_mM_sip , na.rm=TRUE), 
+     sd_Cl_mM  = sd(Cl_mM_sip , na.rm=TRUE), 
 
-#check to see if all samples are present in the metadata 
-all_data$Sample_ID <- toupper(all_data$Sample_ID)
-dionex_metadata$Cl_SO4_ID <- toupper(dionex_metadata$Cl_SO4_ID)
+     min_SO4_mM  = min(SO4_mM_sip , na.rm=TRUE),
+     max_SO4_mM  = max(SO4_mM_sip , na.rm=TRUE), 
+     mean_SO4_mM  = mean(SO4_mM_sip , na.rm=TRUE), 
+     sd_SO4_mM  = sd(SO4_mM_sip , na.rm=TRUE)) %>%
+  mutate(across(where(is.numeric), round, digits = 4))  %>%
+  mutate(Type = "Sip") 
 
-all_present <- all(all_data$Sample_ID %in% dionex_metadata$Cl_SO4_ID)
+summary_by_year_lys <- all_data_lys %>%
+  group_by(Date, Site, Zone, Depth) %>%
+   reframe(
+     min_Cl_mM  = min(Cl_mM_lys , na.rm=TRUE),
+     max_Cl_mM  = max(Cl_mM_lys , na.rm=TRUE), 
+     mean_Cl_mM  = mean(Cl_mM_lys , na.rm=TRUE), 
+     sd_Cl_mM  = sd(Cl_mM_lys , na.rm=TRUE), 
 
-if (all_present) {
-  message("All sample IDs are present in metadata.")
-} else {
-  message("Some sample IDs are missing from metadata.")
-  
-  # Optional: Which ones are missing?
-  missing_ids <- setdiff(all_data$Sample_ID, dionex_metadata$Cl_SO4_ID)
-  print(missing_ids)
-}
+     min_SO4_mM  = min(SO4_mM_lys , na.rm=TRUE),
+     max_SO4_mM  = max(SO4_mM_lys , na.rm=TRUE), 
+     mean_SO4_mM  = mean(SO4_mM_lys , na.rm=TRUE), 
+     sd_SO4_mM  = sd(SO4_mM_lys , na.rm=TRUE)) %>%
+  mutate(across(where(is.numeric), round, digits = 4)) %>%
+  mutate(Type = "Lys") 
 
-# missing_ids <- data.frame(missing_ids)
-# 
-# ##Export missing IDs to csv
-# write.csv(missing_ids, "COMPASS_SynopticCB_SO4_Cl_2022_missing_IDs.csv")
+##Merge Datasets by Date, Site, Depth, and Zone
+summary_by_year_combined <- bind_rows(summary_by_year_sip, summary_by_year_lys)
 
-##Remove Lys from Replicate Column
-all_data <- all_data %>%
-  mutate(Replicate = gsub("Lys", "", as.character(Replicate)))
+##Convert Collection Date into Date format
+summary_by_year_combined$Date <- as.character(summary_by_year_combined$Date)
+# Append '01' for the first day of the month and convert
+summary_by_year_combined$Date_formatted <- as.Date(paste0(summary_by_year_combined$Date, "01"), format = "%Y%m%d")
 
-##Select only necessary columns
-all_data_selected <- all_data %>%
-  select(-c("Day", "Time", "Time_Zone", "Field_notes", "Depth", "Sample_ID_new", "Date"))
+##Extract Year and month from Collection Date
+raw_dat$Year <- format(raw_dat$Collection_Date_formatted, format = "%Y")
+raw_dat$Month <- format(raw_dat$Collection_Date_formatted, format = "%m")
+raw_dat$Day <- format(raw_dat$Collection_Date_formatted, format = "%d")
 
-all_data_selected$Depth_cm <- as.integer(all_data_selected$Depth_cm)
-
-##Select only necessary columns
-dionex_metadata_selected <- dionex_metadata %>%
-  select(Cl_SO4_ID, Year, Month, Day, Depth_cm, Lysimeter, Time..24hr., Time.Zone_EDT.EST,  Field.Notes) 
-
-#merge metadata with sample run data 
-merged_data <- all_data_selected %>%
-  left_join(dionex_metadata_selected, by = c("Sample_ID" = "Cl_SO4_ID", "Replicate" = "Lysimeter", "Year", "Month", "Depth_cm"))
-
-##Change any SO4/Cl conc's of NA to 0 
-merged_data$SO4_Conc_mM[is.na(merged_data$SO4_Conc_mM)] <- 0
-merged_data$Cl_Conc_mM[is.na(merged_data$Cl_Conc_mM)] <- 0
-merged_data$SO4_ppm[is.na(merged_data$SO4_ppm)] <- 0
-merged_data$Cl_ppm[is.na(merged_data$Cl_ppm)] <- 0
-
-merged_data$salinity <- ifelse(merged_data$Cl_ppm == 0, 2.6e-05, merged_data$salinity)
 
 ```
 
+## Summarized data for Site and Zone 
+```{r Summarize and Visualize Data, echo=FALSE, warning=FALSE, message = FALSE, fig.width=16, fig.height=10, dpi = 300}
 
-## Visualize Data
-```{r}
+##Summarize SO4 and Cl by Date and Zone
+# Dionex_avg <- data_plotting %>%
+#   group_by(Collection_Date_formatted, Zone_1) %>%
+#    dplyr::summarize(mean_SO4 = mean(SO4_ppm, na.rm=TRUE),
+#             sd_SO4 = sd(SO4_ppm, na.rm=TRUE),
+#             mean_Cl = mean(Cl_ppm, na.rm=TRUE),
+#             sd_Cl = sd(Cl_ppm, na.rm=TRUE))
+
+# Define the specific date breaks you want to display
+specific_breaks <- as.Date(c("2024-01-01", "2025-01-01"))
+
+viz_cl_plot_avgs <- ggplot(summary_by_year_combined, aes(x = Date_formatted, y = mean_Cl_mM, color = Type)) +
+  geom_point(size = 3) + 
+  geom_errorbar(aes(ymin = mean_Cl_mM - sd_Cl_mM, ymax = mean_Cl_mM + sd_Cl_mM), width = 0.2) + 
+  geom_line() + 
+  facet_wrap( Site ~ Zone, scales="free_y") +
+  # scale_color_manual(values = c(
+  #   "Control" = "springgreen2",
+  #   "Freshwater" = "cyan2",
+  #   "Saltwater" = "violetred2"
+  # )) +
+  theme_classic() +
+  labs(x = "Date", y = "Chloride (ppm)", title = "Samples: Chloride") +
+  theme(
+    panel.spacing = unit(0.5, "lines"), 
+    panel.border = element_rect(color = "black", fill = NA, linewidth = 1)) +
+  # theme(axis.text.x = element_text(angle = 90, hjust = 0.5))+ 
+  theme(text = element_text(size = 30))+
+  scale_x_date(date_labels = "%b %Y", date_breaks = "1 month") + # Format x-axis labels
+  theme(axis.ticks.x = element_line(linewidth = 1))+
+  theme(axis.ticks.length.x = unit(0.25, "cm"))+ 
+  theme(legend.position = "none")+ 
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+viz_cl_plot_avgs
+
+
+viz_so4_plot_avgs <- ggplot(Dionex_avg, aes(x = Collection_Date_formatted, y = mean_SO4, color = Zone_1)) +
+  geom_point(size = 3) + 
+  geom_errorbar(aes(ymin = mean_SO4 - sd_SO4, ymax = mean_SO4 + sd_SO4), width = 0.2) + 
+  geom_line() + 
+  facet_wrap( ~ Zone_1, scales="free_y", ncol = 1) +
+  scale_color_manual(values = c(
+    "Control" = "springgreen2",
+    "Freshwater" = "cyan2",
+    "Saltwater" = "violetred2"
+  )) +
+  theme_classic() +
+  labs(x = "Date", y = "Sulfate (ppm)", title = "Samples: Sulfate") +
+  theme(
+    panel.spacing = unit(0.5, "lines"), 
+    panel.border = element_rect(color = "black", fill = NA, linewidth = 1)) +
+  # theme(axis.text.x = element_text(angle = 90, hjust = 0.5))+ 
+  theme(text = element_text(size = 30))+
+  scale_x_date(date_labels = "%b %Y", date_breaks = "1 month") + # Format x-axis labels
+  theme(axis.ticks.x = element_line(linewidth = 1))+
+  theme(axis.ticks.length.x = unit(0.25, "cm"))+ 
+  theme(legend.position = "none")+ 
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+viz_so4_plot_avgs
+
+# ggarrange(viz_cl_plot_avgs, viz_so4_plot_avgs, nrow=1, ncol=2)
 
 ```
 
+## Boxplot summary
+```{r Overall Boxplot, echo=FALSE, warning=FALSE, message = FALSE, fig.width=16, fig.height=10, dpi = 300}
+##Want boxplot of Sip vs Lys data for same Date, Site, Depth, and Zone
+##Looks like only comparisons possible for GCW WC for different dates and depths
+##Need to make date actual date value and maybe facet by depth? 
+
+summary_by_year_combined_GCW <- subset(summary_by_year_combined, Site == "GCW")
+summary_by_year_combined_GCW_WC <- subset(summary_by_year_combined_GCW, Zone == "WC")
+
+
+##Summarize SO4 and Cl by Date, Site, and Zone
+viz_cl_boxplot <- ggplot(summary_by_year_combined, aes(x = Depth, y = mean_Cl_mM, fill = Type)) +
+  geom_boxplot() + 
+  facet_grid( Site ~ Date ) +
+  scale_x_discrete(drop = TRUE) +
+  theme_classic() +
+  labs(x = " ", y = "Chloride (mM)", title = "Synoptic CB Porewater: Chloride") +
+  theme(
+    panel.spacing = unit(0.5, "lines"), 
+    panel.border = element_rect(color = "black", fill = NA, linewidth = 1)) +
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))+ 
+  theme(text = element_text(size = 30))+
+  theme(axis.ticks.x = element_line(linewidth = 1))+
+  theme(axis.ticks.length.x = unit(0.25, "cm"))
+
+viz_cl_boxplot
+
+
+viz_so4_boxplot <- ggplot(all_dat_dates, aes(x = Zone_1, y = SO4_mM, fill = Zone_1, group = Zone_1)) +
+  geom_boxplot() +
+  facet_grid( ~ Site, scales = "free_x") +
+  scale_x_discrete(drop = TRUE) +
+  scale_fill_manual(values = c(
+    "Upland" = "#20063B",
+    "Transition" = "#FFBC42",
+    "Swamp" = "darkgrey",
+    "Wetland" = "#419973",
+    "Surface Water" = "#25ABE6"
+  ), labels = c("Upland", "Swamp", "Transition", "Wetland", "Surface Water")) +
+  theme_classic() +
+  labs(x = " ", y = "Sulfate (mM)", title = "Samples: Sulfate") +
+  theme(
+    panel.spacing = unit(0.5, "lines"), 
+    panel.border = element_rect(color = "black", fill = NA, linewidth = 1)) +
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))+ 
+  theme(text = element_text(size = 30))+
+  theme(axis.ticks.x = element_line(linewidth = 1))+
+  theme(axis.ticks.length.x = unit(0.25, "cm"))+ 
+  #scale_x_discrete(labels = c("Upland", "Swamp", "Transition", "Wetland", "Surface Water"))+ 
+  theme(legend.position = "none")
+
+viz_so4_boxplot
+
+# ggarrange(viz_cl_boxplot, viz_so4_boxplot, nrow=2, ncol=1)
+
+# Save as a PNG
+png("COMPASS_SynopticCB_Cl_alldata.png", width = 2000, height = 1200, res = 100) 
+print(viz_cl_boxplot)  # For ggplot objects, use print()
+dev.off() 
+
+# Save as a PNG
+png("COMPASS_SynopticCB_SO4_alldata.png", width = 2000, height = 1200, res = 100) 
+print(viz_so4_boxplot)  # For ggplot objects, use print()
+dev.off() 
+
+```
 
 ## Write the 2022 file out to the folder 
 ```{r, echo=FALSE}
