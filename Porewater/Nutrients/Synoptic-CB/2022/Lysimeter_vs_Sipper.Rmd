@@ -1,0 +1,89 @@
+---
+title: "COMPASS_SynopticCB_NUTR_CollateData_2022_Data_Sip"
+author: "Stephanie J. Wilson"
+date: "2025-08-29"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(dplyr)
+library(ggplot2)
+library(ggpubr)
+library(stringr)
+library(readxl)
+library(tidyr)
+library(tibble)
+library(lubridate)
+```
+
+#Read in and collate all the files in the Processed Data folder 
+```{r}
+files <- list.files(path = "Processed Data", pattern = "\\.csv$", full.names = TRUE)
+
+# 3. Read and combine all CSVs
+all_data <- files %>%
+  lapply(read.csv, colClasses = "character") %>%    # or read.csv if you prefer base R
+  bind_rows()             # combine into one data frame
+
+all_data <- all_data %>%
+  select("Date" ,"Site", , "Zone" , "Replicate",   "Depth" ,      "Sample_Name" ,  "NH3_mgL" ,    "PO4_mgL"   ,   "NOx_mgL"  )
+
+colnames(all_data)
+
+all_data$NH3_mgL <- as.numeric(all_data$NH3_mgL)
+all_data$PO4_mgL <- as.numeric(all_data$PO4_mgL)
+all_data$NOx_mgL <- as.numeric(all_data$NOx_mgL)
+
+##Fix sample IDs
+all_data$Site <- gsub("GCerw", "GCW", all_data$Site)
+all_data$Site <- gsub("Gcrew", "GCW", all_data$Site)
+all_data$Site <- gsub("GCrew", "GCW", all_data$Site)
+
+##Add labels for sampler types
+all_data_long <- all_data %>%  
+  mutate(Sampler = substring(Replicate, 1, 3),
+         Replicate = substring(Replicate, 4, nchar(Replicate)))%>%  
+  filter(Sampler %in% c("Lys", "Sip"))
+
+```
+
+##Boxplots
+```{r}
+##Subset for only samples that overlap
+dates <- c("202206","202207", "202208") 
+df_sub <- subset(all_data_long, Site == "GCW" & Zone == "WC" & Date %in% dates)
+str(df_sub)
+
+boxplot_NH3 <- ggplot(df_sub, aes(x = Depth, y = NH3_mgL, fill = Sampler)) +
+  geom_boxplot(position = position_dodge(width = 0.8)) +
+  facet_wrap(~ Date) +
+  labs(y = "NH3 (ppm)", fill = "Sampler", title = "NH3 by Sampler Type") +
+  theme_bw()
+
+boxplot_PO4 <- ggplot(df_sub, aes(x = Depth, y = PO4_mgL, fill = Sampler)) +
+  geom_boxplot(position = position_dodge(width = 0.8)) +
+  facet_wrap(~ Date) +
+  labs(y = "PO4 (ppm)", fill = "Sampler", title = "PO4 by Sampler Type") +
+  theme_bw()
+
+boxplot_NOx <- ggplot(df_sub, aes(x = Depth, y = NOx_mgL, fill = Sampler)) +
+  geom_boxplot(position = position_dodge(width = 0.8)) +
+  facet_wrap(~ Date) +
+  labs(y = "NOx (ppm)", fill = "Sampler", title = "NOx by Sampler Type") +
+  theme_bw()
+
+# Save as a PNG
+png("Lysimeter_vs_Sipper_NH3.png", width = 2000, height = 1200, res = 200) 
+print(boxplot_NH3)  # For ggplot objects, use print()
+dev.off() 
+
+# Save as a PNG
+png("Lysimeter_vs_Sipper_PO4.png", width = 2000, height = 1200, res = 200) 
+print(boxplot_PO4)  # For ggplot objects, use print()
+dev.off()
+
+# Save as a PNG
+png("Lysimeter_vs_Sipper_NOx.png", width = 2000, height = 1200, res = 200) 
+print(boxplot_NOx)  # For ggplot objects, use print()
+dev.off() 
+```
