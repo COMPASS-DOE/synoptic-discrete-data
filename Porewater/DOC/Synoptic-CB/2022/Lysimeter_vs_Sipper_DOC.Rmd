@@ -1,0 +1,73 @@
+---
+title: "Lysimeter_vs_Sipper_DOC"
+author: "Zoe Read"
+date: "2025-12-29"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(dplyr)
+library(ggplot2)
+library(ggpubr)
+library(stringr)
+library(readxl)
+library(tidyr)
+library(tibble)
+library(lubridate)
+```
+
+#Read in and collate all the files in the Processed Data folder 
+```{r}
+files <- list.files(path = "Processed Data", pattern = "\\.csv$", full.names = TRUE)
+
+# 3. Read and combine all CSVs
+all_data <- files %>%
+  lapply(read.csv, colClasses = "character") %>%    # or read.csv if you prefer base R
+  bind_rows()             # combine into one data frame
+
+colnames(all_data)
+
+all_data <- all_data %>%
+  select("Site", "Zone" , "Replicate",   "Depth_cm" ,  "Sample_ID" ,  "ic_mgL", "Year", "Month")
+
+all_data$ic_mgL <- as.numeric(all_data$ic_mgL)
+
+##Fix sample IDs
+all_data$Site <- gsub("GCerw", "GCW", all_data$Site)
+all_data$Site <- gsub("Gcrew", "GCW", all_data$Site)
+all_data$Site <- gsub("GCrew", "GCW", all_data$Site)
+
+##Add labels for sampler types
+all_data_long <- all_data %>%  
+  separate(
+    col = Sample_ID,
+    sep = "_",
+    into = c("Site", "Date", "Zone", "Replicate", "Depth_cm"),
+    remove = FALSE)%>%  
+  rename(Depth = Depth_cm) %>%  
+  mutate(Sampler = substring(Replicate, 1, 3),
+         Replicate = substring(Replicate, 4, nchar(Replicate)))%>%  
+  filter(Sampler %in% c("Lys", "Sip"))
+
+```
+
+##Boxplots
+```{r}
+##Subset for only samples that overlap
+dates <- c("202206","202207", "202208")
+df_sub <- subset(all_data_long, Site == "GCW" & Zone == "WC" & Date %in% dates)
+str(df_sub)
+
+boxplot_ic_mgL <- ggplot(df_sub, aes(x = Depth, y = ic_mgL, fill = Sampler)) +
+  geom_boxplot(position = position_dodge(width = 0.8)) +
+  facet_wrap(~ Date) +
+  labs(y = "ic_mgL (ppm)", fill = "Sampler", title = "DIC by Sampler Type") +
+  theme_bw()
+
+# Save as a PNG
+png("Lysimeter_vs_Sipper_DIC.png", width = 2000, height = 1200, res = 200) 
+print(boxplot_ic_mgL)  # For ggplot objects, use print()
+dev.off() 
+
+```
+

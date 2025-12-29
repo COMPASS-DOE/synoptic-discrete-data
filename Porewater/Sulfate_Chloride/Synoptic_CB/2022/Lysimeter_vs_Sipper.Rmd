@@ -41,7 +41,49 @@ all_data$Site <- gsub("GCerw", "GCW", all_data$Site)
 all_data$Site <- gsub("Gcrew", "GCW", all_data$Site)
 all_data$Site <- gsub("GCrew", "GCW", all_data$Site)
 
+##Add labels for sampler types
+all_data_long <- all_data %>%  
+  mutate(Sampler = substring(Replicate, 1, 3),
+         Replicate = substring(Replicate, 4, nchar(Replicate)))%>%  
+  filter(Sampler %in% c("Lys", "Sip"))
 
+```
+
+##Boxplots
+```{r}
+##Subset for only samples that overlap
+dates <- c("202206","202207", "202208") 
+df_sub <- subset(all_data_long, Site == "GCW" & Zone == "WC" & Date %in% dates)
+str(df_sub)
+
+boxplot_Cl <- ggplot(df_sub, aes(x = Depth, y = Cl_ppm, fill = Sampler)) +
+  geom_boxplot(position = position_dodge(width = 0.8)) +
+  facet_wrap(~ Date) +
+  labs(y = "Cl (ppm)", fill = "Sampler", title = "Sulfate by Sampler Type") +
+  theme_bw()
+
+boxplot_SO4 <- ggplot(df_sub, aes(x = Depth, y = SO4_ppm, fill = Sampler)) +
+  geom_boxplot(position = position_dodge(width = 0.8)) +
+  facet_wrap(~ Date) +
+  labs(y = "SO4 (ppm)", fill = "Sampler", title = "Sulfate by Sampler Type") +
+  theme_bw()
+
+# Save as a PNG
+png("Lysimeter_vs_Sipper_Cl.png", width = 2000, height = 1200, res = 200) 
+print(boxplot_Cl)  # For ggplot objects, use print()
+dev.off() 
+
+# Save as a PNG
+png("Lysimeter_vs_Sipper_SO4.png", width = 2000, height = 1200, res = 200) 
+print(boxplot_SO4)  # For ggplot objects, use print()
+dev.off() 
+
+```
+
+
+
+####Still figuring these out####
+```{r}
 ##Remove non-Sip Samples
 all_data_sip <- all_data %>%  
   filter(str_detect(Replicate, "Sip"))%>%  
@@ -54,7 +96,8 @@ all_data_sip <- all_data %>%
     Cl_mM_sip = Cl_mM, 
     salinity_sip = salinity
   )%>%  
-  mutate(Replicate = gsub("Sip", "", Replicate_sip))
+  mutate(Replicate = gsub("Sip", "", Replicate_sip))%>%  
+  mutate(Sampler = "Sipper")
 
 ##Remove non-Lys Samples
 all_data_lys <- all_data %>%  
@@ -68,62 +111,12 @@ all_data_lys <- all_data %>%
     Cl_mM_lys = Cl_mM, 
     salinity_lys = salinity
   )%>%  
-  mutate(Replicate = gsub("Lys", "", Replicate_lys))
+  mutate(Replicate = gsub("Lys", "", Replicate_lys))%>%  
+  mutate(Sampler = "Lysimeter")
 
 ##Merge Datasets by Date, Site, Depth, and Zone
 all_data_combined <- merge(all_data_lys, all_data_sip, by = c("Date", "Site", "Depth", "Zone"))
-
 ```
-
-
-```{r}
-df_long <- all_data_combined %>%
-  pivot_longer(
-    cols = c(Cl_ppm_lys, Cl_ppm_sip),
-    names_to = "Source",
-    values_to = "Cl_ppm"
-  )
-
-ggplot(df_long, aes(
-  x = Depth,
-  y = Cl_ppm,
-  fill = Source
-)) +
-  geom_boxplot(position = position_dodge(width = 0.8)) +
-  facet_wrap(~ Date) +
-  labs(
-    y = "Cl (ppm)",
-    fill = "Measurement"
-  ) +
-  theme_bw()
-
-
-df_long <- all_data_combined %>%
-  pivot_longer(
-    cols = c(SO4_ppm_lys, SO4_ppm_sip),
-    names_to = "Source",
-    values_to = "SO4_ppm"
-  )
-
-ggplot(df_long, aes(
-  x = Depth,
-  y = SO4_ppm,
-  fill = Source
-)) +
-  geom_boxplot(position = position_dodge(width = 0.8)) +
-  facet_wrap(~ Date) +
-  labs(
-    y = "SO4 (ppm)",
-    fill = "Measurement"
-  ) +
-  theme_bw()
-
-```
-
-
-
-
-
 
 
 ```{r}
@@ -166,10 +159,10 @@ summary_by_year_combined$Date <- as.character(summary_by_year_combined$Date)
 # Append '01' for the first day of the month and convert
 summary_by_year_combined$Date_formatted <- as.Date(paste0(summary_by_year_combined$Date, "01"), format = "%Y%m%d")
 
-##Extract Year and month from Collection Date
-raw_dat$Year <- format(raw_dat$Collection_Date_formatted, format = "%Y")
-raw_dat$Month <- format(raw_dat$Collection_Date_formatted, format = "%m")
-raw_dat$Day <- format(raw_dat$Collection_Date_formatted, format = "%d")
+# ##Extract Year and month from Collection Date
+# raw_dat$Year <- format(raw_dat$Collection_Date_formatted, format = "%Y")
+# raw_dat$Month <- format(raw_dat$Collection_Date_formatted, format = "%m")
+# raw_dat$Day <- format(raw_dat$Collection_Date_formatted, format = "%d")
 
 
 ```
@@ -254,7 +247,7 @@ summary_by_year_combined_GCW_WC <- subset(summary_by_year_combined_GCW, Zone == 
 
 
 ##Summarize SO4 and Cl by Date, Site, and Zone
-viz_cl_boxplot <- ggplot(summary_by_year_combined, aes(x = Depth, y = mean_Cl_mM, fill = Type)) +
+viz_cl_boxplot <- ggplot(summary_by_year_combined_GCW_WC, aes(x = Depth, y = mean_Cl_mM, fill = Type)) +
   geom_boxplot() + 
   facet_grid( Site ~ Date ) +
   scale_x_discrete(drop = TRUE) +
@@ -307,6 +300,73 @@ dev.off()
 png("COMPASS_SynopticCB_SO4_alldata.png", width = 2000, height = 1200, res = 100) 
 print(viz_so4_boxplot)  # For ggplot objects, use print()
 dev.off() 
+
+```
+
+```{r}
+# Summary stats for Sip only
+sip_sum <- df_sub %>%
+  filter(Sampler == "Sip") %>%
+  group_by(Depth, Date) %>%
+  summarise(
+    mean = mean(SO4_ppm, na.rm = TRUE),
+    sd = sd(SO4_ppm, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+
+##Plot: raw data + Sip mean ± SD + Lys points
+ggplot() +
+  geom_jitter(
+    data = subset(df_sub, Sampler == "Sip"),
+    aes(x = Depth, y = SO4_ppm, color = Sampler),
+    width = 0.15,
+    size = 3
+  ) +
+
+  #Sip mean ± SD
+  geom_errorbar(
+    data = sip_sum,
+    aes(x = Depth, ymin = mean - sd, ymax = mean + sd),
+    width = 0.2
+  ) + 
+
+  geom_point(
+    data = sip_sum,
+    aes(x = Depth, y = mean),
+    size = 4,
+    shape = 21,
+    fill = "steelblue"
+  ) +
+
+  # Lys single points
+  geom_point(
+    data = subset(df_sub, Sampler == "Lys"),
+    aes(x = Depth, y = SO4_ppm, shape = Sampler),
+    shape = 24,
+    size = 3,
+    fill = "white",
+    color = "black"
+  ) +
+
+  labs(
+    x = "Depth",
+    y = "Sulfate (ppm)",
+    title = "Sulfate concentration by sampler and depth",
+    subtitle = "Sip shown as replicates and mean ± SD; Lys shown as single samples"
+  ) +
+
+  theme_bw() + 
+  
+  facet_wrap(~Date) + 
+  
+  labs(
+  color = "Sampler type",
+  shape = "Sampler type")
+
+
+```
+
 
 ```
 
