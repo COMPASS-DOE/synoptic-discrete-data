@@ -1,0 +1,181 @@
+---
+title: "COMPASS_Synoptic_SoilFluxes_2024_CH4"
+author: "Stephanie J. Wilson"
+date: "2025-01-30"
+output: html_document
+---
+## Goals of this code: 
+1.	Pull in CO2 and CH4 data and combine 
+2.	Initial visualization of the data 
+3.  Write out a combined 2024 data file to the project 
+
+
+## Set Up & Load Packages
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+#install.packages("remotes") # if necessary
+#remotes::install_github("COMPASS-DOE/fluxfinder")
+
+library(fluxfinder)
+library(ggplot2)
+library(ggpubr)
+library(lubridate)
+library(dplyr)
+library(tidyr)
+library(tidyverse)
+library(dplyr)
+library(stringr)
+
+```
+
+## Read in 2024 CH4 and CO2 fluxes and combine 
+```{r setup, include=FALSE}
+
+#read in the data files
+ch4 <- read.csv("Processed Data/COMPASS_Synoptic_CB_SmartChamber_Fluxes_Final_2024_CH4.csv")
+
+co2 <- read.csv("Processed Data/COMPASS_Synoptic_CB_SmartChamber_Fluxes_Final_2024_CO2.csv")
+
+#we need to identify the columns in the ch4 and co2 dataframes because they have the same column names 
+ch4 <- ch4 %>%
+  select(-X) %>%
+  rename_with(
+    .fn = ~ paste0("ch4_", .),
+    .cols = !c("RepNumber", "Month", "Site", "Zone", "Replicate", "Plot", "TIMESTAMP")
+  )
+
+co2 <- co2 %>%
+  select(-X) %>%
+  rename_with(
+    .fn = ~ paste0("co2_", .),
+    .cols = !c("RepNumber", "Month", "Site", "Zone", "Replicate", "Plot", "TIMESTAMP")
+  )
+
+all <- full_join(ch4, co2, by = c("RepNumber", "Month", "Site", "Zone", "Replicate", "Plot"))
+
+all <- all %>%
+  rename(TIMESTAMP = TIMESTAMP.x) %>%
+   mutate(Project = "COMPASS", Experiment = "Synoptic", Region = "CB")
+
+```
+
+## Initial Viz of Fluxes across sites and zones  
+```{r setup, include=FALSE}
+
+#Plot up the Methane fluxes across the year and sites 
+p1 <- ggplot(all, aes(x=as.Date(TIMESTAMP), y=ch4_lin_flux.estimate, color=Zone, fill=Zone)) + 
+  geom_point(size=2)+
+  scale_x_date(date_labels = "%b", breaks = "1 month") +
+  facet_wrap(vars(Site),nrow=1, ncol=4, scales="free")+ 
+  ggtitle("COMPASS Synoptic CB Soil Fluxes: 2024")+
+  scale_color_manual(values=c("darkgrey","#FFBC42", "#20063B"))+
+  scale_fill_manual(values=c("darkgrey","#FFBC42", "#20063B"))+
+  ylab(expression(paste(CH[4]* ~ Flux ~ (nmoles ~ m^-2~s^-1))))+
+  xlab(" ")+
+  theme_classic() + 
+  theme(legend.title=element_blank(), text = element_text(size = 12),
+        legend.text=element_text(size=12), 
+        #plot.margin = margin(t=0.1, r=0.05, l=0.05, b=0.05, "cm"),
+        panel.border = element_rect(color="black", fill=NA, size=1))+
+  theme(legend.position="bottom")
+p1
+
+p2 <- ggplot(all, aes(x=as.Date(TIMESTAMP), y=co2_lin_flux.estimate, color=Zone, fill=Zone)) + 
+  geom_point(size=2, shape=15)+
+  scale_x_date(date_labels = "%b", breaks = "1 month") +
+  facet_wrap(vars(Site),nrow=1, ncol=4, scales="free")+ 
+  ggtitle("COMPASS Synoptic CB Soil Fluxes: 2024")+
+  scale_color_manual(values=c("darkgrey","#FFBC42", "#20063B"))+
+  scale_fill_manual(values=c("darkgrey","#FFBC42", "#20063B"))+
+  ylab(expression(paste(CO[2]* ~ Flux ~ (μmoles ~ m^-2~s^-1))))+
+  xlab(" ")+
+  theme_classic() + 
+  theme(legend.title=element_blank(), text = element_text(size = 12),
+        legend.text=element_text(size=12), 
+        #plot.margin = margin(t=0.1, r=0.05, l=0.05, b=0.05, "cm"),
+        panel.border = element_rect(color="black", fill=NA, size=1))+
+  theme(legend.position="bottom")
+p2
+
+##########################
+
+#lets average across site zone and month to look at it this wasy 
+
+Avgch4 <- all %>% 
+  group_by(Site, Zone, Month) %>% 
+  dplyr::summarize(mean_ch4 = as.numeric(mean(ch4_lin_flux.estimate, na.rm=TRUE)),
+                   std_ch4 = sd(ch4_lin_flux.estimate, na.rm=TRUE), 
+                   se_ch4 = as.numeric(std_ch4/(sqrt(5))), 
+                   TIMESTAMP = first(na.omit(TIMESTAMP))) 
+
+Avgch4 <- as.data.frame(Avgch4)
+head(Avgch4)
+
+p1a <- ggplot(Avgch4, aes(x=as.Date(TIMESTAMP), y=mean_ch4, color=Zone, fill=Zone)) + 
+  geom_point(size=4)+
+  geom_errorbar(aes(ymin=mean_ch4-se_ch4, ymax=mean_ch4+se_ch4), width=.2,
+                position=position_dodge(.9)) +
+  geom_line() + 
+  scale_x_date(date_labels = "%b", breaks = "1 month") +
+  facet_wrap(vars(Site),nrow=1, ncol=4, scales="free")+ 
+  ggtitle("COMPASS Synoptic CB Soil Fluxes: 2024")+
+  scale_color_manual(values=c("darkgrey","#FFBC42", "#20063B"))+
+  scale_fill_manual(values=c("darkgrey","#FFBC42", "#20063B"))+
+  ylab(expression(paste(CH[4]* ~ Flux ~ (nmoles ~ m^-2~s^-1))))+
+  xlab(" ")+
+  theme_classic() + 
+  theme(legend.title=element_blank(), text = element_text(size = 12),
+        legend.text=element_text(size=12), 
+        #plot.margin = margin(t=0.1, r=0.05, l=0.05, b=0.05, "cm"),
+        panel.border = element_rect(color="black", fill=NA, size=1))+
+  theme(legend.position="bottom")
+p1a
+
+
+Avgco2 <- all %>% 
+  group_by(Site, Zone, Month) %>% 
+  dplyr::summarize(mean_co2 = as.numeric(mean(co2_lin_flux.estimate, na.rm=TRUE)),
+                   std_co2 = sd(co2_lin_flux.estimate, na.rm=TRUE), 
+                   se_co2 = as.numeric(std_co2/(sqrt(5))), 
+                   TIMESTAMP = first(na.omit(TIMESTAMP))) 
+
+Avgco2 <- as.data.frame(Avgco2)
+head(Avgco2)
+
+p2a <- ggplot(Avgco2, aes(x=as.Date(TIMESTAMP), y=mean_co2, color=Zone, fill=Zone)) + 
+  geom_point(size=4, shape=15)+
+  geom_errorbar(aes(ymin=mean_co2-se_co2, ymax=mean_co2+se_co2), width=.2,
+                position=position_dodge(.9)) +
+  geom_line() + 
+  scale_x_date(date_labels = "%b", breaks = "1 month") +
+  facet_wrap(vars(Site),nrow=1, ncol=4, scales="free")+ 
+  ggtitle("COMPASS Synoptic CB Soil Fluxes: 2024")+
+  scale_color_manual(values=c("darkgrey","#FFBC42", "#20063B"))+
+  scale_fill_manual(values=c("darkgrey","#FFBC42", "#20063B"))+
+  ylab(expression(paste(CO[2]* ~ Flux ~ (μmoles ~ m^-2~s^-1))))+
+  xlab(" ")+
+  theme_classic() + 
+  theme(legend.title=element_blank(), text = element_text(size = 12),
+        legend.text=element_text(size=12), 
+        #plot.margin = margin(t=0.1, r=0.05, l=0.05, b=0.05, "cm"),
+        panel.border = element_rect(color="black", fill=NA, size=1))+
+  theme(legend.position="bottom")
+p2a
+
+
+```
+
+
+## Write out the Full 2024 Soil Fluxes Data File   
+```{r setup, include=FALSE}
+
+#check that all the columns are named what we want for now: 
+head(all)
+
+write.csv(all, "COMPASS_Synoptic_SoilFluxes_2024_CO2_CH4.csv")
+
+```
+
+
+
