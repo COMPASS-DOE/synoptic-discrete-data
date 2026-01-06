@@ -1,0 +1,363 @@
+---
+title: "COMPASS_Synoptic_MacrophyteFluxes_2022"
+author: "Stephanie J. Wilson"
+date: "2024-04-19"
+output: pdf_document
+---
+## Set Up
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+#install.packages("remotes") # if necessary
+#remotes::install_github("COMPASS-DOE/fluxfinder")
+
+library(fluxfinder)
+library(ggplot2)
+library(ggpubr)
+library(lubridate)
+library(dplyr)
+library(tidyr)
+
+```
+
+## Pull in Raw Datafiles
+```{r}
+#list the files
+L <- list.files(path = "Raw Data/")
+head(L)
+
+file.list <- dir(pattern = "txt$")
+
+#Read in the data 
+alldat1 <- lapply(file.list, ffi_read_LI7810)
+
+alldat <- data.table::rbindlist(alldat1, fill=TRUE)
+```
+
+## Read in metadata file and match to raw data
+```{r}
+
+#read in metadatfile
+md <- "Raw Data/COMPASS_ChamberFlux_Metadata_2022.csv"
+
+metadat <- read.csv(md) 
+
+head(metadat)  
+
+```
+
+## Read in Air Temp Data from Air Temp Code # use after L1 release
+```{r}
+# Air temp 
+
+#setwd("S:/Biogeochemistry/COMPASS Synoptics/Samples & Data/Fluxes/Macrophyte GHG Fluxes/Flux Calculations/Air Temp Data")
+#download the L1 dataset from: https://drive.google.com/drive/folders/1RP-hxmjAYNGzTfCNpYbMN6U_zbZmEWHM
+
+# Path to zip file
+L1 <- "Raw Data/L1_20240507.zip"
+
+# List CSV files inside the zip
+files <- unzip(L1, list = TRUE)$Name
+files <- files[grepl("\\.csv$", files)]
+
+results <- list()
+
+for (f in files) {
+  message(f)
+  
+  selected_research_names <- c("wx_tempavg15")
+  
+  # Read CSV directly from zip
+  dat <- read.csv(unz(L1, f))
+  
+  temp <- subset(dat, Instrument == "ClimaVUE50")
+  
+  gw <- temp %>% 
+    filter(research_name %in% selected_research_names) %>%
+    select(TIMESTAMP, research_name, Value, F_OOB, F_OOS, Plot, Site)
+  
+  results[[f]] <- gw
+}
+
+#we need to bind these together 
+dat <- do.call(rbind, results)
+rownames(dat) <- NULL
+dat1 <- dat %>% filter(!(F_OOB == 1 & F_OOS == 1))
+head(dat1)
+
+#convert to wide format 
+temps <- pivot_wider(dat1, id_cols = c("TIMESTAMP", "Plot", "Site"), names_from = research_name, values_from = Value )
+head(temps)
+
+
+```
+
+## Match up the L1 temp data and add it to the metadata dataframe
+```{r}
+#Going to need to use site and timestamp in the metadata in order to find a date 
+
+#first we need to make a timestamp column in metadat so that we can 
+metadat$TIMESTAMP <- ymd_hms(paste(metadat$Date, metadat$Time_start))
+
+#make sure time stamps are in the correct format 
+metadat$TIMESTAMP <- as.POSIXct(metadat$TIMESTAMP, format = "%Y-%m-%d %H:%M:%OS")
+temps$TIMESTAMP <- as.POSIXct(temps$TIMESTAMP, format = "%Y-%m-%d %H:%M:%OS")
+
+#time rounding step 
+metadat$DateTime_round <- round_date(metadat$TIMESTAMP, "60 mins")
+temps$TIMESTAMP_round <- round_date(temps$TIMESTAMP, "60 mins")
+  
+#ensure there is only one data observation per hour 
+temps_clean <-   temps %>% 
+    group_by(TIMESTAMP_round, Site) %>%
+    summarize(wx_tempavg15 = mean(wx_tempavg15)) 
+
+#join them 
+metadat_L1temp <- metadat %>% 
+  left_join(temps_clean, by=c("Site"="Site", "DateTime_round"="TIMESTAMP_round"))
+
+
+
+```
+
+## Match metadata to raw data
+```{r}
+
+#match the metadata to the concentration data 
+alldat$metadat_row <- ffi_metadata_match(
+  data_timestamps = alldat$TIMESTAMP,
+  start_dates = metadat$Date,
+  start_times = metadat$Time_start,
+  obs_lengths = metadat$Obs_length) 
+head(alldat)
+
+
+#Set plot, temp, volume, etc. here 
+alldat$Plot <- metadat$Plot[alldat$metadat_row]
+alldat$ID <- metadat$Plot_ID[alldat$metadat_row]
+alldat$Volume <- metadat$Volume[alldat$metadat_row]
+alldat$Hand_Temp <- metadat$Temp_ByHand[alldat$metadat_row] #found online from weather 
+alldat$L1_Temp <- metadat_L1temp$wx_tempavg15[alldat$metadat_row] #calculate  temp for the measurement time from L1
+alldat$Site <- metadat$Site[alldat$metadat_row]
+metadat$metadat_row <- seq_len(nrow(metadat))
+
+
+#calculate average Licor temp over each Plot ID then add that as another TEMP column 
+  #these temps are crazy and not usable - make sure that these are correct...??? 
+licor_temps <- alldat %>%
+  group_by(Plot) %>%
+  summarize(licor_cavity_temp = mean(CAVITY_T, na.rm = TRUE), licor_enclosure_temp = mean(THERMAL_ENCLOSURE_T, na.rm = TRUE)) 
+
+alldat$licor_cavity_temp <- licor_temps$licor_cavity_temp[alldat$metadat_row]
+alldat$licor_enclosure_temp <- licor_temps$licor_enclosure_temp[alldat$metadat_row]
+
+#We need one more line that creates a column for final temp and takes the L1 data but if there isn't L1 data it will pull in another datatype 
+# in this case we will use the by hand data i guess? but we could look to using some sort of NOAA dataset.... that we would need to match 
+
+alldat <- alldat %>%
+  mutate(final_temp = coalesce(L1_Temp, Hand_Temp))
+
+```
+
+## Calculate fluxes 
+```{r}
+#change the units
+alldat$CH4_nmol <- ffi_ppb_to_nmol(alldat$CH4, 
+                                volume = alldat$Volume, # m3
+                                temp = alldat$final_temp)    # degrees C
+#> Assuming atm = 101325 Pa
+#> Using R = 8.31446261815324 m3 Pa K-1 mol-1
+
+alldat$CH4_nmol_m2 <- alldat$CH4_nmol / 0.16
+
+fluxes <- ffi_compute_fluxes(alldat,
+                             group_column = "Plot", 
+                             time_column = "TIMESTAMP", 
+                             gas_column = "CH4_nmol_m2",
+                             dead_band = 10, 
+                             c0_band = 5)
+head(fluxes)
+
+#take a look at the fluxes we calculated with R2 
+ggplot(fluxes, aes(Plot, lin_flux.estimate, color = lin_r.squared)) +
+  geom_point(size=4) + theme_classic() + 
+  geom_linerange(aes(ymin = lin_flux.estimate- lin_flux.std.error,
+                   ymax = lin_flux.estimate+ lin_flux.std.error)) +
+  scale_color_gradientn(colours = c("darkred",  "red", "white","lightblue", "darkblue"),
+                        values = c(0, 0.5, 0.6, 0.7, 1)) +
+  ylab("CH4 flux (nmol/m2/s)")
+
+#sort fluxes by R2 
+fluxes_good <- as.data.frame(subset(fluxes, lin_r.squared >= .90, select = Plot:TIMESTAMP_max))
+fluxes_weird <- as.data.frame(subset(fluxes, lin_r.squared < .90, select = Plot:TIMESTAMP_max))
+
+#find fluxes that represent the first and fourth quartile of the data 
+low <- quantile(fluxes$flux_estimate, 0.05) 
+high <- quantile(fluxes$flux_estimate, 0.95) 
+
+fluxes_low <- as.data.frame(subset(fluxes, lin_flux.estimate <= low, select = Plot:TIMESTAMP_max))
+fluxes_high <- as.data.frame(subset(fluxes, lin_flux.estimate >= high, select = Plot:TIMESTAMP_max))
+
+tails <- rbind(fluxes_low, fluxes_high)
+
+```
+
+## Spot check a few fluxes with R2 > 0.9
+```{r, echo=FALSE}
+
+### pull a random sample of good fluxes to check and plot 
+good_plots <- unique(fluxes_good$Plot)
+
+# take a random sample (FALSE so we don't get the same plot twice)
+# set.seed(...) to guarantee reproducibility
+good_sample <- sample(good_plots, 5, replace=FALSE)
+
+#Loop to run five random plots subset above 
+for(P in good_sample){ 
+  r1 <- subset(alldat, Plot == P)
+  p1 <- ggplot(r1, aes(TIMESTAMP, CH4)) + geom_point() + theme_classic() +
+  ylab(expression(paste( CH [4], " (ppb)"))) +
+  xlab("Time") + labs(title = P) + 
+  geom_smooth()
+  print(p1)
+  }
+
+####################
+```
+
+## Take a look at the bad fluxes <0.9 
+# If a flux was started to early/late, change start time or Obs_length in metadata file and note n the note column
+```{r, echo=FALSE}
+
+### pull out fluxes with R2 < 0.9 and put them in a list 
+bad_plots <- unique(fluxes_weird$Plot)
+
+#Loop to run five random plots subset above 
+for(P in bad_plots){ 
+  r1 <- subset(alldat, Plot == P)
+  p1 <- ggplot(r1, aes(TIMESTAMP, CH4)) + geom_point() + theme_classic() +
+  ylab(expression(paste( CH [4], " (ppb)"))) +
+  xlab("Time") + labs(title = P) + 
+  geom_smooth()
+  print(p1)
+  }
+
+####################
+```
+
+## Look at the really high or really low ones to see if there is a timing issue or something
+```{r, echo=FALSE}
+
+### pull out fluxes in the 5% and 95% tails to look at really high and really low 
+tail_plots <- unique(tails$Plot)
+
+#Loop to run five random plots subset above 
+for(P in tail_plots){ 
+  r1 <- subset(alldat, Plot == P)
+  p1 <- ggplot(r1, aes(TIMESTAMP, CH4)) + geom_point() + theme_classic() +
+  ylab(expression(paste( CH [4], " (ppb)"))) +
+  xlab("Time") + labs(title = P) + 
+  geom_smooth()
+  print(p1)
+  }
+
+#would be nice to put on the plot the flux estimate and if it is a high or low or something 
+####################
+
+
+```
+
+## Do some visualization of QAQC plots to assess fluxes  
+```{r, echo=FALSE}
+
+p1 <- ggplot(fluxes, aes(lin_flux.estimate, rob_flux.estimate, color = Plot)) +
+  geom_point(size=4) + geom_abline() + 
+  theme_classic() + 
+  labs(title = "A") + 
+  ylab(expression(paste( CH [4], " Flux (nmol m"^-2* " s"^-1*") Robust Method"))) +
+  xlab(expression(paste( CH [4], " Flux (nmol m"^-2* " s"^-1*") Linear Method"))) +
+  guides(color = guide_legend(title = "Plot")) +
+  theme(legend.position="none") +
+  theme(axis.title.x = element_text(size=12), axis.text = element_text(size=12),
+        axis.title.y = element_text(size=12), legend.text=element_text(size=12),
+        panel.border = element_rect(colour = "black", fill=NA, linewidth =1), 
+        aspect.ratio = 1)
+p1
+
+
+p2 <- ggplot(fluxes, aes(lin_r.squared, poly_r.squared, color = Plot)) +
+  geom_point(size=4) + geom_abline() + 
+  theme_classic() + 
+  xlim(0,1) + ylim(0,1) +
+  labs(title = "B") + 
+  ylab(expression(paste("R"^2* " Second-Order Polynomial"))) +
+  xlab(expression(paste("R"^2* " Linear Model"))) +
+  guides(color = guide_legend(title = "Plot")) + 
+  theme(legend.position="none") +
+  theme(axis.title.x = element_text(size=12), axis.text = element_text(size=12),
+        axis.title.y = element_text(size=12), legend.text=element_text(size=12),
+        panel.border = element_rect(colour = "black", fill=NA, linewidth =1), 
+        aspect.ratio = 1)
+p2
+
+p3 <- ggplot(fluxes, aes(lin_flux.estimate, HM81_flux.estimate, color = lin_r.squared )) +
+  geom_point(size=4) + geom_abline() + 
+  theme_classic() + 
+  xlim(0,50) + ylim(0,50) +
+  labs(title = "C") + 
+  ylab(expression(paste( CH [4], " Flux (nmol m"^-2* " s"^-1*") HM1981 Method"))) +
+  xlab(expression(paste( CH [4], " Flux (nmol m"^-2* " s"^-1*") Linear Method"))) +
+  guides(color = guide_legend(title = "Plot")) + 
+  theme(legend.position="right") +
+  theme(axis.title.x = element_text(size=12), axis.text = element_text(size=12),
+        axis.title.y = element_text(size=12), legend.text=element_text(size=12),
+        panel.border = element_rect(colour = "black", fill=NA, linewidth =1), 
+        aspect.ratio = 1)
+p3
+
+#ggarrange(p1, p2, p3, ncol=3, nrow=1) #, common.legend = TRUE, legend="none")
+```
+## Create document to look at all fluxes - not working so just plotted all    
+```{r, echo=FALSE}
+
+#ffi_qaqc(fluxes, Plot, output_file = "qaqc.html", output_dir = getwd(), open_output = TRUE)
+
+### pull a random sample of good fluxes to check and plot 
+all_plots <- unique(fluxes$Plot)
+
+#Loop to run five random plots subset above 
+#for(P in all_plots){ 
+ r1 <- subset(alldat, Plot == P)
+  p1 <- ggplot(r1, aes(TIMESTAMP, CH4)) + geom_point() + theme_classic() +
+  ylab(expression(paste( CH [4], " (ppb)"))) +
+  xlab("Time") + labs(title = P) + 
+  geom_smooth()
+  print(p1)
+  
+
+####################
+
+
+```
+
+## Pull together dataframe and export for use elsewhere 
+```{r, echo=FALSE}
+
+## KEEP IN MIND THAT THIS CH4 flux data is in nmol m-2 s-1 units!!!!! 
+
+#make new columns with the plot; zone; replicate 
+IDs <- data.frame(do.call('rbind', strsplit(as.character(fluxes$Plot),'_',fixed=TRUE)))
+colnames(IDs) <- c("Site",  "Zone", "Replicate", "Date") #, "RHZ", "RHZ_Rep")
+head(IDs)
+
+#rejoin them to the dataframe
+allflux <- cbind(IDs, fluxes)
+head(allflux)
+
+#export as a csv to the folder that you want 
+write.csv(allflux, file="Processed Data/COMPASS_Synoptic_CB_Macrophyte_Fluxes_Final_2022.csv")           #Change file name
+
+
+```
+
+
