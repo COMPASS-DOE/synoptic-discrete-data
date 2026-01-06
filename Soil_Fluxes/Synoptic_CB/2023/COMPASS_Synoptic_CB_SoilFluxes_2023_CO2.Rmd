@@ -287,7 +287,7 @@ fluxes <- fluxes %>%
   mutate(Plot = if_else(str_detect(Plot, "-retake"), 
                         str_replace(Plot, "-retake", "a"), 
                         Plot)) %>%
-    mutate(Plot = if_else(str_detect(Plot, "real"), 
+  mutate(Plot = if_else(str_detect(Plot, "real"), 
                         str_replace(Plot, "real", "b"), 
                         Plot)) %>%
   mutate(Plot = if_else(str_detect(Plot, "-Retake"), 
@@ -310,8 +310,51 @@ fluxes <- fluxes %>%
                         Plot)) %>%
   mutate(Plot = if_else(str_detect(Plot, "2C"), 
                        str_replace(Plot, "2C", "2c"), 
+                        Plot))%>%
+  mutate(Plot = if_else(str_detect(Plot, "1real"), 
+                        str_replace(Plot, "1real", "1b"), 
+                        Plot)) %>%
+  mutate(Plot = if_else(str_detect(Plot, "-1B"), 
+                       str_replace(Plot, "-1B", "-1b"), 
+                        Plot)) %>%
+  mutate(Plot = if_else(str_detect(Plot, "-4B"), 
+                       str_replace(Plot, "-4B", "-4b"), 
                         Plot))
 
+#Do the same for alldat (individual flux point data)
+#if they say retake then we want to replace that with an "a" and if it has -A then we also want to remove that and make it "a" 
+#remove any lines that don't have a site code in the Plot ID 
+alldat <-  alldat %>%  
+  filter(str_detect(Plot, "SWH|MSM|GWI|GCW|GCReW"))
+
+alldat <- alldat %>%
+  mutate(Plot = if_else(str_detect(Plot, "1A"), 
+                       str_replace(Plot, "1A", "1a"), 
+                        Plot))%>%
+  mutate(Plot = if_else(str_detect(Plot, "1B"), 
+                       str_replace(Plot, "1B", "1b"), 
+                        Plot)) %>%
+  mutate(Plot = if_else(str_detect(Plot, "2A"), 
+                       str_replace(Plot, "2A", "2a"), 
+                        Plot))%>%
+  mutate(Plot = if_else(str_detect(Plot, "2B"), 
+                       str_replace(Plot, "2B", "2b"), 
+                        Plot)) %>%
+  mutate(Plot = if_else(str_detect(Plot, "2C"), 
+                       str_replace(Plot, "2C", "2c"), 
+                        Plot))%>%
+  mutate(Plot = if_else(str_detect(Plot, "1real"), 
+                        str_replace(Plot, "1real", "1b"), 
+                        Plot)) %>%
+  mutate(Plot = if_else(str_detect(Plot, "-1B"), 
+                       str_replace(Plot, "-1B", "-1b"), 
+                        Plot)) %>%
+  mutate(Plot = if_else(str_detect(Plot, "-4B"), 
+                       str_replace(Plot, "-4B", "-4b"), 
+                        Plot)) %>%
+  mutate(Plot = if_else(str_detect(Plot, "-b"), 
+                        str_replace(Plot, "-b", "b"), 
+                        Plot))
 
 # Extract the base plot (e.g., "GCW-TR-1" from "GCW-TR-1", "GCW-TR-1a", etc.)
 fluxes$base_plot <- str_extract(fluxes$Plot,  "^[^-]+-[A-Za-z]+-[A-Za-z]+-[A-Za-z]+")
@@ -376,7 +419,7 @@ tails <- rbind(fluxes_low, fluxes_high)
 ## check the fluxes for which I changed the start time due to lags or ebullition (recorded in notes of metadata)
 ```{r}
 
-tobechecked <- c("2-Sep-SWH-TR-8" , "1-Sep-SWH-TR-7a"      )
+tobechecked <- c("2-Aug-SWH-TR-9" , "2-Jul-MSM-TR-1"      )
 
 colnames <- c("Plot")
 
@@ -418,8 +461,9 @@ fixedplots <- c("2-Jul-GWI-UP-3", "2-Aug-SWH-TR-6a", "1-Oct-SWH-TR-9", "1-Sep-SW
                 "2-Jun-GCW-TR-3", "1-Sep-SWH-TR-3a", "2-Sep-SWH-TR-5", "2-Sep-GWI-UP-4", "2-Oct-SWH-SWAMP-1a", "2-May-GWI-TR-1b", "2-Jul-GCW-TR-2", 
                  "2-Jun-GCW-UP-3", "1-Jul-SWH-UP-2", "2-Jun-GCW-TR-1", "1-Nov-SWH-TR-7a", "2-Nov-SWH-TR-10", "2-Nov-SWH-SWAMP-4",
                  "1-Nov-SWH-TR-8", "1-Apr-MSM-UP-3", "1-Sep-SWH-SWAMP-3", "1-Apr-MSM-TR-1", "2-Jun-SWH-UP-5", "1-Oct-SWH-SWAMP-5a", 
-                "2-Sep-SWH-TR-8" , "1-Sep-SWH-TR-7a")
-  
+                "2-Sep-SWH-TR-8" , "1-Sep-SWH-TR-7a", "1-Aug-SWH-TR-6" , "2-Jul-MSM-TR-1", "2-Aug-SWH-TR-9")
+
+Missing_data <- c("1-Nov-SWH-UP-1b", "2-Nov-SWH-UP-1", "1-Apr-MSM-UP-4B", "2-Apr-MSM-UP-4b", "1-Jul-SWH-TR-1b", "2-Jul-SWH-TR-1b",  "1-Nov-SWH-UPCON-1b",   "2-Nov-SWH-UP-1b", "1-Nov-SWH-UP-2c", "2-Nov-SWH-UP-2c")
 
 ```
 
@@ -539,10 +583,32 @@ for(P in tail_plots){
 
 ```
 
+## Check all fluxes
+```{r, echo=FALSE}
+
+### pull a random sample of good fluxes to check and plot 
+fluxes_all <- as.data.frame(subset(allflux, select = Plot:TIMESTAMP_max))
+all_plots <- unique(fluxes_all$Plot)
+
+#Loop to run five random plots subset above 
+for(P in all_plots){ 
+  r1 <- subset(alldat, Plot == P)
+  p1 <- ggplot(r1, aes(TIMESTAMP, co2)) + geom_point() + theme_classic() + 
+  scale_x_datetime(breaks = "15 sec") + 
+  ylab(expression(paste( CO [2], " (ppm)"))) +
+  xlab("Time") + labs(title = P) + 
+  geom_smooth(color="red")
+  print(p1)
+  }
+
+####################
+```
+
+
 ## Remove any fluxes that do not fit criteria 
 ```{r, echo=FALSE}
 
-# Create a new dataframe by removing rows that were present in fluxes_weird which have a low R2 and a flux higher than 1 (23 obs)
+# Create a new dataframe by removing rows that were present in fluxes_weird which have a low R2 and a flux higher than 1 (23 obs) and negative CO2 fluxes
 allflux_filtered <- allflux[!(allflux$Plot %in% fluxes_weird$Plot), ]
 
 allflux_filtered <- allflux[!(allflux$Plot %in% fluxes_negative$Plot), ]
