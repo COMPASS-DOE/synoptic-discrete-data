@@ -586,20 +586,20 @@ for(P in tail_plots){
 ## Check all fluxes
 ```{r, echo=FALSE}
 
-### pull a random sample of good fluxes to check and plot 
-fluxes_all <- as.data.frame(subset(allflux, select = Plot:TIMESTAMP_max))
-all_plots <- unique(fluxes_all$Plot)
-
-#Loop to run five random plots subset above 
-for(P in all_plots){ 
-  r1 <- subset(alldat, Plot == P)
-  p1 <- ggplot(r1, aes(TIMESTAMP, co2)) + geom_point() + theme_classic() + 
-  scale_x_datetime(breaks = "15 sec") + 
-  ylab(expression(paste( CO [2], " (ppm)"))) +
-  xlab("Time") + labs(title = P) + 
-  geom_smooth(color="red")
-  print(p1)
-  }
+# ### pull a random sample of good fluxes to check and plot 
+# fluxes_all <- as.data.frame(subset(allflux, select = Plot:TIMESTAMP_max))
+# all_plots <- unique(fluxes_all$Plot)
+# 
+# #Loop to run five random plots subset above 
+# for(P in all_plots){ 
+#   r1 <- subset(alldat, Plot == P)
+#   p1 <- ggplot(r1, aes(TIMESTAMP, co2)) + geom_point() + theme_classic() + 
+#   scale_x_datetime(breaks = "15 sec") + 
+#   ylab(expression(paste( CO [2], " (ppm)"))) +
+#   xlab("Time") + labs(title = P) + 
+#   geom_smooth(color="red")
+#   print(p1)
+#   }
 
 ####################
 ```
