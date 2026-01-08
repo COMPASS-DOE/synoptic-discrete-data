@@ -61,7 +61,7 @@ all <- all %>%
 ```
 
 ## Initial Viz of Fluxes across sites and zones  
-```{r setup, include=FALSE}
+```{r vizualization, include=FALSE}
 
 #Plot up the Methane fluxes across the year and sites 
 p1 <- ggplot(all, aes(x=as.Date(TIMESTAMP), y=ch4_lin_flux.estimate, color=Zone, fill=Zone)) + 
@@ -168,7 +168,7 @@ p2a
 
 
 ## Write out the Full 2024 Soil Fluxes Data File   
-```{r setup, include=FALSE}
+```{r combined data output, include=FALSE}
 
 #check that all the columns are named what we want for now: 
 head(all)
