@@ -45,20 +45,37 @@ library(stringr)
 ## Pull in Smart Chamber Files from the Raw Data folder
 ```{r}
 
-setwd("Raw Data/")
+# Create a temporary directory
+tmp_dir <- tempdir()
 
-#list all the files in the directory
-L <- list.files(path = "Raw Data/")
-head(L)
+# Get list of files inside the zip
+zip_contents <- unzip("Raw Data.zip", list = TRUE)
 
-#create a list of the files there 
-file.list <- dir(pattern = "json$", full.names = FALSE)
+# Keep only JSON files
+json_files <- zip_contents$Name[grepl("json$", zip_contents$Name, ignore.case = TRUE)]
 
-#Read in the data 
+# Extract only the JSON files
+unzip(
+  "Raw Data.zip",
+  files = json_files,
+  exdir = tmp_dir
+)
+
+# List extracted JSON files (full paths)
+file.list <- list.files(
+  path = tmp_dir,
+  pattern = "json$",
+  full.names = TRUE,
+  recursive = TRUE
+)
+
+head(file.list)
+
+# Read in the data
 alldat1 <- lapply(file.list, ffi_read_LIsmartchamber)
 
-#combind into one dataframe
-alldat <- data.table::rbindlist(alldat1, fill=TRUE)
+# Combine into one data.table
+alldat <- data.table::rbindlist(alldat1, fill = TRUE)
 
 
 ```
@@ -84,10 +101,24 @@ alldat <- alldat %>%
                      pmax(Plot_ID, label),  sep = '-'))  
 #this needs to be PLot ID so that later we ID plot from metadata and not the metadata row 
 
+# Path inside the zip
+zip_file <- "Raw Data.zip"
+csv_inside_zip <- "Raw Data/COMPASS_SmartChamber_Metadata_2024.csv"
 
+# Make sure the destination folder exists
+dir.create("Raw Data", showWarnings = FALSE)
+
+# Extract only the metadata CSV if it doesn't already exist
+if (!file.exists(csv_inside_zip)) {
+  unzip(
+    zip_file,
+    files = csv_inside_zip,
+    exdir = "."
+  )
+}
 
 # Define the file path where you want to save the CSV file
-file_path <- "COMPASS_SmartChamber_Metadata_2024.csv"
+file_path <- "Raw Data/COMPASS_SmartChamber_Metadata_2024.csv"
 
 # Check if the CSV file exists
 if (file.exists(file_path)) {
@@ -131,6 +162,7 @@ if (file.exists(file_path)) {
 ##Sometimes there are other fluxes in the .json files that we don't want to calculate 
   #change drop column to TRUE if the plot doesn't include a site code in the Plot_ID 
 metadata <- metadata %>%
+  rename(Plot = Plot_ID) %>%
   mutate(
     drop = ifelse(
       !grepl("SWH|GCW|MSM|GWI|GCReW", Plot), 
@@ -181,6 +213,9 @@ metadata <- metadata %>%
   mutate(drop = if_else(Total_Time > 300, TRUE, drop)) 
 
 
+################# Remove columns with drop = TRUE
+metadata <-  metadata %>%  
+  filter(drop == "FALSE")
 
 
 ```
@@ -203,7 +238,7 @@ head(alldat)
 #alldat$Deadband <- metadata$Deadband[alldat$metadat_row] #flux calcs function cannot handle a column as a deadband and that is a problem to fix
 alldat$Plot <- metadata$Plot[alldat$metadat_row] 
 
-#alldat$Drop <- metadata$Drop[alldat$metadat_row] #don't need this for now because we remove the fluxes that were retaken below 
+#alldat$Drop <- metadata$Drop[alldat$metadat_row] #don't need this for now because we remove the fluxes that were retaken above 
 
 ```
 
@@ -371,7 +406,8 @@ fixedplots <- c("2-Jul-GWI-UP-3", "2-Aug-SWH-TR-6a", "1-Oct-SWH-TR-9", "1-Sep-SW
                  "2-Jun-GCW-UP-5", "2-Aug-GCW-UP-5", "2-Jul-GCW-UP-1", "2-Oct-SWH-TR-3a", "1-Aug-SWH-TR-7a", "2-Nov-SWH-UP-1", "2-Sep-SWH-UP-1",
                 "2-Jun-GCW-TR-3", "1-Sep-SWH-TR-3a", "2-Sep-SWH-TR-5", "2-Sep-GWI-UP-4", "2-Oct-SWH-SWAMP-1a", "2-May-GWI-TR-1b", "2-Jul-GCW-TR-2", 
                  "2-Jun-GCW-UP-3", "1-Jul-SWH-UP-2", "2-Jun-GCW-TR-1", "1-Nov-SWH-TR-7a", "2-Nov-SWH-TR-10", "2-Nov-SWH-SWAMP-4",
-                 "1-Nov-SWH-TR-8", "1-Apr-MSM-UP-3", "1-Sep-SWH-SWAMP-3", "1-Apr-MSM-TR-1", "2-Jun-SWH-UP-5", "1-Oct-SWH-SWAMP-5a")
+                 "1-Nov-SWH-TR-8", "1-Apr-MSM-UP-3", "1-Sep-SWH-SWAMP-3", "1-Apr-MSM-TR-1", "2-Jun-SWH-UP-5", "1-Oct-SWH-SWAMP-5a", 
+                "2-May-SWH-TR-6a", "2-Sep-SWH-TR-1a")
   
 
 ```
