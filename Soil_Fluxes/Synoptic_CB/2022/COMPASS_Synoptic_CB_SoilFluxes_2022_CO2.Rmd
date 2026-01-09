@@ -219,8 +219,7 @@ metadata$suffix[is.na(metadata$suffix)] <- ""
 #remove any metadata rows that have NAs for the PlotID
 metadata <- metadata %>%
   filter(!is.na(Plot_ID)) %>%
-  filter(str_detect(Plot_ID, paste(c("GCW", "MSM", "GWI", "SWH"), collapse = "|")))  %>%
-  mutate(Total_Time = 59)
+  filter(str_detect(Plot_ID, paste(c("GCW", "MSM", "GWI", "SWH"), collapse = "|")))
 
 ##Write out to metadata with new total times 
 # metadata <- metadata %>%
@@ -290,50 +289,6 @@ fluxes <-  fluxes %>%
 
 #if they say retake then we want to replace that with an "a" and if it has -A then we also want to remove that and make it "a" 
 fluxes <- fluxes %>%
-  mutate(Plot = if_else(str_detect(Plot, "-retake"), 
-                        str_replace(Plot, "-retake", "a"), 
-                        Plot)) %>%
-  mutate(Plot = if_else(str_detect(Plot, "real"), 
-                        str_replace(Plot, "real", "b"), 
-                        Plot)) %>%
-  mutate(Plot = if_else(str_detect(Plot, "-Retake"), 
-                        str_replace(Plot, "-Retake", "a"), 
-                        Plot)) %>%
-  mutate(Plot = if_else(str_detect(Plot, "-b"), 
-                        str_replace(Plot, "-b", "b"), 
-                        Plot)) %>%
-  mutate(Plot = if_else(str_detect(Plot, "1A"), 
-                       str_replace(Plot, "1A", "1a"), 
-                        Plot))%>%
-  mutate(Plot = if_else(str_detect(Plot, "1B"), 
-                       str_replace(Plot, "1B", "1b"), 
-                        Plot)) %>%
-  mutate(Plot = if_else(str_detect(Plot, "2A"), 
-                       str_replace(Plot, "2A", "2a"), 
-                        Plot))%>%
-  mutate(Plot = if_else(str_detect(Plot, "2B"), 
-                       str_replace(Plot, "2B", "2b"), 
-                        Plot)) %>%
-  mutate(Plot = if_else(str_detect(Plot, "2C"), 
-                       str_replace(Plot, "2C", "2c"), 
-                        Plot))%>%
-  mutate(Plot = if_else(str_detect(Plot, "1real"), 
-                        str_replace(Plot, "1real", "1b"), 
-                        Plot)) %>%
-  mutate(Plot = if_else(str_detect(Plot, "-1B"), 
-                       str_replace(Plot, "-1B", "-1b"), 
-                        Plot)) %>%
-  mutate(Plot = if_else(str_detect(Plot, "-4B"), 
-                       str_replace(Plot, "-4B", "-4b"), 
-                        Plot))
-
-#Do the same for alldat (individual flux point data)
-#if they say retake then we want to replace that with an "a" and if it has -A then we also want to remove that and make it "a" 
-#remove any lines that don't have a site code in the Plot ID 
-alldat <-  alldat %>%  
-  filter(str_detect(Plot, "SWH|MSM|GWI|GCW|GCReW"))
-
-alldat_IDs <- alldat %>%
   mutate(Plot = gsub(pattern = "_", replacement = "-", x = Plot)) %>%
   mutate(Plot = if_else(str_detect(Plot, "1A"), 
                        str_replace(Plot, "1A", "1a"), 
@@ -350,8 +305,8 @@ alldat_IDs <- alldat %>%
   mutate(Plot = if_else(str_detect(Plot, "2C"), 
                        str_replace(Plot, "2C", "2c"), 
                         Plot))%>%
-  mutate(Plot = if_else(str_detect(Plot, "1real"), 
-                        str_replace(Plot, "1real", "1b"), 
+  mutate(Plot = if_else(str_detect(Plot, "real"), 
+                        str_replace(Plot, "real", "b"), 
                         Plot)) %>%
   mutate(Plot = if_else(str_detect(Plot, "4B"), 
                        str_replace(Plot, "4B", "4b"), 
@@ -410,7 +365,116 @@ alldat_IDs <- alldat %>%
   mutate(Plot = if_else(str_detect(Plot, "UP8"), 
                         str_replace(Plot, "UP8", "UP_8"), 
                         Plot)) %>%
-  mutate(Plot = if_else(str_detect(Plot, ""), 
+  mutate(Plot = if_else(str_detect(Plot, "UP8"), 
+                        str_replace(Plot, "UP8", "UP_8"), 
+                        Plot)) %>%
+  mutate(Plot = if_else(str_detect(Plot, "UP8"), 
+                        str_replace(Plot, "UP8", "UP_8"), 
+                        Plot)) %>%
+  mutate(Plot = if_else(str_detect(Plot, "UP8"), 
+                        str_replace(Plot, "UP8", "UP_8"), 
+                        Plot)) %>%
+  mutate(Plot = if_else(str_detect(Plot, "1aug"), 
+                        str_replace(Plot, "1aug", "1-Aug"), 
+                        Plot)) %>%
+  mutate(Plot = if_else(str_detect(Plot, "2aug"), 
+                        str_replace(Plot, "2aug", "2-Aug"), 
+                        Plot)) %>%
+  mutate(Plot = if_else(str_detect(Plot, "-U-"), 
+                        str_replace(Plot, "-U-", "-UP-"), 
+                        Plot)) %>%
+  mutate(Plot = if_else(str_detect(Plot, "-up-"), 
+                        str_replace(Plot, "-up-", "-UP-"), 
+                        Plot)) %>%
+  mutate(Plot = if_else(str_detect(Plot, "-tr-"), 
+                        str_replace(Plot, "-tr-", "-TR-"), 
+                        Plot)) %>%
+  mutate(Plot = gsub(pattern = "-", replacement = "_", x = Plot)) 
+
+#Do the same for alldat (individual flux point data)
+#if they say retake then we want to replace that with an "a" and if it has -A then we also want to remove that and make it "a" 
+#remove any lines that don't have a site code in the Plot ID 
+alldat <-  alldat %>%  
+  filter(str_detect(Plot, "SWH|MSM|GWI|GCW|GCReW"))
+
+alldat <- alldat %>%
+  mutate(Plot = gsub(pattern = "_", replacement = "-", x = Plot)) %>%
+  mutate(Plot = if_else(str_detect(Plot, "1A"), 
+                       str_replace(Plot, "1A", "1a"), 
+                        Plot)) %>%
+  mutate(Plot = if_else(str_detect(Plot, "1B"), 
+                       str_replace(Plot, "1B", "1b"), 
+                        Plot)) %>%
+  mutate(Plot = if_else(str_detect(Plot, "2A"), 
+                       str_replace(Plot, "2A", "2a"), 
+                        Plot))%>%
+  mutate(Plot = if_else(str_detect(Plot, "2B"), 
+                       str_replace(Plot, "2B", "2b"), 
+                        Plot)) %>%
+  mutate(Plot = if_else(str_detect(Plot, "2C"), 
+                       str_replace(Plot, "2C", "2c"), 
+                        Plot))%>%
+  mutate(Plot = if_else(str_detect(Plot, "real"), 
+                        str_replace(Plot, "real", "b"), 
+                        Plot)) %>%
+  mutate(Plot = if_else(str_detect(Plot, "4B"), 
+                       str_replace(Plot, "4B", "4b"), 
+                        Plot)) %>%
+  mutate(Plot = if_else(str_detect(Plot, "-b"), 
+                        str_replace(Plot, "-b", "b"), 
+                        Plot)) %>%
+  mutate(Plot = if_else(str_detect(Plot, "-01"), 
+                        str_replace(Plot, "-01", "-1"), 
+                        Plot)) %>%
+  mutate(Plot = if_else(str_detect(Plot, "-02"), 
+                        str_replace(Plot, "-02", "-2"), 
+                        Plot)) %>%
+  mutate(Plot = if_else(str_detect(Plot, "-03"), 
+                        str_replace(Plot, "-03", "-3"), 
+                        Plot)) %>%
+  mutate(Plot = if_else(str_detect(Plot, "-04"), 
+                        str_replace(Plot, "-04", "-4"), 
+                        Plot)) %>%
+  mutate(Plot = if_else(str_detect(Plot, "-05"), 
+                        str_replace(Plot, "-05", "-5"), 
+                        Plot)) %>%
+  mutate(Plot = if_else(str_detect(Plot, "-06"), 
+                        str_replace(Plot, "-06", "-6"), 
+                        Plot)) %>%
+  mutate(Plot = if_else(str_detect(Plot, "-07"), 
+                        str_replace(Plot, "-07", "-7"), 
+                        Plot)) %>%
+  mutate(Plot = if_else(str_detect(Plot, "-08"), 
+                        str_replace(Plot, "-08", "-8"), 
+                        Plot)) %>%
+  mutate(Plot = if_else(str_detect(Plot, "-A"), 
+                        str_replace(Plot, "-A", "a"), 
+                        Plot)) %>%
+  mutate(Plot = if_else(str_detect(Plot, "UP1"), 
+                        str_replace(Plot, "UP1", "UP_1"), 
+                        Plot)) %>%
+  mutate(Plot = if_else(str_detect(Plot, "UP2"), 
+                        str_replace(Plot, "UP2", "UP_2"), 
+                        Plot)) %>%
+  mutate(Plot = if_else(str_detect(Plot, "UP3"), 
+                        str_replace(Plot, "UP3", "UP_3"), 
+                        Plot)) %>%
+  mutate(Plot = if_else(str_detect(Plot, "UP4"), 
+                        str_replace(Plot, "UP4", "UP_4"), 
+                        Plot)) %>%
+  mutate(Plot = if_else(str_detect(Plot, "UP5"), 
+                        str_replace(Plot, "UP5", "UP_5"), 
+                        Plot)) %>%
+  mutate(Plot = if_else(str_detect(Plot, "UP6"), 
+                        str_replace(Plot, "UP6", "UP_6"), 
+                        Plot)) %>%
+  mutate(Plot = if_else(str_detect(Plot, "UP7"), 
+                        str_replace(Plot, "UP7", "UP_7"), 
+                        Plot)) %>%
+  mutate(Plot = if_else(str_detect(Plot, "UP8"), 
+                        str_replace(Plot, "UP8", "UP_8"), 
+                        Plot)) %>%
+  mutate(Plot = if_else(str_detect(Plot, "UP8"), 
                         str_replace(Plot, "UP8", "UP_8"), 
                         Plot)) %>%
   mutate(Plot = if_else(str_detect(Plot, "UP8"), 
@@ -418,13 +482,29 @@ alldat_IDs <- alldat %>%
                         Plot)) %>%
   mutate(Plot = if_else(str_detect(Plot, "UP8"), 
                         str_replace(Plot, "UP8", "UP_8"), 
-                        Plot)) 
+                        Plot)) %>%
+  mutate(Plot = if_else(str_detect(Plot, "1aug"), 
+                        str_replace(Plot, "1aug", "1-Aug"), 
+                        Plot)) %>%
+  mutate(Plot = if_else(str_detect(Plot, "2aug"), 
+                        str_replace(Plot, "2aug", "2-Aug"), 
+                        Plot)) %>%
+  mutate(Plot = if_else(str_detect(Plot, "-U-"), 
+                        str_replace(Plot, "-U-", "-UP-"), 
+                        Plot)) %>%
+  mutate(Plot = if_else(str_detect(Plot, "-up-"), 
+                        str_replace(Plot, "-up-", "-UP-"), 
+                        Plot)) %>%
+  mutate(Plot = if_else(str_detect(Plot, "-tr-"), 
+                        str_replace(Plot, "-tr-", "-TR-"), 
+                        Plot)) %>%
+  mutate(Plot = gsub(pattern = "-", replacement = "_", x = Plot)) 
 
 # Extract the base plot (e.g., "GCW-TR-1" from "GCW-TR-1", "GCW-TR-1a", etc.)
-fluxes$base_plot <- str_extract(fluxes$Plot,  "^[^-]+-[A-Za-z]+-[A-Za-z]+-[A-Za-z]+")
+fluxes$base_plot <- str_extract(fluxes$Plot,  "^[^-]+_[A-Za-z]+_[A-Za-z]+_[A-Za-z]+")
 
 # Extract the replicate number (the number after the last hyphen)
-fluxes$replicate <- as.numeric(str_extract(fluxes$Plot, "(?<=-)[0-9]+(?=[a-zA-Z]?$)"))
+fluxes$replicate <- as.numeric(str_extract(fluxes$Plot, "(?<=_)[0-9]+(?=[a-zA-Z]?$)"))
 
 # Extract the suffix (if any, the letter after the replicate number)
 fluxes$suffix <- str_extract(fluxes$Plot, "(?<=\\d)[a-zA-Z]$")
@@ -443,7 +523,7 @@ allflux <- cbind(IDs, fluxes)
 # Sort by base plot, replicate number, and suffix (to keep highest suffix)
 allflux <- allflux %>%
   group_by(base_plot, replicate) %>%
-  arrange(Month, Site, Zone, replicate, desc(suffix), .by_group = TRUE) %>%
+  arrange(Month, Site, Zone, Replicate, desc(suffix), .by_group = TRUE) %>%
   slice_head(n = 1) %>%
   ungroup()
 
@@ -483,7 +563,7 @@ tails <- rbind(fluxes_low, fluxes_high)
 ## check the fluxes for which I changed the start time due to lags or ebullition (recorded in notes of metadata)
 ```{r}
 
-tobechecked <- c("2-Aug-SWH-TR-9" , "2-Jul-MSM-TR-1"      )
+tobechecked <- c("1_May_MSM_UP_2", "1_Oct_GWI_TR_1")
 
 colnames <- c("Plot")
 
@@ -509,25 +589,8 @@ for(P in tobechecked){
 #print(p1)
 
 
-#list of the ones that I changed and checked and looked good? 
-fixedplots <- c("2-Jul-GWI-UP-3", "2-Aug-SWH-TR-6a", "1-Oct-SWH-TR-9", "1-Sep-SWH-TR-9",
-                "2-May-GWI-TR-4b", "1-Sep-SWH-UP-2", "2-Oct-SWH-TR-1a", "2-Oct-SWH-UP-2", "2-Nov-SWH-SWAMP-2a",
-                "2-Oct-GWI-UP-3", "1-Aug-SWH-TR-1", "2-May-SWH-SWAMP-2", "2-Nov-SWH-SWAMP-1", "2-Aug-SWH-TR-1",
-                 "2-Aug-SWH-SWAMP-2", "1-Sep-SWH-TR-8b", "1-Oct-SWH-TR-10", "1-Oct-SWH-SWAMP-1a", "1-Nov-SWH-TR-4a", 
-                "1-Nov-SWH-SWAMP-2a", "1-Nov-SWH-SWAMP-1",  "1-May-SWH-TR-4a", "1-May-SWH-SWAMP-2", "1-May-GCW-TR-4", 
-                "1-Jun-SWH-TR-8b", "2-Jun-SWH-TR-3a", "1-Aug-SWH-TR-8a", "1-Aug-SWH-SWAMP-2", "2-May-GWI-UP-5", "1-Nov-SWH-UP-2",
-                "2-Aug-SWH-TR-2c", "1-Oct-SWH-SWAMP-3a", "1-Jun-SWH-UP-4", "1-May-SWH-TR-5a", 
-                 "2-Nov-SWH-SWAMP-5a", "2-Aug-SWH-TR-9a", "2-Sep-GCW-TR-5", "2-Aug-SWH-SWAMP-1a", "2-Oct-SWH-SWAMP-2", 
-                "1-Aug-SWH-TR-2c", "2-Oct-GCW-TR-4", "2-Aug-SWH-SWAMP-1a", "1-Nov-SWH-UP-4", 
-                "1-Jun-SWH-TR-5" , "1-Aug-SWH-TR-5", "2-Oct-GCW-UP-4", "1-Jul-SWH-UP-3", "1-Oct-SWH-SWAMP-4", "2-Sep-SWH-TR-2a", 
-                 "2-Jun-SWH-TR-1a", "2-Jun-SWH-SWAMP-1", "2-Jul-SWH-SWAMP-2a", "2-Jul-SWH-SWAMP-1a", "1-Oct-SWH-TR-2a", "2-Sep-GCW-UP-5", 
-                 "2-Jun-GCW-UP-5", "2-Aug-GCW-UP-5", "2-Jul-GCW-UP-1", "2-Oct-SWH-TR-3a", "1-Aug-SWH-TR-7a", "2-Nov-SWH-UP-1", "2-Sep-SWH-UP-1",
-                "2-Jun-GCW-TR-3", "1-Sep-SWH-TR-3a", "2-Sep-SWH-TR-5", "2-Sep-GWI-UP-4", "2-Oct-SWH-SWAMP-1a", "2-May-GWI-TR-1b", "2-Jul-GCW-TR-2", 
-                 "2-Jun-GCW-UP-3", "1-Jul-SWH-UP-2", "2-Jun-GCW-TR-1", "1-Nov-SWH-TR-7a", "2-Nov-SWH-TR-10", "2-Nov-SWH-SWAMP-4",
-                 "1-Nov-SWH-TR-8", "1-Apr-MSM-UP-3", "1-Sep-SWH-SWAMP-3", "1-Apr-MSM-TR-1", "2-Jun-SWH-UP-5", "1-Oct-SWH-SWAMP-5a", 
-                "2-Sep-SWH-TR-8" , "1-Sep-SWH-TR-7a", "1-Aug-SWH-TR-6" , "2-Jul-MSM-TR-1", "2-Aug-SWH-TR-9")
-
-Missing_data <- c("1-Nov-SWH-UP-1b", "2-Nov-SWH-UP-1", "1-Apr-MSM-UP-4B", "2-Apr-MSM-UP-4b", "1-Jul-SWH-TR-1b", "2-Jul-SWH-TR-1b",  "1-Nov-SWH-UPCON-1b",   "2-Nov-SWH-UP-1b", "1-Nov-SWH-UP-2c", "2-Nov-SWH-UP-2c")
+#list of the ones that I changed and checked and looked good 
+fixedplots <- c("1_Jul_GWI_TR_1a" , "2_Sep_MSM_TR_4", "1_May_MSM_UP_2", "1_Oct_GWI_TR_1")
 
 ```
 
@@ -650,17 +713,17 @@ for(P in tail_plots){
 ## Check all fluxes
 ```{r, echo=FALSE}
 
-# ### pull a random sample of good fluxes to check and plot 
+# ### pull all fluxes to check and plot
 # fluxes_all <- as.data.frame(subset(allflux, select = Plot:TIMESTAMP_max))
 # all_plots <- unique(fluxes_all$Plot)
 # 
-# #Loop to run five random plots subset above 
-# for(P in all_plots){ 
+# #Loop to run five random plots subset above
+# for(P in all_plots){
 #   r1 <- subset(alldat, Plot == P)
-#   p1 <- ggplot(r1, aes(TIMESTAMP, co2)) + geom_point() + theme_classic() + 
-#   scale_x_datetime(breaks = "15 sec") + 
+#   p1 <- ggplot(r1, aes(TIMESTAMP, co2)) + geom_point() + theme_classic() +
+#   scale_x_datetime(breaks = "15 sec") +
 #   ylab(expression(paste( CO [2], " (ppm)"))) +
-#   xlab("Time") + labs(title = P) + 
+#   xlab("Time") + labs(title = P) +
 #   geom_smooth(color="red")
 #   print(p1)
 #   }
@@ -680,8 +743,8 @@ allflux_filtered <- allflux[!(allflux$Plot %in% fluxes_negative$Plot), ]
 #Any others that are not in the weird category that need to be removed: 
   #also removing ones that are crazy off but were not in the fluxes_weird dataframe (did this by listing them below)
 
-allflux_filtered <- allflux_filtered %>%
-  filter(!Plot %in% c("2-Jul-SWH-TR-9", "1-Jul-SWH-TR-9", "1-May-GCW-TR-3", "2-May-GCW-TR-3")) 
+# allflux_filtered <- allflux_filtered %>%
+#   filter(!Plot %in% c("2-Jul-SWH-TR-9", "1-Jul-SWH-TR-9", "1-May-GCW-TR-3", "2-May-GCW-TR-3")) 
 
 
 # View the result
@@ -746,24 +809,10 @@ p3
 ```{r, echo=FALSE}
 
 #can remove base_plot column, the replicate column, and the suffix column
-allflux_filtered <- allflux_filtered[,-c(32:33)]
-
-#need to deal with SWH UPCON, UP, and SWAMP 
-  #in 2023 when sampling SWH the UP site was known as UPCON and the SWAMP site was UP 
-  #this was changed in 2024, so for consistency we need to change these here to prevent confusion 
-allflux_filtered <- allflux_filtered %>%
-  mutate(
-    Zone = case_when(
-      Site == "SWH" & Zone == "UP" ~ "SWAMP",
-      Site == "SWH" & Zone == "UPCON" ~ "UP",
-      TRUE ~ Zone )) %>%  # leave other values unchanged 
-  mutate(
-    Plot = case_when(
-      Site == "SWH" ~ str_replace_all(Plot, c( "-UP-" = "-SWAMP-",  "-UPCON-" = "-UP-")),
-      TRUE ~ Plot) ) 
+allflux_cols <- allflux_filtered[,-c(31:33)]
 
 #export as a csv to the folder that you want 
-write.csv(allflux_filtered, file="Processed Data/COMPASS_Synoptic_CB_SmartChamber_Fluxes_Final_2023_CO2.csv")           #Change file name
+write.csv(allflux_cols, file="Processed Data/COMPASS_Synoptic_CB_SmartChamber_Fluxes_Final_2022_CO2.csv")           #Change file name
 
 
 ```

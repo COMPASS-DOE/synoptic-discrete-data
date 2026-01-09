@@ -586,20 +586,20 @@ for(P in tail_plots){
 ## Check all fluxes
 ```{r, echo=FALSE}
 
-# ### pull a random sample of good fluxes to check and plot 
-# fluxes_all <- as.data.frame(subset(allflux, select = Plot:TIMESTAMP_max))
-# all_plots <- unique(fluxes_all$Plot)
-# 
-# #Loop to run five random plots subset above 
-# for(P in all_plots){ 
-#   r1 <- subset(alldat, Plot == P)
-#   p1 <- ggplot(r1, aes(TIMESTAMP, co2)) + geom_point() + theme_classic() + 
-#   scale_x_datetime(breaks = "15 sec") + 
-#   ylab(expression(paste( CO [2], " (ppm)"))) +
-#   xlab("Time") + labs(title = P) + 
-#   geom_smooth(color="red")
-#   print(p1)
-#   }
+##Put all fluxes together
+fluxes_all <- as.data.frame(subset(allflux, select = Plot:TIMESTAMP_max))
+all_plots <- unique(fluxes_all$Plot)
+
+#Loop to run five random plots subset above
+for(P in all_plots){
+  r1 <- subset(alldat, Plot == P)
+  p1 <- ggplot(r1, aes(TIMESTAMP, co2)) + geom_point() + theme_classic() +
+  scale_x_datetime(breaks = "15 sec") +
+  ylab(expression(paste( CO [2], " (ppm)"))) +
+  xlab("Time") + labs(title = P) +
+  geom_smooth(color="red")
+  print(p1)
+  }
 
 ####################
 ```
@@ -611,13 +611,25 @@ for(P in tail_plots){
 # Create a new dataframe by removing rows that were present in fluxes_weird which have a low R2 and a flux higher than 1 (23 obs) and negative CO2 fluxes
 allflux_filtered <- allflux[!(allflux$Plot %in% fluxes_weird$Plot), ]
 
-allflux_filtered <- allflux[!(allflux$Plot %in% fluxes_negative$Plot), ]
+allflux_filtered <- allflux_filtered[!(allflux_filtered$Plot %in% fluxes_negative$Plot), ]
 
 #Any others that are not in the weird category that need to be removed: 
   #also removing ones that are crazy off but were not in the fluxes_weird dataframe (did this by listing them below)
 
 allflux_filtered <- allflux_filtered %>%
-  filter(!Plot %in% c("2-Jul-SWH-TR-9", "1-Jul-SWH-TR-9", "1-May-GCW-TR-3", "2-May-GCW-TR-3")) 
+  filter(!Plot %in% c("2-Jul-SWH-TR-9", "1-Jul-SWH-TR-9", "1-May-GCW-TR-3", "2-May-GCW-TR-3", "1-Aug-SWH-TR-10a", "1-Sep-GCW-UP-3", "2-Jul-SWH-TR-9")) 
+
+# 1-Aug-SWH-TR-10a, V-shaped
+# 1-Sep-GCW-UP-3, V-shaped
+# 2-Jul-SWH-TR-9, has a starting CO2 value of over 30,000
+
+##Ask Steph
+# 1-May-SWH-UP-5, asked Steph
+# 1-Sep-MSM-TR-1, asked Steph
+# 2-Oct-GCW-TR-3, asked Steph
+# 2-Sep-SWH-TR-1, asked Steph
+# 2-Sep-SWH-TR-3, asked Steph
+# 2-Sep-SWH-UP-1, asked Steph
 
 
 # View the result
@@ -682,7 +694,7 @@ p3
 ```{r, echo=FALSE}
 
 #can remove base_plot column, the replicate column, and the suffix column
-allflux_filtered <- allflux_filtered[,-c(32:33)]
+allflux_filtered <- allflux_filtered[,-c(31:33)]
 
 #need to deal with SWH UPCON, UP, and SWAMP 
   #in 2023 when sampling SWH the UP site was known as UPCON and the SWAMP site was UP 

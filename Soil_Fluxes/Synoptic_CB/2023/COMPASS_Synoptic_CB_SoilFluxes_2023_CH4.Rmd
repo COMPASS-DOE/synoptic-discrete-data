@@ -424,9 +424,7 @@ tails <- rbind(fluxes_low, fluxes_high)
 
 ####If something is in a V shape should we take the second part to make a positive linear curve? 
 
-tobechecked <- c( "1-Apr-GCW-TR-1", "1-Aug-SWH-TR-3", "2-Jul-SWH-TR-2", "1-Jun-GCW-TR-1", "1-Oct-SWH-TR-3", "1-Sep-SWH-TR-5a", "2-Aug-GCW-TR-2", "2-Aug-SWH-TR-4", "2-Jul-GCW-TR-2", "2-Jul-SWH-TR-1b", "2-Jul-SWH-TR-2", "2-Jul-SWH-TR-4", "2-Jul-SWH-UP-5", "2-Jun-GCW-TR-3", "2-May-GWI-TR-1", "2-Oct-SWH-TR-5", "2-Oct-SWH-TR-10", 
-"2-Sep-SWH-TR-10", "2-Sep-SWH-UP-5"
-                  )
+tobechecked <- c("1-Jun-GCW-TR-2", "2-Sep-SWH-TR-3", "2-Sep-GCW-TR-1")
 
 colnames <- c("Plot")
 
@@ -466,7 +464,8 @@ fixedplots <- c("2-Aug-GWI-TR-3", "2-Sep-SWH-UPCON-1", "2-Sep-MSM-TR-3" ,"2-Sep-
                 "1-Sep-SWH-TR-9a", "2-Sep-GCW-TR-5", "2-Nov-SWH-UPCON-3", "1-Jun-GCW-TR-5", "1-Jul-GCW-TR-3", 
                 "2-Jul-GCW-TR-3", "1-Apr-GCW-TR-4", "1-Aug-GCW-TR-2", "1-May-SWH-TR-7", "1-Aug-SWH-TR-9" , 
                 "2-Jul-SWH-TR-9", "1-May-GCW-TR-3", "2-May-GCW-TR-3", "2-May-GCW-TR-5", "2-May-SWH-UP-1", 
-                "1-Aug-SWH-UP-1a", "1-Apr-GCW-TR-2", "1-Aug-SWH-TR-9", "1-Aug-SWH-UP-2", "1-Jul-GWI-TR-1")
+                "1-Aug-SWH-UP-1a", "1-Apr-GCW-TR-2", "1-Aug-SWH-TR-9", "1-Aug-SWH-UP-2", "1-Jul-GWI-TR-1", 
+                "1-Jun-GCW-TR-2", "2-Sep-SWH-TR-3", "2-Sep-GCW-TR-1")
   
 
 ```
@@ -569,20 +568,20 @@ for(P in tail_plots){
 ## Check all fluxes
 ```{r, echo=FALSE}
 
-# ##Putt all fluxes together
-# fluxes_all <- as.data.frame(subset(allflux, select = Plot:TIMESTAMP_max))
-# all_plots <- unique(fluxes_all$Plot)
-# 
-# #Loop to run five random plots subset above
-# for(P in all_plots){
-#   r1 <- subset(alldat, Plot == P)
-#   p1 <- ggplot(r1, aes(TIMESTAMP, ch4)) + geom_point() + theme_classic() +
-#   scale_x_datetime(breaks = "15 sec") +
-#   ylab(expression(paste( CH [4], " (ppb)"))) +
-#   xlab("Time") + labs(title = P) +
-#   geom_smooth(color="red")
-#   print(p1)
-#   }
+##Put all fluxes together
+fluxes_all <- as.data.frame(subset(allflux, select = Plot:TIMESTAMP_max))
+all_plots <- unique(fluxes_all$Plot)
+
+#Loop to run five random plots subset above
+for(P in all_plots){
+  r1 <- subset(alldat, Plot == P)
+  p1 <- ggplot(r1, aes(TIMESTAMP, ch4)) + geom_point() + theme_classic() +
+  scale_x_datetime(breaks = "15 sec") +
+  ylab(expression(paste( CH [4], " (ppb)"))) +
+  xlab("Time") + labs(title = P) +
+  geom_smooth(color="red")
+  print(p1)
+  }
 
 ####################
 ```
@@ -598,9 +597,23 @@ allflux_filtered <- allflux[!(allflux$Plot %in% fluxes_weird$Plot), ]
   #also removing ones that are crazy off but were not in the fluxes_weird dataframe (did this by listing them below)
 
 allflux_filtered <- allflux_filtered %>%
-  filter(!Plot %in% c("2-Jul-SWH-TR-9", "1-Jul-SWH-TR-9", "1-May-GCW-TR-3", "2-May-GCW-TR-3")) 
+  filter(!Plot %in% c("2-Jul-SWH-TR-9", "1-Jul-SWH-TR-9", "1-May-GCW-TR-3", "2-May-GCW-TR-3", 
+                      "2-May-SWH-TR-8", "1-Aug-SWH-TR-10a", "1-Apr-GCW-TR-2", "1-Aug-SWH-UP-2", 
+                      "1-Jul-SWH-TR-2", "1-May-SWH-UP-1", "2-Sep-SWH-TR-5a", "2-Oct-GCW-TR-3", 
+                      "1-Aug-SWH-TR-9", "1-Aug-GCW-TR-2")) 
           #these GCW ones look fine but are way higher than expected
           #the SWH ones are ugllllyyyy 
+# 2-May-SWH-TR-8, weird looking flux
+# 1-Aug-SWH-TR-10a, weird looking flux
+# 1-Apr-GCW-TR-2, V-shaped
+# 1-Aug-SWH-UP-2, V-shaped
+# 1-Jul-SWH-TR-2, messy at start, CH4 very high
+# 1-May-SWH-UP-1, messy at start, CH4 very high
+# 2-Sep-SWH-TR-5a, V-shaped
+# 2-Oct-GCW-TR-3, V-shaped
+# 1-Aug-SWH-TR-9, upside down V
+# 1-Aug-GCW-TR-2, upside down V
+
 
 
 # View the result
@@ -665,7 +678,7 @@ p3
 ```{r, echo=FALSE}
 
 #can remove base_plot column, the replicate column, and the suffix column
-allflux_filtered <- allflux_filtered[,-c(32:33)]
+allflux_filtered <- allflux_filtered[,-c(31:33)]
 
 #need to deal with SWH UPCON, UP, and SWAMP 
   #in 2023 when sampling SWH the UP site was known as UPCON and the SWAMP site was UP 
