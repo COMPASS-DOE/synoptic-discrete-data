@@ -44,17 +44,37 @@ library(stringr)
 ## Pull in Smart Chamber Files from the Raw Data Folder
 ```{r}
 
-#Tell the code where to find raw data in the project
-setwd("Raw Data/")
+# Create a temporary directory
+tmp_dir <- tempdir()
 
-#create a list of all the files in the raw data folder (json raw smart chamber files)
-file.list <- dir(pattern = "json$", full.names = FALSE)
+# Get list of files inside the zip
+zip_contents <- unzip("Raw Data.zip", list = TRUE)
 
-#Read in the data 
+# Keep only JSON files
+json_files <- zip_contents$Name[grepl("json$", zip_contents$Name, ignore.case = TRUE)]
+
+# Extract only the JSON files
+unzip(
+  "Raw Data.zip",
+  files = json_files,
+  exdir = tmp_dir
+)
+
+# List extracted JSON files (full paths)
+file.list <- list.files(
+  path = tmp_dir,
+  pattern = "json$",
+  full.names = TRUE,
+  recursive = TRUE
+)
+
+head(file.list)
+
+# Read in the data
 alldat1 <- lapply(file.list, ffi_read_LIsmartchamber)
 
-#combind into one dataframe
-alldat <- data.table::rbindlist(alldat1, fill=TRUE)
+# Combine into one data.table
+alldat <- data.table::rbindlist(alldat1, fill = TRUE)
 
 
 ```
@@ -77,8 +97,24 @@ alldat <- alldat %>%
                      pmax(Plot_ID, label),  sep = '-'))  
 
 
+# Path inside the zip
+zip_file <- "Raw Data.zip"
+csv_inside_zip <- "Raw Data/COMPASS_SmartChamber_Metadata_2024.csv"
+
+# Make sure the destination folder exists
+dir.create("Raw Data", showWarnings = FALSE)
+
+# Extract only the metadata CSV if it doesn't already exist
+if (!file.exists(csv_inside_zip)) {
+  unzip(
+    zip_file,
+    files = csv_inside_zip,
+    exdir = "."
+  )
+}
+
 # Define the file path where you want to save the CSV file
-file_path <- "COMPASS_SmartChamber_Metadata_2024.csv"
+file_path <- "Raw Data/COMPASS_SmartChamber_Metadata_2024.csv"
 
 # Check if the CSV file exists
 if (file.exists(file_path)) {
@@ -121,6 +157,7 @@ if (file.exists(file_path)) {
 ##Sometimes there are other fluxes in the .json files that we don't want to calculate 
   #change drop column to TRUE if the plot doesn't include a site code in the Plot_ID 
 metadata <- metadata %>%
+  rename(Plot = Plot_ID) %>%
   mutate(
     drop = ifelse(
       !grepl("SWH|GCW|MSM|GWI|GCReW", Plot), 
@@ -170,7 +207,9 @@ metadata <- metadata %>%
 metadata <- metadata %>%
   mutate(drop = if_else(Total_Time > 300, TRUE, drop)) 
 
-
+################# Remove columns with drop = TRUE
+metadata <-  metadata %>%  
+  filter(drop == "FALSE")
 
 
 ```
@@ -387,9 +426,9 @@ for(P in bad_plots){
     #mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% fluxes_weird, "low r2, high flux", qaqc_flag))
 
 
-########## Ebulition 
+########## Ebullition 
 
-#List the ones that have ebulition - assessed visually for now 
+#List the ones that have ebullition - assessed visually for now 
 eb_flags <- c("2-Nov-SWH-TR-9a", "1-Nov-SWH-TR-9a", "2-Sep-SWH-TR-7a", "2-Sep-SWH-TR-7a", 
               "2-Jul-SWH-TR-9d", "1-Jul-SWH-TR-7b", "2-Oct-SWH-TR-3a", "2-Nov-SWH-TR-4a", 
               "2-Aug-SWH-TR-8a", "1-Oct-SWH-TR-8a")
