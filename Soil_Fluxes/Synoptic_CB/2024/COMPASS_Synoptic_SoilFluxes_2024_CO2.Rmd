@@ -99,7 +99,7 @@ alldat <- alldat %>%
 alldat <- alldat %>% 
   mutate(Plot_ID = str_c(pmin(Plot_ID, label), 
                      pmax(Plot_ID, label),  sep = '-'))  
-#this needs to be PLot ID so that later we ID plot from metadata and not the metadata row 
+#this needs to be Plot ID so that later we ID plot from metadata and not the metadata row 
 
 # Path inside the zip
 zip_file <- "Raw Data.zip"
@@ -205,6 +205,7 @@ metadata <- metadata %>%
   mutate(drop = row_number() != 1) %>% #the entry with the latest suffix will keep false all others will be true
   #slice_head(n = 1) %>% #if you wanted to remove a the line rather than flag it 
   ungroup()
+
 
 ################# Check Observation lengths 
 
@@ -350,6 +351,7 @@ ggplot(allflux, aes(Plot, lin_flux.estimate, color = lin_r.squared)) +
 fluxes_good <- as.data.frame(subset(allflux, lin_r.squared >= .90, select = Plot:TIMESTAMP_max))
 fluxes_lowr2 <- as.data.frame(subset(allflux, lin_r.squared < .90 & lin_flux.estimate < 1, select = Plot:TIMESTAMP_max))
 fluxes_weird <- as.data.frame(subset(allflux, lin_r.squared < .90 & lin_flux.estimate > 1, select = Plot:TIMESTAMP_max))
+fluxes_negative <- as.data.frame(subset(allflux,  lin_flux.estimate < 0, select = Plot:TIMESTAMP_max))
 
 #find fluxes that represent the first and fourth quartile of the data 
 low <- quantile(allflux$lin_flux.estimate, 0.05) 
@@ -365,7 +367,7 @@ tails <- rbind(fluxes_low, fluxes_high)
 ## check the fluxes for which I changed the start time due to lags or ebullition (recorded in notes of metadata)
 ```{r}
 
-tobechecked <- c("2-May-SWH-TR-6a", "2-Sep-SWH-TR-1a"                 )
+tobechecked <- c("1-Jul-SWH-TR-9d")
 
 colnames <- c("Plot")
 
@@ -407,7 +409,7 @@ fixedplots <- c("2-Jul-GWI-UP-3", "2-Aug-SWH-TR-6a", "1-Oct-SWH-TR-9", "1-Sep-SW
                 "2-Jun-GCW-TR-3", "1-Sep-SWH-TR-3a", "2-Sep-SWH-TR-5", "2-Sep-GWI-UP-4", "2-Oct-SWH-SWAMP-1a", "2-May-GWI-TR-1b", "2-Jul-GCW-TR-2", 
                  "2-Jun-GCW-UP-3", "1-Jul-SWH-UP-2", "2-Jun-GCW-TR-1", "1-Nov-SWH-TR-7a", "2-Nov-SWH-TR-10", "2-Nov-SWH-SWAMP-4",
                  "1-Nov-SWH-TR-8", "1-Apr-MSM-UP-3", "1-Sep-SWH-SWAMP-3", "1-Apr-MSM-TR-1", "2-Jun-SWH-UP-5", "1-Oct-SWH-SWAMP-5a", 
-                "2-May-SWH-TR-6a", "2-Sep-SWH-TR-1a")
+                "2-May-SWH-TR-6a", "2-Sep-SWH-TR-1a", "1-Jul-SWH-TR-9d")
   
 
 ```
@@ -499,6 +501,29 @@ allflux <- allflux %>%
 
 ```
 
+# Look at any CO2 fluxes that are negative and remove those plots 
+```{r, echo=FALSE}
+
+### pull out fluxes with R2 < 0.9 and put them in a list 
+neg_plots <- unique(fluxes_negative$Plot)
+
+#Loop to run five random plots subset above 
+for(P in neg_plots){ 
+  r1 <- subset(alldat, Plot == P)
+  p1 <- ggplot(r1, aes(TIMESTAMP, co2)) + geom_point() + theme_classic() + 
+  scale_x_datetime(breaks = "15 sec") + 
+  ylab(expression(paste( CO [2], " (ppm)"))) +
+  xlab("Time") + labs(title = P) +
+  geom_smooth(color="red")
+  print(p1)
+  }
+
+####################
+#add a flag for the fluxes that are negative for CO2 because they should be positive
+# allflux <- allflux %>%
+#     mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% neg_plots, "negative CO2 flux", qaqc_flag))
+
+```
 
 ## Look at the really high or really low ones to see if there is a timing issue or something
 ```{r, echo=FALSE}
@@ -523,11 +548,66 @@ for(P in tail_plots){
 
 ```
 
+## Check all fluxes
+```{r, echo=FALSE}
+
+##Put all fluxes together
+fluxes_all <- as.data.frame(subset(allflux, select = Plot:TIMESTAMP_max))
+all_plots <- unique(fluxes_all$Plot)
+
+#Loop to run five random plots subset above
+for(P in all_plots){
+  r1 <- subset(alldat, Plot == P)
+  p1 <- ggplot(r1, aes(TIMESTAMP, co2)) + geom_point() + theme_classic() +
+  scale_x_datetime(breaks = "15 sec") +
+  ylab(expression(paste( CO [2], " (ppm)"))) +
+  xlab("Time") + labs(title = P) +
+  geom_smooth(color="red")
+  print(p1)
+  }
+
+####################
+```
+
 ## Remove any fluxes that do not fit criteria 
 ```{r, echo=FALSE}
 
-# Create a new dataframe by removing rows that were present in fluxes_weird which have a low R2 and a flux higher than 1 (23 obs)
-allflux_filtered <- allflux[!(allflux$Plot %in% fluxes_weird$Plot), ]
+# previously removed rows that were present in fluxes_weird which have a low R2 and a flux higher than 1 (23 obs), but now they are flagged
+#allflux_filtered <- allflux[!(allflux$Plot %in% fluxes_weird$Plot), ]
+allflux_filtered <- allflux
+
+#Any others that are not in the weird category that need to be removed: 
+  #also removing ones that are crazy off but were not in the fluxes_weird dataframe (did this by listing them below)
+
+allflux_filtered <- allflux_filtered %>%
+  filter(!Plot %in% c("2-Jul-SWH-TR-9", "1-Jul-SWH-TR-9", "1-May-GCW-TR-3", "2-May-GCW-TR-3", "1-Aug-SWH-TR-10a", "1-Sep-GCW-UP-3", "2-Jul-SWH-TR-9", 
+                      "2-Jul-SWH-TR-10", 
+"1-Jun-MSM-TR-3", 
+"1-Jun-MSM-TR-4" , 
+"1-Jun-SWH-TR-6a" , 
+"1-Jun-SWH-TR-7b" , 
+"1-Jun-SWH-TR-8b" , 
+"1-Nov-GCW-UP-3" , 
+"2-Jun-MSM-TR-4" , 
+"2-Oct-GWI-TR-1" , 
+"2-Oct-GWI-TR-4a" , 
+"2-Oct-GWI-TR-5" , 
+"2-Sep-SWH-SWAMP-2" 
+)) 
+
+# Removed
+# 2-Jul-SWH-TR-10 - V-shaped
+# 1-Jun-MSM-TR-3 - V-shaped
+# 1-Jun-MSM-TR-4 - V-shaped
+# 1-Jun-SWH-TR-6a - V-shaped
+# 1-Jun-SWH-TR-7b - V-shaped
+# 1-Jun-SWH-TR-8b - V-shaped
+# 1-Nov-GCW-UP-3 - V-shaped
+# 2-Jun-MSM-TR-4 - V-shaped
+# 2-Oct-GWI-TR-1 - V-shaped
+# 2-Oct-GWI-TR-4a - V-shaped
+# 2-Oct-GWI-TR-5 - V-shaped
+# 2-Sep-SWH-SWAMP-2 - V-shaped
 
 # View the result
 head(allflux_filtered)
@@ -591,10 +671,18 @@ p3
 ```{r, echo=FALSE}
 
 #can remove base_plot column, the replicate column, and the suffix column
-allflux_filtered <- allflux_filtered[,-c(32:34)]
+# allflux_filtered <- allflux_filtered[,-c(32:34)]
+
+#create ID columns from the plots 
+IDs <- data.frame(do.call('rbind', strsplit(as.character(allflux_filtered$Plot),'-',fixed=TRUE)))
+colnames(IDs) <- c("RepNumber", "Month", "Site", "Zone", "Replicate") 
+head(IDs)
+
+#combine these dataframes together 
+allflux_filtered <- cbind(IDs, allflux_filtered)
 
 #export as a csv to the folder that you want 
-write.csv(allflux_filtered, file="Processed Data/COMPASS_Synoptic_CB_SmartChamber_Fluxes_Final_2024_CO2.csv")           #Change file name
+write.csv(allflux_filtered, file="Processed Data/COMPASS_Synoptic_CB_SmartChamber_Fluxes_Final_2024_CO2.csv", row.names = FALSE)           #Change file name
 
 
 ```
