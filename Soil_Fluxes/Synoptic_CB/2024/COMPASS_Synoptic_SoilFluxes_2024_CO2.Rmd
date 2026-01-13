@@ -349,7 +349,7 @@ ggplot(allflux, aes(Plot, lin_flux.estimate, color = lin_r.squared)) +
 
 #sort fluxes by R2 
 fluxes_good <- as.data.frame(subset(allflux, lin_r.squared >= .90, select = Plot:TIMESTAMP_max))
-fluxes_lowr2 <- as.data.frame(subset(allflux, lin_r.squared < .90 & lin_flux.estimate < 1, select = Plot:TIMESTAMP_max))
+fluxes_lowr2 <- as.data.frame(subset(allflux, lin_r.squared < .90 & abs(lin_flux.estimate) < 1, select = Plot:TIMESTAMP_max))
 fluxes_weird <- as.data.frame(subset(allflux, lin_r.squared < .90 & lin_flux.estimate > 1, select = Plot:TIMESTAMP_max))
 fluxes_negative <- as.data.frame(subset(allflux,  lin_flux.estimate < 0, select = Plot:TIMESTAMP_max))
 
@@ -367,7 +367,7 @@ tails <- rbind(fluxes_low, fluxes_high)
 ## check the fluxes for which I changed the start time due to lags or ebullition (recorded in notes of metadata)
 ```{r}
 
-tobechecked <- c("1-Jul-SWH-TR-9d")
+tobechecked <- c("2-Jul-SWH-TR-9d", "1-Jul-SWH-TR-9d", "1-May-GCW-TR-3a", "2-May-GCW-TR-3", "1-Aug-SWH-TR-10a", "1-Sep-GCW-UP-3")
 
 colnames <- c("Plot")
 
@@ -440,7 +440,7 @@ for(P in good_sample){
 ####################
 ```
 
-## Take a look at the  fluxes <0.9 and a flux estimate below 5 
+## Take a look at the  fluxes <0.9 and a flux estimate below 1 
 ```{r, echo=FALSE}
 
 ### pull out fluxes with R2 < 0.9 and put them in a list 
@@ -486,17 +486,17 @@ for(P in bad_plots){
 
 ####################
 
-########## Ebulition 
+########## Ebullition 
 
-#List the ones that have ebulition - assessed visually for now 
+#List the ones that have ebullition - assessed visually for now 
 eb_flags <- c("2-Nov-SWH-TR-9a", "1-Nov-SWH-TR-9a", "2-Sep-SWH-TR-7a", "2-Sep-SWH-TR-7a", 
               "2-Jul-SWH-TR-9d", "1-Jul-SWH-TR-7b", "2-Oct-SWH-TR-3a", "2-Nov-SWH-TR-4a", 
-              "2-Aug-SWH-TR-8a", "1-Oct-SWH-TR-8a")
+              "2-Aug-SWH-TR-8a", "1-Oct-SWH-TR-8a", "1-Apr-GCW-UP-2")
 
 
 #add a flag for the fluxes that have ebullition and therefore not even a flux 
 allflux <- allflux %>%
-    mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% eb_flags, "significant ebulition, flux compromised", qaqc_flag))
+    mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% eb_flags, "significant ebullition, flux compromised", qaqc_flag))
 
 
 ```
@@ -504,7 +504,7 @@ allflux <- allflux %>%
 # Look at any CO2 fluxes that are negative and remove those plots 
 ```{r, echo=FALSE}
 
-### pull out fluxes with R2 < 0.9 and put them in a list 
+### pull out negative fluxes and put them in a list 
 neg_plots <- unique(fluxes_negative$Plot)
 
 #Loop to run five random plots subset above 
@@ -518,10 +518,10 @@ for(P in neg_plots){
   print(p1)
   }
 
-####################
-#add a flag for the fluxes that are negative for CO2 because they should be positive
-# allflux <- allflux %>%
-#     mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% neg_plots, "negative CO2 flux", qaqc_flag))
+####################Negative CO2 fluxes
+# add a flag for the fluxes that are negative for CO2 because they should be positive
+allflux <- allflux %>%
+    mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% neg_plots, "negative CO2 flux", qaqc_flag))
 
 ```
 
@@ -569,45 +569,67 @@ for(P in all_plots){
 ####################
 ```
 
-## Remove any fluxes that do not fit criteria 
+## Flag any fluxes that do not fit criteria 
 ```{r, echo=FALSE}
 
-# previously removed rows that were present in fluxes_weird which have a low R2 and a flux higher than 1 (23 obs), but now they are flagged
+# previously removed rows that were present in fluxes_weird which have a low R2 and a flux higher than 1 (23 obs), but now they are flagged for ebullition
+# flagged fluxes with low R squared and low flux
+# flagged high fluxes that are negative
+
 #allflux_filtered <- allflux[!(allflux$Plot %in% fluxes_weird$Plot), ]
+
 allflux_filtered <- allflux
 
 #Any others that are not in the weird category that need to be removed: 
-  #also removing ones that are crazy off but were not in the fluxes_weird dataframe (did this by listing them below)
+  #also flagging ones that are crazy off but were not in the fluxes_weird dataframe (did this by listing them below)
 
-allflux_filtered <- allflux_filtered %>%
-  filter(!Plot %in% c("2-Jul-SWH-TR-9", "1-Jul-SWH-TR-9", "1-May-GCW-TR-3", "2-May-GCW-TR-3", "1-Aug-SWH-TR-10a", "1-Sep-GCW-UP-3", "2-Jul-SWH-TR-9", 
-                      "2-Jul-SWH-TR-10", 
-"1-Jun-MSM-TR-3", 
+
+########## V-shaped fluxes
+
+#List the ones that are V-shaped - assessed visually for now 
+v_flags <- c(
+"2-Jul-SWH-TR-10", 
+"1-Jun-MSM-TR-3" , 
 "1-Jun-MSM-TR-4" , 
 "1-Jun-SWH-TR-6a" , 
 "1-Jun-SWH-TR-7b" , 
 "1-Jun-SWH-TR-8b" , 
 "1-Nov-GCW-UP-3" , 
+"2-Jun-MSM-TR-3" , 
 "2-Jun-MSM-TR-4" , 
+"2-Jun-SWH-TR-6a" , 
+"2-Jun-SWH-TR-7b" , 
+"2-Jun-SWH-TR-8b" , 
 "2-Oct-GWI-TR-1" , 
 "2-Oct-GWI-TR-4a" , 
 "2-Oct-GWI-TR-5" , 
 "2-Sep-SWH-SWAMP-2" 
-)) 
+)
 
-# Removed
-# 2-Jul-SWH-TR-10 - V-shaped
-# 1-Jun-MSM-TR-3 - V-shaped
-# 1-Jun-MSM-TR-4 - V-shaped
-# 1-Jun-SWH-TR-6a - V-shaped
-# 1-Jun-SWH-TR-7b - V-shaped
-# 1-Jun-SWH-TR-8b - V-shaped
-# 1-Nov-GCW-UP-3 - V-shaped
-# 2-Jun-MSM-TR-4 - V-shaped
-# 2-Oct-GWI-TR-1 - V-shaped
-# 2-Oct-GWI-TR-4a - V-shaped
-# 2-Oct-GWI-TR-5 - V-shaped
-# 2-Sep-SWH-SWAMP-2 - V-shaped
+#add a flag for the fluxes that are v-shaped and therefore not even a flux 
+allflux <- allflux %>%
+    mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% v_flags, "V-shaped, flux compromised", qaqc_flag))
+
+
+########## W-shaped fluxes
+
+#List the ones that are w-shaped - assessed visually for now 
+w_flags <- c("1-Sep-SWH-TR-7a")
+
+#add a flag for the fluxes that are v-shaped and therefore not even a flux 
+allflux <- allflux %>%
+    mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% w_flags, "w-shaped, flux compromised", qaqc_flag))
+
+
+########## Poor fluxes
+
+#List the ones that are w-shaped - assessed visually for now 
+poor_flags <- c("2-Jul-SWH-TR-9d", "1-Jul-SWH-TR-9d")
+
+#add a flag for the fluxes that are v-shaped and therefore not even a flux 
+allflux <- allflux %>%
+    mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% poor_flags, "poor flux, need to remove", qaqc_flag))
+
 
 # View the result
 head(allflux_filtered)
