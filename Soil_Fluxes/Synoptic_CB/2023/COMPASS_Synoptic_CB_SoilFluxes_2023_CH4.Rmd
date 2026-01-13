@@ -422,9 +422,7 @@ tails <- rbind(fluxes_low, fluxes_high)
 ## check the fluxes for which I changed the start time due to lags or ebullition (recorded in notes of metadata)
 ```{r}
 
-####If something is in a V shape should we take the second part to make a positive linear curve? 
-
-tobechecked <- c("1-Jun-GCW-TR-2", "2-Sep-SWH-TR-3", "2-Sep-GCW-TR-1")
+tobechecked <- c("1-May-SWH-UP-1")
 
 colnames <- c("Plot")
 
@@ -465,7 +463,7 @@ fixedplots <- c("2-Aug-GWI-TR-3", "2-Sep-SWH-UPCON-1", "2-Sep-MSM-TR-3" ,"2-Sep-
                 "2-Jul-GCW-TR-3", "1-Apr-GCW-TR-4", "1-Aug-GCW-TR-2", "1-May-SWH-TR-7", "1-Aug-SWH-TR-9" , 
                 "2-Jul-SWH-TR-9", "1-May-GCW-TR-3", "2-May-GCW-TR-3", "2-May-GCW-TR-5", "2-May-SWH-UP-1", 
                 "1-Aug-SWH-UP-1a", "1-Apr-GCW-TR-2", "1-Aug-SWH-TR-9", "1-Aug-SWH-UP-2", "1-Jul-GWI-TR-1", 
-                "1-Jun-GCW-TR-2", "2-Sep-SWH-TR-3", "2-Sep-GCW-TR-1")
+                "1-Jun-GCW-TR-2", "2-Sep-SWH-TR-3", "2-Sep-GCW-TR-1", "1-Jul-SWH-TR-2", "1-May-SWH-UP-1")
   
 
 ```
@@ -599,16 +597,13 @@ allflux_filtered <- allflux[!(allflux$Plot %in% fluxes_weird$Plot), ]
 allflux_filtered <- allflux_filtered %>%
   filter(!Plot %in% c("2-Jul-SWH-TR-9", "1-Jul-SWH-TR-9", "1-May-GCW-TR-3", "2-May-GCW-TR-3", 
                       "2-May-SWH-TR-8", "1-Aug-SWH-TR-10a", "1-Apr-GCW-TR-2", "1-Aug-SWH-UP-2", 
-                      "1-Jul-SWH-TR-2", "1-May-SWH-UP-1", "2-Sep-SWH-TR-5a", "2-Oct-GCW-TR-3", 
-                      "1-Aug-SWH-TR-9", "1-Aug-GCW-TR-2")) 
+                      "2-Sep-SWH-TR-5a", "2-Oct-GCW-TR-3", "1-Aug-SWH-TR-9", "1-Aug-GCW-TR-2")) 
           #these GCW ones look fine but are way higher than expected
           #the SWH ones are ugllllyyyy 
 # 2-May-SWH-TR-8, weird looking flux
 # 1-Aug-SWH-TR-10a, weird looking flux
 # 1-Apr-GCW-TR-2, V-shaped
 # 1-Aug-SWH-UP-2, V-shaped
-# 1-Jul-SWH-TR-2, messy at start, CH4 very high
-# 1-May-SWH-UP-1, messy at start, CH4 very high
 # 2-Sep-SWH-TR-5a, V-shaped
 # 2-Oct-GCW-TR-3, V-shaped
 # 1-Aug-SWH-TR-9, upside down V
