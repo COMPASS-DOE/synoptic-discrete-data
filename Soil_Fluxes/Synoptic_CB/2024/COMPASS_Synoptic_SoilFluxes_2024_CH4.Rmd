@@ -284,8 +284,8 @@ ggplot(allflux, aes(Plot, lin_flux.estimate, color = lin_r.squared)) +
 
 #sort fluxes by R2 
 fluxes_good <- as.data.frame(subset(allflux, lin_r.squared >= .90, select = Plot:TIMESTAMP_max))
-fluxes_lowr2 <- as.data.frame(subset(allflux, lin_r.squared < .90 & lin_flux.estimate < 1, select = Plot:TIMESTAMP_max))
-fluxes_weird <- as.data.frame(subset(allflux, lin_r.squared < .90 & lin_flux.estimate > 5, select = Plot:TIMESTAMP_max))
+fluxes_lowr2 <- as.data.frame(subset(allflux, lin_r.squared < .90 & abs(lin_flux.estimate) < 1, select = Plot:TIMESTAMP_max))
+fluxes_weird <- as.data.frame(subset(allflux, lin_r.squared < .90 & abs(lin_flux.estimate) > 5, select = Plot:TIMESTAMP_max))
 
 #find fluxes that represent the first and fourth quartile of the data 
 low <- quantile(allflux$lin_flux.estimate, 0.05) 
@@ -301,8 +301,17 @@ tails <- rbind(fluxes_low, fluxes_high)
 ## check the fluxes for which I changed the start time due to lags or ebullition (recorded in notes of metadata)
 ```{r}
 
-tobechecked <- c("2-May-SWH-TR-6a", "2-Sep-SWH-TR-1a"  , "2-Oct-SWH-TR-8a", "2-May-SWH-UP-5" , "1-May-MSM-TR-1a", "1-May-GWI-TR-1b", "1-Jul-MSM-TR-4" ,
-                 "1-Aug-SWH-UP-1a", "1-May-GCW-TR-3a", "1-May-SWH-SWAMP-1a")
+tobechecked <- c("2-Oct-SWH-TR-8a", 
+"2-Jun-SWH-TR-8b", 
+"2-Sep-SWH-SWAMP-5", 
+"2-Jun-SWH-TR-4" , 
+"1-Sep-SWH-SWAMP-2" , 
+"1-Sep-SWH-TR-4a" , 
+"2-Jun-SWH-TR-7b" , 
+"2-Nov-SWH-SWAMP-5a", 
+"2-Oct-SWH-SWAMP-5a" , 
+"2-May-GCW-TR-1" , 
+"1-Sep-SWH-TR-10")
 
 colnames <- c("Plot")
 
@@ -343,7 +352,9 @@ fixedplots <- c("2-Jul-GWI-UP-3", "2-Aug-SWH-TR-6a", "1-Oct-SWH-TR-9", "1-Sep-SW
                  "2-Jun-GCW-UP-5", "2-Aug-GCW-UP-5", "2-Jul-GCW-UP-1", "2-Oct-SWH-TR-3a", "1-Aug-SWH-TR-7a", "2-Nov-SWH-UP-1", "2-Sep-SWH-UP-1",
                 "2-Jun-GCW-TR-3", "1-Sep-SWH-TR-3a", "2-Sep-SWH-TR-5", "2-Sep-GWI-UP-4", "2-Oct-SWH-SWAMP-1a", "2-May-GWI-TR-1b", "2-Jul-GCW-TR-2", 
                  "2-Jun-GCW-UP-3", "1-Jul-SWH-UP-2", "2-Jun-GCW-TR-1", "1-Nov-SWH-TR-7a", "2-Nov-SWH-TR-10", "2-Nov-SWH-SWAMP-4",
-                 "1-Nov-SWH-TR-8", "1-Apr-MSM-UP-3", "1-Sep-SWH-SWAMP-3", "1-Apr-MSM-TR-1", "2-Jun-SWH-UP-5", "1-Oct-SWH-SWAMP-5a")
+                 "1-Nov-SWH-TR-8", "1-Apr-MSM-UP-3", "1-Sep-SWH-SWAMP-3", "1-Apr-MSM-TR-1", "2-Jun-SWH-UP-5", "1-Oct-SWH-SWAMP-5a", 
+                "2-May-SWH-TR-6a", "2-Sep-SWH-TR-1a"  , "2-Oct-SWH-TR-8a", "2-May-SWH-UP-5" , "1-May-MSM-TR-1a", "1-May-GWI-TR-1b", "1-Jul-MSM-TR-4" ,
+                 "1-Aug-SWH-UP-1a", "1-May-GCW-TR-3a", "1-May-SWH-SWAMP-1a")
   
 
 ```
@@ -374,7 +385,7 @@ for(P in good_sample){
 ####################
 ```
 
-## Take a look at the  fluxes <0.9 and a flux estimate below 5 
+## Take a look at the  fluxes <0.9 and a flux estimate below 1 
 ```{r, echo=FALSE}
 
 ### pull out fluxes with R2 < 0.9 and put them in a list 
@@ -431,12 +442,13 @@ for(P in bad_plots){
 #List the ones that have ebullition - assessed visually for now 
 eb_flags <- c("2-Nov-SWH-TR-9a", "1-Nov-SWH-TR-9a", "2-Sep-SWH-TR-7a", "2-Sep-SWH-TR-7a", 
               "2-Jul-SWH-TR-9d", "1-Jul-SWH-TR-7b", "2-Oct-SWH-TR-3a", "2-Nov-SWH-TR-4a", 
-              "2-Aug-SWH-TR-8a", "1-Oct-SWH-TR-8a")
+              "2-Aug-SWH-TR-8a", "1-Oct-SWH-TR-8a", 
+              "2-May-SWH-UP-5", "1-May-MSM-TR-1a", "1-Jul-MSM-TR-4")
 
 
 #add a flag for the fluxes that have ebullition and therefore not even a flux 
 allflux <- allflux %>%
-    mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% eb_flags, "significant ebulition, flux compromised", qaqc_flag))
+    mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% eb_flags, "significant ebullition, flux compromised", qaqc_flag))
 
 
 ```
@@ -471,9 +483,21 @@ for(P in tail_plots){
 
 ########## Create a new data frame for output 
 
-# previously removed rows that were present in fluxes_weird which have a low R2 and a flux higher than 1 (23 obs), but now they are flagged
+# previously removed rows that were present in fluxes_weird which have a low R2 and a flux higher than 1 (23 obs), but now they are flagged for ebullition
+# flagged fluxes with low R squared and low flux
 #allflux_filtered <- allflux[!(allflux$Plot %in% fluxes_weird$Plot), ]
 allflux_filtered <- allflux
+
+
+########## Poor fluxes
+
+#List the ones that are w-shaped - assessed visually for now 
+poor_flags <- c("2-Jul-SWH-TR-9d", "1-Jul-SWH-TR-9d")
+
+#add a flag for the fluxes that are v-shaped and therefore not even a flux 
+allflux <- allflux %>%
+    mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% poor_flags, "poor flux, need to remove", qaqc_flag))
+
 
 # View the result
 head(allflux_filtered)
