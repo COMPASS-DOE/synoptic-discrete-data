@@ -39,14 +39,14 @@ co2 <- read.csv("Processed Data/COMPASS_Synoptic_CB_SmartChamber_Fluxes_Final_20
 
 #we need to identify the columns in the ch4 and co2 dataframes because they have the same column names 
 ch4 <- ch4 %>%
-  select(-X) %>%
+  # select(-X) %>%
   rename_with(
     .fn = ~ paste0("ch4_", .),
     .cols = !c("RepNumber", "Month", "Site", "Zone", "Replicate", "Plot", "TIMESTAMP")
   )
 
 co2 <- co2 %>%
-  select(-X) %>%
+  # select(-X) %>%
   rename_with(
     .fn = ~ paste0("co2_", .),
     .cols = !c("RepNumber", "Month", "Site", "Zone", "Replicate", "Plot", "TIMESTAMP")
@@ -67,7 +67,7 @@ all <- all %>%
 p1 <- ggplot(all, aes(x=as.Date(TIMESTAMP), y=ch4_lin_flux.estimate, color=Zone, fill=Zone)) + 
   geom_point(size=2)+
   scale_x_date(date_labels = "%b", breaks = "1 month") +
-  facet_wrap(vars(Site),nrow=1, ncol=4, scales="free")+ 
+  facet_wrap(vars(Site),nrow=1, scales="free")+ 
   ggtitle("COMPASS Synoptic CB Soil Fluxes: 2024")+
   scale_color_manual(values=c("darkgrey","#FFBC42", "#20063B"))+
   scale_fill_manual(values=c("darkgrey","#FFBC42", "#20063B"))+
@@ -100,7 +100,7 @@ p2
 
 ##########################
 
-#lets average across site zone and month to look at it this wasy 
+#lets average across site zone and month to look at it this way 
 
 Avgch4 <- all %>% 
   group_by(Site, Zone, Month) %>% 
