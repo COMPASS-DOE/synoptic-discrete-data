@@ -301,17 +301,10 @@ tails <- rbind(fluxes_low, fluxes_high)
 ## check the fluxes for which I changed the start time due to lags or ebullition (recorded in notes of metadata)
 ```{r}
 
-tobechecked <- c("2-Oct-SWH-TR-8a", 
-"2-Jun-SWH-TR-8b", 
-"2-Sep-SWH-SWAMP-5", 
-"2-Jun-SWH-TR-4" , 
-"1-Sep-SWH-SWAMP-2" , 
-"1-Sep-SWH-TR-4a" , 
-"2-Jun-SWH-TR-7b" , 
-"2-Nov-SWH-SWAMP-5a", 
-"2-Oct-SWH-SWAMP-5a" , 
-"2-May-GCW-TR-1" , 
-"1-Sep-SWH-TR-10")
+tobechecked <- c(
+"1-Aug-GWI-TR-3", 
+"2-Nov-SWH-TR-8"
+)
 
 colnames <- c("Plot")
 
@@ -354,7 +347,12 @@ fixedplots <- c("2-Jul-GWI-UP-3", "2-Aug-SWH-TR-6a", "1-Oct-SWH-TR-9", "1-Sep-SW
                  "2-Jun-GCW-UP-3", "1-Jul-SWH-UP-2", "2-Jun-GCW-TR-1", "1-Nov-SWH-TR-7a", "2-Nov-SWH-TR-10", "2-Nov-SWH-SWAMP-4",
                  "1-Nov-SWH-TR-8", "1-Apr-MSM-UP-3", "1-Sep-SWH-SWAMP-3", "1-Apr-MSM-TR-1", "2-Jun-SWH-UP-5", "1-Oct-SWH-SWAMP-5a", 
                 "2-May-SWH-TR-6a", "2-Sep-SWH-TR-1a"  , "2-Oct-SWH-TR-8a", "2-May-SWH-UP-5" , "1-May-MSM-TR-1a", "1-May-GWI-TR-1b", "1-Jul-MSM-TR-4" ,
-                 "1-Aug-SWH-UP-1a", "1-May-GCW-TR-3a", "1-May-SWH-SWAMP-1a")
+                 "1-Aug-SWH-UP-1a", "1-May-GCW-TR-3a", "1-May-SWH-SWAMP-1a", 
+                "2-Oct-SWH-TR-8a", "2-Jun-SWH-TR-8b", "2-Sep-SWH-SWAMP-5", "2-Jun-SWH-TR-4" ,"1-Sep-SWH-SWAMP-2" , "1-Sep-SWH-TR-4a" , "2-Jun-SWH-TR-7b" ,
+                "2-Nov-SWH-SWAMP-5a", "2-Oct-SWH-SWAMP-5a" , "2-May-GCW-TR-1" , "1-Sep-SWH-TR-10", 
+                "1-Aug-SWH-SWAMP-2", "1-Jul-SWH-TR-5", "1-Jun-SWH-TR-1a", "1-Jun-SWH-TR-8b", "1-May-GCW-TR-4", "1-May-SWH-SWAMP-2", "1-May-SWH-TR-4a", 
+                "1-Nov-SWH-SWAMP-1", "1-Nov-SWH-SWAMP-2a", "1-Oct-SWH-SWAMP-3a", "1-Sep-SWH-TR-7a", "1-Sep-SWH-TR-8b", "2-Aug-SWH-SWAMP-2", 
+                "2-Aug-SWH-TR-1", "2-May-SWH-SWAMP-2", "2-Nov-SWH-SWAMP-1", "2-Nov-SWH-TR-9a", "2-Oct-SWH-SWAMP-2", "2-Oct-SWH-SWAMP-3a")
   
 
 ```
@@ -443,7 +441,8 @@ for(P in bad_plots){
 eb_flags <- c("2-Nov-SWH-TR-9a", "1-Nov-SWH-TR-9a", "2-Sep-SWH-TR-7a", "2-Sep-SWH-TR-7a", 
               "2-Jul-SWH-TR-9d", "1-Jul-SWH-TR-7b", "2-Oct-SWH-TR-3a", "2-Nov-SWH-TR-4a", 
               "2-Aug-SWH-TR-8a", "1-Oct-SWH-TR-8a", 
-              "2-May-SWH-UP-5", "1-May-MSM-TR-1a", "1-Jul-MSM-TR-4")
+              "2-May-SWH-UP-5", "1-May-MSM-TR-1a", "1-Jul-MSM-TR-4", 
+              "2-Jul-SWH-TR-9d", "2-Sep-SWH-TR-7a", "2-Nov-SWH-TR-9a")
 
 
 #add a flag for the fluxes that have ebullition and therefore not even a flux 
@@ -488,15 +487,38 @@ for(P in tail_plots){
 #allflux_filtered <- allflux[!(allflux$Plot %in% fluxes_weird$Plot), ]
 allflux_filtered <- allflux
 
+##Remove test samples
+plots_to_remove <- c("1-Jun-04", "1-Aug-Test2")
+allflux_filtered <- allflux[!(allflux$Plot %in% plots_to_remove), ]
+
 
 ########## Poor fluxes
 
-#List the ones that are w-shaped - assessed visually for now 
-poor_flags <- c("2-Jul-SWH-TR-9d", "1-Jul-SWH-TR-9d")
+#List the ones that have odd/poor flux shapes - assessed visually for now 
+poor_flags <- c("2-Oct-SWH-TR-8a", "1-Jul-SWH-TR-9d", "1-Jul-SWH-TR-7b", 
+                "1-Nov-SWH-TR-9a", "1-Nov-SWH-TR-5a", "1-Oct-SWH-SWAMP-1a", 
+                "1-Oct-SWH-TR-8a", "2-Aug-SWH-TR-8a", "2-Nov-SWH-TR-4a", 
+                "2-Jul-SWH-TR-9d", "2-Nov-SWH-TR-9a", "2-Sep-SWH-TR-7a"
+                )
 
 #add a flag for the fluxes that are v-shaped and therefore not even a flux 
-allflux <- allflux %>%
+allflux_filtered <- allflux_filtered %>%
     mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% poor_flags, "poor flux, need to remove", qaqc_flag))
+
+
+# 2-Oct-SWH-TR-8a - poor flux, remove
+# 1-Jul-SWH-TR-9d - poor flux, remove
+# 1-Jul-SWH-TR-7b - poor flux, remove
+# 1-Nov-SWH-TR-9a - poor flux, remove
+# 1-Nov-SWH-TR-5a - poor flux, remove
+# 1-Oct-SWH-SWAMP-1a - L-shaped, high CH4, remove
+# 1-Oct-SWH-TR-8a - U-shaped, remove
+# 2-Aug-SWH-TR-8a - no clear pattern, remove
+# 2-Nov-SWH-TR-4a - no clear pattern, remove
+# 2-Jul-SWH-TR-9d - poor flux, remove
+# 2-Nov-SWH-TR-9a - poor flux, remove
+# 2-Sep-SWH-TR-7a - poor flux, remove
+
 
 
 # View the result
@@ -561,10 +583,18 @@ p3
 ```{r, echo=FALSE}
 
 #can remove base_plot column, the replicate column, and the suffix column
-allflux_filtered <- allflux_filtered[,-c(32:34)]
+# allflux_filtered <- allflux_filtered[,-c(32:34)]
+
+#create ID columns from the plots 
+IDs <- data.frame(do.call('rbind', strsplit(as.character(allflux_filtered$Plot),'-',fixed=TRUE)))
+colnames(IDs) <- c("RepNumber", "Month", "Site", "Zone", "Replicate")
+head(IDs)
+
+#combine these dataframes together 
+allflux_filtered <- cbind(IDs, allflux_filtered)
 
 #export as a csv to the folder that you want 
-write.csv(allflux_filtered, file="Processed Data/COMPASS_Synoptic_CB_SmartChamber_Fluxes_Final_2024_CH4.csv")           #Change file name
+write.csv(allflux_filtered, file="Processed Data/COMPASS_Synoptic_CB_SmartChamber_Fluxes_Final_2024_CH4.csv", row.names = FALSE)           #Change file name
 
 
 ```

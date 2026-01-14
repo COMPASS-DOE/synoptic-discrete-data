@@ -578,7 +578,12 @@ for(P in all_plots){
 
 #allflux_filtered <- allflux[!(allflux$Plot %in% fluxes_weird$Plot), ]
 
-allflux_filtered <- allflux
+# allflux_filtered <- allflux
+
+##Remove test samples
+plots_to_remove <- c("1-Jun-04", "1-Aug-Test2")
+allflux_filtered <- allflux[!(allflux$Plot %in% plots_to_remove), ]
+
 
 #Any others that are not in the weird category that need to be removed: 
   #also flagging ones that are crazy off but were not in the fluxes_weird dataframe (did this by listing them below)
