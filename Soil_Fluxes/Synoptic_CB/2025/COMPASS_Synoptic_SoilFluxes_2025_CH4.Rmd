@@ -301,26 +301,7 @@ tails <- rbind(fluxes_low, fluxes_high)
 ```{r}
 
 tobechecked <- c(
-"1-Sep-GCW-TR-3", 
-"1-Nov-SWH-SWAMP-1", 
-"1-May-SWH-TR-4", 
-"1-May-SWH-TR-3", 
-"1-Sep-SWH-TR-8", 
-"1-May-SWH-TR-9", 
-"2-May-SWH-SWAMP-1a", 
-"1-Mar-SWH-TR-3", 
-"1-Mar-SWH-TR-5", 
-"1-May-SWH-SWAMP-4a", 
-"1-Nov-SWH-SWAMP-3b", 
-"1-Jul-SWH-SWAMP-4", 
-"1-Jul-SWH-TR-10", 
-"1-Jul-SWH-TR-8", 
-"2-Jul-SWH-TR-6", 
-"2-May-SWH-TR-10", 
-"2-May-SWH-TR-9", 
-"2-Sep-SWH-TR-10a", 
-"2-Sep-SWH-TR-7", 
-"2-Jul-SWH-TR-8"
+
 )
 
 colnames <- c("Plot")
@@ -347,7 +328,18 @@ fixedplots <- c("1-Sep-MSM-TR-1", "1-Sep-MSM-TR-2", "1-Sep-SWH-SWAMP-3",
                 "1-May-SWH-SWAMP-4a", "1-Nov-SWH-SWAMP-3b", "1-Jul-SWH-SWAMP-4",
                 "1-Jul-SWH-TR-10", "1-Jul-SWH-TR-8", "2-Jul-SWH-TR-6", 
                 "2-May-SWH-TR-10", "2-May-SWH-TR-9", "2-Sep-SWH-TR-10a", 
-                "2-Sep-SWH-TR-7", "2-Jul-SWH-TR-8" )
+                "2-Sep-SWH-TR-7", "2-Jul-SWH-TR-8", 
+                "1-May-SWH-TR-5", "1-May-SWH-TR-6a", "1-Sep-GCW-TR-2", 
+                "1-Sep-SWH-TR-5", "1-Sep-SWH-TR-6", "1-Sep-SWH-TR-7", 
+                "1-Sep-SWH-TR-9", "2-Jul-SWH-TR-9", "2-Jul-SWH-UP-1", 
+                "2-Jul-SWH-UP-3", "2-Jul-SWH-UP-4", "2-Jul-SWH-UP-5", 
+                "2-Mar-SWH-TR-7a", "2-May-SWH-SWAMP-2", "2-May-SWH-TR-3", 
+                "2-May-SWH-TR-4", "2-May-SWH-TR-7a", "2-May-SWH-TR-8a", 
+                "2-Nov-SWH-SWAMP-1", "2-Nov-SWH-SWAMP-2", "2-Nov-SWH-SWAMP-3b", 
+                "2-Nov-SWH-SWAMP-4a", "2-Nov-SWH-TR-9a", "2-Sep-GCW-TR-4", 
+                "2-Sep-GCW-TR-5", "2-Sep-SWH-SWAMP-4", "2-Sep-SWH-TR-5", "2-Sep-SWH-TR-7", 
+                "2-Mar-SWH-TR-5", "2-Sep-SWH-UP-4", "2-Sep-SWH-UP-1", "2-Sep-SWH-SWAMP-3", 
+                "2-Sep-MSM-TR-1", "2-Sep-GCW-TR-2", "2-Nov-MSM-TR-5", "2-Nov-GWI-TR-1a")
   
 
 ```
@@ -433,7 +425,7 @@ for(P in bad_plots){
 ########## Ebullition 
 
 #List the ones that have ebullition - assessed visually for now 
-eb_flags <- c()
+eb_flags <- c("2-Jul-GWI-TR-4")
 
 
 #add a flag for the fluxes that have ebullition and therefore not even a flux 
@@ -466,6 +458,7 @@ for(P in tail_plots){
 
 
 ```
+
 ## Check all fluxes
 ```{r, echo=FALSE}
 
@@ -498,18 +491,12 @@ for(P in all_plots){
 #allflux_filtered <- allflux[!(allflux$Plot %in% fluxes_weird$Plot), ]
 allflux_filtered <- allflux
 
-##Remove test samples
-plots_to_remove <- c("1-Jun-04", "1-Aug-Test2")
-allflux_filtered <- allflux[!(allflux$Plot %in% plots_to_remove), ]
-
 
 ########## Poor fluxes
 
 #List the ones that have odd/poor flux shapes - assessed visually for now 
-poor_flags <- c("2-Oct-SWH-TR-8a", "1-Jul-SWH-TR-9d", "1-Jul-SWH-TR-7b", 
-                "1-Nov-SWH-TR-9a", "1-Nov-SWH-TR-5a", "1-Oct-SWH-SWAMP-1a", 
-                "1-Oct-SWH-TR-8a", "2-Aug-SWH-TR-8a", "2-Nov-SWH-TR-4a", 
-                "2-Jul-SWH-TR-9d", "2-Nov-SWH-TR-9a", "2-Sep-SWH-TR-7a"
+poor_flags <- c("1-Sep-SWH-SWAMP-3", "1-Jul-SWH-TR-3", "1-Jul-SWH-TR-6", 
+                "1-May-SWH-TR-7a", "1-Sep-SWH-TR-10a", "2-Sep-SWH-SWAMP-3"
                 )
 
 #add a flag for the fluxes that are v-shaped and therefore not even a flux 
@@ -517,19 +504,12 @@ allflux_filtered <- allflux_filtered %>%
     mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% poor_flags, "poor flux, need to remove", qaqc_flag))
 
 
-# 2-Oct-SWH-TR-8a - poor flux, remove
-# 1-Jul-SWH-TR-9d - poor flux, remove
-# 1-Jul-SWH-TR-7b - poor flux, remove
-# 1-Nov-SWH-TR-9a - poor flux, remove
-# 1-Nov-SWH-TR-5a - poor flux, remove
-# 1-Oct-SWH-SWAMP-1a - L-shaped, high CH4, remove
-# 1-Oct-SWH-TR-8a - U-shaped, remove
-# 2-Aug-SWH-TR-8a - no clear pattern, remove
-# 2-Nov-SWH-TR-4a - no clear pattern, remove
-# 2-Jul-SWH-TR-9d - poor flux, remove
-# 2-Nov-SWH-TR-9a - poor flux, remove
-# 2-Sep-SWH-TR-7a - poor flux, remove
-
+# 1-Sep-SWH-SWAMP-3 - messy flux - remove
+# 1-Jul-SWH-TR-3 - messy flux - remove
+# 1-Jul-SWH-TR-6 - messy flux - remove
+# 1-May-SWH-TR-7a - messy flux - remove
+# 1-Sep-SWH-TR-10a - messy flux - remove
+# 2-Sep-SWH-SWAMP-3 - messy flux - remove
 
 
 # View the result
