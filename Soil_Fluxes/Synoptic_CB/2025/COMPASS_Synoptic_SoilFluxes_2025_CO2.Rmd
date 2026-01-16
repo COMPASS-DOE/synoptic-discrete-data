@@ -77,6 +77,8 @@ alldat1 <- lapply(file.list, ffi_read_LIsmartchamber)
 # Combine into one data.table
 alldat <- data.table::rbindlist(alldat1, fill = TRUE)
 
+##Remove CO2 values below 0 ppm
+alldat <- subset(alldat)
 
 ```
 
@@ -260,6 +262,8 @@ alldat$CO2_umol_m2 <- alldat$CO2_umol / 0.0318 #adjust for the area
 #need to create a new line that would say only calculate the flux if the drop column is false
     #before we add this we need to figure out how to drop except for the last flux taken 
 
+##remove negative CO2 values 
+alldat <- subset(alldat, CO2_umol_m2 >=0)
 
 #calculate fluxes for all other sites 
 fluxes <- ffi_compute_fluxes(alldat,
@@ -307,14 +311,7 @@ tails <- rbind(fluxes_low, fluxes_high)
 ```{r}
 
 tobechecked <- c(
-"1-Jul-SWH-TR-9", 
-"1-May-SWH-TR-1", 
-"2-Mar-SWH-UP-1", 
-"2-Mar-SWH-UP-2", 
-"2-Mar-SWH-UP-5", 
-"2-Nov-SWH-TR-2", 
-"2-Nov-SWH-TR-4", 
-"2-Nov-SWH-TR-5"
+"1-Jul-SWH-TR-7a"
 )
 
 colnames <- c("Plot")
@@ -337,7 +334,10 @@ fixedplots <- c("2-Sep-SWH-TR-7", "2-Jul-SWH-TR-3", "1-May-SWH-TR-6a", "1-Jul-SW
                 "1-Jul-SWH-TR-10", "2-Jul-SWH-TR-2", "2-Mar-GWI-TR-5", "2-Mar-GWI-UP-3a", 
                 "2-May-SWH-TR-6a", "1-Mar-GWI-UP-3a", "1-May-SWH-TR-7a", 
                 "1-Jul-SWH-TR-9", "1-May-SWH-TR-1", "2-Mar-SWH-UP-1", "2-Mar-SWH-UP-2", 
-                "2-Mar-SWH-UP-5", "2-Nov-SWH-TR-2", "2-Nov-SWH-TR-4", "2-Nov-SWH-TR-5")
+                "2-Mar-SWH-UP-5", "2-Nov-SWH-TR-2", "2-Nov-SWH-TR-4", "2-Nov-SWH-TR-5", 
+                "1-Jul-SWH-TR-2", "1-Jul-SWH-TR-6", "1-Jul-SWH-TR-7a", "2-May-MSM-UP-2", 
+                "2-May-MSM-UP-4", "2-Jul-GWI-UP-5", "1-Jul-SWH-TR-3", "2-Jul-SWH-TR-6", 
+                "2-May-MSM-UP-2")
   
 
 ```
@@ -508,29 +508,6 @@ allflux_filtered <- allflux
 
 #Any others that are not in the ebullition or negative category that need to be removed: 
   #also flagging ones that are crazy off but were not in the fluxes_weird dataframe (did this by listing them below)
-
-
-########## V-shaped fluxes
-
-#List the ones that are V-shaped - assessed visually for now 
-v_flags <- c(
-"2-May-MSM-UP-2", 
-"2-May-MSM-UP-4", 
-"2-Jul-GWI-UP-5")
-
-#add a flag for the fluxes that are v-shaped and therefore not even a flux 
-allflux_filtered <- allflux_filtered %>%
-    mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% v_flags, "V-shaped, flux compromised", qaqc_flag))
-
-
-########## Poor fluxes
-
-#List the ones that are w-shaped - assessed visually for now 
-poor_flags <- c("1-Jul-SWH-TR-7a")
-
-#add a flag for the fluxes that are v-shaped and therefore not even a flux 
-allflux_filtered <- allflux_filtered %>%
-    mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% poor_flags, "poor flux, need to remove", qaqc_flag))
 
 
 # View the result
