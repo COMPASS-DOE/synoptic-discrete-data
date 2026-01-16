@@ -301,7 +301,38 @@ tails <- rbind(fluxes_low, fluxes_high)
 ```{r}
 
 tobechecked <- c(
-
+"2-Nov-SWH-UP-4", 
+"1-Jul-SWH-TR-5", 
+"1-Jul-SWH-UP-2", 
+"1-Jun-GCW-TR-3", 
+"1-Jun-GCW-TR-4", 
+"1-Mar-SWH-TR-7a", 
+"1-Mar-SWH-UP-1", 
+"1-May-SWH-SWAMP-3a", 
+"1-May-SWH-SWAMP-5", 
+"1-May-SWH-TR-10", 
+"1-May-SWH-TR-2", 
+"1-May-SWH-UP-2", 
+"1-Nov-GCW-TR-1", 
+"1-Nov-SWH-TR-5", 
+"1-Nov-SWH-TR-6", 
+"1-Nov-SWH-TR-9a", 
+"1-Nov-SWH-UP-2a", 
+"1-Sep-GCW-TR-1", 
+"1-Sep-GCW-TR-5", 
+"1-Sep-MSM-TR-2", 
+"1-Sep-SWH-SWAMP-4", 
+"1-Sep-SWH-SWAMP-5", 
+"2-Jul-SWH-SWAMP-2", 
+"2-Jul-SWH-TR-5", 
+"2-Jul-SWH-TR-8", 
+"2-Jun-GCW-UP-1", 
+"2-Mar-SWH-TR-1", 
+"2-Mar-SWH-TR-2", 
+"2-Mar-SWH-TR-4", 
+"2-Mar-SWH-UP-1", 
+"2-May-SWH-SWAMP-3a", 
+"2-May-SWH-UP-2"
 )
 
 colnames <- c("Plot")
@@ -339,7 +370,15 @@ fixedplots <- c("1-Sep-MSM-TR-1", "1-Sep-MSM-TR-2", "1-Sep-SWH-SWAMP-3",
                 "2-Nov-SWH-SWAMP-4a", "2-Nov-SWH-TR-9a", "2-Sep-GCW-TR-4", 
                 "2-Sep-GCW-TR-5", "2-Sep-SWH-SWAMP-4", "2-Sep-SWH-TR-5", "2-Sep-SWH-TR-7", 
                 "2-Mar-SWH-TR-5", "2-Sep-SWH-UP-4", "2-Sep-SWH-UP-1", "2-Sep-SWH-SWAMP-3", 
-                "2-Sep-MSM-TR-1", "2-Sep-GCW-TR-2", "2-Nov-MSM-TR-5", "2-Nov-GWI-TR-1a")
+                "2-Sep-MSM-TR-1", "2-Sep-GCW-TR-2", "2-Nov-MSM-TR-5", "2-Nov-GWI-TR-1a", 
+                "2-Nov-SWH-UP-4", "1-Jul-SWH-TR-5", "1-Jul-SWH-UP-2","1-Jun-GCW-TR-3",
+                "1-Jun-GCW-TR-4", "1-Mar-SWH-TR-7a", "1-Mar-SWH-UP-1","1-May-SWH-SWAMP-3a", 
+                "1-May-SWH-SWAMP-5", "1-May-SWH-TR-10", "1-May-SWH-TR-2", "1-May-SWH-UP-2", 
+                "1-Nov-GCW-TR-1", "1-Nov-SWH-TR-5", "1-Nov-SWH-TR-6", "1-Nov-SWH-TR-9a", 
+                "1-Nov-SWH-UP-2a", "1-Sep-GCW-TR-1", "1-Sep-GCW-TR-5", "1-Sep-MSM-TR-2", 
+                "1-Sep-SWH-SWAMP-4", "1-Sep-SWH-SWAMP-5", "2-Jul-SWH-SWAMP-2", "2-Jul-SWH-TR-5", 
+                "2-Jul-SWH-TR-8", "2-Jun-GCW-UP-1", "2-Mar-SWH-TR-1", "2-Mar-SWH-TR-2", 
+                "2-Mar-SWH-TR-4", "2-Mar-SWH-UP-1", "2-May-SWH-SWAMP-3a", "2-May-SWH-UP-2")
   
 
 ```
@@ -460,7 +499,7 @@ for(P in tail_plots){
 ```
 
 ## Check all fluxes
-```{r, echo=FALSE}
+```{#r, echo=FALSE}
 
 ##Put all fluxes together
 fluxes_all <- as.data.frame(subset(allflux, select = Plot:TIMESTAMP_max))
@@ -496,7 +535,8 @@ allflux_filtered <- allflux
 
 #List the ones that have odd/poor flux shapes - assessed visually for now 
 poor_flags <- c("1-Sep-SWH-SWAMP-3", "1-Jul-SWH-TR-3", "1-Jul-SWH-TR-6", 
-                "1-May-SWH-TR-7a", "1-Sep-SWH-TR-10a", "2-Sep-SWH-SWAMP-3"
+                "1-May-SWH-TR-7a", "1-Sep-SWH-TR-10a", "2-Sep-SWH-SWAMP-3", 
+                "2-Mar-SWH-TR-3"
                 )
 
 #add a flag for the fluxes that are v-shaped and therefore not even a flux 
@@ -510,7 +550,7 @@ allflux_filtered <- allflux_filtered %>%
 # 1-May-SWH-TR-7a - messy flux - remove
 # 1-Sep-SWH-TR-10a - messy flux - remove
 # 2-Sep-SWH-SWAMP-3 - messy flux - remove
-
+# 2-Mar-SWH-TR-3 - poor flux from ebullition and carryover - remove
 
 # View the result
 head(allflux_filtered)
