@@ -367,7 +367,30 @@ tails <- rbind(fluxes_low, fluxes_high)
 ## check the fluxes for which I changed the start time due to lags or ebullition (recorded in notes of metadata)
 ```{r}
 
-tobechecked <- c("2-Jul-SWH-TR-9d", "1-Jul-SWH-TR-9d", "1-May-GCW-TR-3a", "2-May-GCW-TR-3", "1-Aug-SWH-TR-10a", "1-Sep-GCW-UP-3")
+tobechecked <- c(
+"2-Jul-SWH-TR-10", 
+"1-Jun-MSM-TR-3", 
+"1-Jun-MSM-TR-4", 
+"1-Jun-SWH-TR-6a", 
+"1-Jun-SWH-TR-7b", 
+"1-Jun-SWH-TR-8b", 
+"1-Nov-GCW-UP-3", 
+"2-Jun-MSM-TR-3", 
+"2-Jun-MSM-TR-4", 
+"2-Jun-SWH-TR-6a", 
+"2-Jun-SWH-TR-7b", 
+"2-Jun-SWH-TR-8b", 
+"2-Oct-GWI-TR-1", 
+"2-Oct-GWI-TR-4a", 
+"2-Oct-GWI-TR-5", 
+"2-Sep-SWH-SWAMP-2", 
+"1-Sep-SWH-TR-7a", 
+
+"2-Jul-SWH-TR-9d", 
+"1-Jul-SWH-TR-9d", 
+"1-Jul-SWH-TR-7b"
+
+)
 
 colnames <- c("Plot")
 
@@ -409,7 +432,8 @@ fixedplots <- c("2-Jul-GWI-UP-3", "2-Aug-SWH-TR-6a", "1-Oct-SWH-TR-9", "1-Sep-SW
                 "2-Jun-GCW-TR-3", "1-Sep-SWH-TR-3a", "2-Sep-SWH-TR-5", "2-Sep-GWI-UP-4", "2-Oct-SWH-SWAMP-1a", "2-May-GWI-TR-1b", "2-Jul-GCW-TR-2", 
                  "2-Jun-GCW-UP-3", "1-Jul-SWH-UP-2", "2-Jun-GCW-TR-1", "1-Nov-SWH-TR-7a", "2-Nov-SWH-TR-10", "2-Nov-SWH-SWAMP-4",
                  "1-Nov-SWH-TR-8", "1-Apr-MSM-UP-3", "1-Sep-SWH-SWAMP-3", "1-Apr-MSM-TR-1", "2-Jun-SWH-UP-5", "1-Oct-SWH-SWAMP-5a", 
-                "2-May-SWH-TR-6a", "2-Sep-SWH-TR-1a", "1-Jul-SWH-TR-9d")
+                "2-May-SWH-TR-6a", "2-Sep-SWH-TR-1a", "1-Jul-SWH-TR-9d", "2-Jul-SWH-TR-9d", "1-Jul-SWH-TR-9d", "1-May-GCW-TR-3a", 
+                "2-May-GCW-TR-3", "1-Aug-SWH-TR-10a", "1-Sep-GCW-UP-3")
   
 
 ```
@@ -589,47 +613,10 @@ allflux_filtered <- allflux[!(allflux$Plot %in% plots_to_remove), ]
   #also flagging ones that are crazy off but were not in the fluxes_weird dataframe (did this by listing them below)
 
 
-########## V-shaped fluxes
-
-#List the ones that are V-shaped - assessed visually for now 
-v_flags <- c(
-"2-Jul-SWH-TR-10", 
-"1-Jun-MSM-TR-3" , 
-"1-Jun-MSM-TR-4" , 
-"1-Jun-SWH-TR-6a" , 
-"1-Jun-SWH-TR-7b" , 
-"1-Jun-SWH-TR-8b" , 
-"1-Nov-GCW-UP-3" , 
-"2-Jun-MSM-TR-3" , 
-"2-Jun-MSM-TR-4" , 
-"2-Jun-SWH-TR-6a" , 
-"2-Jun-SWH-TR-7b" , 
-"2-Jun-SWH-TR-8b" , 
-"2-Oct-GWI-TR-1" , 
-"2-Oct-GWI-TR-4a" , 
-"2-Oct-GWI-TR-5" , 
-"2-Sep-SWH-SWAMP-2" 
-)
-
-#add a flag for the fluxes that are v-shaped and therefore not even a flux 
-allflux <- allflux %>%
-    mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% v_flags, "V-shaped, flux compromised", qaqc_flag))
-
-
-########## W-shaped fluxes
-
-#List the ones that are w-shaped - assessed visually for now 
-w_flags <- c("1-Sep-SWH-TR-7a")
-
-#add a flag for the fluxes that are v-shaped and therefore not even a flux 
-allflux <- allflux %>%
-    mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% w_flags, "w-shaped, flux compromised", qaqc_flag))
-
-
 ########## Poor fluxes
 
 #List the ones that are w-shaped - assessed visually for now 
-poor_flags <- c("2-Jul-SWH-TR-9d", "1-Jul-SWH-TR-9d")
+poor_flags <- c("2-Jul-SWH-TR-9d", "1-Jul-SWH-TR-7b")
 
 #add a flag for the fluxes that are v-shaped and therefore not even a flux 
 allflux <- allflux %>%
