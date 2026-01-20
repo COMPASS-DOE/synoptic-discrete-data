@@ -422,7 +422,16 @@ tails <- rbind(fluxes_low, fluxes_high)
 ## check the fluxes for which I changed the start time due to lags or ebullition (recorded in notes of metadata)
 ```{r}
 
-tobechecked <- c("1-May-SWH-UP-1")
+tobechecked <- c(
+"2-May-SWH-TR-8", 
+"1-Aug-SWH-TR-10a", 
+"1-Apr-GCW-TR-2", 
+"1-Aug-SWH-UP-2", 
+"2-Sep-SWH-TR-5a", 
+"2-Oct-GCW-TR-3", 
+"1-Aug-SWH-TR-9", 
+"1-Aug-GCW-TR-2"
+)
 
 colnames <- c("Plot")
 

@@ -419,13 +419,11 @@ tails <- rbind(fluxes_low, fluxes_high)
 ## check the fluxes for which I changed the start time due to lags or ebullition (recorded in notes of metadata)
 ```{r}
 
-tobechecked <- c("1-May-SWH-UP-1", 
-"1-May-SWH-UP-5",
-"1-Sep-MSM-TR-1", 
-"2-Oct-GCW-TR-3", 
-"2-Sep-SWH-TR-1",
-"2-Sep-SWH-TR-3", 
-"2-Sep-SWH-UP-1"
+tobechecked <- c(
+"1-Aug-SWH-TR-10a", 
+"1-Sep-GCW-UP-3", 
+"2-Jul-SWH-TR-9", 
+"2-May-SWH-UP-1"
   )
 
 colnames <- c("Plot")
@@ -616,21 +614,18 @@ for(P in all_plots){
 ## Remove any fluxes that do not fit criteria 
 ```{r, echo=FALSE}
 
-# Create a new dataframe by removing rows that were present in fluxes_weird which have a low R2 and a flux higher than 1 (23 obs) and negative CO2 fluxes
-allflux_filtered <- allflux[!(allflux$Plot %in% fluxes_weird$Plot), ]
-
+# Create a new dataframe by removing rows negative CO2 fluxes
+# allflux_filtered <- allflux[!(allflux$Plot %in% fluxes_weird$Plot), ] ##Already checked fluxes that were present in fluxes_weird which have a low R2 and a flux higher than 1 (23 obs) and removed the ones that are actually bad below. 
 allflux_filtered <- allflux_filtered[!(allflux_filtered$Plot %in% fluxes_negative$Plot), ]
 
-#Any others that are not in the weird category that need to be removed: 
-  #also removing ones that are crazy off but were not in the fluxes_weird dataframe (did this by listing them below)
-
+#Any others that are not in the negative category that need to be removed: 
+  #also removing ones that are crazy off/messy (did this by listing them below)
 allflux_filtered <- allflux_filtered %>%
-  filter(!Plot %in% c("2-Jul-SWH-TR-9", "1-Jul-SWH-TR-9", "1-May-GCW-TR-3", "2-May-GCW-TR-3", "1-Aug-SWH-TR-10a", "1-Sep-GCW-UP-3", "2-Jul-SWH-TR-9", "2-May-SWH-UP-1")) 
+  filter(!Plot %in% c("1-Aug-SWH-TR-10a", "1-Sep-GCW-UP-3", "2-May-SWH-UP-1")) 
 
-# 1-Aug-SWH-TR-10a, V-shaped
-# 1-Sep-GCW-UP-3, V-shaped
-# 2-Jul-SWH-TR-9, has a starting CO2 value of over 30,000
-# 2-May-SWH-UP-1, has a high flux but all over the place
+# 1-Aug-SWH-TR-10a - poor flux, need to remove
+# 1-Sep-GCW-UP-3 - poor flux, need to remove
+# 2-May-SWH-UP-1 - poor flux, need to remove
 
 
 # View the result
