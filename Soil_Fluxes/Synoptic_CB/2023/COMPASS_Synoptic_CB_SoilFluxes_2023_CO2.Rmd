@@ -690,7 +690,7 @@ p3
 ```{r, echo=FALSE}
 
 #can remove base_plot column, the replicate column, and the suffix column
-allflux_filtered <- allflux_filtered[,-c(31:33)]
+# allflux_filtered <- allflux_filtered[,-c(31:33)]
 
 #need to deal with SWH UPCON, UP, and SWAMP 
   #in 2023 when sampling SWH the UP site was known as UPCON and the SWAMP site was UP 
