@@ -423,14 +423,8 @@ tails <- rbind(fluxes_low, fluxes_high)
 ```{r}
 
 tobechecked <- c(
-"2-May-SWH-TR-8", 
-"1-Aug-SWH-TR-10a", 
-"1-Apr-GCW-TR-2", 
-"1-Aug-SWH-UP-2", 
-"2-Sep-SWH-TR-5a", 
-"2-Oct-GCW-TR-3", 
-"1-Aug-SWH-TR-9", 
-"1-Aug-GCW-TR-2"
+"2-May-SWH-TR-8", "1-Aug-SWH-TR-10a", "2-Jul-SWH-TR-9", "1-Jul-SWH-TR-9", "1-May-GCW-TR-3", 
+                      "2-May-GCW-TR-3", "1-Aug-SWH-TR-9", "1-Aug-GCW-TR-2"
 )
 
 colnames <- c("Plot")
@@ -472,7 +466,8 @@ fixedplots <- c("2-Aug-GWI-TR-3", "2-Sep-SWH-UPCON-1", "2-Sep-MSM-TR-3" ,"2-Sep-
                 "2-Jul-GCW-TR-3", "1-Apr-GCW-TR-4", "1-Aug-GCW-TR-2", "1-May-SWH-TR-7", "1-Aug-SWH-TR-9" , 
                 "2-Jul-SWH-TR-9", "1-May-GCW-TR-3", "2-May-GCW-TR-3", "2-May-GCW-TR-5", "2-May-SWH-UP-1", 
                 "1-Aug-SWH-UP-1a", "1-Apr-GCW-TR-2", "1-Aug-SWH-TR-9", "1-Aug-SWH-UP-2", "1-Jul-GWI-TR-1", 
-                "1-Jun-GCW-TR-2", "2-Sep-SWH-TR-3", "2-Sep-GCW-TR-1", "1-Jul-SWH-TR-2", "1-May-SWH-UP-1")
+                "1-Jun-GCW-TR-2", "2-Sep-SWH-TR-3", "2-Sep-GCW-TR-1", "1-Jul-SWH-TR-2", "1-May-SWH-UP-1", 
+                "2-Oct-GCW-TR-3", "1-Apr-GCW-TR-2", "1-Aug-SWH-UP-2", "2-Sep-SWH-TR-5a")
   
 
 ```
@@ -604,20 +599,16 @@ allflux_filtered <- allflux[!(allflux$Plot %in% fluxes_weird$Plot), ]
   #also removing ones that are crazy off but were not in the fluxes_weird dataframe (did this by listing them below)
 
 allflux_filtered <- allflux_filtered %>%
-  filter(!Plot %in% c("2-Jul-SWH-TR-9", "1-Jul-SWH-TR-9", "1-May-GCW-TR-3", "2-May-GCW-TR-3", 
-                      "2-May-SWH-TR-8", "1-Aug-SWH-TR-10a", "1-Apr-GCW-TR-2", "1-Aug-SWH-UP-2", 
-                      "2-Sep-SWH-TR-5a", "2-Oct-GCW-TR-3", "1-Aug-SWH-TR-9", "1-Aug-GCW-TR-2")) 
+  filter(!Plot %in% c("2-May-SWH-TR-8", "1-Aug-SWH-TR-10a", "2-Jul-SWH-TR-9", "1-Jul-SWH-TR-9", "1-May-GCW-TR-3", 
+                      "2-May-GCW-TR-3", "1-Aug-SWH-TR-9", "1-Aug-GCW-TR-2")) 
           #these GCW ones look fine but are way higher than expected
           #the SWH ones are ugllllyyyy 
+
 # 2-May-SWH-TR-8, weird looking flux
 # 1-Aug-SWH-TR-10a, weird looking flux
-# 1-Apr-GCW-TR-2, V-shaped
-# 1-Aug-SWH-UP-2, V-shaped
-# 2-Sep-SWH-TR-5a, V-shaped
-# 2-Oct-GCW-TR-3, V-shaped
 # 1-Aug-SWH-TR-9, upside down V
 # 1-Aug-GCW-TR-2, upside down V
-
+# Other fluxes are off because the CH4 values are crazy high
 
 
 # View the result

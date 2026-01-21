@@ -3,7 +3,7 @@ Plot_ID,Date,Time_start,First_Timestamp,Last_Timestamp,Total_Time,drop,Notes
 1-2-Aug,8/15/2023,11:18:22,8/15/2023 11:18,8/15/2023 11:19,59,FALSE,
 1-Apr-04,4/24/2023,12:33:04,4/24/2023 12:33,4/24/2023 12:34,59,FALSE,
 1-Apr-GCW-TR-1,4/19/2023,10:03:16,4/19/2023 10:03,4/19/2023 10:04,59,FALSE,Changed start time to avoid chamber closure
-1-Apr-GCW-TR-2,4/19/2023,10:06:40,4/19/2023 10:06,4/19/2023 10:07,59,FALSE,Changed start time to avoid chamber closure
+1-Apr-GCW-TR-2,4/19/2023,10:06:52,4/19/2023 10:06,4/19/2023 10:07,59,FALSE,Changed start time to avoid chamber closure
 1-Apr-GCW-TR-3,4/19/2023,9:59:33,4/19/2023 9:59,4/19/2023 10:00,59,FALSE,
 1-Apr-GCW-TR-4,4/19/2023,10:10:15,4/19/2023 10:09,4/19/2023 10:10,59,FALSE,Changed start time to remove chamber closing signature 
 1-Apr-GCW-TR-5,4/19/2023,10:13:30,4/19/2023 10:13,4/19/2023 10:14,59,FALSE,
@@ -115,7 +115,7 @@ Plot_ID,Date,Time_start,First_Timestamp,Last_Timestamp,Total_Time,drop,Notes
 1-Aug-SWH-TR-9,8/23/2023,12:52:18,8/23/2023 12:52,8/23/2023 12:53,59,FALSE,Changed start time to remove chamber closing signature 
 1-Aug-SWH-UP-1,8/23/2023,13:59:37,8/23/2023 13:59,8/23/2023 14:00,59,FALSE,
 1-Aug-SWH-UP-1a,8/23/2023,14:02:53,8/23/2023 14:02,8/23/2023 14:03,59,FALSE,Changed start time to avoid ebullition at beginning
-1-Aug-SWH-UP-2,8/23/2023,13:55:39,8/23/2023 13:55,8/23/2023 13:56,59,FALSE,Changed start time to avoid ebulltion at start of flux
+1-Aug-SWH-UP-2,8/23/2023,13:55:49,8/23/2023 13:55,8/23/2023 13:56,59,FALSE,Changed start time to avoid ebulltion at start of flux
 1-Aug-SWH-UP-3,8/23/2023,13:39:32,8/23/2023 13:39,8/23/2023 13:40,59,FALSE,
 1-Aug-SWH-UP-4,8/23/2023,13:43:41,8/23/2023 13:43,8/23/2023 13:44,59,FALSE,
 1-Aug-SWH-UP-5,8/23/2023,13:50:29,8/23/2023 13:50,8/23/2023 13:51,59,FALSE,
@@ -830,7 +830,7 @@ Plot_ID,Date,Time_start,First_Timestamp,Last_Timestamp,Total_Time,drop,Notes
 2-Sep-SWH-TR-4,9/20/2023,10:01:10,9/20/2023 10:01,9/20/2023 10:02,59,FALSE,
 2-Sep-SWH-TR-4a,9/20/2023,10:04:12,9/20/2023 10:04,9/20/2023 10:05,59,FALSE,
 2-Sep-SWH-TR-5,9/20/2023,9:52:54,9/20/2023 9:52,9/20/2023 9:53,59,FALSE,
-2-Sep-SWH-TR-5a,9/20/2023,9:55:55,9/20/2023 9:55,9/20/2023 9:56,59,FALSE,
+2-Sep-SWH-TR-5a,9/20/2023,9:56:09,9/20/2023 9:55,9/20/2023 9:56,59,FALSE,Changed start time to avoid chamber closure
 2-Sep-SWH-TR-6,9/20/2023,9:36:19,9/20/2023 9:36,9/20/2023 9:37,59,FALSE,
 2-Sep-SWH-TR-6a,9/20/2023,9:39:23,9/20/2023 9:39,9/20/2023 9:40,59,FALSE,
 2-Sep-SWH-TR-7,9/20/2023,9:17:02,9/20/2023 9:17,9/20/2023 9:18,59,FALSE,
