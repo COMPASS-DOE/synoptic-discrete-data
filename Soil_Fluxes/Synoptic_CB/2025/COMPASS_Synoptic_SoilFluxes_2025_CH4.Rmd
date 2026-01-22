@@ -382,7 +382,7 @@ for(P in good_sample){
 ```
 \newpage
 
-## Take a look at the  fluxes <0.9 and a flux estimate below 1 
+## Take a look at the  fluxes <0.9 and a flux estimate below 1
 ```{r, echo=FALSE}
 
 ### pull out fluxes with R2 < 0.9 and put them in a list 
@@ -406,12 +406,13 @@ allflux <- allflux %>%
 
 
 ####################
-
 ```
 \newpage
-## Take a look at the bad fluxes <0.9 and have a high flux estimate (>5) 
-# See if we want to remove these fluxes or if we want to try and recalculate these ones
+
+## Take a look at the bad fluxes <0.9 and have a high flux estimate (>1)
 ```{r, echo=FALSE}
+
+print("See if we want to remove these fluxes or if we want to try and recalculate these ones")
 
 ### pull out fluxes with R2 < 0.9 and put them in a list 
 bad_plots <- unique(fluxes_weird$Plot)
@@ -448,6 +449,7 @@ allflux <- allflux %>%
 ```
 
 \newpage
+
 ## Look at the really high or really low ones to see if there is a timing issue or something
 ```{r, echo=FALSE}
 
@@ -493,7 +495,7 @@ for(P in all_plots){
 ```
 
 ## Flag fluxes that do not fit criteria, low R2 etc.  
-```{r}
+```{r, results=FALSE}
 
 
 ########## Create a new data frame for output 
