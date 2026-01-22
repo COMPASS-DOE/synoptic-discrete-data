@@ -46,7 +46,7 @@ library(stringr)
 ```
 
 ## Pull in Smart Chamber Files from the Raw Data folder
-```{r}
+```{r, include=FALSE}
 
 # Create a temporary directory
 tmp_dir <- tempdir()
@@ -86,7 +86,7 @@ alldat <- subset(alldat)
 ```
 
 ## Create a unique Plot_ID, check if there is a meta-data file, if not, create a meta-data file
-```{r}
+```{r, echo=FALSE}
 
 ############### only run this first part if you don't already have a meta-data file 
         #because if you do then all the data for each one will have a plot and you won't be able to change start times
@@ -230,7 +230,7 @@ metadata <-  metadata %>%
 ##Dont need to pull L1 temp data or any other temps like we do for macrophyte because the smartchamber records the temp
 
 ## Match up the metadata to the rest of the data   
-```{r}
+```{r, include = FALSE}
 
 #match the altered metadata to the concentration data with fluxfinder ffi_metadata_match
 alldat$metadat_row <- ffi_metadata_match(
@@ -246,7 +246,7 @@ alldat$Plot <- metadata$Plot[alldat$metadat_row]
 ```
 
 ## Change the units from ppm to umol  
-```{r}
+```{r, include = FALSE}
 #change the units
 alldat$CO2_umol <- ffi_ppm_to_umol(alldat$co2, 
                                 volume = (alldat$TotalVolume / 1000000), # have to divide to get to m3
@@ -260,7 +260,7 @@ alldat$CO2_umol_m2 <- alldat$CO2_umol / 0.0318 #adjust for the area
 ```
 
 ## Calculate fluxes
-```{r}
+```{r, include = FALSE}
 
 #need to create a new line that would say only calculate the flux if the drop column is false
     #before we add this we need to figure out how to drop except for the last flux taken 
@@ -282,7 +282,7 @@ allflux <- fluxes
 ```
 
 ## Visualize fluxes and sort by r2 
-```{r}
+```{r, echo = FALSE}
 
 #take a look at the fluxes we calculated with R2 
 ggplot(allflux, aes(Plot, lin_flux.estimate, color = lin_r.squared)) +
@@ -314,7 +314,6 @@ tails <- rbind(fluxes_low, fluxes_high)
 ```{r}
 
 tobechecked <- c(
-"1-Jul-SWH-TR-7a"
 )
 
 colnames <- c("Plot")
@@ -340,11 +339,12 @@ fixedplots <- c("2-Sep-SWH-TR-7", "2-Jul-SWH-TR-3", "1-May-SWH-TR-6a", "1-Jul-SW
                 "2-Mar-SWH-UP-5", "2-Nov-SWH-TR-2", "2-Nov-SWH-TR-4", "2-Nov-SWH-TR-5", 
                 "1-Jul-SWH-TR-2", "1-Jul-SWH-TR-6", "1-Jul-SWH-TR-7a", "2-May-MSM-UP-2", 
                 "2-May-MSM-UP-4", "2-Jul-GWI-UP-5", "1-Jul-SWH-TR-3", "2-Jul-SWH-TR-6", 
-                "2-May-MSM-UP-2")
+                "2-May-MSM-UP-2", "1-Jul-SWH-TR-7a")
   
 
 ```
 
+\newpage
 
 ## Spot check a few fluxes with R2 > 0.9  
 ```{r, echo=FALSE}
@@ -370,8 +370,9 @@ for(P in good_sample){
 
 ####################
 ```
+\newpage
 
-## Take a look at the  fluxes <0.9 and a flux estimate below 1 
+## Take a look at the  fluxes <0.9 and a flux estimate below 1
 ```{r, echo=FALSE}
 
 ### pull out fluxes with R2 < 0.9 and put them in a list 
@@ -397,9 +398,12 @@ allflux <- allflux %>%
 
 ```
 
-## Take a look at the bad fluxes <0.9 and have a high flux estimate 
-# See if we want to remove these fluxes or if we want to try and recalculate these ones? 
+\newpage
+
+## Take a look at the bad fluxes <0.9 and have a high flux estimate (>1)
 ```{r, echo=FALSE}
+
+print("See if we want to remove these fluxes or if we want to try and recalculate these ones")
 
 ### pull out fluxes with R2 < 0.9 and put them in a list 
 bad_plots <- unique(fluxes_weird$Plot)
@@ -429,8 +433,9 @@ allflux <- allflux %>%
 
 
 ```
+\newpage
 
-# Look at any CO2 fluxes that are negative and remove those plots 
+## Look at the negative CO2 fluxes
 ```{r, echo=FALSE}
 
 ### pull out negative fluxes and put them in a list 
@@ -453,6 +458,8 @@ allflux <- allflux %>%
     mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% neg_plots, "negative CO2 flux, messy - remove", qaqc_flag))
 
 ```
+
+\newpage
 
 ## Look at the really high or really low ones to see if there is a timing issue or something
 ```{r, echo=FALSE}
@@ -499,7 +506,7 @@ for(P in all_plots){
 ```
 
 ## Flag any fluxes that do not fit criteria 
-```{r, echo=FALSE}
+```{r, results=FALSE}
 
 # previously removed rows that were present in fluxes_weird which have a low R2 and a flux higher than 1 (23 obs), but now they are flagged for ebullition
 # flagged fluxes with low R squared and low flux
@@ -572,7 +579,7 @@ p3
 ```
 
 ## Read out final dataframe and export for use elsewhere 
-```{r, echo=FALSE}
+```{r, include=FALSE}
 
 #can remove base_plot column, the replicate column, and the suffix column
 # allflux_filtered <- allflux_filtered[,-c(32:34)]
