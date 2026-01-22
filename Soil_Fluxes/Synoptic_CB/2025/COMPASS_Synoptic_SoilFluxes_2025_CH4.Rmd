@@ -45,7 +45,7 @@ library(stringr)
 ```
 
 ## Pull in Smart Chamber Files from the Raw Data Folder
-```{r}
+```{r, include=FALSE}
 
 # Create a temporary directory
 tmp_dir <- tempdir()
@@ -83,7 +83,7 @@ alldat <- data.table::rbindlist(alldat1, fill = TRUE)
 ```
 
 ## Check if there is a meta-data file, if not, create a meta-data file with a unique Plot_ID 
-```{r}
+```{r, echo=FALSE}
 
 #create unique Plot ID for each measurement: 
     #this needs to be PLot ID so that later we ID plot from metadata and not the metadata row 
@@ -217,7 +217,7 @@ metadata <-  metadata %>%
 ```
 
 ## Match up the metadata to the raw licor data   
-```{r}
+```{r, include = FALSE}
 
 #Remove any fluxes that have drop = TRUE in the metadata from the dataframe so we don't match them to raw data 
 metadata <- metadata %>%
@@ -238,7 +238,7 @@ alldat$Plot <- metadata$Plot[alldat$metadat_row]
 ```
 
 ## Change the gas units from ppb to nmol  
-```{r}
+```{r, include = FALSE}
 #change the units
 alldat$CH4_nmol <- ffi_ppb_to_nmol(alldat$ch4, 
                                 volume = (alldat$TotalVolume / 1000000), # have to divide to get to m3
@@ -252,7 +252,7 @@ alldat$CH4_nmol_m2 <- alldat$CH4_nmol / 0.0318 #adjust for the area
 ```
 
 ## Calculate fluxes
-```{r}
+```{r, include = FALSE}
 
 #need to create a new line that would say only calculate the flux if the drop column is false
     #before we add this we need to figure out how to drop except for the last flux taken 
@@ -273,7 +273,7 @@ allflux <- fluxes
 
 
 ## Visualize fluxes and sort by r2 
-```{r}
+```{r, echo = FALSE}
 
 #take a look at the fluxes we calculated with R2 
 ggplot(allflux, aes(Plot, lin_flux.estimate, color = lin_r.squared)) +
@@ -304,38 +304,6 @@ tails <- rbind(fluxes_low, fluxes_high)
 ```{r}
 
 tobechecked <- c(
-"2-Nov-SWH-UP-4", 
-"1-Jul-SWH-TR-5", 
-"1-Jul-SWH-UP-2", 
-"1-Jun-GCW-TR-3", 
-"1-Jun-GCW-TR-4", 
-"1-Mar-SWH-TR-7a", 
-"1-Mar-SWH-UP-1", 
-"1-May-SWH-SWAMP-3a", 
-"1-May-SWH-SWAMP-5", 
-"1-May-SWH-TR-10", 
-"1-May-SWH-TR-2", 
-"1-May-SWH-UP-2", 
-"1-Nov-GCW-TR-1", 
-"1-Nov-SWH-TR-5", 
-"1-Nov-SWH-TR-6", 
-"1-Nov-SWH-TR-9a", 
-"1-Nov-SWH-UP-2a", 
-"1-Sep-GCW-TR-1", 
-"1-Sep-GCW-TR-5", 
-"1-Sep-MSM-TR-2", 
-"1-Sep-SWH-SWAMP-4", 
-"1-Sep-SWH-SWAMP-5", 
-"2-Jul-SWH-SWAMP-2", 
-"2-Jul-SWH-TR-5", 
-"2-Jul-SWH-TR-8", 
-"2-Jun-GCW-UP-1", 
-"2-Mar-SWH-TR-1", 
-"2-Mar-SWH-TR-2", 
-"2-Mar-SWH-TR-4", 
-"2-Mar-SWH-UP-1", 
-"2-May-SWH-SWAMP-3a", 
-"2-May-SWH-UP-2"
 )
 
 colnames <- c("Plot")
@@ -386,6 +354,7 @@ fixedplots <- c("1-Sep-MSM-TR-1", "1-Sep-MSM-TR-2", "1-Sep-SWH-SWAMP-3",
 
 ```
 
+\newpage
 
 ## Spot check a few fluxes with R2 > 0.9  
 ```{r, echo=FALSE}
@@ -411,6 +380,7 @@ for(P in good_sample){
 
 ####################
 ```
+\newpage
 
 ## Take a look at the  fluxes <0.9 and a flux estimate below 1 
 ```{r, echo=FALSE}
@@ -438,9 +408,9 @@ allflux <- allflux %>%
 ####################
 
 ```
-
+\newpage
 ## Take a look at the bad fluxes <0.9 and have a high flux estimate (>5) 
-# See if we want to remove these fluxes or if we want to try and recalculate these ones? 
+# See if we want to remove these fluxes or if we want to try and recalculate these ones
 ```{r, echo=FALSE}
 
 ### pull out fluxes with R2 < 0.9 and put them in a list 
@@ -477,7 +447,7 @@ allflux <- allflux %>%
 
 ```
 
-
+\newpage
 ## Look at the really high or really low ones to see if there is a timing issue or something
 ```{r, echo=FALSE}
 
@@ -523,7 +493,7 @@ for(P in all_plots){
 ```
 
 ## Flag fluxes that do not fit criteria, low R2 etc.  
-```{r, echo=FALSE}
+```{r}
 
 
 ########## Create a new data frame for output 
