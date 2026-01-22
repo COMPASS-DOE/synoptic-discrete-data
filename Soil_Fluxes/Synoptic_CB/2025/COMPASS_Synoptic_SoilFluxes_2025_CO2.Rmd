@@ -2,7 +2,10 @@
 title: "COMPASS_Synoptic_SmartChamberFluxes_2025_CO2"
 author: "Stephanie J. Wilson"
 date: "2026-01-14"
-output: html_document
+output: 
+  pdf_document:
+    toc: true
+    number_sections: true
 ---
 ## Goals of this code: 
 1.	Reads in raw smart chamber
@@ -475,7 +478,7 @@ for(P in tail_plots){
 ```
 
 ## Check all fluxes
-```{r, echo=FALSE}
+```{#r, echo=FALSE}
 
 ##Put all fluxes together
 fluxes_all <- as.data.frame(subset(allflux, select = Plot:TIMESTAMP_max))
