@@ -31,7 +31,8 @@ New_ID_1 <- "SWH_202411_SWAMP_LysC_45cm"
                  "Raw Data/COMPASS_Synoptic_CB_202411_VNOx_3.csv")
   NH3_PO4_files <- c("Raw Data/COMPASS_Synoptic_CB_202411_NH3_PO4_1.csv",
                      "Raw Data/COMPASS_Synoptic_CB_202411_NH3_PO4_2.csv",
-                     "Raw Data/COMPASS_Synoptic_CB_202411_NH3_PO4_3.csv")
+                     "Raw Data/COMPASS_Synoptic_CB_202411_NH3_PO4_3.csv", 
+                     "Raw Data/COMPASS_Synoptic_CB_202411_NH3_PO4_redo.csv")
 
 # Define the file path for QAQC log file - NO Need to change just check year 
   file_path <- "Raw Data/SEAL_COMPASS_Synoptic_QAQC_Log_2024.csv"
