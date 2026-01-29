@@ -1,7 +1,7 @@
 ---
 title: "COMPASS_Synoptic_MacrophyteFluxes_2024_CO2"
 author: "Stephanie J. Wilson"
-date: "2024-11-26"
+date: "2025-11-26"
 output: pdf_document
 ---
 ## Set Up
@@ -38,7 +38,7 @@ alldat <- data.table::rbindlist(alldat1, fill=TRUE)
 ```{r}
 
 #read in metadatfile
-md <- "Raw Data/COMPASS_ChamberFlux_Metadata_2024.csv"
+md <- "Raw Data/COMPASS_ChamberFlux_Metadata_2025.csv"
 #metadat <- read_excel(md)
 metadat <- read.csv(md) 
 
