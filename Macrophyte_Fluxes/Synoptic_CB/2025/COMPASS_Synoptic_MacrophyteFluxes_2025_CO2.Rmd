@@ -1,5 +1,5 @@
 ---
-title: "COMPASS_Synoptic_MacrophyteFluxes_2024_CO2"
+title: "COMPASS_Synoptic_MacrophyteFluxes_2025_CO2"
 author: "Stephanie J. Wilson"
 date: "2025-11-26"
 output: pdf_document
@@ -21,11 +21,9 @@ library(tidyr)
 
 ## Pull in Raw Datafiles
 ```{r}
-#Read in data files
-L <- list.files(path = "Raw Data/")
-head(L)
-
-file.list <- dir(pattern = "txt$")
+#read in files
+file.list <- dir(path = "Raw Data/", pattern = "txt$", full.names = TRUE)
+head(file.list)
 
 #Read in the data 
 alldat1 <- lapply(file.list, ffi_read_LI7810)
@@ -38,7 +36,7 @@ alldat <- data.table::rbindlist(alldat1, fill=TRUE)
 ```{r}
 
 #read in metadatfile
-md <- "Raw Data/COMPASS_ChamberFlux_Metadata_2025.csv"
+md <- "Raw Data/COMPASS_ChamberFlux_Metadata_2025a.csv"
 #metadat <- read_excel(md)
 metadat <- read.csv(md) 
 
@@ -59,42 +57,46 @@ head(metadat)
 #setwd("S:/Biogeochemistry/COMPASS Synoptics/Samples & Data/Fluxes/Macrophyte GHG Fluxes/Flux Calculations/Air Temp Data")
 #download the L1 dataset from: https://drive.google.com/drive/folders/1RP-hxmjAYNGzTfCNpYbMN6U_zbZmEWHM
 
-# Path to zip file
-L1 <- "Raw Data/L1_20241107.zip"
+# ##Read in L1 Sensor Data from S Drive and only save necessary data
+# # Path to zip file
+# L1 <- "S:/Biogeochemistry/COMPASS Synoptics/Samples & Data/Synoptic L1 Sensor/L1 2025 Sensor Data.zip"
+# 
+# # List CSV files inside the zip
+# files <- unzip(L1, list = TRUE)$Name
+# files <- files[grepl("\\.csv$", files)]
+# 
+# results <- list()
+# 
+# for (f in files) {
+#   message(f)
+# # f = "L1 2025 Sensor Data/GWI_2025/GWI_W_20250101-20250630_wx-tempavg15_L1_v2-0.csv"
+#   selected_research_names <- c("wx-tempavg15")
+# 
+#   # Read CSV directly from zip
+#   dat <- read.csv(unz(L1, f))
+# 
+#   temp <- subset(dat, Instrument == "ClimaVUE50" | Instrument == "CS EE181")
+# 
+#   gw <- temp %>%
+#     filter(research_name %in% selected_research_names) %>%
+#     select(TIMESTAMP, research_name, Value, F_OOB, F_OOS, Plot, Site)
+# 
+#   results[[f]] <- gw
+# }
+# 
+# #we need to bind these together
+# dat <- do.call(rbind, results)
+# rownames(dat) <- NULL
+# dat1 <- dat %>% filter(!(F_OOB == 1 & F_OOS == 1))
+# head(dat1)
+# 
+# #convert to wide format
+# temps <- pivot_wider(dat1, id_cols = c("TIMESTAMP", "Plot", "Site"), names_from = research_name, values_from = Value )
+# head(temps)
+# 
+# write.csv(temps, file="Raw Data/L1_temps.csv")
 
-# List CSV files inside the zip
-files <- unzip(L1, list = TRUE)$Name
-files <- files[grepl("\\.csv$", files)]
-
-results <- list()
-
-for (f in files) {
-  message(f)
-  
-  selected_research_names <- c("wx_tempavg15")
-  
-  # Read CSV directly from zip
-  dat <- read.csv(unz(L1, f))
-  
-  temp <- subset(dat, Instrument == "ClimaVUE50")
-  
-  gw <- temp %>% 
-    filter(research_name %in% selected_research_names) %>%
-    select(TIMESTAMP, research_name, Value, F_OOB, F_OOS, Plot, Site)
-  
-  results[[f]] <- gw
-}
-
-#we need to bind these together 
-dat <- do.call(rbind, results)
-rownames(dat) <- NULL
-dat1 <- dat %>% filter(!(F_OOB == 1 & F_OOS == 1))
-head(dat1)
-
-#convert to wide format 
-temps <- pivot_wider(dat1, id_cols = c("TIMESTAMP", "Plot", "Site"), names_from = research_name, values_from = Value )
-head(temps)
-
+temps <- read.csv("Raw Data/L1_temps.csv")
 
 ```
 
@@ -149,6 +151,8 @@ metadat$metadat_row <- seq_len(nrow(metadat))
 #We need one more line that creates a column for final temp and takes the L1 data but if there isn't L1 data it will pull in another datatype 
 # in this case we will use the by hand data i guess? but we could look to using some sort of NOAA dataset.... that we would need to match 
 
+alldat$Hand_Temp <- as.numeric(alldat$Hand_Temp)
+
 alldat <- alldat %>%
   mutate(final_temp = coalesce(L1_Temp, Hand_Temp))
 
@@ -156,21 +160,21 @@ alldat <- alldat %>%
 #alldat <- alldat %>%
  # filter(!is.na(metadat_row))
 
-#can remove any row that have NA's in the CH4 column 
+#can remove any row that have NA's in the CO2 column 
 #alldat <- alldat %>%
- # filter(!is.na(CH4))
+ # filter(!is.na(CO2))
 
-#can remove any row that have NA's in the CH4 column 
+#can remove any row that have NA's in the CO2 column 
 #alldat <- alldat %>%
- # filter(CH4 < 0)
+ # filter(CO2 < 0)
 
-#can remove any row that have NA's in the CH4 column 
+#can remove any row that have NA's in the CO2 column 
 #alldat <- alldat %>%
- # filter(!is.na(CH4))
+ # filter(!is.na(CO2))
 
-#can remove any row that have NA's in the CH4 column 
+#can remove any row that have NA's in the CO2 column 
 #alldat <- alldat %>%
- # filter(CH4 < 0)
+ # filter(CO2 < 0)
 
 ```
 
@@ -189,8 +193,7 @@ fluxes <- ffi_compute_fluxes(alldat,
                              group_column = "Plot", 
                              time_column = "TIMESTAMP", 
                              gas_column = "CO2_umol_m2", 
-                             dead_band = 10, 
-                             c0_band = 5)
+                             dead_band = 10) #, c0_band = 5?
 head(fluxes)
 
 #take a look at the fluxes we calculated with R2 
@@ -230,8 +233,8 @@ good_sample <- sample(good_plots, 5, replace=FALSE)
 #Loop to run five random plots subset above 
 for(P in good_sample){ 
   r1 <- subset(alldat, Plot == P)
-  p1 <- ggplot(r1, aes(TIMESTAMP, CH4)) + geom_point() + theme_classic() +
-  ylab(expression(paste( CO [2], " (ppb)"))) +
+  p1 <- ggplot(r1, aes(TIMESTAMP, CO2)) + geom_point() + theme_classic() +
+  ylab(expression(paste( CO [2], " (ppm)"))) +
   xlab("Time") + labs(title = P) + 
   geom_smooth(color="red")
   print(p1)
@@ -250,8 +253,8 @@ bad_plots <- unique(fluxes_weird$Plot)
 #Loop to run five random plots subset above 
 for(P in bad_plots){ 
   r1 <- subset(alldat, Plot == P)
-  p1 <- ggplot(r1, aes(TIMESTAMP, CH4)) + geom_point() + theme_classic() +
-  ylab(expression(paste( CO [2], " (ppb)"))) +
+  p1 <- ggplot(r1, aes(TIMESTAMP, CO2)) + geom_point() + theme_classic() +
+  ylab(expression(paste( CO [2], " (ppm)"))) +
   xlab("Time") + labs(title = P) + 
   geom_smooth(color="red")
   print(p1)
@@ -261,42 +264,28 @@ for(P in bad_plots){
 
 #Notes on the bad ones 
 
-#	GCW WC 3 202405 – non-linear and wobbly but I think it's okay?  
-#	GWI TR 1 202404 – low and okay 
-######	GWI TR 1 202405 – Includes something weird at the beginning and needs a look 
-#	GWI TR 1 202408 – low and weird, but okay 
-#	GWI TR 1 202411 – low and okay 
-#	GWI TR 2 202404 – low uptake and okay 
-#	GWI TR 2 202405 – low and okay 
-######	GWI TR 2 202406 – includes a big jump that looks like chamber opening
-#	GWI TR 2 202408 – low and okay 
-#	GWI TR 4 202404 – low and okay 
-#	GWI TR 4 202405 – low and okay 
-#	GWI TR 4 202408 – low and okay 
-#	GWI TR 4 202409 – low and okay 
-#	GWI TR 4 202411 – low and okay 
-#######	GWI WC 1 202406 – includes chamber opening - need to change observation length or start time 
-#	GWI WC 1 202408 – low and okay
-#	GWI WC 2 202411 – low and okay
-# MSM TR 1 202405 - low and okay 
-# MSM TR 1 202407 - low and okay 
-# MSM TR 1 202410 - low and okay, but looks weird like an M 
-# MSM TR 2 202404 - low and okay 
-# MSM TR 2 202405 - low and okay 
-# MSM TR 2 202409 - low and okay 
-# MSM TR 2 202411 - low and okay 
-# MSM TR 3 202411 - low and okay 
-# MSM TR 4 202411 - low and okay 
-# MSM TR 5 202404 - low and okay 
-# MSM TR 5 202407 - low and okay 
-# MSM TR 5 202409 - low and okay 
-# MSM TR 5 202411 - low and okay 
-# MSM WC 1 202411 - low and okay 
-# MSM WC 4 202411 - low and okay
-# MSM WC 5 202411 - low and okay
-####### SWH WC 1 202407 - really wonky flux, needs checked 
-####### SWH WC 2 202407 - really wonky flux, needs checked 
-####### SWH WC 3 202407 - really wonky flux, needs checked 
+# GCW W 1 202509 - wobbly but okay
+# GCW W 3 202509 - wobbly but okay
+# GCW W 4 202509 - wobbly but okay
+# GCW W 5 202509 - wobbly but okay
+# GWI TR 3 202509 - wobbly but okay
+# GWI TR 4 202509 - wobbly but low flux
+# MSM TR 1 202509 - wobbly but okay
+# MSM TR 5 202509 - messy but okay
+# MSM W 4 202509 - messy but okay
+# SWH TR 1 202507 - messy but low flux
+# SWH TR 3 202507 - messy but okay 
+# MSM TR 4 202509 - wobbly but low flux
+# SWH TR 2 202509 - wobbly but low flux
+
+##Fluxes to change: 
+# MSM TR 4 202507 - clip flux at 15:03 *
+# SWH TR 1 202509 - clip at 10:02 for positive linear section *
+# SWH TR 2 202511 - flux messy at end, reduce obs length to 150 sec *
+# SWH TR 3 202511 - reduce obs length by 10 sec *
+# SWH TR 4 202509 - increase start time to 10:42 *
+# SWH TR 5 202509 - chamber opening at 11:08, reduce obs length to 150 sec *
+# SWH W 4 202507 - reduce obs length by 1 minute
 
 ###########################
 
@@ -312,8 +301,8 @@ tail_plots <- unique(tails$Plot)
 #Loop to run five random plots subset above 
 for(P in tail_plots){ 
   r1 <- subset(alldat, Plot == P)
-  p1 <- ggplot(r1, aes(TIMESTAMP, CH4)) + geom_point() + theme_classic() +
-  ylab(expression(paste( CO [2], " (ppb)"))) +
+  p1 <- ggplot(r1, aes(TIMESTAMP, CO2)) + geom_point() + theme_classic() +
+  ylab(expression(paste( CO [2], " (ppm)"))) +
   xlab("Time") + labs(title = P) + 
   geom_smooth(color="red")
   print(p1)
@@ -324,6 +313,30 @@ for(P in tail_plots){
 
 
 ```
+
+## Create document to look at all fluxes - not working so just plotted all    
+```{r, echo=FALSE}
+
+#ffi_qaqc(fluxes, Plot, output_file = "qaqc.html", output_dir = getwd(), open_output = TRUE)
+
+### pull a random sample of good fluxes to check and plot 
+all_plots <- unique(fluxes$Plot)
+
+#Loop to run five random plots subset above 
+for(P in all_plots){ 
+ r1 <- subset(alldat, Plot == P)
+  p1 <- ggplot(r1, aes(TIMESTAMP, CO2)) + geom_point() + theme_classic() +
+  ylab(expression(paste( CO [2], " (ppm)"))) +
+  xlab("Time") + labs(title = P) + 
+  geom_smooth(color="red")
+  print(p1)
+  }
+
+####################
+
+
+```
+
 
 ## Do some visualization of QAQC plots to assess fluxes  
 ```{r, echo=FALSE}
@@ -389,11 +402,15 @@ head(IDs)
 #rejoin them to the dataframe
 allflux <- cbind(IDs, fluxes)
 
+##Add in notes from metadata
+metadat_notes <- metadat[, c("Plot", "Notes")]
+allflux_notes <- allflux %>% 
+  left_join(metadat_notes, by=c("Plot"="Plot"))
+
 #export as a csv to the folder that you want 
-setwd("S:/Biogeochemistry/COMPASS Synoptics/Samples & Data/Fluxes/Macrophyte GHG Fluxes/Final Data")        #Change wd 
+# setwd("S:/Biogeochemistry/COMPASS Synoptics/Samples & Data/Fluxes/Macrophyte GHG Fluxes/Final Data")        #Change wd 
 
-write.csv(allflux, file="COMPASS_Synoptic_CB_Macrophyte_Fluxes_Final_2024_CO2.csv")           #Change file name
-
+write.csv(allflux_notes, file="Processed Data/COMPASS_Synoptic_CB_Macrophyte_Fluxes_Final_2025_CO2.csv")           #Change file name
 
 ```
 
@@ -402,61 +419,61 @@ write.csv(allflux, file="COMPASS_Synoptic_CB_Macrophyte_Fluxes_Final_2024_CO2.cs
 # and we take that out in the filter step *** 
 ```{r, echo=FALSE}
 
-#SWH 2024-07 because there are one or two that look funky  
+#SWH 2025-07 because there are one or two that look funky  
 p <- ggplot(alldat, aes(TIMESTAMP, CO2, color = Plot)) + geom_point() + theme_classic() + 
          ylab(expression(paste( CO [2], " (ppmv)"))) + ylim(200, 5250) +
-      xlim(c(as.POSIXct('2024-07-24 06:50:00', format = "%Y-%m-%d %H:%M:%S"),
-         as.POSIXct('2024-07-24 08:30:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
+      xlim(c(as.POSIXct('2025-07-24 06:50:00', format = "%Y-%m-%d %H:%M:%S"),
+         as.POSIXct('2025-07-24 08:30:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
 
 print(p)
 
-#GWI 2024-06 because there are a few that are odd and wonky 
+#GWI 2025-06 because there are a few that are odd and wonky 
 p <- ggplot(alldat, aes(TIMESTAMP, CO2, color = Plot)) + geom_point() + theme_classic() + 
   ylab(expression(paste( CO [2], " (ppmv)"))) + ylim(100, 1500) +
-  xlim(c(as.POSIXct('2024-06-27 04:55:00', format = "%Y-%m-%d %H:%M:%S"),
-         as.POSIXct('2024-06-27 10:15:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
+  xlim(c(as.POSIXct('2025-06-27 04:55:00', format = "%Y-%m-%d %H:%M:%S"),
+         as.POSIXct('2025-06-27 10:15:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
 print(p)
 
-#GCW 2024-06 because there are a few that are odd and wonky 
+#GCW 2025-06 because there are a few that are odd and wonky 
 p <- ggplot(alldat, aes(TIMESTAMP, CO2, color = Plot)) + geom_point() + theme_classic() + 
   ylab(expression(paste( CO [2], " (ppmv)"))) + ylim(100, 1500) +
-  xlim(c(as.POSIXct('2024-06-19 02:55:00', format = "%Y-%m-%d %H:%M:%S"),
-         as.POSIXct('2024-06-19 7:15:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
+  xlim(c(as.POSIXct('2025-06-19 02:55:00', format = "%Y-%m-%d %H:%M:%S"),
+         as.POSIXct('2025-06-19 7:15:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
 print(p)
 
-#MSM 2024-06 because there are a few that are odd and wonky 
+#MSM 2025-06 because there are a few that are odd and wonky 
 p <- ggplot(alldat, aes(TIMESTAMP, CO2, color = Plot)) + geom_point() + theme_classic() + 
   ylab(expression(paste( CO [2], " (ppmv)"))) + ylim(100, 1500) +
-  xlim(c(as.POSIXct('2024-06-18 05:45:00', format = "%Y-%m-%d %H:%M:%S"),
-         as.POSIXct('2024-06-18 8:35:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
+  xlim(c(as.POSIXct('2025-06-18 05:45:00', format = "%Y-%m-%d %H:%M:%S"),
+         as.POSIXct('2025-06-18 8:35:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
 print(p)
 
-#SWH 2024-06 because there are a few that are odd and wonky 
+#SWH 2025-06 because there are a few that are odd and wonky 
 p <- ggplot(alldat, aes(TIMESTAMP, CO2, color = Plot)) + geom_point() + theme_classic() + 
   ylab(expression(paste( CO [2], " (ppmv)"))) + ylim(100, 1500) +
-  xlim(c(as.POSIXct('2024-06-26 02:45:00', format = "%Y-%m-%d %H:%M:%S"),
-         as.POSIXct('2024-06-26 12:15:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
+  xlim(c(as.POSIXct('2025-06-26 02:45:00', format = "%Y-%m-%d %H:%M:%S"),
+         as.POSIXct('2025-06-26 12:15:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
 print(p)
 
-#GWI 2024-07 because there are a few that are odd and wonky 
+#GWI 2025-07 because there are a few that are odd and wonky 
 p <- ggplot(alldat, aes(TIMESTAMP, CO2, color = Plot)) + geom_point() + theme_classic() + 
   ylab(expression(paste( CO [2], " (ppmv)"))) + ylim(100, 1500) +
-  xlim(c(as.POSIXct('2024-07-25 05:45:00', format = "%Y-%m-%d %H:%M:%S"),
-         as.POSIXct('2024-07-25 8:15:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
+  xlim(c(as.POSIXct('2025-07-25 05:45:00', format = "%Y-%m-%d %H:%M:%S"),
+         as.POSIXct('2025-07-25 8:15:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
 print(p)
 
-#GWI 2024-10 because there are a few that are odd and wonky 
+#GWI 2025-10 because there are a few that are odd and wonky 
 p <- ggplot(alldat, aes(TIMESTAMP, CO2, color = Plot)) + geom_point() + theme_classic() + 
   ylab(expression(paste( CO [2], " (ppmv)"))) + ylim(100, 1500) +
-  xlim(c(as.POSIXct('2024-10-23 05:15:00', format = "%Y-%m-%d %H:%M:%S"),
-         as.POSIXct('2024-10-23 10:15:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
+  xlim(c(as.POSIXct('2025-10-23 05:15:00', format = "%Y-%m-%d %H:%M:%S"),
+         as.POSIXct('2025-10-23 10:15:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
 print(p)
 
-#SWH 2024-10 because there are a few that are odd and wonky 
+#SWH 2025-10 because there are a few that are odd and wonky 
 p <- ggplot(alldat, aes(TIMESTAMP, CO2, color = Plot)) + geom_point() + theme_classic() + 
   ylab(expression(paste( CO [2], " (ppmv)"))) + ylim(100, 1500) +
-  xlim(c(as.POSIXct('2024-10-24 04:35:00', format = "%Y-%m-%d %H:%M:%S"),
-         as.POSIXct('2024-10-24 8:45:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
+  xlim(c(as.POSIXct('2025-10-24 04:35:00', format = "%Y-%m-%d %H:%M:%S"),
+         as.POSIXct('2025-10-24 8:45:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
 print(p)
 
 ```

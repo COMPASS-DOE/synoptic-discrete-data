@@ -159,21 +159,21 @@ alldat <- alldat %>%
 #alldat <- alldat %>%
  # filter(!is.na(metadat_row))
 
-#can remove any row that have NA's in the CH4 column 
+#can remove any row that have NA's in the CO2 column 
 #alldat <- alldat %>%
- # filter(!is.na(CH4))
+ # filter(!is.na(CO2))
 
-#can remove any row that have NA's in the CH4 column 
+#can remove any row that have NA's in the CO2 column 
 #alldat <- alldat %>%
- # filter(CH4 < 0)
+ # filter(CO2 < 0)
 
-#can remove any row that have NA's in the CH4 column 
+#can remove any row that have NA's in the CO2 column 
 #alldat <- alldat %>%
- # filter(!is.na(CH4))
+ # filter(!is.na(CO2))
 
-#can remove any row that have NA's in the CH4 column 
+#can remove any row that have NA's in the CO2 column 
 #alldat <- alldat %>%
- # filter(CH4 < 0)
+ # filter(CO2 < 0)
 
 ```
 
@@ -232,8 +232,8 @@ good_sample <- sample(good_plots, 5, replace=FALSE)
 #Loop to run five random plots subset above 
 for(P in good_sample){ 
   r1 <- subset(alldat, Plot == P)
-  p1 <- ggplot(r1, aes(TIMESTAMP, CH4)) + geom_point() + theme_classic() +
-  ylab(expression(paste( CO [2], " (ppb)"))) +
+  p1 <- ggplot(r1, aes(TIMESTAMP, CO2)) + geom_point() + theme_classic() +
+  ylab(expression(paste( CO [2], " (ppm)"))) +
   xlab("Time") + labs(title = P) + 
   geom_smooth(color="red")
   print(p1)
@@ -252,8 +252,8 @@ bad_plots <- unique(fluxes_weird$Plot)
 #Loop to run five random plots subset above 
 for(P in bad_plots){ 
   r1 <- subset(alldat, Plot == P)
-  p1 <- ggplot(r1, aes(TIMESTAMP, CH4)) + geom_point() + theme_classic() +
-  ylab(expression(paste( CO [2], " (ppb)"))) +
+  p1 <- ggplot(r1, aes(TIMESTAMP, CO2)) + geom_point() + theme_classic() +
+  ylab(expression(paste( CO [2], " (ppm)"))) +
   xlab("Time") + labs(title = P) + 
   geom_smooth(color="red")
   print(p1)
@@ -314,8 +314,8 @@ tail_plots <- unique(tails$Plot)
 #Loop to run five random plots subset above 
 for(P in tail_plots){ 
   r1 <- subset(alldat, Plot == P)
-  p1 <- ggplot(r1, aes(TIMESTAMP, CH4)) + geom_point() + theme_classic() +
-  ylab(expression(paste( CO [2], " (ppb)"))) +
+  p1 <- ggplot(r1, aes(TIMESTAMP, CO2)) + geom_point() + theme_classic() +
+  ylab(expression(paste( CO [2], " (ppm)"))) +
   xlab("Time") + labs(title = P) + 
   geom_smooth(color="red")
   print(p1)
