@@ -21,17 +21,14 @@ library(tidyr)
 
 ## Pull in Raw Datafiles
 ```{r}
-#read in data files
-L <- list.files(path = "Raw Data/")
-head(L)
-
-file.list <- dir(pattern = "txt$")
+#read in files
+file.list <- dir(path = "Raw Data/", pattern = "txt$", full.names = TRUE)
+head(file.list)
 
 #Read in the data 
 alldat1 <- lapply(file.list, ffi_read_LI7810)
 
 alldat <- data.table::rbindlist(alldat1, fill=TRUE)
-
 ```
 
 ## Read in metadata file and match to raw data
@@ -59,42 +56,46 @@ head(metadat)
 #setwd("S:/Biogeochemistry/COMPASS Synoptics/Samples & Data/Fluxes/Macrophyte GHG Fluxes/Flux Calculations/Air Temp Data")
 #download the L1 dataset from: https://drive.google.com/drive/folders/1RP-hxmjAYNGzTfCNpYbMN6U_zbZmEWHM
 
-# Path to zip file
-L1 <- "Raw Data/L1_20241107.zip"
+# ##Read in L1 Sensor Data from S Drive and only save necessary data
+# # Path to zip file
+# L1 <- "S:/Biogeochemistry/COMPASS Synoptics/Samples & Data/Synoptic L1 Sensor/L1_20241107.zip"
+# 
+# # List CSV files inside the zip
+# files <- unzip(L1, list = TRUE)$Name
+# files <- files[grepl("\\.csv$", files)]
+# 
+# results <- list()
+# 
+# for (f in files) {
+#   message(f)
+# 
+#   selected_research_names <- c("wx_tempavg15")
+# 
+#   # Read CSV directly from zip
+#   dat <- read.csv(unz(L1, f))
+# 
+#   temp <- subset(dat, Instrument == "ClimaVUE50")
+# 
+#   gw <- temp %>%
+#     filter(research_name %in% selected_research_names) %>%
+#     select(TIMESTAMP, research_name, Value, F_OOB, F_OOS, Plot, Site)
+# 
+#   results[[f]] <- gw
+# }
+# 
+# #we need to bind these together
+# dat <- do.call(rbind, results)
+# rownames(dat) <- NULL
+# dat1 <- dat %>% filter(!(F_OOB == 1 & F_OOS == 1))
+# head(dat1)
+# 
+# #convert to wide format
+# temps <- pivot_wider(dat1, id_cols = c("TIMESTAMP", "Plot", "Site"), names_from = research_name, values_from = Value )
+# head(temps)
+# 
+# write.csv(temps, file="Raw Data/L1_temps.csv")
 
-# List CSV files inside the zip
-files <- unzip(L1, list = TRUE)$Name
-files <- files[grepl("\\.csv$", files)]
-
-results <- list()
-
-for (f in files) {
-  message(f)
-  
-  selected_research_names <- c("wx_tempavg15")
-  
-  # Read CSV directly from zip
-  dat <- read.csv(unz(L1, f))
-  
-  temp <- subset(dat, Instrument == "ClimaVUE50")
-  
-  gw <- temp %>% 
-    filter(research_name %in% selected_research_names) %>%
-    select(TIMESTAMP, research_name, Value, F_OOB, F_OOS, Plot, Site)
-  
-  results[[f]] <- gw
-}
-
-
-#we need to bind these together 
-dat <- do.call(rbind, results)
-rownames(dat) <- NULL
-dat1 <- dat %>% filter(!(F_OOB == 1 & F_OOS == 1))
-head(dat1)
-
-#convert to wide format 
-temps <- pivot_wider(dat1, id_cols = c("TIMESTAMP", "Plot", "Site"), names_from = research_name, values_from = Value )
-head(temps)
+temps <- read.csv("Raw Data/L1_temps.csv")
 
 
 ```
@@ -190,8 +191,7 @@ fluxes <- ffi_compute_fluxes(alldat,
                              group_column = "Plot", 
                              time_column = "TIMESTAMP", 
                              gas_column = "CH4_nmol_m2", 
-                             dead_band = 10, 
-                             c0_band = 5)
+                             dead_band = 10) # , c0_band = 5?
 head(fluxes)
 
 #take a look at the fluxes we calculated with R2 
@@ -371,12 +371,15 @@ head(IDs)
 #rejoin them to the dataframe
 allflux <- cbind(IDs, fluxes)
 
+##Add in notes from metadata
+metadat_notes <- metadat[, c("Plot", "Notes")]
+allflux_notes <- allflux %>% 
+  left_join(metadat_notes, by=c("Plot"="Plot"))
+
 #export as a csv to the folder that you want 
-setwd("S:/Biogeochemistry/COMPASS Synoptics/Samples & Data/Fluxes/Macrophyte GHG Fluxes/Final Data")        #Change wd 
+# setwd("S:/Biogeochemistry/COMPASS Synoptics/Samples & Data/Fluxes/Macrophyte GHG Fluxes/Final Data")        #Change wd 
 
-write.csv(allflux, file="COMPASS_Synoptic_CB_Macrophyte_Fluxes_Final_2023.csv")           #Change file name
-
-
+write.csv(allflux_notes, file="Processed Data/COMPASS_Synoptic_CB_Macrophyte_Fluxes_Final_2023_CH4.csv")           #Change file name
 ```
 
 # If you need to look at fluxes from a certain day to see how the concentrations before and after look:
