@@ -24,6 +24,11 @@ library(tibble)
 ```{r}
 files <- list.files(path = "Processed Data", pattern = "\\.csv$", full.names = TRUE)
 
+##Take out the samples that were reran
+files <- files[!files %in% "Processed Data/COMPASS_SynopticCB_PW_Processed_Cl_SO4_202305.csv"]
+
+files
+
 # 3. Read and combine all CSVs
 all_data <- files %>%
   lapply(read.csv, colClasses = c(rep('character', 8), rep('numeric', 5))) %>%    # or read.csv if you prefer base R
