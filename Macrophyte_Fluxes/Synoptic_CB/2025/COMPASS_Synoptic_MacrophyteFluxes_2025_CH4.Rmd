@@ -132,6 +132,8 @@ metadat_L1temp <- metadat %>%
 ## Match metadata to raw data
 ```{r}
 
+####Ask Steph to exaplin this whole chunk, including the parts with metadat_row####
+
 #match the metadata to the concentration data 
 alldat$metadat_row <- ffi_metadata_match(
   data_timestamps = alldat$TIMESTAMP,
@@ -139,6 +141,9 @@ alldat$metadat_row <- ffi_metadata_match(
   start_times = metadat$Time_start,
   obs_lengths = metadat$Obs_length) 
 head(alldat)
+
+bad <- which(is.na(alldat$metadat_row))
+length(bad)  # should be 53
 
 #Set plot, temp, volume, etc. here 
 alldat$Plot <- metadat$Plot[alldat$metadat_row]
@@ -155,6 +160,7 @@ metadat$metadat_row <- seq_len(nrow(metadat))
 alldat <- alldat %>%
   mutate(final_temp = coalesce(L1_Temp, Hand_Temp))
 
+unique(alldat$Plot)
 #remove the rows that don't match to metadata 
 #alldat <- alldat %>%
  # filter(!is.na(metadat_row))
@@ -449,19 +455,22 @@ allflux_notes <- allflux %>%
 #export as a csv to the folder that you want 
 # setwd("S:/Biogeochemistry/COMPASS Synoptics/Samples & Data/Fluxes/Macrophyte GHG Fluxes/Final Data")        #Change wd 
 
-write.csv(allflux_notes, file="Processed Data/COMPASS_Synoptic_CB_Macrophyte_Fluxes_Final_2025_CH4.csv")           #Change file name
+# write.csv(allflux_notes, file="Processed Data/COMPASS_Synoptic_CB_Macrophyte_Fluxes_Final_2025_CH4.csv")           #Change file name
 
 
 ```
 
 ##Histogram of CH4 concentrations by Site
 ```{r}
+
+alldat_missing <- subset(alldat, metadat_row == "SWH_W_5_202511")
+
 alldat_plot <- subset(alldat, !is.na(Site))
 alldat_plot <- subset(alldat_plot, Plot != "SWH_TR_5_202507")
 alldat_plot <- subset(alldat_plot, Plot != "SWH_TR_4_202507")
 
 hist <- ggplot(alldat_plot, aes(x = CH4)) +
-  geom_histogram(bins = 30, color = "black", fill = "skyblue", na.rm = TRUE) +
+  geom_histogram(bins = 50, color = "black", fill = "skyblue", na.rm = TRUE) +
   facet_wrap(~ Site, scales = "free") + # Creates separate plots for each group
   labs(title = "Methane spans by site for 2025", x = "CH4 Conc (ppb)", y = "Frequency")+ 
   theme_classic()
@@ -474,6 +483,26 @@ ggsave("CH4_span.png",
        units = "in",
        dpi = 300)
 
+##Do the same thing but average CH4 per flux measurement taken
+#ensure there is only one data observation per flux measurement 
+alldat_plot_means <- alldat_plot %>% 
+    group_by(Plot, Site) %>%
+    summarize(CH4_avg = mean(CH4)) 
+
+
+hist_avgs <- ggplot(alldat_plot_means, aes(x = CH4_avg)) +
+  geom_histogram(bins = 50, color = "black", fill = "skyblue", na.rm = TRUE) +
+  facet_wrap(~ Site, scales = "free") + # Creates separate plots for each group
+  labs(title = "Avg methane per flux measurement by site for 2025", x = "CH4 Conc (ppb)", y = "Frequency")+ 
+  theme_classic()
+hist_avgs
+
+ggsave("CH4_span_avgs.png", 
+       plot = hist_avgs, 
+       width = 8,
+       height = 4,
+       units = "in",
+       dpi = 300)
 
 ```
 
