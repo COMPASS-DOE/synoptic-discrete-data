@@ -57,8 +57,8 @@ head(metadat)
 #setwd("S:/Biogeochemistry/COMPASS Synoptics/Samples & Data/Fluxes/Macrophyte GHG Fluxes/Flux Calculations/Air Temp Data")
 #download the L1 dataset from: https://drive.google.com/drive/folders/1RP-hxmjAYNGzTfCNpYbMN6U_zbZmEWHM
 
-# ##Read in L1 Sensor Data from S Drive and only save necessary data
-# # Path to zip file
+##Read in L1 Sensor Data from S Drive and only save necessary data
+# Path to zip file
 # L1 <- "S:/Biogeochemistry/COMPASS Synoptics/Samples & Data/Synoptic L1 Sensor/L1 2025 Sensor Data.zip"
 # 
 # # List CSV files inside the zip
@@ -87,7 +87,7 @@ head(metadat)
 # #we need to bind these together
 # dat <- do.call(rbind, results)
 # rownames(dat) <- NULL
-# dat1 <- dat %>% filter(!(F_OOB == 1 & F_OOS == 1))
+# dat1 <- dat %>% filter((F_OOB != 1 & F_OOS != 1))
 # head(dat1)
 # 
 # #convert to wide format
@@ -105,7 +105,7 @@ temps <- read.csv("Raw Data/L1_temps.csv")
 #Going to need to use site and timestamp in the metadata in order to find a date 
 
 #first we need to make a timestamp column in metadat so that we can 
-metadat$TIMESTAMP <- ymd_hms(paste(metadat$Date, metadat$Time_start))
+metadat$TIMESTAMP <- mdy_hms(paste(metadat$Date, metadat$Time_start))
 
 #make sure time stamps are in the correct format 
 metadat$TIMESTAMP <- as.POSIXct(metadat$TIMESTAMP, format = "%Y-%m-%d %H:%M:%OS")
@@ -118,7 +118,7 @@ temps$TIMESTAMP_round <- round_date(temps$TIMESTAMP, "15 mins")
 #ensure there is only one data observation per hour 
 temps_clean <-   temps %>% 
     group_by(TIMESTAMP_round, Site) %>%
-    summarize(wx_tempavg15 = mean(wx_tempavg15)) 
+    summarize(wx_tempavg15 = mean(wx.tempavg15)) 
 
 #join them 
 metadat_L1temp <- metadat %>% 
@@ -209,6 +209,9 @@ ggplot(fluxes, aes(Plot, lin_flux.estimate, color = lin_r.squared)) +
 fluxes_good <- as.data.frame(subset(fluxes, lin_r.squared >= .90, select = Plot:TIMESTAMP_max))
 fluxes_weird <- as.data.frame(subset(fluxes, lin_r.squared < .90, select = Plot:TIMESTAMP_max))
 
+#negative CO2 fluxes
+fluxes_negative <- as.data.frame(subset(fluxes,  lin_flux.estimate < 0, select = Plot:TIMESTAMP_max))
+
 #find fluxes that represent the first and fourth quartile of the data 
 low <- quantile(fluxes$lin_flux.estimate, 0.05) 
 high <- quantile(fluxes$lin_flux.estimate, 0.95) 
@@ -218,7 +221,32 @@ fluxes_high <- as.data.frame(subset(fluxes, lin_flux.estimate >= high, select = 
 
 tails <- rbind(fluxes_low, fluxes_high)
 
+
 ```
+
+## Check the fluxes for which I changed the start time due to lags or ebullition (recorded in notes of metadata)
+```{r}
+
+tobechecked <- c("MSM_TR_4_202507", "SWH_TR_1_202509", "SWH_TR_2_202511", "SWH_TR_3_202511", "SWH_TR_4_202509", "SWH_TR_5_202509", "SWH_W_4_202507")
+
+colnames <- c("Plot")
+
+#Loop to run plots above 
+for(P in tobechecked){ 
+  r1 <- subset(alldat, Plot == P)
+  p1 <- ggplot(r1, aes(TIMESTAMP, CO2)) + geom_point() + theme_classic() +
+  ylab(expression(paste( CO [2], " (ppm)"))) +
+  xlab("Time") + labs(title = P) + 
+  geom_smooth(color="red")
+  print(p1)
+}
+
+#list of the ones that I changed and checked and looked good? 
+fixedplots <- c()
+  
+
+```
+
 
 ## Spot check a few fluxes with R2 > 0.9
 ```{r, echo=FALSE}
@@ -264,28 +292,46 @@ for(P in bad_plots){
 
 #Notes on the bad ones 
 
-# GCW W 1 202509 - wobbly but okay
-# GCW W 3 202509 - wobbly but okay
-# GCW W 4 202509 - wobbly but okay
-# GCW W 5 202509 - wobbly but okay
-# GWI TR 3 202509 - wobbly but okay
-# GWI TR 4 202509 - wobbly but low flux
-# MSM TR 1 202509 - wobbly but okay
-# MSM TR 5 202509 - messy but okay
-# MSM W 4 202509 - messy but okay
-# SWH TR 1 202507 - messy but low flux
-# SWH TR 3 202507 - messy but okay 
-# MSM TR 4 202509 - wobbly but low flux
-# SWH TR 2 202509 - wobbly but low flux
+# GCW_W_1_202509 - wobbly but okay flux
+# GCW_W_3_202509 - wobbly but okay flux
+# GCW_W_4_202509 - wobbly but okay flux
+# GCW_W_5_202509 - wobbly but okay flux
+# GWI_TR_3_202509 - wobbly but okay flux
+# GWI_TR_4_202509 - wobbly but low flux
+# MSM_TR_1_202509 - wobbly but okay flux
+# MSM_TR_5_202509 - messy but okay flux
+# MSM_W_4_202509 - messy but okay flux
+# SWH_TR_1_202507 - messy but low flux
+# SWH_TR_3_202507 - messy but okay flux
+# SWH_TR_2_202509 - wobbly but low flux
+# GCW_TR_5_202509 - low r squared but okay flux
+
+
+##Fluxes to remove: 
+# MSM_TR_4_202509 - very messy, may want to remove this flux
+# SWH_TR_1_202509 - clip at 10:02 for positive linear section *, very messy, may want to remove this flux
+# SWH_TR_2_202509 - very messy, remove
 
 ##Fluxes to change: 
-# MSM TR 4 202507 - clip flux at 15:03 *
-# SWH TR 1 202509 - clip at 10:02 for positive linear section *
-# SWH TR 2 202511 - flux messy at end, reduce obs length to 150 sec *
-# SWH TR 3 202511 - reduce obs length by 10 sec *
-# SWH TR 4 202509 - increase start time to 10:42 *
-# SWH TR 5 202509 - chamber opening at 11:08, reduce obs length to 150 sec *
-# SWH W 4 202507 - reduce obs length by 1 minute
+# MSM_TR_4_202507 - clip flux at 15:03 *
+# SWH_TR_2_202511 - flux messy at end, reduce obs length to 150 sec *
+# SWH_TR_3_202511 - reduce obs length by 10 sec *
+# SWH_TR_4_202509 - increase start time to 10:42 *
+# SWH_TR_5_202509 - chamber opening at 11:08, start time was entered incorrectly, fixed as 11:01
+# SWH_W_4_202507 - reduce obs length by 1 minute to avoid saturation 
+# SWH_TR_4_202507 - reduce obs length by 30 sec
+
+##Already added notes to metadata for the ones I fixed
+##Add qaqc flags 
+#Fluxes that need to be removed
+remove_flags <- c("MSM_TR_4_202509", "SWH_TR_1_202509", "SWH_TR_2_202509")
+fluxes$qaqc_flag <- NA
+fluxes <- fluxes %>%
+    mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% remove_flags, "poor flux, remove", qaqc_flag))
+
+#Any other fluxes that had low R squared but are okay otherwise
+fluxes <- fluxes %>%
+    mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% bad_plots, "low r squared, but checked and flux is okay", qaqc_flag))
 
 ###########################
 
@@ -314,7 +360,30 @@ for(P in tail_plots){
 
 ```
 
-## Create document to look at all fluxes - not working so just plotted all    
+## Look at the negative CO2 fluxes
+```{r, echo=FALSE}
+
+### pull out negative fluxes and put them in a list 
+neg_plots <- unique(fluxes_negative$Plot)
+
+#Loop to run five random plots subset above 
+for(P in neg_plots){ 
+ r1 <- subset(alldat, Plot == P)
+  p1 <- ggplot(r1, aes(TIMESTAMP, CO2)) + geom_point() + theme_classic() +
+  ylab(expression(paste( CO [2], " (ppm)"))) +
+  xlab("Time") + labs(title = P) + 
+  geom_smooth(color="red")
+  print(p1)
+}
+
+####################Negative CO2 fluxes
+# add a flag for the fluxes that are negative for CO2 because they should be positive
+fluxes <- fluxes %>%
+    mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% neg_plots, "negative CO2 flux, remove", qaqc_flag))
+
+```
+
+## Plot all fluxes
 ```{r, echo=FALSE}
 
 #ffi_qaqc(fluxes, Plot, output_file = "qaqc.html", output_dir = getwd(), open_output = TRUE)
@@ -394,6 +463,8 @@ p3
 
 #head(fluxes1)
 
+####Already flagged poor fluxes, negative fluxes, and low r squared fluxes that are actually okay
+
 #make new columns with the plot; zone; replicate 
 IDs <- data.frame(do.call('rbind', strsplit(as.character(fluxes$Plot),'_',fixed=TRUE)))
 colnames(IDs) <- c("Site",  "Zone", "Replicate", "Date") #, "RHZ", "RHZ_Rep")
@@ -419,62 +490,62 @@ write.csv(allflux_notes, file="Processed Data/COMPASS_Synoptic_CB_Macrophyte_Flu
 # and we take that out in the filter step *** 
 ```{r, echo=FALSE}
 
-#SWH 2025-07 because there are one or two that look funky  
-p <- ggplot(alldat, aes(TIMESTAMP, CO2, color = Plot)) + geom_point() + theme_classic() + 
-         ylab(expression(paste( CO [2], " (ppmv)"))) + ylim(200, 5250) +
-      xlim(c(as.POSIXct('2025-07-24 06:50:00', format = "%Y-%m-%d %H:%M:%S"),
-         as.POSIXct('2025-07-24 08:30:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
-
-print(p)
-
-#GWI 2025-06 because there are a few that are odd and wonky 
-p <- ggplot(alldat, aes(TIMESTAMP, CO2, color = Plot)) + geom_point() + theme_classic() + 
-  ylab(expression(paste( CO [2], " (ppmv)"))) + ylim(100, 1500) +
-  xlim(c(as.POSIXct('2025-06-27 04:55:00', format = "%Y-%m-%d %H:%M:%S"),
-         as.POSIXct('2025-06-27 10:15:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
-print(p)
-
-#GCW 2025-06 because there are a few that are odd and wonky 
-p <- ggplot(alldat, aes(TIMESTAMP, CO2, color = Plot)) + geom_point() + theme_classic() + 
-  ylab(expression(paste( CO [2], " (ppmv)"))) + ylim(100, 1500) +
-  xlim(c(as.POSIXct('2025-06-19 02:55:00', format = "%Y-%m-%d %H:%M:%S"),
-         as.POSIXct('2025-06-19 7:15:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
-print(p)
-
-#MSM 2025-06 because there are a few that are odd and wonky 
-p <- ggplot(alldat, aes(TIMESTAMP, CO2, color = Plot)) + geom_point() + theme_classic() + 
-  ylab(expression(paste( CO [2], " (ppmv)"))) + ylim(100, 1500) +
-  xlim(c(as.POSIXct('2025-06-18 05:45:00', format = "%Y-%m-%d %H:%M:%S"),
-         as.POSIXct('2025-06-18 8:35:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
-print(p)
-
-#SWH 2025-06 because there are a few that are odd and wonky 
-p <- ggplot(alldat, aes(TIMESTAMP, CO2, color = Plot)) + geom_point() + theme_classic() + 
-  ylab(expression(paste( CO [2], " (ppmv)"))) + ylim(100, 1500) +
-  xlim(c(as.POSIXct('2025-06-26 02:45:00', format = "%Y-%m-%d %H:%M:%S"),
-         as.POSIXct('2025-06-26 12:15:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
-print(p)
-
-#GWI 2025-07 because there are a few that are odd and wonky 
-p <- ggplot(alldat, aes(TIMESTAMP, CO2, color = Plot)) + geom_point() + theme_classic() + 
-  ylab(expression(paste( CO [2], " (ppmv)"))) + ylim(100, 1500) +
-  xlim(c(as.POSIXct('2025-07-25 05:45:00', format = "%Y-%m-%d %H:%M:%S"),
-         as.POSIXct('2025-07-25 8:15:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
-print(p)
-
-#GWI 2025-10 because there are a few that are odd and wonky 
-p <- ggplot(alldat, aes(TIMESTAMP, CO2, color = Plot)) + geom_point() + theme_classic() + 
-  ylab(expression(paste( CO [2], " (ppmv)"))) + ylim(100, 1500) +
-  xlim(c(as.POSIXct('2025-10-23 05:15:00', format = "%Y-%m-%d %H:%M:%S"),
-         as.POSIXct('2025-10-23 10:15:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
-print(p)
-
-#SWH 2025-10 because there are a few that are odd and wonky 
-p <- ggplot(alldat, aes(TIMESTAMP, CO2, color = Plot)) + geom_point() + theme_classic() + 
-  ylab(expression(paste( CO [2], " (ppmv)"))) + ylim(100, 1500) +
-  xlim(c(as.POSIXct('2025-10-24 04:35:00', format = "%Y-%m-%d %H:%M:%S"),
-         as.POSIXct('2025-10-24 8:45:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
-print(p)
+# #SWH 2025-07 because there are one or two that look funky  
+# p <- ggplot(alldat, aes(TIMESTAMP, CO2, color = Plot)) + geom_point() + theme_classic() + 
+#          ylab(expression(paste( CO [2], " (ppmv)"))) + ylim(200, 5250) +
+#       xlim(c(as.POSIXct('2025-07-24 06:50:00', format = "%Y-%m-%d %H:%M:%S"),
+#          as.POSIXct('2025-07-24 08:30:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
+# 
+# print(p)
+# 
+# #GWI 2025-06 because there are a few that are odd and wonky 
+# p <- ggplot(alldat, aes(TIMESTAMP, CO2, color = Plot)) + geom_point() + theme_classic() + 
+#   ylab(expression(paste( CO [2], " (ppmv)"))) + ylim(100, 1500) +
+#   xlim(c(as.POSIXct('2025-06-27 04:55:00', format = "%Y-%m-%d %H:%M:%S"),
+#          as.POSIXct('2025-06-27 10:15:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
+# print(p)
+# 
+# #GCW 2025-06 because there are a few that are odd and wonky 
+# p <- ggplot(alldat, aes(TIMESTAMP, CO2, color = Plot)) + geom_point() + theme_classic() + 
+#   ylab(expression(paste( CO [2], " (ppmv)"))) + ylim(100, 1500) +
+#   xlim(c(as.POSIXct('2025-06-19 02:55:00', format = "%Y-%m-%d %H:%M:%S"),
+#          as.POSIXct('2025-06-19 7:15:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
+# print(p)
+# 
+# #MSM 2025-06 because there are a few that are odd and wonky 
+# p <- ggplot(alldat, aes(TIMESTAMP, CO2, color = Plot)) + geom_point() + theme_classic() + 
+#   ylab(expression(paste( CO [2], " (ppmv)"))) + ylim(100, 1500) +
+#   xlim(c(as.POSIXct('2025-06-18 05:45:00', format = "%Y-%m-%d %H:%M:%S"),
+#          as.POSIXct('2025-06-18 8:35:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
+# print(p)
+# 
+# #SWH 2025-06 because there are a few that are odd and wonky 
+# p <- ggplot(alldat, aes(TIMESTAMP, CO2, color = Plot)) + geom_point() + theme_classic() + 
+#   ylab(expression(paste( CO [2], " (ppmv)"))) + ylim(100, 1500) +
+#   xlim(c(as.POSIXct('2025-06-26 02:45:00', format = "%Y-%m-%d %H:%M:%S"),
+#          as.POSIXct('2025-06-26 12:15:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
+# print(p)
+# 
+# #GWI 2025-07 because there are a few that are odd and wonky 
+# p <- ggplot(alldat, aes(TIMESTAMP, CO2, color = Plot)) + geom_point() + theme_classic() + 
+#   ylab(expression(paste( CO [2], " (ppmv)"))) + ylim(100, 1500) +
+#   xlim(c(as.POSIXct('2025-07-25 05:45:00', format = "%Y-%m-%d %H:%M:%S"),
+#          as.POSIXct('2025-07-25 8:15:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
+# print(p)
+# 
+# #GWI 2025-10 because there are a few that are odd and wonky 
+# p <- ggplot(alldat, aes(TIMESTAMP, CO2, color = Plot)) + geom_point() + theme_classic() + 
+#   ylab(expression(paste( CO [2], " (ppmv)"))) + ylim(100, 1500) +
+#   xlim(c(as.POSIXct('2025-10-23 05:15:00', format = "%Y-%m-%d %H:%M:%S"),
+#          as.POSIXct('2025-10-23 10:15:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
+# print(p)
+# 
+# #SWH 2025-10 because there are a few that are odd and wonky 
+# p <- ggplot(alldat, aes(TIMESTAMP, CO2, color = Plot)) + geom_point() + theme_classic() + 
+#   ylab(expression(paste( CO [2], " (ppmv)"))) + ylim(100, 1500) +
+#   xlim(c(as.POSIXct('2025-10-24 04:35:00', format = "%Y-%m-%d %H:%M:%S"),
+#          as.POSIXct('2025-10-24 8:45:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
+# print(p)
 
 ```
 

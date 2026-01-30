@@ -1,7 +1,7 @@
 ---
-title: "COMPASS_Synoptic_MacrophyteFluxes_2024_CH4"
+title: "COMPASS_Synoptic_MacrophyteFluxes_2025_CH4"
 author: "Stephanie J. Wilson"
-date: "2024-11-26"
+date: "2025-11-26"
 output: pdf_document
 ---
 ## Set Up
@@ -36,7 +36,7 @@ alldat <- data.table::rbindlist(alldat1, fill=TRUE)
 ```{r}
 
 #read in metadatfile
-md <- "Raw Data/COMPASS_ChamberFlux_Metadata_2024.csv"
+md <- "Raw Data/COMPASS_ChamberFlux_Metadata_2025a.csv"
 #metadat <- read_excel(md)
 metadat <- read.csv(md) 
 
@@ -57,9 +57,9 @@ head(metadat)
 #setwd("S:/Biogeochemistry/COMPASS Synoptics/Samples & Data/Fluxes/Macrophyte GHG Fluxes/Flux Calculations/Air Temp Data")
 #download the L1 dataset from: https://drive.google.com/drive/folders/1RP-hxmjAYNGzTfCNpYbMN6U_zbZmEWHM
 
-# ##Read in L1 Sensor Data from S Drive and only save necessary data
-# # Path to zip file
-# L1 <- "S:/Biogeochemistry/COMPASS Synoptics/Samples & Data/Synoptic L1 Sensor/L1_20241107.zip"
+##Read in L1 Sensor Data from S Drive and only save necessary data
+# Path to zip file
+# L1 <- "S:/Biogeochemistry/COMPASS Synoptics/Samples & Data/Synoptic L1 Sensor/L1 2025 Sensor Data.zip"
 # 
 # # List CSV files inside the zip
 # files <- unzip(L1, list = TRUE)$Name
@@ -69,13 +69,13 @@ head(metadat)
 # 
 # for (f in files) {
 #   message(f)
-# 
-#   selected_research_names <- c("wx_tempavg15")
+# # f = "L1 2025 Sensor Data/GWI_2025/GWI_W_20250101-20250630_wx-tempavg15_L1_v2-0.csv"
+#   selected_research_names <- c("wx-tempavg15")
 # 
 #   # Read CSV directly from zip
 #   dat <- read.csv(unz(L1, f))
 # 
-#   temp <- subset(dat, Instrument == "ClimaVUE50")
+#   temp <- subset(dat, Instrument == "ClimaVUE50" | Instrument == "CS EE181")
 # 
 #   gw <- temp %>%
 #     filter(research_name %in% selected_research_names) %>%
@@ -87,7 +87,7 @@ head(metadat)
 # #we need to bind these together
 # dat <- do.call(rbind, results)
 # rownames(dat) <- NULL
-# dat1 <- dat %>% filter(!(F_OOB == 1 & F_OOS == 1))
+# dat1 <- dat %>% filter((F_OOB != 1 & F_OOS != 1))
 # head(dat1)
 # 
 # #convert to wide format
@@ -106,7 +106,7 @@ temps <- read.csv("Raw Data/L1_temps.csv")
 #Going to need to use site and timestamp in the metadata in order to find a date 
 
 #first we need to make a timestamp column in metadat so that we can 
-metadat$TIMESTAMP <- ymd_hms(paste(metadat$Date, metadat$Time_start))
+metadat$TIMESTAMP <- mdy_hms(paste(metadat$Date, metadat$Time_start))
 
 #make sure time stamps are in the correct format 
 metadat$TIMESTAMP <- as.POSIXct(metadat$TIMESTAMP, format = "%Y-%m-%d %H:%M:%OS")
@@ -119,7 +119,7 @@ temps$TIMESTAMP_round <- round_date(temps$TIMESTAMP, "15 mins")
 #ensure there is only one data observation per hour 
 temps_clean <-   temps %>% 
     group_by(TIMESTAMP_round, Site) %>%
-    summarize(wx_tempavg15 = mean(wx_tempavg15)) 
+    summarize(wx_tempavg15 = mean(wx.tempavg15)) 
 
 #join them 
 metadat_L1temp <- metadat %>% 
@@ -218,6 +218,29 @@ fluxes_high <- as.data.frame(subset(fluxes, lin_flux.estimate >= high, select = 
 tails <- rbind(fluxes_low, fluxes_high)
 
 ```
+## Check the fluxes for which I changed the start time due to lags or ebullition (recorded in notes of metadata)
+```{r}
+
+tobechecked <- c("")
+
+colnames <- c("Plot")
+
+#Loop to run plots above 
+for(P in tobechecked){ 
+  r1 <- subset(alldat, Plot == P)
+  p1 <- ggplot(r1, aes(TIMESTAMP, CH4)) + geom_point() + theme_classic() +
+  ylab(expression(paste( CH [4], " (ppb)"))) +
+  xlab("Time") + labs(title = P) + 
+  geom_smooth()
+  print(p1)
+  }
+
+#list of the ones that I changed and checked and looked good? 
+fixedplots <- c()
+  
+
+```
+
 
 ## Spot check a few fluxes with R2 > 0.9
 ```{r, echo=FALSE}
@@ -259,46 +282,50 @@ for(P in bad_plots){
   print(p1)
   }
 
-####################
+
+#####################
 
 #Notes on the bad ones 
 
-#	GCW WC 3 202405 – non-linear and wobbly but I think it's okay?  
-#	GWI TR 1 202404 – low and okay 
-######	GWI TR 1 202405 – Includes something weird at the beginning and needs a look 
-#	GWI TR 1 202408 – low and weird, but okay 
-#	GWI TR 1 202411 – low and okay 
-#	GWI TR 2 202404 – low uptake and okay 
-#	GWI TR 2 202405 – low and okay 
-######	GWI TR 2 202406 – includes a big jump that looks like chamber opening
-#	GWI TR 2 202408 – low and okay 
-#	GWI TR 4 202404 – low and okay 
-#	GWI TR 4 202405 – low and okay 
-#	GWI TR 4 202408 – low and okay 
-#	GWI TR 4 202409 – low and okay 
-#	GWI TR 4 202411 – low and okay 
-#######	GWI WC 1 202406 – includes chamber opening - need to change observation length or start time 
-#	GWI WC 1 202408 – low and okay
-#	GWI WC 2 202411 – low and okay
-# MSM TR 1 202405 - low and okay 
-# MSM TR 1 202407 - low and okay 
-# MSM TR 1 202410 - low and okay, but looks weird like an M 
-# MSM TR 2 202404 - low and okay 
-# MSM TR 2 202405 - low and okay 
-# MSM TR 2 202409 - low and okay 
-# MSM TR 2 202411 - low and okay 
-# MSM TR 3 202411 - low and okay 
-# MSM TR 4 202411 - low and okay 
-# MSM TR 5 202404 - low and okay 
-# MSM TR 5 202407 - low and okay 
-# MSM TR 5 202409 - low and okay 
-# MSM TR 5 202411 - low and okay 
-# MSM WC 1 202411 - low and okay 
-# MSM WC 4 202411 - low and okay
-# MSM WC 5 202411 - low and okay
-####### SWH WC 1 202407 - really wonky flux, needs checked 
-####### SWH WC 2 202407 - really wonky flux, needs checked 
-####### SWH WC 3 202407 - really wonky flux, needs checked 
+##Fluxes to change: 
+# GCW_TR_4_202509 - added 5 sec to start time to avoid chamber closure
+# MSM_TR_3_202509 - reduced obs length to 4 minutes to avoid ebullition 
+# SWH_TR_1_202507 - changed obs length to 3 minutes to avoid ebullition 
+# SWH_TR_3_202507 - changed obs length to 4 minutes to avoid ebullition 
+# SWH_TR_4_202509 - increase start time to 10:43:30 to avoid ebullition
+# SWH_TR_5_202509 - reduced obs length to 3 minutes to avoid ebullition 
+# SWH_TR_3_202509 - reduced obs length to 4 minutes to avoid ebullition 
+# SWH_TR_4_202507 - increase start time by 30 seconds
+
+
+##Fluxes to remove
+# SWH_TR_5_202507 - extremely high CH4 values (450,000 ppb), remove 
+# SWH_TR_4_202507 - extremely high CH4 values (150,000 ppb), remove 
+# MSM_TR_4_202509 - flux compromised by ebullition, remove
+# GCW_TR_5_202509 - ebullition, poor flux
+# GCW_W_1_202509 - ebullition, poor flux
+# MSM_TR_3_202509 - ebullition, poor flux
+# SWH_TR_2_202509 - ebullition, poor flux
+# SWH_TR_4_202509 - ebullition, poor flux
+# SWH_TR_5_202509 - poor flux
+# SWH_TR_1_202509 - ebullition, poor flux
+# GCW_TR_1_202509 - poor flux
+# MSM_W_2_202509 - poor flux
+
+##Already added notes to metadata for the ones I fixed
+
+####Add qaqc flags####
+#Fluxes that need to be removed
+
+remove_flags <- c("SWH_TR_5_202507", "SWH_TR_4_202507", "MSM_TR_4_202509", "GCW_TR_5_202509", "GCW_W_1_202509", "MSM_TR_3_202509", "SWH_TR_4_202509", "SWH_TR_5_202509", "SWH_TR_1_202509", "GCW_TR_1_202509", "MSM_W_2_202509")
+fluxes$qaqc_flag <- NA
+fluxes <- fluxes %>%
+    mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% remove_flags, "poor flux, remove", qaqc_flag))
+
+#Any other fluxes that had low R squared but are okay otherwise
+
+fluxes <- fluxes %>%
+    mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% bad_plots, "low r squared, but checked and flux is okay", qaqc_flag))
 
 ###########################
 
@@ -322,6 +349,29 @@ for(P in tail_plots){
   }
 
 #would be nice to put on the plot the flux estimate and if it is a high or low or something 
+####################
+
+
+```
+
+## Plot all fluxes
+```{r, echo=FALSE}
+
+#ffi_qaqc(fluxes, Plot, output_file = "qaqc.html", output_dir = getwd(), open_output = TRUE)
+
+### pull a random sample of good fluxes to check and plot 
+all_plots <- unique(fluxes$Plot)
+
+#Loop to for all plots
+for(P in all_plots){ 
+  r1 <- subset(alldat, Plot == P)
+  p1 <- ggplot(r1, aes(TIMESTAMP, CH4)) + geom_point() + theme_classic() +
+  ylab(expression(paste( CH [4], " (ppb)"))) +
+  xlab("Time") + labs(title = P) + 
+  geom_smooth()
+  print(p1)
+  }
+
 ####################
 
 
@@ -399,43 +449,68 @@ allflux_notes <- allflux %>%
 #export as a csv to the folder that you want 
 # setwd("S:/Biogeochemistry/COMPASS Synoptics/Samples & Data/Fluxes/Macrophyte GHG Fluxes/Final Data")        #Change wd 
 
-write.csv(allflux_notes, file="Processed Data/COMPASS_Synoptic_CB_Macrophyte_Fluxes_Final_2024_CH4.csv")           #Change file name
+write.csv(allflux_notes, file="Processed Data/COMPASS_Synoptic_CB_Macrophyte_Fluxes_Final_2025_CH4.csv")           #Change file name
 
 
 ```
+
+##Histogram of CH4 concentrations by Site
+```{r}
+alldat_plot <- subset(alldat, !is.na(Site))
+alldat_plot <- subset(alldat_plot, Plot != "SWH_TR_5_202507")
+alldat_plot <- subset(alldat_plot, Plot != "SWH_TR_4_202507")
+
+hist <- ggplot(alldat_plot, aes(x = CH4)) +
+  geom_histogram(bins = 30, color = "black", fill = "skyblue", na.rm = TRUE) +
+  facet_wrap(~ Site, scales = "free") + # Creates separate plots for each group
+  labs(title = "Methane spans by site for 2025", x = "CH4 Conc (ppb)", y = "Frequency")+ 
+  theme_classic()
+hist
+
+ggsave("CH4_span.png", 
+       plot = hist, 
+       width = 8,
+       height = 4,
+       units = "in",
+       dpi = 300)
+
+
+```
+
+
 
 # If you need to look at fluxes from a certain day to see how the concentrations before and after look:
 # this doesn't work unless you reload and don't filter out the non matched data because you want to see what is before and after 
 # and we take that out in the filter step *** 
 ```{r, echo=FALSE}
 
-#GWI 2024-05 because there are one or two that look funky  
-p <- ggplot(alldat, aes(TIMESTAMP, CH4, color = Plot)) + geom_point() + theme_classic() + 
-         ylab(expression(paste( CH [4], " (ppmv)"))) + ylim(1000, 70250) +
-      xlim(c(as.POSIXct('2024-07-23 10:00:00', format = "%Y-%m-%d %H:%M:%S"),
-         as.POSIXct('2024-07-23 12:30:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
-
-print(p)
-
-#GWI 2024-06 because there are a few that are odd and wonky 
-p <- ggplot(alldat, aes(TIMESTAMP, CH4, color = Plot)) + geom_point() + theme_classic() + 
-  ylab(expression(paste( CH [4], " (ppmv)"))) + #ylim(1800, 3000) +
-  xlim(c(as.POSIXct('2024-06-27 08:45:00', format = "%Y-%m-%d %H:%M:%S"),
-         as.POSIXct('2024-06-27 13:40:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
-print(p)
-
-#SWH
-p <- ggplot(alldat, aes(TIMESTAMP, CH4, color = Plot)) + geom_point() + theme_classic() + 
-  ylab(expression(paste( CH [4], " (ppmv)"))) + ylim(-1000,50000) +
-  xlim(c(as.POSIXct('2023-11-08 12:30:00', format = "%Y-%m-%d %H:%M:%S"),
-         as.POSIXct('2023-11-08 14:00:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
-print(p)
-
-#GWI
-p <- ggplot(alldat, aes(TIMESTAMP, CH4, color = Plot)) + geom_point() + theme_classic() + 
-  ylab(expression(paste( CH [4], " (ppmv)"))) +  ylim(2050, 2500) +
-  xlim(c(as.POSIXct('2023-11-09 09:40:00', format = "%Y-%m-%d %H:%M:%S"),
-         as.POSIXct('2023-11-09 12:40:00', format = "%Y-%m-%d %H:%M:%S")))+ theme(legend.position="none")
-print(p)
+# #GWI 2025-05 because there are one or two that look funky  
+# p <- ggplot(alldat, aes(TIMESTAMP, CH4, color = Plot)) + geom_point() + theme_classic() + 
+#          ylab(expression(paste( CH [4], " (ppmv)"))) + ylim(1000, 70250) +
+#       xlim(c(as.POSIXct('2025-07-23 10:00:00', format = "%Y-%m-%d %H:%M:%S"),
+#          as.POSIXct('2025-07-23 12:30:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
+# 
+# print(p)
+# 
+# #GWI 2025-06 because there are a few that are odd and wonky 
+# p <- ggplot(alldat, aes(TIMESTAMP, CH4, color = Plot)) + geom_point() + theme_classic() + 
+#   ylab(expression(paste( CH [4], " (ppmv)"))) + #ylim(1800, 3000) +
+#   xlim(c(as.POSIXct('2025-06-27 08:45:00', format = "%Y-%m-%d %H:%M:%S"),
+#          as.POSIXct('2025-06-27 13:40:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
+# print(p)
+# 
+# #SWH
+# p <- ggplot(alldat, aes(TIMESTAMP, CH4, color = Plot)) + geom_point() + theme_classic() + 
+#   ylab(expression(paste( CH [4], " (ppmv)"))) + ylim(-1000,50000) +
+#   xlim(c(as.POSIXct('2023-11-08 12:30:00', format = "%Y-%m-%d %H:%M:%S"),
+#          as.POSIXct('2023-11-08 14:00:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
+# print(p)
+# 
+# #GWI
+# p <- ggplot(alldat, aes(TIMESTAMP, CH4, color = Plot)) + geom_point() + theme_classic() + 
+#   ylab(expression(paste( CH [4], " (ppmv)"))) +  ylim(2050, 2500) +
+#   xlim(c(as.POSIXct('2023-11-09 09:40:00', format = "%Y-%m-%d %H:%M:%S"),
+#          as.POSIXct('2023-11-09 12:40:00', format = "%Y-%m-%d %H:%M:%S")))+ theme(legend.position="none")
+# print(p)
 ```
 
