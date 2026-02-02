@@ -25,10 +25,15 @@ library(tidyr)
 file.list <- dir(path = "Raw Data/", pattern = "txt$", full.names = TRUE)
 head(file.list)
 
-#Read in the data 
-alldat1 <- lapply(file.list, ffi_read_LI7810)
+#Read in the data only for November
+file.list.nov <- dir(path = "Raw Data/", pattern = "202511.*\\.txt$", full.names = TRUE)
+file.list.nov
+alldat1.nov <- lapply(file.list.nov, ffi_read_LI7810)
+alldat.raw.nov <- data.table::rbindlist(alldat1.nov, fill=TRUE)
 
-alldat <- data.table::rbindlist(alldat1, fill=TRUE)
+#Convert to US/Eastern TZ
+alldat.raw.nov$TIMESTAMP <- ymd_hms(alldat.raw.nov$TIMESTAMP, tz = "UTC")
+alldat.raw.nov$TIMESTAMP <- with_tz(alldat.raw.nov$TIMESTAMP, "EDT")
 
 ```
 
@@ -46,6 +51,9 @@ head(metadat)
 metadat <- metadat %>%
   filter(!is.na(Date))
 
+#remove unneccesary columns
+metadat <- metadat %>% 
+  select(Date:Starting_CO2)
 head(metadat) 
 
 ```
@@ -133,7 +141,7 @@ metadat_L1temp <- metadat %>%
 
 #match the metadata to the concentration data 
 alldat$metadat_row <- ffi_metadata_match(
-  data_timestamps = alldat$TIMESTAMP,
+  data_timestamps = alldat_raw$TIMESTAMP,
   start_dates = metadat$Date,
   start_times = metadat$Time_start,
   obs_lengths = metadat$Obs_length) 
