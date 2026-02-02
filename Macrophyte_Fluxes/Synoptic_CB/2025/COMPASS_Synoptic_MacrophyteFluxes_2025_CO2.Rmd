@@ -21,19 +21,52 @@ library(tidyr)
 
 ## Pull in Raw Datafiles
 ```{r}
-#read in files
-file.list <- dir(path = "Raw Data/", pattern = "txt$", full.names = TRUE)
-head(file.list)
+##Read in 2026 Louise data and only save necessary data (9/29)
+# Path to zip file
+# Louise_data <- read.delim("S:/Biogeochemistry/LICOR/Louise Data Backup 20260121/Louise_data_backup_20260121.data", header = TRUE)
 
-#Read in the data only for November
-file.list.nov <- dir(path = "Raw Data/", pattern = "202511.*\\.txt$", full.names = TRUE)
-file.list.nov
+#read in files
+# file.list.Louise <- dir(path = "S:/Biogeochemistry/LICOR/Louise Data Backup 20260121", pattern = "data$", full.names = TRUE)
+# head(file.list.Louise)
+# 
+# #Read in the data 
+# alldat1.Louise <- lapply(file.list.Louise, ffi_read_LI7810)
+# alldat.Louise <- data.table::rbindlist(alldat1.Louise, fill=TRUE)
+# 
+# #Clip data to only 9/29/2025
+# Louise_data_clip <- subset(Louise_data, )
+
+#Export Louise data already read in - can read in later and just cbind it on 
+
+
+# alldat$metadat_row <- as.numeric(alldat$metadat_row)
+# sort(unique(alldat$metadat_row))
+##Missing 16-25 (Gru 5/13 data) and 121-125 (9/29 Louise) and 131-166 (11/4-11/13 Simon)
+
+#Read in the data only for November - data was regustered on the Licor as UTC when it was still US/Eastern time. Need to force the data to be recognized as US/Eastern Time to line up with metadata because otherwise the data will be forced into UTC and times will be 7 hours off. 
+file.list.nov <- "Raw Data/TG10-01076-2025-11-03T120000.txt"
 alldat1.nov <- lapply(file.list.nov, ffi_read_LI7810)
 alldat.raw.nov <- data.table::rbindlist(alldat1.nov, fill=TRUE)
 
 #Convert to US/Eastern TZ
-alldat.raw.nov$TIMESTAMP <- ymd_hms(alldat.raw.nov$TIMESTAMP, tz = "UTC")
-alldat.raw.nov$TIMESTAMP <- with_tz(alldat.raw.nov$TIMESTAMP, "EDT")
+alldat.raw.nov$TZ = "US/Eastern"
+alldat.raw.nov$TIMESTAMP <- with_tz(alldat.raw.nov$TIMESTAMP, tz = "UTC")
+alldat.raw.nov$TIMESTAMP <- force_tz(alldat.raw.nov$TIMESTAMP, "US/Eastern")
+
+
+# read in all other files
+# read in files
+file.list <- dir(path = "Raw Data/", pattern = "txt$", full.names = TRUE)
+head(file.list)
+file.list <- file.list[!file.list %in% file.list.nov]
+file.list
+
+#Read in the data
+alldat1 <- lapply(file.list, ffi_read_LI7810)
+
+alldat.raw <- data.table::rbindlist(alldat1, fill=TRUE)
+
+alldat <- rbind(alldat.raw, alldat.raw.nov)
 
 ```
 
@@ -141,7 +174,7 @@ metadat_L1temp <- metadat %>%
 
 #match the metadata to the concentration data 
 alldat$metadat_row <- ffi_metadata_match(
-  data_timestamps = alldat_raw$TIMESTAMP,
+  data_timestamps = alldat$TIMESTAMP,
   start_dates = metadat$Date,
   start_times = metadat$Time_start,
   obs_lengths = metadat$Obs_length) 
@@ -149,7 +182,7 @@ head(alldat)
 
 #Set plot, temp, volume, etc. here 
 alldat$Plot <- metadat$Plot[alldat$metadat_row]
-alldat$ID <- metadat$Plot_ID[alldat$metadat_row]
+alldat$ID <- metadat$Plot1[alldat$metadat_row]
 alldat$Volume <- metadat$Volume[alldat$metadat_row]
 alldat$Hand_Temp <- metadat$Temp_ByHand[alldat$metadat_row] #found online from weather 
 alldat$L1_Temp <- metadat_L1temp$wx_tempavg15[alldat$metadat_row] #calculate  temp for the measurement time from L1
@@ -317,8 +350,10 @@ for(P in bad_plots){
 
 ##Fluxes to remove: 
 # MSM_TR_4_202509 - very messy, may want to remove this flux
-# SWH_TR_1_202509 - clip at 10:02 for positive linear section *, very messy, may want to remove this flux
+# SWH_TR_1_202509 - very messy, may want to remove this flux
 # SWH_TR_2_202509 - very messy, remove
+# MSM_TR_5_202507 - very messy, may want to remove this flux
+
 
 ##Fluxes to change: 
 # MSM_TR_4_202507 - clip flux at 15:03 *
@@ -329,10 +364,12 @@ for(P in bad_plots){
 # SWH_W_4_202507 - reduce obs length by 1 minute to avoid saturation 
 # SWH_TR_4_202507 - reduce obs length by 30 sec
 
+# SWH_W_1_202511 - add 30 sec to start time
+
 ##Already added notes to metadata for the ones I fixed
 ##Add qaqc flags 
 #Fluxes that need to be removed
-remove_flags <- c("MSM_TR_4_202509", "SWH_TR_1_202509", "SWH_TR_2_202509")
+remove_flags <- c("MSM_TR_4_202509", "SWH_TR_1_202509", "SWH_TR_2_202509", "MSM_TR_5_202507")
 fluxes$qaqc_flag <- NA
 fluxes <- fluxes %>%
     mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% remove_flags, "poor flux, remove", qaqc_flag))

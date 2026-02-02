@@ -21,14 +21,51 @@ library(tidyr)
 
 ## Pull in Raw Datafiles
 ```{r}
+##Read in 2026 Louise data and only save necessary data (9/29)
+# Path to zip file
+# Louise_data <- read.delim("S:/Biogeochemistry/LICOR/Louise Data Backup 20260121/Louise_data_backup_20260121.data", header = TRUE)
+
 #read in files
+# file.list.Louise <- dir(path = "S:/Biogeochemistry/LICOR/Louise Data Backup 20260121", pattern = "data$", full.names = TRUE)
+# head(file.list.Louise)
+# 
+# #Read in the data 
+# alldat1.Louise <- lapply(file.list.Louise, ffi_read_LI7810)
+# alldat.Louise <- data.table::rbindlist(alldat1.Louise, fill=TRUE)
+# 
+# #Clip data to only 9/29/2025
+# Louise_data_clip <- subset(Louise_data, )
+
+#Export Louise data already read in - can read in later and just cbind it on 
+
+
+# alldat$metadat_row <- as.numeric(alldat$metadat_row)
+# sort(unique(alldat$metadat_row))
+# missing 121-125 (9/29 Louise)
+
+#Read in the data only for November - data was regustered on the Licor as UTC when it was still US/Eastern time. Need to force the data to be recognized as US/Eastern Time to line up with metadata because otherwise the data will be forced into UTC and times will be 7 hours off. 
+file.list.nov <- "Raw Data/TG10-01076-2025-11-03T120000.txt"
+alldat1.nov <- lapply(file.list.nov, ffi_read_LI7810)
+alldat.raw.nov <- data.table::rbindlist(alldat1.nov, fill=TRUE)
+
+#Convert to US/Eastern TZ
+alldat.raw.nov$TZ = "US/Eastern"
+alldat.raw.nov$TIMESTAMP <- with_tz(alldat.raw.nov$TIMESTAMP, tz = "UTC")
+alldat.raw.nov$TIMESTAMP <- force_tz(alldat.raw.nov$TIMESTAMP, "US/Eastern")
+
+
+# read in all other files
+# read in files
 file.list <- dir(path = "Raw Data/", pattern = "txt$", full.names = TRUE)
 head(file.list)
+file.list <- file.list[!file.list %in% file.list.nov]
+file.list
 
-#Read in the data 
+#Read in the data
 alldat1 <- lapply(file.list, ffi_read_LI7810)
+alldat.raw <- data.table::rbindlist(alldat1, fill=TRUE)
 
-alldat <- data.table::rbindlist(alldat1, fill=TRUE)
+alldat <- rbind(alldat.raw, alldat.raw.nov)
 
 ```
 
@@ -132,7 +169,7 @@ metadat_L1temp <- metadat %>%
 ## Match metadata to raw data
 ```{r}
 
-####Ask Steph to exaplin this whole chunk, including the parts with metadat_row####
+####Ask Steph to explain this whole chunk, including the parts with metadat_row####
 
 #match the metadata to the concentration data 
 alldat$metadat_row <- ffi_metadata_match(
@@ -142,12 +179,10 @@ alldat$metadat_row <- ffi_metadata_match(
   obs_lengths = metadat$Obs_length) 
 head(alldat)
 
-bad <- which(is.na(alldat$metadat_row))
-length(bad)  # should be 53
 
 #Set plot, temp, volume, etc. here 
 alldat$Plot <- metadat$Plot[alldat$metadat_row]
-alldat$ID <- metadat$Plot_ID[alldat$metadat_row]
+alldat$ID <- metadat$Plot1[alldat$metadat_row]
 alldat$Volume <- metadat$Volume[alldat$metadat_row]
 alldat$Hand_Temp <- metadat$Temp_ByHand[alldat$metadat_row] #found online from weather 
 alldat$L1_Temp <- metadat_L1temp$wx_tempavg15[alldat$metadat_row] #calculate  temp for the measurement time from L1
@@ -161,6 +196,7 @@ alldat <- alldat %>%
   mutate(final_temp = coalesce(L1_Temp, Hand_Temp))
 
 unique(alldat$Plot)
+
 #remove the rows that don't match to metadata 
 #alldat <- alldat %>%
  # filter(!is.na(metadat_row))
@@ -224,6 +260,7 @@ fluxes_high <- as.data.frame(subset(fluxes, lin_flux.estimate >= high, select = 
 tails <- rbind(fluxes_low, fluxes_high)
 
 ```
+
 ## Check the fluxes for which I changed the start time due to lags or ebullition (recorded in notes of metadata)
 ```{r}
 
@@ -302,7 +339,14 @@ for(P in bad_plots){
 # SWH_TR_5_202509 - reduced obs length to 3 minutes to avoid ebullition 
 # SWH_TR_3_202509 - reduced obs length to 4 minutes to avoid ebullition 
 # SWH_TR_4_202507 - increase start time by 30 seconds
+# GCW_TR_2_202511 - reduce obs length to 3 minutes to avoid ebullition
+# MSM_TR_3_202511 - increase start time to 15:10:30
+# SWH_TR_3_202507 - increase start time to 15:03
 
+# MSM_TR_5_202511 - increase start time to 15:28, reduce obs length to 4 minutes
+# MSM_W_2_202509 - increase start time to 13:08, reduce obs length to 2.5 minutes -***still need to reduce obs length to 2 minutes!
+
+#SWH_TR_3_202509 -ask Steph, currently flagged
 
 ##Fluxes to remove
 # SWH_TR_5_202507 - extremely high CH4 values (450,000 ppb), remove 
@@ -316,14 +360,16 @@ for(P in bad_plots){
 # SWH_TR_5_202509 - poor flux
 # SWH_TR_1_202509 - ebullition, poor flux
 # GCW_TR_1_202509 - poor flux
-# MSM_W_2_202509 - poor flux
+# GCW_TR_2_202509 - poor flux
+# GCW_TR_5_202507 - ebullition, poor flux
+# SWH_TR_3_202509 - remove, poor flux
 
 ##Already added notes to metadata for the ones I fixed
 
 ####Add qaqc flags####
 #Fluxes that need to be removed
 
-remove_flags <- c("SWH_TR_5_202507", "SWH_TR_4_202507", "MSM_TR_4_202509", "GCW_TR_5_202509", "GCW_W_1_202509", "MSM_TR_3_202509", "SWH_TR_4_202509", "SWH_TR_5_202509", "SWH_TR_1_202509", "GCW_TR_1_202509", "MSM_W_2_202509")
+remove_flags <- c("SWH_TR_5_202507", "SWH_TR_4_202507", "MSM_TR_4_202509", "GCW_TR_5_202509", "GCW_W_1_202509", "MSM_TR_3_202509", "SWH_TR_2_202509", "SWH_TR_4_202509", "SWH_TR_5_202509", "SWH_TR_1_202509", "GCW_TR_1_202509", "GCW_TR_2_202509", "GCW_TR_5_202507", "SWH_TR_3_202509")
 fluxes$qaqc_flag <- NA
 fluxes <- fluxes %>%
     mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% remove_flags, "poor flux, remove", qaqc_flag))
