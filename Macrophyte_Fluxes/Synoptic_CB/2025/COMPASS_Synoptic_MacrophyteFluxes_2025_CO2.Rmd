@@ -22,29 +22,32 @@ library(tidyr)
 ## Pull in Raw Datafiles
 ```{r}
 ##Read in 2026 Louise data and only save necessary data (9/29)
-# Path to zip file
-# Louise_data <- read.delim("S:/Biogeochemistry/LICOR/Louise Data Backup 20260121/Louise_data_backup_20260121.data", header = TRUE)
-
 #read in files
 # file.list.Louise <- dir(path = "S:/Biogeochemistry/LICOR/Louise Data Backup 20260121", pattern = "data$", full.names = TRUE)
 # head(file.list.Louise)
 # 
-# #Read in the data 
+# # #Read in the data 
 # alldat1.Louise <- lapply(file.list.Louise, ffi_read_LI7810)
 # alldat.Louise <- data.table::rbindlist(alldat1.Louise, fill=TRUE)
 # 
 # #Clip data to only 9/29/2025
-# Louise_data_clip <- subset(Louise_data, )
-
-#Export Louise data already read in - can read in later and just cbind it on 
-
+# # Define the start and end of the specific date
+# start_datetime <- as.POSIXct("2025-09-29 00:00:00")
+# end_datetime <- as.POSIXct("2025-09-29 23:59:59") # Or the start of the next day
+# 
+# alldat.Louise.Sept <- alldat.Louise %>%
+#   filter(TIMESTAMP >= start_datetime & TIMESTAMP <= end_datetime)
+# 
+# #Export Louise data already read in - can read in later and just cbind it on 
+# write.csv(alldat.Louise.Sept, file="Raw Data/Louise_20250929_preprocessed.csv", row.names = FALSE)
 
 # alldat$metadat_row <- as.numeric(alldat$metadat_row)
 # sort(unique(alldat$metadat_row))
-##Missing 16-25 (Gru 5/13 data) and 121-125 (9/29 Louise) and 131-166 (11/4-11/13 Simon)
+##We were missing 16-25 (Gru 5/13 data) and 121-125 (9/29 Louise) and 131-166 (11/4-11/13 Simon)
 
 #Read in the data only for November - data was regustered on the Licor as UTC when it was still US/Eastern time. Need to force the data to be recognized as US/Eastern Time to line up with metadata because otherwise the data will be forced into UTC and times will be 7 hours off. 
-file.list.nov <- "Raw Data/TG10-01076-2025-11-03T120000.txt"
+file.list.nov <- dir(path = "Raw Data/", pattern = "(202511.*\\.txt$)", full.names = TRUE)
+file.list.nov
 alldat1.nov <- lapply(file.list.nov, ffi_read_LI7810)
 alldat.raw.nov <- data.table::rbindlist(alldat1.nov, fill=TRUE)
 
@@ -63,10 +66,14 @@ file.list
 
 #Read in the data
 alldat1 <- lapply(file.list, ffi_read_LI7810)
-
 alldat.raw <- data.table::rbindlist(alldat1, fill=TRUE)
 
-alldat <- rbind(alldat.raw, alldat.raw.nov)
+##Read in Louise data from 9/29
+Louise.Sept <- read.csv("Raw Data/Louise_20250929_preprocessed.csv")
+Louise.Sept$TIMESTAMP <- as.POSIXct(Louise.Sept$TIMESTAMP, format = "%Y-%m-%d %H:%M:%OS")
+
+##Combine all other data with Simon's November 2025 and Louise's Sept 29 2025 data
+alldat <- rbind(alldat.raw, alldat.raw.nov, Louise.Sept)
 
 ```
 
@@ -268,7 +275,7 @@ tails <- rbind(fluxes_low, fluxes_high)
 ## Check the fluxes for which I changed the start time due to lags or ebullition (recorded in notes of metadata)
 ```{r}
 
-tobechecked <- c("MSM_TR_4_202507", "SWH_TR_1_202509", "SWH_TR_2_202511", "SWH_TR_3_202511", "SWH_TR_4_202509", "SWH_TR_5_202509", "SWH_W_4_202507")
+tobechecked <- c("MSM_TR_4_202507", "SWH_TR_1_202509", "SWH_TR_2_202511", "SWH_TR_3_202511", "SWH_TR_4_202509", "SWH_TR_5_202509", "SWH_W_4_202507", "SWH_TR_3_202509")
 
 colnames <- c("Plot")
 
@@ -363,6 +370,8 @@ for(P in bad_plots){
 # SWH_TR_5_202509 - chamber opening at 11:08, start time was entered incorrectly, fixed as 11:01
 # SWH_W_4_202507 - reduce obs length by 1 minute to avoid saturation 
 # SWH_TR_4_202507 - reduce obs length by 30 sec
+# MSM_TR_5_202511 - reduce obs length to 3 min
+# MSM_W_2_202509 - reduce obs length to 2 minutes
 
 # SWH_W_1_202511 - add 30 sec to start time
 
