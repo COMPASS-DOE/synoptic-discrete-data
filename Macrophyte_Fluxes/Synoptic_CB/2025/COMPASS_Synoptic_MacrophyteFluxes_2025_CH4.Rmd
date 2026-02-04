@@ -140,9 +140,22 @@ head(metadat)
 # head(temps)
 # 
 # write.csv(temps, file="Raw Data/L1_temps.csv")
+# 
+# temps <- read.csv("Raw Data/L1_temps.csv")
 
-temps <- read.csv("Raw Data/L1_temps.csv")
+##Read in raw temperature data
+files <- dir(path = "Raw Data/", pattern = "_wx-tempavg15.*\\.csv$", full.names = TRUE)
+results <- lapply(files, read.csv) 
+dat <- do.call(rbind, results)
+rownames(dat) <- NULL
+dat <- dat %>%
+  select(TIMESTAMP, research_name, Value, F_OOB, F_OOS, Plot, Site)
+dat1 <- dat %>% filter((F_OOB != 1 & F_OOS != 1))
+head(dat1)
 
+#convert to wide format
+temps <- pivot_wider(dat1, id_cols = c("TIMESTAMP", "Plot", "Site"), names_from = research_name, values_from = Value )
+head(temps)
 
 ```
 
@@ -162,9 +175,10 @@ metadat$DateTime_round <- round_date(metadat$TIMESTAMP, "15 mins")
 temps$TIMESTAMP_round <- round_date(temps$TIMESTAMP, "15 mins")
   
 #ensure there is only one data observation per hour 
-temps_clean <-   temps %>% 
+temps$`wx_tempavg15` <- temps$`wx-tempavg15`
+temps_clean <- temps %>% 
     group_by(TIMESTAMP_round, Site) %>%
-    summarize(wx_tempavg15 = mean(wx.tempavg15)) 
+    summarize(wx_tempavg15 = mean(wx_tempavg15))
 
 #join them 
 metadat_L1temp <- metadat %>% 
@@ -349,7 +363,7 @@ for(P in bad_plots){
 # MSM_TR_5_202511 - increase start time to 15:28, reduce obs length to 4 minutes
 # MSM_W_2_202509 - increase start time to 13:08, reduce obs length to 2.5 minutes -***still need to reduce obs length to 2 minutes!
 
-#SWH_TR_3_202509 -ask Steph, currently flagged
+#SWH_TR_3_202509 - asked Steph, she said to keep it
 
 ##Fluxes to remove
 # SWH_TR_5_202507 - extremely high CH4 values (450,000 ppb), remove 
@@ -394,8 +408,7 @@ remove_flags <- c(
   "SWH_TR_1_202509", 
   "GCW_TR_1_202509", 
   "GCW_TR_2_202509", 
-  "GCW_TR_5_202507", 
-  "SWH_TR_3_202509")
+  "GCW_TR_5_202507")
 
 fluxes <- fluxes %>%
     mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% remove_flags, "poor flux, remove", qaqc_flag))
