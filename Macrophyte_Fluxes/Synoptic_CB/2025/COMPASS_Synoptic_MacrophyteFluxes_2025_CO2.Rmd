@@ -91,7 +91,7 @@ head(metadat)
 metadat <- metadat %>%
   filter(!is.na(Date))
 
-#remove unneccesary columns
+#remove unnecessary columns
 metadat <- metadat %>% 
   select(Date:Starting_CO2)
 head(metadat) 
@@ -100,18 +100,14 @@ head(metadat)
 
 ## Read in Air Temp Data from Air Temp Code # use after L1 release
 ```{r}
+
 # Air temp 
-
-#setwd("S:/Biogeochemistry/COMPASS Synoptics/Samples & Data/Fluxes/Macrophyte GHG Fluxes/Flux Calculations/Air Temp Data")
-#download the L1 dataset from: https://drive.google.com/drive/folders/1RP-hxmjAYNGzTfCNpYbMN6U_zbZmEWHM
-
-##Read in L1 Sensor Data from S Drive and only save necessary data
+# Read in L1 Sensor Data from S Drive and only save necessary data
 # Path to zip file
-# L1 <- "S:/Biogeochemistry/COMPASS Synoptics/Samples & Data/Synoptic L1 Sensor/L1 2025 Sensor Data.zip"
+# L1 <- "S:/Biogeochemistry/COMPASS Synoptics/Samples & Data/Synoptic L1 Sensor/L1 2025 Sensor Data v2-1.zip"
 # 
 # # List CSV files inside the zip
 # files <- unzip(L1, list = TRUE)$Name
-# files <- files[grepl("\\.csv$", files)]
 # 
 # results <- list()
 # 
@@ -131,20 +127,30 @@ head(metadat)
 # 
 #   results[[f]] <- gw
 # }
-# 
+
 # #we need to bind these together
 # dat <- do.call(rbind, results)
 # rownames(dat) <- NULL
 # dat1 <- dat %>% filter((F_OOB != 1 & F_OOS != 1))
 # head(dat1)
-# 
-# #convert to wide format
-# temps <- pivot_wider(dat1, id_cols = c("TIMESTAMP", "Plot", "Site"), names_from = research_name, values_from = Value )
-# head(temps)
-# 
-# write.csv(temps, file="Raw Data/L1_temps.csv")
 
-temps <- read.csv("Raw Data/L1_temps.csv")
+##Read in raw temperature data
+files <- dir(path = "Raw Data/", pattern = "_wx-tempavg15.*\\.csv$", full.names = TRUE)
+results <- lapply(files, read.csv) 
+dat <- do.call(rbind, results)
+rownames(dat) <- NULL
+dat <- dat %>%
+  select(TIMESTAMP, research_name, Value, F_OOB, F_OOS, Plot, Site)
+dat1 <- dat %>% filter((F_OOB != 1 & F_OOS != 1))
+head(dat1)
+
+#convert to wide format
+temps <- pivot_wider(dat1, id_cols = c("TIMESTAMP", "Plot", "Site"), names_from = research_name, values_from = Value )
+head(temps)
+
+# write.csv(temps, file="Raw Data/L1_temps.csv")
+# 
+# temps <- read.csv("Raw Data/L1_temps.csv")
 
 ```
 
@@ -164,9 +170,10 @@ metadat$DateTime_round <- round_date(metadat$TIMESTAMP, "15 mins")
 temps$TIMESTAMP_round <- round_date(temps$TIMESTAMP, "15 mins")
   
 #ensure there is only one data observation per hour 
-temps_clean <-   temps %>% 
+temps$`wx_tempavg15` <- temps$`wx-tempavg15`
+temps_clean <- temps %>% 
     group_by(TIMESTAMP_round, Site) %>%
-    summarize(wx_tempavg15 = mean(wx.tempavg15)) 
+    summarize(wx_tempavg15 = mean(wx_tempavg15))
 
 #join them 
 metadat_L1temp <- metadat %>% 
