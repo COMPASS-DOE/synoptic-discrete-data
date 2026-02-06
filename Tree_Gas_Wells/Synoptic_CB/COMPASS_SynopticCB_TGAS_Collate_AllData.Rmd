@@ -17,7 +17,7 @@ library(openxlsx)
 ```
 
 ## Grab 2022 and 2023 All Data Files
-```{r}
+```{r, echo=FALSE}
 
 #read in 2022 TGAS Data:
 dat22 <- read.csv("2022/COMPASS_SynopticCB_TGAS_2022.csv")
@@ -44,11 +44,11 @@ dat23 <- read.csv("2023/COMPASS_SynopticCB_TGAS_2023.csv")
 ```
 
 ## Add Tree Info and Clean Up
-```{r}
+```{r, echo=FALSE}
 
 #read in the tree information about species and dbh
 tree_dat <- read.csv("TGAS Tree Info/COMPASS_SynopticCB_TGAS_TreeInfo.csv")
-head(tree_dat)
+#head(tree_dat)
 
 #combine the tree data with the 2022 File 
 tree_dat22 <- tree_dat %>%
@@ -70,11 +70,11 @@ dat23_wtree <- dat23_wtree %>%
 ```
 
 ## Grab sampling dates and add to file
-```{r}
+```{r, echo=FALSE}
 
 #read in the sampling date information
 dates <- read.csv("TGAS Tree Info/COMPASS_Synoptic_TGAS_CollectionDates.csv")
-head(dates)
+#head(dates)
 
 #add sampling date and the month # to dat22
 dat22_wtree_dates <- dat22_wtree %>%
@@ -92,7 +92,7 @@ dat23_wtree_dates <- dat23_wtree %>%
 ```
 
 ## Combine years and clean up
-```{r}
+```{r, echo=FALSE}
 #combine all the data together in one dataframe
 all_dat <- rbind(dat22_wtree_dates, dat23_wtree_dates)
 
@@ -118,7 +118,7 @@ all_dat <- all_dat %>%
 ```
 
 ## Make Relevant Metadata Sheet
-```{r}
+```{r, echo=FALSE}
 
 #pull the column names from the all_dat dataframe and create a new dataframe with them 
 metadat <- data.frame(Column_Names = colnames(all_dat))
@@ -187,7 +187,7 @@ metadat$Instrument_ifapplicable <-  c("NA",
 ```
 
 ## Write out files
-```{r}
+```{r, echo=FALSE}
 
 #write out a csv of all the data to the main folder: 
 write.csv(all_dat, "COMPASS_SynopticCB_TGAS_AllData.csv")
@@ -200,26 +200,33 @@ write.csv(metadat, "COMPASS_SynopticCB_TGAS_Metadata.csv")
 
 
 ## Viz  Raw data   
-```{r}
+```{r, echo=FALSE}
+
+all_dat$Sapflux_ID <- as.factor(all_dat$Sapflux_ID)
 
 #just plot all the data 
-ggplot(data=all_dat, aes(x=Sapflux_ID, y=CH4_ppm, fill=Zone, color=Zone))+
+all_trees <- ggplot(data=all_dat, aes(x=Month, y=CH4_ppm, color=Sapflux_ID))+
   geom_point()+ 
-  facet_grid(Site~Month, scales="free_y")+ 
+  facet_grid(Site~Zone, scales="free")+ 
+  labs(y="CH4 (ppm)") + 
   theme_bw()
+
+all_trees
 
 #Let's pull out dead trees and only plot the live ones 
 live_dat <- subset(all_dat, Status == "Living")
 
-ggplot(data=live_dat, aes(x=Sapflux_ID, y=CH4_ppm, fill=Zone, color=Zone))+
+live_only <- ggplot(data=live_dat, aes(x=Month, y=CH4_ppm, color=Sapflux_ID))+
   geom_point()+ 
-  facet_grid(Site~Month, scales="free_y")+ 
+  facet_grid(Site~Zone, scales="free")+ 
+  labs(y="CH4 (ppm)") + 
   theme_bw()
 
+#live_only
 ```
 
 ## Summarize the data  
-```{r}
+```{r, echo=FALSE}
 
 TGAS_avg <- live_dat %>%
   group_by(Month, Site, Zone) %>%
@@ -230,9 +237,11 @@ TGAS_avg <- live_dat %>%
 
 
 
-ggplot(data=TGAS_avg, aes(x=Zone, y=mean_CH4, fill=Zone, color=Zone))+
+ggplot(data=TGAS_avg, aes(x=Zone, y=mean_CH4, fill=Zone))+
   geom_boxplot()+ 
-  facet_grid(~Site, scales="free_y")+ 
+  facet_grid(rows = vars(Site), scales="free")+ 
+  scale_fill_manual(values=c("UP" = "#20063B","TR" = "#FFBC42"))+
+  labs(y="CH4 (ppm)")+
   theme_bw()
 
 
