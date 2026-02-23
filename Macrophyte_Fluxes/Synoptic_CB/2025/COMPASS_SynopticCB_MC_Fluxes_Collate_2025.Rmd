@@ -1,0 +1,294 @@
+---
+title: "Synoptic CB: Macrophyte Fluxes"
+author: "2025 Samples"
+date: "`r Sys.Date()`"
+output: 
+  pdf_document:
+    toc: true
+    number_sections: true
+
+output_dir: "To Be Reviewed/PDF"
+---
+
+```{r setup, include=FALSE}
+library(dplyr)
+library(ggplot2)
+library(ggpubr)
+library(stringr)
+library(readxl)
+library(tidyr)
+library(tibble)
+library(openxlsx)
+```
+
+#Read in and collate all the files in the Processed Data folder 
+```{r}
+
+ch4 <- read.csv("Processed Data/COMPASS_Synoptic_CB_Macrophyte_Fluxes_Final_2025_CH4.csv")
+ch4$X <- NULL
+ch4 <- ch4 %>%
+  rename_with(
+    .cols = 7:(ncol(.) - 4),
+    .fn = ~paste0("ch4_", .)
+  ) %>%
+  rename(ch4_qaqc_flag = qaqc_flag)
+
+co2 <- read.csv("Processed Data/COMPASS_Synoptic_CB_Macrophyte_Fluxes_Final_2025_CO2.csv")
+co2$X <- NULL
+co2 <- co2 %>%
+  rename_with(
+    .cols = 7:(ncol(.) - 4),
+    .fn = ~paste0("co2_", .)
+  ) %>%
+  rename(co2_qaqc_flag = qaqc_flag)
+
+# Combine all files
+all_dat <- merge(ch4, co2, by = c("Plot", "Site", "Zone", "Replicate", "Date", "TIMESTAMP", "TIMESTAMP_min", "TIMESTAMP_max", "Notes"))
+
+##Rename Zone
+all_dat$Zone <- gsub("W", "WC", all_dat$Zone)
+
+```
+
+## Write out files
+```{r write out combined data and metadata, include=FALSE}
+
+#write out a csv of all the data to the main folder: 
+write.csv(all_dat, "COMPASS_SynopticCB_MC_Fluxes_2025.csv")
+
+```
+
+
+## All Data by Year, Site and Zone
+```{r Visualize Data, echo=FALSE, warning=FALSE, message = FALSE, fig.width=16, fig.height=10, dpi = 300}
+
+data_plotting <- all_dat
+
+#Order by Zone from Upland to Surface Water
+data_plotting$Zone = factor(data_plotting$Zone, levels = c("UP", "SWAMP", "TR", "WC", "SW"))
+data_plotting <- data_plotting[order(data_plotting$Zone), ]
+
+#Order by Site from SWH, GCW, MSM, GWI order, which is oligohaline to polyhaline
+data_plotting$Site = factor(data_plotting$Site, levels = c("SWH", "GCW", "MSM", "GWI"))
+data_plotting <- data_plotting[order(data_plotting$Site), ]
+
+#Plot samples to get a first look at concentrations (sanity check)
+#group the data for plotting
+data_plotting_all <- data_plotting %>%
+  group_by(Site, Zone) %>%
+  mutate(row_num = factor(row_number())) %>%  # create row_num as factor per group
+  ungroup()
+
+# data_plotting_all$Date <- as.Date(paste(data_plotting_all$Year, data_plotting_all$Month, data_plotting_all$Day, sep = "-"))
+
+
+#Plot data and change colors based on Zone:
+viz_ch4_plot <- ggplot(data_plotting_all, aes(x = row_num, y = ch4_lin_flux.estimate, fill = Zone)) +
+  geom_bar(stat = "identity", position = position_dodge2(preserve = "total")) +
+  facet_wrap( ~ Site, scales="free") +
+  scale_fill_manual(values = c(
+    "UP" = "#20063B",
+    "TR" = "#FFBC42",
+    "SWAMP" = "darkgrey",
+    "WC" = "#419973",
+    "SW" = "#25ABE6"
+  )) +
+  theme_classic() +
+  labs(x = " ", y = "CH4", title = "CO2 Fluxes by Site") +
+  theme(
+    panel.spacing = unit(.05, "lines"), 
+    panel.border = element_rect(color = "black", fill = NA, linewidth = 1)) + 
+  theme(text = element_text(size = 30)) + 
+  theme(axis.text.x = element_blank())
+
+ viz_ch4_plot
+ 
+ viz_co2_plot <- ggplot(data_plotting_all, aes(x = row_num, y = co2_lin_flux.estimate, fill = Zone)) +
+  geom_bar(stat = "identity", position = position_dodge2(preserve = "total")) +
+  facet_wrap( ~ Site, scales="free") +
+  scale_fill_manual(values = c(
+    "UP" = "#20063B",
+    "TR" = "#FFBC42",
+    "SWAMP" = "darkgrey",
+    "WC" = "#419973",
+    "SW" = "#25ABE6"
+  )) +
+  theme_classic() +
+  labs(x = " ", y = "CO2", title = "CO2 Fluxes by Site") +
+  theme(
+    panel.spacing = unit(.05, "lines"), 
+    panel.border = element_rect(color = "black", fill = NA, linewidth = 1)) + 
+  theme(text = element_text(size = 30)) + 
+  theme(axis.text.x = element_blank())
+
+ viz_co2_plot
+
+
+```
+
+## Boxplot summary by Date
+```{r Overall Boxplot by Date, echo=FALSE, warning=FALSE, message = FALSE, fig.width=16, fig.height=10, dpi = 300}
+
+data_plotting_all <- data_plotting_all %>% 
+    mutate(
+    Zone_1 = case_when(
+      Zone == "UP" ~ "Upland",
+      Zone == "SWAMP" ~ "Swamp",
+      Zone == "TR" ~ "Transition",
+      Zone == "WC" ~ "Wetland",
+      Zone == "SW" ~ "Surface Water",
+      TRUE ~ Zone  # keep everything else unchanged
+    )
+  ) %>%
+  mutate(Zone_1 = factor(Zone_1, levels = c("Upland", "Swamp", "Transition", "Wetland", "Surface Water")))
+
+
+##Summarize NPOC by Date, Site, and Zone
+viz_ch4_boxplot <- ggplot(data_plotting_all, aes(x = as.character(Date), y = ch4_lin_flux.estimate, fill = Zone_1)) +
+  geom_boxplot() + 
+  facet_wrap( ~ Site, scales = "free", nrow = 2) +
+  scale_x_discrete(drop = TRUE) +
+  scale_fill_manual(values = c(
+    "Upland" = "#20063B",
+    "Transition" = "#FFBC42",
+    "Swamp" = "darkgrey",
+    "Wetland" = "#419973",
+    "Surface Water" = "#25ABE6"
+  ), labels = c("Upland", "Swamp", "Transition", "Wetland", "Surface Water")) +
+  theme_classic() +
+  labs(x = " ", y = "CH4", title = "Summary Boxplot of CH4 by Site and Zone") +
+  theme(
+    panel.spacing = unit(0.5, "lines"), 
+    panel.border = element_rect(color = "black", fill = NA, linewidth = 1)) +
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))+ 
+  theme(text = element_text(size = 30))+
+  theme(axis.ticks.x = element_line(linewidth = 1))+
+  theme(axis.ticks.length.x = unit(0.25, "cm"))
+  #scale_x_discrete(labels = c("Upland", "Swamp", "Transition", "Wetland", "Surface Water"))+ 
+
+viz_ch4_boxplot
+
+
+##Summarize TDN by Date, Site, and Zone
+viz_co2_boxplot <- ggplot(data_plotting_all, aes(x = as.character(Date), y = co2_lin_flux.estimate, fill = Zone_1)) +
+  geom_boxplot() + 
+  facet_wrap( ~ Site, scales = "free", nrow = 2) +
+  scale_x_discrete(drop = TRUE) +
+  scale_fill_manual(values = c(
+    "Upland" = "#20063B",
+    "Transition" = "#FFBC42",
+    "Swamp" = "darkgrey",
+    "Wetland" = "#419973",
+    "Surface Water" = "#25ABE6"
+  ), labels = c("Upland", "Swamp", "Transition", "Wetland", "Surface Water")) +
+  theme_classic() +
+  labs(x = " ", y = "CO2", title = "Summary Boxplot of CO2 by Site and Zone") +
+  theme(
+    panel.spacing = unit(0.5, "lines"), 
+    panel.border = element_rect(color = "black", fill = NA, linewidth = 1)) +
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))+ 
+  theme(text = element_text(size = 30))+
+  theme(axis.ticks.x = element_line(linewidth = 1))+
+  theme(axis.ticks.length.x = unit(0.25, "cm"))
+  #scale_x_discrete(labels = c("Upland", "Swamp", "Transition", "Wetland", "Surface Water"))+ 
+
+viz_co2_boxplot
+
+```
+
+## Boxplot summary by Site
+```{r Overall Boxplot, echo=FALSE, warning=FALSE, message = FALSE, fig.width=16, fig.height=10, dpi = 300}
+
+##Summarize NPOC by Date, Site, and Zone
+viz_ch4_summary_boxplot <- ggplot(data_plotting_all, aes(x = Zone_1, y = ch4_lin_flux.estimate, fill = Zone_1)) +
+  geom_boxplot() + 
+  facet_wrap( ~ Site, scales = "free", nrow = 1) +
+  scale_x_discrete(drop = TRUE) +
+  scale_fill_manual(values = c(
+    "Upland" = "#20063B",
+    "Transition" = "#FFBC42",
+    "Swamp" = "darkgrey",
+    "Wetland" = "#419973",
+    "Surface Water" = "#25ABE6"
+  ), labels = c("Upland", "Swamp", "Transition", "Wetland", "Surface Water")) +
+  theme_classic() +
+  labs(x = " ", y = "CH4", title = "Summary Boxplot of CH4 by Site and Zone") +
+  theme(
+    panel.spacing = unit(0.5, "lines"), 
+    panel.border = element_rect(color = "black", fill = NA, linewidth = 1)) +
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))+ 
+  theme(text = element_text(size = 30))+
+  theme(axis.ticks.x = element_line(linewidth = 1))+
+  theme(axis.ticks.length.x = unit(0.25, "cm"))
+  #scale_x_discrete(labels = c("Upland", "Swamp", "Transition", "Wetland", "Surface Water"))+ 
+
+viz_ch4_summary_boxplot
+
+
+##Summarize TDN by Date, Site, and Zone
+viz_co2_summary_boxplot <- ggplot(data_plotting_all, aes(x = Zone_1, y = co2_lin_flux.estimate, fill = Zone_1)) +
+  geom_boxplot() + 
+  facet_wrap( ~ Site, scales = "free", nrow = 1) +
+  scale_x_discrete(drop = TRUE) +
+  scale_fill_manual(values = c(
+    "Upland" = "#20063B",
+    "Transition" = "#FFBC42",
+    "Swamp" = "darkgrey",
+    "Wetland" = "#419973",
+    "Surface Water" = "#25ABE6"
+  ), labels = c("Upland", "Swamp", "Transition", "Wetland", "Surface Water")) +
+  theme_classic() +
+  labs(x = " ", y = "CO2", title = "Summary Boxplot of CO2 by Site and Zone") +
+  theme(
+    panel.spacing = unit(0.5, "lines"), 
+    panel.border = element_rect(color = "black", fill = NA, linewidth = 1)) +
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))+ 
+  theme(text = element_text(size = 30))+
+  theme(axis.ticks.x = element_line(linewidth = 1))+
+  theme(axis.ticks.length.x = unit(0.25, "cm"))
+  #scale_x_discrete(labels = c("Upland", "Swamp", "Transition", "Wetland", "Surface Water"))+ 
+
+viz_co2_summary_boxplot
+
+```
+
+##Calculate summary metrics
+```{r Additional summary metrics, include=FALSE, dpi = 300}
+# It would also be great to add to our collation codes a summary chunk that will calculate value ranges, means, and standard deviations (and errors) for each site, zone, depth for each year; also for each site zone, depth overall; and for each site and zone overall so that we have some easy access to metrics. Was just thinking this might be helpful today when re-collating the DIC data.
+
+##Metrics for each site and zone for all depths and years
+summary <- data_plotting_all %>%
+  group_by(Site, Zone_1) %>%
+   reframe(
+     min_ch4 = min(ch4_lin_flux.estimate, na.rm=TRUE),
+     max_ch4 = max(ch4_lin_flux.estimate, na.rm=TRUE), 
+     mean_ch4 = mean(ch4_lin_flux.estimate, na.rm=TRUE), 
+     sd_ch4 = sd(ch4_lin_flux.estimate, na.rm=TRUE), 
+
+     min_co2 = min(co2_lin_flux.estimate, na.rm=TRUE),
+     max_co2 = max(co2_lin_flux.estimate, na.rm=TRUE), 
+     mean_co2 = mean(co2_lin_flux.estimate, na.rm=TRUE), 
+     sd_co2 = sd(co2_lin_flux.estimate, na.rm=TRUE))
+
+```
+
+## Summary Tables
+```{r Summary table metrics, echo = FALSE, message = FALSE, dpi = 100}
+
+library(kableExtra)
+
+kable(
+  summary[, c("Site", "Zone_1", "min_ch4",	"max_ch4",	"mean_ch4", "min_co2",	"max_co2",	"mean_co2")],  
+  format = "latex",
+  booktabs = TRUE,
+  caption = "Summary Statistics"
+) %>%
+  kable_styling(
+    latex_options = c("hold_position", "striped", "scale_down"),
+    font_size = 12
+  ) %>%
+  row_spec(0, bold = TRUE) %>%   # header
+  column_spec(1, bold = TRUE)
+
+
+```
