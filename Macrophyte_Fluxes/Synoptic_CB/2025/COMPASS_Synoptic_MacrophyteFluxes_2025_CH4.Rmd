@@ -411,10 +411,9 @@ remove_flags <- c(
   "GCW_TR_5_202507")
 
 fluxes <- fluxes %>%
-    mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% remove_flags, "poor flux, remove", qaqc_flag))
+    mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% remove_flags, "messy flux, remove", qaqc_flag))
 
 #Any other fluxes that had low R squared but are okay otherwise
-
 fluxes <- fluxes %>%
     mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% bad_plots, "low r squared, but checked and flux is okay", qaqc_flag))
 
