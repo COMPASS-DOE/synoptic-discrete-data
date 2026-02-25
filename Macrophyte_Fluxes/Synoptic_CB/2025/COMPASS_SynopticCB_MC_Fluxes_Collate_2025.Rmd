@@ -50,6 +50,22 @@ all_dat$Zone <- gsub("W", "WC", all_dat$Zone)
 
 ```
 
+##Remove bad fluxes and calculate how many there were
+```{r}
+##Remove any samples with "remove" in the qaqc_flag columns
+final_dat <- all_dat %>% 
+  filter(!grepl("remove", ch4_qaqc_flag, ignore.case = TRUE)) %>% 
+  filter(!grepl("remove", co2_qaqc_flag, ignore.case = TRUE)) 
+
+##Calculate how many bad fluxes in each category
+remove_dat <- all_dat %>% 
+  filter(grepl("remove", ch4_qaqc_flag, ignore.case = TRUE)) %>% 
+  filter(grepl("remove", co2_qaqc_flag, ignore.case = TRUE)) 
+
+
+```
+
+
 ## Write out files
 ```{r write out combined data and metadata, include=FALSE}
 
