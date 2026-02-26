@@ -546,6 +546,25 @@ summary_all_depths_years <- all_dat %>%
 
 ```
 
+##Calculate number of samples 
+```{r Number of samples, include=FALSE, dpi = 300}
+#  I am thinking it might be cool to add to our porewater collation files a table at the end that has total number of samples then also some info about # of samples per zone, site, depth etc.
+
+##Metrics for each year
+sample_numbers_years <- all_dat %>%
+  group_by(Year) %>%
+   reframe(
+     Number_of_samples = n())
+
+##Metrics for each site, zone, depth for all years
+sample_numbers <- all_dat %>%
+  group_by(Site, Zone, Depth_cm) %>%
+   reframe(
+     Number_of_samples = n())
+     
+
+```
+
 ## Summary Tables
 ```{r Summary table metrics, echo = FALSE, message = FALSE, dpi = 100}
 
@@ -558,6 +577,14 @@ summary_all_depths_years <- summary_all_depths_years[order(summary_all_depths_ye
 #Order by Site from SWH, GCW, MSM, GWI order, which is oligohaline to polyhaline
 summary_all_depths_years$Site = factor(summary_all_depths_years$Site, levels = c("SWH", "GCW", "MSM", "GWI"))
 summary_all_depths_years <- summary_all_depths_years[order(summary_all_depths_years$Site), ]
+
+#Order by Zone from Upland to Surface Water
+sample_numbers$Zone = factor(sample_numbers$Zone, levels = c("UP", "SWAMP", "TR", "WC", "SW"))
+sample_numbers <- sample_numbers[order(sample_numbers$Zone), ]
+
+#Order by Site from SWH, GCW, MSM, GWI order, which is oligohaline to polyhaline
+sample_numbers$Site = factor(sample_numbers$Site, levels = c("SWH", "GCW", "MSM", "GWI"))
+sample_numbers <- sample_numbers[order(sample_numbers$Site), ]
 
 kable(
   summary_all_depths_years[, c("Site", "Zone", "min_Cl_ppm",	"max_Cl_ppm",	"mean_Cl_ppm", "min_SO4_ppm",	"max_SO4_ppm",	"mean_SO4_ppm")],  
@@ -574,8 +601,38 @@ kable(
 
 
 ```
+## Number of Samples
+```{r number of samples tables, echo = FALSE, message = FALSE, dpi = 100}
 
-##Write out summarized data
+kable(
+  sample_numbers_years[, c("Year", "Number_of_samples")],  
+  format = "latex",
+  booktabs = TRUE,
+  caption = paste0("Total Samples: ", nrow(all_dat))
+) %>%
+  kable_styling(
+    latex_options = c("hold_position", "striped", "scale_down"),
+    font_size = 12
+  ) %>%
+  row_spec(0, bold = TRUE) %>%   # header
+  column_spec(1, bold = TRUE)
+
+kable(
+  sample_numbers[, c("Site", "Zone", "Depth_cm", "Number_of_samples")],  
+  format = "latex",
+  booktabs = TRUE,
+  caption = "Number of samples by Site, Zone, and Depth"
+) %>%
+  kable_styling(
+    latex_options = c("hold_position", "striped", "scale_down"),
+    font_size = 12
+  ) %>%
+  row_spec(0, bold = TRUE) %>%   # header
+  column_spec(1, bold = TRUE)
+
+```
+
+
 ```{r write out summarized data, include=FALSE}
 
 #write out a csv of all the data to the main folder: 
