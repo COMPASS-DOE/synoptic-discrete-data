@@ -8,6 +8,8 @@ output:
     number_sections: true
 
 output_dir: "To Be Reviewed/PDF"
+header-includes:
+  - \pagenumbering{gobble}
 ---
 
 ```{r setup, include=FALSE}
