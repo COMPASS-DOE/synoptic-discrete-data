@@ -21,6 +21,7 @@ library(plater)
 library(raster)
 library(knitr)  
 library(readxl)
+library(kableExtra)
 
 #take out of sci notation
 options(scipen = 999)
@@ -31,13 +32,13 @@ options(scipen = 999)
 ```{r Information to be changed}
 
 Date_Run = "20260225"
-plates<- c("Plate1", "Plate2")
+plates<- c("Plate1", "Plate2", "Plate3")
 Std_plates<- c("STD")
 Run_by = "Zoe Read"#Instrument user
 Script_run_by ="Zoe Read"#Code user
 Project = "COMPASS_Synoptic_CB"
 Experiment="2025"
-Run_notes=""#any notes from run
+Run_notes="The check stds for FE3 60 uM were all bad. Spikes were bad. "#any notes from run
 
 #Stds that should be excluded
 stds_to_remove<-c("")
@@ -48,9 +49,7 @@ stds_to_remove<-c("")
 folder_path_tidydata <- paste0("Tidy Data")
 file_paths_STDs <- list.files(path = folder_path_tidydata, full.names = TRUE,pattern =paste0(Date_Run,".+.STD"))
 head(file_paths_STDs)
-# file_paths_tidydata <- list.files(path = folder_path_tidydata, full.names = TRUE,pattern =paste0(Date_Run,".+.Plate"))
-
-file_paths_tidydata <- list.files(path = folder_path_tidydata, full.names = TRUE,pattern ="Plate")
+file_paths_tidydata <- list.files(path = folder_path_tidydata, full.names = TRUE,pattern =paste0(Date_Run,".+.Plate"))
 
 head(file_paths_tidydata)
 
@@ -60,6 +59,7 @@ fulldata_path=paste0("QAQC'd Data/",Project,"_FE_",Date_Run,"_Data.csv")
 shortdata_path=paste0("QAQC'd Data/",Project,"_FE_",Date_Run,"_short_Data.csv")
 out_of_Range=paste0("QAQC'd Data/",Project,"_FE_",Date_Run,"_out_of_range_Data.csv")
 high_CV=paste0("QAQC'd Data/",Project,"_FE_",Date_Run,"_high_CV_Data.csv")
+
 #QAQC log path
 log_path="Fe_STD_QAQC.csv"
 
@@ -102,7 +102,7 @@ Top_STD_Fe2_Abs2_high=100
 
 #read in the csv files
 stds<-read_plates(
-  files = "Tidy Data/20260225_COMPASS_Synoptic_CB_Fe_STD.csv",#list of all file paths
+  files = file_paths_STDs,#list of all file paths
   plate_names = Std_plates ,  #list of plate names          
   well_ids_column = "Wells",    # name to give column of well IDs (optional)
   sep = ","                     # separator used in the csv file (optional)
@@ -849,7 +849,8 @@ ChkStdbar <- ggplot(data = QAstdchk, aes(x = IDs, y = p_value, fill=p_flag))+
         theme_classic() + labs(x= "Sample ID", y="T-test p-value") + 
         theme(legend.position="none") +  geom_hline(yintercept=0.05, linetype="dashed", 
                 color = "black", linewidth=1)+ 
-        ggtitle("Check Standards")
+        ggtitle("Check Standards") + 
+        guides(x = guide_axis(angle = 70))
 
 ChkStdbar
 ```
@@ -1050,9 +1051,15 @@ for(x in 1:nrow(dat1_HCV_1)){
 #summarize by sampleID so that we can calculate the mean and std. dev. of the three wells 
 dat1_HCV_fixed_FE3 <- dat_HCV_fixed_FE3 %>%
   group_by(ID_full) %>%
-  summarise(IDs=first(IDs),FE_2_mean = mean(na.omit(FE_2_Conc_Final)), FE_2_sd = sd(na.omit(FE_2_Conc_Final)), FE_2_cv = cv(na.omit(FE_2_Conc_Final)),
-            FE_3_mean = mean(na.omit(FE_3_Conc_Final)), FE_3_sd = sd(na.omit(FE_3_Conc_Final)), FE_3_cv = cv(na.omit(FE_3_Conc_Final)),
-            FE_tot_mean =(mean(FE_2_Conc_Final,na.rm=TRUE)+ mean(FE_3_Conc_Final,na.rm=TRUE)), FE_tot_sd = sqrt(sd(na.omit(FE_3_Conc_Final))^2+sd(na.omit(FE_2_Conc_Final))),
+  summarise(IDs=first(IDs),
+            FE_2_mean = mean(na.omit(FE_2_Conc_Final)), 
+            FE_2_sd = sd(na.omit(FE_2_Conc_Final)), 
+            FE_2_cv = cv(na.omit(FE_2_Conc_Final)),
+            FE_3_mean = mean(na.omit(FE_3_Conc_Final)), 
+            FE_3_sd = sd(na.omit(FE_3_Conc_Final)), 
+            FE_3_cv = cv(na.omit(FE_3_Conc_Final)),
+            FE_tot_mean =(mean(FE_2_Conc_Final,na.rm=TRUE)+ mean(FE_3_Conc_Final,na.rm=TRUE)), 
+            FE_tot_sd = sqrt(sd(na.omit(FE_3_Conc_Final))^2+sd(na.omit(FE_2_Conc_Final))),
             FE_2_flag = ifelse(mean(na.omit(Abs1)) > mean(FE_2_500uM$Abs1), "High",ifelse(mean(na.omit(Abs1)) < (mean(FE_2_0uM$Abs1)+ MDL), "Below MDL" ,"Within range")),
             FE_3_flag = ifelse(mean(na.omit(Abs2)) > mean(FE_2_100uM$Abs2)|(mean(na.omit(Abs2))-mean(na.omit(Abs1))) > mean(FE_3_100uM$Abs2), "High", ifelse(mean(na.omit(Abs2_diff)) < MDL|mean(na.omit(Abs2)) < (mean(FE_2_0uM$Abs2)+ MDL), "Below MDL" ,"Within range")),
             Dilution = first(Dilution),
@@ -1095,9 +1102,12 @@ FE_bdl<-FE_bdl %>%
   subset((!IDs %like% " dup")) %>% 
   subset((!IDs %like% " spk"))
 
-knitr::kable(HighCVSamples[, c(1,3,5,6,8,16,17)],col.names = gsub("_", " ", names(HighCVSamples[, c(1,3,5,6,8,16,17)])), caption = "High CV Samples")
-knitr::kable(FE_DiluteRerun[, c(1,3,6,9,11,12)],col.names = gsub("_", " ", names(FE_DiluteRerun[, c(1,3,6,9,11,12)])), caption = "Samples Above the Detection Limit that should be rerun at a higher dilution")
-knitr::kable(FE_bdl[, c(1,3,6,9,11,12)], col.names = gsub("_", " ", names(FE_bdl[, c(1,3,6,9,11,12)])),caption = "Samples Below the Detection Limit that should be rerun at a lower dilution")
+knitr::kable(HighCVSamples[, c(1,3,5,6,8,16,17)],col.names = gsub("_", " ", names(HighCVSamples[, c(1,3,5,6,8,16,17)])), caption = "High CV Samples")%>%
+  kable_styling(font_size = 8)
+knitr::kable(FE_DiluteRerun[, c(1,3,6,9,11,12)],col.names = gsub("_", " ", names(FE_DiluteRerun[, c(1,3,6,9,11,12)])), caption = "Samples Above the Detection Limit that should be rerun at a higher dilution")%>%
+  kable_styling(font_size = 8)
+knitr::kable(FE_bdl[, c(1,3,6,9,11,12)], col.names = gsub("_", " ", names(FE_bdl[, c(1,3,6,9,11,12)])),caption = "Samples Below the Detection Limit that should be rerun at a lower dilution")%>%
+  kable_styling(font_size = 8)
 
 ```
 
