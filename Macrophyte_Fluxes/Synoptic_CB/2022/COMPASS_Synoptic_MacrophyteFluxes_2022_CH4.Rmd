@@ -244,6 +244,45 @@ for(P in bad_plots){
   }
 
 ####################
+
+# GCW_WC_5_202209 - messy in middle, use 10:34:30-10:36
+# GWI_TR_1_202206 - ebullition at start, change start time to 9:33, low flux so okay that it is a bit messy
+# GWI_TR_1_202211 - messy but low flux so okay
+# GWI_TR_2_202211 - messy but low flux so okay
+# GWI_TR_4_202206 - messy but low flux so okay
+# GWI_TR_4_202210 - messy but low flux so okay
+# GWI_TR_4_202211 - messy but low flux so okay
+# GWI_TR_5_202211 - messy, remove
+# GWI_WC_1_202206 - saturation but low flux so okay
+# GWI_WC_4_202210 - messy but low flux so okay
+# MSM_WC_5_202211 - messy but low flux so okay 
+
+
+
+##Added notes to metadata for the ones I fixed
+
+####Add qaqc flags####
+
+fluxes$qaqc_flag <- NA
+
+# ##Fluxes with crazy high CH4 values
+# high_CH4_flags <- c(
+#   "")
+# 
+# fluxes <- fluxes %>%
+#     mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% high_CH4_flags, "Unusually high CH4 values, remove", qaqc_flag))
+
+#Fluxes that need to be removed
+remove_flags <- c(
+  "GWI_TR_5_202211")
+
+fluxes <- fluxes %>%
+    mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% remove_flags, "messy flux, remove", qaqc_flag))
+
+#Any other fluxes that had low R squared but are okay otherwise
+fluxes <- fluxes %>%
+    mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% bad_plots, "low r squared, but checked and flux is okay", qaqc_flag))
+
 ```
 
 ## Look at the really high or really low ones to see if there is a timing issue or something

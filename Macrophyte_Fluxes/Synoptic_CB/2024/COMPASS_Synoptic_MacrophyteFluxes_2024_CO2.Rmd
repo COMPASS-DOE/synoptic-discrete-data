@@ -208,6 +208,9 @@ ggplot(fluxes, aes(Plot, lin_flux.estimate, color = lin_r.squared)) +
 fluxes_good <- as.data.frame(subset(fluxes, lin_r.squared >= .90, select = Plot:TIMESTAMP_max))
 fluxes_weird <- as.data.frame(subset(fluxes, lin_r.squared < .90, select = Plot:TIMESTAMP_max))
 
+#negative CO2 fluxes
+fluxes_negative <- as.data.frame(subset(fluxes,  lin_flux.estimate < 0, select = Plot:TIMESTAMP_max))
+
 #find fluxes that represent the first and fourth quartile of the data 
 low <- quantile(fluxes$lin_flux.estimate, 0.05) 
 high <- quantile(fluxes$lin_flux.estimate, 0.95) 
@@ -300,8 +303,9 @@ for(P in bad_plots){
 ####### SWH WC 2 202407 - really wonky flux, needs checked 
 ####### SWH WC 3 202407 - really wonky flux, needs checked 
 
-###########################
+# GWI_TR_2_202405 - added 60 sec to start time
 
+###########################
 
 ```
 
@@ -324,6 +328,30 @@ for(P in tail_plots){
 #would be nice to put on the plot the flux estimate and if it is a high or low or something 
 ####################
 
+
+```
+
+## Look at the negative CO2 fluxes
+```{r, echo=FALSE}
+
+### pull out negative fluxes and put them in a list 
+neg_plots <- unique(fluxes_negative$Plot)
+
+#Loop to run five random plots subset above 
+for(P in neg_plots){ 
+ r1 <- subset(alldat, Plot == P)
+  p1 <- ggplot(r1, aes(TIMESTAMP, CO2)) + geom_point() + theme_classic() +
+  ylab(expression(paste( CO [2], " (ppm)"))) +
+  xlab("Time") + labs(title = P) + 
+  geom_smooth(color="red")
+  print(p1)
+}
+
+####################Negative CO2 fluxes
+# add a flag for the fluxes that are negative for CO2 because they should be positive
+fluxes$qaqc_flag <- NA
+fluxes <- fluxes %>%
+    mutate(qaqc_flag = ifelse(Plot %in% neg_plots, "negative CO2 flux, remove", qaqc_flag))
 
 ```
 
@@ -415,6 +443,7 @@ p <- ggplot(alldat, aes(TIMESTAMP, CO2, color = Plot)) + geom_point() + theme_cl
          as.POSIXct('2024-07-24 08:30:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
 
 print(p)
+
 
 #GWI 2024-06 because there are a few that are odd and wonky 
 p <- ggplot(alldat, aes(TIMESTAMP, CO2, color = Plot)) + geom_point() + theme_classic() + 

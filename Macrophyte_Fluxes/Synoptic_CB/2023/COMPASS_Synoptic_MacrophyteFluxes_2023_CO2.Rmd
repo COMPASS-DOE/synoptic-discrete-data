@@ -40,6 +40,7 @@ md <- "Raw Data/COMPASS_ChamberFlux_Metadata_2023a.csv"
 #metadat <- read_excel(md)
 metadat <- read.csv(md) 
 
+metadat$Date <- metadat$X...Date
 head(metadat)  
 
 #can remove any row that have NA's in the date column 
@@ -208,6 +209,9 @@ ggplot(fluxes, aes(Plot, lin_flux.estimate, color = lin_r.squared)) +
 fluxes_good <- as.data.frame(subset(fluxes, lin_r.squared >= .90, select = Plot:TIMESTAMP_max))
 fluxes_weird <- as.data.frame(subset(fluxes, lin_r.squared < .90, select = Plot:TIMESTAMP_max))
 
+#negative CO2 fluxes
+fluxes_negative <- as.data.frame(subset(fluxes,  lin_flux.estimate < 0, select = Plot:TIMESTAMP_max))
+
 #find fluxes that represent the first and fourth quartile of the data 
 low <- quantile(fluxes$lin_flux.estimate, 0.05) 
 high <- quantile(fluxes$lin_flux.estimate, 0.95) 
@@ -280,8 +284,25 @@ for(P in bad_plots){
 #	SWH WC 4 202306 – the June sweet hall fluxes are really weird and there doesn’t even appear to be fluxes, may need to remove this month of data 
 #	SWH WC 5 202306 – really low flux in the weird June month 
 
+# GWI_TR_4_202306 - ebullition at the beginning and end of flux, use portion from 12:36:30 to 12:38:30
+# GWI_TR_5_202307 - reduce obs length by 1 minute
+# GWI_WC_3_202308 - messy flux, remove
+# SWH_WC_3_202306 - messy flux, remove
+# SWH_WC_4_202306 - messy flux, remove
+# SWH_WC_5_202306 - messy flux, remove
 
 
+##Already added notes to metadata for the ones I fixed
+##Add qaqc flags 
+#Fluxes that need to be removed
+remove_flags <- c("GWI_WC_3_202308", "SWH_WC_3_202306", "SWH_WC_4_202306", "SWH_WC_5_202306")
+fluxes$qaqc_flag <- NA
+fluxes <- fluxes %>%
+    mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% remove_flags, "messy flux, remove", qaqc_flag))
+
+#Any other fluxes that had low R squared but are okay otherwise
+fluxes <- fluxes %>%
+    mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% bad_plots, "low r squared, but checked and flux is okay", qaqc_flag))
 
 
 ```
@@ -307,6 +328,30 @@ for(P in tail_plots){
 
 
 ```
+
+## Look at the negative CO2 fluxes
+```{r, echo=FALSE}
+
+### pull out negative fluxes and put them in a list 
+neg_plots <- unique(fluxes_negative$Plot)
+
+#Loop to run five random plots subset above 
+for(P in neg_plots){ 
+ r1 <- subset(alldat, Plot == P)
+  p1 <- ggplot(r1, aes(TIMESTAMP, CO2)) + geom_point() + theme_classic() +
+  ylab(expression(paste( CO [2], " (ppm)"))) +
+  xlab("Time") + labs(title = P) + 
+  geom_smooth(color="red")
+  print(p1)
+}
+
+####################Negative CO2 fluxes
+# add a flag for the fluxes that are negative for CO2 because they should be positive
+fluxes <- fluxes %>%
+    mutate(qaqc_flag = ifelse(Plot %in% neg_plots, "negative CO2 flux, remove", qaqc_flag))
+
+```
+
 
 ## Do some visualization of QAQC plots to assess fluxes  
 ```{r, echo=FALSE}
