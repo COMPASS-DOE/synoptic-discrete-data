@@ -282,7 +282,7 @@ for(P in bad_plots){
 #	GWI WC 2 202411 – low and okay
 # MSM TR 1 202405 - low and okay 
 # MSM TR 1 202407 - low and okay 
-# MSM TR 1 202410 - low and okay, but looks weird like an M 
+# MSM TR 1 202410 - low and okay, but looks weird like an M - remove
 # MSM TR 2 202404 - low and okay 
 # MSM TR 2 202405 - low and okay 
 # MSM TR 2 202409 - low and okay 
@@ -302,6 +302,28 @@ for(P in bad_plots){
 
 ###########################
 
+####Add qaqc flags####
+
+fluxes$qaqc_flag <- NA
+
+# ##Fluxes with crazy high CH4 values
+# high_CH4_flags <- c(
+#   "")
+# 
+# fluxes <- fluxes %>%
+#     mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% high_CH4_flags, "Unusually high CH4 values, remove", qaqc_flag))
+
+#Fluxes that need to be removed
+remove_flags <- c(
+  "MSM_TR_1_202410"
+)
+
+fluxes <- fluxes %>%
+    mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% remove_flags, "messy flux, remove", qaqc_flag))
+
+#Any other fluxes that had low R squared but are okay otherwise
+fluxes <- fluxes %>%
+    mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% bad_plots, "low r squared, but checked and flux is okay", qaqc_flag))
 
 ```
 

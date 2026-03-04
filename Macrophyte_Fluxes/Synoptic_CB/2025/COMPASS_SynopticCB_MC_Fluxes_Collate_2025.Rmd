@@ -22,7 +22,7 @@ library(openxlsx)
 ```
 
 #Read in and collate all the files in the Processed Data folder 
-```{r}
+```{r, include = FALSE}
 
 ch4 <- read.csv("Processed Data/COMPASS_Synoptic_CB_Macrophyte_Fluxes_Final_2025_CH4.csv")
 ch4$X <- NULL
@@ -51,16 +51,38 @@ all_dat$Zone <- gsub("W", "WC", all_dat$Zone)
 ```
 
 ##Remove bad fluxes and calculate how many there were
-```{r}
+```{r, echo=FALSE}
 ##Remove any samples with "remove" in the qaqc_flag columns
 final_dat <- all_dat %>% 
   filter(!grepl("remove", ch4_qaqc_flag, ignore.case = TRUE)) %>% 
   filter(!grepl("remove", co2_qaqc_flag, ignore.case = TRUE)) 
 
 ##Calculate how many bad fluxes in each category
+##Percent fluxes removed: 
+#Total
 remove_dat <- all_dat %>% 
-  filter(grepl("remove", ch4_qaqc_flag, ignore.case = TRUE)) %>% 
-  filter(grepl("remove", co2_qaqc_flag, ignore.case = TRUE)) 
+  filter(grepl("remove", ch4_qaqc_flag, ignore.case = TRUE) | grepl("remove", co2_qaqc_flag, ignore.case = TRUE))
+perc_removed = nrow(remove_dat)/nrow(all_dat)*100
+
+#Negative CO2
+neg_co2 <- all_dat %>% 
+  filter(grepl("negative CO2", co2_qaqc_flag, ignore.case = TRUE))
+perc_neg_co2 = nrow(neg_co2)/nrow(all_dat)*100
+
+#Poor/messy flux
+messy <- all_dat %>% 
+  filter(grepl("messy", ch4_qaqc_flag, ignore.case = TRUE) | grepl("Unusual", ch4_qaqc_flag, ignore.case = TRUE) | grepl("poor", co2_qaqc_flag, ignore.case = TRUE))
+perc_messy = nrow(messy)/nrow(all_dat)*100
+
+##Table with  percentage and type of issue
+
+cat(paste0("Number flux measurements removed: ", nrow(remove_dat)))
+cat(paste0("Number negative CO2 fluxes removed: ", nrow(neg_co2)))
+cat(paste0("Number messy fluxes removed: ", nrow(messy)))
+
+cat(paste0("Percentage flux measurements removed: ", round(perc_removed, digits = 2), "%"))
+cat(paste0("Percentage negative CO2 fluxes removed: ", round(perc_neg_co2, digits = 2), "%"))
+cat(paste0("Percentage messy fluxes removed: ", round(perc_messy, digits = 2), "%"))
 
 
 ```
@@ -70,7 +92,7 @@ remove_dat <- all_dat %>%
 ```{r write out combined data and metadata, include=FALSE}
 
 #write out a csv of all the data to the main folder: 
-write.csv(all_dat, "COMPASS_SynopticCB_MC_Fluxes_2025.csv")
+write.csv(final_dat, "COMPASS_SynopticCB_MC_Fluxes_2025.csv")
 
 ```
 
@@ -78,7 +100,7 @@ write.csv(all_dat, "COMPASS_SynopticCB_MC_Fluxes_2025.csv")
 ## All Data by Year, Site and Zone
 ```{r Visualize Data, echo=FALSE, warning=FALSE, message = FALSE, fig.width=16, fig.height=10, dpi = 300}
 
-data_plotting <- all_dat
+data_plotting <- final_dat
 
 #Order by Zone from Upland to Surface Water
 data_plotting$Zone = factor(data_plotting$Zone, levels = c("UP", "SWAMP", "TR", "WC", "SW"))

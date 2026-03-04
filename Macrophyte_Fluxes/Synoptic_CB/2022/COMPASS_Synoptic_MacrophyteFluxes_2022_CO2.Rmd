@@ -193,6 +193,9 @@ ggplot(fluxes, aes(Plot, lin_flux.estimate, color = lin_r.squared)) +
 fluxes_good <- as.data.frame(subset(fluxes, lin_r.squared >= .90, select = Plot:TIMESTAMP_max))
 fluxes_weird <- as.data.frame(subset(fluxes, lin_r.squared < .90, select = Plot:TIMESTAMP_max))
 
+#negative CO2 fluxes
+fluxes_negative <- as.data.frame(subset(fluxes,  lin_flux.estimate < 0, select = Plot:TIMESTAMP_max))
+
 #find fluxes that represent the first and fourth quartile of the data 
 low <- quantile(fluxes$lin_flux.estimate, 0.05) 
 high <- quantile(fluxes$lin_flux.estimate, 0.95) 
@@ -245,6 +248,25 @@ for(P in bad_plots){
   }
 
 ####################
+
+# GCW_WC_5_202209 - messy flux, remove
+# GWI_TR_4_202206 - messy flux, remove
+
+
+##Already added notes to metadata for the ones I fixed
+##Add qaqc flags 
+#Fluxes that need to be removed
+remove_flags <- c("GCW_WC_5_202209", "GWI_TR_4_202206")
+fluxes$qaqc_flag <- NA
+fluxes <- fluxes %>%
+    mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% remove_flags, "messy flux, remove", qaqc_flag))
+
+#Any other fluxes that had low R squared but are okay otherwise
+fluxes <- fluxes %>%
+    mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% bad_plots, "low r squared, but checked and flux is okay", qaqc_flag))
+
+###########################
+
 ```
 
 ## Look at the really high or really low ones to see if there is a timing issue or something
@@ -266,6 +288,29 @@ for(P in tail_plots){
 #would be nice to put on the plot the flux estimate and if it is a high or low or something 
 ####################
 
+
+```
+
+## Look at the negative CO2 fluxes
+```{r, echo=FALSE}
+
+### pull out negative fluxes and put them in a list 
+neg_plots <- unique(fluxes_negative$Plot)
+
+#Loop to run five random plots subset above 
+for(P in neg_plots){ 
+ r1 <- subset(alldat, Plot == P)
+  p1 <- ggplot(r1, aes(TIMESTAMP, CO2)) + geom_point() + theme_classic() +
+  ylab(expression(paste( CO [2], " (ppm)"))) +
+  xlab("Time") + labs(title = P) + 
+  geom_smooth(color="red")
+  print(p1)
+}
+
+####################Negative CO2 fluxes
+# add a flag for the fluxes that are negative for CO2 because they should be positive
+fluxes <- fluxes %>%
+    mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% neg_plots, "negative CO2 flux, remove", qaqc_flag))
 
 ```
 

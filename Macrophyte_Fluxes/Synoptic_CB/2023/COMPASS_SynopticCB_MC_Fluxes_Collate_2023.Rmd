@@ -22,26 +22,73 @@ library(openxlsx)
 ```
 
 #Read in and collate all the files in the Processed Data folder 
-```{r}
+```{r, include = FALSE}
 
 ch4 <- read.csv("Processed Data/COMPASS_Synoptic_CB_Macrophyte_Fluxes_Final_2023_CH4.csv")
 ch4$X <- NULL
 ch4 <- ch4 %>%
   rename_with(
-    .cols = 7:(ncol(.) - 3),
+    .cols = 7:(ncol(.) - 4),
     .fn = ~paste0("ch4_", .)
-  )
+  ) %>%
+  rename(ch4_qaqc_flag = qaqc_flag)
 
 co2 <- read.csv("Processed Data/COMPASS_Synoptic_CB_Macrophyte_Fluxes_Final_2023_CO2.csv")
 co2$X <- NULL
 co2 <- co2 %>%
   rename_with(
-    .cols = 7:(ncol(.) - 3),
+    .cols = 7:(ncol(.) - 4),
     .fn = ~paste0("co2_", .)
-  )
+  ) %>%
+  rename(co2_qaqc_flag = qaqc_flag)
 
 # Combine all files
 all_dat <- merge(ch4, co2, by = c("Plot", "Site", "Zone", "Replicate", "Date", "TIMESTAMP", "TIMESTAMP_min", "TIMESTAMP_max", "Notes"))
+
+```
+
+
+##Remove bad fluxes and calculate how many there were
+```{r, echo=FALSE}
+##Remove any samples with "remove" in the qaqc_flag columns
+final_dat <- all_dat %>% 
+  filter(!grepl("remove", ch4_qaqc_flag, ignore.case = TRUE)) %>% 
+  filter(!grepl("remove", co2_qaqc_flag, ignore.case = TRUE)) 
+
+##Calculate how many bad fluxes in each category
+##Percent fluxes removed: 
+#Total
+remove_dat <- all_dat %>% 
+  filter(grepl("remove", ch4_qaqc_flag, ignore.case = TRUE) | grepl("remove", co2_qaqc_flag, ignore.case = TRUE))
+perc_removed = nrow(remove_dat)/nrow(all_dat)*100
+
+#Negative CO2
+neg_co2 <- all_dat %>% 
+  filter(grepl("negative CO2", co2_qaqc_flag, ignore.case = TRUE))
+perc_neg_co2 = nrow(neg_co2)/nrow(all_dat)*100
+
+#Unusually high CH4
+high_ch4 <- all_dat %>% 
+  filter(grepl("Unusually high CH4", ch4_qaqc_flag, ignore.case = TRUE))
+perc_high_ch4 = nrow(high_ch4)/nrow(all_dat)*100
+
+#Poor/messy flux
+messy <- all_dat %>% 
+  filter(grepl("messy", ch4_qaqc_flag, ignore.case = TRUE) | grepl("messy", co2_qaqc_flag, ignore.case = TRUE))
+perc_messy = nrow(messy)/nrow(all_dat)*100
+
+##Table with  percentage and type of issue
+
+cat(paste0("Number flux measurements removed: ", nrow(remove_dat)))
+cat(paste0("Number negative CO2 fluxes removed: ", nrow(neg_co2)))
+cat(paste0("Number unusually high CH4 fluxes removed: ", nrow(high_ch4)))
+cat(paste0("Number messy fluxes removed: ", nrow(messy)))
+
+cat(paste0("Percentage flux measurements removed: ", round(perc_removed, digits = 2), "%"))
+cat(paste0("Percentage negative CO2 fluxes removed: ", round(perc_neg_co2, digits = 2), "%"))
+cat(paste0("Percentage unusually high CH4 fluxes removed: ", round(perc_high_ch4, digits = 2), "%"))
+cat(paste0("Percentage messy fluxes removed: ", round(perc_messy, digits = 2), "%"))
+
 
 ```
 
