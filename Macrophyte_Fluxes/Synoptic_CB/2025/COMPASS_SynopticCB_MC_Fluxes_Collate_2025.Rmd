@@ -69,19 +69,26 @@ neg_co2 <- all_dat %>%
   filter(grepl("negative CO2", co2_qaqc_flag, ignore.case = TRUE))
 perc_neg_co2 = nrow(neg_co2)/nrow(all_dat)*100
 
+#Unusually high CH4/CO2 values
+unusual <- all_dat %>% 
+  filter(grepl("Unusual", ch4_qaqc_flag, ignore.case = TRUE))
+perc_unusual = nrow(unusual)/nrow(all_dat)*100
+
 #Poor/messy flux
 messy <- all_dat %>% 
-  filter(grepl("messy", ch4_qaqc_flag, ignore.case = TRUE) | grepl("Unusual", ch4_qaqc_flag, ignore.case = TRUE) | grepl("poor", co2_qaqc_flag, ignore.case = TRUE))
+  filter(grepl("messy", ch4_qaqc_flag, ignore.case = TRUE) | grepl("poor", co2_qaqc_flag, ignore.case = TRUE))
 perc_messy = nrow(messy)/nrow(all_dat)*100
 
 ##Table with  percentage and type of issue
 
 cat(paste0("Number flux measurements removed: ", nrow(remove_dat)))
 cat(paste0("Number negative CO2 fluxes removed: ", nrow(neg_co2)))
+cat(paste0("Number unusually high starting value fluxes removed: ", nrow(unusual)))
 cat(paste0("Number messy fluxes removed: ", nrow(messy)))
 
 cat(paste0("Percentage flux measurements removed: ", round(perc_removed, digits = 2), "%"))
 cat(paste0("Percentage negative CO2 fluxes removed: ", round(perc_neg_co2, digits = 2), "%"))
+cat(paste0("Percentage unusually high starting value fluxes removed: ", round(perc_unusual, digits = 2), "%"))
 cat(paste0("Percentage messy fluxes removed: ", round(perc_messy, digits = 2), "%"))
 
 
