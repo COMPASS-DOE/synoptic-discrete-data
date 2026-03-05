@@ -392,7 +392,8 @@ fluxes$qaqc_flag <- NA
 ##Fluxes with crazy high CH4 values
 high_CH4_flags <- c(
   "SWH_TR_5_202507", 
-  "SWH_TR_4_202507")
+  "SWH_TR_4_202507", 
+  "MSM_TR_2_202509")
 
 fluxes <- fluxes %>%
     mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% high_CH4_flags, "Unusually high CH4 values, remove", qaqc_flag))
