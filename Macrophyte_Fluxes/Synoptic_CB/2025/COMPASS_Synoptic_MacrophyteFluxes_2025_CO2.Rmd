@@ -282,7 +282,7 @@ tails <- rbind(fluxes_low, fluxes_high)
 ## Check the fluxes for which I changed the start time due to lags or ebullition (recorded in notes of metadata)
 ```{r}
 
-tobechecked <- c("MSM_TR_4_202507", "SWH_TR_1_202509", "SWH_TR_2_202511", "SWH_TR_3_202511", "SWH_TR_4_202509", "SWH_TR_5_202509", "SWH_W_4_202507", "SWH_TR_3_202509")
+tobechecked <- c("MSM_TR_2_202507", "MSM_TR_2_202509")
 
 colnames <- c("Plot")
 
@@ -297,7 +297,7 @@ for(P in tobechecked){
 }
 
 #list of the ones that I changed and checked and looked good? 
-fixedplots <- c()
+fixedplots <- c("MSM_TR_4_202507", "SWH_TR_1_202509", "SWH_TR_2_202511", "SWH_TR_3_202511", "SWH_TR_4_202509", "SWH_TR_5_202509", "SWH_W_4_202507", "SWH_TR_3_202509")
   
 
 ```

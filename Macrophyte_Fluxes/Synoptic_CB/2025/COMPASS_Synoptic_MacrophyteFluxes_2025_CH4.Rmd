@@ -284,7 +284,7 @@ tails <- rbind(fluxes_low, fluxes_high)
 ## Check the fluxes for which I changed the start time due to lags or ebullition (recorded in notes of metadata)
 ```{r}
 
-tobechecked <- c("")
+tobechecked <- c("MSM_TR_2_202507", "MSM_TR_2_202509", "MSM_TR_5_202511")
 
 colnames <- c("Plot")
 
@@ -378,9 +378,10 @@ for(P in bad_plots){
 # SWH_TR_5_202509 - poor flux
 # SWH_TR_1_202509 - ebullition, poor flux
 # GCW_TR_1_202509 - poor flux
-# GCW_TR_2_202509 - poor flux
+# GCW_TR_2_202509 - poor flux, but low so okay
 # GCW_TR_5_202507 - ebullition, poor flux
 # SWH_TR_3_202509 - remove, poor flux
+# MSM_TR_2_202509 - very low flux rate and high CH4 starting value
 
 ##Added notes to metadata for the ones I fixed
 
@@ -407,7 +408,6 @@ remove_flags <- c(
   "SWH_TR_5_202509", 
   "SWH_TR_1_202509", 
   "GCW_TR_1_202509", 
-  "GCW_TR_2_202509", 
   "GCW_TR_5_202507")
 
 fluxes <- fluxes %>%
