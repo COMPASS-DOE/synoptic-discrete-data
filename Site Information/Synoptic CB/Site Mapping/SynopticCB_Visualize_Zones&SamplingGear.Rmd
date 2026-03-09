@@ -1,0 +1,97 @@
+---
+title: "SynopticCB_SiteMapping"
+author: "Stephanie J. Wilson"
+date: "2026-03-06"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+
+library(ggplot2)
+library(plotly)
+library(dplyr)
+
+```
+
+##Site Elevation Data 
+
+Read in 
+
+```{r}
+
+#read in 2022 Dionex Data:
+dat <- read.csv("COMPASS_CBSynoptic_AQ600_RTK_AllData.csv")
+ head(dat)
+# colnames(dat)
+ 
+ 
+#Just doing some tests so let'sjust pull out one site 
+ 
+gcw <- dat %>% 
+  filter(Site.Code == "GCW")
+
+fig <- plot_ly(
+  data = gcw,
+  x = ~LocalLongi,
+  y = ~LocalLatit,
+  z = ~Elevation,
+  type = "scatter3d",
+  mode = "markers",
+  marker = list(
+    size = 5,
+    color = ~Zone,
+    colorscale = "Viridis",
+    opacity = 0.8
+  )
+)
+
+fig
+ 
+
+fig1 <- plot_ly(
+  x = unique(gcw$LocalLongi),
+  y = unique(gcw$LocalLatit),
+  z = matrix(gcw$Elevation, nrow = length(unique(gcw$LocalLongi))),
+  type = "surface"
+)
+
+fig1
+
+plot_ly(
+  gcw,
+  x = ~LocalLongi,
+  y = ~LocalLatit,
+  z = ~Elevation,
+  type = "scatter3d",
+  mode = "markers",
+  marker = list(
+    size = 3,
+    color = ~Elevation,
+    colorscale = "Terrain",
+    showscale = TRUE
+  )
+)
+
+ 
+gcw_tr <- dat %>% 
+  filter(Site.Code == "GCW") %>%
+  filter(Zone.Code == "TR")
+  
+
+fig2 <- plot_ly(
+  gcw_tr,
+  x = ~LocalLongi,
+  y = ~LocalLatit,
+  z = ~Elevation,
+  type = "scatter3d",
+  intensity = ~Elevation,
+  colorscale = "Viridis",
+  opacity = 0.9
+)
+
+fig2
+
+
+```
+
+
