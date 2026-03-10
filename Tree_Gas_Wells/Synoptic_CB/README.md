@@ -36,5 +36,11 @@ For questions about this data: contact Stephanie J. Wilson (wilsonsj@si.edu) or 
 "COMPASS_SynopticCB_TGAS_AllData.csv" = All data from all years.QAQC'd and collated.
 
 "COMPASS_SynopticCB_TGAS_Metadata.csv" = Metadata for AllData file that explains each column header, units, and instrumentation.
+
+**Overview Summary of Data**
+
+![Figure 3: Summary Boxplot of All Data ](Tree_GHG_SummaryPlot.png)  
+![Figure 2: Summary Boxplot of All Data by Tree ](Tree_GHG_SummaryPlot_ByTree.png) 
+![Table 1: Summary Statistics for Site and Zone](Tree_GHG_SumStats.png)
   
 
