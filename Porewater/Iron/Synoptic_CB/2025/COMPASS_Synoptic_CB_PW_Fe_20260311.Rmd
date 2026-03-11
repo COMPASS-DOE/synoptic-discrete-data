@@ -1,0 +1,1328 @@
+---
+title: "FeCode_updated2025_20260311"
+output: pdf_document
+date: "`r Sys.Date()`"
+---
+
+```{r setup, include=FALSE}
+library(dplyr)
+library(broom)
+library(ggplot2)
+library(ggpubr)
+library(stringr)
+library(purrr)
+library(tidyverse)
+library(here)
+library(data.table)
+library(matrixStats)
+library(gridExtra)
+library(grid)
+library(plater)
+library(raster)
+library(knitr)  
+library(readxl)
+library(kableExtra)
+
+#take out of sci notation
+options(scipen = 999)
+
+```
+
+# Things that need to be changed
+```{r Information to be changed}
+
+Date_Run = "20260226"
+plates<- c("Plate4", "Plate5", "Plate6")
+Std_plates<- c("STD")
+Run_by = "Zoe Read"#Instrument user
+Script_run_by ="Zoe Read"#Code user
+Project = "COMPASS_Synoptic_CB"
+Experiment="2025"
+Run_notes="The Fe2 diff std curve R squared is X, which is slightly below the 0.985 cutoff but I think is reasonable, and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. The check stds for FE3 60 uM were all bad."#any notes from run
+
+#Stds that should be excluded
+stds_to_remove<-c("45 uM Fe_2 B")
+```
+## File paths 
+```{r file paths, echo=FALSE}
+#read in all the Tidy data files
+folder_path_tidydata <- paste0("Tidy Data")
+file_paths_STDs <- list.files(path = folder_path_tidydata, full.names = TRUE,pattern =paste0(Date_Run,".+.STD"))
+head(file_paths_STDs)
+file_paths_tidydata <- list.files(path = folder_path_tidydata, full.names = TRUE,pattern =paste0(Date_Run,".+.Plate"))
+head(file_paths_tidydata)
+
+#file path name for processed data
+summarizeddata_path=paste0("QAQC'd Data/",Project,"_FE_",Date_Run,"_Summary_Data.csv")
+fulldata_path=paste0("QAQC'd Data/",Project,"_FE_",Date_Run,"_Data.csv")
+shortdata_path=paste0("QAQC'd Data/",Project,"_FE_",Date_Run,"_short_Data.csv")
+out_of_Range=paste0("QAQC'd Data/",Project,"_FE_",Date_Run,"_out_of_range_Data.csv")
+high_CV=paste0("QAQC'd Data/",Project,"_FE_",Date_Run,"_high_CV_Data.csv")
+#QAQC log path
+log_path="Fe_STD_QAQC.csv"
+
+```
+
+```{r Set Up Code - constants and QAQC cutoffs, include=FALSE}
+
+#Flag cutoffs
+  r2_cutoff = 0.985            #this is the level below which we want to rerun or consider a curve 
+  cv_flag_stds = 10           #this is the maximum cv allowed for standards
+  p_value_chkstds = 0.05      #the p-value for the t-test between check  and top std must be greater than this
+  cv_flag_sample = 10         #this is the maximum cv allowed for samples
+  dups_perc_diff = 15.5       #this is the maximum percent difference allowed between duplicates
+  high_recovery_cutoff = 120  #this is the maximum percent recovery allowed in spiked samples
+  low_recovery_cutoff = 80    #this is the minimum percent recovery allowed in spiked samples
+
+# Chk Standard concentrations - Update if running different standard curve:
+# standard units are in uM
+
+
+#Spike concentration calc
+  #spike for these samples was 55 uL of the 60uM standard
+  Con1 <- 1000000               #conversion factor value for spike volumes (uL -> L)
+  spk_std <- 60                # uM Fe2- standard used
+  spkvol <- 55                  # uL volume of spike added
+  spk_Conc <- spk_std*(spkvol/Con1)   # this would be in umoles of FE in the spk
+  sample_vol <- 160             # the sample volume without the spike is 160 uL
+
+#Top standard Concentration- Update if running different standard curve: 
+Top_STD_Fe2_low = 60
+Top_STD_Fe3_low = 60
+
+Top_STD_Fe2_high = 500
+Top_STD_Fe3_high = 100
+Top_STD_Fe2_Abs2_high=100
+
+```
+
+```{r read in Std curves,echo=FALSE,include=FALSE}
+
+#read in the csv files
+stds<-read_plates(
+  files = "Tidy Data/20260311_COMPASS_Synoptic_CB_Fe_STD.csv",#list of all file paths
+  plate_names = Std_plates ,  #list of plate names          
+  well_ids_column = "Wells",    # name to give column of well IDs (optional)
+  sep = ","                     # separator used in the csv file (optional)
+) 
+
+stds <- stds %>%
+  rename(Dilution = Dilutions)
+
+head(stds)
+  
+```
+
+```{r read in Data,echo=FALSE,include=FALSE}
+
+#read in the csv files
+dat<-read_plates(
+  files = file_paths_tidydata,#list of all file paths
+  plate_names = plates ,  #list of plate names          
+  well_ids_column = "Wells",    # name to give column of well IDs (optional)
+  sep = ","                     # separator used in the csv file (optional)
+) 
+
+dat <- dat %>%
+  rename(Dilution = Dilutions)
+
+str(dat)
+head(dat)
+dat$QAQC_flag<-""
+  
+```
+
+```{r Remove high cv stds,echo=FALSE,fig.keep='none',include=FALSE}
+stds_all<- stds[!is.na(stds$IDs),]
+stds_all_fixed<-stds_all
+
+#Calculate cv for STDs
+stds1_all <- stds_all %>%
+  group_by(IDs) %>%
+  summarise(Abs1_mean = mean(na.omit(Abs1)), Abs1_sd = sd(na.omit(Abs1)), Abs1_cv = cv(na.omit(Abs1)),
+              Abs2_mean = mean(na.omit(Abs2)), Abs2_sd = sd(na.omit(Abs2)), Abs2_cv = cv(na.omit(Abs2)),
+              Dilution = first(Dilution),
+              Conc_uM = first(Conc_uM),
+              Plate = first(Plate))
+#flag high cv stds
+stds1_all$Abs1_cv_flag <- ifelse(stds1_all$Abs1_cv > cv_flag_stds, 'High CV', 'Within range')
+stds1_all$Abs2_cv_flag <- ifelse(stds1_all$Abs2_cv > cv_flag_stds, 'High CV', 'Within range')
+#make dataframes for the fixed data
+stds1_all_fixed<-stds1_all
+stds_Abs1_HCV_fixed<-data.frame(matrix(ncol = 12, nrow =0 ))
+colnames(stds_Abs1_HCV_fixed)<-colnames(stds1_all)
+  
+#filter High CV Samples for Abs1
+stds_Abs1_all_HCV <- stds1_all %>%  
+    filter(str_detect(Abs1_cv_flag, "High CV"))
+
+#this if loop will keep the code from breaking if there are no high cv points
+if(!nrow(stds_Abs1_all_HCV)==0){  
+    
+    #make a loop to filter each high cv sample
+    for(x in 1:nrow(stds_Abs1_all_HCV)){
+      sing_ID<- stds_all_fixed %>% subset(IDs == stds_Abs1_all_HCV$IDs[x])
+      #make a dataframe for cvs
+      cv_trial<-data.frame(matrix(ncol = 3, nrow =1 ))
+      
+      #make a loop to find the cv for each deleted point
+      for(i in 1:nrow(sing_ID)){
+        sing_ID1<-sing_ID[-i,] 
+        cv_trial[i]<-cv(sing_ID1$Abs1)
+      }
+      
+      # delete the point that gives the lowest cv
+      sing_ID[which.min(cv_trial),c(3)]=NA
+      stds_Abs1_HCV_fixed<-rbind(stds_Abs1_HCV_fixed,sing_ID)
+  }
+    #recalculate the average and cv  
+    stds1_Abs1_all_fixed <- stds_Abs1_HCV_fixed %>%
+      group_by(IDs) %>%
+      summarise(Abs1_mean = mean(na.omit(Abs1)), Abs1_sd = sd(na.omit(Abs1)), Abs1_cv = cv(na.omit(Abs1)),
+                Abs2_mean = mean(na.omit(Abs2)), Abs2_sd = sd(na.omit(Abs2)), Abs2_cv = cv(na.omit(Abs2)),
+                Dilution = first(Dilution),
+                Conc_uM = first(Conc_uM),
+                Plate = first(Plate))
+    #Flag high cvs
+    stds1_Abs1_all_fixed$Abs1_cv_flag <- ifelse(stds1_Abs1_all_fixed$Abs1_cv > cv_flag_stds, 'High CV', 'Within range')
+    stds1_Abs1_all_fixed$Abs2_cv_flag <- ifelse(stds1_Abs1_all_fixed$Abs2_cv > cv_flag_stds, 'High CV', 'Within range')
+    
+    #bind fixed dataframes back together with non high cv points
+    #averaged stds
+    stds1_all_fixed <- subset(stds1_all_fixed, (!IDs %in% stds1_Abs1_all_fixed$IDs))
+    stds1_all_fixed <- rbind(stds1_Abs1_all_fixed, stds1_all_fixed) 
+    #all points  
+    stds_all_fixed <- subset(stds_all_fixed, (!IDs %in% stds_Abs1_HCV_fixed$IDs))
+    stds_all_fixed <- rbind(stds_Abs1_HCV_fixed, stds_all_fixed) 
+  }
+
+
+#make dataframe for fixed data
+stds_Abs2_HCV_fixed<-data.frame(matrix(ncol = 12, nrow =0 ))
+colnames(stds_Abs2_HCV_fixed)<-colnames(stds1_all)
+
+#filter High CV Samples
+stds_Abs2_all_HCV <- stds1_all_fixed %>%  
+    filter(str_detect(Abs2_cv_flag, "High CV"))
+#this if loop will keep the code from breaking if there are no high cv points
+if(!nrow(stds_Abs2_all_HCV)==0){  
+    
+    #make a loop to filter each high cv sample
+    for(x in 1:nrow(stds_Abs2_all_HCV)){
+      sing_ID<- stds_all_fixed %>% subset(IDs == stds_Abs2_all_HCV$IDs[x])
+      #make a dataframe for cvs
+      cv_trial<-data.frame(matrix(ncol = 3, nrow =1 ))
+      
+      #make a loop to find the cv for each deleted point
+      for(i in 1:nrow(sing_ID)){
+        sing_ID1<-sing_ID[-i,] 
+        cv_trial[i]<-cv(sing_ID1$Abs2)
+      }
+      
+      # delete the point that gives the lowest cv
+      sing_ID[which.min(cv_trial),c(4)]=NA
+      stds_Abs2_HCV_fixed<-rbind(stds_Abs2_HCV_fixed,sing_ID)
+    }
+    #recalculate the average and cv  
+    stds1_Abs2_all_fixed <- stds_Abs2_HCV_fixed %>%
+      group_by(IDs) %>%
+      summarise(Abs1_mean = mean(na.omit(Abs1)), Abs1_sd = sd(na.omit(Abs1)), Abs1_cv = cv(na.omit(Abs1)),
+                Abs2_mean = mean(na.omit(Abs2)), Abs2_sd = sd(na.omit(Abs2)), Abs2_cv = cv(na.omit(Abs2)),
+                Dilution = first(Dilution),
+                Conc_uM = first(Conc_uM),
+                Plate = first(Plate))
+    #Flag high cvs
+    stds1_Abs2_all_fixed$Abs1_cv_flag <- ifelse(stds1_Abs2_all_fixed$Abs1_cv > cv_flag_stds, 'High CV', 'Within range')
+    stds1_Abs2_all_fixed$Abs2_cv_flag <- ifelse(stds1_Abs2_all_fixed$Abs2_cv > cv_flag_stds, 'High CV', 'Within range')
+    #bind fixed dataframes back together with non high cv points
+    #averaged stds
+    stds1_all_fixed <- subset(stds1_all_fixed, (!IDs %in% stds1_Abs2_all_fixed$IDs ))
+    stds1_all_fixed <- rbind(stds1_Abs2_all_fixed, stds1_all_fixed) 
+    #all points  
+    stds_all_fixed <- subset(stds_all_fixed, (!IDs %in% stds_Abs2_HCV_fixed$IDs ))
+    stds_all_fixed <- rbind(stds_Abs2_HCV_fixed, stds_all_fixed) 
+  }
+
+# filter High CV Stds
+stds_HCV <- stds1_all_fixed %>%  
+subset(Abs1_cv_flag == "High CV"|Abs2_cv_flag == "High CV")
+```
+
+
+```{r subset Stds,include=FALSE}
+stds_all_fixed<-filter(stds_all_fixed, !IDs %in% stds_to_remove)
+#subset by FE_2
+FE_2_stds_Abs1 <- stds_all_fixed %>%  
+  filter(str_detect(stds_all_fixed$IDs, "Fe_2")) %>% na.omit(stds_all_fixed$Abs1) 
+FE_2_stds_Abs2 <- stds_all_fixed %>%  
+  filter(str_detect(stds_all_fixed$IDs, "Fe_2")) %>% filter(!(Conc_uM > Top_STD_Fe2_Abs2_high))%>% na.omit(stds_all_fixed$Abs2)
+#subset by FE_3
+FE_3_stds_Abs1 <- stds_all_fixed %>%  
+  filter(str_detect(stds_all_fixed$IDs, "Fe_3"))%>% na.omit(stds_all_fixed$Abs1)
+FE_3_stds_Abs2 <- stds_all_fixed %>%  
+  filter(str_detect(stds_all_fixed$IDs, "Fe_3")) %>% filter(!(Conc_uM > Top_STD_Fe3_high)) %>% na.omit(stds_all_fixed$Abs2)
+
+#subset Fe3 STD with in their linear range
+FE_3_stds_high <- FE_3_stds_Abs2
+
+#Subset the low standard curve from all 
+FE_2_stds_low <- FE_2_stds_Abs1[!(FE_2_stds_Abs1$Conc_uM > Top_STD_Fe2_low),]
+FE_3_stds_low <- FE_3_stds_Abs2[!(FE_3_stds_Abs2$Conc_uM > Top_STD_Fe3_low),]
+
+#subset Fe2 abs2 to 100um 
+FE_2_stds_high <-FE_2_stds_Abs1
+FE_2_stds_diff<-FE_2_stds_Abs2
+
+```
+
+
+```{r calculate slope and intercept, include=FALSE}
+###Fe(2)
+#Low curve for Fe(II)
+FE_2_low_lm <- lm(FE_2_stds_low$Abs1 ~ FE_2_stds_low$Conc_uM)
+summary(FE_2_low_lm)
+cf <- coef(FE_2_low_lm)
+
+#create data frame with 1 rows and 0 columns
+Slopes1 <- data.frame(matrix(ncol = 0, nrow = 1))
+Slopes1$Date <- Date_Run
+Slopes1$Project <- Project
+Slopes1$Curve <- "FE_2_low"
+Slopes1$R2 <- summary(FE_2_low_lm)$adj.r.squared
+Slopes1$Slope <- cf[2]
+Slopes1$Intercept <- cf[1]
+Slopes1$Top_STD <- Top_STD_Fe2_low
+
+
+#High curve for Fe2
+ FE_2_high_lm <- lm(FE_2_stds_Abs1$Abs1 ~ FE_2_stds_Abs1$Conc_uM)
+ summary(FE_2_high_lm)
+ cf <- coef(FE_2_high_lm)
+ 
+#create data frame with 1 rows and 0 columns
+Slopes2 <- data.frame(matrix(ncol = 0, nrow = 1))
+Slopes2$Date <- Date_Run
+Slopes2$Project <- Project
+Slopes2$Curve <- "FE_2_high"
+Slopes2$R2 <- summary(FE_2_high_lm)$adj.r.squared
+Slopes2$Slope <- cf[2]
+Slopes2$Intercept <- cf[1]
+Slopes2$Top_STD <- Top_STD_Fe2_high
+
+ 
+#curve for Fe(II) Abs2
+FE_2_stds_Abs2_lm <- lm(FE_2_stds_Abs2$Abs2 ~ FE_2_stds_Abs2$Conc_uM)
+summary(FE_2_stds_Abs2_lm)
+cf <- coef(FE_2_stds_Abs2_lm)
+
+#create data frame with 1 rows and 0 columns
+Slopes5 <- data.frame(matrix(ncol = 0, nrow = 1))
+Slopes5$Date <- Date_Run
+Slopes5$Project <- Project
+Slopes5$Curve <- "FE_2_abs2"
+Slopes5$R2 <- summary(FE_2_stds_Abs2_lm)$adj.r.squared
+Slopes5$Slope <- cf[2]
+Slopes5$Intercept <- cf[1]
+Slopes5$Top_STD <- Top_STD_Fe2_Abs2_high
+
+
+#curve for Fe(II) Abs2-Abs1
+FE_2_stds_diff$FE_2_Diff<-FE_2_stds_diff$Abs2-FE_2_stds_diff$Abs1
+
+FE_2_diff_lm <- lm(FE_2_stds_diff$FE_2_Diff ~ FE_2_stds_diff$Conc_uM)
+summary(FE_2_diff_lm)
+cf <- coef(FE_2_diff_lm)
+
+#create data frame with 1 rows and 0 columns
+Slopes7 <- data.frame(matrix(ncol = 0, nrow = 1))
+Slopes7$Date <- Date_Run
+Slopes7$Project <- Project
+Slopes7$Curve <- "FE_2_diff"
+Slopes7$R2 <- summary(FE_2_diff_lm)$adj.r.squared
+Slopes7$Slope <- cf[2]
+Slopes7$Intercept <- cf[1]
+Slopes7$Top_STD <- Top_STD_Fe2_Abs2_high
+
+
+###Fe(3)
+#Low curve for Fe(III)
+FE_3_low_lm <- lm(FE_3_stds_low$Abs2 ~ FE_3_stds_low$Conc_uM)
+summary(FE_3_low_lm)
+cf <- coef(FE_3_low_lm)
+
+#create data frame with 1 rows and 0 columns
+Slopes3 <- data.frame(matrix(ncol = 0, nrow = 1))
+Slopes3$Date <- Date_Run
+Slopes3$Project <- Project
+Slopes3$Curve <- "FE_Tot_low"
+Slopes3$R2 <- summary(FE_3_low_lm)$adj.r.squared
+Slopes3$Slope <- cf[2]
+Slopes3$Intercept <- cf[1]
+Slopes3$Top_STD <- Top_STD_Fe3_low
+
+
+#High curve for Fe(III) 
+FE_3_high_lm <- lm(FE_3_stds_high$Abs2 ~ FE_3_stds_high$Conc_uM)
+summary(FE_3_high_lm)
+cf <- coef(FE_3_high_lm)
+ 
+ #create data frame with 1 rows and 0 columns
+Slopes4 <- data.frame(matrix(ncol = 0, nrow = 1))
+Slopes4$Date <- Date_Run
+Slopes4$Project <- Project
+Slopes4$Curve <- "FE_Tot_high"
+Slopes4$R2 <- summary(FE_3_high_lm)$adj.r.squared
+Slopes4$Slope <- cf[2]
+Slopes4$Intercept <- cf[1]
+Slopes4$Top_STD <- Top_STD_Fe3_high
+
+
+#curve for Fe(III) Abs1
+FE_3_abs1_lm <- lm(FE_3_stds_Abs1$Abs1 ~ FE_3_stds_Abs1$Conc_uM )
+summary(FE_3_abs1_lm)
+cf <- coef(FE_3_abs1_lm)
+
+#create data frame with 1 rows and 0 columns
+Slopes6 <- data.frame(matrix(ncol = 0, nrow = 1))
+Slopes6$Date <- Date_Run
+Slopes6$Project <- Project
+Slopes6$Curve <- "FE_3_abs1"
+Slopes6$R2 <- summary(FE_3_abs1_lm)$adj.r.squared
+Slopes6$Slope <- cf[2]
+Slopes6$Intercept <- cf[1]
+Slopes6$Top_STD <- Top_STD_Fe2_high
+
+
+#This slope should be small e-6
+
+Slopes<- rbind(Slopes1, Slopes2, Slopes3, Slopes4, Slopes5, Slopes6, Slopes7)
+
+#Slopes6$Slope should be close to 0, e-5
+####
+```
+# Plot standards 
+```{r plot all the std curves, echo=FALSE, message=FALSE,fig.keep='last'}
+#Plot each of these and calculate the slope, intercept, and R2
+#Low curve for Fe(II)
+FE_2_low <- ggplot(FE_2_stds_low, aes(Conc_uM, Abs1)) + geom_point() + facet_wrap(~Plate)+ geom_smooth(method = "lm", se = FALSE)+ggtitle("Low Fe(II) Absorbance 1 Curve")
+FE_2_low
+
+#High curve for Fe2
+ FE_2_high <- ggplot(FE_2_stds_Abs1, aes(Conc_uM, Abs1)) + geom_point() + facet_wrap(~Plate)+ geom_smooth(method = "lm", se = FALSE)+ggtitle("High Fe(II) Absorbance 1 Curve")
+ FE_2_high
+ 
+ #curve for Fe(II) Abs2
+FE_2_abs2 <- ggplot(FE_2_stds_Abs2, aes(Conc_uM, Abs2)) + geom_point() + facet_wrap(~Plate)+ geom_smooth(method = "lm", se = FALSE)+ggtitle("Fe(II) Absorbance 2 Curve")
+FE_2_abs2
+
+#curve for Fe(II) Abs2-Abs1
+FE_2 <- ggplot(FE_2_stds_diff, aes(Conc_uM,FE_2_Diff)) + geom_point() + facet_wrap(~Plate)+ geom_smooth(method = "lm", se = FALSE)+ggtitle("Fe(II) Absorbance Difference Curve")
+FE_2
+
+#Low curve for Fe(III)
+FE_3_low <- ggplot(FE_3_stds_low, aes(Conc_uM, Abs2)) + geom_point() + facet_wrap(~Plate)+ geom_smooth(method = "lm", se = FALSE)+ggtitle("Low Fe(III) Absorbance 2 Curve")
+FE_3_low
+
+#High curve for Fe(III)
+FE_3_high <- ggplot(FE_3_stds_high, aes(Conc_uM, Abs2)) + geom_point() + facet_wrap(~Plate)+ geom_smooth(method = "lm", se = FALSE)+ggtitle("High Fe(III) Absorbance 2 Curve")
+FE_3_high
+
+#curve for Fe(III) Abs1
+FE_3_abs1 <- ggplot(FE_3_stds_Abs1, aes(Conc_uM,Abs1 )) + geom_point() + facet_wrap(~Plate)+ geom_smooth(method = "lm", se = FALSE)+ggtitle("Fe(III) Absorbance 1 Curve")
+FE_3_abs1
+
+knitr::kable(Slopes,caption = "Slopes")
+ggarrange(FE_2_low,FE_2_high,FE_2_abs2,FE_2,FE_3_low,FE_3_high,FE_3_abs1)
+```
+
+# Checking STD Data against QAQC file
+
+```{r read in QAQC file, echo=FALSE}
+
+
+#read in datafile with all the slopes
+qlogO <- read.csv(log_path)
+qlogO <- qlogO[,c(1:7)]
+colnames(qlogO) <- c("Date", "Project", "Curve", "R2", "Slope", "Intercept", "Top_STD")
+
+#add data to file
+qlog <- rbind(Slopes, qlogO)
+qlog <- qlog %>% distinct(.keep_all = TRUE)
+```
+
+### R2
+```{r check R2-1, echo=FALSE,fig.width=3, fig.height=2,warning=FALSE, fig.show='hold',results='hide'}
+#plot R2 for all curves
+Rsq1_graph<-function(curve){
+  qlog1<-qlog %>% filter(Curve == curve)
+Rsq1 <- ggplot(data=qlog1, aes(x=Date, y=R2)) +
+  geom_hline(yintercept= (0.98), linetype="dashed", color = "red", linewidth=2)+
+  geom_point() + 
+  theme_classic() + ylim(0.96, 1.01) + 
+  theme(legend.position="none")+ 
+  ggtitle(paste0(curve," R2"))+
+  guides(x = guide_axis(angle = 70))+
+  geom_point(data = qlog %>% filter(Date %in% Slopes$Date & R2 %in% Slopes$R2 & Curve %in% curve),color = "orange")
+Rsq1
+}
+#apply function for each curve
+lapply(Slopes[-c(6),]$Curve,Rsq1_graph)
+```
+
+
+```{r check R2-2, echo=FALSE}
+#Is the intercept for each plate within 2 standard deviation of the log file? 
+for(i in 1:nrow(Slopes)){
+  if (Slopes$R2[i] < (r2_cutoff)) {
+    ifelse(Slopes$Curve[i]=="FE_3_abs1",print(paste0(Slopes$Curve[i],": R2 will always be low")), print(paste0(Slopes$Curve[i],": Std Curve r2 is below cutoff! - REASSESS")))
+  } else {
+   print(paste0(Slopes$Curve[i],": Std Curve r2 GOOD"))
+  }
+  if(!Slopes$Curve[i]=="FE_3_abs1"){
+ #writes a flag for Curves that have a low R2   
+    dat$QAQC_flag<-if(Slopes$R2[i] <= r2_cutoff){
+      ifelse(dat$QAQC_flag != "", paste0(dat$QAQC_flag, "; ",Slopes$Curve[i] ," Std curve r2 low"),paste0(Slopes$Curve[i]," Std curve r2 low"))                   
+    }else{
+      ifelse(dat$QAQC_flag != "", paste0(dat$QAQC_flag, ""),"")
+    }
+  }
+}
+
+
+#Rerun if outside of red lines
+#FE_3_abs1 R2 will never be above cut off, This is fine
+```
+### Slopes
+```{r check slopes-1, echo=FALSE,fig.width=3, fig.height=2,warning=FALSE, fig.show='hold', results='hide'}
+##plot the slopes to make sure there are no crazy outliers 
+#plot slopes for all curves
+slope_graph<-function(curve){
+  qlog1<-qlog %>% filter(Curve == curve)
+slope_Fe <- ggplot(data=qlog1, aes(x=Date, y=Slope)) +
+  geom_hline(yintercept= (mean(qlog1$Slope)+ (2*sd(qlog1$Slope))), linetype="dashed", color = "red", linewidth=2)+
+  geom_hline(yintercept= (mean(qlog1$Slope)- (2*sd(qlog1$Slope))), linetype="dashed", color = "red", linewidth=2)+
+  geom_point() + 
+  theme_classic() +  
+  theme(legend.position="none") + 
+  ggtitle( paste0(curve," Slopes"))+
+  guides(x = guide_axis(angle = 70))+
+  geom_point(data = qlog %>% filter(Date %in% Slopes$Date & Slope %in% Slopes$Slope & Curve %in% curve),color = "orange")
+slope_Fe
+}
+#apply function for each curve
+lapply(Slopes$Curve,slope_graph)
+```
+
+
+```{r check slopes-2, echo=FALSE}
+#Is the slope for each plate within 2 standard deviation of the log file? 
+for(i in 1:nrow(Slopes)){
+  qlog1<-qlog %>% filter(Curve == Slopes$Curve[i])
+  if (Slopes$Slope[i] > (mean(qlog1$Slope)+ (2*sd(qlog1$Slope)))| Slopes$Slope[i] < (mean(qlog1$Slope)- (2*sd(qlog1$Slope)))) {
+    print(paste0(Slopes$Curve[i],": Std curve slope is 2 sd different from previous slopes! 
+      - REASSESS"))
+  } else {
+    print(paste0(Slopes$Curve[i],":Std curve slope is with 2 sd of previous slopes"))
+  }}
+#Fe3_abs1$Slope should be close to 0, e-5
+#Rerun if outside of red lines
+```
+
+### Intercepts
+```{r check intercepts-1, echo=FALSE,fig.width=3, fig.height=2,warning=FALSE, fig.show='hold', results='hide'}
+##plot the intercepts to make sure there are no crazy outliers 
+# Plot intercept for all curves
+intercept_graph<-function(curve){
+  qlog1<-qlog %>% filter(Curve == curve)
+intercept_Fe <- ggplot(data=qlog1, aes(x=Date, y=Intercept)) +
+  geom_hline(yintercept= (mean(qlog1$Intercept)+ (2*sd(qlog1$Intercept))), linetype="dashed", color = "red", linewidth=2)+
+  geom_hline(yintercept= (mean(qlog1$Intercept)- (2*sd(qlog1$Intercept))), linetype="dashed", color = "red", linewidth=2)+
+  geom_point() + 
+  theme_classic() +  
+  theme(legend.position="none") + 
+  ggtitle( paste0(curve," Intercepts"))+
+  guides(x = guide_axis(angle = 70))+
+  geom_point(data = qlog %>% filter(Date %in% Slopes$Date & Intercept %in% Slopes$Intercept & Curve %in% curve),color = "orange")
+
+intercept_Fe
+}
+#apply function for each curve
+lapply(Slopes$Curve,intercept_graph)
+```
+
+
+```{r check intercepts-2, echo=FALSE}
+#Is the intercept for each plate within 2 standard deviation of the log file? 
+for(i in 1:nrow(Slopes)){
+  qlog1<-qlog %>% filter(Curve == Slopes$Curve[i])
+  if (Slopes$Intercept[i] > (mean(qlog1$Intercept)+ (2*sd(qlog1$Intercept)))| Slopes$Intercept[i] < (mean(qlog1$Intercept)- (2*sd(qlog1$Intercept)))) {
+    print(paste0(Slopes$Curve[i],":Std curve intercept is 2 sd different from previous intercepts! 
+      - REASSESS"))
+  } else {
+    print(paste0(Slopes$Curve[i],":Std curve intercept is with 2 sd of previous intercepts"))
+  }}
+
+#Rerun if outside of red lines
+```
+
+
+# Calculate Reduction Efficiency 
+```{r calculate reduction Efficiency, echo=FALSE}
+#pull out Fe_2 and Fe_3 standards at 60uM to check reduction efficiency
+
+#subset by FE_2 and FE_Total
+FE_2_60uM <- stds %>%  
+  filter(str_detect(stds$IDs, "60 uM Fe_2 A"))  
+
+#subset by FE_2 and FE_Total
+FE_3_60uM <- stds %>%  
+  filter(str_detect(IDs, "60 uM Fe_3 A"))  
+
+#create data frame with 0 rows and 3 columns
+Fe_Red_eff <- data.frame(matrix(ncol = 0, nrow = 3))
+Fe_Red_eff$ID <- FE_2_60uM$Wells
+Fe_Red_eff$FE2 <- (FE_2_60uM$Abs1)
+Fe_Red_eff$FE3 <- FE_3_60uM$Abs2
+Fe_Red_eff$Eff <- ((Fe_Red_eff$FE3)/Fe_Red_eff$FE2)*100
+Fe_Red_eff$Eff1 <- ((Fe_Red_eff$FE3/0.8)/Fe_Red_eff$FE2)*100 #this one accounts for dilution of the reagents 
+
+Fe_Red_eff$Eff_flag <-  ifelse(Fe_Red_eff$Eff1 > low_recovery_cutoff & Fe_Red_eff$Eff1 < high_recovery_cutoff, 'OK', 'NO, rerun')  
+knitr::kable(Fe_Red_eff, caption = "Reduction Efficiency")
+
+#plot recoveries as a bar graph to easily check 
+redeffbar <- ggplot(data = Fe_Red_eff, aes(x = ID, y = Eff1,fill=Eff_flag)) +
+        geom_bar(stat = 'identity') + 
+        scale_fill_manual(values=c("OK"="darkgreen","NO, rerun"="darkred")) + 
+        theme_classic() + labs(x= "Sample ID", y="Reduction Efficiency (%)") + 
+        theme(legend.position="none") +  
+        geom_hline(yintercept=low_recovery_cutoff, linetype="dashed", color = "black", linewidth=1) + 
+        geom_hline(yintercept=high_recovery_cutoff, linetype="dashed", color = "black", linewidth=1)
+redeffbar
+
+BadEff <- subset(Fe_Red_eff, Eff_flag == "NO, rerun")
+
+#write out a flag to the sample dataframe if the efficiency have recovery out of range 
+
+dat$QAQC_flag<-if(nrow(BadEff) > 1){
+  ifelse(dat$QAQC_flag != "", paste0(dat$QAQC_flag, "; Reduction Efficiency out of range"),"Reduction Efficiency out of range")                   
+  }else{
+    ifelse(dat$QAQC_flag != "", paste0(dat$QAQC_flag, ""),"")
+}
+
+Eff_percent <- (sum(Fe_Red_eff$Eff_flag == "OK")/nrow(Fe_Red_eff))*100
+#report out if flags indicate need for rerun
+ifelse(Eff_percent >= 60  , ">60% of Reduction Efficiencies are within range",
+       "<60% of Reduction Efficiencies are out of range - REASSESS")
+
+
+```
+
+## Method Minimum Detection Limit (MDL) Calculation
+I use the lowest standard to calculate MDL
+How to calculate MDL https://www.epa.gov/sites/default/files/2016-12/documents/mdl-procedure_rev2_12-13-2016.pdf
+Look at Table 1 on page 5
+The Student's t-value used to calculate the method detection limit (MDL) is the one appropriate for a 99% confidence level and a standard deviation estimate with n-1 degrees of freedom
+```{r MDL, echo=FALSE}
+#make a dataframe of just 0.6 uM Fe2 samples from standard dataframe
+MDL_dat <- subset(FE_2_stds_Abs1, Conc_uM == 0.6)
+
+#calculate the standard deviation of abs 1
+stddev <- sd(MDL_dat$Abs1)
+
+#calculate n (number of 0.6 uM samples)
+n <- nrow(MDL_dat)
+
+#Identify the proper Student's T for n-1 from the table link above
+StudentsT <-qt(.99,(n-1))
+
+#Multiply Standard deviation by Student's T
+MDL <- stddev*StudentsT
+MDL
+```
+
+
+# Check standards QAQC
+
+```{r Assess check stds, echo=FALSE}
+#filter std curves
+Fe2_low <- subset(Slopes, Curve == "FE_2_low")
+Fe2_high <- subset(Slopes, Curve == "FE_2_high")
+FeTot_low <- subset(Slopes, Curve == "FE_Tot_low")
+FeTot_high <- subset(Slopes, Curve == "FE_Tot_high")
+Fe2_abs2 <- subset(Slopes, Curve == "FE_2_abs2")
+Fe3_abs1 <- subset(Slopes, Curve == "FE_3_abs1")
+Fe2_diff <- subset(Slopes, Curve == "FE_2_diff")
+
+#creat data frame for p values
+QAstdchk<-data.frame(matrix(nrow=0,ncol=3))
+        colnames(QAstdchk) <- c("Plate","IDs","p_value")
+
+#Make sure check standards are not different from standard concentration
+#subset Check Standards from the rest of the dataset
+Fe2_std_Chk <- dat %>%  filter(str_detect(IDs, "Fe_2"))
+Fe3_std_Chk <- dat %>%  filter(str_detect(IDs, "Fe_3"))
+
+#Calculate Check standard Concentration
+Fe2_std_Chk$Conc_uM <- (Fe2_std_Chk$Abs1-Fe2_low$Intercept)/Fe2_low$Slope
+Fe3_std_Chk$Conc_uM <-(Fe3_std_Chk$Abs2-FeTot_low$Intercept)/FeTot_low$Slope
+
+
+#Are the check standards significantly different from the standards?
+#subset datasets for comparison
+Fe2_std0.6 <- subset(FE_2_stds_low, Conc_uM == 0.6)
+Fe2_std9 <- subset(FE_2_stds_low, Conc_uM == 9.0)
+Fe2_std60 <- subset(FE_2_stds_low, Conc_uM == 60.0)
+
+Fe3_std0.6 <- subset(FE_3_stds_low, Conc_uM == 0.6)
+Fe3_std9 <- subset(FE_3_stds_low, Conc_uM == 9.0)
+Fe3_std60 <- subset(FE_3_stds_low, Conc_uM == 60.0)
+
+#this loop compares the check stds for each plate to the std plate
+for(i in 1:length(plates)){
+#filter each plate  
+  Fe2_std_Chk1<-filter(Fe2_std_Chk, Plate %in% plates[i])
+  Fe3_std_Chk1<-filter(Fe3_std_Chk, Plate %in% plates[i])
+print(plates[i])
+#filter out the individual check stds
+Fe2_Chkstd0.6 <- subset(Fe2_std_Chk1, IDs %like% "0.6")
+Fe2_Chkstd9 <- subset(Fe2_std_Chk1, IDs %like% "9")
+Fe2_Chkstd60 <- subset(Fe2_std_Chk1, IDs %like% "60")
+Fe3_Chkstd0.6 <- subset(Fe3_std_Chk1, IDs %like% "0.6")
+Fe3_Chkstd9 <- subset(Fe3_std_Chk1, IDs %like% "9")
+Fe3_Chkstd60 <- subset(Fe3_std_Chk1, IDs %like% "60")
+
+#this if else statement keeps the code from breaking if there are not enough values for the stds or chkstds
+if(!nrow(Fe2_std0.6) == 0 & !nrow(Fe2_Chkstd0.6) == 0){
+Fe2.t.test.std0.6 <- t.test(Fe2_std0.6$Abs1,Fe2_Chkstd0.6$Abs1,var.equal = T)
+Fe2.t.test.std0.6
+
+if(Fe2.t.test.std0.6$p.value > p_value_chkstds){
+print("Fe2 Chk Std 0.6 GOOD")
+} else {
+print("Fe2 Chk Std 0.6 is signficantly different from Std - REASSESS")
+}
+#write out a flag to the sample dataframe if the Chk std is Bad
+  dat$QAQC_flag<-if(Fe2.t.test.std0.6$p.value < p_value_chkstds){
+    ifelse(dat$Plate %in% plates[i], ifelse(dat$QAQC_flag != "", paste0(dat$QAQC_flag, "; Fe2 Chk Std 0.6 out of range"),"Fe2 Chk Std 0.6 out of range"),paste0( dat$QAQC_flag,"") )                   
+  }else{
+    ifelse(dat$QAQC_flag != "", paste0(dat$QAQC_flag, ""),"")
+  } 
+#Add p-values to dataframes
+  QAstdchk<-rbind(QAstdchk,list(Plate=plates[i],IDs="Std 0.6 Fe2",p_value=Fe2.t.test.std0.6$p.value)) 
+}else{
+  #if std didn't have enough points for t-test
+  QAstdchk<-rbind(QAstdchk,list(Plate=plates[i],IDs="Std 0.6 Fe2",p_value=NA)) 
+  print("Std excluded")
+}
+
+#this if else statement keeps the code from breaking if there are not enough values for the stds or chkstds
+if(!nrow(Fe2_std9) == 0 & !nrow(Fe2_Chkstd9) == 0){
+Fe2.t.test.std9 <- t.test(Fe2_std9$Abs1,Fe2_Chkstd9$Abs1,var.equal = T)
+Fe2.t.test.std9
+
+if(Fe2.t.test.std9$p.value > p_value_chkstds){
+print("Fe2 Chk Std 9 GOOD")
+} else {
+print("Fe2 Chk Std 9 is signficantly different from Std - REASSESS")
+}
+#write out a flag to the sample dataframe if the Chk std is Bad
+  dat$QAQC_flag<-if(Fe2.t.test.std9$p.value < p_value_chkstds){
+    ifelse(dat$Plate %in% plates[i], ifelse(dat$QAQC_flag != "", paste0(dat$QAQC_flag, "; Fe2 Chk Std 9 out of range"),"Fe2 Chk Std 9 out of range"),paste0( dat$QAQC_flag,"") )                   
+  }else{
+    ifelse(dat$QAQC_flag != "", paste0(dat$QAQC_flag, ""),"")
+  } 
+#Add p-values to dataframes
+  QAstdchk<-rbind(QAstdchk,list(Plate=plates[i],IDs="Std 9 Fe2",p_value=Fe2.t.test.std9$p.value)) 
+}else{
+  #if std didn't have enough points for t-test
+  QAstdchk<-rbind(QAstdchk,list(Plate=plates[i],IDs="Std 9 Fe2",p_value=NA)) 
+  print("Std excluded")
+}
+
+#this if else statement keeps the code from breaking if there are not enough values for the stds or chkstds
+if(!nrow(Fe2_std60) == 0 & !nrow(Fe2_Chkstd60) == 0){
+Fe2.t.test.std60 <- t.test(Fe2_std60$Abs1,Fe2_Chkstd60$Abs1,var.equal = T)
+Fe2.t.test.std60
+
+if(Fe2.t.test.std60$p.value > p_value_chkstds){
+print("Fe2 Chk Std 60 GOOD")
+} else {
+print("Fe2 Chk Std 60 is signficantly different from Std - REASSESS")
+}
+#write out a flag to the sample dataframe if the Chk std is Bad
+  dat$QAQC_flag<-if(Fe2.t.test.std60$p.value < p_value_chkstds){
+    ifelse(dat$Plate %in% plates[i], ifelse(dat$QAQC_flag != "", paste0(dat$QAQC_flag, "; Fe2 Chk Std 60 out of range"),"Fe2 Chk Std 60 out of range"),paste0( dat$QAQC_flag,"") )                   
+  }else{
+    ifelse(dat$QAQC_flag != "", paste0(dat$QAQC_flag, ""),"")
+  } 
+#Add p-values to dataframes
+  QAstdchk<-rbind(QAstdchk,list(Plate=plates[i],IDs="Std 60 Fe2",p_value=Fe2.t.test.std60$p.value)) 
+}else{
+  #if std didn't have enough points for t-test
+  QAstdchk<-rbind(QAstdchk,list(Plate=plates[i],IDs="Std 60 Fe2",p_value=NA)) 
+  print("Std excluded")
+}
+
+#this if else statement keeps the code from breaking if there are not enough values for the stds or chkstds
+if(!nrow(Fe3_std0.6) == 0 & !nrow(Fe3_Chkstd0.6) == 0){
+Fe3.t.test.std0.6 <- t.test(Fe3_std0.6$Abs2,Fe3_Chkstd0.6$Abs2,var.equal = T)
+Fe3.t.test.std0.6
+
+if(Fe3.t.test.std0.6$p.value > p_value_chkstds){
+print("Fe 3 Chk Std 0.6 Fe2 GOOD")
+} else {
+print("Fe 3 Chk Std 0.6 is signficantly different from Std - REASSESS")
+}
+#write out a flag to the sample dataframe if the Chk std is Bad
+  dat$QAQC_flag<-if(Fe3.t.test.std0.6$p.value < p_value_chkstds){
+    ifelse(dat$Plate %in% plates[i], ifelse(dat$QAQC_flag != "", paste0(dat$QAQC_flag, "; Fe3 Chk Std 0.6 out of range"),"Fe3 Chk Std 0.6 out of range"),paste0( dat$QAQC_flag,"") )                   
+  }else{
+    ifelse(dat$QAQC_flag != "", paste0(dat$QAQC_flag, ""),"")
+  } 
+#Add p-values to dataframes
+  QAstdchk<-rbind(QAstdchk,list(Plate=plates[i],IDs="Std 0.6 Fe3",p_value=Fe3.t.test.std0.6$p.value)) 
+}else{
+  #if std didn't have enough points for t-test
+  QAstdchk<-rbind(QAstdchk,list(Plate=plates[i],IDs="Std 0.6 Fe3",p_value=NA)) 
+  print("Std excluded")
+}
+
+#this if else statement keeps the code from breaking if there are not enough values for the stds or chkstds
+if(!nrow(Fe3_std9) == 0 & !nrow(Fe3_Chkstd9) == 0){
+Fe3.t.test.std9 <- t.test(Fe3_std9$Abs2,Fe3_Chkstd9$Abs2,var.equal = T)
+Fe3.t.test.std9
+
+if(Fe3.t.test.std9$p.value > p_value_chkstds){
+print("Fe 3 Chk Std 9 GOOD")
+} else {
+print("Fe 3 Chk Std 9 is signficantly different from Std - REASSESS")
+}
+#write out a flag to the sample dataframe if the Chk std is Bad
+  dat$QAQC_flag<-if(Fe3.t.test.std9$p.value < p_value_chkstds){
+    ifelse(dat$Plate %in% plates[i], ifelse(dat$QAQC_flag != "", paste0(dat$QAQC_flag, "; Fe3 Chk Std 9 out of range"),"Fe3 Chk Std 9 out of range"),paste0( dat$QAQC_flag,"") )                   
+  }else{
+    ifelse(dat$QAQC_flag != "", paste0(dat$QAQC_flag, ""),"")
+  } 
+#Add p-values to dataframes
+  QAstdchk<-rbind(QAstdchk,list(Plate=plates[i],IDs="Std 9 Fe3",p_value=Fe3.t.test.std9$p.value)) 
+}else{
+  #if std didn't have enough points for t-test
+  QAstdchk<-rbind(QAstdchk,list(Plate=plates[i],IDs="Std 9 Fe3",p_value=NA)) 
+  print("Std excluded")
+}
+
+#this if else statement keeps the code from breaking if there are not enough values for the stds or chkstds
+if(!nrow(Fe3_std60) == 0 & !nrow(Fe3_Chkstd60) == 0){
+Fe3.t.test.std60 <- t.test(Fe3_std60$Abs2,Fe3_Chkstd60$Abs2,var.equal = T)
+Fe3.t.test.std60
+
+if(Fe3.t.test.std60$p.value > p_value_chkstds){
+print("Fe 3 Chk Std 60 GOOD")
+} else {
+print("Fe 3 Chk Std 60 is signficantly different from Std - REASSESS")
+}
+#write out a flag to the sample dataframe if the Chk std is Bad
+  dat$QAQC_flag<-if(Fe3.t.test.std60$p.value < p_value_chkstds){
+    ifelse(dat$Plate %in% plates[i], ifelse(dat$QAQC_flag != "", paste0(dat$QAQC_flag, "; Fe3 Chk Std 60 out of range"),"Fe3 Chk Std 60 out of range"),paste0( dat$QAQC_flag,"") )                   
+  }else{
+    ifelse(dat$QAQC_flag != "", paste0(dat$QAQC_flag, ""),"")
+  } 
+#Add p-values to dataframes
+  QAstdchk<-rbind(QAstdchk,list(Plate=plates[i],IDs="Std 60 Fe3",p_value=Fe3.t.test.std60$p.value)) 
+}else{
+  #if std didn't have enough points for t-test
+  QAstdchk<-rbind(QAstdchk,list(Plate=plates[i],IDs="Std 60 Fe3",p_value=NA)) 
+  print("Std excluded")
+}
+}
+
+#flag p-values
+QAstdchk$p_flag <-  ifelse(QAstdchk$p_value > p_value_chkstds, 'OK', 'Rerun')
+
+#plot output as a bar graph to easily check
+ChkStdbar <- ggplot(data = QAstdchk, aes(x = IDs, y = p_value, fill=p_flag))+
+        facet_wrap(~Plate)+
+        geom_bar(stat = 'identity') + 
+        scale_fill_manual(values = c("OK" = "darkgreen", "Rerun" = "darkred"))+
+        theme_classic() + labs(x= "Sample ID", y="T-test p-value") + 
+        theme(legend.position="none") +  geom_hline(yintercept=0.05, linetype="dashed", 
+                color = "black", linewidth=1)+ 
+        ggtitle("Check Standards")+ 
+        guides(x = guide_axis(angle = 70))
+
+ChkStdbar
+```
+
+#No Matrix Checks
+We do not use matrix checks for the Fe samples because our matrix checks are not made with Trace metal grade reagents. If we want to do this in the future, we need to use trace metal grade sodium chloride and sodium bicarbonate for making the matrix checks
+
+
+```{r flag out of range data, echo=FALSE,include=FALSE}
+
+## remove any lines that say stds in IDs
+dat1 <- dat %>%  filter(!str_detect(IDs, "Fe_2")) %>%
+  filter(!str_detect(IDs, "Fe_3")) %>%
+  filter(!str_detect(IDs, "HCl"))
+
+#Now flag any Abs1 that are above the 500uM standard absorbance
+FE_2_500uM<- FE_2_stds_high %>%  filter(Conc_uM == Top_STD_Fe2_high)
+FE_2_0uM<-subset(na.omit(stds_all_fixed), Conc_uM == 0)
+
+dat1$FE_2_Curve <- ifelse(dat1$Abs1 > mean(FE_2_500uM$Abs1), "High", "Within range")
+
+#and flag any that are below the 0um std + MDL
+dat1$FE_2_Curve <- ifelse(dat1$Abs1 <(mean(FE_2_0uM$Abs1)+ MDL), "Below MDL", dat1$FE_2_Curve)
+
+#Now flag any Abs2 that are above the 100uM standard absorbance for Fe2 or Fe3
+FE_2_100uM<- FE_2_stds_Abs2 %>%  filter(Conc_uM == Top_STD_Fe2_Abs2_high)
+FE_3_100uM<- FE_3_stds_Abs2 %>%  filter(Conc_uM == Top_STD_Fe3_high)
+
+dat1$FE_Tot_Curve <- ifelse(dat1$Abs2 > mean(FE_2_100uM$Abs2), "High", ifelse((dat1$Abs2-dat1$Abs1) > mean(FE_3_100uM$Abs2), "High", "Within range")) 
+
+#and flag any that are below the 0um std + MDL; this only flags samples that have no Fe2 in them
+dat1$FE_Tot_Curve <- ifelse(dat1$Abs2 < (mean(FE_2_0uM$Abs2)+ MDL), "Below MDL", dat1$FE_Tot_Curve)
+
+```
+
+# Subset Data and Calculate Concentrations 
+```{r calculate concentrations, echo=FALSE,include=FALSE}
+###Calculate concentrations of Fe(II)
+dat1$FE_2_Conc <- ifelse(dat1$Abs1 > mean(Fe2_std60$Abs1), (dat1$Abs1-Fe2_high$Intercept)/Fe2_high$Slope, (dat1$Abs1-Fe2_low$Intercept)/Fe2_low$Slope)
+
+##since the absorbance for Fe2 changes between Abs1 and Abs2 we need to calculate the expected Abs2 for Fe2
+##Expected_diff=m*conc+b
+#m=Fe2_diff$Slope #b=Fe2_diff$Intercept
+# abs2=abs1+diff
+dat1$CalcAbs2<-dat1$Abs1+(dat1$FE_2_Conc*Fe2_diff$Slope+Fe2_diff$Intercept)
+
+#subtract the expected Abs2 from the actual Abs2, this should leave you with the absorbance caused by the Fe3 reducing to Fe2
+dat1$Abs2_diff<-dat1$Abs2-dat1$CalcAbs2
+
+#using the slope from FeTot slope calculate Fe3 
+#the intercept is not needed as the Abs2_diff starts at 0 
+#Fe3_abs1$Slope should be close to 0, I'm unsure if this is the correct place to put it  
+dat1$FE_3_Conc <-ifelse(dat1$Abs2 > mean(Fe3_std60$Abs2), (dat1$Abs2_diff)/(FeTot_high$Slope-Fe3_abs1$Slope), (dat1$Abs2_diff)/(FeTot_low$Slope-Fe3_abs1$Slope))
+
+
+#Account for the dilution factor
+dat1$FE_2_Conc_DilCorr <- dat1$FE_2_Conc*dat1$Dilution
+dat1$FE_3_Conc_DilCorr <- dat1$FE_3_Conc*dat1$Dilution
+
+#Use ifelse to make any negative values equal to zero 
+dat1$FE_2_Conc_Final <- ifelse(dat1$FE_2_Conc_DilCorr <0, 0, dat1$FE_2_Conc_DilCorr)
+
+dat1$FE_3_Conc_Final <- ifelse(dat1$FE_3_Conc_DilCorr <0, 0, dat1$FE_3_Conc_DilCorr)
+
+#Create a column for total iron
+dat1$FE_tot_Conc_Final<- dat1$FE_2_Conc_Final+ dat1$FE_3_Conc_Final
+
+head(dat1)
+
+```
+## Calculate Averages across wells, std. dev, and cv.  
+```{r Calculate Averages across wells and sd, echo=FALSE,fig.width=8,fig.height=5}
+##Need to make it so it groups by Plate and Dilution so that reruns of the same ID don't count towards the CV
+dat1$ID_full <- paste(dat1$Plate, dat1$Dilution, dat1$IDs, sep = "_")
+
+#summarize by sampleID so that we can calculate the mean and std. dev. of the three wells 
+dat_aver <- dat1 %>%
+  group_by(ID_full) %>%
+  summarise(IDs=first(IDs),FE_2_mean = mean(na.omit(FE_2_Conc_Final)), FE_2_sd = sd(na.omit(FE_2_Conc_Final)), FE_2_cv = cv(na.omit(FE_2_Conc_Final)),
+            FE_3_mean = mean(na.omit(FE_3_Conc_Final)), FE_3_sd = sd(na.omit(FE_3_Conc_Final)), FE_3_cv = cv(na.omit(FE_3_Conc_Final)),
+            FE_tot_mean =(mean(FE_2_Conc_Final,na.rm=TRUE)+ mean(FE_3_Conc_Final,na.rm=TRUE)), FE_tot_sd = sqrt(sd(na.omit(FE_3_Conc_Final))^2+sd(na.omit(FE_2_Conc_Final))),
+            FE_2_flag = ifelse(mean(na.omit(Abs1)) > mean(FE_2_500uM$Abs1), "High",ifelse(mean(na.omit(Abs1)) < (mean(FE_2_0uM$Abs1)+ MDL), "Below MDL" ,"Within range")),
+            FE_3_flag = ifelse(mean(na.omit(Abs2)) > mean(FE_2_100uM$Abs2)|(mean(na.omit(Abs2))-mean(na.omit(Abs1))) > mean(FE_3_100uM$Abs2), "High", ifelse(mean(na.omit(Abs2_diff)) < MDL|mean(na.omit(Abs2)) < (mean(FE_2_0uM$Abs2)+ MDL), "Below MDL" ,"Within range")),
+            Dilution = first(Dilution),
+            Plate = first(Plate),
+            QAQC_flag = first(QAQC_flag))
+
+#flag high cv data
+dat_aver$FE_2_cv_flag <- ifelse(dat_aver$FE_2_cv > cv_flag_sample, "High cv rerun", "ok")
+dat_aver$FE_3_cv_flag <- ifelse(dat_aver$FE_3_cv > cv_flag_sample, "High cv rerun", "ok")
+
+#Make a list of samples to rerun
+HighCVSamples <- subset(dat_aver, FE_2_cv_flag == "High cv rerun"|FE_3_cv_flag == "High cv rerun")
+
+Fe2 <- ggplot(dat_aver, aes(x=IDs, y=FE_2_mean, color=FE_2_cv_flag))+ 
+  geom_point(size=4) +  theme_classic() + 
+  labs(y="Fe(II) (uM)", x="Sample ID",title=paste(Project, Experiment," Iron(II) Data"))+
+  scale_color_manual(values = c("High cv rerun" = "red", "ok" = "darkgreen")) +
+  guides(x = guide_axis(angle = 70)) + 
+  geom_errorbar(aes(ymin=FE_2_mean-FE_2_sd,
+                    ymax=FE_2_mean+FE_2_sd),width=0.3,position=position_dodge(.1))
+Fe2
+
+Fe3 <- ggplot(dat_aver, aes(x=IDs, y=FE_3_mean,color=FE_3_cv_flag))+ 
+  geom_point(size=4) +  theme_classic() +
+  labs(y="Fe(III) (uM)", x="Sample ID",title=paste(Project, Experiment," Iron(III) Data"))+
+  scale_color_manual(values = c("High cv rerun" = "red", "ok" = "darkgreen")) +
+  guides(x = guide_axis(angle = 70)) + 
+  geom_errorbar(aes(ymin=FE_3_mean-FE_3_sd,
+                    ymax=FE_3_mean+FE_3_sd),width=0.3,position=position_dodge(.1))
+Fe3
+```
+
+# Remove Bad Reps 
+```{r, echo=FALSE,include=FALSE}
+#auto remove bad reps
+# filter High CV Samples
+dat1_HCV <- subset(dat_aver, FE_2_cv_flag == "High cv rerun"|FE_3_cv_flag == "High cv rerun")
+dat_aver1 <- dat_aver
+
+#make dataframe for fixed data
+dat1_fixed<-dat1
+dat_HCV_fixed_FE2<-data.frame(matrix(ncol = 19, nrow =0 ))
+colnames(dat_HCV_fixed_FE2)<-colnames(dat1)
+dat_HCV_fixed_FE3<-data.frame(matrix(ncol = 19, nrow =0 ))
+colnames(dat_HCV_fixed_FE3)<-colnames(dat1)
+
+#make a loop to filter each high cv sample for Fe 2
+dat1_HCV_1<-subset(dat1_HCV,  FE_2_cv_flag == "High cv rerun")
+for(x in 1:nrow(dat1_HCV_1)){
+  dat_HCV <- subset(dat1_fixed, ID_full %in% dat1_HCV_1$ID_full )
+  sing_ID<- dat_HCV %>% subset(ID_full == dat1_HCV_1$ID_full[x])
+  #make a dataframe for cvs
+  cv_trial<-data.frame(matrix(ncol = 3, nrow =1 ))
+  
+  #make a loop to find the cv for each deleted point
+  if(nrow(sing_ID)>2){
+  for(i in 1:nrow(sing_ID)){
+    sing_ID1<-sing_ID[-i,]  
+    cv_trial[i]<-cv(sing_ID1$FE_2_Conc_Final)
+  }
+  
+  # delete the point that gives the lowest cv
+  if(which.min(cv_trial)<cv(sing_ID$FE_2_Conc_Final)){sing_ID[which.min(cv_trial),c(3,16)]=NA}
+  dat_HCV_fixed_FE2<-rbind(dat_HCV_fixed_FE2,sing_ID)
+  }else{
+    dat_HCV_fixed_FE2<-rbind(dat_HCV_fixed_FE2,sing_ID) 
+  }
+}
+
+#summarize by sampleID so that we can calculate the mean and std. dev. of the three wells 
+dat1_HCV_fixed_FE2 <- dat_HCV_fixed_FE2 %>%
+  group_by(ID_full) %>%
+  summarise(IDs=first(IDs),FE_2_mean = mean(na.omit(FE_2_Conc_Final)), FE_2_sd = sd(na.omit(FE_2_Conc_Final)), FE_2_cv = cv(na.omit(FE_2_Conc_Final)),
+            FE_3_mean = mean(na.omit(FE_3_Conc_Final)), FE_3_sd = sd(na.omit(FE_3_Conc_Final)), FE_3_cv = cv(na.omit(FE_3_Conc_Final)),
+            FE_tot_mean =(mean(FE_2_Conc_Final,na.rm=TRUE)+ mean(FE_3_Conc_Final,na.rm=TRUE)), FE_tot_sd = sqrt(sd(na.omit(FE_3_Conc_Final))^2+sd(na.omit(FE_2_Conc_Final))),
+            FE_2_flag = ifelse(mean(na.omit(Abs1)) > mean(FE_2_500uM$Abs1), "High",ifelse(mean(na.omit(Abs1)) < (mean(FE_2_0uM$Abs1)+ MDL), "Below MDL" ,"Within range")),
+            FE_3_flag = ifelse(mean(na.omit(Abs2)) > mean(FE_2_100uM$Abs2)|(mean(na.omit(Abs2))-mean(na.omit(Abs1))) > mean(FE_3_100uM$Abs2), "High", ifelse(mean(na.omit(Abs2_diff)) < MDL|mean(na.omit(Abs2)) < (mean(FE_2_0uM$Abs2)+ MDL), "Below MDL" ,"Within range")),
+            Dilution = first(Dilution),
+            Plate = first(Plate),
+            QAQC_flag = first(QAQC_flag))
+
+
+#Flag high cvs 
+dat1_HCV_fixed_FE2$FE_2_cv_flag <- ifelse(dat1_HCV_fixed_FE2$FE_2_cv > cv_flag_sample, "High cv rerun", "ok")
+dat1_HCV_fixed_FE2$FE_3_cv_flag <- ifelse(dat1_HCV_fixed_FE2$FE_3_cv > cv_flag_sample, "High cv rerun", "ok")
+
+#bind fixed dataframes back together with non high cv points
+#averaged data
+dat_aver1 <- subset(dat_aver1, !(ID_full %in% dat1_HCV_fixed_FE2$ID_full ))
+dat_aver1 <- rbind(dat1_HCV_fixed_FE2, dat_aver1)
+head(dat_aver1)
+#all points
+dat1_fixed <- subset(dat1_fixed, (!ID_full %in% dat_HCV_fixed_FE2$ID_full ))
+dat1_fixed <- rbind(dat_HCV_fixed_FE2, dat1_fixed)
+
+#make a loop to filter each high cv sample for Fe 3
+dat1_HCV_1<-subset(dat1_HCV,  FE_3_cv_flag == "High cv rerun")
+for(x in 1:nrow(dat1_HCV_1)){
+  dat_HCV <- subset(dat1_fixed, ID_full %in% dat1_HCV_1$ID_full )
+  sing_ID<- dat_HCV %>% subset(ID_full == dat1_HCV_1$ID_full[x])
+  #make a dataframe for cvs
+  cv_trial<-data.frame(matrix(ncol = 3, nrow =1 ))
+  
+  #make a loop to find the cv for each deleted point
+  if(nrow(sing_ID)>2){
+  for(i in 1:nrow(sing_ID)){
+    sing_ID1<-sing_ID[-i,] 
+    cv_trial[i]<-cv(sing_ID1$FE_3_Conc_Final)
+  }
+  
+  # delete the point that gives the lowest cv
+  if(which.min(cv_trial)<cv(sing_ID$FE_3_Conc_Final)){sing_ID[which.min(cv_trial),c(4,12,17)]=NA}
+  dat_HCV_fixed_FE3<-rbind(dat_HCV_fixed_FE3,sing_ID)
+  }else{
+    dat_HCV_fixed_FE2<-rbind(dat_HCV_fixed_FE3,sing_ID) 
+  }}
+#summarize by sampleID so that we can calculate the mean and std. dev. of the three wells 
+dat1_HCV_fixed_FE3 <- dat_HCV_fixed_FE3 %>%
+  group_by(ID_full) %>%
+  summarise(IDs=first(IDs),FE_2_mean = mean(na.omit(FE_2_Conc_Final)), FE_2_sd = sd(na.omit(FE_2_Conc_Final)), FE_2_cv = cv(na.omit(FE_2_Conc_Final)),
+            FE_3_mean = mean(na.omit(FE_3_Conc_Final)), FE_3_sd = sd(na.omit(FE_3_Conc_Final)), FE_3_cv = cv(na.omit(FE_3_Conc_Final)),
+            FE_tot_mean =(mean(FE_2_Conc_Final,na.rm=TRUE)+ mean(FE_3_Conc_Final,na.rm=TRUE)), FE_tot_sd = sqrt(sd(na.omit(FE_3_Conc_Final))^2+sd(na.omit(FE_2_Conc_Final))),
+            FE_2_flag = ifelse(mean(na.omit(Abs1)) > mean(FE_2_500uM$Abs1), "High",ifelse(mean(na.omit(Abs1)) < (mean(FE_2_0uM$Abs1)+ MDL), "Below MDL" ,"Within range")),
+            FE_3_flag = ifelse(mean(na.omit(Abs2)) > mean(FE_2_100uM$Abs2)|(mean(na.omit(Abs2))-mean(na.omit(Abs1))) > mean(FE_3_100uM$Abs2), "High", ifelse(mean(na.omit(Abs2_diff)) < MDL|mean(na.omit(Abs2)) < (mean(FE_2_0uM$Abs2)+ MDL), "Below MDL" ,"Within range")),
+            Dilution = first(Dilution),
+            Plate = first(Plate),
+            QAQC_flag = first(QAQC_flag))
+
+
+#Flag high cvs
+dat1_HCV_fixed_FE3$FE_2_cv_flag <- ifelse(dat1_HCV_fixed_FE3$FE_2_cv > cv_flag_sample, "High cv rerun", "ok")
+dat1_HCV_fixed_FE3$FE_3_cv_flag <- ifelse(dat1_HCV_fixed_FE3$FE_3_cv > cv_flag_sample, "High cv rerun", "ok")
+
+#bind fixed dataframes back together with non high cv points
+#averaged data
+dat_aver1 <- subset(dat_aver1, !(ID_full %in% dat1_HCV_fixed_FE3$ID_full ))
+dat_aver1 <- rbind(dat1_HCV_fixed_FE3, dat_aver1)
+head(dat_aver1)
+#all points
+dat1_fixed <- subset(dat1_fixed, (!ID_full %in% dat_HCV_fixed_FE3$ID_full ))
+dat1_fixed <- rbind(dat_HCV_fixed_FE3, dat1_fixed)
+```
+
+## Flagged data
+```{r, echo=FALSE}
+#filter the high cv samples  
+HighCVSamples <- subset(dat_aver1, FE_2_cv_flag == "High cv rerun"|FE_3_cv_flag == "High cv rerun")  
+#filter the samples that need to be run at a higher dilution 
+FE_DiluteRerun <- subset(dat_aver1, FE_2_flag == "High"| FE_3_flag == "High")
+ADL<-subset(dat_aver1 ,(IDs %in% FE_DiluteRerun$IDs))
+ADL<-filter(ADL,!FE_2_flag=="High" & !FE_3_flag=="High") 
+FE_DiluteRerun<-FE_DiluteRerun %>% 
+  subset((!IDs %in% ADL$IDs)) %>% 
+  subset((!IDs %like% " dup")) %>% 
+  subset((!IDs %like% " spk"))
+#filter the samples that need to be run at a lower dilution 
+FE_bdl <- subset(dat_aver1, FE_2_flag == "Below MDL"& Dilution!=1| FE_3_flag == "Below MDL"& Dilution!=1)
+BDL<-subset(dat_aver1 ,(IDs %in% FE_bdl$IDs))
+BDL<-filter(BDL, !FE_2_flag == "Below MDL" & !FE_3_flag == "Below MDL") 
+FE_bdl<-FE_bdl %>% 
+  subset((!IDs %in% BDL$IDs)) %>% 
+  subset((!IDs %like% " dup")) %>% 
+  subset((!IDs %like% " spk"))
+
+knitr::kable(HighCVSamples[, c(1,3,5,6,8,16,17)],col.names = gsub("_", " ", names(HighCVSamples[, c(1,3,5,6,8,16,17)])), caption = "High CV Samples")%>%
+  kable_styling(font_size = 8)
+
+knitr::kable(FE_DiluteRerun[, c(1,3,6,9,11,12)],col.names = gsub("_", " ", names(FE_DiluteRerun[, c(1,3,6,9,11,12)])), caption = "Samples Above the Detection Limit that should be rerun at a higher dilution")%>%
+  kable_styling(font_size = 8)
+
+knitr::kable(FE_bdl[, c(1,3,6,9,11,12)], col.names = gsub("_", " ", names(FE_bdl[, c(1,3,6,9,11,12)])),caption = "Samples Below the Detection Limit that should be rerun at a lower dilution")%>%
+  kable_styling(font_size = 8)
+
+```
+
+## Plot data after bad reps were removed 
+
+```{r, echo=FALSE,fig.width=8,fig.height=5,fig.show='hold'}
+#plot data and sd's just to check and see what they look like - just a quick first look 
+FE2 <- ggplot(dat_aver1, aes(x=ID_full, y=FE_2_mean, color=FE_2_flag))+ 
+  geom_point(size=4)+ 
+  scale_color_manual(values = c("High" = "red", "Below MDL" = "orange", "Within range" = "black")) +  theme_classic() + 
+  labs(y="Fe(II) (uM)", x="Sample ID",title=paste(Project, Experiment," Iron(II) Data")) + 
+   geom_errorbar(aes(ymin=FE_2_mean-FE_2_sd,
+                    ymax=FE_2_mean+FE_2_sd),width=0.3,position=position_dodge(.1))+
+  guides(x = guide_axis(angle = 70))
+FE2
+
+FE3 <- ggplot(dat_aver1, aes(x=ID_full, y=FE_3_mean, color=FE_3_flag))+ 
+  geom_point(size=4)+ 
+  scale_color_manual(values = c("High" = "red", "Below MDL" = "orange", "Within range" = "black")) +  theme_classic() + 
+  labs(y="Fe(III) (uM)", x="Sample ID",title=paste(Project, Experiment," Iron(III) Data")) + 
+   geom_errorbar(aes(ymin=FE_3_mean-FE_3_sd,
+                    ymax=FE_3_mean+FE_3_sd),width=0.3,position=position_dodge(.1))+
+  guides(x = guide_axis(angle = 70))
+FE3
+
+FE_tot <- ggplot(dat_aver1, aes(x=IDs, y=FE_tot_mean, color=Dilution))+ 
+  geom_point(size=4) +  theme_classic() +
+  labs(y="Fe(II)+Fe(III) (uM)", x="Sample ID",title=paste(Project, Experiment," Total Iron Data")) + 
+   geom_errorbar(aes(ymin=FE_tot_mean-FE_tot_sd,
+                    ymax=FE_tot_mean+FE_tot_sd),width=0.3,position=position_dodge(.1))+
+  guides(x = guide_axis(angle = 70))
+FE_tot
+
+Fe2 <- ggplot(dat_aver1, aes(x=ID_full, y=FE_2_mean, color=FE_2_cv_flag))+ 
+  geom_point(size=4) +  theme_classic() +  
+  scale_color_manual(values = c("High cv rerun" = "red", "ok" = "darkgreen"))+
+  labs(y="Fe(II) (uM)", x="Sample ID",title=paste(Project, Experiment," Iron(II) Data"))+
+  guides(x = guide_axis(angle = 70)) + 
+  geom_errorbar(aes(ymin=FE_2_mean-FE_2_sd,
+                    ymax=FE_2_mean+FE_2_sd),width=0.3,position=position_dodge(.1))
+Fe2
+
+Fe3 <- ggplot(dat_aver1, aes(x=ID_full, y=FE_3_mean, color=FE_3_cv_flag))+ 
+  geom_point(size=4) +  theme_classic() + 
+  scale_color_manual(values = c("High cv rerun" = "red", "ok" = "darkgreen"))+
+  labs(y="Fe(III) (uM)", x="Sample ID",title=paste(Project, Experiment," Iron(III) Data"))+
+  guides(x = guide_axis(angle = 70)) + 
+  geom_errorbar(aes(ymin=FE_3_mean-FE_3_sd,
+                    ymax=FE_3_mean+FE_3_sd),width=0.3,position=position_dodge(.1))
+Fe3
+
+
+
+```
+
+## Check Dups for QAQC 
+```{r Dups, echo=FALSE,fig.width=8,fig.height=5,warning=FALSE}
+
+#pull out any rows that have "d" in the SampleID column
+dups <- dat_aver1 %>%  
+  filter(str_detect(IDs, "dup")) 
+
+#remove these from dat2
+dat3 <-  dat_aver1  %>%  
+  filter(!str_detect(IDs, "dup")) %>%  
+  filter(!str_detect(IDs, "spk")) 
+
+#remove the d from these IDs so we will have duplicates 
+dups$ID_full<-gsub(" dup",'',dups$ID_full)
+dups <- dups[ ,-c(4,5,7:8,10:17)]
+
+colnames(dups) <- c('ID_full','IDs', 'FE_2_mean_dup', "FE_3_mean_dup", "FE_tot_mean_dup")
+
+
+#put it back together with the old data set and look for duplicates 
+QAdups <- merge(dat3, dups, by= "ID_full")
+QAdups <- QAdups[ ,-c(4:5,7:8,10:12,15:18)]
+
+QAdups$FE_2_dups_chk <- ((abs(QAdups$FE_2_mean-QAdups$FE_2_mean_dup))/((QAdups$FE_2_mean+QAdups$FE_2_mean_dup)/2))*100
+QAdups$FE_2_dups_chk <- ifelse(!is.na(QAdups$FE_2_dups_chk),QAdups$FE_2_dups_chk,0 )
+QAdups$FE_2_dups_flag <-  ifelse(QAdups$FE_2_dups_chk <dups_perc_diff, 'OK', 'Rerun')
+
+QAdups$FE_3_dups_chk <- ((abs(QAdups$FE_3_mean-QAdups$FE_3_mean_dup))/((QAdups$FE_3_mean+QAdups$FE_3_mean_dup)/2))*100
+QAdups$FE_3_dups_chk <- ifelse(!is.na(QAdups$FE_3_dups_chk),QAdups$FE_3_dups_chk,0 )
+QAdups$FE_3_dups_flag <-  ifelse(QAdups$FE_3_dups_chk <dups_perc_diff, 'OK', 'Rerun')
+
+QAdups$FE_tot_dups_chk <- ((abs(QAdups$FE_tot_mean-QAdups$FE_tot_mean_dup))/((QAdups$FE_tot_mean+QAdups$FE_tot_mean_dup)/2))*100
+QAdups$FE_tot_dups_chk <- ifelse(!is.na(QAdups$FE_tot_dups_chk),QAdups$FE_tot_dups_chk,0 )
+QAdups$FE_tot_dups_flag <-  ifelse(QAdups$FE_tot_dups_chk <dups_perc_diff, 'OK', 'Rerun')
+
+#plot dups output as a bar graph to easily check - want any over 10% to be red need to work on this 
+dupsbar_Fe2 <- ggplot(data = QAdups, aes(x = ID_full, y = FE_2_dups_chk, fill=FE_2_dups_flag)) +
+       geom_bar(stat = 'identity') + 
+        scale_fill_manual(values=c("OK" ='darkgreen' , "Rerun" = 'darkred')) + 
+        theme_classic() + labs(x= "Sample ID", y="Difference Between Duplicates (%)") + 
+        theme(legend.position="none") +  geom_hline(yintercept=dups_perc_diff, linetype="dashed", 
+                color = "black", linewidth=1)
+
+dupsbar_Fe2
+
+
+dupsbar_Fe3 <- ggplot(data = QAdups, aes(x = ID_full, y = FE_3_dups_chk, fill=FE_3_dups_flag)) +
+       geom_bar(stat = 'identity') + 
+       scale_fill_manual(values=c("OK" ='darkgreen' , "Rerun" = 'darkred')) + 
+        theme_classic() + labs(x= "Sample ID", y="Difference Between Duplicates (%)") + 
+        theme(legend.position="none") +  geom_hline(yintercept=dups_perc_diff, linetype="dashed", 
+                color = "black", linewidth=1)
+
+dupsbar_Fe3
+
+dupsbar_Fetot <- ggplot(data = QAdups, aes(x = ID_full, y = FE_tot_dups_chk, fill=FE_tot_dups_flag)) +
+       geom_bar(stat = 'identity') + 
+       scale_fill_manual(values=c("OK" ='darkgreen' , "Rerun" = 'darkred')) + 
+        theme_classic() + labs(x= "Sample ID", y="Difference Between Duplicates (%)") + 
+        theme(legend.position="none") +  geom_hline(yintercept=dups_perc_diff, linetype="dashed", 
+                color = "black", linewidth=1)
+
+dupsbar_Fetot
+#check for any no's that would warrant reruns
+Baddups_Fe2 <- subset(QAdups, FE_2_dups_flag == "Rerun")
+Baddups_Fe3 <- subset(QAdups, FE_3_dups_flag == "Rerun")
+
+
+
+dat_aver1<-dat_aver1 %>% group_by(Plate) %>% mutate(QAQC_flag=ifelse(Plate %in% Baddups_Fe2$Plate, ifelse(dat_aver1$QAQC_flag != "", paste0(dat_aver1$QAQC_flag, "; Fe2 Dup perc diff out of range"),"Fe2 Dup perc diff out of range"),paste0( dat_aver1$QAQC_flag,"") ) )%>% mutate(QAQC_flag=ifelse(Plate %in% Baddups_Fe3$Plate, ifelse(dat_aver1$QAQC_flag != "", paste0(dat_aver1$QAQC_flag, "; Fe3 Dup perc diff out of range"),"Fe3 Dup perc diff out of range"),paste0( dat_aver1$QAQC_flag,"") ) ) %>% ungroup()
+
+dat1<-dat1 %>% group_by(Plate) %>% mutate(QAQC_flag=ifelse(Plate %in% Baddups_Fe2$Plate, ifelse(dat1$QAQC_flag != "", paste0(dat1$QAQC_flag, "; Fe2 Dup perc diff out of range"),"Fe2 Dup perc diff out of range"),paste0( dat1$QAQC_flag,"") ) )%>% mutate(QAQC_flag=ifelse(Plate %in% Baddups_Fe3$Plate, ifelse(dat1$QAQC_flag != "", paste0(dat1$QAQC_flag, "; Fe3 Dup perc diff out of range"),"Fe3 Dup perc diff out of range"),paste0( dat1$QAQC_flag,"") ) ) %>% ungroup()
+
+
+dups_percent_Fe2 <- (sum(QAdups$FE_2_dups_flag == "OK")/nrow(QAdups))*100
+#report out if flags indicate need for rerun
+ifelse(dups_percent_Fe2 >= 60  , ">60% of Fe 2 Duplicates are within <10%",
+       "<60% of Duplicates are within <10% - REASSESS")
+
+dups_percent_Fe3 <- (sum( QAdups$FE_3_dups_flag == "OK")/nrow(QAdups))*100
+#report out if flags indicate need for rerun
+ifelse(dups_percent_Fe3 >= 60  , ">60% of Fe 3 Duplicates are within <10%",
+       "<60% of Duplicates are within <10% - REASSESS")
+
+
+```
+
+
+## Check the spks for QAQC 
+```{r Spikes, echo=FALSE,fig.width=8,fig.height=5,warning=FALSE}
+
+#pull out any rows that have "spk" in the SampleID column
+spks <- dat_aver1 %>%  
+  filter(str_detect(IDs, "spk")) 
+
+#remove the spk from these IDs so we will have duplicates 
+spks$ID_full<-gsub(" spk","",spks$ID_full)
+spks <- spks[ ,-c(4:14)]
+colnames(spks) <- c('ID_full','IDs', 'FE_2_mean_spk')
+
+#put it back together with the old data set and look for duplicates 
+QAspks <- merge(dat3, spks, by= "ID_full")
+QAspks <- QAspks[ ,-c(4:5,7:10,15)]
+
+#now we need to calculate the spike concentration and calculate the spike recovery 
+#spike for these samples was 55uL of the 60uM standard
+                      
+QAspks$FE_Total_unspkd <- (QAspks$FE_2_mean/QAspks$Dilution)*(sample_vol/Con1) #gives us the total fe in the sample in umoles
+QAspks$FE_Total_spkd <-    (QAspks$FE_2_mean_spk/QAspks$Dilution)*((sample_vol+spkvol)/Con1)        ##total fe in spiked sample in umoles 
+QAspks$FE_expctd_spkd <-  (QAspks$FE_Total_unspkd + spk_Conc)
+QAspks$spk_recovery <-    (QAspks$FE_Total_spkd/QAspks$FE_expctd_spkd)*100
+QAspks$FE_spks_flag <-  ifelse(QAspks$spk_recovery >low_recovery_cutoff & QAspks$spk_recovery < high_recovery_cutoff, 'OK', 'NO, rerun') 
+
+
+#plot spk recoveries output as a bar graph to easily check - want any over 10% to be red need to work on this 
+
+spksbar <- ggplot(data = QAspks, aes(x = ID_full, y = spk_recovery, fill=FE_spks_flag)) +
+        geom_bar(stat = 'identity') + 
+        scale_fill_manual(values=c("OK"="darkgreen","NO, rerun"="darkred")) + 
+        theme_classic() + labs(x= "Sample ID", y="Spike Recovery (%)") + 
+        theme(legend.position="none") +  
+        geom_hline(yintercept=low_recovery_cutoff, linetype="dashed", color = "black", linewidth=1) + 
+        geom_hline(yintercept=high_recovery_cutoff, linetype="dashed", color = "black", linewidth=1)
+
+spksbar
+
+#check for any no's that would warrant reruns!
+Badspks <- subset(QAspks, FE_spks_flag == "NO, rerun")
+
+dat_aver1<-dat_aver1 %>% group_by(Plate) %>% mutate(QAQC_flag=ifelse(Plate %in% Badspks$Plate, ifelse(dat_aver1$QAQC_flag != "", paste0(dat_aver1$QAQC_flag, "; Spk recovery out of range"),"Spk recovery out of range"),paste0( dat_aver1$QAQC_flag,"") ) ) %>% ungroup()
+
+dat_aver1 <- dat_aver1 %>%
+  mutate(Run_notes = Run_notes)
+
+dat1<-dat1 %>% group_by(Plate) %>% mutate(QAQC_flag=ifelse(Plate %in% Baddups_Fe2$Plate, ifelse(dat1$QAQC_flag != "", paste0(dat1$QAQC_flag, "; Spk recovery out of range"),"Spk recovery out of range"),paste0( dat1$QAQC_flag,"") ) ) %>% ungroup()
+
+dat1 <- dat1 %>%
+  mutate(Run_notes = Run_notes)
+
+#write out a flag to the sample dataframe if any spks have recovery out of range 
+
+
+spks_percent <- (sum(QAspks$FE_spks_flag == "OK")/nrow(QAspks))*100
+#report out if flags indicate need for rerun
+ifelse(spks_percent >= 60  , ">60% of Spikes are within range",
+       "<60% of Spikes are out of range - REASSESS")
+```
+## Export full data then just final data 
+```{r, echo=FALSE}
+
+#Read out the summarized data
+write.csv(dat_aver1, file= summarizeddata_path)
+
+#Read out all the data
+write.csv(dat1, file= fulldata_path)
+
+#Now take out the absorbance and stuff 
+dat4 <- dat1[ ,-c(1:6,8:15)]
+write.csv(dat4, file= shortdata_path)
+
+Samples_outof_range<-rbind(FE_DiluteRerun,FE_bdl)
+write.csv(Samples_outof_range, out_of_Range)
+write.csv(HighCVSamples, high_CV)
+
+#save to QAQC Data to QAQC File
+write.csv(qlog, file= log_path, row.names=FALSE)
+
+```
+
