@@ -5,10 +5,9 @@ output: pdf_document
 date: "`r Sys.Date()`"
 ---
 
-##Collected sample from TEMPEST and GCW TR in March 2026. Some samples were added directly to vials with 75 uL of 50% HCl. Some samples were added to empty vials, and then those were reacidified in the lab a few weeks later using 75 uL HCl. This compares the aidified samples (added to acid in the field), NoAcid samples (added to empty vials in the field) and Reacidified samples (75 uL HCl added to NoAcid vials).  
+##Collected samples from TEMPEST and GCW TR in March 2026. Some samples were added directly to vials with 75 uL of 50% HCl in the field, some samples were added to empty vials, and then those were acidified in the lab a few weeks later using 75 uL HCl. 
 
-##Read in packages
-```{r packages, include = FALSE}
+```{r read in packages, include = FALSE}
 #packages
 library(ggplot2)
 library(dplyr)
@@ -26,8 +25,7 @@ library(dplyr)
 
 ```
 
-#Read in and collate all the files in the Processed Data folder 
-```{r, include = FALSE}
+```{r read in and collate all the files in the Processed Data folder , include = FALSE}
 files <- list.files(path = "Processed Data", pattern = "\\_Summary_Data.csv$", full.names = TRUE, recursive =  TRUE)
 
 read_csv_filename <- function(filename) {
