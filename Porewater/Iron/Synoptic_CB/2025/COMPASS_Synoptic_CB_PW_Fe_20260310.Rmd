@@ -1,5 +1,5 @@
 ---
-title: "FeCode_updated2025_20260226"
+title: "FeCode_updated2025_20260310"
 output: pdf_document
 date: "`r Sys.Date()`"
 ---
@@ -31,14 +31,18 @@ options(scipen = 999)
 # Things that need to be changed
 ```{r Information to be changed}
 
-Date_Run = "20260226"
-plates<- c("Plate4", "Plate5", "Plate6")
+Date_Run = "20260310"
+plates<- c("Plate7", "Plate8", "Plate9", "Plate10", "Plate11", "Plate12", "Plate13", "Plate14")
 Std_plates<- c("STD")
-Run_by = "Zoe Read"#Instrument user
+Run_by = "Melanie Giessner and Zoe Read"#Instrument user
 Script_run_by ="Zoe Read"#Code user
 Project = "COMPASS_Synoptic_CB"
 Experiment="2025"
-Run_notes="The Fe2 diff std curve R squared is 0.9844, which is slightly below the 0.985 cutoff but I think is reasonable. The check stds for FE3 60 uM were all bad."#any notes from run
+Run_notes="The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "#any notes from run
 
 #Stds that should be excluded
 stds_to_remove<-c("45 uM Fe_2 B")
@@ -53,11 +57,11 @@ file_paths_tidydata <- list.files(path = folder_path_tidydata, full.names = TRUE
 head(file_paths_tidydata)
 
 #file path name for processed data
-summarizeddata_path=paste0("QAQC'd Data/",Project,"_FE_",Date_Run,"_Summary_Data.csv")
-fulldata_path=paste0("QAQC'd Data/",Project,"_FE_",Date_Run,"_Data.csv")
-shortdata_path=paste0("QAQC'd Data/",Project,"_FE_",Date_Run,"_short_Data.csv")
-out_of_Range=paste0("QAQC'd Data/",Project,"_FE_",Date_Run,"_out_of_range_Data.csv")
-high_CV=paste0("QAQC'd Data/",Project,"_FE_",Date_Run,"_high_CV_Data.csv")
+summarizeddata_path=paste0("Processed Data/",Project,"_FE_",Date_Run,"_Summary_Data.csv")
+fulldata_path=paste0("Processed Data/",Project,"_FE_",Date_Run,"_Data.csv")
+shortdata_path=paste0("Processed Data/",Project,"_FE_",Date_Run,"_short_Data.csv")
+out_of_Range=paste0("Processed Data/",Project,"_FE_",Date_Run,"_out_of_range_Data.csv")
+high_CV=paste0("Processed Data/",Project,"_FE_",Date_Run,"_high_CV_Data.csv")
 #QAQC log path
 log_path="Fe_STD_QAQC.csv"
 
@@ -100,7 +104,7 @@ Top_STD_Fe2_Abs2_high=100
 
 #read in the csv files
 stds<-read_plates(
-  files = "Tidy Data/20260310_COMPASS_Synoptic_CB_Fe_STD.csv",#list of all file paths
+  files = file_paths_STDs,#list of all file paths
   plate_names = Std_plates ,  #list of plate names          
   well_ids_column = "Wells",    # name to give column of well IDs (optional)
   sep = ","                     # separator used in the csv file (optional)
@@ -927,14 +931,25 @@ dat1$ID_full <- paste(dat1$Plate, dat1$Dilution, dat1$IDs, sep = "_")
 #summarize by sampleID so that we can calculate the mean and std. dev. of the three wells 
 dat_aver <- dat1 %>%
   group_by(ID_full) %>%
-  summarise(IDs=first(IDs),FE_2_mean = mean(na.omit(FE_2_Conc_Final)), FE_2_sd = sd(na.omit(FE_2_Conc_Final)), FE_2_cv = cv(na.omit(FE_2_Conc_Final)),
-            FE_3_mean = mean(na.omit(FE_3_Conc_Final)), FE_3_sd = sd(na.omit(FE_3_Conc_Final)), FE_3_cv = cv(na.omit(FE_3_Conc_Final)),
-            FE_tot_mean =(mean(FE_2_Conc_Final,na.rm=TRUE)+ mean(FE_3_Conc_Final,na.rm=TRUE)), FE_tot_sd = sqrt(sd(na.omit(FE_3_Conc_Final))^2+sd(na.omit(FE_2_Conc_Final))),
-            FE_2_flag = ifelse(mean(na.omit(Abs1)) > mean(FE_2_500uM$Abs1), "High",ifelse(mean(na.omit(Abs1)) < (mean(FE_2_0uM$Abs1)+ MDL), "Below MDL" ,"Within range")),
-            FE_3_flag = ifelse(mean(na.omit(Abs2)) > mean(FE_2_100uM$Abs2)|(mean(na.omit(Abs2))-mean(na.omit(Abs1))) > mean(FE_3_100uM$Abs2), "High", ifelse(mean(na.omit(Abs2_diff)) < MDL|mean(na.omit(Abs2)) < (mean(FE_2_0uM$Abs2)+ MDL), "Below MDL" ,"Within range")),
+  summarise(IDs=first(IDs),
+            FE_2_mean = mean(na.omit(FE_2_Conc_Final)), 
+            FE_2_sd = sd(na.omit(FE_2_Conc_Final)), 
+            FE_2_cv = cv(na.omit(FE_2_Conc_Final)),
+            FE_3_mean = mean(na.omit(FE_3_Conc_Final)), 
+            FE_3_sd = sd(na.omit(FE_3_Conc_Final)), 
+            FE_3_cv = cv(na.omit(FE_3_Conc_Final)),
+            FE_tot_mean =(mean(FE_2_Conc_Final,na.rm=TRUE)+ mean(FE_3_Conc_Final,na.rm=TRUE)), 
+            FE_tot_sd = sqrt(sd(na.omit(FE_3_Conc_Final))^2+sd(na.omit(FE_2_Conc_Final))),
+            FE_2_flag = ifelse(mean(na.omit(Abs1)) > mean(FE_2_500uM$Abs1), "High",
+                               ifelse(mean(na.omit(Abs1)) < (mean(FE_2_0uM$Abs1)+ MDL), "Below MDL" ,"Within range")),
+            FE_3_flag = ifelse(mean(na.omit(Abs2)) > mean(FE_2_100uM$Abs2)|
+                              (mean(na.omit(Abs2))-mean(na.omit(Abs1))) > (mean(FE_3_100uM$Abs2)- mean(FE_3_100uM$Abs1)), "High",
+                              ifelse(mean(na.omit(Abs2_diff)) < MDL|mean(na.omit(Abs2)) < (mean(FE_2_0uM$Abs2)+ MDL), "Below MDL" ,"Within range")),
             Dilution = first(Dilution),
             Plate = first(Plate),
-            QAQC_flag = first(QAQC_flag))
+            QAQC_flag = first(QAQC_flag), 
+            Abs1_mean = mean(na.omit(Abs1)), 
+            Abs2_mean = mean(na.omit(Abs2)))
 
 #flag high cv data
 dat_aver$FE_2_cv_flag <- ifelse(dat_aver$FE_2_cv > cv_flag_sample, "High cv rerun", "ok")
@@ -1009,7 +1024,9 @@ dat1_HCV_fixed_FE2 <- dat_HCV_fixed_FE2 %>%
             FE_3_flag = ifelse(mean(na.omit(Abs2)) > mean(FE_2_100uM$Abs2)|(mean(na.omit(Abs2))-mean(na.omit(Abs1))) > mean(FE_3_100uM$Abs2), "High", ifelse(mean(na.omit(Abs2_diff)) < MDL|mean(na.omit(Abs2)) < (mean(FE_2_0uM$Abs2)+ MDL), "Below MDL" ,"Within range")),
             Dilution = first(Dilution),
             Plate = first(Plate),
-            QAQC_flag = first(QAQC_flag))
+            QAQC_flag = first(QAQC_flag), 
+            Abs1_mean = mean(na.omit(Abs1)), 
+            Abs2_mean = mean(na.omit(Abs2)))
 
 
 #Flag high cvs 
@@ -1056,7 +1073,9 @@ dat1_HCV_fixed_FE3 <- dat_HCV_fixed_FE3 %>%
             FE_3_flag = ifelse(mean(na.omit(Abs2)) > mean(FE_2_100uM$Abs2)|(mean(na.omit(Abs2))-mean(na.omit(Abs1))) > mean(FE_3_100uM$Abs2), "High", ifelse(mean(na.omit(Abs2_diff)) < MDL|mean(na.omit(Abs2)) < (mean(FE_2_0uM$Abs2)+ MDL), "Below MDL" ,"Within range")),
             Dilution = first(Dilution),
             Plate = first(Plate),
-            QAQC_flag = first(QAQC_flag))
+            QAQC_flag = first(QAQC_flag), 
+            Abs1_mean = mean(na.omit(Abs1)), 
+            Abs2_mean = mean(na.omit(Abs2)))
 
 
 #Flag high cvs
@@ -1302,7 +1321,7 @@ dat1 <- dat1 %>%
 spks_percent <- (sum(QAspks$FE_spks_flag == "OK")/nrow(QAspks))*100
 #report out if flags indicate need for rerun
 ifelse(spks_percent >= 60  , ">60% of Spikes are within range",
-       "<60% of Spikes are out of range - REASSESS")
+       "<60% of Spikes are within range - REASSESS")
 ```
 ## Export full data then just final data 
 ```{r, echo=FALSE}

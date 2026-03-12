@@ -31,14 +31,22 @@ options(scipen = 999)
 # Things that need to be changed
 ```{r Information to be changed}
 
-Date_Run = "20260226"
-plates<- c("Plate4", "Plate5", "Plate6")
+Date_Run = "20260311"
+plates<- c("Plate15", "Plate16", "Plate17")
 Std_plates<- c("STD")
-Run_by = "Zoe Read"#Instrument user
+Run_by = "Melanie Giessner and Zoe Read"#Instrument user
 Script_run_by ="Zoe Read"#Code user
 Project = "COMPASS_Synoptic_CB"
 Experiment="2025"
-Run_notes="The Fe2 diff std curve R squared is X, which is slightly below the 0.985 cutoff but I think is reasonable, and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. The check stds for FE3 60 uM were all bad."#any notes from run
+Run_notes="
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "#any notes from run
 
 #Stds that should be excluded
 stds_to_remove<-c("45 uM Fe_2 B")
@@ -53,11 +61,11 @@ file_paths_tidydata <- list.files(path = folder_path_tidydata, full.names = TRUE
 head(file_paths_tidydata)
 
 #file path name for processed data
-summarizeddata_path=paste0("QAQC'd Data/",Project,"_FE_",Date_Run,"_Summary_Data.csv")
-fulldata_path=paste0("QAQC'd Data/",Project,"_FE_",Date_Run,"_Data.csv")
-shortdata_path=paste0("QAQC'd Data/",Project,"_FE_",Date_Run,"_short_Data.csv")
-out_of_Range=paste0("QAQC'd Data/",Project,"_FE_",Date_Run,"_out_of_range_Data.csv")
-high_CV=paste0("QAQC'd Data/",Project,"_FE_",Date_Run,"_high_CV_Data.csv")
+summarizeddata_path=paste0("Processed Data/",Project,"_FE_",Date_Run,"_Summary_Data.csv")
+fulldata_path=paste0("Processed Data/",Project,"_FE_",Date_Run,"_Data.csv")
+shortdata_path=paste0("Processed Data/",Project,"_FE_",Date_Run,"_short_Data.csv")
+out_of_Range=paste0("Processed Data/",Project,"_FE_",Date_Run,"_out_of_range_Data.csv")
+high_CV=paste0("Processed Data/",Project,"_FE_",Date_Run,"_high_CV_Data.csv")
 #QAQC log path
 log_path="Fe_STD_QAQC.csv"
 
@@ -100,7 +108,7 @@ Top_STD_Fe2_Abs2_high=100
 
 #read in the csv files
 stds<-read_plates(
-  files = "Tidy Data/20260311_COMPASS_Synoptic_CB_Fe_STD.csv",#list of all file paths
+  files = file_paths_STDs,#list of all file paths
   plate_names = Std_plates ,  #list of plate names          
   well_ids_column = "Wells",    # name to give column of well IDs (optional)
   sep = ","                     # separator used in the csv file (optional)
@@ -1053,7 +1061,8 @@ dat1_HCV_fixed_FE3 <- dat_HCV_fixed_FE3 %>%
             FE_3_mean = mean(na.omit(FE_3_Conc_Final)), FE_3_sd = sd(na.omit(FE_3_Conc_Final)), FE_3_cv = cv(na.omit(FE_3_Conc_Final)),
             FE_tot_mean =(mean(FE_2_Conc_Final,na.rm=TRUE)+ mean(FE_3_Conc_Final,na.rm=TRUE)), FE_tot_sd = sqrt(sd(na.omit(FE_3_Conc_Final))^2+sd(na.omit(FE_2_Conc_Final))),
             FE_2_flag = ifelse(mean(na.omit(Abs1)) > mean(FE_2_500uM$Abs1), "High",ifelse(mean(na.omit(Abs1)) < (mean(FE_2_0uM$Abs1)+ MDL), "Below MDL" ,"Within range")),
-            FE_3_flag = ifelse(mean(na.omit(Abs2)) > mean(FE_2_100uM$Abs2)|(mean(na.omit(Abs2))-mean(na.omit(Abs1))) > mean(FE_3_100uM$Abs2), "High", ifelse(mean(na.omit(Abs2_diff)) < MDL|mean(na.omit(Abs2)) < (mean(FE_2_0uM$Abs2)+ MDL), "Below MDL" ,"Within range")),
+            FE_3_flag = ifelse(mean(na.omit(Abs2)) > mean(FE_2_100uM$Abs2)|(mean(na.omit(Abs2))-mean(na.omit(Abs1))) > mean(FE_3_100uM$Abs2), "High", 
+                               ifelse(mean(na.omit(Abs2_diff)) < MDL|mean(na.omit(Abs2)) < (mean(FE_2_0uM$Abs2)+ MDL), "Below MDL" ,"Within range")),
             Dilution = first(Dilution),
             Plate = first(Plate),
             QAQC_flag = first(QAQC_flag))
@@ -1196,7 +1205,7 @@ QAdups$FE_tot_dups_flag <-  ifelse(QAdups$FE_tot_dups_chk <dups_perc_diff, 'OK',
 dupsbar_Fe2 <- ggplot(data = QAdups, aes(x = ID_full, y = FE_2_dups_chk, fill=FE_2_dups_flag)) +
        geom_bar(stat = 'identity') + 
         scale_fill_manual(values=c("OK" ='darkgreen' , "Rerun" = 'darkred')) + 
-        theme_classic() + labs(x= "Sample ID", y="Difference Between Duplicates (%)") + 
+        theme_classic() + labs(x= "Sample ID", y="Difference Between Fe 2 Duplicates (%)") + 
         theme(legend.position="none") +  geom_hline(yintercept=dups_perc_diff, linetype="dashed", 
                 color = "black", linewidth=1)
 
@@ -1206,7 +1215,7 @@ dupsbar_Fe2
 dupsbar_Fe3 <- ggplot(data = QAdups, aes(x = ID_full, y = FE_3_dups_chk, fill=FE_3_dups_flag)) +
        geom_bar(stat = 'identity') + 
        scale_fill_manual(values=c("OK" ='darkgreen' , "Rerun" = 'darkred')) + 
-        theme_classic() + labs(x= "Sample ID", y="Difference Between Duplicates (%)") + 
+        theme_classic() + labs(x= "Sample ID", y="Difference Between Fe 3 Duplicates (%)") + 
         theme(legend.position="none") +  geom_hline(yintercept=dups_perc_diff, linetype="dashed", 
                 color = "black", linewidth=1)
 
@@ -1215,7 +1224,7 @@ dupsbar_Fe3
 dupsbar_Fetot <- ggplot(data = QAdups, aes(x = ID_full, y = FE_tot_dups_chk, fill=FE_tot_dups_flag)) +
        geom_bar(stat = 'identity') + 
        scale_fill_manual(values=c("OK" ='darkgreen' , "Rerun" = 'darkred')) + 
-        theme_classic() + labs(x= "Sample ID", y="Difference Between Duplicates (%)") + 
+        theme_classic() + labs(x= "Sample ID", y="Difference Between Fe Tot Duplicates (%)") + 
         theme(legend.position="none") +  geom_hline(yintercept=dups_perc_diff, linetype="dashed", 
                 color = "black", linewidth=1)
 

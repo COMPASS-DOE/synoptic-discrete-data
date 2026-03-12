@@ -1,0 +1,165 @@
+---
+title: "COMPASS_Iron_Reacidification_Comparison_2026"
+author: "Zoe Read"
+output: pdf_document
+date: "`r Sys.Date()`"
+---
+
+##Collected sample from TEMPEST and GCW TR in March 2026. Some samples were added directly to vials with 75 uL of 50% HCl. Some samples were added to empty vials, and then those were reacidified in the lab a few weeks later using 75 uL HCl. This compares the aidified samples (added to acid in the field), NoAcid samples (added to empty vials in the field) and Reacidified samples (75 uL HCl added to NoAcid vials).  
+
+##Read in packages
+```{r packages, include = FALSE}
+#packages
+library(ggplot2)
+library(dplyr)
+library(data.table)
+library(matrixStats)
+library(gridExtra)
+library(ggpubr)
+library(grid)
+library(stringr)
+library(plater)
+library(raster)
+library(tidyverse)
+library(readxl)
+library(dplyr)
+
+```
+
+#Read in and collate all the files in the Processed Data folder 
+```{r, include = FALSE}
+files <- list.files(path = "Processed Data", pattern = "\\_Summary_Data.csv$", full.names = TRUE, recursive =  TRUE)
+
+read_csv_filename <- function(filename) {
+  # Read the CSV file
+  data <- read.csv(filename)
+  # Add a new column 'SourceFile' with only the filename (using basename)
+  data$SourceFile <- basename(filename)
+  # Return the modified data frame
+  return(data)
+}
+
+# 3. Use lapply to apply the function to all files
+list_of_dfs <- lapply(files, read_csv_filename)
+
+# 4. Combine the list of data frames into a single data frame
+#    This uses base R's do.call and rbind
+all_data <- do.call(rbind, list_of_dfs)
+
+##Extract Analysis date from file name
+all_data <- all_data %>%
+  mutate(Analysis_rundate = str_extract(SourceFile, "\\d{8}"))
+
+all_data <- all_data %>%
+  mutate(Plate = str_extract(ID_full, "[^_]+"))
+
+all_data <- all_data[, -which(names(all_data) == "X")]
+all_data <- all_data[, -which(names(all_data) == "SourceFile")]
+
+head(all_data)
+
+##Extract IDs for comparison
+Samples <- c("20260309_TMP_C_I5", "20260309_TMP_C_H3", "20260309_TMP_C_B4", "20260309_TMP_FW_D5", "20260309_TMP_FW_H3", "20260309_TMP_SW_H6", "20260309_TMP_SW_C6", "GCW_TR_B_10", "GCW_TR_B_20", "GCW_TR_C_20")
+
+##Remove IDs for comparison
+Samples_to_remove <- c("1_GCW_TR_B_20", "8_GCW_TR_B_10", "8_GCW_TR_C_20")
+
+data_comparison <- all_data %>%
+  filter(str_detect(IDs, paste(Samples, collapse = "|"))) %>%
+  filter(!str_detect(IDs, "spk")) %>%
+  filter(!str_detect(IDs, "dup")) %>%
+  filter(!str_detect(IDs, "2025")) %>%
+  filter(!str_detect(ID_full, paste(Samples_to_remove, collapse = "|")))
+
+##Separate IDs to get acidified/un-acidified as its own column
+data_comparison <- data_comparison %>%
+  separate(
+    col = "IDs",
+    sep = "_",
+    into = c("A", "B", "C", "D", "Acid_state"),
+    remove = FALSE) %>%
+  mutate(new_ID = paste(A, B, C, D, sep = "_")) %>%
+  dplyr::select(-c("A", "B", "C", "D"))
+
+##Replace NA's with "Acidified" 
+data_comparison$Acid_state <- data_comparison$Acid_state %>% replace_na("Acidified")
+
+```
+
+## Plot Acidified vs Re-acidified Samples
+```{r Visualize Data, echo=FALSE, warning=FALSE}
+
+#group the data for plotting
+data_plotting <- data_comparison %>%
+  mutate(
+    Acid_state_1 = case_when(
+      Acid_state == "Reacidified" ~ "Acidified Later in Lab",
+      Acid_state == "Acidified" ~ "Acidified in Field",
+      Acid_state == "NoAcid" ~ "No Acid", 
+      TRUE ~ Acid_state  # keep everything else unchanged
+    )
+  ) %>%
+  mutate(Acid_state_1 = factor(Acid_state_1, levels = c("Acidified in Field", "Acidified Later in Lab", "No Acid")))
+
+#Plot Fe2 Data: 
+viz_Fe2_plot <- ggplot(data_plotting, aes(x = factor(new_ID), y = FE_2_mean, fill = Acid_state_1)) + 
+  geom_col(position = position_dodge(width = 0.9), width = 0.8) + # 'position_dodge' for grouped bars
+  geom_errorbar(
+    aes(ymin = FE_2_mean - FE_2_sd, ymax = FE_2_mean + FE_2_sd),
+    position = position_dodge(width = 0.9), # Must match the geom_col dodge width
+    width = 0.25 # Width of the horizontal segments of the error bars
+  ) +
+  scale_fill_manual(values = c(
+    "Acidified in Field" = "#419973",
+    "Acidified Later in Lab" = "#25ABE6",
+    "No Acid" = "#FFBC42"
+  )) +
+  theme_classic() +
+  labs(x = "Sample ID", y = "Iron II (uM)", title = "Iron II Comparison") + 
+  theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1)) + 
+  labs(fill = "Sample Acidification")
+
+viz_Fe2_plot
+
+#Plot Fe3 Data: 
+viz_Fe3_plot <- ggplot(data_plotting, aes(x = factor(new_ID), y = FE_3_mean, fill = Acid_state_1)) + 
+  geom_col(position = position_dodge(width = 0.9), width = 0.8) + # 'position_dodge' for grouped bars
+  geom_errorbar(
+    aes(ymin = FE_3_mean - FE_3_sd, ymax = FE_3_mean + FE_3_sd),
+    position = position_dodge(width = 0.9), # Must match the geom_col dodge width
+    width = 0.25 # Width of the horizontal segments of the error bars
+  ) +
+  scale_fill_manual(values = c(
+    "Acidified in Field" = "#419973",
+    "Acidified Later in Lab" = "#25ABE6",
+    "No Acid" = "#FFBC42"
+  )) +
+  theme_classic() +
+  labs(x = "Sample ID", y = "Iron III (uM)", title = "Iron III Comparison") + 
+  theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1)) + 
+  labs(fill = "Sample Acidification")
+
+viz_Fe3_plot
+
+#Plot Total Fe Data: 
+viz_FeTot_plot <- ggplot(data_plotting, aes(x = factor(new_ID), y = FE_tot_mean, fill = Acid_state_1)) + 
+  geom_col(position = position_dodge(width = 0.9), width = 0.8) + # 'position_dodge' for grouped bars
+  geom_errorbar(
+    aes(ymin = FE_tot_mean - FE_tot_sd, ymax = FE_tot_mean + FE_tot_sd),
+    position = position_dodge(width = 0.9), # Must match the geom_col dodge width
+    width = 0.25 # Width of the horizontal segments of the error bars
+  ) +
+  scale_fill_manual(values = c(
+    "Acidified in Field" = "#419973",
+    "Acidified Later in Lab" = "#25ABE6",
+    "No Acid" = "#FFBC42"
+  )) +
+  theme_classic() +
+  labs(x = "Sample ID", y = "Total Iron (uM)", title = "Total Iron Comparison") + 
+  theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1)) + 
+  labs(fill = "Sample Acidification")
+
+viz_FeTot_plot
+
+```
+

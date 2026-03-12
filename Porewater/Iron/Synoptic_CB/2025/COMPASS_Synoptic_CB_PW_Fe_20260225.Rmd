@@ -54,11 +54,11 @@ file_paths_tidydata <- list.files(path = folder_path_tidydata, full.names = TRUE
 head(file_paths_tidydata)
 
 #file path name for processed data
-summarizeddata_path=paste0("QAQC'd Data/",Project,"_FE_",Date_Run,"_Summary_Data.csv")
-fulldata_path=paste0("QAQC'd Data/",Project,"_FE_",Date_Run,"_Data.csv")
-shortdata_path=paste0("QAQC'd Data/",Project,"_FE_",Date_Run,"_short_Data.csv")
-out_of_Range=paste0("QAQC'd Data/",Project,"_FE_",Date_Run,"_out_of_range_Data.csv")
-high_CV=paste0("QAQC'd Data/",Project,"_FE_",Date_Run,"_high_CV_Data.csv")
+summarizeddata_path=paste0("Processed Data/",Project,"_FE_",Date_Run,"_Summary_Data.csv")
+fulldata_path=paste0("Processed Data/",Project,"_FE_",Date_Run,"_Data.csv")
+shortdata_path=paste0("Processed Data/",Project,"_FE_",Date_Run,"_short_Data.csv")
+out_of_Range=paste0("Processed Data/",Project,"_FE_",Date_Run,"_out_of_range_Data.csv")
+high_CV=paste0("Processed Data/",Project,"_FE_",Date_Run,"_high_CV_Data.csv")
 
 #QAQC log path
 log_path="Fe_STD_QAQC.csv"
