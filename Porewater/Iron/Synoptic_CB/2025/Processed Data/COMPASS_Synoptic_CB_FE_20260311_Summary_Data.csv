@@ -1,0 +1,613 @@
+"","ID_full","IDs","FE_2_mean","FE_2_sd","FE_2_cv","FE_3_mean","FE_3_sd","FE_3_cv","FE_tot_mean","FE_tot_sd","FE_2_flag","FE_3_flag","Dilution","Plate","QAQC_flag","FE_2_cv_flag","FE_3_cv_flag","Run_notes"
+"1","Plate15_1_202511_SWH_SW_B","202511_SWH_SW_B",3.05449971600937,0.257658213781437,8.43536545218807,2.96932477997973,0.215293716928392,7.25059509757843,6.02382449598911,0.551370654215728,"Within range","Within range",1,"Plate15","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range","ok","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"2","Plate15_1_202511_SWH_WC_B_10","202511_SWH_WC_B_10",100.952377145598,2.66272096691638,2.63760105725503,146.632220669913,22.98755970835,15.6770180546456,247.584597815511,23.0454034963997,"Within range","High",1,"Plate15","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range","ok","High cv rerun","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"3","Plate15_1_202511_SWH_WC_B_20","202511_SWH_WC_B_20",48.2380835239397,2.8342403515958,5.87552436694383,50.2308194472815,5.38079883501371,10.712146236557,98.4689029712211,5.63801706759395,"Within range","Within range",1,"Plate15","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range","ok","High cv rerun","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"4","Plate15_1_202511_SWH_WC_C_10","202511_SWH_WC_C_10",102.129144678169,21.6346078561955,21.1835788152057,0,0,0,102.129144678169,4.65130173781443,"Within range","Below MDL",1,"Plate15","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range","High cv rerun","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"5","Plate15_1_202511_SWH_WC_C_45","202511_SWH_WC_C_45",23.8243729180418,0.257658213781436,1.0814900130543,18.8952443630394,1.17259260860455,6.20575519466813,42.7196172810812,1.27774474741064,"Within range","Within range",1,"Plate15","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range","ok","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"6","Plate15_1_20260309_TMP_C_B4","20260309_TMP_C_B4",7.06272086026125,0.77297464134431,10.9444314257624,0,0,0,7.06272086026125,0.879189764126215,"Within range","Below MDL",1,"Plate15","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range","High cv rerun","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"7","Plate15_1_20260309_TMP_C_C3","20260309_TMP_C_C3",17.4476574612775,1.03063285512575,5.90699844614146,0,0,0,17.4476574612775,1.01520089397407,"Within range","Below MDL",1,"Plate15","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range","ok","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"8","Plate15_1_20260309_TMP_C_C6","20260309_TMP_C_C6",7.97368021122759,1.54594928268862,19.388152543562,0,0,0,7.97368021122759,1.2433620883269,"Within range","Below MDL",1,"Plate15","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range","High cv rerun","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"9","Plate15_1_20260309_TMP_C_C6 spk","20260309_TMP_C_C6 spk",20.9093029949496,0.772974641344312,3.69679774371731,34.5485093646024,1.28286467369822,3.71322727750625,55.457812359552,1.55522230319885,"Within range","Within range",1,"Plate15","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range","ok","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"10","Plate15_1_20260309_TMP_C_E3","20260309_TMP_C_E3",6.51614524968145,1.54594928268862,23.7249051924402,0,0,0,6.51614524968145,1.2433620883269,"Within range","Below MDL",1,"Plate15","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range","High cv rerun","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"11","Plate15_1_20260309_TMP_C_H6","20260309_TMP_C_H6",21.4558786055294,1.03063285512575,4.80349872440156,0,0,0,21.4558786055294,1.01520089397407,"Within range","Below MDL",1,"Plate15","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range","ok","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"12","Plate15_1_20260309_TMP_FW_C6","20260309_TMP_FW_C6",4.14765093716898,0.257658213781437,6.21214797688121,0,0,0,4.14765093716898,0.507600446987035,"Within range","Below MDL",1,"Plate15","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range","ok","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"13","Plate15_1_20260309_TMP_FW_F6","20260309_TMP_FW_F6",3.41888345639591,0.257658213781437,7.53632632020319,0.666131879754688,0.215293716928389,32.3199839959129,4.0850153361506,0.551370654215727,"Within range","Below MDL",1,"Plate15","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range","ok","High cv rerun","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"14","Plate15_1_20260309_TMP_FW_I5","20260309_TMP_FW_I5",79.7705615593136,3.32840120864546,4.17246806789823,0,0,0,79.7705615593136,1.82439064036337,"Within range","Below MDL",1,"Plate15","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range","ok","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"15","Plate16_1_20260309_TMP_C_B4_NoAcid","20260309_TMP_C_B4_NoAcid",15.0184325253673,0.556605357444145,3.70614813832267,37.4944860656941,0.264966138997678,0.706680279690807,52.5129185910614,0.791714855399014,"Within range","Within range",1,"Plate16","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range","ok","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"16","Plate16_1_20260309_TMP_C_H3","20260309_TMP_C_H3",17.083273720891,2.0612657102515,12.065987725355,0,0,0,17.083273720891,1.43571087279142,"Within range","Below MDL",1,"Plate16","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range","High cv rerun","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"17","Plate16_1_20260309_TMP_C_I5","20260309_TMP_C_I5",13.0750525766391,2.0612657102515,15.7648751174761,0,0,0,13.0750525766391,1.43571087279142,"Within range","Below MDL",1,"Plate16","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range","High cv rerun","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"18","Plate16_1_20260309_TMP_C_I5_NoAcid","20260309_TMP_C_I5_NoAcid",8.45952519840964,0.210377050600489,2.48686593711004,17.7232308876004,0.726912683872574,4.10146822824014,26.18275608601,0.859522600386586,"Within range","Within range",1,"Plate16","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range","ok","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"19","Plate16_1_20260309_TMP_FW_D5_NoAcid","20260309_TMP_FW_D5_NoAcid",1.59696475446323,0.257658213781436,16.1342454842116,0,0,0,1.59696475446323,0.507600446987033,"Within range","Below MDL",1,"Plate16","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range","High cv rerun","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"20","Plate16_1_20260309_TMP_FW_H3 spk","20260309_TMP_FW_H3 spk",31.2942395959658,2.38942397683993,7.6353476156933,63.2389549980676,28.1629748137737,44.5342191606965,94.5331945940335,28.2053642830241,"Within range","Within range",1,"Plate16","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range","ok","High cv rerun","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"21","Plate16_1_20260309_TMP_SW_D5","20260309_TMP_SW_D5",19.9983436439832,0.964068758858294,4.82074303762825,5.85237376081918,1.68956607836626,28.8697569126167,25.8507174048024,1.95415001778887,"Within range","Within range",1,"Plate16","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range","ok","High cv rerun","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"22","Plate16_1_20260309_TMP_SW_F4","20260309_TMP_SW_F4",29.7152433876242,2.42618650453236,8.16478759027368,19.8617155896234,2.67600141249011,13.4731634858781,49.5769589772476,3.09631556275865,"Within range","Within range",1,"Plate16","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range","ok","High cv rerun","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"23","Plate16_1_20260309_TMP_SW_F6","20260309_TMP_SW_F6",27.4682103219072,1.80360749647006,6.56616312214415,5.51649277289083,4.64103645056753,84.1302008655668,32.984703094798,4.83144148593011,"Within range","Within range",1,"Plate16","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range","ok","High cv rerun","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"24","Plate16_1_20260309_TMP_SW_H6","20260309_TMP_SW_H6",11.860440108684,1.17132984509069,9.87593912499979,2.4766547150318,1.29176230157032,52.1575451648591,14.3370948237158,1.68522392839911,"Within range","Within range",1,"Plate16","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range","ok","High cv rerun","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"25","Plate16_1_20260309_TMP_SW_H6_NoAcid","20260309_TMP_SW_H6_NoAcid",4.9371490413398,0.210377050600488,4.26110390508685,10.6221001548959,0.942206400800968,8.87024587474532,15.5592491962357,1.04791695869034,"Within range","Within range",1,"Plate16","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range","ok","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"26","Plate16_8_GCW_TR_B_20","GCW_TR_B_20",188.165758408425,10.2373891250184,5.44062278472451,0,0,0,188.165758408425,3.19959202477729,"Within range","Below MDL",8,"Plate16","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range","ok","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"27","Plate16_8_GCW_TR_B_20_NoAcid","GCW_TR_B_20_NoAcid",63.7894416898207,4.122531420503,6.46271751452067,16.7618182536054,4.51879694158203,26.9588708886642,80.5512599434261,4.9539940673919,"Within range","Within range",8,"Plate16","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range","ok","High cv rerun","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"28","Plate17_1_20260309_TMP_C_B4_Reacidified","20260309_TMP_C_B4_Reacidified",28.3791696728735,1.31380425990901,4.62946687677342,14.1536482502501,0.627034331832352,4.43019581061916,42.5328179231236,1.30651303598757,"Within range","Within range",1,"Plate17","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range","ok","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"29","Plate17_1_20260309_TMP_C_H3_Reacidified","20260309_TMP_C_H3_Reacidified",9.18829267918271,0.556605357444145,6.05776695277903,6.78756000195483,0.76742845041628,11.3063965577506,15.9758526811375,1.07030452860505,"Within range","Within range",1,"Plate17","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range","ok","High cv rerun","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"30","Plate17_1_20260309_TMP_C_I5_Reacidified","20260309_TMP_C_I5_Reacidified",10.2814439003423,0.556605357444145,5.41368861065918,12.2034312040288,3.47250035318806,28.4551147552802,22.4848751043711,3.55174099004071,"Within range","Within range",1,"Plate17","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range","ok","High cv rerun","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"31","Plate17_1_20260309_TMP_FW_D5_Reacidified","20260309_TMP_FW_D5_Reacidified",2.50792410542957,0,0,1.0655408747794,1.37279383465775,128.83539873043,3.57346498020897,1.37279383465775,"Within range","Within range",1,"Plate17","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range","ok","High cv rerun","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"32","Plate17_1_20260309_TMP_SW_C6_Reacidified","20260309_TMP_SW_C6_Reacidified",26.8001734645319,1.11321071488829,4.15374443886173,9.33234136702763,1.58979683398607,17.0353480596309,36.1325148315595,1.90805259053319,"Within range","Within range",1,"Plate17","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range","ok","High cv rerun","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"33","Plate17_1_20260309_TMP_SW_H6_Reacidified","20260309_TMP_SW_H6_Reacidified",9.613407042967,0.772974641344312,8.04058995826882,0,0,0,9.613407042967,0.879189764126216,"Within range","Below MDL",1,"Plate17","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range","ok","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"34","Plate17_1_GCW_TR_B_10_Reacidified","GCW_TR_B_10_Reacidified",7.06272086026125,0.77297464134431,10.9444314257624,8.61438776819789,4.88580995438951,56.7168565643942,15.6771086284591,4.96428379041287,"Within range","Within range",1,"Plate17","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range","High cv rerun","High cv rerun","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"35","Plate17_1_GCW_TR_B_20_NoAcid","GCW_TR_B_20_NoAcid",268.759427290273,0.998520362593625,0.371529427883166,202.527689335297,220.705681473572,108.975558946007,471.28711662557,220.707943570404,"Within range","High",1,"Plate17","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range","ok","High cv rerun","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"36","Plate17_1_GCW_TR_B_20_Reacidified","GCW_TR_B_20_Reacidified",53.1572640191579,0.515316427562876,0.96941864309863,310.967310584256,32.6517731779574,10.500066105537,364.124574603414,32.659663318723,"Within range","High",1,"Plate17","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range","ok","High cv rerun","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"37","Plate17_1_GCW_TR_C_20","GCW_TR_C_20",6.75906774327248,0.556605357444145,8.23494272561704,11.9455904446166,0.686396917328873,5.74602754473478,18.704658187889,1.01377812442503,"Within range","Within range",1,"Plate17","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range","ok","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"38","Plate17_1_GCW_TR_C_20 spk","GCW_TR_C_20 spk",5.05861028813531,0,0,13.7061294834768,0.349555900769372,2.55036187415838,18.7647397716121,0.349555900769372,"Within range","Within range",1,"Plate17","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range","ok","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"39","Plate17_1_GCW_TR_C_20_Reacidified","GCW_TR_C_20_Reacidified",6.69833711987472,1.28829106890718,19.2329983673811,8.96716622826099,2.1529371692839,24.0091140777416,15.6655033481357,2.43380967287735,"Within range","Within range",1,"Plate17","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range","High cv rerun","High cv rerun","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"40","Plate17_8_GCW_TR_B_20_Reacidified","GCW_TR_B_20_Reacidified",55.0442319205439,5.04904921441173,9.17271263172499,58.0260617948991,2.37060200012641,4.08540908481024,113.070293715443,3.26631337403732,"Within range","Within range",8,"Plate17","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range","ok","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"41","Plate15_1_202511_SWH_SW_A","202511_SWH_SW_A",2.50792410542957,0,0,0,0,0,2.50792410542957,0,"Within range","Below MDL",1,"Plate15","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range","ok","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"42","Plate15_1_202511_SWH_SW_C","202511_SWH_SW_C",2.69011597562284,0.257658213781438,9.57795931908781,0,0,0,2.69011597562284,0.507600446987035,"Within range","Below MDL",1,"Plate15","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range","ok","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"43","Plate15_1_20260309_TMP_C_D5","20260309_TMP_C_D5",1.41477288426997,0,0,0,0,0,1.41477288426997,0,"Within range","Below MDL",1,"Plate15","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range","ok","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"44","Plate15_1_20260309_TMP_C_D5 dup","20260309_TMP_C_D5 dup",1.05038914388343,0,0,0,0,0,1.05038914388343,0,"Within range","Below MDL",1,"Plate15","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range","ok","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"45","Plate16_1_20260309_TMP_FW_D5","20260309_TMP_FW_D5",4.51203467755551,0.257658213781436,5.71046616869149,0,0,0,4.51203467755551,0.507600446987033,"Within range","Below MDL",1,"Plate16","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range","ok","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"46","Plate16_1_20260309_TMP_FW_H3_NoAcid","20260309_TMP_FW_H3_NoAcid",3.78326719678244,0.257658213781438,6.81046831692375,0,0,0,3.78326719678244,0.507600446987035,"Within range","Below MDL",1,"Plate16","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range","ok","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"47","Plate16_1_20260309_TMP_SW_C6","20260309_TMP_SW_C6",73.180663376914,0,0,0,0,0,73.180663376914,0,"Within range","Below MDL",1,"Plate16","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range","ok","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"48","Plate17_1_GCW_TR_B_10","GCW_TR_B_10",5.05861028813531,0,0,12.1133696034574,0.878932918836262,7.25589119798178,17.1719798915927,0.878932918836262,"Within range","Within range",1,"Plate17","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range","ok","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"49","Plate17_1_GCW_TR_B_10 dup","GCW_TR_B_10 dup",5.05861028813531,0.515316427562875,10.1869169240319,18.3316145994389,0.699793631251081,3.81741404967406,23.3902248875742,1.00251062533145,"Within range","Within range",1,"Plate17","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range","High cv rerun","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"50","Plate17_1_GCW_TR_B_20","GCW_TR_B_20",624.61392913985,44.9334163167138,7.19379031117528,0,0,0,624.61392913985,6.70323924059956,"High","High",1,"Plate17","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range","ok","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"51","Plate15_1_20260309_TMP_C_F4","20260309_TMP_C_F4",8.94537018559168,0.556605357444145,6.22227304064699,0,0,0,8.94537018559168,0.746059888644434,"Within range","Below MDL",1,"Plate15","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range","ok","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"52","Plate15_1_20260309_TMP_C_F6","20260309_TMP_C_F6",12.589207589457,0.210377050600488,1.67109048846467,0,0,0,12.589207589457,0.458668780930737,"Within range","Below MDL",1,"Plate15","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range","ok","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"53","Plate15_1_20260309_TMP_FW_B4","20260309_TMP_FW_B4",6.27322275609043,0.210377050600489,3.35357213955525,0,0,0,6.27322275609043,0.458668780930737,"Within range","Below MDL",1,"Plate15","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range","ok","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"54","Plate15_1_20260309_TMP_FW_C3","20260309_TMP_FW_C3",4.32984280736224,0.364383740386534,8.41563439132142,0,0,0,4.32984280736224,0.603642063135542,"Within range","Below MDL",1,"Plate15","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range","ok","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"55","Plate15_1_20260309_TMP_FW_E3","20260309_TMP_FW_E3",4.20838156056673,0.210377050600489,4.99900133989176,0,0,0,4.20838156056673,0.458668780930737,"Within range","Below MDL",1,"Plate15","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range","ok","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"56","Plate15_1_20260309_TMP_FW_F4","20260309_TMP_FW_F4",5.05861028813531,0.364383740386535,7.20323803636696,0,0,0,5.05861028813531,0.603642063135543,"Within range","Below MDL",1,"Plate15","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range","ok","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"57","Plate16_1_20260309_TMP_C_H3_NoAcid","20260309_TMP_C_H3_NoAcid",8.58098644520515,0.420754101200978,4.90333021602761,5.45807585833631,0.417735137247702,7.65352384411588,14.0390623035415,0.771528836850791,"Within range","Within range",1,"Plate16","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range","ok","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"58","Plate16_1_20260309_TMP_FW_H3","20260309_TMP_FW_H3",4.9371490413398,0.420754101200977,8.52220781017371,0,0,0,4.9371490413398,0.648655610629383,"Within range","Below MDL",1,"Plate16","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range","ok","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"59","Plate16_1_20260309_TMP_SW_B4","20260309_TMP_SW_B4",28.7435534132601,0.964068758858292,3.35403471170529,15.3464658930058,0.290281834612731,1.89152236506144,44.0900193062659,1.02388100009934,"Within range","Within range",1,"Plate16","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range","ok","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"60","Plate16_1_20260309_TMP_SW_C6_NoAcid","20260309_TMP_SW_C6_NoAcid",12.103362602275,0.420754101200975,3.47634054293216,41.2498279797435,2.10000984049131,5.09095417688181,53.3531905820185,2.19790705703433,"Within range","Within range",1,"Plate16","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range","ok","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"61","Plate16_8_GCW_TR_B_10","GCW_TR_B_10",2.5729733048829,NA,NA,0,NA,0,2.5729733048829,NA,"Below MDL","Below MDL",8,"Plate16","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range",NA,"ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"62","Plate16_8_GCW_TR_B_10_NoAcid","GCW_TR_B_10_NoAcid",5.48804322797518,0,0,0,0,0,5.48804322797518,0,"Within range","Below MDL",8,"Plate16","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range","ok","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"63","Plate16_8_GCW_TR_B_11","GCW_TR_B_11",5.48804322797518,NA,NA,0,NA,0,5.48804322797518,NA,"Within range","Below MDL",8,"Plate16","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range",NA,"ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"64","Plate16_8_GCW_TR_B_12","GCW_TR_B_12",5.48804322797518,NA,NA,0,NA,0,5.48804322797518,NA,"Within range","Below MDL",8,"Plate16","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range",NA,"ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"65","Plate16_8_GCW_TR_C_20","GCW_TR_C_20",5.48804322797518,0,0,0,0,0,5.48804322797518,0,"Within range","Below MDL",8,"Plate16","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range","ok","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"66","Plate17_1_20260309_TMP_FW_H3_Reacidified","20260309_TMP_FW_H3_Reacidified",4.08692031377122,0.210377050600489,5.1475691828785,0,0,0,4.08692031377122,0.458668780930737,"Within range","Below MDL",1,"Plate17","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range","ok","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"67","Plate17_1_GCW_TR_B_10_NoAcid","GCW_TR_B_10_NoAcid",19.6339599035967,0.631131151801466,3.21448732145903,0,0,0,19.6339599035967,0.794437632417716,"Within range","Below MDL",1,"Plate17","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range","ok","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "
+"68","Plate17_1_GCW_TR_C_20_NoAcid","GCW_TR_C_20_NoAcid",20.3627273843698,0.728767480773071,3.57892863277473,0,0,0,20.3627273843698,0.853678792505162,"Within range","Below MDL",1,"Plate17","FE_2_high Std curve r2 low; FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range","ok","ok","
+The Fe2 diff std curve R squared is 0.94, which is below the 0.985 cutoff but I think is reasonable, 
+and Melanie mentioned that this R sqaured might be lower since it is the difference between two curves and is more sensitive. 
+The FE_2_high std curve R squared is 0.984, which is close to the 0.985 cutoff
+so I think it is reasonable. 
+The FE_2_diff slope is slightly lower than previous slopes. 
+The check stds for FE3 60 uM and Fe3 9 uM were all bad.
+One dup was off for Fe2 and one dup was off for Fe3. 
+One spike was too high and one spike looks like the spk solution didn't get added. "

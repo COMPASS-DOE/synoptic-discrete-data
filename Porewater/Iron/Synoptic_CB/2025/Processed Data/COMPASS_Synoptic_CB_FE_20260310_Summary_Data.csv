@@ -1,0 +1,961 @@
+,ID_full,IDs,FE_2_mean,FE_2_sd,FE_2_cv,FE_3_mean,FE_3_sd,FE_3_cv,FE_tot_mean,FE_tot_sd,FE_2_flag,FE_3_flag,Dilution,Plate,QAQC_flag,FE_2_cv_flag,FE_3_cv_flag,Run_notes
+1,Plate10_1_202511_GWI_SW_C,202511_GWI_SW_C,0.744865419,0.268876223,36.09728903,0,0,0,0.744865419,0.51853276,Below MDL,Below MDL,1,Plate10,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range,High cv rerun,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+2,Plate10_8_202511_GWI_TR_A_10,202511_GWI_TR_A_10,940.3850151,26.34608419,2.801627393,0,0,0,940.3850151,5.132843674,Within range,High,8,Plate10,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+3,Plate10_8_202511_GWI_TR_C_10,202511_GWI_TR_C_10,430.3161395,41.82040999,9.718531599,43.44337055,37.71606962,86.81662848,473.75951,38.26646466,Within range,Within range,8,Plate10,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range,ok,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+4,Plate10_8_202511_GWI_TR_C_20,202511_GWI_TR_C_20,463.7779988,0,0,0,0,0,463.7779988,0,Within range,Below MDL,8,Plate10,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+5,Plate10_8_202511_GWI_UP_A_45,202511_GWI_UP_A_45,74.40363563,4.302019572,5.782001828,12.32758018,7.573726847,61.43725483,86.73121581,7.852601985,Within range,Below MDL,8,Plate10,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range,ok,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+6,Plate10_8_202511_GWI_UP_B_10,202511_GWI_UP_B_10,60.71469317,2.151009786,3.542815871,4.433027362,5.596717602,126.2504637,65.14772054,5.785694229,Within range,Below MDL,8,Plate10,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range,ok,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+7,Plate10_8_202511_GWI_WC_A_10,202511_GWI_WC_A_10,1368.863395,184.4225893,13.47268032,0,0,0,1368.863395,13.58022788,Within range,High,8,Plate10,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range,High cv rerun,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+8,Plate10_8_202511_SWH_UP_A_20,202511_SWH_UP_A_20,24.21084663,2.151009786,8.884488094,1.914309284,1.308388981,68.34783657,26.12515591,1.965424003,Within range,Below MDL,8,Plate10,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range,ok,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+9,Plate10_8_202511_SWH_UP_A_45,202511_SWH_UP_A_45,86.57158448,6.083974425,7.027680573,0,0,0,86.57158448,2.466571391,Within range,Below MDL,8,Plate10,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+10,Plate11_1_202511_SWH_SWAMP_A_20,202511_SWH_SWAMP_A_20,175.4548065,10.26032568,5.847845313,276.9074934,12.80559765,4.624503835,452.3622999,13.20013852,Within range,High,1,Plate11,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+11,Plate11_1_202511_SWH_SWAMP_A_45,202511_SWH_SWAMP_A_45,81.68634942,0.658652105,0.806318448,79.47368338,10.14843948,12.76955975,161.1600328,10.18083867,Within range,High,1,Plate11,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range,ok,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+12,Plate11_1_202511_SWH_SWAMP_B_10,202511_SWH_SWAMP_B_10,282.8848931,5.927868942,2.095505658,91.75290269,23.20055032,25.28590338,374.6377958,23.32795328,Within range,High,1,Plate11,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range,ok,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+13,Plate11_1_202511_SWH_SWAMP_B_20,202511_SWH_SWAMP_B_20,83.23880732,6.254305502,7.513689472,162.5648132,16.66807831,10.25318947,245.8036205,16.85464743,Within range,High,1,Plate11,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range,ok,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+14,Plate11_1_202511_SWH_SWAMP_B_45,202511_SWH_SWAMP_B_45,110.5620663,11.85573788,10.72315151,29.47781605,6.992889726,23.72255025,140.0398824,7.794629216,Within range,High,1,Plate11,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range,High cv rerun,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+15,Plate11_1_202511_SWH_SWAMP_C_10,202511_SWH_SWAMP_C_10,164.3547325,4.939890785,3.005627346,125.3582304,5.547470644,4.425294317,289.7129629,5.976146026,Within range,High,1,Plate11,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+16,Plate11_1_202511_SWH_SWAMP_C_10 dup,202511_SWH_SWAMP_C_10 dup,121.895009,9.248532585,7.587293902,152.3653177,34.58960356,22.70175659,274.2603267,34.72303568,Within range,High,1,Plate11,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range,ok,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+17,Plate11_1_202511_SWH_SWAMP_C_20,202511_SWH_SWAMP_C_20,99.85010684,4.586981127,4.593867019,120.543193,1.256655244,1.042493742,220.3932999,2.483176097,Within range,High,1,Plate11,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+18,Plate11_1_202511_SWH_SWAMP_C_20 spk,202511_SWH_SWAMP_C_20 spk,90.30249076,11.52641183,12.76422359,62.32691532,0.191972136,0.308008402,152.6294061,3.400480133,Within range,High,1,Plate11,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range,High cv rerun,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+19,Plate11_1_202511_SWH_SWAMP_C_45,202511_SWH_SWAMP_C_45,77.02897572,5.371145368,6.97288951,89.47164436,10.94788531,12.23615078,166.5006201,11.19050214,Within range,High,1,Plate11,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range,ok,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+20,Plate11_1_202511_SWH_TR_A_10,202511_SWH_TR_A_10,20.96140543,0.439073034,2.094673639,29.16182132,2.824575777,9.685868885,50.12322675,2.901258581,Within range,Within range,1,Plate11,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+21,Plate11_1_202511_SWH_TR_A_20,202511_SWH_TR_A_20,226.064934,64.54790626,28.55281671,201.583014,90.25412522,44.77268369,427.647948,90.6110094,Within range,High,1,Plate11,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range,High cv rerun,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+22,Plate11_1_202511_SWH_TR_A_45,202511_SWH_TR_A_45,0.93498962,0,0,0,0,0,0.93498962,0,Within range,Below MDL,1,Plate11,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+23,Plate11_1_202511_SWH_TR_B_10,202511_SWH_TR_B_10,106.6032987,0.329326052,0.3089267,243.0192948,32.60729332,13.41757384,349.6225935,32.61234282,Within range,High,1,Plate11,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range,ok,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+24,Plate11_1_202511_SWH_TR_C_10,202511_SWH_TR_C_10,1.505362222,0.268876223,17.86123096,1.026914343,0.6995897,68.12541915,2.532276565,0.870805358,Within range,Below MDL,1,Plate11,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range,High cv rerun,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+25,Plate11_1_202511_SWH_TR_C_20,202511_SWH_TR_C_20,34.39684895,1.61325734,4.690131185,10.0712672,0.128459139,1.275501247,44.46811616,1.276620182,Within range,Within range,1,Plate11,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+26,Plate11_1_202511_SWH_TR_C_45,202511_SWH_TR_C_45,2.075734825,0,0,2.102380805,0,0,4.17811563,0,Within range,Within range,1,Plate11,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+27,Plate11_1_202511_SWH_WC_A_45,202511_SWH_WC_A_45,9.680702855,0.537752447,5.554890534,15.58876019,3.209033579,20.58555998,25.26946305,3.291754693,Within range,Within range,1,Plate11,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range,ok,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+28,Plate11_8_202511_SWH_UP_B_20,202511_SWH_UP_B_20,1063.339681,42.1537347,3.964277405,1168.910422,30.77151338,2.632495424,2232.250103,31.44900269,Within range,High,8,Plate11,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+29,Plate11_8_202511_SWH_UP_B_45,202511_SWH_UP_B_45,3591.362123,155.4418967,4.328215629,0,0,0,3591.362123,12.46763397,Within range,High,8,Plate11,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+30,Plate11_8_202511_SWH_UP_C_10,202511_SWH_UP_C_10,125.1034225,7.655499936,6.119336931,89.28837954,20.40986117,22.85836216,214.391802,20.59655148,Within range,Within range,8,Plate11,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range,ok,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+31,Plate11_8_202511_SWH_UP_C_20,202511_SWH_UP_C_20,1663.209413,10.53843367,0.633620372,1732.489992,949.40761,54.80017861,3395.699405,949.41316,Within range,High,8,Plate11,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range,ok,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+32,Plate11_8_202511_SWH_UP_C_45,202511_SWH_UP_C_45,1067.06558,3.725898957,0.349172443,1529.083668,362.2550119,23.69098693,2596.149247,362.2601545,Within range,High,8,Plate11,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range,ok,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+33,Plate12_1_202507_SWH_SW_B,202507_SWH_SW_B,12.34244167,0.537752447,4.356937315,45.59420645,4.21545381,9.245590916,57.93664812,4.278761885,Within range,Within range,1,Plate12,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+34,Plate12_1_202507_SWH_SW_C,202507_SWH_SW_C,10.25107546,0.80662867,7.86872239,33.97127059,0.845308011,2.488302606,44.22234605,1.233358952,Within range,Within range,1,Plate12,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+35,Plate12_1_202507_SWH_WC_C_20,202507_SWH_WC_C_20,45.9944252,4.570895795,9.937934381,18.02486973,18.21726439,101.0673845,64.01929493,18.34229041,Within range,Within range,1,Plate12,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range,ok,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+36,Plate12_1_202507_SWH_WC_C_45,202507_SWH_WC_C_45,43.52281059,2.688762233,6.177823068,16.14609243,13.54187999,83.87094304,59.66890302,13.64079454,Within range,Within range,1,Plate12,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range,ok,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+37,Plate12_1_202509_GCW_SW_A,202509_GCW_SW_A,2.646107427,0.268876223,10.16119831,0.298386901,0.247126156,82.82071193,2.944494328,0.57441062,Within range,Below MDL,1,Plate12,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range,High cv rerun,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+38,Plate12_1_202509_GCW_SW_B,202509_GCW_SW_B,1.315238022,0,0,1.521598964,0.904927089,59.47211525,2.836836985,0.904927089,Within range,Below MDL,1,Plate12,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range,ok,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+39,Plate12_1_202509_GCW_WC_C_20,202509_GCW_WC_C_20,1.315238022,0,0,0,0,0,1.315238022,0,Within range,Below MDL,1,Plate12,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+40,Plate12_8_202509_GCW_TR_A_20,202509_GCW_TR_A_20,18.1268722,2.151009786,11.86641447,0,0,0,18.1268722,1.466632124,Within range,Below MDL,8,Plate12,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range,High cv rerun,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+41,Plate13_1_202509_MSM_SW_A,202509_MSM_SW_A,3.216480029,0,0,3.293493607,0.452463545,13.73810302,6.509973637,0.452463545,Within range,Within range,1,Plate13,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range,ok,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+42,Plate13_1_202509_MSM_SW_A spk,202509_MSM_SW_A spk,32.49560695,1.61325734,4.964539798,9.216719513,0.767059417,8.322477602,41.71232646,1.483791592,Within range,Within range,1,Plate13,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+43,Plate13_1_202509_MSM_SW_B,202509_MSM_SW_B,6.638715643,0,0,7.826652137,1.357390634,17.3431834,14.46536778,1.357390634,Within range,Within range,1,Plate13,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range,ok,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+44,Plate13_1_202509_MSM_SW_C,202509_MSM_SW_C,1.505362222,0.268876223,17.86123096,1.056463463,0.247126156,23.39183174,2.561825685,0.57441062,Within range,Below MDL,1,Plate13,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range,High cv rerun,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+45,Plate13_1_202509_MSM_WC_A_45,202509_MSM_WC_A_45,224.4348532,16.13697656,7.190049287,73.36550083,23.74706637,32.36816501,297.800354,24.08443766,Within range,High,1,Plate13,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range,ok,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+46,Plate13_50_202509_MSM_TR_A_10,202509_MSM_TR_A_10,930.8270146,120.9943005,12.99858068,320.7972395,224.3226562,69.92661674,1251.624254,224.5921824,Within range,Within range,50,Plate13,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range,High cv rerun,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+47,Plate13_50_202509_MSM_TR_A_20,202509_MSM_TR_A_20,5955.029239,275.8617653,4.632416638,0,0,0,5955.029239,16.60908683,Within range,High,50,Plate13,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+48,Plate13_50_202509_MSM_TR_B_20,202509_MSM_TR_B_20,1466.343513,104.7122448,7.141044639,0,0,0,1466.343513,10.23290012,Within range,Below MDL,50,Plate13,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+49,Plate13_50_202509_MSM_TR_B_45,202509_MSM_TR_B_45,4581.103999,410.2280036,8.95478478,0,0,0,4581.103999,20.2540861,Within range,Below MDL,50,Plate13,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+50,Plate13_8_202509_MSM_UP_B_20,202509_MSM_UP_B_20,24.21084663,2.151009786,8.884488094,0,0,0,24.21084663,1.466632124,Within range,Below MDL,8,Plate13,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+51,Plate13_8_202509_MSM_UP_B_45,202509_MSM_UP_B_45,603.8121426,54.5476358,9.033875265,0,0,0,603.8121426,7.385637129,Within range,Below MDL,8,Plate13,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+52,Plate13_8_202509_MSM_UP_C_45,202509_MSM_UP_C_45,444.0050819,27.96312722,6.297929541,0,0,0,444.0050819,5.288017324,Within range,Below MDL,8,Plate13,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+53,Plate14_1_202509_GWI_SW_A,202509_GWI_SW_A,4.357225234,0.537752447,12.3416261,0,0,0,4.357225234,0.733316062,Within range,Below MDL,1,Plate14,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range,High cv rerun,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+54,Plate14_1_202509_GWI_SW_B,202509_GWI_SW_B,5.87821884,0,0,0.4114831,0.163548623,39.74613355,6.28970194,0.163548623,Within range,Below MDL,1,Plate14,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range,ok,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+55,Plate14_1_202509_GWI_SW_B spk,202509_GWI_SW_B spk,37.43883617,3.764267126,10.05444483,0,0,0,37.43883617,1.940171932,Within range,Below MDL,1,Plate14,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range,High cv rerun,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+56,Plate14_8_202509_GWI_TR_B_10,202509_GWI_TR_B_10,251.8528897,21.58167908,8.569160795,29.59109592,0.998109784,3.373007161,281.4439856,4.75162101,Within range,Within range,8,Plate14,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+57,Plate14_8_202509_GWI_UP_A_10,202509_GWI_UP_A_10,97.21853972,10.75504893,11.06275507,52.80711946,8.242347111,15.60840128,150.0256592,8.870813651,Within range,Within range,8,Plate14,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range,High cv rerun,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+58,Plate14_8_202509_GWI_UP_A_20,202509_GWI_UP_A_20,375.5603696,6.083974425,1.619972424,38.23984987,3.366450383,8.803513596,413.8002195,4.173363464,Within range,Within range,8,Plate14,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+59,Plate14_8_202509_GWI_UP_B_10,202509_GWI_UP_B_10,54.63071875,6.453029358,11.81208944,20.26293524,12.16751405,60.04813178,74.89365399,12.42986032,Within range,Within range,8,Plate14,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range,High cv rerun,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+60,Plate14_8_202509_GWI_UP_B_20,202509_GWI_UP_B_20,425.7531586,23.66110765,5.557470841,41.04202623,22.28361184,54.29461917,466.7951849,22.80834199,Within range,Within range,8,Plate14,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range,ok,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+61,Plate14_8_202509_GWI_UP_B_45,202509_GWI_UP_B_45,425.7531586,10.75504893,2.52612311,0,0,0,425.7531586,3.279489126,Within range,Below MDL,8,Plate14,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+62,Plate14_8_202509_GWI_UP_C_20,202509_GWI_UP_C_20,919.2715877,30.11608272,3.276081098,53.04971994,22.30538127,42.046181,972.3213076,22.97054889,Within range,High,8,Plate14,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+63,Plate7_1_202509_SWH_SWAMP_A_10,202509_SWH_SWAMP_A_10,143.1636822,10.53843367,7.361108286,74.03362522,5.173676951,6.988279901,217.1973074,6.107811954,Within range,High,1,Plate7,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+64,Plate7_1_202509_SWH_SWAMP_A_20,202509_SWH_SWAMP_A_20,103.2655142,3.76451034,3.645467094,96.05515787,41.0932009,42.7808374,199.3206721,41.13897994,Within range,High,1,Plate7,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range,ok,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+65,Plate7_1_202509_SWH_SWAMP_A_20 spk,202509_SWH_SWAMP_A_20 spk,87.43044365,5.15126024,5.891838157,39.1615556,4.495620725,11.47967862,126.5919992,5.036056586,Within range,High,1,Plate7,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range,ok,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+66,Plate7_1_202509_SWH_SWAMP_A_45,202509_SWH_SWAMP_A_45,87.04232917,2.963934471,3.405164475,25.64592289,15.65475143,61.04187204,112.6882521,15.74913258,Within range,Within range,1,Plate7,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range,ok,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+67,Plate7_1_202509_SWH_SWAMP_B_10,202509_SWH_SWAMP_B_10,382.5526902,73.76903572,19.28336609,0,0,0,382.5526902,8.58889025,Within range,High,1,Plate7,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range,High cv rerun,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+68,Plate7_1_202509_SWH_SWAMP_B_10 dup,202509_SWH_SWAMP_B_10 dup,337.0656738,18.00382688,5.341340954,0,0,0,337.0656738,4.243091665,Within range,High,1,Plate7,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+69,Plate7_1_202509_SWH_SWAMP_C_45,202509_SWH_SWAMP_C_45,29.45361974,2.151009786,7.303040528,65.86867587,36.455176,55.34523886,95.32229561,36.48466619,Within range,Within range,1,Plate7,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range,ok,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+70,Plate7_1_202509_SWH_TR_A_10,202509_SWH_TR_A_10,263.0910549,45.77632127,17.39942139,135.7377276,98.43629595,72.51948127,398.8287825,98.66853947,Within range,High,1,Plate7,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range,High cv rerun,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+71,Plate7_1_202509_SWH_TR_A_20,202509_SWH_TR_A_20,122.671238,4.610564733,3.758472491,110.850379,17.32367645,15.62798125,233.521617,17.45624045,Within range,High,1,Plate7,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range,ok,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+72,Plate7_1_202509_SWH_TR_A_45,202509_SWH_TR_A_45,1.315238022,0,0,0,0,0,1.315238022,0,Within range,Below MDL,1,Plate7,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+73,Plate7_1_202509_SWH_TR_B_10,202509_SWH_TR_B_10,238.8727117,23.38214972,9.788539491,97.46898766,41.49586927,42.57340746,336.3416993,41.77665994,Within range,High,1,Plate7,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range,ok,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+74,Plate7_1_202509_SWH_TR_B_20,202509_SWH_TR_B_20,256.8036004,53.35082048,20.77495035,230.7295525,221.3228552,95.92306352,487.5331529,221.4433495,Within range,High,1,Plate7,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range,High cv rerun,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+75,Plate7_8_202509_SWH_SWAMP_B_20,202509_SWH_SWAMP_B_20,36.88579335,3.512584272,9.522864911,0,0,0,36.88579335,1.874188964,Within range,Below MDL,8,Plate7,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+76,Plate7_8_202509_SWH_UP_A_45,202509_SWH_UP_A_45,81.50160579,4.646712221,5.701375054,0,0,0,81.50160579,2.155623395,Within range,Below MDL,8,Plate7,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+77,Plate7_8_202509_SWH_UP_B_45,202509_SWH_UP_B_45,271.1188087,3.512584272,1.295588561,83.67725214,22.25404852,26.59509956,354.7960608,22.33282919,Within range,Within range,8,Plate7,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range,ok,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+78,Plate7_8_202509_SWH_UP_C_10,202509_SWH_UP_C_10,22.68985302,0,0,0.989138563,0,0,23.67899158,0,Within range,Below MDL,8,Plate7,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+79,Plate7_8_202509_SWH_UP_C_20,202509_SWH_UP_C_20,54.63071875,2.151009786,3.937363145,10.02485394,5.596717602,55.82842043,64.65557269,5.785694229,Within range,Below MDL,8,Plate7,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range,ok,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+80,Plate7_8_202509_SWH_UP_C_45,202509_SWH_UP_C_45,60.71469317,2.151009786,3.542815871,4.905813285,2.311319377,47.113888,65.62050646,2.737372289,Within range,Below MDL,8,Plate7,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range,ok,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+81,Plate8_1_202509_SWH_SW_A,202509_SWH_SW_A,4.167101033,0.268876223,6.452356713,0,0,0,4.167101033,0.51853276,Within range,Below MDL,1,Plate8,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+82,Plate8_1_202509_SWH_SW_A spk,202509_SWH_SW_A spk,35.53759416,2.151009786,6.052772668,0,0,0,35.53759416,1.466632124,Within range,Below MDL,1,Plate8,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+83,Plate8_1_202509_SWH_SW_B,202509_SWH_SW_B,2.646107427,0.268876223,10.16119831,0.298386901,0.247126156,82.82071193,2.944494328,0.57441062,Within range,Below MDL,1,Plate8,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range,High cv rerun,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+84,Plate8_1_202509_SWH_SW_C,202509_SWH_SW_C,2.329233759,0.219536517,9.425267693,0,0,0,2.329233759,0.468547241,Within range,Below MDL,1,Plate8,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+85,Plate8_1_202509_SWH_TR_C_10,202509_SWH_TR_C_10,138.5063085,5.269216837,3.804315409,97.42510236,15.83975781,16.25839483,235.9314109,16.0052224,Within range,High,1,Plate8,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range,ok,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+86,Plate8_1_202509_SWH_TR_C_20,202509_SWH_TR_C_20,241.4342672,11.19708578,4.637736767,133.1241373,162.4423518,122.0232147,374.5584045,162.476813,Within range,High,1,Plate8,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range,ok,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+87,Plate8_1_202509_SWH_TR_C_45,202509_SWH_TR_C_45,4.357225234,0,0,3.524786288,0.452463545,12.83662349,7.882011521,0.452463545,Within range,Within range,1,Plate8,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range,ok,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+88,Plate8_1_202509_SWH_WC_A_10,202509_SWH_WC_A_10,164.2771096,6.657492655,4.052599093,216.1589236,17.7520112,8.21248131,380.4360332,17.93854493,Within range,High,1,Plate8,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+89,Plate8_1_202509_SWH_WC_A_45,202509_SWH_WC_A_45,20.8980307,0.268876223,1.286610337,0,0,0,20.8980307,0.51853276,Within range,Below MDL,1,Plate8,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+90,Plate8_1_202509_SWH_WC_B_10,202509_SWH_WC_B_10,266.1183478,18.13387788,6.814215566,20.19718371,6.628195236,32.81742312,286.3155315,7.878251708,Within range,High,1,Plate8,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+91,Plate8_1_202509_SWH_WC_B_20,202509_SWH_WC_B_20,23.17952111,1.882133563,8.119812113,8.869020818,5.895039734,66.46776296,32.04854193,6.052571935,Within range,Within range,1,Plate8,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+92,Plate8_1_202509_SWH_WC_B_45,202509_SWH_WC_B_45,49.73353448,4.171193823,8.387085024,14.2265848,6.369695843,44.77318999,63.96011929,6.689111971,Within range,Within range,1,Plate8,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+93,Plate8_1_202509_SWH_WC_C_10,202509_SWH_WC_C_10,139.4377833,6.090306386,4.367759042,75.37861501,38.02054118,50.43942658,214.8163983,38.10054931,Within range,High,1,Plate8,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+94,Plate8_1_202509_SWH_WC_C_20,202509_SWH_WC_C_20,164.8204699,6.915847099,4.195987976,0,0,0,164.8204699,2.629799821,Within range,High,1,Plate8,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+95,Plate8_1_202509_SWH_WC_C_45,202509_SWH_WC_C_45,26.60175672,5.108648242,19.20417623,0,0,0,26.60175672,2.2602319,Within range,Below MDL,1,Plate8,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,High cv rerun,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+96,Plate8_1_202509_SWH_WC_C_45 dup,202509_SWH_WC_C_45 dup,30.97461334,3.226514679,10.41664231,3.787108265,3.038674342,80.23732436,34.76172161,3.529880513,Within range,Within range,1,Plate8,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,High cv rerun,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+97,Plate8_8_202511_GCW_TR_B_10,202511_GCW_TR_B_10,5.958923354,2.151009786,36.09728903,0,0,0,5.958923354,1.466632124,Below MDL,Below MDL,8,Plate8,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,High cv rerun,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+98,Plate8_8_202511_GCW_TR_C_20,202511_GCW_TR_C_20,4.437929748,0,0,0,0,0,4.437929748,0,Below MDL,Below MDL,8,Plate8,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+99,Plate9_1_202511_GCW_SW_B,202511_GCW_SW_B,16.33504988,1.882133563,11.5220558,0,0,0,16.33504988,1.37190873,Within range,Below MDL,1,Plate9,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range,High cv rerun,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+100,Plate9_1_202511_GCW_SW_C,202511_GCW_SW_C,15.38442888,1.075504893,6.990866554,0,0,0,15.38442888,1.03706552,Within range,Below MDL,1,Plate9,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+101,Plate9_1_202511_MSM_WC_A_10,202511_MSM_WC_A_10,1.505362222,0.268876223,17.86123096,0,0,0,1.505362222,0.51853276,Within range,Below MDL,1,Plate9,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range,High cv rerun,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+102,Plate9_1_202511_MSM_WC_A_20,202511_MSM_WC_A_20,2.075734825,0,0,0,0,0,2.075734825,0,Within range,Below MDL,1,Plate9,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+103,Plate9_50_202511_MSM_TR_B_20,202511_MSM_TR_B_20,1805.398338,13.44381116,0.74464515,0,0,0,1805.398338,3.666580309,Within range,Below MDL,50,Plate9,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+104,Plate9_50_202511_MSM_TR_C_20,202511_MSM_TR_C_20,1681.817608,107.5504893,6.394896142,357.8136777,175.1150176,48.94028053,2039.631285,175.4218341,Within range,Within range,50,Plate9,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range,ok,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+105,Plate9_8_202511_MSM_UP_C_45,202511_MSM_UP_C_45,614.3688563,102.7497283,16.72443635,52.01424668,51.27464591,98.57808039,666.383103,52.26699763,Within range,Within range,8,Plate9,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range,High cv rerun,High cv rerun,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+106,Plate10_1_202511_GWI_SW_A,202511_GWI_SW_A,0.554741218,0,0,0,0,0,0.554741218,0,Below MDL,Below MDL,1,Plate10,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+107,Plate10_1_202511_GWI_SW_B,202511_GWI_SW_B,3.216480029,0,0,0,0,0,3.216480029,0,Within range,Below MDL,1,Plate10,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+108,Plate10_1_202511_GWI_SW_C spk,202511_GWI_SW_C spk,30.40424074,2.419886009,7.959041076,0,0,0,30.40424074,1.55559828,Within range,Below MDL,1,Plate10,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+109,Plate10_8_202511_GWI_TR_B_20,202511_GWI_TR_B_20,94.17655251,2.151009786,2.284018398,0,0,0,94.17655251,1.466632124,Within range,Below MDL,8,Plate10,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+110,Plate10_8_202511_GWI_UP_B_20,202511_GWI_UP_B_20,1774.986381,121.1919873,6.827769977,0,0,0,1774.986381,11.00872323,Within range,High,8,Plate10,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+111,Plate10_8_202511_GWI_WC_B_10,202511_GWI_WC_B_10,1806.656523,76.40364414,4.229007738,0,0,0,1806.656523,8.740917809,Within range,High,8,Plate10,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+112,Plate10_8_202511_GWI_WC_B_20,202511_GWI_WC_B_20,845.3745917,55.32677679,6.544646283,0,0,0,845.3745917,7.438197147,Within range,Below MDL,8,Plate10,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+113,Plate10_8_202511_GWI_WC_B_45,202511_GWI_WC_B_45,1599.869131,5.269216837,0.329352991,0,0,0,1599.869131,2.295477475,Within range,High,8,Plate10,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+114,Plate10_8_202511_GWI_WC_C_10,202511_GWI_WC_C_10,1797.341775,79.03825256,4.397508234,0,0,0,1797.341775,8.890346032,Within range,High,8,Plate10,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+115,Plate10_8_202511_SWH_UP_A_10,202511_SWH_UP_A_10,9.000910566,2.151009786,23.89769091,0,0,0,9.000910566,1.466632124,Within range,Below MDL,8,Plate10,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,High cv rerun,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+116,Plate11_1_202511_SWH_TR_B_45,202511_SWH_TR_B_45,5.307846238,0.268876223,5.065637006,0,0,0,5.307846238,0.51853276,Within range,Below MDL,1,Plate11,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+117,Plate12_1_202509_GCW_SW_C,202509_GCW_SW_C,2.265859025,0.268876223,11.86641447,0,0,0,2.265859025,0.51853276,Within range,Below MDL,1,Plate12,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range,High cv rerun,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+118,Plate12_1_202509_GCW_WC_A_45 dup,202509_GCW_WC_A_45 dup,4.927597836,0.268876223,5.45653749,0,0,0,4.927597836,0.51853276,Within range,Below MDL,1,Plate12,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+119,Plate12_1_202509_GCW_WC_B_20,202509_GCW_WC_B_20,3.976976832,0,0,0,0,0,3.976976832,0,Within range,Below MDL,1,Plate12,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+120,Plate12_1_202509_GCW_WC_C_10,202509_GCW_WC_C_10,1.695486423,0,0,0,0,0,1.695486423,0,Within range,Below MDL,1,Plate12,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+121,Plate12_8_202509_GCW_TR_C_20,202509_GCW_TR_C_20,1.395942535,0,0,0,0,0,1.395942535,0,Below MDL,Below MDL,8,Plate12,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+122,Plate12_8_202509_MSM_UP_B_10,202509_MSM_UP_B_10,12.04289778,6.453029358,53.58369287,0,0,0,12.04289778,2.540281354,Within range,Below MDL,8,Plate12,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range,High cv rerun,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+123,Plate13_1_202509_MSM_WC_A_10,202509_MSM_WC_A_10,1.885610624,0.268876223,14.25937147,0,0,0,1.885610624,0.51853276,Within range,Below MDL,1,Plate13,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,High cv rerun,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+124,Plate13_1_202509_MSM_WC_A_20,202509_MSM_WC_A_20,2.265859025,0.268876223,11.86641447,0,0,0,2.265859025,0.51853276,Within range,Below MDL,1,Plate13,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,High cv rerun,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+125,Plate13_1_202509_MSM_WC_C_10,202509_MSM_WC_C_10,2.455983226,0,0,0,0,0,2.455983226,0,Within range,Below MDL,1,Plate13,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+126,Plate13_1_202509_MSM_WC_C_10 dup,202509_MSM_WC_C_10 dup,2.646107427,0.268876223,10.16119831,0,0,0,2.646107427,0.51853276,Within range,Below MDL,1,Plate13,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,High cv rerun,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+127,Plate13_1_202509_MSM_WC_C_20,202509_MSM_WC_C_20,3.596728431,0.537752447,14.95115511,0,0,0,3.596728431,0.733316062,Within range,Below MDL,1,Plate13,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,High cv rerun,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+128,Plate13_50_202509_MSM_TR_C_45,202509_MSM_TR_C_45,0,0,0,0,0,0,0,0,Below MDL,Below MDL,50,Plate13,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+129,Plate13_8_202509_MSM_UP_C_20,202509_MSM_UP_C_20,16.6058786,0,0,0,0,0,16.6058786,0,Within range,Below MDL,8,Plate13,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+130,Plate14_8_202509_GWI_TR_A_20,202509_GWI_TR_A_20,1778.71228,94.84590307,5.332279094,0,0,0,1778.71228,9.738886131,Within range,High,8,Plate14,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+131,Plate14_8_202509_GWI_TR_B_20 dup,202509_GWI_TR_B_20 dup,33.33680826,2.151009786,6.452356713,0,0,0,33.33680826,1.466632124,Within range,Below MDL,8,Plate14,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+132,Plate14_8_202509_GWI_TR_B_45,202509_GWI_TR_B_45,3785.108869,71.1344273,1.879323152,0,0,0,3785.108869,8.434122794,Within range,High,8,Plate14,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+133,Plate14_8_202509_GWI_WC_B_10,202509_GWI_WC_B_10,1130.405862,0,0,0,0,0,1130.405862,0,Within range,High,8,Plate14,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+134,Plate14_8_202509_GWI_WC_B_45,202509_GWI_WC_B_45,1819.697169,121.1919873,6.660008562,0,0,0,1819.697169,11.00872323,Within range,High,8,Plate14,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+135,Plate14_8_202509_SWH_UP_A_20,202509_SWH_UP_A_20,56.15171236,4.302019572,7.661421872,0,0,0,56.15171236,2.07413104,Within range,Below MDL,8,Plate14,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+136,Plate7_1_202509_SWH_SWAMP_C_10,202509_SWH_SWAMP_C_10,129.4244298,4.939890785,3.816814795,0,0,0,129.4244298,2.222586508,Within range,High,1,Plate7,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+137,Plate7_8_202509_SWH_UP_B_10,202509_SWH_UP_B_10,10.52190417,0,0,0,0,0,10.52190417,0,Within range,Below MDL,8,Plate7,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+138,Plate7_8_202509_SWH_UP_B_20,202509_SWH_UP_B_20,85.05059087,6.453029358,7.587283395,0,0,0,85.05059087,2.540281354,Within range,Below MDL,8,Plate7,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+139,Plate8_1_202511_GCW_WC_A_10,202511_GCW_WC_A_10,1.315238022,0,0,0,0,0,1.315238022,0,Within range,Below MDL,1,Plate8,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+140,Plate8_1_202511_GCW_WC_A_20,202511_GCW_WC_A_20,2.075734825,0,0,0,0,0,2.075734825,0,Within range,Below MDL,1,Plate8,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+141,Plate8_1_202511_GCW_WC_A_45,202511_GCW_WC_A_45,3.786852631,0.268876223,7.100255791,0,0,0,3.786852631,0.51853276,Within range,Below MDL,1,Plate8,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+142,Plate8_8_202511_GCW_TR_A_20,202511_GCW_TR_A_20,10.52190417,0,0,0,0,0,10.52190417,0,Within range,Below MDL,8,Plate8,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+143,Plate8_8_202511_GCW_TR_B_20,202511_GCW_TR_B_20,1745.17919,5.269216837,0.301929846,0,0,0,1745.17919,2.295477475,Within range,High,8,Plate8,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+144,Plate9_1_202511_GCW_SW_A,202511_GCW_SW_A,14.24368367,2.151009786,15.10149927,0,0,0,14.24368367,1.466632124,Within range,Below MDL,1,Plate9,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range,High cv rerun,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+145,Plate9_1_202511_GCW_WC_B_20,202511_GCW_WC_B_20,2.455983226,0,0,0,0,0,2.455983226,0,Within range,Below MDL,1,Plate9,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+146,Plate9_1_202511_GCW_WC_B_45,202511_GCW_WC_B_45,3.026355828,0.268876223,8.884488094,0,0,0,3.026355828,0.51853276,Within range,Below MDL,1,Plate9,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+147,Plate9_1_202511_GCW_WC_C_10,202511_GCW_WC_C_10,1.315238022,0,0,0,0,0,1.315238022,0,Within range,Below MDL,1,Plate9,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+148,Plate9_1_202511_GCW_WC_C_45,202511_GCW_WC_C_45,3.026355828,0.268876223,8.884488094,0,0,0,3.026355828,0.51853276,Within range,Below MDL,1,Plate9,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+149,Plate9_1_202511_MSM_SW_B,202511_MSM_SW_B,1.315238022,0,0,0,0,0,1.315238022,0,Within range,Below MDL,1,Plate9,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+150,Plate9_1_202511_MSM_SW_B spk,202511_MSM_SW_B spk,31.35486174,4.839772019,15.43547555,0,0,0,31.35486174,2.199948185,Within range,Below MDL,1,Plate9,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,High cv rerun,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+151,Plate9_1_202511_MSM_SW_C,202511_MSM_SW_C,1.315238022,0,0,0,0,0,1.315238022,0,Within range,Below MDL,1,Plate9,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+152,Plate9_1_202511_MSM_WC_A_20 dup,202511_MSM_WC_A_20 dup,3.40660423,0.268876223,7.89279309,0,0,0,3.40660423,0.51853276,Within range,Below MDL,1,Plate9,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+153,Plate9_8_202511_MSM_UP_A_20,202511_MSM_UP_A_20,442.4840883,8.604039144,1.944485547,0,0,0,442.4840883,2.933264247,Within range,Below MDL,8,Plate9,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+154,Plate10_8_202511_GWI_TR_A_20,202511_GWI_TR_A_20,1638.370086,71.31309609,4.352685433,0,0,0,1638.370086,8.444708171,Within range,High,8,Plate10,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+155,Plate10_8_202511_GWI_TR_B_45,202511_GWI_TR_B_45,3984.444463,205.1275728,5.148210114,0,0,0,3984.444463,14.32227541,High,High,8,Plate10,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+156,Plate10_8_202511_GWI_UP_B_45,202511_GWI_UP_B_45,1499.269859,70.79208019,4.721770386,0,0,0,1499.269859,8.413802956,Within range,High,8,Plate10,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+157,Plate10_8_202511_GWI_WC_A_10 dup,202511_GWI_WC_A_10 dup,1316.70081,103.8583892,7.887774383,0,0,0,1316.70081,10.19109362,Within range,High,8,Plate10,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+158,Plate10_8_202511_GWI_WC_A_45,202511_GWI_WC_A_45,2951.128486,146.3255602,4.958291749,0,0,0,2951.128486,12.09651025,Within range,High,8,Plate10,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+159,Plate12_1_202507_SWH_SW_A,202507_SWH_SW_A,10.94819753,0.791550169,7.229958784,42.31761752,2.892480837,6.835169383,53.26581505,3.026218029,Within range,Within range,1,Plate12,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+160,Plate12_1_202509_GCW_WC_A_20,202509_GCW_WC_A_20,5.117722037,0.380248402,7.430032323,0,0,0,5.117722037,0.616642848,Within range,Below MDL,1,Plate12,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+161,Plate12_1_202509_GCW_WC_A_20 dup,202509_GCW_WC_A_20 dup,4.737473635,0.380248402,8.026396151,0,0,0,4.737473635,0.616642848,Within range,Below MDL,1,Plate12,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+162,Plate12_1_202509_GCW_WC_A_45,202509_GCW_WC_A_45,4.99097257,0.439073034,8.797344162,0,0,0,4.99097257,0.662625863,Within range,Below MDL,1,Plate12,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+163,Plate12_1_202509_GCW_WC_B_10,202509_GCW_WC_B_10,10.94819753,0.580839028,5.305339315,0,0,0,10.94819753,0.76212796,Within range,Below MDL,1,Plate12,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+164,Plate12_1_202509_GCW_WC_C_45,202509_GCW_WC_C_45,6.004968307,0.439073034,7.311829331,0,0,0,6.004968307,0.662625863,Within range,Below MDL,1,Plate12,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+165,Plate12_8_202509_GCW_TR_B_10,202509_GCW_TR_B_10,1.395942535,0,0,0,0,0,1.395942535,0,Below MDL,Below MDL,8,Plate12,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+166,Plate12_8_202509_GCW_TR_B_45,202509_GCW_TR_B_45,1244.666763,40.87182655,3.283756565,0,0,0,1244.666763,6.393107738,Within range,High,8,Plate12,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+167,Plate12_8_202509_GCW_TR_C_10,202509_GCW_TR_C_10,7.47991696,0,0,0,0,0,7.47991696,0,Within range,Below MDL,8,Plate12,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+168,Plate12_8_202509_MSM_UP_A_20,202509_MSM_UP_A_20,10.52190417,0,0,0,0,0,10.52190417,0,Within range,Below MDL,8,Plate12,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+169,Plate13_1_202509_MSM_WC_B_20,202509_MSM_WC_B_20,4.357225234,0.380248402,8.726847503,0,0,0,4.357225234,0.616642848,Within range,Below MDL,1,Plate13,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+170,Plate13_50_202509_MSM_TR_A_45,202509_MSM_TR_A_45,7336.716769,317.8749955,4.332660037,0,0,0,7336.716769,17.8290492,Within range,High,50,Plate13,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+171,Plate13_50_202509_MSM_TR_B_10,202509_MSM_TR_B_10,1555.06814,153.6755619,9.882239749,0,0,0,1555.06814,12.39659477,Within range,Below MDL,50,Plate13,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+172,Plate13_50_202509_MSM_TR_C_20,202509_MSM_TR_C_20,1396.631306,76.04968031,5.445222369,0,0,0,1396.631306,8.720646783,Within range,Below MDL,50,Plate13,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+173,Plate13_8_202509_MSM_UP_C_10,202509_MSM_UP_C_10,17.61987433,1.756292136,9.967676855,0,0,0,17.61987433,1.325251725,Within range,Below MDL,8,Plate13,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+174,Plate14_8_202509_GWI_TR_A_10,202509_GWI_TR_A_10,1404.880418,94.6505457,6.737267063,0,0,0,1404.880418,9.728851201,Within range,High,8,Plate14,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+175,Plate14_8_202509_GWI_TR_B_20,202509_GWI_TR_B_20,37.89978908,3.041987212,8.026396151,0,0,0,37.89978908,1.744129357,Within range,Below MDL,8,Plate14,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+176,Plate14_8_202509_GWI_TR_C_45,202509_GWI_TR_C_45,5389.10837,20.74492743,0.384941738,0,0,0,5389.10837,4.554659969,High,High,8,Plate14,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+177,Plate14_8_202509_GWI_UP_A_45,202509_GWI_UP_A_45,41.95577203,1.756292136,4.186056056,0,0,0,41.95577203,1.325251725,Within range,Below MDL,8,Plate14,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+178,Plate14_8_202509_GWI_WC_A_10,202509_GWI_WC_A_10,1425.993846,87.88173332,6.162840995,0,0,0,1425.993846,9.374525765,Within range,High,8,Plate14,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+179,Plate14_8_202509_GWI_WC_A_45,202509_GWI_WC_A_45,2676.653929,213.777004,7.986725579,0,0,0,2676.653929,14.62111501,Within range,High,8,Plate14,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+180,Plate14_8_202509_GWI_WC_C_10,202509_GWI_WC_C_10,1557.642276,96.46649096,6.193109449,0,0,0,1557.642276,9.821735639,Within range,High,8,Plate14,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+181,Plate14_8_202509_SWH_UP_A_10,202509_SWH_UP_A_10,42.96976777,1.756292136,4.087273977,0,0,0,42.96976777,1.325251725,Within range,Below MDL,8,Plate14,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+182,Plate7_1_202509_SWH_SWAMP_B_45,202509_SWH_SWAMP_B_45,161.4826854,9.330259056,5.777869641,0,0,0,161.4826854,3.054547275,Within range,High,1,Plate7,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+183,Plate7_1_202509_SWH_SWAMP_C_20,202509_SWH_SWAMP_C_20,163.6561265,5.2485936,3.207086538,0,0,0,163.6561265,2.290980925,Within range,Below MDL,1,Plate7,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+184,Plate7_1_202509_SWH_TR_B_45,202509_SWH_TR_B_45,6.511966176,0.219536517,3.371278521,0,0,0,6.511966176,0.468547241,Within range,Below MDL,1,Plate7,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+185,Plate8_8_202511_GCW_TR_C_45,202511_GCW_TR_C_45,3436.737316,290.9304446,8.465309326,0,0,0,3436.737316,17.05668328,Within range,High,8,Plate8,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+186,Plate9_1_202511_GCW_WC_C_20,202511_GCW_WC_C_20,2.202484292,0.219536517,9.967676855,0,0,0,2.202484292,0.468547241,Within range,Below MDL,1,Plate9,FE_2_diff Std curve r2 low; Fe2 Chk Std 0.6 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+187,Plate9_1_202511_MSM_WC_C_20,202511_MSM_WC_C_20,8.413208183,0.439073034,5.218853788,0,0,0,8.413208183,0.662625863,Within range,Below MDL,1,Plate9,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+188,Plate9_50_202511_MSM_TR_A_20,202511_MSM_TR_A_20,8175.044035,223.7640674,2.737160392,0,0,0,8175.044035,14.95874551,Within range,High,50,Plate9,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+189,Plate9_8_202511_GWI_UP_A_20,202511_GWI_UP_A_20,977.6440046,85.20830329,8.715677986,0,0,0,977.6440046,9.230834377,Within range,Below MDL,8,Plate9,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+190,Plate9_8_202511_MSM_UP_B_20,202511_MSM_UP_B_20,626.1675364,26.16985422,4.17936937,0,0,0,626.1675364,5.115647977,Within range,Below MDL,8,Plate9,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+191,Plate9_8_202511_MSM_UP_B_45,202511_MSM_UP_B_45,601.32821,29.57340615,4.9180141,0,0,0,601.32821,5.438143631,Within range,Below MDL,8,Plate9,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
+192,Plate9_8_202511_MSM_UP_C_20,202511_MSM_UP_C_20,972.6761394,76.02416606,7.815979336,0,0,0,972.6761394,8.719183796,Within range,Below MDL,8,Plate9,FE_2_diff Std curve r2 low; Fe2 Chk Std 9 out of range; Fe3 Chk Std 9 out of range; Fe3 Chk Std 60 out of range; Fe3 Dup perc diff out of range; Spk recovery out of range,ok,ok,"The Fe2 diff std curve R squared is 0.9747518, which is  below the 0.985 cutoff, 
+but Melanie suggested this is okay because this is the difference curve whihc is more sensitive. 
+Removed 45 uM Fe_2 B standard because it was off. 
+The check stds for FE3 60 uM were all bad, and other check standards were bad on some plates.
+<60% of Spikes are within range. We tend to have issues with the spikes. "
