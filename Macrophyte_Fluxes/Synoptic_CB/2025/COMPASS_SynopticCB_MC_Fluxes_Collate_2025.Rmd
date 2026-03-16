@@ -100,6 +100,68 @@ final_dat1 <- merge(all_dat, hydrago, by = c("Plot"), all = TRUE)
 
 ```
 
+
+##pull TEROS data for the zone during the time of the fluxes and put it into another column so that we can use that too.
+```{r}
+# Air temp 
+
+##Read in L1 Sensor Data from S Drive and only save necessary data
+# Path to zip file
+L1 <- "S:/Biogeochemistry/COMPASS Synoptics/Samples & Data/Synoptic L1 Sensor/L1 2025 Sensor Data v2-1.zip"
+
+# List CSV files inside the zip
+files <- unzip(L1, list = TRUE)$Name
+files <- files[grepl("\\.csv$", files)]
+
+results <- list()
+
+for (f in files) {
+  message(f)
+# f = "L1 2025 Sensor Data/GWI_2025/GWI_W_20250101-20250630_wx-tempavg15_L1_v2-0.csv"
+  selected_research_names <- c("wx-tempavg15")
+
+  # Read CSV directly from zip
+  dat <- read.csv(unz(L1, f))
+
+  temp <- subset(dat, Instrument == "ClimaVUE50" | Instrument == "CS EE181")
+
+  gw <- temp %>%
+    filter(research_name %in% selected_research_names) %>%
+    select(TIMESTAMP, research_name, Value, F_OOB, F_OOS, Plot, Site)
+
+  results[[f]] <- gw
+}
+
+#we need to bind these together
+dat <- do.call(rbind, results)
+rownames(dat) <- NULL
+dat1 <- dat %>% filter((F_OOB != 1 & F_OOS != 1))
+head(dat1)
+
+#convert to wide format
+temps <- pivot_wider(dat1, id_cols = c("TIMESTAMP", "Plot", "Site"), names_from = research_name, values_from = Value )
+head(temps)
+
+write.csv(temps, file="Raw Data/L1_temps.csv")
+
+temps <- read.csv("Raw Data/L1_temps.csv")
+
+##Read in raw temperature data
+files <- dir(path = "Raw Data/", pattern = "_wx-tempavg15.*\\.csv$", full.names = TRUE)
+results <- lapply(files, read.csv) 
+dat <- do.call(rbind, results)
+rownames(dat) <- NULL
+dat <- dat %>%
+  select(TIMESTAMP, research_name, Value, F_OOB, F_OOS, Plot, Site)
+dat1 <- dat %>% filter((F_OOB != 1 & F_OOS != 1))
+head(dat1)
+
+#convert to wide format
+temps <- pivot_wider(dat1, id_cols = c("TIMESTAMP", "Plot", "Site"), names_from = research_name, values_from = Value )
+head(temps)
+
+```
+
 ##Remove bad fluxes and calculate how many there were
 ```{r, echo=FALSE}
 ##Remove any samples with "remove" in the qaqc_flag columns
