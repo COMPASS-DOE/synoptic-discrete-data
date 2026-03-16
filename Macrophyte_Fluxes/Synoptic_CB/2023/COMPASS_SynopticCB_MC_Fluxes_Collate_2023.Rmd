@@ -47,11 +47,48 @@ all_dat <- merge(ch4, co2, by = c("Plot", "Site", "Zone", "Replicate", "Date", "
 
 ```
 
+##Pull in Hydrago probe data
+```{r, echo = FALSE}
+
+hydrago <- read.csv("S:/Biogeochemistry/COMPASS Synoptics/Samples & Data/Soil Conductivity Probe/Raw Data Files/2023/COMPASS_Synoptic_2023_ALL_SoilCond_Data.csv")
+
+# colnames(hydrago)
+
+## Select only measurements from collars
+hydrago <- hydrago %>% 
+  filter(Type == "Collar")
+
+## Remove columns that have replicates in flux data
+hydrago <- hydrago %>% 
+  select(-c("Memo", "Site", "Zone", "Type", "Replicate", "Month", "Month_Name", "Date"))
+
+
+##Find fluxes that are missing hydrago data: 
+all_present <- all(all_dat$Plot %in% hydrago$Plot)
+
+if (all_present) {
+  message("All flux IDs are present in hydrago data")
+} else {
+  message("Some flux IDs are missing from hydrago data")
+  
+  # Optional: Which ones are missing?
+  missing_ids <- setdiff(all_dat$Plot, hydrago$Plot)
+  print(missing_ids)
+}
+
+##Print missing IDs into a dataframe
+missing_ids <- data.frame(missing_ids)
+write.csv(missing_ids, "fluxes_missing_hydrago_data_2023.csv", row.names = FALSE)
+
+##Combine with flux data
+final_dat1 <- left_join(all_dat, hydrago, by = "Plot")
+
+```
 
 ##Remove bad fluxes and calculate how many there were
 ```{r, echo=FALSE}
 ##Remove any samples with "remove" in the qaqc_flag columns
-final_dat <- all_dat %>% 
+final_dat <- final_dat1 %>% 
   filter(!grepl("remove", ch4_qaqc_flag, ignore.case = TRUE)) %>% 
   filter(!grepl("remove", co2_qaqc_flag, ignore.case = TRUE)) 
 

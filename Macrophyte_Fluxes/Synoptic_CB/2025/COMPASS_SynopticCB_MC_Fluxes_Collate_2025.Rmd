@@ -91,6 +91,9 @@ if (all_present) {
 #   print(missing_ids1)
 # }
 
+##Print missing IDs into a dataframe
+missing_ids <- data.frame(missing_ids)
+write.csv(missing_ids, "fluxes_missing_hydrago_data_2025.csv", row.names = FALSE)
 
 ##Combine with flux data
 final_dat1 <- merge(all_dat, hydrago, by = c("Plot"), all = TRUE)
