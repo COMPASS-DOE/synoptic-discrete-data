@@ -96,7 +96,7 @@ cat(paste0("Percentage messy fluxes removed: ", round(perc_messy, digits = 2), "
 ```{r write out combined data and metadata, include=FALSE}
 
 #write out a csv of all the data to the main folder: 
-write.csv(all_dat, "COMPASS_SynopticCB_MC_Fluxes_2023.csv")
+write.csv(final_dat, "COMPASS_SynopticCB_MC_Fluxes_2023.csv")
 
 ```
 
@@ -104,7 +104,7 @@ write.csv(all_dat, "COMPASS_SynopticCB_MC_Fluxes_2023.csv")
 ## All Data by Year, Site and Zone
 ```{r Visualize Data, echo=FALSE, warning=FALSE, message = FALSE, fig.width=16, fig.height=10, dpi = 300}
 
-data_plotting <- all_dat
+data_plotting <- final_dat
 
 #Order by Zone from Upland to Surface Water
 data_plotting$Zone = factor(data_plotting$Zone, levels = c("UP", "SWAMP", "TR", "WC", "SW"))

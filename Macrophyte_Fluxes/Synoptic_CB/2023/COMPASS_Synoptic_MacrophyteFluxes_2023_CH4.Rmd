@@ -318,7 +318,7 @@ fluxes <- fluxes %>%
 
 #Fluxes that need to be removed
 remove_flags <- c(
-  "")
+  "GCW_WC_2_202309")
 
 fluxes <- fluxes %>%
     mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% remove_flags, "messy flux, remove", qaqc_flag))

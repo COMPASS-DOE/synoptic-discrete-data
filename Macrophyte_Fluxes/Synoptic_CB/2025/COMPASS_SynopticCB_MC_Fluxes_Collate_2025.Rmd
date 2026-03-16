@@ -47,13 +47,60 @@ all_dat <- merge(ch4, co2, by = c("Plot", "Site", "Zone", "Replicate", "Date", "
 
 ##Rename Zone
 all_dat$Zone <- gsub("W", "WC", all_dat$Zone)
+all_dat$Plot <- gsub("_W_", "_WC_", all_dat$Plot)
+
+```
+
+
+##Pull in Hydrago probe data
+```{r, echo = FALSE}
+
+hydrago <- read.csv("S:/Biogeochemistry/COMPASS Synoptics/Samples & Data/Soil Conductivity Probe/Raw Data Files/2025/COMPASS_Synoptic_2025_ALL_SoilCond_Data.csv")
+
+# colnames(hydrago)
+
+## Remove columns that have replicates in flux data
+hydrago <- hydrago %>% 
+  select(-c("Memo", "Site", "Zone", "Type", "Replicate", "Month", "Month_Name", "Date"))
+
+
+##Find fluxes that are missing hydrago data: 
+all_present <- all(all_dat$Plot %in% hydrago$Plot)
+
+if (all_present) {
+  message("All flux IDs are present in hydrago data")
+} else {
+  message("Some flux IDs are missing from hydrago data")
+  
+  # Optional: Which ones are missing?
+  missing_ids <- setdiff(all_dat$Plot, hydrago$Plot)
+  print(missing_ids)
+}
+
+# ##The other way
+# ##Find hydrago that are missing fluxes: 
+# all_present1 <- all(hydrago$Plot %in% all_dat$Plot)
+# 
+# if (all_present1) {
+#   message("All hydrago IDs are present in flux data")
+# } else {
+#   message("Some hydrago IDs are missing from flux data")
+#   
+#   # Optional: Which ones are missing?
+#   missing_ids1 <- setdiff(hydrago$Plot, all_dat$Plot)
+#   print(missing_ids1)
+# }
+
+
+##Combine with flux data
+final_dat1 <- merge(all_dat, hydrago, by = c("Plot"), all = TRUE)
 
 ```
 
 ##Remove bad fluxes and calculate how many there were
 ```{r, echo=FALSE}
 ##Remove any samples with "remove" in the qaqc_flag columns
-final_dat <- all_dat %>% 
+final_dat <- final_dat1 %>% 
   filter(!grepl("remove", ch4_qaqc_flag, ignore.case = TRUE)) %>% 
   filter(!grepl("remove", co2_qaqc_flag, ignore.case = TRUE)) 
 
@@ -93,7 +140,6 @@ cat(paste0("Percentage messy fluxes removed: ", round(perc_messy, digits = 2), "
 
 
 ```
-
 
 ## Write out files
 ```{r write out combined data and metadata, include=FALSE}
