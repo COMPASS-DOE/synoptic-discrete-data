@@ -40,7 +40,6 @@ md <- "Raw Data/COMPASS_ChamberFlux_Metadata_2023a.csv"
 #metadat <- read_excel(md)
 metadat <- read.csv(md) 
 
-metadat$Date <- metadat$X...Date
 head(metadat)  
 
 #can remove any row that have NA's in the date column 
@@ -220,6 +219,29 @@ fluxes_low <- as.data.frame(subset(fluxes, lin_flux.estimate <= low, select = Pl
 fluxes_high <- as.data.frame(subset(fluxes, lin_flux.estimate >= high, select = Plot:TIMESTAMP_max))
 
 tails <- rbind(fluxes_low, fluxes_high)
+
+```
+
+## Check the fluxes for which I changed the start time due to lags or ebullition (recorded in notes of metadata)
+```{r}
+
+tobechecked <- c("GCW_WC_2_202309")
+
+colnames <- c("Plot")
+
+#Loop to run plots above 
+for(P in tobechecked){ 
+  r1 <- subset(alldat, Plot == P)
+  p1 <- ggplot(r1, aes(TIMESTAMP, CO2)) + geom_point() + theme_classic() +
+  ylab(expression(paste( CO [2], " (ppm)"))) +
+  xlab("Time") + labs(title = P) + 
+  geom_smooth(color="red")
+  print(p1)
+}
+
+#list of the ones that I changed and checked and looked good? 
+fixedplots <- c("")
+  
 
 ```
 

@@ -39,7 +39,6 @@ md <- "Raw Data/COMPASS_ChamberFlux_Metadata_2023a.csv"
 
 metadat <- read.csv(md) 
 
-metadat$Date <- metadat$X...Date
 head(metadat)  
 
 #can remove any row that have NA's in the date column 
@@ -219,6 +218,29 @@ tails <- rbind(fluxes_low, fluxes_high)
 
 ```
 
+## Check the fluxes for which I changed the start time due to lags or ebullition (recorded in notes of metadata)
+```{r}
+
+tobechecked <- c("GCW_WC_2_202309", "GCW_WC_3_202311")
+
+colnames <- c("Plot")
+
+#Loop to run plots above 
+for(P in tobechecked){ 
+  r1 <- subset(alldat, Plot == P)
+  p1 <- ggplot(r1, aes(TIMESTAMP, CH4)) + geom_point() + theme_classic() +
+  ylab(expression(paste( CH [4], " (ppb)"))) +
+  xlab("Time") + labs(title = P) + 
+  geom_smooth()
+  print(p1)
+  }
+
+#list of the ones that I changed and checked and looked good? 
+fixedplots <- c()
+  
+
+```
+
 ## Spot check a few fluxes with R2 > 0.9
 ```{r, echo=FALSE}
 
@@ -279,6 +301,7 @@ for(P in bad_plots){
 #	SWH WC 2 202305 – weird flux here should look into this one – it is the only flat one from this month the rest look good… ZR: the CH4 concentrations here are 18,000 which is much higher than the typical 2000 ppb - REMOVE
 #	SWH WC 4 202306 – the June sweet hall fluxes are really weird and there doesn’t even appear to be fluxes, may need to remove this month of data 
 #	SWH WC 5 202306 – really low flux in the weird June month 
+# SWH_WC_3_202309 - reduce obs lenght by half
 
 
 ####Add qaqc flags####
@@ -287,17 +310,18 @@ fluxes$qaqc_flag <- NA
 
 ##Fluxes with crazy high CH4 values
 high_CH4_flags <- c(
-  "SWH_WC_2_202305")
+  "SWH_WC_2_202305", 
+  "SWH_WC_4_202307")
 
 fluxes <- fluxes %>%
     mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% high_CH4_flags, "Unusually high CH4 values, remove", qaqc_flag))
 
 #Fluxes that need to be removed
-# remove_flags <- c(
-#   "")
-# 
-# fluxes <- fluxes %>%
-#     mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% remove_flags, "messy flux, remove", qaqc_flag))
+remove_flags <- c(
+  "")
+
+fluxes <- fluxes %>%
+    mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% remove_flags, "messy flux, remove", qaqc_flag))
 
 #Any other fluxes that had low R squared but are okay otherwise
 fluxes <- fluxes %>%
