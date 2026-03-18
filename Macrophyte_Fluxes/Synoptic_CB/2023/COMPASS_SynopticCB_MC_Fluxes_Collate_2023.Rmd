@@ -60,7 +60,7 @@ hydrago <- hydrago %>%
 
 ## Remove columns that have replicates in flux data
 hydrago <- hydrago %>% 
-  select(-c("Memo", "Site", "Zone", "Type", "Replicate", "Month", "Month_Name", "Date"))
+  select(-c("Memo", "Site", "Zone", "Type", "Replicate", "Month", "Month_Name", "Date", "Year", "Timestamp", "HydraGO.Serial", "HydraProbe.Serial"))
 
 
 ##Find fluxes that are missing hydrago data: 
@@ -84,11 +84,86 @@ write.csv(missing_ids, "fluxes_missing_hydrago_data_2023.csv", row.names = FALSE
 final_dat1 <- left_join(all_dat, hydrago, by = "Plot")
 
 ```
+##pull TEROS data for the zone during the time of the fluxes and put it into another column so that we can use that too.
+```{r}
+# Soil sensors
+
+##Read in L1 Sensor Data from S Drive and only save necessary data
+# Path to zip file
+L2 <- "S:/Biogeochemistry/COMPASS/L2 Data/v2-1"
+
+# List CSV files inside the zip
+files <- list.files(path = L2, recursive = TRUE, full.names = TRUE)
+
+files <- files[
+  grepl("soil", files, ignore.case = TRUE) &
+  grepl("10cm", files, ignore.case = TRUE) &
+  grepl("SWH|GCW|MSM|GWI", files, ignore.case = TRUE) &
+  grepl("2023", files, ignore.case = TRUE) &
+  grepl("\\.parquet$", files, ignore.case = TRUE)
+]
+
+teros <- files %>%
+  map_dfr(read_parquet)
+
+#Change W Plot to WC
+teros <- teros %>%
+  mutate(Plot = ifelse(Plot == "W", "WC", Plot))
+
+##Want to go from long to wide format
+teros_wide <- pivot_wider(teros, id_cols = c("TIMESTAMP", "Plot", "Site", "Instrument", "Instrument_ID", "Sensor_ID"), names_from = research_name, values_from = Value )
+
+##Average for each TIMESTAMP by Site, Plot, and Timestamp
+teros_wide_avg <- teros_wide %>%
+  group_by(Site, Plot, TIMESTAMP) %>%
+   dplyr::summarize(
+     soil.EC.10cm.TEROS = mean(`soil-EC-10cm`, na.rm=TRUE),
+     soil.salinity.10cm.TEROS = mean(`soil-salinity-10cm`, na.rm=TRUE),
+     soil.temp.10cm.TEROS = mean(`soil-temp-10cm`, na.rm=TRUE),
+     soil.vwc.10cm.TEROS = mean(`soil-vwc-10cm`, na.rm=TRUE))
+
+##Write out this dataframe
+write.csv(teros_wide_avg, file="Raw Data/TEROS_data.csv", row.names = FALSE)
+
+teros_wide_avg <- read.csv("Raw Data/TEROS_data.csv")
+colnames(teros_wide_avg)
+```
+
+## Match up the TEROS soil data and add it to the flux dataframe
+```{r}
+#Going to need to use site and timestamp in the metadata in order to find a date 
+
+#first we need to make a timestamp column in metadat so that we can 
+final_dat1$TIMESTAMP <- ymd_hms(final_dat1$TIMESTAMP)
+
+#make sure time stamps are in the correct format 
+final_dat1$TIMESTAMP <- as.POSIXct(final_dat1$TIMESTAMP, format = "%Y-%m-%d %H:%M:%OS")
+teros_wide_avg$TIMESTAMP <- as.POSIXct(teros_wide_avg$TIMESTAMP, format = "%Y-%m-%d %H:%M:%OS")
+
+#time rounding step to closest 15 minutes
+final_dat1$DateTime_round <- round_date(final_dat1$TIMESTAMP, "15 mins")
+teros_wide_avg$TIMESTAMP_round <- round_date(teros_wide_avg$TIMESTAMP, "15 mins")
+  
+#ensure there is only one data observation per hour 
+teros_wide_avg_clean <- teros_wide_avg %>% 
+    group_by(TIMESTAMP_round, Site, Plot) %>%
+    summarize(
+     soil.EC.10cm.TEROS = mean(soil.EC.10cm.TEROS, na.rm=TRUE),
+     soil.salinity.10cm.TEROS = mean(soil.salinity.10cm.TEROS, na.rm=TRUE),
+     soil.temp.10cm.TEROS = mean(soil.temp.10cm.TEROS, na.rm=TRUE),
+     soil.vwc.10cm.TEROS = mean(soil.vwc.10cm.TEROS, na.rm=TRUE))
+
+#join them 
+final_dat2 <- final_dat1 %>% 
+  left_join(teros_wide_avg_clean, by=c("Site"="Site", "Zone"="Plot", "DateTime_round"="TIMESTAMP_round")) %>% 
+  select(-DateTime_round)
+
+```
 
 ##Remove bad fluxes and calculate how many there were
 ```{r, echo=FALSE}
 ##Remove any samples with "remove" in the qaqc_flag columns
-final_dat <- final_dat1 %>% 
+final_dat <- final_dat2 %>% 
   filter(!grepl("remove", ch4_qaqc_flag, ignore.case = TRUE)) %>% 
   filter(!grepl("remove", co2_qaqc_flag, ignore.case = TRUE)) 
 
