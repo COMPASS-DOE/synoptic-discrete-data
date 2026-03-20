@@ -33,7 +33,12 @@ ch4 <- ch4 %>%
     .cols = 8:(ncol(.) - 6),
     .fn = ~paste0("ch4_", .)
   ) %>%
-  rename(ch4_qaqc_flag = qaqc_flag)
+  rename(ch4_qaqc_flag = qaqc_flag) %>% 
+  mutate(
+    TIMESTAMP <- ymd_hms(TIMESTAMP)
+  )
+
+##Need to figure out why some timestamps, probably the ones I edited, are output differently to the processed Excel file and then read in as long decimal places. 
 
 co2 <- read.csv("Processed Data/COMPASS_Synoptic_CB_SmartChamber_Fluxes_Final_2025_CO2.csv")
 co2 <- co2 %>%
