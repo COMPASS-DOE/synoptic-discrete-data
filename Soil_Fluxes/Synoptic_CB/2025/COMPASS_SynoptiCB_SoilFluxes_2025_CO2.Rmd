@@ -210,7 +210,6 @@ metadata <- metadata %>%
   #slice_head(n = 1) %>% #if you wanted to remove a the line rather than flag it 
   ungroup()
 
-
 ################# Check Observation lengths 
 
 #if the observation length is over 5 mins then change drop column to true  
@@ -224,7 +223,6 @@ metadata <-  metadata %>%
 
 
 ```
-
 
 
 ##Dont need to pull L1 temp data or any other temps like we do for macrophyte because the smartchamber records the temp
@@ -279,7 +277,7 @@ head(fluxes)
 ##Create a dataframe with averaged soil probe data per Plot and add to flux data
 soildat <- alldat %>% 
     group_by(Plot) %>%
-  dplyr::summarize(
+    dplyr::summarize(
      soilp_c = mean(soilp_c, na.rm=TRUE),
      soilp_m = mean(soilp_m, na.rm=TRUE),
      soilp_t = mean(soilp_t, na.rm=TRUE))
@@ -462,7 +460,7 @@ for(P in neg_plots){
 ####################Negative CO2 fluxes
 # add a flag for the fluxes that are negative for CO2 because they should be positive
 allflux <- allflux %>%
-    mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% neg_plots, "negative CO2 flux, messy - remove", qaqc_flag))
+    mutate(qaqc_flag = ifelse(Plot %in% neg_plots, "negative CO2 flux, messy - remove", qaqc_flag))
 
 ```
 

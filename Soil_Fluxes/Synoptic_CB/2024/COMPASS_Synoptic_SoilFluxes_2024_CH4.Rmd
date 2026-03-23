@@ -264,8 +264,15 @@ fluxes <- ffi_compute_fluxes(alldat,
                              dead_band = 5)
 head(fluxes)
 
-allflux <- fluxes
+##Create a dataframe with averaged soil probe data per Plot and add to flux data
+soildat <- alldat %>% 
+    group_by(Plot) %>%
+  dplyr::summarize(
+     soilp_c = mean(soilp_c, na.rm=TRUE),
+     soilp_m = mean(soilp_m, na.rm=TRUE),
+     soilp_t = mean(soilp_t, na.rm=TRUE))
 
+allflux <- left_join(fluxes, soildat, by = "Plot")
 
 ```
 
@@ -459,7 +466,7 @@ eb_flags <- c("2-Nov-SWH-TR-9a", "1-Nov-SWH-TR-9a", "2-Sep-SWH-TR-7a", "2-Sep-SW
 
 #add a flag for the fluxes that have ebullition and therefore not even a flux 
 allflux <- allflux %>%
-    mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% eb_flags, "significant ebullition, flux compromised", qaqc_flag))
+    mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% eb_flags, "significant ebullition, flux compromised, remove", qaqc_flag))
 
 
 ```
@@ -515,7 +522,7 @@ poor_flags <- c("2-Oct-SWH-TR-8a", "1-Jul-SWH-TR-9d", "1-Jul-SWH-TR-7b",
 
 #add a flag for the fluxes that are v-shaped and therefore not even a flux 
 allflux_filtered <- allflux_filtered %>%
-    mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% poor_flags, "poor flux, need to remove", qaqc_flag))
+    mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% poor_flags, "poor flux, remove", qaqc_flag))
 
 
 # 2-Oct-SWH-TR-8a - poor flux, remove
