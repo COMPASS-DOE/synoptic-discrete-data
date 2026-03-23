@@ -270,8 +270,15 @@ fluxes <- ffi_compute_fluxes(alldat,
                              dead_band = 5)
 head(fluxes)
 
-allflux <- fluxes
+##Create a dataframe with averaged soil probe data per Plot and add to flux data
+soildat <- alldat %>% 
+    group_by(Plot) %>%
+  dplyr::summarize(
+     soilp_c = mean(soilp_c, na.rm=TRUE),
+     soilp_m = mean(soilp_m, na.rm=TRUE),
+     soilp_t = mean(soilp_t, na.rm=TRUE))
 
+allflux1 <- left_join(fluxes, soildat, by = "Plot")
 
 ```
 
@@ -283,7 +290,7 @@ allflux <- fluxes
 
 
 #remove any lines that don't have a site code in the Plot ID 
-fluxes <-  fluxes %>%  
+fluxes <-  allflux1 %>%  
   filter(str_detect(Plot, "SWH|MSM|GWI|GCW|GCReW"))
 
 #if they say retake then we want to replace that with an "a" and if it has -A then we also want to remove that and make it "a" 
@@ -385,7 +392,8 @@ allflux <- allflux %>%
   group_by(base_plot, replicate) %>%
   arrange(Month, Site, Zone, replicate, desc(suffix), .by_group = TRUE) %>%
   slice_head(n = 1) %>%
-  ungroup()
+  ungroup() %>%
+  select(-c(base_plot, replicate, suffix))
 
 
 
@@ -595,8 +603,7 @@ for(P in all_plots){
 # Create a new dataframe by removing rows that were present in fluxes_weird which have a low R2 and a flux higher than 1 (23 obs)
 allflux_filtered <- allflux[!(allflux$Plot %in% fluxes_weird$Plot), ]
 
-#Any others that are not in the weird category that need to be removed: 
-  #also removing ones that are crazy off but were not in the fluxes_weird dataframe (did this by listing them below)
+# Also removing ones that are crazy off but were not in the fluxes_weird dataframe (did this by listing them below)
 
 allflux_filtered <- allflux_filtered %>%
   filter(!Plot %in% c("2-May-SWH-TR-8", "1-Aug-SWH-TR-10a", "2-Jul-SWH-TR-9", "1-Jul-SWH-TR-9", "1-May-GCW-TR-3", 
@@ -690,7 +697,7 @@ allflux_filtered <- allflux_filtered %>%
       TRUE ~ Plot) ) 
 
 #export as a csv to the folder that you want 
-write.csv(allflux_filtered, file="Processed Data/COMPASS_Synoptic_CB_SmartChamber_Fluxes_Final_2023_CH4.csv")           #Change file name
+write.csv(allflux_filtered, file="Processed Data/COMPASS_Synoptic_CB_SmartChamber_Fluxes_Final_2023_CH4.csv", row.names = FALSE)           #Change file name
 
 
 ```
