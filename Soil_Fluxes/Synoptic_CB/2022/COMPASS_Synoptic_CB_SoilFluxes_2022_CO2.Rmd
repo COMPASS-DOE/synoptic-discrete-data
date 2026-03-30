@@ -271,8 +271,15 @@ fluxes <- ffi_compute_fluxes(alldat,
                              dead_band = 5)
 head(fluxes)
 
-allflux <- fluxes
+##Create a dataframe with averaged soil probe data per Plot and add to flux data
+soildat <- alldat %>% 
+    group_by(Plot) %>%
+  dplyr::summarize(
+     soilp_c = mean(soilp_c, na.rm=TRUE),
+     soilp_m = mean(soilp_m, na.rm=TRUE),
+     soilp_t = mean(soilp_t, na.rm=TRUE))
 
+allflux1 <- left_join(fluxes, soildat, by = "Plot")
 
 ```
 
@@ -284,7 +291,7 @@ allflux <- fluxes
 
 
 #remove any lines that don't have a site code in the Plot ID 
-fluxes <-  fluxes %>%  
+fluxes <-  allflux1 %>%  
   filter(str_detect(Plot, "SWH|MSM|GWI|GCW|GCReW"))
 
 #if they say retake then we want to replace that with an "a" and if it has -A then we also want to remove that and make it "a" 
@@ -809,10 +816,13 @@ p3
 ```{r, echo=FALSE}
 
 #can remove base_plot column, the replicate column, and the suffix column
-allflux_cols <- allflux_filtered[,-c(31:33)]
+allflux_cols <- allflux_filtered[,-c(34:36)]
+
+#fix TIMESTAMP format
+allflux_cols$TIMESTAMP <- format(allflux_cols$TIMESTAMP, format = "%Y-%m-%d %H:%M:%S")
 
 #export as a csv to the folder that you want 
-write.csv(allflux_cols, file="Processed Data/COMPASS_Synoptic_CB_SmartChamber_Fluxes_Final_2022_CO2.csv")           #Change file name
+write.csv(allflux_cols, file="Processed Data/COMPASS_Synoptic_CB_SmartChamber_Fluxes_Final_2022_CO2.csv", row.names = FALSE)           #Change file name
 
 
 ```
