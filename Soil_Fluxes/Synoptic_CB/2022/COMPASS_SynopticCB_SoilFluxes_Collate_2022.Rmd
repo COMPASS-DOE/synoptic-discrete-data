@@ -1,6 +1,6 @@
 ---
 title: "Synoptic CB: Soil Fluxes"
-author: "2023 Samples"
+author: "2022 Samples"
 date: "`r Sys.Date()`"
 output: 
   pdf_document:
@@ -27,10 +27,10 @@ library(lubridate)
 #Read in and collate all the files in the Processed Data folder 
 ```{r, include = FALSE}
 
-ch4 <- read.csv("Processed Data/COMPASS_Synoptic_CB_SmartChamber_Fluxes_Final_2023_CH4.csv")
+ch4 <- read.csv("Processed Data/COMPASS_Synoptic_CB_SmartChamber_Fluxes_Final_2022_CH4.csv")
 ch4 <- ch4 %>%
   rename_with(
-    .cols = 8:(ncol(.) - 6),
+    .cols = 8:(ncol(.) - 5),
     .fn = ~paste0("ch4_", .)
   ) %>%
   mutate(ch4_qaqc_flag = NA) %>%
@@ -46,10 +46,10 @@ ch4 <- ch4 %>%
 ch4$TIMESTAMP <- ymd_hms(ch4$TIMESTAMP)
 # rownames(df) <- NULL
 
-co2 <- read.csv("Processed Data/COMPASS_Synoptic_CB_SmartChamber_Fluxes_Final_2023_CO2.csv")
+co2 <- read.csv("Processed Data/COMPASS_Synoptic_CB_SmartChamber_Fluxes_Final_2022_CO2.csv")
 co2 <- co2 %>%
   rename_with(
-    .cols = 8:(ncol(.) - 6),
+    .cols = 8:(ncol(.) - 5),
     .fn = ~paste0("co2_", .)
   ) %>%
   mutate(co2_qaqc_flag = NA) %>%
@@ -65,9 +65,7 @@ co2 <- co2 %>%
 co2$TIMESTAMP <- ymd_hms(co2$TIMESTAMP)
 
 # Combine all files
-all_dat <- merge(co2, ch4, by = c("RepNumber", "Month", "Site", "Zone", "Replicate", "Plot", "TIMESTAMP", "TIMESTAMP_min", "TIMESTAMP_max", "soilp_c", "soilp_m", "soilp_t"), all = TRUE)
-
-##Why are a lot of the soil probe data C and M zeroes? 
+all_dat <- merge(co2, ch4, by = c("RepNumber", "Month", "Site", "Zone", "Replicate", "Plot", "TIMESTAMP", "TIMESTAMP_min", "TIMESTAMP_max", "soilp_c", "soilp_m", "soilp_t"), all = FALSE)
 
 ```
 
@@ -86,7 +84,7 @@ final_dat <- all_dat %>%
 ```{r write out combined data and metadata, include=FALSE}
 
 #write out a csv of all the data to the main folder: 
-write.csv(final_dat, "COMPASS_SynopticCB_Soil_Fluxes_2023.csv")
+write.csv(final_dat, "COMPASS_SynopticCB_Soil_Fluxes_2022.csv", row.names = FALSE)
 
 ```
 
@@ -97,7 +95,7 @@ write.csv(final_dat, "COMPASS_SynopticCB_Soil_Fluxes_2023.csv")
 data_plotting <- final_dat
 
 #Order by Zone from Upland to Surface Water
-data_plotting$Zone = factor(data_plotting$Zone, levels = c("UP", "SWAMP", "TR"))
+data_plotting$Zone = factor(data_plotting$Zone, levels = c("UP", "TR"))
 data_plotting <- data_plotting[order(data_plotting$Zone), ]
 
 #Order by Site from SWH, GCW, MSM, GWI order, which is oligohaline to polyhaline
@@ -165,12 +163,11 @@ data_plotting_all <- data_plotting_all %>%
     mutate(
     Zone_1 = case_when(
       Zone == "UP" ~ "Upland",
-      Zone == "SWAMP" ~ "Swamp",
       Zone == "TR" ~ "Transition",
       TRUE ~ Zone  # keep everything else unchanged
     )
   ) %>%
-  mutate(Zone_1 = factor(Zone_1, levels = c("Upland", "Swamp", "Transition"))) %>%
+  mutate(Zone_1 = factor(Zone_1, levels = c("Upland", "Transition"))) %>%
   mutate(Date = paste0(format(TIMESTAMP, "%Y"), format(TIMESTAMP, "%m")))
 
 
