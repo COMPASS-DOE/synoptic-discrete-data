@@ -280,6 +280,14 @@ soildat <- alldat %>%
      soilp_m = mean(soilp_m, na.rm=TRUE),
      soilp_t = mean(soilp_t, na.rm=TRUE))
 
+##Soil probe not working for Apr - July? , set soilp_c and soilp_m to NA
+months_no_probe = c("Apr", "May", "Jun", "Jul")
+pattern <- paste(months_no_probe, collapse = "|")
+
+soildat <- soildat %>%
+  mutate(soilp_c = ifelse(str_detect(Plot, pattern), NA, soilp_c),
+         soilp_m = ifelse(str_detect(Plot, pattern), NA, soilp_m))
+
 allflux <- left_join(fluxes, soildat, by = "Plot")
 
 ```
@@ -527,7 +535,7 @@ eb_flags <- c("2-Nov-SWH-TR-9a", "1-Nov-SWH-TR-9a", "2-Sep-SWH-TR-7a", "2-Sep-SW
 
 #add a flag for the fluxes that have ebullition and therefore not even a flux 
 allflux <- allflux %>%
-    mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% eb_flags, "significant ebullition, flux compromised", qaqc_flag))
+    mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% eb_flags, "significant ebullition, flux compromised, remove", qaqc_flag))
 
 
 ```
@@ -552,7 +560,7 @@ for(P in neg_plots){
 ####################Negative CO2 fluxes
 # add a flag for the fluxes that are negative for CO2 because they should be positive
 allflux <- allflux %>%
-    mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% neg_plots, "negative CO2 flux, remove", qaqc_flag))
+    mutate(qaqc_flag = ifelse(Plot %in% neg_plots, "negative CO2 flux, remove", qaqc_flag))
 
 ```
 
@@ -626,7 +634,7 @@ allflux_filtered <- allflux[!(allflux$Plot %in% plots_to_remove), ]
 poor_flags <- c("2-Jul-SWH-TR-9d", "1-Jul-SWH-TR-7b")
 
 #add a flag for the fluxes that are v-shaped and therefore not even a flux 
-allflux <- allflux %>%
+allflux_filtered <- allflux_filtered %>%
     mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% poor_flags, "poor flux, need to remove", qaqc_flag))
 
 

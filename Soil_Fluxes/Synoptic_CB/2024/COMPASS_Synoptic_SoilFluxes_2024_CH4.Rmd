@@ -272,6 +272,14 @@ soildat <- alldat %>%
      soilp_m = mean(soilp_m, na.rm=TRUE),
      soilp_t = mean(soilp_t, na.rm=TRUE))
 
+##Soil probe not working for Apr - July? , set soilp_c and soilp_m to NA
+months_no_probe = c("Apr", "May", "Jun", "Jul")
+pattern <- paste(months_no_probe, collapse = "|")
+
+soildat <- soildat %>%
+  mutate(soilp_c = ifelse(str_detect(Plot, pattern), NA, soilp_c),
+         soilp_m = ifelse(str_detect(Plot, pattern), NA, soilp_m))
+
 allflux <- left_join(fluxes, soildat, by = "Plot")
 
 ```
