@@ -33,6 +33,23 @@ all_data <- files %>%
 
 all_data <- all_data[ ,-1]
 
+##Fix run dates
+all_data <- all_data %>% 
+  mutate(Run_Date = ifelse(str_detect(Run_Date, "/"), format(as.Date(Run_Date, format = "%m/%d/%Y"), "%Y%m%d"), Run_Date)) %>% 
+  mutate(Run_Date = gsub("\\.", "0", Run_Date))
+
+##Fix SWH Sample Zones for2023
+##UPCON -> UP, UP -> SWAMP
+unique(all_data$Zone)
+
+all_data <- all_data %>% 
+  rename(Zone_old = Zone) %>% 
+  mutate(Zone = ifelse(Site == "SWH" & Zone_old == "UP", "SWAMP", Zone_old)) %>% 
+  mutate(Zone = ifelse(Site == "SWH" & Zone_old == "UPCON", "UP", Zone)) 
+
+all_data <- all_data %>% 
+  select(-Zone_old)
+
 ```
 
 #Read in selected TMP data for GCW Upland - need to do this too...  
@@ -90,7 +107,7 @@ all_data_gcw <- rbind(all_data, final_gcw_up)
 ```{r, echo=FALSE}
 
 
-write.csv(all_data_gcw, "COMPASS_SynopticCB_SGAS_2023.csv")
+write.csv(all_data, "COMPASS_SynopticCB_SGAS_2023.csv")
 
 ```
 

@@ -20,16 +20,16 @@ library(openxlsx)
 ```{r}
 
 #read in 2022 TGAS Data:
-dat22 <- read.csv("2023/COMPASS_SynopticCB_SGAS_2023.csv")
+dat23 <- read.csv("2023/COMPASS_SynopticCB_SGAS_2023.csv")
 
 #need to deal with some of the tempest data that has the wrong replicate info 
   #a rep of 1 = C7 
   #a rep of 2 = C11
   #a rep of 4 = C19
 
-dat22$Replicate <- as.numeric(dat22$Replicate)
+dat23$Replicate <- as.numeric(dat23$Replicate)
 
-dat22 <- dat22 %>%
+dat23 <- dat23 %>%
   mutate(Replicate = case_when(
     Site == "GCW" & Zone == "UP" & Replicate == 1 ~ 7,
     Site == "GCW" & Zone == "UP" & Replicate == 2 ~ 11,
@@ -38,7 +38,7 @@ dat22 <- dat22 %>%
   ))
 
 #read in 2023 TGAS Data:
-dat23 <- read.csv("2024/COMPASS_SynopticCB_SGAS_2024.csv")
+dat24 <- read.csv("2024/COMPASS_SynopticCB_SGAS_2024.csv")
 
 
 ```
@@ -51,19 +51,19 @@ tree_dat <- read.csv("TGAS Tree Info/COMPASS_SynopticCB_TGAS_TreeInfo.csv")
 head(tree_dat)
 
 #combine the tree data with the 2022 File 
-tree_dat22 <- tree_dat %>%
-  select(!"DBH_2023_cm")
-dat22_wtree <- left_join(dat22, tree_dat22, by = c("Site", "Zone", "Tree_Code", "Replicate"))
-
-dat22_wtree <- dat22_wtree %>%
-  rename(DBH_cm = DBH_2022_cm)
-
-#combine tree data with 2023 File 
 tree_dat23 <- tree_dat %>%
-  select(!"DBH_2022_cm")
+  select(!"DBH_2023_cm")
 dat23_wtree <- left_join(dat23, tree_dat23, by = c("Site", "Zone", "Tree_Code", "Replicate"))
 
 dat23_wtree <- dat23_wtree %>%
+  rename(DBH_cm = DBH_2022_cm)
+
+#combine tree data with 2023 File 
+tree_dat24 <- tree_dat %>%
+  select(!"DBH_2022_cm")
+dat24_wtree <- left_join(dat24, tree_dat24, by = c("Site", "Zone", "Tree_Code", "Replicate"))
+
+dat24_wtree <- dat24_wtree %>%
   rename(DBH_cm = DBH_2023_cm)
 
 
@@ -76,14 +76,14 @@ dat23_wtree <- dat23_wtree %>%
 dates <- read.csv("COMPASS_Synoptic_SGAS_CollectionDates.csv")
 head(dates)
 
-#add sampling date and the month # to dat22
-dat22_wtree_dates <- dat22_wtree %>%
+#add sampling date and the month # to dat23
+dat23_wtree_dates <- dat23_wtree %>%
   left_join(dates %>% select(Site, Year, Month, Day),
             by = c("Site", "Year", "Month")) %>%
   mutate(Month_num = match(Month, month.name))
 
-#add sampling date and the month # to dat23
-dat23_wtree_dates <- dat23_wtree %>%
+#add sampling date and the month # to dat24
+dat24_wtree_dates <- dat24_wtree %>%
   left_join(dates %>% select(Site, Year, Month, Day),
             by = c("Site", "Year", "Month")) %>%
   mutate(Month_num = match(Month, month.name))
@@ -94,7 +94,7 @@ dat23_wtree_dates <- dat23_wtree %>%
 ## Combine years and clean up
 ```{r}
 #combine all the data together in one dataframe
-all_dat <- rbind(dat22_wtree_dates, dat23_wtree_dates)
+all_dat <- rbind(dat23_wtree_dates, dat24_wtree_dates)
 
 all_dat <- all_dat %>%
   mutate(CO2_ppm = if_else(CO2_ppm < 0, 0, CO2_ppm),
