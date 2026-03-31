@@ -33,6 +33,8 @@ all_data <- files %>%
 
 all_data <- all_data[ ,-1]
 
+all_data$CO2_Conc_ppm <- NULL
+
 ```
 
 #Read in selected TMP data for GCW Upland - need to do this too...  
@@ -90,7 +92,7 @@ all_data_gcw <- rbind(all_data, final_gcw_up)
 ```{r, echo=FALSE}
 
 
-write.csv(all_data_gcw, "COMPASS_SynopticCB_SGAS_2024.csv")
+write.csv(all_data, "COMPASS_SynopticCB_SGAS_2024.csv")
 
 ```
 
