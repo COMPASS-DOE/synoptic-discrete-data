@@ -58,14 +58,14 @@ std.error <- function (x, na.rm=FALSE){
 # Patrick, & Faulkner 1993
 # They used a calomel electrode and used 224 to adjust to H2, 
 # we use a KCl ref probe, so we need to add 202 instead 
-```{r adjust for pH, include = FALSE}
+```{r adjust for pH, message = FALSE, warning = FALSE}
 
 ##Remove unneccesary column in redox data
 prelong <- dat %>% 
   select (-Campaign)
 
 #switch redox data to long format 
-datlong <-  as.data.frame(melt(setDT(prelong), id.vars = c("Date", "Month", "Year", "Site","Zone", "Depth", "Time_24hr", "Time_Zone", "Notes"), variable.name = "RP_mV"))
+datlong <-  as.data.frame(melt(setDT(prelong), id.vars = c("Date", "Month", "Year", "Site", "Zone", "Depth", "Time_24hr", "Time_Zone", "Notes"), variable.name = "RP_mV"))
 datlong$Site <- gsub(" ", "", datlong$Site) ## Remove space in GWI site name
 
 ##Add in soil pH data
@@ -77,10 +77,14 @@ all_corr <- all_corr %>%
 
 ##Average across all 5-6 measurements for each sampling Site, Zone, Depth, Month, Year
 red1 <- all_corr %>%
-  group_by(Site, Zone, Depth, Month, Year) %>%
-  summarise(Date = mean(Date), Avg_mV = mean(value_corr, na.rm=TRUE), Std_dv = sd(value_corr, na.rm=TRUE), Std_err = std.error(value_corr, na.rm=TRUE))
+  group_by(Date, Month, Year, Site, Zone, Depth, Time_24hr, Time_Zone, Notes) %>%
+  summarise(Date = mean(Date), 
+            Avg_mV = mean(value_corr, na.rm=TRUE), 
+            Std_dv = sd(value_corr, na.rm=TRUE), 
+            Std_err = std.error(value_corr, na.rm=TRUE), 
+            Notes = first(Notes))
 
-head(red1)
+# head(red1)
 
 ```
 
