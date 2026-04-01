@@ -84,7 +84,8 @@ missing_ids <- data.frame(missing_ids)
 write.csv(missing_ids, "fluxes_missing_hydrago_data_2024.csv", row.names = FALSE)
 
 ##Combine with flux data
-final_dat1 <- left_join(all_dat, hydrago, by = "Plot")
+final_dat1 <- all_dat %>% 
+  left_join(hydrago, by = "Plot")
 
 ```
 

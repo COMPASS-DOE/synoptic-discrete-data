@@ -43,7 +43,7 @@ co2 <- co2 %>%
   rename(co2_qaqc_flag = qaqc_flag)
 
 # Combine all files
-all_dat <- merge(ch4, co2, by = c("Plot", "Site", "Zone", "Replicate", "Date", "TIMESTAMP", "TIMESTAMP_min", "TIMESTAMP_max", "Notes"))
+all_dat <- merge(ch4, co2, by = c("Plot", "Site", "Zone", "Replicate", "Date", "TIMESTAMP", "TIMESTAMP_min", "TIMESTAMP_max", "Notes"), all = FALSE)
 
 ```
 
