@@ -162,7 +162,7 @@ viz_ch4_plot <- ggplot(data_plotting_all, aes(x = row_num, y = ch4_lin_flux.esti
     "SW" = "#25ABE6"
   )) +
   theme_classic() +
-  labs(x = " ", y = "CH4", title = "CO2 Fluxes by Site") +
+  labs(x = " ", y = "CH4", title = "CH4 Fluxes by Site") +
   theme(
     panel.spacing = unit(.05, "lines"), 
     panel.border = element_rect(color = "black", fill = NA, linewidth = 1)) + 
