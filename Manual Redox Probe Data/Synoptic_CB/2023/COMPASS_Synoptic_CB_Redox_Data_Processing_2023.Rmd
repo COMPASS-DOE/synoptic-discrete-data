@@ -50,6 +50,7 @@ soildat <- soildat %>%
 dat <- dat %>%
   mutate(Zone = case_when(Site == "SWH" & Zone == "Upland" ~ "Swamp", 
                           Site == "SWH" & Zone == "Upland Control" ~ "Upland",
+                          Site == "SWH" & Zone == "Upland-Control" ~ "Upland",
                           TRUE ~ Zone), 
          Site = ifelse(Site == "Gcrew", "GCW", Site))
 
