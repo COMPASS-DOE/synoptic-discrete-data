@@ -1,0 +1,173 @@
+---
+title: "Synoptic CB: Manual Redox Probes"
+author: "2022 Samples"
+date: "`r Sys.Date()`"
+output: 
+  pdf_document:
+  toc: true
+number_sections: true
+
+output_dir: "To Be Reviewed/PDF"
+---
+  
+# Measurements taken with SWAP Redox Probes & Calomel Ref probe
+# Protocol: https://docs.google.com/document/d/
+# 1dL2ZPhLFBAZJmVBCfKxup_KOYY96qA5IWfJmQen50pY/edit
+# Units = mV 
+
+##Add Required Packages
+```{r packages, include = FALSE}
+
+#Packages that are required 
+lapply(c(
+  "dplyr", "ggplot2", "ggpubr", "stringr",
+  "purrr", "tidyverse", "here", "broom", "tibble",
+  "googledrive", "googlesheets4", "data.table", 
+  "matrixStats", "gridExtra", "grid", "tidyverse", "knitr"), 
+  library, character.only = TRUE)
+
+```
+
+##Setup
+```{r setup}
+
+###### File Names - PLEASE CHANGE 
+#file path and name for raw summary data file 
+dat <- read.csv("Raw Data/COMPASS_Synoptic_CB_Redox_2022_Raw.csv")
+soildat <- read.csv("Raw Data/CB_Soil_pH.csv")
+
+#file path and name of processed data file 
+processed_file_name = "Processed Data/COMPASS_Synoptic_CB_Redox_2022_processed.csv" 
+
+##No SWH in 2022
+##Fix Sample Zone and Site naming
+soildat <- soildat %>%
+  mutate(Site = ifelse(Site == "Gcrew", "GCW", Site)) %>% 
+  filter(Site != "SWH")
+
+##Fix Site naming
+dat <- dat %>%
+  mutate(Site = ifelse(Site == "Gcrew", "GCW", Site))
+
+##Std error function
+std.error <- function (x, na.rm=FALSE){
+  sqrt(var(x, na.rm = na.rm) / sum(!is.na(x)))}
+
+```
+
+## Adjust Raw Readings by pH
+## Need to adjust for pH: 
+# redox = redoxi + [(ph - 5)59 + 224] This is the equation from Megonigal, 
+# Patrick, & Faulkner 1993
+# They used a calomel electrode and used 224 to adjust to H2, 
+# we use a KCl ref probe, so we need to add 202 instead 
+```{r adjust for pH, message = FALSE, warning = FALSE}
+
+##Remove unneccesary column in redox data
+prelong <- dat %>% 
+  select (-Campaign) %>% 
+  mutate(Notes = NA, 
+         Time_24hr = NA, 
+         Time_Zone = NA)
+
+#switch redox data to long format 
+datlong <-  as.data.frame(melt(setDT(prelong), id.vars = c("Date", "Month", "Year", "Site", "Zone", "Depth", "Time_24hr", "Time_Zone", "Notes"), variable.name = "RP_mV"))
+datlong$Site <- gsub(" ", "", datlong$Site) ## Remove space in GWI site name
+
+##Add in soil pH data
+all_corr <- merge(datlong, soildat, by = c("Site", "Zone"), all = TRUE)
+
+##Adjust redox for pH
+all_corr <- all_corr %>% 
+  mutate(value_corr = value + ((pH - 5)*59 + 202))
+
+##Average across all 5-6 measurements for each sampling Site, Zone, Depth, Month, Year
+red1 <- all_corr %>%
+  group_by(Date, Month, Year, Site, Zone, Depth, Time_24hr, Time_Zone, Notes) %>%
+  summarise(Date = mean(Date), 
+            Avg_mV = mean(value_corr, na.rm=TRUE), 
+            Std_dv = sd(value_corr, na.rm=TRUE), 
+            Std_err = std.error(value_corr, na.rm=TRUE), 
+            Notes = first(Notes))
+
+# head(red1)
+
+```
+
+##Write Out Adjusted & Avg'd Data
+```{r write out processed data, include = FALSE}
+
+#write a .csv of the new data frame 
+write.csv(red1, processed_file_name, row.names = FALSE) 
+
+```
+
+## Vizualize Data
+```{r visualize data, echo = FALSE, warning = FALSE, message = FALSE}
+
+#Plot samples to get a first look at redox (sanity check)
+data_plotting <- red1
+
+#Order by Zone from Upland to Surface Water
+data_plotting$Zone = factor(data_plotting$Zone, levels = c("Upland",  "Transition", "Wetland"))
+data_plotting <- data_plotting[order(data_plotting$Zone), ]
+
+#group the data for plotting
+data_plotting <- data_plotting %>%
+  group_by(Site) %>%
+  mutate(row_num = factor(row_number())) %>%  # create row_num as factor per group
+  ungroup()
+
+#Plot all data and change colors based on zone:
+viz_redox_plot <- ggplot(data_plotting, aes(x = row_num, y = Avg_mV, fill = Zone)) +
+  geom_bar(stat = "identity", position = position_dodge2(preserve = "single")) +
+  facet_grid(~ Site, scales="free_x") +
+  scale_fill_manual(values = c(
+    "Upland" = "#20063B",
+    "Transition" = "#FFBC42",
+    "Wetland" = "#419973"
+  )) +
+  theme_classic() +
+  theme(axis.text.x = element_blank(), 
+        legend.position = "bottom") +
+  labs(x = " ", y = "Redox Potential (mV)", title = "All Redox Data") +
+  scale_x_discrete(drop = TRUE)
+
+viz_redox_plot
+
+#Plot averaged data by depth and change colors based on zone:
+red <- all_corr %>%
+  group_by(Site, Zone, Depth) %>%
+  summarise(Date = mean(Date), Avg_mV = mean(value_corr, na.rm=TRUE), Std_dv = sd(value_corr, na.rm=TRUE), Std_err = std.error(value_corr, na.rm=TRUE))
+
+viz_redox_depth <- ggplot(red, aes(x=Depth, y= Avg_mV, col=Zone, fill=Zone))+
+  geom_point(size=3) +  
+  geom_line(linewidth=1.5) +
+  scale_x_reverse( lim=c(45,5)) + 
+  ylim(c(-150, 700)) +
+  coord_flip() + 
+  theme_classic() +
+  facet_grid(~factor(Site, levels=c("MSM", "GWI", "GCW"))) +
+  labs(x="Depth (cm)", y="Redox Potential (mV)", title ="Averaged Redox Data") +
+  scale_colour_manual(values = c(
+    "Upland" = "#20063B",
+    "Transition" = "#FFBC42",
+    "Wetland" = "#419973"
+  )) +
+  theme(panel.spacing = unit(.5, "lines"),
+        panel.border = element_rect(color = "black", fill = NA, size = 1),
+        strip.background = element_rect(color = "black", size = 1),
+        plot.margin = margin(t=0.1, r=0.1, l=0.1, b=0.1, "cm"),
+        plot.title = element_text(hjust = 0.0),
+        axis.text=element_text(size=12),
+        axis.title=element_text(size=12),
+        legend.text=element_text(size=12), 
+        legend.title=element_blank(),
+        legend.position = "bottom")+
+  geom_errorbar(aes(ymin=Avg_mV-Std_err, ymax=Avg_mV+Std_err),width=0.3,position=position_dodge(.1))
+
+viz_redox_depth
+
+```
+
+
