@@ -319,6 +319,37 @@ viz_H2S_plot_depth
 
 ```
 
+## Boxplot by depth
+```{r Boxplot by depth, echo=FALSE, warning=FALSE, message = FALSE, fig.width=16, fig.height=10, dpi = 300}
+
+##Remove SW
+data_plotting_depth <- data_plotting %>%
+  filter(Zone != "SW") %>%
+  mutate(Depth_cm = factor(Depth_cm, levels = c("45", "20", "10")))
+
+
+#Plot data and change colors based on Zone:
+viz_H2S_depth <-  ggplot(data_plotting_depth, aes(x = Depth_cm, y = H2S_mean_uM, fill = Zone)) +
+  geom_boxplot() +
+  facet_wrap( ~ Site, scales="free", nrow = 1) +
+  scale_fill_manual(values = c(
+    "UP" = "#20063B",
+    "TR" = "#FFBC42",
+    "SWAMP" = "darkgrey",
+    "WC" = "#419973")) +
+  theme_classic() +
+  labs(x = "Sampling Depth (cm)", y = "Sulfide (uM)", title = "") +
+  # theme(
+  #   panel.spacing = unit(.05, "lines"), 
+  #   panel.border = element_rect(color = "black", fill = NA, linewidth = 1))+ 
+  theme(text = element_text(size = 30))+ 
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))+ 
+  coord_flip() 
+
+viz_H2S_depth
+
+```
+
 
 ## Boxplot summary
 ```{r Overall Boxplot, echo=FALSE, warning=FALSE, message = FALSE, fig.width=16, fig.height=10, dpi = 400}
@@ -411,6 +442,25 @@ summary_all_depths_years <- all_dat %>%
 
 ```
 
+##Calculate number of samples 
+```{r Number of samples, include=FALSE, dpi = 300}
+#  I am thinking it might be cool to add to our porewater collation files a table at the end that has total number of samples then also some info about # of samples per zone, site, depth etc.
+
+##Metrics for each year
+sample_numbers_years <- all_dat %>%
+  group_by(Year) %>%
+   reframe(
+     Number_of_samples = n())
+
+##Metrics for each site, zone, depth for all years
+sample_numbers <- all_dat %>%
+  group_by(Site, Zone, Depth_cm) %>%
+   reframe(
+     Number_of_samples = n())
+     
+
+```
+
 ## Summary Tables
 ```{r Summary table metrics, echo = FALSE, message = FALSE, dpi = 100}
 
@@ -438,6 +488,63 @@ kable(
   column_spec(1, bold = TRUE)
 
 
+```
+
+## Number of Samples
+```{r number of samples tables, echo = FALSE, message = FALSE, dpi = 100}
+
+#Order by Zone from Upland to Surface Water
+sample_numbers$Zone = factor(sample_numbers$Zone, levels = c("UP", "SWAMP", "TR", "WC", "SW"))
+sample_numbers <- sample_numbers[order(sample_numbers$Zone), ]
+
+#Order by Site from SWH, GCW, MSM, GWI order, which is oligohaline to polyhaline
+sample_numbers$Site = factor(sample_numbers$Site, levels = c("SWH", "GCW", "MSM", "GWI"))
+sample_numbers <- sample_numbers[order(sample_numbers$Site), ]
+
+kable(
+  sample_numbers_years[, c("Year", "Number_of_samples")],  
+  format = "latex",
+  booktabs = TRUE,
+  caption = paste0("Total Samples: ", nrow(all_dat))
+) %>%
+  kable_styling(
+    latex_options = c("hold_position", "striped", "scale_down"),
+    font_size = 12
+  ) %>%
+  row_spec(0, bold = TRUE) %>%   # header
+  column_spec(1, bold = TRUE)
+
+```
+
+```{r Number of Samples Barplots, echo=FALSE, warning=FALSE, message = FALSE, fig.width=16, fig.height=10, dpi = 300}
+##Remove SW samples
+sample_numbers_pw <- sample_numbers %>% 
+  filter(Zone != "SW")
+
+##Number of Samples Plots
+sample_num_barplot <- ggplot(sample_numbers_pw, aes(x = as.character(Depth_cm), y = Number_of_samples, fill = Zone)) +
+  geom_col(position = "dodge", color = "black", width = 0.75) + # 'color' adds a border to the bars
+  facet_grid(~Site , scales = "free_x") +
+  scale_x_discrete(drop = TRUE) +
+  scale_fill_manual(values = c(
+    "UP" = "#20063B",
+    "TR" = "#FFBC42",
+    "SWAMP" = "darkgrey",
+    "WC" = "#419973"
+  ), labels = c("Upland", "Swamp", "Transition", "Wetland")) +
+  theme_classic() +
+  labs(x = "Depth (cm)", y = "Number of Samples", title = "Synoptic CB Porewater Sample Numbers") +
+  theme(
+    panel.spacing = unit(0.5, "lines"),
+    panel.border = element_rect(color = "black", fill = NA, linewidth = 1)) +
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))+
+  theme(text = element_text(size = 30))+
+  theme(axis.ticks.x = element_line(linewidth = 1))+
+  theme(axis.ticks.length.x = unit(0.25, "cm"))
+  #scale_x_discrete(labels = c("Upland", "Swamp", "Transition", "Wetland", "Surface Water"))+
+  # theme(legend.position = "none")
+
+sample_num_barplot
 ```
 
 ## Write out summarized data

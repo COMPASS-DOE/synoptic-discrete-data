@@ -627,14 +627,6 @@ summary_all_depths_years <- summary_all_depths_years[order(summary_all_depths_ye
 summary_all_depths_years$Site = factor(summary_all_depths_years$Site, levels = c("SWH", "GCW", "MSM", "GWI"))
 summary_all_depths_years <- summary_all_depths_years[order(summary_all_depths_years$Site), ]
 
-#Order by Zone from Upland to Surface Water
-sample_numbers$Zone = factor(sample_numbers$Zone, levels = c("UP", "SWAMP", "TR", "WC", "SW"))
-sample_numbers <- sample_numbers[order(sample_numbers$Zone), ]
-
-#Order by Site from SWH, GCW, MSM, GWI order, which is oligohaline to polyhaline
-sample_numbers$Site = factor(sample_numbers$Site, levels = c("SWH", "GCW", "MSM", "GWI"))
-sample_numbers <- sample_numbers[order(sample_numbers$Site), ]
-
 kable(
   summary_all_depths_years[, c("Site", "Zone", "min_Cl_ppm",	"max_Cl_ppm",	"mean_Cl_ppm", "min_SO4_ppm",	"max_SO4_ppm",	"mean_SO4_ppm")],  
   format = "latex",
@@ -650,8 +642,17 @@ kable(
 
 
 ```
+
 ## Number of Samples
 ```{r number of samples tables, echo = FALSE, message = FALSE, dpi = 100}
+
+#Order by Zone from Upland to Surface Water
+sample_numbers$Zone = factor(sample_numbers$Zone, levels = c("UP", "SWAMP", "TR", "WC", "SW"))
+sample_numbers <- sample_numbers[order(sample_numbers$Zone), ]
+
+#Order by Site from SWH, GCW, MSM, GWI order, which is oligohaline to polyhaline
+sample_numbers$Site = factor(sample_numbers$Site, levels = c("SWH", "GCW", "MSM", "GWI"))
+sample_numbers <- sample_numbers[order(sample_numbers$Site), ]
 
 kable(
   sample_numbers_years[, c("Year", "Number_of_samples")],  
@@ -665,19 +666,6 @@ kable(
   ) %>%
   row_spec(0, bold = TRUE) %>%   # header
   column_spec(1, bold = TRUE)
-
-# kable(
-#   sample_numbers[, c("Site", "Zone", "Depth_cm", "Number_of_samples")],  
-#   format = "latex",
-#   booktabs = TRUE,
-#   caption = "Number of samples by Site, Zone, and Depth"
-# ) %>%
-#   kable_styling(
-#     latex_options = c("hold_position", "striped", "scale_down"),
-#     font_size = 12
-#   ) %>%
-#   row_spec(0, bold = TRUE) %>%   # header
-#   column_spec(1, bold = TRUE)
 
 ```
 
