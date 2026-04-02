@@ -1,0 +1,281 @@
+---
+title: "Synoptic Trees"
+author: "A. Stearns"
+date: "2026-03-29"
+output: html_document
+---
+# Set up Library
+
+```{r}
+
+library(readr)
+library(lubridate)
+library(dplyr)
+library(ggplot2)
+library(tidyr)
+library(zoo)
+theme_set(theme_bw())
+library(terra)
+library(scales)
+
+```
+
+## Read in dataset
+
+```{r}
+
+trees <- read_csv("CB_TreePlotInventory.csv")
+show_col_types = FALSE
+
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+# Pivot to long format since we have multiple years with DBH and status as column headers
+
+```{r}
+
+long_data <- trees %>%
+  
+  # take out columns we don't care about
+  select(-Sapflow, -starts_with("Notes_")) %>%
+  
+    pivot_longer(
+      cols = matches("_(\\d{4})$"),       # columns ending with a year
+      names_to = c(".value", "Year"),
+      names_pattern = "^(.*)_(\\d{4})$"
+    ) %>%
+    mutate(
+      Year = as.integer(Year)
+    ) %>%
+
+  # filter out rows that have blanks and NA's in the  dbh column
+   filter(if_all(starts_with("DBH"), ~ !is.na(.) 
+                 & . != ""))
+# convert year to integer
+ long_data <- long_data %>%
+  mutate(Year = as.integer(Year))
+
+```
+
+# Standardize status codes
+
+```{r}
+ long_data <- long_data %>%
+    mutate(
+      Status = toupper(trimws(Status)),  # LI, DS, DC, DN
+      Status_code = case_when(
+        Status == "LI" ~ 1,                   # alive
+        Status %in% c("DS", "DC", "DN") ~ 0, # dead
+        TRUE ~ NA_real_                       # anything else
+      )
+    )
+```
+
+# Calculate growth
+
+```{r}
+long_data <- long_data %>%
+    arrange(Site, Plot, Tag, Year) %>%
+    group_by(Site, Plot, Tag) %>%
+    mutate(
+      growth_cm = DBH_cm - lag(DBH_cm),
+      annual_growth = growth_cm / (Year - lag(Year))
+    ) %>%
+    ungroup()
+```
+
+# Calculate mortality
+
+```{r}
+ mortality_data <- long_data %>%
+    arrange(Site, Plot, Tag, Year) %>%
+    group_by(Site, Plot, Tag) %>%
+    mutate(
+      prev_status_code = lag(Status_code),
+      died_this_year = Status_code == 0 & prev_status_code == 1,
+      first_observed_dead = is.na(prev_status_code) & Status_code == 0
+    ) %>%
+    ungroup()
+```
+
+# Site level growth and mortality
+
+```{r}
+
+#growth 
+
+growth_summary <- long_data %>%
+    group_by(Site, Year) %>%
+    summarize(
+      mean_growth = mean(annual_growth, na.rm = TRUE),
+      median_growth = median(annual_growth, na.rm = TRUE),
+      n_trees = sum(!is.na(annual_growth)),
+      .groups = "drop"
+    )
+
+# visualize
+
+ggplot(growth_summary, aes(x = Year, y = mean_growth, color = Site)) +
+  geom_line(size = 1.2) +
+  geom_point(size = 2) +
+  labs(title = "Mean Annual Growth by Site", y = "DBH Growth (cm/year)", x = "Year") +
+  theme_minimal()
+
+# mortality
+
+ mortality_summary <- mortality_data %>%
+    group_by(Site, Year) %>%
+    summarize(
+      n_alive_prev = sum(prev_status_code == 1, na.rm = TRUE),
+      n_died = sum(died_this_year, na.rm = TRUE),
+      mortality_rate = n_died / n_alive_prev,
+      .groups = "drop"
+    )
+
+
+```
+
+# Plot level growth and mortality
+
+```{r}
+
+# growth
+
+plot_growth_summary <- long_data %>%
+    group_by(Site, Plot, Year) %>%
+    summarize(
+      mean_growth = mean(annual_growth, na.rm = TRUE),
+      n_trees = sum(!is.na(annual_growth)),
+      .groups = "drop"
+    )
+
+# mortality
+
+ plot_mortality_summary <- mortality_data %>%
+    group_by(Site, Plot, Year) %>%
+    summarize(
+      n_alive_prev = sum(prev_status_code == 1, na.rm = TRUE),
+      n_died = sum(died_this_year, na.rm = TRUE),
+      mortality_rate = n_died / n_alive_prev,
+      .groups = "drop"
+    )
+ 
+ # visualize heatmap
+ 
+ ggplot(plot_mortality_summary, aes(x = Year, y = Plot, fill = mortality_rate)) +
+  geom_tile(color = "white") +
+  facet_wrap(~Site) +
+  scale_fill_viridis_c(option = "plasma", labels = scales::percent_format(accuracy = 1)) +
+  labs(title = "Plot-level Mortality Rate by Year", y = "Plot", x = "Year", fill = "Mortality") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+ 
+```
+
+# Growth vs. Mortality
+
+```{r}
+plot_growth_vs_mortality <- function(growth_summary, mortality_summary) {
+  
+  # Merge site-level summaries
+  site_summary <- growth_summary %>%
+    left_join(mortality_summary, by = c("Site", "Year"))
+  
+  # Scatter plot: Mean growth vs Mortality rate
+  ggplot(site_summary, aes(x = mean_growth, y = mortality_rate, color = Site)) +
+    geom_point(size = 3) +
+    geom_smooth(method = "lm", se = FALSE, linetype = "dashed", color = "gray30") +
+    scale_y_continuous(labels = scales::percent_format(accuracy = 1)) +
+    labs(
+      title = "Site-level Growth vs Mortality",
+      x = "Mean Annual Growth (cm/year)",
+      y = "Mortality Rate",
+      color = "Site"
+    ) +
+    theme_minimal()
+}
+```
+
+
+
+## Auto plot dashboard function
+
+```{r}
+
+library(ggplot2)
+library(scales)
+library(gridExtra)  # for arranging multiple plots
+
+plot_dashboard <- function(growth_summary, mortality_summary, plot_growth_summary = NULL, plot_mortality_summary = NULL) {
+  
+  # -----------------------------
+  # 1. Site-level growth line plot
+  # -----------------------------
+  p1 <- ggplot(growth_summary, aes(x = Year, y = mean_growth, color = Site)) +
+    geom_line(size = 1.2) +
+    geom_point(size = 2) +
+    labs(title = "Mean Annual Growth by Site", y = "DBH Growth (cm/year)", x = "Year") +
+    theme_minimal()
+  
+  # -----------------------------
+  # 2. Site-level mortality line plot
+  # -----------------------------
+  p2 <- ggplot(mortality_summary, aes(x = Year, y = mortality_rate, color = Site)) +
+    geom_line(size = 1.2) +
+    geom_point(size = 2) +
+    scale_y_continuous(labels = percent_format(accuracy = 1)) +
+    labs(title = "Annual Mortality Rate by Site", y = "Mortality Rate", x = "Year") +
+    theme_minimal()
+  
+  plots <- list(p1, p2)
+  
+  # -----------------------------
+  # Optional: Plot-level growth heatmap
+  # -----------------------------
+  if (!is.null(plot_growth_summary)) {
+    p3 <- ggplot(plot_growth_summary, aes(x = Year, y = Plot, fill = mean_growth)) +
+      geom_tile(color = "white") +
+      facet_wrap(~Site) +
+      scale_fill_viridis_c(option = "viridis") +
+      labs(title = "Plot-level Growth Heatmap", y = "Plot", x = "Year", fill = "Growth") +
+      theme_minimal() +
+      theme(axis.text.x = element_text(angle = 45, hjust = 1))
+    
+    plots <- c(plots, list(p3))
+  }
+  
+  # -----------------------------
+  # Optional: Plot-level mortality heatmap
+  # -----------------------------
+  if (!is.null(plot_mortality_summary)) {
+    p4 <- ggplot(plot_mortality_summary, aes(x = Year, y = Plot, fill = mortality_rate)) +
+      geom_tile(color = "white") +
+      facet_wrap(~Site) +
+      scale_fill_viridis_c(option = "plasma", labels = percent_format(accuracy = 1)) +
+      labs(title = "Plot-level Mortality Heatmap", y = "Plot", x = "Year", fill = "Mortality") +
+      theme_minimal() +
+      theme(axis.text.x = element_text(angle = 45, hjust = 1))
+    
+    plots <- c(plots, list(p4))
+  }
+  
+  # Arrange all plots in a grid
+  gridExtra::grid.arrange(grobs = plots, ncol = 1)
+}
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
