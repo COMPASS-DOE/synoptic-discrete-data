@@ -78,6 +78,15 @@ if (all_present) {
 
 ##Print missing IDs into a dataframe
 missing_ids <- data.frame(missing_ids)
+
+##Separate IDs into columns
+missing_ids <- missing_ids %>% 
+  separate(
+    col = missing_ids,
+    sep = "_",
+    into = c("Site", "Zone", "Collar" ,"Date"),
+    remove = FALSE)
+
 write.csv(missing_ids, "fluxes_missing_hydrago_data_2023.csv", row.names = FALSE)
 
 ##Combine with flux data
