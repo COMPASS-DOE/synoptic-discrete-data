@@ -93,6 +93,7 @@ write.csv(missing_ids, "fluxes_missing_hydrago_data_2023.csv", row.names = FALSE
 final_dat1 <- left_join(all_dat, hydrago, by = "Plot")
 
 ```
+
 ##pull TEROS data for the zone during the time of the fluxes and put it into another column so that we can use that too.
 ```{r}
 # Soil sensors
