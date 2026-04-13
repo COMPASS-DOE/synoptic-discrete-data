@@ -169,7 +169,7 @@ data_abbrev <- data_plotting %>%
   dplyr::select(Acid_state_1, FE_2_mean, FE_3_mean, FE_tot_mean, new_ID) %>% 
   filter(Acid_state_1 != "No Acid")
 
-head(data_abbrev)
+# head(data_abbrev)
 
 
 ##Reshape Data
@@ -187,46 +187,44 @@ df_wide <- df_long %>%
     values_from = value
   )
 
-##Select only TEMPEST Data
-df_Fe2 <- df_wide %>% 
-    filter(Fe_type == "FE_2_mean")
+##Select only Total FE Data
+df_Fe_tot <- df_wide %>% 
+    filter(Fe_type == "FE_tot_mean")
 
-#Plot Fe Data: 
-combined_limits <- range(c(df_Fe2$`Acidified in Field`, df_Fe2$`Acidified Later in Lab`), na.rm = TRUE)
-
-scatter_Fe2_plot <- ggplot(df_Fe2, aes(x = `Acidified in Field`, y = `Acidified Later in Lab`)) +
+##Plot Total FE Data
+scatter_Fetot_plot <- ggplot(df_Fe_tot, aes(x = `Acidified in Field`, y = `Acidified Later in Lab`)) +
   geom_point(size = 3) +
   geom_abline(slope = 1, intercept = 0, linetype = "dashed") +
-  coord_cartesian(xlim = combined_limits, ylim = combined_limits) +
+  # coord_cartesian(xlim = combined_limits, ylim = combined_limits) +
   coord_fixed(ratio = 1) + 
   labs(
     x = "Acidified in Field",
     y = "Acidified Later in Lab",
-    title = "1:1 Comparison of All Fe Measurements"
+    title = "Total Fe Measurements"
   ) + 
   theme_classic()
 
-scatter_Fe2_plot
+scatter_Fetot_plot
 
 
 ##Select only TEMPEST Data
-df_TMP <- df_wide %>% 
+df_TMP <- df_Fe_tot %>% 
     filter(str_detect(new_ID, "TMP"))
-
 
 #Plot TEMPEST Fe Data: 
 scatter_Fe_plot_TMP <- ggplot(df_TMP, aes(x = `Acidified in Field`, y = `Acidified Later in Lab`)) +
   geom_point(size = 3) +
   geom_abline(slope = 1, intercept = 0, linetype = "dashed") +
-  facet_wrap(~ Fe_type) +
-  coord_equal() +
+  # coord_cartesian(xlim = combined_limits, ylim = combined_limits) +
+  coord_fixed(ratio = 1) + 
   labs(
     x = "Acidified in Field",
     y = "Acidified Later in Lab",
-    title = "1:1 Comparison of TEMPEST Fe Measurements"
+    title = "TMP Total Fe Measurements"
   ) + 
-  theme_bw()
+  theme_classic()
 
 scatter_Fe_plot_TMP
+
 
 ```

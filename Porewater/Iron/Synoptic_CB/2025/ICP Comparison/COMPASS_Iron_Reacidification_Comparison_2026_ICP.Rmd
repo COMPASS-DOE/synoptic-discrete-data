@@ -1,0 +1,297 @@
+---
+title: "COMPASS_Iron_Reacidification_Comparison_2026"
+author: "Zoe Read"
+output: pdf_document
+date: "`r Sys.Date()`"
+---
+
+##Collected samples from TEMPEST and GCW TR in March 2026. Some samples were added directly to vials with 75 uL of 50% HCl in the field, some samples were added to empty vials, and then those were acidified in the lab a few weeks later using 75 uL HCl.
+
+##Samples were ran on the microplate and then on the ICP-OES. 
+
+```{r read in packages, include = FALSE}
+#packages
+library(ggplot2)
+library(dplyr)
+library(data.table)
+library(matrixStats)
+library(gridExtra)
+library(ggpubr)
+library(grid)
+library(stringr)
+library(plater)
+library(raster)
+library(tidyverse)
+library(readxl)
+library(dplyr)
+
+```
+
+```{r Read in microplate and ICP data, include = FALSE}
+
+MP <- read_excel("Samples to run on ICP Iron Values.xlsx")
+ICP <- read_excel("NAC_ICPOES_run_04092026.xlsx")
+
+##Fix ICP Sample IDs
+ICP <- ICP %>% 
+  mutate(`Sample Id` = case_when(
+    (`Sample Id` == "0.5 M HCl (0 uM Fe_2, 0 u") ~ "0.5 M HCl (0 uM Fe_2, 0 uM Fe_3)",
+    (`Sample Id` == "20260309_TMP_C_B4_Reacidi") ~ "20260309_TMP_C_B4_Reacidified",
+    (`Sample Id` == "20260309_TMP_C_H3_Reacidi") ~ "20260309_TMP_C_H3_Reacidified",
+    (`Sample Id` == "20260309_TMP_C_I5_Reacidi") ~ "20260309_TMP_C_I5_Reacidified",
+    (`Sample Id` == "20260309_TMP_FW_D5_Reacid") ~ "20260309_TMP_FW_D5_Reacidified",
+    (`Sample Id` == "20260309_TMP_SW_C6_Reacid") ~ "20260309_TMP_SW_C6_Reacidified",
+    (`Sample Id` == "20260309_TMP_SW_H6_Reacid") ~ "20260309_TMP_SW_H6_Reacidified",
+    (`Sample Id` == "20260309_TMP_FW_H3_Reacid") ~ "20260309_TMP_FW_H3_Reacidified",
+    TRUE ~ `Sample Id`)) %>% 
+  dplyr::select(ID = 2, FE_ICP_mgL = 9)
+
+##Convert ICP Fe mg/L to umol/L (uM)
+## X mg/L * 1 g/1000 mg * 1 mol/55.845 g * 1,000,000 umol/1 mol
+## X mg/L * 1000 / 55.845
+ICP <- ICP %>% 
+  mutate(FE_ICP_uM = FE_ICP_mgL * 1000 / 55.845) %>% 
+  dplyr::select(-FE_ICP_mgL)
+    
+##Rename MP Iron
+MP <- MP %>%
+  rename(FE_MP_uM = FE_total)
+
+data <- left_join(MP, ICP, by = "ID")
+
+##Dilution correction
+data <- data %>% 
+  mutate(FE_ICP_uM_dilcorr = FE_ICP_uM * Dilution_for_ICP) %>% 
+  dplyr::select(-c(FE_ICP_uM, Dilution_for_ICP)) %>% 
+  mutate(Sample_Type = case_when(
+    str_detect(ID, "uM") ~ "Standard",
+    TRUE ~ "Sample"))
+
+
+```
+
+# Plotting Microplate vs ICP Total FE values
+
+## ICP and Microplate standards appear to align well, although standards are generally lower on the ICP. Samples tended to have much less total iron on the ICP. This is especially true for TMP samples. 
+```{r Plotting MP vs ICP values against each other, echo=FALSE, warning=FALSE}
+
+##All Stds and Samples
+scatter_Fe_plot <- ggplot(data, aes(x = FE_MP_uM, y = FE_ICP_uM_dilcorr, color = Sample_Type)) +
+  geom_point(size = 3) +
+  geom_abline(slope = 1, intercept = 0, linetype = "dashed") +
+  coord_fixed(ratio = 1) + 
+  labs(
+    x = "Microplate FE (uM)",
+    y = "ICP FE (uM)",
+    title = "Samples and Standards"
+  ) + 
+  theme_classic()
+
+scatter_Fe_plot
+
+##Just Samples, colored by Site
+samples <- data %>% 
+  filter(Sample_Type == "Sample") %>% 
+  mutate(Site = case_when(
+    str_detect(ID, "GCW") ~ "GCW",
+    TRUE ~ "TMP")) %>% 
+  mutate(Zone = case_when(
+    str_detect(ID, "GCW") ~ "Transition",
+    str_detect(ID, "C_") ~ "Control",
+    str_detect(ID, "SW_") ~ "Saltwater",
+    str_detect(ID, "FW_") ~ "Freshwater",
+    TRUE ~ NA))
+
+scatter_Fe_samples_plot <- ggplot(samples, aes(x = FE_MP_uM, y = FE_ICP_uM_dilcorr, color = Site)) +
+  geom_point(size = 3) +
+  geom_abline(slope = 1, intercept = 0, linetype = "dashed") +
+  coord_fixed(ratio = 1) + 
+  labs(
+    x = "Microplate FE (uM)",
+    y = "ICP FE (uM)",
+    title = "All Samples"
+  ) + 
+  theme_classic()
+
+scatter_Fe_samples_plot
+
+##Just TMP, colored by Zone
+samples_TMP <- samples %>% 
+  filter(Site == "TMP")
+
+scatter_Fe_samples_TMP <- ggplot(samples_TMP, aes(x = FE_MP_uM, y = FE_ICP_uM_dilcorr, color = Zone)) +
+  geom_point(size = 3) +
+  geom_abline(slope = 1, intercept = 0, linetype = "dashed") +
+  coord_cartesian(xlim = c(0, 125), ylim = c(0, 30)) + 
+# coord_fixed(ratio = 1) + 
+  labs(
+    x = "Microplate FE (uM)",
+    y = "ICP FE (uM)",
+    title = "TMP Samples"
+  ) + 
+  theme_classic()
+
+scatter_Fe_samples_TMP
+
+##Just GCW
+samples_GCW <- samples %>% 
+  filter(Site == "GCW")
+
+scatter_Fe_samples_GCW <- ggplot(samples_GCW, aes(x = FE_MP_uM, y = FE_ICP_uM_dilcorr, color = Zone)) +
+  geom_point(size = 3) +
+  geom_abline(slope = 1, intercept = 0, linetype = "dashed") +
+  coord_fixed(ratio = 1) + 
+  labs(
+    x = "Microplate FE (uM)",
+    y = "ICP FE (uM)",
+    title = "GCW Samples"
+  ) + 
+  theme_classic()
+
+scatter_Fe_samples_GCW
+
+```
+
+
+```{r Select Reacidified Samples, include = FALSE}
+
+##Extract IDs for comparison
+Samples <- c("20260309_TMP_C_I5", "20260309_TMP_C_H3", "20260309_TMP_C_B4", "20260309_TMP_FW_D5", "20260309_TMP_FW_H3", "20260309_TMP_SW_H6", "20260309_TMP_SW_C6", "GCW_TR_B_10", "GCW_TR_B_20", "GCW_TR_C_20")
+
+samples_reacidified <- samples %>%
+  filter(str_detect(ID, paste(Samples, collapse = "|")))
+
+##Separate IDs to get acidified/un-acidified as its own column
+samples_reacidified <- samples_reacidified %>%
+  separate(
+    col = "ID",
+    sep = "_",
+    into = c("A", "B", "C", "D", "Acid_state"),
+    remove = FALSE) %>%
+  mutate(new_ID = paste(A, B, C, D, sep = "_")) %>%
+  dplyr::select(-c("A", "B", "C", "D"))
+
+##Replace NA's with "Acidified" 
+samples_reacidified$Acid_state <- samples_reacidified$Acid_state %>% replace_na("Acidified")
+
+```
+
+
+# 1:1 Plots of Pre-Acidified vs Re-acidified Sample data from ICP
+## Pre-acidified total iron values seem to match re-acidified values, with re-acidified total iron being slightly higher. There is one outlier sample that has a strong mismatch.  
+```{r Plotting reacidified values against preacidified values, echo=FALSE, warning=FALSE}
+
+#group the data for plotting
+data_plotting <- samples_reacidified %>%
+  mutate(
+    Acid_state_1 = case_when(
+      Acid_state == "Reacidified" ~ "Acidified Later in Lab",
+      Acid_state == "Acidified" ~ "Acidified in Field",
+      TRUE ~ Acid_state  # keep everything else unchanged
+    )
+  ) %>%
+  mutate(Acid_state_1 = factor(Acid_state_1, levels = c("Acidified in Field", "Acidified Later in Lab")))
+
+##Select only necessary columns
+data_abbrev <- data_plotting %>% 
+  dplyr::select(Acid_state_1, FE_ICP_uM_dilcorr, new_ID, Site, Zone)
+
+##Reshape Data
+df_wide <- data_abbrev %>%
+  pivot_wider(
+    names_from = Acid_state_1,
+    values_from = FE_ICP_uM_dilcorr
+  )
+
+scatter_Fe_plot_reacid <- ggplot(df_wide, aes(x = `Acidified in Field`, y = `Acidified Later in Lab`, color = Site)) +
+  geom_point(size = 3) +
+  geom_abline(slope = 1, intercept = 0, linetype = "dashed") +
+  # coord_cartesian(xlim = combined_limits, ylim = combined_limits) +
+  coord_fixed(ratio = 1) + 
+  labs(
+    x = "Acidified in Field",
+    y = "Acidified Later in Lab",
+    title = "All Samples"
+  ) + 
+  theme_classic()
+
+scatter_Fe_plot_reacid
+
+
+##Select only TEMPEST Data
+df_TMP <- df_wide %>% 
+    filter(Site == "TMP")
+
+
+#Plot TEMPEST Fe Data: 
+scatter_Fe_plot_reacid_TMP <- ggplot(df_TMP, aes(x = `Acidified in Field`, y = `Acidified Later in Lab`, color = Zone)) +
+  geom_point(size = 3) +
+  geom_abline(slope = 1, intercept = 0, linetype = "dashed") +
+  # coord_cartesian(xlim = combined_limits, ylim = combined_limits) +
+  coord_fixed(ratio = 1) + 
+  labs(
+    x = "Acidified in Field",
+    y = "Acidified Later in Lab",
+    title = "TMP Samples"
+  ) + 
+  theme_classic()
+
+scatter_Fe_plot_reacid_TMP
+
+
+```
+
+# Barplots of Pre-Acidified vs Re-acidified Sample data from ICP
+```{r Visualize Data, echo=FALSE, warning=FALSE}
+
+#Plot Fe Tot Data: 
+viz_Fe_plot <- ggplot(data_plotting, aes(x = factor(new_ID), y = FE_ICP_uM_dilcorr, fill = Acid_state_1)) + 
+  geom_col(position = position_dodge(width = 0.9), width = 0.8) + # 'position_dodge' for grouped bars
+  scale_fill_manual(values = c(
+    "Acidified in Field" = "#419973",
+    "Acidified Later in Lab" = "#25ABE6"
+    )) +
+  theme_classic() +
+  labs(x = "Sample ID", y = "Total FE (uM)", title = "ICP Iron Comparison") + 
+  theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1)) + 
+  labs(fill = "Sample Acidification")
+
+viz_Fe_plot
+
+#Plot TMP Fe Tot Data: 
+data_plotting_TMP <- data_plotting %>% 
+  filter(Site == "TMP") 
+
+viz_Fe_plot_TMP <- ggplot(data_plotting_TMP, aes(x = factor(new_ID), y = FE_ICP_uM_dilcorr, fill = Acid_state_1)) + 
+  geom_col(position = position_dodge(width = 0.9), width = 0.8) + # 'position_dodge' for grouped bars
+  scale_fill_manual(values = c(
+    "Acidified in Field" = "#419973",
+    "Acidified Later in Lab" = "#25ABE6"
+    )) +
+  theme_classic() +
+  labs(x = "Sample ID", y = "Total FE (uM)", title = "TMP ICP Iron Comparison") + 
+  theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1)) + 
+  labs(fill = "Sample Acidification")
+
+viz_Fe_plot_TMP
+
+#Plot GCW Fe Tot Data: 
+data_plotting_GCW <- data_plotting %>% 
+  filter(Site == "GCW") 
+
+viz_Fe_plot_GCW <- ggplot(data_plotting_GCW, aes(x = factor(new_ID), y = FE_ICP_uM_dilcorr, fill = Acid_state_1)) + 
+  geom_col(position = position_dodge(width = 0.9), width = 0.8) + # 'position_dodge' for grouped bars
+  scale_fill_manual(values = c(
+    "Acidified in Field" = "#419973",
+    "Acidified Later in Lab" = "#25ABE6"
+    )) +
+  theme_classic() +
+  labs(x = "Sample ID", y = "Total FE (uM)", title = "GCW ICP Iron Comparison") + 
+  theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1)) + 
+  labs(fill = "Sample Acidification")
+
+viz_Fe_plot_GCW
+
+```
+
+
