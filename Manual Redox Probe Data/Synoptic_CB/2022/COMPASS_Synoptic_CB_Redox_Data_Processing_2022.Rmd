@@ -54,6 +54,10 @@ dat$Site <- gsub(" ", "", dat$Site) ## Remove space in GWI site name
 dat30 <- dat %>% 
   filter(Depth == 30)
 
+##Change Date to just the day
+dat <- dat %>%
+  mutate(Date = substr(Date, 7, 8))
+
 ##Std error function
 std.error <- function (x, na.rm=FALSE){
   sqrt(var(x, na.rm = na.rm) / sum(!is.na(x)))}
@@ -91,7 +95,7 @@ datlong$Site <- gsub(" ", "", datlong$Site) ## Remove space in GWI site name
 ##Average across all 5-6 measurements for each sampling Site, Zone, Depth, Month, Year
 red1 <- datlong %>%
   group_by(Date, Month, Year, Site, Zone, Depth, Time_24hr, Time_Zone, Topography, Notes) %>%
-  summarise(Date = mean(Date), 
+  summarise(Date = first(Date), 
             Avg_mV = mean(value, na.rm=TRUE), 
             Std_dv = sd(value, na.rm=TRUE), 
             Std_err = std.error(value, na.rm=TRUE), 

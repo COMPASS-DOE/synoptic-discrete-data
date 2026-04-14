@@ -66,6 +66,10 @@ dat <- dat %>%
                           Site == "SWH" & Zone == "Transition-Hollow" ~ "Transition", 
                           TRUE ~ Zone))
 
+##Change Date to just the day
+dat <- dat %>%
+  mutate(Date = substr(Date, 7, 8))
+
 ##Check redox depths of 30 cm
 dat30 <- dat %>% 
   filter(Depth == 30)
@@ -105,7 +109,7 @@ datlong <-  as.data.frame(melt(setDT(prelong), id.vars = c("Date", "Month", "Yea
 ##Average across all 5-6 measurements for each sampling Site, Zone, Depth, Month, Year
 red1 <- datlong %>%
   group_by(Date, Month, Year, Site, Zone, Depth, Time_24hr, Time_Zone, Topography, Notes) %>%
-  summarise(Date = mean(Date), 
+  summarise(Date = first(Date), 
             Avg_mV = mean(value, na.rm=TRUE), 
             Std_dv = sd(value, na.rm=TRUE), 
             Std_err = std.error(value, na.rm=TRUE), 
