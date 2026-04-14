@@ -48,6 +48,11 @@ soildat <- soildat %>%
 ##Fix Site naming
 dat <- dat %>%
   mutate(Site = ifelse(Site == "Gcrew", "GCW", Site))
+dat$Site <- gsub(" ", "", dat$Site) ## Remove space in GWI site name
+
+##Check redox depths of 30 cm
+dat30 <- dat %>% 
+  filter(Depth == 30)
 
 ##Std error function
 std.error <- function (x, na.rm=FALSE){
@@ -68,27 +73,30 @@ prelong <- dat %>%
   select (-Campaign) %>% 
   mutate(Notes = NA, 
          Time_24hr = NA, 
-         Time_Zone = NA)
+         Time_Zone = NA, 
+         Topography = NA)
 
 #switch redox data to long format 
-datlong <-  as.data.frame(melt(setDT(prelong), id.vars = c("Date", "Month", "Year", "Site", "Zone", "Depth", "Time_24hr", "Time_Zone", "Notes"), variable.name = "RP_mV"))
+datlong <-  as.data.frame(melt(setDT(prelong), id.vars = c("Date", "Month", "Year", "Site", "Zone", "Depth", "Time_24hr", "Time_Zone", "Topography", "Notes"), 
+                               variable.name = "RP_mV"))
 datlong$Site <- gsub(" ", "", datlong$Site) ## Remove space in GWI site name
 
-##Add in soil pH data
-all_corr <- merge(datlong, soildat, by = c("Site", "Zone"), all = TRUE)
-
-##Adjust redox for pH
-all_corr <- all_corr %>% 
-  mutate(value_corr = value + ((pH - 5)*59 + 202))
+# ##Add in soil pH data
+# all_corr <- merge(datlong, soildat, by = c("Site", "Zone"), all = TRUE)
+# 
+# ##Adjust redox for pH
+# all_corr <- all_corr %>% 
+#   mutate(value_corr = value + ((pH - 5)*59 + 202))
 
 ##Average across all 5-6 measurements for each sampling Site, Zone, Depth, Month, Year
-red1 <- all_corr %>%
-  group_by(Date, Month, Year, Site, Zone, Depth, Time_24hr, Time_Zone, Notes) %>%
+red1 <- datlong %>%
+  group_by(Date, Month, Year, Site, Zone, Depth, Time_24hr, Time_Zone, Topography, Notes) %>%
   summarise(Date = mean(Date), 
-            Avg_mV = mean(value_corr, na.rm=TRUE), 
-            Std_dv = sd(value_corr, na.rm=TRUE), 
-            Std_err = std.error(value_corr, na.rm=TRUE), 
-            Notes = first(Notes))
+            Avg_mV = mean(value, na.rm=TRUE), 
+            Std_dv = sd(value, na.rm=TRUE), 
+            Std_err = std.error(value, na.rm=TRUE), 
+            Notes = first(Notes)
+            )
 
 # head(red1)
 
@@ -136,15 +144,15 @@ viz_redox_plot <- ggplot(data_plotting, aes(x = row_num, y = Avg_mV, fill = Zone
 viz_redox_plot
 
 #Plot averaged data by depth and change colors based on zone:
-red <- all_corr %>%
+red <- datlong %>%
   group_by(Site, Zone, Depth) %>%
-  summarise(Date = mean(Date), Avg_mV = mean(value_corr, na.rm=TRUE), Std_dv = sd(value_corr, na.rm=TRUE), Std_err = std.error(value_corr, na.rm=TRUE))
+  summarise(Date = mean(Date), Avg_mV = mean(value, na.rm=TRUE), Std_dv = sd(value, na.rm=TRUE), Std_err = std.error(value, na.rm=TRUE))
 
 viz_redox_depth <- ggplot(red, aes(x=Depth, y= Avg_mV, col=Zone, fill=Zone))+
   geom_point(size=3) +  
   geom_line(linewidth=1.5) +
-  scale_x_reverse( lim=c(45,5)) + 
-  ylim(c(-150, 700)) +
+  scale_x_reverse() + 
+  # ylim(c(-300, 700)) +
   coord_flip() + 
   theme_classic() +
   facet_grid(~factor(Site, levels=c("MSM", "GWI", "GCW"))) +
