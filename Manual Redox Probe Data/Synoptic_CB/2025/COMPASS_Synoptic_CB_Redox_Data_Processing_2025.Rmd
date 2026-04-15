@@ -20,11 +20,13 @@ output_dir: "To Be Reviewed/PDF"
 
 #Packages that are required 
 lapply(c(
-  "dplyr", "ggplot2", "ggpubr", "stringr",
-  "purrr", "tidyverse", "here", "broom", "tibble",
-  "googledrive", "googlesheets4", "data.table", 
-  "matrixStats", "gridExtra", "grid", "tidyverse", "knitr"), 
+  "data.table", "tidyverse", "dplyr", "ggplot2", "ggpubr", "stringr"), 
   library, character.only = TRUE)
+
+# ,
+#   "purrr",  "here", "broom", "tibble",
+#   "googledrive", "googlesheets4", "data.table", 
+#   "matrixStats", "gridExtra", "grid", "tidyverse", "knitr"
 
 ```
 
@@ -53,11 +55,11 @@ dat <- dat %>%
 ##Remove space from GWI site name 
 dat$Site <- gsub(" ", "", dat$Site) ## Remove space in GWI site name
 
-##For November, Depths were labelled 10, 25, 30 but should be 10, 20, 35
-# dat <- dat %>%
-#   mutate(Depth = case_when(Month == "November" & Depth == 25 ~ 20, 
-#                            Month == "November" & Depth == 30 ~ 35, 
-#                           TRUE ~ Depth))
+#For November, Depths were labelled 10, 25, 30 but should be 10, 20, 35
+dat <- dat %>%
+  mutate(Depth = case_when(Month == "November" & Depth == 25 ~ 20,
+                           Month == "November" & Depth == 30 ~ 35,
+                           TRUE ~ Depth))
 
 ##Add column for SWH topography
 dat <- dat %>%
@@ -97,7 +99,12 @@ datlong <-  as.data.frame(melt(setDT(prelong), id.vars = c("Date", "Month", "Yea
 #   mutate(value_corr = value + ((pH - 5)*59 + 202))
 
 ##Average across all 5-6 measurements for each sampling Site, Zone, Depth, Month, Year
-red1 <- datlong %>%
+#Change all 30 cm measurements to 35 so depth is averaged from 30-35 cm
+datlong1 <- datlong %>% 
+  mutate(Depth = case_when(Depth == 30 ~ 35,
+                           TRUE ~ Depth))
+
+red1 <- datlong1 %>%
   group_by(Date, Month, Year, Site, Zone, Depth, Time_24hr, Time_Zone, Topography, Notes) %>%
   summarise(Date = mean(Date), 
             Avg_mV = mean(value, na.rm=TRUE), 
@@ -158,7 +165,7 @@ viz_redox_plot <- ggplot(data_plotting, aes(x = row_num, y = Avg_mV, fill = Zone
 viz_redox_plot
 
 #Plot averaged data by depth and change colors based on zone:
-red <- datlong %>%
+red <- datlong1 %>%
   mutate(Zone = case_when(Site == "SWH" & Zone == "Transition" & Topography == "Hummock" ~ "Transition-Hummock",
                           Site == "SWH" & Zone == "Transition" & Topography == "Hollow" ~ "Transition-Hollow",
                           TRUE ~ Zone)) %>% 

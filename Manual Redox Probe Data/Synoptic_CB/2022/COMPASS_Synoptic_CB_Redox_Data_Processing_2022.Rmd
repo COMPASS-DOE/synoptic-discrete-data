@@ -93,7 +93,11 @@ datlong$Site <- gsub(" ", "", datlong$Site) ## Remove space in GWI site name
 #   mutate(value_corr = value + ((pH - 5)*59 + 202))
 
 ##Average across all 5-6 measurements for each sampling Site, Zone, Depth, Month, Year
-red1 <- datlong %>%
+datlong1 <- datlong %>% 
+  mutate(Depth = case_when(Depth == 30 ~ 35,
+                           TRUE ~ Depth))
+
+red1 <- datlong1 %>%
   group_by(Date, Month, Year, Site, Zone, Depth, Time_24hr, Time_Zone, Topography, Notes) %>%
   summarise(Date = first(Date), 
             Avg_mV = mean(value, na.rm=TRUE), 
@@ -148,7 +152,7 @@ viz_redox_plot <- ggplot(data_plotting, aes(x = row_num, y = Avg_mV, fill = Zone
 viz_redox_plot
 
 #Plot averaged data by depth and change colors based on zone:
-red <- datlong %>%
+red <- datlong1 %>%
   group_by(Site, Zone, Depth) %>%
   summarise(Date = mean(Date), Avg_mV = mean(value, na.rm=TRUE), Std_dv = sd(value, na.rm=TRUE), Std_err = std.error(value, na.rm=TRUE))
 
