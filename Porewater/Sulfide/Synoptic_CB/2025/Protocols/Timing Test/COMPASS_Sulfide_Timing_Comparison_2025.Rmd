@@ -1,0 +1,178 @@
+---
+title: "COMPASS_Sulfide_Timing_Comparison_2025"
+author: "Zoe Read"
+output: pdf_document
+date: "`r Sys.Date()`"
+---
+
+##Run some COMPASS Synoptic HwS samples in August and then again over a month later in September. 
+
+```{r read in packages, include = FALSE}
+#packages
+library(ggplot2)
+library(dplyr)
+library(data.table)
+library(matrixStats)
+library(gridExtra)
+library(ggpubr)
+library(grid)
+library(stringr)
+library(plater)
+library(raster)
+library(tidyverse)
+library(readxl)
+library(dplyr)
+library(readxl)
+
+```
+
+```{r read in and collate all the files in the Processed Data folder , include = FALSE}
+
+##Read in Data
+July_msmt <- read.csv("COMPASS_H2S_20250813_Plate1-8_Combined.csv")
+Sept_msmt <- read.csv("COMPASS_H2S_20250925_Plate6.csv")
+Sample_List <- read_excel("202507_SampleList.xlsx")
+
+##Make Sample IDs GCW_202507_UP_LYSA_20CM
+Sample_List <- Sample_List %>% 
+  mutate(Sample_ID = toupper(paste(site, date, zone, replicate, depth, sep = "_"))) %>% 
+  mutate(Number = as.character(Number)) %>% 
+  dplyr::select(c(Number, Sample_ID))
+
+#Select July Samples
+Sept_msmt <- Sept_msmt %>% 
+  filter(str_detect(IDs, "July")) %>% 
+  dplyr::select(-X)
+
+Sept_msmt <- Sept_msmt %>% 
+  separate(IDs, into = c("Month", "Number"))
+
+Sept_msmt_IDs <- left_join(Sept_msmt, Sample_List, by = "Number")
+
+##Set column names specific to the analysis date
+Sept_msmt_IDs <- Sept_msmt_IDs %>%
+  mutate(Analysis_rundate = "20250925")
+colnames(Sept_msmt_IDs)
+colnames(July_msmt)
+
+Sept_msmt_IDs <- Sept_msmt_IDs %>%
+  rename(H2S_Conc_flag = H2S_flag)
+
+Sept_msmt_IDs$Sample_ID
+
+July_msmt <- July_msmt %>% 
+  mutate(Month = as.character(Month), 
+         Analysis_rundate = as.character(Analysis_rundate))
+
+all_data <- bind_rows(Sept_msmt_IDs, July_msmt)
+
+
+colnames(all_data)
+
+all_data <- all_data %>% 
+  dplyr::select(c("Sample_ID", "Analysis_rundate", "Number", "H2S_mean", "H2S_sd", "H2S_cv", "H2S_cv_flag", "H2S_Conc_flag", "Dilution"))
+
+##Extract IDs for comparison
+Samples <- c("MSM_202507_TR_LYSA_10CM", "MSM_202507_WC_LYSA_45CM") ## "MSM_202507_WC_LYSA_10CM", 
+
+data_comparison <- all_data %>%
+  filter(str_detect(Sample_ID, paste(Samples, collapse = "|"))) %>%
+  mutate()
+
+```
+
+## Mean with SD Plot Acidified vs Re-acidified Samples
+```{r Visualize Data, echo=FALSE, warning=FALSE}
+
+#group the data for plotting
+data_plotting <- data_comparison
+
+#Plot Fe2 Data: 
+data_plotting$Analysis_rundate
+viz_H2S_plot <- ggplot(data_plotting, aes(x = factor(Sample_ID), y = H2S_mean, fill = Analysis_rundate)) + 
+  geom_col(position = position_dodge(width = 0.9), width = 0.8) + # 'position_dodge' for grouped bars
+  geom_errorbar(
+    aes(ymin = H2S_mean - H2S_sd, ymax = H2S_mean + H2S_sd),
+    position = position_dodge(width = 0.9), # Must match the geom_col dodge width
+    width = 0.25 # Width of the horizontal segments of the error bars
+  ) +
+  scale_fill_manual(values = c(
+    "20250812" = "#419973",
+    "20250813" = "#25ABE6",
+    "20250925" = "#FFBC42"
+  )) +
+  theme_classic() +
+  labs(x = "Sample ID", y = "Sulfide (uM)", title = "Sulfide Timing Comparison") + 
+  theme(axis.text.x = element_text(angle = 30, hjust = 1, vjust = 1)) + 
+  labs(fill = "Analysis Rundate")
+
+viz_H2S_plot
+
+```
+
+
+```{r Plotting values against each other, echo=FALSE, warning=FALSE}
+
+# data_abbrev <- data_plotting %>% 
+#   dplyr::select(Acid_state_1, FE_2_mean, FE_3_mean, FE_tot_mean, new_ID) %>% 
+#   filter(Acid_state_1 != "No Acid")
+# 
+# # head(data_abbrev)
+# 
+# 
+# ##Reshape Data
+# df_long <- data_abbrev %>%
+#   dplyr::select(new_ID, Acid_state_1, FE_2_mean, FE_3_mean, FE_tot_mean) %>%
+#   pivot_longer(
+#     cols = c(FE_2_mean, FE_3_mean, FE_tot_mean),
+#     names_to = "Fe_type",
+#     values_to = "value"
+#   )
+# 
+# df_wide <- df_long %>%
+#   pivot_wider(
+#     names_from = Acid_state_1,
+#     values_from = value
+#   )
+# 
+# ##Select only Total FE Data
+# df_Fe_tot <- df_wide %>% 
+#     filter(Fe_type == "FE_tot_mean")
+# 
+# ##Plot Total FE Data
+# scatter_Fetot_plot <- ggplot(df_Fe_tot, aes(x = `Acidified in Field`, y = `Acidified Later in Lab`)) +
+#   geom_point(size = 3) +
+#   geom_abline(slope = 1, intercept = 0, linetype = "dashed") +
+#   # coord_cartesian(xlim = combined_limits, ylim = combined_limits) +
+#   coord_fixed(ratio = 1) + 
+#   labs(
+#     x = "Acidified in Field",
+#     y = "Acidified Later in Lab",
+#     title = "Total Fe Measurements"
+#   ) + 
+#   theme_classic()
+# 
+# scatter_Fetot_plot
+# 
+# 
+# ##Select only TEMPEST Data
+# df_TMP <- df_Fe_tot %>% 
+#     filter(str_detect(new_ID, "TMP"))
+# 
+# #Plot TEMPEST Fe Data: 
+# scatter_Fe_plot_TMP <- ggplot(df_TMP, aes(x = `Acidified in Field`, y = `Acidified Later in Lab`)) +
+#   geom_point(size = 3) +
+#   geom_abline(slope = 1, intercept = 0, linetype = "dashed") +
+#   # coord_cartesian(xlim = combined_limits, ylim = combined_limits) +
+#   coord_fixed(ratio = 1) + 
+#   labs(
+#     x = "Acidified in Field",
+#     y = "Acidified Later in Lab",
+#     title = "TMP Total Fe Measurements"
+#   ) + 
+#   theme_classic()
+# 
+# scatter_Fe_plot_TMP
+
+
+```
