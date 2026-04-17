@@ -81,7 +81,7 @@ data_comparison <- all_data %>%
 
 ```
 
-## Mean with SD Plot Acidified vs Re-acidified Samples
+## Mean with SD Plot September versus November Sample Analysis
 ```{r Visualize Data, echo=FALSE, warning=FALSE}
 
 #group the data for plotting
