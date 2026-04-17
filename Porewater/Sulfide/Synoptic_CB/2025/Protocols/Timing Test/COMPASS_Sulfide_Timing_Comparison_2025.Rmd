@@ -5,7 +5,7 @@ output: pdf_document
 date: "`r Sys.Date()`"
 ---
 
-##Run some COMPASS Synoptic HwS samples in August and then again over a month later in September. 
+##Ran some COMPASS Synoptic H2S samples that were collected in July on the microplate in August and then again over a month later in September. 
 
 ```{r read in packages, include = FALSE}
 #packages
