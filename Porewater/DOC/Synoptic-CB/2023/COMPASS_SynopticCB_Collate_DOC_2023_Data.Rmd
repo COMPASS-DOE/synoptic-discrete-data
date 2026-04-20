@@ -55,6 +55,20 @@ final_data_lys <- final_data_lys %>%
 ```
 
 
+##Make all Sample IDs formatted the same
+```{r}
+
+final_data_lys <- final_data_lys %>%
+  mutate(Sample_ID = case_when(
+      Zone != "SW" & Month >9 ~ paste0(Site, "_", Year, Month, "_", Zone, "_Lys", Replicate, "_", Depth_cm, "cm"),
+      Zone != "SW" & Month <= 9 ~ paste0(Site, "_", Year, "0", Month, "_", Zone, "_Lys", Replicate, "_", Depth_cm, "cm"),
+      Zone == "SW" & Month <= 9 ~ paste0(Site, "_", Year, "0", Month, "_", Zone, "_", Replicate),
+      TRUE ~ paste0(Site, "_", Year, Month, "_", Zone, "_", Replicate)  # keep everything else unchanged
+    ))
+
+```
+
+
 ##Collate the data 
 ```{r}
 colnames(all_data)

@@ -50,6 +50,7 @@ colnames(dat25)
 all_dat <- bind_rows(dat22, dat23, dat24, dat25)
 
 all_dat <- all_dat %>%
+  mutate(Project = "COMPASS: Synoptic") %>%
   dplyr::select(
     Project, Region, Sample_ID, Year, Month, Day, Time, Time_Zone,
     Site, Zone, Replicate, Depth_cm, 
@@ -61,6 +62,13 @@ all_dat <- all_dat %>%
 ##Set 4 decimal points max
 all_dat <- all_dat %>%
   mutate(across(where(is.numeric), round, digits = 4)) ##This does make all salinities 0 when Cl_ppm is 0 instead of 0.000026
+
+
+duplicates <- all_dat %>%
+  group_by(Sample_ID) %>%
+  filter(n() > 1) %>%
+  ungroup()
+
 
 ```
 
@@ -164,11 +172,11 @@ metadat$Instrument_ifapplicable <-
 ```{r write out combined data and metadata, include=FALSE}
 
 #write out a csv of all the data to the main folder: 
-write.csv(all_dat, "COMPASS_SynopticCB_SO4_Cl_AllData.csv")
+write.csv(all_dat, "COMPASS_SynopticCB_SO4_Cl_AllData.csv", row.names = FALSE)
 
 
 #write out a csv of the metadata associated with the data: 
-write.csv(metadat, "COMPASS_SynopticCB_SO4_Cl_Metadata.csv")
+write.csv(metadat, "COMPASS_SynopticCB_SO4_Cl_Metadata.csv", row.names = FALSE)
 
 ```
 

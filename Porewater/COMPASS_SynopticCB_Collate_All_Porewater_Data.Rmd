@@ -1,0 +1,99 @@
+---
+title: "COMPASS_SynopticCB_Collate_Dionex_2025_Data"
+author: "Stephanie J. Wilson"
+date: "2025-08-29"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(dplyr)
+library(ggplot2)
+library(ggpubr)
+library(stringr)
+library(readxl)
+library(tidyr)
+library(tibble)
+library(purrr)
+```
+
+#Read in and collate all the collated analyte files
+```{r}
+
+##Collated data by analyte
+##Desired Sample ID format: SWH_202511_WC_LYSC_45CM
+
+DIC <- read.csv("DIC/Synoptic-CB/COMPASS_SynopticCB_PW_DIC_AllData.csv")
+DIC <- DIC %>%
+  rename_with(
+    .cols = c(11:12, (ncol(.) - 2):(ncol(.))),
+    .fn = ~paste0("DIC_", .)) %>%
+  mutate(Sample_ID = toupper(Sample_ID))
+
+DOC <- read.csv("DOC/Synoptic-CB/COMPASS_SynopticCB_PW_DOC_AllData.csv")
+DOC <- DOC %>%
+  rename_with(
+    .cols = c(7:8, (ncol(.) - 2):(ncol(.))),
+    .fn = ~paste0("DOC_", .)) %>%
+  mutate(Sample_ID = toupper(Sample_ID))
+
+Nutrients <- read.csv("Nutrients/Synoptic-CB/COMPASS_SynopticCB_Nutrient_AllData.csv")
+Nutrients <- Nutrients %>%
+  rename_with(
+    .cols = c(7:8, (ncol(.) - 2):(ncol(.))),
+    .fn = ~paste0("Nutr_", .)) %>%
+  mutate(Sample_ID = toupper(Sample_ID))
+
+SO4_Cl <- read.csv("Sulfate_Chloride/Synoptic-CB/COMPASS_SynopticCB_SO4_Cl_AllData.csv")
+SO4_Cl <- SO4_Cl %>%
+  rename_with(
+    .cols = c(7:8, (ncol(.) - 2):(ncol(.))),
+    .fn = ~paste0("SO4_Cl_", .)) %>%
+  mutate(Sample_ID = toupper(Sample_ID))
+
+Sulfide <- read.csv("Sulfide/Synoptic-CB/COMPASS_SynopticCB_Sulfide_AllData.csv")
+Sulfide <- Sulfide %>%
+  rename_with(
+    .cols = c(7:8, (ncol(.) - 2):(ncol(.))),
+    .fn = ~paste0("H2S_", .)) %>%
+  mutate(Sample_ID = toupper(Sample_ID))
+
+
+##Combine data
+df_list <- list(DIC, DOC, Nutrients, SO4_Cl, Sulfide)
+colnames(DIC)
+merged_df <- df_list %>% reduce(full_join)
+
+df_duplicates <- merged_df %>%
+  group_by(Sample_ID) %>%
+  filter(n() > 1) %>%
+  ungroup()
+
+
+##Need to figure out duplicates
+
+
+
+
+# final_data <- all_data %>%
+#     rename(
+#       SO4_mM = SO4_Conc_mM, 
+#       Cl_mM = Cl_Conc_mM
+#       ) %>%
+#     dplyr::select(
+#     Project, Region, Site, Zone, Replicate, Depth_cm, 
+#          Sample_ID, Year, Month, Day, Time, Time_Zone,
+#          SO4_ppm, SO4_mM, SO4_Conc_flag, SO4_QAQC_flag, Cl_ppm, Cl_mM, Cl_Conc_flag, Cl_QAQC_flag, salinity,
+#          Analysis_rundate,  Run_notes, Field_notes
+#         # list columns in the order you want them
+#   )
+
+
+```
+
+## Write the 2023 file out to the folder 
+```{r, echo=FALSE}
+
+write.csv(merged_df, "COMPASS_SynopticCB_AllData_AllYears.csv", row.names = FALSE)
+
+```
+

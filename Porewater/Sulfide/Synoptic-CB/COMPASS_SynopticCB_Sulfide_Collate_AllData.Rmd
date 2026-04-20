@@ -47,7 +47,7 @@ all_dat <- all_dat %>%
   dplyr::select(
     Project, Region, Sample_ID, Year, Month, Day, Time, Time_Zone,
     Site, Zone, Replicate, Depth_cm, 
-    H2S_mean_uM, H2S_sd_uM, H2S_cv, H2S_Conc_flag, H2S_cv_flag, H2S_QAQC_flag, Dilution,
+    H2S_mean_uM, H2S_sd_uM, H2S_cv, H2S_Conc_flag, H2S_cv_flag, H2S_QAQC_flag, 
     Analysis_rundate,  Run_notes, Field_notes
         # list columns in the order you want them
   )
@@ -91,7 +91,6 @@ metadat$Description <- c("Project name",
                          standard), Within Range=within detection range)",                          
                          "Sulfide flag based on triplicate cv compared to QAQC cutoff value (Within Range or High CV)", 
                          "Sulfide QAQC Flags generated during checks of standards, blanks, dups, and spks",
-                         "Dilution factor used for sample when ran on microplate",
                          "The date that samples were run on the microplate reader", 
                          "Any notes generated during QAQC", 
                          "Notes generated during field sample collection")
@@ -110,7 +109,6 @@ metadat$Units <-       c("NA",
                          "cm",
                          "uM", 
                          "uM", 
-                         "NA", 
                          "NA", 
                          "NA", 
                          "NA", 
@@ -141,7 +139,6 @@ metadat$Instrument_ifapplicable <-
                          "NA", 
                          "NA", 
                          "NA", 
-                         "NA", 
                          "NA")
 
 
@@ -152,11 +149,11 @@ metadat$Instrument_ifapplicable <-
 ```{r write out combined data and metadata, include=FALSE}
 
 #write out a csv of all the data to the main folder: 
-write.csv(all_dat, "COMPASS_SynopticCB_Sulfide_AllData.csv")
+write.csv(all_dat, "COMPASS_SynopticCB_Sulfide_AllData.csv", row.names = FALSE)
 
 
 #write out a csv of the metadata associated with the data: 
-write.csv(metadat, "COMPASS_SynopticCB_Sulfide_Metadata.csv")
+write.csv(metadat, "COMPASS_SynopticCB_Sulfide_Metadata.csv", row.names = FALSE)
 
 ```
 

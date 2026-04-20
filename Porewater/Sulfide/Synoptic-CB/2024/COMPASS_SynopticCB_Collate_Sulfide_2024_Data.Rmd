@@ -30,11 +30,13 @@ all_data <- all_data[, -which(names(all_data) == "X")]
 head(all_data)
 
 final_data <- all_data %>%
-    rename(
+  mutate(Replicate = gsub("Lys", "", Replicate), 
+         Replicate = gsub("LYS", "", Replicate)) %>%
+  rename(
     H2S_mean_uM = H2S_mean, 
     H2S_sd_uM = H2S_sd
     ) %>%
-    dplyr::select(
+  dplyr::select(
     Project, Region, Site, Zone, Replicate, Depth_cm, 
          Sample_ID, Year, Month, Day, Time, Time_Zone,
          H2S_mean_uM, H2S_sd_uM, H2S_cv, H2S_Conc_flag, H2S_cv_flag, Dilution,
