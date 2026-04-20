@@ -49,9 +49,13 @@ colnames(dat24)
 
 all_dat <- bind_rows(dat23, dat24)
 
-all_dat <- all_dat %>%
-  rename( 
-    Depth_cm = Depth1) %>%
+##Remove samples flagged for unusually high values 
+all_dat1 <- all_dat %>% 
+  filter(is.na(qaqc_flag))
+
+##Select only required columns
+all_dat1 <- all_dat1 %>%
+  rename(Depth_cm = Depth1) %>%
   dplyr::select(
     Site, Zone, Replicate, Depth_cm, Machine, User, Run_Date, Sample_Year, Sample_Month, Sample_ID, 
     Dilution_Factor, CH4_Conc_ppm_dilcorr, CH4_Flag, CO2_Conc_ppm_dilcorr, CO2_Flag
@@ -59,11 +63,11 @@ all_dat <- all_dat %>%
   )
 
 ##Set 4 decimal points max
-all_dat <- all_dat %>%
+all_dat1 <- all_dat1 %>%
   mutate(across(where(is.numeric), round, digits = 0)) ##Can cahnge this depending on what the machine output is
 
 ##Remove test samples
-all_dat <- all_dat %>% 
+all_dat1 <- all_dat1 %>% 
   filter(Zone != "Test")
 
 ```
@@ -71,8 +75,8 @@ all_dat <- all_dat %>%
 ##Make Relevant Metadata Sheet
 ```{r make metadata, include = FALSE}
 
-# #pull the column names from the all_dat dataframe and create a new dataframe with them 
-# metadat <- data.frame(Column_Names = colnames(all_dat))
+# #pull the column names from the all_dat1 dataframe and create a new dataframe with them 
+# metadat <- data.frame(Column_Names = colnames(all_dat1))
 # metadat
 # 
 # metadat$Description <- ""
@@ -167,7 +171,7 @@ all_dat <- all_dat %>%
 ```{r write out combined data and metadata, include=FALSE}
 
 #write out a csv of all the data to the main folder: 
-write.csv(all_dat, "COMPASS_SynopticCB_SGAS_AllData.csv", row.names = FALSE)
+write.csv(all_dat1, "COMPASS_SynopticCB_SGAS_AllData.csv", row.names = FALSE)
 
 
 # #write out a csv of the metadata associated with the data: 
@@ -177,9 +181,9 @@ write.csv(all_dat, "COMPASS_SynopticCB_SGAS_AllData.csv", row.names = FALSE)
 
 
 ## Visualize Data by Plot   
-```{r Visualize Data, echo=FALSE, warning=FALSE, message = FALSE, fig.width=16, fig.height=10, dpi = 300}
+```{r Visualize Data, echo=FALSE, warning=FALSE, message = FALSE, fig.width=20, fig.height=10, dpi = 300}
 
-data_plotting <- all_dat
+data_plotting <- all_dat1
 
 #Order by Zone from Upland to Surface Water
 data_plotting$Zone = factor(data_plotting$Zone, levels = c("UP", "SWAMP", "TR", "WC", "SW"))
@@ -199,7 +203,7 @@ data_plotting_all <- data_plotting %>%
 #Plot data and change colors based on Zone:
 viz_ch4_plot <- ggplot(data_plotting_all, aes(x = as.character(Sample_Year), y = CH4_Conc_ppm_dilcorr, fill = Zone)) +
   geom_bar(stat = "identity", position = position_dodge2(preserve = "total")) +
-  facet_grid( ~ Site, scales="free") +
+  facet_wrap( ~ Site, scales="free", nrow = 1) +
   scale_fill_manual(values = c(
     "UP" = "#20063B",
     "TR" = "#FFBC42",
@@ -212,14 +216,14 @@ viz_ch4_plot <- ggplot(data_plotting_all, aes(x = as.character(Sample_Year), y =
   theme(
     panel.spacing = unit(.05, "lines"), 
     panel.border = element_rect(color = "black", fill = NA, linewidth = 1)) + 
-  theme(text = element_text(size = 20))
+  theme(text = element_text(size = 28))
 
 # viz_ch4_plot
 
 
 viz_co2_plot <-  ggplot(data_plotting_all, aes(x = as.character(Sample_Year), y = CO2_Conc_ppm_dilcorr, fill = Zone)) +
   geom_bar(stat = "identity", position = position_dodge2(preserve = "total")) +
-  facet_grid( ~ Site, scales="free") +
+  facet_wrap( ~ Site, scales="free", nrow = 1) +
   scale_fill_manual(values = c(
     "UP" = "#20063B",
     "TR" = "#FFBC42",
@@ -232,7 +236,7 @@ viz_co2_plot <-  ggplot(data_plotting_all, aes(x = as.character(Sample_Year), y 
   theme(
     panel.spacing = unit(.05, "lines"), 
     panel.border = element_rect(color = "black", fill = NA, linewidth = 1))+ 
-  theme(text = element_text(size = 20))
+  theme(text = element_text(size = 28))
 
 # viz_co2_plot
 
@@ -243,7 +247,7 @@ ggarrange(viz_ch4_plot, viz_co2_plot, nrow=2, ncol=1)
 
 
 ## Summarized data for Site and Zone 
-```{r Summarize and Visualize Data, echo=FALSE, warning=FALSE, message = FALSE, fig.width=16, fig.height=10, dpi = 300}
+```{r Summarize and Visualize Data, echo=FALSE, warning=FALSE, message = FALSE, fig.width=20, fig.height=15, dpi = 300}
 
 ##Make Date Column with just Year and Month for Sample ID
 data_plotting$Month_num <- match(data_plotting$Sample_Month, month.name)
@@ -280,7 +284,7 @@ viz_ch4_plot_avgs <- ggplot(SGAS_avg, aes(x = Date, y = mean_ch4, color = Zone, 
   geom_point(size = 3) + 
   geom_errorbar(aes(ymin = mean_ch4 - sd_ch4, ymax = mean_ch4 + sd_ch4), width = 0.2) + 
   geom_line() + 
-  facet_grid( ~ Site, scales="free_y") +
+  facet_wrap( ~ Site, scales="free_y", nrow = 1) +
   scale_color_manual(values = c(
     "UP" = "#20063B",
     "TR" = "#FFBC42",
@@ -294,7 +298,7 @@ viz_ch4_plot_avgs <- ggplot(SGAS_avg, aes(x = Date, y = mean_ch4, color = Zone, 
     panel.spacing = unit(0.5, "lines"), 
     panel.border = element_rect(color = "black", fill = NA, linewidth = 1)) +
   # theme(axis.text.x = element_text(angle = 90, hjust = 0.5))+ 
-  theme(text = element_text(size = 30))+
+  theme(text = element_text(size = 28))+
   scale_x_date(breaks = specific_breaks, date_labels = "%Y", expand = expansion(mult = c(0.18, 0.05)))+
   theme(axis.ticks.x = element_line(linewidth = 1))+
   theme(axis.ticks.length.x = unit(0.25, "cm"))
@@ -306,7 +310,7 @@ viz_co2_plot_avgs <- ggplot(SGAS_avg, aes(x = Date, y = mean_co2, color = Zone, 
   geom_point(size = 3) + 
   geom_errorbar(aes(ymin = mean_co2 - sd_co2, ymax = mean_co2 + sd_co2), width = 0.2) + 
   geom_line() + 
-  facet_grid( ~ Site, scales="free_y") +
+  facet_wrap( ~ Site, scales="free_y", nrow = 1) +
   scale_color_manual(values = c(
     "UP" = "#20063B",
     "TR" = "#FFBC42",
@@ -320,7 +324,7 @@ viz_co2_plot_avgs <- ggplot(SGAS_avg, aes(x = Date, y = mean_co2, color = Zone, 
     panel.spacing = unit(0.5, "lines"), 
     panel.border = element_rect(color = "black", fill = NA, linewidth = 1)) +
   # theme(axis.text.x = element_text(angle = 90, hjust = 0.5))+ 
-  theme(text = element_text(size = 30))+
+  theme(text = element_text(size = 28))+
   scale_x_date(breaks = specific_breaks, date_labels = "%Y", expand = expansion(mult = c(0.18, 0.05)))+
   theme(axis.ticks.x = element_line(linewidth = 1))+
   theme(axis.ticks.length.x = unit(0.25, "cm"))
@@ -332,82 +336,111 @@ ggarrange(viz_ch4_plot_avgs, viz_co2_plot_avgs, nrow=2, ncol=1)
 ```
 
 
-## Summarized data for Depth, Site and Zone 
-```{r Depth Data, echo=FALSE, warning=FALSE, message = FALSE, fig.width=22, fig.height=10, dpi = 300}
+## Summarized Data by Depth
+```{r Summarize Data by Depth, echo=FALSE, warning=FALSE, message = FALSE, fig.width=22, fig.height=8, dpi = 500}
 
-##Summarize CO2 and CH4 by Date, Site, and Zone
+##Remove SW and calculate average and sd for each depth
 SGAS_avg_depth <- all_dat_dates %>%
-  group_by(Month_num, Sample_Year, Site, Zone, Depth_cm) %>%
+  group_by(Site, Zone, Depth_cm) %>%
    dplyr::summarize(mean_ch4 = mean(CH4_Conc_ppm_dilcorr, na.rm=TRUE), 
             sd_ch4 = sd(CH4_Conc_ppm_dilcorr, na.rm=TRUE), 
             mean_co2 = mean(CO2_Conc_ppm_dilcorr, na.rm=TRUE), 
-            sd_co2 = sd(CO2_Conc_ppm_dilcorr, na.rm=TRUE), 
-            YearMonth = first(YearMonth))
+            sd_co2 = sd(CO2_Conc_ppm_dilcorr, na.rm=TRUE))
 
-# Concatenate with a day (e.g., "01" for the first day)
-SGAS_avg_depth$Date <- paste0(SGAS_avg_depth$YearMonth, "-01")
-
-# Convert to Date object
-SGAS_avg_depth$Date <- as.Date(SGAS_avg_depth$Date)
-
-# Define the specific date breaks you want to display
-specific_breaks <- as.Date(c("2022-01-01", "2023-01-01", "2024-01-01"))
-
-viz_ch4_plot_depth <- ggplot(SGAS_avg_depth, aes(x = Date, y = mean_ch4, color = Zone, group = Zone, shape = as.character(Depth_cm))) +
+viz_ch4_plot_depth <- ggplot(SGAS_avg_depth, aes(x = as.numeric(Depth_cm), y = mean_ch4, color = Zone, group = Zone)) +
   geom_point(size = 3) + 
-  geom_errorbar(aes(ymin = mean_ch4 - sd_ch4, ymax = mean_ch4 + sd_ch4), width = 0.2) + 
-  # geom_line() + 
-  facet_grid( ~ Site, scales="free_y") +
+  geom_errorbar(aes(ymin = mean_ch4 - sd_ch4, ymax = mean_ch4 + sd_ch4), width = 0.5, size = 1) + 
+  geom_line(size = 1.5) + 
+  facet_wrap( ~ Site, scales="free", nrow = 1) + 
   scale_color_manual(values = c(
     "UP" = "#20063B",
     "TR" = "#FFBC42",
     "SWAMP" = "darkgrey",
-    "WC" = "#419973",
-    "SW" = "#25ABE6"
-  )) +
+    "WC" = "#419973"
+  )) + 
   theme_classic() +
-  labs(x = " ", y = "CH4 (ppm)", title = "Samples: CH4") +
-  theme(
-    panel.spacing = unit(0.5, "lines"), 
-    panel.border = element_rect(color = "black", fill = NA, linewidth = 1)) +
-  # theme(axis.text.x = element_text(angle = 90, hjust = 0.5))+ 
-  theme(text = element_text(size = 30))+
-  scale_x_date(breaks = specific_breaks, date_labels = "%Y", expand = expansion(mult = c(0.18, 0.05))) + 
-  labs(fill = "Zone", shape = "Depth (cm)")+
-  theme(axis.ticks.x = element_line(linewidth = 1))+
-  theme(axis.ticks.length.x = unit(0.25, "cm"))
+  labs(x = "Sampling Depth (cm)", y = "CH4 (ppm)", title = "Methane by Depth") +
+  theme(text = element_text(size = 28)) + 
+  theme(plot.title = element_text(size = 28)) + 
+  coord_flip() + 
+  scale_x_continuous(trans = "reverse") + 
+  labs(color = "Zone") 
 
 viz_ch4_plot_depth
 
-
-viz_co2_plot_depth <- ggplot(SGAS_avg_depth, aes(x = Date, y = mean_co2, color = Zone, group = Zone, shape = as.character(Depth_cm))) +
+viz_co2_plot_depth <- ggplot(SGAS_avg_depth, aes(x = as.numeric(Depth_cm), y = mean_co2, color = Zone, group = Zone)) +
   geom_point(size = 3) + 
-  geom_errorbar(aes(ymin = mean_co2 - sd_co2, ymax = mean_co2 + sd_co2), width = 0.2) + 
-  # geom_line() + 
-  facet_grid( ~ Site, scales="free_y") +
+  geom_errorbar(aes(ymin = mean_co2 - sd_co2, ymax = mean_co2 + sd_co2), width = 0.5, size = 1) + 
+  geom_line(size = 1.5) + 
+  facet_wrap( ~ Site, scales="free", nrow = 1) + 
   scale_color_manual(values = c(
     "UP" = "#20063B",
     "TR" = "#FFBC42",
     "SWAMP" = "darkgrey",
-    "WC" = "#419973",
-    "SW" = "#25ABE6"
-  )) +
+    "WC" = "#419973"
+  )) + 
   theme_classic() +
-  labs(x = " ", y = "CO2 (ppm)", title = "Samples: CO2") +
-  theme(
-    panel.spacing = unit(0.5, "lines"), 
-    panel.border = element_rect(color = "black", fill = NA, linewidth = 1)) +
-  # theme(axis.text.x = element_text(angle = 90, hjust = 0.5))+ 
-  theme(text = element_text(size = 30))+
-  scale_x_date(breaks = specific_breaks, date_labels = "%Y", expand = expansion(mult = c(0.18, 0.05))) + 
-  labs(fill = "Zone", shape = "Depth (cm)")+
-  theme(axis.ticks.x = element_line(linewidth = 1))+
-  theme(axis.ticks.length.x = unit(0.25, "cm"))
+  labs(x = "Sampling Depth (cm)", y = "CO2 (ppm)", title = "Carbon Dioxide by Depth") +
+  theme(text = element_text(size = 28)) + 
+  theme(plot.title = element_text(size = 28)) + 
+  coord_flip() + 
+  scale_x_continuous(trans = "reverse") + 
+  labs(color = "Zone") 
 
 viz_co2_plot_depth
-# ggarrange(viz_ch4_plot_depth, viz_co2_plot_depth, nrow=2, ncol=1)
 
 ```
+
+## Boxplot by depth
+```{r Boxplot by depth, echo=FALSE, warning=FALSE, message = FALSE, fig.width=16, fig.height=10, dpi = 300}
+
+##Remove SW
+data_plotting_depth <- data_plotting %>%
+  mutate(Depth_cm = factor(Depth_cm, levels = c("45", "20", "10", "0")))
+
+
+#Plot data and change colors based on Zone:
+viz_co2_depth <-  ggplot(data_plotting_depth, aes(x = Depth_cm, y = CO2_Conc_ppm_dilcorr, fill = Zone)) +
+  geom_boxplot() +
+  facet_wrap( ~ Site, scales="free", nrow = 1) +
+  scale_fill_manual(values = c(
+    "UP" = "#20063B",
+    "TR" = "#FFBC42",
+    "SWAMP" = "darkgrey",
+    "WC" = "#419973")) +
+  theme_classic() +
+  labs(x = "Sampling Depth (cm)", y = "CO2 (ppm)", title = "") +
+  # theme(
+  #   panel.spacing = unit(.05, "lines"), 
+  #   panel.border = element_rect(color = "black", fill = NA, linewidth = 1))+ 
+  theme(text = element_text(size = 30))+ 
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))+ 
+  coord_flip() 
+
+viz_co2_depth
+
+#Plot data and change colors based on Zone:
+viz_ch4_depth <-  ggplot(data_plotting_depth, aes(x = Depth_cm, y = CH4_Conc_ppm_dilcorr, fill = Zone)) +
+  geom_boxplot() +
+  facet_wrap( ~ Site, scales="free", nrow = 1) +
+  scale_fill_manual(values = c(
+    "UP" = "#20063B",
+    "TR" = "#FFBC42",
+    "SWAMP" = "darkgrey",
+    "WC" = "#419973")) +
+  theme_classic() +
+  labs(x = "Sampling Depth (cm)", y = "CH4 (ppm)", title = "") +
+  # theme(
+  #   panel.spacing = unit(.05, "lines"), 
+  #   panel.border = element_rect(color = "black", fill = NA, linewidth = 1))+ 
+  theme(text = element_text(size = 30))+ 
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))+ 
+  coord_flip() 
+
+viz_ch4_depth
+
+```
+
 
 
 ## Boxplot summary
@@ -440,7 +473,7 @@ viz_ch4_boxplot <- ggplot(all_dat_dates, aes(x = Zone_1, y = CH4_Conc_ppm_dilcor
     "Surface Water" = "#25ABE6"
   ), labels = c("Upland", "Swamp", "Transition", "Wetland", "Surface Water")) +
   theme_classic() +
-  labs(x = " ", y = "CH4 (ppm)", title = "Synoptic CB Porewater: CH4") +
+  labs(x = " ", y = "CH4 (ppm)", title = "Synoptic CB Soil Gas Well: CH4") +
   theme(
     panel.spacing = unit(0.5, "lines"), 
     panel.border = element_rect(color = "black", fill = NA, linewidth = 1)) +
@@ -466,7 +499,7 @@ viz_co2_boxplot <- ggplot(all_dat_dates, aes(x = Zone_1, y = CO2_Conc_ppm_dilcor
     "Surface Water" = "#25ABE6"
   ), labels = c("Upland", "Swamp", "Transition", "Wetland", "Surface Water")) +
   theme_classic() +
-  labs(x = " ", y = "CO2 (ppm)", title = "Synoptic CB Porewater: CO2") +
+  labs(x = " ", y = "CO2 (ppm)", title = "Synoptic CB Soil Gas Well: CO2") +
   theme(
     panel.spacing = unit(0.5, "lines"), 
     panel.border = element_rect(color = "black", fill = NA, linewidth = 1)) +
@@ -497,10 +530,10 @@ dev.off()
 ```{r Additional summary metrics, include=FALSE, dpi = 300}
 # It would also be great to add to our collation codes a summary chunk that will calculate value ranges, means, and standard deviations (and errors) for each site, zone, depth for each year; also for each site zone, depth overall; and for each site and zone overall so that we have some easy access to metrics. Was just thinking this might be helpful today when re-collating the DIC data.
 
-colnames(all_dat)
+colnames(all_dat1)
 
 ##Metrics for each site, zone, depth for each year
-summary_by_year <- all_dat %>%
+summary_by_year <- all_dat1 %>%
   group_by(Sample_Year, Site, Zone, Depth_cm) %>%
    reframe(
      min_CH4_ppm = min(CH4_Conc_ppm_dilcorr, na.rm=TRUE),
@@ -515,7 +548,7 @@ summary_by_year <- all_dat %>%
   mutate(across(where(is.numeric), round, digits = 0)) 
 
 ##Metrics for each site, zone, depth for all years
-summary_all_years <- all_dat %>%
+summary_all_years <- all_dat1 %>%
   group_by(Site, Zone, Depth_cm) %>%
    reframe(
      min_CH4_ppm = min(CH4_Conc_ppm_dilcorr, na.rm=TRUE),
@@ -530,7 +563,7 @@ summary_all_years <- all_dat %>%
   mutate(across(where(is.numeric), round, digits = 0)) 
 
 ##Metrics for each site and zone for all depths and years
-summary_all_depths_years <- all_dat %>%
+summary_all_depths_years <- all_dat1 %>%
   group_by(Site, Zone) %>%
     reframe(
      min_CH4_ppm = min(CH4_Conc_ppm_dilcorr, na.rm=TRUE),
@@ -548,16 +581,16 @@ summary_all_depths_years <- all_dat %>%
 
 ##Calculate number of samples 
 ```{r Number of samples, include=FALSE, dpi = 300}
-#  I am thinking it might be cool to add to our porewater collation files a table at the end that has total number of samples then also some info about # of samples per zone, site, depth etc.
+#  I am thinking it might be cool to add to our Soil Gas Well collation files a table at the end that has total number of samples then also some info about # of samples per zone, site, depth etc.
 
 ##Metrics for each year
-sample_numbers_years <- all_dat %>%
+sample_numbers_years <- all_dat1 %>%
   group_by(Sample_Year) %>%
    reframe(
      Number_of_samples = n())
 
 ##Metrics for each site, zone, depth for all years
-sample_numbers <- all_dat %>%
+sample_numbers <- all_dat1 %>%
   group_by(Site, Zone, Depth_cm) %>%
    reframe(
      Number_of_samples = n())
@@ -578,14 +611,6 @@ summary_all_depths_years <- summary_all_depths_years[order(summary_all_depths_ye
 summary_all_depths_years$Site = factor(summary_all_depths_years$Site, levels = c("SWH", "GCW", "MSM", "GWI"))
 summary_all_depths_years <- summary_all_depths_years[order(summary_all_depths_years$Site), ]
 
-#Order by Zone from Upland to Surface Water
-sample_numbers$Zone = factor(sample_numbers$Zone, levels = c("UP", "SWAMP", "TR", "WC", "SW"))
-sample_numbers <- sample_numbers[order(sample_numbers$Zone), ]
-
-#Order by Site from SWH, GCW, MSM, GWI order, which is oligohaline to polyhaline
-sample_numbers$Site = factor(sample_numbers$Site, levels = c("SWH", "GCW", "MSM", "GWI"))
-sample_numbers <- sample_numbers[order(sample_numbers$Site), ]
-
 kable(
   summary_all_depths_years[, c("Site", "Zone", "min_CH4_ppm",	"max_CH4_ppm",	"mean_CH4_ppm", "min_CO2_ppm",	"max_CO2_ppm",	"mean_CO2_ppm")],  
   format = "latex",
@@ -601,27 +626,23 @@ kable(
 
 
 ```
+
 ## Number of Samples
 ```{r number of samples tables, echo = FALSE, message = FALSE, dpi = 100}
+
+#Order by Zone from Upland to Surface Water
+sample_numbers$Zone = factor(sample_numbers$Zone, levels = c("UP", "SWAMP", "TR", "WC", "SW"))
+sample_numbers <- sample_numbers[order(sample_numbers$Zone), ]
+
+#Order by Site from SWH, GCW, MSM, GWI order, which is oligohaline to polyhaline
+sample_numbers$Site = factor(sample_numbers$Site, levels = c("SWH", "GCW", "MSM", "GWI"))
+sample_numbers <- sample_numbers[order(sample_numbers$Site), ]
 
 kable(
   sample_numbers_years[, c("Sample_Year", "Number_of_samples")],  
   format = "latex",
   booktabs = TRUE,
-  caption = paste0("Total Samples: ", nrow(all_dat))
-) %>%
-  kable_styling(
-    latex_options = c("hold_position", "striped", "scale_down"),
-    font_size = 12
-  ) %>%
-  row_spec(0, bold = TRUE) %>%   # header
-  column_spec(1, bold = TRUE)
-
-kable(
-  sample_numbers[, c("Site", "Zone", "Depth_cm", "Number_of_samples")],  
-  format = "latex",
-  booktabs = TRUE,
-  caption = "Number of samples by Site, Zone, and Depth"
+  caption = paste0("Total Samples: ", nrow(all_dat1))
 ) %>%
   kable_styling(
     latex_options = c("hold_position", "striped", "scale_down"),
@@ -631,6 +652,37 @@ kable(
   column_spec(1, bold = TRUE)
 
 ```
+
+```{r Number of Samples Barplots, echo=FALSE, warning=FALSE, message = FALSE, fig.width=16, fig.height=10, dpi = 300}
+##Remove SW samples
+sample_numbers_pw <- sample_numbers
+
+##Number of Samples Plots
+sample_num_barplot <- ggplot(sample_numbers_pw, aes(x = as.character(Depth_cm), y = Number_of_samples, fill = Zone)) +
+  geom_col(position = "dodge", color = "black", width = 0.75) + # 'color' adds a border to the bars
+  facet_grid(~Site , scales = "free_x") +
+  scale_x_discrete(drop = TRUE) +
+  scale_fill_manual(values = c(
+    "UP" = "#20063B",
+    "TR" = "#FFBC42",
+    "SWAMP" = "darkgrey",
+    "WC" = "#419973"
+  ), labels = c("Upland", "Swamp", "Transition", "Wetland")) +
+  theme_classic() +
+  labs(x = "Depth (cm)", y = "Number of Samples", title = "Synoptic CB SGAS Sample Numbers") +
+  theme(
+    panel.spacing = unit(0.5, "lines"),
+    panel.border = element_rect(color = "black", fill = NA, linewidth = 1)) +
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))+
+  theme(text = element_text(size = 30))+
+  theme(axis.ticks.x = element_line(linewidth = 1))+
+  theme(axis.ticks.length.x = unit(0.25, "cm"))
+  #scale_x_discrete(labels = c("Upland", "Swamp", "Transition", "Wetland", "Surface Water"))+
+  # theme(legend.position = "none")
+
+sample_num_barplot
+```
+
 
 
 ```{r write out summarized data, include=FALSE}

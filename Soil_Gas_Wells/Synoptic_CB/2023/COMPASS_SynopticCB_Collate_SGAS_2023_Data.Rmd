@@ -50,6 +50,39 @@ all_data <- all_data %>%
 all_data <- all_data %>% 
   select(-Zone_old)
 
+##Calculate mean of CO2 data for each Site
+SWH_mean_CO2 = mean(subset(all_data, Site == "SWH")$CO2_Conc_ppm_dilcorr, na.rm = TRUE)
+MSM_mean_CO2 = mean(subset(all_data, Site == "MSM")$CO2_Conc_ppm_dilcorr, na.rm = TRUE)
+GCW_mean_CO2 = mean(subset(all_data, Site == "GCW")$CO2_Conc_ppm_dilcorr, na.rm = TRUE)
+GWI_mean_CO2 = mean(subset(all_data, Site == "GWI")$CO2_Conc_ppm_dilcorr, na.rm = TRUE)
+
+##Flag data that is more than 100x the mean 
+all_data <- all_data %>% 
+  mutate(qaqc_flag = NA) %>% 
+  mutate(qaqc_flag = case_when(
+    is.na(qaqc_flag) & Site == "SWH" & CO2_Conc_ppm_dilcorr >= 10*SWH_mean_CO2 ~ "CO2 unusually high, not real value",
+    is.na(qaqc_flag) & Site == "MSM" & CO2_Conc_ppm_dilcorr >= 10*MSM_mean_CO2 ~ "CO2 unusually high, not real value",
+    is.na(qaqc_flag) & Site == "GCW" & CO2_Conc_ppm_dilcorr >= 10*GCW_mean_CO2 ~ "CO2 unusually high, not real value",
+    is.na(qaqc_flag) & Site == "GWI" & CO2_Conc_ppm_dilcorr >= 10*GWI_mean_CO2 ~ "CO2 unusually high, not real value",
+    TRUE ~ qaqc_flag    # NA if no match
+  ))
+
+##Calculate mean of CH4 data for each Site
+SWH_mean_CH4 = mean(subset(all_data, Site == "SWH")$CH4_Conc_ppm_dilcorr, na.rm = TRUE)
+MSM_mean_CH4 = mean(subset(all_data, Site == "MSM")$CH4_Conc_ppm_dilcorr, na.rm = TRUE)
+GCW_mean_CH4 = mean(subset(all_data, Site == "GCW")$CH4_Conc_ppm_dilcorr, na.rm = TRUE)
+GWI_mean_CH4 = mean(subset(all_data, Site == "GWI")$CH4_Conc_ppm_dilcorr, na.rm = TRUE)
+
+##Flag data that is more than 100x the mean 
+all_data <- all_data %>% 
+  mutate(qaqc_flag = case_when(
+    is.na(qaqc_flag) & Site == "SWH" & CH4_Conc_ppm_dilcorr >= 10*SWH_mean_CH4 ~ "CH4 unusually high, not real value",
+    is.na(qaqc_flag) & Site == "MSM" & CH4_Conc_ppm_dilcorr >= 10*MSM_mean_CH4 ~ "CH4 unusually high, not real value",
+    is.na(qaqc_flag) & Site == "GCW" & CH4_Conc_ppm_dilcorr >= 10*GCW_mean_CH4 ~ "CH4 unusually high, not real value",
+    is.na(qaqc_flag) & Site == "GWI" & CH4_Conc_ppm_dilcorr >= 10*GWI_mean_CH4 ~ "CH4 unusually high, not real value",
+    TRUE ~ qaqc_flag    # NA if no match
+  ))
+
 ```
 
 #Read in selected TMP data for GCW Upland - need to do this too...  
