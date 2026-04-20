@@ -36,6 +36,20 @@ all_data <- all_data[, -which(names(all_data) == "X")]
 ```
 
 
+##Make all Sample IDs formatted the same
+```{r}
+
+all_data <- all_data %>%
+  mutate(Sample_ID = case_when(
+      Zone != "SW" & Month >9 ~ paste0(Site, "_", Year, Month, "_", Zone, "_Lys", Replicate, "_", Depth_cm, "cm"),
+      Zone != "SW" & Month <= 9 ~ paste0(Site, "_", Year, "0", Month, "_", Zone, "_Lys", Replicate, "_", Depth_cm, "cm"),
+      Zone == "SW" & Month <= 9 ~ paste0(Site, "_", Year, "0", Month, "_", Zone, "_", Replicate),
+      TRUE ~ paste0(Site, "_", Year, Month, "_", Zone, "_", Replicate)  # keep everything else unchanged
+    ))
+
+```
+
+
 ##Collate the data 
 ```{r}
 
