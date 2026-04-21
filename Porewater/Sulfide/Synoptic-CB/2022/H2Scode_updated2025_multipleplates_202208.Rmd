@@ -884,7 +884,9 @@ Sample_data1 <- Sample_data %>%
   mutate(Site = gsub("Gcrew",'GCW', Site)) %>% 
   mutate(Sample_ID = paste(Site, Date_Run, Zone, Replicate, Depth, sep = "_")) %>% 
   mutate(ID_full = NULL) %>%
-  mutate(Sample_ID = gsub("_NA", "", Sample_ID))
+  mutate(Sample_ID = gsub("_NA", "", Sample_ID)) %>% 
+  mutate(Depth = ifelse(Zone == "SW", "0cm", Depth))
+
 
 ```
 
