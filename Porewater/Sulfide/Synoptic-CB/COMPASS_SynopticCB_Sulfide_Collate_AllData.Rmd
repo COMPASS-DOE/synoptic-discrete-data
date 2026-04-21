@@ -268,51 +268,37 @@ viz_H2S_plot_avgs
 ```
 
 
-## Summarized data for Depth, Site and Zone 
-```{r Summarize and Visualize Data, echo=FALSE, warning=FALSE, message = FALSE, fig.width=16, fig.height=10, dpi = 300}
+## Summarized Data by Depth
+```{r Summarize Data by Depth, echo=FALSE, warning=FALSE, message = FALSE, fig.width=22, fig.height=8, dpi = 500}
 
-##Summarize H2S and Cl by Date, Site, and Zone
+##Remove SW and calculate average and sd for each depth
 Sulfide_avg_depth <- all_dat_dates %>%
-  group_by(Month, Year, Site, Zone, Depth_cm) %>%
-   dplyr::summarize(mean_H2S = mean(H2S_mean_uM, na.rm=TRUE), 
-            sd_H2S = sd(H2S_mean_uM, na.rm=TRUE), 
-            YearMonth = first(YearMonth))
+  filter(Zone != "SW") %>%
+  group_by(Site, Zone, Depth_cm) %>%
+   dplyr::summarize(
+     mean_H2S = mean(H2S_mean_uM, na.rm=TRUE), 
+     sd_H2S = sd(H2S_mean_uM, na.rm=TRUE))
 
-# Concatenate with a day (e.g., "01" for the first day)
-Sulfide_avg_depth$Date <- paste0(Sulfide_avg_depth$YearMonth, "-01")
-
-# Convert to Date object
-Sulfide_avg_depth$Date <- as.Date(Sulfide_avg_depth$Date)
-
-# Define the specific date breaks you want to display
-specific_breaks <- as.Date(c("2022-01-01", "2023-01-01", "2024-01-01"))
-
-viz_H2S_plot_depth <- ggplot(Sulfide_avg_depth, aes(x = Date, y = mean_H2S, color = Zone, group = Zone, shape = as.character(Depth_cm))) +
+viz_h2s_plot_depth <- ggplot(Sulfide_avg_depth, aes(x = as.numeric(Depth_cm), y = mean_H2S, color = Zone, group = Zone)) +
   geom_point(size = 3) + 
-  geom_errorbar(aes(ymin = mean_H2S - sd_H2S, ymax = mean_H2S + sd_H2S), width = 0.2) + 
-  geom_line() + 
-  facet_wrap( ~ Site, scales="free_y") +
+  geom_errorbar(aes(ymin = mean_H2S - sd_H2S, ymax = mean_H2S + sd_H2S), width = 0.5, size = 1) + 
+  geom_line(size = 1.5) + 
+  facet_wrap( ~ Site, scales="free", nrow = 1) + 
   scale_color_manual(values = c(
     "UP" = "#20063B",
     "TR" = "#FFBC42",
     "SWAMP" = "darkgrey",
-    "WC" = "#419973",
-    "SW" = "#25ABE6"
-  )) +
+    "WC" = "#419973"
+  )) + 
   theme_classic() +
-  labs(x = " ", y = "Sulfide (uM)", title = "Samples: Sulfide")  +
-  theme(
-    panel.spacing = unit(0.5, "lines"), 
-    panel.border = element_rect(color = "black", fill = NA, linewidth = 1)) +
-  # theme(axis.text.x = element_text(angle = 90, hjust = 0.5))+ 
-  theme(text = element_text(size = 30))+
-  scale_x_date(breaks = specific_breaks, date_labels = "%Y", expand = expansion(mult = c(0.18, 0.05))) + 
-  labs(fill = "Zone", shape = "Depth (cm)")+
-  theme(axis.ticks.x = element_line(linewidth = 1))+
-  theme(axis.ticks.length.x = unit(0.25, "cm"))
+  labs(x = "Sampling Depth (cm)", y = "Sulfide (uM)", title = "Sulfide by Depth") +
+  theme(text = element_text(size = 28)) + 
+  theme(plot.title = element_text(size = 28)) + 
+  coord_flip() + 
+  scale_x_continuous(trans = "reverse") + 
+  labs(color = "Zone") 
 
-viz_H2S_plot_depth
-# ggarrange(viz_cl_plot, viz_H2S_plot, nrow=2, ncol=1)
+viz_h2s_plot_depth
 
 ```
 

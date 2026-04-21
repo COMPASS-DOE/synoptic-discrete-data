@@ -1,0 +1,1032 @@
+"Project","Region","Site","Zone","Replicate","Depth_cm","Sample_ID","Year","Month","Day","Time","Time_Zone","H2S_mean_uM","H2S_sd_uM","H2S_cv","H2S_Conc_flag","H2S_cv_flag","H2S_QAQC_flag","Dilution","Analysis_rundate","Field_notes","Run_notes"
+"COMPASS: Synoptic","CB","GCW","TR","A","10","GCW_202206_TR_LYSA_10CM","2022","6","10",NA,NA,"0","0","0","bdl","Within Range","","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","GCW","TR","A","20","GCW_202206_TR_LYSA_20CM","2022","6","10",NA,NA,"0","0","0","bdl","Within Range","","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","GCW","TR","A","45","GCW_202206_TR_LYSA_45CM","2022","6","10",NA,NA,"169.788880413183","1.27355285001533","0.750080244899509","adl","Within Range","","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","GCW","TR","B","10","GCW_202206_TR_LYSB_10CM","2022","6","10",NA,NA,"0","0","0","bdl","Within Range","","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","GCW","TR","B","20","GCW_202206_TR_LYSB_20CM","2022","6","10",NA,NA,"0","0","0","bdl","Within Range","","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","GCW","TR","B","45","GCW_202206_TR_LYSB_45CM","2022","6","10",NA,NA,"0","0","0","bdl","Within Range","","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","GCW","TR","C","10","GCW_202206_TR_LYSC_10CM","2022","6","10",NA,NA,"0","0","0","bdl","Within Range","","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","GCW","TR","C","20","GCW_202206_TR_LYSC_20CM","2022","6","10",NA,NA,"132.641693834814","5.86743991614203","4.42352607728989","adl","Within Range","","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","GCW","TR","C","45","GCW_202206_TR_LYSC_45CM","2022","6","10",NA,NA,"0","0","0","bdl","Within Range","","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","GCW","UP","A","10","GCW_202206_UP_LYSA_10CM","2022","6","10",NA,NA,"0","0","0","bdl","Within Range","","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","GCW","UP","A","20","GCW_202206_UP_LYSA_20CM","2022","6","10",NA,NA,"159.046750268442","8.73293382867648","5.49079677134984","adl","Within Range","","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","GCW","UP","A","45","GCW_202206_UP_LYSA_45CM","2022","6","10",NA,NA,"0","0","0","bdl","Within Range","","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","GCW","UP","B","10","GCW_202206_UP_LYSB_10CM","2022","6","10",NA,NA,"0","0","0","bdl","Within Range","","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","GCW","UP","B","20","GCW_202206_UP_LYSB_20CM","2022","6","10",NA,NA,"152.968119737437","11.3255235590648","7.40384570229706","adl","Within Range","","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","GCW","UP","C","10","GCW_202206_UP_LYSC_10CM","2022","6","10",NA,NA,"0","0","0","bdl","Within Range","","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","GWI","TR","A","10","GWI_202206_TR_LYSA_10CM","2022","6","9",NA,NA,"0","0","0","bdl","Within Range","","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","GWI","TR","A","20","GWI_202206_TR_LYSA_20CM","2022","6","9",NA,NA,"0","0","0","bdl","Within Range","","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","GWI","TR","A","45","GWI_202206_TR_LYSA_45CM","2022","6","9",NA,NA,"0","0","0","bdl","Within Range","","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","GWI","TR","B","10","GWI_202206_TR_LYSB_10CM","2022","6","9",NA,NA,"0.777221998182843","0.0454840303576902","5.85212853779647","Within Range","Within Range","","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","GWI","TR","B","20","GWI_202206_TR_LYSB_20CM","2022","6","9",NA,NA,"26.3246233304343","0.705613550203471","2.6804317058839","Within Range","Within Range","","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","GWI","TR","B","45","GWI_202206_TR_LYSB_45CM","2022","6","9",NA,NA,"0","0","0","bdl","Within Range","","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","GWI","TR","C","10","GWI_202206_TR_LYSC_10CM","2022","6","9",NA,NA,"13.545562319925","0.97127310269365","7.17041551877803","Within Range","Within Range","","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","GWI","TR","C","20","GWI_202206_TR_LYSC_20CM","2022","6","9",NA,NA,"0","0","0","bdl","Within Range","","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","GWI","TR","C","45","GWI_202206_TR_LYSC_45CM","2022","6","9",NA,NA,"0","0","0","bdl","Within Range","","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","GWI","UP","A","10","GWI_202206_UP_LYSA_10CM","2022","6","9",NA,NA,"0","0","0","bdl","Within Range","","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","GWI","UP","A","20","GWI_202206_UP_LYSA_20CM","2022","6","9",NA,NA,"0","0","0","bdl","Within Range","","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","GWI","UP","A","45","GWI_202206_UP_LYSA_45CM","2022","6","9",NA,NA,"0","0","0","bdl","Within Range","","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","GWI","UP","B","10","GWI_202206_UP_LYSB_10CM","2022","6","9",NA,NA,"1.7956874310674","0.0982567355555667","5.47181730270066","Within Range","Within Range","","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","GWI","UP","B","20","GWI_202206_UP_LYSB_20CM","2022","6","9",NA,NA,"0","0","0","bdl","Within Range","","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","GWI","UP","B","45","GWI_202206_UP_LYSB_45CM","2022","6","9",NA,NA,"0","0","0","bdl","Within Range","","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","GWI","UP","C","10","GWI_202206_UP_LYSC_10CM","2022","6","9",NA,NA,"30.9130781227984","1.6412110519029","5.30911559626443","Within Range","Within Range","","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","GWI","UP","C","20","GWI_202206_UP_LYSC_20CM","2022","6","9",NA,NA,"0","0","0","bdl","Within Range","","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","GWI","UP","C","45","GWI_202206_UP_LYSC_45CM","2022","6","9",NA,NA,"0","0","0","bdl","Within Range","","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","MSM","TR","A","10","MSM_202206_TR_LYSA_10CM","2022","6","6",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","MSM","TR","A","20","MSM_202206_TR_LYSA_20CM","2022","6","6",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","MSM","TR","A","45","MSM_202206_TR_LYSA_45CM","2022","6","6",NA,NA,"104.72502028501","0.955164637511506","0.912069183574291","adl","Within Range","Std curve r2 low","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","MSM","TR","B","10","MSM_202206_TR_LYSB_10CM","2022","6","6",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","MSM","TR","B","20","MSM_202206_TR_LYSB_20CM","2022","6","6",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","MSM","TR","B","45","MSM_202206_TR_LYSB_45CM","2022","6","6",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","MSM","TR","C","10","MSM_202206_TR_LYSC_10CM","2022","6","6",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","MSM","TR","C","20","MSM_202206_TR_LYSC_20CM","2022","6","6",NA,NA,"39.7576463557432","0.318388212503834","0.800822588075163","Within Range","Within Range","Std curve r2 low","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","MSM","TR","C","45","MSM_202206_TR_LYSC_45CM","2022","6","6",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","MSM","UP","A","10","MSM_202206_UP_LYSA_10CM","2022","6","6",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","MSM","UP","A","20","MSM_202206_UP_LYSA_20CM","2022","6","6",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","MSM","UP","A","45","MSM_202206_UP_LYSA_45CM","2022","6","6",NA,NA,"120.452270706501","1.8193612143076","1.51044160781388","adl","Within Range","Std curve r2 low","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","MSM","UP","B","10","MSM_202206_UP_LYSB_10CM","2022","6","6",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","MSM","UP","B","20","MSM_202206_UP_LYSB_20CM","2022","6","6",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","MSM","UP","B","45","MSM_202206_UP_LYSB_45CM","2022","6","6",NA,NA,"153.868657593882","9.87003458761876","6.41458419275324","adl","Within Range","Std curve r2 low","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","MSM","UP","C","10","MSM_202206_UP_LYSC_10CM","2022","6","6",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","MSM","UP","C","20","MSM_202206_UP_LYSC_20CM","2022","6","6",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","MSM","UP","C","45","MSM_202206_UP_LYSC_45CM","2022","6","6",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","MSM","WC","A","10","MSM_202206_WC_LYSA_10CM","2022","6","6",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","MSM","WC","A","20","MSM_202206_WC_LYSA_20CM","2022","6","6",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","MSM","WC","A","45","MSM_202206_WC_LYSA_45CM",NA,NA,NA,NA,NA,"100.704761997308","2.58259590038309","2.56452212304729","adl","Within Range","","1","202206",NA,"Plate2 std curve used."
+"COMPASS: Synoptic","CB","MSM","WC","B","10","MSM_202206_WC_LYSB_10CM","2022","6","6",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","MSM","WC","B","20","MSM_202206_WC_LYSB_20CM","2022","6","6",NA,NA,"99.5790896767517","2.6835577911037","2.69490090722352","adl","Within Range","Std curve r2 low","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","MSM","WC","B","45","MSM_202206_WC_LYSB_45CM","2022","6","6",NA,NA,"0","0","0","bdl","Within Range","","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","MSM","WC","C","10","MSM_202206_WC_LYSC_10CM","2022","6","6",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","MSM","WC","C","20","MSM_202206_WC_LYSC_20CM","2022","6","6",NA,NA,"145.442196222858","10.8706832554879","7.47422930745008","adl","Within Range","Std curve r2 low","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","MSM","WC","C","45","MSM_202206_WC_LYSC_45CM","2022","6","6",NA,NA,"0","0","0","bdl","Within Range","","1","202206","","Plate2 std curve used."
+"COMPASS: Synoptic","CB","GCW","TR","A","20","GCW_202207_TR_LYSA_20CM","2022","7","11",NA,NA,"0","0","0","bdl","Within Range","","1","202207","","Plate2 std curve used. 
+Some high CV, adl, and bdl samples. 
+5/6 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GCW","TR","A","45","GCW_202207_TR_LYSA_45CM","2022","7","11",NA,NA,"0","0","0","bdl","Within Range","","1","202207","","Plate2 std curve used. 
+Some high CV, adl, and bdl samples. 
+5/6 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GCW","TR","B","10","GCW_202207_TR_LYSB_10CM","2022","7","11",NA,NA,"0","0","0","bdl","Within Range","","1","202207","","Plate2 std curve used. 
+Some high CV, adl, and bdl samples. 
+5/6 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GCW","TR","B","20","GCW_202207_TR_LYSB_20CM","2022","7","11",NA,NA,"0","0","0","bdl","Within Range","","1","202207","","Plate2 std curve used. 
+Some high CV, adl, and bdl samples. 
+5/6 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GCW","TR","B","45","GCW_202207_TR_LYSB_45CM","2022","7","11",NA,NA,"0","0","0","bdl","Within Range","","1","202207","","Plate2 std curve used. 
+Some high CV, adl, and bdl samples. 
+5/6 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GCW","TR","C","10","GCW_202207_TR_LYSC_10CM","2022","7","11",NA,NA,"0","0","0","bdl","Within Range","","1","202207","","Plate2 std curve used. 
+Some high CV, adl, and bdl samples. 
+5/6 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GCW","TR","C","20","GCW_202207_TR_LYSC_20CM","2022","7","11",NA,NA,"0","0","0","bdl","Within Range","","1","202207","","Plate2 std curve used. 
+Some high CV, adl, and bdl samples. 
+5/6 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GCW","TR","C","45","GCW_202207_TR_LYSC_45CM","2022","7","11",NA,NA,"0","0","0","bdl","Within Range","","1","202207","","Plate2 std curve used. 
+Some high CV, adl, and bdl samples. 
+5/6 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GCW","UP","A","20","GCW_202207_UP_LYSA_20CM","2022","7","11",NA,NA,"0","0","0","bdl","Within Range","","1","202207","","Plate2 std curve used. 
+Some high CV, adl, and bdl samples. 
+5/6 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GCW","UP","B","10","GCW_202207_UP_LYSB_10CM","2022","7","11",NA,NA,"0","0","0","bdl","Within Range","","1","202207","","Plate2 std curve used. 
+Some high CV, adl, and bdl samples. 
+5/6 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GCW","UP","B","20","GCW_202207_UP_LYSB_20CM","2022","7","11",NA,NA,"0","0","0","bdl","Within Range","","1","202207","","Plate2 std curve used. 
+Some high CV, adl, and bdl samples. 
+5/6 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GCW","UP","B","45","GCW_202207_UP_LYSB_45CM","2022","7","11",NA,NA,"0","0","0","bdl","Within Range","","1","202207","","Plate2 std curve used. 
+Some high CV, adl, and bdl samples. 
+5/6 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GCW","UP","C","10","GCW_202207_UP_LYSC_10CM","2022","7","11",NA,NA,"0","0","0","bdl","Within Range","","1","202207","","Plate2 std curve used. 
+Some high CV, adl, and bdl samples. 
+5/6 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GCW","UP","C","20","GCW_202207_UP_LYSC_20CM","2022","7","11",NA,NA,"0","0","0","bdl","Within Range","","1","202207","","Plate2 std curve used. 
+Some high CV, adl, and bdl samples. 
+5/6 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GCW","UP","C","45","GCW_202207_UP_LYSC_45CM","2022","7","11",NA,NA,"0","0","0","bdl","Within Range","","1","202207","","Plate2 std curve used. 
+Some high CV, adl, and bdl samples. 
+5/6 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GCW","WC","A","10","GCW_202207_WC_LYSA_10CM","2022","7","11",NA,NA,"9172.97638258301","508.252223483156","5.54075582760889","adl","Within Range","","50","202207","","Plate2 std curve used. 
+Some high CV, adl, and bdl samples. 
+5/6 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GCW","WC","A","20","GCW_202207_WC_LYSA_20CM","2022","7","11",NA,NA,"8874.84410043214","380.571530746411","4.28820525115342","adl","Within Range","","50","202207","","Plate2 std curve used. 
+Some high CV, adl, and bdl samples. 
+5/6 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GCW","WC","A","45","GCW_202207_WC_LYSA_45CM","2022","7","11",NA,NA,"9084.07875663257","258.256696095014","2.84295967718744","adl","Within Range","","50","202207","","Plate2 std curve used. 
+Some high CV, adl, and bdl samples. 
+5/6 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GWI","TR","A","10","GWI_202207_TR_LYSA_10CM","2022","7","13",NA,NA,"0","0","0","bdl","Within Range","","1","202207","","Plate2 std curve used. 
+Some high CV, adl, and bdl samples. 
+5/6 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GWI","TR","A","20","GWI_202207_TR_LYSA_20CM","2022","7","13",NA,NA,"0","0","0","bdl","Within Range","","1","202207","","Plate2 std curve used. 
+Some high CV, adl, and bdl samples. 
+5/6 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GWI","TR","A","45","GWI_202207_TR_LYSA_45CM","2022","7","13",NA,NA,"0","0","0","bdl","Within Range","","1","202207","","Plate2 std curve used. 
+Some high CV, adl, and bdl samples. 
+5/6 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GWI","TR","B","10","GWI_202207_TR_LYSB_10CM","2022","7","13",NA,NA,"0","0","0","bdl","Within Range","","1","202207","","Plate2 std curve used. 
+Some high CV, adl, and bdl samples. 
+5/6 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GWI","TR","B","20","GWI_202207_TR_LYSB_20CM","2022","7","13",NA,NA,"171.187318800941","4.88517298152349","2.85370027157446","adl","Within Range","","1","202207","","Plate2 std curve used. 
+Some high CV, adl, and bdl samples. 
+5/6 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GWI","TR","B","45","GWI_202207_TR_LYSB_45CM","2022","7","13",NA,NA,"0","0","0","bdl","Within Range","","1","202207","","Plate2 std curve used. 
+Some high CV, adl, and bdl samples. 
+5/6 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GWI","TR","C","10","GWI_202207_TR_LYSC_10CM","2022","7","13",NA,NA,"0","0","0","bdl","Within Range","","1","202207","","Plate2 std curve used. 
+Some high CV, adl, and bdl samples. 
+5/6 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GWI","TR","C","20","GWI_202207_TR_LYSC_20CM","2022","7","13",NA,NA,"35.911150921722","2.1810976224292","6.07359431944546","Within Range","Within Range","","1","202207","","Plate2 std curve used. 
+Some high CV, adl, and bdl samples. 
+5/6 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GWI","TR","C","45","GWI_202207_TR_LYSC_45CM","2022","7","13",NA,NA,"0","0","0","bdl","Within Range","","1","202207","","Plate2 std curve used. 
+Some high CV, adl, and bdl samples. 
+5/6 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GWI","UP","A","10","GWI_202207_UP_LYSA_10CM","2022","7","13",NA,NA,"0","0","0","bdl","Within Range","","1","202207","","Plate2 std curve used. 
+Some high CV, adl, and bdl samples. 
+5/6 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GWI","UP","A","20","GWI_202207_UP_LYSA_20CM","2022","7","13",NA,NA,"0","0","0","bdl","Within Range","","1","202207","","Plate2 std curve used. 
+Some high CV, adl, and bdl samples. 
+5/6 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GWI","UP","A","45","GWI_202207_UP_LYSA_45CM","2022","7","13",NA,NA,"0","0","0","bdl","Within Range","","1","202207","","Plate2 std curve used. 
+Some high CV, adl, and bdl samples. 
+5/6 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GWI","UP","B","10","GWI_202207_UP_LYSB_10CM","2022","7","13",NA,NA,"0","0","0","bdl","Within Range","","1","202207","","Plate2 std curve used. 
+Some high CV, adl, and bdl samples. 
+5/6 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GWI","UP","B","20","GWI_202207_UP_LYSB_20CM","2022","7","13",NA,NA,"0","0","0","bdl","Within Range","","1","202207","","Plate2 std curve used. 
+Some high CV, adl, and bdl samples. 
+5/6 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GWI","UP","B","45","GWI_202207_UP_LYSB_45CM","2022","7","13",NA,NA,"0","0","0","bdl","Within Range","","1","202207","","Plate2 std curve used. 
+Some high CV, adl, and bdl samples. 
+5/6 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GWI","UP","C","10","GWI_202207_UP_LYSC_10CM","2022","7","13",NA,NA,"0","0","0","bdl","Within Range","","1","202207","","Plate2 std curve used. 
+Some high CV, adl, and bdl samples. 
+5/6 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GWI","UP","C","20","GWI_202207_UP_LYSC_20CM","2022","7","13",NA,NA,"0","0","0","bdl","Within Range","","1","202207","","Plate2 std curve used. 
+Some high CV, adl, and bdl samples. 
+5/6 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","MSM","UP","A","20","MSM_202207_UP_LYSA_20CM","2022","7","14",NA,NA,"0","0","0","bdl","Within Range","Spk recovery out of range","1","202207","","Plate2 std curve used. 
+Some high CV, adl, and bdl samples. 
+5/6 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","MSM","UP","A","45","MSM_202207_UP_LYSA_45CM","2022","7","14",NA,NA,"0","0","0","bdl","Within Range","Spk recovery out of range","1","202207","","Plate2 std curve used. 
+Some high CV, adl, and bdl samples. 
+5/6 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","MSM","UP","B","10","MSM_202207_UP_LYSB_10CM","2022","7","14",NA,NA,"0","0","0","bdl","Within Range","Spk recovery out of range","1","202207","","Plate2 std curve used. 
+Some high CV, adl, and bdl samples. 
+5/6 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","MSM","UP","B","20","MSM_202207_UP_LYSB_20CM","2022","7","14",NA,NA,"0","0","0","bdl","Within Range","Spk recovery out of range","1","202207","","Plate2 std curve used. 
+Some high CV, adl, and bdl samples. 
+5/6 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","MSM","UP","C","10","MSM_202207_UP_LYSC_10CM","2022","7","14",NA,NA,"0","0","0","bdl","Within Range","Spk recovery out of range","1","202207","","Plate2 std curve used. 
+Some high CV, adl, and bdl samples. 
+5/6 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","MSM","UP","C","20","MSM_202207_UP_LYSC_20CM","2022","7","14",NA,NA,"0","0","0","bdl","Within Range","Spk recovery out of range","1","202207","","Plate2 std curve used. 
+Some high CV, adl, and bdl samples. 
+5/6 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GCW","SW","A",NA,"GCW_202208_SW_A",NA,NA,NA,NA,NA,"0","0","0","bdl","Within Range","Spk recovery out of range","1","202208",NA,"Plate2 std curve used. 
+Some adl samples. 
+2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
+3/7 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GCW","SW","B",NA,"GCW_202208_SW_B",NA,NA,NA,NA,NA,"0","0","0","bdl","Within Range","Spk recovery out of range","1","202208",NA,"Plate2 std curve used. 
+Some adl samples. 
+2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
+3/7 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GCW","SW","C",NA,"GCW_202208_SW_C",NA,NA,NA,NA,NA,"0","0","0","bdl","Within Range","Spk recovery out of range","1","202208",NA,"Plate2 std curve used. 
+Some adl samples. 
+2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
+3/7 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GCW","TR","A","10","GCW_202208_TR_LYSA_10CM","2022","8","15",NA,NA,"0","0","0","bdl","Within Range","","1","202208","","Plate2 std curve used. 
+Some adl samples. 
+2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
+3/7 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GCW","TR","A","20","GCW_202208_TR_LYSA_20CM","2022","8","15",NA,NA,"0","0","0","bdl","Within Range","","1","202208","","Plate2 std curve used. 
+Some adl samples. 
+2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
+3/7 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GCW","TR","A","45","GCW_202208_TR_LYSA_45CM","2022","8","15",NA,NA,"0","0","0","bdl","Within Range","","1","202208","","Plate2 std curve used. 
+Some adl samples. 
+2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
+3/7 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GCW","TR","B","20","GCW_202208_TR_LYSB_20CM","2022","8","15",NA,NA,"0","0","0","bdl","Within Range","","1","202208","","Plate2 std curve used. 
+Some adl samples. 
+2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
+3/7 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GCW","TR","B","45","GCW_202208_TR_LYSB_45CM","2022","8","15",NA,NA,"0","0","0","bdl","Within Range","","1","202208","","Plate2 std curve used. 
+Some adl samples. 
+2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
+3/7 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GCW","TR","C","10","GCW_202208_TR_LYSC_10CM","2022","8","15",NA,NA,"0","0","0","bdl","Within Range","","1","202208","","Plate2 std curve used. 
+Some adl samples. 
+2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
+3/7 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GCW","TR","C","45","GCW_202208_TR_LYSC_45CM","2022","8","15",NA,NA,"0","0","0","bdl","Within Range","","1","202208","","Plate2 std curve used. 
+Some adl samples. 
+2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
+3/7 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GCW","TR","C","20","GCW_202208_TR_LYSC_20CM","2022","8","15",NA,NA,"0","0","0","bdl","Within Range","","1","202208","","Plate2 std curve used. 
+Some adl samples. 
+2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
+3/7 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GCW","UP","A","20","GCW_202208_UP_LYSA_20CM","2022","8","15",NA,NA,"0","0","0","bdl","Within Range","","1","202208","","Plate2 std curve used. 
+Some adl samples. 
+2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
+3/7 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GCW","UP","B","10","GCW_202208_UP_LYSB_10CM","2022","8","15",NA,NA,"0","0","0","bdl","Within Range","","1","202208","","Plate2 std curve used. 
+Some adl samples. 
+2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
+3/7 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GCW","UP","B","20","GCW_202208_UP_LYSB_20CM","2022","8","15",NA,NA,"0","0","0","bdl","Within Range","","1","202208","","Plate2 std curve used. 
+Some adl samples. 
+2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
+3/7 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GCW","UP","B","45","GCW_202208_UP_LYSB_45CM","2022","8","15",NA,NA,"0","0","0","bdl","Within Range","","1","202208","","Plate2 std curve used. 
+Some adl samples. 
+2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
+3/7 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GCW","UP","C","20","GCW_202208_UP_LYSC_20CM","2022","8","15",NA,NA,"0","0","0","bdl","Within Range","","1","202208","","Plate2 std curve used. 
+Some adl samples. 
+2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
+3/7 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GCW","UP","C","45","GCW_202208_UP_LYSC_45CM","2022","8","15",NA,NA,"0","0","0","bdl","Within Range","","1","202208","","Plate2 std curve used. 
+Some adl samples. 
+2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
+3/7 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GCW","WC","A","10","GCW_202208_WC_LYSA_10CM","2022","8","15",NA,NA,"80.6506374992723","2.54278869067906","3.15284388260663","Within Range","Within Range","Spk recovery out of range","1","202208","","Plate2 std curve used. 
+Some adl samples. 
+2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
+3/7 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GCW","WC","A","20","GCW_202208_WC_LYSA_20CM","2022","8","15",NA,NA,"136.967123859096","3.33888201121057","2.43772513953453","adl","Within Range","Spk recovery out of range","1","202208","","Plate2 std curve used. 
+Some adl samples. 
+2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
+3/7 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GCW","WC","A","45","GCW_202208_WC_LYSA_45CM","2022","8","15",NA,NA,"159.537544462449","2.70345525836691","1.69455739554976","adl","Within Range","Spk recovery out of range","1","202208","","Plate2 std curve used. 
+Some adl samples. 
+2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
+3/7 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GWI","SW","A",NA,"GWI_202208_SW_A",NA,NA,NA,NA,NA,"0","0","0","bdl","Within Range","MC 10 out of range; Spk recovery out of range","1","202208",NA,"Plate2 std curve used. 
+Some adl samples. 
+2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
+3/7 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GWI","SW","B",NA,"GWI_202208_SW_B",NA,NA,NA,NA,NA,"0","0","0","bdl","Within Range","MC 10 out of range; Spk recovery out of range","1","202208",NA,"Plate2 std curve used. 
+Some adl samples. 
+2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
+3/7 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GWI","SW","C",NA,"GWI_202208_SW_C",NA,NA,NA,NA,NA,"0","0","0","bdl","Within Range","MC 10 out of range; Spk recovery out of range","1","202208",NA,"Plate2 std curve used. 
+Some adl samples. 
+2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
+3/7 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GWI","TR","A","10","GWI_202208_TR_LYSA_10CM","2022","8","18",NA,NA,"23.0791321650349","0.391890941502547","1.69803153212262","Within Range","Within Range","Spk recovery out of range","1","202208","","Plate2 std curve used. 
+Some adl samples. 
+2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
+3/7 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GWI","TR","A","20","GWI_202208_TR_LYSA_20CM","2022","8","18",NA,NA,"10.3695749320787","0.501200617561653","4.83337668944529","Within Range","Within Range","Spk recovery out of range","1","202208","","Plate2 std curve used. 
+Some adl samples. 
+2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
+3/7 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GWI","TR","A","45","GWI_202208_TR_LYSA_45CM","2022","8","18",NA,NA,"0","0","0","bdl","Within Range","Spk recovery out of range","1","202208","","Plate2 std curve used. 
+Some adl samples. 
+2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
+3/7 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GWI","TR","B","10","GWI_202208_TR_LYSB_10CM","2022","8","18",NA,NA,"0","0","0","bdl","Within Range","Spk recovery out of range","1","202208","","Plate2 std curve used. 
+Some adl samples. 
+2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
+3/7 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GWI","TR","B","20","GWI_202208_TR_LYSB_20CM","2022","8","18",NA,NA,"165.294694995873","1.53339456562783","0.927673187373692","adl","Within Range","Spk recovery out of range","1","202208","","Plate2 std curve used. 
+Some adl samples. 
+2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
+3/7 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GWI","TR","B","45","GWI_202208_TR_LYSB_45CM","2022","8","18",NA,NA,"2.78965874533911","0.126776061046578","4.54450069415812","Within Range","Within Range","Spk recovery out of range","1","202208","","Plate2 std curve used. 
+Some adl samples. 
+2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
+3/7 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GWI","TR","C","10","GWI_202208_TR_LYSC_10CM","2022","8","18",NA,NA,"0","0","0","bdl","Within Range","Spk recovery out of range","1","202208","","Plate2 std curve used. 
+Some adl samples. 
+2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
+3/7 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GWI","TR","C","20","GWI_202208_TR_LYSC_20CM","2022","8","18",NA,NA,"4.31361035712775","0.103512220388014","2.39966551955654","Within Range","Within Range","Spk recovery out of range","1","202208","","Plate2 std curve used. 
+Some adl samples. 
+2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
+3/7 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GWI","TR","C","45","GWI_202208_TR_LYSC_45CM","2022","8","18",NA,NA,"0","0","0","bdl","Within Range","MC 10 out of range; Spk recovery out of range","1","202208","","Plate2 std curve used. 
+Some adl samples. 
+2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
+3/7 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GWI","UP","A","10","GWI_202208_UP_LYSA_10CM","2022","8","18",NA,NA,"0","0","0","bdl","Within Range","Spk recovery out of range","1","202208","","Plate2 std curve used. 
+Some adl samples. 
+2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
+3/7 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GWI","UP","A","20","GWI_202208_UP_LYSA_20CM","2022","8","18",NA,NA,"0","0","0","bdl","Within Range","Spk recovery out of range","1","202208","","Plate2 std curve used. 
+Some adl samples. 
+2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
+3/7 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GWI","UP","A","45","GWI_202208_UP_LYSA_45CM","2022","8","18",NA,NA,"0","0","0","bdl","Within Range","Spk recovery out of range","1","202208","","Plate2 std curve used. 
+Some adl samples. 
+2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
+3/7 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GWI","UP","B","10","GWI_202208_UP_LYSB_10CM","2022","8","18",NA,NA,"0.877248879565132","0.0422586870155262","4.81718335581968","Within Range","Within Range","Spk recovery out of range","1","202208","","Plate2 std curve used. 
+Some adl samples. 
+2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
+3/7 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GWI","UP","B","20","GWI_202208_UP_LYSB_20CM","2022","8","18",NA,NA,"0","0","0","bdl","Within Range","Spk recovery out of range","1","202208","","Plate2 std curve used. 
+Some adl samples. 
+2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
+3/7 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GWI","UP","B","45","GWI_202208_UP_LYSB_45CM","2022","8","18",NA,NA,"0","0","0","bdl","Within Range","Spk recovery out of range","1","202208","","Plate2 std curve used. 
+Some adl samples. 
+2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
+3/7 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GWI","UP","C","10","GWI_202208_UP_LYSC_10CM","2022","8","18",NA,NA,"0","0","0","bdl","Within Range","Spk recovery out of range","1","202208","","Plate2 std curve used. 
+Some adl samples. 
+2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
+3/7 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GWI","UP","C","20","GWI_202208_UP_LYSC_20CM","2022","8","18",NA,NA,"0","0","0","bdl","Within Range","Spk recovery out of range","1","202208","","Plate2 std curve used. 
+Some adl samples. 
+2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
+3/7 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","MSM","UP","A","20","MSM_202208_UP_LYSA_20CM","2022","8","31",NA,NA,"0","0","0","bdl","Within Range","MC 10 out of range; Spk recovery out of range","1","202208","","Plate2 std curve used. 
+Some adl samples. 
+2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
+3/7 spikes were bad. 
+No dups. 
+Some samples high CV, adl, bdl"
+"COMPASS: Synoptic","CB","GCW","TR","A","20","GCW_202209_TR_LYSA_20CM","2022","9","19",NA,NA,"0","0","0","bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","GCW","TR","A","45","GCW_202209_TR_LYSA_45CM","2022","9","19",NA,NA,"0","0","0","bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","GCW","TR","B","10","GCW_202209_TR_LYSB_10CM","2022","9","19",NA,NA,"0","0","0","bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","GCW","TR","B","20","GCW_202209_TR_LYSB_20CM","2022","9","19",NA,NA,"0","0","0","bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","GCW","UP","A","20","GCW_202209_UP_LYSA_20CM","2022","9","19",NA,NA,"0","0","0","bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","GWI","SW","A","0","GWI_202209_SW_A","2022","9","22",NA,NA,"0","0","0","bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","GWI","SW","B","0","GWI_202209_SW_B","2022","9","22",NA,NA,"0","0","0","bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","GWI","SW","C","0","GWI_202209_SW_C","2022","9","22",NA,NA,"0","0","0","bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","GWI","TR","A","10","GWI_202209_TR_LYSA_10CM","2022","9","22",NA,NA,"2.56919998850559","0.0845506777211636","3.29093406894897","Within Range","Within Range","MC 10 out of range; Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","GWI","TR","A","20","GWI_202209_TR_LYSA_20CM","2022","9","22",NA,NA,"0","0","0","bdl","Within Range","MC 10 out of range; Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","GWI","TR","A","45","GWI_202209_TR_LYSA_45CM","2022","9","22",NA,NA,"0","0","0","bdl","Within Range","MC 10 out of range; Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","GWI","TR","B","10","GWI_202209_TR_LYSB_10CM","2022","9","22",NA,NA,"0","0","0","bdl","Within Range","MC 10 out of range; Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","GWI","TR","B","20","GWI_202209_TR_LYSB_20CM","2022","9","22",NA,NA,"151.944191008492","5.52158652386071","3.63395697276254","adl","Within Range","MC 10 out of range; Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","GWI","TR","B","45","GWI_202209_TR_LYSB_45CM","2022","9","22",NA,NA,"19.5325363870171","1.93221886236994","9.89230903803283","Within Range","Within Range","MC 10 out of range; Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","GWI","TR","C","10","GWI_202209_TR_LYSC_10CM","2022","9","22",NA,NA,"0","0","0","bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","GWI","TR","C","20","GWI_202209_TR_LYSC_20CM","2022","9","22",NA,NA,"19.1908288912197","0.631305435980298","3.28962047214717","Within Range","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","GWI","TR","C","45","GWI_202209_TR_LYSC_45CM","2022","9","22",NA,NA,"0","0","0","bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","GWI","UP","A","45","GWI_202209_UP_LYSA_45CM","2022","9","22",NA,NA,"0","0","0","bdl","Within Range","MC 10 out of range; Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","GWI","UP","B","10","GWI_202209_UP_LYSB_10CM","2022","9","22",NA,NA,"0","0","0","bdl","Within Range","MC 10 out of range; Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","GWI","UP","B","20","GWI_202209_UP_LYSB_20CM","2022","9","22",NA,NA,"0","0","0","bdl","Within Range","MC 10 out of range; Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","GWI","UP","B","45","GWI_202209_UP_LYSB_45CM","2022","9","22",NA,NA,"0","0","0","bdl","Within Range","MC 10 out of range; Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","GWI","UP","C","10","GWI_202209_UP_LYSC_10CM","2022","9","22",NA,NA,"0","0","0","bdl","Within Range","MC 10 out of range; Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","GWI","UP","C","20","GWI_202209_UP_LYSC_20CM","2022","9","22",NA,NA,"0","0","0","bdl","Within Range","MC 10 out of range; Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","GWI","WC","A","10","GWI_202209_WC_LYSA_10CM","2022","9","22",NA,NA,"0","0","0","bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","GWI","WC","A","20","GWI_202209_WC_LYSA_20CM","2022","9","22",NA,NA,"0","0","0","bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","GWI","WC","A","45","GWI_202209_WC_LYSA_45CM","2022","9","22",NA,NA,"0","0","0","bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","GWI","WC","B","10","GWI_202209_WC_LYSB_10CM","2022","9","22",NA,NA,"0","0","0","bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","GWI","WC","B","20","GWI_202209_WC_LYSB_20CM","2022","9","22",NA,NA,"0","0","0","bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","GWI","WC","B","45","GWI_202209_WC_LYSB_45CM","2022","9","22",NA,NA,"0","0","0","bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","GWI","WC","C","10","GWI_202209_WC_LYSC_10CM","2022","9","22",NA,NA,"0","0","0","bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","GWI","WC","C","20","GWI_202209_WC_LYSC_20CM","2022","9","22",NA,NA,"0","0","0","bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","GWI","WC","C","45","GWI_202209_WC_LYSC_45CM","2022","9","22",NA,NA,"0","0","0","bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","MSM","SW","A","0","MSM_202209_SW_A","2022","9","18",NA,NA,"0","0","0","bdl","Within Range","MC 10 out of range; Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","MSM","SW","B","0","MSM_202209_SW_B","2022","9","18",NA,NA,"0","0","0","bdl","Within Range","MC 10 out of range; Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","MSM","SW","C","0","MSM_202209_SW_C","2022","9","18",NA,NA,"0","0","0","bdl","Within Range","MC 10 out of range; Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","MSM","TR","A","10","MSM_202209_TR_LYSA_10CM","2022","9","18",NA,NA,"2.42275391887815","0.0845506777211636","3.48985825850256","Within Range","Within Range","Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","MSM","TR","A","20","MSM_202209_TR_LYSA_20CM","2022","9","18",NA,NA,"0","0","0","bdl","Within Range","Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","MSM","TR","A","45","MSM_202209_TR_LYSA_45CM","2022","9","18",NA,NA,"0","0","0","bdl","Within Range","Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","MSM","TR","B","10","MSM_202209_TR_LYSB_10CM","2022","9","18",NA,NA,"3.66754551071137","0.169101355442327","4.61075002200934","Within Range","Within Range","Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","MSM","TR","B","20","MSM_202209_TR_LYSB_20CM","2022","9","18",NA,NA,"22.4614577795658","0.614084767918038","2.73394885561122","Within Range","Within Range","Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","MSM","TR","C","10","MSM_202209_TR_LYSC_10CM","2022","9","18",NA,NA,"0","0","0","bdl","Within Range","Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","MSM","TR","C","20","MSM_202209_TR_LYSC_20CM","2022","9","18",NA,NA,"19.3128672825759","0.346038562124306","1.791751359657","Within Range","Within Range","Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","MSM","TR","C","45","MSM_202209_TR_LYSC_45CM","2022","9","18",NA,NA,"5.30285995488442","0.335550099648253","6.32771942881842","Within Range","Within Range","Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","MSM","UP","A","20","MSM_202209_UP_LYSA_20CM","2022","9","18",NA,NA,"1.60509669679163","0.362435531190873","22.5802926337917","Within Range","High CV","Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","MSM","UP","A","45","MSM_202209_UP_LYSA_45CM","2022","9","18",NA,NA,"0","0","0","bdl","Within Range","Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","MSM","UP","B","10","MSM_202209_UP_LYSB_10CM","2022","9","18",NA,NA,"0","0","0","bdl","Within Range","Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","MSM","UP","B","20","MSM_202209_UP_LYSB_20CM","2022","9","18",NA,NA,"0","0","0","bdl","Within Range","Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","MSM","UP","B","45","MSM_202209_UP_LYSB_45CM","2022","9","18",NA,NA,"0","0","0","bdl","Within Range","Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","MSM","UP","C","10","MSM_202209_UP_LYSC_10CM","2022","9","18",NA,NA,"0","0","0","bdl","Within Range","Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","MSM","UP","C","20","MSM_202209_UP_LYSC_20CM","2022","9","18",NA,NA,"5.52252905932557","0.517765044558391","9.37550602262693","Within Range","Within Range","Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","MSM","UP","C","45","MSM_202209_UP_LYSC_45CM","2022","9","18",NA,NA,"0","0","0","bdl","Within Range","Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","MSM","WC","A","10","MSM_202209_WC_LYSA_10CM","2022","9","18",NA,NA,"158.339002715556","7.55936965055249","4.77416777983142","adl","Within Range","Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","MSM","WC","A","20","MSM_202209_WC_LYSA_20CM","2022","9","18",NA,NA,"178.158037471803","2.13772807746023","1.19990549278394","adl","Within Range","Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","MSM","WC","A","45","MSM_202209_WC_LYSA_45CM","2022","9","18",NA,NA,"0","0","0","bdl","Within Range","Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","MSM","WC","B","10","MSM_202209_WC_LYSB_10CM","2022","9","18",NA,NA,"176.620353740715","3.23371801763408","1.83088638944824","adl","Within Range","Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","MSM","WC","B","20","MSM_202209_WC_LYSB_20CM","2022","9","18",NA,NA,"183.332465265306","2.46070073075387","1.34220675382994","adl","Within Range","Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","MSM","WC","B","45","MSM_202209_WC_LYSB_45CM","2022","9","18",NA,NA,"0","0","0","bdl","Within Range","Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","MSM","WC","C","10","MSM_202209_WC_LYSC_10CM","2022","9","18",NA,NA,"172.495456112875","6.72948505785649","3.90125352255826","adl","Within Range","MC 10 out of range; Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","MSM","WC","C","20","MSM_202209_WC_LYSC_20CM","2022","9","18",NA,NA,"179.47605209845","3.21376002677788","1.79063445468201","adl","Within Range","MC 10 out of range; Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","MSM","WC","C","45","MSM_202209_WC_LYSC_45CM","2022","9","18",NA,NA,"0","0","0","bdl","Within Range","MC 10 out of range; Spk recovery out of range","1","202209","","Plate1 std curve used. 
+Half of MCs were bad. 
+Some samples still high CV and adl. 
+7/11 spks were bad. 
+Sample still had high CV and some samples adl. 
+"
+"COMPASS: Synoptic","CB","GCW","SW","A","0","GCW_202210_SW_A","2022","October","11",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range","1","202210","","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+"
+"COMPASS: Synoptic","CB","GCW","SW","B","0","GCW_202210_SW_B","2022","October","11",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range","1","202210","","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+"
+"COMPASS: Synoptic","CB","GCW","SW","C","0","GCW_202210_SW_C","2022","October","11",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range","1","202210","","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+"
+"COMPASS: Synoptic","CB","GCW","TR","A","10","GCW_202210_TR_LYSA_10CM","2022","October","11",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low; MC 10 out of range","1","202210","","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+"
+"COMPASS: Synoptic","CB","GCW","TR","A","20","GCW_202210_TR_LYSA_20CM","2022","October","11",NA,NA,"0.0620687102752729","0","0","Within Range","Within Range","Std curve r2 low; MC 10 out of range","1","202210","","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+"
+"COMPASS: Synoptic","CB","GCW","TR","A","45","GCW_202210_TR_LYSA_45CM","2022","October","11",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low; MC 10 out of range","1","202210","","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+"
+"COMPASS: Synoptic","CB","GCW","TR","B","10","GCW_202210_TR_LYSB_10CM","2022","October","11",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low; MC 10 out of range","1","202210","","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+"
+"COMPASS: Synoptic","CB","GCW","TR","B","20","GCW_202210_TR_LYSB_20CM","2022","October","11",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low; MC 10 out of range","1","202210","","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+"
+"COMPASS: Synoptic","CB","GCW","TR","B","45","GCW_202210_TR_LYSB_45CM","2022","October","11",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low; MC 10 out of range","1","202210","","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+"
+"COMPASS: Synoptic","CB","GCW","TR","C","10","GCW_202210_TR_LYSC_10CM","2022","October","11",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low; MC 10 out of range","1","202210","","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+"
+"COMPASS: Synoptic","CB","GCW","TR","C","20","GCW_202210_TR_LYSC_20CM","2022","October","11",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low; MC 10 out of range","1","202210","","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+"
+"COMPASS: Synoptic","CB","GCW","TR","C","45","GCW_202210_TR_LYSC_45CM","2022","October","11",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low; MC 10 out of range","1","202210","","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+"
+"COMPASS: Synoptic","CB","GCW","UP","A","20","GCW_202210_UP_LYSA_20CM","2022","October","11",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low; MC 10 out of range","1","202210","","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+"
+"COMPASS: Synoptic","CB","GCW","UP","B","10","GCW_202210_UP_LYSB_10CM","2022","October","11",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low; MC 10 out of range","1","202210","","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+"
+"COMPASS: Synoptic","CB","GCW","UP","B","20","GCW_202210_UP_LYSB_20CM","2022","October","11",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low; MC 10 out of range","1","202210","","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+"
+"COMPASS: Synoptic","CB","GCW","UP","B","45","GCW_202210_UP_LYSB_45CM","2022","October","11",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low; MC 10 out of range","1","202210","","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+"
+"COMPASS: Synoptic","CB","GCW","UP","C","20","GCW_202210_UP_LYSC_20CM","2022","October","11",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low; MC 10 out of range","1","202210","","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+"
+"COMPASS: Synoptic","CB","GWI","SW","A","0","GWI_202210_SW_A","2022","October","14",NA,NA,"0","0","0","bdl","Within Range","MC 20 out of range; Dup perc diff out of range","1","202210","","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+"
+"COMPASS: Synoptic","CB","GWI","SW","B","0","GWI_202210_SW_B","2022","October","14",NA,NA,"0","0","0","bdl","Within Range","MC 20 out of range; Dup perc diff out of range","1","202210","","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+"
+"COMPASS: Synoptic","CB","GWI","SW","C","0","GWI_202210_SW_C","2022","October","14",NA,NA,"0","0","0","bdl","Within Range","MC 20 out of range; Dup perc diff out of range","1","202210","","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+"
+"COMPASS: Synoptic","CB","GWI","TR","A","10","GWI_202210_TR_LYSA_10CM","2022","October","14",NA,NA,"28.1678086257247","2.53491827608159","8.99934499614053","Within Range","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range","1","202210","","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+"
+"COMPASS: Synoptic","CB","GWI","TR","A","20","GWI_202210_TR_LYSA_20CM","2022","October","14",NA,NA,"2.17716903554506","0.0506983655216321","2.32863708301545","Within Range","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range","1","202210","","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+"
+"COMPASS: Synoptic","CB","GWI","TR","A","45","GWI_202210_TR_LYSA_45CM","2022","October","14",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range","1","202210","","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+"
+"COMPASS: Synoptic","CB","GWI","TR","B","10","GWI_202210_TR_LYSB_10CM","2022","October","14",NA,NA,"0","0","0","bdl","Within Range","MC 20 out of range; Dup perc diff out of range","1","202210","","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+"
+"COMPASS: Synoptic","CB","GWI","TR","B","20","GWI_202210_TR_LYSB_20CM","2022","October","14",NA,NA,"171.301547021666","4.51262921025414","2.6343190057025","adl","Within Range","MC 20 out of range; Dup perc diff out of range","1","202210","","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+"
+"COMPASS: Synoptic","CB","GWI","TR","B","45","GWI_202210_TR_LYSB_45CM","2022","October","14",NA,NA,"22.336345582043","0.165580168428146","0.74130375454641","Within Range","Within Range","MC 20 out of range; Dup perc diff out of range","1","202210","","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+"
+"COMPASS: Synoptic","CB","GWI","TR","C","10","GWI_202210_TR_LYSC_10CM","2022","October","14",NA,NA,"2.49981145804384","0.0716983161108402","2.86814895099912","Within Range","Within Range","MC 20 out of range; Dup perc diff out of range","1","202210","","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+"
+"COMPASS: Synoptic","CB","GWI","TR","C","20","GWI_202210_TR_LYSC_20CM","2022","October","14",NA,NA,"27.5225237807271","0.788681477219244","2.86558559637443","Within Range","Within Range","MC 20 out of range; Dup perc diff out of range","1","202210","","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+"
+"COMPASS: Synoptic","CB","GWI","TR","C","45","GWI_202210_TR_LYSC_45CM","2022","October","14",NA,NA,"0","0","0","bdl","Within Range","MC 20 out of range; Dup perc diff out of range","1","202210","","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+"
+"COMPASS: Synoptic","CB","GWI","UP","A","10","GWI_202210_UP_LYSA_10CM","2022","October","14",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range","1","202210","","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+"
+"COMPASS: Synoptic","CB","GWI","UP","A","20","GWI_202210_UP_LYSA_20CM","2022","October","14",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range","1","202210","","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+"
+"COMPASS: Synoptic","CB","GWI","UP","A","45","GWI_202210_UP_LYSA_45CM","2022","October","14",NA,NA,"0.138581829303897","0.195984302500044","141.42135623731","Within Range","High CV","Std curve r2 low; MC 10 out of range; MC 20 out of range","1","202210","","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+"
+"COMPASS: Synoptic","CB","GWI","UP","B","10","GWI_202210_UP_LYSB_10CM","2022","October","14",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range","1","202210","","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+"
+"COMPASS: Synoptic","CB","GWI","UP","B","20","GWI_202210_UP_LYSB_20CM","2022","October","14",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range","1","202210","","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+"
+"COMPASS: Synoptic","CB","GWI","UP","C","10","GWI_202210_UP_LYSC_10CM","2022","October","14",NA,NA,"6.04887810553044","0.0506983655216318","0.838144935922559","Within Range","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range","1","202210","","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+"
+"COMPASS: Synoptic","CB","GWI","UP","C","20","GWI_202210_UP_LYSC_20CM","2022","October","14",NA,NA,"0.635655239161996","0","0","Within Range","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range","1","202210","","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+"
+"COMPASS: Synoptic","CB","MSM","UP","A","20","MSM_202210_UP_LYSA_20CM","2022","October","27",NA,NA,"4.43566599303653","0.215094948332521","4.84921427064603","Within Range","Within Range","MC 20 out of range; Dup perc diff out of range","1","202210","","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+"
+"COMPASS: Synoptic","CB","MSM","UP","A","45","MSM_202210_UP_LYSA_45CM","2022","October","27",NA,NA,"0","0","0","bdl","Within Range","MC 20 out of range; Dup perc diff out of range","1","202210","","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+"
+"COMPASS: Synoptic","CB","GWI","SW","A","0","GWI_202211_SW_A","2022","November","17",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low; Spk recovery out of range","1","202211","","
+"
+"COMPASS: Synoptic","CB","GWI","SW","B","0","GWI_202211_SW_B","2022","November","17",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low; Spk recovery out of range","1","202211","","
+"
+"COMPASS: Synoptic","CB","GWI","SW","C","0","GWI_202211_SW_C","2022","November","17",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low; Spk recovery out of range","1","202211","","
+"
+"COMPASS: Synoptic","CB","GWI","TR","C","10","GWI_202211_TR_LYSC_10CM","2022","November","17",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low; Spk recovery out of range","1","202211","","
+"
+"COMPASS: Synoptic","CB","GWI","TR","C","20","GWI_202211_TR_LYSC_20CM","2022","November","17",NA,NA,"32.1011676823811","1.67080094219777","5.20479802706615","Within Range","Within Range","Std curve r2 low; Spk recovery out of range","1","202211","","
+"
+"COMPASS: Synoptic","CB","GWI","TR","C","45","GWI_202211_TR_LYSC_45CM","2022","November","17",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low; Spk recovery out of range","1","202211","","
+"
+"COMPASS: Synoptic","CB","MSM","SW","A","0","MSM_202211_SW_A","2022","November","13",NA,NA,"0","0","0","bdl","Within Range","MC 10 out of range; Spk recovery out of range","1","202211","","
+"
+"COMPASS: Synoptic","CB","MSM","SW","B","0","MSM_202211_SW_B","2022","November","13",NA,NA,"0","0","0","bdl","Within Range","MC 10 out of range; Spk recovery out of range","1","202211","","
+"
+"COMPASS: Synoptic","CB","MSM","SW","C","0","MSM_202211_SW_C","2022","November","13",NA,NA,"0","0","0","bdl","Within Range","MC 10 out of range; Spk recovery out of range","1","202211","","
+"
+"COMPASS: Synoptic","CB","MSM","TR","A","10","MSM_202211_TR_LYSA_10CM","2022","November","13",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low; Spk recovery out of range","1","202211","","
+"
+"COMPASS: Synoptic","CB","MSM","TR","A","20","MSM_202211_TR_LYSA_20CM","2022","November","13",NA,NA,"5.95423545115621","0.508334418756281","8.53735837163731","Within Range","Within Range","Std curve r2 low; Spk recovery out of range","1","202211","","
+"
+"COMPASS: Synoptic","CB","MSM","TR","A","45","MSM_202211_TR_LYSA_45CM","2022","November","13",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low; Spk recovery out of range","1","202211","","
+"
+"COMPASS: Synoptic","CB","MSM","TR","B","10","MSM_202211_TR_LYSB_10CM","2022","November","13",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low; Spk recovery out of range","1","202211","","
+"
+"COMPASS: Synoptic","CB","MSM","TR","B","20","MSM_202211_TR_LYSB_20CM","2022","November","13",NA,NA,"12.8816099267596","0.531808232410952","4.12842987355331","Within Range","Within Range","Std curve r2 low; Spk recovery out of range","1","202211","","
+"
+"COMPASS: Synoptic","CB","MSM","TR","B","45","MSM_202211_TR_LYSB_45CM","2022","November","13",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low; Spk recovery out of range","1","202211","","
+"
+"COMPASS: Synoptic","CB","MSM","UP","A","10","MSM_202211_UP_LYSA_10CM","2022","November","13",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low; Spk recovery out of range","1","202211","","
+"
+"COMPASS: Synoptic","CB","MSM","UP","A","20","MSM_202211_UP_LYSA_20CM","2022","November","13",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low; Spk recovery out of range","1","202211","","
+"
+"COMPASS: Synoptic","CB","MSM","UP","B","10","MSM_202211_UP_LYSB_10CM","2022","November","13",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low; Spk recovery out of range","1","202211","","
+"
+"COMPASS: Synoptic","CB","MSM","UP","B","20","MSM_202211_UP_LYSB_20CM","2022","November","13",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low; Spk recovery out of range","1","202211","","
+"
+"COMPASS: Synoptic","CB","MSM","UP","B",NA,"MSM_202211_UP_LYSB_45CM","2022","November","13",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low; Spk recovery out of range","1","202211","","
+"
+"COMPASS: Synoptic","CB","MSM","UP","C","10","MSM_202211_UP_LYSC_10CM","2022","November","13",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low; Spk recovery out of range","1","202211","","
+"
+"COMPASS: Synoptic","CB","MSM","UP","C","20","MSM_202211_UP_LYSC_20CM","2022","November","13",NA,NA,"22.582538468723","0.497205351966089","2.20172480899223","Within Range","Within Range","Std curve r2 low; Spk recovery out of range","1","202211","","
+"
+"COMPASS: Synoptic","CB","MSM","UP","C","45","MSM_202211_UP_LYSC_45CM","2022","November","13",NA,NA,"0","0","0","bdl","Within Range","Std curve r2 low; Spk recovery out of range","1","202211","","
+"
