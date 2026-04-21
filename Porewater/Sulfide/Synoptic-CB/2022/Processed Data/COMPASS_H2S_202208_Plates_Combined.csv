@@ -1,22 +1,22 @@
 "","Project","Region","Site","Zone","Replicate","Depth_cm","Sample_ID","Year","Month","Day","Time","Time_Zone","H2S_mean","H2S_sd","H2S_cv","H2S_Conc_flag","H2S_cv_flag","H2S_QAQC_flag","Dilution","Analysis_rundate","Run_notes","Field_notes"
-"1","COMPASS: Synoptic","CB","GCW","SW","A",NA,"GCW_202208_SW_A",NA,NA,NA,NA,NA,0,0,0,"bdl","Within Range","Spk recovery out of range",1,"202208","Plate2 std curve used. 
+"1","COMPASS: Synoptic","CB","GCW","SW","A",0,"GCW_202208_SW_A",2022,8,15,NA,NA,0,0,0,"bdl","Within Range","Spk recovery out of range",1,"202208","Plate2 std curve used. 
 Some adl samples. 
 2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
 3/7 spikes were bad. 
 No dups. 
-Some samples high CV, adl, bdl",NA
-"2","COMPASS: Synoptic","CB","GCW","SW","B",NA,"GCW_202208_SW_B",NA,NA,NA,NA,NA,0,0,0,"bdl","Within Range","Spk recovery out of range",1,"202208","Plate2 std curve used. 
+Some samples high CV, adl, bdl",""
+"2","COMPASS: Synoptic","CB","GCW","SW","B",0,"GCW_202208_SW_B",2022,8,15,NA,NA,0,0,0,"bdl","Within Range","Spk recovery out of range",1,"202208","Plate2 std curve used. 
 Some adl samples. 
 2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
 3/7 spikes were bad. 
 No dups. 
-Some samples high CV, adl, bdl",NA
-"3","COMPASS: Synoptic","CB","GCW","SW","C",NA,"GCW_202208_SW_C",NA,NA,NA,NA,NA,0,0,0,"bdl","Within Range","Spk recovery out of range",1,"202208","Plate2 std curve used. 
+Some samples high CV, adl, bdl",""
+"3","COMPASS: Synoptic","CB","GCW","SW","C",0,"GCW_202208_SW_C",2022,8,15,NA,NA,0,0,0,"bdl","Within Range","Spk recovery out of range",1,"202208","Plate2 std curve used. 
 Some adl samples. 
 2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
 3/7 spikes were bad. 
 No dups. 
-Some samples high CV, adl, bdl",NA
+Some samples high CV, adl, bdl",""
 "4","COMPASS: Synoptic","CB","GCW","TR","A",10,"GCW_202208_TR_LYSA_10CM",2022,8,15,NA,NA,0,0,0,"bdl","Within Range","",1,"202208","Plate2 std curve used. 
 Some adl samples. 
 2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
@@ -215,24 +215,24 @@ Some adl samples.
 3/7 spikes were bad. 
 No dups. 
 Some samples high CV, adl, bdl",NA
-"37","COMPASS: Synoptic","CB","GWI","SW","A",NA,"GWI_202208_SW_A",NA,NA,NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202208","Plate2 std curve used. 
+"37","COMPASS: Synoptic","CB","GWI","SW","A",0,"GWI_202208_SW_A",2022,8,18,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202208","Plate2 std curve used. 
 Some adl samples. 
 2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
 3/7 spikes were bad. 
 No dups. 
-Some samples high CV, adl, bdl",NA
-"38","COMPASS: Synoptic","CB","GWI","SW","B",NA,"GWI_202208_SW_B",NA,NA,NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202208","Plate2 std curve used. 
+Some samples high CV, adl, bdl",""
+"38","COMPASS: Synoptic","CB","GWI","SW","B",0,"GWI_202208_SW_B",2022,8,18,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202208","Plate2 std curve used. 
 Some adl samples. 
 2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
 3/7 spikes were bad. 
 No dups. 
-Some samples high CV, adl, bdl",NA
-"39","COMPASS: Synoptic","CB","GWI","SW","C",NA,"GWI_202208_SW_C",NA,NA,NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202208","Plate2 std curve used. 
+Some samples high CV, adl, bdl",""
+"39","COMPASS: Synoptic","CB","GWI","SW","C",0,"GWI_202208_SW_C",2022,8,18,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202208","Plate2 std curve used. 
 Some adl samples. 
 2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 
 3/7 spikes were bad. 
 No dups. 
-Some samples high CV, adl, bdl",NA
+Some samples high CV, adl, bdl",""
 "40","COMPASS: Synoptic","CB","GWI","TR","A",10,"GWI_202208_TR_LYSA_10CM",2022,8,18,NA,NA,23.0791321650349,0.391890941502547,1.69803153212262,"Within Range","Within Range","Spk recovery out of range",1,"202208","Plate2 std curve used. 
 Some adl samples. 
 2/5 plates had bad MC 10 and 1/5 plates had bad MC 20. 

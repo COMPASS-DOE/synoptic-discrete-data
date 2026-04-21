@@ -25,8 +25,8 @@ library(ggh4x)
 ```{r Pull in 2022-2024 data files, message=FALSE, include=FALSE}
 
 #read in 2022 Sulfide Data:
-# dat22 <- read.csv("2022/COMPASS_SynopticCB_H2S_Cl_2022.csv")
-# head(dat22)
+dat22 <- read.csv("2022/COMPASS_SynopticCB_Sulfide_2022.csv")
+head(dat22)
 
 #read in 2023 Sulfide Data:
 dat23 <- read.csv("2023/COMPASS_SynopticCB_Sulfide_2023.csv")
@@ -41,7 +41,7 @@ dat24$H2S_QAQC_flag <- NA
 dat25 <- read.csv("2025/COMPASS_SynopticCB_Sulfide_2025.csv")
 colnames(dat25)
 
-all_dat <- rbind(dat23, dat24, dat25)
+all_dat <- rbind(dat22, dat23, dat24, dat25)
 
 all_dat <- all_dat %>%
   dplyr::select(
