@@ -1,0 +1,235 @@
+"","Project","Region","Site","Zone","Replicate","Depth_cm","Sample_ID","Year","Month","Day","Time","Time_Zone","H2S_mean","H2S_sd","H2S_cv","H2S_Conc_flag","H2S_cv_flag","H2S_QAQC_flag","Dilution","Analysis_rundate","Run_notes","Field_notes","Type"
+"1","COMPASS: Synoptic","CB","GCW","SW","A",0,"GCW_202210_SW_A",2022,"October",11,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+","","SW"
+"2","COMPASS: Synoptic","CB","GCW","SW","B",0,"GCW_202210_SW_B",2022,"October",11,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+","","SW"
+"3","COMPASS: Synoptic","CB","GCW","SW","C",0,"GCW_202210_SW_C",2022,"October",11,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+","","SW"
+"4","COMPASS: Synoptic","CB","GCW","TR","A",10,"GCW_202210_TR_LYSA_10CM",2022,"October",11,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+","","Lys"
+"5","COMPASS: Synoptic","CB","GCW","TR","A",20,"GCW_202210_TR_LYSA_20CM",2022,"October",11,NA,NA,0.0620687102752729,0,0,"Within Range","Within Range","Std curve r2 low; MC 10 out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+","","Lys"
+"6","COMPASS: Synoptic","CB","GCW","TR","A",45,"GCW_202210_TR_LYSA_45CM",2022,"October",11,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+","","Lys"
+"7","COMPASS: Synoptic","CB","GCW","TR","B",10,"GCW_202210_TR_LYSB_10CM",2022,"October",11,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+","","Lys"
+"8","COMPASS: Synoptic","CB","GCW","TR","B",20,"GCW_202210_TR_LYSB_20CM",2022,"October",11,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+","","Lys"
+"9","COMPASS: Synoptic","CB","GCW","TR","B",45,"GCW_202210_TR_LYSB_45CM",2022,"October",11,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+","","Lys"
+"10","COMPASS: Synoptic","CB","GCW","TR","C",10,"GCW_202210_TR_LYSC_10CM",2022,"October",11,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+","","Lys"
+"11","COMPASS: Synoptic","CB","GCW","TR","C",20,"GCW_202210_TR_LYSC_20CM",2022,"October",11,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+","","Lys"
+"12","COMPASS: Synoptic","CB","GCW","TR","C",45,"GCW_202210_TR_LYSC_45CM",2022,"October",11,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+","","Lys"
+"13","COMPASS: Synoptic","CB","GCW","UP","A",20,"GCW_202210_UP_LYSA_20CM",2022,"October",11,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+","","Lys"
+"14","COMPASS: Synoptic","CB","GCW","UP","B",10,"GCW_202210_UP_LYSB_10CM",2022,"October",11,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+","","Lys"
+"15","COMPASS: Synoptic","CB","GCW","UP","B",20,"GCW_202210_UP_LYSB_20CM",2022,"October",11,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+","","Lys"
+"16","COMPASS: Synoptic","CB","GCW","UP","B",45,"GCW_202210_UP_LYSB_45CM",2022,"October",11,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+","","Lys"
+"17","COMPASS: Synoptic","CB","GCW","UP","C",20,"GCW_202210_UP_LYSC_20CM",2022,"October",11,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+","","Lys"
+"18","COMPASS: Synoptic","CB","GCW","WC","A",10,"GCW_202210_WC_SIPA_10CM",2022,"October",NA,NA,NA,954.064720168822,47.8651151120223,5.0169673084183,"Within Range","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range",12.5,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+",NA,"Sip"
+"19","COMPASS: Synoptic","CB","GCW","WC","A",20,"GCW_202210_WC_SIPA_20CM",2022,"October",NA,NA,NA,1081.03048828177,45.2780448418069,4.18841515874114,"Within Range","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range",12.5,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+",NA,"Sip"
+"20","COMPASS: Synoptic","CB","GCW","WC","A",45,"GCW_202210_WC_SIPA_45CM",2022,"October",NA,NA,NA,1686.28377345078,38.9868178326681,2.31199626340982,"adl","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range",12.5,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+",NA,"Sip"
+"21","COMPASS: Synoptic","CB","GCW","WC","B",10,"GCW_202210_WC_SIPB_10CM",2022,"October",NA,NA,NA,964.520724601653,84.1326226333427,8.72273871233711,"Within Range","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range",12.5,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+",NA,"Sip"
+"22","COMPASS: Synoptic","CB","GCW","WC","B",20,"GCW_202210_WC_SIPB_20CM",2022,"October",NA,NA,NA,1220.84220469791,36.7380998699949,3.00924228607297,"Within Range","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range",12.5,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+",NA,"Sip"
+"23","COMPASS: Synoptic","CB","GCW","WC","B",45,"GCW_202210_WC_SIPB_45CM",2022,"October",NA,NA,NA,1426.37737754898,98.7696894804197,6.92451317828251,"adl","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range",12.5,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+",NA,"Sip"
+"24","COMPASS: Synoptic","CB","GCW","WC","C",10,"GCW_202210_WC_SIPC_10CM",2022,"October",NA,NA,NA,265.760885504755,22.4116978478779,8.43303099525416,"Within Range","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range",12.5,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+",NA,"Sip"
+"25","COMPASS: Synoptic","CB","GCW","WC","C",20,"GCW_202210_WC_SIPC_20CM",2022,"October",NA,NA,NA,540.305687612514,15.3147670345996,2.83446341316005,"Within Range","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range",12.5,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+",NA,"Sip"
+"26","COMPASS: Synoptic","CB","GCW","WC","C",45,"GCW_202210_WC_SIPC_45CM",2022,"October",NA,NA,NA,1337.65071136182,59.2890055291767,4.43232340293204,"adl","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range",12.5,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+",NA,"Sip"
+"27","COMPASS: Synoptic","CB","GWI","SW","A",0,"GWI_202210_SW_A",2022,"October",14,NA,NA,0,0,0,"bdl","Within Range","MC 20 out of range; Dup perc diff out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+","","SW"
+"28","COMPASS: Synoptic","CB","GWI","SW","B",0,"GWI_202210_SW_B",2022,"October",14,NA,NA,0,0,0,"bdl","Within Range","MC 20 out of range; Dup perc diff out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+","","SW"
+"29","COMPASS: Synoptic","CB","GWI","SW","C",0,"GWI_202210_SW_C",2022,"October",14,NA,NA,0,0,0,"bdl","Within Range","MC 20 out of range; Dup perc diff out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+","","SW"
+"30","COMPASS: Synoptic","CB","GWI","TR","A",10,"GWI_202210_TR_LYSA_10CM",2022,"October",14,NA,NA,28.1678086257247,2.53491827608159,8.99934499614053,"Within Range","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+","","Lys"
+"31","COMPASS: Synoptic","CB","GWI","TR","A",20,"GWI_202210_TR_LYSA_20CM",2022,"October",14,NA,NA,2.17716903554506,0.0506983655216321,2.32863708301545,"Within Range","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+","","Lys"
+"32","COMPASS: Synoptic","CB","GWI","TR","A",45,"GWI_202210_TR_LYSA_45CM",2022,"October",14,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+","","Lys"
+"33","COMPASS: Synoptic","CB","GWI","TR","B",10,"GWI_202210_TR_LYSB_10CM",2022,"October",14,NA,NA,0,0,0,"bdl","Within Range","MC 20 out of range; Dup perc diff out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+","","Lys"
+"34","COMPASS: Synoptic","CB","GWI","TR","B",20,"GWI_202210_TR_LYSB_20CM",2022,"October",14,NA,NA,171.301547021666,4.51262921025414,2.6343190057025,"adl","Within Range","MC 20 out of range; Dup perc diff out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+","","Lys"
+"35","COMPASS: Synoptic","CB","GWI","TR","B",45,"GWI_202210_TR_LYSB_45CM",2022,"October",14,NA,NA,22.336345582043,0.165580168428146,0.74130375454641,"Within Range","Within Range","MC 20 out of range; Dup perc diff out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+","","Lys"
+"36","COMPASS: Synoptic","CB","GWI","TR","C",10,"GWI_202210_TR_LYSC_10CM",2022,"October",14,NA,NA,2.49981145804384,0.0716983161108402,2.86814895099912,"Within Range","Within Range","MC 20 out of range; Dup perc diff out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+","","Lys"
+"37","COMPASS: Synoptic","CB","GWI","TR","C",20,"GWI_202210_TR_LYSC_20CM",2022,"October",14,NA,NA,27.5225237807271,0.788681477219244,2.86558559637443,"Within Range","Within Range","MC 20 out of range; Dup perc diff out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+","","Lys"
+"38","COMPASS: Synoptic","CB","GWI","TR","C",45,"GWI_202210_TR_LYSC_45CM",2022,"October",14,NA,NA,0,0,0,"bdl","Within Range","MC 20 out of range; Dup perc diff out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+","","Lys"
+"39","COMPASS: Synoptic","CB","GWI","UP","A",10,"GWI_202210_UP_LYSA_10CM",2022,"October",14,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+","","Lys"
+"40","COMPASS: Synoptic","CB","GWI","UP","A",20,"GWI_202210_UP_LYSA_20CM",2022,"October",14,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+","","Lys"
+"41","COMPASS: Synoptic","CB","GWI","UP","A",45,"GWI_202210_UP_LYSA_45CM",2022,"October",14,NA,NA,0.138581829303897,0.195984302500044,141.42135623731,"Within Range","High CV","Std curve r2 low; MC 10 out of range; MC 20 out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+","","Lys"
+"42","COMPASS: Synoptic","CB","GWI","UP","B",10,"GWI_202210_UP_LYSB_10CM",2022,"October",14,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+","","Lys"
+"43","COMPASS: Synoptic","CB","GWI","UP","B",20,"GWI_202210_UP_LYSB_20CM",2022,"October",14,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+","","Lys"
+"44","COMPASS: Synoptic","CB","GWI","UP","C",10,"GWI_202210_UP_LYSC_10CM",2022,"October",14,NA,NA,6.04887810553044,0.0506983655216318,0.838144935922559,"Within Range","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+","","Lys"
+"45","COMPASS: Synoptic","CB","GWI","UP","C",20,"GWI_202210_UP_LYSC_20CM",2022,"October",14,NA,NA,0.635655239161996,0,0,"Within Range","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+","","Lys"
+"46","COMPASS: Synoptic","CB","GWI","WC","A",10,"GWI_202210_WC_SIPA_10CM",2022,"October",NA,NA,NA,0.922448503605356,0.0716983161108404,7.77260907580316,"Within Range","Within Range","MC 20 out of range; Dup perc diff out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+",NA,"Sip"
+"47","COMPASS: Synoptic","CB","GWI","WC","A",20,"GWI_202210_WC_SIPA_20CM",2022,"October",NA,NA,NA,0.492258606940315,0.101396731043264,20.5982647359903,"Within Range","High CV","MC 20 out of range; Dup perc diff out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+",NA,"Sip"
+"48","COMPASS: Synoptic","CB","GWI","WC","A",45,"GWI_202210_WC_SIPA_45CM",2022,"October",NA,NA,NA,0,0,0,"bdl","Within Range","MC 20 out of range; Dup perc diff out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+",NA,"Sip"
+"49","COMPASS: Synoptic","CB","GWI","WC","B",10,"GWI_202210_WC_SIPB_10CM",2022,"October",NA,NA,NA,13.2784583133735,1.1434326726686,8.61118546809747,"Within Range","Within Range","MC 20 out of range; Dup perc diff out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+",NA,"Sip"
+"50","COMPASS: Synoptic","CB","GWI","WC","B",20,"GWI_202210_WC_SIPB_20CM",2022,"October",NA,NA,NA,0.0620687102752729,0,0,"Within Range","Within Range","MC 20 out of range; Dup perc diff out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+",NA,"Sip"
+"51","COMPASS: Synoptic","CB","GWI","WC","B",45,"GWI_202210_WC_SIPB_45CM",2022,"October",NA,NA,NA,0.456409448884895,0.0506983655216319,11.1080885037544,"Within Range","High CV","MC 20 out of range; Dup perc diff out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+",NA,"Sip"
+"52","COMPASS: Synoptic","CB","GWI","WC","C",10,"GWI_202210_WC_SIPC_10CM",2022,"October",NA,NA,NA,0.826850748790903,0.041395042107036,5.00634995705908,"Within Range","Within Range","MC 20 out of range; Dup perc diff out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+",NA,"Sip"
+"53","COMPASS: Synoptic","CB","GWI","WC","C",20,"GWI_202210_WC_SIPC_20CM",2022,"October",NA,NA,NA,0,0,0,"bdl","Within Range","MC 20 out of range; Dup perc diff out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+",NA,"Sip"
+"54","COMPASS: Synoptic","CB","GWI","WC","C",45,"GWI_202210_WC_SIPC_45CM",2022,"October",NA,NA,NA,0,0,0,"bdl","Within Range","MC 20 out of range; Dup perc diff out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+",NA,"Sip"
+"55","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202210_TR_PPR_10",2022,"October",NA,NA,NA,2.428113141933,0.12418512632111,5.11447033404081,"Within Range","Within Range","Spk recovery out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+",NA,"PPR"
+"56","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202210_TR_PPR_11",2022,"October",NA,NA,NA,1.49603503249208,0.101396731043264,6.77769763682326,"Within Range","Within Range","Spk recovery out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+",NA,"PPR"
+"57","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202210_TR_PPR_12",2022,"October",NA,NA,NA,5.9771797894196,0.0506983655216318,0.848198771122372,"Within Range","Within Range","Spk recovery out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+",NA,"PPR"
+"58","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202210_TR_PPR_2",2022,"October",NA,NA,NA,1.92622492915712,0.189695913851379,9.84806659803671,"Within Range","Within Range","Spk recovery out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+",NA,"PPR"
+"59","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202210_TR_PPR_3",2022,"October",NA,NA,NA,3.3123923739667,0.298503893733822,9.01173110045396,"Within Range","Within Range","Spk recovery out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+",NA,"PPR"
+"60","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202210_TR_PPR_4",2022,"October",NA,NA,NA,3.98157665766788,0.180436805308183,4.53179282535452,"Within Range","Within Range","Spk recovery out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+",NA,"PPR"
+"61","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202210_TR_PPR_5",2022,"October",NA,NA,NA,7.82938628894964,0.556913333920855,7.1131160651363,"Within Range","Within Range","Spk recovery out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+",NA,"PPR"
+"62","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202210_TR_PPR_6",2022,"October",NA,NA,NA,5.31994522507023,0.298503893733823,5.61103321754374,"Within Range","Within Range","Spk recovery out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+",NA,"PPR"
+"63","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202210_TR_PPR_7",2022,"October",NA,NA,NA,2.2488673516559,0.0506983655216318,2.25439555091149,"Within Range","Within Range","Spk recovery out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+",NA,"PPR"
+"64","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202210_TR_PPR_8",2022,"October",NA,NA,NA,1.85452661304628,0.101396731043263,5.46752633960356,"Within Range","Within Range","Spk recovery out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+",NA,"PPR"
+"65","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202210_TR_PPR_9",2022,"October",NA,NA,NA,1.83062717434267,0.149251946866911,8.15304989234104,"Within Range","Within Range","Spk recovery out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+",NA,"PPR"
+"66","COMPASS: Synoptic","CB","MSM","UP","A",20,"MSM_202210_UP_LYSA_20CM",2022,"October",27,NA,NA,4.43566599303653,0.215094948332521,4.84921427064603,"Within Range","Within Range","MC 20 out of range; Dup perc diff out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+","","Lys"
+"67","COMPASS: Synoptic","CB","MSM","UP","A",45,"MSM_202210_UP_LYSA_45CM",2022,"October",27,NA,NA,0,0,0,"bdl","Within Range","MC 20 out of range; Dup perc diff out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+","","Lys"
+"68","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202210_WC_PPR_1",2022,"October",NA,NA,NA,0,0,0,"bdl","Within Range","Spk recovery out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+",NA,"PPR"
+"69","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202210_WC_PPR_10",2022,"October",NA,NA,NA,25.8734625101778,3.24469539338444,12.5406307412782,"Within Range","High CV","Spk recovery out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+",NA,"PPR"
+"70","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202210_WC_PPR_11",2022,"October",NA,NA,NA,27.8810153612813,0.608380386259582,2.18205965018206,"Within Range","Within Range","Spk recovery out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+",NA,"PPR"
+"71","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202210_WC_PPR_2",2022,"October",NA,NA,NA,33.7961264404256,2.28142644847344,6.75055602154595,"Within Range","Within Range","Spk recovery out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+",NA,"PPR"
+"72","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202210_WC_PPR_3",2022,"October",NA,NA,NA,46.2716334437118,0.253491827608159,0.547834188556418,"Within Range","Within Range","Spk recovery out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+",NA,"PPR"
+"73","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202210_WC_PPR_4",2022,"October",NA,NA,NA,45.2320078601047,4.86704309007666,10.7601747530856,"Within Range","High CV","Spk recovery out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+",NA,"PPR"
+"74","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202210_WC_PPR_5",2022,"October",NA,NA,NA,36.8791540331918,2.38282317951669,6.46116550659517,"Within Range","Within Range","Spk recovery out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+",NA,"PPR"
+"75","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202210_WC_PPR_6",2022,"October",NA,NA,NA,23.6866638687972,4.10656760725218,17.3370451406702,"Within Range","High CV","Spk recovery out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+",NA,"PPR"
+"76","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202210_WC_PPR_7",2022,"October",NA,NA,NA,25.1923285071248,0.354888558651423,1.40871677880453,"Within Range","Within Range","Spk recovery out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+",NA,"PPR"
+"77","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202210_WC_PPR_8",2022,"October",NA,NA,NA,21.7508093338045,0.861872213867743,3.96248342137893,"Within Range","Within Range","Spk recovery out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+",NA,"PPR"
+"78","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202210_WC_PPR_9",2022,"October",NA,NA,NA,28.9923392609993,1.2674591380408,4.37170359601092,"Within Range","Within Range","Spk recovery out of range",1,"202210","Plate 1 Std curve R squared was low and slope was different from previous std curves. 
+Plate 2 both MC's were off. 5/9 spks were good. 
+",NA,"PPR"
