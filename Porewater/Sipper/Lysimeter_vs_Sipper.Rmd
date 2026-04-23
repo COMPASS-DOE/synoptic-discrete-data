@@ -1,5 +1,5 @@
 ---
-title: "COMPASS_SynopticCB_Collate_Dionex_2022_Data_Sip"
+title: "COMPASS_SynopticCB_Collate_2022_Data_Sip"
 author: "Stephanie J. Wilson"
 date: "2025-08-29"
 output: html_document
@@ -18,15 +18,85 @@ library(lubridate)
 
 #Read in and collate all the files in the Processed Data folder 
 ```{r}
-files <- list.files(path = "Processed Data", pattern = "\\.csv$", full.names = TRUE)
 
+##SO4/Cl
+dionex_files <- list.files(path = "../Sulfate_Chloride/Synoptic-CB/2022/Processed Data", pattern = "\\.csv$", full.names = TRUE)
 # 3. Read and combine all CSVs
-all_data <- files %>%
+dionex_data <- dionex_files %>%
+  lapply(read.csv, colClasses = "character") %>%    # or read.csv if you prefer base R
+  bind_rows()             # combine into one data frame
+dionex_data <- dionex_data %>%
+  select("Date", "Site", "Zone", "Replicate", "Depth", "Sample_ID",  "SO4_ppm",  "Cl_ppm",  "SO4_mM", "Cl_mM", "salinity")
+
+##Nutrients
+nutr_files <- list.files(path = "../Nutrients/Synoptic-CB/2022/Processed Data", pattern = "\\.csv$", full.names = TRUE)
+nutr_data <- nutr_files %>%
+  lapply(read.csv, colClasses = "character") %>%    # or read.csv if you prefer base R
+  bind_rows()             # combine into one data frame
+nutr_data <- nutr_data %>%
+  rename(Sample_ID = Sample_Name) %>%
+  select("Date" ,"Site", "Zone" , "Replicate", "Depth", "Sample_ID",  "NH3_uM", "PO4_uM", "NOx_uM")
+
+##DIC
+dic_files <- list.files(path = "../DIC/Synoptic-CB/2022/Processed Data", pattern = "\\.csv$", full.names = TRUE)
+dic_data <- dic_files %>%
   lapply(read.csv, colClasses = "character") %>%    # or read.csv if you prefer base R
   bind_rows()             # combine into one data frame
 
-all_data <- all_data %>%
-  select("Date" ,"Site", "Replicate",   "Depth" ,      "Sample_ID" ,  "SO4_ppm" ,    "Cl_ppm"   ,   "SO4_mM"  ,    "Cl_mM"    ,"salinity", "Zone"  )
+dic_data <- dic_data %>%
+  separate(
+    col = Sample_ID,
+    sep = "_",
+    into = c("Site", "Date", "Zone" ,"Replicate", "Depth"),
+    remove = FALSE) %>%
+  select("Date", "Site", "Zone", "Replicate", "Depth", "Sample_ID",  "ic_uM") %>%
+  filter(Zone != "SW")
+
+
+# ##DOC - where is the processed 2022 data? 
+# doc_files <- list.files(path = "../DOC/Synoptic-CB/2022/Processed Data", pattern = "\\.csv$", full.names = TRUE)
+# # 3. Read and combine all CSVs
+# doc_data <- doc_files %>%
+#   lapply(read.csv, colClasses = "character") %>%    # or read.csv if you prefer base R
+#   bind_rows()             # combine into one data frame
+# doc_data <- doc_data %>%
+#   select("Date" ,"Site", "Replicate",   "Depth" ,      "Sample_ID" ,  "SO4_ppm" ,    "Cl_ppm"   ,   "SO4_mM"  ,    "Cl_mM"    ,"salinity", "Zone"  )
+# 
+# ##Iron - need to collate 2022 data? 
+# iron_files <- list.files(path = "../Iron/Synoptic-CB/2022/Processed Data", pattern = "\\.csv$", full.names = TRUE)
+# # 3. Read and combine all CSVs
+# iron_data <- iron_files %>%
+#   lapply(read.csv, colClasses = "character") %>%    # or read.csv if you prefer base R
+#   bind_rows()             # combine into one data frame
+# iron_data <- iron_data %>%
+#   select("Date" ,"Site", "Replicate",   "Depth" ,      "Sample_ID" ,  "SO4_ppm" ,    "Cl_ppm"   ,   "SO4_mM"  ,    "Cl_mM"    ,"salinity", "Zone"  )
+
+##Sulfide - need to collate 2022 data? 
+sulfide_files <- list.files(path = "../Sulfide/Synoptic-CB/2022/Processed Data", pattern = "\\.csv$", full.names = TRUE)
+# 3. Read and combine all CSVs
+sulfide_data <- sulfide_files %>%
+  lapply(read.csv, colClasses = "character") %>%    # or read.csv if you prefer base R
+  bind_rows()             # combine into one data frame
+# GCW_202207_WC_SIPC_10CM
+
+sulfide_data <- sulfide_data %>%
+  separate(
+    col = Sample_ID,
+    sep = "_",
+    into = c("Site", "Date", "Zone" ,"Replicate", "Depth"),
+    remove = FALSE) %>%
+  select("Date", "Site", "Zone", "Replicate", "Depth", "Sample_ID",  "H2S_mean") %>%
+  filter(Zone != "SW") %>%
+  filter(Zone != "RHZ") %>%
+  filter(Replicate != "PPR") %>%
+  filter(Replicate != "RHZ")
+
+sulfide_data <- sulfide_data %>%
+  select("Date", "Site", "Zone", "Replicate", "Depth", "Sample_ID",  "H2S_mean") 
+
+
+##Combine data
+
 
 colnames(all_data)
 
@@ -49,24 +119,133 @@ all_data_long <- all_data %>%
 
 ```
 
-##Boxplots
+##Boxplots SO4/Cl
 ```{r}
-##Subset for only samples that overlap
+
+boxplot_SO4_all <- ggplot(all_data_long, aes(x = Depth, y = SO4_ppm, fill = Sampler)) +
+  geom_boxplot(position = position_dodge(width = 0.8)) +
+  facet_grid(Zone ~ Site) +
+  labs(y = "SO4 (ppm)", fill = "Sampler", title = "Sulfate from all data") +
+  theme_bw()
+
+boxplot_SO4_all
+
+##Subset for only site and zone that overlap
+df_sub <- subset(all_data_long, Site == "GCW" & Zone == "WC")
+
+boxplot_SO4_GCW_WC <- ggplot(df_sub, aes(x = Depth, y = SO4_ppm, fill = Sampler)) +
+  geom_boxplot(position = position_dodge(width = 0.8)) +
+  facet_grid(Zone ~ Site) +
+  labs(y = "SO4 (ppm)", fill = "Sampler", title = "Sulfate from GCW WC") +
+  theme_bw()
+
+boxplot_SO4_GCW_WC
+
+##Subset for only dates that overlap
 dates <- c("202206","202207", "202208") 
 df_sub <- subset(all_data_long, Site == "GCW" & Zone == "WC" & Date %in% dates)
-str(df_sub)
+# str(df_sub)
 
 boxplot_Cl <- ggplot(df_sub, aes(x = Depth, y = Cl_ppm, fill = Sampler)) +
   geom_boxplot(position = position_dodge(width = 0.8)) +
   facet_wrap(~ Date) +
-  labs(y = "Cl (ppm)", fill = "Sampler", title = "Sulfate by Sampler Type") +
+  labs(y = "Cl (ppm)", fill = "Sampler", title = "Chloride from GCW WC 2022") +
   theme_bw()
+
+boxplot_Cl
 
 boxplot_SO4 <- ggplot(df_sub, aes(x = Depth, y = SO4_ppm, fill = Sampler)) +
   geom_boxplot(position = position_dodge(width = 0.8)) +
   facet_wrap(~ Date) +
-  labs(y = "SO4 (ppm)", fill = "Sampler", title = "Sulfate by Sampler Type") +
+  labs(y = "SO4 (ppm)", fill = "Sampler", title = "Sulfate from GCW WC 2022") +
   theme_bw()
+
+boxplot_SO4
+
+# Save as a PNG
+png("Lysimeter_vs_Sipper_Cl.png", width = 2000, height = 1200, res = 200) 
+print(boxplot_Cl)  # For ggplot objects, use print()
+dev.off() 
+
+# Save as a PNG
+png("Lysimeter_vs_Sipper_SO4.png", width = 2000, height = 1200, res = 200) 
+print(boxplot_SO4)  # For ggplot objects, use print()
+dev.off() 
+
+```
+#Read in and collate all the files in the Processed Data folder 
+```{r}
+files <- list.files(path = "../Nutrients/Synoptic-CB/2022/Processed Data", pattern = "\\.csv$", full.names = TRUE)
+
+# 3. Read and combine all CSVs
+all_data <- files %>%
+  lapply(read.csv, colClasses = "character") %>%    # or read.csv if you prefer base R
+  bind_rows()             # combine into one data frame
+
+all_data <- all_data %>%
+  select("Date" ,"Site", "Zone" , "Replicate", "Depth", "Sample_Name",  "NH3_uM", "PO4_uM", "NOx_uM")
+
+colnames(all_data)
+
+all_data$NH3_uM <- as.numeric(all_data$NH3_uM)
+all_data$PO4_uM <- as.numeric(all_data$PO4_uM)
+all_data$NOx_uM <- as.numeric(all_data$NOx_uM)
+
+##Fix sample IDs
+all_data$Site <- gsub("GCerw", "GCW", all_data$Site)
+all_data$Site <- gsub("Gcrew", "GCW", all_data$Site)
+all_data$Site <- gsub("GCrew", "GCW", all_data$Site)
+
+##Add labels for sampler types
+all_data_long <- all_data %>%  
+  mutate(Sampler = substring(Replicate, 1, 3),
+         Replicate = substring(Replicate, 4, nchar(Replicate)))%>%  
+  filter(Sampler %in% c("Lys", "Sip"))
+
+```
+
+##Boxplots Nutrients
+```{r}
+
+boxplot_NH3_all <- ggplot(all_data_long, aes(x = Depth, y = NH3_uM, fill = Sampler)) +
+  geom_boxplot(position = position_dodge(width = 0.8)) +
+  facet_grid(Zone ~ Site) +
+  labs(y = "NH3_uM (uM)", fill = "Sampler", title = "NH3_uM from all data") +
+  theme_bw()
+
+boxplot_NH3_all
+
+##Subset for only site and zone that overlap
+df_sub <- subset(all_data_long, Site == "GCW" & Zone == "WC")
+
+boxplot_NH3_GCW_WC <- ggplot(df_sub, aes(x = Depth, y = NH3_uM, fill = Sampler)) +
+  geom_boxplot(position = position_dodge(width = 0.8)) +
+  facet_grid(Zone ~ Site + Date) +
+  labs(y = "NH3 (uM)", fill = "Sampler", title = "NH3_uM from GCW WC") +
+  theme_bw()
+
+boxplot_NH3_GCW_WC
+
+##Subset for only dates that overlap
+dates <- c("202206","202207", "202208") 
+df_sub <- subset(all_data_long, Site == "GCW" & Zone == "WC" & Date %in% dates)
+# str(df_sub)
+
+boxplot_NH3 <- ggplot(df_sub, aes(x = Depth, y = NH3_uM, fill = Sampler)) +
+  geom_boxplot(position = position_dodge(width = 0.8)) +
+  facet_wrap(~ Date) +
+  labs(y = "NH3 (uM)", fill = "Sampler", title = "NH3 from GCW WC 2022") +
+  theme_bw()
+
+boxplot_NH3
+
+boxplot_SO4 <- ggplot(df_sub, aes(x = Depth, y = SO4_ppm, fill = Sampler)) +
+  geom_boxplot(position = position_dodge(width = 0.8)) +
+  facet_wrap(~ Date) +
+  labs(y = "SO4 (ppm)", fill = "Sampler", title = "Sulfate from GCW WC 2022") +
+  theme_bw()
+
+boxplot_SO4
 
 # Save as a PNG
 png("Lysimeter_vs_Sipper_Cl.png", width = 2000, height = 1200, res = 200) 
@@ -82,9 +261,77 @@ dev.off()
 
 
 
+## Plotting values against each other
+```{r Plotting values against each other, echo=FALSE, warning=FALSE}
+
+data_abbrev <- data_plotting %>% 
+  dplyr::select(Acid_state_1, FE_2_mean, FE_3_mean, FE_tot_mean, new_ID) %>% 
+  filter(Acid_state_1 != "No Acid")
+
+# head(data_abbrev)
+
+
+##Reshape Data
+df_long <- data_abbrev %>%
+  dplyr::select(new_ID, Acid_state_1, FE_2_mean, FE_3_mean, FE_tot_mean) %>%
+  pivot_longer(
+    cols = c(FE_2_mean, FE_3_mean, FE_tot_mean),
+    names_to = "Fe_type",
+    values_to = "value"
+  )
+
+df_wide <- df_long %>%
+  pivot_wider(
+    names_from = Acid_state_1,
+    values_from = value
+  )
+
+##Select only Total FE Data
+df_Fe_tot <- df_wide %>% 
+    filter(Fe_type == "FE_tot_mean")
+
+##Plot Total FE Data
+scatter_Fetot_plot <- ggplot(df_Fe_tot, aes(x = `Acidified in Field`, y = `Acidified Later in Lab`)) +
+  geom_point(size = 3) +
+  geom_abline(slope = 1, intercept = 0, linetype = "dashed") +
+  # coord_cartesian(xlim = combined_limits, ylim = combined_limits) +
+  coord_fixed(ratio = 1) + 
+  labs(
+    x = "Acidified in Field",
+    y = "Acidified Later in Lab",
+    title = "Total Fe Measurements"
+  ) + 
+  theme_classic()
+
+scatter_Fetot_plot
+
+
+##Select only TEMPEST Data
+df_TMP <- df_Fe_tot %>% 
+    filter(str_detect(new_ID, "TMP"))
+
+#Plot TEMPEST Fe Data: 
+scatter_Fe_plot_TMP <- ggplot(df_TMP, aes(x = `Acidified in Field`, y = `Acidified Later in Lab`)) +
+  geom_point(size = 3) +
+  geom_abline(slope = 1, intercept = 0, linetype = "dashed") +
+  # coord_cartesian(xlim = combined_limits, ylim = combined_limits) +
+  coord_fixed(ratio = 1) + 
+  labs(
+    x = "Acidified in Field",
+    y = "Acidified Later in Lab",
+    title = "TMP Total Fe Measurements"
+  ) + 
+  theme_classic()
+
+scatter_Fe_plot_TMP
+
+
+```
+
+
 ####Still figuring these out####
 ```{r}
-##Remove non-Sip Samples
+##Only Sip Samples
 all_data_sip <- all_data %>%  
   filter(str_detect(Replicate, "Sip"))%>%  
   rename(
@@ -96,10 +343,9 @@ all_data_sip <- all_data %>%
     Cl_mM_sip = Cl_mM, 
     salinity_sip = salinity
   )%>%  
-  mutate(Replicate = gsub("Sip", "", Replicate_sip))%>%  
-  mutate(Sampler = "Sipper")
+  mutate(Replicate_sip = gsub("Sip", "", Replicate_sip))
 
-##Remove non-Lys Samples
+##Only Lys Samples
 all_data_lys <- all_data %>%  
   filter(str_detect(Replicate, "Lys"))%>%  
   rename(
@@ -111,8 +357,7 @@ all_data_lys <- all_data %>%
     Cl_mM_lys = Cl_mM, 
     salinity_lys = salinity
   )%>%  
-  mutate(Replicate = gsub("Lys", "", Replicate_lys))%>%  
-  mutate(Sampler = "Lysimeter")
+  mutate(Replicate_lys = gsub("Lys", "", Replicate_lys))
 
 ##Merge Datasets by Date, Site, Depth, and Zone
 all_data_combined <- merge(all_data_lys, all_data_sip, by = c("Date", "Site", "Depth", "Zone"))
