@@ -1,16 +1,12 @@
 ---
-title: "COMPASS_SynopticCB_Collate_Data_Peeper"
+title: "COMPASS_SynopticCB_Collate_Data_Rhizon"
 author: "Stephanie J. Wilson"
 date: "`r Sys.Date()`"
 output: html_document
 ---
 
 ```{r notes}
-# - Collated Peeper data for SO4/Cl, H2S, Nutrients, and Fe MSM 202210, 202211, 202304, and 202306
-# - Data was already processed/QAQC'd with 2022/2023 Lysimeter data
-# - Missing MSM_202210_UP_PPR sulfide data
-# - No 2023 nutrient peeper data
-# - Iron 2023 data has not been processed and 2022 iron data was processed with an old scripts
+
 ```
 
 
@@ -24,7 +20,7 @@ library(tidyr)
 library(tibble)
 library(lubridate)
 library(tidyverse)
-# detach("package:raster", unload = TRUE)
+detach("package:raster", unload = TRUE)
 ```
 
 #Read in and collate all the files in the Processed Data folder 
@@ -38,14 +34,13 @@ dionex_files_2022 <- list.files(path = "../Sulfate_Chloride/Synoptic-CB/2022/Pro
 dionex_2022 <- dionex_files_2022 %>%
   lapply(read.csv, colClasses = "character") %>%    # or read.csv if you prefer base R
   bind_rows()             # combine into one data frame
-#Select peeper data MSM_202210_TR_PPR_10
-dionex_ppr_2022 <- dionex_2022 %>%
-  filter(str_detect(Sample_ID, "PPR")) %>% 
-  rename(Zone = Replicate, Replicate = Zone) %>% 
-  mutate(Sample_ID = paste(Site, Date, Zone, "PPR", Depth, sep = "_"))
+#Select Rhizon data MSM_202210_TR_RHZ_10
+dionex_RHZ_2022 <- dionex_2022 %>%
+  filter(str_detect(Sample_ID, "RHZ")) %>% 
+  mutate(Sample_ID = str_remove(Sample_ID, "^[^_]*_"))
 #Select only data columns
-colnames(dionex_ppr_2022)
-dionex_ppr_sel_2022 <- dionex_ppr_2022 %>% 
+colnames(dionex_RHZ_2022)
+dionex_RHZ_sel_2022 <- dionex_RHZ_2022 %>% 
   select("Sample_ID", "SO4_ppm",   "Cl_ppm",    "SO4_mM" ,   "Cl_mM"   ,  "salinity" )
 
 #2023
@@ -54,19 +49,17 @@ dionex_files_2023 <- list.files(path = "../Sulfate_Chloride/Synoptic-CB/2023/Pro
 dionex_2023 <- dionex_files_2023 %>%
   lapply(read.csv, colClasses = "character") %>%    # or read.csv if you prefer base R
   bind_rows()             # combine into one data frame
-#Select peeper data MSM_202210_TR_PPR_10
-dionex_ppr_2023 <- dionex_2023 %>%
-  filter(str_detect(Sample_ID, "PPR")) %>% 
-  mutate(Zone = ifelse(Zone == "PPR", Replicate, Zone)) %>% 
-  mutate(Replicate = "PPR") %>% 
-  mutate(Sample_ID = paste(Site, Date, Zone, "PPR", Depth, sep = "_"))
+#Select Rhizon data MSM_202210_TR_RHZ_10
+dionex_RHZ_2023 <- dionex_2023 %>%
+  filter(str_detect(Sample_ID, "RHZ")) %>% 
+  mutate(Sample_ID = str_remove(Sample_ID, "^[^_]*_"))
 #Select only data columns
-colnames(dionex_ppr_2023)
-dionex_ppr_sel_2023 <- dionex_ppr_2023 %>% 
+colnames(dionex_RHZ_2023)
+dionex_RHZ_sel_2023 <- dionex_RHZ_2023 %>% 
   select("Sample_ID", "SO4_ppm",   "Cl_ppm",    "SO4_mM" ,   "Cl_mM"   ,  "salinity" )
 
 #Combine 2022 and 2023
-dionex_ppr_sel <- bind_rows(dionex_ppr_sel_2022, dionex_ppr_sel_2023)
+dionex_RHZ_sel <- bind_rows(dionex_RHZ_sel_2022, dionex_RHZ_sel_2023)
 
 
 ##Sulfide
@@ -76,30 +69,28 @@ sulfide_files_2022 <- list.files(path = "../Sulfide/Synoptic-CB/2022/Processed D
 sulfide_data_2022 <- sulfide_files_2022 %>%
   lapply(read.csv, colClasses = "character") %>%    # or read.csv if you prefer base R
   bind_rows()             # combine into one data frame
-#Select peeper data
-sulfide_ppr_2022 <- sulfide_data_2022 %>%
-  filter(str_detect(Sample_ID, "PPR"))
+#Select Rhizon data
+sulfide_RHZ_2022 <- sulfide_data_2022 %>%
+  filter(str_detect(Sample_ID, "RHZ"))
 #Select only data columns
-colnames(sulfide_ppr_2022)
-sulfide_ppr_sel_2022 <- sulfide_ppr_2022 %>% 
+colnames(sulfide_RHZ_2022)
+sulfide_RHZ_sel_2022 <- sulfide_RHZ_2022 %>% 
   select("Sample_ID", "H2S_mean"     ,    "H2S_sd"        ,   "H2S_cv"          ,
 "H2S_Conc_flag"  ,  "H2S_cv_flag"   ,   "H2S_QAQC_flag"  , "Run_notes",        "Field_notes") %>% 
   rename(H2S_Run_notes = Run_notes)
 
-#2023 - No 2023 Peeper Sulfide Data? 
+#2023
 sulfide_files_2023 <- list.files(path = "../Sulfide/Synoptic-CB/2023/Processed Data", pattern = "Combined\\.csv$", full.names = TRUE)
 # 3. Read and combine all CSVs
 sulfide_data_2023 <- sulfide_files_2023 %>%
   lapply(read.csv, colClasses = "character") %>%    # or read.csv if you prefer base R
   bind_rows()             # combine into one data frame
-#Select peeper data
-sulfide_ppr_2023 <- sulfide_data_2023 %>%
-  filter(str_detect(Sample_ID, "PPR"))%>%
-  separate(Sample_ID, into = c("Site", "Date", "Replicate", "Zone", "Depth_cm"), sep = "_")  %>% 
-  mutate(Sample_ID = paste(Site, Date, Zone, "PPR", Depth_cm, sep = "_")) 
+#Select Rhizon data
+sulfide_RHZ_2023 <- sulfide_data_2023 %>%
+  filter(str_detect(Sample_ID, "RHZ"))
 #Select only data columns
-colnames(sulfide_ppr_2023)
-sulfide_ppr_sel_2023 <- sulfide_ppr_2023 %>% 
+colnames(sulfide_RHZ_2023)
+sulfide_RHZ_sel_2023 <- sulfide_RHZ_2023 %>% 
   rename(H2S_mean = H2S_mean_uM, 
          H2S_sd = H2S_sd_uM) %>% 
   select("Sample_ID", "H2S_mean"     ,    "H2S_sd"        ,   "H2S_cv"          ,
@@ -107,7 +98,7 @@ sulfide_ppr_sel_2023 <- sulfide_ppr_2023 %>%
   rename(H2S_Run_notes = Run_notes)
 
 #Combine 2022 and 2023
-sulfide_ppr_sel <- bind_rows(sulfide_ppr_sel_2022, sulfide_ppr_sel_2023)
+sulfide_RHZ_sel <- bind_rows(sulfide_RHZ_sel_2022, sulfide_RHZ_sel_2023)
 
 
 ##Nutrients
@@ -118,42 +109,42 @@ nutr_data_2022 <- nutr_files_2022 %>%
   bind_rows()             # combine into one data frame
 nutr_data_2022 <- nutr_data_2022 %>%
   rename(Sample_ID = Sample_Name)
-#Select peeper data
-nutr_ppr_2022 <- nutr_data_2022 %>%
-  filter(str_detect(Sample_ID, "PPR"))
-##Nutr MSM_202211_PPR_WC_9 data is formatted differently from MSM_202210_WC_PPR_9
-nutr_ppr_2022 <- nutr_ppr_2022 %>% 
+#Select Rhizon data
+nutr_RHZ_2022 <- nutr_data_2022 %>%
+  filter(str_detect(Sample_ID, "RHZ"))
+##Nutr MSM_202211_RHZ_WC_9 data is formatted differently from MSM_202210_WC_RHZ_9
+nutr_RHZ_2022 <- nutr_RHZ_2022 %>% 
   mutate(Sample_ID = ifelse(Date == "202211", paste(Site, Date, Replicate, Zone, Depth, sep = "_"), Sample_ID))
 #Select only data columns
-colnames(nutr_ppr_2022)
-nutr_ppr_sel_2022 <- nutr_ppr_2022 %>% 
+colnames(nutr_RHZ_2022)
+nutr_RHZ_sel_2022 <- nutr_RHZ_2022 %>% 
   select("Sample_ID", "NH3_mgL"  , "NH3_uM"  ,  "PO4_mgL" , "PO4_uM"  ,  "NOx_mgL"   ,"NOx_uM"  ,  "NH3_range", "PO4_range", "NOx_range" , "Run_notes")  %>% 
   rename(Nutr_Run_notes = Run_notes)
 ##Select unique rows because there are 4 of the same for each sample
-nutr_ppr_sel_unique_2022 <- unique(nutr_ppr_sel_2022)
+nutr_RHZ_sel_unique_2022 <- unique(nutr_RHZ_sel_2022)
 
-#2023 - No 2023 Peeper Nutrient Data? 
-# nutr_files_2023 <- list.files(path = "../Nutrients/Synoptic-CB/2023/Processed Data", pattern = "\\.csv$", full.names = TRUE)
-# nutr_data_2023 <- nutr_files_2023 %>%
-#   lapply(read.csv, colClasses = "character") %>%    # or read.csv if you prefer base R
-#   bind_rows()             # combine into one data frame
-# #Select peeper data
-# nutr_ppr_2023 <- nutr_data_2023 %>%
-#   filter(str_detect(Sample_ID, "PPR"))
-# ##Nutr MSM_202211_PPR_WC_9 data is formatted differently from MSM_202210_WC_PPR_9
-# nutr_ppr_2023 <- nutr_ppr_2023 %>% 
-#   mutate(Sample_ID = ifelse(Date == "202211", paste(Site, Date, Replicate, Zone, Depth, sep = "_"), Sample_ID))
-# #Select only data columns
-# colnames(nutr_ppr_2023)
-# nutr_ppr_sel_2023 <- nutr_ppr_2023 %>% 
-#   select("Sample_ID", "NH3_mgL"  , "NH3_uM"  ,  "PO4_mgL" , "PO4_uM"  ,  "NOx_mgL"   ,"NOx_uM"  ,  "NH3_range", "PO4_range", "NOx_range" , "Run_notes")  %>% 
-#   rename(Nutr_Run_notes = Run_notes)
-# ##Select unique rows because there are 4 of the same for each sample
-# nutr_ppr_sel_unique_2023 <- unique(nutr_ppr_sel_2023)
+#2023 - No 2023 Rhizon Data? 
+nutr_files_2023 <- list.files(path = "../Nutrients/Synoptic-CB/2023/Processed Data", pattern = "\\.csv$", full.names = TRUE)
+nutr_data_2023 <- nutr_files_2023 %>%
+  lapply(read.csv, colClasses = "character") %>%    # or read.csv if you prefer base R
+  bind_rows()             # combine into one data frame
+#Select Rhizon data
+nutr_RHZ_2023 <- nutr_data_2023 %>%
+  filter(str_detect(Sample_ID, "RHZ"))
+##Nutr MSM_202211_RHZ_WC_9 data is formatted differently from MSM_202210_WC_RHZ_9
+nutr_RHZ_2023 <- nutr_RHZ_2023 %>%
+  mutate(Sample_ID = ifelse(Date == "202211", paste(Site, Date, Replicate, Zone, Depth, sep = "_"), Sample_ID))
+#Select only data columns
+colnames(nutr_RHZ_2023)
+nutr_RHZ_sel_2023 <- nutr_RHZ_2023 %>%
+  select("Sample_ID", "NH3_mgL"  , "NH3_uM"  ,  "PO4_mgL" , "PO4_uM"  ,  "NOx_mgL"   ,"NOx_uM"  ,  "NH3_range", "PO4_range", "NOx_range" , "Run_notes")  %>%
+  rename(Nutr_Run_notes = Run_notes)
+##Select unique rows because there are 4 of the same for each sample
+nutr_RHZ_sel_unique_2023 <- unique(nutr_RHZ_sel_2023)
 
 #Combine 2022 and 2023
-# nutr_ppr_sel_unique <- bind_rows(nutr_ppr_sel_unique_2022, nutr_ppr_sel_unique_2023)
-nutr_ppr_sel_unique <- nutr_ppr_sel_unique_2022
+# nutr_RHZ_sel_unique <- bind_rows(nutr_RHZ_sel_unique_2022, nutr_RHZ_sel_unique_2023)
+nutr_RHZ_sel_unique <- nutr_RHZ_sel_unique_2022
 
 
 ##Iron - need to collate 2022 data?
@@ -163,14 +154,14 @@ iron_files_2022 <- list.files(path = "../Iron/Synoptic-CB/2022/Processed Data", 
 iron_data_2022 <- iron_files_2022 %>%
   lapply(read.csv, colClasses = "character") %>%    # or read.csv if you prefer base R
   bind_rows()             # combine into one data frame
-#Select peeper data
-iron_ppr_2022 <- iron_data_2022 %>%
+#Select Rhizon data
+iron_RHZ_2022 <- iron_data_2022 %>%
   rename(Sample_ID = Sample_Name) %>%
-  filter(str_detect(Sample_ID, "PEEPER")) %>% 
-  mutate(Sample_ID = gsub("PEEPER", "PPR", Sample_ID))
+  filter(str_detect(Sample_ID, "Rhizon")) %>% 
+  mutate(Sample_ID = gsub("Rhizon", "RHZ", Sample_ID))
 #Select only data columns
-colnames(iron_ppr_2022)
-iron_ppr_sel_2022 <- iron_ppr_2022 %>% 
+colnames(iron_RHZ_2022)
+iron_RHZ_sel_2022 <- iron_RHZ_2022 %>% 
   select("Sample_ID", "FE_2_mean" ,"FE_2_sd"  ,"FE_3_mean" ,"FE_3_sd" ,  "FE_2_flag" ,"FE_3_flag")
 
 #2023 - Iron data not processed
@@ -179,24 +170,24 @@ iron_ppr_sel_2022 <- iron_ppr_2022 %>%
 # iron_data_2023 <- iron_files_2023 %>%
 #   lapply(read.csv, colClasses = "character") %>%    # or read.csv if you prefer base R
 #   bind_rows()             # combine into one data frame
-# #Select peeper data
-# iron_ppr_2023 <- iron_data_2023 %>%
+# #Select Rhizon data
+# iron_RHZ_2023 <- iron_data_2023 %>%
 #   rename(Sample_ID = Sample_Name) %>%
-#   filter(str_detect(Sample_ID, "PEEPER")) %>% 
-#   mutate(Sample_ID = gsub("PEEPER", "PPR", Sample_ID))
+#   filter(str_detect(Sample_ID, "Rhizon")) %>% 
+#   mutate(Sample_ID = gsub("Rhizon", "RHZ", Sample_ID))
 # #Select only data columns
-# colnames(iron_ppr_2023)
-# iron_ppr_sel_2023 <- iron_ppr_2023 %>% 
+# colnames(iron_RHZ_2023)
+# iron_RHZ_sel_2023 <- iron_RHZ_2023 %>% 
 #   select("Sample_ID", "FE_2_mean" ,"FE_2_sd"  ,"FE_3_mean" ,"FE_3_sd" ,  "FE_2_flag" ,"FE_3_flag")
 
 #Combine 2022 and 2023
-# iron_ppr_sel <- bind_rows(iron_ppr_sel_2022, iron_ppr_sel_2023)
-iron_ppr_sel <- iron_ppr_sel_2022
+# iron_RHZ_sel <- bind_rows(iron_RHZ_sel_2022, iron_RHZ_sel_2023)
+iron_RHZ_sel <- iron_RHZ_sel_2022
 
 
 ##Combine all analytes by Sample ID
 # Create a list of your data frames
-df_list <- list(dionex_ppr_sel, sulfide_ppr_sel, nutr_ppr_sel_unique, iron_ppr_sel)
+df_list <- list(dionex_RHZ_sel, sulfide_RHZ_sel, nutr_RHZ_sel_unique, iron_RHZ_sel)
 # Join them all together
 joined_data <- df_list %>% 
   reduce(full_join, by = "Sample_ID")
@@ -207,7 +198,7 @@ joined_data <- df_list %>%
 ```{r write out combined data and metadata, include=FALSE}
 
 #write out a csv of all the data to the main folder: 
-write.csv(joined_data, "COMPASS_SynopticCB_Peeper_Data.csv", row.names = FALSE)
+write.csv(joined_data, "COMPASS_SynopticCB_Rhizon_Data.csv", row.names = FALSE)
 
 ```
 

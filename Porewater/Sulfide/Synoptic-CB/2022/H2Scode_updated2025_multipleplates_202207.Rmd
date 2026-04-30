@@ -799,8 +799,8 @@ colnames(spks) <- c('ID_full', 'mean_spk')
 
 
 #put it back together with the old data set and look for duplicates 
-dat2$ID_full <- toupper(dat2$ID_full)
-QAspks <- merge(dat2, spks)
+dat1$ID_full <- toupper(dat1$ID_full)
+QAspks <- merge(dat1, spks)
 #head(QAspks)
 
 #now we need to calculate the spike concentration and calculate the spike recovery 
@@ -868,6 +868,8 @@ Sample_data <- dat1 %>%
 
 Sample_data1 <- Sample_data %>%
   mutate(IDs = gsub("DILx50", "", IDs)) %>%
+  mutate(IDs = gsub("7 ", "7_", IDs)) %>%
+  mutate(IDs = gsub("Tree_", "Tree", IDs)) %>%
   mutate(IDs = gsub(" ", "", IDs)) %>%
   rename(
     H2S_Conc_flag = H2S_flag,

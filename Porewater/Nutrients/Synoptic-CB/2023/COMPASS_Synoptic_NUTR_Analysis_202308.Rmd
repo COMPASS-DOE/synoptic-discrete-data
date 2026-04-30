@@ -984,8 +984,7 @@ df_NH3_dup <- df_all_cor %>%
 df_PO4_dup <- df_all_cor %>%
   filter(Test == "o-PHOS 0.3") %>%
   filter(
-     !grepl("CCV|CCB|Standard|Auto Spike|Blank|1mg/L ammonia|Abs_Chk_20ppt|Abs_Chk_10ppt|	
-0.15 mg/L", Sample_Name, ignore.case = TRUE), 
+     !grepl("CCV|CCB|Standard|Auto Spike|Blank|1mg/L ammonia|Abs_Chk_20ppt|Abs_Chk_10ppt|0.15 mg/L|peCHK", Sample_Name, ignore.case = TRUE), 
      #^removes autospice, ccv, ccb, standards
      !is.na(Sample_Name),                                         # Remove NA
      !grepl("^\\d+$", Sample_Name),                               # removes all numbers
@@ -1456,8 +1455,7 @@ if (any(df_matrix$Spike_diff_flag[df_matrix$Test == "o-PHOS 0.3"] != "YES")) {
 
 #Pull out samples 
 samples <- df_all_cor %>%  
-  filter(str_detect(Sample_Name, c("GCW|GWI|MSM|SWH")))     
-
+  filter(!str_detect(Sample_Name, c("Standard|Chk|CHK|Duplicate|Spike|Blank|ammonia|mg/L|CCV|CCB")))     
 
 #Convert values based on the Test ID 
 samples <- samples %>%
@@ -1513,8 +1511,8 @@ samples_flagged <- samples %>%
 cat("Sample Processing")
 
 samples_flagged <- samples_flagged %>%
-  filter(str_detect(Sample_Name, "GCW|GWI|MSM|SWH")) %>%
-  filter(!str_detect(Sample_Name, "RHZ|PPR")) %>% 
+  # filter(str_detect(Sample_Name, "GCW|GWI|MSM|SWH")) %>%
+  # filter(!str_detect(Sample_Name, "RHZ|PPR")) %>% 
   mutate(Run_Time = lubridate::mdy_hm(Run_Time)) %>%
   separate(
     col = Sample_Name,
@@ -1794,7 +1792,10 @@ final_data <- final_data_labeled %>%
 
 
 #Write out data frame 
-  write.csv(final_data, final_path)
+final_data <- final_data %>%
+  mutate(across(where(is.list), as.character))
+
+write.csv(final_data, final_path)
 
 
 ```
