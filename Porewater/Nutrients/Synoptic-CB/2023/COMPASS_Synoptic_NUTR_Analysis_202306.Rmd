@@ -1503,12 +1503,11 @@ if (any(df_matrix$Spike_diff_flag[df_matrix$Test == "o-PHOS 0.3"] != "YES")) {
 
 #Pull out samples 
 samples <- df_all_cor %>%  
-  filter(str_detect(Sample_Name, c("GCW|GWI|MSM|SWH")))     
-
+  filter(!str_detect(Sample_Name, c("Standard|Chk|Duplicate|Spike|Blank|ammonia|mg/L|CCV|CCB")))     
 
 #Convert values based on the Test ID 
 samples <- samples %>%
-  mutate(
+  mutate( 
     Conc_uM = case_when(
       Test == "Vanadium NOx" ~ (((as.numeric(samples$Conc))/Con1)/N_mw)*Con2,
       Test == "Ammonia 2" ~ (((as.numeric(samples$Conc))/Con1)/N_mw)*Con2,
@@ -1563,8 +1562,8 @@ samples_flagged <- samples %>%
 cat("Sample Processing")
 
 samples_flagged <- samples_flagged %>%
-  filter(str_detect(Sample_Name, "GCW|GWI|MSM|SWH")) %>%
-  filter(!str_detect(Sample_Name, "RHZ|PPR")) %>% 
+  # filter(str_detect(Sample_Name, "GCW|GWI|MSM|SWH")) %>%
+  # filter(!str_detect(Sample_Name, "RHZ|PPR")) %>% 
   mutate(Run_Time = lubridate::mdy_hm(Run_Time)) %>%
   separate(
     col = Sample_Name,
@@ -1847,7 +1846,10 @@ final_data <- final_data_labeled %>%
 
 
 #Write out data frame 
-  write.csv(final_data, final_path)
+final_data <- final_data %>%
+  mutate(across(where(is.list), as.character))
+
+write.csv(final_data, final_path)
 
 
 ```

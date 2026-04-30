@@ -1018,6 +1018,7 @@ df_PO4_dup <- df_all_cor %>%
 Nox_dup_chk <- df_NOx_dup %>%
   group_by(Pair_ID) %>%  # Use Pair_ID as it groups Originals and Duplicates
   filter(n_distinct(Type) == 2) %>%  # Keep only groups that have both Original and Duplicate
+  filter(Conc != -0.000815) %>% ##Remove extra sample
   summarise(
     OG_Conc = Conc[Type == "Original"],
     Dup_Conc = Conc[Type == "Duplicate"],
@@ -1467,7 +1468,7 @@ if (any(df_matrix$Spike_diff_flag[df_matrix$Test == "o-PHOS 0.3"] != "YES")) {
 
 #Pull out samples 
 samples <- df_all_cor %>%  
-  filter(str_detect(Sample_Name, c("GCW|GWI|MSM|SWH")))     
+  filter(!str_detect(Sample_Name, c("Standard|Chk|CHK|Duplicate|Spike|Blank|ammonia|mg/L|CCV|CCB")))     
 
 
 #Convert values based on the Test ID 
@@ -1523,8 +1524,8 @@ samples_flagged <- samples %>%
 cat("Sample Processing")
 
 samples_flagged <- samples_flagged %>%
-  filter(str_detect(Sample_Name, "GCW|GWI|MSM|SWH")) %>%
-  filter(!str_detect(Sample_Name, "RHZ|PPR|TEMPEST")) %>% 
+  # filter(str_detect(Sample_Name, "GCW|GWI|MSM|SWH")) %>%
+  # filter(!str_detect(Sample_Name, "TEMPEST")) %>% #RHZ|PPR|
   mutate(Run_Time = lubridate::mdy_hm(Run_Time)) %>%
   separate(
     col = Sample_Name,
@@ -1804,8 +1805,10 @@ final_data <- final_data_labeled %>%
 
 
 #Write out data frame 
-  write.csv(final_data, final_path)
+final_data <- final_data %>%
+  mutate(across(where(is.list), as.character))
 
+write.csv(final_data, final_path)
 
 ```
 
