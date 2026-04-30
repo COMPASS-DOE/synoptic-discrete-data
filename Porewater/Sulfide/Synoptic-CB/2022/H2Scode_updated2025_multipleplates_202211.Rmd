@@ -45,7 +45,7 @@ Script_run_by = "Zoe Read" #Code user
 Project = "COMPASS"
 
 Run_notes="Used Plate 4 standard curve. 9/15 of the MC's were off. 
-A lot fo the spks were bad but most of the samples that were spiked were 0 to begin with, 
+A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 "#any notes from run
 
@@ -872,10 +872,10 @@ all_data1 <- dat1 %>%
 Sample_data1 <- all_data1 %>% 
   subset((!IDs %like% "dup")) %>% 
   subset((!IDs %like% "spk"))%>% 
-  subset((!IDs %like% "TMP"))%>% 
-  subset((!Plate %like% "Plate4"))%>% 
-  subset((!Plate %like% "Plate5"))%>% 
-  subset((!Plate %like% "Plate6"))
+  subset((!IDs %like% "TMP")) #%>% 
+  # subset((!Plate %like% "Plate4"))%>% ##Why were these removed? 
+  # subset((!Plate %like% "Plate5"))%>% 
+  # subset((!Plate %like% "Plate6"))
 
 ```
 

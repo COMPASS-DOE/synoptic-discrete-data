@@ -921,9 +921,10 @@ all_data1 <- dat1 %>%
 ##Remove Dups and Spikes
 Sample_data1 <- all_data1 %>% 
   subset((!IDs %like% "_dup")) %>% 
-  subset((!IDs %like% "_spk")) %>% 
-  subset((!IDs %like% "PPR")) %>% 
-  subset((!IDs %like% "RHZ"))
+  subset((!IDs %like% "_spk")) 
+# %>% 
+#   subset((!IDs %like% "PPR")) %>% 
+#   subset((!IDs %like% "RHZ"))
 
 
 ```
