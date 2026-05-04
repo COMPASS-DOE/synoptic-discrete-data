@@ -20,7 +20,7 @@ library(tidyr)
 library(tibble)
 library(lubridate)
 library(tidyverse)
-detach("package:raster", unload = TRUE)
+# detach("package:raster", unload = TRUE)
 ```
 
 #Read in and collate all the files in the Processed Data folder 
@@ -38,10 +38,31 @@ dionex_2022 <- dionex_files_2022 %>%
 dionex_RHZ_2022 <- dionex_2022 %>%
   filter(str_detect(Sample_ID, "RHZ")) %>% 
   mutate(Sample_ID = str_remove(Sample_ID, "^[^_]*_"))
+
+##Nutr MSM_202211_RHZ_WC_9 data is formatted differently from MSM_202210_WC_RHZ_9
+dionex_RHZ_2022 <- dionex_RHZ_2022 %>% 
+  mutate(Sample_ID = ifelse(Date == "202208", paste(Date, Site, Zone, Replicate, Depth, Tree, sep = "_"), Sample_ID)) %>% 
+  mutate(Sample_ID = gsub("_NA", "", Sample_ID))
+
+dionex_RHZ_2022 <- dionex_RHZ_2022 %>% #202207_MSM_TR_RHZ_Tree_6
+  mutate(Sample_ID = gsub("SF_", "SF", Sample_ID), 
+         Sample_ID = gsub("Col_", "Col", Sample_ID), 
+         Sample_ID = gsub("Tree_", "Tree", Sample_ID), 
+         Sample_ID = gsub("Sip_", "Sip", Sample_ID), 
+         Sample_ID = gsub("SIp_", "Sip", Sample_ID)) %>% 
+  separate(Sample_ID, into = c("Date", "Site", "Sampler_Type", "Zone", "Replicate"), sep = "_", remove = FALSE) 
+  
+dionex_RHZ_2022 <- dionex_RHZ_2022 %>%
+  mutate(Zone = ifelse(Zone == "RHZ", Sampler_Type, Zone))
+
+dionex_RHZ_2022 <- dionex_RHZ_2022 %>%
+  mutate(Sample_ID = paste(Site, Date, Zone, "RHZ", Replicate, sep = "_")) 
+
 #Select only data columns
 colnames(dionex_RHZ_2022)
 dionex_RHZ_sel_2022 <- dionex_RHZ_2022 %>% 
   select("Sample_ID", "SO4_ppm",   "Cl_ppm",    "SO4_mM" ,   "Cl_mM"   ,  "salinity" )
+
 
 #2023
 dionex_files_2023 <- list.files(path = "../Sulfate_Chloride/Synoptic-CB/2023/Processed Data", pattern = "\\.csv$", full.names = TRUE)
@@ -53,6 +74,19 @@ dionex_2023 <- dionex_files_2023 %>%
 dionex_RHZ_2023 <- dionex_2023 %>%
   filter(str_detect(Sample_ID, "RHZ")) %>% 
   mutate(Sample_ID = str_remove(Sample_ID, "^[^_]*_"))
+
+dionex_RHZ_2023 <- dionex_RHZ_2023 %>% #MSM_202207_TR_RHZ_Tree6
+  mutate(Sample_ID = gsub("SF_", "SF", Sample_ID), 
+         Sample_ID = gsub("Collar_", "Col", Sample_ID), 
+         Sample_ID = gsub("Tree_", "Tree", Sample_ID), 
+         Sample_ID = gsub("Sip_", "Sip", Sample_ID), 
+         Sample_ID = gsub("SIp_", "Sip", Sample_ID)) %>% 
+  separate(Sample_ID, into = c("Site", "Date", "Zone", "Sampler_Type", "Replicate"), sep = "_", remove = FALSE) 
+
+dionex_RHZ_2022 <- dionex_RHZ_2022 %>%
+  mutate(Sample_ID = paste(Site, Date, Zone, "RHZ", Replicate, sep = "_")) 
+
+
 #Select only data columns
 colnames(dionex_RHZ_2023)
 dionex_RHZ_sel_2023 <- dionex_RHZ_2023 %>% 
@@ -62,7 +96,7 @@ dionex_RHZ_sel_2023 <- dionex_RHZ_2023 %>%
 dionex_RHZ_sel <- bind_rows(dionex_RHZ_sel_2022, dionex_RHZ_sel_2023)
 
 
-##Sulfide
+##Sulfide - need to fix sample IDs 
 #2022
 sulfide_files_2022 <- list.files(path = "../Sulfide/Synoptic-CB/2022/Processed Data", pattern = "\\.csv$", full.names = TRUE)
 #Read and combine all CSVs
@@ -112,18 +146,36 @@ nutr_data_2022 <- nutr_data_2022 %>%
 #Select Rhizon data
 nutr_RHZ_2022 <- nutr_data_2022 %>%
   filter(str_detect(Sample_ID, "RHZ"))
+
 ##Nutr MSM_202211_RHZ_WC_9 data is formatted differently from MSM_202210_WC_RHZ_9
 nutr_RHZ_2022 <- nutr_RHZ_2022 %>% 
-  mutate(Sample_ID = ifelse(Date == "202211", paste(Site, Date, Replicate, Zone, Depth, sep = "_"), Sample_ID))
+  mutate(Sample_ID = ifelse(Date == "202206"|Date == "202207", paste(Site, Date, Replicate, Zone, Depth, Tree, sep = "_"), Sample_ID)) %>% 
+  mutate(Sample_ID = gsub("_NA", "", Sample_ID))
+
+
+nutr_RHZ_2022 <- nutr_RHZ_2022 %>% #MSM_202305_RHZ_TR_SF_1
+  mutate(Sample_ID = gsub("SF_", "SF", Sample_ID), 
+         Sample_ID = gsub("Col_", "Col", Sample_ID), 
+         Sample_ID = gsub("Sip_", "Sip", Sample_ID), 
+         Sample_ID = gsub("SIp_", "Sip", Sample_ID)) %>% 
+  separate(Sample_ID, into = c("Site", "Date", "Sampler_Type", "Zone", "Replicate"), sep = "_", remove = FALSE) 
+  
+nutr_RHZ_2022 <- nutr_RHZ_2022 %>%
+  mutate(Zone = ifelse(Zone == "RHZ", Sampler_Type, Zone))
+
+nutr_RHZ_2022 <- nutr_RHZ_2022 %>%
+  mutate(Sample_ID = paste(Site, Date, Zone, "RHZ", Replicate, sep = "_")) 
+
+
 #Select only data columns
 colnames(nutr_RHZ_2022)
 nutr_RHZ_sel_2022 <- nutr_RHZ_2022 %>% 
-  select("Sample_ID", "NH3_mgL"  , "NH3_uM"  ,  "PO4_mgL" , "PO4_uM"  ,  "NOx_mgL"   ,"NOx_uM"  ,  "NH3_range", "PO4_range", "NOx_range" , "Run_notes")  %>% 
-  rename(Nutr_Run_notes = Run_notes)
+  rename(Nutr_Run_notes = Run_notes) %>% 
+  select("Sample_ID", "NH3_mgL"  , "NH3_uM"  ,  "PO4_mgL" , "PO4_uM"  ,  "NOx_mgL"   ,"NOx_uM"  ,  "NH3_range", "PO4_range", "NOx_range")
 ##Select unique rows because there are 4 of the same for each sample
 nutr_RHZ_sel_unique_2022 <- unique(nutr_RHZ_sel_2022)
 
-#2023 - No 2023 Rhizon Data? 
+#2023
 nutr_files_2023 <- list.files(path = "../Nutrients/Synoptic-CB/2023/Processed Data", pattern = "\\.csv$", full.names = TRUE)
 nutr_data_2023 <- nutr_files_2023 %>%
   lapply(read.csv, colClasses = "character") %>%    # or read.csv if you prefer base R
@@ -131,20 +183,40 @@ nutr_data_2023 <- nutr_files_2023 %>%
 #Select Rhizon data
 nutr_RHZ_2023 <- nutr_data_2023 %>%
   filter(str_detect(Sample_ID, "RHZ"))
-##Nutr MSM_202211_RHZ_WC_9 data is formatted differently from MSM_202210_WC_RHZ_9
+
+nutr_RHZ_2023 <- nutr_RHZ_2023 %>% #MSM_202305_RHZ_TR_SF_1
+  mutate(Sample_ID = gsub("SF_", "SF", Sample_ID), 
+         Sample_ID = gsub("Col_", "Col", Sample_ID), 
+         Sample_ID = gsub("Sip_", "Sip", Sample_ID), 
+         Sample_ID = gsub("SIp_", "Sip", Sample_ID)) %>% 
+  separate(Sample_ID, into = c("Site", "Date", "Sampler_Type", "Zone", "Replicate"), sep = "_", remove = FALSE) 
+  
 nutr_RHZ_2023 <- nutr_RHZ_2023 %>%
-  mutate(Sample_ID = ifelse(Date == "202211", paste(Site, Date, Replicate, Zone, Depth, sep = "_"), Sample_ID))
-#Select only data columns
+  mutate(Zone = ifelse(Zone == "RHZ", Sampler_Type, Zone))
+
+nutr_RHZ_2023 <- nutr_RHZ_2023 %>%
+  mutate(Sample_ID = paste(Site, Date, Zone, "RHZ", Replicate, sep = "_")) 
+
 colnames(nutr_RHZ_2023)
 nutr_RHZ_sel_2023 <- nutr_RHZ_2023 %>%
-  select("Sample_ID", "NH3_mgL"  , "NH3_uM"  ,  "PO4_mgL" , "PO4_uM"  ,  "NOx_mgL"   ,"NOx_uM"  ,  "NH3_range", "PO4_range", "NOx_range" , "Run_notes")  %>%
-  rename(Nutr_Run_notes = Run_notes)
+  rename(Nutr_Run_notes = Run_notes, 
+         NOx_mgL = NOx_Conc_mgL, 
+         NOx_uM = NOx_Conc_uM, 
+         NH3_mgL = NH3_Conc_mgL, 
+         NH3_uM = NH3_Conc_uM, 
+         PO4_mgL = PO4_Conc_mgL, 
+         PO4_uM = PO4_Conc_uM, 
+         NOx_range = NOx_Conc_Flag, 
+         NH3_range = NH3_Conc_Flag, 
+         PO4_range = PO4_Conc_Flag, 
+         Nutr_Field_notes = Field_notes) %>%
+  select("Sample_ID", "NH3_mgL"  , "NH3_uM"  ,  "PO4_mgL" , "PO4_uM"  ,  "NOx_mgL"   ,"NOx_uM"  ,  "NH3_range", "PO4_range", "NOx_range")
+
 ##Select unique rows because there are 4 of the same for each sample
 nutr_RHZ_sel_unique_2023 <- unique(nutr_RHZ_sel_2023)
 
 #Combine 2022 and 2023
-# nutr_RHZ_sel_unique <- bind_rows(nutr_RHZ_sel_unique_2022, nutr_RHZ_sel_unique_2023)
-nutr_RHZ_sel_unique <- nutr_RHZ_sel_unique_2022
+nutr_RHZ_sel_unique <- bind_rows(nutr_RHZ_sel_unique_2022, nutr_RHZ_sel_unique_2023)
 
 
 ##Iron - need to collate 2022 data?
@@ -157,12 +229,24 @@ iron_data_2022 <- iron_files_2022 %>%
 #Select Rhizon data
 iron_RHZ_2022 <- iron_data_2022 %>%
   rename(Sample_ID = Sample_Name) %>%
-  filter(str_detect(Sample_ID, "Rhizon")) %>% 
-  mutate(Sample_ID = gsub("Rhizon", "RHZ", Sample_ID))
+  filter(str_detect(Sample_ID, "RHZ"))
+
+iron_RHZ_2022 <- iron_RHZ_2022 %>% #MSM_202305_RHZ_TR_SF_1
+  mutate(Sample_ID = gsub("SF_Tree_", "SF", Sample_ID), 
+         Sample_ID = gsub("Col_", "Col", Sample_ID), 
+         Sample_ID = gsub("Collar_", "Col", Sample_ID), 
+         Sample_ID = gsub("Sip_", "Sip", Sample_ID), 
+         Sample_ID = gsub("SIp_", "Sip", Sample_ID)) %>% 
+  separate(Sample_ID, into = c("Site", "Zone", "Sampler_Type", "Replicate"), sep = "_", remove = FALSE) 
+
+iron_RHZ_2022 <- iron_RHZ_2022 %>%
+  mutate(Sample_ID = paste(Site, Date, Zone, "RHZ", Replicate, sep = "_")) 
+
 #Select only data columns
 colnames(iron_RHZ_2022)
 iron_RHZ_sel_2022 <- iron_RHZ_2022 %>% 
   select("Sample_ID", "FE_2_mean" ,"FE_2_sd"  ,"FE_3_mean" ,"FE_3_sd" ,  "FE_2_flag" ,"FE_3_flag")
+
 
 #2023 - Iron data not processed
 # iron_files_2023 <- list.files(path = "../Iron/Synoptic-CB/2023/Processed Data", pattern = "Summary_Data\\.csv$", full.names = TRUE)
