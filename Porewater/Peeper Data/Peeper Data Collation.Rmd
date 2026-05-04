@@ -86,7 +86,7 @@ sulfide_ppr_sel_2022 <- sulfide_ppr_2022 %>%
 "H2S_Conc_flag"  ,  "H2S_cv_flag"   ,   "H2S_QAQC_flag"  , "Run_notes",        "Field_notes") %>% 
   rename(H2S_Run_notes = Run_notes)
 
-#2023 - No 2023 Peeper Sulfide Data? 
+#2023
 sulfide_files_2023 <- list.files(path = "../Sulfide/Synoptic-CB/2023/Processed Data", pattern = "Combined\\.csv$", full.names = TRUE)
 # 3. Read and combine all CSVs
 sulfide_data_2023 <- sulfide_files_2023 %>%
@@ -94,7 +94,7 @@ sulfide_data_2023 <- sulfide_files_2023 %>%
   bind_rows()             # combine into one data frame
 #Select peeper data
 sulfide_ppr_2023 <- sulfide_data_2023 %>%
-  filter(str_detect(Sample_ID, "PPR"))%>%
+  filter(str_detect(Sample_ID, "PPR")) %>%
   separate(Sample_ID, into = c("Site", "Date", "Replicate", "Zone", "Depth_cm"), sep = "_")  %>% 
   mutate(Sample_ID = paste(Site, Date, Zone, "PPR", Depth_cm, sep = "_")) 
 #Select only data columns
@@ -103,7 +103,7 @@ sulfide_ppr_sel_2023 <- sulfide_ppr_2023 %>%
   rename(H2S_mean = H2S_mean_uM, 
          H2S_sd = H2S_sd_uM) %>% 
   select("Sample_ID", "H2S_mean"     ,    "H2S_sd"        ,   "H2S_cv"          ,
-"H2S_Conc_flag"  ,  "H2S_cv_flag"   ,   "H2S_QAQC_flag"  , "Run_notes",        "Field_notes") %>% 
+"H2S_Conc_flag"  ,  "H2S_cv_flag"   ,   "H2S_QAQC_flag"  , "Run_notes") %>% 
   rename(H2S_Run_notes = Run_notes)
 
 #Combine 2022 and 2023
@@ -127,7 +127,7 @@ nutr_ppr_2022 <- nutr_ppr_2022 %>%
 #Select only data columns
 colnames(nutr_ppr_2022)
 nutr_ppr_sel_2022 <- nutr_ppr_2022 %>% 
-  select("Sample_ID", "NH3_mgL"  , "NH3_uM"  ,  "PO4_mgL" , "PO4_uM"  ,  "NOx_mgL"   ,"NOx_uM"  ,  "NH3_range", "PO4_range", "NOx_range" , "Run_notes")  %>% 
+  select("Sample_ID", "NH3_mgL"  , "NH3_uM"  ,  "PO4_mgL" , "PO4_uM"  ,  "NOx_mgL"   ,"NOx_uM"  ,  "NH3_range", "PO4_range", "NOx_range" , "Run_notes")%>% 
   rename(Nutr_Run_notes = Run_notes)
 ##Select unique rows because there are 4 of the same for each sample
 nutr_ppr_sel_unique_2022 <- unique(nutr_ppr_sel_2022)
@@ -207,7 +207,61 @@ joined_data <- df_list %>%
 ```{r write out combined data and metadata, include=FALSE}
 
 #write out a csv of all the data to the main folder: 
-write.csv(joined_data, "COMPASS_SynopticCB_Peeper_Data.csv", row.names = FALSE)
+colnames(joined_data)
+final_data <- joined_data %>% 
+  mutate(Project = "COMPASS: Synoptic", 
+         Region = "CB") %>% 
+  rename(H2S_mean_uM = H2S_mean, 
+         H2S_sd_uM = H2S_sd, 
+         FE_2_mean_uM = FE_2_mean, 
+         FE_2_sd_uM = FE_2_sd, 
+         FE_3_mean_uM = FE_3_mean, 
+         FE_3_sd_uM = FE_3_sd) %>% 
+  separate(
+    col = Sample_ID, #MSM_202306_TR_PPR_3
+    sep = "_",
+    into = c("Site", "Date", "Zone", "Sampler_Type", "Replicate"),
+    remove = FALSE) %>%
+  mutate(Month = as.numeric(substr(Date, 5, 6)), 
+         Year = as.numeric(substr(Date, 1, 4))) 
+
+
+##Pull in metadata dates
+metadata_2022 <- read.csv("COMPASS_SynopticCB_PW_SampleLog_2022.csv")
+metadata_2023 <- read.csv("COMPASS_SynopticCB_PW_SampleLog_2023.csv")
+metadat <- bind_rows(metadata_2022, metadata_2023)
+
+metadat <- metadat %>% 
+  select("Year", "Month", "Day", "Site", "Transect.Location") %>% 
+  rename(Zone = Transect.Location) %>% 
+  mutate(Zone = case_when(
+    `Zone` == "Upland" ~ "UP",
+    `Zone` == "Transition" ~ "TR",
+    `Zone` == "Wetland" ~ "WC",   
+    `Zone` == "UPCON" ~ "UPCON",
+    `Zone` == "Surface Water" ~ "SW",
+    TRUE                 ~ `Zone`    # keep original value if no match
+  )) %>%
+  mutate(
+    Zone = case_when(
+      Site == "SWH" & Zone == "UP" & Year == 2023 ~ "SWAMP",
+      Site == "SWH" & Zone == "UPCON" & Year == 2023 ~ "UP",
+      TRUE ~ `Zone`
+    )) 
+
+metadat <- unique(metadat)
+
+
+final_data1 <- final_data %>% 
+  left_join(metadat, by = c("Year", "Month", "Site", "Zone"))
+
+final_data1 <- final_data1 %>%
+  select(c("Project", "Site", "Year", "Month", "Day", "Sample_ID", "Zone", "Sampler_Type", "Replicate", "SO4_ppm", "Cl_ppm", "SO4_mM", "Cl_mM", "salinity", "H2S_mean_uM", "H2S_sd_uM", "H2S_Conc_flag", "NH3_mgL", "NH3_uM", "NH3_range", "PO4_mgL", "PO4_uM", "PO4_range", "NOx_mgL", "NOx_uM", "NOx_range", "FE_2_mean_uM", "FE_2_sd_uM", "FE_3_mean_uM", "FE_3_sd_uM", "FE_2_flag", "FE_3_flag"))
+
+
+
+##Export final data
+write.csv(final_data1, "COMPASS_SynopticCB_Peeper_Data.csv", row.names = FALSE)
 
 ```
 

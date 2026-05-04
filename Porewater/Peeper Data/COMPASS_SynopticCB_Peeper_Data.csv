@@ -1,545 +1,168 @@
-"Sample_ID","SO4_ppm","Cl_ppm","SO4_mM","Cl_mM","salinity","H2S_mean","H2S_sd","H2S_cv","H2S_Conc_flag","H2S_cv_flag","H2S_QAQC_flag","H2S_Run_notes","Field_notes","NH3_mgL","NH3_uM","PO4_mgL","PO4_uM","NOx_mgL","NOx_uM","NH3_range","PO4_range","NOx_range","Nutr_Run_notes","FE_2_mean","FE_2_sd","FE_3_mean","FE_3_sd","FE_2_flag","FE_3_flag"
-"MSM_202210_UP_PPR_1","56.4808","1046.1222","1.7617217716781","29.5097940761636","1.8903688154",NA,NA,NA,NA,NA,NA,NA,NA,"0.313359","22.372079076442","0.003792","0.27072758037225","0.003577","0.25537778348933","Within_Range","Within_Range","bdl",NA,"74.8250697174969","2.55939904990192","171.601122236424","81.8815101070448","within range","within range"
-"MSM_202210_UP_PPR_2","56.9315","1042.8043","1.77577978789769","29.4162002820874","1.8843733701",NA,NA,NA,NA,NA,NA,NA,NA,"0.343022","24.4898512854562","0.003947","0.281793713008774","0.001753","0.125154390398881","Within_Range","Within_Range","bdl",NA,"656.113449875451","58.7424324797883","355.120031094197","31.5276679756945","within range","within range"
-"MSM_202210_UP_PPR_3","70.1598","1104.8402","2.18839051777916","31.1661551480959","1.9964722414",NA,NA,NA,NA,NA,NA,NA,NA,"0.467758","33.3953036760979","0.00706","0.504044492992639","0.003841","0.274225906173474","Within_Range","Within_Range","bdl",NA,"806.37508894555","3.60172962503972","161.061706711202","19.901168139904","within range","within range"
-"MSM_202210_UP_PPR_4","82.4729","1330.7842","2.57245477230193","37.5397517630465","2.4047530494",NA,NA,NA,NA,NA,NA,NA,NA,"0.645589","46.0914419527797","0.009802","0.699807949052953","0.006355","0.453711438097482","Within_Range","Within_Range","bdl",NA,"1868.39379220371","104.450159126153","136.332918758467","61.8041137254612","within range","within range"
-"MSM_202210_UP_PPR_5","94.551","1353.2643","2.9491890205864","38.1738871650212","2.4453745901",NA,NA,NA,NA,NA,NA,NA,NA,"0.79449","56.7221401186575","0.009451","0.674748513211535","0.003096","0.221037075114053","Within_Range","Within_Range","bdl",NA,"2665.5445215078","154.87437387671","30.9242519175812","43.7334964680855","within range","bdl"
-"MSM_202210_UP_PPR_6","95.2751","1491.5376","2.97177479725515","42.0744033850494","2.6952344432",NA,NA,NA,NA,NA,NA,NA,NA,"0.450865","32.189238007525","0.005077","0.362469389649239","1.1e-05","0.000785338445172667","Within_Range","Within_Range","bdl",NA,"2897.30399871762","162.07783312679","0","0","within range","bdl"
-"MSM_202210_UP_PPR_7","101.5296","1765.9643","3.16686213349969","49.8156361071932","3.1911234901",NA,NA,NA,NA,NA,NA,NA,NA,"0.45069","32.1767439868063","0.015779","1.12653230239814","0.005841","0.417014714386686","Within_Range","Within_Range","bdl",NA,"2169.76600615787","36.9360255942215","50.1023168676596","29.0753478521001","within range","within range"
-"MSM_202210_UP_PPR_8","112.9602","2132.855","3.52339987523394","60.1651622002821","3.854094985",NA,NA,NA,NA,NA,NA,NA,NA,"0.361354","25.7986535015385","-0.0053","-0.378390341765012","0.001839","0.131294309152049","Within_Range","bdl","bdl",NA,"2274.60957918136","99.0475646885933","98.9313238894206","59.9289122529193","within range","within range"
-"MSM_202210_UP_PPR_9","138.9142","2589.1649","4.33294447910168","73.0370916784203","4.6786469743",NA,NA,NA,NA,NA,NA,NA,NA,"0.304009","21.7045413980452","0.015861","1.13238664353488","0.008685","0.620060399665874","Within_Range","Within_Range","bdl",NA,"1583.15135871471","118.857077626312","255.608965798601","109.335061581786","within range","within range"
-"MSM_202210_UP_PPR_10","133.0179","2447.1084","4.14902994385527","69.029856135402","4.4219508788",NA,NA,NA,NA,NA,NA,NA,NA,"0.338749","24.1847829967087","0.019816","1.41475151177651","0.00576","0.411231767654051","Within_Range","Within_Range","bdl",NA,"2177.83089639044","138.666590564031","120.794623908273","127.014257228256","within range","within range"
-"MSM_202210_UP_PPR_11","146.819","2371.4323","4.57950717404866","66.8951283497884","4.2852041661",NA,NA,NA,NA,NA,NA,NA,NA,"0.345049","24.6345677425803","0.017267","1.23276717570877","0.004157","0.296786537871162","Within_Range","Within_Range","bdl",NA,"1611.16624057524","97.2466998760734","146.915979414318","155.924678529584","within range","within range"
-"MSM_202210_UP_PPR_12","141.9209","2376.4229","4.42672800998128","67.0359069111424","4.2942221803",NA,NA,NA,NA,NA,NA,NA,NA,"0.34512","24.6396367452719","0.021077","1.50477985535494","0.004426","0.315991632575839","Within_Range","Within_Range","bdl",NA,"1879.85442569211","102.649294313633","242.431809004684","37.4515402541763","within range","within range"
-"MSM_202210_TR_PPR_1","234.3596","2538.4834","7.31003119151591","71.6074301833568","4.5870655038",NA,NA,NA,NA,NA,NA,NA,NA,"0.492415","35.1556754981545","0.006604","0.471488644720027","0.030207","2.15661076484825","Within_Range","Within_Range","Within_Range",NA,"156.83573975606","25.2071573005363","31.9191334073554","2.94074782771743","within range","within range"
-"MSM_202210_TR_PPR_2","244.5354","2577.2622","7.62742981908921","72.7013314527504","4.6571387954","1.92622492915712","0.189695913851379","9.84806659803671","Within Range","Within Range","Spk recovery out of range","October sample 143/reruns plate was not run.
-Plate 1 Std curve R squared was low and slope was different from previous std curves. 
-Plate 2 both MC's were off. 5/9 spks were good. 
-",NA,"0.493272","35.2168605024738","0.011991","0.856090299642314","0.024336","1.73745421833837","Within_Range","Within_Range","bdl",NA,"113.244482708535","3.8390985748529","47.8662872329846","17.9384425667644","within range","within range"
-"MSM_202210_TR_PPR_3","422.5919","3501.0406","13.1812819713038","98.7599605077574","6.3264063642","3.3123923739667","0.298503893733822","9.01173110045396","Within Range","Within Range","Spk recovery out of range","October sample 143/reruns plate was not run.
-Plate 1 Std curve R squared was low and slope was different from previous std curves. 
-Plate 2 both MC's were off. 5/9 spks were good. 
-",NA,"0.61463","43.8811425960433","0.020532","1.46586990511684","0.020434","1.45887325351439","Within_Range","Within_Range","bdl",NA,"2530.5637270889","122.458807251352","56.1978807946603","19.7723446077076","within range","within range"
-"MSM_202210_TR_PPR_4","427.6311","3386.6446","13.3384622582658","95.5329929478138","6.1196927922","3.98157665766788","0.180436805308183","4.53179282535452","Within Range","Within Range","Spk recovery out of range","October sample 143/reruns plate was not run.
-Plate 1 Std curve R squared was low and slope was different from previous std curves. 
-Plate 2 both MC's were off. 5/9 spks were good. 
-",NA,"1.01472","72.4453297350554","-0.005337","-0.381031934716957","0.021132","1.5087065475808","Within_Range","bdl","bdl",NA,"3345.90204393641","333.293035446733","987.365754562243","506.306096847854","within range","within range"
-"MSM_202210_TR_PPR_5","446.9793","3488.3102","13.9419619463506","98.4008519040903","6.3034025314","7.82938628894964","0.556913333920855","7.1131160651363","Within Range","Within Range","Spk recovery out of range","October sample 143/reruns plate was not run.
-Plate 1 Std curve R squared was low and slope was different from previous std curves. 
-Plate 2 both MC's were off. 5/9 spks were good. 
-",NA,"0.962214","68.6966951530339","0.057148","4.08004740588433","0.036333","2.59397288440532","Within_Range","Within_Range","Within_Range",NA,"2815.8061605779","360.172962503976","0","0","within range","bdl"
-"MSM_202210_TR_PPR_6","465.5185","3616.861","14.5202276980661","102.027108603667","6.535693827","5.31994522507023","0.298503893733823","5.61103321754374","Within Range","Within Range","Spk recovery out of range","October sample 143/reruns plate was not run.
-Plate 1 Std curve R squared was low and slope was different from previous std curves. 
-Plate 2 both MC's were off. 5/9 spks were good. 
-",NA,"0.883277","63.0610350760707","0.042471","3.03219173681167","0.025101","1.79207093747992","Within_Range","Within_Range","Within_Range",NA,"3474.15588430029","250.320208940263","0","0","within range","bdl"
-"MSM_202210_TR_PPR_7","468.6459","3676.7816","14.6177760449158","103.717393511989","6.6439703512","2.2488673516559","0.0506983655216318","2.25439555091149","Within Range","Within Range","Spk recovery out of range","October sample 143/reruns plate was not run.
-Plate 1 Std curve R squared was low and slope was different from previous std curves. 
-Plate 2 both MC's were off. 5/9 spks were good. 
-",NA,"0.923026","65.8988912449042","0.033972","2.42541069630962","0.012103","0.864086472902254","Within_Range","Within_Range","bdl",NA,"3266.5910777882","39.6190258754375","0","0","within range","bdl"
-"MSM_202210_TR_PPR_8","469.1142","3673.5219","14.6323830318153","103.625441466855","6.6380800733","1.85452661304628","0.101396731043263","5.46752633960356","Within Range","Within Range","Spk recovery out of range","October sample 143/reruns plate was not run.
-Plate 1 Std curve R squared was low and slope was different from previous std curves. 
-Plate 2 both MC's were off. 5/9 spks were good. 
-",NA,"0.802303","57.2799445979424","0.036018","2.57148364711174","0.009264","0.661397759643599","Within_Range","Within_Range","bdl",NA,"3163.44537639262","84.6406461884348","0","0","within range","bdl"
-"MSM_202210_TR_PPR_9","485.0662","3786.4111","15.1299500935745","106.809904090268","6.8420708577","1.83062717434267","0.149251946866911","8.15304989234104","Within Range","Within Range","Spk recovery out of range","October sample 143/reruns plate was not run.
-Plate 1 Std curve R squared was low and slope was different from previous std curves. 
-Plate 2 both MC's were off. 5/9 spks were good. 
-",NA,"0.880456","62.859631462086","0.029736","2.12298400051404","0.012894","0.920559446550579","Within_Range","Within_Range","bdl",NA,"3095.95497918317","0","0","0","within range","bdl"
-"MSM_202210_TR_PPR_10","462.9205","3552.5306","14.439192139738","100.21242877292","6.4194487942","2.428113141933","0.12418512632111","5.11447033404081","Within Range","Within Range","Spk recovery out of range","October sample 143/reruns plate was not run.
-Plate 1 Std curve R squared was low and slope was different from previous std curves. 
-Plate 2 both MC's were off. 5/9 spks were good. 
-",NA,"0.801875","57.2493877929848","0.027304","1.94935280972677","0.003755","0.268085987420306","Within_Range","Within_Range","bdl",NA,"2559.85201267036","95.4458350635541","0","0","within range","bdl"
-"MSM_202210_TR_PPR_11","439.7246","3454.7595","13.7156768558952","97.4544287729196","6.2427764165","1.49603503249208","0.101396731043264","6.77769763682326","Within Range","Within Range","Spk recovery out of range","October sample 143/reruns plate was not run.
-Plate 1 Std curve R squared was low and slope was different from previous std curves. 
-Plate 2 both MC's were off. 5/9 spks were good. 
-",NA,"0.899013","64.1844974190923","0.030383","2.16917617997101","0.011425","0.815681066917975","Within_Range","Within_Range","bdl",NA,"3416.8527168583","111.653618376233","0","0","within range","bdl"
-"MSM_202210_TR_PPR_12","449.9308","3561.7699","14.0340237055521","100.473057827927","6.4361442093","5.9771797894196","0.0506983655216318","0.848198771122372","Within Range","Within Range","Spk recovery out of range","October sample 143/reruns plate was not run.
-Plate 1 Std curve R squared was low and slope was different from previous std curves. 
-Plate 2 both MC's were off. 5/9 spks were good. 
-",NA,"0.842736","60.1666345391848","0.048924","3.4928998265116","0.021295","1.52034383545018","Within_Range","Within_Range","bdl",NA,NA,NA,NA,NA,NA,NA
-"MSM_202210_WC_PPR_1","710.7319","6493.1289","22.1688053649407","183.16301551481","11.7331099223","0","0","0","bdl","Within Range","Spk recovery out of range","October sample 143/reruns plate was not run.
-Plate 1 Std curve R squared was low and slope was different from previous std curves. 
-Plate 2 both MC's were off. 5/9 spks were good. 
-",NA,"0.311169","22.2157253314485","-0.00479","-0.341979195670643","0.007043","0.502830788122827","Within_Range","bdl","bdl",NA,"197.920542981449","6.23838665181922","110.492811920129","10.8243442424472","within range","within range"
-"MSM_202210_WC_PPR_2","728.9265","6742.9495","22.7363225202745","190.210141043724","12.1845357465","33.7961264404256","2.28142644847344","6.75055602154595","Within Range","Within Range","Spk recovery out of range","October sample 143/reruns plate was not run.
-Plate 1 Std curve R squared was low and slope was different from previous std curves. 
-Plate 2 both MC's were off. 5/9 spks were good. 
-",NA,"0.447715","31.9643456345892","0.009089","0.648903738924943","0.007604","0.542883048826633","Within_Range","Within_Range","bdl",NA,"449.551048319558","12.7480075058915","43.1480899157212","31.7371757591879","within range","within range"
-"MSM_202210_WC_PPR_3","733.9223","6700.2763","22.892149095446","189.006383638928","12.1074252741","46.2716334437118","0.253491827608159","0.547834188556418","Within Range","Within Range","Spk recovery out of range","October sample 143/reruns plate was not run.
-Plate 1 Std curve R squared was low and slope was different from previous std curves. 
-Plate 2 both MC's were off. 5/9 spks were good. 
-",NA,"0.754409","53.8605810076606","0.007689","0.548951573175694","0.005613","0.40073679025038","Within_Range","Within_Range","bdl",NA,"516.294505528141","7.8657918653373","50.5470650726496","2.04160026681744","within range","within range"
-"MSM_202210_WC_PPR_4","728.1319","6589.7918","22.7115377417342","185.889754583921","11.9077797826","45.2320078601047","4.86704309007666","10.7601747530856","Within Range","High CV","Spk recovery out of range","October sample 143/reruns plate was not run.
-Plate 1 Std curve R squared was low and slope was different from previous std curves. 
-Plate 2 both MC's were off. 5/9 spks were good. 
-",NA,"0.761274","54.3507035918525","0.0109","0.778199004762007","0.011608","0.828746242869484","Within_Range","Within_Range","bdl",NA,"501.526556663024","55.65128342706","108.386383220969","51.0818137617684","within range","within range"
-"MSM_202210_WC_PPR_5","730.5454","6654.6298","22.7868184653774","187.718753173484","12.0249420486","36.8791540331918","2.38282317951669","6.46116550659517","Within Range","Within Range","Spk recovery out of range","October sample 143/reruns plate was not run.
-Plate 1 Std curve R squared was low and slope was different from previous std curves. 
-Plate 2 both MC's were off. 5/9 spks were good. 
-",NA,"0.67643","48.2933167698316","0.007278","0.519608473087879","0.008837","0.630912349090078","Within_Range","Within_Range","bdl",NA,NA,NA,NA,NA,NA,NA
-"MSM_202210_WC_PPR_6","714.4724","6578.1094","22.2854772301934","185.560208744711","11.8866696858","23.6866638687972","4.10656760725218","17.3370451406702","Within Range","High CV","Spk recovery out of range","October sample 143/reruns plate was not run.
-Plate 1 Std curve R squared was low and slope was different from previous std curves. 
-Plate 2 both MC's were off. 5/9 spks were good. 
-",NA,"0.60738","43.3635331662704","0.007912","0.564872525291468","0.009515","0.679317755074357","Within_Range","Within_Range","bdl",NA,"617.339837759304","48.6941087609854","43.0015195654936","41.2483637647951","within range","within range"
-"MSM_202210_WC_PPR_7","683.2475","6304.253","21.3115252651279","177.835063469676","11.391811171","25.1923285071248","0.354888558651423","1.40871677880453","Within Range","Within Range","Spk recovery out of range","October sample 143/reruns plate was not run.
-Plate 1 Std curve R squared was low and slope was different from previous std curves. 
-Plate 2 both MC's were off. 5/9 spks were good. 
-",NA,"0.652495","46.58449170754","0.00487","0.347690747999172","0.00562","0.401236551079126","Within_Range","Within_Range","bdl",NA,"674.771954960046","73.8424764334394","0","0","within range","bdl"
-"MSM_202210_WC_PPR_8","738.2954","6780.6854","23.0285527136619","191.274623413258","12.2527245178","21.7508093338045","0.861872213867743","3.96248342137893","Within Range","Within Range","Spk recovery out of range","October sample 143/reruns plate was not run.
-Plate 1 Std curve R squared was low and slope was different from previous std curves. 
-Plate 2 both MC's were off. 5/9 spks were good. 
-",NA,"0.628757","44.8897313428573","0.009631","0.687599505950724","0.011253","0.803401229411639","Within_Range","Within_Range","bdl",NA,"607.20475825329","132.274760125949","15.7267971839194","27.2396117628796","within range","within range"
-"MSM_202210_WC_PPR_9","722.7894","6658.0236","22.5448970679975","187.814488011283","12.0310746452","28.9923392609993","1.2674591380408","4.37170359601092","Within Range","Within Range","Spk recovery out of range","October sample 143/reruns plate was not run.
-Plate 1 Std curve R squared was low and slope was different from previous std curves. 
-Plate 2 both MC's were off. 5/9 spks were good. 
-",NA,"0.640935","45.7591723960676","0.00817","0.583292281550972","0.011629","0.830245525355723","Within_Range","Within_Range","bdl",NA,"549.772641052548","22.0888936757313","38.7284994932195","67.0797288231617","within range","within range"
-"MSM_202210_WC_PPR_10","747.1061","6846.8689","23.3033718028696","193.141576868829","12.3723181023","25.8734625101778","3.24469539338444","12.5406307412782","Within Range","High CV","Spk recovery out of range","October sample 143/reruns plate was not run.
-Plate 1 Std curve R squared was low and slope was different from previous std curves. 
-Plate 2 both MC's were off. 5/9 spks were good. 
-",NA,"0.555973","39.6933610343621","0.008019","0.572511726530874","0.011553","0.824819550643621","Within_Range","Within_Range","bdl",NA,"707.686020382598","158.482123731481","117.165965504406","151.4712541491","within range","within range"
-"MSM_202210_WC_PPR_11","740.1485","6788.1672","23.0863537117904","191.485675599436","12.2662441304","27.8810153612813","0.608380386259582","2.18205965018206","Within Range","Within Range","Spk recovery out of range","October sample 143/reruns plate was not run.
-Plate 1 Std curve R squared was low and slope was different from previous std curves. 
-Plate 2 both MC's were off. 5/9 spks were good. 
-",NA,"0.680422","48.5783232310252","0.006256","0.446643392090928","0.008893","0.634910435720048","Within_Range","Within_Range","bdl",NA,NA,NA,NA,NA,NA,NA
-"MSM_202210_WC_PPR_12","733.4681","6740.1887","22.8779819089208","190.132262341326","12.1795469809",NA,NA,NA,NA,NA,NA,NA,NA,"0.551769","39.3932189594979","-0.002132","-0.152212869555284","0.008923","0.637052267843246","Within_Range","bdl","bdl",NA,"595.380498829608","30.4052385180403","80.7127202086117","40.3652799136609","within range","within range"
-"MSM_202211_UP_PPR_1","23.4174","304.3703","0.730424204616344","8.58590409026798","0.5500231321","0","0","0","bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range","Used Plate 4 standard curve. 9/15 of the MC's were off. 
-A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
-so probably wouldn't have given a good spike. 
-",NA,"0.011429","0.815966644534401","0.001214","0.0866728065854198","0.039103","2.79173538378062","bdl","bdl","Within_Range",NA,"38.6221613220952","1.27969952495097","24.3043799347621","12.6174653515001","within range","within range"
-"MSM_202211_UP_PPR_2","84.6656","1007.8622","2.64084840923269","28.4305275035261","1.8212329954","0","0","0","bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range","Used Plate 4 standard curve. 9/15 of the MC's were off. 
-A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
-so probably wouldn't have given a good spike. 
-",NA,"0.546142","38.9914826475901","0.003376","0.241027508263902","0.043644","3.11593737282872","Within_Range","Within_Range","Within_Range",NA,"14.9794456353023","1.27969952495097","61.7691472325027","12.3473770217557","within range","within range"
-"MSM_202211_UP_PPR_3","94.4782","1118.5059","2.94691827822832","31.5516473906911","2.0211661613","0","0","0","bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range","Used Plate 4 standard curve. 9/15 of the MC's were off. 
-A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
-so probably wouldn't have given a good spike. 
-",NA,"0.845169","60.3403371243762","0.007642","0.545596036182684","0.028109","2.00682530503259","Within_Range","Within_Range","Within_Range",NA,"42.3163356481566","3.13461086021191","241.28640891452","43.5773684768113","within range","within range"
-"MSM_202211_UP_PPR_4","112.3998","1386.3066","3.50592014971928","39.1059689703808","2.5050820262","0","0","0","bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range","Used Plate 4 standard curve. 9/15 of the MC's were off. 
-A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
-so probably wouldn't have given a good spike. 
-",NA,"0.659124","47.0577652123627","0.005102","0.364254249751904","0.011004","0.785624022789094","Within_Range","Within_Range","bdl",NA,"46.7493448394303","4.43300919127367","49.0641468020956","3.45599950492285","within range","within range"
-"MSM_202211_UP_PPR_5","211.3758","2175.9984","6.59313162819713","61.3821833568406","3.9320551088","0","0","0","bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range","Used Plate 4 standard curve. 9/15 of the MC's were off. 
-A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
-so probably wouldn't have given a good spike. 
-",NA,"0.931922","66.5340158638366","0.014839","1.05942156253793","0.009588","0.684529546574139","Within_Range","Within_Range","bdl",NA,"3471.60907685842","156.675238689229","0","0","within range","bdl"
-"MSM_202211_UP_PPR_6","179.9841","2076.472","5.61397691827823","58.5746685472497","3.752210904","0","0","0","bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range","Used Plate 4 standard curve. 9/15 of the MC's were off. 
-A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
-so probably wouldn't have given a good spike. 
-",NA,"0.622052","44.4110318633226","0.011952","0.853305917882156","-0.000432","0","Within_Range","Within_Range","bdl",NA,"2887.11676895015","68.4328628757558","0","0","within range","bdl"
-"MSM_202211_UP_PPR_7","174.8104","2399.5399","5.4526013724267","67.6880084626234","4.3359945993","0","0","0","bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range","Used Plate 4 standard curve. 9/15 of the MC's were off. 
-A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
-so probably wouldn't have given a good spike. 
-",NA,"0.400736","28.6103079240649","0.010765","0.768560760207615","-0.000694","0","Within_Range","Within_Range","bdl",NA,"2347.19359127454","140.46745537655","16.7346270009327","23.6663364659741","within range","within range"
-"MSM_202211_UP_PPR_8","177.2609","2485.0861","5.52903618215845","70.1011593794076","4.4905765827","0","0","0","bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range","Used Plate 4 standard curve. 9/15 of the MC's were off. 
-A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
-so probably wouldn't have given a good spike. 
-",NA,"0.317279","22.6519451405399","0.009907","0.707304361484147","-0.000741","0","Within_Range","Within_Range","bdl",NA,"1445.62375685394","28.8138370003181","128.051367081317","71.1923771389649","within range","within range"
-"MSM_202211_UP_PPR_9","178.6692","2492.5354","5.57296319401123","70.3112947813822","4.5040374678","0","0","0","bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range","Used Plate 4 standard curve. 9/15 of the MC's were off. 
-A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
-so probably wouldn't have given a good spike. 
-",NA,"0.278149","19.8582821078484","0.009244","0.659969871561467","0.000778","0.0555448463949396","Within_Range","Within_Range","bdl",NA,"1241.0302256907","39.482361011917","149.006165090488","35.5358777146188","within range","within range"
-"MSM_202211_UP_PPR_10","148.4152","2364.0378","4.62929507174049","66.686538787024","4.2718423046","0","0","0","bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range","Used Plate 4 standard curve. 9/15 of the MC's were off. 
-A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
-so probably wouldn't have given a good spike. 
-",NA,"0.279792","19.9755831137955","0.009308","0.66453911342429","0.001378","0.0983814888589032","Within_Range","Within_Range","bdl",NA,"1120.48134010904","209.958492459552","236.515445962421","14.3873373638622","within range","within range"
-"MSM_202211_UP_PPR_11","161.6766","2433.2554","5.0429382407985","68.6390803949224","4.3969185078","0","0","0","bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range","Used Plate 4 standard curve. 9/15 of the MC's were off. 
-A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
-so probably wouldn't have given a good spike. 
-",NA,"0.232179","16.5762813510677","0.011352","0.810469275418193","0.000201","0.0143502752254278","Within_Range","Within_Range","bdl",NA,"1140.00686383001","110.044481681175","271.543688157511","36.884729686783","within range","within range"
-"MSM_202211_UP_PPR_12","158.7478","2355.5381","4.95158452900811","66.4467729196051","4.2564833467","0","0","0","bdl","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range","Used Plate 4 standard curve. 9/15 of the MC's were off. 
-A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
-so probably wouldn't have given a good spike. 
-",NA,"0.267067","19.067089321539","-0.001706","-0.12179885340587","-0.000123","0","Within_Range","bdl","bdl",NA,"1193.4898201092","50.4242147505567","216.52400607787","34.1247762356924","within range","within range"
-"MSM_202211_TR_PPR_1","278.143","2474.0204","8.67570180910792","69.7890098730606","4.4705808628","0","0","0","bdl","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range","Used Plate 4 standard curve. 9/15 of the MC's were off. 
-A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
-so probably wouldn't have given a good spike. 
-",NA,"0.693291","49.4970978174731","0.005179","0.369751618868113","0.009901","0.706875995059507","Within_Range","Within_Range","bdl",NA,"221.85320789474","17.3114542997182","32.675566038012","8.56469751015998","within range","within range"
-"MSM_202211_TR_PPR_2","415.2092","3336.8363","12.9510043668122","94.1279633286319","6.0296891941","2.73795444462606","0.497205351966089","18.1597379365454","Within Range","High CV","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range","Used Plate 4 standard curve. 9/15 of the MC's were off. 
-A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
-so probably wouldn't have given a good spike. 
-",NA,"0.789734","56.3825883327265","0.015548","1.11004019504951","0.003067","0.218966637394961","Within_Range","Within_Range","bdl",NA,"764.35276615476","70.2337276882754","141.999178934006","9.63352103455888","within range","within range"
-"MSM_202211_TR_PPR_3","483.1684","3838.8819","15.070754834685","108.290039492243","6.9368855933","0","0","0","bdl","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range","Used Plate 4 standard curve. 9/15 of the MC's were off. 
-A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
-so probably wouldn't have given a good spike. 
-",NA,"1.270161","90.6823877144509","0.022955","1.63885854626714","-0.000333","0","Within_Range","Within_Range","bdl",NA,"1951.16503406436","1.8008648125199","3.09324958165541","4.37451551018199","within range","within range"
-"MSM_202211_TR_PPR_4","504.1556","3933.5373","15.7253774173425","110.960149506347","7.1079279011","0","0","0","bdl","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range","Used Plate 4 standard curve. 9/15 of the MC's were off. 
-A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
-so probably wouldn't have given a good spike. 
-",NA,"0.888744","63.4513482833216","0.01554","1.10946903981666","0.001158","0.0826747199554499","Within_Range","Within_Range","bdl",NA,"2622.24879499608","543.861173381004","0","0","within range","bdl"
-"MSM_202211_TR_PPR_5","514.8428","3992.268","16.058727386151","112.616868829337","7.214054276","0","0","0","bdl","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range","Used Plate 4 standard curve. 9/15 of the MC's were off. 
-A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
-so probably wouldn't have given a good spike. 
-",NA,"1.242898","88.7359620752925","0.027575","1.96870069323966","-0.002135","0","Within_Range","Within_Range","bdl",NA,"2587.86689453088","354.770368066417","11.3520046798146","16.0541589783167","within range","bdl"
-"MSM_202211_TR_PPR_6","508.4345","3861.4798","15.8588427947598","108.927497884344","6.9777199986","0","0","0","bdl","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range","Used Plate 4 standard curve. 9/15 of the MC's were off. 
-A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
-so probably wouldn't have given a good spike. 
-",NA,"1.102503","78.7125447107456","0.021282","1.51941570819679","0.001105","0.0788908165377998","Within_Range","Within_Range","bdl",NA,"2135.80857359965","342.164314378777","0","0","within range","bdl"
-"MSM_202211_TR_PPR_7","514.9525","4014.6269","16.062149095446","113.247585331453","7.2544568083","0.0603284726924646","0.0853173442789384","141.421356237309","Within Range","High CV","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range","Used Plate 4 standard curve. 9/15 of the MC's were off. 
-A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
-so probably wouldn't have given a good spike. 
-",NA,"1.193005","85.1738810712016","0.032784","2.34059414423098","0.002719","0.194121384765862","Within_Range","Within_Range","bdl",NA,"2608.66582197279","39.482361011917","1.90221380097106","3.2947309501406","within range","within range"
-"MSM_202211_TR_PPR_8","492.0431","3875.5447","15.3475701809108","109.324251057828","7.0031352729","0","0","0","bdl","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range","Used Plate 4 standard curve. 9/15 of the MC's were off. 
-A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
-so probably wouldn't have given a good spike. 
-",NA,"1.064666","76.0111946425639","0.024078","1.71903446207886","-0.001839","0","Within_Range","Within_Range","bdl",NA,"2692.28599964739","131.463131313951","0","0","within range","bdl"
-"MSM_202211_TR_PPR_9","522.1735","4020.9697","16.2873830318153","113.426507757405","7.2659182479","2.98536067589761","0.162636991482328","5.44781716981074","Within Range","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range","Used Plate 4 standard curve. 9/15 of the MC's were off. 
-A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
-so probably wouldn't have given a good spike. 
-",NA,"1.058845","75.5956078162594","0.04797","3.4247895649939","0.008725","0.622916175830138","Within_Range","Within_Range","bdl",NA,"2878.20294290362","257.523668190343","13.9040873818742","19.6633489478671","within range","within range"
-"MSM_202211_TR_PPR_10","517.8428","3845.2175","16.152301933874","108.468758815233","6.9483340225","4.76928981717142","0.165735117322028","3.4750481450155","Within Range","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range","Used Plate 4 standard curve. 9/15 of the MC's were off. 
-A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
-so probably wouldn't have given a good spike. 
-",NA,"0.97575","69.6630898070209","0.054323","3.87835821428316","0.004844","0.3458344934924","Within_Range","Within_Range","bdl",NA,"2512.73607499583","79.2380517508746","0","0","within range","bdl"
-"MSM_202211_TR_PPR_11","442.7026","3319.5097","13.8085651902682","93.6392016925247","5.9983800279","7.77722873420973","0.541288626532371","6.95991650793814","Within Range","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range","Used Plate 4 standard curve. 9/15 of the MC's were off. 
-A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
-so probably wouldn't have given a good spike. 
-",NA,"1.153342","82.3421648211213","0.061645","4.40110804115173","0.010408","0.743072957941557","Within_Range","Within_Range","bdl",NA,"2577.25519685644","216.768075982768","0","0","within range","bdl"
-"MSM_202211_TR_PPR_12","490.2003","3858.1237","15.2900904553961","108.83282651622","6.9716555259","2.26918474326944","0.607695430180776","26.7803417938201","Within Range","High CV","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range","Used Plate 4 standard curve. 9/15 of the MC's were off. 
-A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
-so probably wouldn't have given a good spike. 
-",NA,"0.645873","46.111717963546","-0.00111","-0.0792477885583328","5.1e-05","0.00364111460943691","Within_Range","bdl","bdl",NA,"1480.00565731913","5.4025944375597","120.17798667393","46.1511907247202","within range","within range"
-"MSM_202211_WC_PPR_1","758.1275","6017.3466","23.6471459762944","169.741794076164","10.8733713062","0","0","0","bdl","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range","Used Plate 4 standard curve. 9/15 of the MC's were off. 
-A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
-so probably wouldn't have given a good spike. 
-",NA,"0.210096","14.9996787251815","0.004476","0.319561352781169","0.004108","0.293288212069938","Within_Range","Within_Range","bdl",NA,"46.258917042005","1.79120620583538","30.5321905265906","0.30443588893287","within range","within range"
-"MSM_202211_WC_PPR_2","810.8875","5928.6302","25.2928103555833","167.239215796897","10.7130607714","0","0","0","bdl","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range","Used Plate 4 standard curve. 9/15 of the MC's were off. 
-A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
-so probably wouldn't have given a good spike. 
-",NA,"0.528781","37.7520043978953","0.005757","0.411017584441731","-0.001447","0","Within_Range","Within_Range","bdl",NA,"35.8096810911456","0.44780155145884","100.41978511638","26.0969983156057","within range","within range"
-"MSM_202211_WC_PPR_3","861.5224","6300.3969","26.8721896444167","177.726287729196","11.3848431983","0.550362504961831","0.0552450391073433","10.0379365616803","Within Range","High CV","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range","Used Plate 4 standard curve. 9/15 of the MC's were off. 
-A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
-so probably wouldn't have given a good spike. 
-",NA,"0.514708","36.747270948903","0.023481","1.67641200282722","0.002564","0.183055252129338","Within_Range","Within_Range","bdl",NA,"102.704957158307","6.19935519749806","21.8892994172215","6.26795490807664","within range","within range"
-"MSM_202211_WC_PPR_4","1103.1859","7997.9954","34.4100405489707","225.613410437236","14.4524036878","54.9406692429231","2.50173221697947","4.55351609555014","Within Range","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range","Used Plate 4 standard curve. 9/15 of the MC's were off. 
-A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
-so probably wouldn't have given a good spike. 
-",NA,"0.60422","43.1379268492935","0.012523","0.894072122627029","-0.002414","0","Within_Range","Within_Range","bdl",NA,"368.23995210906","12.0915208840621","61.3943758562865","55.4014575092726","within range","within range"
-"MSM_202211_WC_PPR_5","1034.7348","7548.1547","32.274946974423","212.923968970381","13.6395415429","49.1852190207112","4.10675434812463","8.34957011454058","Within Range","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range","Used Plate 4 standard curve. 9/15 of the MC's were off. 
-A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
-so probably wouldn't have given a good spike. 
-",NA,"0.64299","45.9058878965067","0.011751","0.838955642656729","0.001374","0.0980959112424768","Within_Range","Within_Range","bdl",NA,"276.009139750052","8.74705766081082","62.0802369597678","22.9204228823538","within range","within range"
-"MSM_202211_WC_PPR_6","903.92","7053.2224","28.1946350592639","198.962550070522","12.7451988768","52.0759655124104","1.92011284302096","3.68713824914753","Within Range","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range","Used Plate 4 standard curve. 9/15 of the MC's were off. 
-A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
-so probably wouldn't have given a good spike. 
-",NA,"0.421368","30.0833172695924","0.010983","0.784124740302855","-0.000704","0","Within_Range","Within_Range","bdl",NA,"305.661254966065","30.1001690092608","40.0019846174141","45.9339092808431","within range","within range"
-"MSM_202211_WC_PPR_7","900.7168","7537.9508","28.0947223955084","212.636129760226","13.6211030956","30.1219178322087","1.4844373876293","4.92809719453528","Within Range","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range","Used Plate 4 standard curve. 9/15 of the MC's were off. 
-A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
-so probably wouldn't have given a good spike. 
-",NA,"0.494665","35.3163129073943","0.009706","0.692954086258719","0.002663","0.190123298135892","Within_Range","Within_Range","bdl",NA,"443.006942009558","18.5231809287759","48.8647808741146","18.9888791720577","within range","within range"
-"MSM_202211_WC_PPR_8","943.1403","7818.451","29.4179756706176","220.548688293371","14.127966957","31.4761414139056","0.673596911687163","2.14002378128083","Within Range","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range","Used Plate 4 standard curve. 9/15 of the MC's were off. 
-A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
-so probably wouldn't have given a good spike. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,"494.306920481432","7.20345925007955","73.4680803317328","20.4758591836119","within range","within range"
-"MSM_202211_WC_PPR_9","894.1399","7412.5097","27.8895789145352","209.097593794076","13.3944310279","32.5178518613647","0.238685848885395","0.734014811012114","Within Range","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range; Spk recovery out of range","Used Plate 4 standard curve. 9/15 of the MC's were off. 
-A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
-so probably wouldn't have given a good spike. 
-",NA,"0.508315","36.2908465234495","0.007324","0.522892615676783","-0.004168","0","Within_Range","Within_Range","bdl",NA,"558.704765797189","5.65986083934817","0","0","within range","bdl"
-"MSM_202211_WC_PPR_10","1030.3036","8510.6046","32.1367311291329","240.073472496474","15.3786885122","37.1795061137444","1.90468572715953","5.12294520893436","Within Range","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range; Spk recovery out of range","Used Plate 4 standard curve. 9/15 of the MC's were off. 
-A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
-so probably wouldn't have given a good spike. 
-",NA,"0.187101","13.3579644027501","0.005061","0.361327079183534","-0.005054","0","Within_Range","Within_Range","bdl",NA,"440.823964202244","5.1453280357711","38.3697708276954","7.7066683738212","within range","within range"
-"MSM_202211_WC_PPR_11","894.179","7400.8901","27.8907985028072","208.769819464034","13.3734344107","31.9969966376351","1.43211509331238","4.47577974123956","Within Range","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range; Spk recovery out of range","Used Plate 4 standard curve. 9/15 of the MC's were off. 
-A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
-so probably wouldn't have given a good spike. 
-",NA,"0.522588","37.3098588532631","0.0079","0.564015792442188","-0.002353","0","Within_Range","Within_Range","bdl",NA,"472.477142408294","1.02906560715423","1.8286602269603","2.58611609393951","within range","bdl"
-"MSM_202211_WC_PPR_12","941.3899","7732.9737","29.3633780411728","218.137480959097","13.9735094759","29.1583356683089","0.66447328166797","2.27884502471847","Within Range","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range; Spk recovery out of range","Used Plate 4 standard curve. 9/15 of the MC's were off. 
-A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
-so probably wouldn't have given a good spike. 
-",NA,"0.163561","11.6773401300806","-0.001421","-0.101451448235487","-0.003454","0","Within_Range","bdl","bdl",NA,"407.169723006156","52.2250795630765","31.1784991692751","44.0930563796271","within range","within range"
-"MSM_202304_TR_PPR_4","741.9526","5993.3481","23.1426263256394","169.06482651622","10.8300060167","2.04487158786325","0","0","Within Range","Within Range","Std curve r2 low; Dup perc diff out of range; Spk recovery out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_TR_PPR_4","741.9526","0","23.1426263256394","0","2.6e-05","2.04487158786325","0","0","Within Range","Within Range","Std curve r2 low; Dup perc diff out of range; Spk recovery out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_TR_PPR_4","741.9526","0","23.1426263256394","0","2.6e-05","2.04487158786325","0","0","Within Range","Within Range","Std curve r2 low; Dup perc diff out of range; Spk recovery out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_TR_PPR_4","9.2977","5993.3481","0.290009357454772","169.06482651622","10.8300060167","2.04487158786325","0","0","Within Range","Within Range","Std curve r2 low; Dup perc diff out of range; Spk recovery out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_TR_PPR_4","9.2977","0","0.290009357454772","0","2.6e-05","2.04487158786325","0","0","Within Range","Within Range","Std curve r2 low; Dup perc diff out of range; Spk recovery out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_TR_PPR_4","9.2977","0","0.290009357454772","0","2.6e-05","2.04487158786325","0","0","Within Range","Within Range","Std curve r2 low; Dup perc diff out of range; Spk recovery out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_TR_PPR_4","8.3717","5993.3481","0.261126013724267","169.06482651622","10.8300060167","2.04487158786325","0","0","Within Range","Within Range","Std curve r2 low; Dup perc diff out of range; Spk recovery out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_TR_PPR_4","8.3717","0","0.261126013724267","0","2.6e-05","2.04487158786325","0","0","Within Range","Within Range","Std curve r2 low; Dup perc diff out of range; Spk recovery out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_TR_PPR_4","8.3717","0","0.261126013724267","0","2.6e-05","2.04487158786325","0","0","Within Range","Within Range","Std curve r2 low; Dup perc diff out of range; Spk recovery out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_TR_PPR_5","0","0","0","0","2.6e-05","4.71940552585082","0.369010943232112","7.8190132467073","Within Range","Within Range","Std curve r2 low; Dup perc diff out of range; Spk recovery out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_TR_PPR_5","0","6018.509","0","169.774583921016","10.875471763","4.71940552585082","0.369010943232112","7.8190132467073","Within Range","Within Range","Std curve r2 low; Dup perc diff out of range; Spk recovery out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_TR_PPR_5","0","0","0","0","2.6e-05","4.71940552585082","0.369010943232112","7.8190132467073","Within Range","Within Range","Std curve r2 low; Dup perc diff out of range; Spk recovery out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_TR_PPR_5","783.8743","0","24.4502276980661","0","2.6e-05","4.71940552585082","0.369010943232112","7.8190132467073","Within Range","Within Range","Std curve r2 low; Dup perc diff out of range; Spk recovery out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_TR_PPR_5","783.8743","6018.509","24.4502276980661","169.774583921016","10.875471763","4.71940552585082","0.369010943232112","7.8190132467073","Within Range","Within Range","Std curve r2 low; Dup perc diff out of range; Spk recovery out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_TR_PPR_5","783.8743","0","24.4502276980661","0","2.6e-05","4.71940552585082","0.369010943232112","7.8190132467073","Within Range","Within Range","Std curve r2 low; Dup perc diff out of range; Spk recovery out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_TR_PPR_5","10.5257","0","0.328312538989395","0","2.6e-05","4.71940552585082","0.369010943232112","7.8190132467073","Within Range","Within Range","Std curve r2 low; Dup perc diff out of range; Spk recovery out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_TR_PPR_5","10.5257","6018.509","0.328312538989395","169.774583921016","10.875471763","4.71940552585082","0.369010943232112","7.8190132467073","Within Range","Within Range","Std curve r2 low; Dup perc diff out of range; Spk recovery out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_TR_PPR_5","10.5257","0","0.328312538989395","0","2.6e-05","4.71940552585082","0.369010943232112","7.8190132467073","Within Range","Within Range","Std curve r2 low; Dup perc diff out of range; Spk recovery out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_TR_PPR_6","5.2337","0","0.163247036805989","0","2.6e-05","0.577139548723725","0.322884575328098","55.9456679137859","Within Range","High CV","Std curve r2 low; Dup perc diff out of range; Spk recovery out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_TR_PPR_6","5.2337","6565.8159","0.163247036805989","185.213424541608","11.8644553313","0.577139548723725","0.322884575328098","55.9456679137859","Within Range","High CV","Std curve r2 low; Dup perc diff out of range; Spk recovery out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_TR_PPR_6","382.7082","0","11.9372489082969","0","2.6e-05","0.577139548723725","0.322884575328098","55.9456679137859","Within Range","High CV","Std curve r2 low; Dup perc diff out of range; Spk recovery out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_TR_PPR_6","382.7082","6565.8159","11.9372489082969","185.213424541608","11.8644553313","0.577139548723725","0.322884575328098","55.9456679137859","Within Range","High CV","Std curve r2 low; Dup perc diff out of range; Spk recovery out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_TR_PPR_7","386.7112","6552.3956","12.0621085464754","184.834854724965","11.8402048492","22.2669574604522","1.19573211898111","5.36998429670879","Within Range","Within Range","Std curve r2 low; Dup perc diff out of range; Spk recovery out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_TR_PPR_7","386.7112","81.2729","12.0621085464754","2.29260648801128","0.1468861303","22.2669574604522","1.19573211898111","5.36998429670879","Within Range","Within Range","Std curve r2 low; Dup perc diff out of range; Spk recovery out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_TR_PPR_7","12.7341","6552.3956","0.3971958827199","184.834854724965","11.8402048492","22.2669574604522","1.19573211898111","5.36998429670879","Within Range","Within Range","Std curve r2 low; Dup perc diff out of range; Spk recovery out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_TR_PPR_7","12.7341","81.2729","0.3971958827199","2.29260648801128","0.1468861303","22.2669574604522","1.19573211898111","5.36998429670879","Within Range","Within Range","Std curve r2 low; Dup perc diff out of range; Spk recovery out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_TR_PPR_8","833.8826","6178.9134","26.0100623830318","174.299390691114","11.1653225138","5.69789355194383","0","0","Within Range","Within Range","Std curve r2 low; Dup perc diff out of range; Spk recovery out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_TR_PPR_9","865.134","6432.475","26.9848409232689","181.452045133992","11.623508325","2.99074334641983","0.23063183952007","7.71152228077865","Within Range","Within Range","Std curve r2 low; Dup perc diff out of range; Spk recovery out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_TR_PPR_10","841.3815","6137.9061","26.2439644416719","173.142626234133","11.0912223227","2.33841799569115","0.507390046944154","21.6980047142593","Within Range","High CV","Std curve r2 low; Dup perc diff out of range; Spk recovery out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_TR_PPR_11","865.4937","6308.0716","26.9960605115409","177.942781382228","11.3987113812","12.1776587025153","0.480836504445244","3.94851355413603","Within Range","Within Range","Std curve r2 low; Dup perc diff out of range; Spk recovery out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_TR_PPR_12","858.6871","6215.2484","26.7837523393637","175.324355430183","11.2309798588","25.7025376409566","0.718545577784268","2.79562114769274","Within Range","Within Range","Std curve r2 low; Dup perc diff out of range; Spk recovery out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_WC_PPR_1","1639.3423","11867.1978","51.1335714285714","334.758753173484","21.4440524246","0","0","0","bdl","Within Range","Std curve r2 low; Dup perc diff out of range; Spk recovery out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_WC_PPR_2","728.5031","13337.4514","22.7231160324392","376.232761636107","24.1008006798","2.97987125724102","0.164164946531048","5.50912883005032","Within Range","Within Range","","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_WC_PPR_3","1794.2591","12815.3804","55.9656612601372","361.505794076164","23.1574183828","35.18299940488","0.690356260772427","1.9621870575272","Within Range","Within Range","","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_WC_PPR_4","1740.6627","12611.279","54.2939082969432","355.748349788434","22.788607153","39.1487092661878","1.99288686496852","5.09055573561334","Within Range","Within Range","Std curve r2 low; Dup perc diff out of range; Spk recovery out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_WC_PPR_5","726.9002","13600.8726","22.6731191515908","383.663543018336","24.5768027882","25.963467781248","1.37505067561161","5.29609791418054","Within Range","Within Range","","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_WC_PPR_6","723.467","13589.9245","22.5660324391765","383.354710860367","24.5570195715","20.9188184022796","0.979212563790286","4.68101278456329","Within Range","Within Range","","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_WC_PPR_7","711.8625","13353.1206","22.2040704928259","376.674770098731","24.1291149242","13.8193441685158","0.784148254368239","5.67427979798591","Within Range","Within Range","","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_WC_PPR_8","701.8253","13217.4893","21.8909950093575","372.848781382228","23.8840291651","13.8737046144099","1.23310773434972","8.88809275259435","Within Range","Within Range","","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_WC_PPR_9","1666.9806","11953.8055","51.9956519026825","337.201847672779","21.6005525385","10.6773103958394","0.480836504445244","4.50334856456557","Within Range","Within Range","","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_WC_PPR_10","691.3365","13049.3123","21.563833437305","368.10471932299","23.5801333261","9.2421946242363","0.703584628309317","7.61274412534302","Within Range","Within Range","","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_WC_PPR_11","691.9781","13121.4266","21.5838459139114","370.138973201693","23.7104438662","6.39370725938775","0.0753240433684838","1.17809653011384","Within Range","Within Range","","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_WC_PPR_12","692.0534","13340.018","21.5861946350593","376.305162200282","24.105438526","6.70899784557328","0.507390046944154","7.56282918288518","Within Range","Within Range","","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_UP_PPR_1","65.1992","1896.6743","2.03366188396756","53.5028011283498","3.4273164601","0","0","0","bdl","Within Range","MC 10 out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_UP_PPR_2","69.4329","981.2909","2.16571740486588","27.6809844851904","1.7732186563","2.91463872216815","0.135792350320171","4.6589770899344","Within Range","Within Range","MC 10 out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_UP_PPR_3","107.1467","1580.5047","3.34206799750468","44.5840535966149","2.8559979929","0","0","0","bdl","Within Range","MC 10 out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_UP_PPR_4","115.7515","1681.3881","3.61046475358702","47.4298476727786","3.0382942967","4.95859148778467","0.263634151789693","5.31671448311779","Within Range","Within Range","MC 10 out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_UP_PPR_5","130.7546","1773.5946","4.07843418590144","50.0308772919605","3.2049114422","7.72010213920273","0.456627745510073","5.91478891440198","Within Range","Within Range","MC 10 out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_UP_PPR_5","126.399","1782.3633","3.94257641921397","50.2782313117066","3.2207564831","7.72010213920273","0.456627745510073","5.91478891440198","Within Range","Within Range","MC 10 out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_UP_PPR_6","174.0613","2343.6638","5.42923580786026","66.1118138222849","4.2350264866","17.5049824001329","0.960935246596324","5.48949564547423","Within Range","Within Range","MC 10 out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_UP_PPR_7","193.951","2674.8578","6.04962570180911","75.4543808180536","4.8334940446","11.7645193137205","0.662037924970609","5.62741160362157","Within Range","Within Range","Std curve r2 low; Dup perc diff out of range; Spk recovery out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_UP_PPR_8","204.8717","3145.7186","6.39025888958203","88.7367729196051","5.6843395102","12.7212631614559","0.925597341134878","7.2759861138581","Within Range","Within Range","Std curve r2 low; Dup perc diff out of range; Spk recovery out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_UP_PPR_9","216.7288","3654.781","6.7600998128509","103.096784203103","6.604215267","2.66458067105549","0.322884575328098","12.1176505870321","Within Range","High CV","Std curve r2 low; Dup perc diff out of range; Spk recovery out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_UP_PPR_10","235.9954","4147.9582","7.36105427323768","117.00869393512","7.4953864674","7.04603261011643","0.489606281895143","6.94868032816346","Within Range","Within Range","Std curve r2 low; Dup perc diff out of range; Spk recovery out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_UP_PPR_11","260.5231","4336.5769","8.12611041796631","122.329390691114","7.8362204583","4.98033566614229","0.276758207424084","5.55701916450259","Within Range","Within Range","Std curve r2 low; Dup perc diff out of range; Spk recovery out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_UP_PPR_12","258.1895","4282.0554","8.05332189644417","120.791407616361","7.7377001078","1.45777877220744","0.184505471616056","12.6566167057481","Within Range","High CV","Std curve r2 low; Dup perc diff out of range; Spk recovery out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_TR_PPR_1","41.4142","474.5927","1.29177167810356","13.3876643159379","0.8576150089","0","0","0","bdl","Within Range","Std curve r2 low; Dup perc diff out of range; Spk recovery out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_TR_PPR_2","90.0462","1142.8126","2.80867747972551","32.2373088857546","2.0650883682","1.0337672942338","0.23063183952007","22.3098409870868","Within Range","High CV","Std curve r2 low; Dup perc diff out of range; Spk recovery out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202304_TR_PPR_3","387.2873","3889.9243","12.0800779787898","109.729881523272","7.0291192101","1.21859281027359","0.0753240433684838","6.18123155934036","Within Range","Within Range","Std curve r2 low; Dup perc diff out of range; Spk recovery out of range","1/6 plates had a bad dup. 2/6 plates had a bad spk. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202306_UP_PPR_1","44.7657","815.6234","1.39631004366812","23.0077122708039","1.4738574838","0.0810852658522373","0","0","Within Range","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range","Used Plate 7 std curve for all runs. 
-1/9 plates had bad MC 10 and a different plate had bad MC 20. 
-2/9 plates had bad dups. 
-5/9 plates had bad spks. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202306_UP_PPR_2","56.2271","931.0506","1.75380848409233","26.2637686882934","1.6824344342","2.9659058939494","0.13751974575063","4.63668608067359","Within Range","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range","Used Plate 7 std curve for all runs. 
-1/9 plates had bad MC 10 and a different plate had bad MC 20. 
-2/9 plates had bad dups. 
-5/9 plates had bad spks. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202306_UP_PPR_3","77.799","923.5793","2.42666874610106","26.0530126939351","1.6689337951","4.0139493431083","0.163145454064325","4.0644622071386","Within Range","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range","Used Plate 7 std curve for all runs. 
-1/9 plates had bad MC 10 and a different plate had bad MC 20. 
-2/9 plates had bad dups. 
-5/9 plates had bad spks. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202306_UP_PPR_4","99.0902","1030.9977","3.09077354959451","29.0831509167842","1.8630388439","1.05349671352544","0.0916798305004199","8.70243156180535","Within Range","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range","Used Plate 7 std curve for all runs. 
-1/9 plates had bad MC 10 and a different plate had bad MC 20. 
-2/9 plates had bad dups. 
-5/9 plates had bad spks. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202306_UP_PPR_5","162.9493","1566.0638","5.0826356830942","44.1766939351199","2.8299032866","1.70177101197424","0","0","Within Range","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range","Used Plate 7 std curve for all runs. 
-1/9 plates had bad MC 10 and a different plate had bad MC 20. 
-2/9 plates had bad dups. 
-5/9 plates had bad spks. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202306_UP_PPR_6","160.0524","1779.0776","4.99227698066126","50.1855458392102","3.2148192232","2.24199959401491","0.0990255347912009","4.41683999656168","Within Range","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range","Used Plate 7 std curve for all runs. 
-1/9 plates had bad MC 10 and a different plate had bad MC 20. 
-2/9 plates had bad dups. 
-5/9 plates had bad spks. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202306_UP_PPR_7","177.0942","3053.8581","5.52383655645664","86.1455035260931","5.5183475867","0.0162578360073572","0","0","Within Range","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range","Used Plate 7 std curve for all runs. 
-1/9 plates had bad MC 10 and a different plate had bad MC 20. 
-2/9 plates had bad dups. 
-5/9 plates had bad spks. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202306_UP_PPR_8","183.6989","3110.9823","5.72984716157205","87.7569055007052","5.6215710161","0.145912695697117","0.0916798305004199","62.8319763831428","Within Range","High CV","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range","Used Plate 7 std curve for all runs. 
-1/9 plates had bad MC 10 and a different plate had bad MC 20. 
-2/9 plates had bad dups. 
-5/9 plates had bad spks. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202306_UP_PPR_9","181.5773","3074.7094","5.66367124142233","86.7336925246827","5.5560258858","0","0","0","bdl","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range","Used Plate 7 std curve for all runs. 
-1/9 plates had bad MC 10 and a different plate had bad MC 20. 
-2/9 plates had bad dups. 
-5/9 plates had bad spks. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202306_UP_PPR_10","191.5831","3078.3672","5.97576731129133","86.836874471086","5.5626355304","0","0","0","bdl","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range","Used Plate 7 std curve for all runs. 
-1/9 plates had bad MC 10 and a different plate had bad MC 20. 
-2/9 plates had bad dups. 
-5/9 plates had bad spks. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202306_UP_PPR_11","173.294","2891.3391","5.4053025577043","81.5610465444288","5.2246757537","0","0","0","bdl","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range","Used Plate 7 std curve for all runs. 
-1/9 plates had bad MC 10 and a different plate had bad MC 20. 
-2/9 plates had bad dups. 
-5/9 plates had bad spks. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202306_UP_PPR_12","181.4733","2907.0668","5.66042732376793","82.0047052186178","5.2530957076","0.275567555386878","0","0","Within Range","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range","Used Plate 7 std curve for all runs. 
-1/9 plates had bad MC 10 and a different plate had bad MC 20. 
-2/9 plates had bad dups. 
-5/9 plates had bad spks. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202306_TR_PPR_1","164.8393","1705.2825","5.1415876481597","48.1038787023977","3.0814714775","0","0","0","bdl","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range","Used Plate 7 std curve for all runs. 
-1/9 plates had bad MC 10 and a different plate had bad MC 20. 
-2/9 plates had bad dups. 
-5/9 plates had bad spks. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202306_TR_PPR_2","237.8114","2340.9398","7.41769806612601","66.0349732016925","4.2301042186","1.55050700900285","0.149712536287252","9.6557148995756","Within Range","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range","Used Plate 7 std curve for all runs. 
-1/9 plates had bad MC 10 and a different plate had bad MC 20. 
-2/9 plates had bad dups. 
-5/9 plates had bad spks. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202306_TR_PPR_3","457.4169","4089.3654","14.2675265127885","115.355864598025","7.3895092778","2.50130931339443","0.0374281340718132","1.49634169078518","Within Range","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range","Used Plate 7 std curve for all runs. 
-1/9 plates had bad MC 10 and a different plate had bad MC 20. 
-2/9 plates had bad dups. 
-5/9 plates had bad spks. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202306_TR_PPR_4","818.073","6957.8727","25.5169369931379","196.272854724965","12.5729019689","1.44246129259472","0.0916798305004198","6.35579138040542","Within Range","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range","Used Plate 7 std curve for all runs. 
-1/9 plates had bad MC 10 and a different plate had bad MC 20. 
-2/9 plates had bad dups. 
-5/9 plates had bad spks. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202306_TR_PPR_5","832.7506","7008.2991","25.9747535870243","197.695320169252","12.6640224737","4.03555848638992","0.12965485968976","3.21281081979176","Within Range","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range","Used Plate 7 std curve for all runs. 
-1/9 plates had bad MC 10 and a different plate had bad MC 20. 
-2/9 plates had bad dups. 
-5/9 plates had bad spks. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202306_TR_PPR_6","821.9378","6839.1639","25.6374859638178","192.924228490832","12.3583951673","0.372808700154198","0.0458399152502093","12.2958276540353","Within Range","High CV","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range","Used Plate 7 std curve for all runs. 
-1/9 plates had bad MC 10 and a different plate had bad MC 20. 
-2/9 plates had bad dups. 
-5/9 plates had bad spks. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202306_TR_PPR_7","801.6916","6578.55","25.0059762944479","185.57263751763","11.88746585","4.55417792514896","0.18335966100084","4.0261857137442","Within Range","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range","Used Plate 7 std curve for all runs. 
-1/9 plates had bad MC 10 and a different plate had bad MC 20. 
-2/9 plates had bad dups. 
-5/9 plates had bad spks. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202306_TR_PPR_8","824.2297","6721.5471","25.7089737991266","189.606406205924","12.1458616097","1.70177101197424","0.112284402215439","6.5980911312608","Within Range","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range","Used Plate 7 std curve for all runs. 
-1/9 plates had bad MC 10 and a different plate had bad MC 20. 
-2/9 plates had bad dups. 
-5/9 plates had bad spks. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202306_TR_PPR_9","820.1026","6693.149","25.5802432938241","188.80533145275","12.094546243","3.71142133716552","0.336853206646318","9.07612410569311","Within Range","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range","Used Plate 7 std curve for all runs. 
-1/9 plates had bad MC 10 and a different plate had bad MC 20. 
-2/9 plates had bad dups. 
-5/9 plates had bad spks. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202306_TR_PPR_10","829.0092","6669.9604","25.8580536494074","188.151210155148","12.0526444428","3.10636532527997","0.0990255347912009","3.18782642805465","Within Range","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range","Used Plate 7 std curve for all runs. 
-1/9 plates had bad MC 10 and a different plate had bad MC 20. 
-2/9 plates had bad dups. 
-5/9 plates had bad spks. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202306_TR_PPR_11","820.7486","6672.612","25.6003930131004","188.226008462623","12.057435884","4.1003859162348","0.18335966100084","4.47176594463603","Within Range","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range","Used Plate 7 std curve for all runs. 
-1/9 plates had bad MC 10 and a different plate had bad MC 20. 
-2/9 plates had bad dups. 
-5/9 plates had bad spks. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202306_TR_PPR_12","786.8576","6294.9246","24.5432813474735","177.571921015515","11.3749547522","5.33210708328752","0.282576215463305","5.29952251613601","Within Range","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range","Used Plate 7 std curve for all runs. 
-1/9 plates had bad MC 10 and a different plate had bad MC 20. 
-2/9 plates had bad dups. 
-5/9 plates had bad spks. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202306_WC_PPR_1","1163.6044","9463.2946","36.2945851528384","266.947661495063","17.1001993422","0.632118419533718","0.13751974575063","21.7553770782492","Within Range","High CV","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range","Used Plate 7 std curve for all runs. 
-1/9 plates had bad MC 10 and a different plate had bad MC 20. 
-2/9 plates had bad dups. 
-5/9 plates had bad spks. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202306_WC_PPR_2","1108.0008","9681.1848","34.5602245789145","273.094070521862","17.4939269336","0.632118419533718","0.04583991525021","7.25179235941642","Within Range","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range","Used Plate 7 std curve for all runs. 
-1/9 plates had bad MC 10 and a different plate had bad MC 20. 
-2/9 plates had bad dups. 
-5/9 plates had bad spks. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202306_WC_PPR_3","1025.8101","9135.9163","31.9965720524017","257.712730606488","16.5086267541","1.87464415822725","0.0748562681436262","3.99309211911522","Within Range","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range","Used Plate 7 std curve for all runs. 
-1/9 plates had bad MC 10 and a different plate had bad MC 20. 
-2/9 plates had bad dups. 
-5/9 plates had bad spks. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202306_WC_PPR_4","1029.0833","9128.4754","32.0986681222707","257.502832157969","16.4951810478","0.891428138913238","0.13751974575063","15.4269020403914","Within Range","High CV","Std curve r2 low; MC 20 out of range","Used Plate 7 std curve for all runs. 
-1/9 plates had bad MC 10 and a different plate had bad MC 20. 
-2/9 plates had bad dups. 
-5/9 plates had bad spks. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202306_WC_PPR_5","1018.0119","9038.2348","31.7533343730505","254.957258110014","16.3321162836","3.87348991177772","0.13751974575063","3.55028020939173","Within Range","Within Range","Std curve r2 low; MC 20 out of range","Used Plate 7 std curve for all runs. 
-1/9 plates had bad MC 10 and a different plate had bad MC 20. 
-2/9 plates had bad dups. 
-5/9 plates had bad spks. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202306_WC_PPR_6","1031.9689","9031.6724","32.1886743605739","254.772141043724","16.3202580268","0.923841853835678","0.0916798305004199","9.92375806744157","Within Range","Within Range","Std curve r2 low; MC 20 out of range","Used Plate 7 std curve for all runs. 
-1/9 plates had bad MC 10 and a different plate had bad MC 20. 
-2/9 plates had bad dups. 
-5/9 plates had bad spks. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202306_WC_PPR_7","1010.6333","8865.5491","31.5231846537742","250.086011283498","16.0200732237","0.664532134456158","0.0916798305004199","13.7961470554692","Within Range","High CV","Std curve r2 low; MC 20 out of range","Used Plate 7 std curve for all runs. 
-1/9 plates had bad MC 10 and a different plate had bad MC 20. 
-2/9 plates had bad dups. 
-5/9 plates had bad spks. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202306_WC_PPR_8","1023.3384","8841.3055","31.9194759825327","249.402129760226","15.9762650385","0.815796137427545","0.0374281340718131","4.58792734540709","Within Range","Within Range","Std curve r2 low; MC 20 out of range","Used Plate 7 std curve for all runs. 
-1/9 plates had bad MC 10 and a different plate had bad MC 20. 
-2/9 plates had bad dups. 
-5/9 plates had bad spks. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202306_WC_PPR_9","1026.1569","8888.6427","32.0073892701185","250.737452750353","16.0618033589","1.15073785829276","0.0458399152502099","3.98352369480728","Within Range","Within Range","Std curve r2 low; MC 20 out of range","Used Plate 7 std curve for all runs. 
-1/9 plates had bad MC 10 and a different plate had bad MC 20. 
-2/9 plates had bad dups. 
-5/9 plates had bad spks. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202306_WC_PPR_10","1020.2571","8710.3829","31.8233655645664","245.708967559944","15.7396879003","0.632118419533718","0.04583991525021","7.25179235941642","Within Range","Within Range","Std curve r2 low; MC 20 out of range","Used Plate 7 std curve for all runs. 
-1/9 plates had bad MC 10 and a different plate had bad MC 20. 
-2/9 plates had bad dups. 
-5/9 plates had bad spks. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202306_WC_PPR_11","1016.703","8625.8626","31.712507797879","243.324755994358","15.5869597182","0.340394985231757","0.0916798305004192","26.9333669642633","Within Range","High CV","Std curve r2 low; MC 20 out of range","Used Plate 7 std curve for all runs. 
-1/9 plates had bad MC 10 and a different plate had bad MC 20. 
-2/9 plates had bad dups. 
-5/9 plates had bad spks. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-"MSM_202306_WC_PPR_12","1029.1264","8695.2528","32.1000124766064","245.282166431594","15.7123478096","20.665017726709","3.43799364376574","16.6367805207456","Within Range","High CV","Std curve r2 low; MC 20 out of range","Used Plate 7 std curve for all runs. 
-1/9 plates had bad MC 10 and a different plate had bad MC 20. 
-2/9 plates had bad dups. 
-5/9 plates had bad spks. 
-",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"Project","Site","Year","Month","Day","Sample_ID","Zone","Sampler_Type","Replicate","SO4_ppm","Cl_ppm","SO4_mM","Cl_mM","salinity","H2S_mean_uM","H2S_sd_uM","H2S_Conc_flag","NH3_mgL","NH3_uM","NH3_range","PO4_mgL","PO4_uM","PO4_range","NOx_mgL","NOx_uM","NOx_range","FE_2_mean_uM","FE_2_sd_uM","FE_3_mean_uM","FE_3_sd_uM","FE_2_flag","FE_3_flag"
+"COMPASS: Synoptic","MSM",2022,10,27,"MSM_202210_UP_PPR_1","UP","PPR","1","56.4808","1046.1222","1.7617217716781","29.5097940761636","1.8903688154",NA,NA,NA,"0.313359","22.372079076442","Within_Range","0.003792","0.27072758037225","Within_Range","0.003577","0.25537778348933","bdl","74.8250697174969","2.55939904990192","171.601122236424","81.8815101070448","within range","within range"
+"COMPASS: Synoptic","MSM",2022,10,27,"MSM_202210_UP_PPR_2","UP","PPR","2","56.9315","1042.8043","1.77577978789769","29.4162002820874","1.8843733701",NA,NA,NA,"0.343022","24.4898512854562","Within_Range","0.003947","0.281793713008774","Within_Range","0.001753","0.125154390398881","bdl","656.113449875451","58.7424324797883","355.120031094197","31.5276679756945","within range","within range"
+"COMPASS: Synoptic","MSM",2022,10,27,"MSM_202210_UP_PPR_3","UP","PPR","3","70.1598","1104.8402","2.18839051777916","31.1661551480959","1.9964722414",NA,NA,NA,"0.467758","33.3953036760979","Within_Range","0.00706","0.504044492992639","Within_Range","0.003841","0.274225906173474","bdl","806.37508894555","3.60172962503972","161.061706711202","19.901168139904","within range","within range"
+"COMPASS: Synoptic","MSM",2022,10,27,"MSM_202210_UP_PPR_4","UP","PPR","4","82.4729","1330.7842","2.57245477230193","37.5397517630465","2.4047530494",NA,NA,NA,"0.645589","46.0914419527797","Within_Range","0.009802","0.699807949052953","Within_Range","0.006355","0.453711438097482","bdl","1868.39379220371","104.450159126153","136.332918758467","61.8041137254612","within range","within range"
+"COMPASS: Synoptic","MSM",2022,10,27,"MSM_202210_UP_PPR_5","UP","PPR","5","94.551","1353.2643","2.9491890205864","38.1738871650212","2.4453745901",NA,NA,NA,"0.79449","56.7221401186575","Within_Range","0.009451","0.674748513211535","Within_Range","0.003096","0.221037075114053","bdl","2665.5445215078","154.87437387671","30.9242519175812","43.7334964680855","within range","bdl"
+"COMPASS: Synoptic","MSM",2022,10,27,"MSM_202210_UP_PPR_6","UP","PPR","6","95.2751","1491.5376","2.97177479725515","42.0744033850494","2.6952344432",NA,NA,NA,"0.450865","32.189238007525","Within_Range","0.005077","0.362469389649239","Within_Range","1.1e-05","0.000785338445172667","bdl","2897.30399871762","162.07783312679","0","0","within range","bdl"
+"COMPASS: Synoptic","MSM",2022,10,27,"MSM_202210_UP_PPR_7","UP","PPR","7","101.5296","1765.9643","3.16686213349969","49.8156361071932","3.1911234901",NA,NA,NA,"0.45069","32.1767439868063","Within_Range","0.015779","1.12653230239814","Within_Range","0.005841","0.417014714386686","bdl","2169.76600615787","36.9360255942215","50.1023168676596","29.0753478521001","within range","within range"
+"COMPASS: Synoptic","MSM",2022,10,27,"MSM_202210_UP_PPR_8","UP","PPR","8","112.9602","2132.855","3.52339987523394","60.1651622002821","3.854094985",NA,NA,NA,"0.361354","25.7986535015385","Within_Range","-0.0053","-0.378390341765012","bdl","0.001839","0.131294309152049","bdl","2274.60957918136","99.0475646885933","98.9313238894206","59.9289122529193","within range","within range"
+"COMPASS: Synoptic","MSM",2022,10,27,"MSM_202210_UP_PPR_9","UP","PPR","9","138.9142","2589.1649","4.33294447910168","73.0370916784203","4.6786469743",NA,NA,NA,"0.304009","21.7045413980452","Within_Range","0.015861","1.13238664353488","Within_Range","0.008685","0.620060399665874","bdl","1583.15135871471","118.857077626312","255.608965798601","109.335061581786","within range","within range"
+"COMPASS: Synoptic","MSM",2022,10,27,"MSM_202210_UP_PPR_10","UP","PPR","10","133.0179","2447.1084","4.14902994385527","69.029856135402","4.4219508788",NA,NA,NA,"0.338749","24.1847829967087","Within_Range","0.019816","1.41475151177651","Within_Range","0.00576","0.411231767654051","bdl","2177.83089639044","138.666590564031","120.794623908273","127.014257228256","within range","within range"
+"COMPASS: Synoptic","MSM",2022,10,27,"MSM_202210_UP_PPR_11","UP","PPR","11","146.819","2371.4323","4.57950717404866","66.8951283497884","4.2852041661",NA,NA,NA,"0.345049","24.6345677425803","Within_Range","0.017267","1.23276717570877","Within_Range","0.004157","0.296786537871162","bdl","1611.16624057524","97.2466998760734","146.915979414318","155.924678529584","within range","within range"
+"COMPASS: Synoptic","MSM",2022,10,27,"MSM_202210_UP_PPR_12","UP","PPR","12","141.9209","2376.4229","4.42672800998128","67.0359069111424","4.2942221803",NA,NA,NA,"0.34512","24.6396367452719","Within_Range","0.021077","1.50477985535494","Within_Range","0.004426","0.315991632575839","bdl","1879.85442569211","102.649294313633","242.431809004684","37.4515402541763","within range","within range"
+"COMPASS: Synoptic","MSM",2022,10,27,"MSM_202210_TR_PPR_1","TR","PPR","1","234.3596","2538.4834","7.31003119151591","71.6074301833568","4.5870655038",NA,NA,NA,"0.492415","35.1556754981545","Within_Range","0.006604","0.471488644720027","Within_Range","0.030207","2.15661076484825","Within_Range","156.83573975606","25.2071573005363","31.9191334073554","2.94074782771743","within range","within range"
+"COMPASS: Synoptic","MSM",2022,10,27,"MSM_202210_TR_PPR_2","TR","PPR","2","244.5354","2577.2622","7.62742981908921","72.7013314527504","4.6571387954","1.92622492915712","0.189695913851379","Within Range","0.493272","35.2168605024738","Within_Range","0.011991","0.856090299642314","Within_Range","0.024336","1.73745421833837","bdl","113.244482708535","3.8390985748529","47.8662872329846","17.9384425667644","within range","within range"
+"COMPASS: Synoptic","MSM",2022,10,27,"MSM_202210_TR_PPR_3","TR","PPR","3","422.5919","3501.0406","13.1812819713038","98.7599605077574","6.3264063642","3.3123923739667","0.298503893733822","Within Range","0.61463","43.8811425960433","Within_Range","0.020532","1.46586990511684","Within_Range","0.020434","1.45887325351439","bdl","2530.5637270889","122.458807251352","56.1978807946603","19.7723446077076","within range","within range"
+"COMPASS: Synoptic","MSM",2022,10,27,"MSM_202210_TR_PPR_4","TR","PPR","4","427.6311","3386.6446","13.3384622582658","95.5329929478138","6.1196927922","3.98157665766788","0.180436805308183","Within Range","1.01472","72.4453297350554","Within_Range","-0.005337","-0.381031934716957","bdl","0.021132","1.5087065475808","bdl","3345.90204393641","333.293035446733","987.365754562243","506.306096847854","within range","within range"
+"COMPASS: Synoptic","MSM",2022,10,27,"MSM_202210_TR_PPR_5","TR","PPR","5","446.9793","3488.3102","13.9419619463506","98.4008519040903","6.3034025314","7.82938628894964","0.556913333920855","Within Range","0.962214","68.6966951530339","Within_Range","0.057148","4.08004740588433","Within_Range","0.036333","2.59397288440532","Within_Range","2815.8061605779","360.172962503976","0","0","within range","bdl"
+"COMPASS: Synoptic","MSM",2022,10,27,"MSM_202210_TR_PPR_6","TR","PPR","6","465.5185","3616.861","14.5202276980661","102.027108603667","6.535693827","5.31994522507023","0.298503893733823","Within Range","0.883277","63.0610350760707","Within_Range","0.042471","3.03219173681167","Within_Range","0.025101","1.79207093747992","Within_Range","3474.15588430029","250.320208940263","0","0","within range","bdl"
+"COMPASS: Synoptic","MSM",2022,10,27,"MSM_202210_TR_PPR_7","TR","PPR","7","468.6459","3676.7816","14.6177760449158","103.717393511989","6.6439703512","2.2488673516559","0.0506983655216318","Within Range","0.923026","65.8988912449042","Within_Range","0.033972","2.42541069630962","Within_Range","0.012103","0.864086472902254","bdl","3266.5910777882","39.6190258754375","0","0","within range","bdl"
+"COMPASS: Synoptic","MSM",2022,10,27,"MSM_202210_TR_PPR_8","TR","PPR","8","469.1142","3673.5219","14.6323830318153","103.625441466855","6.6380800733","1.85452661304628","0.101396731043263","Within Range","0.802303","57.2799445979424","Within_Range","0.036018","2.57148364711174","Within_Range","0.009264","0.661397759643599","bdl","3163.44537639262","84.6406461884348","0","0","within range","bdl"
+"COMPASS: Synoptic","MSM",2022,10,27,"MSM_202210_TR_PPR_9","TR","PPR","9","485.0662","3786.4111","15.1299500935745","106.809904090268","6.8420708577","1.83062717434267","0.149251946866911","Within Range","0.880456","62.859631462086","Within_Range","0.029736","2.12298400051404","Within_Range","0.012894","0.920559446550579","bdl","3095.95497918317","0","0","0","within range","bdl"
+"COMPASS: Synoptic","MSM",2022,10,27,"MSM_202210_TR_PPR_10","TR","PPR","10","462.9205","3552.5306","14.439192139738","100.21242877292","6.4194487942","2.428113141933","0.12418512632111","Within Range","0.801875","57.2493877929848","Within_Range","0.027304","1.94935280972677","Within_Range","0.003755","0.268085987420306","bdl","2559.85201267036","95.4458350635541","0","0","within range","bdl"
+"COMPASS: Synoptic","MSM",2022,10,27,"MSM_202210_TR_PPR_11","TR","PPR","11","439.7246","3454.7595","13.7156768558952","97.4544287729196","6.2427764165","1.49603503249208","0.101396731043264","Within Range","0.899013","64.1844974190923","Within_Range","0.030383","2.16917617997101","Within_Range","0.011425","0.815681066917975","bdl","3416.8527168583","111.653618376233","0","0","within range","bdl"
+"COMPASS: Synoptic","MSM",2022,10,27,"MSM_202210_TR_PPR_12","TR","PPR","12","449.9308","3561.7699","14.0340237055521","100.473057827927","6.4361442093","5.9771797894196","0.0506983655216318","Within Range","0.842736","60.1666345391848","Within_Range","0.048924","3.4928998265116","Within_Range","0.021295","1.52034383545018","bdl",NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2022,10,27,"MSM_202210_WC_PPR_1","WC","PPR","1","710.7319","6493.1289","22.1688053649407","183.16301551481","11.7331099223","0","0","bdl","0.311169","22.2157253314485","Within_Range","-0.00479","-0.341979195670643","bdl","0.007043","0.502830788122827","bdl","197.920542981449","6.23838665181922","110.492811920129","10.8243442424472","within range","within range"
+"COMPASS: Synoptic","MSM",2022,10,27,"MSM_202210_WC_PPR_2","WC","PPR","2","728.9265","6742.9495","22.7363225202745","190.210141043724","12.1845357465","33.7961264404256","2.28142644847344","Within Range","0.447715","31.9643456345892","Within_Range","0.009089","0.648903738924943","Within_Range","0.007604","0.542883048826633","bdl","449.551048319558","12.7480075058915","43.1480899157212","31.7371757591879","within range","within range"
+"COMPASS: Synoptic","MSM",2022,10,27,"MSM_202210_WC_PPR_3","WC","PPR","3","733.9223","6700.2763","22.892149095446","189.006383638928","12.1074252741","46.2716334437118","0.253491827608159","Within Range","0.754409","53.8605810076606","Within_Range","0.007689","0.548951573175694","Within_Range","0.005613","0.40073679025038","bdl","516.294505528141","7.8657918653373","50.5470650726496","2.04160026681744","within range","within range"
+"COMPASS: Synoptic","MSM",2022,10,27,"MSM_202210_WC_PPR_4","WC","PPR","4","728.1319","6589.7918","22.7115377417342","185.889754583921","11.9077797826","45.2320078601047","4.86704309007666","Within Range","0.761274","54.3507035918525","Within_Range","0.0109","0.778199004762007","Within_Range","0.011608","0.828746242869484","bdl","501.526556663024","55.65128342706","108.386383220969","51.0818137617684","within range","within range"
+"COMPASS: Synoptic","MSM",2022,10,27,"MSM_202210_WC_PPR_5","WC","PPR","5","730.5454","6654.6298","22.7868184653774","187.718753173484","12.0249420486","36.8791540331918","2.38282317951669","Within Range","0.67643","48.2933167698316","Within_Range","0.007278","0.519608473087879","Within_Range","0.008837","0.630912349090078","bdl",NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2022,10,27,"MSM_202210_WC_PPR_6","WC","PPR","6","714.4724","6578.1094","22.2854772301934","185.560208744711","11.8866696858","23.6866638687972","4.10656760725218","Within Range","0.60738","43.3635331662704","Within_Range","0.007912","0.564872525291468","Within_Range","0.009515","0.679317755074357","bdl","617.339837759304","48.6941087609854","43.0015195654936","41.2483637647951","within range","within range"
+"COMPASS: Synoptic","MSM",2022,10,27,"MSM_202210_WC_PPR_7","WC","PPR","7","683.2475","6304.253","21.3115252651279","177.835063469676","11.391811171","25.1923285071248","0.354888558651423","Within Range","0.652495","46.58449170754","Within_Range","0.00487","0.347690747999172","Within_Range","0.00562","0.401236551079126","bdl","674.771954960046","73.8424764334394","0","0","within range","bdl"
+"COMPASS: Synoptic","MSM",2022,10,27,"MSM_202210_WC_PPR_8","WC","PPR","8","738.2954","6780.6854","23.0285527136619","191.274623413258","12.2527245178","21.7508093338045","0.861872213867743","Within Range","0.628757","44.8897313428573","Within_Range","0.009631","0.687599505950724","Within_Range","0.011253","0.803401229411639","bdl","607.20475825329","132.274760125949","15.7267971839194","27.2396117628796","within range","within range"
+"COMPASS: Synoptic","MSM",2022,10,27,"MSM_202210_WC_PPR_9","WC","PPR","9","722.7894","6658.0236","22.5448970679975","187.814488011283","12.0310746452","28.9923392609993","1.2674591380408","Within Range","0.640935","45.7591723960676","Within_Range","0.00817","0.583292281550972","Within_Range","0.011629","0.830245525355723","bdl","549.772641052548","22.0888936757313","38.7284994932195","67.0797288231617","within range","within range"
+"COMPASS: Synoptic","MSM",2022,10,27,"MSM_202210_WC_PPR_10","WC","PPR","10","747.1061","6846.8689","23.3033718028696","193.141576868829","12.3723181023","25.8734625101778","3.24469539338444","Within Range","0.555973","39.6933610343621","Within_Range","0.008019","0.572511726530874","Within_Range","0.011553","0.824819550643621","bdl","707.686020382598","158.482123731481","117.165965504406","151.4712541491","within range","within range"
+"COMPASS: Synoptic","MSM",2022,10,27,"MSM_202210_WC_PPR_11","WC","PPR","11","740.1485","6788.1672","23.0863537117904","191.485675599436","12.2662441304","27.8810153612813","0.608380386259582","Within Range","0.680422","48.5783232310252","Within_Range","0.006256","0.446643392090928","Within_Range","0.008893","0.634910435720048","bdl",NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2022,10,27,"MSM_202210_WC_PPR_12","WC","PPR","12","733.4681","6740.1887","22.8779819089208","190.132262341326","12.1795469809",NA,NA,NA,"0.551769","39.3932189594979","Within_Range","-0.002132","-0.152212869555284","bdl","0.008923","0.637052267843246","bdl","595.380498829608","30.4052385180403","80.7127202086117","40.3652799136609","within range","within range"
+"COMPASS: Synoptic","MSM",2022,11,13,"MSM_202211_UP_PPR_1","UP","PPR","1","23.4174","304.3703","0.730424204616344","8.58590409026798","0.5500231321","0","0","bdl","0.011429","0.815966644534401","bdl","0.001214","0.0866728065854198","bdl","0.039103","2.79173538378062","Within_Range","38.6221613220952","1.27969952495097","24.3043799347621","12.6174653515001","within range","within range"
+"COMPASS: Synoptic","MSM",2022,11,13,"MSM_202211_UP_PPR_2","UP","PPR","2","84.6656","1007.8622","2.64084840923269","28.4305275035261","1.8212329954","0","0","bdl","0.546142","38.9914826475901","Within_Range","0.003376","0.241027508263902","Within_Range","0.043644","3.11593737282872","Within_Range","14.9794456353023","1.27969952495097","61.7691472325027","12.3473770217557","within range","within range"
+"COMPASS: Synoptic","MSM",2022,11,13,"MSM_202211_UP_PPR_3","UP","PPR","3","94.4782","1118.5059","2.94691827822832","31.5516473906911","2.0211661613","0","0","bdl","0.845169","60.3403371243762","Within_Range","0.007642","0.545596036182684","Within_Range","0.028109","2.00682530503259","Within_Range","42.3163356481566","3.13461086021191","241.28640891452","43.5773684768113","within range","within range"
+"COMPASS: Synoptic","MSM",2022,11,13,"MSM_202211_UP_PPR_4","UP","PPR","4","112.3998","1386.3066","3.50592014971928","39.1059689703808","2.5050820262","0","0","bdl","0.659124","47.0577652123627","Within_Range","0.005102","0.364254249751904","Within_Range","0.011004","0.785624022789094","bdl","46.7493448394303","4.43300919127367","49.0641468020956","3.45599950492285","within range","within range"
+"COMPASS: Synoptic","MSM",2022,11,13,"MSM_202211_UP_PPR_5","UP","PPR","5","211.3758","2175.9984","6.59313162819713","61.3821833568406","3.9320551088","0","0","bdl","0.931922","66.5340158638366","Within_Range","0.014839","1.05942156253793","Within_Range","0.009588","0.684529546574139","bdl","3471.60907685842","156.675238689229","0","0","within range","bdl"
+"COMPASS: Synoptic","MSM",2022,11,13,"MSM_202211_UP_PPR_6","UP","PPR","6","179.9841","2076.472","5.61397691827823","58.5746685472497","3.752210904","0","0","bdl","0.622052","44.4110318633226","Within_Range","0.011952","0.853305917882156","Within_Range","-0.000432","0","bdl","2887.11676895015","68.4328628757558","0","0","within range","bdl"
+"COMPASS: Synoptic","MSM",2022,11,13,"MSM_202211_UP_PPR_7","UP","PPR","7","174.8104","2399.5399","5.4526013724267","67.6880084626234","4.3359945993","0","0","bdl","0.400736","28.6103079240649","Within_Range","0.010765","0.768560760207615","Within_Range","-0.000694","0","bdl","2347.19359127454","140.46745537655","16.7346270009327","23.6663364659741","within range","within range"
+"COMPASS: Synoptic","MSM",2022,11,13,"MSM_202211_UP_PPR_8","UP","PPR","8","177.2609","2485.0861","5.52903618215845","70.1011593794076","4.4905765827","0","0","bdl","0.317279","22.6519451405399","Within_Range","0.009907","0.707304361484147","Within_Range","-0.000741","0","bdl","1445.62375685394","28.8138370003181","128.051367081317","71.1923771389649","within range","within range"
+"COMPASS: Synoptic","MSM",2022,11,13,"MSM_202211_UP_PPR_9","UP","PPR","9","178.6692","2492.5354","5.57296319401123","70.3112947813822","4.5040374678","0","0","bdl","0.278149","19.8582821078484","Within_Range","0.009244","0.659969871561467","Within_Range","0.000778","0.0555448463949396","bdl","1241.0302256907","39.482361011917","149.006165090488","35.5358777146188","within range","within range"
+"COMPASS: Synoptic","MSM",2022,11,13,"MSM_202211_UP_PPR_10","UP","PPR","10","148.4152","2364.0378","4.62929507174049","66.686538787024","4.2718423046","0","0","bdl","0.279792","19.9755831137955","Within_Range","0.009308","0.66453911342429","Within_Range","0.001378","0.0983814888589032","bdl","1120.48134010904","209.958492459552","236.515445962421","14.3873373638622","within range","within range"
+"COMPASS: Synoptic","MSM",2022,11,13,"MSM_202211_UP_PPR_11","UP","PPR","11","161.6766","2433.2554","5.0429382407985","68.6390803949224","4.3969185078","0","0","bdl","0.232179","16.5762813510677","Within_Range","0.011352","0.810469275418193","Within_Range","0.000201","0.0143502752254278","bdl","1140.00686383001","110.044481681175","271.543688157511","36.884729686783","within range","within range"
+"COMPASS: Synoptic","MSM",2022,11,13,"MSM_202211_UP_PPR_12","UP","PPR","12","158.7478","2355.5381","4.95158452900811","66.4467729196051","4.2564833467","0","0","bdl","0.267067","19.067089321539","Within_Range","-0.001706","-0.12179885340587","bdl","-0.000123","0","bdl","1193.4898201092","50.4242147505567","216.52400607787","34.1247762356924","within range","within range"
+"COMPASS: Synoptic","MSM",2022,11,13,"MSM_202211_TR_PPR_1","TR","PPR","1","278.143","2474.0204","8.67570180910792","69.7890098730606","4.4705808628","0","0","bdl","0.693291","49.4970978174731","Within_Range","0.005179","0.369751618868113","Within_Range","0.009901","0.706875995059507","bdl","221.85320789474","17.3114542997182","32.675566038012","8.56469751015998","within range","within range"
+"COMPASS: Synoptic","MSM",2022,11,13,"MSM_202211_TR_PPR_2","TR","PPR","2","415.2092","3336.8363","12.9510043668122","94.1279633286319","6.0296891941","2.73795444462606","0.497205351966089","Within Range","0.789734","56.3825883327265","Within_Range","0.015548","1.11004019504951","Within_Range","0.003067","0.218966637394961","bdl","764.35276615476","70.2337276882754","141.999178934006","9.63352103455888","within range","within range"
+"COMPASS: Synoptic","MSM",2022,11,13,"MSM_202211_TR_PPR_3","TR","PPR","3","483.1684","3838.8819","15.070754834685","108.290039492243","6.9368855933","0","0","bdl","1.270161","90.6823877144509","Within_Range","0.022955","1.63885854626714","Within_Range","-0.000333","0","bdl","1951.16503406436","1.8008648125199","3.09324958165541","4.37451551018199","within range","within range"
+"COMPASS: Synoptic","MSM",2022,11,13,"MSM_202211_TR_PPR_4","TR","PPR","4","504.1556","3933.5373","15.7253774173425","110.960149506347","7.1079279011","0","0","bdl","0.888744","63.4513482833216","Within_Range","0.01554","1.10946903981666","Within_Range","0.001158","0.0826747199554499","bdl","2622.24879499608","543.861173381004","0","0","within range","bdl"
+"COMPASS: Synoptic","MSM",2022,11,13,"MSM_202211_TR_PPR_5","TR","PPR","5","514.8428","3992.268","16.058727386151","112.616868829337","7.214054276","0","0","bdl","1.242898","88.7359620752925","Within_Range","0.027575","1.96870069323966","Within_Range","-0.002135","0","bdl","2587.86689453088","354.770368066417","11.3520046798146","16.0541589783167","within range","bdl"
+"COMPASS: Synoptic","MSM",2022,11,13,"MSM_202211_TR_PPR_6","TR","PPR","6","508.4345","3861.4798","15.8588427947598","108.927497884344","6.9777199986","0","0","bdl","1.102503","78.7125447107456","Within_Range","0.021282","1.51941570819679","Within_Range","0.001105","0.0788908165377998","bdl","2135.80857359965","342.164314378777","0","0","within range","bdl"
+"COMPASS: Synoptic","MSM",2022,11,13,"MSM_202211_TR_PPR_7","TR","PPR","7","514.9525","4014.6269","16.062149095446","113.247585331453","7.2544568083","0.0603284726924646","0.0853173442789384","Within Range","1.193005","85.1738810712016","Within_Range","0.032784","2.34059414423098","Within_Range","0.002719","0.194121384765862","bdl","2608.66582197279","39.482361011917","1.90221380097106","3.2947309501406","within range","within range"
+"COMPASS: Synoptic","MSM",2022,11,13,"MSM_202211_TR_PPR_8","TR","PPR","8","492.0431","3875.5447","15.3475701809108","109.324251057828","7.0031352729","0","0","bdl","1.064666","76.0111946425639","Within_Range","0.024078","1.71903446207886","Within_Range","-0.001839","0","bdl","2692.28599964739","131.463131313951","0","0","within range","bdl"
+"COMPASS: Synoptic","MSM",2022,11,13,"MSM_202211_TR_PPR_9","TR","PPR","9","522.1735","4020.9697","16.2873830318153","113.426507757405","7.2659182479","2.98536067589761","0.162636991482328","Within Range","1.058845","75.5956078162594","Within_Range","0.04797","3.4247895649939","Within_Range","0.008725","0.622916175830138","bdl","2878.20294290362","257.523668190343","13.9040873818742","19.6633489478671","within range","within range"
+"COMPASS: Synoptic","MSM",2022,11,13,"MSM_202211_TR_PPR_10","TR","PPR","10","517.8428","3845.2175","16.152301933874","108.468758815233","6.9483340225","4.76928981717142","0.165735117322028","Within Range","0.97575","69.6630898070209","Within_Range","0.054323","3.87835821428316","Within_Range","0.004844","0.3458344934924","bdl","2512.73607499583","79.2380517508746","0","0","within range","bdl"
+"COMPASS: Synoptic","MSM",2022,11,13,"MSM_202211_TR_PPR_11","TR","PPR","11","442.7026","3319.5097","13.8085651902682","93.6392016925247","5.9983800279","7.77722873420973","0.541288626532371","Within Range","1.153342","82.3421648211213","Within_Range","0.061645","4.40110804115173","Within_Range","0.010408","0.743072957941557","bdl","2577.25519685644","216.768075982768","0","0","within range","bdl"
+"COMPASS: Synoptic","MSM",2022,11,13,"MSM_202211_TR_PPR_12","TR","PPR","12","490.2003","3858.1237","15.2900904553961","108.83282651622","6.9716555259","2.26918474326944","0.607695430180776","Within Range","0.645873","46.111717963546","Within_Range","-0.00111","-0.0792477885583328","bdl","5.1e-05","0.00364111460943691","bdl","1480.00565731913","5.4025944375597","120.17798667393","46.1511907247202","within range","within range"
+"COMPASS: Synoptic","MSM",2022,11,13,"MSM_202211_WC_PPR_1","WC","PPR","1","758.1275","6017.3466","23.6471459762944","169.741794076164","10.8733713062","0","0","bdl","0.210096","14.9996787251815","Within_Range","0.004476","0.319561352781169","Within_Range","0.004108","0.293288212069938","bdl","46.258917042005","1.79120620583538","30.5321905265906","0.30443588893287","within range","within range"
+"COMPASS: Synoptic","MSM",2022,11,13,"MSM_202211_WC_PPR_2","WC","PPR","2","810.8875","5928.6302","25.2928103555833","167.239215796897","10.7130607714","0","0","bdl","0.528781","37.7520043978953","Within_Range","0.005757","0.411017584441731","Within_Range","-0.001447","0","bdl","35.8096810911456","0.44780155145884","100.41978511638","26.0969983156057","within range","within range"
+"COMPASS: Synoptic","MSM",2022,11,13,"MSM_202211_WC_PPR_3","WC","PPR","3","861.5224","6300.3969","26.8721896444167","177.726287729196","11.3848431983","0.550362504961831","0.0552450391073433","Within Range","0.514708","36.747270948903","Within_Range","0.023481","1.67641200282722","Within_Range","0.002564","0.183055252129338","bdl","102.704957158307","6.19935519749806","21.8892994172215","6.26795490807664","within range","within range"
+"COMPASS: Synoptic","MSM",2022,11,13,"MSM_202211_WC_PPR_4","WC","PPR","4","1103.1859","7997.9954","34.4100405489707","225.613410437236","14.4524036878","54.9406692429231","2.50173221697947","Within Range","0.60422","43.1379268492935","Within_Range","0.012523","0.894072122627029","Within_Range","-0.002414","0","bdl","368.23995210906","12.0915208840621","61.3943758562865","55.4014575092726","within range","within range"
+"COMPASS: Synoptic","MSM",2022,11,13,"MSM_202211_WC_PPR_5","WC","PPR","5","1034.7348","7548.1547","32.274946974423","212.923968970381","13.6395415429","49.1852190207112","4.10675434812463","Within Range","0.64299","45.9058878965067","Within_Range","0.011751","0.838955642656729","Within_Range","0.001374","0.0980959112424768","bdl","276.009139750052","8.74705766081082","62.0802369597678","22.9204228823538","within range","within range"
+"COMPASS: Synoptic","MSM",2022,11,13,"MSM_202211_WC_PPR_6","WC","PPR","6","903.92","7053.2224","28.1946350592639","198.962550070522","12.7451988768","52.0759655124104","1.92011284302096","Within Range","0.421368","30.0833172695924","Within_Range","0.010983","0.784124740302855","Within_Range","-0.000704","0","bdl","305.661254966065","30.1001690092608","40.0019846174141","45.9339092808431","within range","within range"
+"COMPASS: Synoptic","MSM",2022,11,13,"MSM_202211_WC_PPR_7","WC","PPR","7","900.7168","7537.9508","28.0947223955084","212.636129760226","13.6211030956","30.1219178322087","1.4844373876293","Within Range","0.494665","35.3163129073943","Within_Range","0.009706","0.692954086258719","Within_Range","0.002663","0.190123298135892","bdl","443.006942009558","18.5231809287759","48.8647808741146","18.9888791720577","within range","within range"
+"COMPASS: Synoptic","MSM",2022,11,13,"MSM_202211_WC_PPR_8","WC","PPR","8","943.1403","7818.451","29.4179756706176","220.548688293371","14.127966957","31.4761414139056","0.673596911687163","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,"494.306920481432","7.20345925007955","73.4680803317328","20.4758591836119","within range","within range"
+"COMPASS: Synoptic","MSM",2022,11,13,"MSM_202211_WC_PPR_9","WC","PPR","9","894.1399","7412.5097","27.8895789145352","209.097593794076","13.3944310279","32.5178518613647","0.238685848885395","Within Range","0.508315","36.2908465234495","Within_Range","0.007324","0.522892615676783","Within_Range","-0.004168","0","bdl","558.704765797189","5.65986083934817","0","0","within range","bdl"
+"COMPASS: Synoptic","MSM",2022,11,13,"MSM_202211_WC_PPR_10","WC","PPR","10","1030.3036","8510.6046","32.1367311291329","240.073472496474","15.3786885122","37.1795061137444","1.90468572715953","Within Range","0.187101","13.3579644027501","Within_Range","0.005061","0.361327079183534","Within_Range","-0.005054","0","bdl","440.823964202244","5.1453280357711","38.3697708276954","7.7066683738212","within range","within range"
+"COMPASS: Synoptic","MSM",2022,11,13,"MSM_202211_WC_PPR_11","WC","PPR","11","894.179","7400.8901","27.8907985028072","208.769819464034","13.3734344107","31.9969966376351","1.43211509331238","Within Range","0.522588","37.3098588532631","Within_Range","0.0079","0.564015792442188","Within_Range","-0.002353","0","bdl","472.477142408294","1.02906560715423","1.8286602269603","2.58611609393951","within range","bdl"
+"COMPASS: Synoptic","MSM",2022,11,13,"MSM_202211_WC_PPR_12","WC","PPR","12","941.3899","7732.9737","29.3633780411728","218.137480959097","13.9735094759","29.1583356683089","0.66447328166797","Within Range","0.163561","11.6773401300806","Within_Range","-0.001421","-0.101451448235487","bdl","-0.003454","0","bdl","407.169723006156","52.2250795630765","31.1784991692751","44.0930563796271","within range","within range"
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_TR_PPR_4","TR","PPR","4","741.9526","5993.3481","23.1426263256394","169.06482651622","10.8300060167","2.04487158786325","0","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_TR_PPR_4","TR","PPR","4","741.9526","0","23.1426263256394","0","2.6e-05","2.04487158786325","0","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_TR_PPR_4","TR","PPR","4","741.9526","0","23.1426263256394","0","2.6e-05","2.04487158786325","0","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_TR_PPR_4","TR","PPR","4","9.2977","5993.3481","0.290009357454772","169.06482651622","10.8300060167","2.04487158786325","0","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_TR_PPR_4","TR","PPR","4","9.2977","0","0.290009357454772","0","2.6e-05","2.04487158786325","0","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_TR_PPR_4","TR","PPR","4","9.2977","0","0.290009357454772","0","2.6e-05","2.04487158786325","0","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_TR_PPR_4","TR","PPR","4","8.3717","5993.3481","0.261126013724267","169.06482651622","10.8300060167","2.04487158786325","0","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_TR_PPR_4","TR","PPR","4","8.3717","0","0.261126013724267","0","2.6e-05","2.04487158786325","0","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_TR_PPR_4","TR","PPR","4","8.3717","0","0.261126013724267","0","2.6e-05","2.04487158786325","0","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_TR_PPR_5","TR","PPR","5","0","0","0","0","2.6e-05","4.71940552585082","0.369010943232112","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_TR_PPR_5","TR","PPR","5","0","6018.509","0","169.774583921016","10.875471763","4.71940552585082","0.369010943232112","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_TR_PPR_5","TR","PPR","5","0","0","0","0","2.6e-05","4.71940552585082","0.369010943232112","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_TR_PPR_5","TR","PPR","5","783.8743","0","24.4502276980661","0","2.6e-05","4.71940552585082","0.369010943232112","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_TR_PPR_5","TR","PPR","5","783.8743","6018.509","24.4502276980661","169.774583921016","10.875471763","4.71940552585082","0.369010943232112","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_TR_PPR_5","TR","PPR","5","783.8743","0","24.4502276980661","0","2.6e-05","4.71940552585082","0.369010943232112","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_TR_PPR_5","TR","PPR","5","10.5257","0","0.328312538989395","0","2.6e-05","4.71940552585082","0.369010943232112","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_TR_PPR_5","TR","PPR","5","10.5257","6018.509","0.328312538989395","169.774583921016","10.875471763","4.71940552585082","0.369010943232112","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_TR_PPR_5","TR","PPR","5","10.5257","0","0.328312538989395","0","2.6e-05","4.71940552585082","0.369010943232112","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_TR_PPR_6","TR","PPR","6","5.2337","0","0.163247036805989","0","2.6e-05","0.577139548723725","0.322884575328098","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_TR_PPR_6","TR","PPR","6","5.2337","6565.8159","0.163247036805989","185.213424541608","11.8644553313","0.577139548723725","0.322884575328098","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_TR_PPR_6","TR","PPR","6","382.7082","0","11.9372489082969","0","2.6e-05","0.577139548723725","0.322884575328098","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_TR_PPR_6","TR","PPR","6","382.7082","6565.8159","11.9372489082969","185.213424541608","11.8644553313","0.577139548723725","0.322884575328098","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_TR_PPR_7","TR","PPR","7","386.7112","6552.3956","12.0621085464754","184.834854724965","11.8402048492","22.2669574604522","1.19573211898111","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_TR_PPR_7","TR","PPR","7","386.7112","81.2729","12.0621085464754","2.29260648801128","0.1468861303","22.2669574604522","1.19573211898111","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_TR_PPR_7","TR","PPR","7","12.7341","6552.3956","0.3971958827199","184.834854724965","11.8402048492","22.2669574604522","1.19573211898111","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_TR_PPR_7","TR","PPR","7","12.7341","81.2729","0.3971958827199","2.29260648801128","0.1468861303","22.2669574604522","1.19573211898111","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_TR_PPR_8","TR","PPR","8","833.8826","6178.9134","26.0100623830318","174.299390691114","11.1653225138","5.69789355194383","0","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_TR_PPR_9","TR","PPR","9","865.134","6432.475","26.9848409232689","181.452045133992","11.623508325","2.99074334641983","0.23063183952007","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_TR_PPR_10","TR","PPR","10","841.3815","6137.9061","26.2439644416719","173.142626234133","11.0912223227","2.33841799569115","0.507390046944154","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_TR_PPR_11","TR","PPR","11","865.4937","6308.0716","26.9960605115409","177.942781382228","11.3987113812","12.1776587025153","0.480836504445244","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_TR_PPR_12","TR","PPR","12","858.6871","6215.2484","26.7837523393637","175.324355430183","11.2309798588","25.7025376409566","0.718545577784268","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_WC_PPR_1","WC","PPR","1","1639.3423","11867.1978","51.1335714285714","334.758753173484","21.4440524246","0","0","bdl",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_WC_PPR_2","WC","PPR","2","728.5031","13337.4514","22.7231160324392","376.232761636107","24.1008006798","2.97987125724102","0.164164946531048","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_WC_PPR_3","WC","PPR","3","1794.2591","12815.3804","55.9656612601372","361.505794076164","23.1574183828","35.18299940488","0.690356260772427","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_WC_PPR_4","WC","PPR","4","1740.6627","12611.279","54.2939082969432","355.748349788434","22.788607153","39.1487092661878","1.99288686496852","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_WC_PPR_5","WC","PPR","5","726.9002","13600.8726","22.6731191515908","383.663543018336","24.5768027882","25.963467781248","1.37505067561161","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_WC_PPR_6","WC","PPR","6","723.467","13589.9245","22.5660324391765","383.354710860367","24.5570195715","20.9188184022796","0.979212563790286","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_WC_PPR_7","WC","PPR","7","711.8625","13353.1206","22.2040704928259","376.674770098731","24.1291149242","13.8193441685158","0.784148254368239","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_WC_PPR_8","WC","PPR","8","701.8253","13217.4893","21.8909950093575","372.848781382228","23.8840291651","13.8737046144099","1.23310773434972","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_WC_PPR_9","WC","PPR","9","1666.9806","11953.8055","51.9956519026825","337.201847672779","21.6005525385","10.6773103958394","0.480836504445244","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_WC_PPR_10","WC","PPR","10","691.3365","13049.3123","21.563833437305","368.10471932299","23.5801333261","9.2421946242363","0.703584628309317","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_WC_PPR_11","WC","PPR","11","691.9781","13121.4266","21.5838459139114","370.138973201693","23.7104438662","6.39370725938775","0.0753240433684838","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_WC_PPR_12","WC","PPR","12","692.0534","13340.018","21.5861946350593","376.305162200282","24.105438526","6.70899784557328","0.507390046944154","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_UP_PPR_1","UP","PPR","1","65.1992","1896.6743","2.03366188396756","53.5028011283498","3.4273164601","0","0","bdl",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_UP_PPR_2","UP","PPR","2","69.4329","981.2909","2.16571740486588","27.6809844851904","1.7732186563","2.91463872216815","0.135792350320171","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_UP_PPR_3","UP","PPR","3","107.1467","1580.5047","3.34206799750468","44.5840535966149","2.8559979929","0","0","bdl",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_UP_PPR_4","UP","PPR","4","115.7515","1681.3881","3.61046475358702","47.4298476727786","3.0382942967","4.95859148778467","0.263634151789693","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_UP_PPR_5","UP","PPR","5","130.7546","1773.5946","4.07843418590144","50.0308772919605","3.2049114422","7.72010213920273","0.456627745510073","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_UP_PPR_5","UP","PPR","5","126.399","1782.3633","3.94257641921397","50.2782313117066","3.2207564831","7.72010213920273","0.456627745510073","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_UP_PPR_6","UP","PPR","6","174.0613","2343.6638","5.42923580786026","66.1118138222849","4.2350264866","17.5049824001329","0.960935246596324","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_UP_PPR_7","UP","PPR","7","193.951","2674.8578","6.04962570180911","75.4543808180536","4.8334940446","11.7645193137205","0.662037924970609","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_UP_PPR_8","UP","PPR","8","204.8717","3145.7186","6.39025888958203","88.7367729196051","5.6843395102","12.7212631614559","0.925597341134878","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_UP_PPR_9","UP","PPR","9","216.7288","3654.781","6.7600998128509","103.096784203103","6.604215267","2.66458067105549","0.322884575328098","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_UP_PPR_10","UP","PPR","10","235.9954","4147.9582","7.36105427323768","117.00869393512","7.4953864674","7.04603261011643","0.489606281895143","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_UP_PPR_11","UP","PPR","11","260.5231","4336.5769","8.12611041796631","122.329390691114","7.8362204583","4.98033566614229","0.276758207424084","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_UP_PPR_12","UP","PPR","12","258.1895","4282.0554","8.05332189644417","120.791407616361","7.7377001078","1.45777877220744","0.184505471616056","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_TR_PPR_1","TR","PPR","1","41.4142","474.5927","1.29177167810356","13.3876643159379","0.8576150089","0","0","bdl",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_TR_PPR_2","TR","PPR","2","90.0462","1142.8126","2.80867747972551","32.2373088857546","2.0650883682","1.0337672942338","0.23063183952007","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,4,24,"MSM_202304_TR_PPR_3","TR","PPR","3","387.2873","3889.9243","12.0800779787898","109.729881523272","7.0291192101","1.21859281027359","0.0753240433684838","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,6,29,"MSM_202306_UP_PPR_1","UP","PPR","1","44.7657","815.6234","1.39631004366812","23.0077122708039","1.4738574838","0.0810852658522373","0","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,6,29,"MSM_202306_UP_PPR_2","UP","PPR","2","56.2271","931.0506","1.75380848409233","26.2637686882934","1.6824344342","2.9659058939494","0.13751974575063","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,6,29,"MSM_202306_UP_PPR_3","UP","PPR","3","77.799","923.5793","2.42666874610106","26.0530126939351","1.6689337951","4.0139493431083","0.163145454064325","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,6,29,"MSM_202306_UP_PPR_4","UP","PPR","4","99.0902","1030.9977","3.09077354959451","29.0831509167842","1.8630388439","1.05349671352544","0.0916798305004199","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,6,29,"MSM_202306_UP_PPR_5","UP","PPR","5","162.9493","1566.0638","5.0826356830942","44.1766939351199","2.8299032866","1.70177101197424","0","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,6,29,"MSM_202306_UP_PPR_6","UP","PPR","6","160.0524","1779.0776","4.99227698066126","50.1855458392102","3.2148192232","2.24199959401491","0.0990255347912009","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,6,29,"MSM_202306_UP_PPR_7","UP","PPR","7","177.0942","3053.8581","5.52383655645664","86.1455035260931","5.5183475867","0.0162578360073572","0","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,6,29,"MSM_202306_UP_PPR_8","UP","PPR","8","183.6989","3110.9823","5.72984716157205","87.7569055007052","5.6215710161","0.145912695697117","0.0916798305004199","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,6,29,"MSM_202306_UP_PPR_9","UP","PPR","9","181.5773","3074.7094","5.66367124142233","86.7336925246827","5.5560258858","0","0","bdl",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,6,29,"MSM_202306_UP_PPR_10","UP","PPR","10","191.5831","3078.3672","5.97576731129133","86.836874471086","5.5626355304","0","0","bdl",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,6,29,"MSM_202306_UP_PPR_11","UP","PPR","11","173.294","2891.3391","5.4053025577043","81.5610465444288","5.2246757537","0","0","bdl",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,6,29,"MSM_202306_UP_PPR_12","UP","PPR","12","181.4733","2907.0668","5.66042732376793","82.0047052186178","5.2530957076","0.275567555386878","0","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,6,29,"MSM_202306_TR_PPR_1","TR","PPR","1","164.8393","1705.2825","5.1415876481597","48.1038787023977","3.0814714775","0","0","bdl",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,6,29,"MSM_202306_TR_PPR_2","TR","PPR","2","237.8114","2340.9398","7.41769806612601","66.0349732016925","4.2301042186","1.55050700900285","0.149712536287252","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,6,29,"MSM_202306_TR_PPR_3","TR","PPR","3","457.4169","4089.3654","14.2675265127885","115.355864598025","7.3895092778","2.50130931339443","0.0374281340718132","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,6,29,"MSM_202306_TR_PPR_4","TR","PPR","4","818.073","6957.8727","25.5169369931379","196.272854724965","12.5729019689","1.44246129259472","0.0916798305004198","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,6,29,"MSM_202306_TR_PPR_5","TR","PPR","5","832.7506","7008.2991","25.9747535870243","197.695320169252","12.6640224737","4.03555848638992","0.12965485968976","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,6,29,"MSM_202306_TR_PPR_6","TR","PPR","6","821.9378","6839.1639","25.6374859638178","192.924228490832","12.3583951673","0.372808700154198","0.0458399152502093","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,6,29,"MSM_202306_TR_PPR_7","TR","PPR","7","801.6916","6578.55","25.0059762944479","185.57263751763","11.88746585","4.55417792514896","0.18335966100084","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,6,29,"MSM_202306_TR_PPR_8","TR","PPR","8","824.2297","6721.5471","25.7089737991266","189.606406205924","12.1458616097","1.70177101197424","0.112284402215439","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,6,29,"MSM_202306_TR_PPR_9","TR","PPR","9","820.1026","6693.149","25.5802432938241","188.80533145275","12.094546243","3.71142133716552","0.336853206646318","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,6,29,"MSM_202306_TR_PPR_10","TR","PPR","10","829.0092","6669.9604","25.8580536494074","188.151210155148","12.0526444428","3.10636532527997","0.0990255347912009","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,6,29,"MSM_202306_TR_PPR_11","TR","PPR","11","820.7486","6672.612","25.6003930131004","188.226008462623","12.057435884","4.1003859162348","0.18335966100084","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,6,29,"MSM_202306_TR_PPR_12","TR","PPR","12","786.8576","6294.9246","24.5432813474735","177.571921015515","11.3749547522","5.33210708328752","0.282576215463305","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,6,29,"MSM_202306_WC_PPR_1","WC","PPR","1","1163.6044","9463.2946","36.2945851528384","266.947661495063","17.1001993422","0.632118419533718","0.13751974575063","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,6,29,"MSM_202306_WC_PPR_2","WC","PPR","2","1108.0008","9681.1848","34.5602245789145","273.094070521862","17.4939269336","0.632118419533718","0.04583991525021","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,6,29,"MSM_202306_WC_PPR_3","WC","PPR","3","1025.8101","9135.9163","31.9965720524017","257.712730606488","16.5086267541","1.87464415822725","0.0748562681436262","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,6,29,"MSM_202306_WC_PPR_4","WC","PPR","4","1029.0833","9128.4754","32.0986681222707","257.502832157969","16.4951810478","0.891428138913238","0.13751974575063","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,6,29,"MSM_202306_WC_PPR_5","WC","PPR","5","1018.0119","9038.2348","31.7533343730505","254.957258110014","16.3321162836","3.87348991177772","0.13751974575063","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,6,29,"MSM_202306_WC_PPR_6","WC","PPR","6","1031.9689","9031.6724","32.1886743605739","254.772141043724","16.3202580268","0.923841853835678","0.0916798305004199","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,6,29,"MSM_202306_WC_PPR_7","WC","PPR","7","1010.6333","8865.5491","31.5231846537742","250.086011283498","16.0200732237","0.664532134456158","0.0916798305004199","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,6,29,"MSM_202306_WC_PPR_8","WC","PPR","8","1023.3384","8841.3055","31.9194759825327","249.402129760226","15.9762650385","0.815796137427545","0.0374281340718131","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,6,29,"MSM_202306_WC_PPR_9","WC","PPR","9","1026.1569","8888.6427","32.0073892701185","250.737452750353","16.0618033589","1.15073785829276","0.0458399152502099","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,6,29,"MSM_202306_WC_PPR_10","WC","PPR","10","1020.2571","8710.3829","31.8233655645664","245.708967559944","15.7396879003","0.632118419533718","0.04583991525021","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,6,29,"MSM_202306_WC_PPR_11","WC","PPR","11","1016.703","8625.8626","31.712507797879","243.324755994358","15.5869597182","0.340394985231757","0.0916798305004192","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+"COMPASS: Synoptic","MSM",2023,6,29,"MSM_202306_WC_PPR_12","WC","PPR","12","1029.1264","8695.2528","32.1000124766064","245.282166431594","15.7123478096","20.665017726709","3.43799364376574","Within Range",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
