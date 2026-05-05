@@ -4049,11 +4049,6 @@
   Reduction efficiency check was only ran for some of the runs within this month's data.",""
 "COMPASS: Synoptic","CB","SWH_202409_WC_LysC_45cm",2024,9,25,"11:34","EDT","SWH","WC","C",45,0.0094,0.6739,"bdl",NA,0.0482,3.4426,"Within_Range",NA,0.271,8.7481,"Within_Range",NA,"7/10/2025","Some sample IDs are missing from metadata: MSM_202409_UP_LysA_45cm. 
   Reduction efficiency check was only ran for some of the runs within this month's data.",""
-"COMPASS: Synoptic","CB","SWH_202409_WC_LysA_10cm",2024,9,25,"10:53","EDT","SWH","WC","A",10,0.0156,1.117,"bdl",NA,0.0389,2.7777,"Within_Range",NA,0.0443,1.4302,"Within_Range",NA,"7/1/2025","Some sample IDs are missing from metadata: SWH_202410_UP_LysC_10cm
-  Nitrate and nitrite reduction efficiency is okay, graph off 
-  because only one run for this month. 
-  Performance check for NOx looks like DI was run instead of the peCheck.
-  ** Something up with the phosphate on this run... needs looked at. ",NA
 "COMPASS: Synoptic","CB","SWH_202410_SWAMP_LysA_10cm",2024,10,22,"14:08","EDT","SWH","SWAMP","A",10,0,0,"bdl",NA,0.8024,57.2863,"Within_Range",NA,0.0151,0.4887,"Within_Range",NA,"7/1/2025","Some sample IDs are missing from metadata: SWH_202410_UP_LysC_10cm
   Nitrate and nitrite reduction efficiency is okay, graph off 
   because only one run for this month. 
@@ -4200,6 +4195,11 @@
   Performance check for NOx looks like DI was run instead of the peCheck.
   ** Something up with the phosphate on this run... needs looked at. ",NA
 "COMPASS: Synoptic","CB","SWH_202410_UP_LysC_45cm",2024,10,22,"15:05","EDT","SWH","UP","C",45,0,0,"bdl",NA,NA,NA,NA,NA,NA,NA,NA,NA,"7/1/2025","Some sample IDs are missing from metadata: SWH_202410_UP_LysC_10cm
+  Nitrate and nitrite reduction efficiency is okay, graph off 
+  because only one run for this month. 
+  Performance check for NOx looks like DI was run instead of the peCheck.
+  ** Something up with the phosphate on this run... needs looked at. ",NA
+"COMPASS: Synoptic","CB","SWH_202410_WC_LysA_10cm",2024,10,22,"10:20","EDT","SWH","WC","A",10,0.0156,1.117,"bdl",NA,0.0389,2.7777,"Within_Range",NA,0.0443,1.4302,"Within_Range",NA,"7/1/2025","Some sample IDs are missing from metadata: SWH_202410_UP_LysC_10cm
   Nitrate and nitrite reduction efficiency is okay, graph off 
   because only one run for this month. 
   Performance check for NOx looks like DI was run instead of the peCheck.
@@ -4526,55 +4526,55 @@
                 A few duplicates were out of range but still within CV.
                 SWH_202411_SWAMP_LycC_45cm, SWH_202411_TR_LysC_10cm, 
                 MSM_202411_TR_LysC_10cm, MSM_202411_TR_LysC_45cm were missing from metadata. ",""
-"COMPASS: Synoptic","CB","SWH_202411_SWAMP_LysC_45cm",2024,11,12,"14:45","EDT","SWH","SWAMP","C",45,0.0081,0.5774,"bdl",NA,NA,NA,NA,NA,0.0061,0.1966,"Within_Range",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
+"COMPASS: Synoptic","CB","SWH_202411_SWAMP_LysC_45cm",2024,11,12,"14:45","EDT","SWH","SWAMP","C",45,0.0081,0.5774,"bdl",NA,0.9914,70.7781,"Within_Range",NA,0.0061,0.1966,"Within_Range",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
                 A few duplicates were out of range but still within CV.
                 SWH_202411_SWAMP_LycC_45cm, SWH_202411_TR_LysC_10cm, 
                 MSM_202411_TR_LysC_10cm, MSM_202411_TR_LysC_45cm were missing from metadata. ",""
-"COMPASS: Synoptic","CB","SWH_202411_SW_A",2024,11,12,"13:10","EDT","SWH","SW","A",0,0.0533,3.8022,"Within_Range",NA,NA,NA,NA,NA,0.0246,0.7928,"Within_Range",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
+"COMPASS: Synoptic","CB","SWH_202411_SW_A",2024,11,12,"13:10","EDT","SWH","SW","A",0,0.0533,3.8022,"Within_Range",NA,0.0288,2.0571,"Within_Range",NA,0.0246,0.7928,"Within_Range",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
                 A few duplicates were out of range but still within CV.
                 SWH_202411_SWAMP_LycC_45cm, SWH_202411_TR_LysC_10cm, 
                 MSM_202411_TR_LysC_10cm, MSM_202411_TR_LysC_45cm were missing from metadata. ",""
-"COMPASS: Synoptic","CB","SWH_202411_SW_B",2024,11,12,"13:10","EDT","SWH","SW","B",0,0.0559,3.9919,"Within_Range",NA,NA,NA,NA,NA,0.024,0.7746,"Within_Range",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
+"COMPASS: Synoptic","CB","SWH_202411_SW_B",2024,11,12,"13:10","EDT","SWH","SW","B",0,0.0559,3.9919,"Within_Range",NA,0.0414,2.9539,"Within_Range",NA,0.024,0.7746,"Within_Range",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
                 A few duplicates were out of range but still within CV.
                 SWH_202411_SWAMP_LycC_45cm, SWH_202411_TR_LysC_10cm, 
                 MSM_202411_TR_LysC_10cm, MSM_202411_TR_LysC_45cm were missing from metadata. ",""
-"COMPASS: Synoptic","CB","SWH_202411_SW_C",2024,11,12,"13:10","EDT","SWH","SW","C",0,0.049,3.4983,"Within_Range",NA,NA,NA,NA,NA,0.0215,0.6954,"Within_Range",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
+"COMPASS: Synoptic","CB","SWH_202411_SW_C",2024,11,12,"13:10","EDT","SWH","SW","C",0,0.049,3.4983,"Within_Range",NA,0.036,2.5708,"Within_Range",NA,0.0215,0.6954,"Within_Range",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
                 A few duplicates were out of range but still within CV.
                 SWH_202411_SWAMP_LycC_45cm, SWH_202411_TR_LysC_10cm, 
                 MSM_202411_TR_LysC_10cm, MSM_202411_TR_LysC_45cm were missing from metadata. ",""
-"COMPASS: Synoptic","CB","SWH_202411_TR_LysA_10cm",2024,11,12,"12:30","EDT","SWH","TR","A",10,0.0325,2.3173,"Within_Range",NA,NA,NA,NA,NA,0.0283,0.914,"Within_Range",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
+"COMPASS: Synoptic","CB","SWH_202411_TR_LysA_10cm",2024,11,12,"12:30","EDT","SWH","TR","A",10,0.0325,2.3173,"Within_Range",NA,0.2854,20.3765,"Within_Range",NA,0.0283,0.914,"Within_Range",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
                 A few duplicates were out of range but still within CV.
                 SWH_202411_SWAMP_LycC_45cm, SWH_202411_TR_LysC_10cm, 
                 MSM_202411_TR_LysC_10cm, MSM_202411_TR_LysC_45cm were missing from metadata. ",""
-"COMPASS: Synoptic","CB","SWH_202411_TR_LysA_20cm",2024,11,12,"12:35","EDT","SWH","TR","A",20,0.0016,0.1143,"bdl",NA,NA,NA,NA,NA,0.5687,18.3618,"adl",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
+"COMPASS: Synoptic","CB","SWH_202411_TR_LysA_20cm",2024,11,12,"12:35","EDT","SWH","TR","A",20,0.0016,0.1143,"bdl",NA,1.9256,137.4755,"Within_Range",NA,0.5687,18.3618,"adl",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
                 A few duplicates were out of range but still within CV.
                 SWH_202411_SWAMP_LycC_45cm, SWH_202411_TR_LysC_10cm, 
                 MSM_202411_TR_LysC_10cm, MSM_202411_TR_LysC_45cm were missing from metadata. ",""
-"COMPASS: Synoptic","CB","SWH_202411_TR_LysA_45cm",2024,11,12,"12:40","EDT","SWH","TR","A",45,0.0018,0.1259,"bdl",NA,NA,NA,NA,NA,0.159,5.1324,"Within_Range",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
+"COMPASS: Synoptic","CB","SWH_202411_TR_LysA_45cm",2024,11,12,"12:40","EDT","SWH","TR","A",45,0.0018,0.1259,"bdl",NA,1.5567,111.1407,"Within_Range",NA,0.159,5.1324,"Within_Range",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
                 A few duplicates were out of range but still within CV.
                 SWH_202411_SWAMP_LycC_45cm, SWH_202411_TR_LysC_10cm, 
                 MSM_202411_TR_LysC_10cm, MSM_202411_TR_LysC_45cm were missing from metadata. ",""
-"COMPASS: Synoptic","CB","SWH_202411_TR_LysB_10cm",2024,11,12,"12:45","EDT","SWH","TR","B",10,0.043,3.0705,"Within_Range",NA,NA,NA,NA,NA,0.0331,1.0693,"Within_Range",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
+"COMPASS: Synoptic","CB","SWH_202411_TR_LysB_10cm",2024,11,12,"12:45","EDT","SWH","TR","B",10,0.043,3.0705,"Within_Range",NA,0.3652,26.075,"Within_Range",NA,0.0331,1.0693,"Within_Range",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
                 A few duplicates were out of range but still within CV.
                 SWH_202411_SWAMP_LycC_45cm, SWH_202411_TR_LysC_10cm, 
                 MSM_202411_TR_LysC_10cm, MSM_202411_TR_LysC_45cm were missing from metadata. ",""
-"COMPASS: Synoptic","CB","SWH_202411_TR_LysB_20cm",2024,11,12,"12:50","EDT","SWH","TR","B",20,0.0036,0.2559,"bdl",NA,NA,NA,NA,NA,0.6745,21.7769,"adl",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
+"COMPASS: Synoptic","CB","SWH_202411_TR_LysB_20cm",2024,11,12,"12:50","EDT","SWH","TR","B",20,0.0036,0.2559,"bdl",NA,1.8362,131.0929,"Within_Range",NA,0.6745,21.7769,"adl",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
                 A few duplicates were out of range but still within CV.
                 SWH_202411_SWAMP_LycC_45cm, SWH_202411_TR_LysC_10cm, 
                 MSM_202411_TR_LysC_10cm, MSM_202411_TR_LysC_45cm were missing from metadata. ",""
-"COMPASS: Synoptic","CB","SWH_202411_TR_LysB_45cm",2024,11,12,"12:55","EDT","SWH","TR","B",45,0.0051,0.363,"bdl",NA,NA,NA,NA,NA,0.7626,24.621,"adl",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
+"COMPASS: Synoptic","CB","SWH_202411_TR_LysB_45cm",2024,11,12,"12:55","EDT","SWH","TR","B",45,0.0051,0.363,"bdl",NA,3.6895,263.4103,"Within_Range",NA,0.7626,24.621,"adl",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
                 A few duplicates were out of range but still within CV.
                 SWH_202411_SWAMP_LycC_45cm, SWH_202411_TR_LysC_10cm, 
                 MSM_202411_TR_LysC_10cm, MSM_202411_TR_LysC_45cm were missing from metadata. ",""
-"COMPASS: Synoptic","CB","SWH_202411_TR_LysC_10cm",2024,11,12,"13:00","EDT","SWH","TR","C",10,0.0358,2.5585,"Within_Range",NA,NA,NA,NA,NA,0.0151,0.4884,"Within_Range",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
+"COMPASS: Synoptic","CB","SWH_202411_TR_LysC_10cm",2024,11,12,"13:00","EDT","SWH","TR","C",10,0.0358,2.5585,"Within_Range",NA,0.0306,2.1845,"Within_Range",NA,0.0151,0.4884,"Within_Range",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
                 A few duplicates were out of range but still within CV.
                 SWH_202411_SWAMP_LycC_45cm, SWH_202411_TR_LysC_10cm, 
                 MSM_202411_TR_LysC_10cm, MSM_202411_TR_LysC_45cm were missing from metadata. ",""
-"COMPASS: Synoptic","CB","SWH_202411_TR_LysC_20cm",2024,11,12,"13:05","EDT","SWH","TR","C",20,0.0064,0.4544,"bdl",NA,NA,NA,NA,NA,0.3245,10.4774,"adl",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
+"COMPASS: Synoptic","CB","SWH_202411_TR_LysC_20cm",2024,11,12,"13:05","EDT","SWH","TR","C",20,0.0064,0.4544,"bdl",NA,1.4592,104.1766,"Within_Range",NA,0.3245,10.4774,"adl",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
                 A few duplicates were out of range but still within CV.
                 SWH_202411_SWAMP_LycC_45cm, SWH_202411_TR_LysC_10cm, 
                 MSM_202411_TR_LysC_10cm, MSM_202411_TR_LysC_45cm were missing from metadata. ",""
-"COMPASS: Synoptic","CB","SWH_202411_TR_LysC_45cm",2024,11,12,"13:10","EDT","SWH","TR","C",45,0.0039,0.2802,"bdl",NA,NA,NA,NA,NA,0.563,18.1768,"adl",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
+"COMPASS: Synoptic","CB","SWH_202411_TR_LysC_45cm",2024,11,12,"13:10","EDT","SWH","TR","C",45,0.0039,0.2802,"bdl",NA,2.6394,188.4405,"Within_Range",NA,0.563,18.1768,"adl",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
                 A few duplicates were out of range but still within CV.
                 SWH_202411_SWAMP_LycC_45cm, SWH_202411_TR_LysC_10cm, 
                 MSM_202411_TR_LysC_10cm, MSM_202411_TR_LysC_45cm were missing from metadata. ",""
@@ -4614,31 +4614,31 @@
                 A few duplicates were out of range but still within CV.
                 SWH_202411_SWAMP_LycC_45cm, SWH_202411_TR_LysC_10cm, 
                 MSM_202411_TR_LysC_10cm, MSM_202411_TR_LysC_45cm were missing from metadata. ",""
-"COMPASS: Synoptic","CB","SWH_202411_WC_LysA_10cm",2024,11,12,"13:30","EDT","SWH","WC","A",10,0,0,"bdl",NA,NA,NA,NA,NA,0.0281,0.9079,"Within_Range",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
+"COMPASS: Synoptic","CB","SWH_202411_WC_LysA_10cm",2024,11,12,"13:30","EDT","SWH","WC","A",10,0,0,"bdl",NA,0.0256,1.8262,"Within_Range",NA,0.0281,0.9079,"Within_Range",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
                 A few duplicates were out of range but still within CV.
                 SWH_202411_SWAMP_LycC_45cm, SWH_202411_TR_LysC_10cm, 
                 MSM_202411_TR_LysC_10cm, MSM_202411_TR_LysC_45cm were missing from metadata. ",""
-"COMPASS: Synoptic","CB","SWH_202411_WC_LysA_45cm",2024,11,12,"13:40","EDT","SWH","WC","A",45,0.0045,0.3193,"bdl",NA,NA,NA,NA,NA,0.0464,1.4971,"Within_Range",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
+"COMPASS: Synoptic","CB","SWH_202411_WC_LysA_45cm",2024,11,12,"13:40","EDT","SWH","WC","A",45,0.0045,0.3193,"bdl",NA,0.0345,2.4666,"Within_Range",NA,0.0464,1.4971,"Within_Range",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
                 A few duplicates were out of range but still within CV.
                 SWH_202411_SWAMP_LycC_45cm, SWH_202411_TR_LysC_10cm, 
                 MSM_202411_TR_LysC_10cm, MSM_202411_TR_LysC_45cm were missing from metadata. ",""
-"COMPASS: Synoptic","CB","SWH_202411_WC_LysB_10cm",2024,11,12,"13:45","EDT","SWH","WC","B",10,0.0044,0.3161,"bdl",NA,NA,NA,NA,NA,0.2453,7.9184,"Within_Range",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
+"COMPASS: Synoptic","CB","SWH_202411_WC_LysB_10cm",2024,11,12,"13:45","EDT","SWH","WC","B",10,0.0044,0.3161,"bdl",NA,0.0376,2.6829,"Within_Range",NA,0.2453,7.9184,"Within_Range",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
                 A few duplicates were out of range but still within CV.
                 SWH_202411_SWAMP_LycC_45cm, SWH_202411_TR_LysC_10cm, 
                 MSM_202411_TR_LysC_10cm, MSM_202411_TR_LysC_45cm were missing from metadata. ",""
-"COMPASS: Synoptic","CB","SWH_202411_WC_LysB_45cm",2024,11,12,"13:55","EDT","SWH","WC","B",45,0.0087,0.6187,"bdl",NA,NA,NA,NA,NA,0.0475,1.533,"Within_Range",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
+"COMPASS: Synoptic","CB","SWH_202411_WC_LysB_45cm",2024,11,12,"13:55","EDT","SWH","WC","B",45,0.0087,0.6187,"bdl",NA,0.0295,2.1061,"Within_Range",NA,0.0475,1.533,"Within_Range",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
                 A few duplicates were out of range but still within CV.
                 SWH_202411_SWAMP_LycC_45cm, SWH_202411_TR_LysC_10cm, 
                 MSM_202411_TR_LysC_10cm, MSM_202411_TR_LysC_45cm were missing from metadata. ",""
-"COMPASS: Synoptic","CB","SWH_202411_WC_LysC_10cm",2024,11,12,"14:00","EDT","SWH","WC","C",10,0.0044,0.3149,"bdl",NA,NA,NA,NA,NA,0.3506,11.3195,"adl",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
+"COMPASS: Synoptic","CB","SWH_202411_WC_LysC_10cm",2024,11,12,"14:00","EDT","SWH","WC","C",10,0.0044,0.3149,"bdl",NA,0.0318,2.2708,"Within_Range",NA,0.3506,11.3195,"adl",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
                 A few duplicates were out of range but still within CV.
                 SWH_202411_SWAMP_LycC_45cm, SWH_202411_TR_LysC_10cm, 
                 MSM_202411_TR_LysC_10cm, MSM_202411_TR_LysC_45cm were missing from metadata. ",""
-"COMPASS: Synoptic","CB","SWH_202411_WC_LysC_20cm",2024,11,12,"14:05","EDT","SWH","WC","C",20,0.0016,0.1159,"bdl",NA,NA,NA,NA,NA,0.0639,2.0644,"Within_Range",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
+"COMPASS: Synoptic","CB","SWH_202411_WC_LysC_20cm",2024,11,12,"14:05","EDT","SWH","WC","C",20,0.0016,0.1159,"bdl",NA,0.0275,1.9661,"Within_Range",NA,0.0639,2.0644,"Within_Range",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
                 A few duplicates were out of range but still within CV.
                 SWH_202411_SWAMP_LycC_45cm, SWH_202411_TR_LysC_10cm, 
                 MSM_202411_TR_LysC_10cm, MSM_202411_TR_LysC_45cm were missing from metadata. ",""
-"COMPASS: Synoptic","CB","SWH_202411_WC_LysC_45cm",2024,11,12,"14:10","EDT","SWH","WC","C",45,0.0069,0.4911,"bdl",NA,NA,NA,NA,NA,0.1417,4.5745,"Within_Range",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
+"COMPASS: Synoptic","CB","SWH_202411_WC_LysC_45cm",2024,11,12,"14:10","EDT","SWH","WC","C",45,0.0069,0.4911,"bdl",NA,0.0285,2.0338,"Within_Range",NA,0.1417,4.5745,"Within_Range",NA,"8/7/2025","One PO4 check standard came back very high, all others were within range.
                 A few duplicates were out of range but still within CV.
                 SWH_202411_SWAMP_LycC_45cm, SWH_202411_TR_LysC_10cm, 
                 MSM_202411_TR_LysC_10cm, MSM_202411_TR_LysC_45cm were missing from metadata. ",""
