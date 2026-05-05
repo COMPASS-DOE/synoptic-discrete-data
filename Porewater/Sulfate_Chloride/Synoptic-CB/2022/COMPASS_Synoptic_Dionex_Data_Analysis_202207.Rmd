@@ -74,7 +74,13 @@ head(all_dat)
 
 ## Fix Sample IDs
 ```{r Fix sample IDs}
-all_dat$Sample_ID[all_dat$Sample_ID == "13_202207_GCrew_TR_LysA_45"] <- "13_202207_GCrew_TR_LysA_45_cm"
+# all_dat$Sample_ID[all_dat$Sample_ID == "13_202207_GCrew_TR_LysA_45"] <- "13_202207_GCrew_TR_LysA_45_cm"
+
+##Based on sample list order, 36_202207_GWI_UP_LysA_10cm was probably actually 36_202207_GWI_TR_LysA_10cm
+all_dat <- all_dat %>% 
+  mutate(Sample_ID = gsub("13_202207_GCrew_TR_LysA_45","13_202207_GCrew_TR_LysA_45cm", Sample_ID), 
+         Sample_ID = gsub("36_202207_GWI_UP_LysA_10cm","36_202207_GWI_TR_LysA_10cm", Sample_ID))
+
 ```
 
 

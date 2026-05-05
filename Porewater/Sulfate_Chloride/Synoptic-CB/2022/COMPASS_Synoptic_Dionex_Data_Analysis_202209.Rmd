@@ -69,8 +69,16 @@ all_dat <- droplevels(all_dat[!all_dat$Sample_ID == 'Lab Blank',])
 head(all_dat)
 
 
+```
+## Fix Sample IDs
+```{r Fix sample IDs}
+
+##Based on sample list order, 6_202209_MSM_TR_LysC_10cm was probably actually 6_202209_MSM_UP_LysC_10cm
+all_dat <- all_dat %>% 
+  mutate(Sample_ID = gsub("6_202209_MSM_TR_LysC_10cm","6_202209_MSM_UP_LysC_10cm", Sample_ID))
 
 ```
+
 
 
 ## Pull out standards  - could do some checks here if we want

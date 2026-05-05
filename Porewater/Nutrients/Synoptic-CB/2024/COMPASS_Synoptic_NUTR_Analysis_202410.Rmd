@@ -12,8 +12,12 @@ output_dir: "To Be Reviewed/PDF"
 \newpage
 
 ```{r Fix incorrect sample IDs}
+
 Old_ID_1 <- "SWH_202410_SWAMP_LycC_45cm"
 New_ID_1 <- "SWH_202410_SWAMP_LysC_45cm"
+
+Old_ID_2 <- "SWH_202409_WC_LysA_10cm"
+New_ID_2 <- "SWH_202410_WC_LysA_10cm"
 
 ```
 
@@ -221,7 +225,7 @@ df_all <- df %>%
 ```{r Fix data entered incorrectly, include = FALSE}
 ##Data entered incorrectly
 df_all$Sample_Name[df_all$Sample_Name == Old_ID_1] <- New_ID_1
-# dat$IDs[dat$IDs == Old_ID_2] <- New_ID_2
+df_all$Sample_Name[df_all$Sample_Name == Old_ID_2] <- New_ID_2
 # dat$IDs[dat$IDs == Old_ID_3] <- New_ID_3
 # dat$IDs[dat$IDs == Old_ID_4] <- New_ID_4
 # dat$IDs[dat$IDs == Old_ID_5] <- New_ID_5

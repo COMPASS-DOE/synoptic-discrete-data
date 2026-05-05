@@ -1151,7 +1151,12 @@ head(final_data)
 
 #will put final data in processed data folder 
 #Write out data frame 
-  write.csv(final_data, processed_file_name)
+
+##Filter out samples that were reran on the second run and came out better
+final_data <- final_data %>% 
+  filter(Sample_ID != "SWH_202409_SWAMP_LYSB_20CM")
+
+write.csv(final_data, processed_file_name)
 
 ```
 
