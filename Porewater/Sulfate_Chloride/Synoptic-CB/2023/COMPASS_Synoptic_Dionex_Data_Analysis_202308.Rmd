@@ -74,6 +74,15 @@ head(all_dat)
 
 ```
 
+## Fix Sample IDs
+```{r Fix sample IDs}
+
+##Based on sample list order, 78_SWH_202308_WC_LysC_20cm was probably actually 78_SWH_202308_WC_LysA_20cm
+all_dat <- all_dat %>% 
+  mutate(Sample_ID = gsub("78_SWH_202308_WC_LysC_20cm","78_SWH_202308_WC_LysA_20cm", Sample_ID))
+
+```
+
 
 ## Pull out standards  - could do some checks here if we want
 ```{r}
@@ -369,6 +378,7 @@ head(alldat)
 ```{r}
 alldat$'NA' <- NULL
 alldat$'NA.1' <- NULL
+alldat <- alldat[,-7]
 write.csv(alldat, file="Processed Data/COMPASS_SynopticCB_PW_Processed_Cl_SO4_202308.csv")           #Change file name
 
 ```

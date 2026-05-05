@@ -365,8 +365,15 @@ head(alldat)
 
 ```
 
-## Make final dataframe with IDs  
+## Write out the processed data
 ```{r}
+
+##Filter out samples that were reran on the second run and came out better
+alldat <- alldat %>% 
+  filter(Sample_ID != "50_SWH_202309_UPCON_LysA_20cm") %>% 
+  filter(Sample_ID != "51_SWH_202309_UPCON_LysA_45cm") %>% 
+  filter(Sample_ID != "61_SWH_202309_UP_LysB_10cm")
+
 
 write.csv(alldat, file="Processed Data/COMPASS_SynopticCB_PW_Processed_Cl_SO4_202309.csv")           #Change file name
 
