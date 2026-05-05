@@ -206,6 +206,20 @@ head(df)
 
 df_all <- df %>%
   mutate(Run_Number = as.numeric(Run_Number))
+
+
+##Fix RHZ Sample Naming different across analytes
+df_all <- df_all %>% #MSM_202308_RHZ_TR_SF_1
+  separate(
+    col = Sample_Name,
+    sep = "_",
+    into = c("Site", "Samp_Time", "Zone", "Replicate", "Depth", "Number"),
+    remove = FALSE) %>%
+  mutate(Zone = ifelse(Zone == "RHZ", Replicate, Zone)) %>%
+  mutate(Sample_Name = ifelse(str_detect(Sample_Name, "RHZ"), paste(Site, Samp_Time, Zone, "RHZ", Depth, Number, sep = "_"), Sample_Name)) %>%
+  select(-c("Site", "Samp_Time", "Zone", "Replicate", "Depth", "Number"))
+
+
 ```
 
 ## Assessing standard Curves
@@ -1520,7 +1534,6 @@ samples_flagged <- samples_flagged %>%
     into = c("Site", "Samp_Time", "Zone", "Replicate", "Depth"),
     remove = FALSE) %>%
   mutate(Samp_Time = ym(Samp_Time))
-
 
 
 ```
