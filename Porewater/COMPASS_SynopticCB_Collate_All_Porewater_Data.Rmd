@@ -80,20 +80,20 @@ df_duplicates <- merged_df %>%
   filter(n() > 1) %>%
   ungroup()
 
-##Fix SO4 duplicates
+
+##Fix SO4/Cl duplicates
 df_duplicates_SO4 <- SO4_Cl %>%
   group_by(Sample_ID) %>%
   filter(n() > 1) %>%
   ungroup()
 
-
 ##Based on sample list order, 36_202207_GWI_UP_LysA_10cm was probably actually 36_202207_GWI_TR_LysA_10cm
 
 ##33_GWI_202208_UP_LysB_10cm was ran 4 times for SO4/Cl for some reason. The 2-4 times the values were similar, should I average them? 
-##29_202209_GWI_UP_LysA_20cm	and 30_202209_GWI_UP_LysA_20cm - ran twice for some reason. 
+##29_202209_GWI_UP_LysA_20cm and 30_202209_GWI_UP_LysA_20cm - ran twice for some reason, values are not that close but should I still average them? 
 ##100_202211_GCrew_TR_LysC_45cm was ran twice for some reason, they're close so should I average or take the first one? 
 ##119_202211_GWI_UP_LysC_20cm was ran twice for some reason, they're close so should I average or take the first one? 
-##MSM TR 202211 samples ran several times with different outcomes: 
+##MSM TR 202211 samples ran several times with different SO4: 
 # 12_202211_MSM_TR_LysB_10cm	
 # 13_202211_MSM_TR_LysB_20cm	
 # 14_202211_MSM_TR_LysB_45cm	
@@ -102,11 +102,12 @@ df_duplicates_SO4 <- SO4_Cl %>%
 # 17_202211_MSM_TR_LysB_45cm	
 
 ##Based on sample list order, 78_SWH_202308_WC_LysC_20cm was probably actually 78_SWH_202308_WC_LysA_20cm
+
 ##It looks like 50_SWH_202309_UPCON_LysA_20cm	, 50_SWH_202309_UPCON_LysA_20cm_dup	, 51_SWH_202309_UPCON_LysA_45cm, 51_SWH_202309_UPCON_LysA_45cm_spk, 61_SWH_202309_UP_LysB_10cm, 61_SWH_202309_UP_LysB_10cm_spk were added to the end of the second 202309 run, because they did not have normal/any values for the first run. So, took the values from the second run only. 
 
-##It looks like SWH_202409_SWAMP_LYSB_20CM was added to the end of the 202408 run, so kept the second run because it also had values greater than 0 for Cl. 
+##It looks like SWH_202409_SWAMP_LYSB_20CM was added to the end of the 202408 run, so kept the one from the second run because it also had values greater than 0 for Cl. 
 
-##The 202509 SO4 samples were not in order, so it's hard for me to tell what happened there, but these samples were ran twice and likely one of them is somthing else? GWI_202509_UP_LysA_10cm, GWI_202509_UP_LYSA_20CM, GWI_202509_UP_LYSA_45CM, GWI_202509_UP_LYSB_10CM
+##The 202509 SO4 samples were not in order, so it's hard for me to tell what happened there, but these samples were ran twice and likely one of them is something else? GWI_202509_UP_LysA_10cm, GWI_202509_UP_LYSA_20CM, GWI_202509_UP_LYSA_45CM, GWI_202509_UP_LYSB_10CM
 
 
 ##Fix DIC duplicates
@@ -121,7 +122,7 @@ df_duplicates_DOC <- DOC %>%
   filter(n() > 1) %>%
   ungroup()
 
-##Fix DOC duplicates
+##Fix Nutrient duplicates
 df_duplicates_Nutrients <- Nutrients %>%
   group_by(Sample_ID) %>%
   filter(n() > 1) %>%
@@ -129,12 +130,30 @@ df_duplicates_Nutrients <- Nutrients %>%
 
 ##SWH_202409_WC_LYSA_10CM was ran on 7/1 and 7/10, one of them was actually SWH_202409_WC_LYSA_10CM beause it was ran with the other 202410 samples. Fixed ID in processing code. 
 
+##Fix Sulfide duplicates
+df_duplicates_Sulfide <- Sulfide %>%
+  group_by(Sample_ID) %>%
+  filter(n() > 1) %>%
+  ungroup()
+unique(df_duplicates_Sulfide$Sample_ID)
+
+##Same issue as SO4/Cl 2025 data because used Sample ID list from the Dionex, so would need to go back and check the actual vials with the number written on them. 
+## GWI_202509_UP_LYSB_10CM
+## GWI_202509_UP_LYSA_45CM
+## GWI_202509_UP_LYSA_20CM
+## GWI_202509_UP_LYSA_10CM
+
+
 ```
 
 ## Write the 2023 file out to the folder 
 ```{r, echo=FALSE}
 
-write.csv(merged_df, "COMPASS_SynopticCB_AllData_AllYears.csv", row.names = FALSE)
+##Order data by Year, Month, Day
+final_data <- merged_df[order(merged_df$Year, merged_df$Month, merged_df$Day, merged_df$Zone, merged_df$Replicate, merged_df$Depth_cm),]
+
+
+write.csv(final_data, "COMPASS_SynopticCB_AllData_AllYears.csv", row.names = FALSE)
 
 ```
 
