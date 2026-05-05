@@ -355,6 +355,11 @@ head(Perc_spks)
 
 ## Make final dataframe with IDs  
 ```{r}
+
+sampledat2 <- sampledat2 %>% #GWI_202207_TR_RHZ_TREE1
+  mutate(Sample_ID = gsub("_Tree_", "", Sample_ID), 
+         Sample_ID = gsub("Collar_", "Collar", Sample_ID))
+
 #for steph <- pull out identifiers of the sample names 
 #pull the sample ID and separate it by the underscores 
 IDs <- data.frame(do.call('rbind', strsplit(as.character(sampledat2$Sample_ID),'_',fixed=TRUE)))

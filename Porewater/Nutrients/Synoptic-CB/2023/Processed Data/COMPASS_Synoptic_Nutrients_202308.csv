@@ -1,287 +1,259 @@
-,Project,Region,Site,Zone,Replicate,Depth_cm,Sample_ID,Year,Month,Day,Time,Time_Zone,NOx_Conc_mgL,NOx_Conc_uM,NOx_Conc_Flag,NOx_QAQC_Flag,NH3_Conc_mgL,NH3_Conc_uM,NH3_Conc_Flag,NH3_QAQC_Flag,PO4_Conc_mgL,PO4_Conc_uM,PO4_Conc_Flag,PO4_QAQC_Flag,Analysis_rundate,Run_notes,Field_notes
-1,COMPASS: Synoptic,CB,GCW,SW,A,0,GCW_202308_SW_A,2023,8,15,NA,NA,0.026502,1.892094498,Within_Range,,0.147163,10.50661469,Within_Range,,0.096083,3.102077171,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-2,COMPASS: Synoptic,CB,GCW,SW,B,0,GCW_202308_SW_B,2023,8,15,NA,NA,0.020239,1.444951345,bdl,,0.137659,9.828082275,Within_Range,,0.098527,3.180982665,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-3,COMPASS: Synoptic,CB,GCW,SW,C,0,GCW_202308_SW_C,2023,8,15,NA,NA,0.020811,1.485788944,bdl,,0.199744,14.26060385,Within_Range,,0.095752,3.091390707,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-4,COMPASS: Synoptic,CB,GCW,TR,A,20,GCW_202308_TR_LysA_20cm,2023,8,15,NA,NA,0.012278,0.876580494,bdl,,0.551964,39.40714087,Within_Range,,0.004448,0.143605417,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-5,COMPASS: Synoptic,CB,GCW,TR,A,45,GCW_202308_TR_LysA_45cm,2023,8,15,NA,NA,0.017038,1.216417857,bdl,,0.104238,7.442009895,Within_Range,,0.004373,0.141184012,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-6,COMPASS: Synoptic,CB,GCW,TR,B,10,GCW_202308_TR_LysB_10cm,2023,8,15,NA,NA,0.009828,0.701664204,bdl,,0.176126,12.57441082,Within_Range,,0.00811,0.261834517,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-7,COMPASS: Synoptic,CB,GCW,TR,C,10,GCW_202308_TR_LysC_10cm,2023,8,15,NA,NA,0.013728,0.98010238,bdl,,0.029186,2.083717078,Within_Range,,0.013813,0.445958098,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-8,COMPASS: Synoptic,CB,GCW,TR,C,20,GCW_202308_TR_LysC_20cm,2023,8,15,NA,NA,0.019045,1.359706426,bdl,,0.453333,32.3654394,Within_Range,,0.013929,0.449703204,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-9,COMPASS: Synoptic,CB,GCW,TR,C,45,GCW_202308_TR_LysC_45cm,2023,8,15,NA,NA,0.01005,0.717513761,bdl,,0.092476,6.602268914,Within_Range,,0.007018,0.22657887,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-10,COMPASS: Synoptic,CB,GCW,UP,A,20,GCW_202308_UP_LysA_20cm,2023,8,15,NA,NA,0.02026,1.446450627,bdl,,0.03656,2.610179414,Within_Range,,0.010855,0.350457913,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-11,COMPASS: Synoptic,CB,GCW,UP,B,10,GCW_202308_UP_LysB_10cm,2023,8,15,NA,NA,0.01276,0.910992596,bdl,,0.111094,7.93148993,Within_Range,,0.006194,0.199975708,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-12,COMPASS: Synoptic,CB,GCW,UP,B,20,GCW_202308_UP_LysB_20cm,2023,8,15,NA,NA,0.027739,1.980409376,Within_Range,,0.053642,3.829738625,Within_Range,,0.020439,0.659881095,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-13,COMPASS: Synoptic,CB,GCW,UP,C,10,GCW_202308_UP_LysC_10cm,2023,8,15,NA,NA,0.016843,1.202495948,bdl,,0.081095,5.789729201,Within_Range,,0.007227,0.233326517,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-14,COMPASS: Synoptic,CB,GCW,WC,A,10,GCW_202308_WC_LysA_10cm,2023,8,15,NA,NA,0.020228,1.444166006,bdl,,0.327861,23.40744072,Within_Range,,0.102965,3.324265228,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-15,COMPASS: Synoptic,CB,GCW,WC,A,20,GCW_202308_WC_LysA_20cm,2023,8,15,NA,NA,0.026699,1.906159195,Within_Range,,0.275643,19.67936773,Within_Range,,0.068307,2.205318166,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-16,COMPASS: Synoptic,CB,GCW,WC,A,45,GCW_202308_WC_LysA_45cm,2023,8,15,NA,NA,0.024533,1.751518916,bdl,,1.867783,133.3492543,Within_Range,,0.388324,12.53719196,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-17,COMPASS: Synoptic,CB,GCW,WC,B,10,GCW_202308_WC_LysB_10cm,2023,8,15,NA,NA,0.030935,2.208585891,Within_Range,,1.172543,83.71300877,Within_Range,,0.219693,7.092874285,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-18,COMPASS: Synoptic,CB,GCW,WC,B,20,GCW_202308_WC_LysB_20cm,2023,8,15,NA,NA,0.018502,1.320939265,bdl,,0.646201,46.13513533,Within_Range,,0.124631,4.023760498,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-19,COMPASS: Synoptic,CB,GCW,WC,B,45,GCW_202308_WC_LysB_45cm,2023,8,15,NA,NA,0.024874,1.775864408,bdl,,1.821711,130.0599713,Within_Range,,0.391272,12.63236929,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-20,COMPASS: Synoptic,CB,GCW,WC,C,10,GCW_202308_WC_LysC_10cm,2023,8,15,NA,NA,0.031573,2.254135521,Within_Range,,0.352247,25.14846466,Within_Range,,0.198779,6.417657629,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-21,COMPASS: Synoptic,CB,GCW,WC,C,20,GCW_202308_WC_LysC_20cm,2023,8,15,NA,NA,0.018942,1.352352803,bdl,,0.253881,18.12568271,Within_Range,,0.120684,3.896330062,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-22,COMPASS: Synoptic,CB,GCW,WC,C,45,GCW_202308_WC_LysC_45cm,2023,8,15,NA,NA,0.017186,1.226984229,bdl,,0.537882,38.40176487,Within_Range,,0.190072,6.136548734,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-23,COMPASS: Synoptic,CB,GWI,SW,A,0,GWI_202308_SW_A,2023,8,24,NA,NA,0.014964,1.068345863,bdl,,0.254527,18.17180349,Within_Range,,0.013437,0.433818792,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-24,COMPASS: Synoptic,CB,GWI,SW,B,0,GWI_202308_SW_B,2023,8,24,NA,NA,0.0189,1.349354238,bdl,,0.333155,23.7854027,Within_Range,,0.014856,0.479631761,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-25,COMPASS: Synoptic,CB,GWI,SW,C,0,GWI_202308_SW_C,2023,8,24,NA,NA,0.015451,1.103114938,bdl,,0.443598,31.67041487,Within_Range,,0.02045,0.660236235,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-26,COMPASS: Synoptic,CB,GWI,TR,A,10,GWI_202308_TR_LysA_10cm,2023,8,24,NA,NA,0.021282,1.519415708,bdl,,0.462402,33.01291525,Within_Range,,0.003777,0.12194192,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-27,COMPASS: Synoptic,CB,GWI,TR,A,20,GWI_202308_TR_LysA_20cm,2023,8,24,NA,NA,0.025619,1.829053239,Within_Range,,0.13054,9.319825512,Within_Range,,0.00294,0.094919048,bdl,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-28,COMPASS: Synoptic,CB,GWI,TR,B,10,GWI_202308_TR_LysB_10cm,2023,8,24,NA,NA,0.020062,1.432314535,bdl,,0.12904,9.212733906,Within_Range,,0.002556,0.082521458,bdl,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-29,COMPASS: Synoptic,CB,GWI,TR,B,20,GWI_202308_TR_LysB_20cm,2023,8,24,NA,NA,0.026055,1.860181199,Within_Range,,0.395421,28.23084667,Within_Range,,0.005045,0.162879795,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-30,COMPASS: Synoptic,CB,GWI,TR,B,45,GWI_202308_TR_LysB_45cm,2023,8,24,NA,NA,0.022474,1.604517838,bdl,,0.515692,36.81752304,Within_Range,,0.004185,0.135114359,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-31,COMPASS: Synoptic,CB,GWI,TR,C,10,GWI_202308_TR_LysC_10cm,2023,8,24,NA,NA,0.030373,2.168462236,Within_Range,,0.184536,13.17483776,Within_Range,,0.005064,0.163493217,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-32,COMPASS: Synoptic,CB,GWI,TR,C,20,GWI_202308_TR_LysC_20cm,2023,8,24,NA,NA,0.022545,1.609586841,bdl,,0.217644,15.53856369,Within_Range,,0.002382,0.0769038,bdl,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-33,COMPASS: Synoptic,CB,GWI,TR,C,45,GWI_202308_TR_LysC_45cm,2023,8,24,NA,NA,0.024458,1.746164336,bdl,,1.086685,77.58322803,Within_Range,,0.011859,0.382872445,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-34,COMPASS: Synoptic,CB,GWI,UP,A,20,GWI_202308_UP_LysA_20cm,2023,8,24,NA,NA,0.017327,1.23705084,bdl,,0.380483,27.16435706,Within_Range,,0.007245,0.233907654,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-35,COMPASS: Synoptic,CB,GWI,UP,A,45,GWI_202308_UP_LysA_45cm,2023,8,24,NA,NA,0.016457,1.174937708,bdl,,0.246184,17.57615998,Within_Range,,0.007636,0.246531242,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-36,COMPASS: Synoptic,CB,GWI,UP,B,10,GWI_202308_UP_LysB_10cm,2023,8,24,NA,NA,0.016819,1.200782483,bdl,,0.056329,4.021575389,Within_Range,,0.044537,1.437894435,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-37,COMPASS: Synoptic,CB,GWI,UP,B,20,GWI_202308_UP_LysB_20cm,2023,8,24,NA,NA,0.031773,2.268414402,Within_Range,,0.252261,18.01002377,Within_Range,,0.00728,0.235037643,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-38,COMPASS: Synoptic,CB,GWI,UP,C,10,GWI_202308_UP_LysC_10cm,2023,8,24,NA,NA,0.020099,1.434956128,bdl,,0.572184,40.85073572,Within_Range,,0.016568,0.534904349,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-39,COMPASS: Synoptic,CB,GWI,UP,C,20,GWI_202308_UP_LysC_20cm,2023,8,24,NA,NA,0.025227,1.801066632,Within_Range,,0.380166,27.14172503,Within_Range,,0.018396,0.593922043,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-40,COMPASS: Synoptic,CB,GWI,WC,A,10,GWI_202308_WC_LysA_10cm,2023,8,24,NA,NA,0.017683,1.262467248,bdl,,0.762113,54.4106035,Within_Range,,0.004695,0.151579908,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-41,COMPASS: Synoptic,CB,GWI,WC,A,20,GWI_202308_WC_LysA_20cm,2023,8,24,NA,NA,0.024015,1.714536615,bdl,,0.509966,36.40871868,Within_Range,,0.004906,0.158392126,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-42,COMPASS: Synoptic,CB,GWI,WC,A,45,GWI_202308_WC_LysA_45cm,2023,8,24,NA,NA,0.024275,1.73309916,bdl,,0.639227,45.63723075,Within_Range,,0.003889,0.125557883,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-43,COMPASS: Synoptic,CB,GWI,WC,B,10,GWI_202308_WC_LysB_10cm,2023,8,24,NA,NA,0.022498,1.606231304,bdl,,0.432597,30.88500503,Within_Range,,0.003413,0.110190038,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-44,COMPASS: Synoptic,CB,GWI,WC,B,20,GWI_202308_WC_LysB_20cm,2023,8,24,NA,NA,0.023095,1.648853763,bdl,,0.544099,38.84562388,Within_Range,,0.003664,0.118293671,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-45,COMPASS: Synoptic,CB,GWI,WC,B,45,GWI_202308_WC_LysB_45cm,2023,8,24,NA,NA,0.026256,1.874531474,Within_Range,,0.467843,33.4013722,Within_Range,,0.003605,0.116388833,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-46,COMPASS: Synoptic,CB,GWI,WC,C,10,GWI_202308_WC_LysC_10cm,2023,8,24,NA,NA,0.020567,1.468368709,bdl,,0.53708,38.34450656,Within_Range,,0.003417,0.110319179,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-47,COMPASS: Synoptic,CB,GWI,WC,C,20,GWI_202308_WC_LysC_20cm,2023,8,24,NA,NA,0.027435,1.958705477,Within_Range,,0.525129,37.49127203,Within_Range,,0.003161,0.102054119,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-48,COMPASS: Synoptic,CB,MSM,WC,NA,NA,MSM_202038_WC_RHZ_Col_5,NA,NA,NA,NA,NA,0.033409,2.385215647,Within_Range,,NULL,NULL,NULL,,NULL,NULL,NULL,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
+"","Project","Region","Site","Zone","Replicate","Depth_cm","Sample_ID","Year","Month","Day","Time","Time_Zone","NOx_Conc_mgL","NOx_Conc_uM","NOx_Conc_Flag","NOx_QAQC_Flag","NH3_Conc_mgL","NH3_Conc_uM","NH3_Conc_Flag","NH3_QAQC_Flag","PO4_Conc_mgL","PO4_Conc_uM","PO4_Conc_Flag","PO4_QAQC_Flag","Analysis_rundate","Run_notes","Field_notes"
+"1","COMPASS: Synoptic","CB","GCW","SW","A",0,"GCW_202308_SW_A",2023,8,15,NA,NA,0.026502,1.89209449763328,"Within_Range","",0.147163,10.5066146915405,"Within_Range","",0.096083,3.10207717099395,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"2","COMPASS: Synoptic","CB","GCW","SW","B",0,"GCW_202308_SW_B",2023,8,15,NA,NA,0.020239,1.4449513447136,"bdl","",0.137659,9.82808227491129,"Within_Range","",0.098527,3.18098266526359,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"3","COMPASS: Synoptic","CB","GCW","SW","C",0,"GCW_202308_SW_C",2023,8,15,NA,NA,0.020811,1.48578894386258,"bdl","",0.199744,14.2606038538699,"Within_Range","",0.095752,3.09139070675367,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"4","COMPASS: Synoptic","CB","GCW","TR","A",20,"GCW_202308_TR_LysA_20cm",2023,8,15,NA,NA,0.012278,0.87658049362091,"bdl","",0.551964,39.4071408682987,"Within_Range","",0.004448,0.143605416739497,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"5","COMPASS: Synoptic","CB","GCW","TR","A",45,"GCW_202308_TR_LysA_45cm",2023,8,15,NA,NA,0.017038,1.21641785716836,"bdl","",0.104238,7.44200989526441,"Within_Range","",0.004373,0.141184012455445,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"6","COMPASS: Synoptic","CB","GCW","TR","B",10,"GCW_202308_TR_LysB_10cm",2023,8,15,NA,NA,0.009828,0.701664203559725,"bdl","",0.176126,12.5744108176801,"Within_Range","",0.00811,0.261834516582132,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"7","COMPASS: Synoptic","CB","GCW","TR","C",10,"GCW_202308_TR_LysC_10cm",2023,8,15,NA,NA,0.013728,0.980102379575489,"bdl","",0.029186,2.08371707825541,"Within_Range","",0.013813,0.445958098341428,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"8","COMPASS: Synoptic","CB","GCW","TR","C",20,"GCW_202308_TR_LysC_20cm",2023,8,15,NA,NA,0.019045,1.35970642621031,"bdl","",0.453333,32.3654393968601,"Within_Range","",0.013929,0.449703203634095,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"9","COMPASS: Synoptic","CB","GCW","TR","C",45,"GCW_202308_TR_LysC_45cm",2023,8,15,NA,NA,0.01005,0.717513761271392,"bdl","",0.092476,6.60226891416251,"Within_Range","",0.007018,0.226578870206338,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"10","COMPASS: Synoptic","CB","GCW","UP","A",20,"GCW_202308_UP_LysA_20cm",2023,8,15,NA,NA,0.02026,1.44645062719984,"bdl","",0.03656,2.61017941413752,"Within_Range","",0.010855,0.350457913378427,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"11","COMPASS: Synoptic","CB","GCW","UP","B",10,"GCW_202308_UP_LysB_10cm",2023,8,15,NA,NA,0.01276,0.910992596400294,"bdl","",0.111094,7.9314899298193,"Within_Range","",0.006194,0.199975708472222,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"12","COMPASS: Synoptic","CB","GCW","UP","B",20,"GCW_202308_UP_LysB_20cm",2023,8,15,NA,NA,0.027739,1.98040937551315,"Within_Range","",0.053642,3.82973862508657,"Within_Range","",0.020439,0.659881095489789,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"13","COMPASS: Synoptic","CB","GCW","UP","C",10,"GCW_202308_UP_LysC_10cm",2023,8,15,NA,NA,0.016843,1.20249594836757,"bdl","",0.081095,5.78972920102522,"Within_Range","",0.007227,0.233326516811229,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"14","COMPASS: Synoptic","CB","GCW","WC","A",10,"GCW_202308_WC_LysA_10cm",2023,8,15,NA,NA,0.020228,1.44416600626843,"bdl","",0.327861,23.407440724796,"Within_Range","",0.102965,3.32426522809854,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"15","COMPASS: Synoptic","CB","GCW","WC","A",20,"GCW_202308_WC_LysA_20cm",2023,8,15,NA,NA,0.026699,1.90615919524228,"Within_Range","",0.275643,19.6793677311572,"Within_Range","",0.068307,2.20531816574299,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"16","COMPASS: Synoptic","CB","GCW","WC","A",45,"GCW_202308_WC_LysA_45cm",2023,8,15,NA,NA,0.024533,1.75151891594737,"bdl","",1.867783,133.349254285449,"Within_Range","",0.388324,12.5371919626683,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"17","COMPASS: Synoptic","CB","GCW","WC","B",10,"GCW_202308_WC_LysB_10cm",2023,8,15,NA,NA,0.030935,2.20858589103786,"Within_Range","",1.172543,83.7130087743723,"Within_Range","",0.219693,7.09287428501581,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"18","COMPASS: Synoptic","CB","GCW","WC","B",20,"GCW_202308_WC_LysB_20cm",2023,8,15,NA,NA,0.018502,1.32093926478043,"bdl","",0.646201,46.135135328093,"Within_Range","",0.124631,4.02376049767542,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"19","COMPASS: Synoptic","CB","GCW","WC","B",45,"GCW_202308_WC_LysB_45cm",2023,8,15,NA,NA,0.024874,1.77586440774772,"bdl","",1.821711,130.05997129945,"Within_Range","",0.391272,12.6323692937267,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"20","COMPASS: Synoptic","CB","GCW","WC","C",10,"GCW_202308_WC_LysC_10cm",2023,8,15,NA,NA,0.031573,2.25413552085787,"Within_Range","",0.352247,25.1484646633397,"Within_Range","",0.198779,6.41765762906036,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"21","COMPASS: Synoptic","CB","GCW","WC","C",20,"GCW_202308_WC_LysC_20cm",2023,8,15,NA,NA,0.018942,1.35235280258733,"bdl","",0.253881,18.1256827089893,"Within_Range","",0.120684,3.89633006155339,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"22","COMPASS: Synoptic","CB","GCW","WC","C",45,"GCW_202308_WC_LysC_45cm",2023,8,15,NA,NA,0.017186,1.22698422897613,"bdl","",0.537882,38.4017648696695,"Within_Range","",0.190072,6.13654873437718,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"23","COMPASS: Synoptic","CB","GWI","SW","A",0,"GWI_202308_SW_A",2023,8,24,NA,NA,0.014964,1.06834586305125,"bdl","",0.254527,18.1718034940421,"Within_Range","",0.013437,0.433818791530716,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"24","COMPASS: Synoptic","CB","GWI","SW","B",0,"GWI_202308_SW_B",2023,8,24,NA,NA,0.0189,1.34935423761486,"bdl","",0.333155,23.7854027001364,"Within_Range","",0.014856,0.479631760584975,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"25","COMPASS: Synoptic","CB","GWI","SW","C",0,"GWI_202308_SW_C",2023,8,24,NA,NA,0.015451,1.10311493785117,"bdl","",0.443598,31.6704148728823,"Within_Range","",0.02045,0.660236234784783,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"26","COMPASS: Synoptic","CB","GWI","TR","A",10,"GWI_202308_TR_LysA_10cm",2023,8,24,NA,NA,0.021282,1.51941570819679,"bdl","",0.462402,33.0129152477029,"Within_Range","",0.003777,0.121941919744847,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"27","COMPASS: Synoptic","CB","GWI","TR","A",20,"GWI_202308_TR_LysA_20cm",2023,8,24,NA,NA,0.025619,1.82905323880714,"Within_Range","",0.13054,9.31982551207636,"Within_Range","",0.00294,0.0949190479348295,"bdl","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"28","COMPASS: Synoptic","CB","GWI","TR","B",10,"GWI_202308_TR_LysB_10cm",2023,8,24,NA,NA,0.020062,1.43231453518673,"bdl","",0.12904,9.21273390591645,"Within_Range","",0.002556,0.0825214580004844,"bdl","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"29","COMPASS: Synoptic","CB","GWI","TR","B",20,"GWI_202308_TR_LysB_20cm",2023,8,24,NA,NA,0.026055,1.86018119899762,"Within_Range","",0.395421,28.2308466662383,"Within_Range","",0.005045,0.162879794840549,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"30","COMPASS: Synoptic","CB","GWI","TR","B",45,"GWI_202308_TR_LysB_45cm",2023,8,24,NA,NA,0.022474,1.60451783789187,"bdl","",0.515692,36.8175230425439,"Within_Range","",0.004185,0.135114359050089,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"31","COMPASS: Synoptic","CB","GWI","TR","C",10,"GWI_202308_TR_LysC_10cm",2023,8,24,NA,NA,0.030373,2.16846223592995,"Within_Range","",0.184536,13.1748377562167,"Within_Range","",0.005064,0.163493217259176,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"32","COMPASS: Synoptic","CB","GWI","TR","C",20,"GWI_202308_TR_LysC_20cm",2023,8,24,NA,NA,0.022545,1.60958684058344,"bdl","",0.217644,15.5385636873782,"Within_Range","",0.002382,0.0769038000614843,"bdl","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"33","COMPASS: Synoptic","CB","GWI","TR","C",45,"GWI_202308_TR_LysC_45cm",2023,8,24,NA,NA,0.024458,1.74616433563937,"bdl","",1.086685,77.5832280265873,"Within_Range","",0.011859,0.382872445394266,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"34","COMPASS: Synoptic","CB","GWI","UP","A",20,"GWI_202308_UP_LysA_20cm",2023,8,24,NA,NA,0.017327,1.23705083995516,"bdl","",0.380483,27.1643570576938,"Within_Range","",0.007245,0.233907653839401,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"35","COMPASS: Synoptic","CB","GWI","UP","A",45,"GWI_202308_UP_LysA_45cm",2023,8,24,NA,NA,0.016457,1.17493770838242,"bdl","",0.246184,17.5761599805807,"Within_Range","",0.007636,0.246531241506925,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"36","COMPASS: Synoptic","CB","GWI","UP","B",10,"GWI_202308_UP_LysB_10cm",2023,8,24,NA,NA,0.016819,1.20078248266901,"bdl","",0.056329,4.02157538892102,"Within_Range","",0.044537,1.43789443465085,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"37","COMPASS: Synoptic","CB","GWI","UP","B",20,"GWI_202308_UP_LysB_20cm",2023,8,24,NA,NA,0.031773,2.2684144016792,"Within_Range","",0.252261,18.0100237743366,"Within_Range","",0.00728,0.235037642505292,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"38","COMPASS: Synoptic","CB","GWI","UP","C",10,"GWI_202308_UP_LysC_10cm",2023,8,24,NA,NA,0.020099,1.43495612813868,"bdl","",0.572184,40.8507357193343,"Within_Range","",0.016568,0.534904349042263,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"39","COMPASS: Synoptic","CB","GWI","UP","C",20,"GWI_202308_UP_LysC_20cm",2023,8,24,NA,NA,0.025227,1.80106663239735,"Within_Range","",0.380166,27.141725031592,"Within_Range","",0.018396,0.593922042792219,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"40","COMPASS: Synoptic","CB","GWI","WC","A",10,"GWI_202308_WC_LysA_10cm",2023,8,24,NA,NA,0.017683,1.26246724781712,"bdl","",0.762113,54.4106034968979,"Within_Range","",0.004695,0.151579908181641,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"41","COMPASS: Synoptic","CB","GWI","WC","A",20,"GWI_202308_WC_LysA_20cm",2023,8,24,NA,NA,0.024015,1.71453661462015,"bdl","",0.509966,36.4087186846295,"Within_Range","",0.004906,0.15839212556744,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"42","COMPASS: Synoptic","CB","GWI","WC","A",45,"GWI_202308_WC_LysA_45cm",2023,8,24,NA,NA,0.024275,1.73309915968786,"bdl","",0.639227,45.6372307538535,"Within_Range","",0.003889,0.125557883475698,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"43","COMPASS: Synoptic","CB","GWI","WC","B",10,"GWI_202308_WC_LysB_10cm",2023,8,24,NA,NA,0.022498,1.60623130359042,"bdl","",0.432597,30.8850050333055,"Within_Range","",0.003413,0.110190037619583,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"44","COMPASS: Synoptic","CB","GWI","WC","B",20,"GWI_202308_WC_LysB_20cm",2023,8,24,NA,NA,0.023095,1.64885376284207,"bdl","",0.544099,38.8456238800003,"Within_Range","",0.003664,0.118293670623543,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"45","COMPASS: Synoptic","CB","GWI","WC","B",45,"GWI_202308_WC_LysB_45cm",2023,8,24,NA,NA,0.026256,1.87453147422305,"Within_Range","",0.467843,33.4013722004469,"Within_Range","",0.003605,0.116388832586755,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"46","COMPASS: Synoptic","CB","GWI","WC","C",10,"GWI_202308_WC_LysC_10cm",2023,8,24,NA,NA,0.020567,1.46836870926057,"bdl","",0.53708,38.344506557576,"Within_Range","",0.003417,0.110319179181399,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"47","COMPASS: Synoptic","CB","GWI","WC","C",20,"GWI_202308_WC_LysC_20cm",2023,8,24,NA,NA,0.027435,1.95870547666474,"Within_Range","",0.525129,37.491272034098,"Within_Range","",0.003161,0.102054119225169,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"48","COMPASS: Synoptic","CB","MSM","WC",NA,NA,"MSM_202038_WC_RHZ_Col_5",NA,NA,NA,NA,NA,0.033409,2.3852156467976,"Within_Range","",NA,NA,NA,"",NA,NA,NA,"","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
   so we are accepting this run.",NA
-49,COMPASS: Synoptic,CB,MSM,RHZ,NA,NA,MSM_202308_RHZ_TR_SF_1,NA,NA,NA,NA,NA,NULL,NULL,NULL,,0.651631,46.52280694,Within_Range,,0.007132,0.230259405,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
+"49","COMPASS: Synoptic","CB","MSM","SW","A",0,"MSM_202308_SW_A",2023,8,17,NA,NA,0.01121,0.800331270035055,"bdl","",0.17282,12.3383809177037,"Within_Range","",0.003314,0.106993783964634,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"50","COMPASS: Synoptic","CB","MSM","SW","B",0,"MSM_202308_SW_B",2023,8,17,NA,NA,0.009753,0.69630962325173,"bdl","",0.216628,15.4660269728059,"Within_Range","",0.003338,0.107768633335531,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"51","COMPASS: Synoptic","CB","MSM","SW","C",0,"MSM_202308_SW_C",2023,8,17,NA,NA,0.008982,0.641264537685536,"bdl","",0.176681,12.6140347119593,"Within_Range","",0.003455,0.111546024018652,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"52","COMPASS: Synoptic","CB","MSM","TR","A",10,"MSM_202308_TR_LysA_10cm",2023,8,17,NA,NA,0.095592,6.82473387735869,"Within_Range","",0.638118,45.5580543596993,"Within_Range","",0.008489,0.274070679564207,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"53","COMPASS: Synoptic","CB","MSM","TR","A",20,"MSM_202308_TR_LysA_20cm",2023,8,17,NA,NA,0.003226,0.230318347647911,"bdl","",2.835141,202.413202253207,"Within_Range","",0.014518,0.468719298611515,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"54","COMPASS: Synoptic","CB","MSM","TR","A",45,"MSM_202308_TR_LysA_45cm",2023,8,17,NA,NA,0.00467,0.333411867177851,"bdl","",1.227049,87.6044321646069,"Within_Range","",0.015846,0.511594297134458,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"55","COMPASS: Synoptic","CB","MSM","TR","B",10,"MSM_202308_TR_LysB_10cm",2023,8,17,NA,NA,0.008891,0.634767646911835,"bdl","",1.571119,112.169104785567,"Within_Range","",0.007594,0.245175255107855,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"56","COMPASS: Synoptic","CB","MSM","TR","B",20,"MSM_202308_TR_LysB_20cm",2023,8,17,NA,NA,0.006697,0.478128324301941,"bdl","",2.552799,182.25556340894,"Within_Range","",0.009412,0.30387009495327,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"57","COMPASS: Synoptic","CB","MSM","TR","B",45,"MSM_202308_TR_LysB_45cm",2023,8,17,NA,NA,0.006525,0.465848486795605,"bdl","",2.210723,157.833251229769,"Within_Range","",0.019797,0.639153874818306,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"58","COMPASS: Synoptic","CB","MSM","TR","C",10,"MSM_202308_TR_LysC_10cm",2023,8,17,NA,NA,0.057319,4.09225584898656,"Within_Range","",1.553023,110.877151648854,"Within_Range","",0.009783,0.315847974811713,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"59","COMPASS: Synoptic","CB","MSM","TR","C",20,"MSM_202308_TR_LysC_20cm",2023,8,17,NA,NA,0.005766,0.411660134078691,"bdl","",1.939575,138.474801345071,"Within_Range","",0.01021,0.329633836535581,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"60","COMPASS: Synoptic","CB","MSM","TR","C",45,"MSM_202308_TR_LysC_45cm",2023,8,17,NA,NA,0.002979,0.21268392983358,"bdl","",1.792214,127.954050561517,"Within_Range","",0.011751,0.379385623225232,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"61","COMPASS: Synoptic","CB","MSM","TR",NA,NA,"MSM_202308_TR_RHZ_SF_1",NA,NA,NA,NA,NA,0.036279,2.59011758658356,"Within_Range","",0.651631,46.5228069423919,"Within_Range","",0.007132,0.230259404718097,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
   so we are accepting this run.",NA
-50,COMPASS: Synoptic,CB,MSM,RHZ,NA,NA,MSM_202308_RHZ_TR_SF_2,NA,NA,NA,NA,NA,NULL,NULL,NULL,,0.406685,29.03503323,Within_Range,,0.008038,0.259509968,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
+"62","COMPASS: Synoptic","CB","MSM","TR",NA,NA,"MSM_202308_TR_RHZ_SF_2",NA,NA,NA,NA,NA,0.01967,1.40432792877694,"bdl","",0.406685,29.0350332340951,"Within_Range","",0.008038,0.259509968469442,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
   so we are accepting this run.",NA
-51,COMPASS: Synoptic,CB,MSM,RHZ,NA,NA,MSM_202308_RHZ_TR_SF_3,NA,NA,NA,NA,NA,NULL,NULL,NULL,,0.596233,42.56769974,Within_Range,,0.007334,0.236781054,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
+"63","COMPASS: Synoptic","CB","MSM","TR",NA,NA,"MSM_202308_TR_RHZ_SF_3",NA,NA,NA,NA,NA,0.228962,16.3466055530568,"Within_Range","",0.596233,42.5676997436941,"Within_Range","",0.007334,0.236781053589809,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
   so we are accepting this run.",NA
-52,COMPASS: Synoptic,CB,MSM,RHZ,NA,NA,MSM_202308_RHZ_TR_SF_4,NA,NA,NA,NA,NA,NULL,NULL,NULL,,0.460629,32.88633297,Within_Range,,0.005724,0.184801575,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
+"64","COMPASS: Synoptic","CB","MSM","TR",NA,NA,"MSM_202308_TR_RHZ_SF_4",NA,NA,NA,NA,NA,0.043372,3.09651809491172,"Within_Range","",0.460629,32.8863329692219,"Within_Range","",0.005724,0.184801574958831,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
   so we are accepting this run.",NA
-53,COMPASS: Synoptic,CB,MSM,RHZ,NA,NA,MSM_202308_RHZ_TR_SF_5,NA,NA,NA,NA,NA,NULL,NULL,NULL,,0.708663,50.5945726,Within_Range,,0.010284,0.332022955,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
+"65","COMPASS: Synoptic","CB","MSM","TR",NA,NA,"MSM_202308_TR_RHZ_SF_5",NA,NA,NA,NA,NA,0.056124,4.00693953607916,"Within_Range","",0.708663,50.5945725973998,"Within_Range","",0.010284,0.332022955429179,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
   so we are accepting this run.",NA
-54,COMPASS: Synoptic,CB,MSM,RHZ,NA,NA,MSM_202308_RHZ_TR_SF_6,NA,NA,NA,NA,NA,NULL,NULL,NULL,,0.357086,25.49394218,Within_Range,,0.006126,0.197780302,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
+"66","COMPASS: Synoptic","CB","MSM","TR",NA,NA,"MSM_202308_TR_RHZ_SF_6",NA,NA,NA,NA,NA,0.031336,2.23721504708461,"Within_Range","",0.357086,25.4939421848116,"Within_Range","",0.006126,0.197780301921349,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
   so we are accepting this run.",NA
-55,COMPASS: Synoptic,CB,MSM,RHZ,NA,NA,MSM_202308_RHZ_TR_SF_7,NA,NA,NA,NA,NA,NULL,NULL,NULL,,0.556735,39.74776357,Within_Range,,0.007568,0.244335835,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
+"67","COMPASS: Synoptic","CB","MSM","TR",NA,NA,"MSM_202308_TR_RHZ_SF_7",NA,NA,NA,NA,NA,0.022411,1.60001999043315,"bdl","",0.556735,39.7477635702914,"Within_Range","",0.007568,0.244335834956051,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
   so we are accepting this run.",NA
-56,COMPASS: Synoptic,CB,MSM,RHZ,NA,NA,MSM_202308_RHZ_TR_SF_8,NA,NA,NA,NA,NA,NULL,NULL,NULL,,0.536881,38.33029907,Within_Range,,0.012252,0.395560604,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
+"68","COMPASS: Synoptic","CB","MSM","TR",NA,NA,"MSM_202308_TR_RHZ_SF_8",NA,NA,NA,NA,NA,0.216574,15.4621716749841,"Within_Range","",0.536881,38.3302990711588,"Within_Range","",0.012252,0.395560603842698,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
   so we are accepting this run.",NA
-57,COMPASS: Synoptic,CB,MSM,RHZ,NA,NA,MSM_202308_RHZ_WC_Col_1,NA,NA,NA,NA,NA,NULL,NULL,NULL,,0.257009,18.34900441,Within_Range,,0.019457,0.628176842,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
+"69","COMPASS: Synoptic","CB","MSM","UP","A",20,"MSM_202308_UP_LysA_20cm",2023,8,17,NA,NA,0.018061,1.28945433256941,"bdl","",0.086893,6.20367395603533,"Within_Range","",0.003839,0.123943613952997,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"70","COMPASS: Synoptic","CB","MSM","UP","A",45,"MSM_202308_UP_LysA_45cm",2023,8,17,NA,NA,0.014649,1.04585662575767,"bdl","",1.479718,105.643584855819,"Within_Range","",0.004188,0.135211215221451,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"71","COMPASS: Synoptic","CB","MSM","UP","B",10,"MSM_202308_UP_LysB_10cm",2023,8,17,NA,NA,0.008258,0.589574989112353,"bdl","",0.037867,2.70349190030485,"Within_Range","",0.003827,0.123556189267548,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"72","COMPASS: Synoptic","CB","MSM","UP","C",10,"MSM_202308_UP_LysC_10cm",2023,8,17,NA,NA,0.010173,0.726295272976504,"bdl","",0.036418,2.60004140875438,"Within_Range","",0.005107,0.164881489048699,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"73","COMPASS: Synoptic","CB","MSM","UP","C",20,"MSM_202308_UP_LysC_20cm",2023,8,17,NA,NA,0.009213,0.657756645034162,"bdl","",1.52718,109.032106063527,"Within_Range","",0.011096,0.358238692477846,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"74","COMPASS: Synoptic","CB","MSM","UP","C",45,"MSM_202308_UP_LysC_45cm",2023,8,17,NA,NA,0.01281,0.914562316605624,"bdl","",0.756508,54.0104378618804,"Within_Range","",0.007329,0.236619626637539,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"75","COMPASS: Synoptic","CB","MSM","WC","A",10,"MSM_202308_WC_LysA_10cm",2023,8,17,NA,NA,0.006757,0.482411988548338,"bdl","",0.33378,23.830024202703,"Within_Range","",0.030285,0.977763049900106,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"76","COMPASS: Synoptic","CB","MSM","WC","A",20,"MSM_202308_WC_LysA_20cm",2023,8,17,NA,NA,0.008054,0.575010530674606,"bdl","",0.677447,48.365924878808,"Within_Range","",0.036139,1.16676172561796,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"77","COMPASS: Synoptic","CB","MSM","WC","A",45,"MSM_202308_WC_LysA_45cm",2023,8,17,NA,NA,0.007457,0.532388071422962,"bdl","",0.246064,17.5675926520879,"Within_Range","",0.005332,0.172145701900854,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"78","COMPASS: Synoptic","CB","MSM","WC","B",10,"MSM_202308_WC_LysB_10cm",2023,8,17,NA,NA,0.009002,0.642692425767668,"bdl","",0.330725,23.6119142981573,"Within_Range","",0.052303,1.6886227769168,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"79","COMPASS: Synoptic","CB","MSM","WC","B",20,"MSM_202308_WC_LysB_20cm",2023,8,17,NA,NA,0.012114,0.864871811347427,"bdl","",0.663736,47.3870362041023,"Within_Range","",0.06179,1.99491427615412,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"80","COMPASS: Synoptic","CB","MSM","WC","C",10,"MSM_202308_WC_LysC_10cm",2023,8,17,NA,NA,0.019193,1.37027279801809,"bdl","",1.373732,98.0767775421762,"Within_Range","",0.086475,2.79187913951169,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"81","COMPASS: Synoptic","CB","MSM","WC","C",20,"MSM_202308_WC_LysC_20cm",2023,8,17,NA,NA,0.020785,1.48393268935581,"bdl","",2.031717,145.053224528261,"Within_Range","",0.054682,1.76542972080692,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"82","COMPASS: Synoptic","CB","MSM","WC","C",45,"MSM_202308_WC_LysC_45cm",2023,8,17,NA,NA,0.012215,0.872082646162194,"bdl","",1.822792,130.137148650289,"Within_Range","",0.006064,0.195778607713199,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"83","COMPASS: Synoptic","CB","MSM","WC",NA,NA,"MSM_202308_WC_RHZ_Col_1",NA,NA,NA,NA,NA,0.035028,2.5008031870462,"Within_Range","",0.257009,18.3490044050347,"Within_Range","",0.019457,0.628176842063938,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
   so we are accepting this run.",NA
-58,COMPASS: Synoptic,CB,MSM,RHZ,NA,NA,MSM_202308_RHZ_WC_Col_2,NA,NA,NA,NA,NA,NULL,NULL,NULL,,0.354105,25.28111547,Within_Range,,0.05223,1.686265943,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
+"84","COMPASS: Synoptic","CB","MSM","WC",NA,NA,"MSM_202308_WC_RHZ_Col_2",NA,NA,NA,NA,NA,0.032998,2.35587254670979,"Within_Range","",0.354105,25.2811154661698,"Within_Range","",0.05223,1.68626594341365,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
   so we are accepting this run.",NA
-59,COMPASS: Synoptic,CB,MSM,RHZ,NA,NA,MSM_202308_RHZ_WC_Col_3,NA,NA,NA,NA,NA,NULL,NULL,NULL,,0.372584,26.60041266,Within_Range,,0.032229,1.040525849,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
+"85","COMPASS: Synoptic","CB","MSM","WC",NA,NA,"MSM_202308_WC_RHZ_Col_3",NA,NA,NA,NA,NA,0.023266,1.6610622059443,"bdl","",0.372584,26.6004126596557,"Within_Range","",0.032229,1.04052584894273,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
   so we are accepting this run.",NA
-60,COMPASS: Synoptic,CB,MSM,RHZ,NA,NA,MSM_202308_RHZ_WC_Col_4,NA,NA,NA,NA,NA,NULL,NULL,NULL,,1.185103,84.60972249,Within_Range,,0.098903,3.193121972,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
+"86","COMPASS: Synoptic","CB","MSM","WC",NA,NA,"MSM_202308_WC_RHZ_Col_4",NA,NA,NA,NA,NA,0.054244,3.87271805635874,"Within_Range","",1.185103,84.6097224899512,"Within_Range","",0.098903,3.1931219720743,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
   so we are accepting this run.",NA
-61,COMPASS: Synoptic,CB,MSM,RHZ,NA,NA,MSM_202308_RHZ_WC_Col_5,NA,NA,NA,NA,NA,NULL,NULL,NULL,,0.796668,56.87763713,Within_Range,,0.059615,1.924693552,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
+"87","COMPASS: Synoptic","CB","MSM","WC",NA,NA,"MSM_202308_WC_RHZ_Col_5",NA,NA,NA,NA,NA,NA,NA,NA,"",0.796668,56.8776371308017,"Within_Range","",0.059615,1.92469355191662,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
   so we are accepting this run.",NA
-62,COMPASS: Synoptic,CB,MSM,RHZ,NA,NA,MSM_202308_RHZ_WC_SIp_C,NA,NA,NA,NA,NA,NULL,NULL,NULL,,0.99671,71.15951652,Within_Range,,0.086096,2.779642977,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
+"88","COMPASS: Synoptic","CB","MSM","WC",NA,NA,"MSM_202308_WC_RHZ_SIp_C",NA,NA,NA,NA,NA,NA,NA,NA,"",0.99671,71.1595165170954,"Within_Range","",0.086096,2.77964297652962,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
   so we are accepting this run.",NA
-63,COMPASS: Synoptic,CB,MSM,RHZ,NA,NA,MSM_202308_RHZ_WC_Sip_A,NA,NA,NA,NA,NA,NULL,NULL,NULL,,0.243376,17.37568449,Within_Range,,0.018815,0.607449621,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
+"89","COMPASS: Synoptic","CB","MSM","WC",NA,NA,"MSM_202308_WC_RHZ_Sip_A",NA,NA,NA,NA,NA,0.029861,2.13190830102737,"Within_Range","",0.243376,17.3756844938494,"Within_Range","",0.018815,0.607449621392455,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
   so we are accepting this run.",NA
-64,COMPASS: Synoptic,CB,MSM,RHZ,NA,NA,MSM_202308_RHZ_WC_Sip_B,NA,NA,NA,NA,NA,NULL,NULL,NULL,,0.402855,28.76159267,Within_Range,,0.047169,1.522869582,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
+"90","COMPASS: Synoptic","CB","MSM","WC",NA,NA,"MSM_202308_WC_RHZ_Sip_B",NA,NA,NA,NA,NA,0.032488,2.31946140061542,"Within_Range","",0.402855,28.7615926663668,"Within_Range","",0.047169,1.52286958232584,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
   so we are accepting this run.",NA
-65,COMPASS: Synoptic,CB,MSM,SW,A,0,MSM_202308_SW_A,2023,8,17,NA,NA,0.01121,0.80033127,bdl,,0.17282,12.33838092,Within_Range,,0.003314,0.106993784,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-66,COMPASS: Synoptic,CB,MSM,SW,B,0,MSM_202308_SW_B,2023,8,17,NA,NA,0.009753,0.696309623,bdl,,0.216628,15.46602697,Within_Range,,0.003338,0.107768633,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-67,COMPASS: Synoptic,CB,MSM,SW,C,0,MSM_202308_SW_C,2023,8,17,NA,NA,0.008982,0.641264538,bdl,,0.176681,12.61403471,Within_Range,,0.003455,0.111546024,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-68,COMPASS: Synoptic,CB,MSM,TR,A,10,MSM_202308_TR_LysA_10cm,2023,8,17,NA,NA,0.095592,6.824733877,Within_Range,,0.638118,45.55805436,Within_Range,,0.008489,0.27407068,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-69,COMPASS: Synoptic,CB,MSM,TR,A,20,MSM_202308_TR_LysA_20cm,2023,8,17,NA,NA,0.003226,0.230318348,bdl,,2.835141,202.4132023,Within_Range,,0.014518,0.468719299,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-70,COMPASS: Synoptic,CB,MSM,TR,A,45,MSM_202308_TR_LysA_45cm,2023,8,17,NA,NA,0.00467,0.333411867,bdl,,1.227049,87.60443216,Within_Range,,0.015846,0.511594297,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-71,COMPASS: Synoptic,CB,MSM,TR,B,10,MSM_202308_TR_LysB_10cm,2023,8,17,NA,NA,0.008891,0.634767647,bdl,,1.571119,112.1691048,Within_Range,,0.007594,0.245175255,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-72,COMPASS: Synoptic,CB,MSM,TR,B,20,MSM_202308_TR_LysB_20cm,2023,8,17,NA,NA,0.006697,0.478128324,bdl,,2.552799,182.2555634,Within_Range,,0.009412,0.303870095,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-73,COMPASS: Synoptic,CB,MSM,TR,B,45,MSM_202308_TR_LysB_45cm,2023,8,17,NA,NA,0.006525,0.465848487,bdl,,2.210723,157.8332512,Within_Range,,0.019797,0.639153875,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-74,COMPASS: Synoptic,CB,MSM,TR,C,10,MSM_202308_TR_LysC_10cm,2023,8,17,NA,NA,0.057319,4.092255849,Within_Range,,1.553023,110.8771516,Within_Range,,0.009783,0.315847975,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-75,COMPASS: Synoptic,CB,MSM,TR,C,20,MSM_202308_TR_LysC_20cm,2023,8,17,NA,NA,0.005766,0.411660134,bdl,,1.939575,138.4748013,Within_Range,,0.01021,0.329633837,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-76,COMPASS: Synoptic,CB,MSM,TR,C,45,MSM_202308_TR_LysC_45cm,2023,8,17,NA,NA,0.002979,0.21268393,bdl,,1.792214,127.9540506,Within_Range,,0.011751,0.379385623,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-77,COMPASS: Synoptic,CB,MSM,TR,NA,NA,MSM_202308_TR_RHZ_SF_1,NA,NA,NA,NA,NA,0.036279,2.590117587,Within_Range,,NULL,NULL,NULL,,NULL,NULL,NULL,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
+"91","COMPASS: Synoptic","CB","MSM","WC",NA,NA,"MSM_202308_WC_RHZ_Sip_C",NA,NA,NA,NA,NA,0.035044,2.5019454975119,"Within_Range","",NA,NA,NA,"",NA,NA,NA,"","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
   so we are accepting this run.",NA
-78,COMPASS: Synoptic,CB,MSM,TR,NA,NA,MSM_202308_TR_RHZ_SF_2,NA,NA,NA,NA,NA,0.01967,1.404327929,bdl,,NULL,NULL,NULL,,NULL,NULL,NULL,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",NA
-79,COMPASS: Synoptic,CB,MSM,TR,NA,NA,MSM_202308_TR_RHZ_SF_3,NA,NA,NA,NA,NA,0.228962,16.34660555,Within_Range,,NULL,NULL,NULL,,NULL,NULL,NULL,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",NA
-80,COMPASS: Synoptic,CB,MSM,TR,NA,NA,MSM_202308_TR_RHZ_SF_4,NA,NA,NA,NA,NA,0.043372,3.096518095,Within_Range,,NULL,NULL,NULL,,NULL,NULL,NULL,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",NA
-81,COMPASS: Synoptic,CB,MSM,TR,NA,NA,MSM_202308_TR_RHZ_SF_5,NA,NA,NA,NA,NA,0.056124,4.006939536,Within_Range,,NULL,NULL,NULL,,NULL,NULL,NULL,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",NA
-82,COMPASS: Synoptic,CB,MSM,TR,NA,NA,MSM_202308_TR_RHZ_SF_6,NA,NA,NA,NA,NA,0.031336,2.237215047,Within_Range,,NULL,NULL,NULL,,NULL,NULL,NULL,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",NA
-83,COMPASS: Synoptic,CB,MSM,TR,NA,NA,MSM_202308_TR_RHZ_SF_7,NA,NA,NA,NA,NA,0.022411,1.60001999,bdl,,NULL,NULL,NULL,,NULL,NULL,NULL,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",NA
-84,COMPASS: Synoptic,CB,MSM,TR,NA,NA,MSM_202308_TR_RHZ_SF_8,NA,NA,NA,NA,NA,0.216574,15.46217167,Within_Range,,NULL,NULL,NULL,,NULL,NULL,NULL,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",NA
-85,COMPASS: Synoptic,CB,MSM,UP,A,20,MSM_202308_UP_LysA_20cm,2023,8,17,NA,NA,0.018061,1.289454333,bdl,,0.086893,6.203673956,Within_Range,,0.003839,0.123943614,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-86,COMPASS: Synoptic,CB,MSM,UP,A,45,MSM_202308_UP_LysA_45cm,2023,8,17,NA,NA,0.014649,1.045856626,bdl,,1.479718,105.6435849,Within_Range,,0.004188,0.135211215,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-87,COMPASS: Synoptic,CB,MSM,UP,B,10,MSM_202308_UP_LysB_10cm,2023,8,17,NA,NA,0.008258,0.589574989,bdl,,0.037867,2.7034919,Within_Range,,0.003827,0.123556189,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-88,COMPASS: Synoptic,CB,MSM,UP,C,10,MSM_202308_UP_LysC_10cm,2023,8,17,NA,NA,0.010173,0.726295273,bdl,,0.036418,2.600041409,Within_Range,,0.005107,0.164881489,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-89,COMPASS: Synoptic,CB,MSM,UP,C,20,MSM_202308_UP_LysC_20cm,2023,8,17,NA,NA,0.009213,0.657756645,bdl,,1.52718,109.0321061,Within_Range,,0.011096,0.358238692,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-90,COMPASS: Synoptic,CB,MSM,UP,C,45,MSM_202308_UP_LysC_45cm,2023,8,17,NA,NA,0.01281,0.914562317,bdl,,0.756508,54.01043786,Within_Range,,0.007329,0.236619627,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-91,COMPASS: Synoptic,CB,MSM,WC,A,10,MSM_202308_WC_LysA_10cm,2023,8,17,NA,NA,0.006757,0.482411989,bdl,,0.33378,23.8300242,Within_Range,,0.030285,0.97776305,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-92,COMPASS: Synoptic,CB,MSM,WC,A,20,MSM_202308_WC_LysA_20cm,2023,8,17,NA,NA,0.008054,0.575010531,bdl,,0.677447,48.36592488,Within_Range,,0.036139,1.166761726,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-93,COMPASS: Synoptic,CB,MSM,WC,A,45,MSM_202308_WC_LysA_45cm,2023,8,17,NA,NA,0.007457,0.532388071,bdl,,0.246064,17.56759265,Within_Range,,0.005332,0.172145702,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-94,COMPASS: Synoptic,CB,MSM,WC,B,10,MSM_202308_WC_LysB_10cm,2023,8,17,NA,NA,0.009002,0.642692426,bdl,,0.330725,23.6119143,Within_Range,,0.052303,1.688622777,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-95,COMPASS: Synoptic,CB,MSM,WC,B,20,MSM_202308_WC_LysB_20cm,2023,8,17,NA,NA,0.012114,0.864871811,bdl,,0.663736,47.3870362,Within_Range,,0.06179,1.994914276,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-96,COMPASS: Synoptic,CB,MSM,WC,C,10,MSM_202308_WC_LysC_10cm,2023,8,17,NA,NA,0.019193,1.370272798,bdl,,1.373732,98.07677754,Within_Range,,0.086475,2.79187914,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-97,COMPASS: Synoptic,CB,MSM,WC,C,20,MSM_202308_WC_LysC_20cm,2023,8,17,NA,NA,0.020785,1.483932689,bdl,,2.031717,145.0532245,Within_Range,,0.054682,1.765429721,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-98,COMPASS: Synoptic,CB,MSM,WC,C,45,MSM_202308_WC_LysC_45cm,2023,8,17,NA,NA,0.012215,0.872082646,bdl,,1.822792,130.1371487,Within_Range,,0.006064,0.195778608,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-99,COMPASS: Synoptic,CB,MSM,WC,NA,NA,MSM_202308_WC_RHZ_Col_1,NA,NA,NA,NA,NA,0.035028,2.500803187,Within_Range,,NULL,NULL,NULL,,NULL,NULL,NULL,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",NA
-100,COMPASS: Synoptic,CB,MSM,WC,NA,NA,MSM_202308_WC_RHZ_Col_2,NA,NA,NA,NA,NA,0.032998,2.355872547,Within_Range,,NULL,NULL,NULL,,NULL,NULL,NULL,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",NA
-101,COMPASS: Synoptic,CB,MSM,WC,NA,NA,MSM_202308_WC_RHZ_Col_3,NA,NA,NA,NA,NA,0.023266,1.661062206,bdl,,NULL,NULL,NULL,,NULL,NULL,NULL,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",NA
-102,COMPASS: Synoptic,CB,MSM,WC,NA,NA,MSM_202308_WC_RHZ_Col_4,NA,NA,NA,NA,NA,0.054244,3.872718056,Within_Range,,NULL,NULL,NULL,,NULL,NULL,NULL,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",NA
-103,COMPASS: Synoptic,CB,MSM,WC,NA,NA,MSM_202308_WC_RHZ_Sip_A,NA,NA,NA,NA,NA,0.029861,2.131908301,Within_Range,,NULL,NULL,NULL,,NULL,NULL,NULL,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",NA
-104,COMPASS: Synoptic,CB,MSM,WC,NA,NA,MSM_202308_WC_RHZ_Sip_B,NA,NA,NA,NA,NA,0.032488,2.319461401,Within_Range,,NULL,NULL,NULL,,NULL,NULL,NULL,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",NA
-105,COMPASS: Synoptic,CB,MSM,WC,NA,NA,MSM_202308_WC_RHZ_Sip_C,NA,NA,NA,NA,NA,0.035044,2.501945498,Within_Range,,NULL,NULL,NULL,,NULL,NULL,NULL,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",NA
-106,COMPASS: Synoptic,CB,SWH,SW,A,0,SWH_202308_SW_A,2023,8,23,NA,NA,0.00865,0.617561596,bdl,,0.062133,4.43594851,Within_Range,,0.010399,0.335735775,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-107,COMPASS: Synoptic,CB,SWH,SW,B,0,SWH_202308_SW_B,2023,8,23,NA,NA,0.005364,0.382959584,bdl,,0.012533,0.894786067,bdl,,0.014321,0.462359077,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-108,COMPASS: Synoptic,CB,SWH,SW,C,0,SWH_202308_SW_C,2023,8,23,NA,NA,0.003328,0.237600577,bdl,,0.009577,0.683744208,bdl,,0.016757,0.541006288,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-109,COMPASS: Synoptic,CB,SWH,TR,A,10,SWH_202308_TR_LysA_10cm,2023,8,23,NA,NA,0.009408,0.671678554,bdl,,0.550271,39.28627014,Within_Range,,0.021498,0.694071324,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-110,COMPASS: Synoptic,CB,SWH,TR,A,20,SWH_202308_TR_LysA_20cm,2023,8,23,NA,NA,0.007159,0.511112539,bdl,,2.125162,151.7246746,Within_Range,,0.506609,16.35606937,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-111,COMPASS: Synoptic,CB,SWH,TR,A,45,SWH_202308_TR_LysA_45cm,2023,8,23,NA,NA,0.010202,0.728365711,bdl,,1.925855,137.4952701,Within_Range,,0.340721,11.00031052,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-112,COMPASS: Synoptic,CB,SWH,TR,B,10,SWH_202308_TR_LysB_10cm,2023,8,23,NA,NA,0.031772,2.268343007,Within_Range,,0.324936,23.19861209,Within_Range,,0.009572,0.309035757,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-113,COMPASS: Synoptic,CB,SWH,TR,B,20,SWH_202308_TR_LysB_20cm,2023,8,23,NA,NA,0.009961,0.711159659,bdl,,0.974337,69.56220951,Within_Range,,0.007427,0.239783595,bdl,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-114,COMPASS: Synoptic,CB,SWH,TR,B,45,SWH_202308_TR_LysB_45cm,2023,8,23,NA,NA,0.007006,0.500189195,bdl,,0.01406,1.003805322,bdl,,0.0201,0.648936348,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-115,COMPASS: Synoptic,CB,SWH,TR,C,10,SWH_202308_TR_LysC_10cm,2023,8,23,NA,NA,0.030671,2.189737768,Within_Range,,0.035897,2.562844924,Within_Range,,0.00622,0.200815129,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-116,COMPASS: Synoptic,CB,SWH,TR,C,20,SWH_202308_TR_LysC_20cm,2023,8,23,NA,NA,0.007537,0.538099624,bdl,,0.839829,59.95909101,Within_Range,,0.086199,2.782968372,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-117,COMPASS: Synoptic,CB,SWH,TR,C,45,SWH_202308_TR_LysC_45cm,2023,8,23,NA,NA,0.006406,0.457352553,bdl,,1.941557,138.6163051,Within_Range,,0.279449,9.022120077,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-118,COMPASS: Synoptic,CB,SWH,UP,A,10,SWH_202308_UPCON_LysA_10cm,2023,8,23,NA,NA,0.009906,0.707232967,bdl,,0.025412,1.814274597,Within_Range,,0.003404,0.109899469,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-119,COMPASS: Synoptic,CB,SWH,UP,A,20,SWH_202308_UPCON_LysA_20cm,2023,8,23,NA,NA,0.008325,0.594358414,bdl,,0.022204,1.585241349,Within_Range,,0.002876,0.092852783,bdl,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-120,COMPASS: Synoptic,CB,SWH,UP,A,45,SWH_202308_UPCON_LysA_45cm,2023,8,23,NA,NA,0.004809,0.343335689,bdl,,0.090674,6.473616198,Within_Range,,0.003085,0.09960043,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-121,COMPASS: Synoptic,CB,SWH,UP,B,10,SWH_202308_UPCON_LysB_10cm,2023,8,23,NA,NA,0.011113,0.793406013,bdl,,0.025766,1.839548216,Within_Range,,0.007761,0.250566915,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-122,COMPASS: Synoptic,CB,SWH,UP,B,20,SWH_202308_UPCON_LysB_20cm,2023,8,23,NA,NA,0.008109,0.578937223,bdl,,0.027394,1.955778306,Within_Range,,0.004321,0.139505172,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-123,COMPASS: Synoptic,CB,SWH,UP,B,45,SWH_202308_UPCON_LysB_45cm,2023,8,23,NA,NA,0.009237,0.659470111,bdl,,0.088029,6.284777999,Within_Range,,0.002892,0.093369349,bdl,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-124,COMPASS: Synoptic,CB,SWH,UP,C,10,SWH_202308_UPCON_LysC_10cm,2023,8,23,NA,NA,0.010895,0.777842033,bdl,,0.088873,6.345034876,Within_Range,,0.00486,0.156906998,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-125,COMPASS: Synoptic,CB,SWH,UP,C,20,SWH_202308_UPCON_LysC_20cm,2023,8,23,NA,NA,0.008936,0.637980395,bdl,,0.042162,3.010130866,Within_Range,,0.004273,0.137955473,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-126,COMPASS: Synoptic,CB,SWH,UP,C,45,SWH_202308_UPCON_LysC_45cm,2023,8,23,NA,NA,0.007849,0.560374678,bdl,,0.12583,8.983557869,Within_Range,,0.003824,0.123459333,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-127,COMPASS: Synoptic,CB,SWH,SWAMP,A,10,SWH_202308_UP_LysA_10cm,2023,8,23,NA,NA,0.075499,5.390206116,Within_Range,,0.353277,25.2220009,Within_Range,,0.043129,1.392436605,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-128,COMPASS: Synoptic,CB,SWH,SWAMP,A,20,SWH_202308_UP_LysA_20cm,2023,8,23,NA,NA,0.050805,3.627192701,Within_Range,,1.132975,80.88807499,Within_Range,,0.023393,0.755252139,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-129,COMPASS: Synoptic,CB,SWH,SWAMP,A,45,SWH_202308_UP_LysA_45cm,2023,8,23,NA,NA,0.010787,0.770131437,bdl,,1.107997,79.10478557,Within_Range,,0.005509,0.177860216,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-130,COMPASS: Synoptic,CB,SWH,SWAMP,B,10,SWH_202308_UP_LysB_10cm,2023,8,23,NA,NA,0.015202,1.085337731,bdl,,0.763445,54.50570084,Within_Range,,0.038825,1.253480284,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-131,COMPASS: Synoptic,CB,SWH,SWAMP,B,20,SWH_202308_UP_LysB_20cm,2023,8,23,NA,NA,0.011326,0.808613021,bdl,,0.736171,52.55848987,Within_Range,,0.023506,0.758900388,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-132,COMPASS: Synoptic,CB,SWH,SWAMP,B,45,SWH_202308_UP_LysB_45cm,2023,8,23,NA,NA,0.009841,0.702592331,bdl,,0.640442,45.72397495,Within_Range,,0.010233,0.330376401,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-133,COMPASS: Synoptic,CB,SWH,SWAMP,C,10,SWH_202308_UP_LysC_10cm,2023,8,23,NA,NA,0.008413,0.600641122,bdl,,0.049256,3.516602769,Within_Range,,0.003895,0.125751596,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-134,COMPASS: Synoptic,CB,SWH,SWAMP,C,20,SWH_202308_UP_LysC_20cm,2023,8,23,NA,NA,0.506696,36.17525898,Within_Range,,0.02741,1.956920617,Within_Range,,0.00314,0.101376126,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-135,COMPASS: Synoptic,CB,SWH,SWAMP,C,45,SWH_202308_UP_LysC_45cm,2023,8,23,NA,NA,0.009258,0.660969393,bdl,,0.875521,62.50730008,Within_Range,,0.003275,0.105734654,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-136,COMPASS: Synoptic,CB,SWH,WC,A,10,SWH_202308_WC_LysA_10cm,2023,8,23,NA,NA,0.01205,0.860302569,bdl,,0.049106,3.505893608,Within_Range,,0.043384,1.400669379,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-137,COMPASS: Synoptic,CB,SWH,WC,A,20,SWH_202308_WC_LysA_20cm,2023,8,23,NA,NA,0.010043,0.717014,bdl,,0.029456,2.102993567,Within_Range,,0.015494,0.50022984,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-138,COMPASS: Synoptic,CB,SWH,WC,A,45,SWH_202308_WC_LysA_45cm,2023,8,23,NA,NA,0.01346,0.960968679,bdl,,0.340186,24.28737676,Within_Range,,0.467761,15.10184652,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-139,COMPASS: Synoptic,CB,SWH,WC,B,10,SWH_202308_WC_LysB_10cm,2023,8,23,NA,NA,0.002835,0.202403136,bdl,,0.032129,2.29383081,Within_Range,,0.011115,0.358852115,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-140,COMPASS: Synoptic,CB,SWH,WC,B,20,SWH_202308_WC_LysB_20cm,2023,8,23,NA,NA,0.009399,0.671036004,bdl,,0.051976,3.710795548,Within_Range,,0.017603,0.568319728,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-141,COMPASS: Synoptic,CB,SWH,WC,C,10,SWH_202308_WC_LysC_10cm,2023,8,23,NA,NA,0.005613,0.40073679,bdl,,0.05846,4.173716864,Within_Range,,0.081402,2.628095354,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-142,COMPASS: Synoptic,CB,SWH,WC,C,20,SWH_202308_WC_LysC_20cm,2023,8,23,NA,NA,0.003488,0.249023682,bdl,,0.022033,1.573032906,Within_Range,,0.010014,0.3233059,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
-143,COMPASS: Synoptic,CB,SWH,WC,C,45,SWH_202308_WC_LysC_45cm,2023,8,23,NA,NA,0.002722,0.194335568,bdl,,0.046207,3.298921231,Within_Range,,0.061403,1.98241983,Within_Range,,1/22/2024,"NH3 peCheck is out of range, but other run metrics are good,
-  so we are accepting this run.",
+"92","COMPASS: Synoptic","CB","SWH","SW","A",0,"SWH_202308_SW_A",2023,8,23,NA,NA,0.00865,0.617561595522143,"bdl","",0.062133,4.43594851035576,"Within_Range","",0.010399,0.335735775331392,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"93","COMPASS: Synoptic","CB","SWH","SW","B",0,"SWH_202308_SW_B",2023,8,23,NA,NA,0.005364,0.382959583627835,"bdl","",0.012533,0.894786066668095,"bdl","",0.014321,0.462359076692072,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"94","COMPASS: Synoptic","CB","SWH","SW","C",0,"SWH_202308_SW_C",2023,8,23,NA,NA,0.003328,0.237600576866785,"bdl","",0.009577,0.683744208128967,"bdl","",0.016757,0.541006287838074,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"95","COMPASS: Synoptic","CB","SWH","TR","A",10,"SWH_202308_TR_LysA_10cm",2023,8,23,NA,NA,0.009408,0.67167855383495,"bdl","",0.550271,39.2862701421463,"Within_Range","",0.021498,0.6940713239806,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"96","COMPASS: Synoptic","CB","SWH","TR","A",20,"SWH_202308_TR_LysA_20cm",2023,8,23,NA,NA,0.007159,0.511112538999193,"bdl","",2.125162,151.724674620003,"Within_Range","",0.506609,16.3560693725225,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"97","COMPASS: Synoptic","CB","SWH","TR","A",45,"SWH_202308_TR_LysA_45cm",2023,8,23,NA,NA,0.010202,0.728365710695596,"bdl","",1.925855,137.495270120728,"Within_Range","",0.340721,11.0003105208854,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"98","COMPASS: Synoptic","CB","SWH","TR","B",10,"SWH_202308_TR_LysB_10cm",2023,8,23,NA,NA,0.031772,2.26834300727509,"Within_Range","",0.324936,23.1986120927842,"Within_Range","",0.009572,0.309035757425914,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"99","COMPASS: Synoptic","CB","SWH","TR","B",20,"SWH_202308_TR_LysB_20cm",2023,8,23,NA,NA,0.009961,0.711159659305904,"bdl","",0.974337,69.5622095140183,"Within_Range","",0.007427,0.239783594902033,"bdl","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"100","COMPASS: Synoptic","CB","SWH","TR","B",45,"SWH_202308_TR_LysB_45cm",2023,8,23,NA,NA,0.007006,0.500189195170883,"bdl","",0.01406,1.00380532173888,"bdl","",0.0201,0.648936348125875,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"101","COMPASS: Synoptic","CB","SWH","TR","C",10,"SWH_202308_TR_LysC_10cm",2023,8,23,NA,NA,0.030671,2.18973776835372,"Within_Range","",0.035897,2.56284492421484,"Within_Range","",0.00622,0.200815128624027,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"102","COMPASS: Synoptic","CB","SWH","TR","C",20,"SWH_202308_TR_LysC_20cm",2023,8,23,NA,NA,0.007537,0.53809962375149,"bdl","",0.839829,59.9590910064469,"Within_Range","",0.086199,2.78296837174638,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"103","COMPASS: Synoptic","CB","SWH","TR","C",45,"SWH_202308_TR_LysC_45cm",2023,8,23,NA,NA,0.006406,0.457352552706919,"bdl","",1.941557,138.61630505401,"Within_Range","",0.279449,9.02212007698645,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"104","COMPASS: Synoptic","CB","SWH","UP","A",10,"SWH_202308_UPCON_LysA_10cm",2023,8,23,NA,NA,0.009906,0.70723296708004,"bdl","",0.025412,1.81427459715707,"Within_Range","",0.003404,0.109899469105496,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"105","COMPASS: Synoptic","CB","SWH","UP","A",20,"SWH_202308_UPCON_LysA_20cm",2023,8,23,NA,NA,0.008325,0.594358414187496,"bdl","",0.022204,1.58524134878308,"Within_Range","",0.002876,0.092852782945772,"bdl","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"106","COMPASS: Synoptic","CB","SWH","UP","A",45,"SWH_202308_UPCON_LysA_45cm",2023,8,23,NA,NA,0.004809,0.343335689348669,"bdl","",0.090674,6.4736161979624,"Within_Range","",0.003085,0.0996004295506629,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"107","COMPASS: Synoptic","CB","SWH","UP","B",10,"SWH_202308_UPCON_LysB_10cm",2023,8,23,NA,NA,0.011113,0.793406012836714,"bdl","",0.025766,1.83954821621081,"Within_Range","",0.007761,0.250566915313677,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"108","COMPASS: Synoptic","CB","SWH","UP","B",20,"SWH_202308_UPCON_LysB_20cm",2023,8,23,NA,NA,0.008109,0.578937222900469,"bdl","",0.027394,1.95577830609637,"Within_Range","",0.004321,0.139505172151836,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"109","COMPASS: Synoptic","CB","SWH","UP","B",45,"SWH_202308_UPCON_LysB_45cm",2023,8,23,NA,NA,0.009237,0.659470110732721,"bdl","",0.088029,6.28477799910043,"Within_Range","",0.002892,0.0933693491930364,"bdl","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"110","COMPASS: Synoptic","CB","SWH","UP","C",10,"SWH_202308_UPCON_LysC_10cm",2023,8,23,NA,NA,0.010895,0.777842032741474,"bdl","",0.088873,6.3450348761664,"Within_Range","",0.00486,0.156906997606555,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"111","COMPASS: Synoptic","CB","SWH","UP","C",20,"SWH_202308_UPCON_LysC_20cm",2023,8,23,NA,NA,0.008936,0.637980395096632,"bdl","",0.042162,3.01013086594273,"Within_Range","",0.004273,0.137955473410043,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"112","COMPASS: Synoptic","CB","SWH","UP","C",45,"SWH_202308_UPCON_LysC_45cm",2023,8,23,NA,NA,0.007849,0.560374677832751,"bdl","",0.12583,8.98355786873425,"Within_Range","",0.003824,0.123459333096186,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"113","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202308_UP_LysA_10cm",2023,8,23,NA,NA,0.075499,5.39020611564466,"Within_Range","",0.353277,25.2220008995695,"Within_Range","",0.043129,1.39243660489159,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"114","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202308_UP_LysA_20cm",2023,8,23,NA,NA,0.050805,3.62719270063612,"Within_Range","",1.132975,80.8880749926821,"Within_Range","",0.023393,0.755252138890975,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"115","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202308_UP_LysA_45cm",2023,8,23,NA,NA,0.010787,0.77013143709796,"bdl","",1.107997,79.1047855669073,"Within_Range","",0.005509,0.177860216011216,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"116","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202308_UP_LysB_10cm",2023,8,23,NA,NA,0.015202,1.08533773122863,"bdl","",0.763445,54.5057008431679,"Within_Range","",0.038825,1.25348028437747,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"117","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202308_UP_LysB_20cm",2023,8,23,NA,NA,0.011326,0.808613020911421,"bdl","",0.736171,52.5584898655643,"Within_Range","",0.023506,0.75890038801228,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"118","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202308_UP_LysB_45cm",2023,8,23,NA,NA,0.009841,0.702592330813111,"bdl","",0.640442,45.723974954843,"Within_Range","",0.010233,0.330376400516024,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"119","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202308_UP_LysC_10cm",2023,8,23,NA,NA,0.008413,0.600641121748877,"bdl","",0.049256,3.51660276867499,"Within_Range","",0.003895,0.125751595818422,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"120","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202308_UP_LysC_20cm",2023,8,23,NA,NA,0.506696,36.1752589832009,"Within_Range","",0.02741,1.95692061656207,"Within_Range","",0.00314,0.101376126025634,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"121","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202308_UP_LysC_45cm",2023,8,23,NA,NA,0.009258,0.660969393218959,"bdl","",0.875521,62.5073000778199,"Within_Range","",0.003275,0.105734653736927,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"122","COMPASS: Synoptic","CB","SWH","WC","A",10,"SWH_202308_WC_LysA_10cm",2023,8,23,NA,NA,0.01205,0.860302569484604,"bdl","",0.049106,3.505893608059,"Within_Range","",0.043384,1.40066937945736,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"123","COMPASS: Synoptic","CB","SWH","WC","A",20,"SWH_202308_WC_LysA_20cm",2023,8,23,NA,NA,0.010043,0.717014000442645,"bdl","",0.029456,2.10299356736419,"Within_Range","",0.015494,0.500229839694642,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"124","COMPASS: Synoptic","CB","SWH","WC","A",45,"SWH_202308_WC_LysA_45cm",2023,8,23,NA,NA,0.01346,0.960968679274918,"bdl","",0.340186,24.2873767554099,"Within_Range","",0.467761,15.1018465241645,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"125","COMPASS: Synoptic","CB","SWH","WC","B",10,"SWH_202308_WC_LysB_10cm",2023,8,23,NA,NA,0.002835,0.202403135642228,"bdl","",0.032129,2.29383080954115,"Within_Range","",0.011115,0.358852114896473,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"126","COMPASS: Synoptic","CB","SWH","WC","B",20,"SWH_202308_WC_LysB_20cm",2023,8,23,NA,NA,0.009399,0.671036004197991,"bdl","",0.051976,3.71079554784496,"Within_Range","",0.017603,0.568319728162178,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"127","COMPASS: Synoptic","CB","SWH","WC","C",10,"SWH_202308_WC_LysC_10cm",2023,8,23,NA,NA,0.005613,0.40073679025038,"bdl","",0.05846,4.17371686407219,"Within_Range","",0.081402,2.62809535373843,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"128","COMPASS: Synoptic","CB","SWH","WC","C",20,"SWH_202308_WC_LysC_20cm",2023,8,23,NA,NA,0.003488,0.249023681523842,"bdl","",0.022033,1.57303290568085,"Within_Range","",0.010014,0.323305900006593,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
+"129","COMPASS: Synoptic","CB","SWH","WC","C",45,"SWH_202308_WC_LysC_45cm",2023,8,23,NA,NA,0.002722,0.194335567978182,"bdl","",0.046207,3.29892123055395,"Within_Range","",0.061403,1.98241983004841,"Within_Range","","01/22/2024","NH3 peCheck is out of range, but other run metrics are good,
+  so we are accepting this run.",""
