@@ -1,0 +1,286 @@
+---
+title: "COMPASS_SynopticCB_Collate_Data_Sipper"
+author: "Stephanie J. Wilson"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r notes}
+
+```
+
+
+```{r setup, include=FALSE}
+library(dplyr)
+library(ggplot2)
+library(ggpubr)
+library(stringr)
+library(readxl)
+library(tidyr)
+library(tibble)
+library(lubridate)
+library(tidyverse)
+# detach("package:raster", unload = TRUE)
+```
+
+#Read in and collate all the files in the Processed Data folder 
+```{r}
+
+##Assumed that all samples were in WC Zone
+
+##SO4/Cl
+
+#2022
+dionex_files_2022 <- list.files(path = "../Sulfate_Chloride/Synoptic-CB/2022/Processed Data", pattern = "\\.csv$", full.names = TRUE)
+#Read and combine all CSVs
+dionex_2022 <- dionex_files_2022 %>%
+  lapply(read.csv, colClasses = "character") %>%    # or read.csv if you prefer base R
+  bind_rows()             # combine into one data frame
+#Capitalize Sample IDs
+dionex_2022$Sample_ID <- toupper(dionex_2022$Sample_ID)
+#Select Sipper data MSM_202210_TR_SIP_10
+dionex_SIP_2022 <- dionex_2022 %>%
+  filter(str_detect(Sample_ID, "SIP")) %>% 
+  filter(!str_detect(Sample_ID, "RHZ")) %>% 
+  mutate(Date = ifelse(Date == "20220502", "202205", Date)) %>% 
+  mutate(Date = ifelse(Date == "20220505", "202205", Date)) %>% 
+  mutate(Zone = "WC") %>% 
+  mutate(Site = ifelse(Site == "GCrew", "GCW", Site)) %>% 
+  mutate(Sample_ID = paste(Site, Date, Zone, Replicate, Depth, sep = "_"))
+#Select only data columns
+colnames(dionex_SIP_2022)
+dionex_SIP_sel_2022 <- dionex_SIP_2022 %>% 
+  select("Sample_ID", "SO4_ppm",   "Cl_ppm",    "SO4_mM" ,   "Cl_mM"   ,  "salinity" )
+
+#2023 - No 2023 Sipper Data? Is it only from Rhizons? 
+# dionex_files_2023 <- list.files(path = "../Sulfate_Chloride/Synoptic-CB/2023/Processed Data", pattern = "\\.csv$", full.names = TRUE)
+# #Read and combine all CSVs
+# dionex_2023 <- dionex_files_2023 %>%
+#   lapply(read.csv, colClasses = "character") %>%    # or read.csv if you prefer base R
+#   bind_rows()             # combine into one data frame
+# #Capitalize Sample IDs
+# dionex_2023$Sample_ID <- toupper(dionex_2023$Sample_ID)
+# #Select Sipper data MSM_202210_TR_SIP_10
+# dionex_SIP_2023 <- dionex_2023 %>%
+#   filter(str_detect(Sample_ID, "SIP")) %>% 
+#   filter(!str_detect(Sample_ID, "RHZ")) 
+# #Select only data columns
+# colnames(dionex_SIP_2023)
+# dionex_SIP_sel_2023 <- dionex_SIP_2023 %>% 
+#   select("Sample_ID", "SO4_ppm",   "Cl_ppm",    "SO4_mM" ,   "Cl_mM"   ,  "salinity" )
+
+#Combine 2022 and 2023
+# dionex_SIP_sel <- bind_rows(dionex_SIP_sel_2022, dionex_SIP_sel_2023)
+dionex_SIP_sel <- dionex_SIP_sel_2022
+dionex_SIP_sel$Sample_ID <- toupper(dionex_SIP_sel$Sample_ID)
+
+
+##Sulfide
+#2022
+sulfide_files_2022 <- list.files(path = "../Sulfide/Synoptic-CB/2022/Processed Data", pattern = "\\.csv$", full.names = TRUE)
+#Read and combine all CSVs
+sulfide_data_2022 <- sulfide_files_2022 %>%
+  lapply(read.csv, colClasses = "character") %>%    # or read.csv if you prefer base R
+  bind_rows()             # combine into one data frame
+#Capitalize Sample IDs
+sulfide_data_2022$Sample_ID <- toupper(sulfide_data_2022$Sample_ID)
+#Select Sipper data
+sulfide_SIP_2022 <- sulfide_data_2022 %>%
+  filter(str_detect(Sample_ID, "SIP")) %>% 
+  filter(!str_detect(Sample_ID, "RHZ"))
+#Select only data columns
+colnames(sulfide_SIP_2022)
+sulfide_SIP_sel_2022 <- sulfide_SIP_2022 %>% 
+  select("Sample_ID", "H2S_mean"     ,    "H2S_sd"        ,   "H2S_cv"          ,
+"H2S_Conc_flag"  ,  "H2S_cv_flag"   ,   "H2S_QAQC_flag"  , "Run_notes",        "Field_notes") %>% 
+  rename(H2S_Run_notes = Run_notes)
+
+#2023
+# sulfide_files_2023 <- list.files(path = "../Sulfide/Synoptic-CB/2023/Processed Data", pattern = "Combined\\.csv$", full.names = TRUE)
+# # 3. Read and combine all CSVs
+# sulfide_data_2023 <- sulfide_files_2023 %>%
+#   lapply(read.csv, colClasses = "character") %>%    # or read.csv if you prefer base R
+#   bind_rows()             # combine into one data frame
+# #Capitalize Sample IDs
+# sulfide_data_2023$Sample_ID <- toupper(sulfide_data_2023$Sample_ID)
+# #Select Sipper data
+# sulfide_SIP_2023 <- sulfide_data_2023 %>%
+#   filter(str_detect(Sample_ID, "SIP")) %>% 
+#   filter(!str_detect(Sample_ID, "RHZ"))
+# #Select only data columns
+# colnames(sulfide_SIP_2023)
+# sulfide_SIP_sel_2023 <- sulfide_SIP_2023 %>% 
+#   rename(H2S_mean = H2S_mean_uM, 
+#          H2S_sd = H2S_sd_uM) %>% 
+#   select("Sample_ID", "H2S_mean"     ,    "H2S_sd"        ,   "H2S_cv"          ,
+# "H2S_Conc_flag"  ,  "H2S_cv_flag"   ,   "H2S_QAQC_flag"  , "Run_notes") %>% 
+#   rename(H2S_Run_notes = Run_notes)
+
+#Combine 2022 and 2023
+# sulfide_SIP_sel <- bind_rows(sulfide_SIP_sel_2022, sulfide_SIP_sel_2023)
+sulfide_SIP_sel <- sulfide_SIP_sel_2022
+sulfide_SIP_sel$Sample_ID <- toupper(sulfide_SIP_sel$Sample_ID)
+
+
+##Nutrients
+#2022
+nutr_files_2022 <- list.files(path = "../Nutrients/Synoptic-CB/2022/Processed Data", pattern = "\\.csv$", full.names = TRUE)
+nutr_data_2022 <- nutr_files_2022 %>%
+  lapply(read.csv, colClasses = "character") %>%    # or read.csv if you prefer base R
+  bind_rows()             # combine into one data frame
+nutr_data_2022 <- nutr_data_2022 %>%
+  rename(Sample_ID = Sample_Name)
+#Capitalize Sample IDs
+nutr_data_2022$Sample_ID <- toupper(nutr_data_2022$Sample_ID)
+#Select Sipper data
+nutr_SIP_2022 <- nutr_data_2022 %>%
+  filter(str_detect(Sample_ID, "SIP")) %>% 
+  filter(!str_detect(Sample_ID, "RHZ")) %>% 
+  mutate(Date = ifelse(Date == "20220502", "202205", Date)) %>% 
+  mutate(Date = ifelse(Date == "20220505", "202205", Date)) %>% 
+  mutate(Zone = "WC") %>% 
+  mutate(Site = ifelse(Site == "GCrew", "GCW", Site)) %>% 
+  mutate(Sample_ID = paste(Site, Date, Zone, Replicate, Depth, sep = "_"))
+#Select only data columns
+colnames(nutr_SIP_2022)
+nutr_SIP_sel_2022 <- nutr_SIP_2022 %>% 
+  select("Sample_ID", "NH3_mgL"  , "NH3_uM"  ,  "PO4_mgL" , "PO4_uM"  ,  "NOx_mgL"   ,"NOx_uM"  ,  "NH3_range", "PO4_range", "NOx_range" , "Run_notes")%>% 
+  rename(Nutr_Run_notes = Run_notes)
+
+#2023 - No 2023 Sipper Nutrient Data? 
+# nutr_files_2023 <- list.files(path = "../Nutrients/Synoptic-CB/2023/Processed Data", pattern = "\\.csv$", full.names = TRUE)
+# nutr_data_2023 <- nutr_files_2023 %>%
+#   lapply(read.csv, colClasses = "character") %>%    # or read.csv if you prefer base R
+#   bind_rows()             # combine into one data frame
+# #Select Sipper data
+# nutr_SIP_2023 <- nutr_data_2023 %>%
+#   filter(str_detect(Sample_ID, "SIP"))
+# ##Nutr MSM_202211_SIP_WC_9 data is formatted differently from MSM_202210_WC_SIP_9
+# nutr_SIP_2023 <- nutr_SIP_2023 %>% 
+#   mutate(Sample_ID = ifelse(Date == "202211", paste(Site, Date, Replicate, Zone, Depth, sep = "_"), Sample_ID))
+# #Select only data columns
+# colnames(nutr_SIP_2023)
+# nutr_SIP_sel_2023 <- nutr_SIP_2023 %>% 
+#   select("Sample_ID", "NH3_mgL"  , "NH3_uM"  ,  "PO4_mgL" , "PO4_uM"  ,  "NOx_mgL"   ,"NOx_uM"  ,  "NH3_range", "PO4_range", "NOx_range" , "Run_notes")  %>% 
+#   rename(Nutr_Run_notes = Run_notes)
+
+#Combine 2022 and 2023
+# nutr_SIP_sel_unique <- bind_rows(nutr_SIP_sel_unique_2022, nutr_SIP_sel_unique_2023)
+nutr_SIP_sel <- nutr_SIP_sel_2022
+nutr_SIP_sel$Sample_ID <- toupper(nutr_SIP_sel$Sample_ID)
+
+
+##Iron - need to collate 2022 data?
+#2022
+iron_files_2022 <- list.files(path = "../Iron/Synoptic-CB/2022/Processed Data", pattern = "Summary_Data\\.csv$", full.names = TRUE)
+# 3. Read and combine all CSVs
+iron_data_2022 <- iron_files_2022 %>%
+  lapply(read.csv, colClasses = "character") %>%    # or read.csv if you prefer base R
+  bind_rows()             # combine into one data frame
+#Capitalize Sample IDs
+iron_data_2022$Sample_Name <- toupper(iron_data_2022$Sample_Name)
+#Select Sipper data
+iron_SIP_2022 <- iron_data_2022 %>%
+  rename(Sample_ID = Sample_Name) %>%
+  filter(str_detect(Sample_ID, "SIP")) %>% 
+  filter(!str_detect(Sample_ID, "RHZ")) %>% 
+  mutate(Date = substr(Date, 1, 6)) %>% 
+  mutate(Site = ifelse(Site == "Gcrew", "GCW", Site)) %>% 
+  mutate(Sample_ID = paste0(Site, "_", Date, "_", Zone, "_SIP", Rep, "_", Depth, "cm"))
+#Select only data columns
+colnames(iron_SIP_2022)
+iron_SIP_sel_2022 <- iron_SIP_2022 %>% 
+  select("Sample_ID", "FE_2_mean" ,"FE_2_sd"  ,"FE_3_mean" ,"FE_3_sd" ,  "FE_2_flag" ,"FE_3_flag")
+
+#2023 - Iron data not processed
+# iron_files_2023 <- list.files(path = "../Iron/Synoptic-CB/2023/Processed Data", pattern = "Summary_Data\\.csv$", full.names = TRUE)
+# # 3. Read and combine all CSVs
+# iron_data_2023 <- iron_files_2023 %>%
+#   lapply(read.csv, colClasses = "character") %>%    # or read.csv if you prefer base R
+#   bind_rows()             # combine into one data frame
+# #Select Sipper data
+# iron_SIP_2023 <- iron_data_2023 %>%
+#   rename(Sample_ID = Sample_Name) %>%
+#   filter(str_detect(Sample_ID, "Sipper")) %>% 
+#   mutate(Sample_ID = gsub("Sipper", "SIP", Sample_ID))
+# #Select only data columns
+# colnames(iron_SIP_2023)
+# iron_SIP_sel_2023 <- iron_SIP_2023 %>% 
+#   select("Sample_ID", "FE_2_mean" ,"FE_2_sd"  ,"FE_3_mean" ,"FE_3_sd" ,  "FE_2_flag" ,"FE_3_flag")
+
+#Combine 2022 and 2023
+# iron_SIP_sel <- bind_rows(iron_SIP_sel_2022, iron_SIP_sel_2023)
+iron_SIP_sel <- iron_SIP_sel_2022
+iron_SIP_sel$Sample_ID <- toupper(iron_SIP_sel$Sample_ID)
+
+##Combine all analytes by Sample ID
+# Create a list of your data frames
+df_list <- list(dionex_SIP_sel, sulfide_SIP_sel, nutr_SIP_sel, iron_SIP_sel)
+# Join them all together
+joined_data <- df_list %>% 
+  reduce(full_join, by = "Sample_ID")
+
+```
+
+##Write out files
+```{r write out combined data and metadata, include=FALSE}
+
+#write out a csv of all the data to the main folder: 
+colnames(joined_data)
+final_data <- joined_data %>% 
+  mutate(Project = "COMPASS: Synoptic", 
+         Region = "CB") %>% 
+  rename(H2S_mean_uM = H2S_mean, 
+         H2S_sd_uM = H2S_sd, 
+         FE_2_mean_uM = FE_2_mean, 
+         FE_2_sd_uM = FE_2_sd, 
+         FE_3_mean_uM = FE_3_mean, 
+         FE_3_sd_uM = FE_3_sd) %>% 
+  separate(
+    col = Sample_ID, #MSM_202306_TR_SIP_3
+    sep = "_",
+    into = c("Site", "Date", "Zone", "Replicate", "Depth"),
+    remove = FALSE) %>%
+  mutate(Month = as.numeric(substr(Date, 5, 6)), 
+         Year = as.numeric(substr(Date, 1, 4))) 
+
+
+##Pull in metadata dates
+metadata_2022 <- read.csv("COMPASS_SynopticCB_PW_SampleLog_2022.csv")
+metadata_2023 <- read.csv("COMPASS_SynopticCB_PW_SampleLog_2023.csv")
+metadat <- bind_rows(metadata_2022, metadata_2023)
+
+metadat <- metadat %>% 
+  select("Year", "Month", "Day", "Site", "Transect.Location") %>% 
+  rename(Zone = Transect.Location) %>% 
+  mutate(Zone = case_when(
+    `Zone` == "Upland" ~ "UP",
+    `Zone` == "Transition" ~ "TR",
+    `Zone` == "Wetland" ~ "WC",   
+    `Zone` == "UPCON" ~ "UPCON",
+    `Zone` == "Surface Water" ~ "SW",
+    TRUE                 ~ `Zone`    # keep original value if no match
+  )) %>%
+  mutate(
+    Zone = case_when(
+      Site == "SWH" & Zone == "UP" & Year == 2023 ~ "SWAMP",
+      Site == "SWH" & Zone == "UPCON" & Year == 2023 ~ "UP",
+      TRUE ~ `Zone`
+    )) 
+
+metadat <- unique(metadat)
+
+
+final_data1 <- final_data %>% 
+  left_join(metadat, by = c("Year", "Month", "Site", "Zone"))
+
+final_data1 <- final_data1 %>%
+  select(c("Project", "Site", "Year", "Month", "Day", "Sample_ID", "Zone", "Replicate", "Depth", "SO4_ppm", "Cl_ppm", "SO4_mM", "Cl_mM", "salinity", "H2S_mean_uM", "H2S_sd_uM", "H2S_Conc_flag", "NH3_mgL", "NH3_uM", "NH3_range", "PO4_mgL", "PO4_uM", "PO4_range", "NOx_mgL", "NOx_uM", "NOx_range", "FE_2_mean_uM", "FE_2_sd_uM", "FE_3_mean_uM", "FE_3_sd_uM", "FE_2_flag", "FE_3_flag"))
+
+
+
+##Export final data
+write.csv(final_data1, "COMPASS_SynopticCB_Sipper_Data.csv", row.names = FALSE)
+
+```
+

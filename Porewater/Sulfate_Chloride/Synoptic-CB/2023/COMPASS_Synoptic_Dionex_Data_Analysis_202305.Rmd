@@ -380,7 +380,7 @@ head(alldat)
 
 ## Make final dataframe with IDs  
 ```{r}
-write.csv(alldat, file="Processed Data/COMPASS_SynopticCB_PW_Processed_Cl_SO4_202305.csv")    #Change file name
+# write.csv(alldat, file="Processed Data/COMPASS_SynopticCB_PW_Processed_Cl_SO4_202305.csv")    #Change file name
 
 ```
 

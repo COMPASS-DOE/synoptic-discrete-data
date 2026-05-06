@@ -416,7 +416,8 @@ if (dil_dups_string != "") {
 }
 
 
-
+##Not sure why these were ran again on the SEAL without dilutions: 
+# GWI_TR_RHZ_SF_8, GWI_WC_SipA_20cm, GWI_WC_SipC_45cm
 
 
 alldat2 <- alldat3 %>%

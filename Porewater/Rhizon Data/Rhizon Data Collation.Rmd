@@ -55,6 +55,23 @@ dionex_RHZ_2022 <- dionex_RHZ_2022 %>% #202207_MSM_TR_RHZ_Tree_6
 dionex_RHZ_2022 <- dionex_RHZ_2022 %>%
   mutate(Zone = ifelse(Zone == "RHZ", Sampler_Type, Zone))
 
+# For WC: 
+# Col1 = 1, Col2 = 2, SipA = 3, Col3 = 4, SipB = 5, Col4 = 6, SipC = 7, Col5 = 8
+dionex_RHZ_2022 <- dionex_RHZ_2022 %>%
+  mutate(
+    Replicate = case_when(
+      Zone == "WC" & Replicate == "1" ~ "Col1",
+      Zone == "WC" & Replicate == "2" ~ "Col2",
+      Zone == "WC" & Replicate == "3" ~ "SipA",
+      Zone == "WC" & Replicate == "4" ~ "Col3",
+      Zone == "WC" & Replicate == "5" ~ "SipB",
+      Zone == "WC" & Replicate == "6" ~ "Col4",
+      Zone == "WC" & Replicate == "7" ~ "SipC",
+      Zone == "WC" & Replicate == "8" ~ "Col5",
+      TRUE ~ Replicate  # keep everything else unchanged
+    ))
+
+##Remake sample IDs
 dionex_RHZ_2022 <- dionex_RHZ_2022 %>%
   mutate(Sample_ID = paste(Site, Date, Zone, "RHZ", Replicate, sep = "_")) 
 
@@ -83,7 +100,8 @@ dionex_RHZ_2023 <- dionex_RHZ_2023 %>% #MSM_202207_TR_RHZ_Tree6
          Sample_ID = gsub("Tree_", "", Sample_ID), 
          Sample_ID = gsub("Sip_", "Sip", Sample_ID), 
          Sample_ID = gsub("SipB_", "Sip", Sample_ID), 
-         Sample_ID = gsub("SIp_", "Sip", Sample_ID)) %>% 
+         Sample_ID = gsub("SIp_", "Sip", Sample_ID), 
+         Sample_ID = gsub("Lys", "Sip", Sample_ID)) %>% 
   separate(Sample_ID, into = c("Site", "Date", "Zone", "Sampler_Type", "Replicate"), sep = "_", remove = FALSE) 
 
 dionex_RHZ_2023 <- dionex_RHZ_2023 %>%
@@ -153,8 +171,8 @@ sulfide_RHZ_2023 <- sulfide_RHZ_2023 %>%
          Sample_ID = gsub("MSM_202309_WC_RHZ_2", "MSM_202309_WC_RHZ_Col2", Sample_ID),
          Sample_ID = gsub("MSM_202309_WC_RHZ_3", "MSM_202309_WC_RHZ_Col3", Sample_ID),
          Sample_ID = gsub("MSM_202309_WC_RHZ_4", "MSM_202309_WC_RHZ_Col4", Sample_ID),
-         Sample_ID = gsub("MSM_202309_WC_RHZ_5", "MSM_202309_WC_RHZ_Col5", Sample_ID))
-
+         Sample_ID = gsub("MSM_202309_WC_RHZ_5", "MSM_202309_WC_RHZ_Col5", Sample_ID), 
+         Sample_ID = gsub("Lys", "Sip", Sample_ID))
 
 
 sulfide_RHZ_2023 <- sulfide_RHZ_2023 %>% #GWI_202207_TR_RHZ_TREE1
@@ -328,14 +346,52 @@ df_list <- list(dionex_RHZ_sel, sulfide_RHZ_sel, nutr_RHZ_sel, iron_RHZ_sel)
 joined_data <- df_list %>% 
   reduce(full_join, by = "Sample_ID")
 
+
+##Check duplicates
+##Need to figure out duplicates
+df_duplicates <- joined_data %>%
+  dplyr::group_by(Sample_ID) %>%
+  filter(n() > 1) %>%
+  ungroup()
+
+# GWI_202207_TR_RHZ_SF8 dup for nutrients - ran twice on SEAL for unknown reason
+
+
 ```
 
 ##Write out files
 ```{r write out combined data and metadata, include=FALSE}
 
-#write out a csv of all the data to the main folder: 
-colnames(joined_data)
+##Fix Replicate IDs
+# the UP and TR Rhizon samplers were around the trees (3 per sapflow tree), but the WC doesn't have trees. So at the WC sites we put in a rhizon next to each collar and each sipper so we would have a total of 8 for replication. If it says SipA then it was next to sipper A. We can probably just rename them as 1-8 so that they go from left to right Col1, Col2, SipA, Col3, SipB, Col4, SipC, Col5 but instead of these identifiers we can just say replicate 1-8. Then for the UP and TR we have 1A, 1B which we just won't have for the wetland.
+# WC: 
+# Col1 = 1, Col2 = 2, SipA = 3, Col3 = 4, SipB = 5, Col4 = 6, SipC = 7, Col5 = 8
+# UP/TR: SF Trees 1-8 
+
+joined_data <- joined_data %>% # MSM_202207_TR_RHZ_SF6
+  separate(Sample_ID, into = c("Site", "Date", "Zone", "Sampler_Type", "Replicate"), sep = "_", remove = FALSE) 
+
+
 final_data <- joined_data %>% 
+  mutate(Sample_ID = toupper(Sample_ID)) %>% 
+  mutate(Rep_Number = gsub("SF", "", Replicate)) %>% 
+  mutate(Rep_Number = case_when(
+    Replicate == "COL1" ~ "1",
+    Replicate == "COL2" ~ "2",
+    Replicate == "SIPA" ~ "3",
+    Replicate == "COL3" ~ "4",
+    Replicate == "SIPB" ~ "5",
+    Replicate == "COL4" ~ "6",
+    Replicate == "SIPC" ~ "7",
+    Replicate == "COL5" ~ "8",
+    TRUE                 ~ Rep_Number)) %>%    # keep original value if no match
+  mutate(Sample_ID = paste(Site, Date, Zone, Sampler_Type, Rep_Number, sep = "_")) 
+
+
+
+#write out a csv of all the data to the main folder: 
+colnames(final_data)
+final_data1 <- final_data %>% 
   mutate(Project = "COMPASS: Synoptic", 
          Region = "CB") %>% 
   rename(H2S_mean_uM = H2S_mean, 
@@ -344,11 +400,6 @@ final_data <- joined_data %>%
          FE_2_sd_uM = FE_2_sd, 
          FE_3_mean_uM = FE_3_mean, 
          FE_3_sd_uM = FE_3_sd) %>% 
-  separate(
-    col = Sample_ID, #GWI_202209_TR_RHZ_SF1
-    sep = "_",
-    into = c("Site", "Date", "Zone", "Sampler_Type", "Replicate"),
-    remove = FALSE) %>%
   mutate(Month = as.numeric(substr(Date, 5, 6)), 
          Year = as.numeric(substr(Date, 1, 4))) 
 
@@ -379,16 +430,16 @@ metadat <- metadat %>%
 metadat <- unique(metadat)
 
 
-final_data1 <- final_data %>% 
+final_data2 <- final_data1 %>% 
   left_join(metadat, by = c("Year", "Month", "Site", "Zone"))
 
-final_data1 <- final_data1 %>%
-  select(c("Project", "Site", "Year", "Month", "Day", "Sample_ID", "Zone", "Sampler_Type", "Replicate", "SO4_ppm", "Cl_ppm", "SO4_mM", "Cl_mM", "salinity", "H2S_mean_uM", "H2S_sd_uM", "H2S_Conc_flag", "NH3_mgL", "NH3_uM", "NH3_range", "PO4_mgL", "PO4_uM", "PO4_range", "NOx_mgL", "NOx_uM", "NOx_range", "FE_2_mean_uM", "FE_2_sd_uM", "FE_3_mean_uM", "FE_3_sd_uM", "FE_2_flag", "FE_3_flag"))
+final_data2 <- final_data2 %>%
+  select(c("Project", "Site", "Year", "Month", "Day", "Sample_ID", "Zone", "Sampler_Type", "Rep_Number", "Replicate", "SO4_ppm", "Cl_ppm", "SO4_mM", "Cl_mM", "salinity", "H2S_mean_uM", "H2S_sd_uM", "H2S_Conc_flag", "NH3_mgL", "NH3_uM", "NH3_range", "PO4_mgL", "PO4_uM", "PO4_range", "NOx_mgL", "NOx_uM", "NOx_range", "FE_2_mean_uM", "FE_2_sd_uM", "FE_3_mean_uM", "FE_3_sd_uM", "FE_2_flag", "FE_3_flag"))
 
 
 
 ##Export final data
-write.csv(final_data1, "COMPASS_SynopticCB_Rhizon_Data.csv", row.names = FALSE)
+write.csv(final_data2, "COMPASS_SynopticCB_Rhizon_Data.csv", row.names = FALSE)
 
 ```
 
