@@ -119,6 +119,21 @@ all_data_long <- all_data %>%
 
 ```
 
+##Pull in 2022 Data
+```{r}
+
+##Lysimeter Data
+lys <- read.csv("../COMPASS_SynopticCB_AllData_AllYears.csv")
+lys_2022 <- lys %>% 
+  filter(str_detect(Sample_ID, "2022"))
+
+##Sipper Data
+sip_2022 <- read.csv("COMPASS_SynopticCB_Sipper_Data.csv")
+
+```
+
+
+
 ##Boxplots SO4/Cl
 ```{r}
 

@@ -1,577 +1,577 @@
 "","Project","Region","Site","Zone","Replicate","Depth_cm","Sample_ID","Year","Month","Day","Time","Time_Zone","H2S_mean","H2S_sd","H2S_cv","H2S_Conc_flag","H2S_cv_flag","H2S_QAQC_flag","Dilution","Analysis_rundate","Run_notes","Field_notes","Type"
-"1","COMPASS: Synoptic","CB","GCerw","TR","B",20,"GCERW_202211_TR_LYSB_20CM",2022,"November",NA,NA,NA,2.07386403437085,1.98882140786436,95.8993152348923,"Within Range","High CV","Std curve r2 low; MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"1","COMPASS: Synoptic","CB","GCerw","TR","B",20,"GCERW_202211_TR_LYSB_20CM",2022,11,NA,NA,NA,2.07386403437085,1.98882140786436,95.8993152348923,"Within Range","High CV","Std curve r2 low; MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"Lys"
-"2","COMPASS: Synoptic","CB","GCW","SW","A",0,"GCW_202211_SW_A",2022,"November",15,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"2","COMPASS: Synoptic","CB","GCW","SW","A",0,"GCW_202211_SW_A",2022,11,15,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","SW"
-"3","COMPASS: Synoptic","CB","GCW","SW","B",0,"GCW_202211_SW_B",2022,"November",15,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"3","COMPASS: Synoptic","CB","GCW","SW","B",0,"GCW_202211_SW_B",2022,11,15,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","SW"
-"4","COMPASS: Synoptic","CB","GCW","SW","C",0,"GCW_202211_SW_C",2022,"November",15,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"4","COMPASS: Synoptic","CB","GCW","SW","C",0,"GCW_202211_SW_C",2022,11,15,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","SW"
-"5","COMPASS: Synoptic","CB","GCW","TR","A",20,"GCW_202211_TR_LYSA_20CM",2022,"November",15,NA,NA,9.26166612183903,0.662940469288119,7.15789643641875,"Within Range","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"5","COMPASS: Synoptic","CB","GCW","TR","A",20,"GCW_202211_TR_LYSA_20CM",2022,11,15,NA,NA,9.26166612183903,0.662940469288119,7.15789643641875,"Within Range","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","Lys"
-"6","COMPASS: Synoptic","CB","GCW","TR","A",45,"GCW_202211_TR_LYSA_45CM",2022,"November",15,NA,NA,7.2042879881072,0.565193920890629,7.84524330265043,"Within Range","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"6","COMPASS: Synoptic","CB","GCW","TR","A",45,"GCW_202211_TR_LYSA_45CM",2022,11,15,NA,NA,7.2042879881072,0.565193920890629,7.84524330265043,"Within Range","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","Lys"
-"7","COMPASS: Synoptic","CB","GCW","TR","B",10,"GCW_202211_TR_LYSB_10CM",2022,"November",15,NA,NA,8.05067772666776,1.04965574303952,13.0381041034912,"Within Range","High CV","Std curve r2 low; MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"7","COMPASS: Synoptic","CB","GCW","TR","B",10,"GCW_202211_TR_LYSB_10CM",2022,11,15,NA,NA,8.05067772666776,1.04965574303952,13.0381041034912,"Within Range","High CV","Std curve r2 low; MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","Lys"
-"8","COMPASS: Synoptic","CB","GCW","TR","B",45,"GCW_202211_TR_LYSB_45CM",2022,"November",15,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"8","COMPASS: Synoptic","CB","GCW","TR","B",45,"GCW_202211_TR_LYSB_45CM",2022,11,15,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","Lys"
-"9","COMPASS: Synoptic","CB","GCW","TR","C",10,"GCW_202211_TR_LYSC_10CM",2022,"November",15,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"9","COMPASS: Synoptic","CB","GCW","TR","C",10,"GCW_202211_TR_LYSC_10CM",2022,11,15,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","Lys"
-"10","COMPASS: Synoptic","CB","GCW","TR","C",20,"GCW_202211_TR_LYSC_20CM",2022,"November",15,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"10","COMPASS: Synoptic","CB","GCW","TR","C",20,"GCW_202211_TR_LYSC_20CM",2022,11,15,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","Lys"
-"11","COMPASS: Synoptic","CB","GCW","TR","C",45,"GCW_202211_TR_LYSC_45CM",2022,"November",15,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"11","COMPASS: Synoptic","CB","GCW","TR","C",45,"GCW_202211_TR_LYSC_45CM",2022,11,15,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","Lys"
-"12","COMPASS: Synoptic","CB","GCW","UP","B",10,"GCW_202211_UP_LYSB_10CM",2022,"November",15,NA,NA,2.30824888504916,0.662940469288119,28.7204934260805,"Within Range","High CV","Std curve r2 low; MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"12","COMPASS: Synoptic","CB","GCW","UP","B",10,"GCW_202211_UP_LYSB_10CM",2022,11,15,NA,NA,2.30824888504916,0.662940469288119,28.7204934260805,"Within Range","High CV","Std curve r2 low; MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","Lys"
-"13","COMPASS: Synoptic","CB","GCW","UP","B",20,"GCW_202211_UP_LYSB_20CM",2022,"November",15,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"13","COMPASS: Synoptic","CB","GCW","UP","B",20,"GCW_202211_UP_LYSB_20CM",2022,11,15,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","Lys"
-"14","COMPASS: Synoptic","CB","GCW","UP","C",10,"GCW_202211_UP_LYSC_10CM",2022,"November",15,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"14","COMPASS: Synoptic","CB","GCW","UP","C",10,"GCW_202211_UP_LYSC_10CM",2022,11,15,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","Lys"
-"15","COMPASS: Synoptic","CB","GCW","UP","C",20,"GCW_202211_UP_LYSC_20CM",2022,"November",15,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"15","COMPASS: Synoptic","CB","GCW","UP","C",20,"GCW_202211_UP_LYSC_20CM",2022,11,15,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","Lys"
-"16","COMPASS: Synoptic","CB","GCW","UP","C",45,"GCW_202211_UP_LYSC_45CM",2022,"November",15,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"16","COMPASS: Synoptic","CB","GCW","UP","C",45,"GCW_202211_UP_LYSC_45CM",2022,11,15,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","Lys"
-"17","COMPASS: Synoptic","CB","GCW","WC","A",10,"GCW_202211_WC_SIPA_10CM",2022,"November",NA,NA,NA,567.612733108397,47.9464933281998,8.4470432975723,"Within Range","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range; Spk recovery out of range",12.5,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"17","COMPASS: Synoptic","CB","GCW","WC","A",10,"GCW_202211_WC_SIPA_10CM",2022,11,NA,NA,NA,567.612733108397,47.9464933281998,8.4470432975723,"Within Range","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range; Spk recovery out of range",12.5,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"Sip"
-"18","COMPASS: Synoptic","CB","GCW","WC","A",20,"GCW_202211_WC_SIPA_20CM",2022,"November",NA,NA,NA,1532.49703506744,56.4856323695217,3.68585589903186,"adl","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range; Spk recovery out of range",12.5,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"18","COMPASS: Synoptic","CB","GCW","WC","A",20,"GCW_202211_WC_SIPA_20CM",2022,11,NA,NA,NA,1532.49703506744,56.4856323695217,3.68585589903186,"adl","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range; Spk recovery out of range",12.5,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"Sip"
-"19","COMPASS: Synoptic","CB","GCW","WC","A",45,"GCW_202211_WC_SIPA_45CM",2022,"November",NA,NA,NA,955.649874786933,16.4290145389761,1.71914578470897,"Within Range","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range; Spk recovery out of range",12.5,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"19","COMPASS: Synoptic","CB","GCW","WC","A",45,"GCW_202211_WC_SIPA_45CM",2022,11,NA,NA,NA,955.649874786933,16.4290145389761,1.71914578470897,"Within Range","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range; Spk recovery out of range",12.5,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"Sip"
-"20","COMPASS: Synoptic","CB","GCW","WC","B",10,"GCW_202211_WC_SIPB_10CM",2022,"November",NA,NA,NA,827.389275943525,63.0823400146339,7.62426367476144,"Within Range","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range; Spk recovery out of range",12.5,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"20","COMPASS: Synoptic","CB","GCW","WC","B",10,"GCW_202211_WC_SIPB_10CM",2022,11,NA,NA,NA,827.389275943525,63.0823400146339,7.62426367476144,"Within Range","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range; Spk recovery out of range",12.5,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"Sip"
-"21","COMPASS: Synoptic","CB","GCW","WC","B",20,"GCW_202211_WC_SIPB_20CM",2022,"November",NA,NA,NA,906.494163047454,60.5599199614966,6.68067401095073,"Within Range","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",12.5,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"21","COMPASS: Synoptic","CB","GCW","WC","B",20,"GCW_202211_WC_SIPB_20CM",2022,11,NA,NA,NA,906.494163047454,60.5599199614966,6.68067401095073,"Within Range","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",12.5,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"Sip"
-"22","COMPASS: Synoptic","CB","GCW","WC","B",45,"GCW_202211_WC_SIPB_45CM",2022,"November",NA,NA,NA,1218.03069374071,15.2028452295997,1.2481495998192,"Within Range","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",12.5,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"22","COMPASS: Synoptic","CB","GCW","WC","B",45,"GCW_202211_WC_SIPB_45CM",2022,11,NA,NA,NA,1218.03069374071,15.2028452295997,1.2481495998192,"Within Range","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",12.5,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"Sip"
-"23","COMPASS: Synoptic","CB","GCW","WC","C",10,"GCW_202211_WC_SIPC_10CM",2022,"November",NA,NA,NA,278.863618453312,19.2368588768824,6.89830354478568,"Within Range","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",12.5,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"23","COMPASS: Synoptic","CB","GCW","WC","C",10,"GCW_202211_WC_SIPC_10CM",2022,11,NA,NA,NA,278.863618453312,19.2368588768824,6.89830354478568,"Within Range","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",12.5,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"Sip"
-"24","COMPASS: Synoptic","CB","GCW","WC","C",20,"GCW_202211_WC_SIPC_20CM",2022,"November",NA,NA,NA,338.436434667383,26.5485322197458,7.84446634589974,"Within Range","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",12.5,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"24","COMPASS: Synoptic","CB","GCW","WC","C",20,"GCW_202211_WC_SIPC_20CM",2022,11,NA,NA,NA,338.436434667383,26.5485322197458,7.84446634589974,"Within Range","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",12.5,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"Sip"
-"25","COMPASS: Synoptic","CB","GCW","WC","C",45,"GCW_202211_WC_SIPC_45CM",2022,"November",NA,NA,NA,1108.97663127233,50.3590425902439,4.54103731044963,"Within Range","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",12.5,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"25","COMPASS: Synoptic","CB","GCW","WC","C",45,"GCW_202211_WC_SIPC_45CM",2022,11,NA,NA,NA,1108.97663127233,50.3590425902439,4.54103731044963,"Within Range","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",12.5,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"Sip"
-"26","COMPASS: Synoptic","CB","GWI","SW","A",0,"GWI_202211_SW_A",2022,"November",17,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"26","COMPASS: Synoptic","CB","GWI","SW","A",0,"GWI_202211_SW_A",2022,11,17,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","SW"
-"27","COMPASS: Synoptic","CB","GWI","SW","B",0,"GWI_202211_SW_B",2022,"November",17,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"27","COMPASS: Synoptic","CB","GWI","SW","B",0,"GWI_202211_SW_B",2022,11,17,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","SW"
-"28","COMPASS: Synoptic","CB","GWI","SW","C",0,"GWI_202211_SW_C",2022,"November",17,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"28","COMPASS: Synoptic","CB","GWI","SW","C",0,"GWI_202211_SW_C",2022,11,17,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","SW"
-"29","COMPASS: Synoptic","CB","GWI","TR","A",10,"GWI_202211_TR_LYSA_10CM",2022,"November",17,NA,NA,18.6370601489715,0.99441070393218,5.33566289953226,"Within Range","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"29","COMPASS: Synoptic","CB","GWI","TR","A",10,"GWI_202211_TR_LYSA_10CM",2022,11,17,NA,NA,18.6370601489715,0.99441070393218,5.33566289953226,"Within Range","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","Lys"
-"30","COMPASS: Synoptic","CB","GWI","TR","A",20,"GWI_202211_TR_LYSA_20CM",2022,"November",17,NA,NA,17.1526227613422,4.41960312858746,25.7663401689692,"Within Range","High CV","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"30","COMPASS: Synoptic","CB","GWI","TR","A",20,"GWI_202211_TR_LYSA_20CM",2022,11,17,NA,NA,17.1526227613422,4.41960312858746,25.7663401689692,"Within Range","High CV","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","Lys"
-"31","COMPASS: Synoptic","CB","GWI","TR","A",45,"GWI_202211_TR_LYSA_45CM",2022,"November",17,NA,NA,10.0429489574334,3.31470234644059,33.0052692738937,"Within Range","High CV","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"31","COMPASS: Synoptic","CB","GWI","TR","A",45,"GWI_202211_TR_LYSA_45CM",2022,11,17,NA,NA,10.0429489574334,3.31470234644059,33.0052692738937,"Within Range","High CV","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","Lys"
-"32","COMPASS: Synoptic","CB","GWI","TR","B",10,"GWI_202211_TR_LYSB_10CM",2022,"November",17,NA,NA,0.607226457608522,0.858747891781743,141.42135623731,"Within Range","High CV","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"32","COMPASS: Synoptic","CB","GWI","TR","B",10,"GWI_202211_TR_LYSB_10CM",2022,11,17,NA,NA,0.607226457608522,0.858747891781743,141.42135623731,"Within Range","High CV","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","Lys"
-"33","COMPASS: Synoptic","CB","GWI","TR","B",20,"GWI_202211_TR_LYSB_20CM",2022,"November",17,NA,NA,144.449639440851,11.0634541625609,7.65903896014304,"adl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"33","COMPASS: Synoptic","CB","GWI","TR","B",20,"GWI_202211_TR_LYSB_20CM",2022,11,17,NA,NA,144.449639440851,11.0634541625609,7.65903896014304,"adl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","Lys"
-"34","COMPASS: Synoptic","CB","GWI","TR","B",45,"GWI_202211_TR_LYSB_45CM",2022,"November",17,NA,NA,23.507056490843,1.10857766679261,4.71593569030835,"Within Range","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"34","COMPASS: Synoptic","CB","GWI","TR","B",45,"GWI_202211_TR_LYSB_45CM",2022,11,17,NA,NA,23.507056490843,1.10857766679261,4.71593569030835,"Within Range","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","Lys"
-"35","COMPASS: Synoptic","CB","GWI","TR","C",10,"GWI_202211_TR_LYSC_10CM",2022,"November",17,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"35","COMPASS: Synoptic","CB","GWI","TR","C",10,"GWI_202211_TR_LYSC_10CM",2022,11,17,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","Lys"
-"36","COMPASS: Synoptic","CB","GWI","TR","C",20,"GWI_202211_TR_LYSC_20CM",2022,"November",17,NA,NA,32.1011676823811,1.67080094219777,5.20479802706615,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"36","COMPASS: Synoptic","CB","GWI","TR","C",20,"GWI_202211_TR_LYSC_20CM",2022,11,17,NA,NA,32.1011676823811,1.67080094219777,5.20479802706615,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","Lys"
-"37","COMPASS: Synoptic","CB","GWI","TR","C",45,"GWI_202211_TR_LYSC_45CM",2022,"November",17,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"37","COMPASS: Synoptic","CB","GWI","TR","C",45,"GWI_202211_TR_LYSC_45CM",2022,11,17,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","Lys"
-"38","COMPASS: Synoptic","CB","GWI","TR","",NA,"GWI_202211_TR_RHZ_SF_1",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"38","COMPASS: Synoptic","CB","GWI","TR","",NA,"GWI_202211_TR_RHZ_SF_1",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"RHZ"
-"39","COMPASS: Synoptic","CB","GWI","TR","",NA,"GWI_202211_TR_RHZ_SF_2",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"39","COMPASS: Synoptic","CB","GWI","TR","",NA,"GWI_202211_TR_RHZ_SF_2",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"RHZ"
-"40","COMPASS: Synoptic","CB","GWI","TR","",NA,"GWI_202211_TR_RHZ_SF_3",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"40","COMPASS: Synoptic","CB","GWI","TR","",NA,"GWI_202211_TR_RHZ_SF_3",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"RHZ"
-"41","COMPASS: Synoptic","CB","GWI","TR","",NA,"GWI_202211_TR_RHZ_SF_4",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"41","COMPASS: Synoptic","CB","GWI","TR","",NA,"GWI_202211_TR_RHZ_SF_4",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"RHZ"
-"42","COMPASS: Synoptic","CB","GWI","TR","",NA,"GWI_202211_TR_RHZ_SF_5",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"42","COMPASS: Synoptic","CB","GWI","TR","",NA,"GWI_202211_TR_RHZ_SF_5",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"RHZ"
-"43","COMPASS: Synoptic","CB","GWI","TR","",NA,"GWI_202211_TR_RHZ_SF_6",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"43","COMPASS: Synoptic","CB","GWI","TR","",NA,"GWI_202211_TR_RHZ_SF_6",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"RHZ"
-"44","COMPASS: Synoptic","CB","GWI","TR","",NA,"GWI_202211_TR_RHZ_SF_7",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"44","COMPASS: Synoptic","CB","GWI","TR","",NA,"GWI_202211_TR_RHZ_SF_7",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"RHZ"
-"45","COMPASS: Synoptic","CB","GWI","TR","",NA,"GWI_202211_TR_RHZ_SF_8",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"45","COMPASS: Synoptic","CB","GWI","TR","",NA,"GWI_202211_TR_RHZ_SF_8",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"RHZ"
-"46","COMPASS: Synoptic","CB","GWI","UP","A",10,"GWI_202211_UP_LYSA_10CM",2022,"November",17,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"46","COMPASS: Synoptic","CB","GWI","UP","A",10,"GWI_202211_UP_LYSA_10CM",2022,11,17,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","Lys"
-"47","COMPASS: Synoptic","CB","GWI","UP","A",20,"GWI_202211_UP_LYSA_20CM",2022,"November",17,NA,NA,8.44131914446495,0.386715273751402,4.58121849361631,"Within Range","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"47","COMPASS: Synoptic","CB","GWI","UP","A",20,"GWI_202211_UP_LYSA_20CM",2022,11,17,NA,NA,8.44131914446495,0.386715273751402,4.58121849361631,"Within Range","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","Lys"
-"48","COMPASS: Synoptic","CB","GWI","UP","A",45,"GWI_202211_UP_LYSA_45CM",2022,"November",17,NA,NA,7.42565145819227,0.607695430180775,8.18373220992404,"Within Range","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"48","COMPASS: Synoptic","CB","GWI","UP","A",45,"GWI_202211_UP_LYSA_45CM",2022,11,17,NA,NA,7.42565145819227,0.607695430180775,8.18373220992404,"Within Range","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","Lys"
-"49","COMPASS: Synoptic","CB","GWI","UP","B",10,"GWI_202211_UP_LYSB_10CM",2022,"November",17,NA,NA,5.82402164522381,0.662940469288119,11.3828641044249,"Within Range","High CV","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"49","COMPASS: Synoptic","CB","GWI","UP","B",10,"GWI_202211_UP_LYSB_10CM",2022,11,17,NA,NA,5.82402164522381,0.662940469288119,11.3828641044249,"Within Range","High CV","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","Lys"
-"50","COMPASS: Synoptic","CB","GWI","UP","B",20,"GWI_202211_UP_LYSB_20CM",2022,"November",17,NA,NA,1.42279500470888,0.0902147710887286,6.34067246442068,"Within Range","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"50","COMPASS: Synoptic","CB","GWI","UP","B",20,"GWI_202211_UP_LYSB_20CM",2022,11,17,NA,NA,1.42279500470888,0.0902147710887286,6.34067246442068,"Within Range","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","Lys"
-"51","COMPASS: Synoptic","CB","GWI","UP","C",10,"GWI_202211_UP_LYSC_10CM",2022,"November",17,NA,NA,2.11292817615057,0.16573511732203,7.84385949284722,"Within Range","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"51","COMPASS: Synoptic","CB","GWI","UP","C",10,"GWI_202211_UP_LYSC_10CM",2022,11,17,NA,NA,2.11292817615057,0.16573511732203,7.84385949284722,"Within Range","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","Lys"
-"52","COMPASS: Synoptic","CB","GWI","UP","C",20,"GWI_202211_UP_LYSC_20CM",2022,"November",17,NA,NA,0.0212643309127462,0.0300723051715951,141.42135623731,"Within Range","High CV","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"52","COMPASS: Synoptic","CB","GWI","UP","C",20,"GWI_202211_UP_LYSC_20CM",2022,11,17,NA,NA,0.0212643309127462,0.0300723051715951,141.42135623731,"Within Range","High CV","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","Lys"
-"53","COMPASS: Synoptic","CB","GWI","WC","A",10,"GWI_202211_WC_SIPA_10CM",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"53","COMPASS: Synoptic","CB","GWI","WC","A",10,"GWI_202211_WC_SIPA_10CM",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"Sip"
-"54","COMPASS: Synoptic","CB","GWI","WC","A",20,"GWI_202211_WC_SIPA_20CM",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"54","COMPASS: Synoptic","CB","GWI","WC","A",20,"GWI_202211_WC_SIPA_20CM",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"Sip"
-"55","COMPASS: Synoptic","CB","GWI","WC","A",45,"GWI_202211_WC_SIPA_45CM",2022,"November",NA,NA,NA,1.17538877343733,0.16573511732203,14.1004509373823,"Within Range","High CV","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"55","COMPASS: Synoptic","CB","GWI","WC","A",45,"GWI_202211_WC_SIPA_45CM",2022,11,NA,NA,NA,1.17538877343733,0.16573511732203,14.1004509373823,"Within Range","High CV","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"Sip"
-"56","COMPASS: Synoptic","CB","GWI","WC","B",10,"GWI_202211_WC_SIPB_10CM",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"56","COMPASS: Synoptic","CB","GWI","WC","B",10,"GWI_202211_WC_SIPB_10CM",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"Sip"
-"57","COMPASS: Synoptic","CB","GWI","WC","B",20,"GWI_202211_WC_SIPB_20CM",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"57","COMPASS: Synoptic","CB","GWI","WC","B",20,"GWI_202211_WC_SIPB_20CM",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"Sip"
-"58","COMPASS: Synoptic","CB","GWI","WC","B",45,"GWI_202211_WC_SIPB_45CM",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"58","COMPASS: Synoptic","CB","GWI","WC","B",45,"GWI_202211_WC_SIPB_45CM",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"Sip"
-"59","COMPASS: Synoptic","CB","GWI","WC","C",10,"GWI_202211_WC_SIPC_10CM",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"59","COMPASS: Synoptic","CB","GWI","WC","C",10,"GWI_202211_WC_SIPC_10CM",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"Sip"
-"60","COMPASS: Synoptic","CB","GWI","WC","C",20,"GWI_202211_WC_SIPC_20CM",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"60","COMPASS: Synoptic","CB","GWI","WC","C",20,"GWI_202211_WC_SIPC_20CM",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"Sip"
-"61","COMPASS: Synoptic","CB","MSM","SW","A",0,"MSM_202211_SW_A",2022,"November",13,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"61","COMPASS: Synoptic","CB","MSM","SW","A",0,"MSM_202211_SW_A",2022,11,13,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","SW"
-"62","COMPASS: Synoptic","CB","MSM","SW","B",0,"MSM_202211_SW_B",2022,"November",13,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"62","COMPASS: Synoptic","CB","MSM","SW","B",0,"MSM_202211_SW_B",2022,11,13,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","SW"
-"63","COMPASS: Synoptic","CB","MSM","SW","C",0,"MSM_202211_SW_C",2022,"November",13,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"63","COMPASS: Synoptic","CB","MSM","SW","C",0,"MSM_202211_SW_C",2022,11,13,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","SW"
-"64","COMPASS: Synoptic","CB","MSM","TR","A",10,"MSM_202211_TR_LYSA_10CM",2022,"November",13,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"64","COMPASS: Synoptic","CB","MSM","TR","A",10,"MSM_202211_TR_LYSA_10CM",2022,11,13,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","Lys"
-"65","COMPASS: Synoptic","CB","MSM","TR","A",20,"MSM_202211_TR_LYSA_20CM",2022,"November",13,NA,NA,5.95423545115621,0.508334418756281,8.53735837163731,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"65","COMPASS: Synoptic","CB","MSM","TR","A",20,"MSM_202211_TR_LYSA_20CM",2022,11,13,NA,NA,5.95423545115621,0.508334418756281,8.53735837163731,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","Lys"
-"66","COMPASS: Synoptic","CB","MSM","TR","A",45,"MSM_202211_TR_LYSA_45CM",2022,"November",13,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"66","COMPASS: Synoptic","CB","MSM","TR","A",45,"MSM_202211_TR_LYSA_45CM",2022,11,13,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","Lys"
-"67","COMPASS: Synoptic","CB","MSM","TR","B",10,"MSM_202211_TR_LYSB_10CM",2022,"November",13,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"67","COMPASS: Synoptic","CB","MSM","TR","B",10,"MSM_202211_TR_LYSB_10CM",2022,11,13,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","Lys"
-"68","COMPASS: Synoptic","CB","MSM","TR","B",20,"MSM_202211_TR_LYSB_20CM",2022,"November",13,NA,NA,12.8816099267596,0.531808232410952,4.12842987355331,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"68","COMPASS: Synoptic","CB","MSM","TR","B",20,"MSM_202211_TR_LYSB_20CM",2022,11,13,NA,NA,12.8816099267596,0.531808232410952,4.12842987355331,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","Lys"
-"69","COMPASS: Synoptic","CB","MSM","TR","B",45,"MSM_202211_TR_LYSB_45CM",2022,"November",13,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"69","COMPASS: Synoptic","CB","MSM","TR","B",45,"MSM_202211_TR_LYSB_45CM",2022,11,13,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","Lys"
-"70","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202211_TR_PPR_1",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"70","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202211_TR_PPR_1",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"PPR"
-"71","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202211_TR_PPR_10",2022,"November",NA,NA,NA,4.76928981717142,0.165735117322028,3.4750481450155,"Within Range","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"71","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202211_TR_PPR_10",2022,11,NA,NA,NA,4.76928981717142,0.165735117322028,3.4750481450155,"Within Range","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"PPR"
-"72","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202211_TR_PPR_11",2022,"November",NA,NA,NA,7.77722873420973,0.541288626532371,6.95991650793814,"Within Range","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"72","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202211_TR_PPR_11",2022,11,NA,NA,NA,7.77722873420973,0.541288626532371,6.95991650793814,"Within Range","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"PPR"
-"73","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202211_TR_PPR_12",2022,"November",NA,NA,NA,2.26918474326944,0.607695430180776,26.7803417938201,"Within Range","High CV","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"73","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202211_TR_PPR_12",2022,11,NA,NA,NA,2.26918474326944,0.607695430180776,26.7803417938201,"Within Range","High CV","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"PPR"
-"74","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202211_TR_PPR_2",2022,"November",NA,NA,NA,2.73795444462606,0.497205351966089,18.1597379365454,"Within Range","High CV","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"74","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202211_TR_PPR_2",2022,11,NA,NA,NA,2.73795444462606,0.497205351966089,18.1597379365454,"Within Range","High CV","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"PPR"
-"75","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202211_TR_PPR_3",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"75","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202211_TR_PPR_3",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"PPR"
-"76","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202211_TR_PPR_4",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"76","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202211_TR_PPR_4",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"PPR"
-"77","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202211_TR_PPR_5",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"77","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202211_TR_PPR_5",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"PPR"
-"78","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202211_TR_PPR_6",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"78","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202211_TR_PPR_6",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"PPR"
-"79","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202211_TR_PPR_7",2022,"November",NA,NA,NA,0.0603284726924646,0.0853173442789384,141.421356237309,"Within Range","High CV","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"79","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202211_TR_PPR_7",2022,11,NA,NA,NA,0.0603284726924646,0.0853173442789384,141.421356237309,"Within Range","High CV","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"PPR"
-"80","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202211_TR_PPR_8",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"80","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202211_TR_PPR_8",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"PPR"
-"81","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202211_TR_PPR_9",2022,"November",NA,NA,NA,2.98536067589761,0.162636991482328,5.44781716981074,"Within Range","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"81","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202211_TR_PPR_9",2022,11,NA,NA,NA,2.98536067589761,0.162636991482328,5.44781716981074,"Within Range","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"PPR"
-"82","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202211_TR_RHZ_SF_1",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"82","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202211_TR_RHZ_SF_1",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"RHZ"
-"83","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202211_TR_RHZ_SF_2",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"83","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202211_TR_RHZ_SF_2",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"RHZ"
-"84","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202211_TR_RHZ_SF_3",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"84","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202211_TR_RHZ_SF_3",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"RHZ"
-"85","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202211_TR_RHZ_SF_4",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"85","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202211_TR_RHZ_SF_4",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"RHZ"
-"86","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202211_TR_RHZ_SF_6",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"86","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202211_TR_RHZ_SF_6",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"RHZ"
-"87","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202211_TR_RHZ_SF_7",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"87","COMPASS: Synoptic","CB","MSM","TR","",NA,"MSM_202211_TR_RHZ_SF_7",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"RHZ"
-"88","COMPASS: Synoptic","CB","MSM","UP","A",10,"MSM_202211_UP_LYSA_10CM",2022,"November",13,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"88","COMPASS: Synoptic","CB","MSM","UP","A",10,"MSM_202211_UP_LYSA_10CM",2022,11,13,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","Lys"
-"89","COMPASS: Synoptic","CB","MSM","UP","A",20,"MSM_202211_UP_LYSA_20CM",2022,"November",13,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"89","COMPASS: Synoptic","CB","MSM","UP","A",20,"MSM_202211_UP_LYSA_20CM",2022,11,13,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","Lys"
-"90","COMPASS: Synoptic","CB","MSM","UP","B",10,"MSM_202211_UP_LYSB_10CM",2022,"November",13,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"90","COMPASS: Synoptic","CB","MSM","UP","B",10,"MSM_202211_UP_LYSB_10CM",2022,11,13,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","Lys"
-"91","COMPASS: Synoptic","CB","MSM","UP","B",20,"MSM_202211_UP_LYSB_20CM",2022,"November",13,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"91","COMPASS: Synoptic","CB","MSM","UP","B",20,"MSM_202211_UP_LYSB_20CM",2022,11,13,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","Lys"
-"92","COMPASS: Synoptic","CB","MSM","UP","B",45,"MSM_202211_UP_LYSB_45CM",2022,"November",13,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"92","COMPASS: Synoptic","CB","MSM","UP","B",45,"MSM_202211_UP_LYSB_45CM",2022,11,13,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","Lys"
-"93","COMPASS: Synoptic","CB","MSM","UP","C",10,"MSM_202211_UP_LYSC_10CM",2022,"November",13,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"93","COMPASS: Synoptic","CB","MSM","UP","C",10,"MSM_202211_UP_LYSC_10CM",2022,11,13,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","Lys"
-"94","COMPASS: Synoptic","CB","MSM","UP","C",20,"MSM_202211_UP_LYSC_20CM",2022,"November",13,NA,NA,22.582538468723,0.497205351966089,2.20172480899223,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"94","COMPASS: Synoptic","CB","MSM","UP","C",20,"MSM_202211_UP_LYSC_20CM",2022,11,13,NA,NA,22.582538468723,0.497205351966089,2.20172480899223,"Within Range","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","Lys"
-"95","COMPASS: Synoptic","CB","MSM","UP","C",45,"MSM_202211_UP_LYSC_45CM",2022,"November",13,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"95","COMPASS: Synoptic","CB","MSM","UP","C",45,"MSM_202211_UP_LYSC_45CM",2022,11,13,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ","","Lys"
-"96","COMPASS: Synoptic","CB","MSM","UP","",NA,"MSM_202211_UP_PPR_1",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"96","COMPASS: Synoptic","CB","MSM","UP","",NA,"MSM_202211_UP_PPR_1",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"PPR"
-"97","COMPASS: Synoptic","CB","MSM","UP","",NA,"MSM_202211_UP_PPR_10",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"97","COMPASS: Synoptic","CB","MSM","UP","",NA,"MSM_202211_UP_PPR_10",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"PPR"
-"98","COMPASS: Synoptic","CB","MSM","UP","",NA,"MSM_202211_UP_PPR_11",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"98","COMPASS: Synoptic","CB","MSM","UP","",NA,"MSM_202211_UP_PPR_11",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"PPR"
-"99","COMPASS: Synoptic","CB","MSM","UP","",NA,"MSM_202211_UP_PPR_12",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"99","COMPASS: Synoptic","CB","MSM","UP","",NA,"MSM_202211_UP_PPR_12",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"PPR"
-"100","COMPASS: Synoptic","CB","MSM","UP","",NA,"MSM_202211_UP_PPR_2",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"100","COMPASS: Synoptic","CB","MSM","UP","",NA,"MSM_202211_UP_PPR_2",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"PPR"
-"101","COMPASS: Synoptic","CB","MSM","UP","",NA,"MSM_202211_UP_PPR_3",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"101","COMPASS: Synoptic","CB","MSM","UP","",NA,"MSM_202211_UP_PPR_3",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"PPR"
-"102","COMPASS: Synoptic","CB","MSM","UP","",NA,"MSM_202211_UP_PPR_4",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"102","COMPASS: Synoptic","CB","MSM","UP","",NA,"MSM_202211_UP_PPR_4",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"PPR"
-"103","COMPASS: Synoptic","CB","MSM","UP","",NA,"MSM_202211_UP_PPR_5",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"103","COMPASS: Synoptic","CB","MSM","UP","",NA,"MSM_202211_UP_PPR_5",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"PPR"
-"104","COMPASS: Synoptic","CB","MSM","UP","",NA,"MSM_202211_UP_PPR_6",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"104","COMPASS: Synoptic","CB","MSM","UP","",NA,"MSM_202211_UP_PPR_6",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"PPR"
-"105","COMPASS: Synoptic","CB","MSM","UP","",NA,"MSM_202211_UP_PPR_7",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"105","COMPASS: Synoptic","CB","MSM","UP","",NA,"MSM_202211_UP_PPR_7",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"PPR"
-"106","COMPASS: Synoptic","CB","MSM","UP","",NA,"MSM_202211_UP_PPR_8",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"106","COMPASS: Synoptic","CB","MSM","UP","",NA,"MSM_202211_UP_PPR_8",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"PPR"
-"107","COMPASS: Synoptic","CB","MSM","UP","",NA,"MSM_202211_UP_PPR_9",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"107","COMPASS: Synoptic","CB","MSM","UP","",NA,"MSM_202211_UP_PPR_9",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"PPR"
-"108","COMPASS: Synoptic","CB","MSM","UP","",NA,"MSM_202211_UP_RHZ_SF_1",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"108","COMPASS: Synoptic","CB","MSM","UP","",NA,"MSM_202211_UP_RHZ_SF_1",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"RHZ"
-"109","COMPASS: Synoptic","CB","MSM","UP","",NA,"MSM_202211_UP_RHZ_SF_2",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"109","COMPASS: Synoptic","CB","MSM","UP","",NA,"MSM_202211_UP_RHZ_SF_2",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"RHZ"
-"110","COMPASS: Synoptic","CB","MSM","UP","",NA,"MSM_202211_UP_RHZ_SF_3",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"110","COMPASS: Synoptic","CB","MSM","UP","",NA,"MSM_202211_UP_RHZ_SF_3",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"RHZ"
-"111","COMPASS: Synoptic","CB","MSM","UP","",NA,"MSM_202211_UP_RHZ_SF_4",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"111","COMPASS: Synoptic","CB","MSM","UP","",NA,"MSM_202211_UP_RHZ_SF_4",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"RHZ"
-"112","COMPASS: Synoptic","CB","MSM","UP","",NA,"MSM_202211_UP_RHZ_SF_5",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"112","COMPASS: Synoptic","CB","MSM","UP","",NA,"MSM_202211_UP_RHZ_SF_5",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"RHZ"
-"113","COMPASS: Synoptic","CB","MSM","UP","",NA,"MSM_202211_UP_RHZ_SF_6",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"113","COMPASS: Synoptic","CB","MSM","UP","",NA,"MSM_202211_UP_RHZ_SF_6",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"RHZ"
-"114","COMPASS: Synoptic","CB","MSM","UP","",NA,"MSM_202211_UP_RHZ_SF_7",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"114","COMPASS: Synoptic","CB","MSM","UP","",NA,"MSM_202211_UP_RHZ_SF_7",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"RHZ"
-"115","COMPASS: Synoptic","CB","MSM","UP","",NA,"MSM_202211_UP_RHZ_SF_8",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"115","COMPASS: Synoptic","CB","MSM","UP","",NA,"MSM_202211_UP_RHZ_SF_8",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"RHZ"
-"116","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202211_WC_PPR_1",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"116","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202211_WC_PPR_1",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"PPR"
-"117","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202211_WC_PPR_10",2022,"November",NA,NA,NA,37.1795061137444,1.90468572715953,5.12294520893436,"Within Range","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"117","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202211_WC_PPR_10",2022,11,NA,NA,NA,37.1795061137444,1.90468572715953,5.12294520893436,"Within Range","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"PPR"
-"118","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202211_WC_PPR_11",2022,"November",NA,NA,NA,31.9969966376351,1.43211509331238,4.47577974123956,"Within Range","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"118","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202211_WC_PPR_11",2022,11,NA,NA,NA,31.9969966376351,1.43211509331238,4.47577974123956,"Within Range","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"PPR"
-"119","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202211_WC_PPR_12",2022,"November",NA,NA,NA,29.1583356683089,0.66447328166797,2.27884502471847,"Within Range","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"119","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202211_WC_PPR_12",2022,11,NA,NA,NA,29.1583356683089,0.66447328166797,2.27884502471847,"Within Range","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"PPR"
-"120","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202211_WC_PPR_2",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"120","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202211_WC_PPR_2",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"PPR"
-"121","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202211_WC_PPR_3",2022,"November",NA,NA,NA,0.550362504961831,0.0552450391073433,10.0379365616803,"Within Range","High CV","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"121","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202211_WC_PPR_3",2022,11,NA,NA,NA,0.550362504961831,0.0552450391073433,10.0379365616803,"Within Range","High CV","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"PPR"
-"122","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202211_WC_PPR_4",2022,"November",NA,NA,NA,54.9406692429231,2.50173221697947,4.55351609555014,"Within Range","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"122","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202211_WC_PPR_4",2022,11,NA,NA,NA,54.9406692429231,2.50173221697947,4.55351609555014,"Within Range","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"PPR"
-"123","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202211_WC_PPR_5",2022,"November",NA,NA,NA,49.1852190207112,4.10675434812463,8.34957011454058,"Within Range","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"123","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202211_WC_PPR_5",2022,11,NA,NA,NA,49.1852190207112,4.10675434812463,8.34957011454058,"Within Range","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"PPR"
-"124","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202211_WC_PPR_6",2022,"November",NA,NA,NA,52.0759655124104,1.92011284302096,3.68713824914753,"Within Range","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"124","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202211_WC_PPR_6",2022,11,NA,NA,NA,52.0759655124104,1.92011284302096,3.68713824914753,"Within Range","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"PPR"
-"125","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202211_WC_PPR_7",2022,"November",NA,NA,NA,30.1219178322087,1.4844373876293,4.92809719453528,"Within Range","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"125","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202211_WC_PPR_7",2022,11,NA,NA,NA,30.1219178322087,1.4844373876293,4.92809719453528,"Within Range","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"PPR"
-"126","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202211_WC_PPR_8",2022,"November",NA,NA,NA,31.4761414139056,0.673596911687163,2.14002378128083,"Within Range","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"126","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202211_WC_PPR_8",2022,11,NA,NA,NA,31.4761414139056,0.673596911687163,2.14002378128083,"Within Range","Within Range","MC 10 out of range; MC 20 out of range; Dup perc diff out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"PPR"
-"127","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202211_WC_PPR_9",2022,"November",NA,NA,NA,32.5178518613647,0.238685848885395,0.734014811012114,"Within Range","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"127","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202211_WC_PPR_9",2022,11,NA,NA,NA,32.5178518613647,0.238685848885395,0.734014811012114,"Within Range","Within Range","Std curve r2 low; MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"PPR"
-"128","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202211_WC_RHZ_COL1",2022,"November",NA,NA,NA,75.6707071473603,3.50882115127724,4.63696096356573,"Within Range","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"128","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202211_WC_RHZ_COL1",2022,11,NA,NA,NA,75.6707071473603,3.50882115127724,4.63696096356573,"Within Range","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"RHZ"
-"129","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202211_WC_RHZ_COL2",2022,"November",NA,NA,NA,119.266289373526,11.0155338666426,9.23608332623094,"adl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"129","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202211_WC_RHZ_COL2",2022,11,NA,NA,NA,119.266289373526,11.0155338666426,9.23608332623094,"adl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"RHZ"
-"130","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202211_WC_RHZ_COL3",2022,"November",NA,NA,NA,163.252513017489,4.37867035998321,2.68214576244479,"adl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"130","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202211_WC_RHZ_COL3",2022,11,NA,NA,NA,163.252513017489,4.37867035998321,2.68214576244479,"adl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"RHZ"
-"131","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202211_WC_RHZ_COL4",2022,"November",NA,NA,NA,151.168671826963,13.7506518913788,9.09623120001922,"adl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"131","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202211_WC_RHZ_COL4",2022,11,NA,NA,NA,151.168671826963,13.7506518913788,9.09623120001922,"adl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"RHZ"
-"132","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202211_WC_RHZ_COL5",2022,"November",NA,NA,NA,104.395872736047,4.35724269557892,4.17376911690343,"adl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"132","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202211_WC_RHZ_COL5",2022,11,NA,NA,NA,104.395872736047,4.35724269557892,4.17376911690343,"adl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"RHZ"
-"133","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202211_WC_RHZ_SIPA",2022,"November",NA,NA,NA,27.7259838030526,1.90788777883531,6.88122662260682,"Within Range","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"133","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202211_WC_RHZ_SIPA",2022,11,NA,NA,NA,27.7259838030526,1.90788777883531,6.88122662260682,"Within Range","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"RHZ"
-"134","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202211_WC_RHZ_SIPB",2022,"November",NA,NA,NA,67.9099643137896,2.92364068328376,4.30517187400449,"Within Range","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"134","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202211_WC_RHZ_SIPB",2022,11,NA,NA,NA,67.9099643137896,2.92364068328376,4.30517187400449,"Within Range","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"RHZ"
-"135","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202211_WC_RHZ_SIPC",2022,"November",NA,NA,NA,172.445607716316,1.95372787478081,1.13295310947833,"adl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"135","COMPASS: Synoptic","CB","MSM","WC","",NA,"MSM_202211_WC_RHZ_SIPC",2022,11,NA,NA,NA,172.445607716316,1.95372787478081,1.13295310947833,"adl","Within Range","MC 10 out of range; MC 20 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"RHZ"
-"136","COMPASS: Synoptic","CB","MSM","WC","A",10,"MSM_202211_WC_SIPA_10CM",2022,"November",NA,NA,NA,104.994856243336,1.0664820734228,1.0157469723575,"adl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"136","COMPASS: Synoptic","CB","MSM","WC","A",10,"MSM_202211_WC_SIPA_10CM",2022,11,NA,NA,NA,104.994856243336,1.0664820734228,1.0157469723575,"adl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"Sip"
-"137","COMPASS: Synoptic","CB","MSM","WC","A",20,"MSM_202211_WC_SIPA_20CM",2022,"November",NA,NA,NA,165.700532569018,7.05941392165523,4.26034473891315,"adl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"137","COMPASS: Synoptic","CB","MSM","WC","A",20,"MSM_202211_WC_SIPA_20CM",2022,11,NA,NA,NA,165.700532569018,7.05941392165523,4.26034473891315,"adl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"Sip"
-"138","COMPASS: Synoptic","CB","MSM","WC","A",45,"MSM_202211_WC_SIPA_45CM",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"138","COMPASS: Synoptic","CB","MSM","WC","A",45,"MSM_202211_WC_SIPA_45CM",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"Sip"
-"139","COMPASS: Synoptic","CB","MSM","WC","B",10,"MSM_202211_WC_SIPB_10CM",2022,"November",NA,NA,NA,179.867794654462,11.4143078229509,6.34594305494128,"adl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"139","COMPASS: Synoptic","CB","MSM","WC","B",10,"MSM_202211_WC_SIPB_10CM",2022,11,NA,NA,NA,179.867794654462,11.4143078229509,6.34594305494128,"adl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"Sip"
-"140","COMPASS: Synoptic","CB","MSM","WC","B",20,"MSM_202211_WC_SIPB_20CM",2022,"November",NA,NA,NA,190.336984651427,6.5424371501865,3.43729158164819,"adl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"140","COMPASS: Synoptic","CB","MSM","WC","B",20,"MSM_202211_WC_SIPB_20CM",2022,11,NA,NA,NA,190.336984651427,6.5424371501865,3.43729158164819,"adl","Within Range","Std curve r2 low; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"Sip"
-"141","COMPASS: Synoptic","CB","MSM","WC","B",45,"MSM_202211_WC_SIPB_45CM",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"141","COMPASS: Synoptic","CB","MSM","WC","B",45,"MSM_202211_WC_SIPB_45CM",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"Sip"
-"142","COMPASS: Synoptic","CB","MSM","WC","C",10,"MSM_202211_WC_SIPC_10CM",2022,"November",NA,NA,NA,188.357734801255,8.8310308143786,4.68843545166682,"adl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"142","COMPASS: Synoptic","CB","MSM","WC","C",10,"MSM_202211_WC_SIPC_10CM",2022,11,NA,NA,NA,188.357734801255,8.8310308143786,4.68843545166682,"adl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"Sip"
-"143","COMPASS: Synoptic","CB","MSM","WC","C",20,"MSM_202211_WC_SIPC_20CM",2022,"November",NA,NA,NA,194.868425097874,3.61619470360409,1.85571095049792,"adl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"143","COMPASS: Synoptic","CB","MSM","WC","C",20,"MSM_202211_WC_SIPC_20CM",2022,11,NA,NA,NA,194.868425097874,3.61619470360409,1.85571095049792,"adl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"Sip"
-"144","COMPASS: Synoptic","CB","MSM","WC","C",45,"MSM_202211_WC_SIPC_45CM",2022,"November",NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
+"144","COMPASS: Synoptic","CB","MSM","WC","C",45,"MSM_202211_WC_SIPC_45CM",2022,11,NA,NA,NA,0,0,0,"bdl","Within Range","MC 10 out of range; Spk recovery out of range",1,"202211","Used Plate 4 standard curve. 9/15 of the MC's were off. 
 A lot of the spks were bad but most of the samples that were spiked were 0 to begin with, 
 so probably wouldn't have given a good spike. 
 ",NA,"Sip"

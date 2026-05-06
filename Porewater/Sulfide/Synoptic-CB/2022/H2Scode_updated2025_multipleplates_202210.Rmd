@@ -1153,7 +1153,8 @@ final_data <- merged_data %>%
     Project = "COMPASS: Synoptic",   # new column with same value on every row
     Region = "CB", 
     Analysis_rundate = Date_Run, #need to make it so this comes out in plate processed file
-    Run_notes = Run_notes
+    Run_notes = Run_notes, 
+    Month = match(Month, month.name)
   ) 
 
 colnames(final_data)
