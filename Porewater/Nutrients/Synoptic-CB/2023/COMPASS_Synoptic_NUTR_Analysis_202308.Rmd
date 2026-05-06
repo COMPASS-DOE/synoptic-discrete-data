@@ -222,6 +222,14 @@ df_all <- df_all %>% #MSM_202308_RHZ_TR_SF_1
 
 ```
 
+##Fix Sample Names
+```{r}
+df_all <- df_all %>% 
+  mutate(Sample_Name = gsub("SIp", "Sip", Sample_Name), 
+         Sample_Name = gsub("202038", "202308", Sample_Name))
+```
+
+
 ## Assessing standard Curves
   #Pull out standards data  
 ```{r Pull out Standard Curves, echo=FALSE}

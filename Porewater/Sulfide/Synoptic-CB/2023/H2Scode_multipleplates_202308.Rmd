@@ -918,7 +918,10 @@ all_data1 <- dat1 %>%
 ##Remove Dups and Spikes
 Sample_data1 <- all_data1 %>% 
   subset((!IDs %like% "_dup")) %>% 
-  subset((!IDs %like% "_spk")) 
+  subset((!IDs %like% "_spk")) %>% 
+  mutate(IDs = gsub("SF_", "SF", IDs)) %>% 
+  mutate(IDs = gsub("Sip_", "Sip", IDs)) %>% 
+  mutate(IDs = gsub("Col_", "Col", IDs))
 # %>% 
 #   subset((!IDs %like% "PPR")) %>% 
 #   subset((!IDs %like% "RHZ"))
@@ -996,9 +999,6 @@ print(BDL_not_fixed)
 ```{r Format Sample IDs in Data, echo=FALSE, warning=FALSE}
 
 samples_flagged_all <- Sample_data_nodups %>% 
-  mutate(IDs = gsub("SF_", "SF", IDs)) %>% 
-  mutate(IDs = gsub("Sip_", "Sip", IDs)) %>% 
-  mutate(IDs = gsub("Col_", "Col", IDs)) %>% 
   separate(
     col = IDs,
     sep = "_",
