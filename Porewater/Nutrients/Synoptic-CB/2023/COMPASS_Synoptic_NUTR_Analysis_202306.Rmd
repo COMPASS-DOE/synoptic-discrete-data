@@ -1650,7 +1650,6 @@ df_all_clean <- merged_data %>%
     remove = FALSE) %>%
   mutate(Samp_Time = ym(Samp_Time)) 
 
-
 ############### THIS IS ONLY FOR 2023 when SWAMP was called UP and UPLAND was called UPCON ##############
 df_all_clean <- df_all_clean %>%
   mutate(
@@ -1658,6 +1657,11 @@ df_all_clean <- df_all_clean %>%
       Site == "SWH" & Zone == "UP" ~ "SWAMP",
       Site == "SWH" & Zone == "UPCON" ~ "UP",
       TRUE ~ `Zone`
+    )) %>%
+  mutate(Sample_Name = case_when(
+      Site == "SWH" & Zone == "SWAMP" ~ gsub("_UP_", "_SWAMP_", Sample_Name), 
+      Site == "SWH" & Zone == "UP" ~ gsub("_UPCON_", "_UP_", Sample_Name), 
+      TRUE ~ Sample_Name
     )) 
 
 ```

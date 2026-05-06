@@ -1,5 +1,5 @@
 ---
-title: "COMPASS_SynopticCB_Collate_Dionex_2025_Data"
+title: "COMPASS_SynopticCB_Collate_All_Porewater_Data"
 author: "Stephanie J. Wilson"
 date: "2025-08-29"
 output: html_document
@@ -67,7 +67,7 @@ colnames(merged_df)
 merged_df <- merged_df %>% 
   mutate(Project = "COMPASS:Synoptic", 
          Region = "CB") %>% 
-  select(c("Project", "Region", "Site", "Zone", "Replicate", "Depth_cm", "Sample_ID", "Year", "Month", "Day", 
+  dplyr::select(c("Project", "Region", "Site", "Zone", "Replicate", "Depth_cm", "Sample_ID", "Year", "Month", "Day", 
            "ic_mgL", "ic_uM", "ic_flag", "npoc_mgL", "npoc_uM", "npoc_flag", "tdn_mgL", "tdn_uM", "tdn_flag" , 
            "NOx_Conc_mgL", "NOx_Conc_uM", "NOx_Conc_Flag", "NH3_Conc_mgL", "NH3_Conc_uM",  "NH3_Conc_Flag", "PO4_Conc_mgL", "PO4_Conc_uM", "PO4_Conc_Flag", 
            "SO4_ppm", "SO4_mM", "SO4_Conc_flag", "SO4_QAQC_flag", "Cl_ppm", "Cl_mM", "Cl_Conc_flag", "salinity", 
