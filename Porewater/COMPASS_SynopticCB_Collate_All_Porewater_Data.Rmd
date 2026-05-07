@@ -1,7 +1,7 @@
 ---
 title: "COMPASS_SynopticCB_Collate_All_Porewater_Data"
-author: "Stephanie J. Wilson"
-date: "2025-08-29"
+author: "Zoe Read"
+date: "2026-05-07"
 output: html_document
 ---
 
@@ -14,6 +14,7 @@ library(readxl)
 library(tidyr)
 library(tibble)
 library(purrr)
+# detach("package:raster", unload = TRUE)
 ```
 
 #Read in and collate all the collated analyte files
@@ -27,28 +28,33 @@ DIC <- DIC %>%
   rename_with(
     .cols = c(11:12, (ncol(.) - 2):(ncol(.))),
     .fn = ~paste0("DIC_", .)) %>%
-  mutate(Sample_ID = toupper(Sample_ID))
+  mutate(Sample_ID = toupper(Sample_ID)) %>% 
+  dplyr::select(c("Sample_ID", "ic_mgL", "ic_uM", "ic_flag"))
 
 DOC <- read.csv("DOC/Synoptic-CB/COMPASS_SynopticCB_PW_DOC_AllData.csv")
 DOC <- DOC %>%
   rename_with(
     .cols = c(7:8, (ncol(.) - 2):(ncol(.))),
     .fn = ~paste0("DOC_", .)) %>%
-  mutate(Sample_ID = toupper(Sample_ID))
+  mutate(Sample_ID = toupper(Sample_ID)) %>% 
+  dplyr::select(c("Sample_ID", "npoc_mgL", "npoc_uM", "npoc_flag", "tdn_mgL", "tdn_uM", "tdn_flag"))
 
 Nutrients <- read.csv("Nutrients/Synoptic-CB/COMPASS_SynopticCB_Nutrient_AllData.csv")
 Nutrients <- Nutrients %>%
   rename_with(
     .cols = c(7:8, (ncol(.) - 2):(ncol(.))),
     .fn = ~paste0("Nutr_", .)) %>%
-  mutate(Sample_ID = toupper(Sample_ID))
+  mutate(Sample_ID = toupper(Sample_ID)) %>% 
+  dplyr::select(c("Sample_ID", "NOx_Conc_mgL", "NOx_Conc_uM", "NOx_Conc_Flag", "NH3_Conc_mgL", "NH3_Conc_uM",  "NH3_Conc_Flag", "PO4_Conc_mgL", "PO4_Conc_uM", "PO4_Conc_Flag"))
+
 
 SO4_Cl <- read.csv("Sulfate_Chloride/Synoptic-CB/COMPASS_SynopticCB_SO4_Cl_AllData.csv")
 SO4_Cl <- SO4_Cl %>%
   rename_with(
     .cols = c(7:8, (ncol(.) - 2):(ncol(.))),
     .fn = ~paste0("SO4_Cl_", .)) %>%
-  mutate(Sample_ID = toupper(Sample_ID))
+  mutate(Sample_ID = toupper(Sample_ID)) %>% 
+  dplyr::select(c("Sample_ID", "SO4_ppm", "SO4_mM", "SO4_Conc_flag", "SO4_QAQC_flag", "Cl_ppm", "Cl_mM", "Cl_Conc_flag", "salinity"))
 
 Sulfide <- read.csv("Sulfide/Synoptic-CB/COMPASS_SynopticCB_Sulfide_AllData.csv")
 Sulfide <- Sulfide %>%
@@ -56,7 +62,9 @@ Sulfide <- Sulfide %>%
     .cols = c(7:8, (ncol(.) - 2):(ncol(.))),
     .fn = ~paste0("H2S_", .)) %>%
   mutate(Sample_ID = toupper(Sample_ID)) %>% 
-  mutate(Month = as.integer(Month))
+  mutate(Month = as.integer(Month)) %>% 
+  dplyr::select(c("Sample_ID", "H2S_mean_uM", "H2S_sd_uM", "H2S_cv", "H2S_Conc_flag", "H2S_cv_flag")) %>% 
+  mutate(Sample_ID = gsub("GCERW", "GCW", Sample_ID))
 
 
 ##Combine data
@@ -66,12 +74,7 @@ merged_df <- df_list %>% reduce(full_join)
 colnames(merged_df)
 merged_df <- merged_df %>% 
   mutate(Project = "COMPASS:Synoptic", 
-         Region = "CB") %>% 
-  dplyr::select(c("Project", "Region", "Site", "Zone", "Replicate", "Depth_cm", "Sample_ID", "Year", "Month", "Day", 
-           "ic_mgL", "ic_uM", "ic_flag", "npoc_mgL", "npoc_uM", "npoc_flag", "tdn_mgL", "tdn_uM", "tdn_flag" , 
-           "NOx_Conc_mgL", "NOx_Conc_uM", "NOx_Conc_Flag", "NH3_Conc_mgL", "NH3_Conc_uM",  "NH3_Conc_Flag", "PO4_Conc_mgL", "PO4_Conc_uM", "PO4_Conc_Flag", 
-           "SO4_ppm", "SO4_mM", "SO4_Conc_flag", "SO4_QAQC_flag", "Cl_ppm", "Cl_mM", "Cl_Conc_flag", "salinity", 
-           "H2S_mean_uM", "H2S_sd_uM", "H2S_cv", "H2S_Conc_flag", "H2S_cv_flag"))
+         Region = "CB")
 
 
 ##Need to figure out duplicates
@@ -145,15 +148,81 @@ unique(df_duplicates_Sulfide$Sample_ID)
 
 
 ```
+##Read in metadata and create similar sample IDs for matching to samples 
+```{r pull in metadata for later, include=FALSE}
+
+#read in the raw metadata files
+meta_2022 <- read.csv("Sample Logs/COMPASS_SynopticCB_PW_SampleLog_2022.csv")
+meta_2023 <- read.csv("Sample Logs/COMPASS_SynopticCB_PW_SampleLog_2023.csv")
+meta_2023_fixed <- meta_2023 %>%
+  mutate(
+    Transect.Location = case_when(
+      Year == "2023" & Site == "SWH" & Transect.Location == "Upland" ~ "SWAMP",
+      Year == "2023" & Site == "SWH" & Transect.Location == "UPCON" ~ "Upland",
+      TRUE ~ Transect.Location
+    )) 
+
+meta_2024 <- read.csv("Sample Logs/COMPASS_SynopticCB_PW_SampleLog_2024.csv")
+meta_2025 <- read.csv("Sample Logs/COMPASS_SynopticCB_PW_SampleLog_2025.csv")
+
+raw_metadata <- bind_rows(meta_2022, meta_2023_fixed, meta_2024, meta_2025)
+
+#Create NUTR IDs from what was collected for comparison later
+metadata <- raw_metadata %>%
+  mutate(YearMonth = sprintf("%d%02d", Year, Month))  %>%
+  mutate(Zone = case_when(
+    `Transect.Location` == "Transition" ~ "TR",
+    `Transect.Location` == "Wetland"    ~ "WC",
+    `Transect.Location` == "Upland"     ~ "UP",   
+    `Transect.Location` == "Surface Water" ~ "SW",
+    TRUE                 ~ `Transect.Location`))  %>% # keep original value if no match
+  mutate(Sample_ID = paste0(Site, "_", YearMonth, "_", Zone, "_Lys", Lysimeter, "_", Depth_cm, "cm")) %>%
+  mutate(
+    Sample_ID = if_else(
+      Zone == "SW",
+      # Modify the string:
+      Sample_ID %>%
+        str_replace("_LysA", "_A") %>%                    # Replace "_LysA" with "_A"
+        str_replace("_LysB", "_B") %>%                    # Replace "_LysB" with "_B"
+        str_replace("_LysC", "_C") %>%                    # Replace "_LysC" with "_C"
+        str_replace("_0cm$", ""),                         # Remove trailing "_0cm"
+      Sample_ID))  # else keep original
+
+#Take out the columns and rows that are not relevant
+colnames(metadata)
+metadata_sel <- metadata %>%
+  rename(Sampling_Time = Time..24hr., 
+         Sampling_Time_Zone = Time.Zone_EDT.EST, 
+         Field_Notes = Field.Notes) %>% 
+  select(Sample_ID, Year, Month, Day, Site, Zone, Lysimeter, Depth_cm, Sampling_Time, Sampling_Time_Zone, Field_Notes)       
+
+
+##Merge sample data with metadata
+merged_df$Sample_ID <- toupper(merged_df$Sample_ID)
+metadata_sel$Sample_ID <- toupper(metadata_sel$Sample_ID)
+
+
+final_data <- merged_df %>%
+  left_join(metadata_sel, by = c("Sample_ID"))
+
+```
+
 
 ## Write the 2023 file out to the folder 
 ```{r, echo=FALSE}
 
 ##Order data by Year, Month, Day
-final_data <- merged_df[order(merged_df$Year, merged_df$Month, merged_df$Day, merged_df$Zone, merged_df$Replicate, merged_df$Depth_cm),]
+final_data1 <- final_data[order(final_data$Year, final_data$Month, final_data$Day, final_data$Zone, final_data$Lysimeter, final_data$Depth_cm),]
+
+colnames(final_data1)
+final_data1 <- final_data1 %>% 
+  select(c("Project", "Region", "Sample_ID", "Year", "Month", "Day", "Site", "Zone", "Lysimeter", "Depth_cm", "Sampling_Time", "Sampling_Time_Zone", "Field_Notes", 
+           "ic_mgL", "ic_uM", "ic_flag", "npoc_mgL", "npoc_uM", "npoc_flag", "tdn_mgL", "tdn_uM", "tdn_flag", "NOx_Conc_mgL", "NOx_Conc_uM", "NOx_Conc_Flag",
+           "NH3_Conc_mgL", "NH3_Conc_uM", "NH3_Conc_Flag", "PO4_Conc_mgL", "PO4_Conc_uM", "PO4_Conc_Flag", "SO4_ppm", "SO4_mM", "SO4_Conc_flag", "SO4_QAQC_flag", 
+           "Cl_ppm", "Cl_mM", "Cl_Conc_flag", "salinity", "H2S_mean_uM", "H2S_sd_uM", "H2S_cv", "H2S_Conc_flag", "H2S_cv_flag"))
 
 
-write.csv(final_data, "COMPASS_SynopticCB_AllData_AllYears.csv", row.names = FALSE)
+write.csv(final_data1, "COMPASS_SynopticCB_AllData_AllYears.csv", row.names = FALSE)
 
 ```
 

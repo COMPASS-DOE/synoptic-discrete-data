@@ -71,6 +71,8 @@ pacman::p_load(
   writexl,
   broom)
 
+# detach("package:raster", unload = TRUE)
+
 #Coefficients / constants that are needed for calculations 
 N_mw <- 14.0067    # molecular weight of N 
 P_mw <- 30.973762  # molecular weight of P 
@@ -1625,6 +1627,11 @@ df_all_clean <- df_all_clean %>%
       Site == "SWH" & Zone == "UP" ~ "SWAMP",
       Site == "SWH" & Zone == "UPCON" ~ "UP",
       TRUE ~ `Zone`
+    )) %>%
+  mutate(Sample_Name = case_when(
+      Site == "SWH" & Zone == "SWAMP" ~ gsub("_UP_", "_SWAMP_", Sample_Name), 
+      Site == "SWH" & Zone == "UP" ~ gsub("_UPCON_", "_UP_", Sample_Name), 
+      TRUE ~ Sample_Name
     )) 
 
 ```

@@ -64,7 +64,7 @@ all_dat <- all_dat %>%
 
 ##Set 4 decimal points max
 all_dat <- all_dat %>%
-  mutate(across(where(is.numeric), round, digits = 4)) ##This does make all salnities 0 when Cl_ppm is 0 instead of 0.000026
+  mutate(across(where(is.numeric), round, digits = 4)) ##This does make all salinities 0 when Cl_ppm is 0 instead of 0.000026
 
 ```
 
@@ -210,7 +210,7 @@ data_plotting_all <- data_plotting %>%
   mutate(row_num = factor(row_number())) %>%  # create row_num as factor per group
   ungroup()
 
-data_plotting_all$Date <- as.Date(paste(data_plotting_all$Year, data_plotting_all$Month, data_plotting_all$Day, sep = "-"))
+# data_plotting_all$Date <- as.Date(paste(data_plotting_all$Year, data_plotting_all$Month, data_plotting_all$Day, sep = "-"))
 
 
 #Plot data and change colors based on Zone:

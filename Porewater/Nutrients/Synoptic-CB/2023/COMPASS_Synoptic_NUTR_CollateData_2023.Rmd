@@ -20,13 +20,21 @@ library(ggplot2)
 
 #read in all data from processed data folder 
 files <- list.files(path = "Processed Data", pattern = "\\.csv$", full.names = TRUE)
-list_of_dfs <- lapply(files, read_csv)
+list_of_dfs <- lapply(files, read_csv, col_types = cols(.default = "c"))
 
 #combine those files together into one dataframe 
 combined_df <- bind_rows(list_of_dfs)
 
 combined_df <- combined_df %>%
-  select(-1)
+  select(-1) %>%
+  mutate(NOx_Conc_mgL = as.numeric(NOx_Conc_mgL), 
+         NOx_Conc_uM = as.numeric(NOx_Conc_uM), 
+         NH3_Conc_mgL = as.numeric(NH3_Conc_mgL), 
+         NH3_Conc_uM = as.numeric(NH3_Conc_uM), 
+         PO4_Conc_mgL = as.numeric(PO4_Conc_mgL), 
+         PO4_Conc_uM = as.numeric(PO4_Conc_uM))
+
+colnames(combined_df)
 
 head(combined_df)
 ```
@@ -39,10 +47,13 @@ head(combined_df)
 #not sure what this will look like just yet 
 
 #create a date column from year, month, date columns
-combined_df <- combined_df %>% 
-  mutate(Date = make_date(year = Year, month = Month, day = Day))
-
-final_df <- combined_df
+final_df <- combined_df %>% 
+  mutate(Date = make_date(year = Year, month = Month, day = Day)) %>% 
+  filter(Site != "TEMPEST") %>% 
+  filter(Zone != "RHZ") %>% 
+  filter(!str_detect(Sample_ID, "RHZ")) %>% 
+  filter(Sample_ID != "DI") %>% 
+  filter(Sample_ID != "pe_CHK")
 
 ```
 
@@ -107,7 +118,6 @@ PO4
 ```{r, echo=FALSE}
 
 #write out the csv to the main folder 
-
 write.csv(final_df, "COMPASS_Synoptic_CB_Nutrients_2023.csv")
 
 ```

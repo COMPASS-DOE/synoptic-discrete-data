@@ -269,94 +269,94 @@
 "90","COMPASS: Synoptic","CB","MSM","WC",NA,NA,"MSM_202310_WC_RHZ_Sip_C",NA,NA,NA,NA,NA,0.00837,0.597571162372293,"bdl","",1.215007,86.7447007503552,"Within_Range","",0.046038,1.48635480572234,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
   peCheck for NH3 is out of range, all other run metrics are fine, 
   so accepting this run.",NA
-"91","COMPASS: Synoptic","CB","SWH","SW","A",0,"SWH_202310_SW_A",2023,10,18,NA,NA,0.019307,1.37841176008624,"bdl","",0.012592,0.898998336510384,"bdl","",0.009287,0.299834421146517,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
+"91","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202310_SWAMP_LysA_10cm",2023,10,18,NA,NA,0.002898,0.206900983100945,"bdl","",0.442804,31.6137277160216,"Within_Range","",0.008041,0.259606824640804,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
   peCheck for NH3 is out of range, all other run metrics are fine, 
   so accepting this run.",""
-"92","COMPASS: Synoptic","CB","SWH","SW","B",0,"SWH_202310_SW_B",2023,10,18,NA,NA,0.019565,1.39683151634575,"bdl","",0.013154,0.939121991618297,"bdl","",0.009584,0.309423182111362,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
+"92","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202310_SWAMP_LysA_20cm",2023,10,18,NA,NA,0.00438,0.312707489986935,"bdl","",0.95014,67.8346791178507,"Within_Range","",0.007471,0.241204152082011,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
   peCheck for NH3 is out of range, all other run metrics are fine, 
   so accepting this run.",""
-"93","COMPASS: Synoptic","CB","SWH","SW","C",0,"SWH_202310_SW_C",2023,10,18,NA,NA,0.018416,1.31479934602726,"bdl","",0.020545,1.46679803237022,"Within_Range","",0.009649,0.311521732490874,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
+"93","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202310_SWAMP_LysA_45cm",2023,10,18,NA,NA,0.002376,0.169633104157296,"bdl","",1.706712,121.849686221594,"Within_Range","",0.004727,0.15261304067617,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
   peCheck for NH3 is out of range, all other run metrics are fine, 
   so accepting this run.",""
-"94","COMPASS: Synoptic","CB","SWH","TR","A",10,"SWH_202310_TR_LysA_10cm",2023,10,18,NA,NA,0.007728,0.551735954935852,"bdl","",0.288572,20.6024259818515,"Within_Range","",0.049022,1.58269441083715,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
+"94","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202310_SWAMP_LysB_10cm",2023,10,18,NA,NA,0.009242,0.659827082753254,"bdl","",0.134935,9.6336039181249,"Within_Range","",0.003653,0.117938531328548,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
   peCheck for NH3 is out of range, all other run metrics are fine, 
   so accepting this run.",""
-"95","COMPASS: Synoptic","CB","SWH","TR","A",20,"SWH_202310_TR_LysA_20cm",2023,10,18,NA,NA,0.004778,0.341122462821364,"bdl","",1.187964,84.8139818801002,"Within_Range","",0.009032,0.291601646580742,"bdl","","01/27/24","This run has limited spike checks for NH3 and PO4.
+"95","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202310_SWAMP_LysB_20cm",2023,10,18,NA,NA,0.00168,0.119942598899098,"bdl","",1.74921,124.883805607316,"Within_Range","",0.005578,0.180087907952544,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
   peCheck for NH3 is out of range, all other run metrics are fine, 
   so accepting this run.",""
-"96","COMPASS: Synoptic","CB","SWH","TR","A",45,"SWH_202310_TR_LysA_45cm",2023,10,18,NA,NA,0.004752,0.339266208314592,"bdl","",2.565739,183.17940699808,"Within_Range","",0.371556,11.9958305355352,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
+"96","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202310_SWAMP_LysB_45cm",2023,10,18,NA,NA,0.006357,0.453854226905695,"bdl","",0.766032,54.6903981665917,"Within_Range","",0.009202,0.297090162957925,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
   peCheck for NH3 is out of range, all other run metrics are fine, 
   so accepting this run.",""
-"97","COMPASS: Synoptic","CB","SWH","TR","B",10,"SWH_202310_TR_LysB_10cm",2023,10,18,NA,NA,0.054229,3.87164714029714,"Within_Range","",0.102903,7.34669836578209,"Within_Range","",0.011316,0.365341478377731,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
+"97","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202310_SWAMP_LysC_10cm",2023,10,18,NA,NA,0.004423,0.315777449363519,"bdl","",0.257118,18.3567863950824,"Within_Range","",0.003896,0.125783881208876,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
   peCheck for NH3 is out of range, all other run metrics are fine, 
   so accepting this run.",""
-"98","COMPASS: Synoptic","CB","SWH","TR","B",20,"SWH_202310_TR_LysB_20cm",2023,10,18,NA,NA,0.00916,0.653972741616512,"bdl","",0.233923,16.7007931918296,"Within_Range","",0.151646,4.89595032079087,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
+"98","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202310_SWAMP_LysC_20cm",2023,10,18,NA,NA,0.002753,0.196548794505487,"bdl","",0.879971,62.8250051760943,"Within_Range","",0.002673,0.0862988486836052,"bdl","","01/27/24","This run has limited spike checks for NH3 and PO4.
   peCheck for NH3 is out of range, all other run metrics are fine, 
   so accepting this run.",""
-"99","COMPASS: Synoptic","CB","SWH","TR","B",45,"SWH_202310_TR_LysB_45cm",2023,10,18,NA,NA,0.003423,0.244383045256913,"bdl","",2.44228,174.365125261482,"Within_Range","",0.243419,7.85887745892798,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
+"99","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202310_SWAMP_LysC_45cm",2023,10,18,NA,NA,0.002369,0.16913334332855,"bdl","",1.038318,74.1300948831631,"Within_Range","",0.002917,0.0941764839543869,"bdl","","01/27/24","This run has limited spike checks for NH3 and PO4.
   peCheck for NH3 is out of range, all other run metrics are fine, 
   so accepting this run.",""
-"100","COMPASS: Synoptic","CB","SWH","TR","C",10,"SWH_202310_TR_LysC_10cm",2023,10,18,NA,NA,0.148166,10.5782232788594,"Within_Range","",0.022467,1.60401807706312,"Within_Range","",0.004827,0.155841579721572,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
+"100","COMPASS: Synoptic","CB","SWH","SW","A",0,"SWH_202310_SW_A",2023,10,18,NA,NA,0.019307,1.37841176008624,"bdl","",0.012592,0.898998336510384,"bdl","",0.009287,0.299834421146517,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
   peCheck for NH3 is out of range, all other run metrics are fine, 
   so accepting this run.",""
-"101","COMPASS: Synoptic","CB","SWH","TR","C",20,"SWH_202310_TR_LysC_20cm",2023,10,18,NA,NA,0.000187,0.0133507535679353,"bdl","",1.023721,73.0879507664189,"Within_Range","",0.116449,3.7596014329806,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
+"101","COMPASS: Synoptic","CB","SWH","SW","B",0,"SWH_202310_SW_B",2023,10,18,NA,NA,0.019565,1.39683151634575,"bdl","",0.013154,0.939121991618297,"bdl","",0.009584,0.309423182111362,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
   peCheck for NH3 is out of range, all other run metrics are fine, 
   so accepting this run.",""
-"102","COMPASS: Synoptic","CB","SWH","TR","C",45,"SWH_202310_TR_LysC_45cm",2023,10,18,NA,NA,0.000588,0.0419799096146844,"bdl","",1.855595,132.479099288198,"Within_Range","",0.374206,12.0813868202384,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
+"102","COMPASS: Synoptic","CB","SWH","SW","C",0,"SWH_202310_SW_C",2023,10,18,NA,NA,0.018416,1.31479934602726,"bdl","",0.020545,1.46679803237022,"Within_Range","",0.009649,0.311521732490874,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
   peCheck for NH3 is out of range, all other run metrics are fine, 
   so accepting this run.",""
-"103","COMPASS: Synoptic","CB","SWH","UP","A",10,"SWH_202310_UPCON_LysA_10cm",2023,10,18,NA,NA,0.000866,0.0618275539563209,"bdl","",0.01886,1.34649846145059,"bdl","",0.011043,0.356527566783783,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
+"103","COMPASS: Synoptic","CB","SWH","TR","A",10,"SWH_202310_TR_LysA_10cm",2023,10,18,NA,NA,0.007728,0.551735954935852,"bdl","",0.288572,20.6024259818515,"Within_Range","",0.049022,1.58269441083715,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
   peCheck for NH3 is out of range, all other run metrics are fine, 
   so accepting this run.",""
-"104","COMPASS: Synoptic","CB","SWH","UP","A",20,"SWH_202310_UPCON_LysA_20cm",2023,10,18,NA,NA,0,0,"bdl","",0.01194,0.852449185032877,"bdl","",0.006453,0.208337624599815,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
+"104","COMPASS: Synoptic","CB","SWH","TR","A",20,"SWH_202310_TR_LysA_20cm",2023,10,18,NA,NA,0.004778,0.341122462821364,"bdl","",1.187964,84.8139818801002,"Within_Range","",0.009032,0.291601646580742,"bdl","","01/27/24","This run has limited spike checks for NH3 and PO4.
   peCheck for NH3 is out of range, all other run metrics are fine, 
   so accepting this run.",""
-"105","COMPASS: Synoptic","CB","SWH","UP","A",45,"SWH_202310_UPCON_LysA_45cm",2023,10,18,NA,NA,0.002269,0.161993902917889,"bdl","",0.316126,22.569627392605,"Within_Range","",0.00461,0.148835649993049,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
+"105","COMPASS: Synoptic","CB","SWH","TR","A",45,"SWH_202310_TR_LysA_45cm",2023,10,18,NA,NA,0.004752,0.339266208314592,"bdl","",2.565739,183.17940699808,"Within_Range","",0.371556,11.9958305355352,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
   peCheck for NH3 is out of range, all other run metrics are fine, 
   so accepting this run.",""
-"106","COMPASS: Synoptic","CB","SWH","UP","B",10,"SWH_202310_UPCON_LysB_10cm",2023,10,18,NA,NA,0.003302,0.235744322360013,"bdl","",0.016815,1.20049690505258,"bdl","",0.044612,1.4403158389349,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
+"106","COMPASS: Synoptic","CB","SWH","TR","B",10,"SWH_202310_TR_LysB_10cm",2023,10,18,NA,NA,0.054229,3.87164714029714,"Within_Range","",0.102903,7.34669836578209,"Within_Range","",0.011316,0.365341478377731,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
   peCheck for NH3 is out of range, all other run metrics are fine, 
   so accepting this run.",""
-"107","COMPASS: Synoptic","CB","SWH","UP","B",20,"SWH_202310_UPCON_LysB_20cm",2023,10,18,NA,NA,0.018328,1.30851663846588,"bdl","",0.114271,8.15830995166599,"Within_Range","",0.01911,0.616973811576392,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
+"107","COMPASS: Synoptic","CB","SWH","TR","B",20,"SWH_202310_TR_LysB_20cm",2023,10,18,NA,NA,0.00916,0.653972741616512,"bdl","",0.233923,16.7007931918296,"Within_Range","",0.151646,4.89595032079087,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
   peCheck for NH3 is out of range, all other run metrics are fine, 
   so accepting this run.",""
-"108","COMPASS: Synoptic","CB","SWH","UP","B",45,"SWH_202310_UPCON_LysB_45cm",2023,10,18,NA,NA,0,0,"bdl","",0.283363,20.2305325308602,"Within_Range","",0.004449,0.143637702129951,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
+"108","COMPASS: Synoptic","CB","SWH","TR","B",45,"SWH_202310_TR_LysB_45cm",2023,10,18,NA,NA,0.003423,0.244383045256913,"bdl","",2.44228,174.365125261482,"Within_Range","",0.243419,7.85887745892798,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
   peCheck for NH3 is out of range, all other run metrics are fine, 
   so accepting this run.",""
-"109","COMPASS: Synoptic","CB","SWH","UP","C",10,"SWH_202310_UPCON_LysC_10cm",2023,10,18,NA,NA,0.002387,0.170418442602469,"bdl","",0.021506,1.53540805471667,"Within_Range","",0.021934,0.708147754218554,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
+"109","COMPASS: Synoptic","CB","SWH","TR","C",10,"SWH_202310_TR_LysC_10cm",2023,10,18,NA,NA,0.148166,10.5782232788594,"Within_Range","",0.022467,1.60401807706312,"Within_Range","",0.004827,0.155841579721572,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
   peCheck for NH3 is out of range, all other run metrics are fine, 
   so accepting this run.",""
-"110","COMPASS: Synoptic","CB","SWH","UP","C",20,"SWH_202310_UPCON_LysC_20cm",2023,10,18,NA,NA,0.007218,0.515324808841483,"bdl","",0.039206,2.7990890074036,"Within_Range","",0.005825,0.188062399394688,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
+"110","COMPASS: Synoptic","CB","SWH","TR","C",20,"SWH_202310_TR_LysC_20cm",2023,10,18,NA,NA,0.000187,0.0133507535679353,"bdl","",1.023721,73.0879507664189,"Within_Range","",0.116449,3.7596014329806,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
   peCheck for NH3 is out of range, all other run metrics are fine, 
   so accepting this run.",""
-"111","COMPASS: Synoptic","CB","SWH","UP","C",45,"SWH_202310_UPCON_LysC_45cm",2023,10,18,NA,NA,0.004192,0.299285342014893,"bdl","",0.193568,13.8196720141075,"Within_Range","",0.003922,0.126623301360681,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
+"111","COMPASS: Synoptic","CB","SWH","TR","C",45,"SWH_202310_TR_LysC_45cm",2023,10,18,NA,NA,0.000588,0.0419799096146844,"bdl","",1.855595,132.479099288198,"Within_Range","",0.374206,12.0813868202384,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
   peCheck for NH3 is out of range, all other run metrics are fine, 
   so accepting this run.",""
-"112","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202310_UP_LysA_10cm",2023,10,18,NA,NA,0.002898,0.206900983100945,"bdl","",0.442804,31.6137277160216,"Within_Range","",0.008041,0.259606824640804,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
+"112","COMPASS: Synoptic","CB","SWH","UP","A",10,"SWH_202310_UP_LysA_10cm",2023,10,18,NA,NA,0.000866,0.0618275539563209,"bdl","",0.01886,1.34649846145059,"bdl","",0.011043,0.356527566783783,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
   peCheck for NH3 is out of range, all other run metrics are fine, 
   so accepting this run.",""
-"113","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202310_UP_LysA_20cm",2023,10,18,NA,NA,0.00438,0.312707489986935,"bdl","",0.95014,67.8346791178507,"Within_Range","",0.007471,0.241204152082011,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
+"113","COMPASS: Synoptic","CB","SWH","UP","A",20,"SWH_202310_UP_LysA_20cm",2023,10,18,NA,NA,0,0,"bdl","",0.01194,0.852449185032877,"bdl","",0.006453,0.208337624599815,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
   peCheck for NH3 is out of range, all other run metrics are fine, 
   so accepting this run.",""
-"114","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202310_UP_LysA_45cm",2023,10,18,NA,NA,0.002376,0.169633104157296,"bdl","",1.706712,121.849686221594,"Within_Range","",0.004727,0.15261304067617,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
+"114","COMPASS: Synoptic","CB","SWH","UP","A",45,"SWH_202310_UP_LysA_45cm",2023,10,18,NA,NA,0.002269,0.161993902917889,"bdl","",0.316126,22.569627392605,"Within_Range","",0.00461,0.148835649993049,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
   peCheck for NH3 is out of range, all other run metrics are fine, 
   so accepting this run.",""
-"115","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202310_UP_LysB_10cm",2023,10,18,NA,NA,0.009242,0.659827082753254,"bdl","",0.134935,9.6336039181249,"Within_Range","",0.003653,0.117938531328548,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
+"115","COMPASS: Synoptic","CB","SWH","UP","B",10,"SWH_202310_UP_LysB_10cm",2023,10,18,NA,NA,0.003302,0.235744322360013,"bdl","",0.016815,1.20049690505258,"bdl","",0.044612,1.4403158389349,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
   peCheck for NH3 is out of range, all other run metrics are fine, 
   so accepting this run.",""
-"116","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202310_UP_LysB_20cm",2023,10,18,NA,NA,0.00168,0.119942598899098,"bdl","",1.74921,124.883805607316,"Within_Range","",0.005578,0.180087907952544,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
+"116","COMPASS: Synoptic","CB","SWH","UP","B",20,"SWH_202310_UP_LysB_20cm",2023,10,18,NA,NA,0.018328,1.30851663846588,"bdl","",0.114271,8.15830995166599,"Within_Range","",0.01911,0.616973811576392,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
   peCheck for NH3 is out of range, all other run metrics are fine, 
   so accepting this run.",""
-"117","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202310_UP_LysB_45cm",2023,10,18,NA,NA,0.006357,0.453854226905695,"bdl","",0.766032,54.6903981665917,"Within_Range","",0.009202,0.297090162957925,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
+"117","COMPASS: Synoptic","CB","SWH","UP","B",45,"SWH_202310_UP_LysB_45cm",2023,10,18,NA,NA,0,0,"bdl","",0.283363,20.2305325308602,"Within_Range","",0.004449,0.143637702129951,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
   peCheck for NH3 is out of range, all other run metrics are fine, 
   so accepting this run.",""
-"118","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202310_UP_LysC_10cm",2023,10,18,NA,NA,0.004423,0.315777449363519,"bdl","",0.257118,18.3567863950824,"Within_Range","",0.003896,0.125783881208876,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
+"118","COMPASS: Synoptic","CB","SWH","UP","C",10,"SWH_202310_UP_LysC_10cm",2023,10,18,NA,NA,0.002387,0.170418442602469,"bdl","",0.021506,1.53540805471667,"Within_Range","",0.021934,0.708147754218554,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
   peCheck for NH3 is out of range, all other run metrics are fine, 
   so accepting this run.",""
-"119","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202310_UP_LysC_20cm",2023,10,18,NA,NA,0.002753,0.196548794505487,"bdl","",0.879971,62.8250051760943,"Within_Range","",0.002673,0.0862988486836052,"bdl","","01/27/24","This run has limited spike checks for NH3 and PO4.
+"119","COMPASS: Synoptic","CB","SWH","UP","C",20,"SWH_202310_UP_LysC_20cm",2023,10,18,NA,NA,0.007218,0.515324808841483,"bdl","",0.039206,2.7990890074036,"Within_Range","",0.005825,0.188062399394688,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
   peCheck for NH3 is out of range, all other run metrics are fine, 
   so accepting this run.",""
-"120","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202310_UP_LysC_45cm",2023,10,18,NA,NA,0.002369,0.16913334332855,"bdl","",1.038318,74.1300948831631,"Within_Range","",0.002917,0.0941764839543869,"bdl","","01/27/24","This run has limited spike checks for NH3 and PO4.
+"120","COMPASS: Synoptic","CB","SWH","UP","C",45,"SWH_202310_UP_LysC_45cm",2023,10,18,NA,NA,0.004192,0.299285342014893,"bdl","",0.193568,13.8196720141075,"Within_Range","",0.003922,0.126623301360681,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.
   peCheck for NH3 is out of range, all other run metrics are fine, 
   so accepting this run.",""
 "121","COMPASS: Synoptic","CB","SWH","WC","A",10,"SWH_202310_WC_LysA_10cm",2023,10,18,NA,NA,0.003104,0.221608230346905,"bdl","",0.034432,2.45825212219866,"Within_Range","",0.011313,0.365244622206369,"Within_Range","","01/27/24","This run has limited spike checks for NH3 and PO4.

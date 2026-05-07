@@ -132,10 +132,15 @@ dat<-read_plates(
   plate_names = file_paths_tidydata ,     #list of plate names          
   well_ids_column = "Wells",              # name to give column of well IDs (optional)
   sep = ","                               # separator used in the csv file (optional)
-) %>%
-  rename("Abs"=values,
-         "IDs"=values.2,
-         "Dilution"=values.3)
+) 
+
+colnames(dat) <- c("Plate", "Wells", "Abs", "IDs", "Dilution")
+
+
+# %>%
+  # rename("Abs"= `o;<bf>`,
+  #        "IDs"=values,
+  #        "Dilution"=values.3)
 
 dat <- dat %>%
   mutate(Plate = str_extract(Plate, "Plate[0-9]+"))

@@ -593,6 +593,60 @@ COMPASS: Synoptic,CB,MSM,WC,C,20,MSM_202305_WC_LysC_20cm,2023,5,19,,,0,0,bdl,NOx
   Autospikes for PO4 not included in this run. 
   Sample TEMPEST_20230513_CON_C6 was input twice.
   NH3 and PO4 have low number of duplicates due to the bad standard curve run",
+COMPASS: Synoptic,CB,SWH,SWAMP,A,10,SWH_202305_SWAMP_LysA_10cm,2023,5,24,,,0.012039,0.859517231039431,bdl,NOx dups out of range,,,,,,,,PO4 dups out of range,20230603/20230111,"Multiple months of data were mixed together so they were parsed 
+  and cleaned prior to read in.
+  Samples ran on 01/11/24 were not included because of boor standard curve.
+  Autospikes for PO4 not included in this run. 
+  Sample TEMPEST_20230513_CON_C6 was input twice.
+  NH3 and PO4 have low number of duplicates due to the bad standard curve run",
+COMPASS: Synoptic,CB,SWH,SWAMP,A,20,SWH_202305_SWAMP_LysA_20cm,2023,5,24,,,0.007295,0.520822177957692,bdl,NOx dups out of range,,,,,,,,PO4 dups out of range,20230603/20230111,"Multiple months of data were mixed together so they were parsed 
+  and cleaned prior to read in.
+  Samples ran on 01/11/24 were not included because of boor standard curve.
+  Autospikes for PO4 not included in this run. 
+  Sample TEMPEST_20230513_CON_C6 was input twice.
+  NH3 and PO4 have low number of duplicates due to the bad standard curve run",
+COMPASS: Synoptic,CB,SWH,SWAMP,A,45,SWH_202305_SWAMP_LysA_45cm,2023,5,24,,,0.007935,0.56651459658592,bdl,NOx dups out of range,,,,,,,,PO4 dups out of range,20230603/20230111,"Multiple months of data were mixed together so they were parsed 
+  and cleaned prior to read in.
+  Samples ran on 01/11/24 were not included because of boor standard curve.
+  Autospikes for PO4 not included in this run. 
+  Sample TEMPEST_20230513_CON_C6 was input twice.
+  NH3 and PO4 have low number of duplicates due to the bad standard curve run",
+COMPASS: Synoptic,CB,SWH,SWAMP,,,SWH_202305_SWAMP_LysB_10cm,,,,,,0.058762,4.19527797411239,Within_Range,NOx dups out of range,,,,,,,,PO4 dups out of range,20230603/20230111,"Multiple months of data were mixed together so they were parsed 
+  and cleaned prior to read in.
+  Samples ran on 01/11/24 were not included because of boor standard curve.
+  Autospikes for PO4 not included in this run. 
+  Sample TEMPEST_20230513_CON_C6 was input twice.
+  NH3 and PO4 have low number of duplicates due to the bad standard curve run",
+COMPASS: Synoptic,CB,SWH,SWAMP,B,20,SWH_202305_SWAMP_LysB_20cm,2023,5,24,,,0.023021,1.64357057693818,bdl,NOx dups out of range,,,,,,,,PO4 dups out of range,20230603/20230111,"Multiple months of data were mixed together so they were parsed 
+  and cleaned prior to read in.
+  Samples ran on 01/11/24 were not included because of boor standard curve.
+  Autospikes for PO4 not included in this run. 
+  Sample TEMPEST_20230513_CON_C6 was input twice.
+  NH3 and PO4 have low number of duplicates due to the bad standard curve run",
+COMPASS: Synoptic,CB,SWH,SWAMP,B,45,SWH_202305_SWAMP_LysB_45cm,2023,5,24,,,0.001318,0.0940978246125069,bdl,NOx dups out of range,,,,,,,,PO4 dups out of range,20230603/20230111,"Multiple months of data were mixed together so they were parsed 
+  and cleaned prior to read in.
+  Samples ran on 01/11/24 were not included because of boor standard curve.
+  Autospikes for PO4 not included in this run. 
+  Sample TEMPEST_20230513_CON_C6 was input twice.
+  NH3 and PO4 have low number of duplicates due to the bad standard curve run",
+COMPASS: Synoptic,CB,SWH,SWAMP,C,10,SWH_202305_SWAMP_LysC_10cm,2023,5,24,,,0.006139,0.438290246810455,bdl,NOx dups out of range,,,,,,,,PO4 dups out of range,20230603/20230111,"Multiple months of data were mixed together so they were parsed 
+  and cleaned prior to read in.
+  Samples ran on 01/11/24 were not included because of boor standard curve.
+  Autospikes for PO4 not included in this run. 
+  Sample TEMPEST_20230513_CON_C6 was input twice.
+  NH3 and PO4 have low number of duplicates due to the bad standard curve run",
+COMPASS: Synoptic,CB,SWH,SWAMP,C,20,SWH_202305_SWAMP_LysC_20cm,2023,5,24,,,0.008494,0.606424068481512,bdl,NOx dups out of range,,,,,,,,PO4 dups out of range,20230603/20230111,"Multiple months of data were mixed together so they were parsed 
+  and cleaned prior to read in.
+  Samples ran on 01/11/24 were not included because of boor standard curve.
+  Autospikes for PO4 not included in this run. 
+  Sample TEMPEST_20230513_CON_C6 was input twice.
+  NH3 and PO4 have low number of duplicates due to the bad standard curve run",
+COMPASS: Synoptic,CB,SWH,SWAMP,C,45,SWH_202305_SWAMP_LysC_45cm,2023,5,24,,,0.012027,0.858660498190152,bdl,NOx dups out of range,,,,,,,,PO4 dups out of range,20230603/20230111,"Multiple months of data were mixed together so they were parsed 
+  and cleaned prior to read in.
+  Samples ran on 01/11/24 were not included because of boor standard curve.
+  Autospikes for PO4 not included in this run. 
+  Sample TEMPEST_20230513_CON_C6 was input twice.
+  NH3 and PO4 have low number of duplicates due to the bad standard curve run",
 COMPASS: Synoptic,CB,SWH,SW,A,0,SWH_202305_SW_A,2023,5,24,,,0.135192,9.65195227998029,Within_Range,NOx dups out of range,,,,,,,,PO4 dups out of range,20230603/20230111,"Multiple months of data were mixed together so they were parsed 
   and cleaned prior to read in.
   Samples ran on 01/11/24 were not included because of boor standard curve.
@@ -659,103 +713,49 @@ COMPASS: Synoptic,CB,SWH,TR,C,45,SWH_202305_TR_LysC_45cm,2023,5,24,,,0.010243,0.
   Autospikes for PO4 not included in this run. 
   Sample TEMPEST_20230513_CON_C6 was input twice.
   NH3 and PO4 have low number of duplicates due to the bad standard curve run",
-COMPASS: Synoptic,CB,SWH,UP,,,SWH_202305_UPCON_LysA_10cm,,,,,,0.014921,1.06527590367467,bdl,NOx dups out of range,,,,,,,,PO4 dups out of range,20230603/20230111,"Multiple months of data were mixed together so they were parsed 
+COMPASS: Synoptic,CB,SWH,UP,,,SWH_202305_UP_LysA_10cm,,,,,,0.014921,1.06527590367467,bdl,NOx dups out of range,,,,,,,,PO4 dups out of range,20230603/20230111,"Multiple months of data were mixed together so they were parsed 
   and cleaned prior to read in.
   Samples ran on 01/11/24 were not included because of boor standard curve.
   Autospikes for PO4 not included in this run. 
   Sample TEMPEST_20230513_CON_C6 was input twice.
   NH3 and PO4 have low number of duplicates due to the bad standard curve run",
-COMPASS: Synoptic,CB,SWH,UP,,,SWH_202305_UPCON_LysA_20cm,,,,,,0.01562,1.11518059214519,bdl,NOx dups out of range,,,,,,,,PO4 dups out of range,20230603/20230111,"Multiple months of data were mixed together so they were parsed 
+COMPASS: Synoptic,CB,SWH,UP,,,SWH_202305_UP_LysA_20cm,,,,,,0.01562,1.11518059214519,bdl,NOx dups out of range,,,,,,,,PO4 dups out of range,20230603/20230111,"Multiple months of data were mixed together so they were parsed 
   and cleaned prior to read in.
   Samples ran on 01/11/24 were not included because of boor standard curve.
   Autospikes for PO4 not included in this run. 
   Sample TEMPEST_20230513_CON_C6 was input twice.
   NH3 and PO4 have low number of duplicates due to the bad standard curve run",
-COMPASS: Synoptic,CB,SWH,UP,,,SWH_202305_UPCON_LysA_45cm,,,,,,0.007868,0.561731171510777,bdl,NOx dups out of range,,,,,,,,PO4 dups out of range,20230603/20230111,"Multiple months of data were mixed together so they were parsed 
+COMPASS: Synoptic,CB,SWH,UP,,,SWH_202305_UP_LysA_45cm,,,,,,0.007868,0.561731171510777,bdl,NOx dups out of range,,,,,,,,PO4 dups out of range,20230603/20230111,"Multiple months of data were mixed together so they were parsed 
   and cleaned prior to read in.
   Samples ran on 01/11/24 were not included because of boor standard curve.
   Autospikes for PO4 not included in this run. 
   Sample TEMPEST_20230513_CON_C6 was input twice.
   NH3 and PO4 have low number of duplicates due to the bad standard curve run",
-COMPASS: Synoptic,CB,SWH,UP,,,SWH_202305_UPCON_LysB_10cm,,,,,,0.02629,1.87695888396267,Within_Range,NOx dups out of range,,,,,,,,PO4 dups out of range,20230603/20230111,"Multiple months of data were mixed together so they were parsed 
+COMPASS: Synoptic,CB,SWH,UP,,,SWH_202305_UP_LysB_10cm,,,,,,0.02629,1.87695888396267,Within_Range,NOx dups out of range,,,,,,,,PO4 dups out of range,20230603/20230111,"Multiple months of data were mixed together so they were parsed 
   and cleaned prior to read in.
   Samples ran on 01/11/24 were not included because of boor standard curve.
   Autospikes for PO4 not included in this run. 
   Sample TEMPEST_20230513_CON_C6 was input twice.
   NH3 and PO4 have low number of duplicates due to the bad standard curve run",
-COMPASS: Synoptic,CB,SWH,UP,,,SWH_202305_UPCON_LysB_20cm,,,,,,0.009008,0.643120792192308,bdl,NOx dups out of range,,,,,,,,PO4 dups out of range,20230603/20230111,"Multiple months of data were mixed together so they were parsed 
+COMPASS: Synoptic,CB,SWH,UP,,,SWH_202305_UP_LysB_20cm,,,,,,0.009008,0.643120792192308,bdl,NOx dups out of range,,,,,,,,PO4 dups out of range,20230603/20230111,"Multiple months of data were mixed together so they were parsed 
   and cleaned prior to read in.
   Samples ran on 01/11/24 were not included because of boor standard curve.
   Autospikes for PO4 not included in this run. 
   Sample TEMPEST_20230513_CON_C6 was input twice.
   NH3 and PO4 have low number of duplicates due to the bad standard curve run",
-COMPASS: Synoptic,CB,SWH,UP,,,SWH_202305_UPCON_LysB_45cm,,,,,,0.008606,0.614420241741452,bdl,NOx dups out of range,,,,,,,,PO4 dups out of range,20230603/20230111,"Multiple months of data were mixed together so they were parsed 
+COMPASS: Synoptic,CB,SWH,UP,,,SWH_202305_UP_LysB_45cm,,,,,,0.008606,0.614420241741452,bdl,NOx dups out of range,,,,,,,,PO4 dups out of range,20230603/20230111,"Multiple months of data were mixed together so they were parsed 
   and cleaned prior to read in.
   Samples ran on 01/11/24 were not included because of boor standard curve.
   Autospikes for PO4 not included in this run. 
   Sample TEMPEST_20230513_CON_C6 was input twice.
   NH3 and PO4 have low number of duplicates due to the bad standard curve run",
-COMPASS: Synoptic,CB,SWH,UP,,,SWH_202305_UPCON_LysC_20cm,,,,,,0.016006,1.14273883213034,bdl,NOx dups out of range,,,,,,,,PO4 dups out of range,20230603/20230111,"Multiple months of data were mixed together so they were parsed 
+COMPASS: Synoptic,CB,SWH,UP,,,SWH_202305_UP_LysC_20cm,,,,,,0.016006,1.14273883213034,bdl,NOx dups out of range,,,,,,,,PO4 dups out of range,20230603/20230111,"Multiple months of data were mixed together so they were parsed 
   and cleaned prior to read in.
   Samples ran on 01/11/24 were not included because of boor standard curve.
   Autospikes for PO4 not included in this run. 
   Sample TEMPEST_20230513_CON_C6 was input twice.
   NH3 and PO4 have low number of duplicates due to the bad standard curve run",
-COMPASS: Synoptic,CB,SWH,UP,,,SWH_202305_UPCON_LysC_45cm,,,,,,0.008815,0.629341672199733,bdl,NOx dups out of range,,,,,,,,PO4 dups out of range,20230603/20230111,"Multiple months of data were mixed together so they were parsed 
-  and cleaned prior to read in.
-  Samples ran on 01/11/24 were not included because of boor standard curve.
-  Autospikes for PO4 not included in this run. 
-  Sample TEMPEST_20230513_CON_C6 was input twice.
-  NH3 and PO4 have low number of duplicates due to the bad standard curve run",
-COMPASS: Synoptic,CB,SWH,SWAMP,A,10,SWH_202305_UP_LysA_10cm,2023,5,24,,,0.012039,0.859517231039431,bdl,NOx dups out of range,,,,,,,,PO4 dups out of range,20230603/20230111,"Multiple months of data were mixed together so they were parsed 
-  and cleaned prior to read in.
-  Samples ran on 01/11/24 were not included because of boor standard curve.
-  Autospikes for PO4 not included in this run. 
-  Sample TEMPEST_20230513_CON_C6 was input twice.
-  NH3 and PO4 have low number of duplicates due to the bad standard curve run",
-COMPASS: Synoptic,CB,SWH,SWAMP,A,20,SWH_202305_UP_LysA_20cm,2023,5,24,,,0.007295,0.520822177957692,bdl,NOx dups out of range,,,,,,,,PO4 dups out of range,20230603/20230111,"Multiple months of data were mixed together so they were parsed 
-  and cleaned prior to read in.
-  Samples ran on 01/11/24 were not included because of boor standard curve.
-  Autospikes for PO4 not included in this run. 
-  Sample TEMPEST_20230513_CON_C6 was input twice.
-  NH3 and PO4 have low number of duplicates due to the bad standard curve run",
-COMPASS: Synoptic,CB,SWH,SWAMP,A,45,SWH_202305_UP_LysA_45cm,2023,5,24,,,0.007935,0.56651459658592,bdl,NOx dups out of range,,,,,,,,PO4 dups out of range,20230603/20230111,"Multiple months of data were mixed together so they were parsed 
-  and cleaned prior to read in.
-  Samples ran on 01/11/24 were not included because of boor standard curve.
-  Autospikes for PO4 not included in this run. 
-  Sample TEMPEST_20230513_CON_C6 was input twice.
-  NH3 and PO4 have low number of duplicates due to the bad standard curve run",
-COMPASS: Synoptic,CB,SWH,SWAMP,,,SWH_202305_UP_LysB_10cm,,,,,,0.058762,4.19527797411239,Within_Range,NOx dups out of range,,,,,,,,PO4 dups out of range,20230603/20230111,"Multiple months of data were mixed together so they were parsed 
-  and cleaned prior to read in.
-  Samples ran on 01/11/24 were not included because of boor standard curve.
-  Autospikes for PO4 not included in this run. 
-  Sample TEMPEST_20230513_CON_C6 was input twice.
-  NH3 and PO4 have low number of duplicates due to the bad standard curve run",
-COMPASS: Synoptic,CB,SWH,SWAMP,B,20,SWH_202305_UP_LysB_20cm,2023,5,24,,,0.023021,1.64357057693818,bdl,NOx dups out of range,,,,,,,,PO4 dups out of range,20230603/20230111,"Multiple months of data were mixed together so they were parsed 
-  and cleaned prior to read in.
-  Samples ran on 01/11/24 were not included because of boor standard curve.
-  Autospikes for PO4 not included in this run. 
-  Sample TEMPEST_20230513_CON_C6 was input twice.
-  NH3 and PO4 have low number of duplicates due to the bad standard curve run",
-COMPASS: Synoptic,CB,SWH,SWAMP,B,45,SWH_202305_UP_LysB_45cm,2023,5,24,,,0.001318,0.0940978246125069,bdl,NOx dups out of range,,,,,,,,PO4 dups out of range,20230603/20230111,"Multiple months of data were mixed together so they were parsed 
-  and cleaned prior to read in.
-  Samples ran on 01/11/24 were not included because of boor standard curve.
-  Autospikes for PO4 not included in this run. 
-  Sample TEMPEST_20230513_CON_C6 was input twice.
-  NH3 and PO4 have low number of duplicates due to the bad standard curve run",
-COMPASS: Synoptic,CB,SWH,SWAMP,C,10,SWH_202305_UP_LysC_10cm,2023,5,24,,,0.006139,0.438290246810455,bdl,NOx dups out of range,,,,,,,,PO4 dups out of range,20230603/20230111,"Multiple months of data were mixed together so they were parsed 
-  and cleaned prior to read in.
-  Samples ran on 01/11/24 were not included because of boor standard curve.
-  Autospikes for PO4 not included in this run. 
-  Sample TEMPEST_20230513_CON_C6 was input twice.
-  NH3 and PO4 have low number of duplicates due to the bad standard curve run",
-COMPASS: Synoptic,CB,SWH,SWAMP,C,20,SWH_202305_UP_LysC_20cm,2023,5,24,,,0.008494,0.606424068481512,bdl,NOx dups out of range,,,,,,,,PO4 dups out of range,20230603/20230111,"Multiple months of data were mixed together so they were parsed 
-  and cleaned prior to read in.
-  Samples ran on 01/11/24 were not included because of boor standard curve.
-  Autospikes for PO4 not included in this run. 
-  Sample TEMPEST_20230513_CON_C6 was input twice.
-  NH3 and PO4 have low number of duplicates due to the bad standard curve run",
-COMPASS: Synoptic,CB,SWH,SWAMP,C,45,SWH_202305_UP_LysC_45cm,2023,5,24,,,0.012027,0.858660498190152,bdl,NOx dups out of range,,,,,,,,PO4 dups out of range,20230603/20230111,"Multiple months of data were mixed together so they were parsed 
+COMPASS: Synoptic,CB,SWH,UP,,,SWH_202305_UP_LysC_45cm,,,,,,0.008815,0.629341672199733,bdl,NOx dups out of range,,,,,,,,PO4 dups out of range,20230603/20230111,"Multiple months of data were mixed together so they were parsed 
   and cleaned prior to read in.
   Samples ran on 01/11/24 were not included because of boor standard curve.
   Autospikes for PO4 not included in this run. 

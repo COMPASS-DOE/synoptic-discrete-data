@@ -214,6 +214,15 @@ df_all <- df %>%
   mutate(Run_Number = as.numeric(Run_Number))
 ```
 
+##Fix Sample IDs
+```{r}
+
+df_all <- df_all %>% 
+  mutate(Sample_Name = gsub("MMS_202304_WC_LysB_10cm", "MSM_202304_WC_LysB_10cm", Sample_Name))
+
+```
+
+
 \newpage
 
 ## Assessing standard Curves
