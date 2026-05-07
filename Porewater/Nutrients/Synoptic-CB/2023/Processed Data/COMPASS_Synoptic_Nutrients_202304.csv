@@ -97,105 +97,103 @@
   parameters are fine so accepting this run.",""
 "49","COMPASS: Synoptic","CB","GWI","WC","C",20,"GWI_202304_WC_LysC_20cm",2023,4,25,NA,NA,"0.015656","1.11775079069303","bdl","NOx r2 low","0.326966","23.3435427331206","Within_Range","","0.008133","0.262577080562574","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
   parameters are fine so accepting this run.",""
-"50","COMPASS: Synoptic","CB","MMS","WC",NA,NA,"MMS_202304_WC_LysB_10cm",NA,NA,NA,NA,NA,"0.004967","0.354616005197513","bdl","NOx r2 low","NULL","NULL","NULL","","NULL","NULL","NULL","","06/04/2023","NH3 3rd Party Check off, but all other run 
+"50","COMPASS: Synoptic","CB","MSM","SW","A",0,"MSM_202304_SW_A",2023,4,24,NA,NA,"0.009886","0.705805078997908","bdl","NOx r2 low","0.152359","10.8775800152784","Within_Range","","0.001987","0.064151070832145","bdl","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"51","COMPASS: Synoptic","CB","MSM","SW","B",0,"MSM_202304_SW_B",2023,4,24,NA,NA,"0.009778","0.698094483354395","bdl","NOx r2 low","0.157535","11.2471174509342","Within_Range","","0.001303","0.0420678637615928","bdl","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"52","COMPASS: Synoptic","CB","MSM","SW","C",0,"MSM_202304_SW_C",2023,4,24,NA,NA,"0.011538","0.823748634582022","bdl","NOx r2 low","0.138848","9.91297022139405","Within_Range","","0.001743","0.0562734355613632","bdl","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"53","COMPASS: Synoptic","CB","MSM","TR","A",10,"MSM_202304_TR_LysA_10cm",2023,4,24,NA,NA,"0.006582","0.469917967829681","bdl","NOx r2 low","0.061516","4.39189816302198","Within_Range","","0.008046","0.259768251593074","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"54","COMPASS: Synoptic","CB","MSM","TR","A",20,"MSM_202304_TR_LysA_20cm",2023,4,24,NA,NA,"0.000314","0.0224178428894743","bdl","NOx r2 low","1.655024","118.159452262132","Within_Range","","0.018583","0.599959410807121","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"55","COMPASS: Synoptic","CB","MSM","TR","A",45,"MSM_202304_TR_LysA_45cm",2023,4,24,NA,NA,"0.002479","0.176986727780277","bdl","NOx r2 low","1.101478","78.6393654465363","Within_Range","","0.04142","1.33726087260566","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"56","COMPASS: Synoptic","CB","MSM","TR","B",10,"MSM_202304_TR_LysB_10cm",2023,4,24,NA,NA,"0.012625","0.901354351845902","bdl","NOx r2 low","0.173016","12.3523742209086","Within_Range","","0.009732","0.314201419898558","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"57","COMPASS: Synoptic","CB","MSM","TR","B",20,"MSM_202304_TR_LysB_20cm",2023,4,24,NA,NA,"0.002713","0.193693018341222","bdl","NOx r2 low","1.141872","81.5232710060185","Within_Range","","0.010759","0.34735851589484","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"58","COMPASS: Synoptic","CB","MSM","TR","B",45,"MSM_202304_TR_LysB_45cm",2023,4,24,NA,NA,"0.00469","0.334839755259983","bdl","NOx r2 low","1.508024","107.664474858461","Within_Range","","0.022875","0.738528306635791","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"59","COMPASS: Synoptic","CB","MSM","TR","C",10,"MSM_202304_TR_LysC_10cm",2023,4,24,NA,NA,"0.004958","0.353973455560553","bdl","NOx r2 low","0.395239","28.2178528846909","Within_Range","","0.010315","0.333023802533254","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"60","COMPASS: Synoptic","CB","MSM","TR","C",20,"MSM_202304_TR_LysC_20cm",2023,4,24,NA,NA,"0.002296","0.163921551828768","bdl","NOx r2 low","1.768716","126.27642485382","Within_Range","","0.017241","0.556632416817821","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"61","COMPASS: Synoptic","CB","MSM","TR","C",45,"MSM_202304_TR_LysC_45cm",2023,4,24,NA,NA,"0.001937","0.138290960754496","bdl","NOx r2 low","1.6932","120.885005033305","Within_Range","","0.040908","1.3207307526932","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"62","COMPASS: Synoptic","CB","MSM","UP","A",20,"MSM_202304_UP_LysA_20cm",2023,4,24,NA,NA,"0.006471","0.461993188973848","bdl","NOx r2 low","1.293663","92.3602989997644","Within_Range","","0.009653","0.31165087405269","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"63","COMPASS: Synoptic","CB","MSM","UP","A",45,"MSM_202304_UP_LysA_45cm",2023,4,24,NA,NA,"0.006773","0.483554299014043","bdl","NOx r2 low","1.180041","84.2483240163636","Within_Range","","0.02076","0.670244705825531","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"64","COMPASS: Synoptic","CB","MSM","UP","B",10,"MSM_202304_UP_LysB_10cm",2023,4,24,NA,NA,"0.003985","0.284506700364825","bdl","NOx r2 low","0.055432","3.95753460843739","Within_Range","","0.004005","0.129302988768365","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"65","COMPASS: Synoptic","CB","MSM","UP","B",20,"MSM_202304_UP_LysB_20cm",2023,4,24,NA,NA,"0.007757","0.553806392654944","bdl","NOx r2 low","0.310648","22.178528846909","Within_Range","","0.003886","0.125461027304336","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"66","COMPASS: Synoptic","CB","MSM","UP","B",45,"MSM_202304_UP_LysB_45cm",2023,4,24,NA,NA,"0.006868","0.490336767404171","bdl","NOx r2 low","0.651014","46.4787565950581","Within_Range","","0.015691","0.506590061614085","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"67","COMPASS: Synoptic","CB","MSM","UP","C",10,"MSM_202304_UP_LysC_10cm",2023,4,24,NA,NA,"0.00783","0.559018184154726","bdl","NOx r2 low","0.411369","29.3694446229305","Within_Range","","0.007038","0.227224578015418","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"68","COMPASS: Synoptic","CB","MSM","UP","C",20,"MSM_202304_UP_LysC_20cm",2023,4,24,NA,NA,"0.008553","0.610636338323802","bdl","NOx r2 low","1.412201","100.823248873753","Within_Range","","0.008676","0.280108047579109","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"69","COMPASS: Synoptic","CB","MSM","WC","A",10,"MSM_202304_WC_LysA_10cm",2023,4,24,NA,NA,"0.00588","0.419799096146844","bdl","NOx r2 low","0","0","bdl","","0.004981","0.160813529851492","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"70","COMPASS: Synoptic","CB","MSM","WC","A",20,"MSM_202304_WC_LysA_20cm",2023,4,24,NA,NA,"0.004349","0.31049426345963","bdl","NOx r2 low","0.37939","27.0863229740053","Within_Range","","0.021894","0.706856338600393","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"71","COMPASS: Synoptic","CB","MSM","WC","A",45,"MSM_202304_WC_LysA_45cm",2023,4,24,NA,NA,"0.004859","0.346905409553999","bdl","NOx r2 low","0.264459","18.8808927156289","Within_Range","","0.019676","0.635247342573369","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"72","COMPASS: Synoptic","CB","MSM","WC","B",10,"MSM_202304_WC_LysB_10cm",2023,4,24,NA,NA,"0.004967","0.354616005197513","bdl","NOx r2 low","0.179774","12.834857603861","Within_Range","","0.022691","0.73258779479225","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"73","COMPASS: Synoptic","CB","MSM","WC","B",20,"MSM_202304_WC_LysB_20cm",2023,4,24,NA,NA,"0.002097","0.149714065411553","bdl","NOx r2 low","0.199648","14.2537499910757","Within_Range","","0.036642","1.18300127701633","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"74","COMPASS: Synoptic","CB","MSM","WC","C",10,"MSM_202304_WC_LysC_10cm",2023,4,24,NA,NA,"0.001222","0.0872439618182727","bdl","NOx r2 low","0.331774","23.6868070280651","Within_Range","","0.023865","0.770490843185274","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"75","COMPASS: Synoptic","CB","MSM","WC","C",20,"MSM_202304_WC_LysC_20cm",2023,4,24,NA,NA,"0.006694","0.477914141089621","bdl","NOx r2 low","1.153183","82.3308131108684","Within_Range","","0.057651","1.86128504506492","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"76","COMPASS: Synoptic","CB","MSM","WC","C",45,"MSM_202304_WC_LysC_45cm",2023,4,24,NA,NA,"0.00766","0.546881135456603","bdl","NOx r2 low","1.437025","102.595543561296","Within_Range","","0.013784","0.445021822018262","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+  parameters are fine so accepting this run.",""
+"77","COMPASS: Synoptic","CB","TEMPEST","CON",NA,NA,"TEMPEST_20230513_CON_C6",NA,NA,NA,NA,NA,"c(0.001942, 0)","c(0.138647932775029, 0)","c(""bdl"", ""bdl"")","NOx r2 low","NULL","NULL","NULL","","NULL","NULL","NULL","","06/04/2023","NH3 3rd Party Check off, but all other run 
   parameters are fine so accepting this run.",NA
-"51","COMPASS: Synoptic","CB","MSM","SW","A",0,"MSM_202304_SW_A",2023,4,24,NA,NA,"0.009886","0.705805078997908","bdl","NOx r2 low","0.152359","10.8775800152784","Within_Range","","0.001987","0.064151070832145","bdl","","06/04/2023","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.",""
-"52","COMPASS: Synoptic","CB","MSM","SW","B",0,"MSM_202304_SW_B",2023,4,24,NA,NA,"0.009778","0.698094483354395","bdl","NOx r2 low","0.157535","11.2471174509342","Within_Range","","0.001303","0.0420678637615928","bdl","","06/04/2023","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.",""
-"53","COMPASS: Synoptic","CB","MSM","SW","C",0,"MSM_202304_SW_C",2023,4,24,NA,NA,"0.011538","0.823748634582022","bdl","NOx r2 low","0.138848","9.91297022139405","Within_Range","","0.001743","0.0562734355613632","bdl","","06/04/2023","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.",""
-"54","COMPASS: Synoptic","CB","MSM","TR","A",10,"MSM_202304_TR_LysA_10cm",2023,4,24,NA,NA,"0.006582","0.469917967829681","bdl","NOx r2 low","0.061516","4.39189816302198","Within_Range","","0.008046","0.259768251593074","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.",""
-"55","COMPASS: Synoptic","CB","MSM","TR","A",20,"MSM_202304_TR_LysA_20cm",2023,4,24,NA,NA,"0.000314","0.0224178428894743","bdl","NOx r2 low","1.655024","118.159452262132","Within_Range","","0.018583","0.599959410807121","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.",""
-"56","COMPASS: Synoptic","CB","MSM","TR","A",45,"MSM_202304_TR_LysA_45cm",2023,4,24,NA,NA,"0.002479","0.176986727780277","bdl","NOx r2 low","1.101478","78.6393654465363","Within_Range","","0.04142","1.33726087260566","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.",""
-"57","COMPASS: Synoptic","CB","MSM","TR","B",10,"MSM_202304_TR_LysB_10cm",2023,4,24,NA,NA,"0.012625","0.901354351845902","bdl","NOx r2 low","0.173016","12.3523742209086","Within_Range","","0.009732","0.314201419898558","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.",""
-"58","COMPASS: Synoptic","CB","MSM","TR","B",20,"MSM_202304_TR_LysB_20cm",2023,4,24,NA,NA,"0.002713","0.193693018341222","bdl","NOx r2 low","1.141872","81.5232710060185","Within_Range","","0.010759","0.34735851589484","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.",""
-"59","COMPASS: Synoptic","CB","MSM","TR","B",45,"MSM_202304_TR_LysB_45cm",2023,4,24,NA,NA,"0.00469","0.334839755259983","bdl","NOx r2 low","1.508024","107.664474858461","Within_Range","","0.022875","0.738528306635791","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.",""
-"60","COMPASS: Synoptic","CB","MSM","TR","C",10,"MSM_202304_TR_LysC_10cm",2023,4,24,NA,NA,"0.004958","0.353973455560553","bdl","NOx r2 low","0.395239","28.2178528846909","Within_Range","","0.010315","0.333023802533254","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.",""
-"61","COMPASS: Synoptic","CB","MSM","TR","C",20,"MSM_202304_TR_LysC_20cm",2023,4,24,NA,NA,"0.002296","0.163921551828768","bdl","NOx r2 low","1.768716","126.27642485382","Within_Range","","0.017241","0.556632416817821","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.",""
-"62","COMPASS: Synoptic","CB","MSM","TR","C",45,"MSM_202304_TR_LysC_45cm",2023,4,24,NA,NA,"0.001937","0.138290960754496","bdl","NOx r2 low","1.6932","120.885005033305","Within_Range","","0.040908","1.3207307526932","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.",""
-"63","COMPASS: Synoptic","CB","MSM","UP","A",20,"MSM_202304_UP_LysA_20cm",2023,4,24,NA,NA,"0.006471","0.461993188973848","bdl","NOx r2 low","1.293663","92.3602989997644","Within_Range","","0.009653","0.31165087405269","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.",""
-"64","COMPASS: Synoptic","CB","MSM","UP","A",45,"MSM_202304_UP_LysA_45cm",2023,4,24,NA,NA,"0.006773","0.483554299014043","bdl","NOx r2 low","1.180041","84.2483240163636","Within_Range","","0.02076","0.670244705825531","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.",""
-"65","COMPASS: Synoptic","CB","MSM","UP","B",10,"MSM_202304_UP_LysB_10cm",2023,4,24,NA,NA,"0.003985","0.284506700364825","bdl","NOx r2 low","0.055432","3.95753460843739","Within_Range","","0.004005","0.129302988768365","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.",""
-"66","COMPASS: Synoptic","CB","MSM","UP","B",20,"MSM_202304_UP_LysB_20cm",2023,4,24,NA,NA,"0.007757","0.553806392654944","bdl","NOx r2 low","0.310648","22.178528846909","Within_Range","","0.003886","0.125461027304336","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.",""
-"67","COMPASS: Synoptic","CB","MSM","UP","B",45,"MSM_202304_UP_LysB_45cm",2023,4,24,NA,NA,"0.006868","0.490336767404171","bdl","NOx r2 low","0.651014","46.4787565950581","Within_Range","","0.015691","0.506590061614085","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.",""
-"68","COMPASS: Synoptic","CB","MSM","UP","C",10,"MSM_202304_UP_LysC_10cm",2023,4,24,NA,NA,"0.00783","0.559018184154726","bdl","NOx r2 low","0.411369","29.3694446229305","Within_Range","","0.007038","0.227224578015418","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.",""
-"69","COMPASS: Synoptic","CB","MSM","UP","C",20,"MSM_202304_UP_LysC_20cm",2023,4,24,NA,NA,"0.008553","0.610636338323802","bdl","NOx r2 low","1.412201","100.823248873753","Within_Range","","0.008676","0.280108047579109","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.",""
-"70","COMPASS: Synoptic","CB","MSM","WC","A",10,"MSM_202304_WC_LysA_10cm",2023,4,24,NA,NA,"0.00588","0.419799096146844","bdl","NOx r2 low","0","0","bdl","","0.004981","0.160813529851492","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.",""
-"71","COMPASS: Synoptic","CB","MSM","WC","A",20,"MSM_202304_WC_LysA_20cm",2023,4,24,NA,NA,"0.004349","0.31049426345963","bdl","NOx r2 low","0.37939","27.0863229740053","Within_Range","","0.021894","0.706856338600393","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.",""
-"72","COMPASS: Synoptic","CB","MSM","WC","A",45,"MSM_202304_WC_LysA_45cm",2023,4,24,NA,NA,"0.004859","0.346905409553999","bdl","NOx r2 low","0.264459","18.8808927156289","Within_Range","","0.019676","0.635247342573369","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.",""
-"73","COMPASS: Synoptic","CB","MSM","WC","B",10,"MSM_202304_WC_LysB_10cm",2023,4,24,NA,NA,"NULL","NULL","NULL","NOx r2 low","0.179774","12.834857603861","Within_Range","","0.022691","0.73258779479225","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.",""
-"74","COMPASS: Synoptic","CB","MSM","WC","B",20,"MSM_202304_WC_LysB_20cm",2023,4,24,NA,NA,"0.002097","0.149714065411553","bdl","NOx r2 low","0.199648","14.2537499910757","Within_Range","","0.036642","1.18300127701633","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.",""
-"75","COMPASS: Synoptic","CB","MSM","WC","C",10,"MSM_202304_WC_LysC_10cm",2023,4,24,NA,NA,"0.001222","0.0872439618182727","bdl","NOx r2 low","0.331774","23.6868070280651","Within_Range","","0.023865","0.770490843185274","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.",""
-"76","COMPASS: Synoptic","CB","MSM","WC","C",20,"MSM_202304_WC_LysC_20cm",2023,4,24,NA,NA,"0.006694","0.477914141089621","bdl","NOx r2 low","1.153183","82.3308131108684","Within_Range","","0.057651","1.86128504506492","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.",""
-"77","COMPASS: Synoptic","CB","MSM","WC","C",45,"MSM_202304_WC_LysC_45cm",2023,4,24,NA,NA,"0.00766","0.546881135456603","bdl","NOx r2 low","1.437025","102.595543561296","Within_Range","","0.013784","0.445021822018262","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.",""
-"78","COMPASS: Synoptic","CB","TEMPEST","CON",NA,NA,"TEMPEST_20230513_CON_C6",NA,NA,NA,NA,NA,"c(0.001942, 0)","c(0.138647932775029, 0)","c(""bdl"", ""bdl"")","NOx r2 low","NULL","NULL","NULL","","NULL","NULL","NULL","","06/04/2023","NH3 3rd Party Check off, but all other run 
+"78","COMPASS: Synoptic","CB","TEMPEST","CON",NA,NA,"TEMPEST_20230513_CON_H6",NA,NA,NA,NA,NA,"0.013228","0.944405177522186","bdl","NOx r2 low","NULL","NULL","NULL","","NULL","NULL","NULL","","06/04/2023","NH3 3rd Party Check off, but all other run 
   parameters are fine so accepting this run.",NA
-"79","COMPASS: Synoptic","CB","TEMPEST","CON",NA,NA,"TEMPEST_20230513_CON_H6",NA,NA,NA,NA,NA,"0.013228","0.944405177522186","bdl","NOx r2 low","NULL","NULL","NULL","","NULL","NULL","NULL","","06/04/2023","NH3 3rd Party Check off, but all other run 
+"79","COMPASS: Synoptic","CB","TEMPEST","FW",NA,NA,"TEMPEST_20230513_FW_B4",NA,NA,NA,NA,NA,"0.003387","0.241812846709075","bdl","NOx r2 low","NULL","NULL","NULL","","NULL","NULL","NULL","","06/04/2023","NH3 3rd Party Check off, but all other run 
   parameters are fine so accepting this run.",NA
-"80","COMPASS: Synoptic","CB","TEMPEST","FW",NA,NA,"TEMPEST_20230513_FW_B4",NA,NA,NA,NA,NA,"0.003387","0.241812846709075","bdl","NOx r2 low","NULL","NULL","NULL","","NULL","NULL","NULL","","06/04/2023","NH3 3rd Party Check off, but all other run 
+"80","COMPASS: Synoptic","CB","TEMPEST","FW",NA,NA,"TEMPEST_20230513_FW_C3",NA,NA,NA,NA,NA,"0","0","bdl","NOx r2 low","NULL","NULL","NULL","","NULL","NULL","NULL","","06/04/2023","NH3 3rd Party Check off, but all other run 
   parameters are fine so accepting this run.",NA
-"81","COMPASS: Synoptic","CB","TEMPEST","FW",NA,NA,"TEMPEST_20230513_FW_C3",NA,NA,NA,NA,NA,"0","0","bdl","NOx r2 low","NULL","NULL","NULL","","NULL","NULL","NULL","","06/04/2023","NH3 3rd Party Check off, but all other run 
+"81","COMPASS: Synoptic","CB","TEMPEST","FW",NA,NA,"TEMPEST_20230513_FW_C6",NA,NA,NA,NA,NA,"0.00286","0.204187995744894","bdl","NOx r2 low","NULL","NULL","NULL","","NULL","NULL","NULL","","06/04/2023","NH3 3rd Party Check off, but all other run 
   parameters are fine so accepting this run.",NA
-"82","COMPASS: Synoptic","CB","TEMPEST","FW",NA,NA,"TEMPEST_20230513_FW_C6",NA,NA,NA,NA,NA,"0.00286","0.204187995744894","bdl","NOx r2 low","NULL","NULL","NULL","","NULL","NULL","NULL","","06/04/2023","NH3 3rd Party Check off, but all other run 
+"82","COMPASS: Synoptic","CB","TEMPEST","FW",NA,NA,"TEMPEST_20230513_FW_D5",NA,NA,NA,NA,NA,"0","0","bdl","NOx r2 low","NULL","NULL","NULL","","NULL","NULL","NULL","","06/04/2023","NH3 3rd Party Check off, but all other run 
   parameters are fine so accepting this run.",NA
-"83","COMPASS: Synoptic","CB","TEMPEST","FW",NA,NA,"TEMPEST_20230513_FW_D5",NA,NA,NA,NA,NA,"0","0","bdl","NOx r2 low","NULL","NULL","NULL","","NULL","NULL","NULL","","06/04/2023","NH3 3rd Party Check off, but all other run 
+"83","COMPASS: Synoptic","CB","TEMPEST","FW",NA,NA,"TEMPEST_20230513_FW_E3",NA,NA,NA,NA,NA,"0.002728","0.194763934402821","bdl","NOx r2 low","NULL","NULL","NULL","","NULL","NULL","NULL","","06/04/2023","NH3 3rd Party Check off, but all other run 
   parameters are fine so accepting this run.",NA
-"84","COMPASS: Synoptic","CB","TEMPEST","FW",NA,NA,"TEMPEST_20230513_FW_E3",NA,NA,NA,NA,NA,"0.002728","0.194763934402821","bdl","NOx r2 low","NULL","NULL","NULL","","NULL","NULL","NULL","","06/04/2023","NH3 3rd Party Check off, but all other run 
+"84","COMPASS: Synoptic","CB","TEMPEST","FW",NA,NA,"TEMPEST_20230513_FW_F6",NA,NA,NA,NA,NA,"0","0","bdl","NOx r2 low","NULL","NULL","NULL","","NULL","NULL","NULL","","06/04/2023","NH3 3rd Party Check off, but all other run 
   parameters are fine so accepting this run.",NA
-"85","COMPASS: Synoptic","CB","TEMPEST","FW",NA,NA,"TEMPEST_20230513_FW_F6",NA,NA,NA,NA,NA,"0","0","bdl","NOx r2 low","NULL","NULL","NULL","","NULL","NULL","NULL","","06/04/2023","NH3 3rd Party Check off, but all other run 
+"85","COMPASS: Synoptic","CB","TEMPEST","CON",NA,NA,"TEMPEST_20230515_CON_C6",NA,NA,NA,NA,NA,"NULL","NULL","NULL","NOx r2 low","0","0","bdl","","0.004308","0.139085462075934","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
   parameters are fine so accepting this run.",NA
-"86","COMPASS: Synoptic","CB","TEMPEST","CON",NA,NA,"TEMPEST_20230515_CON_C6",NA,NA,NA,NA,NA,"NULL","NULL","NULL","NOx r2 low","0","0","bdl","","0.004308","0.139085462075934","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+"86","COMPASS: Synoptic","CB","TEMPEST","CON",NA,NA,"TEMPEST_20230515_CON_F6",NA,NA,NA,NA,NA,"NULL","NULL","NULL","NOx r2 low","0","0","bdl","","0.006522","0.210565316541142","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
   parameters are fine so accepting this run.",NA
-"87","COMPASS: Synoptic","CB","TEMPEST","CON",NA,NA,"TEMPEST_20230515_CON_F6",NA,NA,NA,NA,NA,"NULL","NULL","NULL","NOx r2 low","0","0","bdl","","0.006522","0.210565316541142","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+"87","COMPASS: Synoptic","CB","TEMPEST","CON",NA,NA,"TEMPEST_20230515_CON_H6",NA,NA,NA,NA,NA,"NULL","NULL","NULL","NOx r2 low","0","0","bdl","","0.00686","0.221477778514602","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
   parameters are fine so accepting this run.",NA
-"88","COMPASS: Synoptic","CB","TEMPEST","CON",NA,NA,"TEMPEST_20230515_CON_H6",NA,NA,NA,NA,NA,"NULL","NULL","NULL","NOx r2 low","0","0","bdl","","0.00686","0.221477778514602","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+"88","COMPASS: Synoptic","CB","TEMPEST","FW",NA,NA,"TEMPEST_20230515_FW_B4",NA,NA,NA,NA,NA,"NULL","NULL","NULL","NOx r2 low","0","0","bdl","","0.002631","0.0849428622845362","bdl","","06/04/2023","NH3 3rd Party Check off, but all other run 
   parameters are fine so accepting this run.",NA
-"89","COMPASS: Synoptic","CB","TEMPEST","FW",NA,NA,"TEMPEST_20230515_FW_B4",NA,NA,NA,NA,NA,"NULL","NULL","NULL","NOx r2 low","0","0","bdl","","0.002631","0.0849428622845362","bdl","","06/04/2023","NH3 3rd Party Check off, but all other run 
+"89","COMPASS: Synoptic","CB","TEMPEST","FW",NA,NA,"TEMPEST_20230515_FW_C3",NA,NA,NA,NA,NA,"NULL","NULL","NULL","NOx r2 low","0","0","bdl","","0.002957","0.0954678995725479","bdl","","06/04/2023","NH3 3rd Party Check off, but all other run 
   parameters are fine so accepting this run.",NA
-"90","COMPASS: Synoptic","CB","TEMPEST","FW",NA,NA,"TEMPEST_20230515_FW_C3",NA,NA,NA,NA,NA,"NULL","NULL","NULL","NOx r2 low","0","0","bdl","","0.002957","0.0954678995725479","bdl","","06/04/2023","NH3 3rd Party Check off, but all other run 
+"90","COMPASS: Synoptic","CB","TEMPEST","FW",NA,NA,"TEMPEST_20230515_FW_C6",NA,NA,NA,NA,NA,"NULL","NULL","NULL","NOx r2 low","0","0","bdl","","0.001857","0.0599539700731219","bdl","","06/04/2023","NH3 3rd Party Check off, but all other run 
   parameters are fine so accepting this run.",NA
-"91","COMPASS: Synoptic","CB","TEMPEST","FW",NA,NA,"TEMPEST_20230515_FW_C6",NA,NA,NA,NA,NA,"NULL","NULL","NULL","NOx r2 low","0","0","bdl","","0.001857","0.0599539700731219","bdl","","06/04/2023","NH3 3rd Party Check off, but all other run 
+"91","COMPASS: Synoptic","CB","TEMPEST","FW",NA,NA,"TEMPEST_20230515_FW_D5",NA,NA,NA,NA,NA,"NULL","NULL","NULL","NOx r2 low","0","0","bdl","","0.004426","0.142895138149509","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
   parameters are fine so accepting this run.",NA
-"92","COMPASS: Synoptic","CB","TEMPEST","FW",NA,NA,"TEMPEST_20230515_FW_D5",NA,NA,NA,NA,NA,"NULL","NULL","NULL","NOx r2 low","0","0","bdl","","0.004426","0.142895138149509","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+"92","COMPASS: Synoptic","CB","TEMPEST","FW",NA,NA,"TEMPEST_20230515_FW_E3",NA,NA,NA,NA,NA,"NULL","NULL","NULL","NOx r2 low","0","0","bdl","","0.004448","0.143605416739497","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
   parameters are fine so accepting this run.",NA
-"93","COMPASS: Synoptic","CB","TEMPEST","FW",NA,NA,"TEMPEST_20230515_FW_E3",NA,NA,NA,NA,NA,"NULL","NULL","NULL","NOx r2 low","0","0","bdl","","0.004448","0.143605416739497","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+"93","COMPASS: Synoptic","CB","TEMPEST","FW",NA,NA,"TEMPEST_20230515_FW_F6",NA,NA,NA,NA,NA,"NULL","NULL","NULL","NOx r2 low","0","0","bdl","","0.004558","0.14715680968944","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
   parameters are fine so accepting this run.",NA
-"94","COMPASS: Synoptic","CB","TEMPEST","FW",NA,NA,"TEMPEST_20230515_FW_F6",NA,NA,NA,NA,NA,"NULL","NULL","NULL","NOx r2 low","0","0","bdl","","0.004558","0.14715680968944","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+"94","COMPASS: Synoptic","CB","TEMPEST","FW",NA,NA,"TEMPEST_20230515_FW_H6",NA,NA,NA,NA,NA,"0.001684","0.120228176515525","bdl","NOx r2 low","0","0","bdl","","0.003304","0.106670930060094","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
   parameters are fine so accepting this run.",NA
-"95","COMPASS: Synoptic","CB","TEMPEST","FW",NA,NA,"TEMPEST_20230515_FW_H6",NA,NA,NA,NA,NA,"0.001684","0.120228176515525","bdl","NOx r2 low","0","0","bdl","","0.003304","0.106670930060094","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+"95","COMPASS: Synoptic","CB","TEMPEST","FW",NA,NA,"TEMPEST_20230515_FW_I5",NA,NA,NA,NA,NA,"0","0","bdl","NOx r2 low","0","0","bdl","","0.006348","0.204947658602142","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
   parameters are fine so accepting this run.",NA
-"96","COMPASS: Synoptic","CB","TEMPEST","FW",NA,NA,"TEMPEST_20230515_FW_I5",NA,NA,NA,NA,NA,"0","0","bdl","NOx r2 low","0","0","bdl","","0.006348","0.204947658602142","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+"96","COMPASS: Synoptic","CB","TEMPEST","SW",NA,NA,"TEMPEST_20230515_SW_B4",NA,NA,NA,NA,NA,"0.025068","1.7897149221444","Within_Range","NOx r2 low","0.512489","36.5888467661905","Within_Range","","0.021192","0.684191994501669","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
   parameters are fine so accepting this run.",NA
-"97","COMPASS: Synoptic","CB","TEMPEST","SW",NA,NA,"TEMPEST_20230515_SW_B4",NA,NA,NA,NA,NA,"0.025068","1.7897149221444","Within_Range","NOx r2 low","0.512489","36.5888467661905","Within_Range","","0.021192","0.684191994501669","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+"97","COMPASS: Synoptic","CB","TEMPEST","SW",NA,NA,"TEMPEST_20230515_SW_F6",NA,NA,NA,NA,NA,"0.016694","1.19185818215568","bdl","NOx r2 low","0","0","bdl","","0.009559","0.308616047350012","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
   parameters are fine so accepting this run.",NA
-"98","COMPASS: Synoptic","CB","TEMPEST","SW",NA,NA,"TEMPEST_20230515_SW_F6",NA,NA,NA,NA,NA,"0.016694","1.19185818215568","bdl","NOx r2 low","0","0","bdl","","0.009559","0.308616047350012","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+"98","COMPASS: Synoptic","CB","TEMPEST","SW",NA,NA,"TEMPEST_20230515_SW_H6",NA,NA,NA,NA,NA,"0.003715","0.265230211256042","bdl","NOx r2 low","0","0","bdl","","0.004463","0.144089697596307","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
   parameters are fine so accepting this run.",NA
-"99","COMPASS: Synoptic","CB","TEMPEST","SW",NA,NA,"TEMPEST_20230515_SW_H6",NA,NA,NA,NA,NA,"0.003715","0.265230211256042","bdl","NOx r2 low","0","0","bdl","","0.004463","0.144089697596307","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
-  parameters are fine so accepting this run.",NA
-"100","COMPASS: Synoptic","CB","TEMPEST","FW",NA,NA,"TEMPEST_20230518_FW_H3",NA,NA,NA,NA,NA,"0.00505","0.360541740738361","bdl","NOx r2 low","0","0","bdl","","0.004852","0.156648714482923","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
+"99","COMPASS: Synoptic","CB","TEMPEST","FW",NA,NA,"TEMPEST_20230518_FW_H3",NA,NA,NA,NA,NA,"0.00505","0.360541740738361","bdl","NOx r2 low","0","0","bdl","","0.004852","0.156648714482923","Within_Range","","06/04/2023","NH3 3rd Party Check off, but all other run 
   parameters are fine so accepting this run.",NA

@@ -249,6 +249,14 @@ df_all <- df_all %>%
 
 ```
 
+##Fix Sample IDs
+```{r}
+
+df_all <- df_all %>% 
+  mutate(Sample_Name = gsub("MMS_202306_UP_LysB_45cm", "MSM_202306_UP_LysB_45cm", Sample_Name))
+
+```
+
 ## Assessing standard Curves
   #Pull out standards data  
 ```{r Pull out Standard Curves, echo=FALSE}
@@ -1503,7 +1511,7 @@ if (any(df_matrix$Spike_diff_flag[df_matrix$Test == "o-PHOS 0.3"] != "YES")) {
 
 #Pull out samples 
 samples <- df_all_cor %>%  
-  filter(!str_detect(Sample_Name, c("Standard|Chk|Duplicate|Spike|Blank|ammonia|mg/L|CCV|CCB")))     
+  filter(!str_detect(Sample_Name, c("Standard|Chk|Duplicate|Spike|Blank|ammonia|mg/L|CCV|CCB|pe_CHK")))     
 
 #Convert values based on the Test ID 
 samples <- samples %>%

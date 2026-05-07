@@ -86,6 +86,8 @@ pacman::p_load(
   write_excel,
   broom)
 
+detach("package:raster", unload = TRUE)
+
 #Coefficients / constants that are needed for calculations 
 N_mw <- 14.0067    # molecular weight of N 
 P_mw <- 30.973762  # molecular weight of P 
@@ -126,6 +128,7 @@ NOx_pe <- 0.706
 PO4_pe <- 0.818
 
 ```
+
 ##Read in metadata and create similar sample IDs for matching to samples 
 ```{r pull in metadata for later, include=FALSE}
 
@@ -134,6 +137,12 @@ raw_metadata <- read.csv(Raw_Metadata)
 
 #make a new columns in the metadata with important info:
 metadata <- raw_metadata %>%
+  # mutate(Transect.Location = gsub("UpCON", "UPCON", Transect.Location)) %>% 
+  # mutate(
+  #   Transect.Location = case_when(
+  #     Year == "2023" & Site == "SWH" & Transect.Location == "Upland" ~ "SWAMP",
+  #     Year == "2023" & Site == "SWH" & Transect.Location == "UPCON" ~ "Upland",
+  #     TRUE ~ Transect.Location)) %>%
   mutate(Depth = paste0(Depth_cm, "cm")) %>%
   mutate(LysID = paste0("Lys", Lysimeter)) %>%
   mutate(YearMonth = sprintf("%d%02d", Year, Month))  %>%
@@ -173,11 +182,10 @@ metadata <- metadata %>%
 
 #Take out the columns and rows that are not relevant
 nutr_metadata <- metadata %>%
-  select(NUTR_ID, Year, Month, Day, YearMonth, Site, Zone, Lysimeter, LysID, Depth_cm, 
+  dplyr::select(NUTR_ID, Year, Month, Day, YearMonth, Site, Zone, Lysimeter, LysID, Depth_cm, 
          Depth, Time..24hr., Time.Zone_EDT.EST, Field.Notes, ) %>%        
   # only keep specific columns
   filter(!is.na(NUTR_ID) & NUTR_ID != "")  # remove missing/blank NUTR_ID rows
-
 
 ```
 
@@ -1647,6 +1655,11 @@ df_all_clean <- df_all_clean %>%
       Site == "SWH" & Zone == "UP" ~ "SWAMP",
       Site == "SWH" & Zone == "UPCON" ~ "UP",
       TRUE ~ `Zone`
+    )) %>%
+  mutate(Sample_Name = case_when(
+      Site == "SWH" & Zone == "SWAMP" ~ gsub("_UP_", "_SWAMP_", Sample_Name), 
+      Site == "SWH" & Zone == "UP" ~ gsub("_UPCON_", "_UP_", Sample_Name), 
+      TRUE ~ Sample_Name
     )) 
 
 ```
@@ -1835,11 +1848,11 @@ final_data <- final_data_labeled %>%
 
 
 #Changing lists to strings
-final_data_excel <- final_data %>%
+final_data <- final_data %>%
   mutate(across(where(is.list), ~ sapply(., toString)))
 
 #Write out data frame 
-  write_xlsx(final_data_excel, final_path)
+  write.csv(final_data, final_path)
 
 ```
 
