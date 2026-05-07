@@ -1,8 +1,11 @@
 ---
-title: "COMPASS_SynopticCB_Collate_2022_Data_Sip"
-author: "Stephanie J. Wilson"
-date: "2025-08-29"
-output: html_document
+title: "2022_Lysimeter_vs_Sipper"
+author: "Zoe Read"
+date: "`r Sys.Date()`"
+output: 
+  pdf_document:
+    toc: true
+    number_sections: true
 ---
 
 ```{r setup, include=FALSE}
@@ -16,119 +19,30 @@ library(tibble)
 library(lubridate)
 ```
 
-#Read in and collate all the files in the Processed Data folder 
-```{r}
-
-##SO4/Cl
-dionex_files <- list.files(path = "../Sulfate_Chloride/Synoptic-CB/2022/Processed Data", pattern = "\\.csv$", full.names = TRUE)
-# 3. Read and combine all CSVs
-dionex_data <- dionex_files %>%
-  lapply(read.csv, colClasses = "character") %>%    # or read.csv if you prefer base R
-  bind_rows()             # combine into one data frame
-dionex_data <- dionex_data %>%
-  select("Date", "Site", "Zone", "Replicate", "Depth", "Sample_ID",  "SO4_ppm",  "Cl_ppm",  "SO4_mM", "Cl_mM", "salinity")
-
-##Nutrients
-nutr_files <- list.files(path = "../Nutrients/Synoptic-CB/2022/Processed Data", pattern = "\\.csv$", full.names = TRUE)
-nutr_data <- nutr_files %>%
-  lapply(read.csv, colClasses = "character") %>%    # or read.csv if you prefer base R
-  bind_rows()             # combine into one data frame
-nutr_data <- nutr_data %>%
-  rename(Sample_ID = Sample_Name) %>%
-  select("Date" ,"Site", "Zone" , "Replicate", "Depth", "Sample_ID",  "NH3_uM", "PO4_uM", "NOx_uM")
-
-##DIC
-dic_files <- list.files(path = "../DIC/Synoptic-CB/2022/Processed Data", pattern = "\\.csv$", full.names = TRUE)
-dic_data <- dic_files %>%
-  lapply(read.csv, colClasses = "character") %>%    # or read.csv if you prefer base R
-  bind_rows()             # combine into one data frame
-
-dic_data <- dic_data %>%
-  separate(
-    col = Sample_ID,
-    sep = "_",
-    into = c("Site", "Date", "Zone" ,"Replicate", "Depth"),
-    remove = FALSE) %>%
-  select("Date", "Site", "Zone", "Replicate", "Depth", "Sample_ID",  "ic_uM") %>%
-  filter(Zone != "SW")
-
-
-# ##DOC - where is the processed 2022 data? 
-# doc_files <- list.files(path = "../DOC/Synoptic-CB/2022/Processed Data", pattern = "\\.csv$", full.names = TRUE)
-# # 3. Read and combine all CSVs
-# doc_data <- doc_files %>%
-#   lapply(read.csv, colClasses = "character") %>%    # or read.csv if you prefer base R
-#   bind_rows()             # combine into one data frame
-# doc_data <- doc_data %>%
-#   select("Date" ,"Site", "Replicate",   "Depth" ,      "Sample_ID" ,  "SO4_ppm" ,    "Cl_ppm"   ,   "SO4_mM"  ,    "Cl_mM"    ,"salinity", "Zone"  )
-# 
-# ##Iron - need to collate 2022 data? 
-# iron_files <- list.files(path = "../Iron/Synoptic-CB/2022/Processed Data", pattern = "\\.csv$", full.names = TRUE)
-# # 3. Read and combine all CSVs
-# iron_data <- iron_files %>%
-#   lapply(read.csv, colClasses = "character") %>%    # or read.csv if you prefer base R
-#   bind_rows()             # combine into one data frame
-# iron_data <- iron_data %>%
-#   select("Date" ,"Site", "Replicate",   "Depth" ,      "Sample_ID" ,  "SO4_ppm" ,    "Cl_ppm"   ,   "SO4_mM"  ,    "Cl_mM"    ,"salinity", "Zone"  )
-
-##Sulfide - need to collate 2022 data? 
-sulfide_files <- list.files(path = "../Sulfide/Synoptic-CB/2022/Processed Data", pattern = "\\.csv$", full.names = TRUE)
-# 3. Read and combine all CSVs
-sulfide_data <- sulfide_files %>%
-  lapply(read.csv, colClasses = "character") %>%    # or read.csv if you prefer base R
-  bind_rows()             # combine into one data frame
-# GCW_202207_WC_SIPC_10CM
-
-sulfide_data <- sulfide_data %>%
-  separate(
-    col = Sample_ID,
-    sep = "_",
-    into = c("Site", "Date", "Zone" ,"Replicate", "Depth"),
-    remove = FALSE) %>%
-  select("Date", "Site", "Zone", "Replicate", "Depth", "Sample_ID",  "H2S_mean") %>%
-  filter(Zone != "SW") %>%
-  filter(Zone != "RHZ") %>%
-  filter(Replicate != "PPR") %>%
-  filter(Replicate != "RHZ")
-
-sulfide_data <- sulfide_data %>%
-  select("Date", "Site", "Zone", "Replicate", "Depth", "Sample_ID",  "H2S_mean") 
-
-
-##Combine data
-
-
-colnames(all_data)
-
-all_data$SO4_ppm <- as.numeric(all_data$SO4_ppm)
-all_data$Cl_ppm <- as.numeric(all_data$Cl_ppm)
-all_data$SO4_mM <- as.numeric(all_data$SO4_mM)
-all_data$Cl_mM <- as.numeric(all_data$Cl_mM)
-all_data$salinity <- as.numeric(all_data$salinity)
-
-##Fix sample IDs
-all_data$Site <- gsub("GCerw", "GCW", all_data$Site)
-all_data$Site <- gsub("Gcrew", "GCW", all_data$Site)
-all_data$Site <- gsub("GCrew", "GCW", all_data$Site)
-
-##Add labels for sampler types
-all_data_long <- all_data %>%  
-  mutate(Sampler = substring(Replicate, 1, 3),
-         Replicate = substring(Replicate, 4, nchar(Replicate)))%>%  
-  filter(Sampler %in% c("Lys", "Sip"))
-
-```
-
 ##Pull in 2022 Data
 ```{r}
 
 ##Lysimeter Data
 lys <- read.csv("../COMPASS_SynopticCB_AllData_AllYears.csv")
 lys_2022 <- lys %>% 
-  filter(str_detect(Sample_ID, "2022"))
+  filter(str_detect(Sample_ID, "2022")) %>% 
+  mutate(Replicate = paste0("LYS", Lysimeter)) %>% 
+  select(-Lysimeter) %>% 
+  filter(Zone != "SW")
+colnames(lys_2022)
 
 ##Sipper Data
 sip_2022 <- read.csv("COMPASS_SynopticCB_Sipper_Data.csv")
+colnames(sip_2022)
+
+all_2022 <- bind_rows(lys_2022, sip_2022)
+
+##Add labels for sampler types
+all_data_long <- all_2022 %>%  
+  mutate(Sampler = substring(Replicate, 1, 3),
+         Replicate = substring(Replicate, 4, nchar(Replicate))) %>%  
+  mutate(Depth_cm = as.character(Depth_cm), 
+         Month = as.character(Month))
 
 ```
 
@@ -137,7 +51,7 @@ sip_2022 <- read.csv("COMPASS_SynopticCB_Sipper_Data.csv")
 ##Boxplots SO4/Cl
 ```{r}
 
-boxplot_SO4_all <- ggplot(all_data_long, aes(x = Depth, y = SO4_ppm, fill = Sampler)) +
+boxplot_SO4_all <- ggplot(all_data_long, aes(x = Depth_cm, y = SO4_ppm, fill = Sampler)) +
   geom_boxplot(position = position_dodge(width = 0.8)) +
   facet_grid(Zone ~ Site) +
   labs(y = "SO4 (ppm)", fill = "Sampler", title = "Sulfate from all data") +
@@ -148,7 +62,7 @@ boxplot_SO4_all
 ##Subset for only site and zone that overlap
 df_sub <- subset(all_data_long, Site == "GCW" & Zone == "WC")
 
-boxplot_SO4_GCW_WC <- ggplot(df_sub, aes(x = Depth, y = SO4_ppm, fill = Sampler)) +
+boxplot_SO4_GCW_WC <- ggplot(df_sub, aes(x = Depth_cm, y = SO4_ppm, fill = Sampler)) +
   geom_boxplot(position = position_dodge(width = 0.8)) +
   facet_grid(Zone ~ Site) +
   labs(y = "SO4 (ppm)", fill = "Sampler", title = "Sulfate from GCW WC") +
@@ -158,35 +72,78 @@ boxplot_SO4_GCW_WC
 
 ##Subset for only dates that overlap
 dates <- c("202206","202207", "202208") 
-df_sub <- subset(all_data_long, Site == "GCW" & Zone == "WC" & Date %in% dates)
-# str(df_sub)
+df_sub <- all_data_long %>% 
+  filter(Site == "GCW" & Zone == "WC" & Month == "6" | Site == "GCW" & Zone == "WC" & Month == "7"| Site == "GCW" & Zone == "WC" & Month == "8")
 
-boxplot_Cl <- ggplot(df_sub, aes(x = Depth, y = Cl_ppm, fill = Sampler)) +
+boxplot_Cl <- ggplot(df_sub, aes(x = Depth_cm, y = Cl_ppm, fill = Sampler)) +
   geom_boxplot(position = position_dodge(width = 0.8)) +
-  facet_wrap(~ Date) +
-  labs(y = "Cl (ppm)", fill = "Sampler", title = "Chloride from GCW WC 2022") +
+  facet_wrap(~ Month) +
+  labs(y = "Cl (ppm)", fill = "Sampler", title = "Chloride from GCW WC 2022 by Month") +
   theme_bw()
 
 boxplot_Cl
 
-boxplot_SO4 <- ggplot(df_sub, aes(x = Depth, y = SO4_ppm, fill = Sampler)) +
+boxplot_SO4 <- ggplot(df_sub, aes(x = Depth_cm, y = SO4_ppm, fill = Sampler)) +
   geom_boxplot(position = position_dodge(width = 0.8)) +
-  facet_wrap(~ Date) +
-  labs(y = "SO4 (ppm)", fill = "Sampler", title = "Sulfate from GCW WC 2022") +
+  facet_wrap(~ Month) +
+  labs(y = "SO4 (ppm)", fill = "Sampler", title = "Sulfate from GCW WC 2022 by Month") +
   theme_bw()
 
 boxplot_SO4
 
-# Save as a PNG
-png("Lysimeter_vs_Sipper_Cl.png", width = 2000, height = 1200, res = 200) 
-print(boxplot_Cl)  # For ggplot objects, use print()
-dev.off() 
+##Average by sampler type at each depth
+df_avg <- df_sub %>% 
+  group_by(Sampler, Month, Depth_cm) %>% 
+  summarize(SO4_ppm_avg = mean(SO4_ppm, na.rm = TRUE), 
+            Cl_ppm_avg = mean(Cl_ppm, na.rm = TRUE))
 
-# Save as a PNG
-png("Lysimeter_vs_Sipper_SO4.png", width = 2000, height = 1200, res = 200) 
-print(boxplot_SO4)  # For ggplot objects, use print()
-dev.off() 
+df_avg_lys <- df_avg %>% 
+  filter(Sampler == "LYS") %>%
+  rename_with(
+    .cols = c(4:(ncol(.))),
+    .fn = ~paste0("LYS_", .))  %>%
+  ungroup(Sampler)%>%
+  select(-Sampler)
 
+df_avg_sip <- df_avg %>% 
+  filter(Sampler == "SIP") %>%
+  rename_with(
+    .cols = c(4:(ncol(.))),
+    .fn = ~paste0("SIP_", .)) %>%
+  ungroup(Sampler) %>% 
+  select(-Sampler)
+
+df_avg1 <- df_avg_lys %>% 
+  left_join(df_avg_sip)
+
+##1:1 Plot
+so4_scatter_plot <- ggplot(df_avg1, aes(x = LYS_SO4_ppm_avg, y = SIP_SO4_ppm_avg, color = as.character(Month))) +
+  geom_point(size = 3) +
+  geom_abline(slope = 1, intercept = 0, linetype = "dashed") +
+  # coord_cartesian(xlim = combined_limits, ylim = combined_limits) +
+  coord_fixed(ratio = 1) + 
+  labs(
+    x = "Lysimeter SO4 (ppm)",
+    y = "Sipper SO4 (ppm)",
+    title = ""
+  ) + 
+  theme_classic()
+
+so4_scatter_plot
+
+cl_scatter_plot <- ggplot(df_avg1, aes(x = LYS_Cl_ppm_avg, y = SIP_Cl_ppm_avg, color = as.character(Month))) +
+  geom_point(size = 3) +
+  geom_abline(slope = 1, intercept = 0, linetype = "dashed") +
+  # coord_cartesian(xlim = combined_limits, ylim = combined_limits) +
+  coord_fixed(ratio = 1) + 
+  labs(
+    x = "Lysimeter Cl (ppm)",
+    y = "Sipper Cl (ppm)",
+    title = ""
+  ) + 
+  theme_classic()
+
+cl_scatter_plot
 ```
 #Read in and collate all the files in the Processed Data folder 
 ```{r}

@@ -28,8 +28,49 @@ library(tidyverse)
 
 ##Assumed that all samples were in WC Zone
 
-##SO4/Cl
+##DIC
+#2022
+DIC_files_2022 <- list.files(path = "../DIC/Synoptic-CB/2022/Processed Data", pattern = "\\.csv$", full.names = TRUE)
+#Read and combine all CSVs
+DIC_2022 <- DIC_files_2022 %>%
+  lapply(read.csv, colClasses = "character") %>%    # or read.csv if you prefer base R
+  bind_rows()             # combine into one data frame
+#Capitalize Sample IDs
+DIC_2022$Sample_ID <- toupper(DIC_2022$Sample_ID)
+#Select Sipper data MSM_202210_TR_SIP_10
+DIC_SIP_2022 <- DIC_2022 %>%
+  filter(str_detect(Sample_ID, "SIP")) %>% 
+  filter(!str_detect(Sample_ID, "RHZ"))
+#Select only data columns
+colnames(DIC_SIP_2022)
+DIC_SIP_sel_2022 <- DIC_SIP_2022 %>% 
+  select("Sample_ID", "ic_mgL", "ic_uM", "ic_flag")
+DIC_SIP_sel <- DIC_SIP_sel_2022
+DIC_SIP_sel$Sample_ID <- toupper(DIC_SIP_sel$Sample_ID)
 
+
+##DOC
+# #2022 - data not processed yet
+# DOC_files_2022 <- list.files(path = "../DOC/Synoptic-CB/2022/Processed Data", pattern = "\\.csv$", full.names = TRUE)
+# #Read and combine all CSVs
+# DOC_2022 <- DOC_files_2022 %>%
+#   lapply(read.csv, colClasses = "character") %>%    # or read.csv if you prefer base R
+#   bind_rows()             # combine into one data frame
+# #Capitalize Sample IDs
+# DOC_2022$Sample_ID <- toupper(DOC_2022$Sample_ID)
+# #Select Sipper data MSM_202210_TR_SIP_10
+# DOC_SIP_2022 <- DOC_2022 %>%
+#   filter(str_detect(Sample_ID, "SIP")) %>% 
+#   filter(!str_detect(Sample_ID, "RHZ"))
+# #Select only data columns
+# colnames(DOC_SIP_2022)
+# DOC_SIP_sel_2022 <- DOC_SIP_2022 %>% 
+#   select("Sample_ID", "ic_mgL", "ic_uM", "ic_flag")
+# DOC_SIP_sel <- DOC_SIP_sel_2022
+# DOC_SIP_sel$Sample_ID <- toupper(DOC_SIP_sel$Sample_ID)
+
+
+##SO4/Cl
 #2022
 dionex_files_2022 <- list.files(path = "../Sulfate_Chloride/Synoptic-CB/2022/Processed Data", pattern = "\\.csv$", full.names = TRUE)
 #Read and combine all CSVs
@@ -51,26 +92,6 @@ dionex_SIP_2022 <- dionex_2022 %>%
 colnames(dionex_SIP_2022)
 dionex_SIP_sel_2022 <- dionex_SIP_2022 %>% 
   select("Sample_ID", "SO4_ppm",   "Cl_ppm",    "SO4_mM" ,   "Cl_mM"   ,  "salinity" )
-
-#2023 - No 2023 Sipper Data? Is it only from Rhizons? 
-# dionex_files_2023 <- list.files(path = "../Sulfate_Chloride/Synoptic-CB/2023/Processed Data", pattern = "\\.csv$", full.names = TRUE)
-# #Read and combine all CSVs
-# dionex_2023 <- dionex_files_2023 %>%
-#   lapply(read.csv, colClasses = "character") %>%    # or read.csv if you prefer base R
-#   bind_rows()             # combine into one data frame
-# #Capitalize Sample IDs
-# dionex_2023$Sample_ID <- toupper(dionex_2023$Sample_ID)
-# #Select Sipper data MSM_202210_TR_SIP_10
-# dionex_SIP_2023 <- dionex_2023 %>%
-#   filter(str_detect(Sample_ID, "SIP")) %>% 
-#   filter(!str_detect(Sample_ID, "RHZ")) 
-# #Select only data columns
-# colnames(dionex_SIP_2023)
-# dionex_SIP_sel_2023 <- dionex_SIP_2023 %>% 
-#   select("Sample_ID", "SO4_ppm",   "Cl_ppm",    "SO4_mM" ,   "Cl_mM"   ,  "salinity" )
-
-#Combine 2022 and 2023
-# dionex_SIP_sel <- bind_rows(dionex_SIP_sel_2022, dionex_SIP_sel_2023)
 dionex_SIP_sel <- dionex_SIP_sel_2022
 dionex_SIP_sel$Sample_ID <- toupper(dionex_SIP_sel$Sample_ID)
 
@@ -95,29 +116,6 @@ sulfide_SIP_sel_2022 <- sulfide_SIP_2022 %>%
 "H2S_Conc_flag"  ,  "H2S_cv_flag"   ,   "H2S_QAQC_flag"  , "Run_notes",        "Field_notes") %>% 
   rename(H2S_Run_notes = Run_notes)
 
-#2023
-# sulfide_files_2023 <- list.files(path = "../Sulfide/Synoptic-CB/2023/Processed Data", pattern = "Combined\\.csv$", full.names = TRUE)
-# # 3. Read and combine all CSVs
-# sulfide_data_2023 <- sulfide_files_2023 %>%
-#   lapply(read.csv, colClasses = "character") %>%    # or read.csv if you prefer base R
-#   bind_rows()             # combine into one data frame
-# #Capitalize Sample IDs
-# sulfide_data_2023$Sample_ID <- toupper(sulfide_data_2023$Sample_ID)
-# #Select Sipper data
-# sulfide_SIP_2023 <- sulfide_data_2023 %>%
-#   filter(str_detect(Sample_ID, "SIP")) %>% 
-#   filter(!str_detect(Sample_ID, "RHZ"))
-# #Select only data columns
-# colnames(sulfide_SIP_2023)
-# sulfide_SIP_sel_2023 <- sulfide_SIP_2023 %>% 
-#   rename(H2S_mean = H2S_mean_uM, 
-#          H2S_sd = H2S_sd_uM) %>% 
-#   select("Sample_ID", "H2S_mean"     ,    "H2S_sd"        ,   "H2S_cv"          ,
-# "H2S_Conc_flag"  ,  "H2S_cv_flag"   ,   "H2S_QAQC_flag"  , "Run_notes") %>% 
-#   rename(H2S_Run_notes = Run_notes)
-
-#Combine 2022 and 2023
-# sulfide_SIP_sel <- bind_rows(sulfide_SIP_sel_2022, sulfide_SIP_sel_2023)
 sulfide_SIP_sel <- sulfide_SIP_sel_2022
 sulfide_SIP_sel$Sample_ID <- toupper(sulfide_SIP_sel$Sample_ID)
 
@@ -147,25 +145,6 @@ nutr_SIP_sel_2022 <- nutr_SIP_2022 %>%
   select("Sample_ID", "NH3_mgL"  , "NH3_uM"  ,  "PO4_mgL" , "PO4_uM"  ,  "NOx_mgL"   ,"NOx_uM"  ,  "NH3_range", "PO4_range", "NOx_range" , "Run_notes")%>% 
   rename(Nutr_Run_notes = Run_notes)
 
-#2023 - No 2023 Sipper Nutrient Data? 
-# nutr_files_2023 <- list.files(path = "../Nutrients/Synoptic-CB/2023/Processed Data", pattern = "\\.csv$", full.names = TRUE)
-# nutr_data_2023 <- nutr_files_2023 %>%
-#   lapply(read.csv, colClasses = "character") %>%    # or read.csv if you prefer base R
-#   bind_rows()             # combine into one data frame
-# #Select Sipper data
-# nutr_SIP_2023 <- nutr_data_2023 %>%
-#   filter(str_detect(Sample_ID, "SIP"))
-# ##Nutr MSM_202211_SIP_WC_9 data is formatted differently from MSM_202210_WC_SIP_9
-# nutr_SIP_2023 <- nutr_SIP_2023 %>% 
-#   mutate(Sample_ID = ifelse(Date == "202211", paste(Site, Date, Replicate, Zone, Depth, sep = "_"), Sample_ID))
-# #Select only data columns
-# colnames(nutr_SIP_2023)
-# nutr_SIP_sel_2023 <- nutr_SIP_2023 %>% 
-#   select("Sample_ID", "NH3_mgL"  , "NH3_uM"  ,  "PO4_mgL" , "PO4_uM"  ,  "NOx_mgL"   ,"NOx_uM"  ,  "NH3_range", "PO4_range", "NOx_range" , "Run_notes")  %>% 
-#   rename(Nutr_Run_notes = Run_notes)
-
-#Combine 2022 and 2023
-# nutr_SIP_sel_unique <- bind_rows(nutr_SIP_sel_unique_2022, nutr_SIP_sel_unique_2023)
 nutr_SIP_sel <- nutr_SIP_sel_2022
 nutr_SIP_sel$Sample_ID <- toupper(nutr_SIP_sel$Sample_ID)
 
@@ -192,30 +171,14 @@ colnames(iron_SIP_2022)
 iron_SIP_sel_2022 <- iron_SIP_2022 %>% 
   select("Sample_ID", "FE_2_mean" ,"FE_2_sd"  ,"FE_3_mean" ,"FE_3_sd" ,  "FE_2_flag" ,"FE_3_flag")
 
-#2023 - Iron data not processed
-# iron_files_2023 <- list.files(path = "../Iron/Synoptic-CB/2023/Processed Data", pattern = "Summary_Data\\.csv$", full.names = TRUE)
-# # 3. Read and combine all CSVs
-# iron_data_2023 <- iron_files_2023 %>%
-#   lapply(read.csv, colClasses = "character") %>%    # or read.csv if you prefer base R
-#   bind_rows()             # combine into one data frame
-# #Select Sipper data
-# iron_SIP_2023 <- iron_data_2023 %>%
-#   rename(Sample_ID = Sample_Name) %>%
-#   filter(str_detect(Sample_ID, "Sipper")) %>% 
-#   mutate(Sample_ID = gsub("Sipper", "SIP", Sample_ID))
-# #Select only data columns
-# colnames(iron_SIP_2023)
-# iron_SIP_sel_2023 <- iron_SIP_2023 %>% 
-#   select("Sample_ID", "FE_2_mean" ,"FE_2_sd"  ,"FE_3_mean" ,"FE_3_sd" ,  "FE_2_flag" ,"FE_3_flag")
-
-#Combine 2022 and 2023
-# iron_SIP_sel <- bind_rows(iron_SIP_sel_2022, iron_SIP_sel_2023)
 iron_SIP_sel <- iron_SIP_sel_2022
 iron_SIP_sel$Sample_ID <- toupper(iron_SIP_sel$Sample_ID)
 
+
+
 ##Combine all analytes by Sample ID
 # Create a list of your data frames
-df_list <- list(dionex_SIP_sel, sulfide_SIP_sel, nutr_SIP_sel, iron_SIP_sel)
+df_list <- list(DIC_SIP_sel, dionex_SIP_sel, sulfide_SIP_sel, nutr_SIP_sel, iron_SIP_sel)
 # Join them all together
 joined_data <- df_list %>% 
   reduce(full_join, by = "Sample_ID")
@@ -275,7 +238,11 @@ final_data1 <- final_data %>%
   left_join(metadat, by = c("Year", "Month", "Site", "Zone"))
 
 final_data1 <- final_data1 %>%
-  select(c("Project", "Site", "Year", "Month", "Day", "Sample_ID", "Zone", "Replicate", "Depth", "SO4_ppm", "Cl_ppm", "SO4_mM", "Cl_mM", "salinity", "H2S_mean_uM", "H2S_sd_uM", "H2S_Conc_flag", "NH3_mgL", "NH3_uM", "NH3_range", "PO4_mgL", "PO4_uM", "PO4_range", "NOx_mgL", "NOx_uM", "NOx_range", "FE_2_mean_uM", "FE_2_sd_uM", "FE_3_mean_uM", "FE_3_sd_uM", "FE_2_flag", "FE_3_flag"))
+  mutate(Depth_cm = gsub("CM", "", Depth)) %>%
+  rename(NH3_Conc_Flag = NH3_range, 
+         PO4_Conc_Flag = PO4_range, 
+         NOx_Conc_Flag = NOx_range) %>%
+  select(c("Project", "Region", "Site", "Year", "Month", "Day", "Sample_ID", "Zone", "Replicate", "Depth_cm", "SO4_ppm", "Cl_ppm", "SO4_mM", "Cl_mM", "salinity", "H2S_mean_uM", "H2S_sd_uM", "H2S_Conc_flag", "NH3_mgL", "NH3_uM", "NH3_Conc_Flag", "PO4_mgL", "PO4_uM", "PO4_Conc_Flag", "NOx_mgL", "NOx_uM", "NOx_Conc_Flag", "FE_2_mean_uM", "FE_2_sd_uM", "FE_3_mean_uM", "FE_3_sd_uM", "FE_2_flag", "FE_3_flag", "ic_mgL", "ic_uM", "ic_flag"))
 
 
 
