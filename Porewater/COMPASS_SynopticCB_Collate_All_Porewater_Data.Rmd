@@ -45,7 +45,15 @@ Nutrients <- Nutrients %>%
     .cols = c(7:8, (ncol(.) - 2):(ncol(.))),
     .fn = ~paste0("Nutr_", .)) %>%
   mutate(Sample_ID = toupper(Sample_ID)) %>% 
-  dplyr::select(c("Sample_ID", "NOx_Conc_mgL", "NOx_Conc_uM", "NOx_Conc_Flag", "NH3_Conc_mgL", "NH3_Conc_uM",  "NH3_Conc_Flag", "PO4_Conc_mgL", "PO4_Conc_uM", "PO4_Conc_Flag"))
+  rename(
+    NOx_mgL = NOx_Conc_mgL, 
+    NOx_uM = NOx_Conc_uM, 
+    NH3_mgL = NH3_Conc_mgL, 
+    NH3_uM = NH3_Conc_uM, 
+    PO4_mgL = PO4_Conc_mgL, 
+    PO4_uM = PO4_Conc_uM
+  ) %>% 
+  dplyr::select(c("Sample_ID", "NOx_mgL", "NOx_uM", "NOx_Conc_Flag", "NH3_mgL", "NH3_uM",  "NH3_Conc_Flag", "PO4_mgL", "PO4_uM", "PO4_Conc_Flag"))
 
 
 SO4_Cl <- read.csv("Sulfate_Chloride/Synoptic-CB/COMPASS_SynopticCB_SO4_Cl_AllData.csv")
@@ -217,9 +225,10 @@ final_data1 <- final_data[order(final_data$Year, final_data$Month, final_data$Da
 colnames(final_data1)
 final_data1 <- final_data1 %>% 
   select(c("Project", "Region", "Sample_ID", "Year", "Month", "Day", "Site", "Zone", "Lysimeter", "Depth_cm", "Sampling_Time", "Sampling_Time_Zone", "Field_Notes", 
-           "ic_mgL", "ic_uM", "ic_flag", "npoc_mgL", "npoc_uM", "npoc_flag", "tdn_mgL", "tdn_uM", "tdn_flag", "NOx_Conc_mgL", "NOx_Conc_uM", "NOx_Conc_Flag",
-           "NH3_Conc_mgL", "NH3_Conc_uM", "NH3_Conc_Flag", "PO4_Conc_mgL", "PO4_Conc_uM", "PO4_Conc_Flag", "SO4_ppm", "SO4_mM", "SO4_Conc_flag", "SO4_QAQC_flag", 
-           "Cl_ppm", "Cl_mM", "Cl_Conc_flag", "salinity", "H2S_mean_uM", "H2S_sd_uM", "H2S_cv", "H2S_Conc_flag", "H2S_cv_flag"))
+           "ic_mgL", "ic_uM", "ic_flag", "npoc_mgL", "npoc_uM", "npoc_flag", "tdn_mgL", "tdn_uM", "tdn_flag", 
+           "NOx_mgL", "NOx_uM", "NOx_Conc_Flag", "NH3_mgL", "NH3_uM", "NH3_Conc_Flag", "PO4_mgL", "PO4_uM", "PO4_Conc_Flag", 
+           "SO4_ppm", "SO4_mM", "SO4_Conc_flag", "Cl_ppm", "Cl_mM", "Cl_Conc_flag", "salinity", 
+           "H2S_mean_uM", "H2S_sd_uM", "H2S_cv", "H2S_Conc_flag", "H2S_cv_flag"))
 
 
 write.csv(final_data1, "COMPASS_SynopticCB_AllData_AllYears.csv", row.names = FALSE)
