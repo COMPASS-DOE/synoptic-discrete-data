@@ -69,6 +69,10 @@ all_dat <- droplevels(all_dat[!all_dat$Sample_ID == 'Lab Blank',])
 head(all_dat)
 
 
+##Remove samples that were ran several times and seemed to increase over time for SO4
+all_dat <- all_dat %>% 
+  filter(Sample_ID != "33_GWI_202208_UP_LysB_10cm")
+
 
 ```
 
