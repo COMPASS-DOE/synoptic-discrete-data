@@ -242,6 +242,16 @@ alldat3 <- alldat2
 
 ```
 
+
+## Fix Sample IDs
+```{r Fix sample IDs}
+
+# GWI_TR_RHZ_SF_8 second run was much higher than any other samples in that Site and Zone, so remove that one. 
+alldat3 <- alldat3 %>% 
+  filter(!(Sample_Name == "GWI_TR_RHZ_SF_8" & Test == "o-PHOS 0.3" & Conc == "0.765889"))
+
+```
+
 ## NOx
 ```{r}
 

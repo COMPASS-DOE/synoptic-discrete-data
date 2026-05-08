@@ -20,7 +20,7 @@ library(tidyr)
 library(tibble)
 library(lubridate)
 library(tidyverse)
-detach("package:raster", unload = TRUE)
+# detach("package:raster", unload = TRUE)
 ```
 
 #Read in and collate all the files in the Processed Data folder 
@@ -354,8 +354,20 @@ df_duplicates <- joined_data %>%
   filter(n() > 1) %>%
   ungroup()
 
-# GWI_202207_TR_RHZ_SF8 dup for nutrients - ran twice on SEAL for unknown reason
+##Fix Nutrient duplicates
+df_duplicates_Nutrients <- nutr_RHZ_sel %>%
+  group_by(Sample_ID) %>%
+  filter(n() > 1) %>%
+  ungroup()
 
+# GWI_202207_TR_RHZ_SF8 dup for nutrients - ran twice on SEAL for PO4 for unknown reason
+
+##See what the typical range is for PO4
+nutr_RHZ_sel_GWI_TR <- nutr_RHZ_sel %>% 
+  filter(str_detect(Sample_ID, "GWI")) %>% 
+  filter(str_detect(Sample_ID, "TR"))
+
+##The second run is way higher than typical (first run was 2 uM, which looks about typical for GWI TR but the second run was 54 uM) so removed the second run
 
 ```
 
