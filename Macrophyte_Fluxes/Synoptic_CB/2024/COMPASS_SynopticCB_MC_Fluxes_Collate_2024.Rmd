@@ -19,6 +19,9 @@ library(readxl)
 library(tidyr)
 library(tibble)
 library(openxlsx)
+library(purrr)
+library(arrow)
+library(lubridate)
 ```
 
 #Read in and collate all the files in the Processed Data folder 
@@ -54,9 +57,18 @@ all_dat$Plot <- gsub("_W_", "_WC_", all_dat$Plot)
 ##Pull in Hydrago probe data
 ```{r, echo = FALSE}
 
-hydrago <- read.csv("S:/Biogeochemistry/COMPASS Synoptics/Samples & Data/Soil Conductivity Probe/Raw Data Files/2024/COMPASS_Synoptic_2024_ALL_SoilCond_Data.csv")
+##Read in notes for missing HydraGO data
+hydrago_notes <- read.csv("Raw Data/HydraGO_NoData_Notes.csv")
+hydrago_notes <- hydrago_notes %>% 
+  select(Plot, HydraGO_Notes)
 
-# colnames(hydrago)
+##Combine with flux data
+all_dat1 <- all_dat %>% 
+  left_join(hydrago_notes, by = "Plot")
+
+
+##Read in hydrago data from S Drive
+hydrago <- read.csv("S:/Biogeochemistry/COMPASS Synoptics/Samples & Data/Soil Conductivity Probe/Raw Data Files/2024/COMPASS_Synoptic_2024_ALL_SoilCond_Data.csv")
 
 ## Select only measurements from collars
 hydrago <- hydrago %>% 
@@ -66,16 +78,21 @@ hydrago <- hydrago %>%
 hydrago <- hydrago %>% 
   select(-c("Memo", "Site", "Zone", "Type", "Replicate", "Month", "Month_Name", "Date", "Year", "Timestamp", "HydraGO.Serial", "HydraProbe.Serial"))
 
-##Find fluxes that are missing hydrago data: 
-all_present <- all(all_dat$Plot %in% hydrago$Plot)
 
-if (all_present) {
+##Find fluxes that are missing hydrago data: 
+missing_ids <- all_dat1 %>%
+  filter(!(Plot %in% hydrago$Plot)) %>%
+  filter(is.na(HydraGO_Notes)) %>%
+  select(Plot) %>%
+  rename(missing_ids = Plot)
+
+
+if (nrow(missing_ids) == 0) {
   message("All flux IDs are present in hydrago data")
 } else {
   message("Some flux IDs are missing from hydrago data")
   
   # Optional: Which ones are missing?
-  missing_ids <- setdiff(all_dat$Plot, hydrago$Plot)
   print(missing_ids)
 }
 
@@ -93,7 +110,7 @@ missing_ids <- missing_ids %>%
 write.csv(missing_ids, "fluxes_missing_hydrago_data_2024.csv", row.names = FALSE)
 
 ##Combine with flux data
-final_dat1 <- all_dat %>% 
+final_dat1 <- all_dat1 %>% 
   left_join(hydrago, by = "Plot")
 
 ```
@@ -102,7 +119,7 @@ final_dat1 <- all_dat %>%
 ```{r, include = FALSE}
 # Soil sensors
 
-##Read in L1 Sensor Data from S Drive and only save necessary data
+##Read in L2 Sensor Data from S Drive and only save necessary data
 # Path to zip file
 L2 <- "S:/Biogeochemistry/COMPASS/L2 Data/v2-1"
 
@@ -135,9 +152,6 @@ teros_wide_avg <- teros_wide %>%
      soil.salinity.10cm.TEROS = mean(`soil-salinity-10cm`, na.rm=TRUE),
      soil.temp.10cm.TEROS = mean(`soil-temp-10cm`, na.rm=TRUE),
      soil.vwc.10cm.TEROS = mean(`soil-vwc-10cm`, na.rm=TRUE))
-
-##filter out flagged data 
-dat1 <- dat %>% filter(!(F_OOB == 1 & F_OOS == 1))
 
 ##Write out this dataframe
 write.csv(teros_wide_avg, file="Raw Data/TEROS_data.csv", row.names = FALSE)
