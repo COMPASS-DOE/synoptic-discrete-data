@@ -77,6 +77,12 @@ head(all_dat)
 all_dat <- all_dat %>% 
   mutate(Sample_ID = gsub("6_202209_MSM_TR_LysC_10cm","6_202209_MSM_UP_LysC_10cm", Sample_ID))
 
+
+##Remove samples that were ran several times and had different values
+all_dat <- all_dat %>% 
+  filter(!str_detect(Sample_ID, "29_202209_GWI_UP_LysA_20cm")) %>% 
+  filter(!str_detect(Sample_ID, "30_202209_GWI_UP_LysA_20cm")) 
+
 ```
 
 

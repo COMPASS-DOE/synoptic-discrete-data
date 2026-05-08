@@ -29,6 +29,12 @@ library(stringr)
 Sdat <- read.table("Raw Data/COMPASS_Synoptic_CB_MonMon_202211_SO4.txt",sep='\t' , header=T, skip=3)
 head(Sdat)
 
+##Fix Sample IDs that were entered incorrectly
+Sdat <- Sdat %>% 
+  mutate(X.1 = ifelse(X == "192", paste0(X.1, "_dup"), X.1)) %>% 
+  mutate(X.1 = ifelse(X == "163", paste0(X.1, "_spk"), X.1))
+
+
 ## Only keep the columns that we need 
 Sdat <- Sdat[ ,c(2,5)] # dont need this here 
 head(Sdat)
@@ -44,6 +50,11 @@ head(Sdat)
 ## Read in raw data file from Dionex - copied and saved as a txt
 Cldat <- read.table("Raw Data/COMPASS_Synoptic_CB_MonMon_202211_Cl.txt",sep='\t' , header=T, skip=3)
 head(Cldat)
+
+##Fix Sample IDs that were entered incorrectly
+Cldat <- Cldat %>% 
+  mutate(X.1 = ifelse(X == "192", paste0(X.1, "_dup"), X.1)) %>% 
+  mutate(X.1 = ifelse(X == "163", paste0(X.1, "_spk"), X.1))
 
 ## Only keep the columns that we need 
 Cldat <- Cldat[ ,c(2,5)]
@@ -72,6 +83,14 @@ head(all_dat)
 
 ```
 
+## Fix Sample IDs
+```{r Fix sample IDs}
+
+##Remove samples that were ran several times and had different values
+all_dat <- all_dat %>% 
+  filter(!str_detect(Sample_ID, "202211_MSM_TR_LysB"))
+
+```
 
 ## Pull out standards  - could do some checks here if we want
 ```{r}

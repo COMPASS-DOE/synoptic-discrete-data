@@ -19,9 +19,10 @@ library(tibble)
 ```{r}
 
 files <- list.files(path = ".", pattern = "\\Combined.csv$", full.names = TRUE, recursive =  TRUE)
+updated_list <- files[files != "./Protocols/Timing Test/COMPASS_H2S_20250813_Plate1-8_Combined.csv"]
 
 # 3. Read and combine all CSVs
-all_data <- files %>%
+all_data <- updated_list %>%
   lapply(read.csv) %>%    # or read.csv if you prefer base R
   bind_rows()             # combine into one data frame
 

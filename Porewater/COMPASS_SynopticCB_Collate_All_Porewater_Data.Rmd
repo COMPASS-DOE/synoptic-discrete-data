@@ -100,17 +100,22 @@ df_duplicates_SO4 <- SO4_Cl %>%
 
 ##Based on sample list order, 36_202207_GWI_UP_LysA_10cm was probably actually 36_202207_GWI_TR_LysA_10cm
 
-##33_GWI_202208_UP_LysB_10cm was ran 4 times for SO4/Cl for some reason. The 2-4 times the values were similar, should I average them? 
-##29_202209_GWI_UP_LysA_20cm and 30_202209_GWI_UP_LysA_20cm - ran twice for some reason, values are not that close but should I still average them? 
+##33_GWI_202208_UP_LysB_10cm was ran 4 times for SO4/Cl for some reason. The 2-4 times the values were similar, should I average them? I removed this sample because even though the last 3 values were close, there was a trend of increase in SO4 between each sample, which I thought might indicate an issue here. 
+
+##29_202209_GWI_UP_LysA_20cm and 30_202209_GWI_UP_LysA_20cm - ran twice for some reason, values are not that close but should I still average them? I removed these because I'm not sure what happened here and the values are not that close to each other. 
+ 
 ##100_202211_GCrew_TR_LysC_45cm was ran twice for some reason, they're close so should I average or take the first one? 
-##119_202211_GWI_UP_LysC_20cm was ran twice for some reason, they're close so should I average or take the first one? 
+
+
+##119_202211_GWI_UP_LysC_20cm was ran twice for some reason, they're close so should I average or take the first one? Based on the raw data, it looks like the second one was supposed to be a dup. Fixed this in the processing code. 
+
 ##MSM TR 202211 samples ran several times with different SO4: 
 # 12_202211_MSM_TR_LysB_10cm	
 # 13_202211_MSM_TR_LysB_20cm	
 # 14_202211_MSM_TR_LysB_45cm	
 # 15_202211_MSM_TR_LysB_10cm	
 # 16_202211_MSM_TR_LysB_20cm	
-# 17_202211_MSM_TR_LysB_45cm	
+# 17_202211_MSM_TR_LysB_45cm	I removed these samples because the duplicate samples were not similar in value, and I'm not sure what else they could be, unless there were WC MSM lysimeter samples on this date, but it looks like there are WC samples from sippers.
 
 ##Based on sample list order, 78_SWH_202308_WC_LysC_20cm was probably actually 78_SWH_202308_WC_LysA_20cm
 
@@ -118,7 +123,7 @@ df_duplicates_SO4 <- SO4_Cl %>%
 
 ##It looks like SWH_202409_SWAMP_LYSB_20CM was added to the end of the 202408 run, so kept the one from the second run because it also had values greater than 0 for Cl. 
 
-##The 202509 SO4 samples were not in order, so it's hard for me to tell what happened there, but these samples were ran twice and likely one of them is something else? GWI_202509_UP_LysA_10cm, GWI_202509_UP_LYSA_20CM, GWI_202509_UP_LYSA_45CM, GWI_202509_UP_LYSB_10CM
+##Fixed the 202509 SO4 samples that were not in order. 71-74 GWI_202509_UP_LysA_10cm, GWI_202509_UP_LYSA_20CM, GWI_202509_UP_LYSA_45CM, GWI_202509_UP_LYSB_10CM were actually SWH_202509_UP_LysA_10cm, SWH_202509_UP_LYSA_20CM, SWH_202509_UP_LYSA_45CM, SWH_202509_UP_LYSB_10CM
 
 
 ##Fix DIC duplicates
@@ -148,11 +153,7 @@ df_duplicates_Sulfide <- Sulfide %>%
   ungroup()
 unique(df_duplicates_Sulfide$Sample_ID)
 
-##Same issue as SO4/Cl 2025 data because used Sample ID list from the Dionex, so would need to go back and check the actual vials with the number written on them. 
-## GWI_202509_UP_LYSB_10CM
-## GWI_202509_UP_LYSA_45CM
-## GWI_202509_UP_LYSA_20CM
-## GWI_202509_UP_LYSA_10CM
+##Fixed the 202509 Sulfide samples that were not in order. 71-74 GWI_202509_UP_LysA_10cm, GWI_202509_UP_LYSA_20CM, GWI_202509_UP_LYSA_45CM, GWI_202509_UP_LYSB_10CM were actually SWH_202509_UP_LysA_10cm, SWH_202509_UP_LYSA_20CM, SWH_202509_UP_LYSA_45CM, SWH_202509_UP_LYSB_10CM
 
 
 ```
