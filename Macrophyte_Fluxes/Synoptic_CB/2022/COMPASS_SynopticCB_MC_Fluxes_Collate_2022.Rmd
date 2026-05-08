@@ -53,9 +53,18 @@ all_dat <- merge(ch4, co2, by = c("Plot", "Site", "Zone", "Replicate", "Date", "
 ##Pull in Hydrago probe data
 ```{r, echo = FALSE}
 
-hydrago <- read.csv("S:/Biogeochemistry/COMPASS Synoptics/Samples & Data/Soil Conductivity Probe/Raw Data Files/2022/COMPASS_Synoptic_2022_ALL_SoilCond_Data.csv")
+##Read in notes for missing HydraGO data
+hydrago_notes <- read.csv("Raw Data/HydraGO_NoData_Notes.csv")
+hydrago_notes <- hydrago_notes %>% 
+  select(Plot, HydraGO_Notes)
 
-# colnames(hydrago)
+##Combine with flux data
+all_dat1 <- all_dat %>% 
+  left_join(hydrago_notes, by = "Plot")
+
+
+##Read in hydrago data from S Drive
+hydrago <- read.csv("S:/Biogeochemistry/COMPASS Synoptics/Samples & Data/Soil Conductivity Probe/Raw Data Files/2022/COMPASS_Synoptic_2022_ALL_SoilCond_Data.csv")
 
 ## Select only measurements from collars
 hydrago <- hydrago %>% 
@@ -65,16 +74,21 @@ hydrago <- hydrago %>%
 hydrago <- hydrago %>% 
   select(-c("Memo", "Site", "Zone", "Type", "Replicate", "Month", "Month_Name", "Date", "Year", "Timestamp", "HydraGO.Serial", "HydraProbe.Serial"))
 
-##Find fluxes that are missing hydrago data: 
-all_present <- all(all_dat$Plot %in% hydrago$Plot)
 
-if (all_present) {
+##Find fluxes that are missing hydrago data: 
+missing_ids <- all_dat1 %>%
+  filter(!(Plot %in% hydrago$Plot)) %>%
+  filter(is.na(HydraGO_Notes)) %>%
+  select(Plot) %>%
+  rename(missing_ids = Plot)
+
+
+if (nrow(missing_ids) == 0) {
   message("All flux IDs are present in hydrago data")
 } else {
   message("Some flux IDs are missing from hydrago data")
   
   # Optional: Which ones are missing?
-  missing_ids <- setdiff(all_dat$Plot, hydrago$Plot)
   print(missing_ids)
 }
 
@@ -92,7 +106,9 @@ missing_ids <- missing_ids %>%
 write.csv(missing_ids, "fluxes_missing_hydrago_data_2022.csv", row.names = FALSE)
 
 ##Combine with flux data
-final_dat1 <- left_join(all_dat, hydrago, by = "Plot")
+final_dat1 <- all_dat1 %>% 
+  left_join(hydrago, by = "Plot")
+
 
 ```
 ##pull TEROS data for the zone during the time of the fluxes and put it into another column so that we can use that too.
