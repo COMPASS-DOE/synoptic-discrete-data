@@ -600,12 +600,12 @@
 "599","GCW","SgwC","20cm",20,"Varian GC","Wegner","20231127",2023,"October","GCW_TR_SgwC_20cm",1,"Within Range","Needs Dilution",99.3613688993173,50628.0329280216,"TR",NA
 "600","GCW","SgwC","45cm",45,"Varian GC","Wegner","20231127",2023,"October","GCW_TR_SgwC_45cm",1,"Within Range","Needs Dilution",25.9662194439757,53934.7114092328,"TR",NA
 "601","GCW","ATM","GCW",0,"Varian GC","Wegner","20231127",2023,"October","GCW_TR_ATM",1,"Within Range","Within Range",3.7469943601424,647.996133795671,"TR",NA
-"602","GCW","SgwA","10cm",10,"Varian GC","Wegner","20231127",2023,"October","GCW_WC_SgwA_10cm",1,"Needs Dilution","Needs Dilution",12829.1055787895,84852.910046541,"WC",NA
-"603","GCW","SgwA","20cm",20,"Varian GC","Wegner","20231127",2023,"October","GCW_WC_SgwA_20cm",1,"Needs Dilution","Needs Dilution",12849.6029965438,88448.1562897708,"WC",NA
-"604","GCW","SgwA","45cm",45,"Varian GC","Wegner","20231127",2023,"October","GCW_WC_SgwA_45cm",1,"Needs Dilution","Needs Dilution",16242.488872125,91604.6551346436,"WC",NA
-"605","GCW","SgwB","10cm",10,"Varian GC","Wegner","20231127",2023,"October","GCW_WC_SgwB_10cm",1,"Needs Dilution","Needs Dilution",30571.1084118915,102760.135473527,"WC",NA
-"606","GCW","SgwB","20cm",20,"Varian GC","Wegner","20231127",2023,"October","GCW_WC_SgwB_20cm",1,"Needs Dilution","Needs Dilution",11352.3622379245,97944.6038525943,"WC",NA
-"607","GCW","SgwB","45cm",45,"Varian GC","Wegner","20231127",2023,"October","GCW_WC_SgwB_45cm",1,"Needs Dilution","Needs Dilution",11494.0692549565,84758.2223332179,"WC",NA
+"602","GCW","SgwA","10cm",10,"Varian GC","Wegner","20231127",2023,"October","GCW_WC_SgwA_10cm",1,"Needs Dilution","Needs Dilution",12829.1055787895,84852.910046541,"WC","CH4 unusually high, not real value"
+"603","GCW","SgwA","20cm",20,"Varian GC","Wegner","20231127",2023,"October","GCW_WC_SgwA_20cm",1,"Needs Dilution","Needs Dilution",12849.6029965438,88448.1562897708,"WC","CH4 unusually high, not real value"
+"604","GCW","SgwA","45cm",45,"Varian GC","Wegner","20231127",2023,"October","GCW_WC_SgwA_45cm",1,"Needs Dilution","Needs Dilution",16242.488872125,91604.6551346436,"WC","CH4 unusually high, not real value"
+"605","GCW","SgwB","10cm",10,"Varian GC","Wegner","20231127",2023,"October","GCW_WC_SgwB_10cm",1,"Needs Dilution","Needs Dilution",30571.1084118915,102760.135473527,"WC","CH4 unusually high, not real value"
+"606","GCW","SgwB","20cm",20,"Varian GC","Wegner","20231127",2023,"October","GCW_WC_SgwB_20cm",1,"Needs Dilution","Needs Dilution",11352.3622379245,97944.6038525943,"WC","CH4 unusually high, not real value"
+"607","GCW","SgwB","45cm",45,"Varian GC","Wegner","20231127",2023,"October","GCW_WC_SgwB_45cm",1,"Needs Dilution","Needs Dilution",11494.0692549565,84758.2223332179,"WC","CH4 unusually high, not real value"
 "608","GCW","SgwC","10cm",10,"Varian GC","Wegner","20231127",2023,"October","GCW_WC_SgwC_10cm",1,"Within Range","Needs Dilution",2829.65994251217,72272.9371214226,"WC",NA
 "609","GCW","SgwC","20cm",20,"Varian GC","Wegner","20231127",2023,"October","GCW_WC_SgwC_20cm",1,"Within Range","Needs Dilution",5863.9688007138,72598.2879814438,"WC",NA
 "610","GCW","SgwC","45cm",45,"Varian GC","Wegner","20231127",2023,"October","GCW_WC_SgwC_45cm",1,"Within Range","Needs Dilution",1866.94867318243,75193.3338022623,"WC",NA
@@ -714,13 +714,307 @@
 "713","GCW","SgwC","20cm",20,"Varian GC","Wegner","20231128",2023,"November","GCW_TR_SgwC_20cm",1,"Within Range","Needs Dilution",37.4430794338116,57817.1631216545,"TR",NA
 "714","GCW","SgwC","45cm",45,"Varian GC","Wegner","20231128",2023,"November","GCW_TR_SgwC_45cm",1,"Within Range","Needs Dilution",10.8930573965803,55243.0230236872,"TR",NA
 "715","GCW","ATM","GCW",0,"Varian GC","Wegner","20231128",2023,"November","GCW_TR_ATM",1,"Within Range","Within Range",2.70102510295054,672.327867486834,"TR",NA
-"716","GCW","SgwA","10cm",10,"Varian GC","Wegner","20231128",2023,"November","GCW_WC_SgwA_10cm",1,"Needs Dilution","Needs Dilution",29190.2116758578,66583.6235342236,"WC",NA
-"717","GCW","SgwA","20cm",20,"Varian GC","Wegner","20231128",2023,"November","GCW_WC_SgwA_20cm",1,"Needs Dilution","Needs Dilution",19705.3562612241,61389.0296530073,"WC",NA
-"718","GCW","SgwA","45cm",45,"Varian GC","Wegner","20231128",2023,"November","GCW_WC_SgwA_45cm",1,"Needs Dilution","Needs Dilution",31876.7629681988,74478.9736752197,"WC",NA
+"716","GCW","SgwA","10cm",10,"Varian GC","Wegner","20231128",2023,"November","GCW_WC_SgwA_10cm",1,"Needs Dilution","Needs Dilution",29190.2116758578,66583.6235342236,"WC","CH4 unusually high, not real value"
+"717","GCW","SgwA","20cm",20,"Varian GC","Wegner","20231128",2023,"November","GCW_WC_SgwA_20cm",1,"Needs Dilution","Needs Dilution",19705.3562612241,61389.0296530073,"WC","CH4 unusually high, not real value"
+"718","GCW","SgwA","45cm",45,"Varian GC","Wegner","20231128",2023,"November","GCW_WC_SgwA_45cm",1,"Needs Dilution","Needs Dilution",31876.7629681988,74478.9736752197,"WC","CH4 unusually high, not real value"
 "719","GCW","SgwB","10cm",10,"Varian GC","Wegner","20231128",2023,"November","GCW_WC_SgwB_10cm",1,"Within Range","Within Range",2669.70259469304,41676.4588728741,"WC",NA
 "720","GCW","SgwB","20cm",20,"Varian GC","Wegner","20231128",2023,"November","GCW_WC_SgwB_20cm",1,"Within Range","Needs Dilution",6059.72124733792,60214.6032356488,"WC",NA
-"721","GCW","SgwB","45cm",45,"Varian GC","Wegner","20231128",2023,"November","GCW_WC_SgwB_45cm",1,"Needs Dilution","Needs Dilution",22799.1166655011,75821.7683618462,"WC",NA
+"721","GCW","SgwB","45cm",45,"Varian GC","Wegner","20231128",2023,"November","GCW_WC_SgwB_45cm",1,"Needs Dilution","Needs Dilution",22799.1166655011,75821.7683618462,"WC","CH4 unusually high, not real value"
 "722","GCW","SgwC","10cm",10,"Varian GC","Wegner","20231128",2023,"November","GCW_WC_SgwC_10cm",1,"Within Range","Within Range",3088.0724538375,34137.2499634704,"WC",NA
-"723","GCW","SgwC","20cm",20,"Varian GC","Wegner","20231128",2023,"November","GCW_WC_SgwC_20cm",1,"Within Range","Needs Dilution",8840.82576377531,52181.0315305782,"WC",NA
+"723","GCW","SgwC","20cm",20,"Varian GC","Wegner","20231128",2023,"November","GCW_WC_SgwC_20cm",1,"Within Range","Needs Dilution",8840.82576377531,52181.0315305782,"WC","CH4 unusually high, not real value"
 "724","GCW","SgwC","45cm",45,"Varian GC","Wegner","20231128",2023,"November","GCW_WC_SgwC_45cm",1,"Within Range","Within Range",3656.8408103995,40329.1313880921,"WC",NA
 "725","GCW","ATM","GCW",0,"Varian GC","Wegner","20231128",2023,"November","GCW_WC_ATM",1,"Within Range","Within Range",7.34679316984593,655.880285608003,"WC",NA
+"726","GCW","C3","10",NA,"Varian GC","Max Wegner","20231121",2023,"April",NA,1,"Within Range","Within Range",1.39283759975339,7035.92760654035,"UP",NA
+"727","GCW","C3","20",NA,"Varian GC","Max Wegner","20231121",2023,"April",NA,1,"Within Range","Within Range",1.35390944921262,8605.11858878908,"UP",NA
+"728","GCW","C3","35",NA,"Varian GC","Max Wegner","20231121",2023,"April",NA,1,"Within Range","Within Range",0.609408570120358,10791.8676383856,"UP",NA
+"729","GCW","C3","50",NA,"Varian GC","Max Wegner","20231121",2023,"April",NA,1,"Within Range","Within Range",0.825135404367135,10072.7947561996,"UP",NA
+"730","GCW","C6","10",NA,"Varian GC","Max Wegner","20231121",2023,"April",NA,1,"Within Range","Within Range",1.63289452808815,2879.57203161719,"UP",NA
+"731","GCW","C6","20",NA,"Varian GC","Max Wegner","20231121",2023,"April",NA,1,"Within Range","Within Range",0.786207253826363,15606.9234677552,"UP",NA
+"732","GCW","C6","35",NA,"Varian GC","Max Wegner","20231121",2023,"April",NA,1,"Within Range","Within Range",1.36688549939288,8601.22637066833,"UP",NA
+"733","GCW","C6","50",NA,"Varian GC","Max Wegner","20231121",2023,"April",NA,1,"Within Range","Within Range",1.10249847697013,7991.89241605344,"UP",NA
+"734","GCW","F4","10",NA,"Varian GC","Max Wegner","20231121",2023,"April",NA,1,"Within Range","Within Range",1.57936832109459,2200.89172415093,"UP",NA
+"735","GCW","F4","20",NA,"Varian GC","Max Wegner","20231121",2023,"April",NA,1,"Within Range","Within Range",1.04248424488644,7578.83437189442,"UP",NA
+"736","GCW","F4","35",NA,"Varian GC","Max Wegner","20231121",2023,"April",NA,1,"Within Range","Within Range",1.11871853969546,5595.12936759707,"UP",NA
+"737","GCW","F4","50",NA,"Varian GC","Max Wegner","20231121",2023,"April",NA,1,"Within Range","Within Range",1.34579941784996,6785.04531741262,"UP",NA
+"738","GCW","F4","ATM",NA,"Varian GC","Max Wegner","20231121",2023,"April",NA,1,"Within Range","Within Range",1.91512361950875,461.581978780053,"UP",NA
+"739","GCW","H3","10",NA,"Varian GC","Max Wegner","20231121",2023,"April",NA,1,"Within Range","Within Range",1.08465640797228,3948.41837444339,"UP",NA
+"740","GCW","H3","20",NA,"Varian GC","Max Wegner","20231121",2023,"April",NA,1,"Within Range","Within Range",0.703484933927223,9412.41508171215,"UP",NA
+"741","GCW","H3","35",NA,"Varian GC","Max Wegner","20231121",2023,"April",NA,1,"Within Range","Within Range",1.18197678432421,10877.8784510429,"UP",NA
+"742","GCW","H3","50",NA,"Varian GC","Max Wegner","20231121",2023,"April",NA,1,"Within Range","Within Range",0.815403366731942,13247.4680507673,"UP",NA
+"743","GCW","H6","10",NA,"Varian GC","Max Wegner","20231121",2023,"April",NA,1,"Within Range","Within Range",1.43338775656669,1469.50790020517,"UP",NA
+"744","GCW","H6","20",NA,"Varian GC","Max Wegner","20231121",2023,"April",NA,1,"Within Range","Within Range",0.674288821021645,5842.96996034155,"UP",NA
+"745","GCW","H6","35",NA,"Varian GC","Max Wegner","20231121",2023,"April",NA,1,"Within Range","Within Range",0.661312770841387,9317.35846582982,"UP",NA
+"746","GCW","H6","50",NA,"Varian GC","Max Wegner","20231121",2023,"April",NA,1,"Within Range","Within Range",0.846221485910053,8494.73095819778,"UP",NA
+"747","GCW","C3","10",NA,"Varian GC","Max Wegner","20231130",2023,"May",NA,1,"Within Range","Within Range",1.81547188144643,5350.49750894591,"UP",NA
+"748","GCW","C3","20",NA,"Varian GC","Max Wegner","20231130",2023,"May",NA,1,"Within Range","Within Range",1.19650480501117,8133.15868361725,"UP",NA
+"749","GCW","C3","35",NA,"Varian GC","Max Wegner","20231130",2023,"May",NA,1,"Within Range","Within Range",0.935970193756531,12067.3569740204,"UP",NA
+"750","GCW","C3","50",NA,"Varian GC","Max Wegner","20231130",2023,"May",NA,1,"Within Range","Within Range",0.875968283285766,15252.2972419427,"UP",NA
+"751","GCW","C6","10",NA,"Varian GC","Max Wegner","20231130",2023,"May",NA,1,"Within Range","Within Range",1.63072915710223,6102.13022094255,"UP",NA
+"752","GCW","C6","20",NA,"Varian GC","Max Wegner","20231130",2023,"May",NA,1,"Within Range","Within Range",0.591748707371616,21576.5770498168,"UP",NA
+"753","GCW","C6","35",NA,"Varian GC","Max Wegner","20231130",2023,"May",NA,1,"Within Range","Within Range",1.1317659016085,14110.5799690539,"UP",NA
+"754","GCW","C6","50",NA,"Varian GC","Max Wegner","20231130",2023,"May",NA,1,"Within Range","Within Range",0.965971148991914,13227.9647347761,"UP",NA
+"755","GCW","F4","10",NA,"Varian GC","Max Wegner","20231130",2023,"May",NA,1,"Within Range","Within Range",1.59599120893495,7005.50893763503,"UP",NA
+"756","GCW","F4","20",NA,"Varian GC","Max Wegner","20231130",2023,"May",NA,1,"Within Range","Within Range",1.21387377909481,13958.7536931632,"UP",NA
+"757","GCW","F4","35",NA,"Varian GC","Max Wegner","20231130",2023,"May",NA,1,"Within Range","Within Range",1.14281888511627,12247.9604732834,"UP",NA
+"758","GCW","F4","50",NA,"Varian GC","Max Wegner","20231130",2023,"May",NA,1,"Within Range","Within Range",1.03228905003855,14977.9302977679,"UP",NA
+"759","GCW","F4","ATM",NA,"Varian GC","Max Wegner","20231130",2023,"May",NA,1,"Within Range","Within Range",2.24495924060559,605.660489027,"UP",NA
+"760","GCW","H3","10",NA,"Varian GC","Max Wegner","20231130",2023,"May",NA,1,"Within Range","Within Range",1.34966757647602,5653.07308886247,"UP",NA
+"761","GCW","H3","20",NA,"Varian GC","Max Wegner","20231130",2023,"May",NA,1,"Within Range","Within Range",0.402268990095515,13217.0344737369,"UP",NA
+"762","GCW","H3","35",NA,"Varian GC","Max Wegner","20231130",2023,"May",NA,1,"Within Range","Within Range",0.951760170196206,17373.269578505,"UP",NA
+"763","GCW","H3","50",NA,"Varian GC","Max Wegner","20231130",2023,"May",NA,1,"Within Range","Within Range",0.849125323338319,18507.3276415469,"UP",NA
+"764","GCW","H6","10",NA,"Varian GC","Max Wegner","20231130",2023,"May",NA,1,"Within Range","Within Range",1.57862223485131,2375.89452873159,"UP",NA
+"765","GCW","H6","20",NA,"Varian GC","Max Wegner","20231130",2023,"May",NA,1,"Within Range","Within Range",0.828598353966741,8198.2251763515,"UP",NA
+"766","GCW","H6","35",NA,"Varian GC","Max Wegner","20231130",2023,"May",NA,1,"Within Range","Within Range",0.790702410511521,12618.8067044641,"UP",NA
+"767","GCW","H6","50",NA,"Varian GC","Max Wegner","20231130",2023,"May",NA,1,"Within Range","Within Range",0.812808377527066,12688.8031864186,"UP",NA
+"768","GCW","C3","10",NA,"Varian GC","Max Wegner","20230627",2023,"June",NA,1,"Within Range","Within Range",1.49099047034932,5350.6484473347,"UP",NA
+"769","GCW","C3","20",NA,"Varian GC","Max Wegner","20230627",2023,"June",NA,1,"Within Range","Within Range",1.11918015681169,8460.5761233633,"UP",NA
+"770","GCW","C3","35",NA,"Varian GC","Max Wegner","20230627",2023,"June",NA,1,"Within Range","Within Range",0.879150713894998,11944.4794047108,"UP",NA
+"771","GCW","C3","50",NA,"Varian GC","Max Wegner","20230627",2023,"June",NA,1,"Within Range","Within Range",0.744232203497378,19579.3338601748,"UP",NA
+"772","GCW","C6","10",NA,"Varian GC","Max Wegner","20230627",2023,"June",NA,1,"Within Range","Within Range",1.64630363929542,5296.5331333551,"UP",NA
+"773","GCW","C6","20",NA,"Varian GC","Max Wegner","20230627",2023,"June",NA,1,"Within Range","Within Range",1.61492724152853,20221.3889738047,"UP",NA
+"774","GCW","C6","35",NA,"Varian GC","Max Wegner","20230627",2023,"June",NA,1,"Within Range","Within Range",1.02818860328772,18226.8056229812,"UP",NA
+"775","GCW","C6","50",NA,"Varian GC","Max Wegner","20230627",2023,"June",NA,1,"Within Range","Within Range",0.945041149205463,15616.5118970468,"UP",NA
+"776","GCW","F4","10",NA,"Varian GC","Max Wegner","20230627",2023,"June",NA,1,"Within Range","Within Range",1.58825730342667,5575.95284739419,"UP",NA
+"777","GCW","F4","20",NA,"Varian GC","Max Wegner","20230627",2023,"June",NA,1,"Within Range","Within Range",1.03760152261778,11996.3636163257,"UP",NA
+"778","GCW","F4","35",NA,"Varian GC","Max Wegner","20230627",2023,"June",NA,1,"Within Range","Within Range",1.58668848353833,7451.96271161387,"UP",NA
+"779","GCW","F4","50",NA,"Varian GC","Max Wegner","20230627",2023,"June",NA,1,"Within Range","Within Range",0.981124006637384,11242.7386089456,"UP",NA
+"780","GCW","F4","ATM",NA,"Varian GC","Max Wegner","20230627",2023,"June",NA,1,"Within Range","Within Range",1.95065469763423,409.163035989522,"UP",NA
+"781","GCW","H3","10",NA,"Varian GC","Max Wegner","20230627",2023,"June",NA,1,"Within Range","Within Range",1.29802562408296,5263.3768836431,"UP",NA
+"782","GCW","H3","20",NA,"Varian GC","Max Wegner","20230627",2023,"June",NA,1,"Within Range","Within Range",0.868168974676587,12548.5983903837,"UP",NA
+"783","GCW","H3","35",NA,"Varian GC","Max Wegner","20230627",2023,"June",NA,1,"Within Range","Within Range",0.970142267418974,15439.6933407618,"UP",NA
+"784","GCW","H3","50",NA,"Varian GC","Max Wegner","20230627",2023,"June",NA,1,"Within Range","Within Range",1.19291469156388,10603.6607610542,"UP",NA
+"785","GCW","H6","10",NA,"Varian GC","Max Wegner","20230627",2023,"June",NA,1,"Within Range","Within Range",1.42980649470389,2348.73715433623,"UP",NA
+"786","GCW","H6","20",NA,"Varian GC","Max Wegner","20230627",2023,"June",NA,1,"Within Range","Within Range",0.722268725060557,8830.64360566583,"UP",NA
+"787","GCW","H6","35",NA,"Varian GC","Max Wegner","20230627",2023,"June",NA,1,"Within Range","Within Range",0.791296800147711,14127.1993542789,"UP",NA
+"788","GCW","H6","50",NA,"Varian GC","Max Wegner","20230627",2023,"June",NA,1,"Within Range","Within Range",0.80541617914281,13189.5970548806,"UP",NA
+"789","GCW","C3","10",NA,"Varian GC","Max Wegner","20230627",2023,"June",NA,1,"Within Range","Within Range",1.28704388486454,4445.16811178393,"UP",NA
+"790","GCW","C3","20",NA,"Varian GC","Max Wegner","20230627",2023,"June",NA,1,"Within Range","Within Range",1.31685146274309,7444.11691455635,"UP",NA
+"791","GCW","C3","35",NA,"Varian GC","Max Wegner","20230627",2023,"June",NA,1,"Within Range","Within Range",0.772470961487578,10616.4563547487,"UP",NA
+"792","GCW","C3","50",NA,"Varian GC","Max Wegner","20230627",2023,"June",NA,1,"Within Range","Within Range",0.356733691076309,17157.7455902105,"UP",NA
+"793","GCW","C6","10",NA,"Varian GC","Max Wegner","20230627",2023,"June",NA,1,"Within Range","Within Range",1.48942165046097,4005.49319080348,"UP",NA
+"794","GCW","C6","20",NA,"Varian GC","Max Wegner","20230627",2023,"June",NA,1,"Within Range","Within Range",0.967004627642285,15563.5860118114,"UP",NA
+"795","GCW","C6","35",NA,"Varian GC","Max Wegner","20230627",2023,"June",NA,1,"Within Range","Within Range",0.94033468954043,14789.4156545095,"UP",NA
+"796","GCW","C6","50",NA,"Varian GC","Max Wegner","20230627",2023,"June",NA,1,"Within Range","Within Range",0.916802391215264,14897.6832212496,"UP",NA
+"797","GCW","F4","10",NA,"Varian GC","Max Wegner","20230627",2023,"June",NA,1,"Within Range","Within Range",1.41882475548548,4537.36730884405,"UP",NA
+"798","GCW","F4","20",NA,"Varian GC","Max Wegner","20230627",2023,"June",NA,1,"Within Range","Within Range",0.935628229875397,10483.2772741876,"UP",NA
+"799","GCW","F4","35",NA,"Varian GC","Max Wegner","20230627",2023,"June",NA,1,"Within Range","Within Range",1.69336823594575,7864.0295877695,"UP",NA
+"800","GCW","F4","50",NA,"Varian GC","Max Wegner","20230627",2023,"June",NA,1,"Within Range","Within Range",0.813260278584532,12463.9273168656,"UP",NA
+"801","GCW","F4","ATM",NA,"Varian GC","Max Wegner","20230627",2023,"June",NA,1,"Within Range","Within Range",1.90202128109555,662.016378824431,"UP",NA
+"802","GCW","H3","10",NA,"Varian GC","Max Wegner","20230627",2023,"June",NA,1,"Within Range","Within Range",1.22429108933077,4673.10994079779,"UP",NA
+"803","GCW","H3","20",NA,"Varian GC","Max Wegner","20230627",2023,"June",NA,1,"Within Range","Within Range",0.796003259812744,10946.2901169239,"UP",NA
+"804","GCW","H3","35",NA,"Varian GC","Max Wegner","20230627",2023,"June",NA,1,"Within Range","Within Range",0.7661956819342,15837.826908772,"UP",NA
+"805","GCW","H3","50",NA,"Varian GC","Max Wegner","20230627",2023,"June",NA,1,"Within Range","Within Range",1.30900736330137,16190.5996538696,"UP",NA
+"806","GCW","H6","35",NA,"Varian GC","Max Wegner","20230627",2023,"June",NA,1,"Within Range","Within Range",0.839930216686387,15392.7072114908,"UP",NA
+"807","GCW","H6","50",NA,"Varian GC","Max Wegner","20230627",2023,"June",NA,1,"Within Range","Within Range",0.816397918361221,15006.6821758509,"UP",NA
+"808","GCW","C3","10",NA,"Varian GC","Max Wegner","20230815",2023,"June",NA,1,"Within Range","Within Range",1.51452276867448,4572.08976286509,"UP",NA
+"809","GCW","C3","20",NA,"Varian GC","Max Wegner","20230815",2023,"June",NA,1,"Within Range","Within Range",1.06427146071964,7770.15337005773,"UP",NA
+"810","GCW","C3","35",NA,"Varian GC","Max Wegner","20230815",2023,"June",NA,1,"Within Range","Within Range",0.927784130433674,11187.2787233423,"UP",NA
+"811","GCW","C3","50",NA,"Varian GC","Max Wegner","20230815",2023,"June",NA,1,"Within Range","Within Range",0.356733691076309,18970.6196901613,"UP",NA
+"812","GCW","C6","10",NA,"Varian GC","Max Wegner","20230815",2023,"June",NA,1,"Within Range","Within Range",1.68395531661568,4655.66006071317,"UP",NA
+"813","GCW","C6","20",NA,"Varian GC","Max Wegner","20230815",2023,"June",NA,1,"Within Range","Within Range",1.12388661647673,15970.2154994224,"UP",NA
+"814","GCW","C6","35",NA,"Varian GC","Max Wegner","20230815",2023,"June",NA,1,"Within Range","Within Range",1.0062251248509,15061.240755201,"UP",NA
+"815","GCW","C6","50",NA,"Varian GC","Max Wegner","20230815",2023,"June",NA,1,"Within Range","Within Range",0.877581894006653,16479.039818198,"UP",NA
+"816","GCW","F4","10",NA,"Varian GC","Max Wegner","20230815",2023,"June",NA,1,"Within Range","Within Range",1.69807469561078,4171.41480673082,"UP",NA
+"817","GCW","F4","20",NA,"Varian GC","Max Wegner","20230815",2023,"June",NA,1,"Within Range","Within Range",1.13173071591845,11923.0844628289,"UP",NA
+"818","GCW","F4","35",NA,"Varian GC","Max Wegner","20230815",2023,"June",NA,1,"Within Range","Within Range",1.09564785848653,8433.80289498623,"UP",NA
+"819","GCW","F4","50",NA,"Varian GC","Max Wegner","20230815",2023,"June",NA,1,"Within Range","Within Range",0.934059409987052,12808.9576934921,"UP",NA
+"820","GCW","F4","ATM",NA,"Varian GC","Max Wegner","20230815",2023,"June",NA,1,"Within Range","Within Range",2.14205072401225,646.516866369933,"UP",NA
+"821","GCW","H3","10",NA,"Varian GC","Max Wegner","20230815",2023,"June",NA,1,"Within Range","Within Range",1.46745817202415,4864.17209098759,"UP",NA
+"822","GCW","H3","20",NA,"Varian GC","Max Wegner","20230815",2023,"June",NA,1,"Within Range","Within Range",1.06740910049633,12025.3753348237,"UP",NA
+"823","GCW","H3","35",NA,"Varian GC","Max Wegner","20230815",2023,"June",NA,1,"Within Range","Within Range",0.764626862045856,15601.6846704042,"UP",NA
+"824","GCW","H3","50",NA,"Varian GC","Max Wegner","20230815",2023,"June",NA,1,"Within Range","Within Range",1.26194276665103,18745.3448411265,"UP",NA
+"825","GCW","H6","10",NA,"Varian GC","Max Wegner","20230815",2023,"June",NA,1,"Within Range","Within Range",1.62277134097025,2715.76826885095,"UP",NA
+"826","GCW","H6","20",NA,"Varian GC","Max Wegner","20230815",2023,"June",NA,1,"Within Range","Within Range",0.814829098472877,9186.48965733208,"UP",NA
+"827","GCW","H6","35",NA,"Varian GC","Max Wegner","20230815",2023,"June",NA,1,"Within Range","Within Range",0.741094563720689,15578.583156846,"UP",NA
+"828","GCW","H6","50",NA,"Varian GC","Max Wegner","20230815",2023,"June",NA,1,"Within Range","Within Range",0.763058042157511,14875.5495037502,"UP",NA
+"829","GCW","C3","10",NA,"Varian GC","Max Wegner","20230816",2023,"June",NA,1,"Within Range","Within Range",1.54433034655303,4677.29879854883,"UP",NA
+"830","GCW","C3","20",NA,"Varian GC","Max Wegner","20230816",2023,"June",NA,1,"Within Range","Within Range",1.11918015681169,8673.43954202462,"UP",NA
+"831","GCW","C3","35",NA,"Varian GC","Max Wegner","20230816",2023,"June",NA,1,"Within Range","Within Range",0.852480775793143,11832.6361639822,"UP",NA
+"832","GCW","C3","50",NA,"Varian GC","Max Wegner","20230816",2023,"June",NA,1,"Within Range","Within Range",0.789727980259366,20618.0376028237,"UP",NA
+"833","GCW","C6","10",NA,"Varian GC","Max Wegner","20230816",2023,"June",NA,1,"Within Range","Within Range",1.82358028667833,5011.01852047189,"UP",NA
+"834","GCW","C6","20",NA,"Varian GC","Max Wegner","20230816",2023,"June",NA,1,"Within Range","Within Range",1.257236306986,16237.053864696,"UP",NA
+"835","GCW","C6","35",NA,"Varian GC","Max Wegner","20230816",2023,"June",NA,1,"Within Range","Within Range",1.09878549826322,16358.6193925505,"UP",NA
+"836","GCW","C6","50",NA,"Varian GC","Max Wegner","20230816",2023,"June",NA,1,"Within Range","Within Range",0.918371211103608,17491.7312713558,"UP",NA
+"837","GCW","F4","10",NA,"Varian GC","Max Wegner","20230816",2023,"June",NA,1,"Within Range","Within Range",1.74670811214946,5011.72774506466,"UP",NA
+"838","GCW","F4","20",NA,"Varian GC","Max Wegner","20230816",2023,"June",NA,1,"Within Range","Within Range",1.08937257893315,12535.1305108772,"UP",NA
+"839","GCW","F4","35",NA,"Varian GC","Max Wegner","20230816",2023,"June",NA,1,"Within Range","Within Range",1.19291469156388,9636.66996759293,"UP",NA
+"840","GCW","F4","50",NA,"Varian GC","Max Wegner","20230816",2023,"June",NA,1,"Within Range","Within Range",0.941903509428774,15006.5787472645,"UP",NA
+"841","GCW","F4","ATM",NA,"Varian GC","Max Wegner","20230816",2023,"June",NA,1,"Within Range","Within Range",2.20794115932271,446.722388381641,"UP",NA
+"842","GCW","H3","10",NA,"Varian GC","Max Wegner","20230816",2023,"June",NA,1,"Within Range","Within Range",1.43608177425726,5482.38691544175,"UP",NA
+"843","GCW","H3","20",NA,"Varian GC","Max Wegner","20230816",2023,"June",NA,1,"Within Range","Within Range",0.907389471885197,11920.6021767542,"UP",NA
+"844","GCW","H3","35",NA,"Varian GC","Max Wegner","20230816",2023,"June",NA,1,"Within Range","Within Range",0.838361396798043,17274.7233214805,"UP",NA
+"845","GCW","H3","50",NA,"Varian GC","Max Wegner","20230816",2023,"June",NA,1,"Within Range","Within Range",0.954454068535529,18855.703142864,"UP",NA
+"846","GCW","H6","10",NA,"Varian GC","Max Wegner","20230816",2023,"June",NA,1,"Within Range","Within Range",1.64630363929542,2586.57118886799,"UP",NA
+"847","GCW","H6","20",NA,"Varian GC","Max Wegner","20230816",2023,"June",NA,1,"Within Range","Within Range",0.839930216686387,9468.55418808171,"UP",NA
+"848","GCW","H6","35",NA,"Varian GC","Max Wegner","20230816",2023,"June",NA,1,"Within Range","Within Range",0.7661956819342,16365.5491078424,"UP",NA
+"849","GCW","H6","50",NA,"Varian GC","Max Wegner","20230816",2023,"June",NA,1,"Within Range","Within Range",0.880719533783342,16668.8164988134,"UP",NA
+"850","GCW","H6","10",NA,"Varian GC","Max Wegner","20230825",2023,"June",NA,1,"Within Range","Within Range",1.68081767683899,3007.0527193066,"UP",NA
+"851","GCW","H6","20",NA,"Varian GC","Max Wegner","20230825",2023,"June",NA,1,"Within Range","Within Range",1.44392587369899,11836.7659196839,"UP",NA
+"852","GCW","C3","10",NA,"Varian GC","Max Wegner","20230825",2023,"June",NA,1,"Within Range","Within Range",2.66446774683094,6288.30984878241,"UP",NA
+"853","GCW","C3","20",NA,"Varian GC","Max Wegner","20230825",2023,"June",NA,1,"Within Range","Within Range",1.85338786455688,10334.5395791226,"UP",NA
+"854","GCW","C3","35",NA,"Varian GC","Max Wegner","20230825",2023,"June",NA,1,"Within Range","Within Range",1.28233742519951,15882.9587112432,"UP",NA
+"855","GCW","C3","50",NA,"Varian GC","Max Wegner","20230825",2023,"June",NA,1,"Within Range","Within Range",2.97666290461148,873.29142990819,"UP",NA
+"856","GCW","C6","10",NA,"Varian GC","Max Wegner","20230825",2023,"June",NA,1,"Within Range","Within Range",2.54523743531676,6449.88007632286,"UP",NA
+"857","GCW","C6","20",NA,"Varian GC","Max Wegner","20230825",2023,"June",NA,1,"Within Range","Within Range",1.9459482379692,19364.9928902785,"UP",NA
+"858","GCW","C6","35",NA,"Varian GC","Max Wegner","20230825",2023,"June",NA,1,"Within Range","Within Range",1.82201146678999,18998.6414493319,"UP",NA
+"859","GCW","C6","50",NA,"Varian GC","Max Wegner","20230825",2023,"June",NA,1,"Within Range","Within Range",1.63845953985369,19658.2941981698,"UP",NA
+"860","GCW","F4","10",NA,"Varian GC","Max Wegner","20230825",2023,"June",NA,1,"Within Range","Within Range",2.40718128514245,6860.04091138543,"UP",NA
+"861","GCW","F4","20",NA,"Varian GC","Max Wegner","20230825",2023,"June",NA,1,"Within Range","Within Range",1.74984575192615,14344.5249776697,"UP",NA
+"862","GCW","F4","35",NA,"Varian GC","Max Wegner","20230825",2023,"June",NA,1,"Within Range","Within Range",2.00399457383794,11232.8685666963,"UP",NA
+"863","GCW","F4","50",NA,"Varian GC","Max Wegner","20230825",2023,"June",NA,1,"Within Range","Within Range",1.64002835974204,17087.2811718163,"UP",NA
+"864","GCW","F4","ATM",NA,"Varian GC","Max Wegner","20230825",2023,"June",NA,1,"Within Range","Within Range",3.01902104159678,847.197875099188,"UP",NA
+"865","GCW","H3","10",NA,"Varian GC","Max Wegner","20230825",2023,"June",NA,1,"Within Range","Within Range",2.08557320803185,7123.65821496686,"UP",NA
+"866","GCW","H3","20",NA,"Varian GC","Max Wegner","20230825",2023,"June",NA,1,"Within Range","Within Range",1.57256910454323,13820.5040444429,"UP",NA
+"867","GCW","H3","35",NA,"Varian GC","Max Wegner","20230825",2023,"June",NA,1,"Within Range","Within Range",1.51452276867448,18949.4463809646,"UP",NA
+"868","GCW","H3","50",NA,"Varian GC","Max Wegner","20230825",2023,"June",NA,1,"Within Range","Within Range",1.64002835974204,20844.9673092416,"UP",NA
+"869","GCW","H6","10",NA,"Varian GC","Max Wegner","20230825",2023,"June",NA,1,"Within Range","Within Range",2.35070376916206,4214.14558844522,"UP",NA
+"870","GCW","H6","20",NA,"Varian GC","Max Wegner","20230825",2023,"June",NA,1,"Within Range","Within Range",1.37332897872349,11383.5270783667,"UP",NA
+"871","GCW","H6","35",NA,"Varian GC","Max Wegner","20230825",2023,"June",NA,1,"Within Range","Within Range",1.40156773671369,18649.2449088061,"UP",NA
+"872","GCW","H6","50",NA,"Varian GC","Max Wegner","20230825",2023,"June",NA,1,"Within Range","Within Range",1.37489779861183,18782.1801934135,"UP",NA
+"873","GCW","C3","10",NA,"Varian GC","Max Wegner","20231116",2023,"June",NA,1,"Within Range","Within Range",1.74357047237277,4200.71464771964,"UP",NA
+"874","GCW","C3","20",NA,"Varian GC","Max Wegner","20231116",2023,"June",NA,1,"Within Range","Within Range",1.21644698988905,7938.47600674184,"UP",NA
+"875","GCW","C3","35",NA,"Varian GC","Max Wegner","20231116",2023,"June",NA,1,"Within Range","Within Range",0.957591708312218,11844.722533084,"UP",NA
+"876","GCW","C3","50",NA,"Varian GC","Max Wegner","20231116",2023,"June",NA,1,"Within Range","Within Range",0.750507483050756,18920.7744992506,"UP",NA
+"877","GCW","C6","10",NA,"Varian GC","Max Wegner","20231116",2023,"June",NA,1,"Within Range","Within Range",1.75612103147952,5096.87902273413,"UP",NA
+"878","GCW","C6","20",NA,"Varian GC","Max Wegner","20231116",2023,"June",NA,1,"Within Range","Within Range",1.16781357335037,17768.6982503449,"UP",NA
+"879","GCW","C6","35",NA,"Varian GC","Max Wegner","20231116",2023,"June",NA,1,"Within Range","Within Range",0.962298167977252,18401.1566687039,"UP",NA
+"880","GCW","C6","50",NA,"Varian GC","Max Wegner","20231116",2023,"June",NA,1,"Within Range","Within Range",0.948178788982152,17671.3941137681,"UP",NA
+"881","GCW","F4","10",NA,"Varian GC","Max Wegner","20231116",2023,"June",NA,1,"Within Range","Within Range",1.74357047237277,4751.16897253955,"UP",NA
+"882","GCW","F4","20",NA,"Varian GC","Max Wegner","20231116",2023,"June",NA,1,"Within Range","Within Range",1.20703407055898,10816.5241797155,"UP",NA
+"883","GCW","F4","35",NA,"Varian GC","Max Wegner","20231116",2023,"June",NA,1,"Within Range","Within Range",1.20546525067064,8707.20158774295,"UP",NA
+"884","GCW","F4","50",NA,"Varian GC","Max Wegner","20231116",2023,"June",NA,1,"Within Range","Within Range",0.894838912778442,14345.2859165557,"UP",NA
+"885","GCW","F4","ATM",NA,"Varian GC","Max Wegner","20231116",2023,"June",NA,1,"Within Range","Within Range",2.15930774278404,670.778257647612,"UP",NA
+"886","GCW","H3","10",NA,"Varian GC","Max Wegner","20231116",2023,"June",NA,1,"Within Range","Within Range",1.39215481738362,4958.05569645554,"UP",NA
+"887","GCW","H3","20",NA,"Varian GC","Max Wegner","20231116",2023,"June",NA,1,"Within Range","Within Range",0.921508850880297,11228.4950150408,"UP",NA
+"888","GCW","H3","35",NA,"Varian GC","Max Wegner","20231116",2023,"June",NA,1,"Within Range","Within Range",0.802278539366121,15786.9326564846,"UP",NA
+"889","GCW","H3","50",NA,"Varian GC","Max Wegner","20231116",2023,"June",NA,1,"Within Range","Within Range",0.730112824502279,17178.0397564223,"UP",NA
+"890","GCW","H6","10",NA,"Varian GC","Max Wegner","20231116",2023,"June",NA,1,"Within Range","Within Range",1.4831463709076,2639.40842102937,"UP",NA
+"891","GCW","H6","20",NA,"Varian GC","Max Wegner","20231116",2023,"June",NA,1,"Within Range","Within Range",0.761489222269167,9423.27463048704,"UP",NA
+"892","GCW","H6","35",NA,"Varian GC","Max Wegner","20231116",2023,"June",NA,1,"Within Range","Within Range",0.759920402380822,16624.2387780553,"UP",NA
+"893","GCW","H6","50",NA,"Varian GC","Max Wegner","20231116",2023,"June",NA,1,"Within Range","Within Range",0.810122638807844,16078.7859641657,"UP",NA
+"894","GCW","C3","10",NA,"Varian GC","Max Wegner","20231116",2023,"June",NA,1,"Within Range","Within Range",1.71690053427091,3506.25817954269,"UP",NA
+"895","GCW","C3","20",NA,"Varian GC","Max Wegner","20231116",2023,"June",NA,1,"Within Range","Within Range",1.08937257893315,6669.92439398598,"UP",NA
+"896","GCW","C3","35",NA,"Varian GC","Max Wegner","20231116",2023,"June",NA,1,"Within Range","Within Range",0.984261646414073,9838.34832340577,"UP",NA
+"897","GCW","C3","50",NA,"Varian GC","Max Wegner","20231116",2023,"June",NA,1,"Within Range","Within Range",0.792865620036055,17307.8278568993,"UP",NA
+"898","GCW","C6","10",NA,"Varian GC","Max Wegner","20231116",2023,"June",NA,1,"Within Range","Within Range",1.68081767683899,4378.05034693688,"UP",NA
+"899","GCW","C6","20",NA,"Varian GC","Max Wegner","20231116",2023,"June",NA,1,"Within Range","Within Range",1.30743854341302,13887.6956868517,"UP",NA
+"900","GCW","C6","35",NA,"Varian GC","Max Wegner","20231116",2023,"June",NA,1,"Within Range","Within Range",0.94033468954043,13919.2709567423,"UP",NA
+"901","GCW","C6","50",NA,"Varian GC","Max Wegner","20231116",2023,"June",NA,1,"Within Range","Within Range",0.998381025409173,14807.4270040634,"UP",NA
+"902","GCW","F4","10",NA,"Varian GC","Max Wegner","20231116",2023,"June",NA,1,"Within Range","Within Range",1.57413792443157,4093.94679548303,"UP",NA
+"903","GCW","F4","20",NA,"Varian GC","Max Wegner","20231116",2023,"June",NA,1,"Within Range","Within Range",1.14585009491355,10227.5427064446,"UP",NA
+"904","GCW","F4","35",NA,"Varian GC","Max Wegner","20231116",2023,"June",NA,1,"Within Range","Within Range",1.04858326183619,8557.41483130112,"UP",NA
+"905","GCW","F4","50",NA,"Varian GC","Max Wegner","20231116",2023,"June",NA,1,"Within Range","Within Range",1.01406922429262,13239.5530621338,"UP",NA
+"906","GCW","F4","ATM",NA,"Varian GC","Max Wegner","20231116",2023,"June",NA,1,"Within Range","Within Range",2.00085693406125,551.458607670209,"UP",NA
+"907","GCW","H3","10",NA,"Varian GC","Max Wegner","20231116",2023,"June",NA,1,"Within Range","Within Range",1.38117307816521,4317.89184840638,"UP",NA
+"908","GCW","H3","20",NA,"Varian GC","Max Wegner","20231117",2023,"June",NA,1,"Within Range","Within Range",1.00308748507421,9382.38340006013,"UP",NA
+"909","GCW","H3","35",NA,"Varian GC","Max Wegner","20231117",2023,"June",NA,1,"Within Range","Within Range",0.935628229875397,13354.3218543076,"UP",NA
+"910","GCW","H3","50",NA,"Varian GC","Max Wegner","20231117",2023,"June",NA,1,"Within Range","Within Range",0.700305246623735,16199.6644306959,"UP",NA
+"911","GCW","H6","10",NA,"Varian GC","Max Wegner","20231117",2023,"June",NA,1,"Within Range","Within Range",1.56943146476654,2194.48080540872,"UP",NA
+"912","GCW","H6","20",NA,"Varian GC","Max Wegner","20231117",2023,"June",NA,1,"Within Range","Within Range",0.918371211103608,7765.45475713063,"UP",NA
+"913","GCW","H6","35",NA,"Varian GC","Max Wegner","20231117",2023,"June",NA,1,"Within Range","Within Range",0.806984999031155,13401.7807999738,"UP",NA
+"914","GCW","H6","50",NA,"Varian GC","Max Wegner","20231117",2023,"June",NA,1,"Within Range","Within Range",0.763058042157511,13835.7745364559,"UP",NA
+"915","GCW","C3","10",NA,"Varian GC","Max Wegner","20231205",2023,"July",NA,1,"Within Range","Within Range",2.46987437726288,6798.45016772451,"UP",NA
+"916","GCW","C3","20",NA,"Varian GC","Max Wegner","20231205",2023,"July",NA,1,"Within Range","Within Range",0.499826525005917,11090.5751096174,"UP",NA
+"917","GCW","C3","35",NA,"Varian GC","Max Wegner","20231205",2023,"July",NA,1,"Within Range","Within Range",0.277323181428667,17086.7519067227,"UP",NA
+"918","GCW","C3","50",NA,"Varian GC","Max Wegner","20231205",2023,"July",NA,1,"Within Range","Within Range",0.1441459976817,20515.4178117756,"UP",NA
+"919","GCW","C6","10",NA,"Varian GC","Max Wegner","20231205",2023,"July",NA,1,"Within Range","Within Range",1.08775506788887,6794.19015990043,"UP",NA
+"920","GCW","C6","20",NA,"Varian GC","Max Wegner","20231205",2023,"July",NA,1,"Within Range","Needs Dilution",1.32974775542909,53218.3006201516,"UP",NA
+"921","GCW","C6","35",NA,"Varian GC","Max Wegner","20231205",2023,"July",NA,1,"Within Range","Within Range",0.706088748614024,25740.8185854032,"UP",NA
+"922","GCW","C6","50",NA,"Varian GC","Max Wegner","20231205",2023,"July",NA,1,"Within Range","Within Range",0.431613821135519,29856.675262379,"UP",NA
+"923","GCW","F4","10",NA,"Varian GC","Max Wegner","20231205",2023,"July",NA,1,"Within Range","Within Range",3.00258311225075,5288.29131568167,"UP",NA
+"924","GCW","F4","20",NA,"Varian GC","Max Wegner","20231205",2023,"July",NA,1,"Within Range","Within Range",1.04065581997836,13119.9676604014,"UP",NA
+"925","GCW","F4","35",NA,"Varian GC","Max Wegner","20231205",2023,"July",NA,1,"Within Range","Within Range",1.8104849065157,7263.73072815769,"UP",NA
+"926","GCW","F4","50",NA,"Varian GC","Max Wegner","20231205",2023,"July",NA,1,"Within Range","Within Range",0.793790796447393,16349.1092774322,"UP",NA
+"927","GCW","F4","ATM",NA,"Varian GC","Max Wegner","20231205",2023,"July",NA,1,"Within Range","Within Range",1.80561257052496,586.154542315091,"UP",NA
+"928","GCW","H3","10",NA,"Varian GC","Max Wegner","20231205",2023,"July",NA,1,"Within Range","Within Range",1.09262740387961,6050.08791090283,"UP",NA
+"929","GCW","H3","20",NA,"Varian GC","Max Wegner","20231205",2023,"July",NA,1,"Within Range","Within Range",0.618386700780655,12253.0908721862,"UP",NA
+"930","GCW","H3","35",NA,"Varian GC","Max Wegner","20231205",2023,"July",NA,1,"Within Range","Within Range",0.993556572067843,13794.7542918954,"UP",NA
+"931","GCW","H3","50",NA,"Varian GC","Max Wegner","20231205",2023,"July",NA,1,"Within Range","Within Range",1.81860546650027,13633.8972317537,"UP",NA
+"932","GCW","H6","10",NA,"Varian GC","Max Wegner","20231205",2023,"July",NA,1,"Within Range","Within Range",1.16896066773458,3363.86062434105,"UP",NA
+"933","GCW","H6","20",NA,"Varian GC","Max Wegner","20231205",2023,"July",NA,1,"Within Range","Within Range",0.579408012854714,11642.0024949376,"UP",NA
+"934","GCW","H6","35",NA,"Varian GC","Max Wegner","20231205",2023,"July",NA,1,"Within Range","Within Range",0.379642237234263,25641.891737044,"UP",NA
+"935","GCW","H6","50",NA,"Varian GC","Max Wegner","20231205",2023,"July",NA,1,"Within Range","Within Range",0.442982605113918,23274.7125854769,"UP",NA
+"936","GCW","C3","10",NA,"Varian GC","Max Wegner","20231211",2023,"August",NA,1,"Within Range","Within Range",0.727584089789943,6210.85922132455,"UP",NA
+"937","GCW","C3","20",NA,"Varian GC","Max Wegner","20231211",2023,"August",NA,1,"Within Range","Within Range",0.778427641198364,11688.6417062892,"UP",NA
+"938","GCW","C3","35",NA,"Varian GC","Max Wegner","20231211",2023,"August",NA,1,"Within Range","Within Range",0.657455053364533,14556.793646929,"UP",NA
+"939","GCW","C3","50",NA,"Varian GC","Max Wegner","20231211",2023,"August",NA,1,"Within Range","Within Range",0.487392140032916,26999.7507589724,"UP",NA
+"940","GCW","C6","10",NA,"Varian GC","Max Wegner","20231211",2023,"August",NA,1,"Within Range","Within Range",1.79705189527743,9538.09834796695,"UP",NA
+"941","GCW","C6","20",NA,"Varian GC","Max Wegner","20231211",2023,"August",NA,1,"Within Range","Within Range",1.17640992291256,29941.9985622871,"UP",NA
+"942","GCW","C6","35",NA,"Varian GC","Max Wegner","20231211",2023,"August",NA,1,"Within Range","Within Range",0.85732280717695,24045.2946650701,"UP",NA
+"943","GCW","C6","50",NA,"Varian GC","Max Wegner","20231211",2023,"August",NA,1,"Within Range","Within Range",0.678493764292156,25913.4190937839,"UP",NA
+"944","GCW","F4","10",NA,"Varian GC","Max Wegner","20231211",2023,"August",NA,1,"Within Range","Within Range",1.52530187912897,6450.15451528149,"UP",NA
+"945","GCW","F4","20",NA,"Varian GC","Max Wegner","20231211",2023,"August",NA,1,"Within Range","Within Range",0.901153454942831,17310.1862339968,"UP",NA
+"946","GCW","F4","35",NA,"Varian GC","Max Wegner","20231211",2023,"August",NA,1,"Within Range","Within Range",1.40082283947387,13376.1303619239,"UP",NA
+"947","GCW","F4","50",NA,"Varian GC","Max Wegner","20231211",2023,"August",NA,1,"Within Range","Within Range",1.46569219816738,20804.2885892406,"UP",NA
+"948","GCW","F4","ATM",NA,"Varian GC","Max Wegner","20231211",2023,"August",NA,1,"Within Range","Within Range",2.65788581739933,986.151685039456,"UP",NA
+"949","GCW","H3","10",NA,"Varian GC","Max Wegner","20231211",2023,"August",NA,1,"Within Range","Within Range",1.27985025164004,8079.18984714209,"UP",NA
+"950","GCW","H3","20",NA,"Varian GC","Max Wegner","20231211",2023,"August",NA,1,"Within Range","Within Range",0.696026023398508,15338.0744728176,"UP",NA
+"951","GCW","H3","35",NA,"Varian GC","Max Wegner","20231211",2023,"August",NA,1,"Within Range","Within Range",0.554014724637055,23196.1749920668,"UP",NA
+"952","GCW","H3","50",NA,"Varian GC","Max Wegner","20231211",2023,"August",NA,1,"Within Range","Within Range",0.82050506305361,24258.4384780829,"UP",NA
+"953","GCW","H6","10",NA,"Varian GC","Max Wegner","20231211",2023,"August",NA,1,"Within Range","Within Range",1.35874541761863,3682.71208418281,"UP",NA
+"954","GCW","H6","20",NA,"Varian GC","Max Wegner","20231211",2023,"August",NA,1,"Within Range","Within Range",0.63290989061564,13298.5575894661,"UP",NA
+"955","GCW","H6","35",NA,"Varian GC","Max Wegner","20231211",2023,"August",NA,1,"Within Range","Within Range",0.452327621820211,24333.9777204837,"UP",NA
+"956","GCW","H6","50",NA,"Varian GC","Max Wegner","20231211",2023,"August",NA,1,"Within Range","Within Range",0.469859880926563,24096.3959955609,"UP",NA
+"957","GCW","C3","10",NA,"Varian GC","Max Wegner","20231212",2023,"September",NA,1,"Within Range","Within Range",1.4118076759721,4073.66564485539,"UP",NA
+"958","GCW","C3","20",NA,"Varian GC","Max Wegner","20231212",2023,"September",NA,1,"Within Range","Within Range",0.935139504815391,7476.97539503969,"UP",NA
+"959","GCW","C3","35",NA,"Varian GC","Max Wegner","20231212",2023,"September",NA,1,"Within Range","Within Range",0.769871343282955,10506.2116775504,"UP",NA
+"960","GCW","C3","50",NA,"Varian GC","Max Wegner","20231212",2023,"September",NA,1,"Within Range","Within Range",0.587206533168157,16210.3707234552,"UP",NA
+"961","GCW","C6","10",NA,"Varian GC","Max Wegner","20231212",2023,"September",NA,1,"Within Range","Within Range",1.62056745896044,7861.98806471593,"UP",NA
+"962","GCW","C6","20",NA,"Varian GC","Max Wegner","20231212",2023,"September",NA,1,"Within Range","Within Range",1.40658868139739,15075.2107650292,"UP",NA
+"963","GCW","C6","35",NA,"Varian GC","Max Wegner","20231212",2023,"September",NA,1,"Within Range","Within Range",0.956015483114225,16025.7107932924,"UP",NA
+"964","GCW","C6","50",NA,"Varian GC","Max Wegner","20231212",2023,"September",NA,1,"Within Range","Within Range",0.815102629597095,17329.2252181673,"UP",NA
+"965","GCW","F4","10",NA,"Varian GC","Max Wegner","20231212",2023,"September",NA,1,"Within Range","Within Range",1.47965460544331,3353.50889438966,"UP",NA
+"966","GCW","F4","20",NA,"Varian GC","Max Wegner","20231212",2023,"September",NA,1,"Within Range","Within Range",1.05169705031721,6744.38840424162,"UP",NA
+"967","GCW","F4","35",NA,"Varian GC","Max Wegner","20231212",2023,"September",NA,1,"Within Range","Within Range",0.884689223926542,6954.4624184093,"UP",NA
+"968","GCW","F4","50",NA,"Varian GC","Max Wegner","20231212",2023,"September",NA,1,"Within Range","Within Range",0.667231116647021,13030.3919420923,"UP",NA
+"969","GCW","F4","ATM",NA,"Varian GC","Max Wegner","20231212",2023,"September",NA,1,"Within Range","Within Range",2.06244233295243,931.058779646071,"UP",NA
+"970","GCW","H3","10",NA,"Varian GC","Max Wegner","20231212",2023,"September",NA,1,"Within Range","Within Range",1.10736632578077,4519.56730057762,"UP",NA
+"971","GCW","H3","20",NA,"Varian GC","Max Wegner","20231212",2023,"September",NA,1,"Within Range","Within Range",0.745516035267649,7651.21281965065,"UP",NA
+"972","GCW","H3","35",NA,"Varian GC","Max Wegner","20231212",2023,"September",NA,1,"Within Range","Within Range",0.691586424662327,11165.1325172103,"UP",NA
+"973","GCW","H3","50",NA,"Varian GC","Max Wegner","20231212",2023,"September",NA,1,"Within Range","Within Range",0.628958489765825,14323.6388703507,"UP",NA
+"974","GCW","H6","10",NA,"Varian GC","Max Wegner","20231212",2023,"September",NA,1,"Within Range","Within Range",1.31786577362735,3013.02069602261,"UP",NA
+"975","GCW","H6","20",NA,"Varian GC","Max Wegner","20231212",2023,"September",NA,1,"Within Range","Within Range",0.689846759804091,8384.59699925863,"UP",NA
+"976","GCW","H6","35",NA,"Varian GC","Max Wegner","20231212",2023,"September",NA,1,"Within Range","Within Range",0.21839758322209,16090.7259695675,"UP",NA
+"977","GCW","H6","50",NA,"Varian GC","Max Wegner","20231212",2023,"September",NA,1,"Within Range","Within Range",0.597644522317574,18102.1883459119,"UP",NA
+"978","GCW","C3","10",NA,"Varian GC","Max Wegner","20240102",2023,"October",NA,1,"Within Range","Within Range",2.53298546251497,3199.08282745001,"UP",NA
+"979","GCW","C3","20",NA,"Varian GC","Max Wegner","20240102",2023,"October",NA,1,"Within Range","Within Range",1.917852186004,5913.91522114814,"UP",NA
+"980","GCW","C3","35",NA,"Varian GC","Max Wegner","20240102",2023,"October",NA,1,"Within Range","Within Range",1.64833502876982,10094.382737408,"UP",NA
+"981","GCW","C3","50",NA,"Varian GC","Max Wegner","20240102",2023,"October",NA,1,"Within Range","Within Range",1.51991803032294,15507.9084695263,"UP",NA
+"982","GCW","C6","10",NA,"Varian GC","Max Wegner","20240102",2023,"October",NA,1,"Within Range","Within Range",2.71372049736613,3668.01346002804,"UP",NA
+"983","GCW","C6","20",NA,"Varian GC","Max Wegner","20240102",2023,"October",NA,1,"Within Range","Within Range",2.33164029211061,13589.5709357158,"UP",NA
+"984","GCW","C6","35",NA,"Varian GC","Max Wegner","20240102",2023,"October",NA,1,"Within Range","Within Range",1.76565426191882,13088.0118973804,"UP",NA
+"985","GCW","C6","50",NA,"Varian GC","Max Wegner","20240102",2023,"October",NA,1,"Within Range","Within Range",1.61028554774852,16927.291887499,"UP",NA
+"986","GCW","F4","10",NA,"Varian GC","Max Wegner","20240102",2023,"October",NA,1,"Within Range","Within Range",2.67725641138739,2482.55080853133,"UP",NA
+"987","GCW","F4","20",NA,"Varian GC","Max Wegner","20240102",2023,"October",NA,1,"Within Range","Within Range",2.0732209001743,5793.20986375726,"UP",NA
+"988","GCW","F4","35",NA,"Varian GC","Max Wegner","20240102",2023,"October",NA,1,"Within Range","Within Range",1.97492640753595,5973.20427623213,"UP",NA
+"989","GCW","F4","50",NA,"Varian GC","Max Wegner","20240102",2023,"October",NA,1,"Within Range","Within Range",2.17627157794031,12273.8494213361,"UP",NA
+"990","GCW","F4","ATM",NA,"Varian GC","Max Wegner","20240102",2023,"October",NA,1,"Within Range","Within Range",3.15763110928126,719.744344132215,"UP",NA
+"991","GCW","H3","10",NA,"Varian GC","Max Wegner","20240102",2023,"October",NA,1,"Within Range","Within Range",2.28407844083399,3540.02196244851,"UP",NA
+"992","GCW","H3","20",NA,"Varian GC","Max Wegner","20240102",2023,"October",NA,1,"Within Range","Within Range",1.68162832466345,7545.44378207844,"UP",NA
+"993","GCW","H3","35",NA,"Varian GC","Max Wegner","20240102",2023,"October",NA,1,"Within Range","Within Range",1.80528913798267,9782.34614102498,"UP",NA
+"994","GCW","H3","50",NA,"Varian GC","Max Wegner","20240102",2023,"October",NA,1,"Within Range","Within Range",1.54686974604636,12997.9350785972,"UP",NA
+"995","GCW","H6","10",NA,"Varian GC","Max Wegner","20240102",2023,"October",NA,1,"Within Range","Within Range",2.33164029211061,2023.52397664678,"UP",NA
+"996","GCW","H6","20",NA,"Varian GC","Max Wegner","20240102",2023,"October",NA,1,"Within Range","Within Range",1.66418897919536,6767.33623576133,"UP",NA
+"997","GCW","H6","35",NA,"Varian GC","Max Wegner","20240102",2023,"October",NA,1,"Within Range","Within Range",1.54052816587614,13850.6172887856,"UP",NA
+"998","GCW","H6","50",NA,"Varian GC","Max Wegner","20240102",2023,"October",NA,1,"Within Range","Within Range",1.58967541219532,14274.0477592066,"UP",NA
+"999","GCW","C3","10",NA,"Varian GC","Max Wegner","20240109",2023,"November",NA,1,"Within Range","Within Range",2.22352677792385,1560.96066878475,"UP",NA
+"1000","GCW","C3","20",NA,"Varian GC","Max Wegner","20240109",2023,"November",NA,1,"Within Range","Within Range",1.62663504254888,3106.43755431303,"UP",NA
+"1001","GCW","C3","35",NA,"Varian GC","Max Wegner","20240109",2023,"November",NA,1,"Within Range","Within Range",1.55855455283768,4560.75688838282,"UP",NA
+"1002","GCW","C3","50",NA,"Varian GC","Max Wegner","20240109",2023,"November",NA,1,"Within Range","Within Range",1.47147485669544,8915.92267168162,"UP",NA
+"1003","GCW","C6","10",NA,"Varian GC","Max Wegner","20240109",2023,"November",NA,1,"Within Range","Within Range",2.39135310139798,2083.3279364931,"UP",NA
+"1004","GCW","C6","20",NA,"Varian GC","Max Wegner","20240109",2023,"November",NA,1,"Within Range","Within Range",1.95912115509197,4953.17330118472,"UP",NA
+"1005","GCW","C6","35",NA,"Varian GC","Max Wegner","20240109",2023,"November",NA,1,"Within Range","Within Range",1.54747168241957,7779.18491763783,"UP",NA
+"1006","GCW","C6","50",NA,"Varian GC","Max Wegner","20240109",2023,"November",NA,1,"Within Range","Within Range",1.39547803097131,10517.2404369135,"UP",NA
+"1007","GCW","F4","10",NA,"Varian GC","Max Wegner","20240109",2023,"November",NA,1,"Within Range","Within Range",2.13961361618678,1379.17578575917,"UP",NA
+"1008","GCW","F4","20",NA,"Varian GC","Max Wegner","20240109",2023,"November",NA,1,"Within Range","Within Range",1.73904701393249,3117.61915354215,"UP",NA
+"1009","GCW","F4","35",NA,"Varian GC","Max Wegner","20240109",2023,"November",NA,1,"Within Range","Within Range",1.49522386473423,3544.10387227862,"UP",NA
+"1010","GCW","F4","50",NA,"Varian GC","Max Wegner","20240109",2023,"November",NA,1,"Within Range","Within Range",1.30206526601872,9075.63966859355,"UP",NA
+"1011","GCW","F4","ATM",NA,"Varian GC","Max Wegner","20240109",2023,"November",NA,1,"Within Range","Within Range",2.59559457053159,515.930821023458,"UP",NA
+"1012","GCW","H3","10",NA,"Varian GC","Max Wegner","20240109",2023,"November",NA,1,"Within Range","Within Range",1.8182103740618,1933.00052981018,"UP",NA
+"1013","GCW","H3","20",NA,"Varian GC","Max Wegner","20240109",2023,"November",NA,1,"Within Range","Within Range",1.43189317663079,3875.55842085599,"UP",NA
+"1014","GCW","H3","35",NA,"Varian GC","Max Wegner","20240109",2023,"November",NA,1,"Within Range","Within Range",1.62188524094112,5385.28237775672,"UP",NA
+"1015","GCW","H3","50",NA,"Varian GC","Max Wegner","20240109",2023,"November",NA,1,"Within Range","Within Range",1.17540388981183,8946.84992813286,"UP",NA
+"1016","GCW","H6","10",NA,"Varian GC","Max Wegner","20240109",2023,"November",NA,1,"Within Range","Within Range",1.86095858853163,1440.85579591258,"UP",NA
+"1017","GCW","H6","20",NA,"Varian GC","Max Wegner","20240109",2023,"November",NA,1,"Within Range","Within Range",1.43505971103596,3829.36217386079,"UP",NA
+"1018","GCW","H6","35",NA,"Varian GC","Max Wegner","20240109",2023,"November",NA,1,"Within Range","Within Range",1.20548596666097,8001.49470831371,"UP",NA
+"1019","GCW","H6","50",NA,"Varian GC","Max Wegner","20240109",2023,"November",NA,1,"Within Range","Within Range",1.20548596666097,8623.70439506908,"UP",NA

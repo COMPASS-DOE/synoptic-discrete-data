@@ -1,5 +1,5 @@
 ---
-title: "COMPASS_SynopticCB_Collate_SGAS_2023_Data"
+title: "COMPASS_SynopticCB_Collate_SGAS_2024_Data"
 author: "Stephanie J. Wilson"
 date: "2025-08-29"
 output: html_document
@@ -33,22 +33,8 @@ all_data <- files %>%
 
 all_data <- all_data[ ,-1]
 
-##Fix run dates
 all_data <- all_data %>% 
-  mutate(Run_Date = ifelse(str_detect(Run_Date, "/"), format(as.Date(Run_Date, format = "%m/%d/%Y"), "%Y%m%d"), Run_Date)) %>% 
-  mutate(Run_Date = gsub("\\.", "0", Run_Date))
-
-##Fix SWH Sample Zones for 2023
-##UPCON -> UP, UP -> SWAMP
-unique(all_data$Zone)
-
-all_data <- all_data %>% 
-  rename(Zone_old = Zone) %>% 
-  mutate(Zone = ifelse(Site == "SWH" & Zone_old == "UP", "SWAMP", Zone_old)) %>% 
-  mutate(Zone = ifelse(Site == "SWH" & Zone_old == "UPCON", "UP", Zone)) 
-
-all_data <- all_data %>% 
-  select(-Zone_old, Depth1)
+  select(-Depth1)
 
 ```
 
@@ -56,7 +42,7 @@ all_data <- all_data %>%
 ```{r}
 
 ##Url for tempest SGAS data
-url <- "https://github.com/COMPASS-DOE/TEMPEST/blob/c434b1f6188f72bafc35f742f8418dc9c3964ee9/Data/gas_wells/TEMPEST_SGW_2023_Data/COMPASS_TEMPEST_SGAS_2023.csv"
+url <- "https://github.com/COMPASS-DOE/TEMPEST/blob/c434b1f6188f72bafc35f742f8418dc9c3964ee9/Data/gas_wells/TEMPEST_SGW_2024_Data/COMPASS_TEMPEST_SGAS_2024.csv"
 
 # Convert it to the raw URL by:
 # removing blob/
@@ -84,7 +70,7 @@ colnames(gcw_up1)
 final_gcw_up <- gcw_up1 %>%
   rename(Replicate = Sample_Grid, 
          Depth = Sample_Depth) %>% 
-  select("Site", "Replicate", "Depth", "Machine", "User", "Run_Date" ,            "Sample_Year"  ,        "Sample_Month"    ,            ,"Dilution_Factor"   ,   "CH4_Flag"         ,    "CO2_Flag"        ,     "CH4_Conc_ppm_dilcorr" ,"CO2_Conc_ppm_dilcorr", "Zone") %>% 
+  select("Site", "Replicate", "Depth", "Machine", "User", "Run_Date" ,            "Sample_Year"  ,        "Sample_Month"    ,          ,"Dilution_Factor"   ,   "CH4_Flag"         ,    "CO2_Flag"        ,     "CH4_Conc_ppm_dilcorr" ,"CO2_Conc_ppm_dilcorr", "Zone") %>% 
   mutate(Run_Date = as.character(Run_Date))
 
 #combine the TMP data with the rest of the data: 
@@ -133,7 +119,7 @@ all_data_gcw <- all_data_gcw %>%
 ```{r, echo=FALSE}
 
 
-write.csv(all_data_gcw, "COMPASS_SynopticCB_SGAS_2023.csv")
+write.csv(all_data_gcw, "COMPASS_SynopticCB_SGAS_2024.csv")
 
 ```
 
