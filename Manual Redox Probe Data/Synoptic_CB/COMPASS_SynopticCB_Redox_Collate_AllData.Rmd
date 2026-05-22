@@ -67,101 +67,81 @@ final_dat <- all_dat %>%
 final_dat <- final_dat %>%
   mutate(across(where(is.numeric), round, digits = 1)) ##This does make all salinities 0 when Cl_ppm is 0 instead of 0.000026
 
+##Format data
+final_dat1 <- final_dat %>% 
+  mutate(Project = "COMPASS:Synoptic", 
+         Region = "CB") %>% 
+  rename(Day = Date) %>% 
+  select(c("Project", "Region", "Year", "Month", "Day", "Time_24hr",  "Time_Zone", "Site", "Zone", "Topography", "Depth", "Avg_mV", "Std_dv", "Std_err", "Notes"))
+
 ```
 
 
 ##Make Relevant Metadata Sheet
 ```{r make metadata, include = FALSE}
 
-# #pull the column names from the all_dat dataframe and create a new dataframe with them 
-# metadat <- data.frame(Column_Names = colnames(all_dat))
-# metadat
-# 
-# metadat$Description <- ""
-# metadat$Units <- ""
-# metadat$Instrument_ifapplicable <- ""
-# 
-# #add information about each line: 
-# 
-# metadat$Description <- c("Project name", 
-#                          "Region samples originated from: CB = Chesapeake Bay",
-#                          "Sample identifier used in laboratory and field", 
-#                          "Year (YYYY) of sample collection", 
-#                          "Month (#) of sample collection",
-#                          "Day (#) of sample collection",
-#                          "Time (HH:MM) of sample collection",
-#                          "Time Zone of sample collection",
-#                          "Name of sampling transect location (GCW, SWH, MSM, GWI), see dataset locations for coordinates", 
-#                          "Zone within space-for-time transect (UP=Upland, SWAMP=Swamp, TR=Transition, WC=Wetland Control, SW=Surface Water)",
-#                          "Lysimeter or sample replicate id (A-C)", 
-#                          "Depth in centimeters from which water sample was taken", 
-#                          "Sulfate concentration in ppm", 
-#                          "Sulfate concentration in mM", 
-#                          "Sulfate concentration flag base on standard curve (bdl=below detection limit (0), adl=above detection limit (highest   
-#                          standard), Within_Range=within detection range)", 
-#                          "Sulfate QAQC Flags generated during checks of standards, blanks, dups, and spks",
-#                          "Chloride concentration in ppm", 
-#                          "Chloride concentration in mM", 
-#                          "Chloride concentration flag base on standard curve (bdl=below detection limit (0), adl=above detection limit (highest   
-#                          standard), Within_Range=within detection range)", 
-#                          "Chloride QAQC Flags generated during checks of standards, blanks, dups, and spks", 
-#                          "Salinity calculated using the Knudsen equation: Salinity=((1.807*(Chloride ppm)+0.026)/1000", 
-#                          "The date that samples were run on the Dionex IC", 
-#                          "Any notes generated during QAQC", 
-#                          "Notes generated during field sample collection")
-# 
-# metadat$Units <-       c("NA", 
-#                          "NA",
-#                          "NA", 
-#                          "NA",
-#                          "NA",
-#                          "NA", 
-#                          "NA",
-#                          "NA", 
-#                          "NA", 
-#                          "NA",
-#                          "NA", 
-#                          "cm",
-#                          "ppm", 
-#                          "mM", 
-#                          "NA", 
-#                          "NA", 
-#                          "ppm", 
-#                          "mM", 
-#                          "NA", 
-#                          "NA", 
-#                          "ppt", 
-#                          "NA", 
-#                          "NA",
-#                          "NA")
-# 
-# metadat$Instrument_ifapplicable <-  
-#   
-#                        c("NA", 
-#                          "NA",
-#                          "NA", 
-#                          "NA",
-#                          "NA",
-#                          "NA", 
-#                          "NA",
-#                          "NA", 
-#                          "NA", 
-#                          "NA",
-#                          "NA", 
-#                          "NA",
-#                          "Dionex Integrion HPIC (Thermo Fisher)", 
-#                          "Dionex Integrion HPIC (Thermo Fisher)", 
-#                          "NA", 
-#                          "NA", 
-#                          "Dionex Integrion HPIC (Thermo Fisher)", 
-#                          "Dionex Integrion HPIC (Thermo Fisher)", 
-#                          "NA", 
-#                          "NA", 
-#                          "NA", 
-#                          "NA", 
-#                          "NA",
-#                          "NA")
-# 
+#pull the column names from the all_dat dataframe and create a new dataframe with them
+metadat <- data.frame(Column_Names = colnames(final_dat1))
+metadat
+
+colnames(final_dat)
+
+metadat$Description <- ""
+metadat$Units <- ""
+metadat$Instrument_ifapplicable <- ""
+
+#add information about each line:
+
+metadat$Description <- c("Project name",
+                         "Region samples originated from: CB = Chesapeake Bay",
+                         "Year (YYYY) of sample collection",
+                         "Month (#) of sample collection",
+                         "Day (#) of sample collection",
+                         "Time (HH:MM) of sample collection",
+                         "Time Zone of sample collection",
+                         "Name of sampling transect location (GCW, SWH, MSM, GWI), see dataset locations for coordinates",
+                         "Zone within space-for-time transect (UP=Upland, SWAMP=Swamp, TR=Transition, WC=Wetland Control, SW=Surface Water)",
+                         "Topography (Hummock/Hollow) of SWH transition zone sampling location",
+                         "Depth in centimeters from which water sample was taken",
+                         "Average of 6 redox probe measurements", 
+                         "Standard deviation of 6 redox probe measurements", 
+                         "Standard error of 6 redox probe measurements", 
+                         "Notes generated during field sample collection")
+
+metadat$Units <-       c("NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "cm",
+                         "mV",
+                         "mV",
+                         "mV",
+                         "NA")
+
+metadat$Instrument_ifapplicable <-
+
+                       c("NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA")
+
 
 ```
 
@@ -169,11 +149,11 @@ final_dat <- final_dat %>%
 ```{r write out combined data and metadata, include=FALSE}
 
 #write out a csv of all the data to the main folder: 
-write.csv(final_dat, "COMPASS_SynopticCB_Redox_AllData.csv", row.names = FALSE)
+write.csv(final_dat1, "COMPASS_SynopticCB_Redox_AllData.csv", row.names = FALSE)
 
 
-# #write out a csv of the metadata associated with the data: 
-# write.csv(metadat, "COMPASS_SynopticCB_SO4_Cl_Metadata.csv")
+#write out a csv of the metadata associated with the data:
+write.csv(metadat, "COMPASS_SynopticCB_Redox_Metadata.csv")
 
 ```
 
