@@ -31,6 +31,7 @@ library(knitr)
 dat23 <- read.csv("2023/COMPASS_SynopticCB_SGAS_2023.csv")
 # head(dat23)
 colnames(dat23)
+dat23$Depth1 <- as.character(dat23$Depth1)
 
 #read in 2024 SGAS Data:
 dat24 <- read.csv("2024/COMPASS_SynopticCB_SGAS_2024.csv")
@@ -52,16 +53,12 @@ all_dat1 <- all_dat1 %>%
 
 ##Select only required columns
 all_dat2 <- all_dat1 %>%
-  rename(Depth_cm = Depth1, 
+  mutate(Depth_cm = gsub("cm", "", Depth)) %>% 
+  rename(
          Year = Sample_Year, 
          Month = Sample_Month, 
          CH4_conc_flag = CH4_Flag, 
-         CO2_conc_flag = CO2_Flag) %>%
-  dplyr::select(
-    Site, Zone, Replicate, Depth_cm, Machine, Year, Month, Sample_ID, 
-    Dilution_Factor, CH4_Conc_ppm_dilcorr, CH4_conc_flag, CO2_Conc_ppm_dilcorr, CO2_conc_flag
-    # list columns in the order you want them
-  )
+         CO2_conc_flag = CO2_Flag)
 
 ##Set 4 decimal points max
 all_dat2 <- all_dat2 %>%
@@ -71,99 +68,78 @@ all_dat2 <- all_dat2 %>%
 all_dat2 <- all_dat2 %>% 
   filter(Zone != "Test")
 
+##Remove Within Range flag 
+all_dat2 <- all_dat2 %>% 
+  mutate(CO2_conc_flag = gsub("Within Range", NA, CO2_conc_flag)) %>% 
+  mutate(CH4_conc_flag = gsub("Within Range", NA, CH4_conc_flag))
+
+final_data <- all_dat2 %>% 
+  mutate(Project = "COMPASS:Synoptic", 
+         Region = "CB") %>%
+  dplyr::select(
+    Project, Region, Sample_ID, Year, Month, Site, Zone, Replicate, Depth_cm, Machine, CH4_Conc_ppm_dilcorr, CH4_conc_flag, CO2_Conc_ppm_dilcorr, CO2_conc_flag )
+
 ```
 
 ##Make Relevant Metadata Sheet
 ```{r make metadata, include = FALSE}
 
-# #pull the column names from the all_dat1 dataframe and create a new dataframe with them 
-# metadat <- data.frame(Column_Names = colnames(all_dat1))
-# metadat
-# 
-# metadat$Description <- ""
-# metadat$Units <- ""
-# metadat$Instrument_ifapplicable <- ""
-# 
-# #add information about each line: 
-# 
-# metadat$Description <- c("Project name", 
-#                          "Region samples originated from: CB = Chesapeake Bay",
-#                          "Sample identifier used in laboratory and field", 
-#                          "Year (YYYY) of sample collection", 
-#                          "Month (#) of sample collection",
-#                          "Day (#) of sample collection",
-#                          "Time (HH:MM) of sample collection",
-#                          "Time Zone of sample collection",
-#                          "Name of sampling transect location (GCW, SWH, MSM, GWI), see dataset locations for coordinates", 
-#                          "Zone within space-for-time transect (UP=Upland, SWAMP=Swamp, TR=Transition, WC=Wetland Control, SW=Surface Water)",
-#                          "Lysimeter or sample replicate id (A-C)", 
-#                          "Depth in centimeters from which water sample was taken", 
-#                          "Sulfate concentration in ppm", 
-#                          "Sulfate concentration in ppm", 
-#                          "Sulfate concentration flag base on standard curve (bdl=below detection limit (0), adl=above detection limit (highest   
-#                          standard), Within_Range=within detection range)", 
-#                          "Sulfate QAQC Flags generated during checks of standards, blanks, dups, and spks",
-#                          "Chloride concentration in ppm", 
-#                          "Chloride concentration in ppm", 
-#                          "Chloride concentration flag base on standard curve (bdl=below detection limit (0), adl=above detection limit (highest   
-#                          standard), Within_Range=within detection range)", 
-#                          "Chloride QAQC Flags generated during checks of standards, blanks, dups, and spks", 
-#                          "Salinity calculated using the Knudsen equation: Salinity=((1.807*(Chloride ppm)+0.026)/1000", 
-#                          "The date that samples were run on the Dionex IC", 
-#                          "Any notes generated during QAQC", 
-#                          "Notes generated during field sample collection")
-# 
-# metadat$Units <-       c("NA", 
-#                          "NA",
-#                          "NA", 
-#                          "NA",
-#                          "NA",
-#                          "NA", 
-#                          "NA",
-#                          "NA", 
-#                          "NA", 
-#                          "NA",
-#                          "NA", 
-#                          "cm",
-#                          "ppm", 
-#                          "ppm", 
-#                          "NA", 
-#                          "NA", 
-#                          "ppm", 
-#                          "ppm", 
-#                          "NA", 
-#                          "NA", 
-#                          "ppt", 
-#                          "NA", 
-#                          "NA",
-#                          "NA")
-# 
-# metadat$Instrument_ifapplicable <-  
-#   
-#                        c("NA", 
-#                          "NA",
-#                          "NA", 
-#                          "NA",
-#                          "NA",
-#                          "NA", 
-#                          "NA",
-#                          "NA", 
-#                          "NA", 
-#                          "NA",
-#                          "NA", 
-#                          "NA",
-#                          "Dionex Integrion HPIC (Thermo Fisher)", 
-#                          "Dionex Integrion HPIC (Thermo Fisher)", 
-#                          "NA", 
-#                          "NA", 
-#                          "Dionex Integrion HPIC (Thermo Fisher)", 
-#                          "Dionex Integrion HPIC (Thermo Fisher)", 
-#                          "NA", 
-#                          "NA", 
-#                          "NA", 
-#                          "NA", 
-#                          "NA",
-#                          "NA")
+#pull the column names from the all_dat1 dataframe and create a new dataframe with them
+metadat <- data.frame(Column_Names = colnames(final_data))
+metadat
+
+metadat$Description <- ""
+metadat$Units <- ""
+metadat$Instrument_ifapplicable <- ""
+
+#add information about each line:
+
+metadat$Description <- c("Project name",
+                         "Region samples originated from: CB = Chesapeake Bay",
+                         "Sample identifier used in laboratory and field",
+                         "Year (YYYY) of sample collection",
+                         "Month (#) of sample collection",
+                         "Name of sampling transect location (GCW, SWH, MSM, GWI), see dataset locations for coordinates",
+                         "Zone within space-for-time transect (UP=Upland, SWAMP=Swamp, TR=Transition, WC=Wetland Control, SW=Surface Water)",
+                         "Soil gas well or sample grid replicate id (A-C, ATM for Atmospheric sample, Letter+Number for GCW UP (TEMPEST Site))",
+                         "Depth in centimeters from which water sample was taken",
+                         "Machine on which gas sample was analyzed", 
+                         "Methane concentration in ppm, corrected for dilution",
+                         "Methane concentration flag base on standard curve (bdl=below detection limit, adl=above detection limit)",
+                         "Carbon dioxide concentration in ppm, corrected for dilution",
+                         "Carbon dioxide concentration flag base on standard curve (bdl=below detection limit, adl=above detection limit)")
+
+metadat$Units <-       c("NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "cm",
+                         "NA",
+                         "ppm",
+                         "NA",
+                         "ppm",
+                         "NA")
+
+metadat$Instrument_ifapplicable <-
+
+                       c("NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "Varian Gas Chromatograph",
+                         "NA",
+                         "Varian Gas Chromatograph",
+                         "NA")
 
 
 ```
@@ -172,11 +148,11 @@ all_dat2 <- all_dat2 %>%
 ```{r write out combined data and metadata, include=FALSE}
 
 #write out a csv of all the data to the main folder: 
-write.csv(all_dat1, "COMPASS_SynopticCB_SGAS_AllData.csv", row.names = FALSE)
+write.csv(final_data, "COMPASS_SynopticCB_SGAS_AllData.csv", row.names = FALSE)
 
 
-# #write out a csv of the metadata associated with the data: 
-# write.csv(metadat, "COMPASS_SynopticCB_SGAS_Metadata.csv")
+#write out a csv of the metadata associated with the data:
+write.csv(metadat, "COMPASS_SynopticCB_SGAS_Metadata.csv")
 
 ```
 
@@ -184,7 +160,7 @@ write.csv(all_dat1, "COMPASS_SynopticCB_SGAS_AllData.csv", row.names = FALSE)
 ## Visualize Data by Plot   
 ```{r Visualize Data, echo=FALSE, warning=FALSE, message = FALSE, fig.width=20, fig.height=10, dpi = 300}
 
-data_plotting <- all_dat1
+data_plotting <- all_dat2
 
 #Order by Zone from Upland to Surface Water
 data_plotting$Zone = factor(data_plotting$Zone, levels = c("UP", "SWAMP", "TR", "WC", "SW"))
@@ -202,7 +178,7 @@ data_plotting_all <- data_plotting %>%
   ungroup()
 
 #Plot data and change colors based on Zone:
-viz_ch4_plot <- ggplot(data_plotting_all, aes(x = as.character(Sample_Year), y = CH4_Conc_ppm_dilcorr, fill = Zone)) +
+viz_ch4_plot <- ggplot(data_plotting_all, aes(x = as.character(Year), y = CH4_Conc_ppm_dilcorr, fill = Zone)) +
   geom_bar(stat = "identity", position = position_dodge2(preserve = "total")) +
   facet_wrap( ~ Site, scales="free", nrow = 1) +
   scale_fill_manual(values = c(
@@ -222,7 +198,7 @@ viz_ch4_plot <- ggplot(data_plotting_all, aes(x = as.character(Sample_Year), y =
 # viz_ch4_plot
 
 
-viz_co2_plot <-  ggplot(data_plotting_all, aes(x = as.character(Sample_Year), y = CO2_Conc_ppm_dilcorr, fill = Zone)) +
+viz_co2_plot <-  ggplot(data_plotting_all, aes(x = as.character(Year), y = CO2_Conc_ppm_dilcorr, fill = Zone)) +
   geom_bar(stat = "identity", position = position_dodge2(preserve = "total")) +
   facet_wrap( ~ Site, scales="free", nrow = 1) +
   scale_fill_manual(values = c(
@@ -251,21 +227,21 @@ ggarrange(viz_ch4_plot, viz_co2_plot, nrow=2, ncol=1)
 ```{r Summarize and Visualize Data, echo=FALSE, warning=FALSE, message = FALSE, fig.width=20, fig.height=15, dpi = 300}
 
 ##Make Date Column with just Year and Month for Sample ID
-data_plotting$Month_num <- match(data_plotting$Sample_Month, month.name)
+data_plotting$Month_num <- match(data_plotting$Month, month.name)
 
 all_dat_dates <- data_plotting %>%
   mutate(
     YearMonth = if_else(
       Month_num < 10,
       # Modify the string:
-      YearMonth <- paste(data_plotting$Sample_Year, data_plotting$Month_num, sep = "-0"), 
-      YearMonth <- paste(data_plotting$Sample_Year, data_plotting$Month_num, sep = "-"), 
+      YearMonth <- paste(data_plotting$Year, data_plotting$Month_num, sep = "-0"), 
+      YearMonth <- paste(data_plotting$Year, data_plotting$Month_num, sep = "-"), 
     )
   )
 
 ##Summarize SGAS by Date, Site, and Zone
 SGAS_avg <- all_dat_dates %>%
-  group_by(Month_num, Sample_Year, Site, Zone) %>%
+  group_by(Month_num, Year, Site, Zone) %>%
    dplyr::summarize(mean_ch4 = mean(CH4_Conc_ppm_dilcorr, na.rm=TRUE), 
             sd_ch4 = sd(CH4_Conc_ppm_dilcorr, na.rm=TRUE), 
             mean_co2 = mean(CO2_Conc_ppm_dilcorr, na.rm=TRUE), 
@@ -396,8 +372,9 @@ viz_co2_plot_depth
 ```{r Boxplot by depth, echo=FALSE, warning=FALSE, message = FALSE, fig.width=16, fig.height=10, dpi = 300}
 
 ##Remove SW
+unique(data_plotting$Depth_cm)
 data_plotting_depth <- data_plotting %>%
-  mutate(Depth_cm = factor(Depth_cm, levels = c("45", "20", "10", "0")))
+  mutate(Depth_cm = factor(Depth_cm, levels = c("50", "45", "35", "20", "10", "0")))
 
 
 #Plot data and change colors based on Zone:
@@ -531,11 +508,11 @@ dev.off()
 ```{r Additional summary metrics, include=FALSE, dpi = 300}
 # It would also be great to add to our collation codes a summary chunk that will calculate value ranges, means, and standard deviations (and errors) for each site, zone, depth for each year; also for each site zone, depth overall; and for each site and zone overall so that we have some easy access to metrics. Was just thinking this might be helpful today when re-collating the DIC data.
 
-colnames(all_dat1)
+colnames(all_dat2)
 
 ##Metrics for each site, zone, depth for each year
-summary_by_year <- all_dat1 %>%
-  group_by(Sample_Year, Site, Zone, Depth_cm) %>%
+summary_by_year <- all_dat2 %>%
+  group_by(Year, Site, Zone, Depth_cm) %>%
    reframe(
      min_CH4_ppm = min(CH4_Conc_ppm_dilcorr, na.rm=TRUE),
      max_CH4_ppm = max(CH4_Conc_ppm_dilcorr, na.rm=TRUE), 
@@ -549,7 +526,7 @@ summary_by_year <- all_dat1 %>%
   mutate(across(where(is.numeric), round, digits = 0)) 
 
 ##Metrics for each site, zone, depth for all years
-summary_all_years <- all_dat1 %>%
+summary_all_years <- all_dat2 %>%
   group_by(Site, Zone, Depth_cm) %>%
    reframe(
      min_CH4_ppm = min(CH4_Conc_ppm_dilcorr, na.rm=TRUE),
@@ -564,7 +541,7 @@ summary_all_years <- all_dat1 %>%
   mutate(across(where(is.numeric), round, digits = 0)) 
 
 ##Metrics for each site and zone for all depths and years
-summary_all_depths_years <- all_dat1 %>%
+summary_all_depths_years <- all_dat2 %>%
   group_by(Site, Zone) %>%
     reframe(
      min_CH4_ppm = min(CH4_Conc_ppm_dilcorr, na.rm=TRUE),
@@ -585,13 +562,13 @@ summary_all_depths_years <- all_dat1 %>%
 #  I am thinking it might be cool to add to our Soil Gas Well collation files a table at the end that has total number of samples then also some info about # of samples per zone, site, depth etc.
 
 ##Metrics for each year
-sample_numbers_years <- all_dat1 %>%
-  group_by(Sample_Year) %>%
+sample_numbers_years <- all_dat2 %>%
+  group_by(Year) %>%
    reframe(
      Number_of_samples = n())
 
 ##Metrics for each site, zone, depth for all years
-sample_numbers <- all_dat1 %>%
+sample_numbers <- all_dat2 %>%
   group_by(Site, Zone, Depth_cm) %>%
    reframe(
      Number_of_samples = n())
@@ -640,10 +617,10 @@ sample_numbers$Site = factor(sample_numbers$Site, levels = c("SWH", "GCW", "MSM"
 sample_numbers <- sample_numbers[order(sample_numbers$Site), ]
 
 kable(
-  sample_numbers_years[, c("Sample_Year", "Number_of_samples")],  
+  sample_numbers_years[, c("Year", "Number_of_samples")],  
   format = "latex",
   booktabs = TRUE,
-  caption = paste0("Total Samples: ", nrow(all_dat1))
+  caption = paste0("Total Samples: ", nrow(all_dat2))
 ) %>%
   kable_styling(
     latex_options = c("hold_position", "striped", "scale_down"),
