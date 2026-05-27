@@ -115,11 +115,16 @@ all_data_gcw <- all_data_gcw %>%
 ```
 
 
-## Write the 2022 file out to the folder 
+## Write the 2024 file out to the folder 
 ```{r, echo=FALSE}
 
+final_data <- all_data_gcw %>% 
+  mutate( 
+    Depth1 = gsub("cm", "", Depth), 
+    Depth = ifelse(Replicate == "ATM", "0cm", paste0(Depth1, "cm")), 
+    Depth = gsub("ATM", "0", Depth))
 
-write.csv(all_data_gcw, "COMPASS_SynopticCB_SGAS_2024.csv")
+write.csv(final_data, "COMPASS_SynopticCB_SGAS_2024.csv")
 
 ```
 

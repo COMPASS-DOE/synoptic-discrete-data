@@ -52,7 +52,7 @@ all_data <- all_data %>%
 
 ```
 
-#Read in selected TMP data for GCW Upland - need to do this too...  
+#Read in selected TMP data for GCW Upland
 ```{r}
 
 ##Url for tempest SGAS data
@@ -82,8 +82,10 @@ gcw_up1 <- gcw_up %>%
 colnames(all_data)
 colnames(gcw_up1)
 final_gcw_up <- gcw_up1 %>%
-  rename(Replicate = Sample_Grid, 
-         Depth = Sample_Depth) %>% 
+  mutate(
+    Sample_Depth = ifelse(Sample_Depth == "ATM", 0, Sample_Depth), 
+    Depth = paste0(Sample_Depth, "cm")) %>% 
+  rename(Replicate = Sample_Grid) %>% 
   select("Site", "Replicate", "Depth", "Machine", "User", "Run_Date" ,            "Sample_Year"  ,        "Sample_Month"    ,            ,"Dilution_Factor"   ,   "CH4_Flag"         ,    "CO2_Flag"        ,     "CH4_Conc_ppm_dilcorr" ,"CO2_Conc_ppm_dilcorr", "Zone") %>% 
   mutate(Run_Date = as.character(Run_Date))
 
@@ -129,11 +131,15 @@ all_data_gcw <- all_data_gcw %>%
 ```
 
 
-## Write the 2022 file out to the folder 
+## Write the 2023 file out to the folder 
 ```{r, echo=FALSE}
 
+final_data <- all_data_gcw %>% 
+  mutate( Replicate = toupper(Replicate), 
+          Depth = ifelse(Replicate == "ATM", "0cm", Depth)) %>% 
+  filter(Replicate != "POND")
 
-write.csv(all_data_gcw, "COMPASS_SynopticCB_SGAS_2023.csv")
+write.csv(final_data, "COMPASS_SynopticCB_SGAS_2023.csv")
 
 ```
 
