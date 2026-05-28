@@ -6,6 +6,7 @@ output:
   pdf_document:
     toc: true
     number_sections: true
+    latex_engine: xelatex
 output_dir: "To Be Reviewed/PDF"
 ---
 \newpage
@@ -18,10 +19,10 @@ cat("Setup Information")
 
 
 ###### Run information - PLEASE CHANGE
-  Date_Run = "11/20/25"  #Date that instrument was run
-  Run_by = "Stephanie J. Wilson"  #Instrument user 
+  Date_Run = "05/26/25"  #Date that instrument was run
+  Run_by = "Melanie Giessner"  #Instrument user 
   Script_run_by = "Stephanie J. Wilson" #Code user 
-  run_notes = "RUN NOTES "  #any notes from the run
+  run_notes = "Check Standards are out of range. Standard curve looks good - going to accept run."  #any notes from the run
   samples <- c("GCW", "GWI", "MSM", "SWH") #whatever identifies your samples within the same names 
   samples_pattern <- paste(samples, collapse = "|") 
     #samples_pattern <- "GCW" #use this instead of the line above if you have only one site code 
@@ -197,9 +198,12 @@ dat_raw <- raw_file_name %>%
 
 #need to remove the samples with no peaks: 
 dat_raw <- dat_raw %>% 
-  filter(!sample_name %in% c("202511_MSM_SW_C", "202511_GCW_SW_A", "202511_GCW_SW_B", 
-                           "202511_GWI_TR_LysC_20cm", "202511_GWI_WC_LysB_10cm", 
-                           "202511_SWH_SWAMP_LysC_10cm_WARM"))
+  mutate(sample_name = recode(sample_name, 
+                              "202606_202605_SWH_TR_LysC_20cm" = "202605_SWH_TR_LysC_20cm", #some sample names entered into instrument incorrectly
+                              "202606_202605_SWH_TR_LysC_45cm" = "202605_SWH_TR_LysC_45cm", 
+                              "202605_MSM_TR_Lys2_20cm" = "202605_MSM_TR_LysB_20cm",
+                              "202606_MSM_SW_B" = "202605_MSM_SW_B", 
+                              "202606_MSM_SW_C" = "202605_MSM_SW_C"))
 
 head(dat_raw)
 ```
@@ -323,62 +327,7 @@ dat_raw <- dat_raw %>%
 
 ```
 
-## CRM Check - Don't run chunk if no CRMs run
-```{r CRM Check, echo = FALSE}
-
-cat("Assess the CRMs")
-
-#Pull out the blanks from raw file 
-blks_raw <- raw_file_name %>% 
-  map_df(read_data) %>% 
-  filter(grepl("DI", sample_name)) %>% # filter to TMP samples only
-  filter(run_datetime < "11/22/2025 10:05:38 PM") %>%
-  filter(run_datetime > "11/20/2025 3:59:16 PM") %>%
-  bind_rows() 
-
-blank_avg <- mean(blks_raw$ic_raw)
-
-#Pull out check standards from raw file 
-crm_raw <- raw_file_name %>% 
-  map_df(read_data) %>% 
-  filter(grepl(crm_name, sample_name)) %>% # filter to TMP samples only
-  bind_rows() 
-
-crm_Chk <- crm_raw %>%
-  summarise(
-    Mean_crm = mean(ic_raw, na.rm = TRUE),
-    SD_crm = sd(ic_raw, na.rm = TRUE),
-    CV = (SD_crm / Mean_crm) * 100,
-    pct_diff_Chk = abs(Mean_crm - ic_crm) / ic_crm,
-    crm_flag = ifelse(abs(pct_diff_Chk) < 25, "YES, Pass", "NO, rerun"))
-
-crm_Chk_blank <- crm_raw %>%
-  summarise(
-    Mean_crm = mean((ic_raw-blank_avg), na.rm = TRUE),
-    SD_crm = sd(ic_raw, na.rm = TRUE),
-    CV = (SD_crm / Mean_crm) * 100,
-    pct_diff_Chk = abs(Mean_crm - ic_crm) / ic_crm,
-    crm_flag = ifelse(abs(pct_diff_Chk) < 25, "YES, Pass", "NO, rerun"))
-  
-
-#flag write out 
-ifelse(crm_Chk$pct_diff_Chk >= chk_flag, 
-       "IC crm has a % Difference >25% of expected - REASSESS",  
-       "IC crm has a % Difference <25% of expected - PROCEED")
-cat("Run mean =", crm_Chk$Mean_crm, "\n")
-cat("Expected  =", ic_crm, "\n\n")
-
-#flag write out 
-ifelse(crm_Chk_blank$pct_diff_Chk >= chk_flag, 
-       "IC crm has a % Difference >25% of expected - REASSESS",  
-       "IC crm has a % Difference <25% of expected - PROCEED")
-cat("Run mean minus blank avg. =", crm_Chk_blank$Mean_crm, "\n")
-cat("Expected  =", ic_crm, "\n\n")
-
-
-
-```
- 
+## CRM Check - No CRMs on this run
 
 ## Assess Check Standards 
 ```{r Check Standards, echo=FALSE}
@@ -512,7 +461,7 @@ dat_flagged <- dat_raw %>%
       blk_avg_c > 0.25 * ic_raw,
       if_else(
         ic_flag != "" & !is.na(ic_flag),
-        paste0(ic_flag, "; blank is ≥ 25% of sample value"),
+        paste0(ic_flag, "; blank is > 25% of sample value"),
         "blank is ≥ 25% of sample value"
       ),
       ic_flag
@@ -522,7 +471,7 @@ dat_flagged <- dat_raw %>%
 #lets make a dataframe with just the concentration flag for plotting 
 dat_flag_viz <- dat_raw %>% 
   mutate(ic_flag = case_when(ic_raw > top_std_c ~ "value above cal curve",
-            blk_avg_c > 0.25*ic_raw ~ "blank is ≥ 25% of sample value")
+            blk_avg_c > 0.25*ic_raw ~ "blank is > 25% of sample value")
  )
 
 #Plot data and change colors based on flags to check it: 
@@ -545,7 +494,7 @@ cat("Visualize Data")
 
 #Plot samples to get a first look at concentrations (sanity check)
 IDs <- data.frame(do.call('rbind', strsplit(as.character(dat_flagged$sample_name),'_',fixed=TRUE)))
-colnames(IDs) <- c("Date" , "Site_Code","Zone", "Lysimeter", "Depth", "Extra")
+colnames(IDs) <- c("Date" , "Site_Code","Zone", "Lysimeter", "Depth") #, "Extra")
 #head(IDs)
 
 #rejoin them to the dataframe
@@ -676,5 +625,4 @@ head(final_data)
 
 
 #end
-
 
