@@ -36,8 +36,7 @@ library(patchwork)
 ```{r Run Information, echo=TRUE, message=FALSE, warning=FALSE}
 
 ###things that need to be changed
-Date_Run = "20260526"
-plates<- c("Plate1","Plate2","Plate3","Plate4","Plate5","Plate6")
+Date_Run = "20260526-20260527"
 Month = "May"
 Year = "2026"
 Sample_Month_Year = "202605"
@@ -45,7 +44,7 @@ Run_by = "Zoe Read"  #Instrument user
 Script_run_by = "Zoe Read" #Code user 
 Project = "COMPASS"
 
-Run_notes="Used Plate 6 Std Curve. 1/6 dups bad, probably because the original value was 0. 3/6 spks were high. "#any notes from run
+Run_notes="Used 20260527_Plate2 std curve. 3/16 Matrix checks were bad. 3/8 dups were bad, probably because the sulfide values were so low. 5/8 spieks were bad"#any notes from run
 
 #Stds that should be excluded
 # stds_to_remove<-data.frame(Plate=c("Plate6"),IDs=c("Std 3"))
@@ -59,15 +58,15 @@ stds_to_remove<-NA
 ###### File Names - - PLEASE CHECK, should automatically update based on Date and Plate Number
 
 #read in all the Tidy data files
-file_paths_tidydata <- list.files(path = "Tidy Data", pattern = "20260526.*\\.csv$", full.names = TRUE)
-head(file_paths_tidydata)
+file_paths_tidydata <- list.files(path = "Tidy Data", pattern = "tidy.*\\.csv$", full.names = TRUE)
+(file_paths_tidydata)
 
 #file path name for processed data
 #Write out final data frame 
-final_data_path <- "COMPASS_H2S_20260526_Plates_Combined.csv"
-HighCV_path <- "COMPASS_H2S_20260526_Plates_HighCVs.csv"
-ADL_not_fixed_path <- "COMPASS_H2S_20260526_Plates_ADL.csv"
-BDL_not_fixed_path <- "COMPASS_H2S_20260526_Plates_BDL.csv"
+final_data_path <- "COMPASS_H2S_202605_Plates_Combined.csv"
+HighCV_path <- "COMPASS_H2S_202605_Plates_HighCVs.csv"
+ADL_not_fixed_path <- "COMPASS_H2S_202605_Plates_ADL.csv"
+BDL_not_fixed_path <- "COMPASS_H2S_202605_Plates_BDL.csv"
 
 #QAQC log path
 log_path="Raw Data/Sulfide_STD_QAQC.csv"
@@ -129,7 +128,7 @@ dat<-read_plates(
          "Dilution"=values.3)
 
 dat <- dat %>%
-  mutate(Plate = str_extract(Plate, "Plate[0-9]+"))
+  mutate(Plate = str_extract(Plate, "\\d{4}\\d{2}\\d{2}_Plate[0-9]+"))
 
 head(dat)
   
@@ -173,6 +172,7 @@ colnames(H2S_stds1_all)<-c("IDs", "H2S_mean_Abs", "H2S_sd", "H2S_cv", "Plate","D
 H2S_stds_HCV_fixed<-data.frame(matrix(ncol = 8, nrow =0 ))
 colnames(H2S_stds_HCV_fixed)<-c("IDs", "H2S_mean_Abs", "H2S_sd", "H2S_cv", "Plate","Dilution",  "Conc", "H2S_cv_flag")
 
+plates = unique(dat$Plate)
 
 #make a loop for each plate 
 for(y in 1:length(plates)){
@@ -301,11 +301,11 @@ summary(H2S_lm)
 cf <- coef(H2S_lm)
 
 #create data frame 
-Date <- Date_Run
 R2 <-summary(H2S_lm)$adj.r.squared
 Slope <- cf[2]
 Intercept <- cf[1]
 Plate<- plates[i]
+Date <- substr(Plate, 1, 8)
 qplate1 <- data.frame(Date, Project , R2, Slope, Intercept, Top_STD, Plate, row.names = NULL)
 qplate<-rbind(qplate, qplate1)
 
@@ -425,6 +425,11 @@ knitr::kable(std_curve, caption = "Best std curve to use: ")
 if (nrow(std_curve)==0) {
   stop("Error: No Std Curve is good -Reassess. Exiting early.")
 }
+
+##write to QAQC log
+updated_qlog <- rbind(qlogO, std_curve)
+write.csv(updated_qlog, log_path)
+
 ```
 
 ## Matrix Check QAQC
@@ -672,7 +677,7 @@ head(dat1)
 # H2S
 
 #Plot samples after bad reps removed
-H2S_fixed <- ggplot(dat1, aes(x=ID_full, y=H2S_mean, color = H2S_cv_flag))+ 
+H2S_fixed <- ggplot(dat1, aes(x=IDs, y=H2S_mean, color = H2S_cv_flag))+ 
   geom_point(size=4) +  theme_classic() + 
   scale_color_manual(values = c("Within Range" = "darkgreen", "High CV" = "darkred"))+
   labs(y="Sulfide (uM)", x="Sample ID") + 
@@ -847,21 +852,74 @@ ifelse(spks_percent >= 60  , ">60% of Spikes are within range",
 ```
 
 
-```{r Format data and remove dups, spks, and TMP samples, include=FALSE}
+```{r Remove ADL/BDL samples that were later diluted differently, include = FALSE}
 
-all_data1 <- dat1 %>%
-  rename(
-    H2S_Conc_flag = H2S_flag,
-    H2S_QAQC_flag = QAQC_flag)
+#filter the high CV data in to one table
+HighCV<-filter(dat1, H2S_cv_flag=="High CV")
+
+#filter out the samples that need to be run at a higher dilution
+ADL<-filter(dat1, H2S_flag=="adl")
+
+#remove the samples that have already been run at a higher dilution 
+ww_ADL<-subset(dat1, (IDs %in% ADL$IDs))
+ww_ADL<-filter(ww_ADL, H2S_flag=="Within Range") 
+ADL_not_fixed<-ADL %>% 
+  subset((!IDs %in% ww_ADL$IDs)) %>% 
+  subset((!IDs %like% " Dup")) %>% 
+  subset((!IDs %like% " Spike"))
+
+#filter out the samples that need to be run at a lower dilution
+BDL<-filter(dat1, H2S_flag=="bdl"& Dilution!=1)
+
+#remove the samples that have already been run at a lower dilution 
+ww_BDL<-subset(dat1, (IDs %in% BDL$IDs))
+ww_BDL<-filter(ww_BDL,H2S_flag=="Within Range") 
+BDL_not_fixed<-BDL %>% 
+  subset((!IDs %in% ww_BDL$IDs)) %>% 
+  subset((!IDs %like% " Dup")) %>% 
+  subset((!IDs %like% " Spike"))
+
+
+##Remove samples that were ADL/BDL and are now fixed
+ADL_fixed<-ADL %>% 
+  subset((IDs %in% ww_ADL$IDs)) %>% 
+  subset((!IDs %like% " Dup")) %>% 
+  subset((!IDs %like% " Spike"))
+ADL_fixed$ID_conc <- paste(ADL_fixed$IDs, ADL_fixed$H2S_flag, sep = "_")
+
+BDL_fixed<-BDL %>% 
+  subset((IDs %in% ww_BDL$IDs)) %>% 
+  subset((!IDs %like% " Dup")) %>% 
+  subset((!IDs %like% " Spike"))
+BDL_fixed$ID_conc <- paste(BDL_fixed$IDs, BDL_fixed$H2S_flag, sep = "_")
+
+
+dat1$ID_conc <- paste(dat1$IDs, dat1$H2S_flag, sep = "_")
+
+Sample_data_wr <- dat1 %>% 
+  subset(!ID_conc %in% BDL_fixed$ID_conc) %>% 
+  subset(!ID_conc %in% ADL_fixed$ID_conc)
+
+##If there are duplicates, remove the one with the lowest CV
+Sample_data_nodups <- Sample_data_wr %>%
+  arrange(IDs, H2S_cv) %>% # Sort by ID ascending, Value ascending
+  distinct(IDs, .keep_all = TRUE) # Keep distinct IDs, retaining all other columns
+
+print(HighCV)
+print(ADL_not_fixed)
+print(BDL_not_fixed)
+
+```
+
+```{r Remove dups, spks, and TMP samples, include=FALSE}
 
 ##Remove Dups and Spikes
-Sample_data_IDs <- all_data1 %>% 
+Sample_data_IDs <- Sample_data_nodups %>% 
   subset((!IDs %like% "Dup")) %>% 
   subset((!IDs %like% "Spike"))%>% 
   subset((!IDs %like% "TMP"))
 
 ```
-
 
 ```{r Format Sample IDs, include = FALSE}
 
@@ -901,67 +959,6 @@ Sample_data_IDs <- Sample_data_IDs %>%
 ##Capitalize all sample IDs
 Sample_data_IDs$Sample_ID <- toupper(Sample_data_IDs$Sample_ID)
   
-```
-
-
-
-```{r Remove ADL/BDL samples that were later diluted differently, include = FALSE}
-
-#filter the high CV data in to one table
-HighCV<-filter(Sample_data_IDs, H2S_cv_flag=="High CV")
-
-#filter out the samples that need to be run at a higher dilution
-ADL<-filter(Sample_data_IDs, H2S_Conc_flag=="adl")
-
-#remove the samples that have already been run at a higher dilution 
-ww_ADL<-subset(Sample_data_IDs, (Sample_ID %in% ADL$Sample_ID))
-ww_ADL<-filter(ww_ADL, H2S_Conc_flag=="Within Range") 
-ADL_not_fixed<-ADL %>% 
-  subset((!Sample_ID %in% ww_ADL$Sample_ID)) %>% 
-  subset((!Sample_ID %like% " Dup")) %>% 
-  subset((!Sample_ID %like% " Spike"))
-
-#filter out the samples that need to be run at a lower dilution
-BDL<-filter(Sample_data_IDs, H2S_Conc_flag=="bdl"& Dilution!=1)
-
-#remove the samples that have already been run at a lower dilution 
-ww_BDL<-subset(Sample_data_IDs, (Sample_ID %in% BDL$Sample_ID))
-ww_BDL<-filter(ww_BDL,H2S_Conc_flag=="Within Range") 
-BDL_not_fixed<-BDL %>% 
-  subset((!Sample_ID %in% ww_BDL$Sample_ID)) %>% 
-  subset((!Sample_ID %like% " Dup")) %>% 
-  subset((!Sample_ID %like% " Spike"))
-
-
-##Remove samples that were ADL/BDL and are now fixed
-ADL_fixed<-ADL %>% 
-  subset((Sample_ID %in% ww_ADL$Sample_ID)) %>% 
-  subset((!Sample_ID %like% " Dup")) %>% 
-  subset((!Sample_ID %like% " Spike"))
-ADL_fixed$ID_conc <- paste(ADL_fixed$Sample_ID, ADL_fixed$H2S_Conc_flag, sep = "_")
-
-BDL_fixed<-BDL %>% 
-  subset((Sample_ID %in% ww_BDL$Sample_ID)) %>% 
-  subset((!Sample_ID %like% " Dup")) %>% 
-  subset((!Sample_ID %like% " Spike"))
-BDL_fixed$ID_conc <- paste(BDL_fixed$Sample_ID, BDL_fixed$H2S_Conc_flag, sep = "_")
-
-
-Sample_data_IDs$ID_conc <- paste(Sample_data_IDs$Sample_ID, Sample_data_IDs$H2S_Conc_flag, sep = "_")
-
-Sample_data_wr <- Sample_data_IDs %>% 
-  subset(!ID_conc %in% BDL_fixed$ID_conc) %>% 
-  subset(!ID_conc %in% ADL_fixed$ID_conc)
-
-##If there are duplicates, remove the one with the lowest CV
-Sample_data_nodups <- Sample_data_wr %>%
-  arrange(Sample_ID, H2S_cv) %>% # Sort by ID ascending, Value ascending
-  distinct(Sample_ID, .keep_all = TRUE) # Keep distinct IDs, retaining all other columns
-
-print(HighCV)
-print(ADL_not_fixed)
-print(BDL_not_fixed)
-
 ```
 
 ```{r Pull in Metadata, include = FALSE}
@@ -1024,10 +1021,10 @@ head(sulfide_metadata)
 ```{r Check to see if samples run match metadata & merge info, echo = FALSE}
 
 #check to see if all samples are present in the metadata 
-Sample_data_nodups$Sample_ID <- toupper(Sample_data_nodups$Sample_ID)
+Sample_data_IDs$Sample_ID <- toupper(Sample_data_IDs$Sample_ID)
 sulfide_metadata$H2S_ID <- toupper(sulfide_metadata$H2S_ID)
 
-all_present <- all(Sample_data_nodups$Sample_ID %in% sulfide_metadata$H2S_ID)
+all_present <- all(Sample_data_IDs$Sample_ID %in% sulfide_metadata$H2S_ID)
 
 if (all_present) {
   message("***All sample IDs are present in metadata.***")
@@ -1035,13 +1032,13 @@ if (all_present) {
   message("***Some sample IDs are missing from metadata.***")
   
   # Optional: Which ones are missing?
-  missing_ids <- setdiff(Sample_data_nodups$Sample_ID, sulfide_metadata$H2S_ID)
+  missing_ids <- setdiff(Sample_data_IDs$Sample_ID, sulfide_metadata$H2S_ID)
   print(missing_ids)
 }
 
 
 ##Select only necessary columns
-all_data_selected <- Sample_data_nodups %>%
+all_data_selected <- Sample_data_IDs %>%
   dplyr::select(-c("ID_conc", "Depth", "ID_full", "IDs"))
 
 all_data_selected$Depth_cm <- as.integer(all_data_selected$Depth_cm)
@@ -1120,6 +1117,8 @@ colnames(final_data)
 
 final_data <- final_data %>%
   rename(
+    H2S_Conc_flag = H2S_flag,
+    H2S_QAQC_flag = QAQC_flag, 
     Time = Time..24hr.,
     Time_Zone = Time.Zone_EDT.EST,
     Field_notes = Field.Notes
