@@ -301,11 +301,11 @@ summary(H2S_lm)
 cf <- coef(H2S_lm)
 
 #create data frame 
-Date <- Date_Run
 R2 <-summary(H2S_lm)$adj.r.squared
 Slope <- cf[2]
 Intercept <- cf[1]
 Plate<- plates[i]
+Date <- substr(Plate, 1, 8)
 qplate1 <- data.frame(Date, Project , R2, Slope, Intercept, Top_STD, Plate, row.names = NULL)
 qplate<-rbind(qplate, qplate1)
 
@@ -425,6 +425,11 @@ knitr::kable(std_curve, caption = "Best std curve to use: ")
 if (nrow(std_curve)==0) {
   stop("Error: No Std Curve is good -Reassess. Exiting early.")
 }
+
+##write to QAQC log
+updated_qlog <- rbind(qlogO, std_curve)
+write.csv(updated_qlog, log_path)
+
 ```
 
 ## Matrix Check QAQC
