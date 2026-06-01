@@ -237,17 +237,209 @@ metadat <- unique(metadat)
 final_data1 <- final_data %>% 
   left_join(metadat, by = c("Year", "Month", "Site", "Zone"))
 
-final_data1 <- final_data1 %>%
-  mutate(Depth_cm = gsub("CM", "", Depth)) %>%
-  rename(NH3_Conc_Flag = NH3_range, 
-         PO4_Conc_Flag = PO4_range, 
-         NOx_Conc_Flag = NOx_range) %>%
-  select(c("Project", "Region", "Site", "Year", "Month", "Day", "Sample_ID", "Zone", "Replicate", "Depth_cm", "SO4_ppm", "Cl_ppm", "SO4_mM", "Cl_mM", "salinity", "H2S_mean_uM", "H2S_sd_uM", "H2S_Conc_flag", "NH3_mgL", "NH3_uM", "NH3_Conc_Flag", "PO4_mgL", "PO4_uM", "PO4_Conc_Flag", "NOx_mgL", "NOx_uM", "NOx_Conc_Flag", "FE_2_mean_uM", "FE_2_sd_uM", "FE_3_mean_uM", "FE_3_sd_uM", "FE_2_flag", "FE_3_flag", "ic_mgL", "ic_uM", "ic_flag"))
+final_data2 <- final_data1 %>%
+  mutate(Sampler_Type = "SIP", 
+         Replicate = gsub("SIP", "", Replicate)) %>% 
+  rename(H2S_conc_flag = H2S_Conc_flag, 
+         NH3_conc_flag = NH3_range, 
+         PO4_conc_flag = PO4_range, 
+         NOx_conc_flag = NOx_range, 
+         FE_2_conc_flag = FE_2_flag, 
+         FE_3_conc_flag = FE_3_flag, 
+         ic_conc_flag = ic_flag) %>% 
+  select(c("Project", "Region", "Year", "Month", "Day", "Site", "Zone", "Sample_ID", "Sampler_Type", "Replicate", "SO4_ppm", "Cl_ppm", "SO4_mM", "Cl_mM", "salinity", "H2S_mean_uM", "H2S_sd_uM", "H2S_conc_flag", "NH3_mgL", "NH3_uM", "NH3_conc_flag", "PO4_mgL", "PO4_uM", "PO4_conc_flag", "NOx_mgL", "NOx_uM", "NOx_conc_flag", "FE_2_mean_uM", "FE_2_sd_uM", "FE_2_conc_flag", "FE_3_mean_uM", "FE_3_sd_uM", "FE_3_conc_flag", "ic_mgL", "ic_uM", "ic_conc_flag"))
 
+# For the concentration flags - let's remove when it says "within range" and just make those NA so there is only a flag if it is above or below detection.
+unique(final_data2$ic_conc_flag)
+
+final_data3 <- final_data2 %>% 
+  mutate(H2S_conc_flag = gsub("Within Range", NA, H2S_conc_flag), 
+         NH3_conc_flag = gsub("Within_Range", NA, NH3_conc_flag), 
+         PO4_conc_flag = gsub("Within_Range", NA, PO4_conc_flag), 
+         NOx_conc_flag = gsub("Within_Range", NA, NOx_conc_flag), 
+         FE_2_conc_flag = gsub("within range", NA, FE_2_conc_flag), 
+         FE_3_conc_flag = gsub("within range", NA, FE_3_conc_flag), 
+         ic_conc_flag = gsub("value above cal curve", "adl", ic_conc_flag), 
+         ic_conc_flag = gsub("blank is > 25% of sample value", "bdl", ic_conc_flag))
 
 
 ##Export final data
-write.csv(final_data1, "COMPASS_SynopticCB_Sipper_Data.csv", row.names = FALSE)
+write.csv(final_data3, "COMPASS_SynopticCB_Sipper_Data.csv", row.names = FALSE)
 
 ```
 
+## Make Relevant Metadata Sheet
+```{r, echo=FALSE}
+
+#pull the column names from the all_dat dataframe and create a new dataframe with them 
+metadat <- data.frame(Column_Names = colnames(final_data3))
+
+metadat$Description <- ""
+metadat$Units <- ""
+metadat$Instrument_ifapplicable <- ""
+metadat$Method_ifapplicable <- ""
+
+colnames(final_data3)
+#add information about each line: 
+
+metadat$Description <- c("Project name: Project component", 
+                         "Region samples originated from: CB = Chesapeake Bay",
+                         "Year (YYYY) of sample collection", 
+                         "Month (#) of sample collection",
+                         "Day (#) of sample collection",
+                         "Name of sampling transect location (GCW, SWH, MSM, GWI), see dataset locations for coordinates", 
+                         "Zone within space-for-time transect (UP=Upland, TR=Transition, WC= Wetland Control, SWAMP = Swamp)",
+                         "Porewater sample ID", 
+                         "Collection device used to sample porewater: SIP = Sipper sampler", 
+                         "Replicate (A-C)",
+                         "Sulfate concentration", 
+                         "Chloride concentration", 
+                         "Sulfate concentration", 
+                         "Chloride concentration", 
+                         "Salinity", 
+                         "Sulfide concentration mean", 
+                         "Sulfide concentration standard deviation", 
+                         "Sulfide concentration flag (adl = above detection limit (100 umoles/L), bdl = below detection limit (0 umoles/L))", 
+                         "Ammonia (NH3) concentration", 
+                         "Ammonia (NH3) concentration", 
+                         "Ammonia (NH3) concentration flag (adl = above detection limit (2 mg/L), bdl = below detection limit (0.02 mg/L))", 
+                         "Phosphate (PO4) concentration", 
+                         "Phosphate (PO4) concentration", 
+                         "Phosphate (PO4) concentration flag (adl = above detection limit (0.3 mg/L), bdl = below detection limit (0.003 mg/L))", 
+                         "Nitrate–N + Nitrite–N (NOx) concentration", 
+                         "Nitrate–N + Nitrite–N (NOx) concentration", 
+                         "Nitrate–N + Nitrite–N (NOx) concentration flag (adl = above detection limit (1 mg/L), bdl = below detection limit (0.025 mg/L))",
+                         "Iron (II) concentration mean", 
+                         "Iron (II) concentration standard deviation", 
+                         "Iron (II) concentration concentration flag (adl = above detection limit (500 umoles/L), bdl = below detection limit (0.6 umoles/L))", 
+                         "Iron (III) concentration mean", 
+                         "Iron (III) concentration standard deviation", 
+                         "Iron (III) concentration concentration flag (adl = above detection limit (500 umoles/L), bdl = below detection limit (0.6 umoles/L))", 
+                         "Dissolved inorganic carbon (DIC) concentration", 
+                         "Dissolved inorganic carbon (DIC) concentration", 
+                         "Dissolved inorganic carbon (DIC) concentration flag (adl = above detection limit (200 mg/L), bdl = below detection limit (0 mg/L))" 
+)
+
+metadat$Units <-      c( "NA", 
+                         "NA",
+                         "NA", 
+                         "NA",
+                         "NA",
+                         "NA", 
+                         "NA",
+                         "NA", 
+                         "NA", 
+                         "NA",
+                         "ppm", 
+                         "ppm", 
+                         "umoles/L", 
+                         "umoles/L", 
+                         "ppt", 
+                         "umoles/L", 
+                         "umoles/L", 
+                         "NA",  
+                         "mg/L", 
+                         "umoles/L", 
+                         "NA", 
+                         "mg/L", 
+                         "umoles/L", 
+                         "NA",                          
+                         "mg/L", 
+                         "umoles/L", 
+                         "NA",
+                         "umoles/L", 
+                         "umoles/L", 
+                         "NA", 
+                         "umoles/L", 
+                         "umoles/L", 
+                         "NA", 
+                         "mg/L", 
+                         "umoles/L", 
+                         "NA")
+
+metadat$Instrument_ifapplicable <-  c(
+                         "NA", 
+                         "NA",
+                         "NA", 
+                         "NA",
+                         "NA",
+                         "NA", 
+                         "NA",
+                         "NA", 
+                         "Sipper Sampler", 
+                         "NA",
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         "Calculated with Knudsen equation (Strickland and Parsons, 1972)", 
+                         "Agilent BioTek PowerWave Microplate Reader", 
+                         "Standard deviation of analytical triplicates", 
+                         "NA",  
+                         "SEAL Instrument: SEAL AQ300 Discrete Analyzer (https://seal-analytical.com/en/products/discrete-analyzers/aq300-discrete-analyzer/)", 
+                         "SEAL Instrument: SEAL AQ300 Discrete Analyzer (https://seal-analytical.com/en/products/discrete-analyzers/aq300-discrete-analyzer/)", 
+                         "NA", 
+                         "SEAL Instrument: SEAL AQ300 Discrete Analyzer (https://seal-analytical.com/en/products/discrete-analyzers/aq300-discrete-analyzer/)", 
+                         "SEAL Instrument: SEAL AQ300 Discrete Analyzer (https://seal-analytical.com/en/products/discrete-analyzers/aq300-discrete-analyzer/)", 
+                         "NA",                          
+                         "SEAL Instrument: SEAL AQ300 Discrete Analyzer (https://seal-analytical.com/en/products/discrete-analyzers/aq300-discrete-analyzer/)", 
+                         "SEAL Instrument: SEAL AQ300 Discrete Analyzer (https://seal-analytical.com/en/products/discrete-analyzers/aq300-discrete-analyzer/)", 
+                         "NA",
+                         "Agilent BioTek PowerWave Microplate Reader", 
+                         "Agilent BioTek PowerWave Microplate Reader", 
+                         "NA", 
+                         "Agilent BioTek PowerWave Microplate Reader", 
+                         "Agilent BioTek PowerWave Microplate Reader", 
+                         "NA", 
+                         "Shimadzu TOC-V", 
+                         "Shimadzu TOC-V", 
+                         "Shimadzu TOC-V")
+
+
+metadat$Method_ifapplicable <- c(
+                         "NA", 
+                         "NA",
+                         "NA", 
+                         "NA",
+                         "NA",
+                         "NA", 
+                         "NA",
+                         "NA", 
+                         "NA", 
+                         "NA",
+                         "Sulfate concentration", 
+                         "Chloride concentration", 
+                         "Sulfate concentration", 
+                         "Chloride concentration", 
+                         "Calculated with Knudsen equation (Strickland and Parsons, 1972)", 
+                         "Adapted from Cline, 1969, Ehrhardt et al., 1999", 
+                         "Adapted from Cline, 1969, Ehrhardt et al., 1999", 
+                         "Adapted from Cline, 1969, Ehrhardt et al., 1999", 
+                         "EPA-103-A Rev. 10", 
+                         "EPA-103-A Rev. 10", 
+                         "EPA-103-A Rev. 10", 
+                         "EPA-155-D Rev. 0", 
+                         "EPA-155-D Rev. 0", 
+                         "EPA-155-D Rev. 0", 
+                         "EPA-160-A Rev. 0", 
+                         "EPA-160-A Rev. 0", 
+                         "EPA-160-A Rev. 0", 
+                         "Adapted from Stookey, 1970, Violler et al., 2000, Charbonnier & Anschutz 2021, Gong 2020", 
+                         "Adapted from Stookey, 1970, Violler et al., 2000, Charbonnier & Anschutz 2021, Gong 2020", 
+                         "Adapted from Stookey, 1970, Violler et al., 2000, Charbonnier & Anschutz 2021, Gong 2020", 
+                         "Adapted from Stookey, 1970, Violler et al., 2000, Charbonnier & Anschutz 2021, Gong 2020", 
+                         "Adapted from Stookey, 1970, Violler et al., 2000, Charbonnier & Anschutz 2021, Gong 2020", 
+                         "Adapted from Stookey, 1970, Violler et al., 2000, Charbonnier & Anschutz 2021, Gong 2020", 
+                         "NA", 
+                         "NA", 
+                         "NA")
+
+```
+
+## Write out metadata
+```{r, echo=FALSE}
+
+#write out a csv of the metadata associated with the data: 
+write.csv(metadat, "COMPASS_SynopticCB_Sipper_Metadata.csv")
+
+```
