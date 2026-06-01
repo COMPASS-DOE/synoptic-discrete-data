@@ -397,7 +397,8 @@ final_data <- joined_data %>%
     Replicate == "SIPC" ~ "7",
     Replicate == "COL5" ~ "8",
     TRUE                 ~ Rep_Number)) %>%    # keep original value if no match
-  mutate(Sample_ID = paste(Site, Date, Zone, Sampler_Type, Rep_Number, sep = "_")) 
+  mutate(Sample_ID = paste(Site, Date, Zone, Sampler_Type, Rep_Number, sep = "_")) %>% 
+  select(-Replicate)
 
 
 
@@ -446,13 +447,14 @@ final_data2 <- final_data1 %>%
   left_join(metadat, by = c("Year", "Month", "Site", "Zone"))
 
 final_data2 <- final_data2 %>%
-  rename(H2S_conc_flag = H2S_Conc_flag, 
+  rename(Replicate = Rep_Number, 
+         H2S_conc_flag = H2S_Conc_flag, 
          NH3_conc_flag = NH3_range, 
          PO4_conc_flag = PO4_range, 
          NOx_conc_flag = NOx_range, 
          FE_2_conc_flag = FE_2_flag, 
          FE_3_conc_flag = FE_3_flag) %>% 
-  select(c("Project", "Region", "Year", "Month", "Day", "Site", "Zone", "Sample_ID", "Sampler_Type", "Rep_Number", "SO4_ppm", "Cl_ppm", "SO4_mM", "Cl_mM", "salinity", "H2S_mean_uM", "H2S_sd_uM", "H2S_conc_flag", "NH3_mgL", "NH3_uM", "NH3_conc_flag", "PO4_mgL", "PO4_uM", "PO4_conc_flag", "NOx_mgL", "NOx_uM", "NOx_conc_flag", "FE_2_mean_uM", "FE_2_sd_uM", "FE_2_conc_flag", "FE_3_mean_uM", "FE_3_sd_uM", "FE_3_conc_flag"))
+  select(c("Project", "Region", "Year", "Month", "Day", "Site", "Zone", "Sample_ID", "Sampler_Type", "Replicate", "SO4_ppm", "Cl_ppm", "SO4_mM", "Cl_mM", "salinity", "H2S_mean_uM", "H2S_sd_uM", "H2S_conc_flag", "NH3_mgL", "NH3_uM", "NH3_conc_flag", "PO4_mgL", "PO4_uM", "PO4_conc_flag", "NOx_mgL", "NOx_uM", "NOx_conc_flag", "FE_2_mean_uM", "FE_2_sd_uM", "FE_2_conc_flag", "FE_3_mean_uM", "FE_3_sd_uM", "FE_3_conc_flag"))
 
 # For the concentration flags - let's remove when it says "within range" and just make those NA so there is only a flag if it is above or below detection.
 unique(final_data2$FE_2_conc_flag)
