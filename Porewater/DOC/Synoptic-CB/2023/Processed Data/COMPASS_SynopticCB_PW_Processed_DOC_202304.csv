@@ -1,0 +1,293 @@
+"","Project","Region","Site","Zone","Replicate","Depth_cm","Sample_ID","Year","Month","Day","Time","Time_Zone","npoc_mgL","npoc_uM","npoc_flag","tdn_mgL","tdn_uM","tdn_flag","Analysis_runtime","Run_notes","Field_notes"
+"1","COMPASS: Synoptic","CB","GCW","UP","B",10,"202304_GCW_UP_LysB_10cm",2023,4,19,NA,NA,14.56,1212.22212971443,"",0.4588,32.7557526041109,"","5/2/2023 12:39:24 AM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"2","COMPASS: Synoptic","CB","GCW","UP","B",20,"202304_GCW_UP_LysB_20cm",2023,4,19,NA,NA,11.9,990.758471401216,"",0.5904,42.1512561845403,"","5/2/2023 1:04:22 AM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"3","COMPASS: Synoptic","CB","MSM","UP","A",20,"202304_MSM_UP_LysA_20cm",2023,4,24,NA,NA,54.77,4559.9866788777,"",3.62,258.447742865914,"value above cal curve","5/3/2023 5:03:52 AM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"4","COMPASS: Synoptic","CB","MSM","UP",NA,NA,"202304_MSM_UP_LysA_45cm",NA,NA,NA,NA,NA,32.69,2721.67180084922,"",2.576,183.911984978617,"","5/3/2023 5:29:34 AM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",NA
+"5","COMPASS: Synoptic","CB","MSM","UP","B",10,"202304_MSM_UP_LysB_10cm",2023,4,24,NA,NA,66.48,5534.92631754225,"",1.452,103.664674762792,"","5/3/2023 5:56:02 AM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"6","COMPASS: Synoptic","CB","MSM","UP","B",20,"202304_MSM_UP_LysB_20cm",2023,4,24,NA,NA,65.68,5468.32070601948,"",2.042,145.78737318569,"","5/3/2023 6:14:07 AM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"7","COMPASS: Synoptic","CB","MSM","UP",NA,NA,"202304_MSM_UP_LysB_45cm",NA,NA,NA,NA,NA,-0.02924,-2.43443510115727,"blank is ≥ 25% of sample value",-0.01149,-0.820321703184904,"blank is ≥ 25% of sample value","5/3/2023 6:32:33 AM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",NA
+"8","COMPASS: Synoptic","CB","MSM","UP","C",10,"202304_MSM_UP_LysC_10cm",2023,4,24,NA,NA,74.79,6226.79210723504,"",2.289,163.421791000021,"","5/3/2023 6:59:40 AM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"9","COMPASS: Synoptic","CB","MSM","UP","C",20,"202304_MSM_UP_LysC_20cm",2023,4,24,NA,NA,80.17,6674.71484472567,"",4.216,300.998807713451,"value above cal curve","5/3/2023 7:36:28 AM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"10","COMPASS: Synoptic","CB","GWI","UP",NA,NA,"202304_GWI_UP_LysA_20cm",NA,NA,NA,NA,NA,28.04,2334.52668387312,"",0.8544,60.9993788686843,"","5/3/2023 5:53:26 PM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",NA
+"11","COMPASS: Synoptic","CB","GWI","UP","A",45,"202304_GWI_UP_LysA_45cm",2023,4,25,NA,NA,21.64,1801.68179169095,"",0.662,47.2630955185733,"","5/3/2023 6:18:30 PM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"12","COMPASS: Synoptic","CB","GWI","UP","B",10,"202304_GWI_UP_LysB_10cm",2023,4,25,NA,NA,26.57,2212.13887270003,"",0.6807,48.5981708753668,"","5/3/2023 6:44:05 PM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"13","COMPASS: Synoptic","CB","GWI","UP","B",20,"202304_GWI_UP_LysB_20cm",2023,4,25,NA,NA,36.17,3011.40621097327,"",1.012,72.2511369558854,"","5/3/2023 7:11:33 PM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"14","COMPASS: Synoptic","CB","GWI","UP","B",45,"202304_GWI_UP_LysB_45cm",2023,4,25,NA,NA,44.55,3709.0999916743,"",1.265,90.3139211948567,"","5/3/2023 7:29:33 PM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"15","COMPASS: Synoptic","CB","GWI","UP","C",10,"202304_GWI_UP_LysC_10cm",2023,4,25,NA,NA,45.95,3825.65981183915,"",1.506,107.519972584549,"","5/3/2023 8:21:31 PM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"16","COMPASS: Synoptic","CB","GWI","UP","C",20,"202304_GWI_UP_LysC_20cm",2023,4,25,NA,NA,71.15,5923.73657480643,"",1.96,139.933032048948,"","5/3/2023 8:47:26 PM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"17","COMPASS: Synoptic","CB","GCW","TR","A",20,"202304_GCW_TR_LysA_20cm",2023,4,19,NA,NA,38.23,3182.91566064441,"",1.521,108.590888646148,"","5/2/2023 1:22:18 AM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"18","COMPASS: Synoptic","CB","GCW","TR","B",10,"202304_GCW_TR_LysB_10cm",2023,4,19,NA,NA,15.69,1306.30255599034,"",0.4819,34.4049633389735,"","5/2/2023 1:39:47 AM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"19","COMPASS: Synoptic","CB","GCW","TR","B",20,"202304_GCW_TR_LysB_20cm",2023,4,19,NA,NA,27.56,2294.56331695945,"",1.326,94.6689798453597,"","5/2/2023 2:01:21 AM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"20","COMPASS: Synoptic","CB","GCW","TR","B",45,"202304_GCW_TR_LysB_45cm",2023,4,19,NA,NA,50.43,4198.65123636666,"",1.059,75.6066739488959,"","5/2/2023 2:28:24 AM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"21","COMPASS: Synoptic","CB","GCW","TR","C",10,"202304_GCW_TR_LysC_10cm",2023,4,19,NA,NA,51.52,4289.40138206644,"",1.1,78.5338445172667,"","5/2/2023 2:46:30 AM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"22","COMPASS: Synoptic","CB","GCW","TR","C",20,"202304_GCW_TR_LysC_20cm",2023,4,19,NA,NA,118.8,9890.93331113146,"value above cal curve",3.072,219.323609415494,"value above cal curve","5/2/2023 3:05:30 AM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"23","COMPASS: Synoptic","CB","GCW","TR","C",45,"202304_GCW_TR_LysC_45cm",2023,4,19,NA,NA,22.1,1839.98001831654,"",0.6389,45.6138847837107,"","5/2/2023 5:05:22 AM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"24","COMPASS: Synoptic","CB","MSM","TR","A",10,"202304_MSM_TR_LysA_10cm",2023,4,24,NA,NA,19.78,1646.82374490051,"",0.7313,52.210727723161,"","5/3/2023 7:54:00 AM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"25","COMPASS: Synoptic","CB","MSM","TR","A",20,"202304_MSM_TR_LysA_20cm",2023,4,24,NA,NA,23.87,1987.34493381067,"",2.278,162.636452554849,"","5/3/2023 8:15:30 AM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"26","COMPASS: Synoptic","CB","MSM","TR",NA,NA,"202304_MSM_TR_LysA_45cm",NA,NA,NA,NA,NA,11.81,983.265340104904,"",1.317,94.0264302084003,"","5/3/2023 8:40:48 AM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",NA
+"27","COMPASS: Synoptic","CB","MSM","TR","B",10,"202304_MSM_TR_LysB_10cm",2023,4,24,NA,NA,23.67,1970.69353092998,"",0.9926,70.8660855162172,"","5/3/2023 9:06:31 AM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"28","COMPASS: Synoptic","CB","MSM","TR","B",20,"202304_MSM_TR_LysB_20cm",2023,4,24,NA,NA,37.35,3109.64948796936,"",2.001,142.860202617319,"","5/3/2023 9:24:09 AM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"29","COMPASS: Synoptic","CB","MSM","TR","B",45,"202304_MSM_TR_LysB_45cm",2023,4,24,NA,NA,31.51,2623.42852385314,"",2.416,172.48888032156,"","5/3/2023 9:50:12 AM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"30","COMPASS: Synoptic","CB","MSM","TR",NA,NA,"202304_MSM_TR_LysC_10cm",NA,NA,NA,NA,NA,17.77,1479.47714594955,"",1.003,71.6085873189259,"","5/3/2023 10:15:13 AM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",NA
+"31","COMPASS: Synoptic","CB","MSM","TR",NA,NA,"202304_MSM_TR_LysC_20cm",NA,NA,NA,NA,NA,25.4,2114.72816584797,"",2.716,193.907201553542,"","5/3/2023 11:54:51 AM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",NA
+"32","COMPASS: Synoptic","CB","MSM","TR","C",45,"202304_MSM_TR_LysC_45cm",2023,4,24,NA,NA,13.79,1148.11422862376,"",1.767,126.153912056373,"","5/3/2023 12:12:22 PM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"33","COMPASS: Synoptic","CB","GWI","TR","A",10,"202304_GWI_TR_LysA_10cm",2023,4,25,NA,NA,43.62,3631.67096827908,"",1.416,101.094476214954,"","5/3/2023 9:13:23 PM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"34","COMPASS: Synoptic","CB","GWI","TR","A",20,"202304_GWI_TR_LysA_20cm",2023,4,25,NA,NA,64.21,5345.93289484639,"",1.807,129.009688220637,"","5/3/2023 9:31:39 PM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"35","COMPASS: Synoptic","CB","GWI","TR","B",10,"202304_GWI_TR_LysB_10cm",2023,4,25,NA,NA,29.48,2454.4167846141,"",0.9186,65.5828996123284,"","5/3/2023 9:57:41 PM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"36","COMPASS: Synoptic","CB","GWI","TR","B",20,"202304_GWI_TR_LysB_20cm",2023,4,25,NA,NA,126.3,10515.3609191574,"value above cal curve",3.092,220.751497497626,"value above cal curve","5/3/2023 10:16:11 PM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"37","COMPASS: Synoptic","CB","GWI","TR","B",45,"202304_GWI_TR_LysB_45cm",2023,4,25,NA,NA,26.98,2246.27424860545,"",0.9154,65.3544375191872,"","5/3/2023 10:34:08 PM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"38","COMPASS: Synoptic","CB","GWI","TR","C",10,"202304_GWI_TR_LysC_10cm",2023,4,25,NA,NA,32.64,2717.50895012905,"",0.9503,67.8461022225078,"","5/3/2023 10:52:46 PM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"39","COMPASS: Synoptic","CB","GWI","TR","C",20,"202304_GWI_TR_LysC_20cm",2023,4,25,NA,NA,41.1,3421.86329198235,"",0.9915,70.7875516717,"","5/4/2023 10:58:06 AM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"40","COMPASS: Synoptic","CB","GCW","TR","A",45,"202304_GCW_TR_LysA_45cm",2023,4,19,NA,NA,9.826,818.083423528432,"",0.3802,27.1441524413316,"","5/4/2023 12:27:14 PM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"41","COMPASS: Synoptic","CB","GCW","WC","A",10,"202304_GCW_WC_LysA_10cm",2023,4,19,NA,NA,39.06,3252.01898259928,"",0.6799,48.5410553520815,"","5/2/2023 5:31:58 AM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"42","COMPASS: Synoptic","CB","GCW","WC","A",20,"202304_GCW_WC_LysA_20cm",2023,4,19,NA,NA,59.84,4982.09974190326,"",0.9757,69.6595200868156,"","5/2/2023 5:49:56 AM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"43","COMPASS: Synoptic","CB","GCW","WC","A",45,"202304_GCW_WC_LysA_45cm",2023,4,19,NA,NA,129.3,10765.1319623678,"value above cal curve",4.536,323.845017027565,"value above cal curve","5/2/2023 6:08:56 AM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"44","COMPASS: Synoptic","CB","GCW","WC","B",10,"202304_GCW_WC_LysB_10cm",2023,4,19,NA,NA,34.05,2834.90134043793,"",0.7365,52.5819786245154,"","5/2/2023 6:37:22 AM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"45","COMPASS: Synoptic","CB","GCW","WC","B",20,"202304_GCW_WC_LysB_20cm",2023,4,19,NA,NA,45.63,3799.01756723004,"",1.277,91.170654044136,"","5/2/2023 7:02:57 AM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"46","COMPASS: Synoptic","CB","GCW","WC","B",45,"202304_GCW_WC_LysB_45cm",2023,4,19,NA,NA,117.2,9757.72208808592,"value above cal curve",5.198,371.108112546139,"value above cal curve","5/2/2023 7:21:03 AM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"47","COMPASS: Synoptic","CB","GCW","WC","C",10,"202304_GCW_WC_LysC_10cm",2023,4,19,NA,NA,30.76,2560.98576305054,"",0.4983,35.5758315663218,"","5/2/2023 7:38:47 AM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"48","COMPASS: Synoptic","CB","GCW","WC","C",20,"202304_GCW_WC_LysC_20cm",2023,4,19,NA,NA,26.73,2225.45999500458,"",0.4177,29.8214425953294,"","5/2/2023 8:04:05 AM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"49","COMPASS: Synoptic","CB","GCW","WC","C",45,"202304_GCW_WC_LysC_45cm",2023,4,19,NA,NA,53.66,4467.57139288985,"",1.139,81.3182262774244,"","5/2/2023 8:29:37 AM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"50","COMPASS: Synoptic","CB","MSM","WC","A",10,"202304_MSM_WC_LysA_10cm",2023,4,24,NA,NA,27.81,2315.37757056032,"",0.5297,37.8176158552693,"","5/3/2023 12:38:03 PM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"51","COMPASS: Synoptic","CB","MSM","WC","A",20,"202304_MSM_WC_LysA_20cm",2023,4,24,NA,NA,35,2913.99550412122,"",0.7432,53.0603211320297,"","5/3/2023 12:55:41 PM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"52","COMPASS: Synoptic","CB","MSM","WC","A",45,"202304_MSM_WC_LysA_45cm",2023,4,24,NA,NA,169.9,14145.3667471484,"value above cal curve",2.049,146.287134014436,"","5/3/2023 1:14:46 PM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"53","COMPASS: Synoptic","CB","MSM","WC","B",10,"202304_MSM_WC_LysB_10cm",2023,4,24,NA,NA,33.05,2751.64432603447,"",0.6579,46.9703784617362,"","5/3/2023 1:35:50 PM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"54","COMPASS: Synoptic","CB","MSM","WC","B",20,"202304_MSM_WC_LysB_20cm",2023,4,24,NA,NA,53.65,4466.73882274582,"",0.98,69.966516024474,"","5/3/2023 1:54:05 PM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"55","COMPASS: Synoptic","CB","MSM","WC","C",10,"202304_MSM_WC_LysC_10cm",2023,4,24,NA,NA,35.07,2919.82349512946,"",0.8572,61.1992832001828,"","5/3/2023 2:20:16 PM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"56","COMPASS: Synoptic","CB","MSM","WC","C",20,"202304_MSM_WC_LysC_20cm",2023,4,24,NA,NA,76.03,6330.03080509533,"",2.778,198.333654608152,"","5/3/2023 2:38:20 PM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"57","COMPASS: Synoptic","CB","GWI","WC","A",10,"202304_GWI_WC_LysA_10cm",2023,4,25,NA,NA,28.37,2362.00149862626,"",0.822,58.6862001756302,"","5/4/2023 11:24:16 AM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"58","COMPASS: Synoptic","CB","GWI","WC","A",20,"202304_GWI_WC_LysA_20cm",2023,4,25,NA,NA,67.8,5644.82557655482,"",1.951,139.290482411989,"","5/4/2023 11:42:31 AM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"59","COMPASS: Synoptic","CB","GWI","WC","A",45,"202304_GWI_WC_LysA_45cm",2023,4,25,NA,NA,33.84,2817.4173674132,"",1.391,99.3096161122891,"","5/4/2023 12:01:01 PM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"60","COMPASS: Synoptic","CB","GWI","WC","B",10,"202304_GWI_WC_LysB_10cm",2023,4,25,NA,NA,42.09,3504.28773624178,"",0.9976,71.2230575367503,"","5/4/2023 12:53:15 PM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"61","COMPASS: Synoptic","CB","GWI","WC","B",20,"202304_GWI_WC_LysB_20cm",2023,4,25,NA,NA,46.45,3867.28831904088,"",1.257,89.7427659620039,"","5/4/2023 1:19:08 PM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"62","COMPASS: Synoptic","CB","GWI","WC","B",45,"202304_GWI_WC_LysB_45cm",2023,4,25,NA,NA,52.4,4362.66755474149,"",1.924,137.36283350111,"","5/4/2023 1:37:31 PM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"63","COMPASS: Synoptic","CB","GWI","WC","C",10,"202304_GWI_WC_LysC_10cm",2023,4,25,NA,NA,32.03,2666.72217134294,"",0.9244,65.9969871561467,"","5/4/2023 2:03:55 PM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"64","COMPASS: Synoptic","CB","GWI","WC","C",20,"202304_GWI_WC_LysC_20cm",2023,4,25,NA,NA,49.36,4109.56623095496,"",1.761,125.725545631733,"","5/4/2023 2:29:51 PM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"65","COMPASS: Synoptic","CB","GCW","SW","A",0,"202304_GCW_SW_A",2023,4,19,NA,NA,0,0,"blank is ≥ 25% of sample value",0.6187,44.1717178207572,"","5/3/2023 2:29:50 AM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"66","COMPASS: Synoptic","CB","GCW","SW","B",0,"202304_GCW_SW_B",2023,4,19,NA,NA,0,0,"blank is ≥ 25% of sample value",0.5609,40.0451212633954,"","5/3/2023 3:11:42 AM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"67","COMPASS: Synoptic","CB","GCW","SW","C",0,"202304_GCW_SW_C",2023,4,19,NA,NA,0,0,"blank is ≥ 25% of sample value",0.5479,39.1169940100095,"","5/3/2023 3:36:54 AM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"68","COMPASS: Synoptic","CB","MSM","SW","A",0,"202304_MSM_SW_A",2023,4,24,NA,NA,22.76,1894.92964782283,"",0.49,34.983258012237,"","5/3/2023 3:03:16 PM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"69","COMPASS: Synoptic","CB","MSM","SW","B",0,"202304_MSM_SW_B",2023,4,24,NA,NA,22.94,1909.91591041545,"",0.4573,32.648660997951,"","5/3/2023 3:27:59 PM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"70","COMPASS: Synoptic","CB","MSM","SW","C",0,"202304_MSM_SW_C",2023,4,24,NA,NA,23.16,1928.23245358421,"",0.4891,34.9190030485411,"","5/3/2023 3:52:47 PM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"71","COMPASS: Synoptic","CB","GWI","SW","A",0,"202304_GWI_SW_A",2023,4,25,NA,NA,24.57,2045.6248438931,"",0.2918,20.8328871183077,"","5/4/2023 2:57:05 PM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"72","COMPASS: Synoptic","CB","GWI","SW","C",0,"202304_GWI_SW_C",2023,4,25,NA,NA,24.14,2009.82432769961,"",0.2744,19.5906244868527,"","5/4/2023 3:39:53 PM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""
+"73","COMPASS: Synoptic","CB","GWI","SW","B",0,"202304_GWI_SW_B",2023,4,25,NA,NA,-0.00673,-0.560319706935309,"blank is ≥ 25% of sample value",-0.00341,-0.243454918003527,"blank is ≥ 25% of sample value","5/4/2023 6:56:00 PM","Standard Curve was assessed manually on the instrument.
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm",""

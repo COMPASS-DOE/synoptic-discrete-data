@@ -198,8 +198,9 @@ dat_raw <- raw_file_name %>%
   filter(str_detect(sample_name, samples_pattern))
 
 dat_raw <- dat_raw %>% 
-  mutate(sample_name = str_remove(sample_name, "^[0-9]+_")) %>%
-  mutate(sample_name = str_replace_all(sample_name, "202039", "202309"))
+  mutate(sample_name = gsub("50_202039_GWI_WC_LysB_20cm", "50_202039_GWI_WC_LysB_20cm_dup", sample_name)) %>% ##This one should be a dup
+  mutate(sample_name = str_replace_all(sample_name, "202039", "202309")) %>%
+  mutate(sample_name = str_remove(sample_name, "^[0-9]+_"))
   #filter(!(sample_name == "202308_SWH_UP_LysA_20cm" & npoc_raw == 0.03413))
   #  mutate(
   #  sample_name = if_else(
@@ -389,6 +390,8 @@ cat("Assess Duplicates")
 #pull out any rows that have "dup" in the sample_name column
 dups <- dat_raw %>%  
   select(!c(npoc_flag, tdn_flag)) %>%
+  mutate(sample_name = str_replace_all(sample_name, "50_202039_GWI_WC_LysB_20cm", "50_202039_GWI_WC_LysB_20cm_dup")) %>% ##This one should be a dup
+  mutate(sample_name = str_replace_all(sample_name, "202309_GCW_WC_LysA_20c_dup", "202309_GCW_WC_LysA_20cm_dup")) %>% ##This one should be a dup
   filter(str_detect(sample_name, "dup"))      #have to change this to match data
 
 #create a new dataframe and remove dups from sample dataframe 
@@ -487,6 +490,7 @@ cat("Sample Flagging")
 
 #Flagging data if the concentration is outside the standards range and based on blanks
 dat_flagged <- dat_raw %>%
+  filter(!str_detect(sample_name, "dup")) %>%
   mutate(
     npoc_flag = if_else(
       npoc_raw > top_std_c,
@@ -564,7 +568,7 @@ cat("Visualize Data")
 
 #Plot samples to get a first look at concentrations (sanity check)
 IDs <- data.frame(do.call('rbind', strsplit(as.character(dat_flagged$sample_name),'_',fixed=TRUE)))
-colnames(IDs) <- c("Date" , "Site_Code","Zone", "Lysimeter", "Depth", "Excess_Info")
+colnames(IDs) <- c("Date" , "Site_Code","Zone", "Lysimeter", "Depth")
 #head(IDs)
 
 #rejoin them to the dataframe
@@ -575,6 +579,8 @@ dat_flagged_id$Zone = factor(dat_flagged_id$Zone, levels = c("UP",  "SWAMP", "TR
 dat_flagged_id <- dat_flagged_id[order(dat_flagged_id$Zone), ]
 
 #group the data for plotting
+duplicated_rows <- dat_flagged_id %>% filter(duplicated(sample_name))
+duplicated_rows
 dat_flagged_id <- dat_flagged_id %>%
   group_by(Site_Code) %>%
   mutate(row_num = factor(row_number())) %>%  # create row_num as factor per group
@@ -643,8 +649,7 @@ cat("Check Sample IDs with Metadata")
 
 #remove duplicates from the sample dataframe bc we are just taking the first dup run
 all_data_flagged <- dat_flagged_id %>%
-  filter(!str_detect(sample_name, "dup")) %>%
-  select(!Excess_Info)
+  filter(!str_detect(sample_name, "dup"))
 
 #check to see if all samples are present in the metadata 
 all_present <- all(all_data_flagged$sample_name %in% doc_metadata$DOC_ID)
