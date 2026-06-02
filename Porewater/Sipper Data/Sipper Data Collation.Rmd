@@ -6,7 +6,10 @@ output: html_document
 ---
 
 ```{r notes}
-
+# - Collated Sipper data for DIC, SO4/Cl, H2S, Nutrients, and Fe MSM 202210, 202211, 202304, and 202306
+# - Data was already processed/QAQC'd with 2022/2023 Lysimeter data
+# - Processed Dionex data to create concentration flags based on more recent flags in r code
+# - Iron 2023 data has not been processed and 2022 iron data was processed with an old script
 ```
 
 
@@ -95,6 +98,44 @@ dionex_SIP_sel_2022 <- dionex_SIP_2022 %>%
 dionex_SIP_sel <- dionex_SIP_sel_2022
 dionex_SIP_sel$Sample_ID <- toupper(dionex_SIP_sel$Sample_ID)
 
+##QAQC flagging
+top_std_cl = 200   #ug/mL
+top_std_so4 = 20   #ug/mL
+
+#need to determine dilution factors
+#for COMPASS this depends on the site so... 
+dionex_SIP_sel$Dilution <- NA
+dionex_SIP_sel$Dilution <-  ifelse(str_detect(dionex_SIP_sel$Sample_ID, "MSM") & str_detect(dionex_SIP_sel$Sample_ID, "UP"), 50, dionex_SIP_sel$Dilution)
+dionex_SIP_sel$Dilution <-  ifelse(str_detect(dionex_SIP_sel$Sample_ID, "MSM") & str_detect(dionex_SIP_sel$Sample_ID, "TR"), 100, dionex_SIP_sel$Dilution)
+dionex_SIP_sel$Dilution <-  ifelse(str_detect(dionex_SIP_sel$Sample_ID, "MSM") & str_detect(dionex_SIP_sel$Sample_ID, "WC"), 100, dionex_SIP_sel$Dilution)
+dionex_SIP_sel$Dilution <-  ifelse(str_detect(dionex_SIP_sel$Sample_ID, "MSM") & str_detect(dionex_SIP_sel$Sample_ID, "_SW_"), 100, dionex_SIP_sel$Dilution)
+dionex_SIP_sel$Dilution <-  ifelse(str_detect(dionex_SIP_sel$Sample_ID, "GCW") & str_detect(dionex_SIP_sel$Sample_ID, "UP"), 50, dionex_SIP_sel$Dilution)
+dionex_SIP_sel$Dilution <-  ifelse(str_detect(dionex_SIP_sel$Sample_ID, "GCW") & str_detect(dionex_SIP_sel$Sample_ID, "TR"), 50, dionex_SIP_sel$Dilution)
+dionex_SIP_sel$Dilution <-  ifelse(str_detect(dionex_SIP_sel$Sample_ID, "GCW") & str_detect(dionex_SIP_sel$Sample_ID, "WC"), 100, dionex_SIP_sel$Dilution)
+dionex_SIP_sel$Dilution <-  ifelse(str_detect(dionex_SIP_sel$Sample_ID, "GCW") & str_detect(dionex_SIP_sel$Sample_ID, "_SW_"), 100, dionex_SIP_sel$Dilution)
+dionex_SIP_sel$Dilution <-  ifelse(str_detect(dionex_SIP_sel$Sample_ID, "GWI") & str_detect(dionex_SIP_sel$Sample_ID, "UP"), 100, dionex_SIP_sel$Dilution)
+dionex_SIP_sel$Dilution <-  ifelse(str_detect(dionex_SIP_sel$Sample_ID, "GWI") & str_detect(dionex_SIP_sel$Sample_ID, "TR"), 100, dionex_SIP_sel$Dilution)
+dionex_SIP_sel$Dilution <-  ifelse(str_detect(dionex_SIP_sel$Sample_ID, "GWI") & str_detect(dionex_SIP_sel$Sample_ID, "WC"), 200, dionex_SIP_sel$Dilution)
+dionex_SIP_sel$Dilution <-  ifelse(str_detect(dionex_SIP_sel$Sample_ID, "GWI") & str_detect(dionex_SIP_sel$Sample_ID, "_SW_"), 200, dionex_SIP_sel$Dilution)
+dionex_SIP_sel$Dilution <-  ifelse(str_detect(dionex_SIP_sel$Sample_ID, "SWH"), 50, dionex_SIP_sel$Dilution)
+
+flagged_dionex_data <- dionex_SIP_sel %>%
+  mutate(Cl_ppm_dil = as.numeric(Cl_ppm)/Dilution, 
+         SO4_ppm_dil = as.numeric(SO4_ppm)/Dilution) %>% 
+  mutate(
+    Cl_Conc_flag = case_when(
+      Cl_ppm_dil <= 0 ~ "bdl",
+      Cl_ppm_dil > top_std_cl ~ "adl", 
+      TRUE ~ NA_character_  )) %>% #Flagging data if the concentration is outside the standards range and based on blanks
+  mutate(
+    SO4_Conc_flag = case_when(
+      SO4_ppm_dil <= 0 ~ "bdl",
+      SO4_ppm_dil > top_std_so4 ~ "adl", 
+      TRUE ~ NA_character_  ))#Flagging data if the concentration is outside the standards range and based on blanks
+  
+flagged_dionex_data_sel <- flagged_dionex_data %>% 
+  select("Sample_ID", "SO4_ppm",   "Cl_ppm",    "SO4_mM" ,   "Cl_mM"   ,  "salinity", "Cl_Conc_flag",  "SO4_Conc_flag")
+
 
 ##Sulfide
 #2022
@@ -178,7 +219,7 @@ iron_SIP_sel$Sample_ID <- toupper(iron_SIP_sel$Sample_ID)
 
 ##Combine all analytes by Sample ID
 # Create a list of your data frames
-df_list <- list(DIC_SIP_sel, dionex_SIP_sel, sulfide_SIP_sel, nutr_SIP_sel, iron_SIP_sel)
+df_list <- list(DIC_SIP_sel, flagged_dionex_data_sel, sulfide_SIP_sel, nutr_SIP_sel, iron_SIP_sel)
 # Join them all together
 joined_data <- df_list %>% 
   reduce(full_join, by = "Sample_ID")
@@ -240,14 +281,16 @@ final_data1 <- final_data %>%
 final_data2 <- final_data1 %>%
   mutate(Sampler_Type = "SIP", 
          Replicate = gsub("SIP", "", Replicate)) %>% 
-  rename(H2S_conc_flag = H2S_Conc_flag, 
+  rename(Cl_conc_flag = Cl_Conc_flag, 
+         SO4_conc_flag = SO4_Conc_flag, 
+         H2S_conc_flag = H2S_Conc_flag, 
          NH3_conc_flag = NH3_range, 
          PO4_conc_flag = PO4_range, 
          NOx_conc_flag = NOx_range, 
          FE_2_conc_flag = FE_2_flag, 
          FE_3_conc_flag = FE_3_flag, 
          ic_conc_flag = ic_flag) %>% 
-  select(c("Project", "Region", "Year", "Month", "Day", "Site", "Zone", "Sample_ID", "Sampler_Type", "Replicate", "SO4_ppm", "Cl_ppm", "SO4_mM", "Cl_mM", "salinity", "H2S_mean_uM", "H2S_sd_uM", "H2S_conc_flag", "NH3_mgL", "NH3_uM", "NH3_conc_flag", "PO4_mgL", "PO4_uM", "PO4_conc_flag", "NOx_mgL", "NOx_uM", "NOx_conc_flag", "FE_2_mean_uM", "FE_2_sd_uM", "FE_2_conc_flag", "FE_3_mean_uM", "FE_3_sd_uM", "FE_3_conc_flag", "ic_mgL", "ic_uM", "ic_conc_flag"))
+  select(c("Project", "Region", "Year", "Month", "Day", "Site", "Zone", "Sample_ID", "Sampler_Type", "Replicate", "SO4_ppm", "SO4_mM", "SO4_conc_flag", "Cl_ppm", "Cl_mM", "Cl_conc_flag", "salinity", "H2S_mean_uM", "H2S_sd_uM", "H2S_conc_flag", "NH3_mgL", "NH3_uM", "NH3_conc_flag", "PO4_mgL", "PO4_uM", "PO4_conc_flag", "NOx_mgL", "NOx_uM", "NOx_conc_flag", "FE_2_mean_uM", "FE_2_sd_uM", "FE_2_conc_flag", "FE_3_mean_uM", "FE_3_sd_uM", "FE_3_conc_flag", "ic_mgL", "ic_uM", "ic_conc_flag"))
 
 # For the concentration flags - let's remove when it says "within range" and just make those NA so there is only a flag if it is above or below detection.
 unique(final_data2$ic_conc_flag)
@@ -293,9 +336,11 @@ metadat$Description <- c("Project name: Project component",
                          "Collection device used to sample porewater: SIP = Sipper sampler", 
                          "Replicate (A-C)",
                          "Sulfate concentration", 
-                         "Chloride concentration", 
                          "Sulfate concentration", 
+                         "Sulfate concentration flag (adl = above detection limit (20 ug/mL), bdl = below detection limit (0 ug/mL))", 
                          "Chloride concentration", 
+                         "Chloride concentration", 
+                         "Chloride concentration flag (adl = above detection limit (200 ug/mL), bdl = below detection limit (0 ug/mL))", 
                          "Salinity", 
                          "Sulfide concentration mean", 
                          "Sulfide concentration standard deviation", 
@@ -331,9 +376,11 @@ metadat$Units <-      c( "NA",
                          "NA", 
                          "NA",
                          "ppm", 
+                         "umoles/L", 
+                         "NA", 
                          "ppm", 
                          "umoles/L", 
-                         "umoles/L", 
+                         "NA", 
                          "ppt", 
                          "umoles/L", 
                          "umoles/L", 
@@ -367,6 +414,8 @@ metadat$Instrument_ifapplicable <-  c(
                          "NA",
                          "NA", 
                          "Sipper Sampler", 
+                         "NA",
+                         "NA",
                          "NA",
                          "NA", 
                          "NA", 
@@ -407,10 +456,12 @@ metadat$Method_ifapplicable <- c(
                          "NA", 
                          "NA", 
                          "NA",
-                         "Sulfate concentration", 
-                         "Chloride concentration", 
-                         "Sulfate concentration", 
-                         "Chloride concentration", 
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
                          "Calculated with Knudsen equation (Strickland and Parsons, 1972)", 
                          "Adapted from Cline, 1969, Ehrhardt et al., 1999", 
                          "Adapted from Cline, 1969, Ehrhardt et al., 1999", 

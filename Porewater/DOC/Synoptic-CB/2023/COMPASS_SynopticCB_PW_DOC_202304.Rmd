@@ -17,7 +17,9 @@ cat("Setup Information")
   Run_by = "Stephanie J. Wilson"  #Instrument user 
   Script_run_by = "Stephanie J. Wilson" #Code user 
   run_notes = "Standard Curve was assessed manually on the instrument.
-    Check GCW SW samples, because the npoc values are 0.0000"  #any notes from the run
+    Check GCW SW samples, because the npoc values are 0.0000. 
+  Some sample IDs are missing from metadata: 202304_MSM_UP_LysA_45cm, 202304_MSM_UP_LysB_45cm, 202304_GWI_UP_LysA_20cm, 
+  202304_MSM_TR_LysA_45cm, 202304_MSM_TR_LysC_10cm, 202304_MSM_TR_LysC_20cm"  #any notes from the run
   samples <- c("GCW", "GWI", "MSM", "SWH") #whatever identifies your samples within the same names 
   samples_pattern <- paste(samples, collapse = "|") 
     #samples_pattern <- "GCW" #use this instead of the line above if you have only one site code 
@@ -34,7 +36,7 @@ cat("Setup Information")
 
 #file path and name of processed data file 
     #processed_file_name = "Processed Data/COMPASS_SynopticCB_PW_Processed_DOC_202505.csv" #example
-    processed_file_name = "Processed Data/COMPASS_SynopticCB_PW_Processed_DOC_202411.csv" #example
+    processed_file_name = "Processed Data/COMPASS_SynopticCB_PW_Processed_DOC_202304.csv" #example
 
 
 ###### Log Files - PLEASE CHECK 
@@ -439,8 +441,8 @@ ggarrange(C_dups, N_dups,ncol=2, nrow=1)
 
 
 #calculate the percent of check standards that are within the range based on the flag 
-c_dups_percent <- (sum(QAdups$npoc_dups_cv_flag == "YES")/nrow(QAdups))*100
-n_dups_percent <- (sum(QAdups$tdn_dups_cv_flag == "YES")/nrow(QAdups))*100
+c_dups_percent <- (sum(QAdups$npoc_dups_cv_flag == "YES", na.rm = TRUE)/sum(!is.na(QAdups$npoc_dups_cv_flag)))*100
+n_dups_percent <- (sum(QAdups$tdn_dups_cv_flag == "YES", na.rm = TRUE)/sum(!is.na(QAdups$tdn_dups_cv_flag)))*100
 
 #report out if the dups are within range
 ifelse(c_dups_percent >= chks_flag, ">60% of Carbon Duplicates have a CV <10%",
