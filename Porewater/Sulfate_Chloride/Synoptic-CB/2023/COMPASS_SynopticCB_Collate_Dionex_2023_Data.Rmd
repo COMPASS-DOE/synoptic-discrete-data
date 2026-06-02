@@ -235,14 +235,53 @@ all_clean_IDs$salinity <- ifelse(all_clean_IDs$Cl_ppm == 0, 2.6e-05, all_clean_I
 
 head(all_clean_IDs)
 
-final_data <- all_clean_IDs %>%
+##QAQC flagging
+top_std_cl = 200   #ug/mL
+top_std_so4 = 20   #ug/mL
+
+#need to determine dilution factors
+#for COMPASS this depends on the site so... 
+all_clean_IDs$Dilution <- 1
+all_clean_IDs$Dilution <-  ifelse(str_detect(all_clean_IDs$Sample_ID, "MSM") & str_detect(all_clean_IDs$Sample_ID, "UP"), 50, all_clean_IDs$Dilution)
+all_clean_IDs$Dilution <-  ifelse(str_detect(all_clean_IDs$Sample_ID, "MSM") & str_detect(all_clean_IDs$Sample_ID, "TR"), 100, all_clean_IDs$Dilution)
+all_clean_IDs$Dilution <-  ifelse(str_detect(all_clean_IDs$Sample_ID, "MSM") & str_detect(all_clean_IDs$Sample_ID, "WC"), 100, all_clean_IDs$Dilution)
+all_clean_IDs$Dilution <-  ifelse(str_detect(all_clean_IDs$Sample_ID, "MSM") & str_detect(all_clean_IDs$Sample_ID, "_SW_"), 100, all_clean_IDs$Dilution)
+all_clean_IDs$Dilution <-  ifelse(str_detect(all_clean_IDs$Sample_ID, "GCW") & str_detect(all_clean_IDs$Sample_ID, "UP"), 50, all_clean_IDs$Dilution)
+all_clean_IDs$Dilution <-  ifelse(str_detect(all_clean_IDs$Sample_ID, "GCW") & str_detect(all_clean_IDs$Sample_ID, "TR"), 50, all_clean_IDs$Dilution)
+all_clean_IDs$Dilution <-  ifelse(str_detect(all_clean_IDs$Sample_ID, "GCW") & str_detect(all_clean_IDs$Sample_ID, "WC"), 100, all_clean_IDs$Dilution)
+all_clean_IDs$Dilution <-  ifelse(str_detect(all_clean_IDs$Sample_ID, "GCW") & str_detect(all_clean_IDs$Sample_ID, "_SW_"), 100, all_clean_IDs$Dilution)
+all_clean_IDs$Dilution <-  ifelse(str_detect(all_clean_IDs$Sample_ID, "GWI") & str_detect(all_clean_IDs$Sample_ID, "UP"), 100, all_clean_IDs$Dilution)
+all_clean_IDs$Dilution <-  ifelse(str_detect(all_clean_IDs$Sample_ID, "GWI") & str_detect(all_clean_IDs$Sample_ID, "TR"), 100, all_clean_IDs$Dilution)
+all_clean_IDs$Dilution <-  ifelse(str_detect(all_clean_IDs$Sample_ID, "GWI") & str_detect(all_clean_IDs$Sample_ID, "WC"), 200, all_clean_IDs$Dilution)
+all_clean_IDs$Dilution <-  ifelse(str_detect(all_clean_IDs$Sample_ID, "GWI") & str_detect(all_clean_IDs$Sample_ID, "_SW_"), 200, all_clean_IDs$Dilution)
+all_clean_IDs$Dilution <-  ifelse(str_detect(all_clean_IDs$Sample_ID, "SWH") & str_detect(all_clean_IDs$Sample_ID, "UP"), 50, all_clean_IDs$Dilution)
+all_clean_IDs$Dilution <-  ifelse(str_detect(all_clean_IDs$Sample_ID, "SWH") & str_detect(all_clean_IDs$Sample_ID, "TR"), 50, all_clean_IDs$Dilution)
+all_clean_IDs$Dilution <-  ifelse(str_detect(all_clean_IDs$Sample_ID, "SWH") & str_detect(all_clean_IDs$Sample_ID, "WC"), 50, all_clean_IDs$Dilution)
+all_clean_IDs$Dilution <-  ifelse(str_detect(all_clean_IDs$Sample_ID, "SWH") & str_detect(all_clean_IDs$Sample_ID, "SWAMP"), 50, all_clean_IDs$Dilution)
+all_clean_IDs$Dilution <-  ifelse(str_detect(all_clean_IDs$Sample_ID, "SWH") & str_detect(all_clean_IDs$Sample_ID, "_SW_"), 50, all_clean_IDs$Dilution)
+
+
+flagged_data <- all_clean_IDs %>%
+  mutate(Cl_ppm_dil = Cl_ppm/Dilution, 
+         SO4_ppm_dil = SO4_ppm/Dilution) %>% 
+  mutate(
+    Cl_Conc_flag = case_when(
+      Cl_ppm_dil <= 0 ~ "bdl",
+      Cl_ppm_dil > top_std_cl ~ "adl", 
+      TRUE ~ NA_character_  )) %>% #Flagging data if the concentration is outside the standards range and based on blanks
+  mutate(
+    SO4_Conc_flag = case_when(
+      SO4_ppm_dil <= 0 ~ "bdl",
+      SO4_ppm_dil > top_std_so4 ~ "adl", 
+      TRUE ~ NA_character_  ))#Flagging data if the concentration is outside the standards range and based on blanks
+  
+  
+  
+##Format data for file  
+final_data <- flagged_data %>% 
   mutate(
     Project = "COMPASS: Synoptic", 
     Region = "CB", 
-    SO4_Conc_flag = NA, 
-    SO4_QAQC_flag = NA, 
-    Cl_Conc_flag = NA, 
-    Cl_QAQC_flag = NA, 
     Analysis_rundate = NA, 
     Run_notes = NA
     ) %>%
@@ -255,7 +294,7 @@ final_data <- all_clean_IDs %>%
   select(
     Project, Region, Site, Zone, Replicate, Depth_cm, 
          Sample_ID, Year, Month, Day, Time, Time_Zone,
-         SO4_ppm, SO4_mM, SO4_Conc_flag, SO4_QAQC_flag, Cl_ppm, Cl_mM, Cl_Conc_flag, Cl_QAQC_flag, salinity,
+         SO4_ppm, SO4_mM, SO4_Conc_flag, Cl_ppm, Cl_mM, Cl_Conc_flag, salinity,
          Analysis_rundate,  Run_notes, Field_notes
         # list columns in the order you want them
   )

@@ -224,14 +224,52 @@ merged_data$salinity <- ifelse(merged_data$Cl_ppm == 0, 2.6e-05, merged_data$sal
 
 head(merged_data)
 
-final_data <- merged_data %>%
+
+##QAQC flagging
+top_std_cl = 200   #ug/mL
+top_std_so4 = 20   #ug/mL
+
+#need to determine dilution factors
+#for COMPASS this depends on the site so... 
+merged_data$Dilution <- 1
+merged_data$Dilution <-  ifelse(str_detect(merged_data$Sample_ID, "MSM") & str_detect(merged_data$Sample_ID, "UP"), 50, merged_data$Dilution)
+merged_data$Dilution <-  ifelse(str_detect(merged_data$Sample_ID, "MSM") & str_detect(merged_data$Sample_ID, "TR"), 100, merged_data$Dilution)
+merged_data$Dilution <-  ifelse(str_detect(merged_data$Sample_ID, "MSM") & str_detect(merged_data$Sample_ID, "WC"), 100, merged_data$Dilution)
+merged_data$Dilution <-  ifelse(str_detect(merged_data$Sample_ID, "MSM") & str_detect(merged_data$Sample_ID, "_SW_"), 100, merged_data$Dilution)
+merged_data$Dilution <-  ifelse(str_detect(merged_data$Sample_ID, "GCW") & str_detect(merged_data$Sample_ID, "UP"), 50, merged_data$Dilution)
+merged_data$Dilution <-  ifelse(str_detect(merged_data$Sample_ID, "GCW") & str_detect(merged_data$Sample_ID, "TR"), 50, merged_data$Dilution)
+merged_data$Dilution <-  ifelse(str_detect(merged_data$Sample_ID, "GCW") & str_detect(merged_data$Sample_ID, "WC"), 100, merged_data$Dilution)
+merged_data$Dilution <-  ifelse(str_detect(merged_data$Sample_ID, "GCW") & str_detect(merged_data$Sample_ID, "_SW_"), 100, merged_data$Dilution)
+merged_data$Dilution <-  ifelse(str_detect(merged_data$Sample_ID, "GWI") & str_detect(merged_data$Sample_ID, "UP"), 100, merged_data$Dilution)
+merged_data$Dilution <-  ifelse(str_detect(merged_data$Sample_ID, "GWI") & str_detect(merged_data$Sample_ID, "TR"), 100, merged_data$Dilution)
+merged_data$Dilution <-  ifelse(str_detect(merged_data$Sample_ID, "GWI") & str_detect(merged_data$Sample_ID, "WC"), 200, merged_data$Dilution)
+merged_data$Dilution <-  ifelse(str_detect(merged_data$Sample_ID, "GWI") & str_detect(merged_data$Sample_ID, "_SW_"), 200, merged_data$Dilution)
+merged_data$Dilution <-  ifelse(str_detect(merged_data$Sample_ID, "SWH") & str_detect(merged_data$Sample_ID, "UP"), 50, merged_data$Dilution)
+merged_data$Dilution <-  ifelse(str_detect(merged_data$Sample_ID, "SWH") & str_detect(merged_data$Sample_ID, "TR"), 50, merged_data$Dilution)
+merged_data$Dilution <-  ifelse(str_detect(merged_data$Sample_ID, "SWH") & str_detect(merged_data$Sample_ID, "WC"), 50, merged_data$Dilution)
+merged_data$Dilution <-  ifelse(str_detect(merged_data$Sample_ID, "SWH") & str_detect(merged_data$Sample_ID, "SWAMP"), 50, merged_data$Dilution)
+merged_data$Dilution <-  ifelse(str_detect(merged_data$Sample_ID, "SWH") & str_detect(merged_data$Sample_ID, "_SW_"), 50, merged_data$Dilution)
+
+
+flagged_data <- merged_data %>%
+  mutate(Cl_ppm_dil = as.numeric(Cl_ppm)/Dilution, 
+         SO4_ppm_dil = as.numeric(SO4_ppm)/Dilution) %>% 
+  mutate(
+    Cl_Conc_flag = case_when(
+      Cl_ppm_dil <= 0 ~ "bdl",
+      Cl_ppm_dil > top_std_cl ~ "adl", 
+      TRUE ~ NA_character_  )) %>% #Flagging data if the concentration is outside the standards range and based on blanks
+  mutate(
+    SO4_Conc_flag = case_when(
+      SO4_ppm_dil <= 0 ~ "bdl",
+      SO4_ppm_dil > top_std_so4 ~ "adl", 
+      TRUE ~ NA_character_  ))#Flagging data if the concentration is outside the standards range and based on blanks
+  
+
+final_data <- flagged_data %>%
   mutate(
     Project = "COMPASS", 
     Region = "CB", 
-    SO4_Conc_flag = "NA", 
-    SO4_QAQC_flag = "NA", 
-    Cl_Conc_flag = "NA", 
-    Cl_QAQC_flag = "NA", 
     Analysis_rundate = "NA",  
     Run_notes = "NA"
     ) %>%
@@ -244,7 +282,7 @@ final_data <- merged_data %>%
   select(
     Project, Region, Site, Zone, Replicate, Depth_cm, 
          Sample_ID, Year, Month, Day, Time, Time_Zone,
-         SO4_ppm, SO4_mM, SO4_Conc_flag, SO4_QAQC_flag, Cl_ppm, Cl_mM, Cl_Conc_flag, Cl_QAQC_flag, salinity,
+         SO4_ppm, SO4_mM, SO4_Conc_flag, Cl_ppm, Cl_mM, Cl_Conc_flag, salinity,
          Analysis_rundate,  Run_notes, Field_notes
         # list columns in the order you want them
   )
