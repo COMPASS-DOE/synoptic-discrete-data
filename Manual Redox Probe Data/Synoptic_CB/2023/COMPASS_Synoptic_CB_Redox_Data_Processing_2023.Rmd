@@ -11,8 +11,7 @@ output_dir: "To Be Reviewed/PDF"
 ---
   
 # Measurements taken with SWAP Redox Probes & Calomel Ref probe
-# Protocol: https://docs.google.com/document/d/
-# 1dL2ZPhLFBAZJmVBCfKxup_KOYY96qA5IWfJmQen50pY/edit
+# Protocol: https://docs.google.com/document/d/1dL2ZPhLFBAZJmVBCfKxup_KOYY96qA5IWfJmQen50pY/edit
 # Units = mV 
 
 ##Add Required Packages
@@ -106,6 +105,10 @@ datlong <-  as.data.frame(melt(setDT(prelong), id.vars = c("Date", "Month", "Yea
 # all_corr <- all_corr %>% 
 #   mutate(value_corr = value + ((pH - 5)*59 + 202))
 
+##Adjust redox for KCl ref probe
+datlong <- datlong %>%
+  mutate(value_corr = value + 202)
+
 ##Average across all 5-6 measurements for each sampling Site, Zone, Depth, Month, Year
 datlong1 <- datlong %>% 
   mutate(Depth = case_when(Depth == 30 ~ 35,
@@ -114,9 +117,9 @@ datlong1 <- datlong %>%
 red1 <- datlong1 %>%
   group_by(Date, Month, Year, Site, Zone, Depth, Time_24hr, Time_Zone, Topography, Notes) %>%
   summarise(Date = first(Date), 
-            Avg_mV = mean(value, na.rm=TRUE), 
-            Std_dv = sd(value, na.rm=TRUE), 
-            Std_err = std.error(value, na.rm=TRUE), 
+            Avg_mV = mean(value_corr, na.rm=TRUE), 
+            Std_dv = sd(value_corr, na.rm=TRUE), 
+            Std_err = std.error(value_corr, na.rm=TRUE), 
             Notes = first(Notes)
             )
 
@@ -178,7 +181,7 @@ red <- datlong1 %>%
                           Site == "SWH" & Zone == "Transition" & Topography == "Hollow" ~ "Transition-Hollow",
                           TRUE ~ Zone)) %>% 
   group_by(Site, Zone, Depth) %>%
-  summarise(Date = mean(Date), Avg_mV = mean(value, na.rm=TRUE), Std_dv = sd(value, na.rm=TRUE), Std_err = std.error(value, na.rm=TRUE))
+  summarise(Date = mean(Date), Avg_mV = mean(value_corr, na.rm=TRUE), Std_dv = sd(value_corr, na.rm=TRUE), Std_err = std.error(value_corr, na.rm=TRUE))
 
 viz_redox_depth <- ggplot(red, aes(x=Depth, y= Avg_mV, col=Zone, fill=Zone))+
   geom_point(size=3) +  

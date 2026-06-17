@@ -137,7 +137,7 @@ metadat$Instrument_ifapplicable <-
                          "NA",
                          "NA",
                          "NA",
-                         "SWAP Redox Probe",
+                         "Redox Probe: SWAP Redox Probe, Reference Probe: Calomel Reference probe, Handheld Readout: Thermo Scientific Orion Star A221 pH Meter",
                          "NA",
                          "NA",
                          "NA")
@@ -317,7 +317,7 @@ viz_redox_depth <-  ggplot(data_plotting_depth, aes(x = Depth, y = Avg_mV, fill 
     "Transition-Hummock" = "#FFBC42",
     "Wetland" = "#419973")) +
   theme_classic() +
-  labs(x = "Depth (cm)", y = "Redox Potential (mV)", title = "Samples: Redox\n (No std dev because values were averaged previously,\n so new std dev would be incorrect)") +
+  labs(x = "Depth (cm)", y = "Redox Potential (mV)", title = "Samples: Redox") +
   # theme(
   #   panel.spacing = unit(.05, "lines"), 
   #   panel.border = element_rect(color = "black", fill = NA, linewidth = 1))+ 

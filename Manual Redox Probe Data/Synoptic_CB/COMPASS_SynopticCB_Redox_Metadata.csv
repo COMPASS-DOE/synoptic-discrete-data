@@ -10,7 +10,7 @@
 "9","Zone","Zone within space-for-time transect (UP=Upland, SWAMP=Swamp, TR=Transition, WC=Wetland Control)","NA","NA"
 "10","Topography","Topography (Hummock/Hollow) only for SWH transition zone; hummock is most comparable to the transition zones at other sites","NA","NA"
 "11","Depth","Depth in centimeters at which measurement was made","cm","NA"
-"12","Avg_mV","Average of field replicate measurements at the same depth (n=6)","mV","SWAP Redox Probe"
+"12","Avg_mV","Average of field replicate measurements at the same depth (n=6)","mV","Redox Probe: SWAP Redox Probe, Reference Probe: Calomel Reference probe, Handheld Readout: Thermo Scientific Orion Star A221 pH Meter"
 "13","Std_dv","Sample standard deviation calculated from field replicate measurements at the same depth (n=6) .","mV","NA"
 "14","Std_err","Sample standard error calculated from field replicate measurements at the same depth (n=6) .","mV","NA"
 "15","Notes","Notes generated during field sample collection","NA","NA"
