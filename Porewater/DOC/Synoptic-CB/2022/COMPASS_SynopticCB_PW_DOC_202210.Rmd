@@ -1,6 +1,6 @@
 ---
 title: "Synoptic CB: Porewater DOC, TN"
-author: "June 2022 Samples"
+author: "October 2022 Samples"
 date: "`r Sys.Date()`"
 output: 
   pdf_document:
@@ -17,25 +17,25 @@ cat("Setup Information")
 
 
 ###### Run information - PLEASE CHANGE
-  Date_Run = "06/15/22"  #Date that instrument was run
+  Date_Run = "11/6/2022"  #Date that instrument was run
   Run_by = "Stephanie J. Wilson"  #Instrument user 
-  Script_run_by = "Stephanie J. Wilson" #Code user 
+  Script_run_by = "Zoe Read" #Code user 
   run_notes = "Standard Curve assessed manually on the instrument. Some sample IDs are missing from metadata."  #any notes from the run
-  samples <- c("GCrew", "GWI", "MSM", "SWH") #whatever identifies your samples within the same names 
+  samples <- c("GCrew", "Gcrew", "GWI", "MSM", "SWH") #whatever identifies your samples within the same names 
   
   samples_pattern <- paste(samples, collapse = "|") 
     #samples_pattern <- "GCW" #use this instead of the line above if you have only one site code 
-  chks_name = "CKSTD"  #what did you name your check standards? 
+  chks_name = "_Chk_"  #what did you name your check standards? 
   
 ###### File Names - PLEASE CHANGE 
 #file path and name for raw summary data file 
-    raw_file_name = c("Raw Data/TOCTN_COMPASS_Synoptic_TCTN_202206_1.txt" , "Raw Data/TOCTN_COMPASS_Synoptic_TCTN_202206_2.txt" )
+    raw_file_name = c("Raw Data/TOCTN_COMPASS_Synoptic_TCTN_202210_1.txt") # , "Raw Data/TOCTN_COMPASS_Synoptic_TCTN_202210_2.txt" )
     
 #file path and name for raw all peaks file 
    # raw_allpeaks_name = "Raw Data/COMPASS_SynopticCB_PW_DOC_202505_allpeaks.txt"
 
 #file path and name of processed data file 
-    processed_file_name = "Processed Data/COMPASS_SynopticCB_PW_Processed_DOC_202206.csv"
+    processed_file_name = "Processed Data/COMPASS_SynopticCB_PW_Processed_DOC_202210.csv"
 
 
 ###### Log Files - PLEASE CHECK 
@@ -78,8 +78,8 @@ lapply(c(
   #blank_flag - calculated based on samples later in this code as lower 25% quantile of sample concentrations
 
 #check standard concentrations - Update if running different checks: 
-   # chk_std_low_c = 1
-   chk_std_high_c = 1
+   # chk_std_low_c = 10
+   chk_std_high_c = 10
    # chk_std_low_n = 1
    chk_std_high_n = 1
    
@@ -189,7 +189,7 @@ read_curve <- function(data){
 ```
 
 ## Import Sample Data     
-```{r Import Data, include=FALSE}
+```{r Import Data, echo=FALSE}
 
 cat("Import Sample Data")
 
@@ -203,19 +203,15 @@ head(dat_raw)
 
 ##Fix sample naming
 ```{r}
-#metadata: 202207_GWI_UP_LysB_20cm
-#samples: MSM_WC_PW_MonMon_DOC_20220607_SipA_20cm
+#remove number from sample ID
 dat_raw <- dat_raw %>% 
-  mutate(sample_name = gsub("MSM_UP_PW_MonMon_DOC_20220607", "20220607_MSM_UP", sample_name)) %>% 
-  mutate(sample_name = gsub("MSM_WC_PW_MonMon_DOC_20220607", "20220607_MSM_WC", sample_name))
+  mutate(sample_name = str_remove(sample_name, "^[^_]*_"))
 
-##just need the sample year and month
-dat_raw <- dat_raw %>% 
-  mutate(sample_name = gsub("20220607", "202206", sample_name))
 
 ##fix GCW designation
 dat_raw <- dat_raw %>% 
-  mutate(sample_name = gsub("GCrew", "GCW", sample_name))
+  mutate(sample_name = gsub("GCrew", "GCW", sample_name)) %>% 
+  mutate(sample_name = gsub("Gcrew", "GCW", sample_name))
 
 ```
 
@@ -338,7 +334,7 @@ ifelse(n_blks_percent >= chks_flag, ">50% of Nitrogen Blank concentrations are l
 c_blks <-  ggplot(data = blks_raw, aes(x = rep, y = npoc_raw, fill=C_diff_flag)) +
        geom_bar(stat = 'identity') + 
         scale_fill_manual(values = c("YES" = "darkblue", "NO, rerun" = "darkgrey")) +
-        theme_classic() + labs(x= " ", y="NPOC  (mg/L)", title="Check Stds: NPOC") + 
+        theme_classic() + labs(x= " ", y="NPOC  (mg/L)", title="Blanks: NPOC") + 
         theme(legend.position="bottom") +  geom_hline(yintercept=blk_flag_c, linetype="dashed", 
                 color = "black", linewidth=1)  + 
                 guides(fill=guide_legend(title="Blank Conc <25% Quartile Samples"))
@@ -346,7 +342,7 @@ c_blks <-  ggplot(data = blks_raw, aes(x = rep, y = npoc_raw, fill=C_diff_flag))
 n_blks <-  ggplot(data = blks_raw, aes(x = rep, y = tdn_raw, fill=N_diff_flag)) +
        geom_bar(stat = 'identity') + 
         scale_fill_manual(values = c("YES" = "darkblue", "NO, rerun" = "darkgrey")) +
-        theme_classic() + labs(x= " ", y="TN  (mg/L)", title="Check Stds: TN") + 
+        theme_classic() + labs(x= " ", y="TN  (mg/L)", title="Blanks: TN") + 
         theme(legend.position="bottom") +  geom_hline(yintercept=blk_flag_n, linetype="dashed", 
                 color = "black", linewidth=1)  + 
                 guides(fill=guide_legend(title="Blank Conc <25% Quartile Samples"))
@@ -446,14 +442,14 @@ c_samples_flag <-  ggplot(data = dat_flag_viz, aes(x = sample_name, y = npoc_raw
        geom_bar(stat = 'identity') + 
         scale_fill_manual(values=c("red", "orange"))+
         theme_classic() + labs(x= " ", y="C (mg/L)", title="C: Grey = Within Range of Curve") + 
-        theme(legend.position="none") 
+        theme(legend.position="bottom") 
 
 
 n_samples_flag <-  ggplot(data = dat_flag_viz, aes(x = sample_name, y = tdn_raw, fill=tdn_flag)) +
        geom_bar(stat = 'identity') + 
         scale_fill_manual(values=c("red", "orange"))+
         theme_classic() + labs(x= " ", y="N (mg/L)", title="N: Grey = Within Range of Curve") + 
-        theme(legend.position="none") 
+        theme(legend.position="bottom") 
 
 ggarrange(c_samples_flag, n_samples_flag, nrow=1, ncol=2)
 
@@ -465,9 +461,13 @@ ggarrange(c_samples_flag, n_samples_flag, nrow=1, ncol=2)
 
 cat("Visualize Data")
 
+#remove duplicates from the sample dataframe bc we are just taking the first dup run
+dat_flagged <- dat_flagged %>%
+  filter(!str_detect(sample_name, "DUP"))
+
 #Plot samples to get a first look at concentrations (sanity check)
 IDs <- data.frame(do.call('rbind', strsplit(as.character(dat_flagged$sample_name),'_',fixed=TRUE)))
-colnames(IDs) <- c("Date", "Site_Code", "Zone", "Replicate", "Depth") #20220607_GWI_UP_LysB_10cm
+colnames(IDs) <- c("Date", "Site_Code", "Zone", "Replicate", "Depth") #202210_GWI_UP_LysA_10cm
 #head(IDs)
 
 #rejoin them to the dataframe
@@ -538,7 +538,7 @@ cat("Check Sample IDs with Metadata")
 
 #remove duplicates from the sample dataframe bc we are just taking the first dup run
 all_data_flagged <- dat_flagged_id %>%
-  filter(!str_detect(sample_name, "dup"))
+  filter(!str_detect(sample_name, "DUP"))
 
 #check to see if all samples are present in the metadata 
 all_present <- all(all_data_flagged$sample_name %in% doc_metadata$DOC_ID)
