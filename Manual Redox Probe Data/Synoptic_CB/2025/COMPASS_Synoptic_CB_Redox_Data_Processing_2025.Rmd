@@ -84,7 +84,7 @@ std.error <- function (x, na.rm=FALSE){
 # we use a KCl ref probe, so we need to add 202 instead 
 ```{r adjust for pH, message = FALSE, warning = FALSE}
 
-##Remove unneccesary column in redox data
+##Remove unnecessary column in redox data
 prelong <- dat %>% 
   select (-Campaign)
 
@@ -98,6 +98,10 @@ datlong <-  as.data.frame(melt(setDT(prelong), id.vars = c("Date", "Month", "Yea
 # all_corr <- all_corr %>% 
 #   mutate(value_corr = value + ((pH - 5)*59 + 202))
 
+##Adjust redox for KCl ref probe
+datlong <- datlong %>%
+  mutate(value_corr = value + 202)
+
 ##Average across all 5-6 measurements for each sampling Site, Zone, Depth, Month, Year
 #Change all 30 cm measurements to 35 so depth is averaged from 30-35 cm
 datlong1 <- datlong %>% 
@@ -107,9 +111,9 @@ datlong1 <- datlong %>%
 red1 <- datlong1 %>%
   group_by(Date, Month, Year, Site, Zone, Depth, Time_24hr, Time_Zone, Topography, Notes) %>%
   summarise(Date = mean(Date), 
-            Avg_mV = mean(value, na.rm=TRUE), 
-            Std_dv = sd(value, na.rm=TRUE), 
-            Std_err = std.error(value, na.rm=TRUE), 
+            Avg_mV = mean(value_corr, na.rm=TRUE), 
+            Std_dv = sd(value_corr, na.rm=TRUE), 
+            Std_err = std.error(value_corr, na.rm=TRUE), 
             Notes = first(Notes)
             )
 
@@ -170,7 +174,7 @@ red <- datlong1 %>%
                           Site == "SWH" & Zone == "Transition" & Topography == "Hollow" ~ "Transition-Hollow",
                           TRUE ~ Zone)) %>% 
   group_by(Site, Zone, Depth) %>%
-  summarise(Date = mean(Date), Avg_mV = mean(value, na.rm=TRUE), Std_dv = sd(value, na.rm=TRUE), Std_err = std.error(value, na.rm=TRUE))
+  summarise(Date = mean(Date), Avg_mV = mean(value_corr, na.rm=TRUE), Std_dv = sd(value_corr, na.rm=TRUE), Std_err = std.error(value_corr, na.rm=TRUE))
 
 viz_redox_depth <- ggplot(red, aes(x=Depth, y= Avg_mV, col=Zone, fill=Zone))+
   geom_point(size=3) +  
