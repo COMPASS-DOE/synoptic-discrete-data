@@ -701,7 +701,7 @@ final_data <- final_data %>%
   select(
     Project, Region, Site, Zone, Replicate, Depth_cm, Sample_ID, Year, Month, Day, 
     Time, Time_Zone, npoc_mgL, npoc_uM, npoc_flag, tdn_mgL, tdn_uM, tdn_flag, Analysis_runtime,
-    Run_notes, Field_notes, 
+    Run_notes, Field_notes
     # list columns in the order you want them
   )
 
