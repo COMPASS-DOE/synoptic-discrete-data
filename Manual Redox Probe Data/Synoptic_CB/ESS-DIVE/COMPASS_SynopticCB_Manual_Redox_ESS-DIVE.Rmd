@@ -1,0 +1,217 @@
+---
+title: "ESS-DIVE Synoptic CB: Manual Redox"
+author: "2022-2025 Samples"
+date: "`r Sys.Date()`"
+output: 
+  pdf_document:
+    toc: true
+    number_sections: true
+
+output_dir: "To Be Reviewed/PDF"
+header-includes:
+  - \pagenumbering{gobble}
+---
+
+```{r setup, include=FALSE}
+library(dplyr)
+library(ggplot2)
+library(ggpubr)
+library(stringr)
+library(readxl)
+library(tidyr)
+library(tibble)
+library(openxlsx)
+library(knitr)
+```
+
+##Pull in compiled data and export annual files
+```{r Pull in compiled data files, message=FALSE, include=FALSE}
+
+#write out a csv of all the data to the main folder: 
+final_data <- read.csv("../COMPASS_SynopticCB_Redox_AllData.csv")
+
+##Separate by year for ESS-DIVE 
+final_data_2022 <- subset(final_data, Year == "2022")
+final_data_2023 <- subset(final_data, Year == "2023")
+final_data_2024 <- subset(final_data, Year == "2024")
+final_data_2025 <- subset(final_data, Year == "2025")
+
+##Write out annual data files
+write.csv(final_data_2022, "Data package/COMPASS_SynopticCB_Manual Redox_2022.csv", row.names = FALSE)
+write.csv(final_data_2023, "Data package/COMPASS_SynopticCB_Manual Redox_2023.csv", row.names = FALSE)
+write.csv(final_data_2024, "Data package/COMPASS_SynopticCB_Manual Redox_2024.csv", row.names = FALSE)
+write.csv(final_data_2025, "Data package/COMPASS_SynopticCB_Manual Redox_2025.csv", row.names = FALSE)
+
+```
+
+##Create dd file
+```{r make metadata, include = FALSE}
+
+#pull the column names from the all_dat1 dataframe and create a new dataframe with them
+dd <- data.frame(Column_Names = colnames(final_data))
+dd
+
+dd$Unit <- ""
+dd$Definition <- ""
+dd$Column_Long_Name <- dd$Column_Names
+dd$data_type <- ""
+dd$Instrument_ifapplicable <- ""
+
+#add information about each line:
+
+dd$Definition <-  c("Project name",
+                         "Region samples originated from: CB = Chesapeake Bay",
+                         "Year (YYYY) of sample collection",
+                         "Month (MM) of sample collection",
+                         "Day (DD) of sample collection",
+                         "Time (HH:MM) of sample collection",
+                         "Time Zone of sample collection",
+                         "Name of sampling transect location (GCW, SWH, MSM, GWI), see dataset locations for coordinates",
+                         "Zone within space-for-time transect (UP=Upland, SWAMP=Swamp, TR=Transition, WC=Wetland Control)",
+                         "Topography (Hummock/Hollow) only for SWH transition zone; hummock is most comparable to the transition zones at other sites",
+                         "Depth in centimeters at which measurement was made",
+                         "Average of field replicate measurements at the same depth (n=6)", 
+                         "Sample standard deviation calculated from field replicate measurements at the same depth (n=6) .", 
+                         "Sample standard error calculated from field replicate measurements at the same depth (n=6) .", 
+                         "Notes generated during field sample collection")
+
+dd$Unit <-             c("NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "cm",
+                         "mV",
+                         "mV",
+                         "mV",
+                         "NA")
+
+dd$data_type <-        c("text",
+                         "text",
+                         "numeric",
+                         "text",
+                         "numeric",
+                         "numeric",
+                         "text",
+                         "text",
+                         "text",
+                         "text",
+                         "numeric",
+                         "numeric",
+                         "numeric",
+                         "numeric",
+                         "text")
+
+dd$Instrument_ifapplicable <-
+
+                       c("NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "Redox Probe: SWAP Redox Probe, Reference Probe: Calomel Reference probe, Handheld Readout: Thermo Scientific Orion Star A221 pH Meter",
+                         "NA",
+                         "NA",
+                         "NA")
+
+
+#write out the data dictionary associated with the data:
+write.csv(dd, "Data package/dd.csv", row.names = FALSE)
+
+```
+
+
+##Create flmd file
+```{r}
+
+files  = list.files("Data package")
+files
+
+files = c("COMPASS_SynopticCB_Manual Redox_2022.csv", "COMPASS_SynopticCB_Manual Redox_2023.csv", "COMPASS_SynopticCB_Manual Redox_2024.csv", "COMPASS_SynopticCB_Manual Redox_2025.csv", "dd.csv")
+
+flmd <- data.frame(file_name = files)
+flmd
+
+flmd$file_description <- ""
+flmd$standard <- ""
+flmd$file_version <- ""
+flmd$data_orientation <- ""
+flmd$header_rows <- ""
+flmd$column_or_row_name_position <- ""
+flmd$notes <- ""
+
+#add information about each line:
+
+flmd$file_description <-  c("Manual redox data taken from COMPASS synoptic sites in 2022",
+                            "Manual redox data taken from COMPASS synoptic sites in 2023",
+                            "Manual redox data taken from COMPASS synoptic sites in 2024",
+                            "Manual redox data taken from COMPASS synoptic sites in 2025",
+                            "Data dictionary file for annual redox data files describing each column in the dataset")
+
+flmd$data_orientation <-  c("horizontal",
+                            "horizontal",
+                            "horizontal",
+                            "horizontal",
+                            "horizontal")
+
+flmd$header_rows <-   c("1",
+                        "1",
+                        "1",
+                        "1",
+                        "1")
+
+flmd$column_or_row_name_position <- c("1",
+                                      "1",
+                                      "1",
+                                      "1",
+                                      "1")
+
+
+#write out the flmd associated with the data:
+write.csv(flmd, "Data package/flmd.csv", row.names = FALSE)
+
+```
+
+##Create site list
+```{r}
+
+##Description, Latitude, Longitude
+
+MSM <- data.frame(
+  Description = "Moneystump Swamp (MSM); one of COMPASS-FME synoptic sites located in the Blackwater National Wildlife Refuge along the mesohaline Beaverdam Creek. This synoptic site consists of three plots: upland ('UP'; located at 38.4315N, 76.2267W), transition ('TR'; 38.4310N, 76.2277W), and wetland ('W'; 38.4308N, 76.2286W). The site was established in June 2022. The transect spans a coastal loblolly pine forest and a mesohaline marsh dominated by Spartina and Distichlis.", 
+  Latitude = "38.4310 degrees", 
+  Longitude = "-76.2277 degrees")
+
+SWH <- data.frame(
+  Description = "Sweet Hall Marsh (SWH); one of the COMPASS-FME synoptic sites located in the tidal fresh Pamunkey River, one of the two tributaries of the York River in Virginia, USA. The COMPASS-FME consists of three plots: upland ('UP'; located at 37.5708N, 76.8954W), swamp ('SWAMP'; located at 37.57069N, 76.8957W), transition ('TR'; 37.56883N, 76.8964W), and wetland ('W'; 37.56659N, 76.8970W). The synoptic site was established in June 2023. This site is also identified as a Chesapeake Bay National Research Reserve site.", 
+  Latitude = "37.56883 degrees", 
+  Longitude = "-76.8964 degrees")
+
+GCW <- data.frame(
+  Description = "GCReW (GCW); one of COMPASS-FME synoptic sites, and has three plots: upland ('UP'; located at 38.8741N, 76.5522W), transition ('TR'; 38.8745, 76.5515W), and wetland ('W'; 38.8750N, 76.5500W). Note that this site overlaps spatially with the TEMPEST (TMP) plots, the upland portion of the transect overlaps with the TEMPEST experiment control plot. This transect spans a mid- to late-successional (~80 years old) temperate, deciduous coastal forest and a mesohaline marsh along the Rhode River in Edgewater, MD.",
+  Latitude = "38.8745 degrees", 
+  Longitude = "-76.5515 degrees")
+
+GWI <- data.frame(
+  Description = "Goodwin Island (GWI); one of COMPASS-FME synoptic sites, and has three plots: upland ('UP'; located at 37.2192N, 76.4087W), transition ('TR'; 37.2194N, 76.4092W), and wetland ('W'; 37.2189N, 76.4101W). The site was established in June 2022.", 
+  Latitude = "37.2194 degrees", 
+  Longitude = "-76.4092 degrees")
+
+site_list = bind_rows(MSM, SWH, GCW, GWI)
+
+#write out the site list associated with the data:
+write.csv(site_list, "Data package/site_list.csv", row.names = FALSE)
+
+```
+
