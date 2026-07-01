@@ -1,5 +1,5 @@
 ---
-title: "ESS-DIVE Synoptic CB: Manual Redox"
+title: "ESS-DIVE Synoptic CB: Manual Redox - 2026-07-01 Submission Prep"
 author: "2022-2025 Samples"
 date: "`r Sys.Date()`"
 output: 
@@ -22,9 +22,11 @@ library(tidyr)
 library(tibble)
 library(openxlsx)
 library(knitr)
+library(here)
 ```
 
-##Pull in compiled data and export annual files
+
+## Pull in compiled data and export annual files
 ```{r Pull in compiled data files, message=FALSE, include=FALSE}
 
 #write out a csv of all the data to the main folder: 
@@ -44,7 +46,8 @@ write.csv(final_data_2025, "Data package/COMPASS_SynopticCB_Manual Redox_2025.cs
 
 ```
 
-##Create dd file
+
+## Create dd file
 ```{r make metadata, include = FALSE}
 
 #pull the column names from the all_dat1 dataframe and create a new dataframe with them
@@ -132,8 +135,8 @@ write.csv(dd, "Data package/dd.csv", row.names = FALSE)
 ```
 
 
-##Create flmd file
-```{r}
+## Create flmd file
+```{r create flmd}
 
 files  = list.files("Data package")
 files
@@ -183,8 +186,9 @@ write.csv(flmd, "Data package/flmd.csv", row.names = FALSE)
 
 ```
 
-##Create site list
-```{r}
+
+## Create site list
+```{r create site list}
 
 ##Description, Latitude, Longitude
 
@@ -213,5 +217,51 @@ site_list = bind_rows(MSM, SWH, GCW, GWI)
 #write out the site list associated with the data:
 write.csv(site_list, "Data package/site_list.csv", row.names = FALSE)
 
+```
+
+
+## Data Description 
+```{r data description}
+
+#Create a text file that has the description of the data - This ideally should match the text that is in the data READ.ME 
+
+datadescription <- "These data are measurements of soil reduction-oxidation potential (REDOX) profiles collected using REDOX probes at the COMPASS 'synoptic' sites in the Chesapeake Bay region:  GCReW (GCW), Goodwin Islands (GWI), Moneystump (MSM), and Sweet Hall (SWH). These sites have space for time transects spanning coastal upland forest (UP), coastal upland forest transitioning to wetland (TR), and wetland (WC) plots. The Sweet Hall Marsh site also has a forested swamp as part of its transect (SWAMP). Soil REDOX profiles were measured at 10, 20, and 30/35cm depths monthly from 2022-2024 then bi-monthly from 2025-present across the plots. The SWH TR site has variable topography that includes hummocks and hollows, these were measured separately and are denoted in the dataset by the Topography column as Hummock/Hollow. To make measurements, five replicate soil REDOX probes were pushed into the ground to the depth of measurement and allowed to equilibrate for five minutes before recording the probe reading with a Thermo Scientific Orion pH/ORP handheld meter. After the reading, probes were pushed to the enxt depth of interest."
+
+
+#write to a text file 
+writeLines(datadescription, "Data package/SynopticCB_Redox_ESSDIVE_DataDescription.txt")
+
+
+```
+
+
+## Create Author List 
+```{r create author list}
+
+#Pull in the common synoptic authors list: 
+authors_common <- read.csv(here("Metadata/Synoptic CB/", "COMPASS_SynopticCB_common_essdive_author_list.csv"))
+
+
+#create a list of the last names you want to pull 
+names_we_want <- c("Wilson", "Read", "Stearns", "Phillips", "Chin", "Megonigal")
+
+#Subset the common list for the names that we want 
+author_list <- authors_common %>%
+  filter(last_name %in% names_we_want)
+
+#if you need to add any other authors 
+others <- data.frame(
+  first_name = c("first_name1", "first_name2"), 
+  last_name = c("last_name1", "last_name2"), 
+  orcid = c("orcid_id1", "orcid_id2"), 
+  affiliation = c("affiliation1", "affiliation2"), 
+  email = c("email1", "email2")
+)
+
+#add in the other authors 
+#author_list <- bind_rows(author_list, others)
+
+#write out the site list associated with the data:
+write.csv(author_list, "Data package/author_list.csv", row.names = FALSE)
 ```
 
