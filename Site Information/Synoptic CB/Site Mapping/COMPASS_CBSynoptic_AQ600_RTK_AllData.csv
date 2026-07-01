@@ -1,9 +1,9 @@
 ﻿Site,Site Code,Zone,Zone Code,Point ID,Location of Measure,Type,Field User Description,Northing,Easting,Elevation,GlobalLati,GlobalLong,GlobalElli,LocalLatit,LocalLongi,LocalEllip,H_Prec_Obs,V_Prec_Obs,Date_Obs,Time_Obs
-Moneystump Swamp,MSM,Upland,UP,MSM_UP_Soil_Flux_Collar_1,Center,GHG Soil Flux Collar,Up-Collar1,4254321.436,392980.035,0.753,NA,NA,NA,38.4307538,76.2261277,-33.8870000,0.005,0.005,6/4/2025,NA
-Moneystump Swamp,MSM,Upland,UP,MSM_UP_Soil_Flux_Collar_2,Center,GHG Soil Flux Collar,Up-Collar2,4254329.569,392987.176,0.695,NA,NA,NA,38.4308127,76.2260469,-30.2090000,0.005,0.005,6/4/2025,NA
-Moneystump Swamp,MSM,Upland,UP,MSM_UP_Soil_Flux_Collar_3,Center,GHG Soil Flux Collar,Up-Collar3,4254329.795,392981.501,0.718,NA,NA,NA,38.4308315,76.2261099,-30.3110000,0.005,0.005,6/4/2025,NA
-Moneystump Swamp,MSM,Upland,UP,MSM_UP_Soil_Flux_Collar_4,Center,GHG Soil Flux Collar,Up-Collar4,4254340.58,392975.544,0.696,NA,NA,NA,38.4309240,76.2261862,-32.7540000,0.005,0.005,6/4/2025,NA
-Moneystump Swamp,MSM,Upland,UP,MSM_UP_Soil_Flux_Collar_5,Center,GHG Soil Flux Collar,Up-Collar5,4254333.895,392972.308,0.711,NA,NA,NA,38.4308565,76.2262190,-30.7860000,0.005,0.005,6/4/2025,NA
+Moneystump Swamp,MSM,Upland,UP,MSM_UP_Soil_Flux_Collar_1,Center,GHG Soil Flux Collar,Up-Collar1,4254321.436,392980.035,0.753,NA,NA,NA,38.4307538,76.2261277,-33.887,0.005,0.005,6/4/2025,NA
+Moneystump Swamp,MSM,Upland,UP,MSM_UP_Soil_Flux_Collar_2,Center,GHG Soil Flux Collar,Up-Collar2,4254329.569,392987.176,0.695,NA,NA,NA,38.4308127,76.2260469,-30.209,0.005,0.005,6/4/2025,NA
+Moneystump Swamp,MSM,Upland,UP,MSM_UP_Soil_Flux_Collar_3,Center,GHG Soil Flux Collar,Up-Collar3,4254329.795,392981.501,0.718,NA,NA,NA,38.4308315,76.2261099,-30.311,0.005,0.005,6/4/2025,NA
+Moneystump Swamp,MSM,Upland,UP,MSM_UP_Soil_Flux_Collar_4,Center,GHG Soil Flux Collar,Up-Collar4,4254340.58,392975.544,0.696,NA,NA,NA,38.430924,76.2261862,-32.754,0.005,0.005,6/4/2025,NA
+Moneystump Swamp,MSM,Upland,UP,MSM_UP_Soil_Flux_Collar_5,Center,GHG Soil Flux Collar,Up-Collar5,4254333.895,392972.308,0.711,NA,NA,NA,38.4308565,76.226219,-30.786,0.005,0.005,6/4/2025,NA
 Moneystump Swamp,MSM,Upland,UP,MSM_UP_GasWells_A,Center of Cluster,GHG Soil Gas Well,Up-Gas-A,4254334.625,392972.094,0.733,NA,NA,NA,NA,NA,NA,0.005,0.005,6/4/2025,NA
 Moneystump Swamp,MSM,Upland,UP,MSM_UP_GasWells_B,Center of Cluster,GHG Soil Gas Well,Up-Gas-B,4254330.4,392982.631,0.701,NA,NA,NA,NA,NA,NA,0.005,0.005,6/4/2025,NA
 Moneystump Swamp,MSM,Upland,UP,MSM_UP_GasWells_C,Center of Cluster,GHG Soil Gas Well,Up-Gas-C,4254331.962,392981.421,0.714,NA,NA,NA,NA,NA,NA,0.005,0.005,6/4/2025,NA
@@ -40,7 +40,7 @@ Moneystump Swamp,MSM,Transition,TR,MSM_TR_AQ600,Well Base,AquaTROLL 600,tr-well-
 Moneystump Swamp,MSM,Transition,TR,MSM_TR_AQ600,Well Top,AquaTROLL 600,tr-well-top,4254284.793,392905.614,1.343,NA,NA,NA,38.430411,76.226984,NA,0.013,0.02,6/4/2025,NA
 Moneystump Swamp,MSM,Transition,TR,MSM_TR_Peep,Well Base,GW Sampling Well,MSM_TR_Peep,NA,NA,NA,NA,NA,NA,38.430411,76.226971,-34.223,,,6/4/2025,NA
 Moneystump Swamp,MSM,Transition,TR,MSM_TR_Macrophyte_Flux_Collar_1_A,Front corner ,GHG Macrophyte Flux Collar,tr-collar-macro1-a,4254287.861,392908.526,0.504,NA,NA,NA,38.430437,76.226947,-33.593,0.012,0.018,6/4/2025,NA
-Moneystump Swamp,MSM,Transition,TR,MSM_TR_Macrophyte_Flux_Collar_1_B,Back corner,GHG Macrophyte Flux Collar,tr-collar-macro1-b,4254288.146,392908.202,0.488,NA,NA,NA,38.430443,76.226949,-33.410,0.012,0.018,6/4/2025,NA
+Moneystump Swamp,MSM,Transition,TR,MSM_TR_Macrophyte_Flux_Collar_1_B,Back corner,GHG Macrophyte Flux Collar,tr-collar-macro1-b,4254288.146,392908.202,0.488,NA,NA,NA,38.430443,76.226949,-33.41,0.012,0.018,6/4/2025,NA
 Moneystump Swamp,MSM,Transition,TR,MSM_TR_Macrophyte_Flux_Collar_2_A,Front corner ,GHG Macrophyte Flux Collar,tr-collar-macro-2a,4254283.49,392918.37,0.517,NA,NA,NA,38.430398,76.226838,-34.428,0.029,0.054,6/4/2025,NA
 Moneystump Swamp,MSM,Transition,TR,MSM_TR_Macrophyte_Flux_Collar_2_B,Back corner,GHG Macrophyte Flux Collar,tr-collar-macro-2b,4254283.4,392917.867,0.523,NA,NA,NA,38.430403,76.226836,-34.963,0.069,0.117,6/4/2025,NA
 Moneystump Swamp,MSM,Transition,TR,MSM_TR_Macrophyte_Flux_Collar_3_A,Front corner ,GHG Macrophyte Flux Collar,tr-collar-macro-3a,4254276.194,392914.867,0.487,NA,NA,NA,38.430332,76.226871,-34.608,0.021,0.038,6/4/2025,NA
@@ -48,7 +48,7 @@ Moneystump Swamp,MSM,Transition,TR,MSM_TR_Macrophyte_Flux_Collar_3_B,Back corner
 Moneystump Swamp,MSM,Transition,TR,MSM_TR_Macrophyte_Flux_Collar_4_A,Front corner ,GHG Macrophyte Flux Collar,tr-collar-macro-4a,4254279.062,392908.666,0.502,NA,NA,NA,38.430361,76.226945,-34.768,0.019,0.031,6/4/2025,NA
 Moneystump Swamp,MSM,Transition,TR,MSM_TR_Macrophyte_Flux_Collar_4_B,Back corner,GHG Macrophyte Flux Collar,tr-collar-macro-4b,4254279.358,392908.996,0.485,NA,NA,NA,38.430366,76.226947,-34.154,0.021,0.038,6/4/2025,NA
 Moneystump Swamp,MSM,Transition,TR,MSM_TR_Macrophyte_Flux_Collar_5_A,Front corner ,GHG Macrophyte Flux Collar,tr-collar-macro-5a,4254284.208,392903.451,0.444,NA,NA,NA,38.430406,76.227009,-33.069,0.017,0.028,6/4/2025,NA
-Moneystump Swamp,MSM,Transition,TR,MSM_TR_Macrophyte_Flux_Collar_5_B,Back corner,GHG Macrophyte Flux Collar,tr-collar-macro-5b,4254284.244,392902.972,0.485,NA,NA,NA,38.430403,76.227009,-34.830,0.016,0.029,6/4/2025,NA
+Moneystump Swamp,MSM,Transition,TR,MSM_TR_Macrophyte_Flux_Collar_5_B,Back corner,GHG Macrophyte Flux Collar,tr-collar-macro-5b,4254284.244,392902.972,0.485,NA,NA,NA,38.430403,76.227009,-34.83,0.016,0.029,6/4/2025,NA
 Moneystump Swamp,MSM,Transition,TR,MSM_TR_Soil_Flux_Collar_1,Center,GHG Soil Flux Collar,tr-collar-soil-1,4254287.319,392908.477,0.453,NA,NA,NA,NA,NA,NA,NA,NA,6/4/2025,NA
 Moneystump Swamp,MSM,Transition,TR,MSM_TR_Soil_Flux_Collar_2,Center,GHG Soil Flux Collar,tr-collar-soil-2,4254285.198,392903.012,0.472,NA,NA,NA,NA,NA,NA,NA,NA,6/4/2025,NA
 Moneystump Swamp,MSM,Transition,TR,MSM_TR_Soil_Flux_Collar_3,Center,GHG Soil Flux Collar,tr-collar-soil-3,4254279.471,392908.146,0.422,NA,NA,NA,NA,NA,NA,NA,NA,6/4/2025,NA
@@ -111,113 +111,113 @@ Moneystump Swamp,MSM,Wetland,WC,MSM_WC_VegPlot_5,Back corner,Ground Vegetation P
 Moneystump Swamp,MSM,Wetland,WC,MSM_WC_PARsensor,Pole Base ,PAR Sensor,wc-weather-pole,4254145.067,392858.459,0.289,NA,NA,NA,NA,NA,NA,0.01,0.015,6/4/2025,NA
 Moneystump Swamp,MSM,Wetland,WC,MSM_WC_AQ600,Well Base,AquaTROLL 600,wc-well-base,4254143.719,392861.397,0.324,NA,NA,NA,38.42913674,76.22746098,-34.577,0.01,0.015,6/4/2025,NA
 Moneystump Swamp,MSM,Wetland,WC,MSM_WC_AQ600,Well Top,AquaTROLL 600,wc-well-top,4254143.691,392861.307,1.256,NA,NA,NA,38.42913674,76.22746098,-34.577,0.01,0.015,6/4/2025,NA
-Sweet Hall,SWH,Wetland,WC,SWH_WC_AQ600,Well Base,AquaTROLL 600,wcwellbase,4159417.16,332462.05,0.183755,NA,NA,NA,37.5666,-76.8970,-34.2257,0.014307,0.015777,2/18/2025,11:21:14 AM
-Sweet Hall,SWH,Transition,TR,SWH_TR_AQ600,Well Base,AquaTROLL 600,trwellbottom,4159664.63,332511.74,0.468570,NA,NA,NA,37.5688,-76.8965,-33.9374,0.020840,0.031770,2/18/2025,1:18:25 PM
-Sweet Hall,SWH,Swamp,SWAMP,SWH_SWAMP_AQ600,Well Base,AquaTROLL 600,swampawellbottom,4159858.33,332587.08,0.714962,NA,NA,NA,37.5706,-76.8957,-33.6890,0.016841,0.034841,2/18/2025,1:01:30 PM
+Sweet Hall,SWH,Wetland,WC,SWH_WC_AQ600,Well Base,AquaTROLL 600,wcwellbase,4159417.16,332462.05,0.183755,NA,NA,NA,37.5666,-76.897,-34.2257,0.014307,0.015777,2/18/2025,11:21:14 AM
+Sweet Hall,SWH,Transition,TR,SWH_TR_AQ600,Well Base,AquaTROLL 600,trwellbottom,4159664.63,332511.74,0.46857,NA,NA,NA,37.5688,-76.8965,-33.9374,0.02084,0.03177,2/18/2025,1:18:25 PM
+Sweet Hall,SWH,Swamp,SWAMP,SWH_SWAMP_AQ600,Well Base,AquaTROLL 600,swampawellbottom,4159858.33,332587.08,0.714962,NA,NA,NA,37.5706,-76.8957,-33.689,0.016841,0.034841,2/18/2025,1:01:30 PM
 Sweet Hall,SWH,Upland,UP,SWH_UP_AQ600,Well Base,AquaTROLL 600,upwellbase,4159892.16,332620.67,1.074645,NA,NA,NA,37.5709,-76.8953,-33.3294,0.035604,0.074296,2/18/2025,11:48:36 AM
-Sweet Hall,SWH,Wetland,WC,SWH_WC_LoggerBox,Pole Base ,Logger Box,wcloggerbox,4159416.38,332462.09,0.177,NA,NA,NA,37.5666,-76.8970,-34.2321,0.012,0.016,2/18/2025,11:21:57 AM
-Sweet Hall,SWH,Wetland,WC,SWH_WC_Teros,Teros cluster,Teros12,wcteros,4159415.51,332463.25,0.182,NA,NA,NA,37.5665,-76.8970,-34.2279,0.024,0.020,2/18/2025,11:22:22 AM
-Sweet Hall,SWH,Wetland,WC,SWH_WC_Teros,Teros cluster,Teros12,wcteros-2,4159417.59,332462.97,0.229,NA,NA,NA,37.5666,-76.8970,-34.1800,0.030,0.024,2/18/2025,11:23:06 AM
-Sweet Hall,SWH,Wetland,WC,SWH_WC_Macrophyte_Flux_Collar_1,Front corner ,GHG Macrophyte Flux Collar,wcflux1,4159423.95,332461.08,0.245,NA,NA,NA,37.5666,-76.8970,-34.1645,0.013,0.017,2/18/2025,11:23:35 AM
-Sweet Hall,SWH,Wetland,WC,SWH_WC_Macrophyte_Flux_Collar_2,Front corner ,GHG Macrophyte Flux Collar,wcflux2,4159422.16,332460.99,0.249,NA,NA,NA,37.5666,-76.8970,-34.1608,0.012,0.016,2/18/2025,11:23:44 AM
-Sweet Hall,SWH,Wetland,WC,SWH_WC_Macrophyte_Flux_Collar_3,Front corner ,GHG Macrophyte Flux Collar,wcflux3,4159419.83,332461.14,0.275,NA,NA,NA,37.5666,-76.8970,-34.1339,0.012,0.016,2/18/2025,11:23:56 AM
-Sweet Hall,SWH,Wetland,WC,SWH_WC_Macrophyte_Flux_Collar_4,Front corner ,GHG Macrophyte Flux Collar,wcflux4,4159414.13,332462.43,0.254,NA,NA,NA,37.5665,-76.8970,-34.1553,0.010,0.016,2/18/2025,11:24:11 AM
-Sweet Hall,SWH,Wetland,WC,SWH_WC_Macrophyte_Flux_Collar_5,Front corner ,GHG Macrophyte Flux Collar,wcflux5,4159411.93,332463.19,0.271,NA,NA,NA,37.5665,-76.8970,-34.1386,0.010,0.016,2/18/2025,11:24:22 AM
-Sweet Hall,SWH,Wetland,WC,SWH_WC_Lysimeters_A,Center of Cluster,Porewater Lysimeter,wcsipa,4159422.86,332461.47,0.171,NA,NA,NA,37.5666,-76.8970,-34.2387,0.012,0.015,2/18/2025,11:24:49 AM
-Sweet Hall,SWH,Wetland,WC,SWH_WC_Lysimeters_B,Center of Cluster,Porewater Lysimeter,wcsipb,4159420.95,332461.41,0.176,NA,NA,NA,37.5666,-76.8970,-34.2333,0.012,0.014,2/18/2025,11:25:02 AM
-Sweet Hall,SWH,Wetland,WC,SWH_WC_Lysimeters_C,Center of Cluster,Porewater Lysimeter,wcsipc,4159413.06,332463.39,0.178,NA,NA,NA,37.5665,-76.8970,-34.2314,0.012,0.015,2/18/2025,11:25:23 AM
-Sweet Hall,SWH,Wetland,WC,SWH_WC_GasWells_A,Center of Cluster,GHG Soil Gas Well,wcgaswella,4159423.01,332461.69,0.172,NA,NA,NA,37.5666,-76.8970,-34.2370,0.015,0.022,2/18/2025,11:25:48 AM
-Sweet Hall,SWH,Wetland,WC,SWH_WC_GasWells_B,Center of Cluster,GHG Soil Gas Well,wcgaswellb,4159420.47,332461.56,0.168,NA,NA,NA,37.5666,-76.8970,-34.2413,0.012,0.015,2/18/2025,11:26:02 AM
-Sweet Hall,SWH,Wetland,WC,SWH_WC_GasWells_C,Center of Cluster,GHG Soil Gas Well,wcgaswellc,4159412.99,332463.70,0.189,NA,NA,NA,37.5665,-76.8970,-34.2209,0.011,0.013,2/18/2025,11:26:25 AM
+Sweet Hall,SWH,Wetland,WC,SWH_WC_LoggerBox,Pole Base ,Logger Box,wcloggerbox,4159416.38,332462.09,0.177,NA,NA,NA,37.5666,-76.897,-34.2321,0.012,0.016,2/18/2025,11:21:57 AM
+Sweet Hall,SWH,Wetland,WC,SWH_WC_Teros,Teros cluster,Teros12,wcteros,4159415.51,332463.25,0.182,NA,NA,NA,37.5665,-76.897,-34.2279,0.024,0.02,2/18/2025,11:22:22 AM
+Sweet Hall,SWH,Wetland,WC,SWH_WC_Teros,Teros cluster,Teros12,wcteros-2,4159417.59,332462.97,0.229,NA,NA,NA,37.5666,-76.897,-34.18,0.03,0.024,2/18/2025,11:23:06 AM
+Sweet Hall,SWH,Wetland,WC,SWH_WC_Macrophyte_Flux_Collar_1,Front corner ,GHG Macrophyte Flux Collar,wcflux1,4159423.95,332461.08,0.245,NA,NA,NA,37.5666,-76.897,-34.1645,0.013,0.017,2/18/2025,11:23:35 AM
+Sweet Hall,SWH,Wetland,WC,SWH_WC_Macrophyte_Flux_Collar_2,Front corner ,GHG Macrophyte Flux Collar,wcflux2,4159422.16,332460.99,0.249,NA,NA,NA,37.5666,-76.897,-34.1608,0.012,0.016,2/18/2025,11:23:44 AM
+Sweet Hall,SWH,Wetland,WC,SWH_WC_Macrophyte_Flux_Collar_3,Front corner ,GHG Macrophyte Flux Collar,wcflux3,4159419.83,332461.14,0.275,NA,NA,NA,37.5666,-76.897,-34.1339,0.012,0.016,2/18/2025,11:23:56 AM
+Sweet Hall,SWH,Wetland,WC,SWH_WC_Macrophyte_Flux_Collar_4,Front corner ,GHG Macrophyte Flux Collar,wcflux4,4159414.13,332462.43,0.254,NA,NA,NA,37.5665,-76.897,-34.1553,0.01,0.016,2/18/2025,11:24:11 AM
+Sweet Hall,SWH,Wetland,WC,SWH_WC_Macrophyte_Flux_Collar_5,Front corner ,GHG Macrophyte Flux Collar,wcflux5,4159411.93,332463.19,0.271,NA,NA,NA,37.5665,-76.897,-34.1386,0.01,0.016,2/18/2025,11:24:22 AM
+Sweet Hall,SWH,Wetland,WC,SWH_WC_Lysimeters_A,Center of Cluster,Porewater Lysimeter,wcsipa,4159422.86,332461.47,0.171,NA,NA,NA,37.5666,-76.897,-34.2387,0.012,0.015,2/18/2025,11:24:49 AM
+Sweet Hall,SWH,Wetland,WC,SWH_WC_Lysimeters_B,Center of Cluster,Porewater Lysimeter,wcsipb,4159420.95,332461.41,0.176,NA,NA,NA,37.5666,-76.897,-34.2333,0.012,0.014,2/18/2025,11:25:02 AM
+Sweet Hall,SWH,Wetland,WC,SWH_WC_Lysimeters_C,Center of Cluster,Porewater Lysimeter,wcsipc,4159413.06,332463.39,0.178,NA,NA,NA,37.5665,-76.897,-34.2314,0.012,0.015,2/18/2025,11:25:23 AM
+Sweet Hall,SWH,Wetland,WC,SWH_WC_GasWells_A,Center of Cluster,GHG Soil Gas Well,wcgaswella,4159423.01,332461.69,0.172,NA,NA,NA,37.5666,-76.897,-34.237,0.015,0.022,2/18/2025,11:25:48 AM
+Sweet Hall,SWH,Wetland,WC,SWH_WC_GasWells_B,Center of Cluster,GHG Soil Gas Well,wcgaswellb,4159420.47,332461.56,0.168,NA,NA,NA,37.5666,-76.897,-34.2413,0.012,0.015,2/18/2025,11:26:02 AM
+Sweet Hall,SWH,Wetland,WC,SWH_WC_GasWells_C,Center of Cluster,GHG Soil Gas Well,wcgaswellc,4159412.99,332463.7,0.189,NA,NA,NA,37.5665,-76.897,-34.2209,0.011,0.013,2/18/2025,11:26:25 AM
 Sweet Hall,SWH,Wetland,WC,SWH_WC_VegPlot_1,Front corner ,Ground Vegetation Plot,wcveg1a,4159424.78,332460.21,0.151,NA,NA,NA,37.5666,-76.8971,-34.2582,0.011,0.014,2/18/2025,11:27:10 AM
-Sweet Hall,SWH,Wetland,WC,SWH_WC_VegPlot_1,Back corner,Ground Vegetation Plot,wcveg1b,4159422.89,332460.11,0.173,NA,NA,NA,37.5666,-76.8971,-34.2360,0.011,0.014,2/18/2025,11:27:22 AM
-Sweet Hall,SWH,Wetland,WC,SWH_WC_VegPlot_2,Front corner ,Ground Vegetation Plot,wcveg2a,4159422.19,332460.17,0.160,NA,NA,NA,37.5666,-76.8971,-34.2492,0.011,0.014,2/18/2025,11:27:36 AM
-Sweet Hall,SWH,Wetland,WC,SWH_WC_VegPlot_2,Back corner,Ground Vegetation Plot,wcveg2b,4159420.18,332460.23,0.160,NA,NA,NA,37.5666,-76.8971,-34.2489,0.011,0.014,2/18/2025,11:27:49 AM
+Sweet Hall,SWH,Wetland,WC,SWH_WC_VegPlot_1,Back corner,Ground Vegetation Plot,wcveg1b,4159422.89,332460.11,0.173,NA,NA,NA,37.5666,-76.8971,-34.236,0.011,0.014,2/18/2025,11:27:22 AM
+Sweet Hall,SWH,Wetland,WC,SWH_WC_VegPlot_2,Front corner ,Ground Vegetation Plot,wcveg2a,4159422.19,332460.17,0.16,NA,NA,NA,37.5666,-76.8971,-34.2492,0.011,0.014,2/18/2025,11:27:36 AM
+Sweet Hall,SWH,Wetland,WC,SWH_WC_VegPlot_2,Back corner,Ground Vegetation Plot,wcveg2b,4159420.18,332460.23,0.16,NA,NA,NA,37.5666,-76.8971,-34.2489,0.011,0.014,2/18/2025,11:27:49 AM
 Sweet Hall,SWH,Wetland,WC,SWH_WC_VegPlot_3,Front corner ,Ground Vegetation Plot,wcveg3a,4159419.41,332460.38,0.157,NA,NA,NA,37.5666,-76.8971,-34.2527,0.011,0.014,2/18/2025,11:28:04 AM
-Sweet Hall,SWH,Wetland,WC,SWH_WC_VegPlot_3,Back corner,Ground Vegetation Plot,wcveg3b,4159417.52,332460.63,0.175,NA,NA,NA,37.5666,-76.8971,-34.2340,0.011,0.014,2/18/2025,11:28:17 AM
-Sweet Hall,SWH,Wetland,WC,SWH_WC_VegPlot_4,Front corner ,Ground Vegetation Plot,wcveg4a,4159415.61,332461.16,0.176,NA,NA,NA,37.5665,-76.8970,-34.2338,0.011,0.014,2/18/2025,11:28:34 AM
-Sweet Hall,SWH,Wetland,WC,SWH_WC_VegPlot_4,Back corner,Ground Vegetation Plot,wcveg4b,4159413.62,332461.65,0.182,NA,NA,NA,37.5665,-76.8970,-34.2274,0.010,0.014,2/18/2025,11:28:48 AM
-Sweet Hall,SWH,Wetland,WC,SWH_WC_VegPlot_5,Front corner ,Ground Vegetation Plot,wcveg5a,4159412.76,332461.88,0.192,NA,NA,NA,37.5665,-76.8970,-34.2173,0.012,0.014,2/18/2025,11:28:59 AM
-Sweet Hall,SWH,Wetland,WC,SWH_WC_VegPlot_5,Back corner,Ground Vegetation Plot,wcveg5b,4159410.87,332462.51,0.174,NA,NA,NA,37.5665,-76.8970,-34.2352,0.012,0.014,2/18/2025,11:29:12 AM
-Sweet Hall,SWH,Wetland,WC,SWH_WC_WeatherStation,Pole Base ,Weather Station,wcweather,4159417.64,332461.73,0.181,NA,NA,NA,37.5666,-76.8970,-34.2282,0.012,0.018,2/18/2025,11:30:07 AM
+Sweet Hall,SWH,Wetland,WC,SWH_WC_VegPlot_3,Back corner,Ground Vegetation Plot,wcveg3b,4159417.52,332460.63,0.175,NA,NA,NA,37.5666,-76.8971,-34.234,0.011,0.014,2/18/2025,11:28:17 AM
+Sweet Hall,SWH,Wetland,WC,SWH_WC_VegPlot_4,Front corner ,Ground Vegetation Plot,wcveg4a,4159415.61,332461.16,0.176,NA,NA,NA,37.5665,-76.897,-34.2338,0.011,0.014,2/18/2025,11:28:34 AM
+Sweet Hall,SWH,Wetland,WC,SWH_WC_VegPlot_4,Back corner,Ground Vegetation Plot,wcveg4b,4159413.62,332461.65,0.182,NA,NA,NA,37.5665,-76.897,-34.2274,0.01,0.014,2/18/2025,11:28:48 AM
+Sweet Hall,SWH,Wetland,WC,SWH_WC_VegPlot_5,Front corner ,Ground Vegetation Plot,wcveg5a,4159412.76,332461.88,0.192,NA,NA,NA,37.5665,-76.897,-34.2173,0.012,0.014,2/18/2025,11:28:59 AM
+Sweet Hall,SWH,Wetland,WC,SWH_WC_VegPlot_5,Back corner,Ground Vegetation Plot,wcveg5b,4159410.87,332462.51,0.174,NA,NA,NA,37.5665,-76.897,-34.2352,0.012,0.014,2/18/2025,11:29:12 AM
+Sweet Hall,SWH,Wetland,WC,SWH_WC_WeatherStation,Pole Base ,Weather Station,wcweather,4159417.64,332461.73,0.181,NA,NA,NA,37.5666,-76.897,-34.2282,0.012,0.018,2/18/2025,11:30:07 AM
 Sweet Hall,SWH,Wetland,WC,SWH_WC_SamplingZone,Front corner ,Sampling Zone,wcsample1,4159416.23,332448.85,0.158,NA,NA,NA,37.5666,-76.8972,-34.2512,0.011,0.016,2/18/2025,11:30:35 AM
-Sweet Hall,SWH,Wetland,WC,SWH_WC_SamplingZone,Back corner,Sampling Zone,wcsample2,4159416.13,332446.81,0.139,NA,NA,NA,37.5665,-76.8972,-34.2702,0.010,0.016,2/18/2025,11:30:53 AM
+Sweet Hall,SWH,Wetland,WC,SWH_WC_SamplingZone,Back corner,Sampling Zone,wcsample2,4159416.13,332446.81,0.139,NA,NA,NA,37.5665,-76.8972,-34.2702,0.01,0.016,2/18/2025,11:30:53 AM
 Sweet Hall,SWH,Upland,UP,SWH_UP_LoggerBox,Pole Base ,Logger Box,upbox,4159891.93,332618.83,0.981,NA,NA,NA,37.5709,-76.8954,-33.4231,0.033,0.072,2/18/2025,11:58:00 AM
-Sweet Hall,SWH,Upland,UP,SWH_UP_Lysimeters_B,Center of Cluster,Porewater Lysimeter,upsipb,4159891.35,332619.46,4.126,NA,NA,NA,37.5709,-76.8954,-30.2780,0.196,0.129,2/18/2025,12:06:01 PM
+Sweet Hall,SWH,Upland,UP,SWH_UP_Lysimeters_B,Center of Cluster,Porewater Lysimeter,upsipb,4159891.35,332619.46,4.126,NA,NA,NA,37.5709,-76.8954,-30.278,0.196,0.129,2/18/2025,12:06:01 PM
 Sweet Hall,SWH,Upland,UP,SWH_UP_GasWells_B,Center of Cluster,GHG Soil Gas Well,upgasb,4159892.02,332620.07,1.007,NA,NA,NA,37.5709,-76.8954,-33.3972,0.029,0.058,2/18/2025,12:08:09 PM
-Sweet Hall,SWH,Upland,UP,SWH_UP_Soil_Flux_Collar_3,Center of Collar ,GHG Soil Flux Collar,upflux3,4159890.33,332620.01,0.977,NA,NA,NA,37.5709,-76.8954,-33.4273,0.031,0.090,2/18/2025,12:10:48 PM
-Sweet Hall,SWH,Upland,UP,SWH_UP_Soil_Flux_Collar_5,Center of Collar ,GHG Soil Flux Collar,upflux5,4159885.30,332619.52,0.951,NA,NA,NA,37.5708,-76.8954,-33.4535,0.027,0.076,2/18/2025,12:18:41 PM
-Sweet Hall,SWH,Upland,UP,SWH_UP_Soil_Flux_Collar_4,Center of Collar ,GHG Soil Flux Collar,upflux4,4159890.03,332615.05,0.800,NA,NA,NA,37.5708,-76.8954,-33.6039,0.031,0.065,2/18/2025,12:20:21 PM
+Sweet Hall,SWH,Upland,UP,SWH_UP_Soil_Flux_Collar_3,Center of Collar ,GHG Soil Flux Collar,upflux3,4159890.33,332620.01,0.977,NA,NA,NA,37.5709,-76.8954,-33.4273,0.031,0.09,2/18/2025,12:10:48 PM
+Sweet Hall,SWH,Upland,UP,SWH_UP_Soil_Flux_Collar_5,Center of Collar ,GHG Soil Flux Collar,upflux5,4159885.3,332619.52,0.951,NA,NA,NA,37.5708,-76.8954,-33.4535,0.027,0.076,2/18/2025,12:18:41 PM
+Sweet Hall,SWH,Upland,UP,SWH_UP_Soil_Flux_Collar_4,Center of Collar ,GHG Soil Flux Collar,upflux4,4159890.03,332615.05,0.8,NA,NA,NA,37.5708,-76.8954,-33.6039,0.031,0.065,2/18/2025,12:20:21 PM
 Sweet Hall,SWH,Upland,UP,SWH_UP_GasWells_C,Center of Cluster,GHG Soil Gas Well,upgasc,4159890.64,332616.74,0.957,NA,NA,NA,37.5709,-76.8954,-33.4466,0.028,0.072,2/18/2025,12:22:36 PM
 Sweet Hall,SWH,Upland,UP,SWH_UP_Lysimeters_C,Center of Cluster,Porewater Lysimeter,upsipperc,4159889.97,332616.06,0.945,NA,NA,NA,37.5708,-76.8954,-33.4586,0.032,0.093,2/18/2025,12:24:51 PM
-Sweet Hall,SWH,Upland,UP,SWH_UP_Soil_Flux_Collar_1,Center of Collar ,GHG Soil Flux Collar,upflux1,4159894.51,332614.02,1.124,NA,NA,NA,37.5709,-76.8954,-33.2795,0.029,0.060,2/18/2025,12:26:14 PM
-Sweet Hall,SWH,Upland,UP,SWH_UP_Soil_Flux_Collar_2,Center of Collar ,GHG Soil Flux Collar,upflux2,4159894.60,332620.00,1.156,NA,NA,NA,37.5709,-76.8954,-33.2478,0.026,0.058,2/18/2025,12:27:36 PM
+Sweet Hall,SWH,Upland,UP,SWH_UP_Soil_Flux_Collar_1,Center of Collar ,GHG Soil Flux Collar,upflux1,4159894.51,332614.02,1.124,NA,NA,NA,37.5709,-76.8954,-33.2795,0.029,0.06,2/18/2025,12:26:14 PM
+Sweet Hall,SWH,Upland,UP,SWH_UP_Soil_Flux_Collar_2,Center of Collar ,GHG Soil Flux Collar,upflux2,4159894.6,332620,1.156,NA,NA,NA,37.5709,-76.8954,-33.2478,0.026,0.058,2/18/2025,12:27:36 PM
 Sweet Hall,SWH,Upland,UP,SWH_UP_GasWells_A,Center of Cluster,GHG Soil Gas Well,upgasa,4159895.33,332618.94,1.032,NA,NA,NA,37.5709,-76.8954,-33.3717,0.019,0.042,2/18/2025,12:28:46 PM
 Sweet Hall,SWH,Upland,UP,SWH_UP_Lysimeters_A,Center of Cluster,Porewater Lysimeter,upsippera,4159895.31,332619.75,1.106,NA,NA,NA,37.5709,-76.8954,-33.2977,0.028,0.058,2/18/2025,12:29:31 PM
-Sweet Hall,SWH,Upland,UP,SWH_UP_Teros,Teros cluster,Teros12,upteros15,4159895.01,332619.45,1.037,NA,NA,NA,37.5709,-76.8954,-33.3673,0.025,0.060,2/18/2025,12:30:48 PM
-Sweet Hall,SWH,Upland,UP,SWH_UP_Teros,Teros cluster,Teros12,upteros26,4159891.50,332620.73,1.050,NA,NA,NA,37.5709,-76.8953,-33.3544,0.023,0.057,2/18/2025,12:31:18 PM
-Sweet Hall,SWH,Upland,UP,SWH_UP_VegPlot_2,Front corner ,Ground Vegetation Plot,upveg2a,4159892.67,332611.21,1.160,NA,NA,NA,37.5709,-76.8955,-33.2439,0.024,0.060,2/18/2025,12:32:33 PM
-Sweet Hall,SWH,Upland,UP,SWH_UP_VegPlot_2,Back corner,Ground Vegetation Plot,upveg2b,4159893.00,332614.11,1.020,NA,NA,NA,37.5709,-76.8954,-33.3840,0.025,0.071,2/18/2025,12:33:25 PM
-Sweet Hall,SWH,Upland,UP,SWH_UP_VegPlot_3,Front corner ,Ground Vegetation Plot,upveg3a,4159898.18,332618.70,1.113,NA,NA,NA,37.5709,-76.8954,-33.2913,0.024,0.059,2/18/2025,12:34:50 PM
+Sweet Hall,SWH,Upland,UP,SWH_UP_Teros,Teros cluster,Teros12,upteros15,4159895.01,332619.45,1.037,NA,NA,NA,37.5709,-76.8954,-33.3673,0.025,0.06,2/18/2025,12:30:48 PM
+Sweet Hall,SWH,Upland,UP,SWH_UP_Teros,Teros cluster,Teros12,upteros26,4159891.5,332620.73,1.05,NA,NA,NA,37.5709,-76.8953,-33.3544,0.023,0.057,2/18/2025,12:31:18 PM
+Sweet Hall,SWH,Upland,UP,SWH_UP_VegPlot_2,Front corner ,Ground Vegetation Plot,upveg2a,4159892.67,332611.21,1.16,NA,NA,NA,37.5709,-76.8955,-33.2439,0.024,0.06,2/18/2025,12:32:33 PM
+Sweet Hall,SWH,Upland,UP,SWH_UP_VegPlot_2,Back corner,Ground Vegetation Plot,upveg2b,4159893,332614.11,1.02,NA,NA,NA,37.5709,-76.8954,-33.384,0.025,0.071,2/18/2025,12:33:25 PM
+Sweet Hall,SWH,Upland,UP,SWH_UP_VegPlot_3,Front corner ,Ground Vegetation Plot,upveg3a,4159898.18,332618.7,1.113,NA,NA,NA,37.5709,-76.8954,-33.2913,0.024,0.059,2/18/2025,12:34:50 PM
 Sweet Hall,SWH,Upland,UP,SWH_UP_VegPlot_3,Back corner,Ground Vegetation Plot,upveg3b,4159898.93,332621.73,3.126,NA,NA,NA,37.5709,-76.8953,-31.2779,0.038,0.089,2/18/2025,12:36:51 PM
 Sweet Hall,SWH,Upland,UP,SWH_UP_VegPlot_5,Front corner ,Ground Vegetation Plot,upveg5a,4159894.19,332624.37,10.869,NA,NA,NA,37.5709,-76.8953,-23.5356,0.552,3.028,2/18/2025,12:38:18 PM
-Sweet Hall,SWH,Upland,UP,SWH_UP_VegPlot_5,Back corner,Ground Vegetation Plot,upveg5b,4159892.74,332625.84,1.900,NA,NA,NA,37.5709,-76.8953,-32.5041,0.029,0.058,2/18/2025,12:39:06 PM
+Sweet Hall,SWH,Upland,UP,SWH_UP_VegPlot_5,Back corner,Ground Vegetation Plot,upveg5b,4159892.74,332625.84,1.9,NA,NA,NA,37.5709,-76.8953,-32.5041,0.029,0.058,2/18/2025,12:39:06 PM
 Sweet Hall,SWH,Upland,UP,SWH_UP_VegPlot_4,Front corner ,Ground Vegetation Plot,upveg4a,4159888.67,332621.15,0.956,NA,NA,NA,37.5708,-76.8953,-33.4486,0.031,0.082,2/18/2025,12:40:25 PM
 Sweet Hall,SWH,Upland,UP,SWH_UP_VegPlot_4,Back corner,Ground Vegetation Plot,upveg4b,4159888.98,332624.01,0.973,NA,NA,NA,37.5708,-76.8953,-33.4308,0.022,0.055,2/18/2025,12:41:20 PM
 Sweet Hall,SWH,Upland,UP,SWH_UP_VegPlot_1,Front corner ,Ground Vegetation Plot,upveg1a,4159887.42,332617.18,0.921,NA,NA,NA,37.5708,-76.8954,-33.4831,0.054,0.155,2/18/2025,12:43:13 PM
-Sweet Hall,SWH,Upland,UP,SWH_UP_VegPlot_1,Back corner,Ground Vegetation Plot,upveg1b,4159887.58,332619.96,0.877,NA,NA,NA,37.5708,-76.8954,-33.5276,0.031,0.070,2/18/2025,12:44:09 PM
-Sweet Hall,SWH,Upland,UP,SWH_UP_SamplingZone,Front corner ,Sampling Zone,upsample,4159900.19,332612.00,1.241,NA,NA,NA,37.5709,-76.8954,-33.1623,0.021,0.040,2/18/2025,12:45:39 PM
-Sweet Hall,SWH,Upland,UP,SWH_UP_SamplingZone,Back corner,Sampling Zone,upsample2,4159904.78,332615.85,1.450,NA,NA,NA,37.5710,-76.8954,-32.9542,0.076,0.177,2/18/2025,12:46:18 PM
+Sweet Hall,SWH,Upland,UP,SWH_UP_VegPlot_1,Back corner,Ground Vegetation Plot,upveg1b,4159887.58,332619.96,0.877,NA,NA,NA,37.5708,-76.8954,-33.5276,0.031,0.07,2/18/2025,12:44:09 PM
+Sweet Hall,SWH,Upland,UP,SWH_UP_SamplingZone,Front corner ,Sampling Zone,upsample,4159900.19,332612,1.241,NA,NA,NA,37.5709,-76.8954,-33.1623,0.021,0.04,2/18/2025,12:45:39 PM
+Sweet Hall,SWH,Upland,UP,SWH_UP_SamplingZone,Back corner,Sampling Zone,upsample2,4159904.78,332615.85,1.45,NA,NA,NA,37.571,-76.8954,-32.9542,0.076,0.177,2/18/2025,12:46:18 PM
 Sweet Hall,SWH,Swamp,SWAMP,SWH_SWAMP_Soil_Flux_4,Center of Collar ,GHG Soil Flux Collar,swampflux4,4159882.71,332590.16,0.901,NA,NA,NA,37.5708,-76.8957,-33.5028,0.031,0.061,2/18/2025,12:49:58 PM
 Sweet Hall,SWH,Swamp,SWAMP,SWH_SWAMP_Soil_Flux_3,Center of Collar ,GHG Soil Flux Collar,swampflux3,4159874.03,332586.73,0.866,NA,NA,NA,37.5707,-76.8957,-33.5377,0.023,0.057,2/18/2025,12:51:01 PM
-Sweet Hall,SWH,Swamp,SWAMP,SWH_SWAMP_Lysimeters_C,Center of Cluster,Porewater Lysimeter,swampcsipper,4159866.29,332600.75,0.770,NA,NA,NA,37.5706,-76.8956,-33.6339,0.028,0.055,2/18/2025,12:52:13 PM
-Sweet Hall,SWH,Swamp,SWAMP,SWH_SWAMP_GasWells_C,Center of Cluster,GHG Soil Gas Well,swampcgas,4159866.89,332600.51,0.620,NA,NA,NA,37.5706,-76.8956,-33.7841,0.023,0.039,2/18/2025,12:52:37 PM
+Sweet Hall,SWH,Swamp,SWAMP,SWH_SWAMP_Lysimeters_C,Center of Cluster,Porewater Lysimeter,swampcsipper,4159866.29,332600.75,0.77,NA,NA,NA,37.5706,-76.8956,-33.6339,0.028,0.055,2/18/2025,12:52:13 PM
+Sweet Hall,SWH,Swamp,SWAMP,SWH_SWAMP_GasWells_C,Center of Cluster,GHG Soil Gas Well,swampcgas,4159866.89,332600.51,0.62,NA,NA,NA,37.5706,-76.8956,-33.7841,0.023,0.039,2/18/2025,12:52:37 PM
 Sweet Hall,SWH,Swamp,SWAMP,SWH_SWAMP_Teros,Teros cluster,Teros12,swampcteros4,4159866.96,332601.11,0.734,NA,NA,NA,37.5706,-76.8956,-33.6702,0.026,0.033,2/18/2025,12:53:02 PM
-Sweet Hall,SWH,Swamp,SWAMP,SWH_SWAMP_MultiplexerBox,Pole Base ,Multiplexer Box,swampcbox,4159865.50,332601.26,0.730,NA,NA,NA,37.5706,-76.8956,-33.6738,0.019,0.033,2/18/2025,12:53:34 PM
+Sweet Hall,SWH,Swamp,SWAMP,SWH_SWAMP_MultiplexerBox,Pole Base ,Multiplexer Box,swampcbox,4159865.5,332601.26,0.73,NA,NA,NA,37.5706,-76.8956,-33.6738,0.019,0.033,2/18/2025,12:53:34 PM
 Sweet Hall,SWH,Swamp,SWAMP,SWH_SWAMP_Teros,Teros cluster,Teros12,swampcteroc2,4159867.06,332602.31,0.689,NA,NA,NA,37.5706,-76.8955,-33.7155,0.022,0.036,2/18/2025,12:54:13 PM
-Sweet Hall,SWH,Swamp,SWAMP,SWH_SWAMP_Soil_Flux_5,Center of Collar ,GHG Soil Flux Collar,swampflux5,4159865.82,332604.92,0.814,NA,NA,NA,37.5706,-76.8955,-33.5900,0.023,0.046,2/18/2025,12:54:47 PM
-Sweet Hall,SWH,Swamp,SWAMP,SWH_SWAMP_Soil_Flux_2,Center of Collar ,GHG Soil Flux Collar,swampflux2,4159861.32,332583.37,0.800,NA,NA,NA,37.5706,-76.8958,-33.6042,0.024,0.043,2/18/2025,12:57:35 PM
+Sweet Hall,SWH,Swamp,SWAMP,SWH_SWAMP_Soil_Flux_5,Center of Collar ,GHG Soil Flux Collar,swampflux5,4159865.82,332604.92,0.814,NA,NA,NA,37.5706,-76.8955,-33.59,0.023,0.046,2/18/2025,12:54:47 PM
+Sweet Hall,SWH,Swamp,SWAMP,SWH_SWAMP_Soil_Flux_2,Center of Collar ,GHG Soil Flux Collar,swampflux2,4159861.32,332583.37,0.8,NA,NA,NA,37.5706,-76.8958,-33.6042,0.024,0.043,2/18/2025,12:57:35 PM
 Sweet Hall,SWH,Swamp,SWAMP,SWH_SWAMP_Lysimeters_B,Center of Cluster,Porewater Lysimeter,swampbsipper,4159861.47,332582.72,0.811,NA,NA,NA,37.5706,-76.8958,-33.5924,0.032,0.066,2/18/2025,12:58:05 PM
 Sweet Hall,SWH,Swamp,SWAMP,SWH_SWAMP_GasWells_B,Center of Cluster,GHG Soil Gas Well,swampbgas,4159861.31,332582.05,0.708,NA,NA,NA,37.5706,-76.8958,-33.6956,0.023,0.057,2/18/2025,12:58:34 PM
-Sweet Hall,SWH,Swamp,SWAMP,SWH_SWAMP_Teros,Teros cluster,Teros12,swamptaros15,4159860.07,332587.01,0.680,NA,NA,NA,37.5706,-76.8957,-33.7243,0.015,0.034,2/18/2025,12:59:37 PM
-Sweet Hall,SWH,Swamp,SWAMP,SWH_SWAMP_Teros,Teros cluster,Teros12,swamptaros13,4159859.11,332587.89,0.723,NA,NA,NA,37.5706,-76.8957,-33.6810,0.021,0.048,2/18/2025,1:00:13 PM
+Sweet Hall,SWH,Swamp,SWAMP,SWH_SWAMP_Teros,Teros cluster,Teros12,swamptaros15,4159860.07,332587.01,0.68,NA,NA,NA,37.5706,-76.8957,-33.7243,0.015,0.034,2/18/2025,12:59:37 PM
+Sweet Hall,SWH,Swamp,SWAMP,SWH_SWAMP_Teros,Teros cluster,Teros12,swamptaros13,4159859.11,332587.89,0.723,NA,NA,NA,37.5706,-76.8957,-33.681,0.021,0.048,2/18/2025,1:00:13 PM
 Sweet Hall,SWH,Swamp,SWAMP,SWH_SWAMP_LoggerBox,Pole Base ,Logger Box,swampabox,4159858.48,332586.31,0.724,NA,NA,NA,37.5706,-76.8957,-33.6804,0.015,0.028,2/18/2025,1:01:04 PM
-Sweet Hall,SWH,Swamp,SWAMP,SWH_SWAMP_Lysimeters_A,Center of Cluster,Porewater Lysimeter,swampsipa,4159858.38,332587.65,0.670,NA,NA,NA,37.5706,-76.8957,-33.7339,0.017,0.034,2/18/2025,1:02:26 PM
-Sweet Hall,SWH,Swamp,SWAMP,SWH_SWAMP_GasWells_A,Center of Cluster,GHG Soil Gas Well,swampgasa,4159857.05,332588.10,0.658,NA,NA,NA,37.5705,-76.8957,-33.7457,0.018,0.027,2/18/2025,1:02:48 PM
-Sweet Hall,SWH,Swamp,SWAMP,SWH_SWAMP_Soil_Flux_1,Center of Collar ,GHG Soil Flux Collar,swampflux1,4159858.60,332588.33,0.663,NA,NA,NA,37.5706,-76.8957,-33.7409,0.024,0.037,2/18/2025,1:03:10 PM
-Sweet Hall,SWH,Swamp,SWAMP,SWH_TR_LoggerBox,Pole Base ,Logger Box,trbox,4159664.36,332510.50,0.448,NA,NA,NA,37.5688,-76.8965,-33.9579,0.024,0.042,2/18/2025,1:17:36 PM
+Sweet Hall,SWH,Swamp,SWAMP,SWH_SWAMP_Lysimeters_A,Center of Cluster,Porewater Lysimeter,swampsipa,4159858.38,332587.65,0.67,NA,NA,NA,37.5706,-76.8957,-33.7339,0.017,0.034,2/18/2025,1:02:26 PM
+Sweet Hall,SWH,Swamp,SWAMP,SWH_SWAMP_GasWells_A,Center of Cluster,GHG Soil Gas Well,swampgasa,4159857.05,332588.1,0.658,NA,NA,NA,37.5705,-76.8957,-33.7457,0.018,0.027,2/18/2025,1:02:48 PM
+Sweet Hall,SWH,Swamp,SWAMP,SWH_SWAMP_Soil_Flux_1,Center of Collar ,GHG Soil Flux Collar,swampflux1,4159858.6,332588.33,0.663,NA,NA,NA,37.5706,-76.8957,-33.7409,0.024,0.037,2/18/2025,1:03:10 PM
+Sweet Hall,SWH,Transition,TR,SWH_TR_LoggerBox,Pole Base ,Logger Box,trbox,4159664.36,332510.5,0.448,NA,NA,NA,37.5688,-76.8965,-33.9579,0.024,0.042,2/18/2025,1:17:36 PM
 Sweet Hall,SWH,Transition,TR,SWH_TR_GasWells_A,Center of Cluster,GHG Soil Gas Well,tragas,4159664.73,332512.36,0.551,NA,NA,NA,37.5688,-76.8965,-33.8555,0.019,0.033,2/18/2025,1:19:46 PM
-Sweet Hall,SWH,Transition,TR,SWH_TR_Lysimeters_A,Center of Cluster,Porewater Lysimeter,trasipper,4159665.10,332512.41,0.560,NA,NA,NA,37.5688,-76.8965,-33.8458,0.017,0.029,2/18/2025,1:20:08 PM
+Sweet Hall,SWH,Transition,TR,SWH_TR_Lysimeters_A,Center of Cluster,Porewater Lysimeter,trasipper,4159665.1,332512.41,0.56,NA,NA,NA,37.5688,-76.8965,-33.8458,0.017,0.029,2/18/2025,1:20:08 PM
 Sweet Hall,SWH,Transition,TR,SWH_TR_Teros,Teros cluster,Teros12,trteros1,4159663.53,332512.08,0.611,NA,NA,NA,37.5688,-76.8965,-33.7955,0.035,0.029,2/18/2025,1:21:24 PM
 Sweet Hall,SWH,Transition,TR,SWH_TR_Soil_Flux_6,Center of Collar ,GHG Soil Flux Collar,trflux6,4159666.07,332511.84,0.392,NA,NA,NA,37.5688,-76.8965,-34.0138,0.017,0.031,2/18/2025,1:22:23 PM
 Sweet Hall,SWH,Transition,TR,SWH_TR_Soil_Flux_1,Center of Collar ,GHG Soil Flux Collar,trflux1,4159664.85,332512.89,0.549,NA,NA,NA,37.5688,-76.8965,-33.8568,0.021,0.035,2/18/2025,1:22:49 PM
 Sweet Hall,SWH,Transition,TR,SWH_TR_Lysimeters_B,Center of Cluster,Porewater Lysimeter,trbsipper,4159665.03,332513.96,0.558,NA,NA,NA,37.5688,-76.8965,-33.8475,0.016,0.028,2/18/2025,1:23:18 PM
-Sweet Hall,SWH,Transition,TR,SWH_TR_GasWells_B,Center of Cluster,GHG Soil Gas Well,trbgas,4159664.65,332513.75,0.518,NA,NA,NA,37.5688,-76.8965,-33.8878,0.020,0.027,2/18/2025,1:23:47 PM
+Sweet Hall,SWH,Transition,TR,SWH_TR_GasWells_B,Center of Cluster,GHG Soil Gas Well,trbgas,4159664.65,332513.75,0.518,NA,NA,NA,37.5688,-76.8965,-33.8878,0.02,0.027,2/18/2025,1:23:47 PM
 Sweet Hall,SWH,Transition,TR,SWH_TR_Soil_Flux_2,Center of Collar ,GHG Soil Flux Collar,trflux2,4159663.03,332518.54,0.509,NA,NA,NA,37.5688,-76.8965,-33.8976,0.018,0.031,2/18/2025,1:24:16 PM
-Sweet Hall,SWH,Transition,TR,SWH_TR_Soil_Flux_7,Center of Collar ,GHG Soil Flux Collar,trflux7,4159663.56,332519.13,0.410,NA,NA,NA,37.5688,-76.8964,-33.9958,0.017,0.025,2/18/2025,1:24:33 PM
+Sweet Hall,SWH,Transition,TR,SWH_TR_Soil_Flux_7,Center of Collar ,GHG Soil Flux Collar,trflux7,4159663.56,332519.13,0.41,NA,NA,NA,37.5688,-76.8964,-33.9958,0.017,0.025,2/18/2025,1:24:33 PM
 Sweet Hall,SWH,Transition,TR,SWH_TR_VegPlot_1,Front corner ,Ground Vegetation Plot,trveg1a,4159663.81,332519.19,0.437,NA,NA,NA,37.5688,-76.8964,-33.9691,0.017,0.025,2/18/2025,1:24:54 PM
-Sweet Hall,SWH,Transition,TR,SWH_TR_VegPlot_1,Back corner,Ground Vegetation Plot,trveg1b,4159662.38,332520.71,0.440,NA,NA,NA,37.5688,-76.8964,-33.9662,0.018,0.029,2/18/2025,1:25:19 PM
+Sweet Hall,SWH,Transition,TR,SWH_TR_VegPlot_1,Back corner,Ground Vegetation Plot,trveg1b,4159662.38,332520.71,0.44,NA,NA,NA,37.5688,-76.8964,-33.9662,0.018,0.029,2/18/2025,1:25:19 PM
 Sweet Hall,SWH,Transition,TR,SWH_TR_Soil_Flux_8,Center of Collar ,GHG Soil Flux Collar,trvflux8,4159657.95,332510.26,0.396,NA,NA,NA,37.5687,-76.8965,-34.0101,0.015,0.021,2/18/2025,1:26:28 PM
-Sweet Hall,SWH,Transition,TR,SWH_TR_Soil_Flux_3,Center of Collar ,GHG Soil Flux Collar,trvflux3,4159657.34,332512.93,0.480,NA,NA,NA,37.5687,-76.8965,-33.9264,0.014,0.023,2/18/2025,1:26:58 PM
+Sweet Hall,SWH,Transition,TR,SWH_TR_Soil_Flux_3,Center of Collar ,GHG Soil Flux Collar,trvflux3,4159657.34,332512.93,0.48,NA,NA,NA,37.5687,-76.8965,-33.9264,0.014,0.023,2/18/2025,1:26:58 PM
 Sweet Hall,SWH,Transition,TR,SWH_TR_VegPlot_2,Front corner ,Ground Vegetation Plot,trveg2a,4159656.77,332511.66,0.431,NA,NA,NA,37.5687,-76.8965,-33.9752,0.015,0.023,2/18/2025,1:27:30 PM
 Sweet Hall,SWH,Transition,TR,SWH_TR_VegPlot_2,Back corner,Ground Vegetation Plot,trveg2b,4159656.28,332513.64,0.514,NA,NA,NA,37.5687,-76.8965,-33.8917,0.016,0.026,2/18/2025,1:27:52 PM
-Sweet Hall,SWH,Transition,TR,SWH_TR_MultiplexerBox,Pole Base ,Multiplexer Box,trbox2,4159650.10,332505.68,0.344,NA,NA,NA,37.5687,-76.8966,-34.0619,0.015,0.022,2/18/2025,1:28:33 PM
-Sweet Hall,SWH,Transition,TR,SWH_TR_Teros,Teros cluster,Teros12,trteros26,4159648.98,332505.55,0.551,NA,NA,NA,37.5687,-76.8966,-33.8550,0.015,0.020,2/18/2025,1:29:06 PM
+Sweet Hall,SWH,Transition,TR,SWH_TR_MultiplexerBox,Pole Base ,Multiplexer Box,trbox2,4159650.1,332505.68,0.344,NA,NA,NA,37.5687,-76.8966,-34.0619,0.015,0.022,2/18/2025,1:28:33 PM
+Sweet Hall,SWH,Transition,TR,SWH_TR_Teros,Teros cluster,Teros12,trteros26,4159648.98,332505.55,0.551,NA,NA,NA,37.5687,-76.8966,-33.855,0.015,0.02,2/18/2025,1:29:06 PM
 Sweet Hall,SWH,Transition,TR,SWH_TR_Teros,Teros cluster,Teros12,trteros15,4159649.81,332507.45,0.554,NA,NA,NA,37.5687,-76.8966,-33.8521,0.015,0.026,2/18/2025,1:29:52 PM
 Sweet Hall,SWH,Transition,TR,SWH_TR_GasWells_C,Center of Cluster,GHG Soil Gas Well,trcgas,4159646.61,332504.43,0.524,NA,NA,NA,37.5686,-76.8966,-33.8825,0.017,0.029,2/18/2025,1:30:29 PM
-Sweet Hall,SWH,Transition,TR,SWH_TR_Lysimeters_C,Center of Cluster,Porewater Lysimeter,trcsipper,4159646.20,332503.62,0.548,NA,NA,NA,37.5686,-76.8966,-33.8577,0.019,0.024,2/18/2025,1:30:48 PM
+Sweet Hall,SWH,Transition,TR,SWH_TR_Lysimeters_C,Center of Cluster,Porewater Lysimeter,trcsipper,4159646.2,332503.62,0.548,NA,NA,NA,37.5686,-76.8966,-33.8577,0.019,0.024,2/18/2025,1:30:48 PM
 Sweet Hall,SWH,Transition,TR,SWH_TR_Soil_Flux_4,Center of Collar ,GHG Soil Flux Collar,trflux4,4159645.76,332503.24,0.498,NA,NA,NA,37.5686,-76.8966,-33.9085,0.015,0.022,2/18/2025,1:31:14 PM
 Sweet Hall,SWH,Transition,TR,SWH_TR_Soil_Flux_5,Center of Collar ,GHG Soil Flux Collar,trflux5,4159645.31,332507.92,0.565,NA,NA,NA,37.5686,-76.8966,-33.8408,0.016,0.026,2/18/2025,1:31:36 PM
-Sweet Hall,SWH,Transition,TR,SWH_TR_Soil_Flux_9,Center of Collar ,GHG Soil Flux Collar,trflux9,4159644.86,332506.40,0.336,NA,NA,NA,37.5686,-76.8966,-34.0698,0.014,0.020,2/18/2025,1:32:46 PM
-Sweet Hall,SWH,Transition,TR,SWH_TR_Soil_Flux_10,Center of Collar ,GHG Soil Flux Collar,trflux10,4159644.85,332503.21,0.353,NA,NA,NA,37.5686,-76.8966,-34.0536,0.020,0.033,2/18/2025,1:33:12 PM
+Sweet Hall,SWH,Transition,TR,SWH_TR_Soil_Flux_9,Center of Collar ,GHG Soil Flux Collar,trflux9,4159644.86,332506.4,0.336,NA,NA,NA,37.5686,-76.8966,-34.0698,0.014,0.02,2/18/2025,1:32:46 PM
+Sweet Hall,SWH,Transition,TR,SWH_TR_Soil_Flux_10,Center of Collar ,GHG Soil Flux Collar,trflux10,4159644.85,332503.21,0.353,NA,NA,NA,37.5686,-76.8966,-34.0536,0.02,0.033,2/18/2025,1:33:12 PM
 Sweet Hall,SWH,Transition,TR,SWH_TR_VegPlot_3,Front corner ,Ground Vegetation Plot,trveg3a,4159644.66,332506.01,0.522,NA,NA,NA,37.5686,-76.8966,-33.8844,0.016,0.023,2/18/2025,1:35:30 PM
-Sweet Hall,SWH,Transition,TR,SWH_TR_VegPlot_3,Back corner,Ground Vegetation Plot,trveg3b,4159643.92,332507.89,0.545,NA,NA,NA,37.5686,-76.8966,-33.8610,0.019,0.034,2/18/2025,1:35:59 PM
-Sweet Hall,SWH,Transition,TR,SWH_TR_VegPlot_4,Front corner ,Ground Vegetation Plot,trveg4a,4159632.89,332507.18,0.373,NA,NA,NA,37.5685,-76.8966,-34.0333,0.014,0.020,2/18/2025,1:37:08 PM
+Sweet Hall,SWH,Transition,TR,SWH_TR_VegPlot_3,Back corner,Ground Vegetation Plot,trveg3b,4159643.92,332507.89,0.545,NA,NA,NA,37.5686,-76.8966,-33.861,0.019,0.034,2/18/2025,1:35:59 PM
+Sweet Hall,SWH,Transition,TR,SWH_TR_VegPlot_4,Front corner ,Ground Vegetation Plot,trveg4a,4159632.89,332507.18,0.373,NA,NA,NA,37.5685,-76.8966,-34.0333,0.014,0.02,2/18/2025,1:37:08 PM
 Sweet Hall,SWH,Transition,TR,SWH_TR_VegPlot_4,Back corner,Ground Vegetation Plot,trveg4b,4159634.92,332507.32,0.447,NA,NA,NA,37.5685,-76.8966,-33.9591,0.016,0.026,2/18/2025,1:37:37 PM
-Sweet Hall,SWH,Transition,TR,SWH_TR_VegPlot_5,Front corner ,Ground Vegetation Plot,trveg5a,4159656.30,332501.72,0.372,NA,NA,NA,37.5687,-76.8966,-34.0338,0.017,0.028,2/18/2025,1:39:02 PM
+Sweet Hall,SWH,Transition,TR,SWH_TR_VegPlot_5,Front corner ,Ground Vegetation Plot,trveg5a,4159656.3,332501.72,0.372,NA,NA,NA,37.5687,-76.8966,-34.0338,0.017,0.028,2/18/2025,1:39:02 PM
 Sweet Hall,SWH,Transition,TR,SWH_TR_VegPlot_5,Back corner,Ground Vegetation Plot,trveg5b,4159657.23,332500.05,0.369,NA,NA,NA,37.5687,-76.8967,-34.0367,0.019,0.028,2/18/2025,1:39:19 PM
-Sweet Hall,SWH,Transition,TR,SWH_TR_SamplingZone,Front corner ,Sampling Zone,trvsample1,4159655.70,332504.92,0.429,NA,NA,NA,37.5687,-76.8966,-33.9772,0.015,0.023,2/18/2025,1:41:40 PM
-Sweet Hall,SWH,Transition,TR,SWH_TR_SamplingZone,Back corner,Sampling Zone,trvsample2,4159656.58,332503.18,0.380,NA,NA,NA,37.5687,-76.8966,-34.0258,0.018,0.029,2/18/2025,1:42:07 PM
+Sweet Hall,SWH,Transition,TR,SWH_TR_SamplingZone,Front corner ,Sampling Zone,trvsample1,4159655.7,332504.92,0.429,NA,NA,NA,37.5687,-76.8966,-33.9772,0.015,0.023,2/18/2025,1:41:40 PM
+Sweet Hall,SWH,Transition,TR,SWH_TR_SamplingZone,Back corner,Sampling Zone,trvsample2,4159656.58,332503.18,0.38,NA,NA,NA,37.5687,-76.8966,-34.0258,0.018,0.029,2/18/2025,1:42:07 PM
 Goodwin Islands,GWI,Wetland,WC,GWI_WC_AQ600,Well Base,AquaTROLL 600,wetland well base,4120082.626,374888.8397,0.556758,0.649592,-1.333608,-35.512576,37.218857,-76.410135,-35.512538,0.009082,0.014222,11/14/2024,10:17:28 AM
 Goodwin Islands,GWI,Transition,TR,GWI_TR_AQ600,Well Base,AquaTROLL 600,TR-well base,4120126.39,374967.4411,0.671997,0.649599,-1.333593,-35.398375,37.219261,-76.409257,-35.398337,0.014057,0.023104,11/14/2024,11:15:57 AM
 Goodwin Islands,GWI,Upland,UP,GWI_UP_AQ600,Well Base,AquaTROLL 600,upland well base,4120125.477,375027.7496,1.060355,0.649599,-1.333581,-35.011647,37.219261,-76.408577,-35.011609,0.028691,0.050698,11/14/2024,10:34:12 AM
@@ -426,4 +426,3 @@ GCReW,GCW,Upland,UP,GCW_UP_SF_Tree_3,Tree base,Sap Flow Tree,GCW_UP_SF_3,134181.
 GCReW,GCW,Upland,UP,GCW_UP_SF_Tree_1,Tree base,Sap Flow Tree,GCW_UP_SF_1,134187.923,438862.64,5.926,NA,NA,NA,38.87466206,76.55214127,-27.454,0.308,0.424,12/20/2023,NA
 GCReW,GCW,Upland,UP,GCW_UP_SF_Tree_6,Tree base,Sap Flow Tree,GCW_UP_SF_6,134198.612,438864.36,3.652,NA,NA,NA,38.87475827,76.55212085,-29.729,0.216,0.237,12/20/2023,NA
 GCReW,GCW,Upland,UP,GCW_UP_SF_Tree_2,Tree base,Sap Flow Tree,GCW_UP_SF_2,134200.931,438857.92,3.519,NA,NA,NA,38.87477945,76.55219494,-29.861,0.153,0.277,12/20/2023,NA
-,,,,,,,,,,,,,,,,,,,,
