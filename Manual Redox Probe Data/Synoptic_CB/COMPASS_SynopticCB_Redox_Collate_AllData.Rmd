@@ -69,7 +69,7 @@ final_dat <- final_dat %>%
 
 ##Format data
 final_dat1 <- final_dat %>% 
-  mutate(Project = "COMPASS:Synoptic", 
+  mutate(Project = "COMPASS: Synoptic", 
          Region = "CB") %>% 
   rename(Day = Date) %>% 
   select(c("Project", "Region", "Year", "Month", "Day", "Time_24hr",  "Time_Zone", "Site", "Plot", "Topography", "Depth", "Avg_mV", "Std_dv", "Std_err", "Notes"))
