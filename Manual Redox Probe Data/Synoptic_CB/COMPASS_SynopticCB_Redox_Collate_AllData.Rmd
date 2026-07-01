@@ -53,7 +53,7 @@ all_dat <- all_dat %>%
   mutate(Project = "COMPASS:Synoptic", 
          Region = "CB", 
          Zone_1 = Zone) %>%
-  mutate(Zone = case_when(Zone_1 == "Upland" ~ "UP", 
+  mutate(Plot = case_when(Zone_1 == "Upland" ~ "UP", 
                           Zone_1 == "Transition" ~ "TR", 
                           Zone_1 == "Wetland" ~ "WC", 
                           Zone_1 == "Swamp" ~ "SWAMP",
@@ -72,7 +72,7 @@ final_dat1 <- final_dat %>%
   mutate(Project = "COMPASS:Synoptic", 
          Region = "CB") %>% 
   rename(Day = Date) %>% 
-  select(c("Project", "Region", "Year", "Month", "Day", "Time_24hr",  "Time_Zone", "Site", "Zone", "Topography", "Depth", "Avg_mV", "Std_dv", "Std_err", "Notes"))
+  select(c("Project", "Region", "Year", "Month", "Day", "Time_24hr",  "Time_Zone", "Site", "Plot", "Topography", "Depth", "Avg_mV", "Std_dv", "Std_err", "Notes"))
 
 ```
 
