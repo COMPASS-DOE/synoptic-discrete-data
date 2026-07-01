@@ -22,9 +22,10 @@ library(tidyr)
 library(tibble)
 library(openxlsx)
 library(knitr)
+library(here)
 ```
 
-##Pull in compiled data and export annual files
+## Pull in compiled data and export annual files
 ```{r Pull in compiled data files, message=FALSE, include=FALSE}
 
 #write out a csv of all the data to the main folder: 
@@ -40,7 +41,8 @@ write.csv(final_data_2024, "Data package/COMPASS_SynopticCB_SGAS_2024.csv", row.
 
 ```
 
-##Create dd file
+
+## Create dd file
 ```{r make metadata, include = FALSE}
 
 #pull the column names from the all_dat1 dataframe and create a new dataframe with them
@@ -125,8 +127,8 @@ write.csv(dd, "Data package/dd.csv", row.names = FALSE)
 ```
 
 
-##Create flmd file
-```{r}
+## Create flmd file
+```{r create flmd}
 
 files  = list.files("Data package")
 files
@@ -199,4 +201,50 @@ site_list = bind_rows(MSM, SWH, GCW, GWI)
 #write out the site list associated with the data:
 write.csv(site_list, "Data package/site_list.csv", row.names = FALSE)
 
+```       
+
+
+## Data Description 
+```{r data description}
+
+#Create a text file that has the description of the data - This ideally should match the text that is in the data READ.ME 
+
+datadescription <- "These data are profiles of trace gas (carbon dioxide and methane) concentrations collected from soil gas wells at the COMPASS 'synoptic' sites in the Chesapeake Bay region: Moneystump Swamp (MSM), Goodwin Islands (GWI), GCReW (GCW), and the Sweet Hall Marsh (SWH). These sites have space for time transects spanning coastal upland forest (UP), coastal upland forest transitioning to wetland (TR), and wetlands (WC). The Sweet Hall Marsh site also has a forested swamp as part of its transect (SWAMP). In each zone, gas wells are installed at three depths in triplicate creating three profiles of 10, 20, and 45cm. In addition, an air sample is collected in each zone (0 cm). The samples are stored in exetainers then analyzed for methane and carbon dioxide on a Varian 450 Gas Chromatograph. The methane is determined with an FID and the carbon dioxide with a TCD.  "
+
+
+#write to a text file 
+writeLines(datadescription, "Data package/SynopticCB_SGAS_ESSDIVE_DataDescription.txt")
+
+
+```
+
+
+## Create Author List 
+```{r create author list}
+
+#Pull in the common synoptic authors list: 
+authors_common <- read.csv(here("Metadata/Synoptic CB/", "COMPASS_SynopticCB_common_essdive_author_list.csv"))
+
+
+#create a list of the last names you want to pull 
+names_we_want <- c("Wilson", "Chin", "Phillips", "Read", "Stearns",  "Wegner", "Megonigal")
+
+#Subset the common list for the names that we want 
+author_list <- authors_common %>%
+  filter(last_name %in% names_we_want)
+
+#if you need to add any other authors 
+others <- data.frame(
+  first_name = c("first_name1", "first_name2"), 
+  last_name = c("last_name1", "last_name2"), 
+  orcid = c("orcid_id1", "orcid_id2"), 
+  affiliation = c("affiliation1", "affiliation2"), 
+  email = c("email1", "email2")
+)
+
+#add in the other authors 
+#author_list <- bind_rows(author_list, others)
+
+#write out the author list associated with the data:
+write.csv(author_list, "Data package/author_list.csv", row.names = FALSE)
 ```
