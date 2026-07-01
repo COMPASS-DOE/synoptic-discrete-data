@@ -7,7 +7,7 @@
 "Time_24hr","NA","Time (HH:MM) of sample collection","Time_24hr","numeric","NA"
 "Time_Zone","NA","Time Zone of sample collection","Time_Zone","text","NA"
 "Site","NA","Name of sampling transect location (GCW, SWH, MSM, GWI), see dataset locations for coordinates","Site","text","NA"
-"Zone","NA","Zone within space-for-time transect (UP=Upland, SWAMP=Swamp, TR=Transition, WC=Wetland Control)","Zone","text","NA"
+"Plot","NA","Plot within space-for-time transect (UP=Upland, SWAMP=Swamp, TR=Transition, WC=Wetland Control)","Plot","text","NA"
 "Topography","NA","Topography (Hummock/Hollow) only for SWH transition zone; hummock is most comparable to the transition zones at other sites","Topography","text","NA"
 "Depth","cm","Depth in centimeters at which measurement was made","Depth","numeric","NA"
 "Avg_mV","mV","Average of field replicate measurements at the same depth (n=6)","Avg_mV","numeric","Redox Probe: SWAP Redox Probe, Reference Probe: Calomel Reference probe, Handheld Readout: Thermo Scientific Orion Star A221 pH Meter"
