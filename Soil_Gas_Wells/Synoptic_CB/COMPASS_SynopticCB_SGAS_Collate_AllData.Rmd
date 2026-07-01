@@ -81,6 +81,14 @@ final_data <- all_dat2 %>%
 
 ```
 
+##Write out compiled data file
+```{r write out compiled data, include=FALSE}
+
+#write out a csv of all the data to the main folder: 
+write.csv(final_data, "COMPASS_SynopticCB_SGAS_AllData.csv", row.names = FALSE)
+
+```
+
 ##Make Relevant Metadata Sheet
 ```{r make metadata, include = FALSE}
 
@@ -88,13 +96,15 @@ final_data <- all_dat2 %>%
 metadat <- data.frame(Column_Names = colnames(final_data))
 metadat
 
-metadat$Description <- ""
-metadat$Units <- ""
+metadat$Unit <- ""
+metadat$Definition <- ""
+metadat$Column_Long_Name <- metadat$Column_Names
+metadat$data_type <- ""
 metadat$Instrument_ifapplicable <- ""
 
 #add information about each line:
 
-metadat$Description <- c("Project name",
+metadat$Definition <-  c("Project name",
                          "Region samples originated from: CB = Chesapeake Bay",
                          "Sample identifier used in laboratory and field",
                          "Year (YYYY) of sample collection",
@@ -109,7 +119,7 @@ metadat$Description <- c("Project name",
                          "Carbon dioxide concentration in ppm, corrected for dilution",
                          "Carbon dioxide concentration flag base on standard curve (bdl=below detection limit, adl=above detection limit)")
 
-metadat$Units <-       c("NA",
+metadat$Unit <-        c("NA",
                          "NA",
                          "NA",
                          "NA",
@@ -123,6 +133,21 @@ metadat$Units <-       c("NA",
                          "NA",
                          "ppm",
                          "NA")
+
+metadat$data_type <-   c("text",
+                         "text",
+                         "text",
+                         "numeric",
+                         "text",
+                         "text",
+                         "text",
+                         "text",
+                         "numeric",
+                         "text",
+                         "numeric",
+                         "text",
+                         "numeric",
+                         "text")
 
 metadat$Instrument_ifapplicable <-
 
@@ -144,15 +169,59 @@ metadat$Instrument_ifapplicable <-
 
 ```
 
-##Write out files
-```{r write out combined data and metadata, include=FALSE}
 
-#write out a csv of all the data to the main folder: 
-write.csv(final_data, "COMPASS_SynopticCB_SGAS_AllData.csv", row.names = FALSE)
+##Create FLMD file
+```{r}
+
+files  = list.files("ESS-DIVE")
+
+flmd <- data.frame(file_name = files)
+flmd
+
+flmd$file_description <- ""
+flmd$standard <- ""
+flmd$file_version <- ""
+flmd$data_orientation <- ""
+flmd$header_rows <- ""
+flmd$column_or_row_name_position <- ""
+flmd$notes <- ""
+
+#add information about each line:
+
+flmd$file_description <-  c("Soil gas well data from COMPASS synoptic sites for 2023",
+                            "Soil gas well data from COMPASS synoptic sites for 2024",
+                            "data dictionary file for COMPASS_SynopticCB_SGAS_2023.csv and COMPASS_SynopticCB_SGAS_2024.csv describing each column in the dataset")
+
+flmd$data_orientation <-  c("horizontal",
+                            "horizontal",
+                            "horizontal")
+
+flmd$header_rows <-   c("1",
+                        "1",
+                        "1")
+
+flmd$column_or_row_name_position <- c("1",
+                                      "1",
+                                      "1")
 
 
+
+```
+
+
+##Write out files for ESS-DIVE
+```{r write out ESS-DIVE files, include=FALSE}
+
+##ESS-DIVE 
 #write out a csv of the metadata associated with the data:
-write.csv(metadat, "COMPASS_SynopticCB_SGAS_Metadata.csv")
+write.csv(metadat, "ESS-DIVE/COMPASS_SynopticCB_SGAS_dd.csv", row.names = FALSE)
+
+##Separate by year for ESS-DIVE 
+final_data_2023 <- subset(final_data, Year == "2023")
+final_data_2024 <- subset(final_data, Year == "2024")
+
+write.csv(final_data_2023, "ESS-DIVE/COMPASS_SynopticCB_SGAS_2023.csv", row.names = FALSE)
+write.csv(final_data_2024, "ESS-DIVE/COMPASS_SynopticCB_SGAS_2024.csv", row.names = FALSE)
 
 ```
 
