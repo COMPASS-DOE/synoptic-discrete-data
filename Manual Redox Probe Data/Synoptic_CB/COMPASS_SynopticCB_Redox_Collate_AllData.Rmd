@@ -287,8 +287,9 @@ viz_redox_plot_depth <- ggplot(Redox_avg, aes(x = as.numeric(Depth), y = mean_mV
     "Transition-Hummock" = "#FFBC42",
     "Wetland" = "#419973")) +
   theme_classic() +
+  #labs(x = "Depth (cm)", y = "Redox Potential (mV)", title = "Samples: Redox profiles across transects") +
   labs(x = "Depth (cm)", y = "Redox Potential (mV)", title = "Samples: Redox\n (No std dev because values were averaged previously,\n so new std dev would be incorrect)") +
-  theme(text = element_text(size = 30))+
+  theme(text = element_text(size = 20))+
   coord_flip() + 
   scale_x_continuous(trans = "reverse") + 
   labs(color = "Zone") 
