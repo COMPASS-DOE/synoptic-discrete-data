@@ -1,0 +1,166 @@
+---
+title: "ESS-DIVE Synoptic CB: SGAS"
+author: "2023-2024 Samples"
+date: "`r Sys.Date()`"
+output: 
+  pdf_document:
+    toc: true
+    number_sections: true
+
+output_dir: "To Be Reviewed/PDF"
+header-includes:
+  - \pagenumbering{gobble}
+---
+
+```{r setup, include=FALSE}
+library(dplyr)
+library(ggplot2)
+library(ggpubr)
+library(stringr)
+library(readxl)
+library(tidyr)
+library(tibble)
+library(openxlsx)
+library(knitr)
+```
+
+##Pull in compiled data and export annual files
+```{r Pull in compiled data files, message=FALSE, include=FALSE}
+
+#write out a csv of all the data to the main folder: 
+final_data <- read.csv("../COMPASS_SynopticCB_SGAS_AllData.csv")
+
+##Separate by year for ESS-DIVE 
+final_data_2023 <- subset(final_data, Year == "2023")
+final_data_2024 <- subset(final_data, Year == "2024")
+
+##Write out annual data files
+write.csv(final_data_2023, "Data package/COMPASS_SynopticCB_SGAS_2023.csv", row.names = FALSE)
+write.csv(final_data_2024, "Data package/COMPASS_SynopticCB_SGAS_2024.csv", row.names = FALSE)
+
+```
+
+##Create dd file
+```{r make metadata, include = FALSE}
+
+#pull the column names from the all_dat1 dataframe and create a new dataframe with them
+dd <- data.frame(Column_Names = colnames(final_data))
+dd
+
+dd$Unit <- ""
+dd$Definition <- ""
+dd$Column_Long_Name <- dd$Column_Names
+dd$data_type <- ""
+dd$Instrument_ifapplicable <- ""
+
+#add information about each line:
+
+dd$Definition <-  c("Project name",
+                         "Region samples originated from: CB = Chesapeake Bay",
+                         "Sample identifier used in laboratory and field",
+                         "Year (YYYY) of sample collection",
+                         "Month (#) of sample collection",
+                         "Name of sampling transect location (GCW, SWH, MSM, GWI), see dataset locations for coordinates",
+                         "Zone within space-for-time transect (UP=Upland, SWAMP=Swamp, TR=Transition, WC=Wetland Control, SW=Surface Water)",
+                         "Soil gas well or sample grid replicate id (A-C, ATM for Atmospheric sample, Letter+Number for GCW UP (TEMPEST Site))",
+                         "Depth in centimeters from which water sample was taken",
+                         "Machine on which gas sample was analyzed", 
+                         "Methane concentration in ppm, corrected for dilution",
+                         "Methane concentration flag base on standard curve (bdl=below detection limit, adl=above detection limit)",
+                         "Carbon dioxide concentration in ppm, corrected for dilution",
+                         "Carbon dioxide concentration flag base on standard curve (bdl=below detection limit, adl=above detection limit)")
+
+dd$Unit <-             c("NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "cm",
+                         "NA",
+                         "ppm",
+                         "NA",
+                         "ppm",
+                         "NA")
+
+dd$data_type <-        c("text",
+                         "text",
+                         "text",
+                         "numeric",
+                         "text",
+                         "text",
+                         "text",
+                         "text",
+                         "numeric",
+                         "text",
+                         "numeric",
+                         "text",
+                         "numeric",
+                         "text")
+
+dd$Instrument_ifapplicable <-
+
+                       c("NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "Varian Gas Chromatograph",
+                         "NA",
+                         "Varian Gas Chromatograph",
+                         "NA")
+
+
+#write out the data dictionary associated with the data:
+write.csv(dd, "Data package/dd.csv", row.names = FALSE)
+
+
+```
+
+
+##Create flmd file
+```{r}
+
+files  = list.files("Data package")
+
+flmd <- data.frame(file_name = files)
+flmd
+
+flmd$file_description <- ""
+flmd$standard <- ""
+flmd$file_version <- ""
+flmd$data_orientation <- ""
+flmd$header_rows <- ""
+flmd$column_or_row_name_position <- ""
+flmd$notes <- ""
+
+#add information about each line:
+
+flmd$file_description <-  c("Soil gas well data taken from COMPASS synoptic sites in 2023",
+                            "Soil gas well data taken from COMPASS synoptic sites in 2024",
+                            "Data dictionary file for COMPASS_SynopticCB_SGAS_2023.csv and COMPASS_SynopticCB_SGAS_2024.csv describing each column in the dataset")
+
+flmd$data_orientation <-  c("horizontal",
+                            "horizontal",
+                            "horizontal")
+
+flmd$header_rows <-   c("1",
+                        "1",
+                        "1")
+
+flmd$column_or_row_name_position <- c("1",
+                                      "1",
+                                      "1")
+
+
+#write out the flmd associated with the data:
+write.csv(flmd, "Data package/flmd.csv", row.names = FALSE)
+
+```
