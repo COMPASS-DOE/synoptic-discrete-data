@@ -77,11 +77,36 @@ final_dat1 <- final_dat %>%
 ```
 
 
+##Clean field notes
+```{r}
+
+unique(final_dat1$Notes)
+
+final_dat2 <- final_dat1 %>%
+  mutate(Notes = case_when(
+    str_detect(Notes, "UP too dry") ~ NA, 
+    str_detect(Notes, "probe 3 mesured twice; must be a pocket") ~ "probe 3 measured twice; must be a pocket", 
+    str_detect(Notes, "I feel like") ~ NA, 
+    str_detect(Notes, "Couldn't get probes more than 10 cm into ground") ~ NA, 
+    str_detect(Notes, "4|45 pos change") ~ "probe 4 measured at 45 cm", 
+    str_detect(Notes, "5 mV measurement was done at 30 cm") ~ "probe 5 measurement was done at 30 cm", 
+    str_detect(Notes, "WC very dry") ~ "Very dry", 
+    Notes == "" ~ NA, 
+    TRUE ~ Notes
+  )) %>% 
+  mutate(Notes = str_to_sentence(Notes))
+
+unique(final_dat2$Notes)
+
+```
+
+
+
 ##Write out files
 ```{r write out combined data and metadata, include=FALSE}
 
 #write out a csv of all the data to the main folder: 
-write.csv(final_dat1, "COMPASS_SynopticCB_Redox_AllData.csv", row.names = FALSE)
+write.csv(final_dat2, "COMPASS_SynopticCB_Redox_AllData.csv", row.names = FALSE)
 
 ```
 
