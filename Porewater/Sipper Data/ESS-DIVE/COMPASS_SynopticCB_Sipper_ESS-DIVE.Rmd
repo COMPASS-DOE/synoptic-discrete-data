@@ -1,5 +1,5 @@
 ---
-title: "ESS-DIVE Synoptic CB: Peeper Data - 2026-07-02 Submission Prep"
+title: "ESS-DIVE Synoptic CB: Sipper Data - 2026-07-02 Submission Prep"
 author: "2022-2023 Samples"
 date: "`r Sys.Date()`"
 output: 
@@ -11,6 +11,8 @@ output_dir: "To Be Reviewed/PDF"
 header-includes:
   - \pagenumbering{gobble}
 ---
+
+#### Do we need to process and add in the sipper GHG data? ####
 
 ```{r setup, include=FALSE}
 library(dplyr)
@@ -30,15 +32,15 @@ library(here)
 ```{r Pull in compiled data files, message=FALSE, include=FALSE}
 
 #write out a csv of all the data to the main folder: 
-final_data <- read.csv("../COMPASS_SynopticCB_Peeper_Data.csv")
+final_data <- read.csv("../COMPASS_SynopticCB_Sipper_Data.csv")
 
 ##Separate by year for ESS-DIVE 
 final_data_2022 <- subset(final_data, Year == "2022")
 final_data_2023 <- subset(final_data, Year == "2023")
 
 ##Write out annual data files
-write.csv(final_data_2022, "Data package/COMPASS_SynopticCB_Peeper_2022.csv", row.names = FALSE)
-write.csv(final_data_2023, "Data package/COMPASS_SynopticCB_Peeper_2023.csv", row.names = FALSE)
+write.csv(final_data_2022, "Data package/COMPASS_SynopticCB_Sipper_2022.csv", row.names = FALSE)
+write.csv(final_data_2023, "Data package/COMPASS_SynopticCB_Sipper_2023.csv", row.names = FALSE)
 
 ```
 
@@ -67,8 +69,8 @@ dd$Definition <-       c("Project name: Project component",
                          "Site Code identifier for sampling transect location (GCW, SWH, MSM, GWI), see dataset locations for coordinates", 
                          "Plot within space-for-time transect (UP=Upland, TR=Transition, WC= Wetland Control, SWAMP = Swamp)",
                          "Porewater sample ID", 
-                         "Collection device used to sample porewater: RHZ = Peeper sampler", 
-                         "Replicate (1-12)",
+                         "Collection device used to sample porewater: SIP = Sipper sampler", 
+                         "Replicate (A-C)",
                          "Sulfate concentration", 
                          "Sulfate concentration", 
                          "Sulfate concentration flag (adl = above detection limit (20 ug/mL), bdl = below detection limit (0 ug/mL))", 
@@ -85,17 +87,20 @@ dd$Definition <-       c("Project name: Project component",
                          "Phosphate (PO4) concentration", 
                          "Phosphate (PO4) concentration", 
                          "Phosphate (PO4) concentration flag (adl = above detection limit (0.3 mg/L), bdl = below detection limit (0.003 mg/L))", 
-                         "Nitrate-N + Nitrite-N (NOx) concentration", 
-                         "Nitrate-N + Nitrite-N (NOx) concentration", 
-                         "Nitrate-N + Nitrite-N (NOx) concentration flag (adl = above detection limit (1 mg/L), bdl = below detection limit (0.025 mg/L))",
+                         "Nitrate–N + Nitrite–N (NOx) concentration", 
+                         "Nitrate–N + Nitrite–N (NOx) concentration", 
+                         "Nitrate–N + Nitrite–N (NOx) concentration flag (adl = above detection limit (1 mg/L), bdl = below detection limit (0.025 mg/L))",
                          "Iron (II) concentration mean", 
                          "Iron (II) concentration standard deviation", 
                          "Iron (II) concentration concentration flag (adl = above detection limit (500 umoles/L), bdl = below detection limit (0.6 umoles/L))", 
                          "Iron (III) concentration mean", 
                          "Iron (III) concentration standard deviation", 
-                         "Iron (III) concentration concentration flag (adl = above detection limit (500 umoles/L), bdl = below detection limit (0.6 umoles/L))")
+                         "Iron (III) concentration concentration flag (adl = above detection limit (500 umoles/L), bdl = below detection limit (0.6 umoles/L))", 
+                         "Dissolved inorganic carbon (DIC) concentration", 
+                         "Dissolved inorganic carbon (DIC) concentration", 
+                         "Dissolved inorganic carbon (DIC) concentration flag (adl = above detection limit (200 mg/L), bdl = below detection limit (0 mg/L))")
 
-dd$Unit <-             c( "NA", 
+dd$Unit <-             c("NA", 
                          "NA",
                          "NA", 
                          "NA",
@@ -129,43 +134,49 @@ dd$Unit <-             c( "NA",
                          "NA", 
                          "umoles/L", 
                          "umoles/L", 
+                         "NA", 
+                         "mg/L", 
+                         "umoles/L", 
                          "NA")
 
 dd$data_type <-        c("text", 
                          "text", 
                          "numeric", 
-                         "text",
+                         "numeric", 
                          "numeric",
                          "text",
                          "text",
                          "text",
                          "text",
-                         "numeric",
-                         "numeric",
-                         "numeric",
                          "text",
-                         "numeric",
-                         "numeric",
+                         "numeric", 
+                         "numeric", 
                          "text",
-                         "numeric",
-                         "numeric",
-                         "numeric",
+                         "numeric", 
+                         "numeric", 
                          "text",
-                         "numeric",
-                         "numeric",
+                         "numeric", 
+                         "numeric", 
+                         "numeric", 
                          "text",
-                         "numeric",
-                         "numeric",
+                         "numeric", 
+                         "numeric", 
                          "text",
-                         "numeric",
-                         "numeric",
+                         "numeric", 
+                         "numeric", 
                          "text",
-                         "numeric",
-                         "numeric",
+                         "numeric", 
+                         "numeric", 
                          "text",
-                         "numeric",
-                         "numeric",
-                         "text") 
+                         "numeric", 
+                         "numeric", 
+                         "text",
+                         "numeric", 
+                         "numeric", 
+                         "text",
+                         "numeric", 
+                         "numeric", 
+                         "text")
 
 dd$Instrument_ifapplicable <-  c(
                          "NA", 
@@ -176,13 +187,13 @@ dd$Instrument_ifapplicable <-  c(
                          "NA", 
                          "NA",
                          "NA", 
-                         "Rhizosphere Peeper MOM Soil Moisture Sampler (19.21.21)", 
+                         "Sipper Sampler", 
                          "NA",
-                         "Dionex Integrion", 
-                         "Dionex Integrion", 
+                         "NA",
+                         "NA",
                          "NA", 
-                         "Dionex Integrion", 
-                         "Dionex Integrion", 
+                         "NA", 
+                         "NA", 
                          "NA", 
                          "Calculated with Knudsen equation (Strickland and Parsons, 1972)", 
                          "Agilent BioTek PowerWave Microplate Reader", 
@@ -202,25 +213,28 @@ dd$Instrument_ifapplicable <-  c(
                          "NA", 
                          "Agilent BioTek PowerWave Microplate Reader", 
                          "Agilent BioTek PowerWave Microplate Reader", 
-                         "NA")
+                         "NA", 
+                         "Shimadzu TOC-V", 
+                         "Shimadzu TOC-V", 
+                         "Shimadzu TOC-V")
 
 dd$Method_ifapplicable <- c(
+                         "NA", 
+                         "NA",
+                         "NA", 
                          "NA",
                          "NA",
                          "NA", 
                          "NA",
-                         "NA",
-                         "NA", 
-                         "NA",
                          "NA", 
                          "NA", 
                          "NA",
-                         "NA", 
-                         "NA", 
-                         "NA", 
-                         "NA", 
-                         "NA", 
-                         "NA", 
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
+                         "NA",
                          "Calculated with Knudsen equation (Strickland and Parsons, 1972)", 
                          "Adapted from Cline, 1969, Ehrhardt et al., 1999", 
                          "Adapted from Cline, 1969, Ehrhardt et al., 1999", 
@@ -239,7 +253,10 @@ dd$Method_ifapplicable <- c(
                          "Adapted from Stookey, 1970, Violler et al., 2000, Charbonnier & Anschutz 2021, Gong 2020", 
                          "Adapted from Stookey, 1970, Violler et al., 2000, Charbonnier & Anschutz 2021, Gong 2020", 
                          "Adapted from Stookey, 1970, Violler et al., 2000, Charbonnier & Anschutz 2021, Gong 2020", 
-                         "Adapted from Stookey, 1970, Violler et al., 2000, Charbonnier & Anschutz 2021, Gong 2020")
+                         "Adapted from Stookey, 1970, Violler et al., 2000, Charbonnier & Anschutz 2021, Gong 2020", 
+                         "NA", 
+                         "NA", 
+                         "NA")
 
 
 #write out the data dictionary associated with the data:
@@ -254,7 +271,7 @@ write.csv(dd, "Data package/dd.csv", row.names = FALSE)
 files  = list.files("Data package")
 files
 
-files = c("COMPASS_SynopticCB_Peeper_2022.csv", "COMPASS_SynopticCB_Peeper_2023.csv", "dd.csv")
+files = c("COMPASS_SynopticCB_Sipper_2022.csv", "COMPASS_SynopticCB_Sipper_2023.csv", "dd.csv")
 
 flmd <- data.frame(file_name = files)
 flmd
@@ -269,9 +286,9 @@ flmd$notes <- ""
 
 #add information about each line:
 
-flmd$file_description <-  c("Peeper water sample analysis data taken from COMPASS synoptic sites in 2022",
-                            "Peeper water sample analysis data taken from COMPASS synoptic sites in 2023",
-                            "Data dictionary file for annual Peeper water sample analysis data files describing each column in the dataset")
+flmd$file_description <-  c("Sipper water sample analysis data taken from COMPASS synoptic sites in 2022",
+                            "Sipper water sample analysis data taken from COMPASS synoptic sites in 2023",
+                            "Data dictionary file for annual Sipper water sample analysis data files describing each column in the dataset")
 
 flmd$data_orientation <-  c("horizontal",
                             "horizontal",
@@ -325,7 +342,7 @@ write.csv(site_list, "Data package/site_list.csv", row.names = FALSE)
 ```
 
 
-## Data Description - NEED TO EDIT THIS FOR PEEPER DATA
+## Data Description - NEED TO EDIT THIS FOR Sipper DATA
 ```{#r data description}
 
 #Create a text file that has the description of the data - This ideally should match the text that is in the data READ.ME 
@@ -340,7 +357,7 @@ writeLines(datadescription, "Data package/SynopticCB_Redox_ESSDIVE_DataDescripti
 ```
 
 
-## Create Author List - NEED TO EDIT THIS FOR PEEPER DATA
+## Create Author List - NEED TO EDIT THIS FOR Sipper DATA
 ```{#r create author list}
 
 #Pull in the common synoptic authors list: 
