@@ -1,5 +1,5 @@
 ---
-title: "ESS-DIVE Synoptic CB: Manual Redox - 2026-07-01 Submission Prep"
+title: "ESS-DIVE Synoptic CB: Rhizon Data - 2026-07-01 Submission Prep"
 author: "2022-2025 Samples"
 date: "`r Sys.Date()`"
 output: 
@@ -178,11 +178,11 @@ dd$Instrument_ifapplicable <-  c(
                          "NA", 
                          "Rhizosphere Rhizon MOM Soil Moisture Sampler (19.21.21)", 
                          "NA",
+                         "Dionex Integrion", 
+                         "Dionex Integrion", 
                          "NA", 
-                         "NA", 
-                         "NA", 
-                         "NA", 
-                         "NA", 
+                         "Dionex Integrion", 
+                         "Dionex Integrion", 
                          "NA", 
                          "Calculated with Knudsen equation (Strickland and Parsons, 1972)", 
                          "Agilent BioTek PowerWave Microplate Reader", 
