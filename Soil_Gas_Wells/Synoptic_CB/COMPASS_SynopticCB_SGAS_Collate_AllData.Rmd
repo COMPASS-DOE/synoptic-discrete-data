@@ -75,7 +75,9 @@ all_dat2 <- all_dat2 %>%
 
 final_data <- all_dat2 %>% 
   mutate(Project = "COMPASS:Synoptic", 
-         Region = "CB") %>%
+         Region = "CB", 
+         Month_long = Month) %>% 
+  mutate(Month = match(Month_long, month.name)) %>% 
   rename(Plot = Zone) %>% 
   dplyr::select(
     Project, Region, Sample_ID, Year, Month, Site, Plot, Replicate, Depth_cm, Machine, CH4_Conc_ppm_dilcorr, CH4_conc_flag, CO2_Conc_ppm_dilcorr, CO2_conc_flag )

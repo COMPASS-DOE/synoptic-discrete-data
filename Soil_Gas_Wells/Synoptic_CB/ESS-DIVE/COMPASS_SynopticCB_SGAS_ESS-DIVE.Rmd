@@ -1,5 +1,5 @@
 ---
-title: "ESS-DIVE Synoptic CB: SGAS"
+title: "ESS-DIVE Synoptic CB: SGAS - 2026-07-01 Submission Prep"
 author: "2023-2024 Samples"
 date: "`r Sys.Date()`"
 output: 
@@ -61,7 +61,7 @@ dd$Definition <-       c("Project name",
                          "Region samples originated from: CB = Chesapeake Bay",
                          "Sample identifier used in laboratory and field",
                          "Year (YYYY) of sample collection",
-                         "Month (#) of sample collection",
+                         "Month (MM) of sample collection",
                          "Site Code identifier for sampling transect location (GCW, SWH, MSM, GWI), see dataset locations for coordinates",
                          "Plot within space-for-time transect (UP=Upland, SWAMP=Swamp, TR=Transition, WC=Wetland Center, SW=Surface Water)",
                          "Soil gas well or sample grid replicate id (A-C, ATM for Atmospheric sample, Letter+Number for GCW UP (TEMPEST Site))",

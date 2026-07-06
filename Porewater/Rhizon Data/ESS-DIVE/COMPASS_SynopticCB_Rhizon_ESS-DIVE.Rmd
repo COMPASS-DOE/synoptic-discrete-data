@@ -1,0 +1,372 @@
+---
+title: "ESS-DIVE Synoptic CB: Rhizon Data - 2026-07-01 Submission Prep"
+author: "2022-2025 Samples"
+date: "`r Sys.Date()`"
+output: 
+  pdf_document:
+    toc: true
+    number_sections: true
+
+output_dir: "To Be Reviewed/PDF"
+header-includes:
+  - \pagenumbering{gobble}
+---
+
+```{r setup, include=FALSE}
+library(dplyr)
+library(ggplot2)
+library(ggpubr)
+library(stringr)
+library(readxl)
+library(tidyr)
+library(tibble)
+library(openxlsx)
+library(knitr)
+library(here)
+```
+
+
+## Pull in compiled data and export annual files
+```{r Pull in compiled data files, message=FALSE, include=FALSE}
+
+#write out a csv of all the data to the main folder: 
+final_data <- read.csv("../COMPASS_SynopticCB_Rhizon_Data.csv")
+
+##Separate by year for ESS-DIVE 
+final_data_2022 <- subset(final_data, Year == "2022")
+final_data_2023 <- subset(final_data, Year == "2023")
+
+##Write out annual data files
+write.csv(final_data_2022, "Data package/COMPASS_SynopticCB_Rhizon_2022.csv", row.names = FALSE)
+write.csv(final_data_2023, "Data package/COMPASS_SynopticCB_Rhizon_2023.csv", row.names = FALSE)
+
+```
+
+
+## Create dd file
+```{r make metadata, include = FALSE}
+
+#pull the column names from the all_dat1 dataframe and create a new dataframe with them
+dd <- data.frame(Column_Names = colnames(final_data))
+dd
+
+dd$Unit <- ""
+dd$Definition <- ""
+dd$Column_Long_Name <- dd$Column_Names
+dd$data_type <- ""
+dd$Instrument_ifapplicable <- ""
+dd$Method_ifapplicable <- ""
+
+#add information about each line:
+
+dd$Definition <-       c("Project name: Project component", 
+                         "Region samples originated from: CB = Chesapeake Bay",
+                         "Year (YYYY) of sample collection", 
+                         "Month (MM) of sample collection",
+                         "Day (DD) of sample collection",
+                         "Site Code identifier for sampling transect location (GCW, SWH, MSM, GWI), see dataset locations for coordinates", 
+                         "Plot within space-for-time transect (UP=Upland, TR=Transition, WC= Wetland Control, SWAMP = Swamp)",
+                         "Porewater sample ID", 
+                         "Collection device used to sample porewater: RHZ = Rhizon sampler", 
+                         "Rhizon replicate number (# 1-8)",
+                         "Sulfate concentration", 
+                         "Sulfate concentration", 
+                         "Sulfate concentration flag (adl = above detection limit (20 ug/mL), bdl = below detection limit (0 ug/mL))", 
+                         "Chloride concentration", 
+                         "Chloride concentration", 
+                         "Chloride concentration flag (adl = above detection limit (200 ug/mL), bdl = below detection limit (0 ug/mL))", 
+                         "Salinity", 
+                         "Sulfide concentration mean", 
+                         "Sulfide concentration standard deviation", 
+                         "Sulfide concentration flag (adl = above detection limit (100 umoles/L), bdl = below detection limit (0 umoles/L))", 
+                         "Ammonia (NH3) concentration", 
+                         "Ammonia (NH3) concentration", 
+                         "Ammonia (NH3) concentration flag (adl = above detection limit (2 mg/L), bdl = below detection limit (0.02 mg/L))", 
+                         "Phosphate (PO4) concentration", 
+                         "Phosphate (PO4) concentration", 
+                         "Phosphate (PO4) concentration flag (adl = above detection limit (0.3 mg/L), bdl = below detection limit (0.003 mg/L))", 
+                         "Nitrate-N + Nitrite-N (NOx) concentration", 
+                         "Nitrate-N + Nitrite-N (NOx) concentration", 
+                         "Nitrate-N + Nitrite-N (NOx) concentration flag (adl = above detection limit (1 mg/L), bdl = below detection limit (0.025 mg/L))",
+                         "Iron (II) concentration mean", 
+                         "Iron (II) concentration standard deviation", 
+                         "Iron (II) concentration concentration flag (adl = above detection limit (500 umoles/L), bdl = below detection limit (0.6 umoles/L))", 
+                         "Iron (III) concentration mean", 
+                         "Iron (III) concentration standard deviation", 
+                         "Iron (III) concentration concentration flag (adl = above detection limit (500 umoles/L), bdl = below detection limit (0.6 umoles/L))")
+
+dd$Unit <-             c( "NA", 
+                         "NA",
+                         "NA", 
+                         "NA",
+                         "NA",
+                         "NA", 
+                         "NA",
+                         "NA", 
+                         "NA", 
+                         "NA",
+                         "ppm", 
+                         "umoles/L", 
+                         "NA", 
+                         "ppm", 
+                         "umoles/L", 
+                         "NA", 
+                         "ppt", 
+                         "umoles/L", 
+                         "umoles/L", 
+                         "NA",  
+                         "mg/L", 
+                         "umoles/L", 
+                         "NA", 
+                         "mg/L", 
+                         "umoles/L", 
+                         "NA",                          
+                         "mg/L", 
+                         "umoles/L", 
+                         "NA",
+                         "umoles/L", 
+                         "umoles/L", 
+                         "NA", 
+                         "umoles/L", 
+                         "umoles/L", 
+                         "NA")
+
+dd$data_type <-        c("text", 
+                         "text", 
+                         "numeric", 
+                         "text",
+                         "numeric",
+                         "text",
+                         "text",
+                         "text",
+                         "text",
+                         "numeric",
+                         "numeric",
+                         "numeric",
+                         "text",
+                         "numeric",
+                         "numeric",
+                         "text",
+                         "numeric",
+                         "numeric",
+                         "numeric",
+                         "text",
+                         "numeric",
+                         "numeric",
+                         "text",
+                         "numeric",
+                         "numeric",
+                         "text",
+                         "numeric",
+                         "numeric",
+                         "text",
+                         "numeric",
+                         "numeric",
+                         "text",
+                         "numeric",
+                         "numeric",
+                         "text") 
+
+dd$Instrument_ifapplicable <-  c(
+                         "NA", 
+                         "NA",
+                         "NA", 
+                         "NA",
+                         "NA",
+                         "NA", 
+                         "NA",
+                         "NA", 
+                         "Rhizosphere Rhizon MOM Soil Moisture Sampler (19.21.21)", 
+                         "NA",
+                         "Dionex Integrion", 
+                         "Dionex Integrion", 
+                         "NA", 
+                         "Dionex Integrion", 
+                         "Dionex Integrion", 
+                         "NA", 
+                         "Calculated with Knudsen equation (Strickland and Parsons, 1972)", 
+                         "Agilent BioTek PowerWave Microplate Reader", 
+                         "Standard deviation of analytical triplicates", 
+                         "NA",  
+                         "SEAL Instrument: SEAL AQ300 Discrete Analyzer (https://seal-analytical.com/en/products/discrete-analyzers/aq300-discrete-analyzer/)", 
+                         "SEAL Instrument: SEAL AQ300 Discrete Analyzer (https://seal-analytical.com/en/products/discrete-analyzers/aq300-discrete-analyzer/)", 
+                         "NA", 
+                         "SEAL Instrument: SEAL AQ300 Discrete Analyzer (https://seal-analytical.com/en/products/discrete-analyzers/aq300-discrete-analyzer/)", 
+                         "SEAL Instrument: SEAL AQ300 Discrete Analyzer (https://seal-analytical.com/en/products/discrete-analyzers/aq300-discrete-analyzer/)", 
+                         "NA",                          
+                         "SEAL Instrument: SEAL AQ300 Discrete Analyzer (https://seal-analytical.com/en/products/discrete-analyzers/aq300-discrete-analyzer/)", 
+                         "SEAL Instrument: SEAL AQ300 Discrete Analyzer (https://seal-analytical.com/en/products/discrete-analyzers/aq300-discrete-analyzer/)", 
+                         "NA",
+                         "Agilent BioTek PowerWave Microplate Reader", 
+                         "Agilent BioTek PowerWave Microplate Reader", 
+                         "NA", 
+                         "Agilent BioTek PowerWave Microplate Reader", 
+                         "Agilent BioTek PowerWave Microplate Reader", 
+                         "NA")
+
+dd$Method_ifapplicable <- c(
+                         "NA",
+                         "NA",
+                         "NA", 
+                         "NA",
+                         "NA",
+                         "NA", 
+                         "NA",
+                         "NA", 
+                         "NA", 
+                         "NA",
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         "Calculated with Knudsen equation (Strickland and Parsons, 1972)", 
+                         "Adapted from Cline, 1969, Ehrhardt et al., 1999", 
+                         "Adapted from Cline, 1969, Ehrhardt et al., 1999", 
+                         "Adapted from Cline, 1969, Ehrhardt et al., 1999", 
+                         "EPA-103-A Rev. 10", 
+                         "EPA-103-A Rev. 10", 
+                         "EPA-103-A Rev. 10", 
+                         "EPA-155-D Rev. 0", 
+                         "EPA-155-D Rev. 0", 
+                         "EPA-155-D Rev. 0", 
+                         "EPA-160-A Rev. 0", 
+                         "EPA-160-A Rev. 0", 
+                         "EPA-160-A Rev. 0", 
+                         "Adapted from Stookey, 1970, Violler et al., 2000, Charbonnier & Anschutz 2021, Gong 2020", 
+                         "Adapted from Stookey, 1970, Violler et al., 2000, Charbonnier & Anschutz 2021, Gong 2020", 
+                         "Adapted from Stookey, 1970, Violler et al., 2000, Charbonnier & Anschutz 2021, Gong 2020", 
+                         "Adapted from Stookey, 1970, Violler et al., 2000, Charbonnier & Anschutz 2021, Gong 2020", 
+                         "Adapted from Stookey, 1970, Violler et al., 2000, Charbonnier & Anschutz 2021, Gong 2020", 
+                         "Adapted from Stookey, 1970, Violler et al., 2000, Charbonnier & Anschutz 2021, Gong 2020")
+
+
+#write out the data dictionary associated with the data:
+write.csv(dd, "Data package/dd.csv", row.names = FALSE)
+
+```
+
+
+## Create flmd file
+```{r create flmd}
+
+files  = list.files("Data package")
+files
+
+files = c("COMPASS_SynopticCB_Rhizon_2022.csv", "COMPASS_SynopticCB_Rhizon_2023.csv", "dd.csv")
+
+flmd <- data.frame(file_name = files)
+flmd
+
+flmd$file_description <- ""
+flmd$standard <- ""
+flmd$file_version <- ""
+flmd$data_orientation <- ""
+flmd$header_rows <- ""
+flmd$column_or_row_name_position <- ""
+flmd$notes <- ""
+
+#add information about each line:
+
+flmd$file_description <-  c("Rhizon water sample analysis data taken from COMPASS synoptic sites in 2022",
+                            "Rhizon water sample analysis data taken from COMPASS synoptic sites in 2023",
+                            "Data dictionary file for annual Rhizon water sample analysis data files describing each column in the dataset")
+
+flmd$data_orientation <-  c("horizontal",
+                            "horizontal",
+                            "horizontal")
+
+flmd$header_rows <-   c("1",
+                        "1",
+                        "1")
+
+flmd$column_or_row_name_position <- c("1",
+                                      "1",
+                                      "1")
+
+
+#write out the flmd associated with the data:
+write.csv(flmd, "Data package/flmd.csv", row.names = FALSE)
+
+```
+
+
+## Create site list
+```{r create site list}
+
+##Description, Latitude, Longitude
+
+MSM <- data.frame(
+  Description = "Moneystump Swamp (MSM); one of the COMPASS-FME synoptic sites located in the Blackwater National Wildlife Refuge along the mesohaline Beaverdam Creek. This synoptic site consists of three plots: upland ('UP'; located at 38.4315N, 76.2267W), transition ('TR'; 38.4310N, 76.2277W), and wetland ('W'; 38.4308N, 76.2286W). The site was established in June 2022. The transect spans a coastal loblolly pine forest and a mesohaline marsh dominated by Spartina and Distichlis.", 
+  Latitude = "38.4310 degrees", 
+  Longitude = "-76.2277 degrees")
+
+SWH <- data.frame(
+  Description = "Sweet Hall Marsh (SWH); one of the COMPASS-FME synoptic sites located along the tidal fresh Pamunkey River, one of the two tributaries of the York River in Virginia, USA. The COMPASS-FME consists of three plots: upland ('UP'; located at 37.5708N, 76.8954W), swamp ('SWAMP'; located at 37.57069N, 76.8957W), transition ('TR'; 37.56883N, 76.8964W), and wetland ('W'; 37.56659N, 76.8970W). The synoptic site was established in June 2023. This site is also identified as a Chesapeake Bay National Research Reserve site.", 
+  Latitude = "37.56883 degrees", 
+  Longitude = "-76.8964 degrees")
+
+GCW <- data.frame(
+  Description = "GCReW (GCW); one of the COMPASS-FME synoptic sites, and has three plots: upland ('UP'; located at 38.8741N, 76.5522W), transition ('TR'; 38.8745, 76.5515W), and wetland ('W'; 38.8750N, 76.5500W). Note that this site overlaps spatially with the TEMPEST (TMP) plots, the upland portion of the transect overlaps with the TEMPEST experiment control plot. This transect spans a mid- to late-successional (~80 years old) temperate, deciduous coastal forest and a mesohaline marsh along the Rhode River in Edgewater, MD.",
+  Latitude = "38.8745 degrees", 
+  Longitude = "-76.5515 degrees")
+
+GWI <- data.frame(
+  Description = "Goodwin Islands (GWI); one of the COMPASS-FME synoptic sites, located along the polyhaline York River, and has three plots: upland ('UP'; located at 37.2192N, 76.4087W), transition ('TR'; 37.2194N, 76.4092W), and wetland ('W'; 37.2189N, 76.4101W). The site was established in June 2022.", 
+  Latitude = "37.2194 degrees", 
+  Longitude = "-76.4092 degrees")
+
+site_list = bind_rows(MSM, SWH, GCW, GWI)
+
+#write out the site list associated with the data:
+write.csv(site_list, "Data package/site_list.csv", row.names = FALSE)
+
+```
+
+
+## Data Description - NEED TO EDIT THIS FOR RHIZON DATA
+```{#r data description}
+
+#Create a text file that has the description of the data - This ideally should match the text that is in the data READ.ME 
+
+datadescription <- "These data are measurements of soil reduction-oxidation potential (REDOX) profiles collected using REDOX probes at the COMPASS 'synoptic' sites in the Chesapeake Bay region:  GCReW (GCW), Goodwin Islands (GWI), Moneystump (MSM), and Sweet Hall (SWH). These sites have space for time transects spanning coastal upland forest (UP), coastal upland forest transitioning to wetland (TR), and wetland (WC) plots. The Sweet Hall Marsh site also has a forested swamp as part of its transect (SWAMP). Soil REDOX profiles were measured at 10, 20, and 30/35cm depths monthly from 2022-2024 then bi-monthly from 2025-present across the plots. The SWH TR site has variable topography that includes hummocks and hollows; these were measured separately and are denoted in the dataset by the Topography column as Hummock/Hollow. To make measurements, five replicate soil REDOX probes were pushed into the ground to the depth of measurement and allowed to equilibrate for five minutes before recording the probe reading with a Thermo Scientific Orion pH/ORP handheld meter. After the reading, probes were pushed to the next depth of interest."
+
+
+#write to a text file 
+writeLines(datadescription, "Data package/SynopticCB_Redox_ESSDIVE_DataDescription.txt")
+
+
+```
+
+
+## Create Author List - NEED TO EDIT THIS FOR RHIZON DATA
+```{#r create author list}
+
+#Pull in the common synoptic authors list: 
+authors_common <- read.csv(here("Metadata/Synoptic CB/", "COMPASS_SynopticCB_common_essdive_author_list.csv"))
+
+
+#create a list of the last names you want to pull 
+names_we_want <- c("Wilson", "Read", "Stearns", "Phillips", "Chin", "Megonigal")
+
+#Subset the common list for the names that we want 
+author_list <- authors_common %>%
+  filter(last_name %in% names_we_want)
+
+#if you need to add any other authors 
+others <- data.frame(
+  first_name = c("first_name1", "first_name2"), 
+  last_name = c("last_name1", "last_name2"), 
+  orcid = c("orcid_id1", "orcid_id2"), 
+  affiliation = c("affiliation1", "affiliation2"), 
+  email = c("email1", "email2")
+)
+
+#add in the other authors 
+#author_list <- bind_rows(author_list, others)
+
+#write out the author list associated with the data:
+write.csv(author_list, "Data package/author_list.csv", row.names = FALSE)
+```
+
