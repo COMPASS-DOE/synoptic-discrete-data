@@ -532,19 +532,21 @@ summary_all_depths_years <- summary_all_depths_years[order(summary_all_depths_ye
 summary_all_depths_years$Site = factor(summary_all_depths_years$Site, levels = c("SWH", "GCW", "MSM", "GWI"))
 summary_all_depths_years <- summary_all_depths_years[order(summary_all_depths_years$Site), ]
 
-kable(
+summary_table <- kable(
   summary_all_depths_years[, c("Site", "Zone", "min_CH4_ppm",	"max_CH4_ppm",	"mean_CH4_ppm", "min_CO2_ppm",	"max_CO2_ppm",	"mean_CO2_ppm")],  
-  format = "latex",
-  booktabs = TRUE,
-  caption = "Summary Statistics"
-) %>%
+  format = "html",
+  caption = "<span style='color: black; font-size: 18px;'><strong>Summary Statistics</strong> </span>") %>%
   kable_styling(
-    latex_options = c("hold_position", "striped", "scale_down"),
     font_size = 12
   ) %>%
-  row_spec(0, bold = TRUE) %>%   # header
+  row_spec(0, bold = TRUE) %>% 
   column_spec(1, bold = TRUE)
 
+summary_table
+
+save_kable(
+  summary_table,
+  file = "COMPASS_SynopticCB_PW_SGAS_Summarized_Years_and_Depths_Combined.png")
 
 ```
 
@@ -612,12 +614,14 @@ sample_num_barplot
 write.csv(summary_by_year, "COMPASS_SynopticCB_PW_SGAS_Summarized_By_Year.csv")
 
 
-#write out a csv of the metadata associated with the data: 
+#write out a csv of the summary data by depth: 
 write.csv(summary_all_years, "COMPASS_SynopticCB_PW_SGAS_Summarized_Years_Combined.csv")
 
 
-#write out a csv of the metadata associated with the data: 
+#write out a csv of the summary data: 
 write.csv(summary_all_depths_years, "COMPASS_SynopticCB_PW_SGAS_Summarized_Years_and_Depths_Combined.csv")
+
+
 ```
 
 
