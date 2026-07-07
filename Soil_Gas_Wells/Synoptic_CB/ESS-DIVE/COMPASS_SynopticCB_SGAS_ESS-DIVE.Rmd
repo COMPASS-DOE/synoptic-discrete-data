@@ -43,7 +43,7 @@ write.csv(final_data_2024, "Data package/COMPASS_SynopticCB_SGAS_2024.csv", row.
 
 
 ## Create dd file
-```{r make metadata, include = FALSE}
+```{r make data dictionary, include = FALSE}
 
 #pull the column names from the all_dat1 dataframe and create a new dataframe with them
 dd <- data.frame(Column_Names = colnames(final_data))
@@ -51,8 +51,8 @@ dd
 
 dd$Unit <- ""
 dd$Definition <- ""
-dd$Column_Long_Name <- dd$Column_Names
-dd$data_type <- ""
+dd$Column_long_name <- dd$Column_Names
+dd$Data_type  <- ""
 dd$Instrument_ifapplicable <- ""
 
 #add information about each line:
@@ -62,15 +62,15 @@ dd$Definition <-       c("Project name",
                          "Sample identifier used in laboratory and field",
                          "Year (YYYY) of sample collection",
                          "Month (MM) of sample collection",
-                         "Site Code identifier for sampling transect location (GCW, SWH, MSM, GWI), see dataset locations for coordinates",
-                         "Plot within space-for-time transect (UP=Upland, SWAMP=Swamp, TR=Transition, WC=Wetland Center, SW=Surface Water)",
-                         "Soil gas well or sample grid replicate id (A-C, ATM for Atmospheric sample, Letter+Number for GCW UP (TEMPEST Site))",
+                         "Site code identifier for sampling transect location (GCW, SWH, MSM, GWI), see dataset locations for coordinates",
+                         "Plot within space-for-time transect (UP=Upland, SWAMP=Swamp, TR=Transition, WC=Wetland Center)",
+                         "Soil gas well replicate (A, B, C), atmosphere sample identifier (ATM, collected from ambient air in the given plot), or for samples collected at GCW-UP (also TEMPEST Control) the Letter+Number identifying the grid square within the Plot (see dataset description).",
                          "Depth in centimeters below soil surface from which gas sample was taken",
                          "Machine on which gas sample was analyzed", 
-                         "Methane concentration in ppm, corrected for dilution",
-                         "Methane concentration flag base on standard curve (bdl=below detection limit, adl=above detection limit)",
-                         "Carbon dioxide concentration in ppm, corrected for dilution",
-                         "Carbon dioxide concentration flag base on standard curve (bdl=below detection limit, adl=above detection limit)")
+                         "Methane concentration in ppm, corrected for dilutions when applicable",
+                         "Methane concentration flag determined by comparing sample to standard curve prior to accounting for any dilution factors (bdl = below detection limit, adl = above detection limit, and no value = within the range)",
+                         "Carbon dioxide concentration in ppm, corrected for dilutions when applicable",
+                         "Carbon dioxide concentration flag determined by comparing sample to standard curve prior to accounting for any dilution factors (bdl = below detection limit, adl = above detection limit, and no value = within the range)")
 
 dd$Unit <-             c("NA",
                          "NA",
@@ -87,7 +87,7 @@ dd$Unit <-             c("NA",
                          "ppm",
                          "NA")
 
-dd$data_type <-        c("text",
+dd$Data_type <-        c("text",
                          "text",
                          "text",
                          "numeric",
@@ -114,9 +114,9 @@ dd$Instrument_ifapplicable <-
                          "NA",
                          "NA",
                          "NA",
-                         "Varian Gas Chromatograph",
+                         "Varian 450 GC (Agilent Technologies)",
                          "NA",
-                         "Varian Gas Chromatograph",
+                         "Varian 450 GC (Agilent Technologies)",
                          "NA")
 
 
@@ -148,8 +148,8 @@ flmd$notes <- ""
 
 #add information about each line:
 
-flmd$file_description <-  c("Soil gas well data taken from COMPASS synoptic sites in 2023",
-                            "Soil gas well data taken from COMPASS synoptic sites in 2024",
+flmd$file_description <-  c("Soil trace gas well data collected from COMPASS Chesapeake Bay synoptic sites in 2023",
+                            "Soil trace gas well data collected from COMPASS Chesapeake Bay synoptic sites in 2024",
                             "Data dictionary file for COMPASS_SynopticCB_SGAS_2023.csv and COMPASS_SynopticCB_SGAS_2024.csv describing each column in the dataset")
 
 flmd$data_orientation <-  c("horizontal",
@@ -177,22 +177,22 @@ write.csv(flmd, "Data package/flmd.csv", row.names = FALSE)
 ##Description, Latitude, Longitude
 
 MSM <- data.frame(
-  Description = "Moneystump Swamp (MSM); one of the COMPASS-FME synoptic sites located in the Blackwater National Wildlife Refuge along the mesohaline Beaverdam Creek. This synoptic site consists of three plots: upland ('UP'; located at 38.4315N, 76.2267W), transition ('TR'; 38.4310N, 76.2277W), and wetland ('W'; 38.4308N, 76.2286W). The site was established in June 2022. The transect spans a coastal loblolly pine forest and a mesohaline marsh dominated by Spartina and Distichlis.", 
+  Description = "Moneystump Swamp (MSM); one of the COMPASS-FME synoptic sites located in the Blackwater National Wildlife Refuge along the mesohaline Beaverdam Creek. This synoptic site consists of three plots: upland ('UP'; located at 38.4315N, 76.2267W), transition ('TR'; 38.4310N, 76.2277W), and wetland ('WC'; 38.4308N, 76.2286W). The site was established in June 2022. The transect spans a coastal loblolly pine forest and a mesohaline marsh dominated by Spartina and Distichlis.", 
   Latitude = "38.4310 degrees", 
   Longitude = "-76.2277 degrees")
 
 SWH <- data.frame(
-  Description = "Sweet Hall Marsh (SWH); one of the COMPASS-FME synoptic sites located along the tidal fresh Pamunkey River, one of the two tributaries of the York River in Virginia, USA. The COMPASS-FME consists of three plots: upland ('UP'; located at 37.5708N, 76.8954W), swamp ('SWAMP'; located at 37.57069N, 76.8957W), transition ('TR'; 37.56883N, 76.8964W), and wetland ('W'; 37.56659N, 76.8970W). The synoptic site was established in June 2023. This site is also identified as a Chesapeake Bay National Research Reserve site.", 
+  Description = "Sweet Hall Marsh (SWH); one of the COMPASS-FME synoptic sites located along the tidal fresh Pamunkey River, one of the two tributaries of the York River in Virginia, USA. The COMPASS-FME consists of three plots: upland ('UP'; located at 37.5708N, 76.8954W), swamp ('SWAMP'; located at 37.57069N, 76.8957W), transition ('TR'; 37.56883N, 76.8964W), and wetland ('WC'; 37.56659N, 76.8970W). The synoptic site was established in June 2023. This site is also identified as a Chesapeake Bay National Research Reserve site.", 
   Latitude = "37.56883 degrees", 
   Longitude = "-76.8964 degrees")
 
 GCW <- data.frame(
-  Description = "GCReW (GCW); one of the COMPASS-FME synoptic sites, and has three plots: upland ('UP'; located at 38.8741N, 76.5522W), transition ('TR'; 38.8745, 76.5515W), and wetland ('W'; 38.8750N, 76.5500W). Note that this site overlaps spatially with the TEMPEST (TMP) plots, the upland portion of the transect overlaps with the TEMPEST experiment control plot. This transect spans a mid- to late-successional (~80 years old) temperate, deciduous coastal forest and a mesohaline marsh along the Rhode River in Edgewater, MD.",
+  Description = "GCReW (GCW); one of the COMPASS-FME synoptic sites, and has three plots: upland ('UP'; located at 38.8741N, 76.5522W), transition ('TR'; 38.8745, 76.5515W), and wetland ('WC'; 38.8750N, 76.5500W). Note that this site overlaps spatially with the TEMPEST (TMP) plots, the upland portion of the transect overlaps with the TEMPEST experiment control plot. This transect spans a mid- to late-successional (~80 years old) temperate, deciduous coastal forest and a mesohaline marsh along the Rhode River in Edgewater, MD.",
   Latitude = "38.8745 degrees", 
   Longitude = "-76.5515 degrees")
 
 GWI <- data.frame(
-  Description = "Goodwin Islands (GWI); one of the COMPASS-FME synoptic sites, located along the polyhaline York River, and has three plots: upland ('UP'; located at 37.2192N, 76.4087W), transition ('TR'; 37.2194N, 76.4092W), and wetland ('W'; 37.2189N, 76.4101W). The site was established in June 2022.", 
+  Description = "Goodwin Islands (GWI); one of the COMPASS-FME synoptic sites, located along the polyhaline York River, and has three plots: upland ('UP'; located at 37.2192N, 76.4087W), transition ('TR'; 37.2194N, 76.4092W), and wetland ('WC'; 37.2189N, 76.4101W). The site was established in June 2022.", 
   Latitude = "37.2194 degrees", 
   Longitude = "-76.4092 degrees")
 
