@@ -207,16 +207,16 @@
 "206","SWH","SGWC","10cm",10,"Varian GC","Stephanie J. Wilson","20230910",2023,"June","SWH_TR_SgwC_10cm",1,"Within Range","Within Range",290.668584579291,28283.0485653996,"TR",NA
 "207","SWH","SGWC","20cm",20,"Varian GC","Stephanie J. Wilson","20230910",2023,"June","SWH_TR_SgwC_20cm",1,"Needs Dilution","Within Range",69606.7182196426,35497.8904674062,"TR",NA
 "208","SWH","SGWC","45cm",45,"Varian GC","Stephanie J. Wilson","20230910",2023,"June","SWH_TR_SgwC_45cm",NA,"Within Range","Within Range",NA,NA,"TR",NA
-"209","SWH","ATM","0cm",0,"Varian GC","Stephanie J. Wilson","20230910",2023,"June","SWH_UPCON_ATM",NA,"Within Range","Within Range",NA,NA,"UP",NA
-"210","SWH","SGWA","10cm",10,"Varian GC","Stephanie J. Wilson","20230910",2023,"June","SWH_UPCON_SgwA_10cm",NA,"Within Range","Within Range",NA,NA,"UP",NA
-"211","SWH","SGWA","20cm",20,"Varian GC","Stephanie J. Wilson","20230910",2023,"June","SWH_UPCON_SgwA_20cm",NA,"Within Range","Within Range",NA,NA,"UP",NA
-"212","SWH","SGWA","45cm",45,"Varian GC","Stephanie J. Wilson","20230910",2023,"June","SWH_UPCON_SgwA_45cm",NA,"Within Range","Needs Dilution",NA,NA,"UP",NA
-"213","SWH","SGWB","10cm",10,"Varian GC","Stephanie J. Wilson","20230910",2023,"June","SWH_UPCON_SgwB_10cm",NA,"Within Range","Within Range",NA,NA,"UP",NA
-"214","SWH","SGWB","20cm",20,"Varian GC","Stephanie J. Wilson","20230910",2023,"June","SWH_UPCON_SgwB_20cm",NA,"Within Range","Within Range",NA,NA,"UP",NA
-"215","SWH","SGWB","45cm",45,"Varian GC","Stephanie J. Wilson","20230910",2023,"June","SWH_UPCON_SgwB_45cm",NA,"Within Range","Within Range",NA,NA,"UP",NA
-"216","SWH","SGWC","10cm",10,"Varian GC","Stephanie J. Wilson","20230910",2023,"June","SWH_UPCON_SgwC_10cm",NA,"Within Range","Within Range",NA,NA,"UP",NA
-"217","SWH","SGWC","20cm",20,"Varian GC","Stephanie J. Wilson","20230910",2023,"June","SWH_UPCON_SgwC_20cm",NA,"Within Range","Within Range",NA,NA,"UP",NA
-"218","SWH","SGWC","45cm",45,"Varian GC","Stephanie J. Wilson","20230910",2023,"June","SWH_UPCON_SgwC_45cm",NA,"Within Range","Within Range",NA,NA,"UP",NA
+"209","SWH","ATM","0cm",0,"Varian GC","Stephanie J. Wilson","20230910",2023,"June","SWH_UP_ATM",NA,"Within Range","Within Range",NA,NA,"UP",NA
+"210","SWH","SGWA","10cm",10,"Varian GC","Stephanie J. Wilson","20230910",2023,"June","SWH_UP_SgwA_10cm",NA,"Within Range","Within Range",NA,NA,"UP",NA
+"211","SWH","SGWA","20cm",20,"Varian GC","Stephanie J. Wilson","20230910",2023,"June","SWH_UP_SgwA_20cm",NA,"Within Range","Within Range",NA,NA,"UP",NA
+"212","SWH","SGWA","45cm",45,"Varian GC","Stephanie J. Wilson","20230910",2023,"June","SWH_UP_SgwA_45cm",NA,"Within Range","Needs Dilution",NA,NA,"UP",NA
+"213","SWH","SGWB","10cm",10,"Varian GC","Stephanie J. Wilson","20230910",2023,"June","SWH_UP_SgwB_10cm",NA,"Within Range","Within Range",NA,NA,"UP",NA
+"214","SWH","SGWB","20cm",20,"Varian GC","Stephanie J. Wilson","20230910",2023,"June","SWH_UP_SgwB_20cm",NA,"Within Range","Within Range",NA,NA,"UP",NA
+"215","SWH","SGWB","45cm",45,"Varian GC","Stephanie J. Wilson","20230910",2023,"June","SWH_UP_SgwB_45cm",NA,"Within Range","Within Range",NA,NA,"UP",NA
+"216","SWH","SGWC","10cm",10,"Varian GC","Stephanie J. Wilson","20230910",2023,"June","SWH_UP_SgwC_10cm",NA,"Within Range","Within Range",NA,NA,"UP",NA
+"217","SWH","SGWC","20cm",20,"Varian GC","Stephanie J. Wilson","20230910",2023,"June","SWH_UP_SgwC_20cm",NA,"Within Range","Within Range",NA,NA,"UP",NA
+"218","SWH","SGWC","45cm",45,"Varian GC","Stephanie J. Wilson","20230910",2023,"June","SWH_UP_SgwC_45cm",NA,"Within Range","Within Range",NA,NA,"UP",NA
 "219","SWH","ATM","0cm",0,"Varian GC","Stephanie J. Wilson","20230910",2023,"June","SWH_WC_ATM",NA,"Within Range","Within Range",NA,NA,"WC",NA
 "220","SWH","SGWA","10cm",10,"Varian GC","Stephanie J. Wilson","20230910",2023,"June","SWH_WC_SgwA_10cm",NA,"Needs Dilution","Needs Dilution",NA,NA,"WC",NA
 "221","SWH","SGWA","20cm",20,"Varian GC","Stephanie J. Wilson","20230910",2023,"June","SWH_WC_SgwA_20cm",NA,"Needs Dilution","Needs Dilution",NA,NA,"WC",NA
@@ -287,16 +287,16 @@
 "286","GWI","SGWC","20cm",20,"Varian GC","M. Wegner","202309119",2023,"July","GWI_WC_SgwC_20cm",1,"Within Range","Needs Dilution",70.9164221582989,126230.429028271,"WC",NA
 "287","GWI","SGWC","45cm",45,"Varian GC","M. Wegner","202309119",2023,"July","GWI_WC_SgwC_45cm",1,"Within Range","Needs Dilution",927.665709366159,129421.896615932,"WC",NA
 "288","GWI","ATM","0cm",0,"Varian GC","M. Wegner","202309119",2023,"July","GWI_WC_ATM",1,"Within Range","Within Range",3.05919521457383,591.176409070284,"WC",NA
-"289","SWH","SGWA","10cm",10,"Varian GC","M. Wegner","202309119",2023,"July","SWH_UPCON_SgwA_10cm",1,"Within Range","Within Range",5.0149682431965,46637.6259188596,"UP",NA
-"290","SWH","SGWA","20cm",20,"Varian GC","M. Wegner","202309119",2023,"July","SWH_UPCON_SgwA_20cm",1,"Within Range","Needs Dilution",56.9410535819546,60716.5096569985,"UP",NA
-"291","SWH","SGWA","45cm",45,"Varian GC","M. Wegner","202309119",2023,"July","SWH_UPCON_SgwA_45cm",1,"Needs Dilution","Needs Dilution",10070.825770882,95598.6116889296,"UP",NA
-"292","SWH","SGWB","10cm",10,"Varian GC","M. Wegner","202309119",2023,"July","SWH_UPCON_SgwB_10cm",1,"Within Range","Within Range",14.6100903788437,29552.7153710086,"UP",NA
-"293","SWH","SGWB","20cm",20,"Varian GC","M. Wegner","202309119",2023,"July","SWH_UPCON_SgwB_20cm",1,"Within Range","Within Range",6.20306921520215,40181.6138137847,"UP",NA
-"294","SWH","SGWB","45cm",45,"Varian GC","M. Wegner","202309119",2023,"July","SWH_UPCON_SgwB_45cm",1,"Within Range","Needs Dilution",95.5146279967959,100618.640041591,"UP",NA
-"295","SWH","SGWC","10cm",10,"Varian GC","M. Wegner","202309119",2023,"July","SWH_UPCON_SgwC_10cm",1,"Within Range","Within Range",10.2594296766369,27994.5154646687,"UP",NA
-"296","SWH","SGWC","20cm",20,"Varian GC","M. Wegner","202309119",2023,"July","SWH_UPCON_SgwC_20cm",1,"Within Range","Within Range",105.268578833812,49290.0976413748,"UP",NA
-"297","SWH","SGWC","45cm",45,"Varian GC","M. Wegner","202309119",2023,"July","SWH_UPCON_SgwC_45cm",1,"Needs Dilution","Needs Dilution",74348.5393675942,104532.10497734,"UP",NA
-"298","SWH","ATM","0cm",0,"Varian GC","M. Wegner","202309119",2023,"July","SWH_UPCON_ATM",1,"Within Range","Within Range",61.5284001920839,590.299893594856,"UP",NA
+"289","SWH","SGWA","10cm",10,"Varian GC","M. Wegner","202309119",2023,"July","SWH_UP_SgwA_10cm",1,"Within Range","Within Range",5.0149682431965,46637.6259188596,"UP",NA
+"290","SWH","SGWA","20cm",20,"Varian GC","M. Wegner","202309119",2023,"July","SWH_UP_SgwA_20cm",1,"Within Range","Needs Dilution",56.9410535819546,60716.5096569985,"UP",NA
+"291","SWH","SGWA","45cm",45,"Varian GC","M. Wegner","202309119",2023,"July","SWH_UP_SgwA_45cm",1,"Needs Dilution","Needs Dilution",10070.825770882,95598.6116889296,"UP",NA
+"292","SWH","SGWB","10cm",10,"Varian GC","M. Wegner","202309119",2023,"July","SWH_UP_SgwB_10cm",1,"Within Range","Within Range",14.6100903788437,29552.7153710086,"UP",NA
+"293","SWH","SGWB","20cm",20,"Varian GC","M. Wegner","202309119",2023,"July","SWH_UP_SgwB_20cm",1,"Within Range","Within Range",6.20306921520215,40181.6138137847,"UP",NA
+"294","SWH","SGWB","45cm",45,"Varian GC","M. Wegner","202309119",2023,"July","SWH_UP_SgwB_45cm",1,"Within Range","Needs Dilution",95.5146279967959,100618.640041591,"UP",NA
+"295","SWH","SGWC","10cm",10,"Varian GC","M. Wegner","202309119",2023,"July","SWH_UP_SgwC_10cm",1,"Within Range","Within Range",10.2594296766369,27994.5154646687,"UP",NA
+"296","SWH","SGWC","20cm",20,"Varian GC","M. Wegner","202309119",2023,"July","SWH_UP_SgwC_20cm",1,"Within Range","Within Range",105.268578833812,49290.0976413748,"UP",NA
+"297","SWH","SGWC","45cm",45,"Varian GC","M. Wegner","202309119",2023,"July","SWH_UP_SgwC_45cm",1,"Needs Dilution","Needs Dilution",74348.5393675942,104532.10497734,"UP",NA
+"298","SWH","ATM","0cm",0,"Varian GC","M. Wegner","202309119",2023,"July","SWH_UP_ATM",1,"Within Range","Within Range",61.5284001920839,590.299893594856,"UP",NA
 "299","SWH","SGWA","10cm",10,"Varian GC","M. Wegner","202309119",2023,"July","SWH_TR_SgwA_10cm",1,"Needs Dilution","Needs Dilution",140582.501677617,109758.460996101,"TR",NA
 "300","SWH","SGWA","20cm",20,"Varian GC","M. Wegner","202309119",2023,"July","SWH_TR_SgwA_20cm",1,"Needs Dilution","Needs Dilution",144070.664340705,112669.049539396,"TR",NA
 "301","SWH","SGWA","45cm",45,"Varian GC","M. Wegner","202309119",2023,"July","SWH_TR_SgwA_45cm",1,NA,NA,NA,NA,"TR",NA
@@ -377,16 +377,16 @@
 "376","GWI","SGWC","20cm",20,"Varian GC","M. Wegner","20231005",2023,"August","GWI_WC_SgwC_20cm",1,"Within Range","Needs Dilution",12.3610493892448,53231.2094461547,"WC",NA
 "377","GWI","SGWC","45cm",45,"Varian GC","M. Wegner","20231005",2023,"August","GWI_WC_SgwC_45cm",1,"Within Range","Needs Dilution",1837.68582607921,127576.510343143,"WC","CH4 unusually high, not real value"
 "378","GWI","ATM","0cm",0,"Varian GC","M. Wegner","20231005",2023,"August","GWI_WC_ATM",1,"Within Range","Within Range",12.2254158060411,1516.23441895355,"WC",NA
-"379","SWH","SGWA","10cm",10,"Varian GC","M. Wegner","20231005",2023,"August","SWH_UPCON_SgwA_10cm",1,"Within Range","Within Range",2.91616493062509,34972.4962008168,"UP",NA
-"380","SWH","SGWA","20cm",20,"Varian GC","M. Wegner","20231005",2023,"August","SWH_UPCON_SgwA_20cm",1,"Within Range","Needs Dilution",2.96722698547824,51288.732672672,"UP",NA
-"381","SWH","SGWA","45cm",45,"Varian GC","M. Wegner","20231005",2023,"August","SWH_UPCON_SgwA_45cm",1,"Within Range","Needs Dilution",14.3955531373002,117407.660817987,"UP",NA
-"382","SWH","SGWB","10cm",10,"Varian GC","M. Wegner","20231005",2023,"August","SWH_UPCON_SgwB_10cm",1,"Within Range","Within Range",1.9427945099868,19933.1772333946,"UP",NA
-"383","SWH","SGWB","20cm",20,"Varian GC","M. Wegner","20231005",2023,"August","SWH_UPCON_SgwB_20cm",1,"Within Range","Within Range",1.89811521199029,23855.559921067,"UP",NA
-"384","SWH","SGWB","45cm",45,"Varian GC","M. Wegner","20231005",2023,"August","SWH_UPCON_SgwB_45cm",1,"Within Range","Needs Dilution",11.0876893963442,57036.3226302647,"UP",NA
-"385","SWH","SGWC","10cm",10,"Varian GC","M. Wegner","20231005",2023,"August","SWH_UPCON_SgwC_10cm",1,"Within Range","Within Range",2.38160904388111,15364.9228575625,"UP",NA
-"386","SWH","SGWC","20cm",20,"Varian GC","M. Wegner","20231005",2023,"August","SWH_UPCON_SgwC_20cm",1,"Within Range","Within Range",3.74911470041719,34195.7261742258,"UP",NA
-"387","SWH","SGWC","45cm",45,"Varian GC","M. Wegner","20231005",2023,"August","SWH_UPCON_SgwC_45cm",1,"Within Range","Needs Dilution",9743.62078597732,118006.27294971,"UP",NA
-"388","SWH","ATM","0cm",0,"Varian GC","M. Wegner","20231005",2023,"August","SWH_UPCON_ATM",1,"Within Range","Within Range",6.19211488729788,593.559623388684,"UP",NA
+"379","SWH","SGWA","10cm",10,"Varian GC","M. Wegner","20231005",2023,"August","SWH_UP_SgwA_10cm",1,"Within Range","Within Range",2.91616493062509,34972.4962008168,"UP",NA
+"380","SWH","SGWA","20cm",20,"Varian GC","M. Wegner","20231005",2023,"August","SWH_UP_SgwA_20cm",1,"Within Range","Needs Dilution",2.96722698547824,51288.732672672,"UP",NA
+"381","SWH","SGWA","45cm",45,"Varian GC","M. Wegner","20231005",2023,"August","SWH_UP_SgwA_45cm",1,"Within Range","Needs Dilution",14.3955531373002,117407.660817987,"UP",NA
+"382","SWH","SGWB","10cm",10,"Varian GC","M. Wegner","20231005",2023,"August","SWH_UP_SgwB_10cm",1,"Within Range","Within Range",1.9427945099868,19933.1772333946,"UP",NA
+"383","SWH","SGWB","20cm",20,"Varian GC","M. Wegner","20231005",2023,"August","SWH_UP_SgwB_20cm",1,"Within Range","Within Range",1.89811521199029,23855.559921067,"UP",NA
+"384","SWH","SGWB","45cm",45,"Varian GC","M. Wegner","20231005",2023,"August","SWH_UP_SgwB_45cm",1,"Within Range","Needs Dilution",11.0876893963442,57036.3226302647,"UP",NA
+"385","SWH","SGWC","10cm",10,"Varian GC","M. Wegner","20231005",2023,"August","SWH_UP_SgwC_10cm",1,"Within Range","Within Range",2.38160904388111,15364.9228575625,"UP",NA
+"386","SWH","SGWC","20cm",20,"Varian GC","M. Wegner","20231005",2023,"August","SWH_UP_SgwC_20cm",1,"Within Range","Within Range",3.74911470041719,34195.7261742258,"UP",NA
+"387","SWH","SGWC","45cm",45,"Varian GC","M. Wegner","20231005",2023,"August","SWH_UP_SgwC_45cm",1,"Within Range","Needs Dilution",9743.62078597732,118006.27294971,"UP",NA
+"388","SWH","ATM","0cm",0,"Varian GC","M. Wegner","20231005",2023,"August","SWH_UP_ATM",1,"Within Range","Within Range",6.19211488729788,593.559623388684,"UP",NA
 "389","SWH","SGWA","10cm",10,"Varian GC","M. Wegner","20231005",2023,"August","SWH_TR_SgwA_10cm",1,"Needs Dilution","Needs Dilution",65333.8237000767,118111.465085376,"TR",NA
 "390","SWH","SGWA","20cm",20,"Varian GC","M. Wegner","20231005",2023,"August","SWH_TR_SgwA_20cm",1,"Needs Dilution","Needs Dilution",135887.985366653,107435.753975308,"TR",NA
 "391","SWH","SGWA","45cm",45,"Varian GC","M. Wegner","20231005",2023,"August","SWH_TR_SgwA_45cm",1,"Within Range","Within Range",6469.92264173735,11792.2956617822,"TR",NA
@@ -467,16 +467,16 @@
 "466","GWI","SGWC","20cm",20,"Varian GC","M. Wegner","20231006",2023,"September","GWI_WC_SgwC_20cm",1,"Within Range","Needs Dilution",12.3610493892448,53231.2094461547,"WC",NA
 "467","GWI","SGWC","45cm",45,"Varian GC","M. Wegner","20231006",2023,"September","GWI_WC_SgwC_45cm",1,"Within Range","Needs Dilution",1837.68582607921,127576.510343143,"WC","CH4 unusually high, not real value"
 "468","GWI","ATM","0cm",0,"Varian GC","M. Wegner","20231006",2023,"September","GWI_WC_ATM",1,"Within Range","Within Range",12.2254158060411,1516.23441895355,"WC",NA
-"469","SWH","SGWA","10cm",10,"Varian GC","M. Wegner","20231006",2023,"September","SWH_UPCON_SgwA_10cm",1,"Within Range","Within Range",2.91616493062509,34972.4962008168,"UP",NA
-"470","SWH","SGWA","20cm",20,"Varian GC","M. Wegner","20231006",2023,"September","SWH_UPCON_SgwA_20cm",1,"Within Range","Needs Dilution",2.96722698547824,51288.732672672,"UP",NA
-"471","SWH","SGWA","45cm",45,"Varian GC","M. Wegner","20231006",2023,"September","SWH_UPCON_SgwA_45cm",1,"Within Range","Needs Dilution",14.3955531373002,117407.660817987,"UP",NA
-"472","SWH","SGWB","10cm",10,"Varian GC","M. Wegner","20231006",2023,"September","SWH_UPCON_SgwB_10cm",1,"Within Range","Within Range",1.9427945099868,19933.1772333946,"UP",NA
-"473","SWH","SGWB","20cm",20,"Varian GC","M. Wegner","20231006",2023,"September","SWH_UPCON_SgwB_20cm",1,"Within Range","Within Range",1.89811521199029,23855.559921067,"UP",NA
-"474","SWH","SGWB","45cm",45,"Varian GC","M. Wegner","20231006",2023,"September","SWH_UPCON_SgwB_45cm",1,"Within Range","Needs Dilution",11.0876893963442,57036.3226302647,"UP",NA
-"475","SWH","SGWC","10cm",10,"Varian GC","M. Wegner","20231006",2023,"September","SWH_UPCON_SgwC_10cm",1,"Within Range","Within Range",2.38160904388111,15364.9228575625,"UP",NA
-"476","SWH","SGWC","20cm",20,"Varian GC","M. Wegner","20231006",2023,"September","SWH_UPCON_SgwC_20cm",1,"Within Range","Within Range",3.74911470041719,34195.7261742258,"UP",NA
-"477","SWH","SGWC","45cm",45,"Varian GC","M. Wegner","20231006",2023,"September","SWH_UPCON_SgwC_45cm",1,"Within Range","Needs Dilution",9743.62078597732,118006.27294971,"UP",NA
-"478","SWH","ATM","0cm",0,"Varian GC","M. Wegner","20231006",2023,"September","SWH_UPCON_ATM",1,"Within Range","Within Range",6.19211488729788,593.559623388684,"UP",NA
+"469","SWH","SGWA","10cm",10,"Varian GC","M. Wegner","20231006",2023,"September","SWH_UP_SgwA_10cm",1,"Within Range","Within Range",2.91616493062509,34972.4962008168,"UP",NA
+"470","SWH","SGWA","20cm",20,"Varian GC","M. Wegner","20231006",2023,"September","SWH_UP_SgwA_20cm",1,"Within Range","Needs Dilution",2.96722698547824,51288.732672672,"UP",NA
+"471","SWH","SGWA","45cm",45,"Varian GC","M. Wegner","20231006",2023,"September","SWH_UP_SgwA_45cm",1,"Within Range","Needs Dilution",14.3955531373002,117407.660817987,"UP",NA
+"472","SWH","SGWB","10cm",10,"Varian GC","M. Wegner","20231006",2023,"September","SWH_UP_SgwB_10cm",1,"Within Range","Within Range",1.9427945099868,19933.1772333946,"UP",NA
+"473","SWH","SGWB","20cm",20,"Varian GC","M. Wegner","20231006",2023,"September","SWH_UP_SgwB_20cm",1,"Within Range","Within Range",1.89811521199029,23855.559921067,"UP",NA
+"474","SWH","SGWB","45cm",45,"Varian GC","M. Wegner","20231006",2023,"September","SWH_UP_SgwB_45cm",1,"Within Range","Needs Dilution",11.0876893963442,57036.3226302647,"UP",NA
+"475","SWH","SGWC","10cm",10,"Varian GC","M. Wegner","20231006",2023,"September","SWH_UP_SgwC_10cm",1,"Within Range","Within Range",2.38160904388111,15364.9228575625,"UP",NA
+"476","SWH","SGWC","20cm",20,"Varian GC","M. Wegner","20231006",2023,"September","SWH_UP_SgwC_20cm",1,"Within Range","Within Range",3.74911470041719,34195.7261742258,"UP",NA
+"477","SWH","SGWC","45cm",45,"Varian GC","M. Wegner","20231006",2023,"September","SWH_UP_SgwC_45cm",1,"Within Range","Needs Dilution",9743.62078597732,118006.27294971,"UP",NA
+"478","SWH","ATM","0cm",0,"Varian GC","M. Wegner","20231006",2023,"September","SWH_UP_ATM",1,"Within Range","Within Range",6.19211488729788,593.559623388684,"UP",NA
 "479","SWH","SGWA","10cm",10,"Varian GC","M. Wegner","20231006",2023,"September","SWH_TR_SgwA_10cm",1,"Needs Dilution","Needs Dilution",65335.2816874462,118111.465085376,"TR",NA
 "480","SWH","SGWA","20cm",20,"Varian GC","M. Wegner","20231006",2023,"September","SWH_TR_SgwA_20cm",1,"Needs Dilution","Needs Dilution",135887.985366653,107435.753975308,"TR",NA
 "481","SWH","SGWA","45cm",45,"Varian GC","M. Wegner","20231006",2023,"September","SWH_TR_SgwA_45cm",1,"Within Range","Within Range",6469.92264173735,11792.2956617822,"TR",NA
@@ -552,25 +552,25 @@
 "551","GWI","SGWC","20cm",20,"Varian GC","Wegner","20231127",2023,"October","GWI_WC_SgwC_20cm",1,"Within Range","Needs Dilution",9.42609767711656,112981.617993304,"WC",NA
 "552","GWI","SGWC","45cm",45,"Varian GC","Wegner","20231127",2023,"October","GWI_WC_SgwC_45cm",1,"Within Range","Needs Dilution",149.761408318018,74963.8979210141,"WC",NA
 "553","GWI","ATM","0cm",0,"Varian GC","Wegner","20231127",2023,"October","GWI_WC_ATM",1,"Within Range","Within Range",2.74277268144024,609.637115385609,"WC",NA
-"554","SWH","SGWA","10cm",10,"Varian GC","Wegner","20231127",2023,"October","SWH_UPCON_SgwA_10cm",1,"Within Range","Within Range",2.65580577135655,12908.2803554006,"UP",NA
-"555","SWH","SGWA","20cm",20,"Varian GC","Wegner","20231127",2023,"October","SWH_UPCON_SgwA_20cm",1,"Within Range","Within Range",4.9399178248752,23396.5815409559,"UP",NA
-"556","SWH","SGWA","45cm",45,"Varian GC","Wegner","20231127",2023,"October","SWH_UPCON_SgwA_45cm",1,"Within Range","Needs Dilution",36.3398950203729,87956.9223741311,"UP",NA
-"557","SWH","SGWB","10cm",10,"Varian GC","Wegner","20231127",2023,"October","SWH_UPCON_SgwB_10cm",1,"Within Range","Within Range",3.03649111360966,9270.56793836298,"UP",NA
-"558","SWH","SGWB","20cm",20,"Varian GC","Wegner","20231127",2023,"October","SWH_UPCON_SgwB_20cm",1,"Within Range","Within Range",3.08735855158314,13485.1857671657,"UP",NA
-"559","SWH","SGWB","45cm",45,"Varian GC","Wegner","20231127",2023,"October","SWH_UPCON_SgwB_45cm",1,"Within Range","Needs Dilution",48.5267486277601,62167.2429129882,"UP",NA
-"560","SWH","SGWC","10cm",10,"Varian GC","Wegner","20231127",2023,"October","SWH_UPCON_SgwC_10cm",1,"Within Range","Within Range",3.30887803953214,6768.52234087383,"UP",NA
-"561","SWH","SGWC","20cm",20,"Varian GC","Wegner","20231127",2023,"October","SWH_UPCON_SgwC_20cm",1,"Within Range","Within Range",6.65956540539786,15708.1121519812,"UP",NA
-"562","SWH","ATM","0cm",0,"Varian GC","Wegner","20231127",2023,"October","SWH_UPCON_ATM",1,"Within Range","Within Range",6.39046024966721,543.783167037196,"UP",NA
-"563","SWH","SGWA","10cm",10,"Varian GC","Wegner","20231127",2023,"October","SWH_UP_SgwA_10cm",1,"Within Range","Needs Dilution",4749.7735363792,74081.4522239057,"SWAMP",NA
-"564","SWH","SGWA","20cm",20,"Varian GC","Wegner","20231127",2023,"October","SWH_UP_SgwA_20cm",1,"Within Range","Needs Dilution",78.9864986632965,63096.9453030188,"SWAMP",NA
-"565","SWH","SGWA","45cm",45,"Varian GC","Wegner","20231127",2023,"October","SWH_UP_SgwA_45cm",1,"Within Range","Needs Dilution",478.736128181734,61307.3830840183,"SWAMP",NA
-"566","SWH","SGWB","10cm",10,"Varian GC","Wegner","20231127",2023,"October","SWH_UP_SgwB_10cm",1,"Needs Dilution","Within Range",10090.093955893,33084.0083432294,"SWAMP",NA
-"567","SWH","SGWB","20cm",20,"Varian GC","Wegner","20231127",2023,"October","SWH_UP_SgwB_20cm",1,"Within Range","Needs Dilution",229.682720755127,52865.4982245595,"SWAMP",NA
-"568","SWH","SGWB","45cm",45,"Varian GC","Wegner","20231127",2023,"October","SWH_UP_SgwB_45cm",1,"Within Range","Within Range",69.4578789112974,47583.8846566122,"SWAMP",NA
-"569","SWH","SGWC","10cm",10,"Varian GC","Wegner","20231127",2023,"October","SWH_UP_SgwC_10cm",1,"Within Range","Within Range",53.1885031852648,5269.97544169262,"SWAMP",NA
-"570","SWH","SGWC","20cm",20,"Varian GC","Wegner","20231127",2023,"October","SWH_UP_SgwC_20cm",1,"Within Range","Needs Dilution",277.958620221402,52823.7293606663,"SWAMP",NA
-"571","SWH","SGWC","45cm",45,"Varian GC","Wegner","20231127",2023,"October","SWH_UP_SgwC_45cm",1,"Within Range","Needs Dilution",291.777653635079,58226.3540912182,"SWAMP",NA
-"572","SWH","ATM","0cm",0,"Varian GC","Wegner","20231127",2023,"October","SWH_UP_ATM",1,"Within Range","Within Range",5.03837093063031,682.115507924089,"SWAMP",NA
+"554","SWH","SGWA","10cm",10,"Varian GC","Wegner","20231127",2023,"October","SWH_UP_SgwA_10cm",1,"Within Range","Within Range",2.65580577135655,12908.2803554006,"UP",NA
+"555","SWH","SGWA","20cm",20,"Varian GC","Wegner","20231127",2023,"October","SWH_UP_SgwA_20cm",1,"Within Range","Within Range",4.9399178248752,23396.5815409559,"UP",NA
+"556","SWH","SGWA","45cm",45,"Varian GC","Wegner","20231127",2023,"October","SWH_UP_SgwA_45cm",1,"Within Range","Needs Dilution",36.3398950203729,87956.9223741311,"UP",NA
+"557","SWH","SGWB","10cm",10,"Varian GC","Wegner","20231127",2023,"October","SWH_UP_SgwB_10cm",1,"Within Range","Within Range",3.03649111360966,9270.56793836298,"UP",NA
+"558","SWH","SGWB","20cm",20,"Varian GC","Wegner","20231127",2023,"October","SWH_UP_SgwB_20cm",1,"Within Range","Within Range",3.08735855158314,13485.1857671657,"UP",NA
+"559","SWH","SGWB","45cm",45,"Varian GC","Wegner","20231127",2023,"October","SWH_UP_SgwB_45cm",1,"Within Range","Needs Dilution",48.5267486277601,62167.2429129882,"UP",NA
+"560","SWH","SGWC","10cm",10,"Varian GC","Wegner","20231127",2023,"October","SWH_UP_SgwC_10cm",1,"Within Range","Within Range",3.30887803953214,6768.52234087383,"UP",NA
+"561","SWH","SGWC","20cm",20,"Varian GC","Wegner","20231127",2023,"October","SWH_UP_SgwC_20cm",1,"Within Range","Within Range",6.65956540539786,15708.1121519812,"UP",NA
+"562","SWH","ATM","0cm",0,"Varian GC","Wegner","20231127",2023,"October","SWH_UP_ATM",1,"Within Range","Within Range",6.39046024966721,543.783167037196,"UP",NA
+"563","SWH","SGWA","10cm",10,"Varian GC","Wegner","20231127",2023,"October","SWH_SWAMP_SgwA_10cm",1,"Within Range","Needs Dilution",4749.7735363792,74081.4522239057,"SWAMP",NA
+"564","SWH","SGWA","20cm",20,"Varian GC","Wegner","20231127",2023,"October","SWH_SWAMP_SgwA_20cm",1,"Within Range","Needs Dilution",78.9864986632965,63096.9453030188,"SWAMP",NA
+"565","SWH","SGWA","45cm",45,"Varian GC","Wegner","20231127",2023,"October","SWH_SWAMP_SgwA_45cm",1,"Within Range","Needs Dilution",478.736128181734,61307.3830840183,"SWAMP",NA
+"566","SWH","SGWB","10cm",10,"Varian GC","Wegner","20231127",2023,"October","SWH_SWAMP_SgwB_10cm",1,"Needs Dilution","Within Range",10090.093955893,33084.0083432294,"SWAMP",NA
+"567","SWH","SGWB","20cm",20,"Varian GC","Wegner","20231127",2023,"October","SWH_SWAMP_SgwB_20cm",1,"Within Range","Needs Dilution",229.682720755127,52865.4982245595,"SWAMP",NA
+"568","SWH","SGWB","45cm",45,"Varian GC","Wegner","20231127",2023,"October","SWH_SWAMP_SgwB_45cm",1,"Within Range","Within Range",69.4578789112974,47583.8846566122,"SWAMP",NA
+"569","SWH","SGWC","10cm",10,"Varian GC","Wegner","20231127",2023,"October","SWH_SWAMP_SgwC_10cm",1,"Within Range","Within Range",53.1885031852648,5269.97544169262,"SWAMP",NA
+"570","SWH","SGWC","20cm",20,"Varian GC","Wegner","20231127",2023,"October","SWH_SWAMP_SgwC_20cm",1,"Within Range","Needs Dilution",277.958620221402,52823.7293606663,"SWAMP",NA
+"571","SWH","SGWC","45cm",45,"Varian GC","Wegner","20231127",2023,"October","SWH_SWAMP_SgwC_45cm",1,"Within Range","Needs Dilution",291.777653635079,58226.3540912182,"SWAMP",NA
+"572","SWH","ATM","0cm",0,"Varian GC","Wegner","20231127",2023,"October","SWH_SWAMP_ATM",1,"Within Range","Within Range",5.03837093063031,682.115507924089,"SWAMP",NA
 "573","SWH","SGWA","10cm",10,"Varian GC","Wegner","20231127",2023,"October","SWH_TR_SgwA_10cm",1,"Needs Dilution","Within Range",60474.5816557961,40918.236423683,"TR",NA
 "574","SWH","SGWA","20cm",20,"Varian GC","Wegner","20231127",2023,"October","SWH_TR_SgwA_20cm",1,"Needs Dilution","Needs Dilution",124318.503405422,84278.1662955117,"TR",NA
 "575","SWH","SGWB","10cm",10,"Varian GC","Wegner","20231127",2023,"October","SWH_TR_SgwB_10cm",1,"Within Range","Within Range",184.014751672778,42660.9812550076,"TR",NA
@@ -666,26 +666,26 @@
 "665","GWI","SGWC","20cm",20,"Varian GC","Wegner","20231128",2023,"November","GWI_WC_SgwC_20cm",1,"Within Range","Needs Dilution",20.1149636848233,119261.839485879,"WC",NA
 "666","GWI","SGWC","45cm",45,"Varian GC","Wegner","20231128",2023,"November","GWI_WC_SgwC_45cm",1,"Within Range","Needs Dilution",10.4558467384898,70558.5493555379,"WC",NA
 "667","GWI","ATM","0cm",0,"Varian GC","Wegner","20231128",2023,"November","GWI_WC_ATM",1,"Within Range","Within Range",2.84676198898072,707.467845569166,"WC",NA
-"668","SWH","SGWA","10cm",10,"Varian GC","Wegner","20231128",2023,"November","SWH_UPCON_SgwA_10cm",1,"Within Range","Within Range",2.44355660429723,14685.8475011936,"UP",NA
-"669","SWH","SGWA","20cm",20,"Varian GC","Wegner","20231128",2023,"November","SWH_UPCON_SgwA_20cm",1,"Within Range","Within Range",4.38185718849861,22699.3381909432,"UP",NA
-"670","SWH","SGWA","45cm",45,"Varian GC","Wegner","20231128",2023,"November","SWH_UPCON_SgwA_45cm",1,"Within Range","Needs Dilution",2.20551969044793,75894.2283780761,"UP",NA
-"671","SWH","SGWB","10cm",10,"Varian GC","Wegner","20231128",2023,"November","SWH_UPCON_SgwB_10cm",1,"Within Range","Within Range",2.8580970801164,9739.40633170127,"UP",NA
-"672","SWH","SGWB","20cm",20,"Varian GC","Wegner","20231128",2023,"November","SWH_UPCON_SgwB_20cm",1,"Within Range","Within Range",2.88886375605611,12799.8005530793,"UP",NA
-"673","SWH","SGWB","45cm",45,"Varian GC","Wegner","20231128",2023,"November","SWH_UPCON_SgwB_45cm",1,"Within Range","Within Range",12.1884963835152,38750.4081549263,"UP",NA
-"674","SWH","SGWC","10cm",10,"Varian GC","Wegner","20231128",2023,"November","SWH_UPCON_SgwC_10cm",1,"Within Range","Within Range",3.33093231034765,8327.56201983807,"UP",NA
-"675","SWH","SGWC","20cm",20,"Varian GC","Wegner","20231128",2023,"November","SWH_UPCON_SgwC_20cm",1,"Within Range","Within Range",19.1271914572854,15664.4570382309,"UP",NA
-"676","SWH","SGWC","45cm",45,"Varian GC","Wegner","20231128",2023,"November","SWH_UPCON_SgwC_45cm",1,"Needs Dilution","Needs Dilution",44838.3269332411,84144.0793094274,"UP",NA
-"677","SWH","ATM","0cm",0,"Varian GC","Wegner","20231128",2023,"November","SWH_UPCON_ATM",1,"Within Range","Within Range",22.4532310562409,728.779191818115,"UP",NA
-"678","SWH","SGWA","10cm",10,"Varian GC","Wegner","20231128",2023,"November","SWH_UP_SgwA_10cm",1,"Within Range","Needs Dilution",2198.62991710277,72193.4217264913,"SWAMP",NA
-"679","SWH","SGWA","20cm",20,"Varian GC","Wegner","20231128",2023,"November","SWH_UP_SgwA_20cm",1,"Within Range","Needs Dilution",76.758033388553,58670.8473025404,"SWAMP",NA
-"680","SWH","SGWA","45cm",45,"Varian GC","Wegner","20231128",2023,"November","SWH_UP_SgwA_45cm",1,"Within Range","Needs Dilution",114.074772705947,57110.9963385209,"SWAMP",NA
-"681","SWH","SGWB","10cm",10,"Varian GC","Wegner","20231128",2023,"November","SWH_UP_SgwB_10cm",1,"Needs Dilution","Needs Dilution",36455.2957577692,55561.2470389623,"SWAMP",NA
-"682","SWH","SGWB","20cm",20,"Varian GC","Wegner","20231128",2023,"November","SWH_UP_SgwB_20cm",1,"Within Range","Within Range",197.138580350953,47760.3373877919,"SWAMP",NA
-"683","SWH","SGWB","45cm",45,"Varian GC","Wegner","20231128",2023,"November","SWH_UP_SgwB_45cm",1,"Within Range","Needs Dilution",108.133778106165,57274.2130467104,"SWAMP",NA
-"684","SWH","SGWC","10cm",10,"Varian GC","Wegner","20231128",2023,"November","SWH_UP_SgwC_10cm",1,"Within Range","Needs Dilution",693.763074553502,53503.8819053201,"SWAMP",NA
-"685","SWH","SGWC","20cm",20,"Varian GC","Wegner","20231128",2023,"November","SWH_UP_SgwC_20cm",1,"Within Range","Needs Dilution",758.997370397511,58137.04916292,"SWAMP",NA
-"686","SWH","SGWC","45cm",45,"Varian GC","Wegner","20231128",2023,"November","SWH_UP_SgwC_45cm",1,"Within Range","Needs Dilution",61.9576429628215,55759.4094624561,"SWAMP",NA
-"687","SWH","ATM","0cm",0,"Varian GC","Wegner","20231128",2023,"November","SWH_UP_ATM",1,"Within Range","Within Range",5.0749170465088,767.588577931157,"SWAMP",NA
+"668","SWH","SGWA","10cm",10,"Varian GC","Wegner","20231128",2023,"November","SWH_UP_SgwA_10cm",1,"Within Range","Within Range",2.44355660429723,14685.8475011936,"UP",NA
+"669","SWH","SGWA","20cm",20,"Varian GC","Wegner","20231128",2023,"November","SWH_UP_SgwA_20cm",1,"Within Range","Within Range",4.38185718849861,22699.3381909432,"UP",NA
+"670","SWH","SGWA","45cm",45,"Varian GC","Wegner","20231128",2023,"November","SWH_UP_SgwA_45cm",1,"Within Range","Needs Dilution",2.20551969044793,75894.2283780761,"UP",NA
+"671","SWH","SGWB","10cm",10,"Varian GC","Wegner","20231128",2023,"November","SWH_UP_SgwB_10cm",1,"Within Range","Within Range",2.8580970801164,9739.40633170127,"UP",NA
+"672","SWH","SGWB","20cm",20,"Varian GC","Wegner","20231128",2023,"November","SWH_UP_SgwB_20cm",1,"Within Range","Within Range",2.88886375605611,12799.8005530793,"UP",NA
+"673","SWH","SGWB","45cm",45,"Varian GC","Wegner","20231128",2023,"November","SWH_UP_SgwB_45cm",1,"Within Range","Within Range",12.1884963835152,38750.4081549263,"UP",NA
+"674","SWH","SGWC","10cm",10,"Varian GC","Wegner","20231128",2023,"November","SWH_UP_SgwC_10cm",1,"Within Range","Within Range",3.33093231034765,8327.56201983807,"UP",NA
+"675","SWH","SGWC","20cm",20,"Varian GC","Wegner","20231128",2023,"November","SWH_UP_SgwC_20cm",1,"Within Range","Within Range",19.1271914572854,15664.4570382309,"UP",NA
+"676","SWH","SGWC","45cm",45,"Varian GC","Wegner","20231128",2023,"November","SWH_UP_SgwC_45cm",1,"Needs Dilution","Needs Dilution",44838.3269332411,84144.0793094274,"UP",NA
+"677","SWH","ATM","0cm",0,"Varian GC","Wegner","20231128",2023,"November","SWH_UP_ATM",1,"Within Range","Within Range",22.4532310562409,728.779191818115,"UP",NA
+"678","SWH","SGWA","10cm",10,"Varian GC","Wegner","20231128",2023,"November","SWH_SWAMP_SgwA_10cm",1,"Within Range","Needs Dilution",2198.62991710277,72193.4217264913,"SWAMP",NA
+"679","SWH","SGWA","20cm",20,"Varian GC","Wegner","20231128",2023,"November","SWH_SWAMP_SgwA_20cm",1,"Within Range","Needs Dilution",76.758033388553,58670.8473025404,"SWAMP",NA
+"680","SWH","SGWA","45cm",45,"Varian GC","Wegner","20231128",2023,"November","SWH_SWAMP_SgwA_45cm",1,"Within Range","Needs Dilution",114.074772705947,57110.9963385209,"SWAMP",NA
+"681","SWH","SGWB","10cm",10,"Varian GC","Wegner","20231128",2023,"November","SWH_SWAMP_SgwB_10cm",1,"Needs Dilution","Needs Dilution",36455.2957577692,55561.2470389623,"SWAMP",NA
+"682","SWH","SGWB","20cm",20,"Varian GC","Wegner","20231128",2023,"November","SWH_SWAMP_SgwB_20cm",1,"Within Range","Within Range",197.138580350953,47760.3373877919,"SWAMP",NA
+"683","SWH","SGWB","45cm",45,"Varian GC","Wegner","20231128",2023,"November","SWH_SWAMP_SgwB_45cm",1,"Within Range","Needs Dilution",108.133778106165,57274.2130467104,"SWAMP",NA
+"684","SWH","SGWC","10cm",10,"Varian GC","Wegner","20231128",2023,"November","SWH_SWAMP_SgwC_10cm",1,"Within Range","Needs Dilution",693.763074553502,53503.8819053201,"SWAMP",NA
+"685","SWH","SGWC","20cm",20,"Varian GC","Wegner","20231128",2023,"November","SWH_SWAMP_SgwC_20cm",1,"Within Range","Needs Dilution",758.997370397511,58137.04916292,"SWAMP",NA
+"686","SWH","SGWC","45cm",45,"Varian GC","Wegner","20231128",2023,"November","SWH_SWAMP_SgwC_45cm",1,"Within Range","Needs Dilution",61.9576429628215,55759.4094624561,"SWAMP",NA
+"687","SWH","ATM","0cm",0,"Varian GC","Wegner","20231128",2023,"November","SWH_SWAMP_ATM",1,"Within Range","Within Range",5.0749170465088,767.588577931157,"SWAMP",NA
 "688","SWH","SGWA","10cm",10,"Varian GC","Wegner","20231128",2023,"November","SWH_TR_SgwA_10cm",1,"Needs Dilution","Within Range",50001.2029612137,46621.9934827353,"TR",NA
 "689","SWH","SGWA","20cm",20,"Varian GC","Wegner","20231128",2023,"November","SWH_TR_SgwA_20cm",1,"Needs Dilution","Needs Dilution",99004.4429913792,56038.9104306306,"TR",NA
 "690","SWH","SGWB","10cm",10,"Varian GC","Wegner","20231128",2023,"November","SWH_TR_SgwB_10cm",1,"Within Range","Within Range",409.46117203563,19043.0393002955,"TR",NA

@@ -42,12 +42,14 @@ all_data <- all_data %>%
 ##UPCON -> UP, UP -> SWAMP
 unique(all_data$Zone)
 
-all_data <- all_data %>% 
+all_data1 <- all_data %>% 
   rename(Zone_old = Zone) %>% 
   mutate(Zone = ifelse(Site == "SWH" & Zone_old == "UP", "SWAMP", Zone_old)) %>% 
-  mutate(Zone = ifelse(Site == "SWH" & Zone_old == "UPCON", "UP", Zone)) 
+  mutate(Zone = ifelse(Site == "SWH" & Zone_old == "UPCON", "UP", Zone)) %>% 
+  mutate(Sample_ID = ifelse(Site == "SWH" & Zone_old == "UP", gsub("UP", "SWAMP", Sample_ID), Sample_ID)) %>% 
+  mutate(Sample_ID = ifelse(Site == "SWH" & Zone_old == "UPCON", gsub("UPCON", "UP", Sample_ID), Sample_ID))
 
-all_data <- all_data %>% 
+all_data1 <- all_data1 %>% 
   select(-Zone_old, Depth1)
 
 ```
@@ -79,7 +81,7 @@ gcw_up1 <- gcw_up %>%
          Zone = "UP")
 
 #Put them in order and grab what we need 
-colnames(all_data)
+colnames(all_data1)
 colnames(gcw_up1)
 final_gcw_up <- gcw_up1 %>%
   mutate(
@@ -90,7 +92,7 @@ final_gcw_up <- gcw_up1 %>%
   mutate(Run_Date = as.character(Run_Date))
 
 #combine the TMP data with the rest of the data: 
-all_data_gcw <- bind_rows(all_data, final_gcw_up)
+all_data_gcw <- bind_rows(all_data1, final_gcw_up)
 
 ```
 

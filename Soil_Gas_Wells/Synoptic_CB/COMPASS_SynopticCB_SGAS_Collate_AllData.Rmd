@@ -48,17 +48,22 @@ all_dat1 <- all_dat %>%
 all_dat1 <- all_dat1 %>% 
   mutate(CH4_Flag = gsub("Within Range", NA, CH4_Flag)) %>% 
   mutate(CH4_Flag = gsub("Needs Dilution", "adl", CH4_Flag)) %>% 
-  mutate(CO2_Flag = gsub("Needs Dilution", "adl", CO2_Flag)) %>% 
+  mutate(CO2_Flag = gsub("Within Range", NA, CO2_Flag)) %>% 
   mutate(CO2_Flag = gsub("Needs Dilution", "adl", CO2_Flag))
+
+##Remove QAQC flags when there is no value
+all_dat1 <- all_dat1 %>% 
+  mutate(CH4_Flag = ifelse(is.na(CH4_Conc_ppm_dilcorr), "", CH4_Flag)) %>% 
+  mutate(CO2_Flag = ifelse(is.na(CO2_Conc_ppm_dilcorr), "", CO2_Flag)) %>% 
+  mutate(Dilution_Factor = ifelse(is.na(CO2_Conc_ppm_dilcorr)&is.na(CO2_Conc_ppm_dilcorr), "", Dilution_Factor))
+
 
 ##Select only required columns
 all_dat2 <- all_dat1 %>%
   mutate(Depth_cm = gsub("cm", "", Depth)) %>% 
-  rename(
-         Year = Sample_Year, 
-         Month = Sample_Month, 
-         CH4_conc_flag = CH4_Flag, 
-         CO2_conc_flag = CO2_Flag)
+  mutate(Replicate = gsub("SGW", "", Replicate)) %>% 
+  rename(Year = Sample_Year, 
+         Month = Sample_Month)
 
 ##Set 4 decimal points max
 all_dat2 <- all_dat2 %>%
@@ -68,19 +73,21 @@ all_dat2 <- all_dat2 %>%
 all_dat2 <- all_dat2 %>% 
   filter(Zone != "Test")
 
-##Remove Within Range flag 
-all_dat2 <- all_dat2 %>% 
-  mutate(CO2_conc_flag = gsub("Within Range", NA, CO2_conc_flag)) %>% 
-  mutate(CH4_conc_flag = gsub("Within Range", NA, CH4_conc_flag))
-
 final_data <- all_dat2 %>% 
-  mutate(Project = "COMPASS:Synoptic", 
+  mutate(Sample_ID = toupper(Sample_ID), 
+         Sample_ID = gsub("CM", "cm", Sample_ID), 
+         Project = "COMPASS: Synoptic", 
          Region = "CB", 
          Month_long = Month) %>% 
   mutate(Month = match(Month_long, month.name)) %>% 
-  rename(Plot = Zone) %>% 
+  rename(Plot = Zone, 
+         CH4_ppm = CH4_Conc_ppm_dilcorr, 
+         CO2_ppm = CO2_Conc_ppm_dilcorr, 
+         CH4_flag = CH4_Flag, 
+         CO2_flag = CO2_Flag
+         ) %>% 
   dplyr::select(
-    Project, Region, Sample_ID, Year, Month, Site, Plot, Replicate, Depth_cm, Machine, CH4_Conc_ppm_dilcorr, CH4_conc_flag, CO2_Conc_ppm_dilcorr, CO2_conc_flag )
+    Project, Region, Sample_ID, Year, Month, Site, Plot, Replicate, Depth_cm, Machine, CH4_ppm, CH4_flag, CO2_ppm, CO2_flag)
 
 ```
 
