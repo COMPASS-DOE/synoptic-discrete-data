@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.28)  1 JUL 2026 09:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.7.8)  8 JUL 2026 09:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **COMPASS_SynopticCB_Redox_Collate_AllData.tex
 (./COMPASS_SynopticCB_Redox_Collate_AllData.tex
-LaTeX2e <2025-11-01>
-L3 programming layer <2026-05-15>
+LaTeX2e <2026-06-01>
+L3 programming layer <2026-06-18>
 (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
 (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/size10.clo
@@ -23,7 +23,7 @@ File: size10.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 \belowcaptionskip=\skip50
 \bibindent=\dimen150
 ) (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2025/07/09 v2.17z AMS math features
+Package: amsmath 2026/05/19 v2.18d AMS math features
 \@mathmargin=\skip51
 For additional information on amsmath, use the `?' option.
 (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -83,8 +83,8 @@ LaTeX Info: Redefining \Relbar on input line 970.
 \multlinegap=\skip52
 \multlinetaggap=\skip53
 \mathdisplay@stack=\toks21
-LaTeX Info: Redefining \[ on input line 2950.
-LaTeX Info: Redefining \] on input line 2951.
+LaTeX Info: Redefining \[ on input line 2965.
+LaTeX Info: Redefining \] on input line 2966.
 ) (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty
@@ -159,7 +159,7 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
 ) (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2026/03/07 v6.0 Page Geometry
 (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+Package: keyval 2026-05-17 v1.15 key=value parser (DPC)
 \KV@toks@=\toks24
 ) (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
@@ -176,10 +176,25 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layouthoffset=\dimen166
 \Gm@layoutvoffset=\dimen167
 \Gm@dimlist=\toks25
+) (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2026/04/16 4.6a verbatim text (tvz,hv)
+\FV@CodeLineNo=\count299
+\FV@InFile=\read2
+\FV@TabBox=\box55
+\c@FancyVerbLine=\count300
+\FV@StepNumber=\count301
+\FV@OutFile=\write3
+) (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip54
+\fb@frw=\dimen168
+\fb@frh=\dimen169
+\FrameRule=\dimen170
+\FrameSep=\dimen171
 ) (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
+Package: graphicx 2026-05-17 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
 (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+Package: graphics 2026-05-17 v1.4h Standard LaTeX Graphics (DPC,SPQR)
 (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
 ) (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
@@ -187,79 +202,79 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 106.
 )
-\Gin@req@height=\dimen168
-\Gin@req@width=\dimen169
+\Gin@req@height=\dimen172
+\Gin@req@width=\dimen173
 ) (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen170
-\lightrulewidth=\dimen171
-\cmidrulewidth=\dimen172
-\belowrulesep=\dimen173
-\belowbottomsep=\dimen174
-\aboverulesep=\dimen175
-\abovetopsep=\dimen176
-\cmidrulesep=\dimen177
-\cmidrulekern=\dimen178
-\defaultaddspace=\dimen179
-\@cmidla=\count299
-\@cmidlb=\count300
-\@aboverulesep=\dimen180
-\@belowrulesep=\dimen181
-\@thisruleclass=\count301
-\@lastruleclass=\count302
-\@thisrulewidth=\dimen182
+\heavyrulewidth=\dimen174
+\lightrulewidth=\dimen175
+\cmidrulewidth=\dimen176
+\belowrulesep=\dimen177
+\belowbottomsep=\dimen178
+\aboverulesep=\dimen179
+\abovetopsep=\dimen180
+\cmidrulesep=\dimen181
+\cmidrulekern=\dimen182
+\defaultaddspace=\dimen183
+\@cmidla=\count302
+\@cmidlb=\count303
+\@aboverulesep=\dimen184
+\@belowrulesep=\dimen185
+\@thisruleclass=\count304
+\@lastruleclass=\count305
+\@thisrulewidth=\dimen186
 ) (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty
-Package: longtable 2025-10-13 v4.24 Multi-page Table package (DPC)
-\LTleft=\skip54
-\LTright=\skip55
-\LTpre=\skip56
-\LTpost=\skip57
-\LTchunksize=\count303
-\LTcapwidth=\dimen183
-\LT@head=\box55
-\LT@firsthead=\box56
-\LT@foot=\box57
-\LT@lastfoot=\box58
-\LT@gbox=\box59
-\LT@cols=\count304
-\LT@rows=\count305
-\c@LT@tables=\count306
-\c@LT@chunks=\count307
+Package: longtable 2026-01-28 v4.27 Multi-page Table package (DPC)
+\LTleft=\skip55
+\LTright=\skip56
+\LTpre=\skip57
+\LTpost=\skip58
+\LTchunksize=\count306
+\LTcapwidth=\dimen187
+\LT@head=\box56
+\LT@firsthead=\box57
+\LT@foot=\box58
+\LT@lastfoot=\box59
+\LT@gbox=\box60
+\LT@cols=\count307
+\LT@rows=\count308
+\c@LT@tables=\count309
+\c@LT@chunks=\count310
 \LT@p@ftn=\toks26
 ) (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/array.sty
-Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
-\col@sep=\dimen184
-\ar@mcellbox=\box60
-\extrarowheight=\dimen185
+Package: array 2026/02/24 v2.7b Tabular extension package (FMi)
+\col@sep=\dimen188
+\ar@mcellbox=\box61
+\extrarowheight=\dimen189
 \NC@list=\toks27
-\extratabsurround=\skip58
-\backup@length=\skip59
-\ar@cellbox=\box61
+\extratabsurround=\skip59
+\backup@length=\skip60
+\ar@cellbox=\box62
 ) (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
-\multirow@colwidth=\skip60
-\multirow@cntb=\count308
-\multirow@dima=\skip61
-\bigstrutjot=\dimen186
+\multirow@colwidth=\skip61
+\multirow@cntb=\count311
+\multirow@dima=\skip62
+\bigstrutjot=\dimen190
 ) (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/wrapfig/wrapfig.sty
-\wrapoverhang=\dimen187
-\WF@size=\dimen188
-\c@WF@wrappedlines=\count309
-\WF@box=\box62
+\wrapoverhang=\dimen191
+\WF@size=\dimen192
+\c@WF@wrappedlines=\count312
+\WF@box=\box63
 \WF@everypar=\toks28
 Package: wrapfig 2003/01/31  v 3.6
 ) (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count310
+\c@float@type=\count313
 \float@exts=\toks29
-\float@box=\box63
+\float@box=\box64
 \@float@everytoks=\toks30
-\@floatcapt=\box64
+\@floatcapt=\box65
 ) (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/colortbl/colortbl.sty
 Package: colortbl 2026/05/01 v1.0l Color table columns (DPC)
-\everycr=\toks31
-\minrowclearance=\skip62
-\rownum=\count311
+new hooks used!!
+\minrowclearance=\skip63
+\rownum=\count314
 ) (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pdflscape/pdflscape.sty
 Package: pdflscape 2025-06-23 v0.14 Display of landscape pages in PDF
 (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pdflscape/pdflscape-nometadata.sty
@@ -272,37 +287,37 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 Package: tabu 2019/01/11 v2.9 - flexible LaTeX tabulars (FC+tabu-fixed)
 (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/varwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box65
-\sift@deathcycles=\count312
-\@vwid@loff=\dimen189
-\@vwid@roff=\dimen190
+\@vwid@box=\box66
+\sift@deathcycles=\count315
+\@vwid@loff=\dimen193
+\@vwid@roff=\dimen194
 )
 ==> First Aid for varwidth.sty applied!
-\c@taburow=\count313
-\tabu@nbcols=\count314
-\tabu@cnt=\count315
-\tabu@Xcol=\count316
-\tabu@alloc=\count317
-\tabu@nested=\count318
-\tabu@target=\dimen191
-\tabu@spreadtarget=\dimen192
-\tabu@naturalX=\dimen193
-\tabucolX=\dimen194
-\tabu@Xsum=\dimen195
-\extrarowdepth=\dimen196
-\abovetabulinesep=\dimen197
-\belowtabulinesep=\dimen198
-\tabustrutrule=\dimen199
-\tabu@thebody=\toks32
-\tabu@footnotes=\toks33
-\tabu@box=\box66
-\tabu@arstrutbox=\box67
-\tabu@hleads=\box68
-\tabu@vleads=\box69
-\tabu@cellskip=\skip63
+\c@taburow=\count316
+\tabu@nbcols=\count317
+\tabu@cnt=\count318
+\tabu@Xcol=\count319
+\tabu@alloc=\count320
+\tabu@nested=\count321
+\tabu@target=\dimen195
+\tabu@spreadtarget=\dimen196
+\tabu@naturalX=\dimen197
+\tabucolX=\dimen198
+\tabu@Xsum=\dimen199
+\extrarowdepth=\dimen256
+\abovetabulinesep=\dimen257
+\belowtabulinesep=\dimen258
+\tabustrutrule=\dimen259
+\tabu@thebody=\toks31
+\tabu@footnotes=\toks32
+\tabu@box=\box67
+\tabu@arstrutbox=\box68
+\tabu@hleads=\box69
+\tabu@vleads=\box70
+\tabu@cellskip=\skip64
 ) (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/threeparttable/threeparttable.sty
 Package: threeparttable 2003/06/13  v 3.0
-\@tempboxb=\box70
+\@tempboxb=\box71
 ) (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/threeparttablex/threeparttablex.sty
 Package: threeparttablex 2013/07/23 v0.3 by daleif
 (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/environ/environ.sty
@@ -310,27 +325,27 @@ Package: environ 2014/05/04 v0.3 A new way to define environments
 (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/trimspaces/trimspaces.sty
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 ))
-\TPTL@width=\skip64
+\TPTL@width=\skip65
 ) (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/ulem/ulem.sty
-\UL@box=\box71
-\UL@hyphenbox=\box72
-\UL@skip=\skip65
-\UL@hook=\toks34
-\UL@height=\dimen256
-\UL@pe=\count319
-\UL@pixel=\dimen257
-\ULC@box=\box73
+\UL@box=\box72
+\UL@hyphenbox=\box73
+\UL@skip=\skip66
+\UL@hook=\toks33
+\UL@height=\dimen260
+\UL@pe=\count322
+\UL@pixel=\dimen261
+\ULC@box=\box74
 Package: ulem 2019/11/18
-\ULdepth=\dimen258
+\ULdepth=\dimen262
 ) (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/makecell/makecell.sty
 Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
-\rotheadsize=\dimen259
-\c@nlinenum=\count320
-\TeXr@lab=\toks35
+\rotheadsize=\dimen263
+\c@nlinenum=\count323
+\TeXr@lab=\toks34
 ) (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2026-05-21 v1.32 PDF bookmarks (HO)
 (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2026-04-24 v7.01q Hypertext links for LaTeX
+Package: hyperref 2026-06-17 v7.01r Hypertext links for LaTeX
 (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 ) (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
@@ -358,26 +373,26 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count321
+\c@section@level=\count324
 ) (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count322
+\etb@tempcnta=\count325
 ) (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
 )
-\@linkdim=\dimen260
-\Hy@linkcounter=\count323
-\Hy@pagecounter=\count324
+\@linkdim=\dimen264
+\Hy@linkcounter=\count326
+\Hy@pagecounter=\count327
 (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2026-04-24 v7.01q Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2026-06-17 v7.01r Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 ) (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count325
+\Hy@SavedSpaceFactor=\count328
 (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
-File: puenc.def 2026-04-24 v7.01q Hyperref: PDF Unicode definition (HO)
+File: puenc.def 2026-06-17 v7.01r Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
@@ -389,21 +404,21 @@ Package hyperref Info: Plain pages OFF on input line 4214.
 Package hyperref Info: Backreferencing OFF on input line 4219.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4466.
-\c@Hy@tempcnt=\count326
+\c@Hy@tempcnt=\count329
 (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip18
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4805.
-\XeTeXLinkMargin=\dimen261
+\XeTeXLinkMargin=\dimen265
 (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
-\Fld@menulength=\count327
-\Field@Width=\dimen262
-\Fld@charsize=\dimen263
+\Fld@menulength=\count330
+\Field@Width=\dimen266
+\Fld@charsize=\dimen267
 Package hyperref Info: Hyper figures OFF on input line 6091.
 Package hyperref Info: Link nesting OFF on input line 6096.
 Package hyperref Info: Hyper index ON on input line 6099.
@@ -411,15 +426,15 @@ Package hyperref Info: backreferencing OFF on input line 6106.
 Package hyperref Info: Link coloring OFF on input line 6111.
 Package hyperref Info: Link coloring with OCG OFF on input line 6116.
 Package hyperref Info: PDF/A mode OFF on input line 6121.
-\Hy@abspage=\count328
-\c@Item=\count329
-\c@Hfootnote=\count330
+\Hy@abspage=\count331
+\c@Item=\count332
+\c@Hfootnote=\count333
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2026-04-24 v7.01q Hyperref driver for pdfTeX
-\Fld@listcount=\count331
-\c@bookmark@seq@number=\count332
+File: hpdftex.def 2026-06-17 v7.01r Hyperref driver for pdfTeX
+\Fld@listcount=\count334
+\c@bookmark@seq@number=\count335
 (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
 (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
@@ -427,38 +442,39 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 284.
 )
-\Hy@SectionHShift=\skip66
+\Hy@SectionHShift=\skip67
 ) (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2026-02-18 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count333
+\l__color_backend_stack_int=\count336
 ) (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
 File: bkm-pdftex.def 2026-05-21 v1.32 bookmark driver for pdfTeX (HO)
-\BKM@id=\count334
+\BKM@id=\count337
 ))
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 88.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 128.
 (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) (./COMPASS_SynopticCB_Redox_Collate_AllData.aux)
+)
+No file COMPASS_SynopticCB_Redox_Collate_AllData.aux.
 \openout1 = `COMPASS_SynopticCB_Redox_Collate_AllData.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 88.
-LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 128.
+LaTeX Font Info:    ... okay on input line 128.
 (c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -499,136 +515,24 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 88.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 90.
-(c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
-File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 90.
-(c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
-File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 90.
-(c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
-File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 90.
-(c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
-File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 90.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 90.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 90.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 90.
-(c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 90.
-(c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (./COMPASS_SynopticCB_Redox_Collate_AllData.toc
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 1.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 1.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 1.
-)
-\tf@toc=\write3
-\openout3 = `COMPASS_SynopticCB_Redox_Collate_AllData.toc'.
-
-<COMPASS_SynopticCB_Redox_Collate_AllData_files/figure-latex/Visualize Data-1.pdf, id=11, 1156.32pt x 722.7pt>
-File: COMPASS_SynopticCB_Redox_Collate_AllData_files/figure-latex/Visualize Data-1.pdf Graphic file (type pdf)
-<use COMPASS_SynopticCB_Redox_Collate_AllData_files/figure-latex/Visualize Data-1.pdf>
-Package pdftex.def Info: COMPASS_SynopticCB_Redox_Collate_AllData_files/figure-latex/Visualize Data-1.pdf  used on input line 104.
-(pdftex.def)             Requested size: 469.75385pt x 293.59615pt.
-[1
-
-{c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}]
-<COMPASS_SynopticCB_Redox_Collate_AllData_files/figure-latex/Summarize and Visualize Data-1.pdf, id=30, 1589.94pt x 578.16pt>
-File: COMPASS_SynopticCB_Redox_Collate_AllData_files/figure-latex/Summarize and Visualize Data-1.pdf Graphic file (type pdf)
-<use COMPASS_SynopticCB_Redox_Collate_AllData_files/figure-latex/Summarize and Visualize Data-1.pdf>
-Package pdftex.def Info: COMPASS_SynopticCB_Redox_Collate_AllData_files/figure-latex/Summarize and Visualize Data-1.pdf  used on input line 110.
-(pdftex.def)             Requested size: 469.75606pt x 170.82037pt.
-<COMPASS_SynopticCB_Redox_Collate_AllData_files/figure-latex/Summarize Data by Depth-1.pdf, id=31, 1589.94pt x 578.16pt>
-File: COMPASS_SynopticCB_Redox_Collate_AllData_files/figure-latex/Summarize Data by Depth-1.pdf Graphic file (type pdf)
-<use COMPASS_SynopticCB_Redox_Collate_AllData_files/figure-latex/Summarize Data by Depth-1.pdf>
-Package pdftex.def Info: COMPASS_SynopticCB_Redox_Collate_AllData_files/figure-latex/Summarize Data by Depth-1.pdf  used on input line 115.
-(pdftex.def)             Requested size: 469.75606pt x 170.82037pt.
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
+Package hyperref Info: Link coloring OFF on input line 128.
+! I can't write on file `COMPASS_SynopticCB_Redox_Collate_AllData.pdf'.
+(Press Enter to retry, or Control-Z to exit; default file extension is `.pdf')
+Please type another file name for output
+! Emergency stop.
 <to be read again> 
-                   \relax 
-l.118 ...oxplot by depth}\label{boxplot-by-depth}}
-                                                   [2 <./COMPASS_SynopticCB_Redox_Collate_AllData_files/figure-latex/Visualize Data-1.pdf> <./COMPASS_SynopticCB_Redox_Collate_AllData_files/figure-latex/Summarize and Visualize Data-1.pdf>]
-<COMPASS_SynopticCB_Redox_Collate_AllData_files/figure-latex/Boxplot by depth-1.pdf, id=47, 1156.32pt x 722.7pt>
-File: COMPASS_SynopticCB_Redox_Collate_AllData_files/figure-latex/Boxplot by depth-1.pdf Graphic file (type pdf)
-<use COMPASS_SynopticCB_Redox_Collate_AllData_files/figure-latex/Boxplot by depth-1.pdf>
-Package pdftex.def Info: COMPASS_SynopticCB_Redox_Collate_AllData_files/figure-latex/Boxplot by depth-1.pdf  used on input line 120.
-(pdftex.def)             Requested size: 469.75385pt x 293.59615pt.
-<COMPASS_SynopticCB_Redox_Collate_AllData_files/figure-latex/Overall Boxplot-1.pdf, id=48, 1156.32pt x 722.7pt>
-File: COMPASS_SynopticCB_Redox_Collate_AllData_files/figure-latex/Overall Boxplot-1.pdf Graphic file (type pdf)
-<use COMPASS_SynopticCB_Redox_Collate_AllData_files/figure-latex/Overall Boxplot-1.pdf>
-Package pdftex.def Info: COMPASS_SynopticCB_Redox_Collate_AllData_files/figure-latex/Overall Boxplot-1.pdf  used on input line 125.
-(pdftex.def)             Requested size: 469.75385pt x 293.59615pt.
+                   \edef 
+l.128 \begin{document}
+                      
+*** (job aborted, file error in nonstop mode)
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.127 \begin{verbatim}
-                       [3 <./COMPASS_SynopticCB_Redox_Collate_AllData_files/figure-latex/Summarize Data by Depth-1.pdf> <./COMPASS_SynopticCB_Redox_Collate_AllData_files/figure-latex/Boxplot by depth-1.pdf>]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 127.
-(c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<COMPASS_SynopticCB_Redox_Collate_AllData_files/figure-latex/Number of Samples Barplots-1.pdf, id=64, 1156.32pt x 722.7pt>
-File: COMPASS_SynopticCB_Redox_Collate_AllData_files/figure-latex/Number of Samples Barplots-1.pdf Graphic file (type pdf)
-<use COMPASS_SynopticCB_Redox_Collate_AllData_files/figure-latex/Number of Samples Barplots-1.pdf>
-Package pdftex.def Info: COMPASS_SynopticCB_Redox_Collate_AllData_files/figure-latex/Number of Samples Barplots-1.pdf  used on input line 194.
-(pdftex.def)             Requested size: 469.75385pt x 293.59615pt.
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.196 \end{document}
-                     [4 <./COMPASS_SynopticCB_Redox_Collate_AllData_files/figure-latex/Overall Boxplot-1.pdf>]
-pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.196 \end{document}
-                     [5]
-pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.196 \end{document}
-                     [6 <./COMPASS_SynopticCB_Redox_Collate_AllData_files/figure-latex/Number of Samples Barplots-1.pdf>] (./COMPASS_SynopticCB_Redox_Collate_AllData.aux)
- ***********
-LaTeX2e <2025-11-01>
-L3 programming layer <2026-05-15>
- ***********
- ) 
+ 
 Here is how much of TeX's memory you used:
- 12874 strings out of 469330
- 206211 string characters out of 5464295
- 624730 words of memory out of 5000000
- 41467 multiletter control sequences out of 15000+600000
- 671199 words of font info for 80 fonts, out of 8000000 for 9000
+ 13051 strings out of 469158
+ 204234 string characters out of 5458383
+ 624732 words of memory out of 5000000
+ 41885 multiletter control sequences out of 15000+600000
+ 631580 words of font info for 43 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 89i,10n,93p,538b,497s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/Users/wilsonsj/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on COMPASS_SynopticCB_Redox_Collate_AllData.pdf (6 pages, 209190 bytes).
-PDF statistics:
- 141 PDF objects out of 1000 (max. 8388607)
- 109 compressed objects within 2 object streams
- 19 named destinations out of 1000 (max. 500000)
- 87 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+ 88i,1n,93p,383b,385s stack positions out of 10000i,1000n,20000p,200000b,200000s
+!  ==> Fatal error occurred, no output PDF file produced!
