@@ -377,26 +377,28 @@ sample_numbers <- data_plotting %>%
 ```
 
 ## Summary Tables
-```{r Summary table metrics, echo = FALSE, message = FALSE, dpi = 100}
+```{r Summary table metrics, echo = FALSE, message = FALSE, out.width="100%"}
 
 library(kableExtra)
 
-kable(
+summary_table <- kable(
   summary_all_depths_years[, c("Site", "Zone_1", "min_mV",	"max_mV", "mean_mV")],  
-  format = "latex",
+  format = "html",
   booktabs = TRUE,
-  caption = "Summary Statistics"
+  caption = "<b>Summary Statistics<b>"
 ) %>%
   kable_styling(
-    latex_options = c("hold_position", "striped", "scale_down"),
+    bootstrap_options = c("striped", "hover"),
     font_size = 12
   ) %>%
   row_spec(0, bold = TRUE) %>%   # header
   column_spec(1, bold = TRUE)
 
-
 #output file to png that will save the table as: COMPASS_SynopticCB_Redox_Summary_alldata.png
+save_kable(summary_table, file = "COMPASS_SynopticCB_Redox_Summary_alldata.png")
 
+#Print the PNG
+knitr::include_graphics("COMPASS_SynopticCB_Redox_Summary_alldata.png")
 
 ```
 
@@ -449,7 +451,7 @@ sample_num_barplot
 
 
 
-```{r write out summarized data, include=FALSE}
+```{#r write out summarized data, include=FALSE}
 
 #write out a csv of all the data to the main folder: 
 write.csv(summary_by_year, "COMPASS_SynopticCB_Redox_Summarized_By_Year.csv")
