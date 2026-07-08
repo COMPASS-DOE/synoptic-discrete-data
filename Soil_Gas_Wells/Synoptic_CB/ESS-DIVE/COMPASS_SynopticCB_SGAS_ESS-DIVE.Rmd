@@ -209,7 +209,7 @@ write.csv(site_list, "Data package/site_list.csv", row.names = FALSE)
 
 #Create a text file that has the description of the data - This ideally should match the text that is in the data READ.ME 
 
-datadescription <- "These data are profiles of trace gas (carbon dioxide and methane) concentrations collected from soil gas wells at the COMPASS 'synoptic' sites in the Chesapeake Bay region: Moneystump Swamp (MSM), Goodwin Islands (GWI), GCReW (GCW), and the Sweet Hall Marsh (SWH). These sites have space for time transects spanning coastal upland forest (UP), coastal upland forest transitioning to wetland (TR), and wetlands (WC). The Sweet Hall Marsh site also has a forested swamp as part of its transect (SWAMP). In each zone, gas wells are installed at three depths in triplicate creating three profiles of 10, 20, and 45cm. In addition, an air sample is collected in each zone (0 cm). The samples are stored in exetainers then analyzed for methane and carbon dioxide on a Varian 450 Gas Chromatograph. The methane is determined with an FID and the carbon dioxide with a TCD.  "
+datadescription <- "These data are profiles of trace gas (carbon dioxide and methane) concentrations collected from soil gas wells at the COMPASS 'synoptic' sites in the Chesapeake Bay region: Moneystump Swamp (MSM), Goodwin Islands (GWI), GCReW (GCW), and the Sweet Hall Marsh (SWH). These sites have space for time transects spanning coastal upland forest (UP), coastal upland forest transitioning to wetland (TR), and wetlands (WC). The Sweet Hall Marsh site also has a forested swamp as part of its transect (SWAMP). At the GCReW site, the upland zone overlaps with the COMPASS ecosystem manipulation experiment TEMPEST. The TEMEPST control plot also serves as the synoptic GCReW Upland plot, so these data are pulled from the existing TEMPEST soil gas well dataset. The gas wells consist of roughly 10cm of 2-inch PVC connected to a PVC cap with a swagelok fitting attached allowing gas impermeable tubing to extend from the gas well to above the soil surface where it is connected to a stopcock. Across the sites, each plot has gas wells installed at three depths in triplicate creating three profiles of 10, 20, and 45cm below the soil surface except for the GCW-UP where gas wells are at depths of 10, 20, 35, and 50cm below the soil surface. In addition, an ambient air sample is collected in each plot (ATM, 0 cm) at each sampling. The samples are stored in exetainers then analyzed for methane and carbon dioxide on a Varian 450 Gas Chromatograph. The methane is determined with an FID and the carbon dioxide with a TCD."
 
 
 #write to a text file 
@@ -227,7 +227,7 @@ authors_common <- read.csv(here("Metadata/Synoptic CB/", "COMPASS_SynopticCB_com
 
 
 #create a list of the last names you want to pull 
-names_we_want <- c("Wilson", "Chin", "Phillips", "Read", "Stearns",  "Wegner", "Megonigal")
+names_we_want <- c("Wilson", "Chin", "Fien","Phillips", "Read", "Stearns",  "Wegner", "Megonigal")
 order_of_authors <- c(1:length(names_we_want))
 
 authors <- data.frame(
