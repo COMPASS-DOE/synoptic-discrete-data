@@ -395,6 +395,9 @@ kable(
   column_spec(1, bold = TRUE)
 
 
+#output file to png that will save the table as: COMPASS_SynopticCB_Redox_Summary_alldata.png
+
+
 ```
 
 ## Number of Samples
