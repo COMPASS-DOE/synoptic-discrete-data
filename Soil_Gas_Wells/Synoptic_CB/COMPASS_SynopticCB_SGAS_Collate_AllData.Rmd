@@ -44,11 +44,18 @@ all_dat <- bind_rows(dat23, dat24)
 all_dat1 <- all_dat %>% 
   filter(is.na(qaqc_flag))
 
+##Fix QAQC flags - changing this so that the Within Range data is 
+#all_dat1 <- all_dat1 %>% 
+ # mutate(CH4_Flag = gsub("Within Range", NA, CH4_Flag)) %>% 
+ # mutate(CH4_Flag = gsub("Needs Dilution", "adl", CH4_Flag)) %>% 
+ # mutate(CO2_Flag = gsub("Within Range", NA, CO2_Flag)) %>% 
+ # mutate(CO2_Flag = gsub("Needs Dilution", "adl", CO2_Flag))
+
 ##Fix QAQC flags
 all_dat1 <- all_dat1 %>% 
-  mutate(CH4_Flag = gsub("Within Range", NA, CH4_Flag)) %>% 
+  mutate(CH4_Flag = gsub("Within Range", "", CH4_Flag)) %>% 
   mutate(CH4_Flag = gsub("Needs Dilution", "adl", CH4_Flag)) %>% 
-  mutate(CO2_Flag = gsub("Within Range", NA, CO2_Flag)) %>% 
+  mutate(CO2_Flag = gsub("Within Range", "", CO2_Flag)) %>% 
   mutate(CO2_Flag = gsub("Needs Dilution", "adl", CO2_Flag))
 
 ##Remove QAQC flags when there is no value
