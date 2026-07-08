@@ -50,7 +50,7 @@ all_data1 <- all_data %>%
   mutate(Sample_ID = ifelse(Site == "SWH" & Zone_old == "UPCON", gsub("UPCON", "UP", Sample_ID), Sample_ID))
 
 all_data1 <- all_data1 %>% 
-  select(-Zone_old, Depth1)
+  select(-Zone_old, -Depth1)
 
 ```
 
@@ -88,8 +88,12 @@ final_gcw_up <- gcw_up1 %>%
     Sample_Depth = ifelse(Sample_Depth == "ATM", 0, Sample_Depth), 
     Depth = paste0(Sample_Depth, "cm")) %>% 
   rename(Replicate = Sample_Grid) %>% 
-  select("Site", "Replicate", "Depth", "Machine", "User", "Run_Date" ,            "Sample_Year"  ,        "Sample_Month"    ,            ,"Dilution_Factor"   ,   "CH4_Flag"         ,    "CO2_Flag"        ,     "CH4_Conc_ppm_dilcorr" ,"CO2_Conc_ppm_dilcorr", "Zone") %>% 
-  mutate(Run_Date = as.character(Run_Date))
+  select("Site", "Replicate", "Depth", "Machine", "User", "Run_Date" , "Sample_Year"  ,"Sample_Month","Dilution_Factor",   "CH4_Flag" , "CO2_Flag", 
+         "CH4_Conc_ppm_dilcorr" ,"CO2_Conc_ppm_dilcorr", "Zone") %>% 
+  mutate(Run_Date = as.character(Run_Date)) %>% 
+  mutate(Sample_ID = paste(Site, Zone, Replicate, Depth, sep = "_")) %>% 
+  mutate(Sample_ID = gsub("_0cm", "_ATM", Sample_ID))
+
 
 #combine the TMP data with the rest of the data: 
 all_data_gcw <- bind_rows(all_data1, final_gcw_up)
@@ -137,8 +141,8 @@ all_data_gcw <- all_data_gcw %>%
 ```{r, echo=FALSE}
 
 final_data <- all_data_gcw %>% 
-  mutate( Replicate = toupper(Replicate), 
-          Depth = ifelse(Replicate == "ATM", "0cm", Depth)) %>% 
+  mutate(Replicate = toupper(Replicate), 
+         Depth = ifelse(Replicate == "ATM", "0cm", Depth)) %>% 
   filter(Replicate != "POND")
 
 write.csv(final_data, "COMPASS_SynopticCB_SGAS_2023.csv")

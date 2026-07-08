@@ -286,7 +286,7 @@ ggarrange(ch4_samples, co2_samples, nrow=1, ncol=2)
 ```{r}
 
 #pull out what we need 
-Samples1 <- Samples[ ,c(1:3,6:9,17:20)]
+Samples1 <- Samples[ ,c(1:3,6:9,18:21)]
 #head(Samples1)
 
 IDs <- data.frame(do.call('rbind', strsplit(as.character(Samples1$Sample_ID),'_',fixed=TRUE)))
