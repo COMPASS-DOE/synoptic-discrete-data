@@ -1,0 +1,457 @@
+"","Project","Region","Site","Zone","Replicate","Depth_cm","Sample_ID","Year","Month","Day","Time","Time_Zone","SO4_ppm","SO4_Conc_mM","SO4_Conc_flag","SO4_QAQC_flag","Cl_ppm","Cl_Conc_mM","Cl_Conc_flag","Cl_QAQC_flag","salinity","Analysis_rundate","Run_notes","Field_notes"
+"1","COMPASS: Synoptic","CB","GCW","UP","A",10,"GCW_202605_UP_LYSA_10CM",2026,5,NA,"13:15","EDT",4.2919,0.133870867124142,"Within_Range","SO4 checks perc diff out of range",1.372,0.0387023977433004,"Within_Range","",0.002505204,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"2","COMPASS: Synoptic","CB","GCW","TR","A",10,"GCW_202605_TR_LYSA_10CM",2026,5,NA,"12:40","EDT",27.0171,0.842704304429195,"Within_Range","SO4 checks perc diff out of range",119.6476,3.37510860366714,"Within_Range","",0.2162292132,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"3","COMPASS: Synoptic","CB","GCW","TR","A",20,"GCW_202605_TR_LYSA_20CM",2026,5,NA,"12:45","EDT",21.4564,0.669257641921397,"Within_Range","SO4 checks perc diff out of range",53.2976,1.50345839210155,"Within_Range","",0.0963347632,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"4","COMPASS: Synoptic","CB","GCW","TR","A",45,"GCW_202605_TR_LYSA_45CM",2026,5,NA,"12:49","EDT",10.834,0.33792888334373,"Within_Range","SO4 checks perc diff out of range",215.7913,6.08720169252468,"Within_Range","",0.3899608791,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"5","COMPASS: Synoptic","CB","GCW","TR","B",10,"GCW_202605_TR_LYSB_10CM",2026,5,NA,"12:40","EDT",74.9418,2.33754834684966,"Within_Range","SO4 checks perc diff out of range",714.4721,20.1543610719323,"Within_Range","",1.2910770847,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"6","COMPASS: Synoptic","CB","GCW","TR","B",20,"GCW_202605_TR_LYSB_20CM",2026,5,NA,"12:45","EDT",51.5431,1.60770742358079,"Within_Range","SO4 checks perc diff out of range",255.4238,7.20518476727786,"Within_Range","",0.4615768066,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"7","COMPASS: Synoptic","CB","GCW","TR","B",45,"GCW_202605_TR_LYSB_45CM",2026,5,NA,"12:49","EDT",106.5712,3.32411728009981,"Within_Range","SO4 checks perc diff out of range",739.8146,20.8692411847673,"Within_Range","",1.3368709822,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"8","COMPASS: Synoptic","CB","GCW","TR","C",10,"GCW_202605_TR_LYSC_10CM",2026,5,NA,"12:52","EDT",124.9801,3.89831877729258,"Within_Range","SO4 checks perc diff out of range",503.7836,14.2111029619182,"Within_Range","",0.9103629652,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"9","COMPASS: Synoptic","CB","GCW","TR","C",20,"GCW_202605_TR_LYSC_20CM",2026,5,NA,"12:53","EDT",113.9942,3.55565190268247,"Within_Range","SO4 checks perc diff out of range",539.024,15.2051904090268,"Within_Range","",0.974042368,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"10","COMPASS: Synoptic","CB","GCW","TR","C",45,"GCW_202605_TR_LYSC_45CM",2026,5,NA,"12:57","EDT",74.9461,2.33768247036806,"Within_Range","SO4 checks perc diff out of range",0,0,"bdl","",2.6e-05,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"11","COMPASS: Synoptic","CB","GCW","WC","A",10,"GCW_202605_WC_LYSA_10CM",2026,5,NA,"11:22","EDT",715.5229,22.3182439176544,"Within_Range","SO4 checks perc diff out of range",5341.8436,150.686702397743,"Within_Range","",9.6527373852,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"12","COMPASS: Synoptic","CB","GCW","WC","A",20,"GCW_202605_WC_LYSA_20CM",2026,5,NA,"11:22","EDT",729.9577,22.7684872114785,"Within_Range","SO4 checks perc diff out of range",6035.1651,170.244431593794,"Within_Range","",10.9055693357,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"13","COMPASS: Synoptic","CB","GCW","WC","A",45,"GCW_202605_WC_LYSA_45CM",2026,5,NA,"11:22","EDT",329.4377,10.2756612601372,"Within_Range","SO4 checks perc diff out of range",6215.6833,175.336623413258,"Within_Range","",11.2317657231,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"14","COMPASS: Synoptic","CB","GCW","WC","B",10,"GCW_202605_WC_LYSB_10CM",2026,5,NA,"11:22","EDT",617.6086,19.2641484716157,"Within_Range","SO4 checks perc diff out of range",4906.3681,138.402485190409,"Within_Range","",8.8658331567,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"15","COMPASS: Synoptic","CB","GCW","WC","B",20,"GCW_202605_WC_LYSB_20CM",2026,5,NA,"11:22","EDT",677.116,21.12027448534,"Within_Range","SO4 checks perc diff out of range",5426.7899,153.082930888575,"Within_Range","",9.8062353493,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"16","COMPASS: Synoptic","CB","GCW","WC","B",45,"GCW_202605_WC_LYSB_45CM",2026,5,NA,"11:22","EDT",419.2361,13.0766094822208,"Within_Range","SO4 checks perc diff out of range",5913.4343,166.810558533145,"Within_Range","",10.6856017801,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"17","COMPASS: Synoptic","CB","GCW","WC","C",10,"GCW_202605_WC_LYSC_10CM",2026,5,NA,"11:30","EDT",563.6593,17.5813880224579,"Within_Range","SO4 checks perc diff out of range",4584.4072,129.32037235543,"Within_Range","",8.2840498104,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"18","COMPASS: Synoptic","CB","GCW","WC","C",20,"GCW_202605_WC_LYSC_20CM",2026,5,NA,"11:30","EDT",636.0601,19.8396787273862,"Within_Range","SO4 checks perc diff out of range",4939.5649,139.338925246827,"Within_Range","",8.9258197743,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"19","COMPASS: Synoptic","CB","GCW","WC","C",45,"GCW_202605_WC_LYSC_45CM",2026,5,NA,"11:30","EDT",575.0372,17.9362819713038,"Within_Range","SO4 checks perc diff out of range",6057.4873,170.874112834979,"Within_Range","",10.9459055511,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"20","COMPASS: Synoptic","CB","GCW","SW","A",0,"GCW_202605_SW_A",2026,5,NA,"11:00","EDT",654.1805,20.4048814722396,"Within_Range","SO4 checks perc diff out of range",4770.5806,134.572090267983,"Within_Range","",8.6204651442,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"21","COMPASS: Synoptic","CB","GCW","SW","B",0,"GCW_202605_SW_B",2026,5,NA,"11:00","EDT",673.3545,21.0029475982533,"Within_Range","SO4 checks perc diff out of range",4887.0993,137.858936530324,"Within_Range","",8.8310144351,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"22","COMPASS: Synoptic","CB","GCW","SW","C",0,"GCW_202605_SW_C",2026,5,NA,"11:00","EDT",644.1153,20.0909326263256,"Within_Range","SO4 checks perc diff out of range",4705.9212,132.748129760226,"Within_Range","",8.5036256084,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"23","COMPASS: Synoptic","CB","MSM","UP","A",10,"MSM_202605_UP_LYSA_10CM",2026,5,14,"13:53","EDT",248.6784,7.7566562694947,"Within_Range","SO4 checks perc diff out of range",2862.9343,80.7597827926657,"Within_Range","",5.1733482801,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"24","COMPASS: Synoptic","CB","MSM","UP","A",20,"MSM_202605_UP_LYSA_20CM",2026,5,14,"13:57","EDT",201.8195,6.29505614472863,"Within_Range","SO4 checks perc diff out of range",2954.8218,83.3518138222849,"Within_Range","",5.3393889926,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"25","COMPASS: Synoptic","CB","MSM","UP","B",10,"MSM_202605_UP_LYSB_10CM",2026,5,14,"14:04","EDT",228.6703,7.13257330006238,"Within_Range","SO4 checks perc diff out of range",1758.6066,49.6080846262341,"Within_Range","",3.1778281262,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"26","COMPASS: Synoptic","CB","MSM","UP","B",45,"MSM_202605_UP_LYSB_45CM",2026,5,14,"14:10","EDT",340.1968,10.6112538989395,"Within_Range","SO4 checks perc diff out of range",3578.5853,100.947399153738,"Within_Range","",6.4665296371,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"27","COMPASS: Synoptic","CB","MSM","UP","C",10,"MSM_202605_UP_LYSC_10CM",2026,5,14,"14:15","EDT",191.309,5.96721771678104,"Within_Range","SO4 checks perc diff out of range",1970.0998,55.5740423131171,"Within_Range","",3.5599963386,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"28","COMPASS: Synoptic","CB","MSM","UP","C",20,"MSM_202605_UP_LYSC_20CM",2026,5,14,"14:20","EDT",170.2837,5.31140673736744,"Within_Range","SO4 checks perc diff out of range",2253.9755,63.5818194640338,"Within_Range","",4.0729597285,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"29","COMPASS: Synoptic","CB","MSM","UP","C",45,"MSM_202605_UP_LYSC_45CM",2026,5,14,"14:27","EDT",227.8498,7.10698066126014,"Within_Range","SO4 checks perc diff out of range",2543.5825,71.751269393512,"Within_Range","",4.5962795775,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"30","COMPASS: Synoptic","CB","MSM","TR","A",10,"MSM_202605_TR_LYSA_10CM",2026,5,14,"12:51","EDT",634.7098,19.797560823456,"Within_Range","SO4 checks perc diff out of range",5388.4113,152.000318758815,"Within_Range","",9.7368852191,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"31","COMPASS: Synoptic","CB","MSM","TR","A",20,"MSM_202605_TR_LYSA_20CM",2026,5,14,"12:58","EDT",683.1454,21.3083406113537,"Within_Range","SO4 checks perc diff out of range",5138.3508,144.946425952045,"Within_Range","",9.2850258956,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"32","COMPASS: Synoptic","CB","MSM","TR","A",45,"MSM_202605_TR_LYSA_45CM",2026,5,14,"13:05","EDT",672.1164,20.964329382408,"Within_Range","SO4 checks perc diff out of range",5651.4342,159.419864598025,"Within_Range","",10.2121675994,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"33","COMPASS: Synoptic","CB","MSM","TR","B",10,"MSM_202605_TR_LYSB_10CM",2026,5,14,"12:51","EDT",646.8787,20.1771272613849,"Within_Range","SO4 checks perc diff out of range",4889.1632,137.917156558533,"Within_Range","",8.8347439024,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"34","COMPASS: Synoptic","CB","MSM","TR","B",20,"MSM_202605_TR_LYSB_20CM",2026,5,14,"12:55","EDT",440.4807,13.739260761073,"Within_Range","SO4 checks perc diff out of range",4716.5772,133.048722143865,"Within_Range","",8.5228810004,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"35","COMPASS: Synoptic","CB","MSM","TR","B",45,"MSM_202605_TR_LYSB_45CM",2026,5,14,"12:58","EDT",435.0134,13.568727386151,"Within_Range","SO4 checks perc diff out of range",5705.8494,160.954849083216,"Within_Range","",10.3104958658,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"36","COMPASS: Synoptic","CB","MSM","TR","C",10,"MSM_202605_TR_LYSC_10CM",2026,5,14,"13:09","EDT",690.6266,21.5416905801622,"Within_Range","SO4 checks perc diff out of range",5462.1659,154.080843441467,"Within_Range","",9.8701597813,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"37","COMPASS: Synoptic","CB","MSM","TR","C",20,"MSM_202605_TR_LYSC_20CM",2026,5,14,"13:16","EDT",490.6347,15.3036400499064,"Within_Range","SO4 checks perc diff out of range",4884.605,137.788575458392,"Within_Range","",8.826507235,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"38","COMPASS: Synoptic","CB","MSM","TR","C",45,"MSM_202605_TR_LYSC_45CM",2026,5,14,"13:22","EDT",645.7077,20.140601996257,"Within_Range","SO4 checks perc diff out of range",5805.3408,163.761376586742,"Within_Range","",10.4902768256,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"39","COMPASS: Synoptic","CB","MSM","WC","A",10,"MSM_202605_WC_LYSA_10CM",2026,5,14,"11:50","EDT",1220.7102,38.0758016219588,"Within_Range","SO4 checks perc diff out of range",7907.6368,223.064507757405,"Within_Range","",14.2891256976,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"40","COMPASS: Synoptic","CB","MSM","WC","A",20,"MSM_202605_WC_LYSA_20CM",2026,5,14,"11:55","EDT",1063.5341,33.1732407985028,"Within_Range","SO4 checks perc diff out of range",7875.1995,222.149492242595,"Within_Range","",14.2305114965,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"41","COMPASS: Synoptic","CB","MSM","WC","A",45,"MSM_202605_WC_LYSA_45CM",2026,5,14,"12:00","EDT",103.9619,3.24272925764192,"Within_Range","SO4 checks perc diff out of range",8538.3203,240.855297602257,"Within_Range","",15.4287707821,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"42","COMPASS: Synoptic","CB","MSM","WC","B",10,"MSM_202605_WC_LYSB_10CM",2026,5,14,"12:15","EDT",1138.8627,35.5228540237055,"Within_Range","SO4 checks perc diff out of range",7896.7568,222.757596614951,"Within_Range","",14.2694655376,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"43","COMPASS: Synoptic","CB","MSM","WC","B",20,"MSM_202605_WC_LYSB_20CM",2026,5,14,"12:22","EDT",1046.1746,32.6317716781036,"Within_Range","SO4 checks perc diff out of range",7841.2594,221.192084626234,"Within_Range","",14.1691817358,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"44","COMPASS: Synoptic","CB","MSM","WC","C",10,"MSM_202605_WC_LYSC_10CM",2026,5,14,"12:01","EDT",1156.7334,36.0802682470368,"Within_Range","SO4 checks perc diff out of range",8163.4644,230.281083215797,"Within_Range","",14.7514061708,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"45","COMPASS: Synoptic","CB","MSM","WC","C",20,"MSM_202605_WC_LYSC_20CM",2026,5,14,"12:08","EDT",960.0204,29.9444915782907,"Within_Range","SO4 checks perc diff out of range",7728.2711,218.00482651622,"Within_Range","",13.9650118777,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"46","COMPASS: Synoptic","CB","MSM","SW","A",0,"MSM_202605_SW_A",2026,5,14,"10:30","EDT",1143.6903,35.6734341859014,"Within_Range","SO4 checks perc diff out of range",8234.0943,232.273464033851,"Within_Range","",14.8790344001,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"47","COMPASS: Synoptic","CB","MSM","SW","B",0,"MSM_202605_SW_B",2026,5,14,"10:30","EDT",1134.1624,35.3762445414847,"Within_Range","SO4 checks perc diff out of range",8206.3921,231.492019746121,"Within_Range","",14.8289765247,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"48","COMPASS: Synoptic","CB","MSM","SW","C",0,"MSM_202605_SW_C",2026,5,14,"10:30","EDT",1150.976,35.90068621335,"Within_Range","SO4 checks perc diff out of range",8325.6954,234.857416078984,"Within_Range","",15.0445575878,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"49","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202605_UP_LYSA_10CM",2026,5,19,"12:40","EDT",8.3485,0.260402370555209,"Within_Range","SO4 checks perc diff out of range",6.0031,0.169339915373766,"Within_Range","",0.0108736017,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"50","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202605_UP_LYSA_20CM",2026,5,19,"12:47","EDT",7.985,0.24906425452277,"Within_Range","SO4 checks perc diff out of range",5.6776,0.160157968970381,"Within_Range","",0.0102854232,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"51","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202605_UP_LYSA_45CM",2026,5,19,"12:51","EDT",6.1658,0.192320648783531,"Within_Range","SO4 checks perc diff out of range",4.8814,0.137698166431594,"Within_Range","",0.0088466898,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"52","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202605_UP_LYSB_10CM",2026,5,19,"12:55","EDT",16.1016,0.502233312538989,"Within_Range","SO4 checks perc diff out of range",9.2933,0.262152327221439,"Within_Range","",0.0168189931,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"53","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202605_UP_LYSB_20CM",2026,5,19,"12:57","EDT",10.5757,0.329872114784779,"Within_Range","SO4 checks perc diff out of range",6.2423,0.176087447108604,"Within_Range","",0.0113058361,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"54","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202605_UP_LYSB_45CM",2026,5,19,"13:00","EDT",2.4639,0.0768527760449158,"Within_Range","SO4 checks perc diff out of range",5.8794,0.165850493653032,"Within_Range","",0.0106500758,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"55","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202605_UP_LYSC_10CM",2026,5,19,"13:05","EDT",9.3581,0.291893325015596,"Within_Range","SO4 checks perc diff out of range",15.5456,0.438521861777151,"Within_Range","",0.0281168992,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"56","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202605_UP_LYSC_20CM",2026,5,19,"13:08","EDT",6.1972,0.193300062383032,"Within_Range","SO4 checks perc diff out of range",21.8046,0.615080394922426,"Within_Range","",0.0394269122,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"57","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202605_UP_LYSC_45CM",2026,5,19,"13:11","EDT",3.3568,0.104703680598877,"Within_Range","SO4 checks perc diff out of range",21.1057,0.595365303244006,"Within_Range","",0.0381639999,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"58","COMPASS: Synoptic","CB","SWH","SWAMP","A",10,"SWH_202605_SWAMP_LYSA_10CM",2026,5,19,"14:26","EDT",4.7815,0.149142233312539,"Within_Range","SO4 checks perc diff out of range",4.1114,0.115977433004231,"Within_Range","",0.0074552998,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"59","COMPASS: Synoptic","CB","SWH","SWAMP","A",20,"SWH_202605_SWAMP_LYSA_20CM",2026,5,19,"14:30","EDT",3.9866,0.12434809731753,"Within_Range","SO4 checks perc diff out of range",4.0432,0.114053596614951,"Within_Range","",0.0073320624,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"60","COMPASS: Synoptic","CB","SWH","SWAMP","A",45,"SWH_202605_SWAMP_LYSA_45CM",2026,5,19,"14:33","EDT",4.038,0.125951341235184,"Within_Range","SO4 checks perc diff out of range",8.5006,0.23979125528914,"Within_Range","",0.0153865842,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"61","COMPASS: Synoptic","CB","SWH","SWAMP","B",10,"SWH_202605_SWAMP_LYSB_10CM",2026,5,19,"14:00","EDT",8.1163,0.253159700561447,"Within_Range","SO4 checks perc diff out of range",3.85,0.108603667136812,"Within_Range","",0.00698295,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"62","COMPASS: Synoptic","CB","SWH","SWAMP","B",20,"SWH_202605_SWAMP_LYSB_20CM",2026,5,19,"14:10","EDT",5.1327,0.160096693699314,"Within_Range","SO4 checks perc diff out of range",7.2364,0.20412976022567,"Within_Range","",0.0131021748,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"63","COMPASS: Synoptic","CB","SWH","SWAMP","B",45,"SWH_202605_SWAMP_LYSB_45CM",2026,5,19,"14:12","EDT",4.2536,0.132676232064878,"Within_Range","SO4 checks perc diff out of range",7.625,0.21509167842031,"Within_Range","",0.013804375,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"64","COMPASS: Synoptic","CB","SWH","SWAMP","C",10,"SWH_202605_SWAMP_LYSC_10CM",2026,5,19,"13:43","EDT",16.1158,0.502676232064878,"Within_Range","SO4 checks perc diff out of range",7.0021,0.197520451339915,"Within_Range","",0.0126787947,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"65","COMPASS: Synoptic","CB","SWH","SWAMP","C",20,"SWH_202605_SWAMP_LYSC_20CM",2026,5,19,"13:49","EDT",4.8703,0.15191203992514,"Within_Range","SO4 checks perc diff out of range",7.9906,0.225404795486601,"Within_Range","",0.0144650142,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"66","COMPASS: Synoptic","CB","SWH","SWAMP","C",45,"SWH_202605_SWAMP_LYSC_45CM",2026,5,19,"13:52","EDT",4.0821,0.127326887086712,"Within_Range","SO4 checks perc diff out of range",9.483,0.267503526093089,"Within_Range","",0.017161781,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"67","COMPASS: Synoptic","CB","SWH","TR","A",10,"SWH_202605_TR_LYSA_10CM",2026,5,21,"11:08","EDT",192.0704,5.99096693699314,"Within_Range","SO4 checks perc diff out of range",920.6432,25.9701889985896,"Within_Range","",1.6636282624,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"68","COMPASS: Synoptic","CB","SWH","TR","A",20,"SWH_202605_TR_LYSA_20CM",2026,5,21,"11:15","EDT",36.2247,1.12990330630069,"Within_Range","SO4 checks perc diff out of range",726.4435,20.4920592383639,"Within_Range","",1.3127094045,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"69","COMPASS: Synoptic","CB","SWH","TR","A",45,"SWH_202605_TR_LYSA_45CM",2026,5,21,"11:19","EDT",14.0971,0.439709918902059,"Within_Range","SO4 checks perc diff out of range",700.6316,19.7639379407616,"Within_Range","",1.2660673012,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"70","COMPASS: Synoptic","CB","SWH","TR","B",10,"SWH_202605_TR_LYSB_10CM",2026,5,21,"11:26","EDT",142.1523,4.43394572676232,"Within_Range","SO4 checks perc diff out of range",1058.8833,29.8697686882934,"Within_Range","",1.9134281231,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"71","COMPASS: Synoptic","CB","SWH","TR","B",20,"SWH_202605_TR_LYSB_20CM",2026,5,21,"11:28","EDT",50.2955,1.56879288833437,"Within_Range","SO4 checks perc diff out of range",896.9348,25.3014047954866,"Within_Range","",1.6207871836,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"72","COMPASS: Synoptic","CB","SWH","TR","B",45,"SWH_202605_TR_LYSB_45CM",2026,5,21,"11:30","EDT",2.7109,0.084557080474111,"Within_Range","SO4 checks perc diff out of range",746.0141,21.0441212976023,"Within_Range","",1.3480734787,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"73","COMPASS: Synoptic","CB","SWH","TR","C",10,"SWH_202605_TR_LYSC_10CM",2026,5,21,"11:34","EDT",214.1972,6.68113537117904,"Within_Range","SO4 checks perc diff out of range",1270.269,35.8326939351199,"Within_Range","",2.295402083,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"74","COMPASS: Synoptic","CB","SWH","TR","C",20,"SWH_202605_TR_LYSC_20CM",2026,5,21,"11:39","EDT",107.3421,3.34816281971304,"Within_Range","SO4 checks perc diff out of range",715.3793,20.179952045134,"Within_Range","",1.2927163951,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"75","COMPASS: Synoptic","CB","SWH","TR","C",45,"SWH_202605_TR_LYSC_45CM",2026,5,21,"11:45","EDT",17.398,0.542669993761697,"Within_Range","SO4 checks perc diff out of range",0,0,"bdl","",2.6e-05,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"76","COMPASS: Synoptic","CB","SWH","WC","A",10,"SWH_202605_WC_LYSA_10CM",2026,5,21,"12:29","EDT",111.5185,3.47843106674984,"Within_Range","SO4 checks perc diff out of range",1305.614,36.8297320169252,"Within_Range","",2.359270498,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"77","COMPASS: Synoptic","CB","SWH","WC","A",20,"SWH_202605_WC_LYSA_20CM",2026,5,21,"12:32","EDT",55.019,1.71612601372427,"Within_Range","SO4 checks perc diff out of range",1163.7417,32.8276925246826,"Within_Range","",2.1029072519,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"78","COMPASS: Synoptic","CB","SWH","WC","A",45,"SWH_202605_WC_LYSA_45CM",2026,5,21,"12:35","EDT",26.2332,0.81825327510917,"Within_Range","SO4 checks perc diff out of range",993.9465,28.0379830747532,"Within_Range","",1.7960873255,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"79","COMPASS: Synoptic","CB","SWH","WC","B",10,"SWH_202605_WC_LYSB_10CM",2026,5,21,"12:38","EDT",115.3657,3.59843106674984,"Within_Range","SO4 checks perc diff out of range",1331.2617,37.553221438646,"Within_Range","",2.4056158919,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"80","COMPASS: Synoptic","CB","SWH","WC","B",20,"SWH_202605_WC_LYSB_20CM",2026,5,21,"12:41","EDT",47.5857,1.48427011852776,"Within_Range","SO4 checks perc diff out of range",1097.4936,30.9589167842031,"Within_Range","",1.9831969352,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"81","COMPASS: Synoptic","CB","SWH","WC","B",45,"SWH_202605_WC_LYSB_45CM",2026,5,21,"12:43","EDT",21.2203,0.661893325015596,"Within_Range","SO4 checks perc diff out of range",985.8793,27.8104174894217,"Within_Range","",1.7815098951,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"82","COMPASS: Synoptic","CB","SWH","WC","C",10,"SWH_202605_WC_LYSC_10CM",2026,5,21,"12:45","EDT",142.0487,4.43071428571429,"Within_Range","SO4 checks perc diff out of range",1349.7347,38.0743215796897,"Within_Range","",2.4389966029,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"83","COMPASS: Synoptic","CB","SWH","WC","C",20,"SWH_202605_WC_LYSC_20CM",2026,5,21,"12:47","EDT",115.9756,3.61745477230193,"Within_Range","SO4 checks perc diff out of range",1130.3896,31.8868716502116,"Within_Range","",2.0426400072,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"84","COMPASS: Synoptic","CB","SWH","WC","C",45,"SWH_202605_WC_LYSC_45CM",2026,5,21,"12:49","EDT",11.9359,0.372298814722396,"Within_Range","SO4 checks perc diff out of range",978.051,27.5895909732017,"Within_Range","",1.767364157,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"85","COMPASS: Synoptic","CB","SWH","SW","A",0,"SWH_202605_SW_A",2026,5,21,"12:50","EDT",131.6562,4.10655645664379,"Within_Range","SO4 checks perc diff out of range",952.6022,26.8717122708039,"Within_Range","",1.7213781754,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"86","COMPASS: Synoptic","CB","SWH","SW","B",0,"SWH_202605_SW_B",2026,5,21,"12:50","EDT",131.2015,4.09237367436057,"Within_Range","SO4 checks perc diff out of range",951.1231,26.8299887165021,"Within_Range","",1.7187054417,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"87","COMPASS: Synoptic","CB","SWH","SW","C",0,"SWH_202605_SW_C",2026,5,21,"12:50","EDT",130.8464,4.08129756706176,"Within_Range","SO4 checks perc diff out of range",945.8334,26.6807729196051,"Within_Range","",1.7091469538,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"88","COMPASS: Synoptic","CB","GWI","UP","A",10,"GWI_202605_UP_LYSA_10CM",2026,5,20,"13:00","EDT",884.0663,27.5753680598877,"Within_Range","SO4 checks perc diff out of range",6658.6236,187.83141325811,"Within_Range","",12.0321588452,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"89","COMPASS: Synoptic","CB","GWI","UP","A",20,"GWI_202605_UP_LYSA_20CM",2026,5,20,"13:05","EDT",607.2693,18.9416500311915,"Within_Range","SO4 checks perc diff out of range",5004.5501,141.172076163611,"Within_Range","",9.0432480307,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"90","COMPASS: Synoptic","CB","GWI","UP","A",45,"GWI_202605_UP_LYSA_45CM",2026,5,20,"13:07","EDT",840.3118,26.2105988771054,"Within_Range","SO4 checks perc diff out of range",6305.936,177.882538787024,"Within_Range","",11.394852352,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"91","COMPASS: Synoptic","CB","GWI","UP","B",10,"GWI_202605_UP_LYSB_10CM",2026,5,20,"13:11","EDT",492.7589,15.3698970679975,"Within_Range","SO4 checks perc diff out of range",3869.4546,109.152456981664,"Within_Range","",6.9921304622,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"92","COMPASS: Synoptic","CB","GWI","UP","B",20,"GWI_202605_UP_LYSB_20CM",2026,5,20,"13:14","EDT",542.7452,16.9290455396132,"Within_Range","SO4 checks perc diff out of range",4194.9172,118.333348377997,"Within_Range","",7.5802413804,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"93","COMPASS: Synoptic","CB","GWI","UP","B",45,"GWI_202605_UP_LYSB_45CM",2026,5,20,"13:17","EDT",532.0888,16.5966562694947,"Within_Range","SO4 checks perc diff out of range",4532.5785,127.858349788434,"Within_Range","",8.1903953495,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"94","COMPASS: Synoptic","CB","GWI","UP","C",45,"GWI_202605_UP_LYSC_45CM",2026,5,20,"13:22","EDT",569.2475,17.7556924516531,"Within_Range","SO4 checks perc diff out of range",4753.9968,134.104282087447,"Within_Range","",8.5904982176,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"95","COMPASS: Synoptic","CB","GWI","TR","A",10,"GWI_202605_TR_LYSA_10CM",2026,5,20,"13:53","EDT",1131.1568,35.2824953212726,"Within_Range","SO4 checks perc diff out of range",7826.2517,220.768736248237,"Within_Range","",14.1420628219,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"96","COMPASS: Synoptic","CB","GWI","TR","A",20,"GWI_202605_TR_LYSA_20CM",2026,5,20,"13:56","EDT",930.3347,29.0185495945103,"Within_Range","SO4 checks perc diff out of range",9537.5286,269.041709449929,"Within_Range","",17.2343401802,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"97","COMPASS: Synoptic","CB","GWI","TR","B",10,"GWI_202605_TR_LYSB_10CM",2026,5,20,"14:02","EDT",1275.1403,39.7735589519651,"Within_Range","SO4 checks perc diff out of range",6789.3044,191.517754583921,"Within_Range","",12.2682990508,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"98","COMPASS: Synoptic","CB","GWI","TR","B",20,"GWI_202605_TR_LYSB_20CM",2026,5,20,"14:03","EDT",1018.853,31.7795695570805,"Within_Range","SO4 checks perc diff out of range",7435.2222,209.738284908322,"Within_Range","",13.4354725154,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"99","COMPASS: Synoptic","CB","GWI","TR","B",45,"GWI_202605_TR_LYSB_45CM",2026,5,20,"14:04","EDT",1197.6781,37.3573955084217,"Within_Range","SO4 checks perc diff out of range",9079.616,256.124569816643,"Within_Range","",16.406892112,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"100","COMPASS: Synoptic","CB","GWI","TR","C",10,"GWI_202605_TR_LYSC_10CM",2026,5,20,"14:10","EDT",1104.9153,34.4639831565814,"Within_Range","SO4 checks perc diff out of range",5600.104,157.971904090268,"Within_Range","",10.119413928,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"101","COMPASS: Synoptic","CB","GWI","TR","C",20,"GWI_202605_TR_LYSC_20CM",2026,5,20,"14:12","EDT",1996.0548,62.2599750467873,"Within_Range","SO4 checks perc diff out of range",9676.0962,272.950527503526,"Within_Range","",17.4847318334,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"102","COMPASS: Synoptic","CB","GWI","TR","C",45,"GWI_202605_TR_LYSC_45CM",2026,5,20,"14:15","EDT",1191.0013,37.1491359950094,"Within_Range","SO4 checks perc diff out of range",9495.3857,267.852911142454,"Within_Range","",17.1581879599,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"103","COMPASS: Synoptic","CB","GWI","WC","A",10,"GWI_202605_WC_LYSA_10CM",2026,5,20,"14:38","EDT",2721.0768,84.8745102932002,"Within_Range","SO4 checks perc diff out of range",12124.2495,342.009858956276,"Within_Range","",21.9085448465,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"104","COMPASS: Synoptic","CB","GWI","WC","A",20,"GWI_202605_WC_LYSA_20CM",2026,5,20,"14:42","EDT",1206.1194,37.6206924516531,"Within_Range","SO4 checks perc diff out of range",10747.5359,303.174496473907,"Within_Range","",19.4208233713,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"105","COMPASS: Synoptic","CB","GWI","WC","A",45,"GWI_202605_WC_LYSA_45CM",2026,5,20,"14:46","EDT",1435.1244,44.7637055520898,"Within_Range","SO4 checks perc diff out of range",11855.0034,334.414764456982,"Within_Range","",21.4220171438,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"106","COMPASS: Synoptic","CB","GWI","WC","B",10,"GWI_202605_WC_LYSB_10CM",2026,5,20,"14:50","EDT",2230.1903,69.5630162195883,"Within_Range","SO4 checks perc diff out of range",12052.6073,339.988922425952,"Within_Range","",21.7790873911,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"107","COMPASS: Synoptic","CB","GWI","WC","B",20,"GWI_202605_WC_LYSB_20CM",2026,5,20,"14:54","EDT",1509.5258,47.084398003743,"Within_Range","SO4 checks perc diff out of range",11990.3941,338.233966149506,"Within_Range","",21.6666681387,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"108","COMPASS: Synoptic","CB","GWI","WC","B",45,"GWI_202605_WC_LYSB_45CM",2026,5,20,"14:56","EDT",1531.7491,47.777576419214,"Within_Range","SO4 checks perc diff out of range",12939.5872,365.009511988716,"Within_Range","",23.3818600704,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"109","COMPASS: Synoptic","CB","GWI","WC","C",10,"GWI_202605_WC_LYSC_10CM",2026,5,20,"15:02","EDT",1988.4425,62.0225358702433,"Within_Range","SO4 checks perc diff out of range",12599.4042,355.413376586742,"Within_Range","",22.7671493894,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"110","COMPASS: Synoptic","CB","GWI","WC","C",20,"GWI_202605_WC_LYSC_20CM",2026,5,20,"15:05","EDT",1454.6414,45.3724703680599,"Within_Range","SO4 checks perc diff out of range",11861.9307,334.610174894217,"Within_Range","",21.4345347749,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"111","COMPASS: Synoptic","CB","GWI","WC","C",45,"GWI_202605_WC_LYSC_45CM",2026,5,20,"15:07","EDT",1642.1513,51.2211883967561,"Within_Range","SO4 checks perc diff out of range",13005.9601,366.881808180536,"Within_Range","",23.5017959007,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"112","COMPASS: Synoptic","CB","GWI","SW","A",0,"GWI_202605_SW_A",2026,5,20,"15:58","EDT",1815.5855,56.6308640049906,"Within_Range","SO4 checks perc diff out of range",13313.3961,375.554191819464,"Within_Range","",24.0573327527,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"113","COMPASS: Synoptic","CB","GWI","SW","B",0,"GWI_202605_SW_B",2026,5,20,"16:50","EDT",1894.2183,59.0835402370555,"Within_Range","SO4 checks perc diff out of range",13880.9459,391.564059238364,"Within_Range","",25.0828952413,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
+"114","COMPASS: Synoptic","CB","GWI","SW","C",0,"GWI_202605_SW_C",2026,5,20,"16:52","EDT",1785.2524,55.6847286338116,"Within_Range","SO4 checks perc diff out of range",13134.9839,370.521407616361,"Within_Range","",23.7349419073,"2026-07-09","Std 1 was consistently low. 
+  A couple dups were bad, one spk was low, but generally they looked good. 
+  All samples are present in metadata. 
+  ",NA
