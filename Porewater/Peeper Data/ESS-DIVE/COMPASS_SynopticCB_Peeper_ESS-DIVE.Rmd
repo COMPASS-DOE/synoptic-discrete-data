@@ -32,6 +32,9 @@ library(here)
 #write out a csv of all the data to the main folder: 
 final_data <- read.csv("../COMPASS_SynopticCB_Peeper_Data.csv")
 
+final_data <- final_data %>% 
+  rename(Depth_cm = Replicate)
+
 ##Separate by year for ESS-DIVE 
 final_data_2022 <- subset(final_data, Year == "2022")
 final_data_2023 <- subset(final_data, Year == "2023")
@@ -64,11 +67,11 @@ dd$Definition <-       c("Project name: Project component",
                          "Year (YYYY) of sample collection", 
                          "Month (MM) of sample collection",
                          "Day (DD) of sample collection",
-                         "Site Code identifier for sampling transect location (GCW, SWH, MSM, GWI), see dataset locations for coordinates", 
-                         "Plot within space-for-time transect (UP=Upland, TR=Transition, WC= Wetland Control, SWAMP = Swamp)",
+                         "Site Code identifier for sampling transect location (MSM), see dataset location for coordinates", 
+                         "Plot within space-for-time transect (UP=Upland, TR=Transition, WC= Wetland Control)",
                          "Porewater sample ID", 
                          "Collection device used to sample porewater: RHZ = Peeper sampler", 
-                         "Replicate (1-12)",
+                         "Depth interval below the soil surface from which the sample was collected",
                          "Sulfate concentration", 
                          "Sulfate concentration", 
                          "Sulfate concentration flag (adl = above detection limit (20 ug/mL), bdl = below detection limit (0 ug/mL))", 
@@ -76,8 +79,8 @@ dd$Definition <-       c("Project name: Project component",
                          "Chloride concentration", 
                          "Chloride concentration flag (adl = above detection limit (200 ug/mL), bdl = below detection limit (0 ug/mL))", 
                          "Salinity", 
-                         "Sulfide concentration mean", 
-                         "Sulfide concentration standard deviation", 
+                         "Sulfide concentration in uM, mean of analytical replicates during sample analysis", 
+                         "Sulfide concentration standard deviation in uM of analytical replicates during sample analysis", 
                          "Sulfide concentration flag (adl = above detection limit (100 umoles/L), bdl = below detection limit (0 umoles/L))", 
                          "Ammonia (NH3) concentration", 
                          "Ammonia (NH3) concentration", 
@@ -88,11 +91,11 @@ dd$Definition <-       c("Project name: Project component",
                          "Nitrate-N + Nitrite-N (NOx) concentration", 
                          "Nitrate-N + Nitrite-N (NOx) concentration", 
                          "Nitrate-N + Nitrite-N (NOx) concentration flag (adl = above detection limit (1 mg/L), bdl = below detection limit (0.025 mg/L))",
-                         "Iron (II) concentration mean", 
-                         "Iron (II) concentration standard deviation", 
+                         "Iron (II) concentration in uM, mean of analytical replicates during sample analysis", 
+                         "Iron (II) concentration standard deviation in uM of analytical replicates during sample analysis", 
                          "Iron (II) concentration concentration flag (adl = above detection limit (500 umoles/L), bdl = below detection limit (0.6 umoles/L))", 
-                         "Iron (III) concentration mean", 
-                         "Iron (III) concentration standard deviation", 
+                         "Iron (III) concentration in uM, mean of analytical replicates during sample analysis", 
+                         "Iron (III) concentration standard deviation in uM of analytical replicates during sample analysis", 
                          "Iron (III) concentration concentration flag (adl = above detection limit (500 umoles/L), bdl = below detection limit (0.6 umoles/L))")
 
 dd$Unit <-             c( "NA", 
@@ -106,29 +109,29 @@ dd$Unit <-             c( "NA",
                          "NA", 
                          "NA",
                          "ppm", 
-                         "umoles/L", 
+                         "mmoles/L", 
                          "NA", 
                          "ppm", 
-                         "umoles/L", 
+                         "mmoles/L", 
                          "NA", 
                          "ppt", 
-                         "umoles/L", 
-                         "umoles/L", 
+                         paste0("\u00b5", "moles/L"), 
+                         paste0("\u00b5", "moles/L"), 
                          "NA",  
                          "mg/L", 
-                         "umoles/L", 
+                         paste0("\u00b5", "moles/L"), 
                          "NA", 
                          "mg/L", 
-                         "umoles/L", 
+                         paste0("\u00b5", "moles/L"), 
                          "NA",                          
                          "mg/L", 
-                         "umoles/L", 
+                         paste0("\u00b5", "moles/L"), 
                          "NA",
-                         "umoles/L", 
-                         "umoles/L", 
+                         paste0("\u00b5", "moles/L"), 
+                         paste0("\u00b5", "moles/L"), 
                          "NA", 
-                         "umoles/L", 
-                         "umoles/L", 
+                         paste0("\u00b5", "moles/L"), 
+                         paste0("\u00b5", "moles/L"), 
                          "NA")
 
 dd$data_type <-        c("text", 
@@ -178,15 +181,15 @@ dd$Instrument_ifapplicable <-  c(
                          "NA", 
                          "Rhizosphere Peeper MOM Soil Moisture Sampler (19.21.21)", 
                          "NA",
-                         "Dionex Integrion", 
-                         "Dionex Integrion", 
+                         "Dionex Integrion RFIC (Thermo Scientific)", 
+                         "Dionex Integrion RFIC (Thermo Scientific)", 
                          "NA", 
-                         "Dionex Integrion", 
-                         "Dionex Integrion", 
+                         "Dionex Integrion RFIC (Thermo Scientific)", 
+                         "Dionex Integrion RFIC (Thermo Scientific)", 
                          "NA", 
                          "Calculated with Knudsen equation (Strickland and Parsons, 1972)", 
-                         "Agilent BioTek PowerWave Microplate Reader", 
-                         "Standard deviation of analytical triplicates", 
+                         "Modified Cline (1969) method measured with Agilent BioTek PowerWave Microplate Reader", 
+                         "NA", 
                          "NA",  
                          "SEAL Instrument: SEAL AQ300 Discrete Analyzer (https://seal-analytical.com/en/products/discrete-analyzers/aq300-discrete-analyzer/)", 
                          "SEAL Instrument: SEAL AQ300 Discrete Analyzer (https://seal-analytical.com/en/products/discrete-analyzers/aq300-discrete-analyzer/)", 
@@ -197,11 +200,11 @@ dd$Instrument_ifapplicable <-  c(
                          "SEAL Instrument: SEAL AQ300 Discrete Analyzer (https://seal-analytical.com/en/products/discrete-analyzers/aq300-discrete-analyzer/)", 
                          "SEAL Instrument: SEAL AQ300 Discrete Analyzer (https://seal-analytical.com/en/products/discrete-analyzers/aq300-discrete-analyzer/)", 
                          "NA",
-                         "Agilent BioTek PowerWave Microplate Reader", 
-                         "Agilent BioTek PowerWave Microplate Reader", 
+                         "Modified from Adapted from Stookey, 1970, Violler et al., 2000, Charbonnier & Anschutz 2021, Gong 2020 methods measured with Agilent BioTek PowerWave Microplate Reader", 
+                         "Modified from Adapted from Stookey, 1970, Violler et al., 2000, Charbonnier & Anschutz 2021, Gong 2020 methods measured with Agilent BioTek PowerWave Microplate Reader", 
                          "NA", 
-                         "Agilent BioTek PowerWave Microplate Reader", 
-                         "Agilent BioTek PowerWave Microplate Reader", 
+                         "Modified from Adapted from Stookey, 1970, Violler et al., 2000, Charbonnier & Anschutz 2021, Gong 2020 methods measured with Agilent BioTek PowerWave Microplate Reader", 
+                         "Modified from Adapted from Stookey, 1970, Violler et al., 2000, Charbonnier & Anschutz 2021, Gong 2020 methods measured with Agilent BioTek PowerWave Microplate Reader", 
                          "NA")
 
 dd$Method_ifapplicable <- c(
@@ -243,7 +246,7 @@ dd$Method_ifapplicable <- c(
 
 
 #write out the data dictionary associated with the data:
-write.csv(dd, "Data package/dd.csv", row.names = FALSE)
+write.csv(dd, "Data package/dd.csv", row.names = FALSE,  fileEncoding = "UTF-8")
 
 ```
 
@@ -269,8 +272,8 @@ flmd$notes <- ""
 
 #add information about each line:
 
-flmd$file_description <-  c("Peeper water sample analysis data taken from COMPASS synoptic sites in 2022",
-                            "Peeper water sample analysis data taken from COMPASS synoptic sites in 2023",
+flmd$file_description <-  c("Depth resolved groundwater samples collected from COMPASS CB Synoptic sites in 2022",
+                            "Depth resolved groundwater samples collected from COMPASS CB Synoptic sites in 2023",
                             "Data dictionary file for annual Peeper water sample analysis data files describing each column in the dataset")
 
 flmd$data_orientation <-  c("horizontal",
@@ -298,26 +301,11 @@ write.csv(flmd, "Data package/flmd.csv", row.names = FALSE)
 ##Description, Latitude, Longitude
 
 MSM <- data.frame(
-  Description = "Moneystump Swamp (MSM); one of the COMPASS-FME synoptic sites located in the Blackwater National Wildlife Refuge along the mesohaline Beaverdam Creek. This synoptic site consists of three plots: upland ('UP'; located at 38.4315N, 76.2267W), transition ('TR'; 38.4310N, 76.2277W), and wetland ('W'; 38.4308N, 76.2286W). The site was established in June 2022. The transect spans a coastal loblolly pine forest and a mesohaline marsh dominated by Spartina and Distichlis.", 
+  Description = "Moneystump Swamp (MSM); one of the COMPASS-FME synoptic sites located in the Blackwater National Wildlife Refuge along the mesohaline Beaverdam Creek. This synoptic site consists of three plots: upland ('UP'; located at 38.4315N, 76.2267W), transition ('TR'; 38.4310N, 76.2277W), and wetland ('WC'; 38.4308N, 76.2286W). The site was established in June 2022. The transect spans a coastal loblolly pine forest and a mesohaline marsh dominated by Spartina and Distichlis.", 
   Latitude = "38.4310 degrees", 
   Longitude = "-76.2277 degrees")
 
-SWH <- data.frame(
-  Description = "Sweet Hall Marsh (SWH); one of the COMPASS-FME synoptic sites located along the tidal fresh Pamunkey River, one of the two tributaries of the York River in Virginia, USA. The COMPASS-FME consists of three plots: upland ('UP'; located at 37.5708N, 76.8954W), swamp ('SWAMP'; located at 37.57069N, 76.8957W), transition ('TR'; 37.56883N, 76.8964W), and wetland ('W'; 37.56659N, 76.8970W). The synoptic site was established in June 2023. This site is also identified as a Chesapeake Bay National Research Reserve site.", 
-  Latitude = "37.56883 degrees", 
-  Longitude = "-76.8964 degrees")
-
-GCW <- data.frame(
-  Description = "GCReW (GCW); one of the COMPASS-FME synoptic sites, and has three plots: upland ('UP'; located at 38.8741N, 76.5522W), transition ('TR'; 38.8745, 76.5515W), and wetland ('W'; 38.8750N, 76.5500W). Note that this site overlaps spatially with the TEMPEST (TMP) plots, the upland portion of the transect overlaps with the TEMPEST experiment control plot. This transect spans a mid- to late-successional (~80 years old) temperate, deciduous coastal forest and a mesohaline marsh along the Rhode River in Edgewater, MD.",
-  Latitude = "38.8745 degrees", 
-  Longitude = "-76.5515 degrees")
-
-GWI <- data.frame(
-  Description = "Goodwin Islands (GWI); one of the COMPASS-FME synoptic sites, located along the polyhaline York River, and has three plots: upland ('UP'; located at 37.2192N, 76.4087W), transition ('TR'; 37.2194N, 76.4092W), and wetland ('W'; 37.2189N, 76.4101W). The site was established in June 2022.", 
-  Latitude = "37.2194 degrees", 
-  Longitude = "-76.4092 degrees")
-
-site_list = bind_rows(MSM, SWH, GCW, GWI)
+site_list = MSM
 
 #write out the site list associated with the data:
 write.csv(site_list, "Data package/site_list.csv", row.names = FALSE)
@@ -330,7 +318,7 @@ write.csv(site_list, "Data package/site_list.csv", row.names = FALSE)
 
 #Create a text file that has the description of the data - This ideally should match the text that is in the data READ.ME 
 
-datadescription <- "These data are measurements of soil reduction-oxidation potential (REDOX) profiles collected using REDOX probes at the COMPASS 'synoptic' sites in the Chesapeake Bay region:  GCReW (GCW), Goodwin Islands (GWI), Moneystump (MSM), and Sweet Hall (SWH). These sites have space for time transects spanning coastal upland forest (UP), coastal upland forest transitioning to wetland (TR), and wetland (WC) plots. The Sweet Hall Marsh site also has a forested swamp as part of its transect (SWAMP). Soil REDOX profiles were measured at 10, 20, and 30/35cm depths monthly from 2022-2024 then bi-monthly from 2025-present across the plots. The SWH TR site has variable topography that includes hummocks and hollows; these were measured separately and are denoted in the dataset by the Topography column as Hummock/Hollow. To make measurements, five replicate soil REDOX probes were pushed into the ground to the depth of measurement and allowed to equilibrate for five minutes before recording the probe reading with a Thermo Scientific Orion pH/ORP handheld meter. After the reading, probes were pushed to the next depth of interest."
+datadescription <- "These data are measurements of depth resolved groundwater samples collected in 2022 from the COMPASS 'synoptic' sites in the Chesapeake Bay region:  GCReW (GCW), Goodwin Islands (GWI), Moneystump (MSM), and Sweet Hall (SWH). These sites have space for time transects spanning coastal upland forest (UP), coastal upland forest transitioning to wetland (TR), and wetland (WC) plots. The Sweet Hall Marsh site also has a forested swamp as part of its transect (SWAMP). Soil REDOX profiles were measured at 10, 20, and 30/35cm depths monthly from 2022-2024 then bi-monthly from 2025-present across the plots. The SWH TR site has variable topography that includes hummocks and hollows; these were measured separately and are denoted in the dataset by the Topography column as Hummock/Hollow. To make measurements, five replicate soil REDOX probes were pushed into the ground to the depth of measurement and allowed to equilibrate for five minutes before recording the probe reading with a Thermo Scientific Orion pH/ORP handheld meter. After the reading, probes were pushed to the next depth of interest."
 
 
 #write to a text file 
