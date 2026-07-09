@@ -123,7 +123,7 @@ dd$Instrument_ifapplicable <-
                          "NA",
                          "NA",
                          "NA",
-                         "Redox Probe: SWAP Redox Probe, Reference Probe: Calomel Reference probe, Handheld Readout: Thermo Scientific Orion Star A221 pH Meter",
+                         "Redox Probe: Paleo Terra Redox probe, Reference Probe: Ag/AgCl reference probe, Handheld Readout: Thermo Scientific Orion Star A221 pH Meter",
                          "NA",
                          "NA",
                          "NA")
@@ -198,7 +198,7 @@ MSM <- data.frame(
   Longitude = "-76.2277 degrees")
 
 SWH <- data.frame(
-  Description = "Sweet Hall Marsh (SWH); one of the COMPASS-FME synoptic sites located along the tidal fresh Pamunkey River, one of the two tributaries of the York River in Virginia, USA. The COMPASS-FME consists of three plots: upland ('UP'; located at 37.5708N, 76.8954W), swamp ('SWAMP'; located at 37.57069N, 76.8957W), transition ('TR'; 37.56883N, 76.8964W), and wetland ('WC'; 37.56659N, 76.8970W). The synoptic site was established in June 2023. The transect spans a temperate, deciduous coastal forest, a forest swamp, and a tidal freshwater wetland dominated by peltandra, wild rice, and other species. This site is also identified as a Chesapeake Bay National Research Reserve site. ", 
+  Description = "Sweet Hall Marsh (SWH); one of the COMPASS-FME synoptic sites located along the tidal fresh Pamunkey River, one of the two tributaries of the York River in Virginia, USA. The COMPASS-FME consists of three plots: upland ('UP'; located at 37.5708N, 76.8954W), swamp ('SWAMP'; located at 37.57069N, 76.8957W), transition ('TR'; 37.56883N, 76.8964W), and wetland ('WC'; 37.56659N, 76.8970W). The synoptic site was established in June 2023. This site is also identified as a Chesapeake Bay National Research Reserve site.", 
   Latitude = "37.56883 degrees", 
   Longitude = "-76.8964 degrees")
 
@@ -208,7 +208,7 @@ GCW <- data.frame(
   Longitude = "-76.5515 degrees")
 
 GWI <- data.frame(
-  Description = "Goodwin Islands (GWI); one of the COMPASS-FME synoptic sites, located along the polyhaline York River, and has three plots: upland ('UP'; located at 37.2192N, 76.4087W), transition ('TR'; 37.2194N, 76.4092W), and wetland ('WC'; 37.2189N, 76.4101W). The site was established in June 2022. The transect spans a coastal loblolly pine forest, a transitional forest with a substantial phragmites stand, and a marsh dominated by Spartina and Distichlis. This site is also identified as a Chesapeake Bay National Research Reserve site", 
+  Description = "Goodwin Islands (GWI); one of the COMPASS-FME synoptic sites, located along the polyhaline York River, and has three plots: upland ('UP'; located at 37.2192N, 76.4087W), transition ('TR'; 37.2194N, 76.4092W), and wetland ('WC'; 37.2189N, 76.4101W). The site was established in June 2022.", 
   Latitude = "37.2194 degrees", 
   Longitude = "-76.4092 degrees")
 
@@ -216,6 +216,7 @@ site_list = bind_rows(MSM, SWH, GCW, GWI)
 
 #write out the site list associated with the data:
 write.csv(site_list, "Data package/site_list.csv", row.names = FALSE)
+
 
 ```
 
@@ -244,10 +245,16 @@ authors_common <- read.csv(here("Metadata/Synoptic CB/", "COMPASS_SynopticCB_com
 
 #create a list of the last names you want to pull 
 names_we_want <- c("Wilson",  "Chin", "Phillips", "Read", "Stearns", "Megonigal")
+order_of_authors <- c(1:length(names_we_want))
+
+authors <- data.frame(
+  order_of_authors = unlist(order_of_authors), 
+  last_name = unlist(names_we_want)
+)
 
 #Subset the common list for the names that we want 
-author_list <- authors_common %>%
-  filter(last_name %in% names_we_want)
+author_list <- authors %>% 
+  left_join(authors_common, by = "last_name")
 
 #if you need to add any other authors 
 others <- data.frame(
@@ -255,7 +262,8 @@ others <- data.frame(
   last_name = c("last_name1", "last_name2"), 
   orcid = c("orcid_id1", "orcid_id2"), 
   affiliation = c("affiliation1", "affiliation2"), 
-  email = c("email1", "email2")
+  email = c("email1", "email2"), 
+  order_of_authors = c((length(names_we_want)+1):(length(names_we_want)+2))
 )
 
 #add in the other authors 
