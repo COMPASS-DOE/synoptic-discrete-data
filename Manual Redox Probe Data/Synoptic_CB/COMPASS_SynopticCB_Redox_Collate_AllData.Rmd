@@ -383,10 +383,10 @@ sample_numbers <- data_plotting %>%
 library(kableExtra)
 
 summary_table <- kable(
-  summary_all_depths_years[, c("Site", "Plot", "min_mV",	"max_mV", "mean_mV")],  
+  summary_all_depths_years[, c("Site", "Plot", "min_mV", "max_mV", "mean_mV")],  
   format = "html",
   booktabs = TRUE,
-  caption = "<b>Summary Statistics<b>"
+  caption = "<b>Summary Statistics</b>"
 ) %>%
   kable_styling(
     bootstrap_options = c("striped", "hover"),
@@ -394,17 +394,30 @@ summary_table <- kable(
     full_width = FALSE, 
     position = "center"
   ) %>%
-  row_spec(0, bold = TRUE) %>%   # header
+  row_spec(0, bold = TRUE) %>%
   column_spec(1, bold = TRUE) %>%
-  column_spec(1, width = "0.8in") %>%   # Site
-  column_spec(2, width = "1.6in") %>%   # Zone
-  column_spec(3:5, width = "0.9in")     # Numeric columns
+  column_spec(1, width = "0.8in") %>%
+  column_spec(2, width = "1.6in") %>%
+  column_spec(3:5, width = "0.9in")
+
+#add margins to the table: 
+summary_table <- paste0(
+  '<div style="
+     padding: 20px;
+     margin: 20px;
+     display: inline-block;
+     background: white;
+   ">',
+  summary_table,
+  '</div>'
+)
 
 #output file to png that will save the table as: COMPASS_SynopticCB_Redox_Summary_alldata.png
-save_kable(summary_table, file = "COMPASS_SynopticCB_Redox_Summary_alldata.png")
+save_kable(summary_table, file = "Figures/COMPASS_SynopticCB_Redox_Summary_alldata.png", 
+           zoom=2)
 
 #Print the PNG
-knitr::include_graphics("COMPASS_SynopticCB_Redox_Summary_alldata.png")
+knitr::include_graphics("Figures/COMPASS_SynopticCB_Redox_Summary_alldata.png")
 
 ```
 

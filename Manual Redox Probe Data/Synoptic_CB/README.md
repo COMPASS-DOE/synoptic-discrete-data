@@ -43,7 +43,7 @@ For questions about these data: contact Stephanie J. Wilson (wilsonsj@si.edu) or
 **Overview Summary of Data**
 
 ![Figure 3: Summary Boxplot of All Data ](Figures/COMPASS_SynopticCB_Redox_alldata.png)  
-![Table 1: Summary Statistics for Site and Zone](Figures/COMPASS_SynopticCB_Redox_Summary_alldata.png){width=100%}
+![Table 1: Summary Statistics for Site and Zone](Figures/COMPASS_SynopticCB_Redox_Summary_alldata.png){width=80%}
 
 <br>
 
