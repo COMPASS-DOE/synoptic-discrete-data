@@ -32,9 +32,6 @@ library(here)
 #write out a csv of all the data to the main folder: 
 final_data <- read.csv("../COMPASS_SynopticCB_Peeper_Data.csv")
 
-final_data <- final_data %>% 
-  rename(Depth_cm = Replicate)
-
 ##Separate by year for ESS-DIVE 
 final_data_2022 <- subset(final_data, Year == "2022")
 final_data_2023 <- subset(final_data, Year == "2023")
@@ -69,9 +66,9 @@ dd$Definition <-       c("Project name: Project component",
                          "Day (DD) of sample collection",
                          "Site Code identifier for sampling transect location (MSM), see dataset location for coordinates", 
                          "Plot within space-for-time transect (UP=Upland, TR=Transition, WC= Wetland Control)",
+                         "Depth interval below the soil surface from which the sample was collected",
                          "Porewater sample ID", 
                          "Collection device used to sample porewater: RHZ = Peeper sampler", 
-                         "Depth interval below the soil surface from which the sample was collected",
                          "Sulfate concentration", 
                          "Sulfate concentration", 
                          "Sulfate concentration flag (adl = above detection limit (20 ug/mL), bdl = below detection limit (0 ug/mL))", 
@@ -98,14 +95,14 @@ dd$Definition <-       c("Project name: Project component",
                          "Iron (III) concentration standard deviation in uM of analytical replicates during sample analysis", 
                          "Iron (III) concentration concentration flag (adl = above detection limit (500 umoles/L), bdl = below detection limit (0.6 umoles/L))")
 
-dd$Unit <-             c( "NA", 
+dd$Unit <-             c("NA", 
                          "NA",
                          "NA", 
                          "NA",
                          "NA",
                          "NA", 
                          "NA",
-                         "NA", 
+                         "cm", 
                          "NA", 
                          "NA",
                          "ppm", 
@@ -141,7 +138,7 @@ dd$data_type <-        c("text",
                          "numeric",
                          "text",
                          "text",
-                         "text",
+                         "numeric",
                          "text",
                          "numeric",
                          "numeric",
@@ -247,6 +244,9 @@ dd$Method_ifapplicable <- c(
 
 #write out the data dictionary associated with the data:
 write.csv(dd, "Data package/dd.csv", row.names = FALSE,  fileEncoding = "UTF-8")
+
+#write out data dictionary associated with the data to the main folder: 
+write.csv(dd, here("Porewater/Peeper Data/","COMPASS_SynopticCB_Peeper_DataDictionary.csv"), row.names = FALSE)
 
 ```
 

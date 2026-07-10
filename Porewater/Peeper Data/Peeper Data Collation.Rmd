@@ -41,12 +41,12 @@ dionex_2022 <- dionex_files_2022 %>%
 #Select peeper data MSM_202210_TR_PPR_10
 dionex_ppr_2022 <- dionex_2022 %>%
   filter(str_detect(Sample_ID, "PPR")) %>% 
-  rename(Zone = Replicate, Replicate = Zone) %>% 
+  rename(Zone = Replicate, Replicate = Zone, Salinity = salinity) %>% 
   mutate(Sample_ID = paste(Site, Date, Zone, "PPR", Depth, sep = "_"))
 #Select only data columns
 colnames(dionex_ppr_2022)
 dionex_ppr_sel_2022 <- dionex_ppr_2022 %>% 
-  select("Sample_ID", "SO4_ppm",   "Cl_ppm",    "SO4_mM" ,   "Cl_mM"   ,  "salinity" )
+  select("Sample_ID", "SO4_ppm",   "Cl_ppm",    "SO4_mM" ,   "Cl_mM"   ,  "Salinity" )
 
 #2023
 dionex_files_2023 <- list.files(path = "../Sulfate_Chloride/Synoptic-CB/2023/Processed Data", pattern = "\\.csv$", full.names = TRUE)
@@ -59,11 +59,12 @@ dionex_ppr_2023 <- dionex_2023 %>%
   filter(str_detect(Sample_ID, "PPR")) %>% 
   mutate(Zone = ifelse(Zone == "PPR", Replicate, Zone)) %>% 
   mutate(Replicate = "PPR") %>% 
-  mutate(Sample_ID = paste(Site, Date, Zone, "PPR", Depth, sep = "_"))
+  mutate(Sample_ID = paste(Site, Date, Zone, "PPR", Depth, sep = "_")) %>% 
+  rename(Salinity = salinity)
 #Select only data columns
 colnames(dionex_ppr_2023)
 dionex_ppr_sel_2023 <- dionex_ppr_2023 %>% 
-  select("Sample_ID", "SO4_ppm",   "Cl_ppm",    "SO4_mM" ,   "Cl_mM"   ,  "salinity" )
+  select("Sample_ID", "SO4_ppm",   "Cl_ppm",    "SO4_mM" ,   "Cl_mM"   ,  "Salinity" )
 
 #Combine 2022 and 2023
 dionex_ppr_sel <- bind_rows(dionex_ppr_sel_2022, dionex_ppr_sel_2023)
@@ -105,7 +106,7 @@ flagged_dionex_data <- dionex_ppr_sel %>%
       TRUE ~ NA_character_  ))#Flagging data if the concentration is outside the standards range and based on blanks
   
 flagged_dionex_data_sel <- flagged_dionex_data %>% 
-  select("Sample_ID", "SO4_ppm",   "Cl_ppm",    "SO4_mM" ,   "Cl_mM"   ,  "salinity", "Cl_Conc_flag",  "SO4_Conc_flag")
+  select("Sample_ID", "SO4_ppm",   "Cl_ppm",    "SO4_mM" ,   "Cl_mM"   ,  "Salinity", "Cl_Conc_flag",  "SO4_Conc_flag")
 
 
 ##Sulfide
@@ -294,7 +295,30 @@ metadat <- unique(metadat)
 final_data1 <- final_data %>% 
   left_join(metadat, by = c("Year", "Month", "Site", "Zone"))
 
-final_data2 <- final_data1 %>%
+
+####Convert Replicate to Depth 
+final_data2 <- final_data1 %>% 
+  mutate(Depth_cm = case_when(
+    Replicate == 1 ~ 5, 
+    Replicate == 2 ~ 15, 
+    Replicate == 3 ~ 25, 
+    Replicate == 4 ~ 35, 
+    Replicate == 5 ~ 45, 
+    Replicate == 6 ~ 55, 
+    Replicate == 7 ~ 65, 
+    Replicate == 8 ~ 75, 
+    Replicate == 9 ~ 85, 
+    Replicate == 10 ~ 95, 
+    Replicate == 11 ~ 105, 
+    Replicate == 12 ~ 115, 
+    TRUE ~ NA)
+    ) %>% 
+  select(-Replicate) %>% 
+  mutate(Sample_ID = paste(Site, Date, Zone, Sampler_Type, Depth_cm, sep = "_")) %>% 
+  mutate(Sample_ID = paste0(Sample_ID, "cm"))
+
+
+final_data3 <- final_data2 %>%
   rename(Cl_conc_flag = Cl_Conc_flag, 
          SO4_conc_flag = SO4_Conc_flag, 
          H2S_conc_flag = H2S_Conc_flag, 
@@ -303,12 +327,12 @@ final_data2 <- final_data1 %>%
          NOx_conc_flag = NOx_range, 
          FE_2_conc_flag = FE_2_flag, 
          FE_3_conc_flag = FE_3_flag) %>% 
-  select(c("Project", "Region", "Year", "Month", "Day", "Site", "Zone", "Sample_ID", "Sampler_Type", "Replicate", "SO4_ppm", "SO4_mM", "SO4_conc_flag", "Cl_ppm", "Cl_mM", "Cl_conc_flag", "salinity", "H2S_mean_uM", "H2S_sd_uM", "H2S_conc_flag", "NH3_mgL", "NH3_uM", "NH3_conc_flag", "PO4_mgL", "PO4_uM", "PO4_conc_flag", "NOx_mgL", "NOx_uM", "NOx_conc_flag", "FE_2_mean_uM", "FE_2_sd_uM", "FE_2_conc_flag", "FE_3_mean_uM", "FE_3_sd_uM", "FE_3_conc_flag"))
+  select(c("Project", "Region", "Year", "Month", "Day", "Site", "Zone", "Depth_cm", "Sample_ID", "Sampler_Type", "SO4_ppm", "SO4_mM", "SO4_conc_flag", "Cl_ppm", "Cl_mM", "Cl_conc_flag", "Salinity", "H2S_mean_uM", "H2S_sd_uM", "H2S_conc_flag", "NH3_mgL", "NH3_uM", "NH3_conc_flag", "PO4_mgL", "PO4_uM", "PO4_conc_flag", "NOx_mgL", "NOx_uM", "NOx_conc_flag", "FE_2_mean_uM", "FE_2_sd_uM", "FE_2_conc_flag", "FE_3_mean_uM", "FE_3_sd_uM", "FE_3_conc_flag"))
 
 # For the concentration flags - let's remove when it says "within range" and just make those NA so there is only a flag if it is above or below detection.
-unique(final_data2$FE_2_conc_flag)
+unique(final_data3$FE_2_conc_flag)
 
-final_data3 <- final_data2 %>% 
+final_data4 <- final_data3 %>% 
   mutate(H2S_conc_flag = gsub("Within Range", NA, H2S_conc_flag), 
          NH3_conc_flag = gsub("Within_Range", NA, NH3_conc_flag), 
          PO4_conc_flag = gsub("Within_Range", NA, PO4_conc_flag), 
@@ -317,178 +341,7 @@ final_data3 <- final_data2 %>%
          FE_3_conc_flag = gsub("within range", NA, FE_3_conc_flag))
 
 ##Export final data
-write.csv(final_data3, "COMPASS_SynopticCB_Peeper_Data.csv", row.names = FALSE)
-
-```
-
-## Make Relevant Metadata Sheet
-```{r, echo=FALSE}
-
-#pull the column names from the all_dat dataframe and create a new dataframe with them 
-metadat <- data.frame(Column_Names = colnames(final_data3))
-
-metadat$Description <- ""
-metadat$Units <- ""
-metadat$Instrument_ifapplicable <- ""
-
-colnames(final_data3)
-#add information about each line: 
-
-metadat$Description <- c("Project name: Project component", 
-                         "Region samples originated from: CB = Chesapeake Bay",
-                         "Year (YYYY) of sample collection", 
-                         "Month (MM) of sample collection",
-                         "Day (DD) of sample collection",
-                         "Name of sampling transect location (GCW, SWH, MSM, GWI), see dataset locations for coordinates", 
-                         "Zone within space-for-time transect (UP=Upland, TR=Transition, WC= Wetland Control, SWAMP = Swamp)",
-                         "Porewater sample ID", 
-                         "Collection device used to sample porewater: PPR = Peeper sampler", 
-                         "Replicate (A-C)",
-                         "Sulfate concentration", 
-                         "Sulfate concentration", 
-                         "Sulfate concentration flag (adl = above detection limit (20 ug/mL), bdl = below detection limit (0 ug/mL))", 
-                         "Chloride concentration", 
-                         "Chloride concentration", 
-                         "Chloride concentration flag (adl = above detection limit (200 ug/mL), bdl = below detection limit (0 ug/mL))", 
-                         "Salinity", 
-                         "Sulfide concentration mean", 
-                         "Sulfide concentration standard deviation", 
-                         "Sulfide concentration flag (adl = above detection limit (100 umoles/L), bdl = below detection limit (0 umoles/L))", 
-                         "Ammonia (NH3) concentration", 
-                         "Ammonia (NH3) concentration", 
-                         "Ammonia (NH3) concentration flag (adl = above detection limit (2 mg/L), bdl = below detection limit (0.02 mg/L))", 
-                         "Phosphate (PO4) concentration", 
-                         "Phosphate (PO4) concentration", 
-                         "Phosphate (PO4) concentration flag (adl = above detection limit (0.3 mg/L), bdl = below detection limit (0.003 mg/L))", 
-                         "Nitrate–N + Nitrite–N (NOx) concentration", 
-                         "Nitrate–N + Nitrite–N (NOx) concentration", 
-                         "Nitrate–N + Nitrite–N (NOx) concentration flag (adl = above detection limit (1 mg/L), bdl = below detection limit (0.025 mg/L))",
-                         "Iron (II) concentration mean", 
-                         "Iron (II) concentration standard deviation", 
-                         "Iron (II) concentration concentration flag (adl = above detection limit (500 umoles/L), bdl = below detection limit (0.6 umoles/L))", 
-                         "Iron (III) concentration mean", 
-                         "Iron (III) concentration standard deviation", 
-                         "Iron (III) concentration concentration flag (adl = above detection limit (500 umoles/L), bdl = below detection limit (0.6 umoles/L))")
-
-metadat$Units <-      c( "NA", 
-                         "NA",
-                         "NA", 
-                         "NA",
-                         "NA",
-                         "NA", 
-                         "NA",
-                         "NA", 
-                         "NA", 
-                         "NA",
-                         "ppm", 
-                         "umoles/L", 
-                         "NA", 
-                         "ppm", 
-                         "umoles/L", 
-                         "NA", 
-                         "ppt", 
-                         "umoles/L", 
-                         "umoles/L", 
-                         "NA",  
-                         "mg/L", 
-                         "umoles/L", 
-                         "NA", 
-                         "mg/L", 
-                         "umoles/L", 
-                         "NA",                          
-                         "mg/L", 
-                         "umoles/L", 
-                         "NA",
-                         "umoles/L", 
-                         "umoles/L", 
-                         "NA", 
-                         "umoles/L", 
-                         "umoles/L", 
-                         "NA")
-
-metadat$Instrument_ifapplicable <-  c(
-                         "NA", 
-                         "NA",
-                         "NA", 
-                         "NA",
-                         "NA",
-                         "NA", 
-                         "NA",
-                         "NA", 
-                         "Peeper Sampler", 
-                         "NA",
-                         "NA",
-                         "NA",
-                         "NA", 
-                         "NA", 
-                         "NA", 
-                         "NA", 
-                         "Calculated with Knudsen equation (Strickland and Parsons, 1972)", 
-                         "Agilent BioTek PowerWave Microplate Reader", 
-                         "Standard deviation of analytical triplicates", 
-                         "NA",  
-                         "SEAL Instrument: SEAL AQ300 Discrete Analyzer (https://seal-analytical.com/en/products/discrete-analyzers/aq300-discrete-analyzer/)", 
-                         "SEAL Instrument: SEAL AQ300 Discrete Analyzer (https://seal-analytical.com/en/products/discrete-analyzers/aq300-discrete-analyzer/)", 
-                         "NA", 
-                         "SEAL Instrument: SEAL AQ300 Discrete Analyzer (https://seal-analytical.com/en/products/discrete-analyzers/aq300-discrete-analyzer/)", 
-                         "SEAL Instrument: SEAL AQ300 Discrete Analyzer (https://seal-analytical.com/en/products/discrete-analyzers/aq300-discrete-analyzer/)", 
-                         "NA",                          
-                         "SEAL Instrument: SEAL AQ300 Discrete Analyzer (https://seal-analytical.com/en/products/discrete-analyzers/aq300-discrete-analyzer/)", 
-                         "SEAL Instrument: SEAL AQ300 Discrete Analyzer (https://seal-analytical.com/en/products/discrete-analyzers/aq300-discrete-analyzer/)", 
-                         "NA",
-                         "Agilent BioTek PowerWave Microplate Reader", 
-                         "Agilent BioTek PowerWave Microplate Reader", 
-                         "NA", 
-                         "Agilent BioTek PowerWave Microplate Reader", 
-                         "Agilent BioTek PowerWave Microplate Reader", 
-                         "NA")
-
-
-metadat$Method_ifapplicable <- c(
-                         "NA", 
-                         "NA",
-                         "NA", 
-                         "NA",
-                         "NA",
-                         "NA", 
-                         "NA",
-                         "NA", 
-                         "NA", 
-                         "NA",
-                         "NA",
-                         "NA",
-                         "NA",
-                         "NA",
-                         "NA",
-                         "NA",
-                         "Calculated with Knudsen equation (Strickland and Parsons, 1972)", 
-                         "Adapted from Cline, 1969, Ehrhardt et al., 1999", 
-                         "Adapted from Cline, 1969, Ehrhardt et al., 1999", 
-                         "Adapted from Cline, 1969, Ehrhardt et al., 1999", 
-                         "EPA-103-A Rev. 10", 
-                         "EPA-103-A Rev. 10", 
-                         "EPA-103-A Rev. 10", 
-                         "EPA-155-D Rev. 0", 
-                         "EPA-155-D Rev. 0", 
-                         "EPA-155-D Rev. 0", 
-                         "EPA-160-A Rev. 0", 
-                         "EPA-160-A Rev. 0", 
-                         "EPA-160-A Rev. 0", 
-                         "Adapted from Stookey, 1970, Violler et al., 2000, Charbonnier & Anschutz 2021, Gong 2020", 
-                         "Adapted from Stookey, 1970, Violler et al., 2000, Charbonnier & Anschutz 2021, Gong 2020", 
-                         "Adapted from Stookey, 1970, Violler et al., 2000, Charbonnier & Anschutz 2021, Gong 2020", 
-                         "Adapted from Stookey, 1970, Violler et al., 2000, Charbonnier & Anschutz 2021, Gong 2020", 
-                         "Adapted from Stookey, 1970, Violler et al., 2000, Charbonnier & Anschutz 2021, Gong 2020", 
-                         "Adapted from Stookey, 1970, Violler et al., 2000, Charbonnier & Anschutz 2021, Gong 2020")
-
-
-```
-
-## Write out metadata
-```{r, echo=FALSE}
-
-#write out a csv of the metadata associated with the data: 
-write.csv(metadat, "COMPASS_SynopticCB_Peeper_Metadata.csv", row.names = FALSE)
+write.csv(final_data4, "COMPASS_SynopticCB_Peeper_Data.csv", row.names = FALSE)
 
 ```
 
