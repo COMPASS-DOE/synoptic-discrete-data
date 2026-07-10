@@ -316,7 +316,7 @@ viz_redox_boxplot <- ggplot(all_dat_dates, aes(x = Zone_1, y = Avg_mV, fill = Zo
 viz_redox_boxplot
 
 # Save as a PNG
-png("COMPASS_SynopticCB_Redox_alldata.png", width = 2000, height = 1200, res = 100) 
+png("Figures/COMPASS_SynopticCB_Redox_alldata.png", width = 2000, height = 1200, res = 100) 
 print(viz_redox_boxplot)  # For ggplot objects, use print()
 dev.off() 
 
