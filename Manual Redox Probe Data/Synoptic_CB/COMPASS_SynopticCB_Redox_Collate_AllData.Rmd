@@ -353,7 +353,8 @@ summary_all_depths_years <- data_plotting %>%
      min_mV = min(Avg_mV, na.rm=TRUE),
      max_mV = max(Avg_mV, na.rm=TRUE), 
      mean_mV = mean(Avg_mV, na.rm=TRUE)) %>%
-  mutate(across(where(is.numeric), round, digits = 4)) 
+  mutate(across(where(is.numeric), round, digits = 2)) %>%
+  rename(Plot = Zone_1)
 
 ```
 
@@ -382,17 +383,22 @@ sample_numbers <- data_plotting %>%
 library(kableExtra)
 
 summary_table <- kable(
-  summary_all_depths_years[, c("Site", "Zone_1", "min_mV",	"max_mV", "mean_mV")],  
+  summary_all_depths_years[, c("Site", "Plot", "min_mV",	"max_mV", "mean_mV")],  
   format = "html",
   booktabs = TRUE,
   caption = "<b>Summary Statistics<b>"
 ) %>%
   kable_styling(
     bootstrap_options = c("striped", "hover"),
-    font_size = 12
+    font_size = 12, 
+    full_width = FALSE, 
+    position = "center"
   ) %>%
   row_spec(0, bold = TRUE) %>%   # header
-  column_spec(1, bold = TRUE)
+  column_spec(1, bold = TRUE) %>%
+  column_spec(1, width = "0.8in") %>%   # Site
+  column_spec(2, width = "1.6in") %>%   # Zone
+  column_spec(3:5, width = "0.9in")     # Numeric columns
 
 #output file to png that will save the table as: COMPASS_SynopticCB_Redox_Summary_alldata.png
 save_kable(summary_table, file = "COMPASS_SynopticCB_Redox_Summary_alldata.png")

@@ -132,6 +132,9 @@ dd$Instrument_ifapplicable <-
 #write out the data dictionary associated with the data:
 write.csv(dd, "Data package/dd.csv", row.names = FALSE)
 
+#write out data dictionary associated with the data to the main folder: 
+write.csv(dd, here("Manual Redox Probe Data/Synoptic_CB/","COMPASS_SynopticCB_Redox_DataDictionary.csv"), row.names = FALSE)
+
 ```
 
 
@@ -198,7 +201,7 @@ MSM <- data.frame(
   Longitude = "-76.2277 degrees")
 
 SWH <- data.frame(
-  Description = "Sweet Hall Marsh (SWH); one of the COMPASS-FME synoptic sites located along the tidal fresh Pamunkey River, one of the two tributaries of the York River in Virginia, USA. The COMPASS-FME consists of three plots: upland ('UP'; located at 37.5708N, 76.8954W), swamp ('SWAMP'; located at 37.57069N, 76.8957W), transition ('TR'; 37.56883N, 76.8964W), and wetland ('WC'; 37.56659N, 76.8970W). The synoptic site was established in June 2023. This site is also identified as a Chesapeake Bay National Research Reserve site.", 
+  Description = "Sweet Hall Marsh (SWH); one of the COMPASS-FME synoptic sites located along the tidal fresh Pamunkey River, one of the two tributaries of the York River in Virginia, USA. The COMPASS-FME consists of three plots: upland ('UP'; located at 37.5708N, 76.8954W), swamp ('SWAMP'; located at 37.57069N, 76.8957W), transition ('TR'; 37.56883N, 76.8964W), and wetland ('WC'; 37.56659N, 76.8970W). The synoptic site was established in June 2023. The transect spans a temperate, deciduous coastal forest, a forest swamp, and a tidal freshwater wetland dominated by peltandra, wild rice, and other species. This site is also identified as a Chesapeake Bay National Research Reserve site.", 
   Latitude = "37.56883 degrees", 
   Longitude = "-76.8964 degrees")
 
@@ -208,7 +211,7 @@ GCW <- data.frame(
   Longitude = "-76.5515 degrees")
 
 GWI <- data.frame(
-  Description = "Goodwin Islands (GWI); one of the COMPASS-FME synoptic sites, located along the polyhaline York River, and has three plots: upland ('UP'; located at 37.2192N, 76.4087W), transition ('TR'; 37.2194N, 76.4092W), and wetland ('WC'; 37.2189N, 76.4101W). The site was established in June 2022.", 
+  Description = "Goodwin Islands (GWI); one of the COMPASS-FME synoptic sites, located along the polyhaline mouth of the York River, and has three plots: upland ('UP'; located at 37.2192N, 76.4087W), transition ('TR'; 37.2194N, 76.4092W), and wetland ('WC'; 37.2189N, 76.4101W). The site was established in June 2022. The transect spans a coastal loblolly pine forest, a transitional forest with a substantial phragmites stand, and a marsh dominated by Spartina and Distichlis. This site is also identified as a Chesapeake Bay National Research Reserve site.", 
   Latitude = "37.2194 degrees", 
   Longitude = "-76.4092 degrees")
 
@@ -244,7 +247,7 @@ authors_common <- read.csv(here("Metadata/Synoptic CB/", "COMPASS_SynopticCB_com
 
 
 #create a list of the last names you want to pull 
-names_we_want <- c("Wilson",  "Chin", "Phillips", "Read", "Stearns", "Megonigal")
+names_we_want <- c("Wilson",  "Chin", "Phillips", "Read", "Stearns","Bailey", "Megonigal")
 order_of_authors <- c(1:length(names_we_want))
 
 authors <- data.frame(
