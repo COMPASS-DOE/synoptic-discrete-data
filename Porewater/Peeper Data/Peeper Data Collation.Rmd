@@ -318,30 +318,62 @@ final_data2 <- final_data1 %>%
   mutate(Sample_ID = paste0(Sample_ID, "cm"))
 
 
-final_data3 <- final_data2 %>%
-  rename(Cl_conc_flag = Cl_Conc_flag, 
-         SO4_conc_flag = SO4_Conc_flag, 
-         H2S_conc_flag = H2S_Conc_flag, 
-         NH3_conc_flag = NH3_range, 
-         PO4_conc_flag = PO4_range, 
-         NOx_conc_flag = NOx_range, 
-         FE_2_conc_flag = FE_2_flag, 
-         FE_3_conc_flag = FE_3_flag) %>% 
-  select(c("Project", "Region", "Year", "Month", "Day", "Site", "Zone", "Depth_cm", "Sample_ID", "Sampler_Type", "SO4_ppm", "SO4_mM", "SO4_conc_flag", "Cl_ppm", "Cl_mM", "Cl_conc_flag", "Salinity", "H2S_mean_uM", "H2S_sd_uM", "H2S_conc_flag", "NH3_mgL", "NH3_uM", "NH3_conc_flag", "PO4_mgL", "PO4_uM", "PO4_conc_flag", "NOx_mgL", "NOx_uM", "NOx_conc_flag", "FE_2_mean_uM", "FE_2_sd_uM", "FE_2_conc_flag", "FE_3_mean_uM", "FE_3_sd_uM", "FE_3_conc_flag"))
+##Round data to sensitivity of the instrument 
+colnames(final_data2)
+##Based on raw data from the instrument: 
+##SO4/Cl/Salinity - 4 decimals 
+##H2S/Fe - 3 decimals
+##Nutrients - 6 decimals 
+final_data3 <- final_data2 %>% 
+  mutate(SO4_ppm = round(as.numeric(SO4_ppm), digits = 4), 
+         SO4_mM = round(as.numeric(SO4_mM), digits = 4), 
+         Cl_ppm = round(as.numeric(Cl_ppm), digits = 4), 
+         Cl_mM = round(as.numeric(Cl_mM), digits = 4), 
+         Salinity = round(as.numeric(Salinity), digits = 4), 
+         H2S_mean_uM = round(as.numeric(H2S_mean_uM), digits = 3), 
+         H2S_sd_uM = round(as.numeric(H2S_sd_uM), digits = 3), 
+         NH3_mgL = round(as.numeric(NH3_mgL), digits = 6), 
+         NH3_uM = round(as.numeric(NH3_uM), digits = 6), 
+         PO4_mgL = round(as.numeric(PO4_mgL), digits = 6), 
+         PO4_uM = round(as.numeric(PO4_uM), digits = 6), 
+         NOx_mgL = round(as.numeric(NOx_mgL), digits = 6), 
+         NOx_uM = round(as.numeric(NOx_uM), digits = 6), 
+         FE_2_mean_uM = round(as.numeric(FE_2_mean_uM), digits = 3), 
+         FE_2_sd_uM = round(as.numeric(FE_2_sd_uM), digits = 3), 
+         FE_3_mean_uM = round(as.numeric(FE_3_mean_uM), digits = 3), 
+         FE_3_sd_uM = round(as.numeric(FE_3_sd_uM), digits = 3), 
+         )
+
+##Rename flag columns
+final_data4 <- final_data3 %>%
+  mutate(Sampler_Type = "Depth segmented peeper well") %>%   ##Rename sampler type 
+  rename(Plot = Zone) %>% ##Rename zone to plot
+  rename(Cl_flag = Cl_Conc_flag, 
+         SO4_flag = SO4_Conc_flag, 
+         H2S_flag = H2S_Conc_flag, 
+         NH3_flag = NH3_range, 
+         PO4_flag = PO4_range, 
+         NOx_flag = NOx_range, 
+         FE_2_flag = FE_2_flag, 
+         FE_3_flag = FE_3_flag) %>% 
+  select(c("Project", "Region", "Year", "Month", "Day", "Site", "Plot", "Depth_cm", "Sample_ID", "Sampler_Type", "SO4_ppm", "SO4_mM", "SO4_flag", "Cl_ppm", "Cl_mM", "Cl_flag", "Salinity", "H2S_mean_uM", "H2S_sd_uM", "H2S_flag", "NH3_mgL", "NH3_uM", "NH3_flag", "PO4_mgL", "PO4_uM", "PO4_flag", "NOx_mgL", "NOx_uM", "NOx_flag", "FE_2_mean_uM", "FE_2_sd_uM", "FE_2_flag", "FE_3_mean_uM", "FE_3_sd_uM", "FE_3_flag"))
 
 # For the concentration flags - let's remove when it says "within range" and just make those NA so there is only a flag if it is above or below detection.
-unique(final_data3$FE_2_conc_flag)
+unique(final_data4$FE_2_flag)
 
-final_data4 <- final_data3 %>% 
-  mutate(H2S_conc_flag = gsub("Within Range", NA, H2S_conc_flag), 
-         NH3_conc_flag = gsub("Within_Range", NA, NH3_conc_flag), 
-         PO4_conc_flag = gsub("Within_Range", NA, PO4_conc_flag), 
-         NOx_conc_flag = gsub("Within_Range", NA, NOx_conc_flag), 
-         FE_2_conc_flag = gsub("within range", NA, FE_2_conc_flag), 
-         FE_3_conc_flag = gsub("within range", NA, FE_3_conc_flag))
+final_data5 <- final_data4 %>% 
+  mutate(Cl_flag = gsub("Within Range", "", Cl_flag), 
+         SO4_flag = gsub("Within Range", "", SO4_flag), 
+         H2S_flag = gsub("Within Range", "", H2S_flag), 
+         NH3_flag = gsub("Within_Range", "", NH3_flag), 
+         PO4_flag = gsub("Within_Range", "", PO4_flag), 
+         NOx_flag = gsub("Within_Range", "", NOx_flag), 
+         FE_2_flag = gsub("within range", "", FE_2_flag), 
+         FE_3_flag = gsub("within range", "", FE_3_flag))
 
 ##Export final data
-write.csv(final_data4, "COMPASS_SynopticCB_Peeper_Data.csv", row.names = FALSE)
+write.csv(final_data5, "COMPASS_SynopticCB_Peeper_Data.csv", row.names = FALSE)
 
 ```
 
+##Visualize Data

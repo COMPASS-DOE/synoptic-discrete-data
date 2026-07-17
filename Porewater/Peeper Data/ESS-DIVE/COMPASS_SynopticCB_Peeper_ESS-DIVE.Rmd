@@ -37,8 +37,8 @@ final_data_2022 <- subset(final_data, Year == "2022")
 final_data_2023 <- subset(final_data, Year == "2023")
 
 ##Write out annual data files
-write.csv(final_data_2022, "Data package/COMPASS_SynopticCB_Peeper_2022.csv", row.names = FALSE)
-write.csv(final_data_2023, "Data package/COMPASS_SynopticCB_Peeper_2023.csv", row.names = FALSE)
+write.csv(final_data_2022, "Data package/COMPASS_SynopticCB_GW-Peeper_2022.csv", row.names = FALSE)
+write.csv(final_data_2023, "Data package/COMPASS_SynopticCB_GW-Peeper_2023.csv", row.names = FALSE)
 
 ```
 
@@ -48,7 +48,7 @@ write.csv(final_data_2023, "Data package/COMPASS_SynopticCB_Peeper_2023.csv", ro
 
 #pull the column names from the all_dat1 dataframe and create a new dataframe with them
 dd <- data.frame(Column_Names = colnames(final_data))
-dd
+colnames(final_data)
 
 dd$Unit <- ""
 dd$Definition <- ""
@@ -68,7 +68,7 @@ dd$Definition <-       c("Project name: Project component",
                          "Plot within space-for-time transect (UP=Upland, TR=Transition, WC= Wetland Control)",
                          "Depth interval below the soil surface from which the sample was collected",
                          "Porewater sample ID", 
-                         "Collection device used to sample porewater: RHZ = Peeper sampler", 
+                         "Collection device used to sample porewater (Depth segmented peeper well)", 
                          "Sulfate concentration", 
                          "Sulfate concentration", 
                          "Sulfate concentration flag (adl = above detection limit (20 ug/mL), bdl = below detection limit (0 ug/mL))", 
@@ -112,23 +112,23 @@ dd$Unit <-             c("NA",
                          "mmoles/L", 
                          "NA", 
                          "ppt", 
-                         paste0("\u00b5", "moles/L"), 
-                         paste0("\u00b5", "moles/L"), 
+                         "umoles/L", 
+                         "umoles/L", 
                          "NA",  
                          "mg/L", 
-                         paste0("\u00b5", "moles/L"), 
+                         "umoles/L", 
                          "NA", 
                          "mg/L", 
-                         paste0("\u00b5", "moles/L"), 
+                         "umoles/L", 
                          "NA",                          
                          "mg/L", 
-                         paste0("\u00b5", "moles/L"), 
+                         "umoles/L", 
                          "NA",
-                         paste0("\u00b5", "moles/L"), 
-                         paste0("\u00b5", "moles/L"), 
+                         "umoles/L", 
+                         "umoles/L", 
                          "NA", 
-                         paste0("\u00b5", "moles/L"), 
-                         paste0("\u00b5", "moles/L"), 
+                         "umoles/L", 
+                         "umoles/L", 
                          "NA")
 
 dd$data_type <-        c("text", 
@@ -176,7 +176,7 @@ dd$Instrument_ifapplicable <-  c(
                          "NA", 
                          "NA",
                          "NA", 
-                         "Rhizosphere Peeper MOM Soil Moisture Sampler (19.21.21)", 
+                         "Depth segmented peeper well", 
                          "NA",
                          "Dionex Integrion RFIC (Thermo Scientific)", 
                          "Dionex Integrion RFIC (Thermo Scientific)", 
@@ -257,7 +257,7 @@ write.csv(dd, here("Porewater/Peeper Data/","COMPASS_SynopticCB_Peeper_DataDicti
 files  = list.files("Data package")
 files
 
-files = c("COMPASS_SynopticCB_Peeper_2022.csv", "COMPASS_SynopticCB_Peeper_2023.csv", "dd.csv")
+files = c("COMPASS_SynopticCB_GW-Peeper_2022.csv", "COMPASS_SynopticCB_GW-Peeper_2023.csv", "dd.csv")
 
 flmd <- data.frame(file_name = files)
 flmd
