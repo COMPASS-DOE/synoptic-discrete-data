@@ -36,11 +36,9 @@ final_data <- read.csv("../COMPASS_SynopticCB_Sipper_Data.csv")
 
 ##Separate by year for ESS-DIVE 
 final_data_2022 <- subset(final_data, Year == "2022")
-final_data_2023 <- subset(final_data, Year == "2023")
 
 ##Write out annual data files
 write.csv(final_data_2022, "Data package/COMPASS_SynopticCB_Sipper_2022.csv", row.names = FALSE)
-write.csv(final_data_2023, "Data package/COMPASS_SynopticCB_Sipper_2023.csv", row.names = FALSE)
 
 ```
 
@@ -67,10 +65,11 @@ dd$Definition <-       c("Project name: Project component",
                          "Month (MM) of sample collection",
                          "Day (DD) of sample collection",
                          "Site Code identifier for sampling transect location (GCW, SWH, MSM, GWI), see dataset locations for coordinates", 
-                         "Plot within space-for-time transect (UP=Upland, TR=Transition, WC= Wetland Control, SWAMP = Swamp)",
-                         "Porewater sample ID", 
-                         "Collection device used to sample porewater: SIP = Sipper sampler", 
+                         "Plot within space-for-time transect (UP=Upland, SWAMP = Swamp, TR=Transition, WC= Wetland Control)",
+                         "Porewater sample ID used in the field and laboratory", 
+                         "Collection device used to sample porewater", 
                          "Replicate (A-C)",
+                         "Depth interval below the soil surface from which the sample was collected",
                          "Sulfate concentration", 
                          "Sulfate concentration", 
                          "Sulfate concentration flag (adl = above detection limit (20 ug/mL), bdl = below detection limit (0 ug/mL))", 
@@ -87,7 +86,7 @@ dd$Definition <-       c("Project name: Project component",
                          "Phosphate (PO4) concentration", 
                          "Phosphate (PO4) concentration", 
                          "Phosphate (PO4) concentration flag (adl = above detection limit (0.3 mg/L), bdl = below detection limit (0.003 mg/L))", 
-                         "Nitrate–N + Nitrite–N (NOx) concentration", 
+                         "Nitrate-N + Nitrite–N (NOx) concentration", 
                          "Nitrate–N + Nitrite–N (NOx) concentration", 
                          "Nitrate–N + Nitrite–N (NOx) concentration flag (adl = above detection limit (1 mg/L), bdl = below detection limit (0.025 mg/L))",
                          "Iron (II) concentration mean", 
@@ -110,6 +109,7 @@ dd$Unit <-             c("NA",
                          "NA", 
                          "NA", 
                          "NA",
+                         "cm", 
                          "ppm", 
                          "umoles/L", 
                          "NA", 
@@ -151,6 +151,7 @@ dd$data_type <-        c("text",
                          "text",
                          "numeric", 
                          "numeric", 
+                         "numeric", 
                          "text",
                          "numeric", 
                          "numeric", 
@@ -186,6 +187,7 @@ dd$Instrument_ifapplicable <-  c(
                          "NA",
                          "NA", 
                          "NA",
+                         "NA", 
                          "NA", 
                          "Sipper Sampler", 
                          "NA",
@@ -228,6 +230,7 @@ dd$Method_ifapplicable <- c(
                          "NA",
                          "NA", 
                          "NA", 
+                         "NA", 
                          "NA",
                          "NA",
                          "NA",
@@ -262,6 +265,8 @@ dd$Method_ifapplicable <- c(
 #write out the data dictionary associated with the data:
 write.csv(dd, "Data package/dd.csv", row.names = FALSE)
 
+#write out data dictionary associated with the data to the main folder: 
+write.csv(dd, here("Porewater/Sipper Data/","COMPASS_SynopticCB_Sipper_Metadata.csv"), row.names = FALSE)
 ```
 
 
@@ -271,7 +276,7 @@ write.csv(dd, "Data package/dd.csv", row.names = FALSE)
 files  = list.files("Data package")
 files
 
-files = c("COMPASS_SynopticCB_Sipper_2022.csv", "COMPASS_SynopticCB_Sipper_2023.csv", "dd.csv")
+files = c("COMPASS_SynopticCB_Sipper_2022.csv", "dd.csv")
 
 flmd <- data.frame(file_name = files)
 flmd
@@ -286,20 +291,16 @@ flmd$notes <- ""
 
 #add information about each line:
 
-flmd$file_description <-  c("Sipper water sample analysis data taken from COMPASS synoptic sites in 2022",
-                            "Sipper water sample analysis data taken from COMPASS synoptic sites in 2023",
-                            "Data dictionary file for annual Sipper water sample analysis data files describing each column in the dataset")
+flmd$file_description <-  c("Porewater samples collected with Sippers from the COMPASS CB synoptic sites in 2022",
+                            "Data dictionary file for Sipper porewater sample analysis data files describing each column in the dataset")
 
 flmd$data_orientation <-  c("horizontal",
-                            "horizontal",
                             "horizontal")
 
 flmd$header_rows <-   c("1",
-                        "1",
                         "1")
 
 flmd$column_or_row_name_position <- c("1",
-                                      "1",
                                       "1")
 
 
