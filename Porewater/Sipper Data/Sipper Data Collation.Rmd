@@ -304,7 +304,8 @@ final_data2 <- final_data1 %>%
          FE_2_sd_uM = round(as.numeric(FE_2_sd_uM), digits = 3), 
          FE_3_mean_uM = round(as.numeric(FE_3_mean_uM), digits = 3), 
          FE_3_sd_uM = round(as.numeric(FE_3_sd_uM), digits = 3), 
-         ic_mgL = round(as.numeric(ic_mgL), digits = 2))
+         ic_mgL = round(as.numeric(ic_mgL), digits = 2), 
+         ic_uM = round(as.numeric(ic_uM), digits = 2))
 
 final_data3 <- final_data2 %>%
   mutate(Sampler_Type = "Porewater Sipper (Teflon)", 
@@ -336,7 +337,16 @@ final_data4 <- final_data3 %>%
          FE_2_flag = gsub("within range", "", FE_2_flag), 
          FE_3_flag = gsub("within range", "", FE_3_flag), 
          DIC_flag = gsub("value above cal curve", "adl", DIC_flag), 
-         DIC_flag = gsub("blank is > 25% of sample value", "bdl", DIC_flag))
+         DIC_flag = gsub("blank is > 25% of sample value", "bdl", DIC_flag), 
+         SO4_flag = replace_na(SO4_flag, ""), 
+         Cl_flag = replace_na(Cl_flag, ""), 
+         H2S_flag = replace_na(H2S_flag, ""), 
+         NH3_flag = replace_na(NH3_flag, ""), 
+         PO4_flag = replace_na(PO4_flag, ""), 
+         NOx_flag = replace_na(NOx_flag, ""), 
+         FE_2_flag = replace_na(FE_2_flag, ""), 
+         FE_3_flag = replace_na(FE_3_flag, ""), 
+         DIC_flag = replace_na(DIC_flag, ""))
 
 ##Export final data
 write.csv(final_data4, "COMPASS_SynopticCB_Sipper_Data.csv", row.names = FALSE)
