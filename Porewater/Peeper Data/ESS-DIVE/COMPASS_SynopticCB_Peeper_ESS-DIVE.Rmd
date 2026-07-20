@@ -197,11 +197,11 @@ dd$Instrument_ifapplicable <-  c(
                          "SEAL Instrument: SEAL AQ300 Discrete Analyzer (https://seal-analytical.com/en/products/discrete-analyzers/aq300-discrete-analyzer/)", 
                          "SEAL Instrument: SEAL AQ300 Discrete Analyzer (https://seal-analytical.com/en/products/discrete-analyzers/aq300-discrete-analyzer/)", 
                          "NA",
-                         "Modified from Adapted from Stookey, 1970, Violler et al., 2000, Charbonnier & Anschutz 2021, Gong 2020 methods measured with Agilent BioTek PowerWave Microplate Reader", 
-                         "Modified from Adapted from Stookey, 1970, Violler et al., 2000, Charbonnier & Anschutz 2021, Gong 2020 methods measured with Agilent BioTek PowerWave Microplate Reader", 
+                         "Adapted from Stookey, 1970, Violler et al., 2000, Charbonnier & Anschutz 2021, Gong 2020 methods measured with Agilent BioTek PowerWave Microplate Reader", 
+                         "Adapted from Stookey, 1970, Violler et al., 2000, Charbonnier & Anschutz 2021, Gong 2020 methods measured with Agilent BioTek PowerWave Microplate Reader", 
                          "NA", 
-                         "Modified from Adapted from Stookey, 1970, Violler et al., 2000, Charbonnier & Anschutz 2021, Gong 2020 methods measured with Agilent BioTek PowerWave Microplate Reader", 
-                         "Modified from Adapted from Stookey, 1970, Violler et al., 2000, Charbonnier & Anschutz 2021, Gong 2020 methods measured with Agilent BioTek PowerWave Microplate Reader", 
+                         "Adapted from Stookey, 1970, Violler et al., 2000, Charbonnier & Anschutz 2021, Gong 2020 methods measured with Agilent BioTek PowerWave Microplate Reader", 
+                         "Adapted from Stookey, 1970, Violler et al., 2000, Charbonnier & Anschutz 2021, Gong 2020 methods measured with Agilent BioTek PowerWave Microplate Reader", 
                          "NA")
 
 dd$Method_ifapplicable <- c(

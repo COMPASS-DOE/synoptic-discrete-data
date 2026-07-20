@@ -67,7 +67,7 @@ dd$Definition <-       c("Project name: Project component",
                          "Site Code identifier for sampling transect location (GCW, SWH, MSM, GWI), see dataset locations for coordinates", 
                          "Plot within space-for-time transect (UP=Upland, SWAMP = Swamp, TR=Transition, WC= Wetland Control)",
                          "Porewater sample ID used in the field and laboratory", 
-                         "Collection device used to sample porewater", 
+                         "Collection device used to sample porewater (Porewater Sipper (Teflon))", 
                          "Replicate (A-C)",
                          "Depth interval below the soil surface from which the sample was collected",
                          "Sulfate concentration", 
@@ -198,7 +198,7 @@ dd$Instrument_ifapplicable <-  c(
                          "NA", 
                          "NA", 
                          "Calculated with Knudsen equation (Strickland and Parsons, 1972)", 
-                         "Agilent BioTek PowerWave Microplate Reader", 
+                         "Modified Cline (1969) method measured with Agilent BioTek PowerWave Microplate Reader", 
                          "Standard deviation of analytical triplicates", 
                          "NA",  
                          "SEAL Instrument: SEAL AQ300 Discrete Analyzer (https://seal-analytical.com/en/products/discrete-analyzers/aq300-discrete-analyzer/)", 
@@ -210,11 +210,11 @@ dd$Instrument_ifapplicable <-  c(
                          "SEAL Instrument: SEAL AQ300 Discrete Analyzer (https://seal-analytical.com/en/products/discrete-analyzers/aq300-discrete-analyzer/)", 
                          "SEAL Instrument: SEAL AQ300 Discrete Analyzer (https://seal-analytical.com/en/products/discrete-analyzers/aq300-discrete-analyzer/)", 
                          "NA",
-                         "Agilent BioTek PowerWave Microplate Reader", 
-                         "Agilent BioTek PowerWave Microplate Reader", 
+                         "Adapted from Stookey, 1970, Violler et al., 2000, Charbonnier & Anschutz 2021, Gong 2020 methods measured with Agilent BioTek PowerWave Microplate Reader", 
+                         "Adapted from Stookey, 1970, Violler et al., 2000, Charbonnier & Anschutz 2021, Gong 2020 methods measured with Agilent BioTek PowerWave Microplate Reader", 
                          "NA", 
-                         "Agilent BioTek PowerWave Microplate Reader", 
-                         "Agilent BioTek PowerWave Microplate Reader", 
+                         "Adapted from Stookey, 1970, Violler et al., 2000, Charbonnier & Anschutz 2021, Gong 2020 methods measured with Agilent BioTek PowerWave Microplate Reader", 
+                         "Adapted from Stookey, 1970, Violler et al., 2000, Charbonnier & Anschutz 2021, Gong 2020 methods measured with Agilent BioTek PowerWave Microplate Reader", 
                          "NA", 
                          "Shimadzu TOC-V", 
                          "Shimadzu TOC-V", 
@@ -292,7 +292,7 @@ flmd$notes <- ""
 #add information about each line:
 
 flmd$file_description <-  c("Porewater samples collected with Sippers from the COMPASS CB synoptic sites in 2022",
-                            "Data dictionary file for Sipper porewater sample analysis data files describing each column in the dataset")
+                            "Data dictionary file for Sipper porewater sample analysis data file describing each column in the dataset")
 
 flmd$data_orientation <-  c("horizontal",
                             "horizontal")

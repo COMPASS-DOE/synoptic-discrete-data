@@ -65,9 +65,9 @@ dd$Definition <-       c("Project name: Project component",
                          "Month (MM) of sample collection",
                          "Day (DD) of sample collection",
                          "Site Code identifier for sampling transect location (GCW, SWH, MSM, GWI), see dataset locations for coordinates", 
-                         "Plot within space-for-time transect (UP=Upland, TR=Transition, WC= Wetland Control, SWAMP = Swamp)",
-                         "Porewater sample ID", 
-                         "Collection device used to sample porewater: RHZ = Rhizon sampler", 
+                         "Plot within space-for-time transect (UP=Upland, SWAMP = Swamp, TR=Transition, WC= Wetland Control)",
+                         "Porewater sample ID used in the field and laboratory", 
+                         "Collection device used to sample porewater (Rhizon sampler)", 
                          "Rhizon replicate number (# 1-8)",
                          "Sulfate concentration", 
                          "Sulfate concentration", 
@@ -185,7 +185,7 @@ dd$Instrument_ifapplicable <-  c(
                          "Dionex Integrion", 
                          "NA", 
                          "Calculated with Knudsen equation (Strickland and Parsons, 1972)", 
-                         "Agilent BioTek PowerWave Microplate Reader", 
+                         "Modified Cline (1969) method measured with Agilent BioTek PowerWave Microplate Reader", 
                          "Standard deviation of analytical triplicates", 
                          "NA",  
                          "SEAL Instrument: SEAL AQ300 Discrete Analyzer (https://seal-analytical.com/en/products/discrete-analyzers/aq300-discrete-analyzer/)", 
@@ -197,11 +197,11 @@ dd$Instrument_ifapplicable <-  c(
                          "SEAL Instrument: SEAL AQ300 Discrete Analyzer (https://seal-analytical.com/en/products/discrete-analyzers/aq300-discrete-analyzer/)", 
                          "SEAL Instrument: SEAL AQ300 Discrete Analyzer (https://seal-analytical.com/en/products/discrete-analyzers/aq300-discrete-analyzer/)", 
                          "NA",
-                         "Agilent BioTek PowerWave Microplate Reader", 
-                         "Agilent BioTek PowerWave Microplate Reader", 
+                         "Adapted from Stookey, 1970, Violler et al., 2000, Charbonnier & Anschutz 2021, Gong 2020 methods measured with Agilent BioTek PowerWave Microplate Reader", 
+                         "Adapted from Stookey, 1970, Violler et al., 2000, Charbonnier & Anschutz 2021, Gong 2020 methods measured with Agilent BioTek PowerWave Microplate Reader", 
                          "NA", 
-                         "Agilent BioTek PowerWave Microplate Reader", 
-                         "Agilent BioTek PowerWave Microplate Reader", 
+                         "Adapted from Stookey, 1970, Violler et al., 2000, Charbonnier & Anschutz 2021, Gong 2020 methods measured with Agilent BioTek PowerWave Microplate Reader", 
+                         "Adapted from Stookey, 1970, Violler et al., 2000, Charbonnier & Anschutz 2021, Gong 2020 methods measured with Agilent BioTek PowerWave Microplate Reader", 
                          "NA")
 
 dd$Method_ifapplicable <- c(
@@ -269,8 +269,8 @@ flmd$notes <- ""
 
 #add information about each line:
 
-flmd$file_description <-  c("Rhizon water sample analysis data taken from COMPASS synoptic sites in 2022",
-                            "Rhizon water sample analysis data taken from COMPASS synoptic sites in 2023",
+flmd$file_description <-  c("Porewater samples collected with Rhizons from the COMPASS CB synoptic sites in 2022",
+                            "Porewater samples collected with Rhizons from the COMPASS CB synoptic sites in 2023",
                             "Data dictionary file for annual Rhizon water sample analysis data files describing each column in the dataset")
 
 flmd$data_orientation <-  c("horizontal",
