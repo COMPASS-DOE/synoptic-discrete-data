@@ -341,8 +341,7 @@ final_data3 <- final_data2 %>%
          FE_2_mean_uM = round(as.numeric(FE_2_mean_uM), digits = 3), 
          FE_2_sd_uM = round(as.numeric(FE_2_sd_uM), digits = 3), 
          FE_3_mean_uM = round(as.numeric(FE_3_mean_uM), digits = 3), 
-         FE_3_sd_uM = round(as.numeric(FE_3_sd_uM), digits = 3), 
-         )
+         FE_3_sd_uM = round(as.numeric(FE_3_sd_uM), digits = 3))
 
 ##Rename flag columns
 final_data4 <- final_data3 %>%
@@ -369,7 +368,15 @@ final_data5 <- final_data4 %>%
          PO4_flag = gsub("Within_Range", "", PO4_flag), 
          NOx_flag = gsub("Within_Range", "", NOx_flag), 
          FE_2_flag = gsub("within range", "", FE_2_flag), 
-         FE_3_flag = gsub("within range", "", FE_3_flag))
+         FE_3_flag = gsub("within range", "", FE_3_flag), 
+         SO4_flag = replace_na(SO4_flag, ""), 
+         Cl_flag = replace_na(Cl_flag, ""), 
+         H2S_flag = replace_na(H2S_flag, ""), 
+         NH3_flag = replace_na(NH3_flag, ""), 
+         PO4_flag = replace_na(PO4_flag, ""), 
+         NOx_flag = replace_na(NOx_flag, ""), 
+         FE_2_flag = replace_na(FE_2_flag, ""), 
+         FE_3_flag = replace_na(FE_3_flag, ""))
 
 ##Export final data
 write.csv(final_data5, "COMPASS_SynopticCB_Peeper_Data.csv", row.names = FALSE)
