@@ -13,7 +13,7 @@ library(ggpubr)
 library(stringr)
 ```
 
-## Read in first data file and assess standard curves 
+## Read in data file and assess standard curves 
 ```{r , echo=FALSE}
 
 #Read in June Data 
