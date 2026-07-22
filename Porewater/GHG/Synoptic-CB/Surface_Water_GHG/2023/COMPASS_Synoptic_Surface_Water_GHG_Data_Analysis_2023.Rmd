@@ -17,11 +17,15 @@ output_dir: "To Be Reviewed/PDF"
 cat("Run Information") #lets you know what section you're in
 #set the run date & user name
 sample_year <- "2023"
+Sample_Run_Date <- "20240207"
 # sample_month <- "May"
 user <- "Max Wegner"
+
+#record any notes about the run or anything other info here:
+run_notes <- "All of CH4 checks were a bit high."
+
 #identify the files you want to read in
 #read in as a list to accommodate multiple runs in a month
-
 GHG_files <- c("Raw Data/COMPASS_CBSYN_SW_GHG_2023.csv")
 
 
@@ -39,17 +43,14 @@ TempC = 25 #Equilibration Temperature (Celsius)
 volume_g = 0.020 #volume of gas (in liters) in syringe when equilibrating
 volume_w = 0.020 #volume of water (in liters) in syringe when equilibrating (should be equal to volume_g)
 
-#record any notes about the run or anything other info here:
-run_notes <- ""
+
 
 #Collection_Dates = "Raw Data/Sample_Collection_Dates_2024.csv"
 
 cat(run_notes)
 ```
 
-
 ##Set Up
-
 ```{r setup, include=FALSE}
 
 if (!require("pacman")) install.packages("pacman")
@@ -77,12 +78,16 @@ Raw_Metadata = ("Raw Data/COMPASS_SynopticCB_PW_SampleLog_2023.csv")
 ##Detection Limits
 #highest CH4 standard = 10000
 #highest CO2 standard = 50000
-adl_cutoff_ch4 <- 20000
-adl_cutoff_co2 <- 20000
+adl_cutoff_ch4 <- 5000
+adl_cutoff_co2 <- 50000
+low_std_crv_area_cutoff = 71000
 # bdl_cutoff <- 50
-# 
-# ##Check Standard Concentration
-# level_ch4 <- 1000      #ppm
+
+##Check Standard Concentration
+#change this if check standard concentrations are different 
+level_ch4 <- 5      #ppm
+level_co2 <- 1000   #ppm
+#Percentage of check standards that should be good
 chks_flag = 60
 blks_flag = 60
 
@@ -90,15 +95,13 @@ blks_flag = 60
 
 ```
 
-
 ##Read in metadata and create similar sample IDs for matching to samples 
 ```{r pull in metadata for later, include=FALSE}
 
 #read in metadata
 raw_metadata <- read.csv(Raw_Metadata)
-#clean up columns in metadata file:
-#Pull out only SMARTX Rows
-#Create a Sample_Name column to match the SEAL
+
+##Create metadat sample ID to match raw data
 metadata <- raw_metadata %>%
   filter(str_detect(Transect.Location, "Surface Water")) %>%
   mutate(Sample_ID = ifelse(Month < 10, paste0(Year, "0", Month, "_", Site, "_SW_", Lysimeter), 
@@ -115,12 +118,12 @@ raw_list <- map(GHG_files, read.csv)
 # Combining Files
 raw <- bind_rows(raw_list)
 
-##Make sample id
+##Make sample ID
 raw <- raw %>% 
   mutate(Month= match(Sample_Month, month.name)) %>% 
   mutate(Sample_ID = ifelse(Month < 10, paste0(Sample_Year, "0", Month, "_", Sample.ID), 
                               paste0(Sample_Year, Month, "_", Sample.ID))) %>% 
-  mutate(Run_Date = "20240207") #### All of these should be from the same run, even though it went into the next day. ####
+  mutate(Run_Date = Sample_Run_Date) #### All of these should be from the same run, even though it went into the next day. ####
 
 
 ```
@@ -146,7 +149,7 @@ CH4_High <- ggplot(high_stds_ch4, aes(STD_Conc, CH4_Area, color = Run_Date)) + g
   geom_smooth(method = "lm", se = FALSE) + labs(title = "High CH4 Std Curve")
 CH4_High
 
- # Convert 'run date' to a factor for grouping
+# Convert 'run date' to a factor for grouping
 high_stds_ch4_grouped <- high_stds_ch4 %>%
       mutate(Run_Date = as.factor(Run_Date))
 
@@ -191,9 +194,9 @@ Slope_CH4_raw_list_l <- map(split_data_l, ~ .x %>% mutate(Curve = "Slope_CH4_low
                                         Slope = coef(lm(CH4_Area ~ STD_Conc, data = .))[2],
                                         Intercept = coef(lm(CH4_Area ~ STD_Conc, data = .))[1]))
 
- Slope_CH4_raw_l <- bind_rows(Slope_CH4_raw_list_l)
+Slope_CH4_raw_l <- bind_rows(Slope_CH4_raw_list_l)
   
- Slope_CH4_Low <- Slope_CH4_raw_l %>% select(Run_Date, Curve, R2, Slope, Intercept) %>% distinct()
+Slope_CH4_Low <- Slope_CH4_raw_l %>% select(Run_Date, Curve, R2, Slope, Intercept) %>% distinct()
  
  
  
@@ -231,6 +234,9 @@ Slope_CO2 <- Slope_CO2_raw %>% select(Run_Date, Curve, R2, Slope, Intercept) %>%
  
 
 Slopes <- rbind(Slope_CH4_Low, Slope_CH4_High, Slope_CO2)
+Slopes
+
+####Why are the intercepts not zero?####
 
 #add new standard curve data to log
 log <- read.csv(log_path)
@@ -239,12 +245,11 @@ log <- log[, -c(1)]
 log <- rbind(log, Slopes)
 
 #remove possible duplicates from multiple QAQC attempts 
-
-unique_log <- log %>% distinct(.keep_all = TRUE)
+unique_log <- log %>% distinct()
 
 Slopes_chk <- ggplot(log, aes(x = Run_Date, y = Slope, col = Curve)) +
   geom_point(size = 4) +
-  ylim(400, 800) +
+  # ylim(400, 800) +
   theme_bw()
 
 Slopes_chk
@@ -253,27 +258,31 @@ write.csv(unique_log, log_path)
 
 #check r2
 
-ifelse(Slope_CH4_High$R2 < r2_cutoff, paste0("High_R2 is Bad","-", Slope_CH4_High$Run_Date), paste0("High_R2 is Good","-", Slope_CH4_High$Run_Date))
+ifelse(Slope_CH4_High$R2 < r2_cutoff, paste0("High_CH4_R2 is Bad","-", Slope_CH4_High$Run_Date), paste0("High_CH4_R2 is Good","-", Slope_CH4_High$Run_Date))
+ifelse(Slope_CH4_Low$R2 < r2_cutoff, paste0("Low_CH4_R2 is Bad","-", Slope_CH4_Low$Run_Date), paste0("Low_CH4_R2 is Good","-", Slope_CH4_Low$Run_Date))
+ifelse(Slope_CO2$R2 < r2_cutoff, paste0("CO2_R2 is Bad","-", Slope_CO2$Run_Date), paste0("CO2_R2 is Good","-", Slope_CO2$Run_Date))
 
-ifelse(Slope_CH4_Low$R2 < r2_cutoff, paste0("Low_R2 is Bad","-", Slope_CH4_Low$Run_Date), paste0("Low_R2 is Good","-", Slope_CH4_Low$Run_Date))
+High_CH4_R2_Flags <- Slope_CH4_High %>% mutate(Flag = ifelse(R2 < r2_cutoff,"R2 is Bad", "")) %>% select(Flag, Run_Date, Curve)
+Low_CH4_R2_Flags <- Slope_CH4_Low %>% mutate(Flag = ifelse(R2 < r2_cutoff,"R2 is Bad", "")) %>% select(Flag, Run_Date, Curve)
+CO2_R2_Flags <- Slope_CO2 %>% mutate(Flag = ifelse(R2 < r2_cutoff,"R2 is Bad", "")) %>% select(Flag, Run_Date, Curve)
 
-High_R2_Flags <- Slope_CH4_High %>% mutate(Flag = ifelse(R2 < r2_cutoff,"R2 is Bad", "")) %>% select(Flag, Run_Date, Curve)
-
-
-Low_R2_Flags <- Slope_CH4_Low %>% mutate(Flag = ifelse(R2 < r2_cutoff,"R2 is Bad", "")) %>% select(Flag, Run_Date, Curve)
-
-Flags_df <- rbind(High_R2_Flags, Low_R2_Flags)
+Flags_df <- rbind(High_R2_Flags, Low_R2_Flags, CO2_R2_Flags)
 
 ```
 
 ## Now calculate the CH4 in ppm  
 ```{r Calculate Concentration, echo=FALSE}
-#head(raw)
+
+##Calcaulte area of std curve cutoff
+# low_std_crv_area_cutoff <- raw %>% 
+#   filter(Sample.ID == "STD_100ppm_CH4") %>% 
+#   pull(CH4_Area) %>%
+#   mean(na.rm = TRUE)
 
 #pull out Surface Water Samples
 Samples <-  raw %>%  
   filter(str_detect(Type1, "SWGas")) %>%
-  mutate(Curve = ifelse(CH4_Area >= low_std_crv_area_cutoff, "Slope_CH4_Low", "Low"))
+  mutate(Curve = ifelse(CH4_Area >= low_std_crv_area_cutoff, "Slope_CH4_High", "Slope_CH4_Low"))
 #head(Samples)
 
 #Calculate CH4 concentrations in ppm
@@ -284,7 +293,8 @@ Samples$CH4_Conc_ppm <- ifelse(Samples$CH4_Area >= low_std_crv_area_cutoff, (Sam
 Samples$CO2_Conc_ppm <- ((Samples$CO2_Area-Slope_CO2$Intercept)/Slope_CO2$Slope) 
 
 ##########Add flags for any dilutions needed 
-Samples$CH4_Flag <- ifelse(Samples$CH4_Conc_ppm > adl_cutoff, "Needs Dilution", "Within Range")
+Samples$CH4_Flag <- ifelse(Samples$CH4_Conc_ppm > adl_cutoff_ch4, "Needs Dilution", "Within Range")
+Samples$CO2_Flag <- ifelse(Samples$CO2_Conc_ppm > adl_cutoff_co2, "Needs Dilution", "Within Range")
 
 #head(Samples)
 
@@ -293,64 +303,80 @@ Samples$CH4_Flag <- ifelse(Samples$CH4_Conc_ppm > adl_cutoff, "Needs Dilution", 
 # Aanlayze the Check Standards 
 ```{r Asses Check Standards, echo=FALSE}
 
-chks_1 <-  raw %>%
-  filter(!str_detect(Type, "Lab air")) %>%
-  filter(!str_detect(Type, "Standard")) %>%
-  filter(!str_detect(Type, "Blank")) %>%
-  filter(!str_detect(Type, "Sample")) %>%
-  filter(!str_detect(Type, "NA")) %>%
-  mutate(Curve = "Low")
-#head(chks)
+chks <-  raw %>%
+  filter(str_detect(Sample.ID, "CHKSTD"))
 
+#Calculate CH4 concentrations in ppm
+chks$CH4_Conc_ppm <- ifelse(chks$CH4_Area >= low_std_crv_area_cutoff, 
+                      (chks$CH4_Area-Slope_CH4_High$Intercept)/Slope_CH4_High$Slope, 
+                      (chks$CH4_Area-Slope_CH4_Low$Intercept)/Slope_CH4_Low$Slope )
 
-chks_2 <- merge(chks_1, Slope_CH4)
+#Calculate CO2 concentrations in ppm 
+chks$CO2_Conc_ppm <- ((chks$CO2_Area-Slope_CO2$Intercept)/Slope_CO2$Slope)
 
-
-chks <- chks_2 %>% 
-  mutate(CH4_Conc_ppm = (CH4_Area - Intercept) / Slope)
 
 #calculate percent difference of check standards
-chks$Ch4_diff <- ((chks$CH4_Conc_ppm - level_ch4) / ((chks$CH4_Conc_ppm + level_ch4) /
-                                                       2)) * 100
+chks$Ch4_diff <- ((chks$CH4_Conc_ppm - level_ch4) / ((chks$CH4_Conc_ppm + level_ch4) /2)) * 100
 chks$CH4_diff_flag <-  ifelse(chks$Ch4_diff < 10, 'YES', 'NO, rerun')
+
+chks$CO2_diff <- ((chks$CO2_Conc_ppm - level_co2)/((chks$CO2_Conc_ppm + level_co2)/2)) * 100
+chks$CO2_diff_flag <-  ifelse(chks$CO2_diff <10, 'YES', 'NO, rerun')
+
 
 #calculate the percent of check standards that are within the range based on the flag
 CH4_chks_percent <- (sum(chks$CH4_diff_flag == "YES") / nrow(chks)) * 100
+CO2_chks_percent <- (sum(chks$CO2_diff_flag == "YES") / nrow(chks)) * 100
 
 #report out if flags indicate need for rerun
 
 if (CH4_chks_percent >= chks_flag) {
   message(">60% of CH4 Check Standards are within range of expected concentration - PROCEED")
 } else {
-  message("<60% of CH$ Check Standards are within range of expected concentration - REASSESS")
+  message("<60% of CH4 Check Standards are within range of expected concentration - REASSESS")
+}
+
+if (CO2_chks_percent >= chks_flag) {
+  message(">60% of CO2 Check Standards are within range of expected concentration - PROCEED")
+} else {
+  message("<60% of CO2 Check Standards are within range of expected concentration - REASSESS")
 }
 
 #now plot the Ch4 concentrations and the CO2 concentrations vs. the expected concentration
 #then also make the color the percent difference between the expected and observed concentration
 
-ch4_chk <-  ggplot(data = chks, aes(x = Run_Date, y = CH4_Conc_ppm, fill =
-                                      CH4_diff_flag)) +
+ch4_chk <-  ggplot(data = chks, aes(x = Run_Date, y = CH4_Conc_ppm, fill = CH4_diff_flag)) +
   geom_bar(stat = 'identity',
     position = position_dodge2(padding = 0.25,preserve = "single")) +
-  scale_fill_manual(values = c("NO, rerun" = "darkgrey", "YES" = "darkgreen")) +
-  theme_classic() + labs(x = " ", y = "Concentration (ppm)", title =
-                           "Check Stds: CH4") +
-  theme(legend.position = "bottom") +  geom_hline(
+  scale_fill_manual(values = c("NO, rerun" = "red", "YES" = "darkgreen")) +
+  theme_classic() + labs(x = " ", y = "Concentration (ppm)", title = "Check Stds: CH4") +
+  theme(legend.position = "bottom") +  
+  geom_hline(
     yintercept = level_ch4,
     linetype = "dashed",
     color = "black",
-    linewidth = 1
-  ) +
+    linewidth = 1) +
   guides(fill = guide_legend(title = "% Difference <10%"))
 
 
-ch4_chk
+co2_chk <-  ggplot(data = chks, aes(x = Run_Date, y = CO2_Conc_ppm, fill = CO2_diff_flag)) +
+  geom_bar(stat = 'identity', position = position_dodge2(padding = 0.25,preserve = "single")) +
+  scale_fill_manual(values = c("NO, rerun" = "red", "YES" = "darkgreen")) +
+  theme_classic() + 
+  labs(x = " ", y = "Concentration (ppm)", title = "Check Stds: CO2") +
+  theme(legend.position = "bottom") +  
+  geom_hline(
+    yintercept = level_co2,
+    linetype = "dashed",
+    color = "black",
+    linewidth = 1) +
+  guides(fill = guide_legend(title = "% Difference <10%"))
+
+ggarrange(ch4_chk, co2_chk, nrow=1, ncol=2)
 
 #Add Check Standard Flags
 
-flag_chk <- ifelse(CH4_chks_percent >= chks_flag,
-                "",
-               "; Check Standards out Of Range")
+flag_chk <- ifelse(CH4_chks_percent >= chks_flag, "", "; CH4 Check Standards out Of Range")
+flag_chk <- ifelse(CO2_chks_percent >= chks_flag, flag_chk, "; CO2 Check Standards out Of Range")
 
 Flags_df <- Flags_df %>% mutate(Flag = paste0(Flag, flag_chk))
 
@@ -360,39 +386,42 @@ Flags_df <- Flags_df %>% mutate(Flag = paste0(Flag, flag_chk))
 ```{r Analyze Blanks, echo=FALSE}
 cat("Assess Blanks")
 
-CH4_blks <-  raw %>%
-  filter(!str_detect(Type, "Lab air")) %>%
-  filter(!str_detect(Type, "Standard")) %>%
-  filter(!str_detect(Type, "Sample")) %>%
-  filter(!str_detect(Type, "Chk_STD")) %>%
-  filter(!str_detect(Type, "ChkStd")) %>%
-  filter(!str_detect(Type, "NA"))
+blks <- raw %>%
+  filter(str_detect(Sample.ID, "Blank"))
 
 
 #Pull out samples from df_all to calc quantile
 samples_blanks <- raw %>%
-  filter(str_detect(Type, c("Sample"))) %>%
-  filter(str_detect(Sample_ID, "[0-9]{3}-[0-9]{2,3}"))#have to do this because CO2xN ids start with L
+  filter(Type1 == "SWGas")
 
 #Calculating the lowest 25% of sample concentrations to compare to the blank concentrations
-
 blk_flag_CH4 <- quantile(samples_blanks$CH4_Area, prob = c(.25))   #this gives you the lower 25% quartile of the data
-CH4_blks$CH4_diff_flag <-  ifelse(CH4_blks$CH4_Area <= blk_flag_CH4, 'YES', 'NO, rerun')
+blks$CH4_diff_flag <-  ifelse(blks$CH4_Area <= blk_flag_CH4, 'YES', 'NO, rerun')
+
+blk_flag_CO2 <- quantile(samples_blanks$CO2_Area, prob = c(.25))   #this gives you the lower 25% quartile of the data
+blks$CO2_diff_flag <-  ifelse(blks$CO2_Area <= blk_flag_CO2, 'YES', 'NO, rerun')
+
 
 #calculate the percent of check standards that are within the range based on the flag
-CH4_blks_percent <- (sum(CH4_blks$CH4_diff_flag == "YES") / nrow(CH4_blks)) *
-  100
+CH4_blks_percent <- (sum(blks$CH4_diff_flag == "YES") / nrow(blks)) * 100
+CO2_blks_percent <- (sum(blks$CO2_diff_flag == "YES") / nrow(blks)) * 100
 
 #report out if flags indicate need for rerun
 if (CH4_blks_percent >= blks_flag) {
   message(">60% of CH4 Blanks are below the lower 25% quartile of samples - PROCEED")
 } else {
-  message("<60% of CH4 blaks are lower 25% quartile of samples - REASSESS")
+  message("<60% of CH4 Blanks are lower 25% quartile of samples - REASSESS")
 }
 
+if (CO2_blks_percent >= blks_flag) {
+  message(">60% of CO2 Blanks are below the lower 25% quartile of samples - PROCEED")
+} else {
+  message("<60% of CO2 Blanks are lower 25% quartile of samples - REASSESS")
+}
+
+
 #plotting the blanks compared to the lower 25% of conc (what the flag is)
-CH4_blks_plot <-  ggplot(data = CH4_blks, aes(x = Run_Date, y = CH4_Area, fill =
-                                                CH4_diff_flag)) +
+CH4_blks_plot <-  ggplot(data = blks, aes(x = Run_Date, y = CH4_Area, fill = CH4_diff_flag)) +
   geom_bar(stat = 'identity',
     position = position_dodge2(padding = 0.25,preserve = "single")) +
   scale_fill_manual(values = c(
@@ -409,17 +438,35 @@ CH4_blks_plot <-  ggplot(data = CH4_blks, aes(x = Run_Date, y = CH4_Area, fill =
   )  +
   guides(fill = guide_legend(title = "Blank Conc <25% Quartile Samples"))
 
-print(CH4_blks_plot)
+
+CO2_blks_plot <-  ggplot(data = blks, aes(x = Run_Date, y = CO2_Area, fill = CO2_diff_flag)) +
+  geom_bar(stat = 'identity', position = position_dodge2(padding = 0.25,preserve = "single")) +
+  scale_fill_manual(values = c(
+    "YES" = "deepskyblue3",
+    "NO, rerun" = "darkred"
+  )) +
+  theme_classic() + labs(x = " ", y = "CO2 Area", title = "CO2 Blanks") +
+  theme(legend.position = "bottom") +
+  geom_hline(
+    yintercept = as.numeric(blk_flag_CO2),
+    linetype = "dashed",
+    color = "black",
+    linewidth = 1
+  )  +
+  guides(fill = guide_legend(title = "CO2 Blank Conc <25% Quartile Samples"))
+
+
+ggarrange(CH4_blks_plot, CO2_blks_plot, nrow=1, ncol=2)
 
 
 #find average of run blanks for flagging samples later
 # Compute averages
-blk_avg_CH4 <- mean(CH4_blks$CH4_Area, na.rm = TRUE)
-
+blk_avg_CH4 <- mean(blks$CH4_Area, na.rm = TRUE)
+blk_avg_CO2 <- mean(blks$CO2_Area, na.rm = TRUE)
 
 # Create a data frame
-blank_avgs <- data.frame(Test = c("CH4"),
-                         Blank_Mean_Area = c(blk_avg_CH4))
+blank_avgs <- data.frame(Test = c("CH4", "CO2"),
+                         Blank_Mean_Area = c(blk_avg_CH4, blk_avg_CO2))
 
 # Pretty print
 knitr::kable(blank_avgs, caption = "Mean Area of Blanks", digits = 4)
@@ -428,44 +475,36 @@ knitr::kable(blank_avgs, caption = "Mean Area of Blanks", digits = 4)
 #write out a flag if more than 60% of the blanks are above the lower 25% quantile of samples
 flag_blks <-  ifelse(CH4_blks_percent >= blks_flag,
                  "",
-                 '; Blanks out of Range')
+                 '; CH4 Blanks out of Range')
+flag_blks <-  ifelse(CO2_blks_percent >= blks_flag,
+                 flag_blks,
+                 '; CO2 Blanks out of Range')
 
 Flags_df <- Flags_df %>% mutate(Flag = paste0(Flag, flag_blks))
-
-
-
 
 ```
 
 # Dilution correct samples and Check Range
 ```{r, echo=FALSE}
 
+####Are our exetainers for the SW GHG evacuated? ####
+
 #Correct if volume other than 12mL of Sample was added
-Samples$CH4_Conc_ppm_dilcorr <- ((0.5 * Samples$CH4_Conc_ppm) * (12 + Samples$Sample_Volume)) /
-  (Samples$Sample_Volume)
+# Samples$CH4_Conc_ppm_dilcorr <- ((0.5 * Samples$CH4_Conc_ppm) * (12 + Samples$Sample_Volume)) / (Samples$Sample_Volume)
+
+
+#multiply the concentration by the dilution factor
+Samples$Dilution_Factor <- ifelse(is.na(Samples$Dilution_Factor), 1, Samples$Dilution_Factor)
+
+Samples$CH4_Conc_ppm_dilcorr <- (Samples$CH4_Conc_ppm * Samples$Dilution_Factor)
+
+Samples$CO2_Conc_ppm_dilcorr <- (Samples$CO2_Conc_ppm * Samples$Dilution_Factor)
 
 #check results
 #head(Samples)
 
-Samples_dil <- Samples %>% mutate(Sample_ID = str_sub(Sample_ID, 8, 13))
-
 #quick first look at the samples
-ch4_samples <-  ggplot(data = Samples_dil, aes(x = Sample_ID, y = CH4_Conc_ppm, fill =
-                                             CH4_Flag)) +
-  geom_bar(stat = 'identity',
-    position = position_dodge2(padding = 0.25,preserve = "single"))+
-  scale_fill_manual(values = c("darkgreen", "red")) +
-  theme_classic() + labs(x = " ", y = "CH4 (ppm)", title = "CH4: Green = Within Range (Not Dil Cor)") +
-  theme(axis.text.x = element_text(
-    angle = 90,
-    vjust = 0.5,
-    hjust = 1
-  )) +
-  theme(legend.position = "none")
-
-#corrected for different dilutions
-ch4_samples_cor <-  ggplot(data = Samples_dil, aes(x = Sample_ID, y = CH4_Conc_ppm_dilcorr, fill =
-                                             CH4_Flag)) +
+ch4_samples_cor <-  ggplot(data = Samples, aes(x = Sample_ID, y = CH4_Conc_ppm_dilcorr, fill = CH4_Flag)) +
   geom_bar(stat = 'identity',
     position = position_dodge2(padding = 0.25,preserve = "single"))+
   scale_fill_manual(values = c("green4", "darkred")) +
@@ -477,9 +516,19 @@ ch4_samples_cor <-  ggplot(data = Samples_dil, aes(x = Sample_ID, y = CH4_Conc_p
   )) +
   theme(legend.position = "none")
 
-ch4_samples
+co2_samples_cor <-  ggplot(data = Samples, aes(x = Sample_ID, y = CO2_Conc_ppm_dilcorr, fill = CO2_Flag)) +
+  geom_bar(stat = 'identity',
+    position = position_dodge2(padding = 0.25,preserve = "single"))+
+  scale_fill_manual(values = c("green4", "darkred")) +
+  theme_classic() + labs(x = " ", y = "CO2 (ppm)", title = "CO2: Green = Within Range") +
+  theme(axis.text.x = element_text(
+    angle = 90,
+    vjust = 0.5,
+    hjust = 1
+  )) +
+  theme(legend.position = "none")
 
-ch4_samples_cor
+ggarrange(ch4_samples_cor, co2_samples_cor, nrow=1, ncol=2)
 
 
 ```
@@ -496,18 +545,14 @@ ch4_samples_cor
 #      V = 0.015 (gas syringe volume in L)
 #      T = "TempC" column value in Kelvin (equilibration temperature)
 
-#Calculate CH4 uM from ppm
-
-Samples_dil$CH4_Conc_uM <- (Samples_dil$CH4_Conc_ppm_dilcorr * (( 1 * volume_g )/(R * (TempC + CTK) )))/ volume_w
-
+####Is this correct?####
+#Calculate CH4 uM from ppm 
 Samples$CH4_Conc_uM <- (Samples$CH4_Conc_ppm_dilcorr * (( 1 * volume_g )/(R * (TempC + CTK) )))/ volume_w
-
-#old equation
-#Samples$CH4_Conc_uM <- (Samples$CH4_Conc_ppm_dilcorr * ((1 * volume / 1000) / (R * (TempC + CTK)))) / (volume / 1000)
+Samples$CO2_Conc_uM <- (Samples$CO2_Conc_ppm_dilcorr * (( 1 * volume_g )/(R * (TempC + CTK) )))/ volume_w
 
 
 #quick first look at the samples
-ch4_samples1 <-  ggplot(data = Samples_dil, aes(x = Sample_ID, y = CH4_Conc_uM)) +
+ch4_samples <-  ggplot(data = Samples, aes(x = Sample_ID, y = CH4_Conc_uM)) +
   geom_bar(stat = 'identity', fill = "darkblue",
     position = position_dodge2(padding = 0.25,preserve = "single"))+
   theme_classic() +
@@ -519,8 +564,20 @@ ch4_samples1 <-  ggplot(data = Samples_dil, aes(x = Sample_ID, y = CH4_Conc_uM))
   )) +
   theme(legend.position = "none")
 
+co2_samples <-  ggplot(data = Samples, aes(x = Sample_ID, y = CO2_Conc_uM)) +
+  geom_bar(stat = 'identity', fill = "darkblue",
+    position = position_dodge2(padding = 0.25,preserve = "single"))+
+  theme_classic() +
+  labs(x = " ", y = "CO2 (uM)", title = "CO2 Gas in Water") +
+  theme(axis.text.x = element_text(
+    angle = 90,
+    vjust = 0.5,
+    hjust = 1
+  )) +
+  theme(legend.position = "none")
 
-ch4_samples1
+ggarrange(ch4_samples, co2_samples, nrow=1, ncol=2)
+
 
 ```
 
