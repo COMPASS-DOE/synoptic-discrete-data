@@ -1,0 +1,116 @@
+[Header]	
+System	TOCL TNML ASIL 24ML	
+S/W Version	1.00	
+User	sjw	
+Date/Time	7/23/2026 6:47:25 PM	
+
+[System]	
+Instrument Options	TOC/ASI/IC Unit/TN/	
+
+[Data]	
+Type	Anal.	Sample Name	Sample ID	Result(TOC)	Result(TC)	Result(IC)	Result(POC)	Result(NPOC)	Result(TN)	Unit	Vial	Date / Time	
+Unknown	IC	DI	Untitled			0.000				mg/L	0	7/20/2026 4:58:56 PM	
+Unknown	IC	DI	Untitled			0.000				mg/L	0	7/20/2026 5:10:01 PM	
+Unknown	IC	DI	Untitled			0.000				mg/L	0	7/20/2026 5:18:55 PM	
+Unknown	IC	Chk_Std_10mgL	Untitled			0.000				mg/L	1	7/20/2026 5:32:16 PM	
+Unknown	IC	DI	Untitled			0.000				mg/L	0	7/20/2026 5:45:36 PM	
+Standard	IC	CalCurve_IC	Untitled			200.0				mg/L	2, 3, 4, 5, 6, 7, 8, 9	7/20/2026 7:25:27 PM	
+Unknown	IC	DI	Untitled			1.488				mg/L	0	7/20/2026 7:38:53 PM	
+Unknown	IC	Chk_Std_40mgL	Untitled			10.55				mg/L	10	7/20/2026 7:50:43 PM	
+Unknown	IC	Chk_Std_CRM_224-1077	Untitled			21.97				mg/L	11	7/20/2026 8:02:52 PM	
+Unknown	IC	DI	Untitled			1.488				mg/L	0	7/20/2026 8:11:45 PM	
+Unknown	IC	FATE_Dock_20260611_A	Untitled			14.88				mg/L	12	7/20/2026 8:23:07 PM	
+Unknown	IC	FATE_Dock_20260611_B	Untitled			14.80				mg/L	13	7/20/2026 8:34:27 PM	
+Unknown	IC	FATE_Flume_20260611_A	Untitled			16.54				mg/L	14	7/20/2026 8:46:20 PM	
+Unknown	IC	FATE_Flume_20260611_B	Untitled			17.23				mg/L	15	7/20/2026 8:57:38 PM	
+Unknown	IC	FATE_Dock_20260626_A	Untitled			15.10				mg/L	16	7/20/2026 9:09:16 PM	
+Unknown	IC	FATE_Dock_20260626_B	Untitled			15.15				mg/L	17	7/20/2026 9:21:00 PM	
+Unknown	IC	FATE_Flume_20260626_A	Untitled			16.27				mg/L	18	7/20/2026 9:32:37 PM	
+Unknown	IC	FATE_Flume_20260626_B	Untitled			16.56				mg/L	19	7/20/2026 9:43:56 PM	
+Unknown	IC	FATE_Dock_20260710_A	Untitled			15.40				mg/L	20	7/20/2026 9:55:14 PM	
+Unknown	IC	FATE_Dock_20260710_B	Untitled			15.46				mg/L	21	7/20/2026 10:06:34 PM	
+Unknown	IC	FATE_Flume_20260710_A	Untitled			21.66				mg/L	22	7/20/2026 10:18:38 PM	
+Unknown	IC	FATE_Flume_20260710_B	Untitled			21.69				mg/L	23	7/20/2026 10:30:43 PM	
+Unknown	IC	DI	Untitled			1.489				mg/L	0	7/20/2026 10:43:58 PM	
+Unknown	IC	Chk_Std_CRM_224-1077	Untitled			21.99				mg/L	24	7/20/2026 10:56:02 PM	
+Unknown	IC	DI	Untitled			1.483				mg/L	0	7/20/2026 11:07:06 PM	
+Unknown	IC	202607_SWH_UP_LysA_10cm	Untitled			9.028				mg/L	25	7/20/2026 11:18:14 PM	
+Unknown	IC	202607_SWH_UP_LysA_20cm	Untitled			19.68				mg/L	26	7/20/2026 11:29:51 PM	
+Unknown	IC	202607_SWH_UP_LysA_45cm	Untitled			30.12				mg/L	27	7/20/2026 11:45:22 PM	
+Unknown	IC	202607_SWH_UP_LysB_20cm	Untitled			20.20				mg/L	28	7/20/2026 11:57:08 PM	
+Unknown	IC	202607_SWH_SWAMP_LysA_10cm	Untitled			17.70				mg/L	29	7/21/2026 12:08:30 AM	
+Unknown	IC	202607_SWH_SWAMP_LysA_20cm	Untitled			18.27				mg/L	30	7/21/2026 12:20:10 AM	
+Unknown	IC	202607_SWH_SWAMP_LysB_10cm	Untitled			17.76				mg/L	31	7/21/2026 12:32:17 AM	
+Unknown	IC	202607_SWH_SWAMP_LysC_10cm	Untitled			14.48				mg/L	32	7/21/2026 12:44:14 AM	
+Unknown	IC	202607_SWH_SWAMP_LysC_20cm	Untitled			15.02				mg/L	33	7/21/2026 12:58:25 AM	
+Unknown	IC	202607_SWH_SWAMP_LysC_45cm	Untitled			22.74				mg/L	34	7/21/2026 1:10:10 AM	
+Unknown	IC	DI	Untitled			1.554				mg/L	0	7/21/2026 1:23:26 AM	
+Unknown	IC	Chk_Std_10mgL	Untitled			10.66				mg/L	35	7/21/2026 1:34:45 AM	
+Unknown	IC	DI	Untitled			1.488				mg/L	0	7/21/2026 1:45:49 AM	
+Unknown	IC	202607_SWH_TR_LysA_10cm	Untitled			16.88				mg/L	36	7/21/2026 1:57:29 AM	
+Unknown	IC	202607_SWH_TR_LysA_20cm	Untitled			51.18				mg/L	37	7/21/2026 2:10:37 AM	
+Unknown	IC	202607_SWH_TR_LysA_45cm	Untitled			52.01				mg/L	38	7/21/2026 2:23:44 AM	
+Unknown	IC	202607_SWH_TR_LysB_10cm	Untitled			32.56				mg/L	39	7/21/2026 2:36:40 AM	
+Unknown	IC	202607_SWH_TR_LysB_20cm	Untitled			66.46				mg/L	40	7/21/2026 2:50:00 AM	
+Unknown	IC	202607_SWH_TR_LysB_45cm	Untitled			57.96				mg/L	41	7/21/2026 3:03:17 AM	
+Unknown	IC	202607_SWH_TR_LysC_10cm	Untitled			16.95				mg/L	42	7/21/2026 3:15:20 AM	
+Unknown	IC	202607_SWH_TR_LysC_20cm	Untitled			26.01				mg/L	43	7/21/2026 3:27:34 AM	
+Unknown	IC	202607_SWH_TR_LysC_45cm	Untitled			49.99				mg/L	44	7/21/2026 3:40:31 AM	
+Unknown	IC	DI	Untitled			1.548				mg/L	0	7/21/2026 3:53:46 AM	
+Unknown	IC	Chk_Std_40mgL	Untitled			38.66				mg/L	45	7/21/2026 4:06:53 AM	
+Unknown	IC	DI	Untitled			1.483				mg/L	0	7/21/2026 4:20:08 AM	
+Unknown	IC	202607_SWH_WC_LysA_20cm	Untitled			57.76				mg/L	46	7/21/2026 4:36:39 AM	
+Unknown	IC	202607_SWH_WC_LysA_45cm	Untitled			54.96				mg/L	47	7/21/2026 4:49:47 AM	
+Unknown	IC	202607_SWH_WC_LysB_10cm	Untitled			54.20				mg/L	48	7/21/2026 5:03:04 AM	
+Unknown	IC	202607_SWH_WC_LysB_10cm_dup	Untitled			44.73				mg/L	49	7/21/2026 5:16:13 AM	
+Unknown	IC	202607_SWH_WC_LysB_20cm	Untitled			55.82				mg/L	50	7/21/2026 5:29:33 AM	
+Unknown	IC	202607_SWH_WC_LysB_45cm	Untitled			47.07				mg/L	51	7/21/2026 5:42:37 AM	
+Unknown	IC	202607_SWH_WC_LysC_10cm	Untitled			49.82				mg/L	52	7/21/2026 5:55:40 AM	
+Unknown	IC	202607_SWH_WC_LysC_20cm	Untitled			52.36				mg/L	53	7/21/2026 6:08:50 AM	
+Unknown	IC	202607_SWH_SW_A	Untitled			14.44				mg/L	54	7/21/2026 6:20:12 AM	
+Unknown	IC	202607_SWH_SW_B	Untitled			13.97				mg/L	55	7/21/2026 6:31:34 AM	
+Unknown	IC	202607_SWH_SW_C	Untitled			13.92				mg/L	56	7/21/2026 6:43:01 AM	
+Unknown	IC	DI	Untitled			1.503				mg/L	0	7/21/2026 6:54:13 AM	
+Unknown	IC	Chk_Std_10mgL	Untitled			10.40				mg/L	57	7/21/2026 7:05:50 AM	
+Unknown	IC	DI	Untitled			1.483				mg/L	0	7/21/2026 7:16:58 AM	
+Unknown	IC	202607_GWI_UP_LysA_45cm	Untitled			8.897				mg/L	58	7/21/2026 7:28:26 AM	
+Unknown	IC	202607_GWI_UP_LysB_10cm	Untitled			3.480				mg/L	59	7/21/2026 7:38:58 AM	
+Unknown	IC	202607_GWI_UP_LysB_20cm	Untitled			9.151				mg/L	60	7/21/2026 7:50:05 AM	
+Unknown	IC	202607_GWI_UP_LysB_45cm	Untitled			16.02				mg/L	61	7/21/2026 8:01:24 AM	
+Unknown	IC	202607_GWI_UP_LysC_20cm	Untitled			10.23				mg/L	62	7/21/2026 8:12:31 AM	
+Unknown	IC	202607_GWI_TR_LysA_10cm	Untitled			18.87				mg/L	63	7/21/2026 8:30:00 AM	
+Unknown	IC	202607_GWI_TR_LysA_20cm	Untitled			34.51				mg/L	64	7/21/2026 8:42:41 AM	
+Unknown	IC	202607_GWI_TR_LysB_10cm	Untitled			16.19				mg/L	65	7/21/2026 8:54:00 AM	
+Unknown	IC	202607_GWI_TR_LysB_10cm_dup	Untitled			11.35				mg/L	66	7/21/2026 9:05:08 AM	
+Unknown	IC	202607_GWI_TR_LysC_10cm	Untitled			12.14				mg/L	67	7/21/2026 9:16:20 AM	
+Unknown	IC	DI	Untitled			1.545				mg/L	0	7/21/2026 9:29:36 AM	
+Unknown	IC	Chk_Std_40mgL	Untitled			38.31				mg/L	68	7/21/2026 9:42:27 AM	
+Unknown	IC	DI	Untitled			1.485				mg/L	0	7/21/2026 9:53:33 AM	
+Unknown	IC	202607_GWI_TR_LysC_20cm	Untitled			19.06				mg/L	69	7/21/2026 10:11:22 AM	
+Unknown	IC	202607_GWI_WC_LysA_10cm	Untitled			41.38				mg/L	70	7/21/2026 10:27:26 AM	
+Unknown	IC	202607_GWI_WC_LysA_45cm	Untitled			40.54				mg/L	71	7/21/2026 10:40:21 AM	
+Unknown	IC	202607_GWI_WC_LysB_10cm	Untitled			48.27				mg/L	72	7/21/2026 10:53:26 AM	
+Unknown	IC	202607_GWI_WC_LysB_10cm_dup	Untitled			36.02				mg/L	73	7/21/2026 11:11:48 AM	
+Unknown	IC	202607_GWI_WC_LysB_20cm	Untitled			48.07				mg/L	74	7/21/2026 11:24:54 AM	
+Unknown	IC	202607_GWI_WC_LysC_10cm	Untitled			41.94				mg/L	75	7/21/2026 11:38:00 AM	
+Unknown	IC	202607_GWI_SW_A	Untitled			20.25				mg/L	76	7/21/2026 12:00:52 PM	
+Unknown	IC	202607_GWI_SW_B	Untitled			13.45				mg/L	77	7/21/2026 12:31:16 PM	
+Unknown	IC	202607_GWI_SW_C	Untitled			9.224				mg/L	78	7/21/2026 1:02:57 PM	
+Unknown	IC	DI	Untitled			1.392				mg/L	0	7/21/2026 1:16:41 PM	
+Unknown	IC	Chk_Std_CRM_224-1077	Untitled			8.900				mg/L	79	7/21/2026 1:47:18 PM	
+Unknown	IC	DI	Untitled			1.420				mg/L	0	7/21/2026 2:02:15 PM	
+Unknown	IC	DI	Untitled			1.476				mg/L	0	7/21/2026 2:13:20 PM	
+Unknown	IC	DI	Untitled			1.479				mg/L	0	7/21/2026 2:22:14 PM	
+Unknown	IC	Untitled	Untitled			1.478				mg/L	0	7/21/2026 2:33:19 PM	
+Unknown	IC	Untitled	Untitled			1.484				mg/L	0	7/21/2026 2:44:24 PM	
+Unknown	IC	Untitled	Untitled			1.476				mg/L	0	7/21/2026 2:55:29 PM	
+Unknown	IC	Untitled	Untitled			1.476				mg/L	0	7/21/2026 3:06:34 PM	
+Unknown	IC	Untitled	Untitled			1.473				mg/L	0	7/21/2026 3:17:39 PM	
+Unknown	IC	Untitled	Untitled			1.470				mg/L	0	7/21/2026 3:28:43 PM	
+Unknown	IC	Untitled	Untitled			1.480				mg/L	0	7/21/2026 3:39:47 PM	
+Unknown	IC	Untitled	Untitled			1.473				mg/L	0	7/21/2026 3:48:40 PM	
+Unknown	IC	Untitled	Untitled			1.477				mg/L	0	7/21/2026 3:59:44 PM	
+Unknown	IC	Untitled	Untitled			1.480				mg/L	0	7/21/2026 4:10:48 PM	
+Unknown	IC	Untitled	Untitled			1.468				mg/L	0	7/21/2026 4:19:42 PM	
+Unknown	IC	Untitled	Untitled			1.472				mg/L	0	7/21/2026 4:28:36 PM	
+Unknown	IC	Untitled	Untitled			1.482				mg/L	0	7/21/2026 4:39:41 PM	
