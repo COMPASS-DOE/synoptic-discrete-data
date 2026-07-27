@@ -1,6 +1,6 @@
 ---
 title: "Synoptic CB: Porewater Sulfide"
-author: "May 2026 Samples Ran on 20260526"
+author: "July 2026 Samples Ran on 20260720, 20260724"
 date: "`r Sys.Date()`"
 output: 
   pdf_document:
@@ -36,15 +36,15 @@ library(patchwork)
 ```{r Run Information, echo=TRUE, message=FALSE, warning=FALSE}
 
 ###things that need to be changed
-Date_Run = "20260526-20260527"
-Month = "May"
+Date_Run = "20260720, 20260724"
+Month = "July"
 Year = "2026"
-Sample_Month_Year = "202605"
+Sample_Month_Year = "202607"
 Run_by = "Zoe Read"  #Instrument user 
 Script_run_by = "Zoe Read" #Code user 
 Project = "COMPASS"
 
-Run_notes="Used 20260527_Plate2 std curve. 3/16 Matrix checks were bad. 3/8 dups were bad, probably because the sulfide values were so low. 5/8 spieks were bad"#any notes from run
+Run_notes="Used std curve from Plate 1. MC 20 from the first day were bad. 2/6 dups were bad. 5/6 spikes were bad. All samples are present in metadata."#any notes from run
 
 #Stds that should be excluded
 # stds_to_remove<-data.frame(Plate=c("Plate6"),IDs=c("Std 3"))
@@ -63,10 +63,10 @@ file_paths_tidydata <- list.files(path = "Tidy Data", pattern = "tidy.*\\.csv$",
 
 #file path name for processed data
 #Write out final data frame 
-final_data_path <- "COMPASS_H2S_202605_Plates_Combined.csv"
-HighCV_path <- "COMPASS_H2S_202605_Plates_HighCVs.csv"
-ADL_not_fixed_path <- "COMPASS_H2S_202605_Plates_ADL.csv"
-BDL_not_fixed_path <- "COMPASS_H2S_202605_Plates_BDL.csv"
+final_data_path <- "COMPASS_H2S_202607_Plates_Combined.csv"
+HighCV_path <- "COMPASS_H2S_202607_Plates_HighCVs.csv"
+ADL_not_fixed_path <- "COMPASS_H2S_202607_Plates_ADL.csv"
+BDL_not_fixed_path <- "COMPASS_H2S_202607_Plates_BDL.csv"
 
 #QAQC log path
 log_path="Raw Data/Sulfide_STD_QAQC.csv"
@@ -698,16 +698,16 @@ ADL<-subset(dat1 ,(ID_full %in% H2S_DiluteRerun$ID_full))
 ADL<-filter(ADL,H2S_flag=="Within Range") 
 H2S_DiluteRerun<-H2S_DiluteRerun %>% 
   subset((!ID_full %in% ADL$ID_full)) %>% 
-  subset((!ID_full %like% " Dup")) %>% 
-  subset((!ID_full %like% " Spike"))
+  subset((!ID_full %like% " dup")) %>% 
+  subset((!ID_full %like% " spk"))
 #filter the samples that need to be run at a lower dilution 
 H2S_bdl <- subset(dat1,H2S_flag == "bdl"& Dilution!=1)
 BDL<-subset(dat1 ,(ID_full %in% H2S_bdl$ID_full))
 BDL<-filter(BDL,H2S_flag=="Within Range") 
 H2S_bdl<-H2S_bdl %>% 
   subset((!ID_full %in% BDL$ID_full)) %>% 
-  subset((!ID_full %like% " Dup")) %>% 
-  subset((!ID_full %like% " Spike"))
+  subset((!ID_full %like% " dup")) %>% 
+  subset((!ID_full %like% " spk"))
 
 knitr::kable(H2S_HighCVRerun, caption = "High CV Samples")
 knitr::kable(H2S_DiluteRerun, caption = "Samples Above the Detection Limit")
@@ -724,17 +724,17 @@ knitr::kable(H2S_bdl, caption = "Samples Below the Detection Limit")
 
 #pull out any rows that have "Dup" in the ID column
 dups <- dat1 %>%  
-  filter(str_detect(ID_full, "Dup")) 
+  filter(str_detect(ID_full, "dup")) 
 #head(dups)
 
 #remove these from dat1
 dat2 <- dat1 %>%  
-  filter(!str_detect(ID_full, "Dup")) %>%  
-  filter(!str_detect(ID_full, "Spike")) 
+  filter(!str_detect(ID_full, "dup")) %>%  
+  filter(!str_detect(ID_full, "spk")) 
 #head(dat2)
 
 #remove the dup from these ID_full so we will have duplicates 
-dups$ID_full<-gsub(" Dup",'',dups$ID_full)
+dups$ID_full<-gsub(" dup",'',dups$ID_full)
 #head(dups)
 colnames(dups) <- c('ID_full', 'mean_dup')
 
@@ -753,7 +753,7 @@ QAdups$dups_flag <-  ifelse(QAdups$dups_chk <dups_perc_diff, 'OK', 'Rerun')
 dupsbar<-ggplot(data = QAdups, aes(x = ID_full, y = dups_chk, fill=dups_flag)) +
           geom_bar(stat = 'identity') + facet_wrap(~Plate, scales = "free")+
           scale_fill_manual(values=c("OK" ='darkgreen' , "Rerun" = 'darkred')) + 
-          theme_classic() + labs(x= "Sample ID", y="Difference Between Duplicates (%)") + 
+          theme_classic() + labs(x= "Sample ID", y="Difference Between duplicates (%)") + 
           theme(legend.position="none") +  geom_hline(yintercept=10, linetype="dashed", color = "black", linewidth=1)
 
 dupsbar
@@ -790,10 +790,10 @@ ifelse(dups_percent >= 60  , ">60% of Duplicates are within <10%",
 ```{r,echo=FALSE}
 
 #pull out any rows that have "d" in the SampleID column
-spks <- dat1 %>%  filter(str_detect(ID_full, "Spike")) 
+spks <- dat1 %>%  filter(str_detect(ID_full, "spk")) 
 
 #remove the Spike from these ID_full so we will have duplicates 
-spks$ID_full<-gsub(" Spike","",spks$ID_full)
+spks$ID_full<-gsub(" spk","",spks$ID_full)
 #head(spks)
 colnames(spks) <- c('ID_full', 'mean_spk')
 
@@ -865,8 +865,8 @@ ww_ADL<-subset(dat1, (IDs %in% ADL$IDs))
 ww_ADL<-filter(ww_ADL, H2S_flag=="Within Range") 
 ADL_not_fixed<-ADL %>% 
   subset((!IDs %in% ww_ADL$IDs)) %>% 
-  subset((!IDs %like% " Dup")) %>% 
-  subset((!IDs %like% " Spike"))
+  subset((!IDs %like% " dup")) %>% 
+  subset((!IDs %like% " spk"))
 
 #filter out the samples that need to be run at a lower dilution
 BDL<-filter(dat1, H2S_flag=="bdl"& Dilution!=1)
@@ -876,21 +876,21 @@ ww_BDL<-subset(dat1, (IDs %in% BDL$IDs))
 ww_BDL<-filter(ww_BDL,H2S_flag=="Within Range") 
 BDL_not_fixed<-BDL %>% 
   subset((!IDs %in% ww_BDL$IDs)) %>% 
-  subset((!IDs %like% " Dup")) %>% 
-  subset((!IDs %like% " Spike"))
+  subset((!IDs %like% " dup")) %>% 
+  subset((!IDs %like% " spk"))
 
 
 ##Remove samples that were ADL/BDL and are now fixed
 ADL_fixed<-ADL %>% 
   subset((IDs %in% ww_ADL$IDs)) %>% 
-  subset((!IDs %like% " Dup")) %>% 
-  subset((!IDs %like% " Spike"))
+  subset((!IDs %like% " dup")) %>% 
+  subset((!IDs %like% " spk"))
 ADL_fixed$ID_conc <- paste(ADL_fixed$IDs, ADL_fixed$H2S_flag, sep = "_")
 
 BDL_fixed<-BDL %>% 
   subset((IDs %in% ww_BDL$IDs)) %>% 
-  subset((!IDs %like% " Dup")) %>% 
-  subset((!IDs %like% " Spike"))
+  subset((!IDs %like% " dup")) %>% 
+  subset((!IDs %like% " spk"))
 BDL_fixed$ID_conc <- paste(BDL_fixed$IDs, BDL_fixed$H2S_flag, sep = "_")
 
 
@@ -915,15 +915,15 @@ print(BDL_not_fixed)
 
 ##Remove Dups and Spikes
 Sample_data_IDs <- Sample_data_nodups %>% 
-  subset((!IDs %like% "Dup")) %>% 
-  subset((!IDs %like% "Spike"))%>% 
+  subset((!IDs %like% "dup")) %>% 
+  subset((!IDs %like% "spk"))%>% 
   subset((!IDs %like% "TMP"))
 
 ```
 
 ```{r Format Sample IDs, include = FALSE}
 
-#GCW_WC_A_10 to GCW_202605_UP_LysA_10cm
+#GCW_WC_A_10 to GCW_202607_UP_LysA_10cm
 ##Separate sample IDs into columns 
 Sample_data_IDs <- Sample_data_IDs %>%
   separate(
