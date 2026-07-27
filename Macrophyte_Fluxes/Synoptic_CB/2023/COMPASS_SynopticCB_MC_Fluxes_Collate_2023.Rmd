@@ -34,7 +34,8 @@ ch4 <- ch4 %>%
     .cols = 7:(ncol(.) - 4),
     .fn = ~paste0("ch4_", .)
   ) %>%
-  rename(ch4_qaqc_flag = qaqc_flag)
+  rename(ch4_qaqc_flag = qaqc_flag) %>% 
+  mutate(Year = substring(TIMESTAMP, 1, 4))
 
 co2 <- read.csv("Processed Data/COMPASS_Synoptic_CB_Macrophyte_Fluxes_Final_2023_CO2.csv")
 co2$X <- NULL
@@ -43,10 +44,11 @@ co2 <- co2 %>%
     .cols = 7:(ncol(.) - 4),
     .fn = ~paste0("co2_", .)
   ) %>%
-  rename(co2_qaqc_flag = qaqc_flag)
+  rename(co2_qaqc_flag = qaqc_flag) %>% 
+  mutate(Year = substring(TIMESTAMP, 1, 4))
 
 # Combine all files
-all_dat <- merge(ch4, co2, by = c("Plot", "Site", "Zone", "Replicate", "Date", "TIMESTAMP", "TIMESTAMP_min", "TIMESTAMP_max", "Notes"), all = FALSE)
+all_dat <- merge(ch4, co2, by = c("Year", "Plot", "Site", "Zone", "Replicate", "Date", "TIMESTAMP", "TIMESTAMP_min", "TIMESTAMP_max", "Notes"), all = FALSE)
 
 ```
 

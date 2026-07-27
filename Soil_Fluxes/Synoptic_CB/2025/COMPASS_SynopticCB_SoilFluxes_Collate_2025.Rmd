@@ -41,7 +41,8 @@ ch4 <- ch4 %>%
     TIMESTAMP_min = as.POSIXct(TIMESTAMP_min),
     TIMESTAMP_max = as.POSIXct(TIMESTAMP_max)) %>%
   mutate(across(where(is.character), str_trim)) %>%
-  mutate(TIMESTAMP = round(TIMESTAMP, units = "secs"))
+  mutate(TIMESTAMP = round(TIMESTAMP, units = "secs")) %>% 
+  mutate(Year = substring(TIMESTAMP, 1, 4))
 
 # ch4$TIMESTAMP <- ymd_hms(ch4$TIMESTAMP)
 # rownames(df) <- NULL
@@ -61,12 +62,13 @@ co2 <- co2 %>%
     TIMESTAMP_min = as.POSIXct(TIMESTAMP_min),
     TIMESTAMP_max = as.POSIXct(TIMESTAMP_max)) %>%
   mutate(across(where(is.character), str_trim)) %>%
-  mutate(TIMESTAMP = round(TIMESTAMP, units = "secs"))
+  mutate(TIMESTAMP = round(TIMESTAMP, units = "secs")) %>% 
+  mutate(Year = substring(TIMESTAMP, 1, 4))
 
 # co2$TIMESTAMP <- ymd_hms(co2$TIMESTAMP)
 
 # Combine all files
-all_dat <- merge(co2, ch4, by = c("RepNumber", "Month", "Site", "Zone", "Replicate", "Plot", "TIMESTAMP", "TIMESTAMP_min", "TIMESTAMP_max"), all = TRUE)
+all_dat <- merge(co2, ch4, by = c("RepNumber", "Year", "Month", "Site", "Zone", "Replicate", "Plot", "TIMESTAMP", "TIMESTAMP_min", "TIMESTAMP_max"), all = TRUE)
 
 ```
 

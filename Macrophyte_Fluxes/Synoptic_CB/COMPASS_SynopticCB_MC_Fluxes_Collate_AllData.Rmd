@@ -45,13 +45,16 @@ dat25 <- read.csv("2025/COMPASS_SynopticCB_MC_Fluxes_2025.csv")
 
 all_dat <- bind_rows(dat22, dat23, dat24, dat25)
 
+all_dat$X.1 <- NULL
+all_dat$X <- NULL
+
 ```
 
 ## Write out files
 ```{r write out combined data and metadata, include=FALSE}
 
 #write out a csv of all the data to the main folder: 
-write.csv(all_dat, "COMPASS_SynopticCB_MC_Fluxes_AllData.csv")
+write.csv(all_dat, "COMPASS_SynopticCB_MC_Fluxes_AllData.csv", row.names = FALSE)
 
 
 #write out a csv of the metadata associated with the data: 
