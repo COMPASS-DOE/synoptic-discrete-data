@@ -54,7 +54,7 @@ all_dat$X <- NULL
 ```{r write out combined data and metadata, include=FALSE}
 
 #write out a csv of all the data to the main folder: 
-write.csv(all_dat, "COMPASS_SynopticCB_Soil_Fluxes_AllData.csv")
+write.csv(all_dat, "COMPASS_SynopticCB_Soil_Fluxes_AllData.csv", row.names = FALSE)
 
 
 #write out a csv of the metadata associated with the data: 

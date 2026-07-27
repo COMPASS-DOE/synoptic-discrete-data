@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.12)  27 JUL 2026 16:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.2.12)  27 JUL 2026 16:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**COMPASS_SynopticCB_MC_Fluxes_Collate_AllData.tex
-(./COMPASS_SynopticCB_MC_Fluxes_Collate_AllData.tex
+**COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData.tex
+(./COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
 (c:/Users/readz/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/article.cls
@@ -440,12 +440,12 @@ File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (c:/Users/readz/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count333
-) (./COMPASS_SynopticCB_MC_Fluxes_Collate_AllData.aux
+) (./COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData.aux
 
 LaTeX Warning: Label `tab:Summary table metrics' multiply defined.
 
 )
-\openout1 = `COMPASS_SynopticCB_MC_Fluxes_Collate_AllData.aux'.
+\openout1 = `COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 85.
 LaTeX Font Info:    ... okay on input line 85.
@@ -535,7 +535,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 87.
 (c:/Users/readz/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (./COMPASS_SynopticCB_MC_Fluxes_Collate_AllData.toc
+) (./COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData.toc
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 1.
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -544,17 +544,17 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 1.
 )
 \tf@toc=\write3
-\openout3 = `COMPASS_SynopticCB_MC_Fluxes_Collate_AllData.toc'.
+\openout3 = `COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData.toc'.
 
-<COMPASS_SynopticCB_MC_Fluxes_Collate_AllData_files/figure-latex/Visualize Data-1.pdf, id=13, 1156.32pt x 722.7pt>
-File: COMPASS_SynopticCB_MC_Fluxes_Collate_AllData_files/figure-latex/Visualize Data-1.pdf Graphic file (type pdf)
-<use COMPASS_SynopticCB_MC_Fluxes_Collate_AllData_files/figure-latex/Visualize Data-1.pdf>
-Package pdftex.def Info: COMPASS_SynopticCB_MC_Fluxes_Collate_AllData_files/figure-latex/Visualize Data-1.pdf  used on input line 99.
+<COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData_files/figure-latex/Visualize Data-1.pdf, id=13, 1156.32pt x 722.7pt>
+File: COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData_files/figure-latex/Visualize Data-1.pdf Graphic file (type pdf)
+<use COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData_files/figure-latex/Visualize Data-1.pdf>
+Package pdftex.def Info: COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData_files/figure-latex/Visualize Data-1.pdf  used on input line 99.
 (pdftex.def)             Requested size: 1156.31718pt x 722.69823pt.
-<COMPASS_SynopticCB_MC_Fluxes_Collate_AllData_files/figure-latex/Visualize Data-2.pdf, id=14, 1156.32pt x 722.7pt>
-File: COMPASS_SynopticCB_MC_Fluxes_Collate_AllData_files/figure-latex/Visualize Data-2.pdf Graphic file (type pdf)
-<use COMPASS_SynopticCB_MC_Fluxes_Collate_AllData_files/figure-latex/Visualize Data-2.pdf>
-Package pdftex.def Info: COMPASS_SynopticCB_MC_Fluxes_Collate_AllData_files/figure-latex/Visualize Data-2.pdf  used on input line 100.
+<COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData_files/figure-latex/Visualize Data-2.pdf, id=14, 1156.32pt x 722.7pt>
+File: COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData_files/figure-latex/Visualize Data-2.pdf Graphic file (type pdf)
+<use COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData_files/figure-latex/Visualize Data-2.pdf>
+Package pdftex.def Info: COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData_files/figure-latex/Visualize Data-2.pdf  used on input line 100.
 (pdftex.def)             Requested size: 1156.31718pt x 722.69823pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 99--101
@@ -564,54 +564,54 @@ Underfull \hbox (badness 10000) in paragraph at lines 99--101
 [1
 
 {c:/Users/readz/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/Users/readz/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}]
-<COMPASS_SynopticCB_MC_Fluxes_Collate_AllData_files/figure-latex/Summarize and Visualize Data-1.pdf, id=34, 1156.32pt x 722.7pt>
-File: COMPASS_SynopticCB_MC_Fluxes_Collate_AllData_files/figure-latex/Summarize and Visualize Data-1.pdf Graphic file (type pdf)
-<use COMPASS_SynopticCB_MC_Fluxes_Collate_AllData_files/figure-latex/Summarize and Visualize Data-1.pdf>
-Package pdftex.def Info: COMPASS_SynopticCB_MC_Fluxes_Collate_AllData_files/figure-latex/Summarize and Visualize Data-1.pdf  used on input line 105.
+<COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData_files/figure-latex/Summarize and Visualize Data-1.pdf, id=34, 1156.32pt x 722.7pt>
+File: COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData_files/figure-latex/Summarize and Visualize Data-1.pdf Graphic file (type pdf)
+<use COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData_files/figure-latex/Summarize and Visualize Data-1.pdf>
+Package pdftex.def Info: COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData_files/figure-latex/Summarize and Visualize Data-1.pdf  used on input line 105.
 (pdftex.def)             Requested size: 1156.31718pt x 722.69823pt.
-<COMPASS_SynopticCB_MC_Fluxes_Collate_AllData_files/figure-latex/Summarize and Visualize Data-2.pdf, id=35, 1156.32pt x 722.7pt>
-File: COMPASS_SynopticCB_MC_Fluxes_Collate_AllData_files/figure-latex/Summarize and Visualize Data-2.pdf Graphic file (type pdf)
-<use COMPASS_SynopticCB_MC_Fluxes_Collate_AllData_files/figure-latex/Summarize and Visualize Data-2.pdf>
-Package pdftex.def Info: COMPASS_SynopticCB_MC_Fluxes_Collate_AllData_files/figure-latex/Summarize and Visualize Data-2.pdf  used on input line 106.
+<COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData_files/figure-latex/Summarize and Visualize Data-2.pdf, id=35, 1156.32pt x 722.7pt>
+File: COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData_files/figure-latex/Summarize and Visualize Data-2.pdf Graphic file (type pdf)
+<use COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData_files/figure-latex/Summarize and Visualize Data-2.pdf>
+Package pdftex.def Info: COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData_files/figure-latex/Summarize and Visualize Data-2.pdf  used on input line 106.
 (pdftex.def)             Requested size: 1156.31718pt x 722.69823pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 105--107
 []
  []
 
-[2 <./COMPASS_SynopticCB_MC_Fluxes_Collate_AllData_files/figure-latex/Visualize Data-1.pdf> <./COMPASS_SynopticCB_MC_Fluxes_Collate_AllData_files/figure-latex/Visualize Data-2.pdf>]
-<COMPASS_SynopticCB_MC_Fluxes_Collate_AllData_files/figure-latex/Overall Boxplot by Date-1.pdf, id=52, 1156.32pt x 722.7pt>
-File: COMPASS_SynopticCB_MC_Fluxes_Collate_AllData_files/figure-latex/Overall Boxplot by Date-1.pdf Graphic file (type pdf)
-<use COMPASS_SynopticCB_MC_Fluxes_Collate_AllData_files/figure-latex/Overall Boxplot by Date-1.pdf>
-Package pdftex.def Info: COMPASS_SynopticCB_MC_Fluxes_Collate_AllData_files/figure-latex/Overall Boxplot by Date-1.pdf  used on input line 110.
+[2 <./COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData_files/figure-latex/Visualize Data-1.pdf> <./COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData_files/figure-latex/Visualize Data-2.pdf>]
+<COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData_files/figure-latex/Overall Boxplot by Date-1.pdf, id=52, 1156.32pt x 722.7pt>
+File: COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData_files/figure-latex/Overall Boxplot by Date-1.pdf Graphic file (type pdf)
+<use COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData_files/figure-latex/Overall Boxplot by Date-1.pdf>
+Package pdftex.def Info: COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData_files/figure-latex/Overall Boxplot by Date-1.pdf  used on input line 110.
 (pdftex.def)             Requested size: 1156.31718pt x 722.69823pt.
-<COMPASS_SynopticCB_MC_Fluxes_Collate_AllData_files/figure-latex/Overall Boxplot by Date-2.pdf, id=53, 1156.32pt x 722.7pt>
-File: COMPASS_SynopticCB_MC_Fluxes_Collate_AllData_files/figure-latex/Overall Boxplot by Date-2.pdf Graphic file (type pdf)
-<use COMPASS_SynopticCB_MC_Fluxes_Collate_AllData_files/figure-latex/Overall Boxplot by Date-2.pdf>
-Package pdftex.def Info: COMPASS_SynopticCB_MC_Fluxes_Collate_AllData_files/figure-latex/Overall Boxplot by Date-2.pdf  used on input line 111.
+<COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData_files/figure-latex/Overall Boxplot by Date-2.pdf, id=53, 1156.32pt x 722.7pt>
+File: COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData_files/figure-latex/Overall Boxplot by Date-2.pdf Graphic file (type pdf)
+<use COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData_files/figure-latex/Overall Boxplot by Date-2.pdf>
+Package pdftex.def Info: COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData_files/figure-latex/Overall Boxplot by Date-2.pdf  used on input line 111.
 (pdftex.def)             Requested size: 1156.31718pt x 722.69823pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 110--112
 []
  []
 
-[3 <./COMPASS_SynopticCB_MC_Fluxes_Collate_AllData_files/figure-latex/Summarize and Visualize Data-1.pdf> <./COMPASS_SynopticCB_MC_Fluxes_Collate_AllData_files/figure-latex/Summarize and Visualize Data-2.pdf>]
-<COMPASS_SynopticCB_MC_Fluxes_Collate_AllData_files/figure-latex/Overall Boxplot-1.pdf, id=70, 1156.32pt x 722.7pt>
-File: COMPASS_SynopticCB_MC_Fluxes_Collate_AllData_files/figure-latex/Overall Boxplot-1.pdf Graphic file (type pdf)
-<use COMPASS_SynopticCB_MC_Fluxes_Collate_AllData_files/figure-latex/Overall Boxplot-1.pdf>
-Package pdftex.def Info: COMPASS_SynopticCB_MC_Fluxes_Collate_AllData_files/figure-latex/Overall Boxplot-1.pdf  used on input line 115.
+[3 <./COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData_files/figure-latex/Summarize and Visualize Data-1.pdf> <./COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData_files/figure-latex/Summarize and Visualize Data-2.pdf>]
+<COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData_files/figure-latex/Overall Boxplot-1.pdf, id=70, 1156.32pt x 722.7pt>
+File: COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData_files/figure-latex/Overall Boxplot-1.pdf Graphic file (type pdf)
+<use COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData_files/figure-latex/Overall Boxplot-1.pdf>
+Package pdftex.def Info: COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData_files/figure-latex/Overall Boxplot-1.pdf  used on input line 115.
 (pdftex.def)             Requested size: 1156.31718pt x 722.69823pt.
-<COMPASS_SynopticCB_MC_Fluxes_Collate_AllData_files/figure-latex/Overall Boxplot-2.pdf, id=71, 1156.32pt x 722.7pt>
-File: COMPASS_SynopticCB_MC_Fluxes_Collate_AllData_files/figure-latex/Overall Boxplot-2.pdf Graphic file (type pdf)
-<use COMPASS_SynopticCB_MC_Fluxes_Collate_AllData_files/figure-latex/Overall Boxplot-2.pdf>
-Package pdftex.def Info: COMPASS_SynopticCB_MC_Fluxes_Collate_AllData_files/figure-latex/Overall Boxplot-2.pdf  used on input line 116.
+<COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData_files/figure-latex/Overall Boxplot-2.pdf, id=71, 1156.32pt x 722.7pt>
+File: COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData_files/figure-latex/Overall Boxplot-2.pdf Graphic file (type pdf)
+<use COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData_files/figure-latex/Overall Boxplot-2.pdf>
+Package pdftex.def Info: COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData_files/figure-latex/Overall Boxplot-2.pdf  used on input line 116.
 (pdftex.def)             Requested size: 1156.31718pt x 722.69823pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 115--117
 []
  []
 
-[4 <./COMPASS_SynopticCB_MC_Fluxes_Collate_AllData_files/figure-latex/Overall Boxplot by Date-1.pdf> <./COMPASS_SynopticCB_MC_Fluxes_Collate_AllData_files/figure-latex/Overall Boxplot by Date-2.pdf>] [5 <./COMPASS_SynopticCB_MC_Fluxes_Collate_AllData_files/figure-latex/Overall Boxplot-1.pdf> <./COMPASS_SynopticCB_MC_Fluxes_Collate_AllData_files/figure-latex/Overall Boxplot-2.pdf>] [6] (./COMPASS_SynopticCB_MC_Fluxes_Collate_AllData.aux)
+[4 <./COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData_files/figure-latex/Overall Boxplot by Date-1.pdf> <./COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData_files/figure-latex/Overall Boxplot by Date-2.pdf>] [5 <./COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData_files/figure-latex/Overall Boxplot-1.pdf> <./COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData_files/figure-latex/Overall Boxplot-2.pdf>] [6] (./COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -622,14 +622,14 @@ LaTeX Warning: There were multiply-defined labels.
  ) 
 Here is how much of TeX's memory you used:
  12787 strings out of 469514
- 203608 string characters out of 5468199
- 644980 words of memory out of 5000000
+ 203754 string characters out of 5468199
+ 656942 words of memory out of 5000000
  41199 multiletter control sequences out of 15000+600000
  670880 words of font info for 79 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 89i,10n,93p,528b,479s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 89i,10n,93p,530b,479s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/Users/readz/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/readz/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/readz/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/readz/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb>
-Output written on COMPASS_SynopticCB_MC_Fluxes_Collate_AllData.pdf (6 pages, 224561 bytes).
+Output written on COMPASS_SynopticCB_Soil_Fluxes_Collate_AllData.pdf (6 pages, 279439 bytes).
 PDF statistics:
  164 PDF objects out of 1000 (max. 8388607)
  130 compressed objects within 2 object streams
