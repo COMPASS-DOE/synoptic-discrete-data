@@ -315,7 +315,7 @@ new_log_stds <- STD_run_date %>% dplyr::select(Plate,
    R2,
    Slope,
    Intercept,
-   Run_Date) %>% mutate(R2 = round(R2, digits = 4), Slope = round(Slope, digits = 4), Intercept = round(Intercept, digits = 4), ) %>% mutate(Run = "Current Runs") %>% mutate(Project = "TEMPEST")
+   Run_Date) %>% mutate(R2 = round(R2, digits = 4), Slope = round(Slope, digits = 4), Intercept = round(Intercept, digits = 4), ) %>% mutate(Run = "Current Runs") %>% mutate(Project = "COMPASS")
 
 
 #read in log file and format
@@ -1120,8 +1120,11 @@ Sample_data_IDs4 <- Sample_data_IDs3 %>%
     )
   )
 
+Sample_data_IDs5 <- Sample_data_IDs4 %>%
+  mutate(Depth_cm = if_else(Zone == "SW", "0", Depth_cm))
+
 ##Capitalize all sample IDs
-Sample_data_IDs4$Sample_ID <- toupper(Sample_data_IDs4$Sample_ID)
+Sample_data_IDs5$Sample_ID <- toupper(Sample_data_IDs5$Sample_ID)
   
 ```
 
@@ -1186,10 +1189,10 @@ head(sulfide_metadata)
 ```{r Check to see if samples run match metadata & merge info, echo = FALSE}
 
 #check to see if all samples are present in the metadata 
-Sample_data_IDs4$Sample_ID <- toupper(Sample_data_IDs4$Sample_ID)
+Sample_data_IDs5$Sample_ID <- toupper(Sample_data_IDs5$Sample_ID)
 sulfide_metadata$H2S_ID <- toupper(sulfide_metadata$H2S_ID)
 
-all_present <- all(Sample_data_IDs4$Sample_ID %in% sulfide_metadata$H2S_ID)
+all_present <- all(Sample_data_IDs5$Sample_ID %in% sulfide_metadata$H2S_ID)
 
 if (all_present) {
   message("***All sample IDs are present in metadata.***")
@@ -1197,13 +1200,13 @@ if (all_present) {
   message("***Some sample IDs are missing from metadata.***")
   
   # Optional: Which ones are missing?
-  missing_ids <- setdiff(Sample_data_IDs4$Sample_ID, sulfide_metadata$H2S_ID)
+  missing_ids <- setdiff(Sample_data_IDs5$Sample_ID, sulfide_metadata$H2S_ID)
   print(missing_ids)
 }
 
 
 ##Select only necessary columns
-all_data_selected <- Sample_data_IDs4 %>%
+all_data_selected <- Sample_data_IDs5 %>%
   dplyr::select(-c("Depth"))
 
 all_data_selected$Depth_cm <- as.integer(all_data_selected$Depth_cm)
