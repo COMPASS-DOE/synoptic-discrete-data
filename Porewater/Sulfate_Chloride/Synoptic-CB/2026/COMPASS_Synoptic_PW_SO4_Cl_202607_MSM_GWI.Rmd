@@ -50,7 +50,7 @@ lapply(c(
   raw_file_name_so4 = "Raw Data/COMPASS_Synoptic_CB_MonMon_202607_MSM_GWI_SO4.txt"
 
 #file path and name of processed data file 
-  processed_file_name = "Processed Data/COMPASS_SynopticCB_PW_Processed_Cl_SO4_202607.csv" 
+  processed_file_name = "Processed Data/COMPASS_SynopticCB_PW_Processed_Cl_SO4_MSM_GWI_202607.csv" 
 
 ###### Log Files - PLEASE CHECK 
 #downloaded metadata csv - downloaded from Google drive as csv for this year
