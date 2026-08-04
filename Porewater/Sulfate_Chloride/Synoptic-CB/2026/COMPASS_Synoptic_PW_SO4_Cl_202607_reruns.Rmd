@@ -167,5 +167,5 @@ ggarrange(Cl_dups1, SO4_dups1,ncol=2, nrow=1)
 ggarrange(Cl_dups, SO4_dups,ncol=2, nrow=1)
 
 
-
+write.csv(dat_all, file = "Rerun_comparison.csv")
 ```
