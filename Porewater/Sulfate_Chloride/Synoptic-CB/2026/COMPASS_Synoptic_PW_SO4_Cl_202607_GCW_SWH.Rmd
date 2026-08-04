@@ -1,6 +1,6 @@
 ---
 title: "Synoptic CB: Porewater SO4/Cl"
-author: "May 2026 Samples"
+author: "July 2026 Samples - GCW/SWH"
 date: "`r Sys.Date()`"
 output: 
   pdf_document:
@@ -30,13 +30,10 @@ lapply(c(
 ```{r Run Information, echo=TRUE, message=FALSE, warning=FALSE}
 
 ###### Run information - PLEASE CHANGE
-  Date_Run = "2026-07-09"  #Date that instrument was run
+  Date_Run = "2026-08-04"  #Date that instrument was run
   Run_by = "Zoe Read"  #Instrument user 
   Script_run_by = "Zoe Read" #Code user 
-  run_notes = "Std 1 was consistently low. 
-  A couple dups were bad, one spk was low, but generally they looked good. 
-  All samples are present in metadata. 
-  " #any notes from the run
+  run_notes = "1/6 SO4 dups was bad." #any notes from the run
   samples <- c("GCW", "GWI", "MSM", "SWH") #whatever identifies your samples within the same names 
   samples_pattern <- paste(samples, collapse = "|") 
     #samples_pattern <- "GCW" #use this instead of the line above if you have only one site code 
@@ -49,11 +46,11 @@ lapply(c(
   
 ###### File Names - PLEASE CHANGE 
 #file path and name for raw summary data file 
-  raw_file_name_cl = "Raw Data/COMPASS_Synoptic_CB_MonMon_202605_Cl.txt"
-  raw_file_name_so4 = "Raw Data/COMPASS_Synoptic_CB_MonMon_202605_SO4.txt"
+  raw_file_name_cl = "Raw Data/COMPASS_Synoptic_CB_MonMon_202607_GCW_SWH_Cl.txt"
+  raw_file_name_so4 = "Raw Data/COMPASS_Synoptic_CB_MonMon_202607_GCW_SWH_SO4.txt"
 
 #file path and name of processed data file 
-  processed_file_name = "Processed Data/COMPASS_SynopticCB_PW_Processed_Cl_SO4_202605.csv" 
+  processed_file_name = "Processed Data/COMPASS_SynopticCB_PW_Processed_Cl_SO4_GCW_SWH_202607.csv" 
 
 ###### Log Files - PLEASE CHECK 
 #downloaded metadata csv - downloaded from Google drive as csv for this year
@@ -233,10 +230,11 @@ head(all_dat)
 ##Fix samples entered incorrectly
 ```{r fix sample IDs, include = FALSE}
 
-##Fix samples that were entered incorrectly
-# all_dat <- all_dat %>%  
-#   filter(!str_detect(sample_ID, samples_to_remove),ignore_case = TRUE)
-  
+# ##Fix samples that were entered incorrectly
+# all_dat <- all_dat1 %>%
+#   mutate(sample_ID = ifelse(str_detect(sample_ID, "202605"), paste(sample_ID, "rerun", sep = "_"), sample_ID)) %>%
+#   mutate(sample_name = ifelse(str_detect(sample_name, "202605"), paste(sample_name, "rerun", sep = "_"), sample_name))
+
 ```
 
 
@@ -828,6 +826,8 @@ all_dat$Dilution <-  ifelse(str_detect(all_dat$sample_ID, "MSM") & str_detect(al
 all_dat$Dilution <-  ifelse(str_detect(all_dat$sample_ID, "MSM") & str_detect(all_dat$sample_ID, "TR"), 50, all_dat$Dilution)
 all_dat$Dilution <-  ifelse(str_detect(all_dat$sample_ID, "MSM") & str_detect(all_dat$sample_ID, "WC"), 100, all_dat$Dilution)
 all_dat$Dilution <-  ifelse(str_detect(all_dat$sample_ID, "MSM") & str_detect(all_dat$sample_ID, "SW"), 100, all_dat$Dilution)
+all_dat$Dilution <-  ifelse(str_detect(all_dat$sample_ID, "202607_MSM_TR_LysC_20cm"), 100, all_dat$Dilution)
+
 
 all_dat$Dilution <-  ifelse(str_detect(all_dat$sample_ID, "GCW") & str_detect(all_dat$sample_ID, "UP"), 50, all_dat$Dilution)
 all_dat$Dilution <-  ifelse(str_detect(all_dat$sample_ID, "GCW") & str_detect(all_dat$sample_ID, "TR"), 50, all_dat$Dilution)
@@ -1019,12 +1019,28 @@ knitr::kable(Perc_Cl_flagged, caption = "Cl samples")
 ```{r check sample ids with metadata, echo=FALSE, warning = FALSE}
 
 #remove duplicates from the sample dataframe bc we are just taking the first dup run
-all_data_flagged <- dat_flagged %>%
+all_data_flagged1 <- dat_flagged %>%
   filter(!str_detect(sample_ID, "dup")) %>%
   filter(!str_detect(sample_ID, "Lab Blank")) %>%
   filter(!str_detect(sample_ID, "spk")) %>%
-  mutate(sample_ID = sub("^[^_]+_", "", sample_ID))
+  mutate(sample_ID = ifelse(sample_ID == "202607_MSM_TR_LysC_20cm ", paste0("NA_", sample_ID), sample_ID)) %>% 
+  mutate(sample_ID = ifelse(str_detect(sample_ID, "202607"), sub("^[^_]+_", "", sample_ID), sample_ID))
   #select(!Excess_Info)
+ 
+##Reformat Sample IDs
+#202607_MSM_UP_LYSA_10CM --> GCW_202605_UP_LYSA_10CM
+all_data_flagged <- all_data_flagged1 %>%
+  mutate(sample_ID = toupper(sample_ID)) %>% 
+  mutate(Site_Code = stringr::str_extract(sample_ID, 'GCW|MSM|SWH|GWI'),
+         Date = stringr::str_extract(sample_ID, "[0-9]{6}"),
+         Zone = stringr::str_extract(sample_ID, 'UP|SWAMP|TR|WC|_SW_'),
+         Zone = gsub("_", "", Zone), 
+         LysID = stringr::str_extract(sample_ID, "_A|_B|_C|LYSA|LYSB|LYSC"), 
+         LysID = gsub("_", "", LysID), 
+         Depth = stringr::str_extract(sample_ID, "10CM|20CM|45CM")) %>% 
+  mutate(sample_ID = paste(Site_Code, Date, Zone, LysID, Depth, sep = "_")) %>% 
+  mutate(sample_ID = gsub("_NA", "", sample_ID)) %>% 
+  mutate(sample_ID = gsub(" ", "", sample_ID))
 
 #check to see if all samples are present in the metadata 
 all_data_flagged$sample_ID <- toupper(all_data_flagged$sample_ID)
@@ -1046,17 +1062,17 @@ dionex_metadata_selected <- dionex_metadata %>%
   select(Cl_SO4_ID, Year, Month, Day, Depth_cm, Lysimeter, Time..24hr., Time.Zone_EDT.EST,  Field.Notes) 
 
 #merge metadata with sample run data 
-merged_data <- all_data_flagged %>%
+df_all_clean <- all_data_flagged %>%
   left_join(dionex_metadata_selected, by = c("sample_ID" = "Cl_SO4_ID"))
 
-df_all_clean <- merged_data %>%
-  #filter(str_detect(Sample_Name, "GCW|GWI|MSM|SWH")) %>%
-  #mutate(Run_Time = lubridate::mdy_hm(Run_Time)) %>%
-  separate(
-    col = sample_name,
-    sep = "_",
-    into = c("Sample_Number", "Site_Code", "Date" ,"Zone", "LysID", "Depth"),
-    remove = FALSE)
+# df_all_clean <- merged_data %>%
+#   #filter(str_detect(Sample_Name, "GCW|GWI|MSM|SWH")) %>%
+#   #mutate(Run_Time = lubridate::mdy_hm(Run_Time)) %>%
+#   separate(
+#     col = sample_name,
+#     sep = "_",
+#     into = c("Sample_Number", "Site_Code", "Date" ,"Zone", "LysID", "Depth"),
+#     remove = FALSE)
 
 ```
 
