@@ -7,7 +7,7 @@
 "Site","NA","Site Code identifier for sampling transect location (GCW, SWH, MSM, GWI), see dataset locations for coordinates","Site","text","NA","NA"
 "Plot","NA","Plot within space-for-time transect (UP=Upland, SWAMP = Swamp, TR=Transition, WC= Wetland Control)","Plot","text","NA","NA"
 "Replicate","NA","Porewater sample ID used in the field and laboratory","Replicate","text","NA","NA"
-"Depth_cm","NA","Collection device used to sample porewater","Depth_cm","text","NA","NA"
+"Depth_cm","NA","Collection device used to sample porewater (Porewater Sipper (Teflon))","Depth_cm","text","NA","NA"
 "Sample_ID","NA","Replicate (A-C)","Sample_ID","text","Sipper Sampler: Sippers are made of PTFE with Vinyl tubing attached","NA"
 "Sampler_Type","cm","Depth interval below the soil surface from which the sample was collected","Sampler_Type","numeric","NA","NA"
 "SO4_ppm","ppm","Sulfate concentration","SO4_ppm","numeric","NA","NA"

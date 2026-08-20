@@ -343,12 +343,12 @@ write.csv(site_list, "Data package/site_list.csv", row.names = FALSE)
 ```
 
 
-## Data Description - NEED TO EDIT THIS FOR Sipper DATA
+## Data Description - Done 
 ```{r data description}
 
 #Create a text file that has the description of the data - This ideally should match the text that is in the data READ.ME 
 
-datadescription <- "These data are an analysis of porewater profiles collected using porewater sippers at the COMPASS 'synoptic' sites in the Chesapeake Bay region:  GCReW (GCW), Goodwin Islands (GWI), Moneystump (MSM), and Sweet Hall (SWH). These sites have space for time transects spanning coastal upland forest (UP), coastal upland forest transitioning to wetland (TR), and wetland (WC) plots. The Sweet Hall Marsh site also has a forested swamp as part of its transect (SWAMP). Sippers were ONLY used in the Wetland plots during the first year of sampling. These were then replaced with suction lysimeters in order to be consistent with porewater sampling methods in the UP, TR, and SWAMP plots. Porewater was collected from sippers at 10, 20, and 45cm depths monthly in 2022 prior to being replaced with new infrastructure. Porewater samples were pulled from sippers in the wetland (WC) plot using a syringe and aliquoted into bottles for analysis of sulfate, chloride, sulfide, nutrient, and dissolved carbon concentrations. Analysis of each constituent is described in the data dictionary and further details, including quality assurance and quality control for all analyses can be found on the COMPASS GitHub page (link?)"
+datadescription <- "These data are an analysis of porewater profiles collected using porewater sippers at the COMPASS 'synoptic' sites in the Chesapeake Bay region:  GCReW (GCW), Goodwin Islands (GWI), and Moneystump (MSM). These sites have space for time transects spanning coastal upland forest (UP), coastal upland forest transitioning to wetland (TR), and wetland (WC) plots. Porewater sippers were ONLY used in the Wetland plots during the first year of sampling (2022). These were then replaced with suction lysimeters in order to be consistent with porewater sampling methods in the UP and TR plots. Porewater was collected from sippers at 10, 20, and 45cm depths monthly in 2022 prior to being replaced with new infrastructure. Porewater samples were pulled from sippers in the wetland (WC) plot using a syringe and aliquoted into bottles for analysis of sulfate, chloride, sulfide, nutrient, and dissolved carbon concentrations. Analysis of each constituent is described in the data dictionary and further details, including quality assurance and quality control for all analyses can be found on the COMPASS GitHub page."
 
 
 #write to a text file 
@@ -358,7 +358,7 @@ writeLines(datadescription, "Data package/SynopticCB_Redox_ESSDIVE_DataDescripti
 ```
 
 
-## Create Author List - NEED TO EDIT THIS FOR Sipper DATA
+## Create Author List - Done 
 ```{r create author list}
 
 #Pull in the common synoptic authors list: 
@@ -366,7 +366,7 @@ authors_common <- read.csv(here("Metadata/Synoptic CB/", "COMPASS_SynopticCB_com
 
 
 #create a list of the last names you want to pull 
-names_we_want <- c("Wilson","Phillips", "Read", "Stearns", "Chin", "Megonigal")
+names_we_want <- c("Wilson", "Fien", "Phillips", "Read", "Stearns", "Bailey", "Megonigal")
 
 #Subset the common list for the names that we want 
 author_list <- authors_common %>%
