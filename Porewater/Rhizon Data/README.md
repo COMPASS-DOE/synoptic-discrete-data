@@ -1,44 +1,43 @@
-**Project: COMPASS - Synoptic Chesapeake Bay Soil Redox Profiles** 
+**Project: COMPASS - Synoptic Chesapeake Bay Rhizon Porewater Samples** 
 
-Data Type: Manual Redox Probe Measurements (REDOX)
+Data Type: Rhizon Porewater Samples (Rhizons)
 
-Sampling Type: Soil Redox Profiles
+Sampling Type: Rhizon Porewater
 
-Sampling Locations: COMPASS Synoptic Sites: MSM, GWI, GCW, SWH 
+Sampling Locations: COMPASS Synoptic Sites: MSM, GWI
 
 <br>
 
-Wilson S ; Stearns A ; Phillips E ; Read Z ; Megonigal J P (20XX): COMPASS-FME Synoptic Site Soil Redox Profiles (Manual Redox Probe). COMPASS-FME, ESS-DIVE repository. Dataset. doi:TBD accessed via Link TBD.
+Wilson S ; Erin F ; Phillips E ; Read Z ; Stearns A ; Bailey V ; Megonigal J P (20XX): COMPASS-FME Synoptic Site Rhizon porewater samples (Rhizons). COMPASS-FME, ESS-DIVE repository. Dataset. doi:TBD accessed via Link TBD.
 
 <br>
 
 **Data Description:** 
-These data are measurements of soil reduction-oxidation potential (REDOX) profiles collected using REDOX probes at the COMPASS 'synoptic' sites in the Chesapeake Bay region:  GCReW (GCW), Goodwin Islands (GWI), Moneystump (MSM), and Sweet Hall (SWH). Soil REDOX profiles were measured at 10, 20, and 30/35cm depths monthly from 2022-2024 then bi-monthly from 2025-present across the three plots (Upland - UP, Transition - TR, and Wetland - WC) that form a space-for-time transect at each site. The SWH TR site has variable topography that includes hummocks and hollows, these were measured separately and are denoted in the dataset as XX and XX. To make measurements, five replicate soil REDOX probes were pushed into the ground to the depth of measurement and allowed to equilibrate for five minutes before recording the probe reading with a Thermo Scientific Orion pH/ORP handheld meter. After the reading, probes were pushed to the enxt depth of interest. 
+These data are measurements of shallow porewater samples collected in 2022 and 2023 from the COMPASS 'synoptic' site in the Chesapeake Bay region: Goodwin Islands (GWI) and Moneystump (MSM). These sites have space for time transects spanning coastal upland forest (UP), coastal upland forest transitioning to wetland (TR), and wetland (WC) plots. In the UP and TR transect locations, rhizon porewater (Rhizosphere Research Products: https://www.rhizosphere.com/rhizons/) samplers (n=3) were installed around Loblolly Pine (Pinus taeda) trees (n=8) one meter from the tree stem in a triangle formation. In the WC, replicate rhizons (n=8) were installed in a line next to other synoptic sampling infrastructure as there are no trees present in the WC. Rhizons were sampled monthly from roughly May-November in 2022 and 2023. A need was connected to the rhizon and then inserted into an evacuated exetainer to pull sample from the ground, the samplers were porous from 5-15cm deep. After collection in the exetainers, the three replicate samples from one tree were combined and aliquoted into vials to measure porewater ion, sulfide, iron, and nutrient concentrations. Only samples from the GWI TR were able to be collected, the other plot shallow soils were too dry or well drained.
 
-![Figure 1: REDOX Probes inserted for sampling](REDOX_Image_1.png)
-![Figure 2: REDOX Probes inserted for sampling](REDOX_Image_2.png)
+![Figure 1: Rhizon porewater sampler (Rhizosphere Products)](Rhizon_Image_1.png)
+
 
 <br>
 
-REDOX profiles were collected roughly from May to November at each site during 2022 and 2025. Sampling these was discontinued in 2025 due to the installation of continuous logging REDOX probes, which are included in the COMPASS Synoptic Sensor Data Releases. 
+Rhizon samples were collected roughly from May to November at MSM and GWI during 2022 and only at MSM monthly in 2023. Sampling these was discontinued after 2023 due to large sample volumes, which limited capacity to continue collecting these samples. 
 
 For questions about these data: contact Stephanie J. Wilson (wilsonsj@si.edu) or Patrick Megonigal (megonigalp@si.edu). 
 
 <br>
 
-![Figure 2: Experimental design ](REDOX_Image_3.png)  
+![Figure 2: Rhizon porewater sampling design](Rhizon_Image_2.png)
 
 <br>
 
 **Data Files Available:** 
 
-"COMPASS_SynopticCB_Redox_AllData.csv" = All data from all years. QAQC'd and collated.
+"COMPASS_SynopticCB_Rhizon_Data.csv" = All data from all years. QAQC'd and collated.
 
-"COMPASS_SynopticCB_Redox_Metadata.csv" = Metadata / Data dictionary for AllData file that defines each column header, units, and instrumentation.
+"COMPASS_SynopticCB_Rhizon_Metadata.csv" = Metadata / Data dictionary for AllData file that defines each column header, units, and instrumentation.
 
 **Overview Summary of Data**
 
-![Figure 3: Summary Boxplot of All Data ](COMPASS_SynopticCB_Redox_alldata.png)  
-![Figure 2: Summary Profiles of All Data](COMPASS_SynopticCB_Redox_Profiles_alldata.png) 
-![Table 1: Summary Statistics for Site and Zone](COMPASS_SynopticCB_Redox_Summary_alldata.png)
+![Figure 5: Summary Boxplot of Rhizon Data](COMPASS_SynopticCB_Rhizon_Summary.png)  
+![Figure 4: Summary Boxplot of Rhizon Data at MSM by Tree](COMPASS_SynopticCB_Rhizon_Tree_Summary.png) 
   
