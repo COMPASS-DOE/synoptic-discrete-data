@@ -549,3 +549,124 @@ final_data5 <- final_data4 %>%
 write.csv(final_data5, "COMPASS_SynopticCB_Rhizon_Data.csv", row.names = FALSE)
 
 ```
+
+```{r, plot some data}
+
+library(ggpubr); library(cowplot)
+library(plotrix); library(dplyr); library(here)
+
+head(final_data5)
+
+compass_coolors2 <- c("black", "#F2AF29", "#5A9D43", "darkblue")
+
+final_data5$Plot <- factor(final_data5$Plot, levels = c("UP", "TR", "WC"))
+
+#let's plot a few analytes
+
+salinity_plot <- ggplot(data = final_data5, aes(Plot, Salinity, fill = Plot)) + 
+  geom_boxplot()+
+  #geom_point(size=3.5) + 
+  #geom_line() + 
+  facet_wrap(~Site) + 
+  #scale_shape_manual(values=c(15,16,17,18))+
+  scale_fill_manual(values=compass_coolors2)+
+  labs(x = "Plot", y = "Salinity (ppt)", color = "") + 
+  theme_bw() + 
+  theme(legend.position = "none")
+salinity_plot
+
+so4_plot <- ggplot(data = final_data5, aes(Plot, SO4_mM, fill = Plot)) + 
+  geom_boxplot()+
+  #geom_point(size=3.5) + 
+  #geom_line() + 
+  facet_wrap(~Site) + 
+  #scale_shape_manual(values=c(15,16,17,18))+
+  scale_fill_manual(values=compass_coolors2)+
+  labs(x = "Plot", y = "Sulfate (mM)", color = "") + 
+  theme_bw() 
+so4_plot
+
+nh3_plot <- ggplot(data = final_data5, aes(Plot, NH3_uM, fill = Plot)) + 
+  geom_boxplot()+
+  #geom_point(size=3.5) + 
+  #geom_line() + 
+  facet_wrap(~Site) + 
+  #scale_shape_manual(values=c(15,16,17,18))+
+  scale_fill_manual(values=compass_coolors2)+
+  labs(x = "Plot", y = "Ammonium (uM)", color = "") + 
+  theme_bw() + 
+  theme(legend.position = "none")
+nh3_plot
+
+readme_fig_3 <- plot_grid(salinity_plot, so4_plot,  nh3_plot, ncol = 1, align = 'v', rel_heights = c(1, 1))
+
+# Save as a PNG
+ggsave(
+  filename = "COMPASS_SynopticCB_Rhizon_Summary.png", 
+  plot = readme_fig_3, 
+  width = 5, 
+  height = 6, 
+  dpi = 300, 
+  bg = "white"
+)
+
+#lets take out GWI and WC samples then plot by tree 
+
+msm_tree <- final_data5 %>%
+  filter(Site != "GWI") %>%
+  filter(Plot != "WC")
+
+salinity_plot1 <- ggplot(data = msm_tree, aes(Replicate, Salinity, fill = Replicate)) + 
+  geom_boxplot()+
+  #geom_point(size=3.5) + 
+  #geom_line() + 
+  facet_wrap(~Plot) + 
+  #scale_shape_manual(values=c(15,16,17,18))+
+  #scale_fill_manual(values=compass_coolors2)+
+  labs(x = "Replicate Tree", y = "Salinity (ppt)", color = "") + 
+  theme_bw() + 
+  theme(legend.position = "none")
+salinity_plot1
+
+so4_plot1 <- ggplot(data = msm_tree, aes(Replicate, SO4_mM, fill = Replicate)) + 
+  geom_boxplot()+
+  #geom_point(size=3.5) + 
+  #geom_line() + 
+  facet_wrap(~Plot) + 
+  #scale_shape_manual(values=c(15,16,17,18))+
+ # scale_fill_manual(values=compass_coolors2)+
+  labs(x = "Replicate Tree", y = "Sulfate (mM)", color = "") + 
+  theme_bw() 
+so4_plot1
+
+nh3_plot1 <- ggplot(data = msm_tree, aes(Replicate, NH3_uM, fill = Replicate)) + 
+  geom_boxplot()+
+  #geom_point(size=3.5) + 
+  #geom_line() + 
+  facet_wrap(~Plot) + 
+  #scale_shape_manual(values=c(15,16,17,18))+
+  #scale_fill_manual(values=compass_coolors2)+
+  labs(x = "Replicate Tree", y = "Ammonium (uM)", color = "") + 
+  theme_bw() + 
+  theme(legend.position = "none")
+nh3_plot1
+
+readme_fig_4 <- plot_grid(salinity_plot1, so4_plot1,  nh3_plot1, ncol = 1, align = 'v', rel_heights = c(1, 1))
+
+# Save as a PNG
+ggsave(
+  filename = "COMPASS_SynopticCB_Rhizon_Tree_Summary.png", 
+  plot = readme_fig_4, 
+  width = 4, 
+  height = 5, 
+  dpi = 300, 
+  bg = "white"
+)
+
+```
+
+
+
+
+
+
