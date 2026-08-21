@@ -297,22 +297,37 @@ final_data1 <- final_data %>%
 
 
 ####Convert Replicate to Depth 
+PPR_Depths <- read_excel("MSM Peeper metadata 9_2_2022.xlsx")
+colnames(PPR_Depths)
+PPR_Depths1 <- PPR_Depths %>% 
+  rename(Zone = Location, 
+         Replicate = `Bottle # from top of well`, 
+         Depth_cm = `Depth belowground_cm`) %>% 
+  select(Site, Zone, Replicate, Depth_cm) %>% 
+  mutate(Zone = case_when(
+    Zone == "Upland" ~ "UP", 
+    Zone == "Transition" ~ "TR", 
+    Zone == "Wetland" ~ "WC", 
+  )) %>% 
+  mutate(Replicate = as.character(Replicate))
+
+
 final_data2 <- final_data1 %>% 
-  mutate(Depth_cm = case_when(
-    Replicate == 1 ~ 5, 
-    Replicate == 2 ~ 15, 
-    Replicate == 3 ~ 25, 
-    Replicate == 4 ~ 35, 
-    Replicate == 5 ~ 45, 
-    Replicate == 6 ~ 55, 
-    Replicate == 7 ~ 65, 
-    Replicate == 8 ~ 75, 
-    Replicate == 9 ~ 85, 
-    Replicate == 10 ~ 95, 
-    Replicate == 11 ~ 105, 
-    Replicate == 12 ~ 115, 
-    TRUE ~ NA)
-    ) %>% 
+  left_join(PPR_Depths1, by = c("Site", "Zone", "Replicate")) %>% 
+  # mutate(Depth_cm = case_when(
+  #   Replicate == 1 ~ 5, 
+  #   Replicate == 2 ~ 15, 
+  #   Replicate == 3 ~ 25, 
+  #   Replicate == 4 ~ 35, 
+  #   Replicate == 5 ~ 45, 
+  #   Replicate == 6 ~ 55, 
+  #   Replicate == 7 ~ 65, 
+  #   Replicate == 8 ~ 75, 
+  #   Replicate == 9 ~ 85, 
+  #   Replicate == 10 ~ 95, 
+  #   Replicate == 11 ~ 105, 
+  #   Replicate == 12 ~ 115, 
+  #   TRUE ~ NA)
   select(-Replicate) %>% 
   mutate(Sample_ID = paste(Site, Date, Zone, Sampler_Type, Depth_cm, sep = "_")) %>% 
   mutate(Sample_ID = paste0(Sample_ID, "cm"))
