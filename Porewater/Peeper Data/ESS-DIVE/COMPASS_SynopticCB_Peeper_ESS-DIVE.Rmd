@@ -246,7 +246,7 @@ dd$Method_ifapplicable <- c(
 write.csv(dd, "Data package/dd.csv", row.names = FALSE,  fileEncoding = "UTF-8")
 
 #write out data dictionary associated with the data to the main folder: 
-write.csv(dd, here("Porewater/Peeper Data/","COMPASS_SynopticCB_Peeper_DataDictionary.csv"), row.names = FALSE)
+write.csv(dd, "../COMPASS_SynopticCB_Peeper_DataDictionary.csv", row.names = FALSE)
 
 ```
 
@@ -332,7 +332,7 @@ writeLines(datadescription, "Data package/SynopticCB_Redox_ESSDIVE_DataDescripti
 ```{r create author list}
 
 #Pull in the common synoptic authors list: 
-authors_common <- read.csv(here("Metadata/Synoptic CB/", "COMPASS_SynopticCB_common_essdive_author_list.csv"))
+authors_common <- read.csv(here("Metadata/Synoptic CB", "COMPASS_SynopticCB_common_essdive_author_list.csv"))
 
 
 #create a list of the last names you want to pull 
