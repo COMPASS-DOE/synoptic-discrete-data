@@ -36,7 +36,7 @@ New_ID_1 <- c("MSM_202509_UP_LysC_45cm")
 
 # Define the file path for QAQC log file - NO Need to change just check year 
   file_path <- "Raw Data/SEAL_COMPASS_Synoptic_QAQC_Log_2025.csv"
-  final_path <- "Processed Data/COMPASS_Synoptic_Nutrients_202509.csv"
+  final_path <- "Processed Data/COMPASS_Synoptic_Nutrients_202509-11.csv"
 
 #record any notes about the run or anything other info here: 
   run_notes <- "On the last NH3/PO4 run the PO4 standard curve was bad and it seemed like reagents were off, so this was rerun."

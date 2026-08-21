@@ -30,16 +30,16 @@ New_ID_1 <- "SWH_202505_SWAMP_LysB_45cm"
                  "Raw Data/SEAL_COMPASS_Synoptic_NOx_202511_2_GOOD.csv") #,
                  #"Raw Data/SEAL_COMPASS_Synoptic_NOx_202511_3.csv")
   NH3_PO4_files <- c("Raw Data/SEAL_COMPASS_Synoptic_NH3_PO4_202511_1.csv",
-                     "Raw Data/SEAL_COMPASS_Synoptic_NH3_PO4_202511_2.csv", 
-                     "Raw Data/SEAL_COMPASS_Synoptic_NH3_PO4_202511_3.csv", 
-                     "SEAL_COMPASS_Synoptic_PO4_202511_2_GOOD.csv")
+                     "Raw Data/SEAL_COMPASS_Synoptic_NH3_PO4_202511_2.csv") 
+                    # "Raw Data/SEAL_COMPASS_Synoptic_NH3_PO4_202511_3.csv", 
+                    # "Raw Data/SEAL_COMPASS_Synoptic_PO4_202511_2_GOOD.csv")
 
 # Define the file path for QAQC log file - NO Need to change just check year 
   file_path <- "Raw Data/SEAL_COMPASS_Synoptic_QAQC_Log_2025.csv"
   final_path <- "Processed Data/COMPASS_Synoptic_Nutrients_202511.csv"
 
 #record any notes about the run or anything other info here: 
-  run_notes <- "NA"
+  run_notes <- "No NOx reduction efficiency tests run. It looks like they were forgotten, but the rest of the QA (check standards and spikes) looks good so we will accept these data. Sample names entered incorrectly, fixed in code."
   
 #Set up file path for metadata 
   #downloaded metadata csv - downloaded from Google drive as csv for this year
@@ -209,7 +209,21 @@ head(df_all)
 ```{r}
 
 ####Fix Sample IDs####
-df_all$Sample_Name[df_all$Sample_Name == Old_ID_1] <- New_ID_1
+#df_all$Sample_Name[df_all$Sample_Name == Old_ID_1] <- New_ID_1
+
+#move the date to after the site id: 
+df_all$Sample_Name <- sub(
+  "^([0-9]{6})_(GCW|GWI|MSM|SWH)_(TR|WC|UP|SW)_(LysA|LysB|LysC)_(10|20|45|NA)cm$",
+  "\\2_\\1_\\3_\\4_\\5cm",
+  df_all$Sample_Name
+)
+
+#also change the SW ones 
+df_all$Sample_Name <- sub(
+  "^([0-9]{6})_(GCW|GWI|MSM|SWH)_(SW)_(A|B|C)$",
+  "\\2_\\1_\\3_\\4",
+  df_all$Sample_Name
+)
 
 ```
 
@@ -639,8 +653,8 @@ cat("Expected  =", PO4_pe, "\n")
 ```
 
  
-##Check NOx Reduction Efficiency 
-```{r Assess reduction Efficiency, echo=FALSE}
+##Check NOx Reduction Efficiency - No Reduction Efficiencies Run - forgotten  
+```{#r Assess reduction Efficiency, echo=FALSE}
 cat("Assess Reduction Efficiency")
 
 #check on the reduction efficiency for the NOx test: 

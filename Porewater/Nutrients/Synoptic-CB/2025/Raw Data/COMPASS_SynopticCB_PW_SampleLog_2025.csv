@@ -417,13 +417,13 @@ Year,Month,Day,Site,Transect Location,Lysimeter,Depth_cm,Time (24hr),Time Zone_E
 2025,11,12,GCW,Surface Water,B,0,10:30,EST,x,x,x,x,x,,,,,,,
 2025,11,12,GCW,Surface Water,C,0,10:30,EST,x,x,x,x,x,,,,,,,
 2025,11,13,MSM,Upland,A,10,14:30,EST,,,,,,,,,,,,no water
-2025,11,13,MSM,Upland,A,20,14:30,EST,,x,x,x,,,,,,,,Got DOC
-2025,11,13,MSM,Upland,A,45,14:30,EST,,x,x,,,,,,,,,No DOC
-2025,11,13,MSM,Upland,B,10,14:40,EST,x,x,x,x,,,,,,,,
-2025,11,13,MSM,Upland,B,20,14:40,EST,x,x,x,x,,,,,,,,
-2025,11,13,MSM,Upland,B,45,14:40,EST,,x,x,x,,,,,,,,
-2025,11,13,MSM,Upland,C,10,14:45,EST,x,x,x,x,,,,,,,,
-2025,11,13,MSM,Upland,C,20,14:45,EST,x,x,x,x,,,,,,,,
+2025,11,13,MSM,Upland,A,20,14:30,EST,,x,x,x,x,,,,,,,Got DOC
+2025,11,13,MSM,Upland,A,45,14:30,EST,,x,x,,x,,,,,,,No DOC
+2025,11,13,MSM,Upland,B,10,14:40,EST,x,x,x,x,x,,,,,,,
+2025,11,13,MSM,Upland,B,20,14:40,EST,x,x,x,x,x,,,,,,,
+2025,11,13,MSM,Upland,B,45,14:40,EST,,x,x,x,x,,,,,,,
+2025,11,13,MSM,Upland,C,10,14:45,EST,x,x,x,x,x,,,,,,,
+2025,11,13,MSM,Upland,C,20,14:45,EST,x,x,x,x,x,,,,,,,
 2025,11,13,MSM,Upland,C,45,14:45,EST,,,x,,,,,,,,,cloudy
 2025,11,13,MSM,Transition,A,10,13:12,EST,x,x,x,x,x,,,,,,,
 2025,11,13,MSM,Transition,A,20,13:12,EST,x,x,x,x,x,,,,,,,
