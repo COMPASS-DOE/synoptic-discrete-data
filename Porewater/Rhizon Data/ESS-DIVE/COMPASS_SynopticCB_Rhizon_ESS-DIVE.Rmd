@@ -325,7 +325,7 @@ write.csv(site_list, "Data package/site_list.csv", row.names = FALSE)
 ```
 
 
-## Data Description - NEED TO EDIT THIS FOR RHIZON DATA
+## Data Description - Dpne
 ```{r data description}
 
 #Create a text file that has the description of the data - This ideally should match the text that is in the data READ.ME 
@@ -340,7 +340,7 @@ writeLines(datadescription, "Data package/SynopticCB_Redox_ESSDIVE_DataDescripti
 ```
 
 
-## Create Author List - NEED TO EDIT THIS FOR RHIZON DATA
+## Create Author List - Done
 ```{r create author list}
 
 #Pull in the common synoptic authors list: 
