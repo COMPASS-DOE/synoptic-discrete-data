@@ -24,7 +24,7 @@ header-includes:
 
 #set the run date & user name 
 run_date <- "MM/DD/YYYY"
-sample_year <- "YYYY"
+sample_year <- "2026"
 sample_month <- "Month"
 user <- "First Last Name"
 
@@ -78,7 +78,9 @@ pacman::p_load(
   readxl,
   purrr,
   tinytex,
-  broom)
+  broom, 
+  googlesheets4, 
+  googledrive)
 
 #Coefficients / constants that are needed for calculations 
 N_mw <- 14.0067    # molecular weight of N 
@@ -127,9 +129,24 @@ PO4_pe <- 0.824
 #METADATE  - Read in metadata and create similar sample IDs for matching to samples 
 #################################################################################################
 
+#link directory to google drive location
+directory <- "https://docs.google.com/spreadsheets/d/1HCAN0_q6y17x0RUXVzID09hVal-RfwWc/edit?gid=495553220#gid=495553220"
+
+#Download sample log to Raw Data folder
+drive_download(
+  file = directory,
+  path = "Raw Data/COMPASS_SynopticCB_PW_SampleLog.xlsx",
+  overwrite = TRUE
+)
+
+sheet_names <- excel_sheets("Raw Data/COMPASS_SynopticCB_PW_SampleLog.xlsx")
+sheet_names
+
+raw_metadata <- read_excel("Raw Data/COMPASS_SynopticCB_PW_SampleLog.xlsx", sheet = paste0(sample_year, "_Log"))
+
 
 #read in the raw metadata file 
-raw_metadata <- read.csv(Raw_Metadata)
+# raw_metadata <- read.csv(Raw_Metadata)
 
 #make a new columns in the metadata with important info:
 metadata <- raw_metadata %>%
