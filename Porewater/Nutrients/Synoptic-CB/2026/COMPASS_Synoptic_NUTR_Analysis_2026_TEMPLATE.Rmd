@@ -154,11 +154,11 @@ metadata <- raw_metadata %>%
   mutate(LysID = paste0("Lys", Lysimeter)) %>%
   mutate(YearMonth = sprintf("%d%02d", Year, Month))  %>%
   mutate(Zone = case_when(
-    `Transect.Location` == "Transition" ~ "TR",
-    `Transect.Location` == "Wetland"    ~ "WC",
-    `Transect.Location` == "Upland"     ~ "UP",   
-    `Transect.Location` == "Surface Water" ~ "SW",
-    TRUE                 ~ `Transect.Location`    # keep original value if no match
+    `Transect Location` == "Transition" ~ "TR",
+    `Transect Location` == "Wetland"    ~ "WC",
+    `Transect Location` == "Upland"     ~ "UP",   
+    `Transect Location` == "Surface Water" ~ "SW",
+    TRUE                 ~ `Transect Location`    # keep original value if no match
   ))
 
 #Create NUTR IDs from what was collected for comparison later
@@ -190,10 +190,9 @@ metadata <- metadata %>%
 #Take out the columns and rows that are not relevant
 nutr_metadata <- metadata %>%
   select(NUTR_ID, Year, Month, Day, YearMonth, Site, Zone, Lysimeter, LysID, Depth_cm, 
-         Depth, Time..24hr., Time.Zone_EDT.EST, Field.Notes, ) %>%        
+         Depth, 'Time (24hr)', "Time Zone_EDT/EST", "Field Notes", ) %>%        
   # only keep specific columns
   filter(!is.na(NUTR_ID) & NUTR_ID != "")  # remove missing/blank NUTR_ID rows
-
 
 ```
 
@@ -1736,9 +1735,9 @@ if (all_present) {
   missing_ids <- setdiff(samples_flagged_all$Sample_Name, nutr_metadata$NUTR_ID)
   print(missing_ids)
 }
-
+colnames(nutr_metadata)
 nutr_metadata_selected <- nutr_metadata %>%
-  select(NUTR_ID, Year, Month, Day, Depth_cm, Lysimeter, Time..24hr., Time.Zone_EDT.EST,  Field.Notes) 
+  select(NUTR_ID, Year, Month, Day, Depth_cm, Lysimeter, "Time (24hr)", "Time Zone_EDT/EST",  "Field Notes") 
 
 #merge metadata with sample run data 
 merged_data <- samples_flagged_all %>%
@@ -1912,9 +1911,9 @@ final_data3 <- df_all_clean %>%
 #take out only the columns we want to merge 
 df_all_clean_cols <- df_all_clean %>%
   select(Sample_Name, Site, Zone, Depth, Depth_cm, Lysimeter,
-         Year, Month, Day, Time..24hr., Time.Zone_EDT.EST,
+         Year, Month, Day, "Time (24hr)", "Time Zone_EDT/EST", 
          NOx_flag, NH3_flag, PO4_flag, 
-         Field.Notes)
+          "Field Notes")
 
 df_all_clean_cols_one_row <- df_all_clean_cols %>%
   group_by(Sample_Name) %>%
@@ -1941,8 +1940,8 @@ final_data <- final_data_labeled %>%
     rename(
     Site = Site,
     Sample_ID = Sample_Name, 
-    Time = Time..24hr., 
-    Time_Zone = Time.Zone_EDT.EST,
+    Time = `Time (24hr)`, 
+    Time_Zone = `Time Zone_EDT/EST`,
     Replicate = Lysimeter,
     
     NOx_Conc_mgL = `Vanadium NOx_Conc`,
@@ -1960,7 +1959,7 @@ final_data <- final_data_labeled %>%
     PO4_Conc_Flag =`o-PHOS 0.3_Conc_flag`,
     PO4_QAQC_Flag = PO4_flag,
     
-    Field_notes = Field.Notes
+    Field_notes = `Field Notes`
     # add more rename pairs as needed
   ) %>%
   select(Project, Region, Site, Zone, Replicate, Depth_cm, 
