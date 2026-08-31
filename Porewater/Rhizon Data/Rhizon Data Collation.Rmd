@@ -20,6 +20,11 @@ library(tidyr)
 library(tibble)
 library(lubridate)
 library(tidyverse)
+library(openxlsx)
+library(gt)
+library(kableExtra)
+library(magick)
+library(webshot2)
 # detach("package:raster", unload = TRUE)
 ```
 
@@ -657,14 +662,57 @@ readme_fig_4 <- plot_grid(salinity_plot1, so4_plot1,  nh3_plot1, ncol = 1, align
 ggsave(
   filename = "COMPASS_SynopticCB_Rhizon_Tree_Summary.png", 
   plot = readme_fig_4, 
-  width = 4, 
-  height = 5, 
-  dpi = 300, 
+  width = 5, 
+  height = 6, 
+  dpi = 200, 
   bg = "white"
 )
 
 ```
 
+```{r, summary table}
+
+
+##Metrics for each site, zone for each year
+summary_by_year <- final_data5 %>%
+  group_by(Year, Site, Plot) %>%
+   reframe(
+     mean_so4 = round(mean(SO4_ppm, na.rm=TRUE),  3),
+     mean_cl = round(mean(Cl_ppm, na.rm=TRUE),  3),
+     mean_Salinity = round(mean(Salinity, na.rm=TRUE),  3),
+     mean_H2S = round(mean(H2S_mean_uM, na.rm=TRUE),  3),
+     mean_NH3 = round(mean(NH3_mgL, na.rm=TRUE),  3),
+     mean_PO4 = round(mean(PO4_mgL, na.rm=TRUE),  3),
+     mean_NOx = round(mean(NOx_mgL, na.rm=TRUE),  3),
+     mean_FE_2 = round(mean(FE_2_mean_uM, na.rm=TRUE),  3),
+     mean_FE_3 = round(mean(FE_3_mean_uM, na.rm=TRUE),  3))
+
+
+#Make a PNG from the tables for the READ ME 
+df_table <- summary_by_year[, c("Year", "Site", "Plot", 	"mean_so4", "mean_cl",	"mean_Salinity",
+                                "mean_H2S", "mean_NH3",	"mean_PO4", "mean_NOx", "mean_FE_2", "mean_FE_3")]
+
+colnames(df_table) <- c("Year", "Site", "Plot", 
+                        "Mean SO4 (ppm)", "Mean Cl (ppm)",	"Mean Salinity (ppt)",
+                        "Mean H2S (uM)", "Mean NH3 (mg/L)",	"Mean PO4 (mg/L)", "Mean NOx (mg/L)", "Mean FE2 (uM)", "Mean FE3 (uM)")
+tbl <- df_table %>%
+  gt() %>%
+  tab_header(
+    title = "Summary Statistics by Year, Site, and Plot"
+  ) %>%
+  fmt_number(
+    columns = c("Mean SO4 (ppm)", "Mean Cl (ppm)",	"Mean Salinity (ppt)",
+                   "Mean H2S (uM)", "Mean NH3 (mg/L)",	"Mean PO4 (mg/L)", "Mean NOx (mg/L)", "Mean FE2 (uM)", "Mean FE3 (uM)"),
+    decimals = 3
+  ) %>%
+  tab_style(
+    style = cell_text(weight = "bold"),
+    locations = cells_column_labels(everything())
+  )
+
+gtsave(tbl, "Rhizon_SumStats_ByYear.png")
+
+```
 
 
 

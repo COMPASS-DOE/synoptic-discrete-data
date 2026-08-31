@@ -133,7 +133,7 @@ dd$Instrument_ifapplicable <-
 write.csv(dd, "Data package/dd.csv", row.names = FALSE)
 
 #write out data dictionary associated with the data to the main folder: 
-write.csv(dd, here("Manual Redox Probe Data/Synoptic_CB/","COMPASS_SynopticCB_Redox_DataDictionary.csv"), row.names = FALSE)
+write.csv(dd, here("Manual Redox Probe Data/Synoptic_CB/","COMPASS_SynopticCB_Redox_Metadata.csv"), row.names = FALSE)
 
 ```
 
