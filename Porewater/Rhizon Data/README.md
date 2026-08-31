@@ -26,6 +26,7 @@ For questions about these data: contact Stephanie J. Wilson (wilsonsj@si.edu) or
 
 <br>
 
+
 ![Figure 2: Rhizon porewater sampling design](Rhizon_Image_2.png)
 
 <br>
@@ -38,6 +39,11 @@ For questions about these data: contact Stephanie J. Wilson (wilsonsj@si.edu) or
 
 **Overview Summary of Data**
 
-![Figure 5: Summary Boxplot of Rhizon Data](COMPASS_SynopticCB_Rhizon_Summary.png)  
-![Figure 4: Summary Boxplot of Rhizon Data at MSM by Tree](COMPASS_SynopticCB_Rhizon_Tree_Summary.png) 
-  
+**Figure 3: Summary Boxplot of Rhizon Data** 
+<img src="COMPASS_SynopticCB_Rhizon_Summary.png" width="70%">
+
+**Figure 4: Summary Table of Rhizon Data** 
+![Figure 4: Summary Table of Rhizon Data](Rhizon_SumStats_ByYear.png)
+
+**Figure 5: Summary Boxplot of Rhizon Data at MSM by Tree** 
+<img src="COMPASS_SynopticCB_Rhizon_Tree_Summary.png" width="80%">
