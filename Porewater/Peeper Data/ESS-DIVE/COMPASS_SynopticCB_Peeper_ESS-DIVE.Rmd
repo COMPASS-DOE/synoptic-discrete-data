@@ -334,13 +334,18 @@ writeLines(datadescription, "Data package/SynopticCB_Redox_ESSDIVE_DataDescripti
 #Pull in the common synoptic authors list: 
 authors_common <- read.csv(here("Metadata/Synoptic CB", "COMPASS_SynopticCB_common_essdive_author_list.csv"))
 
-
 #create a list of the last names you want to pull 
 names_we_want <- c("Wilson", "Fien", "Phillips", "Read", "Stearns", "Ward", "Bailey", "Megonigal")
+order_of_authors <- c(1:length(names_we_want))
+
+authors <- data.frame(
+  order_of_authors = unlist(order_of_authors), 
+  last_name = unlist(names_we_want)
+)
 
 #Subset the common list for the names that we want 
-author_list <- authors_common %>%
-  filter(last_name %in% names_we_want)
+author_list <- authors %>% 
+  left_join(authors_common, by = "last_name")
 
 #if you need to add any other authors 
 others <- data.frame(
@@ -348,7 +353,8 @@ others <- data.frame(
   last_name = c("last_name1", "last_name2"), 
   orcid = c("orcid_id1", "orcid_id2"), 
   affiliation = c("affiliation1", "affiliation2"), 
-  email = c("email1", "email2")
+  email = c("email1", "email2"), 
+  order_of_authors = c((length(names_we_want)+1):(length(names_we_want)+2))
 )
 
 #add in the other authors 
