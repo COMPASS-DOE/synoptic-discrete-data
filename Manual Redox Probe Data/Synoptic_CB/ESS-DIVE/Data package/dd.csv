@@ -1,16 +1,16 @@
-"Column_Names","Unit","Definition","Column_Long_Name","Data_Type","Instrument_ifapplicable"
-"Project","NA","Project name","Project","text","NA"
-"Region","NA","Region samples originated from: CB = Chesapeake Bay","Region","text","NA"
-"Year","NA","Year (YYYY) of sample collection","Year","numeric","NA"
-"Month","NA","Month (MM) of sample collection","Month","text","NA"
-"Day","NA","Day (DD) of sample collection","Day","numeric","NA"
-"Time_24hr","NA","Time (HHMM) of sample collection","Time_24hr","numeric","NA"
-"Time_Zone","NA","Time zone of sample collection","Time_Zone","text","NA"
-"Site","NA","Site Code identifier for sampling transect location (GCW, SWH, MSM, GWI), see dataset locations for coordinates","Site","text","NA"
-"Plot","NA","Plot within space-for-time transect (UP=Upland, SWAMP=Swamp, TR=Transition, WC=Wetland Center)","Plot","text","NA"
-"Topography","NA","Only SWH TR where plot topography varies (Hummock/Hollow); Hummock most comparable to other Site TR plots","Topography","text","NA"
-"Depth","cm","Depth in centimeters below soil surface where measurement was taken","Depth","numeric","NA"
-"Avg_mV","mV","Average of field replicate measurements at the same depth (n=6) in millivolts","Avg_mV","numeric","Redox Probe: Paleo Terra Redox probe, Reference Probe: Ag/AgCl reference probe, Handheld Readout: Thermo Scientific Orion Star A221 pH Meter"
-"Std_dv","mV","Sample standard deviation calculated from field replicate measurements at the same depth (n=6) in millivolts.","Std_dv","numeric","NA"
-"Std_err","mV","Sample standard error calculated from field replicate measurements at the same depth (n=6) in millivolts.","Std_err","numeric","NA"
-"Notes","NA","Notes generated during field sample collection","Notes","text","NA"
+column_or_row_name,Unit,Definition,column_or_row_long_name,Data_Type,Instrument_ifapplicable
+Project,NA,Project name,Project,text,NA
+Region,NA,Region samples originated from: CB = Chesapeake Bay,Region,text,NA
+Year,NA,Year (YYYY) of sample collection,Year,numeric,NA
+Month,NA,Month (MM) of sample collection,Month,text,NA
+Day,NA,Day (DD) of sample collection,Day,numeric,NA
+Time_24hr,NA,Time (HHMM) of sample collection,Time_24hr,numeric,NA
+Time_Zone,NA,Time zone of sample collection,Time_Zone,text,NA
+Site,NA,"Site Code identifier for sampling transect location (GCW, SWH, MSM, GWI), see dataset locations for coordinates",Site,text,NA
+Plot,NA,"Plot within space-for-time transect (UP=Upland, SWAMP=Swamp, TR=Transition, WC=Wetland Center)",Plot,text,NA
+Topography,NA,Only SWH TR where plot topography varies (Hummock/Hollow); Hummock most comparable to other Site TR plots,Topography,text,NA
+Depth,cm,Depth in centimeters below soil surface where measurement was taken,Depth,numeric,NA
+Avg_mV,mV,Average of field replicate measurements at the same depth (n=6) in millivolts,Avg_mV,numeric,"Redox Probe: Paleo Terra Redox probe, Reference Probe: Ag/AgCl reference probe, Handheld Readout: Thermo Scientific Orion Star A221 pH Meter"
+Std_dv,mV,Sample standard deviation calculated from field replicate measurements at the same depth (n=6) in millivolts.,Std_dv,numeric,NA
+Std_err,mV,Sample standard error calculated from field replicate measurements at the same depth (n=6) in millivolts.,Std_err,numeric,NA
+Notes,NA,Notes generated during field sample collection,Notes,text,NA
