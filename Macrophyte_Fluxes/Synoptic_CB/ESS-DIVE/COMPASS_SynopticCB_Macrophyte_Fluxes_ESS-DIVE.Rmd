@@ -47,85 +47,453 @@ write.csv(final_data_2025, "Data package/COMPASS_SynopticCB_Macrophyte_Fluxes_20
 ```
 
 
-## Create dd file - NEED TO CHANGE! 
+## Create dd file
 ```{r make metadata, include = FALSE}
 
 #pull the column names from the all_dat1 dataframe and create a new dataframe with them
-dd <- data.frame(Column_Names = colnames(final_data))
-dd
+dd <- data.frame(column_or_row_name = colnames(final_data))
+# dd$column_or_row_name
 
 dd$Unit <- ""
 dd$Definition <- ""
-dd$Column_Long_Name <- dd$Column_Names
+dd$column_or_row_long_name <- dd$column_or_row_name
 dd$Data_Type <- ""
 dd$Instrument_ifapplicable <- ""
 
 #add information about each line:
 
-dd$Definition <-  c(     "Project name",
+dd$Definition <- c(      "Project name",
                          "Region samples originated from: CB = Chesapeake Bay",
+                         "Sample ID of flux measurement (SiteCode_Plot_Replicate_YYYYMM)", 
                          "Year (YYYY) of sample collection",
                          "Month (MM) of sample collection",
                          "Day (DD) of sample collection",
-                         "Time (HHMM) of sample collection",
-                         "Time zone of sample collection",
                          "Site Code identifier for sampling transect location (GCW, SWH, MSM, GWI), see dataset locations for coordinates",
                          "Plot within space-for-time transect (UP=Upland, SWAMP=Swamp, TR=Transition, WC=Wetland Center)",
-                         "Only SWH TR where plot topography varies (Hummock/Hollow); Hummock most comparable to other Site TR plots",
-                         "Depth in centimeters below soil surface where measurement was taken",
-                         "Average of field replicate measurements at the same depth (n=6) in millivolts", 
-                         "Sample standard deviation calculated from field replicate measurements at the same depth (n=6) in millivolts.", 
-                         "Sample standard error calculated from field replicate measurements at the same depth (n=6) in millivolts.", 
-                         "Notes generated during field sample collection")
+                         "Replicate flux collar number (#1-5)", 
+                         
+                         "Average timestamp over which the flux was computed", 
+                         "Minimum timestamp over which the flux was computed", 
+                         "Maximum timestamp over which the flux was computed", 
+                         
+                         "Methane slope (flux) computed by a nonlinear regression based on one‐dimensional diffusion theory (Hutchinson & Mosier, 1981)", 
+                         "Methane nonlinear model AIC value; indicative of the model's goodness of fit", 
+                         "Methane Nonlinear model p-value; indicative of the likelihood that observed relationship is due to chance", 
+                         "Methane R squared of the nonlinear model", 
+                         "Methane Nonlinear root mean square error; indicative of how well the model fits the data", 
+                         
+                         "Methane Linear lux estimate", 
+                         "Methane Linear model AIC value; indicative of the model's goodness of fit", 
+                         "Methane Standard error of the linear model slope", 
+                         "Methane Estimate of the linear model intercept", 
+                         "Methane Standard error of the linear model intercept", 
+                         "Methane linear model p-value; indicative of the likelihood that observed relationship is due to chance", 
+                         "Methane R squared of the linear model", 
+                         "Methane Linear root mean square error; indicative of how well the model fits the data", 
+         
+                         "Methane Flux estimate with a robust linear model; used in comparison with the linear flux_estimate, above, as a warning of possible influential outliers", 
+                         "Methane Robust linear model AIC value; indicative of the model's goodness of fit", 
+                         "Methane Convergence; TRUE or FALSE", 
+                         "Methane Standard error of the robust linear model slope", 
+                         "Methane Root mean square error of robust linear fit; indicative of how well the model fits the data", 
+                         
+                         "Methane 3‐term polynomial model AIC value; indicative of model's goodness of fit", 
+                         "Methane R squared of the polynomial model; used in comparison with linear R squared, above, as a warning of possible data nonlinearity", 
+                         "Methane Root mean square error of polynomial fit; indicative of how well the model fits the data", 
+                         "Methane flux flag generated during QAQC", 
+         
+                         "Carbon dioxide slope (flux) computed by a nonlinear regression based on one‐dimensional diffusion theory (Hutchinson & Mosier, 1981)", 
+                         "Carbon dioxide  nonlinear model AIC value; indicative of the model's goodness of fit", 
+                         "Carbon dioxide  Nonlinear model p-value; indicative of the likelihood that observed relationship is due to chance", 
+                         "Carbon dioxide  R squared of the nonlinear model", 
+                         "Carbon dioxide  Nonlinear root mean square error; indicative of how well the model fits the data", 
+                         
+                         "Carbon dioxide  Linear lux estimate", 
+                         "Carbon dioxide  Linear model AIC value; indicative of the model's goodness of fit", 
+                         "Carbon dioxide  Standard error of the linear model slope", 
+                         "Carbon dioxide  Estimate of the linear model intercept", 
+                         "Carbon dioxide  Standard error of the linear model intercept", 
+                         "Carbon dioxide  linear model p-value; indicative of the likelihood that observed relationship is due to chance", 
+                         "Carbon dioxide  R squared of the linear model", 
+                         "Carbon dioxide  Linear root mean square error; indicative of how well the model fits the data", 
+         
+                         "Carbon dioxide  Flux estimate with a robust linear model; used in comparison with the linear flux_estimate, above, as a warning of possible influential outliers", 
+                         "Carbon dioxide  Robust linear model AIC value; indicative of the model's goodness of fit", 
+                         "Carbon dioxide  Convergence; TRUE or FALSE", 
+                         "Carbon dioxide  Standard error of the robust linear model slope", 
+                         "Carbon dioxide  Root mean square error of robust linear fit; indicative of how well the model fits the data", 
+                         
+                         "Carbon dioxide  3‐term polynomial model AIC value; indicative of model's goodness of fit", 
+                         "Carbon dioxide  R squared of the polynomial model; used in comparison with linear R squared, above, as a warning of possible data nonlinearity", 
+                         "Carbon dioxide  Root mean square error of polynomial fit; indicative of how well the model fits the data", 
+                         "Carbon dioxide  flux flag generated during QAQC", 
+                         
+                         "Soil moisture water fraction by volume", 
+                         "Soil moisture percentage", 
+                         "Soil temperature in degrees Celsius", 
 
-dd$Unit <-             c("NA",
-                         "NA",
-                         "NA",
-                         "NA",
-                         "NA",
-                         "NA",
-                         "NA",
-                         "NA",
-                         "NA",
-                         "NA",
-                         "cm",
-                         "mV",
-                         "mV",
-                         "mV",
+                         "Raw bulk electrical conductivity", 
+                         "Temperature-compensated electrical conductivity", 
+                         "Pore water electrical conductivity", 
+                         "Pore water electrical conductivity offset", 
+         
+                         "Real dielectric permittivity", 
+                         "Imaginary dielectric permittivity", 
+                         "Loss tangent", 
+         
+                         "Soil volumetric water content at 10 cm calibrated for mineral soil", 
+                         "Soil temperature at 10 cm", 
+                         "Soil electrical conductivity at 10 cm", 
+                         "Soil salinity at 10 cm", 
+                         
+                         "Notes about HydraGO data, especially missing data", 
+                         "Notes generated during field sampling")
+
+dd$Unit <- c(            "NA", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         
+                         "umol/m^2/s", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         
+                         "umol/m^2/s", 
+                         "NA", 
+                         "NA", 
+                         "umol/m^2", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+         
+                         "umol/m^2/s", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+         
+                         "umol/m^2/s", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+         
+                         "umol/m^2/s", 
+                         "NA", 
+                         "NA", 
+                         "umol/m^2", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+         
+                         "umol/m^2/s", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         
+                         "water fraction by volume (m^3/m^3)", 
+                         "percent", 
+                         "degrees Celsius", 
+
+                         "dS/m", 
+                         "dS/m", 
+                         "dS/m", 
+                         "NA", 
+         
+                         "NA", 
+                         "NA", 
+                         "NA", 
+         
+                         "m^3/m^3", 
+                         "degrees Celsius", 
+                         "uS/cm", 
+                         "ppt", 
+                         
+                         "NA", 
                          "NA")
 
-dd$Data_Type <-        c("text",
-                         "text",
-                         "numeric",
-                         "text",
-                         "numeric",
-                         "numeric",
-                         "text",
-                         "text",
-                         "text",
-                         "text",
-                         "numeric",
-                         "numeric",
-                         "numeric",
-                         "numeric",
+dd$Data_Type <- c(       "text", 
+                         "text", 
+                         "text", 
+                         "numeric", 
+                         "numeric", 
+                         "numeric", 
+                         "text", 
+                         "text", 
+                         "numeric", 
+                         "datetime", ##not sure if this is considered a data type? 
+                         "datetime", 
+                         "datetime", 
+                         
+                         "numeric", 
+                         "numeric", 
+                         "numeric", 
+                         "numeric", 
+                         "numeric", 
+                         
+                         "numeric", 
+                         "numeric", 
+                         "numeric", 
+                         "numeric", 
+                         "numeric", 
+                         "numeric", 
+                         "numeric", 
+                         "numeric", 
+         
+                         "numeric", 
+                         "numeric", 
+                         "numeric", 
+                         "numeric", 
+                         "numeric", 
+                         
+                         "numeric", 
+                         "numeric", 
+                         "numeric", 
+                         "text", 
+         
+                         "numeric", 
+                         "numeric", 
+                         "numeric", 
+                         "numeric", 
+                         "numeric", 
+         
+                         "numeric", 
+                         "numeric", 
+                         "numeric", 
+                         "numeric", 
+                         "numeric", 
+                         "numeric", 
+                         "numeric", 
+                         "numeric", 
+         
+                         "numeric", 
+                         "numeric", 
+                         "numeric", 
+                         "numeric", 
+                         "numeric", 
+                         
+                         "numeric", 
+                         "numeric", 
+                         "numeric", 
+                         "text", 
+                         
+                         "numeric", 
+                         "numeric", 
+                         "numeric", 
+
+                         "numeric", 
+                         "numeric", 
+                         "numeric", 
+                         "numeric", 
+         
+                         "numeric", 
+                         "numeric", 
+                         "numeric", 
+         
+                         "numeric", 
+                         "numeric", 
+                         "numeric", 
+                         "numeric", 
+                         
+                         "text", 
                          "text")
 
-dd$Instrument_ifapplicable <-
+dd$Instrument_ifapplicable <- c(      
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
+                         "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
+                         "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
+                         
+                         "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
+                         "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
+                         "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
+                         "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
+                         "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
+                         
+                         "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
+                         "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
+                         "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
+                         "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
+                         "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
+                         "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
+                         "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
+                         "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
+         
+                         "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
+                         "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
+                         "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
+                         "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
+                         "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
+                         
+                         "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
+                         "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
+                         "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
+                         "NA", 
+         
+                         "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
+                         "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
+                         "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
+                         "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
+                         "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
+         
+                         "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
+                         "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
+                         "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
+                         "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
+                         "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
+                         "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
+                         "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
+                         "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
+         
+                         "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
+                         "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
+                         "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
+                         "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
+                         "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
+                         
+                         "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
+                         "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
+                         "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
+                         "NA", 
+                         
+                         "HydraGO portable soil sensor (Stevens Water Monitoring Systems Inc.)", 
+                         "HydraGO portable soil sensor (Stevens Water Monitoring Systems Inc.)", 
+                         "HydraGO portable soil sensor (Stevens Water Monitoring Systems Inc.)", 
 
-                       c("NA",
-                         "NA",
-                         "NA",
-                         "NA",
-                         "NA",
-                         "NA",
-                         "NA",
-                         "NA",
-                         "NA",
-                         "NA",
-                         "NA",
-                         "Redox Probe: Paleo Terra Redox probe, Reference Probe: Ag/AgCl reference probe, Handheld Readout: Thermo Scientific Orion Star A221 pH Meter",
-                         "NA",
-                         "NA",
+                         "HydraGO portable soil sensor (Stevens Water Monitoring Systems Inc.)", 
+                         "HydraGO portable soil sensor (Stevens Water Monitoring Systems Inc.)", 
+                         "HydraGO portable soil sensor (Stevens Water Monitoring Systems Inc.)", 
+                         "HydraGO portable soil sensor (Stevens Water Monitoring Systems Inc.)", 
+         
+                         "HydraGO portable soil sensor (Stevens Water Monitoring Systems Inc.)", 
+                         "HydraGO portable soil sensor (Stevens Water Monitoring Systems Inc.)", 
+                         "HydraGO portable soil sensor (Stevens Water Monitoring Systems Inc.)", 
+         
+                         "TEROS 12 Advanced Soil Moisture Sensor + Temperature and EC (Meter)", ##Is this correct? 
+                         "TEROS 12 Advanced Soil Moisture Sensor + Temperature and EC (Meter)", 
+                         "TEROS 12 Advanced Soil Moisture Sensor + Temperature and EC (Meter)", 
+                         "TEROS 12 Advanced Soil Moisture Sensor + Temperature and EC (Meter)", 
+                        
+                         "NA", 
+                         "NA")
+
+
+dd$Method <- c(      
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
+                         "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
+                         "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
+                         
+                         "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
+                         "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
+                         "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
+                         "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
+                         "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
+                         
+                         "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
+                         "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
+                         "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
+                         "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
+                         "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
+                         "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
+                         "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
+                         "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
+         
+                         "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
+                         "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
+                         "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
+                         "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
+                         "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
+                         
+                         "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
+                         "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
+                         "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
+                         "NA", 
+         
+                         "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
+                         "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
+                         "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
+                         "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
+                         "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
+         
+                         "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
+                         "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
+                         "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
+                         "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
+                         "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
+                         "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
+                         "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
+                         "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
+         
+                         "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
+                         "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
+                         "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
+                         "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
+                         "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
+                         
+                         "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
+                         "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
+                         "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
+                         "NA", 
+                         
+                         "NA", 
+                         "NA", 
+                         "NA", 
+
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+         
+                         "NA", 
+                         "NA", 
+                         "NA", 
+         
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         "Calculated from TEROS variables VWC, T, and EC, following Hilhorst (2000; 10.2136/sssaj2000.6461922x) and METER Group protocols that convert TEROS EC to pore water EC and then salinity.", 
+                        
+                         "NA", 
                          "NA")
 
 
@@ -133,7 +501,7 @@ dd$Instrument_ifapplicable <-
 write.csv(dd, "Data package/dd.csv", row.names = FALSE)
 
 #write out data dictionary associated with the data to the main folder: 
-write.csv(dd, here("Manual Redox Probe Data/Synoptic_CB/","COMPASS_SynopticCB_Redox_DataDictionary.csv"), row.names = FALSE)
+write.csv(dd, here("Macrophyte_Fluxes/Synoptic_CB/","COMPASS_SynopticCB_Macrophyte_Fluxes_DataDictionary.csv"), row.names = FALSE)
 
 ```
 
@@ -144,7 +512,7 @@ write.csv(dd, here("Manual Redox Probe Data/Synoptic_CB/","COMPASS_SynopticCB_Re
 files  = list.files("Data package")
 files
 
-files = c("COMPASS_SynopticCB_Manual Redox_2022.csv", "COMPASS_SynopticCB_Manual Redox_2023.csv", "COMPASS_SynopticCB_Manual Redox_2024.csv", "COMPASS_SynopticCB_Manual Redox_2025.csv", "dd.csv")
+files = c("COMPASS_SynopticCB_Macrophyte_Fluxes_2022.csv", "COMPASS_SynopticCB_Macrophyte_Fluxes_2023.csv", "COMPASS_SynopticCB_Macrophyte_Fluxes_2024.csv", "COMPASS_SynopticCB_Macrophyte_Fluxes_2025.csv", "dd.csv")
 
 flmd <- data.frame(file_name = files)
 flmd
@@ -159,11 +527,11 @@ flmd$notes <- ""
 
 #add information about each line:
 
-flmd$file_description <-  c("Manual redox data taken from COMPASS synoptic sites in 2022",
-                            "Manual redox data taken from COMPASS synoptic sites in 2023",
-                            "Manual redox data taken from COMPASS synoptic sites in 2024",
-                            "Manual redox data taken from COMPASS synoptic sites in 2025",
-                            "Data dictionary file for annual redox data files describing each column in the dataset")
+flmd$file_description <-  c("Macrophyte flux data taken from COMPASS synoptic sites in 2022",
+                            "Macrophyte flux data taken from COMPASS synoptic sites in 2023",
+                            "Macrophyte flux data taken from COMPASS synoptic sites in 2024",
+                            "Macrophyte flux data taken from COMPASS synoptic sites in 2025",
+                            "Data dictionary file for annual Macrophyte flux data files describing each column in the dataset")
 
 flmd$data_orientation <-  c("horizontal",
                             "horizontal",
@@ -224,12 +592,12 @@ write.csv(site_list, "Data package/site_list.csv", row.names = FALSE)
 ```
 
 
-## Data Description - NEED TO CHANGE! 
+## Data Description
 ```{r data description}
 
 #Create a text file that has the description of the data - This ideally should match the text that is in the data READ.ME 
 
-datadescription <- "These data are measurements of soil reduction-oxidation potential (REDOX) profiles collected using REDOX probes at the COMPASS 'synoptic' sites in the Chesapeake Bay region:  GCReW (GCW), Goodwin Islands (GWI), Moneystump (MSM), and Sweet Hall (SWH). These sites have space for time transects spanning coastal upland forest (UP), coastal upland forest transitioning to wetland (TR), and wetland (WC) plots. The Sweet Hall Marsh site also has a forested swamp as part of its transect (SWAMP). Soil REDOX profiles were measured at 10, 20, and 30/35cm depths monthly from 2022-2024, then bi-monthly from 2025-present across the plots. The SWH TR site has variable topography that includes hummocks and hollows; these were measured separately and are denoted in the dataset by the Topography column as Hummock/Hollow. To make measurements, one Ag/AgCl saturated KCl reference electrode was pushed into the soil a few centimeters and six replicate soil REDOX probes were pushed into the soil to the depth of measurement and allowed to equilibrate for five minutes before recording the probe reading with a Thermo Scientific Orion pH/ORP handheld meter. After the reading, probes were pushed to the next depth of interest. Raw measurements were recorded then adjusted to account for the Ag/AgCl saturated KCl reference electrode used."
+datadescription <- "These data are greenhouse gas fluxes collected from dedicated collars at the COMPASS (Coastal Observations, Mechanisms, and Predictions Across Systems and Scales) 'synoptic' sites in the Chesapeake Bay region: Global Change Research Wetland (GCW), Goodwin Islands (GWI), Moneystump (MSM), and Sweet Hall (SWH). These sites have space for time transects spanning coastal upland forest (UP), coastal upland forest transitioning to wetland (TR), and wetland (WC) plots. The Sweet Hall Marsh site also has a forested swamp as part of its transect (SWAMP). The dedicated macrophyte collars were installed in 2022, five in each wetland and then later five in the transition zones. These flux collars allow for measurements of fluxes with both the soil and the macrophyte plants included in the chamber measurement. Five minute long fluxes were collected monthly from about May to November for two years at each site, and then measurement frequency was decreased to every other month beginning in May and ending in November. Greenhouse gas concentrations (CH4, CO2) were measured with a LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR), and fluxes were estimated using the fluxfinder R package (Wilson et al., 2024)."
 
 
 #write to a text file 
@@ -238,16 +606,29 @@ writeLines(datadescription, "Data package/SynopticCB_Redox_ESSDIVE_DataDescripti
 
 ```
 
+## Keywords - NEED TO CHANGE! 
+```{#r data description}
+
+#Create a text file that has the description of the data - This ideally should match the text that is in the data READ.ME 
+
+keywords <- "fluxes, wetland, macrophyte"
+
+
+#write to a text file 
+writeLines(keywords, "Data package/SynopticCB_Redox_ESSDIVE_keywords.txt")
+
+
+```
 
 ## Create Author List - NEED TO CHANGE! 
-```{r create author list}
+```{#r create author list}
 
 #Pull in the common synoptic authors list: 
 authors_common <- read.csv(here("Metadata/Synoptic CB/", "COMPASS_SynopticCB_common_essdive_author_list.csv"))
 
 
 #create a list of the last names you want to pull 
-names_we_want <- c("Wilson",  "Chin", "Phillips", "Read", "Stearns","Bailey", "Megonigal")
+names_we_want <- c("Wilson","Chin", "Phillips", "Read", "Stearns","Bailey", "Megonigal")
 order_of_authors <- c(1:length(names_we_want))
 
 authors <- data.frame(

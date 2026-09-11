@@ -48,17 +48,64 @@ all_dat <- bind_rows(dat22, dat23, dat24, dat25)
 all_dat$X.1 <- NULL
 all_dat$X <- NULL
 
+# Extract components (returns character)
+all_dat$TIMESTAMP <- as.POSIXct(all_dat$TIMESTAMP)
+all_dat$Year <- format(all_dat$TIMESTAMP, "%Y") 
+all_dat$Month <- format(all_dat$TIMESTAMP, "%m") 
+all_dat$Day <- format(all_dat$TIMESTAMP, "%d") 
+
+notes_to_keep <- c(
+  "Collar not level",
+  "Removed large debris",
+  "collar a bit unstable",
+  "High water",
+  "water above chamber base",
+  "fan battery died",
+  "water, number of chambers not written, assumed to be 2",
+  "chamber base slightly bent"
+)
+
+##Select column names
+all_dat1 <- all_dat %>% 
+  mutate(Project = "COMPASS: Synoptic", 
+         Region = "CB") %>% 
+  ##remove notes about time changes
+  mutate(
+    Notes = str_to_sentence(str_extract(
+      Notes,
+      regex(str_c(notes_to_keep, collapse = "|"), ignore_case = TRUE)))) %>% 
+  ##Rename columns
+  rename(
+    Sample_ID = Plot, 
+    Plot = Zone, 
+    Field_Notes = Notes) %>% 
+  ##Select columns in order
+  select("Project", "Region", "Sample_ID", "Year", "Month", "Day", "Site", "Plot", "Replicate", "TIMESTAMP", "TIMESTAMP_min", "TIMESTAMP_max", 
+         
+         "ch4_HM81_flux.estimate", "ch4_HM81_AIC", "ch4_HM81_p.value", "ch4_HM81_r.squared", "ch4_HM81_RMSE", 
+         "ch4_lin_flux.estimate", "ch4_lin_AIC", "ch4_lin_flux.std.error", "ch4_lin_int.estimate", 
+         "ch4_lin_int.std.error", "ch4_lin_p.value", "ch4_lin_r.squared", "ch4_lin_RMSE", 
+         "ch4_rob_flux.estimate", "ch4_rob_AIC", "ch4_rob_converged", "ch4_rob_flux.std.error", "ch4_rob_RMSE", 
+         "ch4_poly_AIC", "ch4_poly_r.squared", "ch4_poly_RMSE", "ch4_qaqc_flag", 
+         
+         "co2_HM81_flux.estimate", "co2_HM81_AIC", "co2_HM81_p.value", "co2_HM81_r.squared", "co2_HM81_RMSE", 
+         "co2_lin_flux.estimate", "co2_lin_AIC", "co2_lin_flux.std.error", "co2_lin_int.estimate", 
+         "co2_lin_int.std.error", "co2_lin_p.value", "co2_lin_r.squared", "co2_lin_RMSE", 
+         "co2_rob_flux.estimate", "co2_rob_AIC", "co2_rob_converged", "co2_rob_flux.std.error", "co2_rob_RMSE", 
+         "co2_poly_AIC", "co2_poly_r.squared", "co2_poly_RMSE", "co2_qaqc_flag", 
+         
+         "Soil.Moisture.wfv", "Soil.Moisture.percent", "Soil.Temperature.C", 
+         "Bulk.EC.Raw.dS.per.m.", "Bulk.EC.TC.dS.per.m", "Pore.Water.EC.dS.per.m", "Pore.Water.EC.Offset", 
+         "Raw.Real.Dielectric", "Raw.Imaginary.Dielectric", "Loss.Tangent", 
+         "soil.EC.10cm.TEROS", "soil.salinity.10cm.TEROS", "soil.temp.10cm.TEROS", "soil.vwc.10cm.TEROS", "HydraGO_Notes", "Field_Notes")
+
 ```
 
 ## Write out files
 ```{r write out combined data and metadata, include=FALSE}
 
 #write out a csv of all the data to the main folder: 
-write.csv(all_dat, "COMPASS_SynopticCB_MC_Fluxes_AllData.csv", row.names = FALSE)
-
-
-#write out a csv of the metadata associated with the data: 
-# write.csv(metadat, "COMPASS_SynopticCB_PW_DOC_Metadata.csv")
+write.csv(all_dat1, "COMPASS_SynopticCB_MC_Fluxes_AllData.csv", row.names = FALSE)
 
 ```
 
