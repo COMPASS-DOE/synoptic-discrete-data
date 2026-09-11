@@ -48,6 +48,33 @@ all_dat <- bind_rows(dat22, dat23, dat24, dat25)
 
 all_dat$X <- NULL
 
+# Extract components (returns character)
+all_dat$TIMESTAMP <- as.POSIXct(all_dat$TIMESTAMP)
+all_dat$Year <- format(all_dat$TIMESTAMP, "%Y") 
+all_dat$Month <- format(all_dat$TIMESTAMP, "%m") 
+all_dat$Day <- format(all_dat$TIMESTAMP, "%d") 
+
+colnames(all_dat)
+##Select column names
+all_dat1 <- all_dat %>% 
+  mutate(Project = "COMPASS: Synoptic", 
+         Region = "CB") %>% 
+  ##Rename columns
+  rename(
+    Sample_ID = Plot, 
+    Plot = Zone) %>% 
+  ##Select columns in order
+  select("Project", "Region", "Sample_ID", "Year", "Month", "Day", "Site", "Plot", "Replicate", "RepNumber", "TIMESTAMP", "TIMESTAMP_min", "TIMESTAMP_max", 
+         
+"ch4_HM81_AIC", "ch4_HM81_flux.estimate", "ch4_HM81_p.value", "ch4_HM81_r.squared", "ch4_HM81_RMSE", "ch4_lin_AIC", "ch4_lin_flux.estimate", "ch4_lin_flux.std.error",  "ch4_lin_int.estimate", "ch4_lin_int.std.error", "ch4_lin_p.value", "ch4_lin_r.squared", "ch4_lin_RMSE", "ch4_poly_AIC", "ch4_poly_r.squared", "ch4_poly_RMSE", "ch4_rob_AIC", "ch4_rob_converged", "ch4_rob_flux.estimate", "ch4_rob_flux.std.error", "ch4_rob_RMSE", "ch4_qaqc_flag", 
+         
+"co2_HM81_AIC", "co2_HM81_flux.estimate", "co2_HM81_p.value", "co2_HM81_r.squared", "co2_HM81_RMSE", "co2_lin_AIC", "co2_lin_flux.estimate", "co2_lin_flux.std.error", "co2_lin_int.estimate", "co2_lin_int.std.error", "co2_lin_p.value", "co2_lin_r.squared", "co2_lin_RMSE", "co2_poly_AIC", "co2_poly_r.squared", "co2_poly_RMSE", "co2_rob_AIC", "co2_rob_converged", "co2_rob_flux.estimate", "co2_rob_flux.std.error", "co2_rob_RMSE", "co2_qaqc_flag", 
+
+"rob_RMSE.x", "rob_RMSE.y", ## Need to figure out what gas these are from
+"soilp_c", "soilp_m", "soilp_t", 
+"soil.EC.10cm.TEROS", "soil.salinity.10cm.TEROS", "soil.temp.10cm.TEROS", "soil.vwc.10cm.TEROS", 
+"soil.EC.5cm.TEROS", "soil.salinity.5cm.TEROS", "soil.temp.5cm.TEROS", "soil.vwc.5cm.TEROS") ##Should I be grabbing 5 cm TEROS data for the Macrophyte fluxes as well? 
+
 ```
 
 ## Write out files
