@@ -1,5 +1,5 @@
 ---
-title: "ESS-DIVE Synoptic CB: Macrophyte Fluxes - 2026-07-27 Submission Prep"
+title: "ESS-DIVE Synoptic CB: Soil Fluxes - 2026-09-15 Submission Prep"
 author: "2022-2025 Samples"
 date: "`r Sys.Date()`"
 output: 
@@ -30,7 +30,7 @@ library(here)
 ```{r Pull in compiled data files, message=FALSE, include=FALSE}
 
 #write out a csv of all the data to the main folder: 
-final_data <- read.csv("../COMPASS_SynopticCB_MC_Fluxes_AllData.csv")
+final_data <- read.csv("../COMPASS_SynopticCB_Soil_Fluxes_AllData.csv")
 
 ##Separate by year for ESS-DIVE 
 final_data_2022 <- subset(final_data, Year == "2022")
@@ -39,10 +39,10 @@ final_data_2024 <- subset(final_data, Year == "2024")
 final_data_2025 <- subset(final_data, Year == "2025")
 
 ##Write out annual data files
-write.csv(final_data_2022, "Data package/COMPASS_SynopticCB_Macrophyte_Fluxes_2022.csv", row.names = FALSE)
-write.csv(final_data_2023, "Data package/COMPASS_SynopticCB_Macrophyte_Fluxes_2023.csv", row.names = FALSE)
-write.csv(final_data_2024, "Data package/COMPASS_SynopticCB_Macrophyte_Fluxes_2024.csv", row.names = FALSE)
-write.csv(final_data_2025, "Data package/COMPASS_SynopticCB_Macrophyte_Fluxes_2025.csv", row.names = FALSE)
+write.csv(final_data_2022, "Data package/COMPASS_SynopticCB_Soil_Fluxes_2022.csv", row.names = FALSE)
+write.csv(final_data_2023, "Data package/COMPASS_SynopticCB_Soil_Fluxes_2023.csv", row.names = FALSE)
+write.csv(final_data_2024, "Data package/COMPASS_SynopticCB_Soil_Fluxes_2024.csv", row.names = FALSE)
+write.csv(final_data_2025, "Data package/COMPASS_SynopticCB_Soil_Fluxes_2025.csv", row.names = FALSE)
 
 ```
 
@@ -71,6 +71,7 @@ dd$Definition <- c(      "Project name",
                          "Site Code identifier for sampling transect location (GCW, SWH, MSM, GWI), see dataset locations for coordinates",
                          "Plot within space-for-time transect (UP=Upland, SWAMP=Swamp, TR=Transition, WC=Wetland Center)",
                          "Replicate flux collar number (#1-5)", 
+                         "Flux replicate; the smartchamber measures fluxes twice in a row at each location (#1,2)", 
                          
                          "Average timestamp over which the flux was computed", 
                          "Minimum timestamp over which the flux was computed", 
@@ -97,7 +98,7 @@ dd$Definition <- c(      "Project name",
                          "Methane Standard error of the robust linear model slope", 
                          "Methane Root mean square error of robust linear fit; indicative of how well the model fits the data", 
                          
-                         "Methane 3‐term polynomial model AIC value; indicative of model's goodness of fit", 
+                         "Methane 3-term polynomial model AIC value; indicative of model's goodness of fit", 
                          "Methane R squared of the polynomial model; used in comparison with linear R squared, above, as a warning of possible data nonlinearity", 
                          "Methane Root mean square error of polynomial fit; indicative of how well the model fits the data", 
                          "Methane flux flag generated during QAQC", 
@@ -123,31 +124,19 @@ dd$Definition <- c(      "Project name",
                          "Carbon dioxide  Standard error of the robust linear model slope", 
                          "Carbon dioxide  Root mean square error of robust linear fit; indicative of how well the model fits the data", 
                          
-                         "Carbon dioxide  3‐term polynomial model AIC value; indicative of model's goodness of fit", 
+                         "Carbon dioxide  3-term polynomial model AIC value; indicative of model's goodness of fit", 
                          "Carbon dioxide  R squared of the polynomial model; used in comparison with linear R squared, above, as a warning of possible data nonlinearity", 
                          "Carbon dioxide  Root mean square error of polynomial fit; indicative of how well the model fits the data", 
                          "Carbon dioxide  flux flag generated during QAQC", 
                          
-                         "Soil moisture water fraction by volume", 
-                         "Soil moisture percentage", 
-                         "Soil temperature in degrees Celsius", 
+                         "Soil electrical conductivity value from Stevens HydraProbe (S/m)", 
+                         "Soil moisture value from Stevens HydraProbe (m3/m3)", 
+                         "Soil temperature value from Stevens HydraProbe (degrees Celsius)", 
 
-                         "Raw bulk electrical conductivity", 
-                         "Temperature-compensated electrical conductivity", 
-                         "Pore water electrical conductivity", 
-                         "Pore water electrical conductivity offset", 
-         
-                         "Real dielectric permittivity", 
-                         "Imaginary dielectric permittivity", 
-                         "Loss tangent", 
-         
                          "Soil volumetric water content at 10 cm calibrated for mineral soil", 
                          "Soil temperature at 10 cm", 
                          "Soil electrical conductivity at 10 cm", 
-                         "Soil salinity at 10 cm", 
-                         
-                         "Notes about HydraGO data, especially missing data", 
-                         "Notes generated during field sampling")
+                         "Soil salinity at 10 cm")
 
 dd$Unit <- c(            "NA", 
                          "NA", 
@@ -161,6 +150,7 @@ dd$Unit <- c(            "NA",
                          "NA", 
                          "NA", 
                          "NA", 
+                         "NA", 
                          
                          "umol/m^2/s", 
                          "NA", 
@@ -214,26 +204,14 @@ dd$Unit <- c(            "NA",
                          "NA", 
                          "NA", 
                          
-                         "water fraction by volume (m^3/m^3)", 
-                         "percent", 
+                         "S/m", 
+                         "m^3/m^3", 
                          "degrees Celsius", 
 
-                         "dS/m", 
-                         "dS/m", 
-                         "dS/m", 
-                         "NA", 
-         
-                         "NA", 
-                         "NA", 
-                         "NA", 
-         
                          "m^3/m^3", 
                          "degrees Celsius", 
                          "uS/cm", 
-                         "ppt", 
-                         
-                         "NA", 
-                         "NA")
+                         "ppt")
 
 dd$Data_Type <- c(       "text", 
                          "text", 
@@ -243,7 +221,9 @@ dd$Data_Type <- c(       "text",
                          "numeric", 
                          "text", 
                          "text", 
+                         "numeric",
                          "numeric", 
+                         
                          "datetime", ##not sure if this is considered a data type? 
                          "datetime", 
                          "datetime", 
@@ -303,23 +283,11 @@ dd$Data_Type <- c(       "text",
                          "numeric", 
                          "numeric", 
                          "numeric", 
-
-                         "numeric", 
-                         "numeric", 
-                         "numeric", 
-                         "numeric", 
          
                          "numeric", 
                          "numeric", 
                          "numeric", 
-         
-                         "numeric", 
-                         "numeric", 
-                         "numeric", 
-                         "numeric", 
-                         
-                         "text", 
-                         "text")
+                         "numeric")
 
 dd$Instrument_ifapplicable <- c(      
                          "NA", 
@@ -331,6 +299,8 @@ dd$Instrument_ifapplicable <- c(
                          "NA", 
                          "NA", 
                          "NA", 
+                         "NA", 
+                         
                          "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
                          "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
                          "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
@@ -387,27 +357,14 @@ dd$Instrument_ifapplicable <- c(
                          "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
                          "NA", 
                          
-                         "HydraGO portable soil sensor (Stevens Water Monitoring Systems Inc.)", 
-                         "HydraGO portable soil sensor (Stevens Water Monitoring Systems Inc.)", 
-                         "HydraGO portable soil sensor (Stevens Water Monitoring Systems Inc.)", 
-
-                         "HydraGO portable soil sensor (Stevens Water Monitoring Systems Inc.)", 
-                         "HydraGO portable soil sensor (Stevens Water Monitoring Systems Inc.)", 
-                         "HydraGO portable soil sensor (Stevens Water Monitoring Systems Inc.)", 
-                         "HydraGO portable soil sensor (Stevens Water Monitoring Systems Inc.)", 
-         
-                         "HydraGO portable soil sensor (Stevens Water Monitoring Systems Inc.)", 
-                         "HydraGO portable soil sensor (Stevens Water Monitoring Systems Inc.)", 
-                         "HydraGO portable soil sensor (Stevens Water Monitoring Systems Inc.)", 
+                         "HydraProbe (Stevens Water Monitoring Systems Inc.)", 
+                         "HydraProbe (Stevens Water Monitoring Systems Inc.)", 
+                         "HydraProbe (Stevens Water Monitoring Systems Inc.)", 
          
                          "TEROS 12 Advanced Soil Moisture Sensor + Temperature and EC (Meter)", ##Is this correct? 
                          "TEROS 12 Advanced Soil Moisture Sensor + Temperature and EC (Meter)", 
                          "TEROS 12 Advanced Soil Moisture Sensor + Temperature and EC (Meter)", 
-                         "TEROS 12 Advanced Soil Moisture Sensor + Temperature and EC (Meter)", 
-                        
-                         "NA", 
-                         "NA")
-
+                         "TEROS 12 Advanced Soil Moisture Sensor + Temperature and EC (Meter)")
 
 dd$Method <- c(      
                          "NA", 
@@ -419,6 +376,8 @@ dd$Method <- c(
                          "NA", 
                          "NA", 
                          "NA", 
+                         "NA", 
+                         
                          "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
                          "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
                          "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
@@ -478,30 +437,17 @@ dd$Method <- c(
                          "NA", 
                          "NA", 
                          "NA", 
-
-                         "NA", 
-                         "NA", 
-                         "NA", 
-                         "NA", 
          
                          "NA", 
                          "NA", 
                          "NA", 
-         
-                         "NA", 
-                         "NA", 
-                         "NA", 
-                         "Calculated from TEROS variables VWC, T, and EC, following Hilhorst (2000; 10.2136/sssaj2000.6461922x) and METER Group protocols that convert TEROS EC to pore water EC and then salinity.", 
-                        
-                         "NA", 
-                         "NA")
-
+                         "Calculated from TEROS variables VWC, T, and EC, following Hilhorst (2000; 10.2136/sssaj2000.6461922x) and METER Group protocols that convert TEROS EC to pore water EC and then salinity")
 
 #write out the data dictionary associated with the data:
 write.csv(dd, "Data package/dd.csv", row.names = FALSE)
 
 #write out data dictionary associated with the data to the main folder: 
-write.csv(dd, here("Macrophyte_Fluxes/Synoptic_CB/","COMPASS_SynopticCB_Macrophyte_Fluxes_DataDictionary.csv"), row.names = FALSE)
+write.csv(dd, here("Soil_Fluxes/Synoptic_CB/","COMPASS_SynopticCB_Soil_Fluxes_DataDictionary.csv"), row.names = FALSE)
 
 ```
 
@@ -512,7 +458,7 @@ write.csv(dd, here("Macrophyte_Fluxes/Synoptic_CB/","COMPASS_SynopticCB_Macrophy
 files  = list.files("Data package")
 files
 
-files = c("COMPASS_SynopticCB_Macrophyte_Fluxes_2022.csv", "COMPASS_SynopticCB_Macrophyte_Fluxes_2023.csv", "COMPASS_SynopticCB_Macrophyte_Fluxes_2024.csv", "COMPASS_SynopticCB_Macrophyte_Fluxes_2025.csv", "dd.csv")
+files = c("COMPASS_SynopticCB_Soil_Fluxes_2022.csv", "COMPASS_SynopticCB_Soil_Fluxes_2023.csv", "COMPASS_SynopticCB_Soil_Fluxes_2024.csv", "COMPASS_SynopticCB_Soil_Fluxes_2025.csv", "dd.csv")
 
 flmd <- data.frame(file_name = files)
 flmd
@@ -527,11 +473,11 @@ flmd$notes <- ""
 
 #add information about each line:
 
-flmd$file_description <-  c("Macrophyte flux data taken from COMPASS synoptic sites in 2022",
-                            "Macrophyte flux data taken from COMPASS synoptic sites in 2023",
-                            "Macrophyte flux data taken from COMPASS synoptic sites in 2024",
-                            "Macrophyte flux data taken from COMPASS synoptic sites in 2025",
-                            "Data dictionary file for annual Macrophyte flux data files describing each column in the dataset")
+flmd$file_description <-  c("Soil flux data taken from COMPASS synoptic sites in 2022",
+                            "Soil flux data taken from COMPASS synoptic sites in 2023",
+                            "Soil flux data taken from COMPASS synoptic sites in 2024",
+                            "Soil flux data taken from COMPASS synoptic sites in 2025",
+                            "Data dictionary file for annual Soil flux data files describing each column in the dataset")
 
 flmd$data_orientation <-  c("horizontal",
                             "horizontal",
@@ -597,7 +543,7 @@ write.csv(site_list, "Data package/site_list.csv", row.names = FALSE)
 
 #Create a text file that has the description of the data - This ideally should match the text that is in the data READ.ME 
 
-datadescription <- "These data are greenhouse gas fluxes collected from dedicated collars at the COMPASS (Coastal Observations, Mechanisms, and Predictions Across Systems and Scales) 'synoptic' sites in the Chesapeake Bay region: Global Change Research Wetland (GCW), Goodwin Islands (GWI), Moneystump (MSM), and Sweet Hall (SWH). These sites have space for time transects spanning coastal upland forest (UP), coastal upland forest transitioning to wetland (TR), and wetland (WC) plots. The Sweet Hall Marsh site also has a forested swamp as part of its transect (SWAMP). The dedicated macrophyte collars were installed in 2022, five in each wetland and then later five in the transition zones. These flux collars allow for measurements of fluxes with both the soil and the macrophyte plants included in the chamber measurement. Five minute long fluxes were collected monthly from about May to November for two years at each site, and then measurement frequency was decreased to every other month beginning in May and ending in November. Greenhouse gas concentrations (CH4, CO2) were measured with a LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR), and fluxes were estimated using the fluxfinder R package (Wilson et al., 2024)."
+datadescription <- "These data are greenhouse gas fluxes collected from dedicated collars at the COMPASS (Coastal Observations, Mechanisms, and Predictions Across Systems and Scales) 'synoptic' sites in the Chesapeake Bay region: Global Change Research Wetland (GCW), Goodwin Islands (GWI), Moneystump (MSM), and Sweet Hall (SWH). These sites have space for time transects spanning coastal upland forest (UP), coastal upland forest transitioning to wetland (TR), and wetland (WC) plots. The Sweet Hall Marsh site also has a forested swamp as part of its transect (SWAMP). The dedicated Soil collars were installed in 2022, five in each wetland and then later five in the transition zones. These flux collars allow for measurements of fluxes with both the soil and the Soil plants included in the chamber measurement. Five minute long fluxes were collected monthly from about May to November for two years at each site, and then measurement frequency was decreased to every other month beginning in May and ending in November. Greenhouse gas concentrations (CH4, CO2) were measured with a LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR), and fluxes were estimated using the fluxfinder R package (Wilson et al., 2024)."
 
 
 #write to a text file 
@@ -611,7 +557,7 @@ writeLines(datadescription, "Data package/SynopticCB_Redox_ESSDIVE_DataDescripti
 
 #Create a text file that has the description of the data - This ideally should match the text that is in the data READ.ME 
 
-keywords <- "fluxes, wetland, macrophyte"
+keywords <- "fluxes, wetland, Soil"
 
 
 #write to a text file 

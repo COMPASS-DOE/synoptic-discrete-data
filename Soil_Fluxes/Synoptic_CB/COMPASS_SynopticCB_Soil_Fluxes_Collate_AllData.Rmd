@@ -70,10 +70,9 @@ all_dat1 <- all_dat %>%
          
 "co2_HM81_AIC", "co2_HM81_flux.estimate", "co2_HM81_p.value", "co2_HM81_r.squared", "co2_HM81_RMSE", "co2_lin_AIC", "co2_lin_flux.estimate", "co2_lin_flux.std.error", "co2_lin_int.estimate", "co2_lin_int.std.error", "co2_lin_p.value", "co2_lin_r.squared", "co2_lin_RMSE", "co2_poly_AIC", "co2_poly_r.squared", "co2_poly_RMSE", "co2_rob_AIC", "co2_rob_converged", "co2_rob_flux.estimate", "co2_rob_flux.std.error", "co2_rob_RMSE", "co2_qaqc_flag", 
 
-"rob_RMSE.x", "rob_RMSE.y", ## Need to figure out what gas these are from
 "soilp_c", "soilp_m", "soilp_t", 
-"soil.EC.10cm.TEROS", "soil.salinity.10cm.TEROS", "soil.temp.10cm.TEROS", "soil.vwc.10cm.TEROS", 
-"soil.EC.5cm.TEROS", "soil.salinity.5cm.TEROS", "soil.temp.5cm.TEROS", "soil.vwc.5cm.TEROS") ##Should I be grabbing 5 cm TEROS data for the Macrophyte fluxes as well? 
+
+"soil.vwc.10cm.TEROS", "soil.temp.10cm.TEROS", "soil.EC.10cm.TEROS", "soil.salinity.10cm.TEROS") ##Should I be grabbing 5 cm TEROS data for the Macrophyte fluxes as well? 
 
 ```
 
@@ -81,11 +80,7 @@ all_dat1 <- all_dat %>%
 ```{r write out combined data and metadata, include=FALSE}
 
 #write out a csv of all the data to the main folder: 
-write.csv(all_dat, "COMPASS_SynopticCB_Soil_Fluxes_AllData.csv", row.names = FALSE)
-
-
-#write out a csv of the metadata associated with the data: 
-# write.csv(metadat, "COMPASS_SynopticCB_PW_DOC_Metadata.csv")
+write.csv(all_dat1, "COMPASS_SynopticCB_Soil_Fluxes_AllData.csv", row.names = FALSE)
 
 ```
 

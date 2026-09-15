@@ -30,7 +30,7 @@ library(lubridate)
 ch4 <- read.csv("Processed Data/COMPASS_Synoptic_CB_SmartChamber_Fluxes_Final_2023_CH4.csv")
 ch4 <- ch4 %>%
   rename_with(
-    .cols = 8:(ncol(.) - 6),
+    .cols = 8:(ncol(.) - 5),
     .fn = ~paste0("ch4_", .)
   ) %>%
   mutate(ch4_qaqc_flag = NA) %>%
@@ -50,7 +50,7 @@ ch4$TIMESTAMP <- ymd_hms(ch4$TIMESTAMP)
 co2 <- read.csv("Processed Data/COMPASS_Synoptic_CB_SmartChamber_Fluxes_Final_2023_CO2.csv")
 co2 <- co2 %>%
   rename_with(
-    .cols = 8:(ncol(.) - 6),
+    .cols = 8:(ncol(.) - 5),
     .fn = ~paste0("co2_", .)
   ) %>%
   mutate(co2_qaqc_flag = NA) %>%
