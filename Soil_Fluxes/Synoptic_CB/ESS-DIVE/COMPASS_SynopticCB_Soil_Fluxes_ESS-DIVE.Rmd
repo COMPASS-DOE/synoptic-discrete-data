@@ -452,7 +452,7 @@ write.csv(dd, here("Soil_Fluxes/Synoptic_CB/","COMPASS_SynopticCB_Soil_Fluxes_Da
 ```
 
 
-## Create flmd file - NEED TO CHANGE! 
+## Create flmd file
 ```{r create flmd}
 
 files  = list.files("Data package")
@@ -477,7 +477,7 @@ flmd$file_description <-  c("Soil flux data taken from COMPASS synoptic sites in
                             "Soil flux data taken from COMPASS synoptic sites in 2023",
                             "Soil flux data taken from COMPASS synoptic sites in 2024",
                             "Soil flux data taken from COMPASS synoptic sites in 2025",
-                            "Data dictionary file for annual Soil flux data files describing each column in the dataset")
+                            "Data dictionary file for annual soil flux data files describing each column in the dataset")
 
 flmd$data_orientation <-  c("horizontal",
                             "horizontal",
@@ -520,7 +520,7 @@ SWH <- data.frame(
   Longitude = "-76.8964 degrees")
 
 GCW <- data.frame(
-  Description = "GCReW (GCW); one of the COMPASS-FME synoptic sites, and has three plots: upland ('UP'; located at 38.8741N, 76.5522W), transition ('TR'; 38.8745, 76.5515W), and wetland ('WC'; 38.8750N, 76.5500W). Note that this site overlaps spatially with the TEMPEST (TMP) plots; the upland portion of the transect overlaps with the TEMPEST experiment control plot. This transect spans a mid- to late-successional (~80 years old) temperate, deciduous coastal forest and a mesohaline marsh along the Rhode River in Edgewater, MD.",
+  Description = "Global Change Research Wetland (GCW); one of the COMPASS-FME synoptic sites, and has three plots: upland ('UP'; located at 38.8741N, 76.5522W), transition ('TR'; 38.8745, 76.5515W), and wetland ('WC'; 38.8750N, 76.5500W). Note that this site overlaps spatially with the TEMPEST (TMP) plots; the upland portion of the transect overlaps with the TEMPEST experiment control plot. This transect spans a mid- to late-successional (~80 years old) temperate, deciduous coastal forest and a mesohaline marsh along the Rhode River in Edgewater, MD.",
   Latitude = "38.8745 degrees", 
   Longitude = "-76.5515 degrees")
 
@@ -543,7 +543,11 @@ write.csv(site_list, "Data package/site_list.csv", row.names = FALSE)
 
 #Create a text file that has the description of the data - This ideally should match the text that is in the data READ.ME 
 
-datadescription <- "These data are greenhouse gas fluxes collected from dedicated collars at the COMPASS (Coastal Observations, Mechanisms, and Predictions Across Systems and Scales) 'synoptic' sites in the Chesapeake Bay region: Global Change Research Wetland (GCW), Goodwin Islands (GWI), Moneystump (MSM), and Sweet Hall (SWH). These sites have space for time transects spanning coastal upland forest (UP), coastal upland forest transitioning to wetland (TR), and wetland (WC) plots. The Sweet Hall Marsh site also has a forested swamp as part of its transect (SWAMP). The dedicated Soil collars were installed in 2022, five in each wetland and then later five in the transition zones. These flux collars allow for measurements of fluxes with both the soil and the Soil plants included in the chamber measurement. Five minute long fluxes were collected monthly from about May to November for two years at each site, and then measurement frequency was decreased to every other month beginning in May and ending in November. Greenhouse gas concentrations (CH4, CO2) were measured with a LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR), and fluxes were estimated using the fluxfinder R package (Wilson et al., 2024)."
+datadescription <- "These data are greenhouse gas fluxes collected from dedicated collars at the COMPASS (Coastal Observations, Mechanisms, and Predictions Across Systems and Scales) 'synoptic' sites in the Chesapeake Bay region: Global Change Research Wetland (GCW), Goodwin Islands (GWI), Moneystump (MSM), and Sweet Hall (SWH). These sites have space for time transects spanning coastal upland forest (UP), coastal upland forest transitioning to wetland (TR), and wetland (WC) plots. The Sweet Hall Marsh site also has a forested swamp as part of its transect (SWAMP). The dedicated soil collars were installed in 2022, five in each upland and transition zone. 
+##Vegetation removed
+##Remove A from replicate number
+##Smartchamber
+These flux collars allow for measurements of fluxes with both the soil and the Soil plants included in the chamber measurement. Five minute long fluxes were collected monthly from about May to November for two years at each site, and then measurement frequency was decreased to every other month beginning in May and ending in November. Greenhouse gas concentrations (CH4, CO2) were measured with a LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR), and fluxes were estimated using the fluxfinder R package (Wilson et al., 2024)."
 
 
 #write to a text file 
