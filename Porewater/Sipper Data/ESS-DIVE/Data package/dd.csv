@@ -6,10 +6,10 @@ Month,NA,Month (MM) of sample collection,Month,numeric,NA,NA
 Day,NA,Day (DD) of sample collection,Day,numeric,NA,NA
 Site,NA,"Site Code identifier for sampling transect location (GCW, SWH, MSM, GWI), see dataset locations for coordinates",Site,text,NA,NA
 Plot,NA,"Plot within space-for-time transect (UP=Upland, SWAMP = Swamp, TR=Transition, WC= Wetland Control)",Plot,text,NA,NA
-Sample_ID,NA,Porewater sample ID used in the field and laboratory,Replicate,text,NA,NA
-Sampler_Type,NA,Collection device used to sample porewater (Porewater Sipper (Teflon)),Depth_cm,text,NA,NA
-Replicate,NA,Replicate (A-C),Sample_ID,text,Sipper Sampler: Sippers are made of PTFE with Vinyl tubing attached,NA
-Depth_cm,cm,Depth interval below the soil surface from which the sample was collected,Sampler_Type,numeric,NA,NA
+Sample_ID,NA,Porewater sample ID used in the field and laboratory,Sample_ID,text,NA,NA
+Sampler_Type,NA,Collection device used to sample porewater (Porewater Sipper (Teflon)),Sampler_Type,text,NA,NA
+Replicate,NA,Replicate (A-C),Replicate,text,Sipper Sampler: Sippers are made of PTFE with Vinyl tubing attached,NA
+Depth_cm,cm,Depth interval below the soil surface from which the sample was collected,Depth_cm,numeric,NA,NA
 SO4_ppm,ppm,Sulfate concentration,SO4_ppm,numeric,NA,NA
 SO4_mM,umoles/L,Sulfate concentration,SO4_mM,numeric,NA,NA
 SO4_flag,NA,"Sulfate concentration flag (adl = above detection limit (20 ug/mL), bdl = below detection limit (0 ug/mL))",SO4_flag,text,NA,NA
