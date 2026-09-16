@@ -8,7 +8,7 @@ Site,NA,"Site Code identifier for sampling transect location (MSM), see dataset 
 Plot,NA,"Plot within space-for-time transect (UP=Upland, TR=Transition, WC= Wetland Control)",Plot,text,NA,NA
 Depth_cm,cm,Depth interval below the soil surface from which the sample was collected,Depth_cm,numeric,NA,NA
 Sample_ID,NA,Porewater sample ID,Sample_ID,text,Depth segmented peeper well,NA
-Sampler_Type,NA,Collection device used to sample porewater (Depth segmented peeper well),Sampler_Type,numeric,NA,NA
+Sampler_Type,NA,Collection device used to sample porewater (Depth segmented peeper well),Sampler_Type,text,NA,NA
 SO4_ppm,ppm,Sulfate concentration,SO4_ppm,numeric,Dionex Integrion RFIC (Thermo Scientific),NA
 SO4_mM,mmoles/L,Sulfate concentration,SO4_mM,numeric,Dionex Integrion RFIC (Thermo Scientific),NA
 SO4_flag,NA,"Sulfate concentration flag (adl = above detection limit (20 ug/mL), bdl = below detection limit (0 ug/mL))",SO4_flag,text,NA,NA
