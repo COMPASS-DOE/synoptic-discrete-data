@@ -48,15 +48,61 @@ all_dat <- bind_rows(dat22, dat23, dat24, dat25)
 
 all_dat$X <- NULL
 
-# Extract components (returns character)
-all_dat$TIMESTAMP <- as.POSIXct(all_dat$TIMESTAMP)
-all_dat$Year <- format(all_dat$TIMESTAMP, "%Y") 
-all_dat$Month <- format(all_dat$TIMESTAMP, "%m") 
-all_dat$Day <- format(all_dat$TIMESTAMP, "%d") 
-
-colnames(all_dat)
-##Select column names
+##Remove everything except the last flux (1, 1a, 1b, 1c) 
 all_dat1 <- all_dat %>% 
+  mutate(number = case_when(
+    str_detect(Replicate, "a") ~ "2", 
+    str_detect(Replicate, "b") ~ "3", 
+    str_detect(Replicate, "c") ~ "4", 
+    TRUE ~ "1"))  %>% 
+  mutate(Replicate = gsub("a", "", Replicate)) %>% 
+  mutate(Replicate = gsub("b", "", Replicate)) %>% 
+  mutate(Replicate = gsub("c", "", Replicate)) %>% 
+  
+  group_by(RepNumber, Year, Month, Site, Zone, Replicate) %>% 
+  slice_max(order_by = number, n = 1) %>% 
+  ungroup() %>% 
+  mutate(Plot = gsub("1a", "1", Plot)) %>% 
+  mutate(Plot = gsub("2a", "2", Plot)) %>% 
+  mutate(Plot = gsub("3a", "3", Plot)) %>% 
+  mutate(Plot = gsub("4a", "4", Plot)) %>% 
+  mutate(Plot = gsub("5a", "5", Plot)) %>% 
+  mutate(Plot = gsub("6a", "6", Plot)) %>% 
+  mutate(Plot = gsub("7a", "7", Plot)) %>% 
+  mutate(Plot = gsub("8a", "8", Plot)) %>% 
+  mutate(Plot = gsub("9a", "9", Plot)) %>% 
+  mutate(Plot = gsub("10b","10", Plot)) %>% 
+  mutate(Plot = gsub("1b", "1", Plot)) %>% 
+  mutate(Plot = gsub("2b", "2", Plot)) %>% 
+  mutate(Plot = gsub("3b", "3", Plot)) %>% 
+  mutate(Plot = gsub("4b", "4", Plot)) %>% 
+  mutate(Plot = gsub("5b", "5", Plot)) %>% 
+  mutate(Plot = gsub("6b", "6", Plot)) %>% 
+  mutate(Plot = gsub("7b", "7", Plot)) %>% 
+  mutate(Plot = gsub("8b", "8", Plot)) %>% 
+  mutate(Plot = gsub("9b", "9", Plot)) %>% 
+  mutate(Plot = gsub("10b","10", Plot)) %>% 
+  mutate(Plot = gsub("1c", "1", Plot)) %>% 
+  mutate(Plot = gsub("2c", "2", Plot)) %>% 
+  mutate(Plot = gsub("3c", "3", Plot)) %>% 
+  mutate(Plot = gsub("4c", "4", Plot)) %>% 
+  mutate(Plot = gsub("5c", "5", Plot)) %>% 
+  mutate(Plot = gsub("6c", "6", Plot)) %>% 
+  mutate(Plot = gsub("7c", "7", Plot)) %>% 
+  mutate(Plot = gsub("8c", "8", Plot)) %>% 
+  mutate(Plot = gsub("9c", "9", Plot)) %>% 
+  mutate(Plot = gsub("10c","10", Plot)) %>% 
+  mutate(Plot = gsub("-","_", Plot))
+
+
+# Extract components (returns character)
+all_dat1$TIMESTAMP <- as.POSIXct(all_dat1$TIMESTAMP)
+all_dat1$Year <- format(all_dat1$TIMESTAMP, "%Y") 
+all_dat1$Month <- format(all_dat1$TIMESTAMP, "%m") 
+all_dat1$Day <- format(all_dat1$TIMESTAMP, "%d") 
+
+##Select column names
+all_dat2 <- all_dat1 %>% 
   mutate(Project = "COMPASS: Synoptic", 
          Region = "CB") %>% 
   ##Rename columns
@@ -80,7 +126,7 @@ all_dat1 <- all_dat %>%
 ```{r write out combined data and metadata, include=FALSE}
 
 #write out a csv of all the data to the main folder: 
-write.csv(all_dat1, "COMPASS_SynopticCB_Soil_Fluxes_AllData.csv", row.names = FALSE)
+write.csv(all_dat2, "COMPASS_SynopticCB_Soil_Fluxes_AllData.csv", row.names = FALSE)
 
 ```
 

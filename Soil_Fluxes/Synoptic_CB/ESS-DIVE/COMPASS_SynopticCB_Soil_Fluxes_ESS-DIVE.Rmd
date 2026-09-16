@@ -543,11 +543,7 @@ write.csv(site_list, "Data package/site_list.csv", row.names = FALSE)
 
 #Create a text file that has the description of the data - This ideally should match the text that is in the data READ.ME 
 
-datadescription <- "These data are greenhouse gas fluxes collected from dedicated collars at the COMPASS (Coastal Observations, Mechanisms, and Predictions Across Systems and Scales) 'synoptic' sites in the Chesapeake Bay region: Global Change Research Wetland (GCW), Goodwin Islands (GWI), Moneystump (MSM), and Sweet Hall (SWH). These sites have space for time transects spanning coastal upland forest (UP), coastal upland forest transitioning to wetland (TR), and wetland (WC) plots. The Sweet Hall Marsh site also has a forested swamp as part of its transect (SWAMP). The dedicated soil collars were installed in 2022, five in each upland and transition zone. 
-##Vegetation removed
-##Remove A from replicate number
-##Smartchamber
-These flux collars allow for measurements of fluxes with both the soil and the Soil plants included in the chamber measurement. Five minute long fluxes were collected monthly from about May to November for two years at each site, and then measurement frequency was decreased to every other month beginning in May and ending in November. Greenhouse gas concentrations (CH4, CO2) were measured with a LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR), and fluxes were estimated using the fluxfinder R package (Wilson et al., 2024)."
+datadescription <- "These data are greenhouse gas fluxes collected from dedicated collars at the COMPASS (Coastal Observations, Mechanisms, and Predictions Across Systems and Scales) 'synoptic' sites in the Chesapeake Bay region: Global Change Research Wetland (GCW), Goodwin Islands (GWI), Moneystump (MSM), and Sweet Hall (SWH). These sites have space for time transects spanning coastal upland forest (UP), coastal upland forest transitioning to wetland (TR), and wetland (WC) plots. The Sweet Hall Marsh site also has a forested swamp as part of its transect (SWAMP). The dedicated soil collars were installed in 2022, five in each upland and transition zone, except for SWH transition which had 10 collars installed. Vegetation was removed from the soil collar prior to sampling to allow for measurements of soil fluxes. Fluxes were measured twice at each location for 1-2 minutes, monthly from about May to November for two years at each site, and then measurement frequency was decreased to every other month beginning in May and ending in November. Greenhouse gas concentrations (CH4, CO2) were measured with a LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR) attached to a Smart Chamber (LI-COR), and fluxes were estimated using the fluxfinder R package (Wilson et al., 2024)."
 
 
 #write to a text file 
@@ -559,7 +555,7 @@ writeLines(datadescription, "Data package/SynopticCB_Redox_ESSDIVE_DataDescripti
 ## Keywords - NEED TO CHANGE! 
 ```{#r data description}
 
-#Create a text file that has the description of the data - This ideally should match the text that is in the data READ.ME 
+#Create a text file that has the keywords for the data 
 
 keywords <- "fluxes, wetland, Soil"
 
