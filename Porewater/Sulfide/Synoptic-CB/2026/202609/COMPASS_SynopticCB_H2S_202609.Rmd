@@ -1,6 +1,6 @@
 ---
 title: "COMPASS Synoptic CB: Sulfide"
-author: "July 2026 Samples"
+author: "Sept 2026 Virginia Samples"
 date: "`r Sys.Date()`"
 output:
   pdf_document:
@@ -50,18 +50,18 @@ After_Reruns = "YES"
   #And Will Write a Rerun File
 
 ###things that need to be changed
-sample_month = "July"
+sample_month = "Sept"
 sample_year = "2026"
-Sample_Month_Year = "202607"
-Run_Date = as.Date(c("07/20/2026", "07/24/2026", "07/28/2026"), format = "%m/%d/%Y")
+Sample_Month_Year = "202609"
+Run_Date = as.Date(c("09/22/2026"), format = "%m/%d/%Y")
 Run_by = "Zoe Read, Melanie Giessner"#Instrument user
 Script_run_by ="Zoe Read"#Code user
 
-Run_notes="5/6 dups were good. 5/6 spikes were bad. Reran samples with high CVs."#any notes from run
+Run_notes="Dups and matrix checks look good, spikes look bad. "#any notes from run
 
 #Plate Data
 folder_path_rawdata <- paste0("Raw Data")
-Raw_plates <- list.files(path = folder_path_rawdata, full.names = TRUE,pattern = "Plate")
+Raw_plates <- list.files(path = folder_path_rawdata, full.names = TRUE,pattern = "Plate.*\\.csv")
 (Raw_plates)
 
 # Define the file path for QAQC log file - NO Need to change just check year
@@ -71,8 +71,8 @@ log_path <- "Raw Data/Sulfide_STD_QAQC.csv"
 Raw_Metadata <- "Raw Data/COMPASS_SynopticCB_PW_SampleLog_2026.csv"
 
 # Define final path for data be sure to change year and month and run number
-final_path <- "Processed Data/COMPASS_SynopticCB_H2S_202607_processed.csv"
-rerun_path <- "Processed Data/COMPASS_SynopticCB_H2S_202607_reruns.csv"
+final_path <- "Processed Data/COMPASS_SynopticCB_H2S_202609_processed.csv"
+rerun_path <- "Processed Data/COMPASS_SynopticCB_H2S_202609_reruns.csv"
 
 
 ```
@@ -1087,7 +1087,7 @@ Sample_data_IDs <- df_all_clean1 %>%
 
 ```{r Format Sample IDs, include = FALSE}
 
-#GCW_WC_A_10 to GCW_202607_UP_LysA_10cm
+#GCW_WC_A_10 to GCW_202609_UP_LysA_10cm
 ##Separate sample IDs into columns 
 Sample_data_IDs1 <- Sample_data_IDs %>%
   separate(
@@ -1309,9 +1309,8 @@ write.csv(unique_log, log_path)
 ##Write out sample data
 Rerun_Data <- final_data %>% filter(H2S_conc_flag == "adl" | H2S_cv_flag %like% "High")
 
-if(After_Reruns == "YES"){
-  write.csv(final_data, final_path)} else {
-  write.csv(Rerun_Data, rerun_path) }
+  write.csv(final_data, final_path)
+  write.csv(Rerun_Data, rerun_path)
 
 
 ```
