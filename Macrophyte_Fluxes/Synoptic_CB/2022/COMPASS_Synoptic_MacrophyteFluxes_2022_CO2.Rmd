@@ -92,7 +92,7 @@ head(metadat)
 # write.csv(temps, file="Raw Data/L1_temps.csv")
 
 temps <- read.csv("Raw Data/L1_temps.csv")
-
+temps$X = NULL
 ```
 
 ## Match up the L1 temp data and add it to the metadata dataframe
@@ -100,7 +100,7 @@ temps <- read.csv("Raw Data/L1_temps.csv")
 #Going to need to use site and timestamp in the metadata in order to find a date 
 
 #first we need to make a timestamp column in metadat so that we can 
-metadat$TIMESTAMP <- ymd_hms(paste(metadat$Date, metadat$Time_start))
+metadat$TIMESTAMP <- mdy_hms(paste(metadat$Date, metadat$Time_start))
 
 #make sure time stamps are in the correct format 
 metadat$TIMESTAMP <- as.POSIXct(metadat$TIMESTAMP, format = "%Y-%m-%d %H:%M:%OS")
@@ -402,7 +402,7 @@ allflux <- cbind(IDs, fluxes)
 head(allflux)
 
 ##Add in notes from metadata
-metadat_notes <- metadat[, c("Plot", "Notes")]
+metadat_notes <- metadat_L1temp[, c("Plot", "Temp_ByHand", "wx_tempavg15", "Notes")]
 allflux_notes <- allflux %>% 
   left_join(metadat_notes, by=c("Plot"="Plot"))
             

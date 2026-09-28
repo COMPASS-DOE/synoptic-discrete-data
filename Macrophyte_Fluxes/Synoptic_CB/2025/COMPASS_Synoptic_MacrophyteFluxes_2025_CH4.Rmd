@@ -533,7 +533,7 @@ head(IDs)
 allflux <- cbind(IDs, fluxes)
 
 ##Add in notes from metadata
-metadat_notes <- metadat[, c("Plot", "Notes")]
+metadat_notes <- metadat_L1temp[, c("Plot", "Temp_ByHand", "wx_tempavg15", "Notes")]
 allflux_notes <- allflux %>% 
   left_join(metadat_notes, by=c("Plot"="Plot"))
 
