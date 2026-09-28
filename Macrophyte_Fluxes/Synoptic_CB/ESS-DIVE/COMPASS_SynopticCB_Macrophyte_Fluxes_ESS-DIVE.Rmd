@@ -32,6 +32,10 @@ library(here)
 #write out a csv of all the data to the main folder: 
 final_data <- read.csv("../COMPASS_SynopticCB_MC_Fluxes_AllData.csv")
 
+final_data <- final_data %>% 
+  select(-c("Soil.Moisture.wfv", "Soil.Moisture.percent", "Soil.Temperature.C", "Bulk.EC.Raw.dS.per.m.", "Bulk.EC.TC.dS.per.m", "Pore.Water.EC.dS.per.m", "Pore.Water.EC.Offset", "Raw.Real.Dielectric", "Raw.Imaginary.Dielectric", "Loss.Tangent", "soil.EC.10cm.TEROS", "soil.salinity.10cm.TEROS", "soil.temp.10cm.TEROS", "soil.vwc.10cm.TEROS", "HydraGO_Notes"))
+
+
 ##Separate by year for ESS-DIVE 
 final_data_2022 <- subset(final_data, Year == "2022")
 final_data_2023 <- subset(final_data, Year == "2023")
@@ -71,6 +75,9 @@ dd$Definition <- c(      "Project name",
                          "Site Code identifier for sampling transect location (GCW, SWH, MSM, GWI), see dataset locations for coordinates",
                          "Plot within space-for-time transect (UP=Upland, SWAMP=Swamp, TR=Transition, WC=Wetland Center)",
                          "Replicate flux collar number (#1-5)", 
+                         
+                         "Temperature as measured by a thermometer placed in the chamber", 
+                         "Air temperature from the site's wetland weather station averaged over 15 minutes from L1 sensor data", 
                          
                          "Average timestamp over which the flux was computed", 
                          "Minimum timestamp over which the flux was computed", 
@@ -127,26 +134,6 @@ dd$Definition <- c(      "Project name",
                          "Carbon dioxide  R squared of the polynomial model; used in comparison with linear R squared, above, as a warning of possible data nonlinearity", 
                          "Carbon dioxide  Root mean square error of polynomial fit; indicative of how well the model fits the data", 
                          "Carbon dioxide  flux flag generated during QAQC", 
-                         
-                         "Soil moisture water fraction by volume", 
-                         "Soil moisture percentage", 
-                         "Soil temperature in degrees Celsius", 
-
-                         "Raw bulk electrical conductivity", 
-                         "Temperature-compensated electrical conductivity", 
-                         "Pore water electrical conductivity", 
-                         "Pore water electrical conductivity offset", 
-         
-                         "Real dielectric permittivity", 
-                         "Imaginary dielectric permittivity", 
-                         "Loss tangent", 
-         
-                         "Soil volumetric water content at 10 cm calibrated for mineral soil", 
-                         "Soil temperature at 10 cm", 
-                         "Soil electrical conductivity at 10 cm", 
-                         "Soil salinity at 10 cm", 
-                         
-                         "Notes about HydraGO data, especially missing data", 
                          "Notes generated during field sampling")
 
 dd$Unit <- c(            "NA", 
@@ -158,81 +145,66 @@ dd$Unit <- c(            "NA",
                          "NA", 
                          "NA", 
                          "NA", 
-                         "NA", 
-                         "NA", 
-                         "NA", 
                          
-                         "umol/m^2/s", 
-                         "NA", 
-                         "NA", 
-                         "NA", 
-                         "NA", 
-                         
-                         "umol/m^2/s", 
-                         "NA", 
-                         "NA", 
-                         "umol/m^2", 
-                         "NA", 
-                         "NA", 
-                         "NA", 
-                         "NA", 
-         
-                         "umol/m^2/s", 
-                         "NA", 
-                         "NA", 
-                         "NA", 
-                         "NA", 
-                         
-                         "NA", 
-                         "NA", 
-                         "NA", 
-                         "NA", 
-         
-                         "umol/m^2/s", 
-                         "NA", 
-                         "NA", 
-                         "NA", 
-                         "NA", 
-         
-                         "umol/m^2/s", 
-                         "NA", 
-                         "NA", 
-                         "umol/m^2", 
-                         "NA", 
-                         "NA", 
-                         "NA", 
-                         "NA", 
-         
-                         "umol/m^2/s", 
-                         "NA", 
-                         "NA", 
-                         "NA", 
-                         "NA", 
-                         
-                         "NA", 
-                         "NA", 
-                         "NA", 
-                         "NA", 
-                         
-                         "water fraction by volume (m^3/m^3)", 
-                         "percent", 
                          "degrees Celsius", 
+                         "degrees Celsius", 
+                         
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         
+                         "umol/m^2/s", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         
+                         "umol/m^2/s", 
+                         "NA", 
+                         "NA", 
+                         "umol/m^2", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+         
+                         "umol/m^2/s", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+         
+                         "umol/m^2/s", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+         
+                         "umol/m^2/s", 
+                         "NA", 
+                         "NA", 
+                         "umol/m^2", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+         
+                         "umol/m^2/s", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         
+                         "NA", 
+                         "NA", 
+                         "NA", 
+                         "NA", 
 
-                         "dS/m", 
-                         "dS/m", 
-                         "dS/m", 
-                         "NA", 
-         
-                         "NA", 
-                         "NA", 
-                         "NA", 
-         
-                         "m^3/m^3", 
-                         "degrees Celsius", 
-                         "uS/cm", 
-                         "ppt", 
-                         
-                         "NA", 
                          "NA")
 
 dd$Data_Type <- c(       "text", 
@@ -244,6 +216,10 @@ dd$Data_Type <- c(       "text",
                          "text", 
                          "text", 
                          "numeric", 
+                         
+                         "numeric", 
+                         "numeric", 
+                         
                          "datetime", ##not sure if this is considered a data type? 
                          "datetime", 
                          "datetime", 
@@ -300,25 +276,6 @@ dd$Data_Type <- c(       "text",
                          "numeric", 
                          "text", 
                          
-                         "numeric", 
-                         "numeric", 
-                         "numeric", 
-
-                         "numeric", 
-                         "numeric", 
-                         "numeric", 
-                         "numeric", 
-         
-                         "numeric", 
-                         "numeric", 
-                         "numeric", 
-         
-                         "numeric", 
-                         "numeric", 
-                         "numeric", 
-                         "numeric", 
-                         
-                         "text", 
                          "text")
 
 dd$Instrument_ifapplicable <- c(      
@@ -331,6 +288,10 @@ dd$Instrument_ifapplicable <- c(
                          "NA", 
                          "NA", 
                          "NA", 
+                         
+                         "NA", 
+                         "NA",                          
+                         
                          "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
                          "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
                          "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
@@ -386,26 +347,7 @@ dd$Instrument_ifapplicable <- c(
                          "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
                          "LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR)", 
                          "NA", 
-                         
-                         "HydraGO portable soil sensor (Stevens Water Monitoring Systems Inc.)", 
-                         "HydraGO portable soil sensor (Stevens Water Monitoring Systems Inc.)", 
-                         "HydraGO portable soil sensor (Stevens Water Monitoring Systems Inc.)", 
 
-                         "HydraGO portable soil sensor (Stevens Water Monitoring Systems Inc.)", 
-                         "HydraGO portable soil sensor (Stevens Water Monitoring Systems Inc.)", 
-                         "HydraGO portable soil sensor (Stevens Water Monitoring Systems Inc.)", 
-                         "HydraGO portable soil sensor (Stevens Water Monitoring Systems Inc.)", 
-         
-                         "HydraGO portable soil sensor (Stevens Water Monitoring Systems Inc.)", 
-                         "HydraGO portable soil sensor (Stevens Water Monitoring Systems Inc.)", 
-                         "HydraGO portable soil sensor (Stevens Water Monitoring Systems Inc.)", 
-         
-                         "TEROS 12 Advanced Soil Moisture Sensor + Temperature and EC (Meter)", ##Is this correct? 
-                         "TEROS 12 Advanced Soil Moisture Sensor + Temperature and EC (Meter)", 
-                         "TEROS 12 Advanced Soil Moisture Sensor + Temperature and EC (Meter)", 
-                         "TEROS 12 Advanced Soil Moisture Sensor + Temperature and EC (Meter)", 
-                        
-                         "NA", 
                          "NA")
 
 
@@ -419,6 +361,10 @@ dd$Method <- c(
                          "NA", 
                          "NA", 
                          "NA", 
+                         
+                         "NA", 
+                         "NA",                        
+
                          "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
                          "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
                          "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
@@ -473,27 +419,8 @@ dd$Method <- c(
                          "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
                          "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
                          "Calculated using fluxfinder R package (Wilson et al. 2024; doi: 10.1029/2024JG008208)", 
-                         "NA", 
-                         
-                         "NA", 
-                         "NA", 
                          "NA", 
 
-                         "NA", 
-                         "NA", 
-                         "NA", 
-                         "NA", 
-         
-                         "NA", 
-                         "NA", 
-                         "NA", 
-         
-                         "NA", 
-                         "NA", 
-                         "NA", 
-                         "Calculated from TEROS variables VWC, T, and EC, following Hilhorst (2000; 10.2136/sssaj2000.6461922x) and METER Group protocols that convert TEROS EC to pore water EC and then salinity.", 
-                        
-                         "NA", 
                          "NA")
 
 

@@ -31,6 +31,8 @@ library(here)
 
 #write out a csv of all the data to the main folder: 
 final_data <- read.csv("../COMPASS_SynopticCB_Soil_Fluxes_AllData.csv")
+final_data <- final_data %>% 
+  select(-c("soil.vwc.10cm.TEROS", "soil.temp.10cm.TEROS", "soil.EC.10cm.TEROS", "soil.salinity.10cm.TEROS"))
 
 ##Separate by year for ESS-DIVE 
 final_data_2022 <- subset(final_data, Year == "2022")
@@ -131,12 +133,7 @@ dd$Definition <- c(      "Project name",
                          
                          "Soil electrical conductivity value from Stevens HydraProbe (S/m)", 
                          "Soil moisture value from Stevens HydraProbe (m3/m3)", 
-                         "Soil temperature value from Stevens HydraProbe (degrees Celsius)", 
-
-                         "Soil volumetric water content at 10 cm calibrated for mineral soil", 
-                         "Soil temperature at 10 cm", 
-                         "Soil electrical conductivity at 10 cm", 
-                         "Soil salinity at 10 cm")
+                         "Soil temperature value from Stevens HydraProbe (degrees Celsius)")
 
 dd$Unit <- c(            "NA", 
                          "NA", 
@@ -206,12 +203,7 @@ dd$Unit <- c(            "NA",
                          
                          "S/m", 
                          "m^3/m^3", 
-                         "degrees Celsius", 
-
-                         "m^3/m^3", 
-                         "degrees Celsius", 
-                         "uS/cm", 
-                         "ppt")
+                         "degrees Celsius")
 
 dd$Data_Type <- c(       "text", 
                          "text", 
@@ -280,11 +272,6 @@ dd$Data_Type <- c(       "text",
                          "numeric", 
                          "text", 
                          
-                         "numeric", 
-                         "numeric", 
-                         "numeric", 
-         
-                         "numeric", 
                          "numeric", 
                          "numeric", 
                          "numeric")
@@ -359,12 +346,7 @@ dd$Instrument_ifapplicable <- c(
                          
                          "HydraProbe (Stevens Water Monitoring Systems Inc.)", 
                          "HydraProbe (Stevens Water Monitoring Systems Inc.)", 
-                         "HydraProbe (Stevens Water Monitoring Systems Inc.)", 
-         
-                         "TEROS 12 Advanced Soil Moisture Sensor + Temperature and EC (Meter)", ##Is this correct? 
-                         "TEROS 12 Advanced Soil Moisture Sensor + Temperature and EC (Meter)", 
-                         "TEROS 12 Advanced Soil Moisture Sensor + Temperature and EC (Meter)", 
-                         "TEROS 12 Advanced Soil Moisture Sensor + Temperature and EC (Meter)")
+                         "HydraProbe (Stevens Water Monitoring Systems Inc.)")
 
 dd$Method <- c(      
                          "NA", 
@@ -436,12 +418,7 @@ dd$Method <- c(
                          
                          "NA", 
                          "NA", 
-                         "NA", 
-         
-                         "NA", 
-                         "NA", 
-                         "NA", 
-                         "Calculated from TEROS variables VWC, T, and EC, following Hilhorst (2000; 10.2136/sssaj2000.6461922x) and METER Group protocols that convert TEROS EC to pore water EC and then salinity")
+                         "NA")
 
 #write out the data dictionary associated with the data:
 write.csv(dd, "Data package/dd.csv", row.names = FALSE)
