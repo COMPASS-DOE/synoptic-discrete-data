@@ -59,7 +59,3 @@
 "soilp_c","S/m","Soil electrical conductivity value from Stevens HydraProbe (S/m)","soilp_c","numeric","HydraProbe (Stevens Water Monitoring Systems Inc.)","NA"
 "soilp_m","m^3/m^3","Soil moisture value from Stevens HydraProbe (m3/m3)","soilp_m","numeric","HydraProbe (Stevens Water Monitoring Systems Inc.)","NA"
 "soilp_t","degrees Celsius","Soil temperature value from Stevens HydraProbe (degrees Celsius)","soilp_t","numeric","HydraProbe (Stevens Water Monitoring Systems Inc.)","NA"
-"soil.vwc.10cm.TEROS","m^3/m^3","Soil volumetric water content at 10 cm calibrated for mineral soil","soil.vwc.10cm.TEROS","numeric","TEROS 12 Advanced Soil Moisture Sensor + Temperature and EC (Meter)","NA"
-"soil.temp.10cm.TEROS","degrees Celsius","Soil temperature at 10 cm","soil.temp.10cm.TEROS","numeric","TEROS 12 Advanced Soil Moisture Sensor + Temperature and EC (Meter)","NA"
-"soil.EC.10cm.TEROS","uS/cm","Soil electrical conductivity at 10 cm","soil.EC.10cm.TEROS","numeric","TEROS 12 Advanced Soil Moisture Sensor + Temperature and EC (Meter)","NA"
-"soil.salinity.10cm.TEROS","ppt","Soil salinity at 10 cm","soil.salinity.10cm.TEROS","numeric","TEROS 12 Advanced Soil Moisture Sensor + Temperature and EC (Meter)","Calculated from TEROS variables VWC, T, and EC, following Hilhorst (2000; 10.2136/sssaj2000.6461922x) and METER Group protocols that convert TEROS EC to pore water EC and then salinity"

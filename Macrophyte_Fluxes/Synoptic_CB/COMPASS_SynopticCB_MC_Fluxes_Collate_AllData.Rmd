@@ -80,7 +80,9 @@ all_dat1 <- all_dat %>%
     Plot = Zone, 
     Field_Notes = Notes) %>% 
   ##Select columns in order
-  select("Project", "Region", "Sample_ID", "Year", "Month", "Day", "Site", "Plot", "Replicate", "TIMESTAMP", "TIMESTAMP_min", "TIMESTAMP_max", 
+  select("Project", "Region", "Sample_ID", "Year", "Month", "Day", "Site", "Plot", "Replicate", 
+         "Temp_ByHand", "wx_tempavg15", 
+         "TIMESTAMP", "TIMESTAMP_min", "TIMESTAMP_max", 
          
          "ch4_HM81_flux.estimate", "ch4_HM81_AIC", "ch4_HM81_p.value", "ch4_HM81_r.squared", "ch4_HM81_RMSE", 
          "ch4_lin_flux.estimate", "ch4_lin_AIC", "ch4_lin_flux.std.error", "ch4_lin_int.estimate", 
