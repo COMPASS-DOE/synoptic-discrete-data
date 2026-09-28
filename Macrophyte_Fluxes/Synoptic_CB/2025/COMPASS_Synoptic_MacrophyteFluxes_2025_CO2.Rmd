@@ -136,20 +136,20 @@ head(metadat)
 # head(dat1)
 
 ##Read in raw temperature data
-# files <- dir(path = "Raw Data/", pattern = "_wx-tempavg15.*\\.csv$", full.names = TRUE)
-# results <- lapply(files, read.csv) 
-# dat <- do.call(rbind, results)
-# rownames(dat) <- NULL
-# dat <- dat %>%
-#   select(TIMESTAMP, research_name, Value, F_OOB, F_OOS, Plot, Site)
-# dat1 <- dat %>% filter((F_OOB != 1 & F_OOS != 1))
-# head(dat1)
-# 
-# #convert to wide format
-# temps <- pivot_wider(dat1, id_cols = c("TIMESTAMP", "Plot", "Site"), names_from = research_name, values_from = Value )
-# head(temps)
+files <- dir(path = "Raw Data/", pattern = "_wx-tempavg15.*\\.csv$", full.names = TRUE)
+results <- lapply(files, read.csv)
+dat <- do.call(rbind, results)
+rownames(dat) <- NULL
+dat <- dat %>%
+  select(TIMESTAMP, research_name, Value, F_OOB, F_OOS, Plot, Site)
+dat1 <- dat %>% filter((F_OOB != 1 & F_OOS != 1))
+head(dat1)
 
-# write.csv(temps, file="Raw Data/L1_temps.csv")
+#convert to wide format
+temps <- pivot_wider(dat1, id_cols = c("TIMESTAMP", "Plot", "Site"), names_from = research_name, values_from = Value )
+head(temps)
+
+write.csv(temps, file="Raw Data/L1_temps.csv")
 
 temps <- read.csv("Raw Data/L1_temps.csv")
 
@@ -170,11 +170,11 @@ temps$TIMESTAMP <- as.POSIXct(temps$TIMESTAMP, format = "%Y-%m-%d %H:%M:%OS")
 metadat$DateTime_round <- round_date(metadat$TIMESTAMP, "15 mins")
 temps$TIMESTAMP_round <- round_date(temps$TIMESTAMP, "15 mins")
   
-#ensure there is only one data observation per hour 
+#ensure there is only one data observation per 15 minutes 
 temps$`wx_tempavg15` <- temps$`wx-tempavg15`
 temps_clean <- temps %>% 
     group_by(TIMESTAMP_round, Site) %>%
-    summarize(wx_tempavg15 = mean(wx_tempavg15))
+    summarize(wx.tempavg15 = mean(wx.tempavg15))
 
 #join them 
 metadat_L1temp <- metadat %>% 
@@ -200,7 +200,7 @@ alldat$Plot <- metadat$Plot[alldat$metadat_row]
 alldat$ID <- metadat$Plot1[alldat$metadat_row]
 alldat$Volume <- metadat$Volume[alldat$metadat_row]
 alldat$Hand_Temp <- metadat$Temp_ByHand[alldat$metadat_row] #found online from weather 
-alldat$L1_Temp <- metadat_L1temp$wx_tempavg15[alldat$metadat_row] #calculate  temp for the measurement time from L1
+alldat$L1_Temp <- metadat_L1temp$wx.tempavg15[alldat$metadat_row] #calculate  temp for the measurement time from L1
 alldat$Site <- metadat$Site[alldat$metadat_row]
 metadat$metadat_row <- seq_len(nrow(metadat))
 
@@ -536,7 +536,7 @@ head(IDs)
 allflux <- cbind(IDs, fluxes)
 
 ##Add in notes from metadata
-metadat_notes <- metadat[, c("Plot", "Notes")]
+metadat_notes <- metadat_L1temp[, c("Plot", "Temp_ByHand", "wx.tempavg15", "Notes")]
 allflux_notes <- allflux %>% 
   left_join(metadat_notes, by=c("Plot"="Plot"))
 
