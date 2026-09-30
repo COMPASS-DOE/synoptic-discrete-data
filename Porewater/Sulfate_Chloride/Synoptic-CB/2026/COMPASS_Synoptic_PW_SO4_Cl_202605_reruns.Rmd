@@ -211,7 +211,7 @@ Cldat_clean <- Cldat %>%
 ## Pull Cl and SO4 data  together: 
 all_dat_merge <- inner_join(Sdat_clean, Cldat_clean, by = c("sample_name", "sample_ID", "sample_type"))
 
-#Remove any lines that have no sample ID, make n.a. into NAs,
+#Remove any lines that have no sample ID, make n.a. into 0,
   #if there are NAs or zeroes in the SO4 or Cl columns, make them zeros because that means there was no peak detected
 all_dat <- all_dat_merge %>%
   filter(!is.na(sample_ID) & sample_ID != "") %>%
@@ -916,7 +916,7 @@ spksbar <- ggplot(data = QAspks, aes(x = sample_ID, y = spk_recovery, fill=SO4_s
 spksbar
 
 
-#check for percent of No, reruns to see if it  would warrant reruns 
+#check for percent of No, reruns to see if it would warrant reruns 
 Perc_spks <- QAspks %>% 
   group_by(SO4_spks_flag) %>%
   summarise(no_rows = length(SO4_spks_flag)) 
@@ -928,7 +928,7 @@ Perc_spks$Percent <- (Perc_spks$no_rows / Perc_spks$Total)*100
 Perc_spks <- Perc_spks %>%
   filter(grepl("Yes", SO4_spks_flag))
 
-#report out if the dups are within range
+#report out if the spks are within range
 ifelse(Perc_spks$Percent >= chks_flag, ">80% of SO4 spikes have a recovery between the high and low cutoff - PROCEED",
        "<80% of SO4 spikes have a recovery between the high and low cutoff - REASSESS")
 
