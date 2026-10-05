@@ -1081,7 +1081,33 @@ Sample_data_IDs <- df_all_clean1 %>%
   filter(!str_detect(Sample_ID, "TMP")) %>% 
   filter(!str_detect(Sample_ID, "FATE"))  %>% 
   filter(!str_detect(Sample_ID, "dup"))  %>% 
-  filter(!str_detect(Sample_ID, "spk")) 
+  filter(!str_detect(Sample_ID, "spk")) %>% 
+  filter(!str_detect(Sample_ID, "JULY")) 
+
+July_samples <- df_all_clean1 %>% 
+  filter(str_detect(Sample_ID, "JULY")) %>% 
+  mutate(
+    Project = "COMPASS: Synoptic",   # new column with same value on every row
+    Region = "CB", 
+    Run_notes = Run_notes
+  ) %>% 
+  rename(
+    H2S_mean_uM = Conc,
+    H2S_sd_uM = SD, 
+    H2S_cv = CV, 
+    H2S_conc_flag = Conc_Flag,
+    H2S_cv_flag = CV_Flag, 
+    H2S_QAQC_flag = H2S_Flags, 
+    Analysis_rundate = Run_Date, 
+  ) %>%
+  dplyr::select(
+    Project, Region, Sample_ID,
+         H2S_mean_uM, H2S_sd_uM, H2S_cv, H2S_conc_flag, H2S_cv_flag, H2S_QAQC_flag, Dilution, 
+         Analysis_rundate, Run_notes
+        # list columns in the order you want them
+  )
+
+write.csv(July_samples, "../Sulfide Comparison/July_samples_timing_test.csv")
 
 ```
 
