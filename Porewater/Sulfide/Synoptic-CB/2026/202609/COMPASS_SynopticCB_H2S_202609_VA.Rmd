@@ -61,7 +61,7 @@ Run_notes="Dups and matrix checks look good, spikes look bad. "#any notes from r
 
 #Plate Data
 folder_path_rawdata <- paste0("Raw Data")
-Raw_plates <- list.files(path = folder_path_rawdata, full.names = TRUE,pattern = "Plate.*\\.csv")
+Raw_plates <- list.files(path = folder_path_rawdata, full.names = TRUE,pattern = "Plate.*20260921\\.csv")
 (Raw_plates)
 
 # Define the file path for QAQC log file - NO Need to change just check year

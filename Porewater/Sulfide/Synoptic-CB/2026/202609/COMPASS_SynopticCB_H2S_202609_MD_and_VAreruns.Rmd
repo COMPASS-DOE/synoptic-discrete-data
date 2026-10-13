@@ -57,7 +57,7 @@ Run_Date = as.Date(c("10/01/2026"), format = "%m/%d/%Y")
 Run_by = "Zoe Read"#Instrument user
 Script_run_by ="Zoe Read"#Code user
 
-Run_notes="Matric checks and spikes look bad. Standards were 4 sd higher than usual. "#any notes from run
+Run_notes="Matrix checks and spikes look bad. Standards were 4 sd higher than usual, likely because we used a new bottle of Cline's reagent. "#any notes from run
 
 #Plate Data
 folder_path_rawdata <- paste0("Raw Data")
