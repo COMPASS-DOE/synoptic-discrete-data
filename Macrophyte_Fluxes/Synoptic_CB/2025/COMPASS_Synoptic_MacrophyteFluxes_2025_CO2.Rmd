@@ -259,7 +259,7 @@ ggplot(fluxes, aes(Plot, lin_flux.estimate, color = lin_r.squared)) +
                    ymax = lin_flux.estimate+ lin_flux.std.error)) +
   scale_color_gradientn(colours = c("darkred",  "red", "white","lightblue", "darkblue"),
                         values = c(0, 0.5, 0.6, 0.7, 1)) +
-  ylab("CO2 flux (nmol/m2/s)")
+  ylab("CO2 flux (umol/m2/s)")
 
 #sort fluxes by R2 
 fluxes_good <- as.data.frame(subset(fluxes, lin_r.squared >= .90, select = Plot:TIMESTAMP_max))
