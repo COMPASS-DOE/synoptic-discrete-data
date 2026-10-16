@@ -454,7 +454,7 @@ flmd$notes <- ""
 
 #add information about each line:
 
-flmd$file_description <-  c("Macrophyte flux data taken from COMPASS synoptic sites in 2022",
+flmd$file_description <-  c("Chamber Macrophyte flux data taken from COMPASS synoptic sites in 2022",
                             "Macrophyte flux data taken from COMPASS synoptic sites in 2023",
                             "Macrophyte flux data taken from COMPASS synoptic sites in 2024",
                             "Macrophyte flux data taken from COMPASS synoptic sites in 2025",
@@ -524,38 +524,38 @@ write.csv(site_list, "Data package/site_list.csv", row.names = FALSE)
 
 #Create a text file that has the description of the data - This ideally should match the text that is in the data READ.ME 
 
-datadescription <- "These data are greenhouse gas fluxes collected from dedicated collars at the COMPASS (Coastal Observations, Mechanisms, and Predictions Across Systems and Scales) 'synoptic' sites in the Chesapeake Bay region: Global Change Research Wetland (GCW), Goodwin Islands (GWI), Moneystump (MSM), and Sweet Hall (SWH). These sites have space for time transects spanning coastal upland forest (UP), coastal upland forest transitioning to wetland (TR), and wetland (WC) plots. The Sweet Hall Marsh site also has a forested swamp as part of its transect (SWAMP). The dedicated macrophyte collars were installed in 2022, five in each wetland and then later five in the transition zones. These flux collars allow for measurements of fluxes with both the soil and the macrophyte plants included in the chamber measurement. Five minute long fluxes were collected monthly from about May to November for two years at each site, and then measurement frequency was decreased to every other month beginning in May and ending in November. Greenhouse gas concentrations (CH4, CO2) were measured with a LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR), and fluxes were estimated using the fluxfinder R package (Wilson et al., 2024)."
+datadescription <- "These data are greenhouse gas fluxes collected from dedicated collars at the COMPASS (Coastal Observations, Mechanisms, and Predictions Across Systems and Scales) 'synoptic' sites in the Chesapeake Bay region: Global Change Research Wetland (GCW), Goodwin Islands (GWI), Moneystump (MSM), and Sweet Hall (SWH). These sites have space for time transects spanning coastal upland forest (UP), coastal upland forest transitioning to wetland (TR), and wetland (WC) plots. The Sweet Hall Marsh site also has a forested swamp as part of its transect (SWAMP). The dedicated macrophyte collars, which are used to support chamber based trace gas fluxes were installed in 2022, five in each wetland and then later five in the transition zones. The 0.16 m² dedicated collars are used as a base for chambers, which are placed on top of the collar and allow for measurements of trace gas (carbon dioxide and methane) fluxes from both soil and the macrophyte plants inside the chamber. Five minute long gas fluxes were measured monthly from about May to November for two years (2022, 2023) at each site, and then measurement frequency was decreased to every other month beginning in May and ending in November (2024-2026) in the TR and WC of each site. Greenhouse gas concentrations (CH4, CO2) were measured with a LI-7810 CH4/CO2/H2O Trace Gas Analyzer (LI-COR), and fluxes were estimated as concentration over time per area using the fluxfinder R package (Wilson et al., 2024)."
 
 
 #write to a text file 
-writeLines(datadescription, "Data package/SynopticCB_Redox_ESSDIVE_DataDescription.txt")
+writeLines(datadescription, "Data package/SynopticCB_MacrophyteFluxes_ESSDIVE_DataDescription.txt")
 
 
 ```
 
 ## Keywords - NEED TO CHANGE! 
-```{#r data description}
+```{r data description}
 
 #Create a text file that has the description of the data - This ideally should match the text that is in the data READ.ME 
 
-keywords <- "fluxes, wetland, macrophyte"
+keywords <- "trace gases, gas fluxes, wetland, macrophyte"
 
 
 #write to a text file 
-writeLines(keywords, "Data package/SynopticCB_Redox_ESSDIVE_keywords.txt")
+writeLines(keywords, "Data package/SynopticCB_MacrophyteFluxes_ESSDIVE_keywords.txt")
 
 
 ```
 
 ## Create Author List - NEED TO CHANGE! 
-```{#r create author list}
+```{r create author list}
 
 #Pull in the common synoptic authors list: 
 authors_common <- read.csv(here("Metadata/Synoptic CB/", "COMPASS_SynopticCB_common_essdive_author_list.csv"))
 
 
 #create a list of the last names you want to pull 
-names_we_want <- c("Wilson","Chin", "Phillips", "Read", "Stearns","Bailey", "Megonigal")
+names_we_want <- c("Wilson","Chin", "Fien", "Phillips", "Read", "Stearns","Bailey", "Megonigal")
 order_of_authors <- c(1:length(names_we_want))
 
 authors <- data.frame(
