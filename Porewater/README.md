@@ -4,7 +4,6 @@ Project: COMPASS - Synoptic Chesapeake Bay Sampling Type: Porewater and Surface 
 
 Porewater was collected from lysimeters installed at depths of 10 cm, 20 cm, and 45 cm in the Upland (UP), SWAMP (SWH only), Transition (TR), and Wetland Center(WC) zones at each site monthly from May to November in 2022; April to November in 2023 and 2024; and in every two months from May to November from 2025 to present. Porewater samples were collected in syringes and then processed for DIC, DOC, GHG, Iron, Nutrients, Sulfate/Chloride, and Sulfide.Porewater was also collected from peepers (2022-2023), rhizons(2022-2023), and sippers (2022) and certain sites.
 
-
 This folder contains
 
 *Folders for each analyte sampled from lysimeters and surface water, as well as separate folders for non-lysimeter porewater samples
@@ -15,6 +14,6 @@ This folder contains
 
 **Figure 1. Porewater sampling syringe with syringe filter.
 <p>
-  <img src="Plot_SO4_Cl_2022-2025.png" width="750" alt="Summary plot of chloride and sulfate across sites and zones">
+  <img src="Sampling_syringe.png" width="750" alt="Porewater sampling syringe with syringe filter.">
   <br>
 </p>
