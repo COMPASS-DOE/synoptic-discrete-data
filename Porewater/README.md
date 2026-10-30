@@ -14,6 +14,6 @@ This folder contains
 
 **Figure 1. Porewater sampling syringe with syringe filter.
 <p>
-  <img src="Sampling_syringe.png" width="750" alt="Porewater sampling syringe with syringe filter.">
+  <img src="Sampling_syringe.png" width="200" alt="Porewater sampling syringe with syringe filter.">
   <br>
 </p>
