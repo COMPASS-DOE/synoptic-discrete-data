@@ -1,4 +1,4 @@
-#Folder: synoptic-discrete-data/Porewater
+#Folder: synoptic-discrete-data/Porewater/Sulfate_Chloride
 
 Project: COMPASS - Synoptic Chesapeake Bay
 Analytes: Sulfate and Chloride
