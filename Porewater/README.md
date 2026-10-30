@@ -6,11 +6,11 @@ Porewater was collected from lysimeters installed at depths of 10 cm, 20 cm, and
 
 This folder contains
 
-*Folders for each analyte sampled from lysimeters and surface water, as well as separate folders for non-lysimeter porewater samples
-*Raw data from each instrument for each analyte
-*QAQC Codes and logs for each analyte
-*Processed and QAQC’d data for each analyte
-*Collated data for each analyte within and across years
+* Folders for each analyte sampled from lysimeters and surface water, as well as separate folders for non-lysimeter porewater samples
+* Raw data from each instrument for each analyte
+* QAQC Codes and logs for each analyte
+* Processed and QAQC’d data for each analyte
+* Collated data for each analyte within and across years
 
 **Figure 1. Porewater sampling syringe with syringe filter.
 <p>
