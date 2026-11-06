@@ -1064,7 +1064,7 @@ df_all_clean <- merged_data %>%
   separate(
     col = sample_name,
     sep = "_",
-    into = c("Sample_Number", "Site_Code", "Date" ,"Zone", "LysID", "Depth"),
+    into = c("Sample_Number","Date", "Site_Code", "Zone", "LysID", "Depth"),
     remove = FALSE)
 
 ############### THIS IS ONLY FOR 2023 when SWAMP was called UP and UPLAND was called UPCON ##############
