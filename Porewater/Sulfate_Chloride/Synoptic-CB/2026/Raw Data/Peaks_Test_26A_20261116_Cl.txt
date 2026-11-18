@@ -1,0 +1,29 @@
+Inj.	Injection Name	Type 	Ret.Time	Amount	Rel.Area 	Area	Height	Type
+No.	Selected Peak:		min	µg/mL	%	µS*min	µS	
+			CD	CD	CD	CD	CD	CD
+			IC-Cl	IC-Cl	IC-Cl	IC-Cl	IC-Cl	IC-Cl
+1	Lab Blank	Unknown	3.043 	0.0001 	0.31 	0.0001 	0.00 	Ru
+2	Lab Blank	Unknown	3.200 	0.0086 	95.67 	0.0102 	0.07 	BMB
+3	Lab Blank	Unknown	3.200 	0.0101 	100.00 	0.0120 	0.09 	BMB
+4	Lab Blank	Unknown	3.207 	0.0122 	100.00 	0.0145 	0.11 	BMB
+5	Standard 1	Calibration Standard	3.203 	4.8763 	92.14 	5.7982 	52.53 	BMB
+6	Standard 2	Calibration Standard	3.210 	9.6944 	92.98 	11.5273 	103.81 	BMB
+7	Standard 3	Calibration Standard	3.200 	19.2228 	93.12 	22.8571 	204.76 	BMB
+8	Standard 4	Calibration Standard	3.187 	96.8403 	93.11 	115.1492 	1008.71 	BMB
+9	Standard 5	Calibration Standard	3.187 	201.6759 	92.98 	239.8054 	2077.85 	BMB
+10	Lab Blank	Unknown	3.203 	0.0504 	28.36 	0.0600 	0.42 	BM 
+11	Lab Blank	Unknown	3.210 	0.0282 	46.81 	0.0336 	0.27 	BMB
+12	Sept_GWI_SW_A	Unknown	3.190 	13670.3653 	87.57 	81.2746 	720.28 	BMB
+13	Sept_GWI_SW_B	Unknown	3.193 	9378.3820 	86.23 	55.7574 	498.52 	BMB
+14	Sept_GWI_SW_C	Unknown	3.190 	14192.1865 	87.49 	84.3770 	750.65 	BMB
+15	July_GWI_SW_B	Unknown	3.190 	13267.9360 	87.41 	78.8821 	702.66 	BMB
+16	July_GWI_SW_C	Unknown	3.190 	13656.3178 	87.45 	81.1911 	725.60 	BMB
+17	Nov_GWI_UP_A_20	Unknown	3.197 	6407.9013 	85.61 	38.0970 	343.18 	 MB
+18	Nov_GWI_SW_A	Unknown	3.190 	13247.3509 	87.42 	78.7597 	700.54 	BMB
+19	Nov_GWI_SW_B	Unknown	3.190 	13534.6328 	87.40 	80.4677 	719.01 	BMB
+20	Nov_GWI_SW_C	Unknown	3.197 	75.8003 	87.64 	90.1313 	804.38 	BMB
+Maximum			3.210 	14192.1865 	100.00 	239.8054 	2077.85 	
+Average			3.189 	4888.1646 	80.98 	53.2103 	470.67 	
+Minimum			3.043 	0.0001 	0.31 	0.0001 	0.00 	
+Standard Deviation			0.035 	6327.4558 	25.58 	59.2629 	517.25 	
+Relative Standard Deviation			1.10%	129.44%	31.59%	111.37%	109.90%	
