@@ -1,6 +1,6 @@
 ---
 title: "COMPASS Synoptic CB: Sulfide"
-author: "Sept 2026 Maryland Samples"
+author: "Nov 2026 Maryland Samples"
 date: "`r Sys.Date()`"
 output:
   pdf_document:
@@ -50,18 +50,19 @@ After_Reruns = "YES"
   #And Will Write a Rerun File
 
 ###things that need to be changed
-sample_month = "Sept"
+sample_month = "Nov"
 sample_year = "2026"
-Sample_Month_Year = "202609"
-Run_Date = as.Date(c("10/01/2026"), format = "%m/%d/%Y")
+Sample_Month_Year = "202611"
+Run_Date = as.Date(c("11/17/2026", "11/18/2026"), format = "%m/%d/%Y")
 Run_by = "Zoe Read"#Instrument user
 Script_run_by ="Zoe Read"#Code user
 
-Run_notes="Matrix checks and spikes look bad. Standards were 4 sd higher than usual, likely because we used a new bottle of Cline's reagent. "#any notes from run
+Run_notes="About half the matrix checks are bad, 
+Most of the spikes are bad, most of the dups are good"#any notes from run
 
 #Plate Data
 folder_path_rawdata <- paste0("Raw Data")
-Raw_plates <- list.files(path = folder_path_rawdata, full.names = TRUE,pattern = "Plate.*20261001\\.csv")
+Raw_plates <- list.files(path = folder_path_rawdata, full.names = TRUE,pattern = "Plate.*\\.csv")
 (Raw_plates)
 
 # Define the file path for QAQC log file - NO Need to change just check year
@@ -71,8 +72,8 @@ log_path <- "Raw Data/Sulfide_STD_QAQC.csv"
 Raw_Metadata <- "Raw Data/COMPASS_SynopticCB_PW_SampleLog_2026.csv"
 
 # Define final path for data be sure to change year and month and run number
-final_path <- "Processed Data/COMPASS_SynopticCB_H2S_202609_MD_processed.csv"
-rerun_path <- "Processed Data/COMPASS_SynopticCB_H2S_202609_MD_reruns.csv"
+final_path <- "Processed Data/COMPASS_SynopticCB_H2S_202611_processed.csv"
+rerun_path <- "Processed Data/COMPASS_SynopticCB_H2S_202611_reruns.csv"
 
 
 ```
@@ -315,18 +316,18 @@ new_log_stds <- STD_run_date %>% dplyr::select(Plate,
    R2,
    Slope,
    Intercept,
-   Run_Date) %>% mutate(R2 = round(R2, digits = 4), Slope = round(Slope, digits = 4), Intercept = round(Intercept, digits = 4), ) %>% mutate(Run = "Current Runs") %>% mutate(Project = "COMPASS")
+   Run_Date) %>% mutate(R2 = round(R2, digits = 4), Slope = round(Slope, digits = 4), Intercept = round(Intercept, digits = 4), ) %>% mutate(Run = "Current Runs") %>% mutate(Project = "COMPASS") %>% mutate(Date = as.Date(as.character(Run_Date))) %>% dplyr::select(-Run_Date)
 
 
 #read in log file and format
 log <- read.csv(log_path)
 log_2 <- log %>% 
   # rename(Run_Date = Date) %>% 
-  mutate(Run_Date = as.Date(as.character(Date), tryFormats = c("%Y%m%d", "%Y-%m-%d", "%m/%d/%y")), Run = "Past Runs")
+  mutate(Date = as.Date(as.character(Date), tryFormats = c("%Y%m%d", "%Y-%m-%d", "%m/%d/%y")), Run = "Past Runs")
 log_3 <- log_2[, -c(1)]
 log_4 <- bind_rows(log_3, new_log_stds)
 
-unique_log <- log_4 %>% distinct(Plate,Curve,R2,Slope,Intercept,.keep_all = TRUE) %>% mutate(Run_Date = as.Date(as.character(Run_Date), tryFormats = c("%Y-%m-%d", "%m/%d/%y")))
+unique_log <- log_4 %>% distinct(Plate,Curve,R2,Slope,Intercept,.keep_all = TRUE) %>% mutate(Date = as.Date(as.character(Date), tryFormats = c("%Y-%m-%d", "%m/%d/%y")))
 
 #Calculate Mean and SD and calculate 2SD range for slope and intercept
 mean_slope <- mean(unique_log$Slope, na.rm = TRUE)
@@ -344,7 +345,7 @@ hi_2sd_int <- mean_int + 4*sd_int
 lo_2sd_int <- mean_int - 4*sd_int
 
 #Plot Slope log
-Slopes_chk <- ggplot(unique_log, aes(x = Run_Date, y = Slope, col = Run)) +
+Slopes_chk <- ggplot(unique_log, aes(x = Date, y = Slope, col = Run)) +
     ylim(0.0045,0.018) +
   scale_color_manual(values = c("Past Runs" = "grey27", "Current Runs" = "cyan3")) +
   geom_abline(intercept = mean_slope - 4*sd_slope, slope = 0, linetype = "dashed", linewidth = 1.5, col = "red" )+
@@ -354,7 +355,7 @@ Slopes_chk <- ggplot(unique_log, aes(x = Run_Date, y = Slope, col = Run)) +
   ggtitle("Slope Log") 
 
 #Plot Intercept log
-ints_chk <- ggplot(unique_log, aes(x = Run_Date, y = Intercept, col = Run)) +
+ints_chk <- ggplot(unique_log, aes(x = Date, y = Intercept, col = Run)) +
   ylim(0.03, 0.15) +
   scale_color_manual(values = c("Past Runs" = "grey27", "Current Runs" = "cyan3")) +
   geom_abline(intercept = mean_int - 4*sd_int, slope = 0, linetype = "dashed", linewidth = 1.5, col = "red" )+
@@ -370,7 +371,7 @@ Slopes_chk
 
 
 #Get done of original runs
-Date_1 <-as.Date(new_log_stds$Run_Date[which(new_log_stds$Plate == "Plate1")]) 
+Date_1 <-as.Date(new_log_stds$Date[which(new_log_stds$Plate == "Plate1")]) 
 
 #Check if Std Crvs are Within range and see if dates are close enough for combination
 stdcrv_tagged <- new_log_stds %>% mutate(
@@ -389,7 +390,7 @@ stdcrv_tagged <- new_log_stds %>% mutate(
 ) %>% mutate(
   Slope = ifelse(In_Range_Slope == "Out of Range", NA, Slope),
   Intercept = ifelse(In_Range_Int == "Out of Range", NA, Intercept)
-) %>% mutate(Date_Diff = abs(difftime(Date_1, Run_Date, units = "days"))) %>% mutate(Date_Close = ifelse(Date_Diff <= 10, "Yes", "No")) %>% mutate(Slope_Flag = ifelse(is.na(Slope), "Slope_Bad" , "Slope_Good"), Int_Flag = ifelse(is.na(Intercept), "Intercept_Bad" , "Intercept_Good")) %>% mutate(
+) %>% mutate(Date_Diff = abs(difftime(Date_1, Date, units = "days"))) %>% mutate(Date_Close = ifelse(Date_Diff <= 10, "Yes", "No")) %>% mutate(Slope_Flag = ifelse(is.na(Slope), "Slope_Bad" , "Slope_Good"), Int_Flag = ifelse(is.na(Intercept), "Intercept_Bad" , "Intercept_Good")) %>% mutate(
   Slope = ifelse(is.na(Intercept) | R2 <= r2_cutoff, NA, Slope),
   Intercept = ifelse(is.na(Slope)| R2 <= r2_cutoff, NA, Intercept),
   Curve_RMVD = ifelse(is.na(Slope) |
@@ -763,15 +764,15 @@ H2S_Spl_Plot_CV
 
 #pull out any rows that have "Dup" in the ID column and tag reruns
 DUP_start <- H2S_SPL_CV_fin %>%  
-  mutate(Dup_ID = gsub(" dup", "",IDs),
-         Dup = ifelse(IDs %like% "dup", "dup", "Org")) %>% 
+  mutate(Dup_ID = gsub(" DUP", "",IDs),
+         Dup = ifelse(IDs %like% "DUP", "DUP", "Org")) %>% 
   mutate(Dup_ID = ifelse(Plate %like% "rr", paste0(Dup_ID, "_RR"), Dup_ID))
 
-#separate dups from originals and tag for pairing 
+#separate DUPs from originals and tag for pairing 
 
-dups_only <- DUP_start %>% filter(Dup == "dup") %>% dplyr::select(Dup_ID, Mean_Conc, SD_Conc, Plate) %>% rename(Dup_Conc = Mean_Conc, Dup_SD = SD_Conc) %>% distinct(.keep_all = TRUE)
+dups_only <- DUP_start %>% filter(Dup == "DUP") %>% dplyr::select(Dup_ID, Mean_Conc, SD_Conc, Plate) %>% rename(Dup_Conc = Mean_Conc, Dup_SD = SD_Conc) %>% distinct(.keep_all = TRUE)
 
-no_dups <- DUP_start %>% filter(!Dup == "dup")
+no_dups <- DUP_start %>% filter(!Dup == "DUP")
 
 dup_spls_l <- dups_only %>% dplyr::select(Dup_ID) %>% distinct(.keep_all = TRUE)
 
@@ -789,7 +790,7 @@ dup_flags_1 <- dup_flags %>% dplyr::select(Dup_ID, Dup_Flag, Diff_P, Plate)
 
 Dup_for_plot_1 <- DUP_start %>% dplyr::select(Plate, Mean_Conc, Dup_ID, IDs) %>% distinct(.keep_all = TRUE) %>% filter(Dup_ID %in% as.vector(dup_spls_l$Dup_ID)) %>%
   left_join(dup_flags_1, by = join_by(Dup_ID, Plate)) %>%
-  mutate(Dup = ifelse(IDs %like% "dup", "Duplicate", "Original")) %>%
+  mutate(Dup = ifelse(IDs %like% "DUP", "Duplicate", "Original")) %>%
   dplyr::select(-IDs, -Mean_Conc, -Dup) %>% distinct(.keep_all = TRUE) %>% na.omit
 
 #plot Data
@@ -847,8 +848,8 @@ knitr::kable(Dup_Flag_1, format="markdown")
 ## Spike QAQC
 ```{r, echo=FALSE}
 #pull out any rows that have "Spk" in the ID column
-SPK_start <- H2S_SPL_CV_fin %>%  mutate(Spk_ID = gsub(" spk", "", IDs),
-                                        Spk = ifelse(IDs %like% "spk", "Spk", "Org")) %>% mutate(Spk_ID = ifelse(Plate %like% "rr", paste0(Spk_ID, "_RR"), Spk_ID))
+SPK_start <- H2S_SPL_CV_fin %>%  mutate(Spk_ID = gsub(" SPK", "", IDs),
+                                        Spk = ifelse(IDs %like% "SPK", "Spk", "Org")) %>% mutate(Spk_ID = ifelse(Plate %like% "rr", paste0(Spk_ID, "_RR"), Spk_ID))
 #separate spikes from originals
 spks_only <- SPK_start %>% filter(Spk == "Spk") %>% dplyr::select(Spk_ID, Mean_Conc, SD_Conc, Dilution, Plate) %>% rename(Spk_Conc = Mean_Conc,
                                                                                                                    Spk_SD = SD_Conc,
@@ -1080,74 +1081,51 @@ df_all_clean1 <- flagged_data %>% dplyr::select(-Plate)
 Sample_data_IDs <- df_all_clean1 %>% 
   filter(!str_detect(Sample_ID, "TMP")) %>% 
   filter(!str_detect(Sample_ID, "FATE"))  %>% 
-  filter(!str_detect(Sample_ID, "dup"))  %>% 
-  filter(!str_detect(Sample_ID, "spk")) %>% 
-  filter(!str_detect(Sample_ID, "JULY")) 
-
-July_samples <- df_all_clean1 %>% 
-  filter(str_detect(Sample_ID, "JULY")) %>% 
-  mutate(
-    Project = "COMPASS: Synoptic",   # new column with same value on every row
-    Region = "CB", 
-    Run_notes = Run_notes
-  ) %>% 
-  rename(
-    H2S_mean_uM = Conc,
-    H2S_sd_uM = SD, 
-    H2S_cv = CV, 
-    H2S_conc_flag = Conc_Flag,
-    H2S_cv_flag = CV_Flag, 
-    H2S_QAQC_flag = H2S_Flags, 
-    Analysis_rundate = Run_Date, 
-  ) %>%
-  dplyr::select(
-    Project, Region, Sample_ID,
-         H2S_mean_uM, H2S_sd_uM, H2S_cv, H2S_conc_flag, H2S_cv_flag, H2S_QAQC_flag, Dilution, 
-         Analysis_rundate, Run_notes
-        # list columns in the order you want them
-  )
-
-write.csv(July_samples, "../Sulfide Comparison/July_samples_timing_test.csv")
+  filter(!str_detect(Sample_ID, "DUP"))  %>% 
+  filter(!str_detect(Sample_ID, "SPK"))
 
 ```
 
 ```{r Format Sample IDs, include = FALSE}
 
-#GCW_WC_A_10 to GCW_202609_UP_LysA_10cm
+#1_GCW_202611_TR_LYSA_10CM to GCW_202609_UP_LysA_10cm
 ##Separate sample IDs into columns 
-Sample_data_IDs1 <- Sample_data_IDs %>%
-  separate(
-    col = Sample_ID,
-    sep = "_",
-    into = c("Site", "Zone", "Replicate", "Depth"),
-    remove = FALSE)
-
-##Depths for SW samples should be 0, add cm units to other depths
-Sample_data_IDs2 <-  Sample_data_IDs1 %>% 
-  rename(Depth_cm = Depth) %>% 
-  mutate(Depth = ifelse((Zone == "SW"), "0cm", paste0(Depth_cm, "cm")))
-
-##Create new sample IDs
-Sample_data_IDs3 <-  Sample_data_IDs2 %>% 
-  mutate(Sample_ID = paste0(Site, "_", Sample_Month_Year, "_", Zone, "_", "Lys", Replicate, "_", Depth))
-
-#Change the SW lines because they don't have lysimeters or a depth  
-Sample_data_IDs4 <- Sample_data_IDs3 %>%
-  mutate(
-    Sample_ID = if_else(
-      Zone == "SW",
-      # Modify the string:
-      Sample_ID %>%
-        str_replace("_LysA", "_A") %>%                    # Replace "_LysA" with "_A"
-        str_replace("_LysB", "_B") %>%                    # Replace "_LysB" with "_B"
-        str_replace("_LysC", "_C") %>%                    # Replace "_LysC" with "_C"
-        str_replace("_0cm$", ""),                          # Remove trailing "_0cm"
-      Sample_ID  # else keep original
-    )
-  )
-
-Sample_data_IDs5 <- Sample_data_IDs4 %>%
-  mutate(Depth_cm = if_else(Zone == "SW", "0", Depth_cm))
+Sample_data_IDs5 <- Sample_data_IDs %>%
+  mutate(Sample_ID = str_remove(Sample_ID, "^[^_]*_"))  
+  
+# Sample_data_IDs1 <- Sample_data_IDs %>%
+#   separate(
+#     col = Sample_ID,
+#     sep = "_",
+#     into = c("Site", "Zone", "Replicate", "Depth"),
+#     remove = FALSE)
+# 
+# ##Depths for SW samples should be 0, add cm units to other depths
+# Sample_data_IDs2 <-  Sample_data_IDs1 %>% 
+#   rename(Depth_cm = Depth) %>% 
+#   mutate(Depth = ifelse((Zone == "SW"), "0cm", paste0(Depth_cm, "cm")))
+# 
+# ##Create new sample IDs
+# Sample_data_IDs3 <-  Sample_data_IDs2 %>% 
+#   mutate(Sample_ID = paste0(Site, "_", Sample_Month_Year, "_", Zone, "_", "Lys", Replicate, "_", Depth))
+# 
+# #Change the SW lines because they don't have lysimeters or a depth  
+# Sample_data_IDs4 <- Sample_data_IDs3 %>%
+#   mutate(
+#     Sample_ID = if_else(
+#       Zone == "SW",
+#       # Modify the string:
+#       Sample_ID %>%
+#         str_replace("_LysA", "_A") %>%                    # Replace "_LysA" with "_A"
+#         str_replace("_LysB", "_B") %>%                    # Replace "_LysB" with "_B"
+#         str_replace("_LysC", "_C") %>%                    # Replace "_LysC" with "_C"
+#         str_replace("_0cm$", ""),                          # Remove trailing "_0cm"
+#       Sample_ID  # else keep original
+#     )
+#   )
+# 
+# Sample_data_IDs5 <- Sample_data_IDs4 %>%
+#   mutate(Depth_cm = if_else(Zone == "SW", "0", Depth_cm))
 
 ##Capitalize all sample IDs
 Sample_data_IDs5$Sample_ID <- toupper(Sample_data_IDs5$Sample_ID)
@@ -1232,18 +1210,20 @@ if (all_present) {
 
 
 ##Select only necessary columns
-all_data_selected <- Sample_data_IDs5 %>%
-  dplyr::select(-c("Depth"))
-
-all_data_selected$Depth_cm <- as.integer(all_data_selected$Depth_cm)
+all_data_selected <- Sample_data_IDs5 
+# %>%
+#   dplyr::select(-c("Depth"))
+# 
+# all_data_selected$Depth_cm <- as.integer(all_data_selected$Depth_cm)
 
 ##Select only necessary columns
-sulfide_metadata_selected <- sulfide_metadata %>%
-  dplyr::select(H2S_ID, Year, Month, Day, Depth_cm, Lysimeter, Time..24hr., Time.Zone_EDT.EST,  Field.Notes) 
+sulfide_metadata_selected <- sulfide_metadata 
+# %>%
+#   dplyr::select(H2S_ID, Year, Month, Day, Depth_cm, Lysimeter, Time..24hr., Time.Zone_EDT.EST,  Field.Notes) 
 
 #merge metadata with sample run data 
 merged_data <- all_data_selected %>%
-  left_join(sulfide_metadata_selected, by = c("Sample_ID" = "H2S_ID", "Replicate" = "Lysimeter", "Depth_cm"))
+  left_join(sulfide_metadata_selected, by = c("Sample_ID" = "H2S_ID"))
 
 ```
 
@@ -1316,7 +1296,8 @@ final_data <- merged_data %>%
     Analysis_rundate = Run_Date , 
     Time = Time..24hr.,
     Time_Zone = Time.Zone_EDT.EST,
-    Analysis_rundate = Run_Date
+    Analysis_rundate = Run_Date, 
+    Replicate = Lysimeter
     # add more rename pairs as needed
   ) %>%
   dplyr::select(
