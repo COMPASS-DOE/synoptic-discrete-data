@@ -51,7 +51,7 @@ head(metadat)
 ```
 
 ## Read in Air Temp Data from Air Temp Code # use after L1 release
-```{r}
+```{#r}
 # Air temp 
 
 #setwd("S:/Biogeochemistry/COMPASS Synoptics/Samples & Data/Fluxes/Macrophyte GHG Fluxes/Flux Calculations/Air Temp Data")
@@ -102,7 +102,7 @@ temps <- read.csv("Raw Data/L1_temps.csv")
 ```
 
 ## Match up the L1 temp data and add it to the metadata dataframe
-```{r}
+```{#r}
 #Going to need to use site and timestamp in the metadata in order to find a date 
 
 #first we need to make a timestamp column in metadat so that we can 
@@ -124,9 +124,7 @@ temps_clean <-   temps %>%
 #join them 
 metadat_L1temp <- metadat %>% 
   left_join(temps_clean, by=c("Site"="Site", "DateTime_round"="TIMESTAMP_round"))
-
-
-
+  
 ```
 
 ## Match metadata to raw data
@@ -145,7 +143,7 @@ alldat$Plot <- metadat$Plot[alldat$metadat_row]
 alldat$ID <- metadat$Plot_ID[alldat$metadat_row]
 alldat$Volume <- metadat$Volume[alldat$metadat_row]
 alldat$Hand_Temp <- metadat$Temp_ByHand[alldat$metadat_row] #found online from weather 
-alldat$L1_Temp <- metadat_L1temp$wx_tempavg15[alldat$metadat_row] #calculate  temp for the measurement time from L1
+# alldat$L1_Temp <- metadat_L1temp$wx_tempavg15[alldat$metadat_row] #calculate  temp for the measurement time from L1
 alldat$Site <- metadat$Site[alldat$metadat_row]
 metadat$metadat_row <- seq_len(nrow(metadat))
 
@@ -153,7 +151,10 @@ metadat$metadat_row <- seq_len(nrow(metadat))
 # in this case we will use the by hand data i guess? but we could look to using some sort of NOAA dataset.... that we would need to match 
 
 alldat <- alldat %>%
-  mutate(final_temp = coalesce(L1_Temp, Hand_Temp))
+  mutate(final_temp = Hand_Temp)
+
+# alldat <- alldat %>%
+#   mutate(final_temp = coalesce(L1_Temp, Hand_Temp))
 
 #remove the rows that don't match to metadata 
 #alldat <- alldat %>%
