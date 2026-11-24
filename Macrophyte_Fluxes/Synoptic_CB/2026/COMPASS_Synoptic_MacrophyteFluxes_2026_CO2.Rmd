@@ -17,6 +17,8 @@ library(ggpubr)
 library(lubridate)
 library(dplyr)
 library(tidyr)
+library(readxl)
+
 ```
 
 ## Pull in Raw Datafiles
@@ -37,7 +39,7 @@ alldat <- data.table::rbindlist(alldat1, fill=TRUE)
 
 #read in metadatfile
 md <- "Raw Data/COMPASS_ChamberFlux_Metadata_2026.csv"
-#metadat <- read_excel(md)
+# metadat <- read_excel(md)
 metadat <- read.csv(md) 
 
 head(metadat)  
@@ -50,92 +52,6 @@ metadat <- metadat %>%
 metadat <- metadat %>% 
   select(Date:Starting_CO2)
 head(metadat) 
-
-```
-
-## Read in Air Temp Data from Air Temp Code # use after L1 release
-```{r}
-
-# # Air temp 
-# # Read in L1 Sensor Data from S Drive and only save necessary data
-# # Path to zip file
-# L1 <- "S:/Biogeochemistry/COMPASS Synoptics/Samples & Data/Synoptic L1 Sensor/L1 2025 Sensor Data v2-1"
-# 
-# # List CSV files inside the zip
-# # files <- unzip(L1, list = TRUE)$Name
-# files <- list.files(path = L1, recursive = TRUE, full.names = TRUE, pattern = "\\.csv$")
-# 
-# results <- list()
-# 
-# for (f in files) {
-#   message(f)
-#   # f = "S:/Biogeochemistry/COMPASS Synoptics/Samples & Data/Synoptic L1 Sensor/L1 2025 Sensor Data v2-1/GWI_2025/GWI_2025/GWI_W_20250101-20251231_wx-tempavg15_L1_v2-1.csv"
-#   selected_research_names <- c("wx-tempavg15")
-# 
-#   # Read CSV directly from zip
-#   # dat <- read.csv(unz(L1, f))
-#   dat <- read.csv(f)
-#   temp <- subset(dat, Instrument == "ClimaVUE50" | Instrument == "CS EE181") 
-# 
-#   gw <- temp %>%
-#     filter(research_name %in% selected_research_names) %>%
-#     select(TIMESTAMP, research_name, Value, F_OOB, F_OOS, Plot, Site)
-# 
-#   results[[f]] <- gw
-# }
-# 
-# #we need to bind these together
-# dat <- do.call(rbind, results)
-# rownames(dat) <- NULL
-# dat1 <- dat %>% filter((F_OOB != 1 & F_OOS != 1))
-# head(dat1)
-
-##Read in raw temperature data
-files <- dir(path = "Raw Data/", pattern = "_wx-tempavg15.*\\.csv$", full.names = TRUE)
-results <- lapply(files, read.csv)
-dat <- do.call(rbind, results)
-rownames(dat) <- NULL
-dat <- dat %>%
-  select(TIMESTAMP, research_name, Value, F_OOB, F_OOS, Plot, Site)
-dat1 <- dat %>% filter((F_OOB != 1 & F_OOS != 1))
-head(dat1)
-
-#convert to wide format
-temps <- pivot_wider(dat1, id_cols = c("TIMESTAMP", "Plot", "Site"), names_from = research_name, values_from = Value )
-head(temps)
-
-write.csv(temps, file="Raw Data/L1_temps.csv")
-
-temps <- read.csv("Raw Data/L1_temps.csv")
-
-```
-
-## Match up the L1 temp data and add it to the metadata dataframe
-```{r}
-#Going to need to use site and timestamp in the metadata in order to find a date 
-
-#first we need to make a timestamp column in metadat so that we can 
-metadat$TIMESTAMP <- mdy_hms(paste(metadat$Date, metadat$Time_start))
-
-#make sure time stamps are in the correct format 
-metadat$TIMESTAMP <- as.POSIXct(metadat$TIMESTAMP, format = "%Y-%m-%d %H:%M:%OS")
-temps$TIMESTAMP <- as.POSIXct(temps$TIMESTAMP, format = "%Y-%m-%d %H:%M:%OS")
-
-#time rounding step 
-metadat$DateTime_round <- round_date(metadat$TIMESTAMP, "15 mins")
-temps$TIMESTAMP_round <- round_date(temps$TIMESTAMP, "15 mins")
-  
-#ensure there is only one data observation per 15 minutes 
-temps$`wx_tempavg15` <- temps$`wx-tempavg15`
-temps_clean <- temps %>% 
-    group_by(TIMESTAMP_round, Site) %>%
-    summarize(wx.tempavg15 = mean(wx.tempavg15))
-
-#join them 
-metadat_L1temp <- metadat %>% 
-  left_join(temps_clean, by=c("Site"="Site", "DateTime_round"="TIMESTAMP_round"))
-
-
 
 ```
 
@@ -155,37 +71,25 @@ alldat$Plot <- metadat$Plot[alldat$metadat_row]
 alldat$ID <- metadat$Plot1[alldat$metadat_row]
 alldat$Volume <- metadat$Volume[alldat$metadat_row]
 alldat$Hand_Temp <- metadat$Temp_ByHand[alldat$metadat_row] #found online from weather 
-alldat$L1_Temp <- metadat_L1temp$wx.tempavg15[alldat$metadat_row] #calculate  temp for the measurement time from L1
 alldat$Site <- metadat$Site[alldat$metadat_row]
 metadat$metadat_row <- seq_len(nrow(metadat))
 
 #We need one more line that creates a column for final temp and takes the L1 data but if there isn't L1 data it will pull in another datatype 
 # in this case we will use the by hand data i guess? but we could look to using some sort of NOAA dataset.... that we would need to match 
 
-alldat$Hand_Temp <- as.numeric(alldat$Hand_Temp)
-
-alldat <- alldat %>%
-  mutate(final_temp = coalesce(L1_Temp, Hand_Temp))
+alldat$final_temp <- as.numeric(alldat$Hand_Temp)
 
 #remove the rows that don't match to metadata 
-#alldat <- alldat %>%
- # filter(!is.na(metadat_row))
+# alldat <- alldat %>%
+# filter(!is.na(metadat_row))
 
 #can remove any row that have NA's in the CO2 column 
-#alldat <- alldat %>%
- # filter(!is.na(CO2))
+# alldat <- alldat %>%
+# filter(!is.na(CO2))
 
-#can remove any row that have NA's in the CO2 column 
-#alldat <- alldat %>%
- # filter(CO2 < 0)
-
-#can remove any row that have NA's in the CO2 column 
-#alldat <- alldat %>%
- # filter(!is.na(CO2))
-
-#can remove any row that have NA's in the CO2 column 
-#alldat <- alldat %>%
- # filter(CO2 < 0)
+#can remove any row that have negative CO2
+# alldat <- alldat %>%
+# filter(CO2 < 0)
 
 ```
 
@@ -233,12 +137,23 @@ fluxes_high <- as.data.frame(subset(fluxes, lin_flux.estimate >= high, select = 
 tails <- rbind(fluxes_low, fluxes_high)
 
 
+##Having an issue where it is not matching with the fluxes and getting extremely high fluxes - why? 
+
 ```
 
 ## Check the fluxes for which I changed the start time due to lags or ebullition (recorded in notes of metadata)
 ```{r}
 
-tobechecked <- c("MSM_TR_2_202507", "MSM_TR_2_202509")
+#GCW_TR_2_202609 - remove 120 sec from obs length *
+#GWI_W_5_202607 - avoid weird dip to -400 ppm, change start time to 12:51 and run for 100 seconds*
+#MSM_TR_5_202609 - try using the first 2 minutes to avoid ebullition; change start time to 13:19 *
+#MSM_W_3_202609 - maybe just use the first 90 sec to avoid messy section *
+#MSM_W_5_202607 - add 1 minute to start time; reduce obs length by another 60 sec*
+#SWH_TR_2_202607 - remove 2 minutes from obs length *
+#SWH_TR_4_202607 - use last 2 minutes; weird drop down to -2000 ppm *
+#SWH_W_5_202607 - add 1 min to start time *
+
+tobechecked <- c("GCW_TR_2_202609", "GWI_W_5_202607", "MSM_TR_5_202609", "MSM_W_3_202609", "MSM_W_5_202607", "SWH_TR_2_202607", "SWH_TR_4_202607", "SWH_W_5_202607")
 
 colnames <- c("Plot")
 
@@ -253,7 +168,7 @@ for(P in tobechecked){
 }
 
 #list of the ones that I changed and checked and looked good? 
-fixedplots <- c("MSM_TR_4_202507", "SWH_TR_1_202509", "SWH_TR_2_202511", "SWH_TR_3_202511", "SWH_TR_4_202509", "SWH_TR_5_202509", "SWH_W_4_202507", "SWH_TR_3_202509")
+fixedplots <- c()
   
 
 ```
@@ -296,52 +211,81 @@ for(P in bad_plots){
   ylab(expression(paste( CO [2], " (ppm)"))) +
   xlab("Time") + labs(title = P) + 
   geom_smooth(color="red")
-  print(p1)
+  suppressMessages(print(p1))
   }
 
 ####################
 
 #Notes on the bad ones 
-
-# GCW_W_1_202509 - wobbly but okay flux
-# GCW_W_3_202509 - wobbly but okay flux
-# GCW_W_4_202509 - wobbly but okay flux
-# GCW_W_5_202509 - wobbly but okay flux
-# GWI_TR_3_202509 - wobbly but okay flux
-# GWI_TR_4_202509 - wobbly but low flux
-# MSM_TR_1_202509 - wobbly but okay flux
-# MSM_TR_5_202509 - messy but okay flux
-# MSM_W_4_202509 - messy but okay flux
-# SWH_TR_1_202507 - messy but low flux
-# SWH_TR_3_202507 - messy but okay flux
-# SWH_TR_2_202509 - wobbly but low flux
-# GCW_TR_5_202509 - low r squared but okay flux
-
+#GCW_TR_5_202609 - just a very low, messy flux 
+#GCW_W_1_202607 - just a very low, messy flux
+#GCW_W_2_202607 - just a very low, messy flux
+#GCW_W_3_202607 - just a very low, messy flux
+#GWI_W_1_202607 - just a very low, messy flux
+#GWI_W_3_202607 - just a very low, messy flux
+#GWI_W_4_202607 - just a very low, messy flux
+#MSM_W_1_202607 - just a very low, messy flux
+#MSM_W_1_202609 - just a very low, messy flux
+#MSM_W_2_202607 - just a very low, messy flux
+#MSM_W_2_202609 - just a very low, messy flux
+#MSM_W_3_202607 - just a very low, messy flux
+#MSM_W_4_202607 - just a very low, messy flux
+#SWH_W_3_202607 - just a very low, messy flux
+#SWH_W_4_202607 - just a very low, messy flux
 
 ##Fluxes to remove: 
-# MSM_TR_4_202509 - very messy, may want to remove this flux
-# SWH_TR_1_202509 - very messy, may want to remove this flux
-# SWH_TR_2_202509 - very messy, remove
-# MSM_TR_5_202507 - very messy, may want to remove this flux
+#GCW_TR_1_202607 - very wonky, jumping around from -1000 to 1000 ppm CO2 - remove
+#GCW_TR_5_202607 - remove, all values are at -101585.3, very strange - remove 
+#GWI_TR_2_202609 - only 4 points?? add another 5 minutes?*
+#GWI_TR_3_202607 - what?? add another 5 minutes?*
+#GWI_TR_3_202609 - several ebullition peaks in the middle - remove
+#GWI_TR_4_202609 - ebullition in the beginning - remove
+#GWI_TR_5_202607 - several ebullition peaks in the middle - remove
+#GWI_W_1_202609 - two U shapes, not sure what happened here - remove
+#GWI_W_4_202609 - very messy, not sure what happened here - remove
+#GWI_W_5_202609 - Two large peaks; unusable - remove
+#MSM_TR_3_202607 - very messy, unusable - remove 
+#SWH_TR_4_202609 - starting value is 3000 - remove 
+#GWI_W_2_202609 - unusable 
+#GCW_W_4_202607 - ebullition; co2 at 700 ppm
+#GCW_W_5_202609 - high co2, too messy
+#SWH_W_1_202607 - messy and negative flux
+#MSM_W_3_202609 - messy
+#GWI_TR_4_202607 - extremely negative co2 flux, starts at 2000
 
+##Fluxes to change: Many issues, probably due to using Gru
+#GCW_TR_1_202609 - remove 15 sec from obs length
+#GCW_TR_2_202607 - remove 30 sec from obs length
+#GCW_TR_2_202609 - remove 120 sec from obs length *
+#GCW_TR_3_202607 - remove 120 sec from obs length
+#GCW_W_5_202607 - only use the first 2 minutes to avoid weird dip to -400 ppm
+#GWI_TR_5_202609 - only use the first 3 minutes to avoid ebullition 
+#GWI_W_2_202607 - only use the first 3 minutes to avoid weird dip 
+#GWI_W_3_202609 - use first 2 minutes, ebullition in the middle 
+#GWI_W_5_202607 - avoid weird dip to -400 ppm, change start time to 12:51 and run for 100 seconds*
+#MSM_TR_1_202607 - maybe use the last 2 minutes to avoid the ebullition peak
+#MSM_TR_2_202607 - maybe use the first 2 minutes to avoid the ebullition peak
+#MSM_TR_2_202609 - maybe use the first 2 minutes to avoid the ebullition peak
+#MSM_TR_4_202607 - maybe try using the first 90 seconds
+#MSM_TR_5_202607 - maybe try using the first 90 seconds
+#MSM_TR_5_202609 - try using the first 2 minutes to avoid ebullition; change start time to 13:19 *
+#MSM_W_4_202609 - add 1 minute to start time
+#MSM_W_5_202607 - add 1 minute to start time; reduce obs length by another 60 sec*
+#MSM_W_5_202609 - add 1 minute to start time
+#SWH_TR_2_202607 - remove 2 minutes from obs length *
+#SWH_TR_3_202607 - add 2 minutes to start time
+#SWH_TR_4_202607 - use last 2 minutes; weird drop down to -2000 ppm *
+#SWH_TR_5_202607 - use first 2.5 minutes
+#SWH_TR_5_202609 - reduce obs length by 30 sec 
+#SWH_W_2_202607 - use last 2.5 minutes 
+#SWH_W_5_202607 - add 1 min to start time *
 
-##Fluxes to change: 
-# MSM_TR_4_202507 - clip flux at 15:03 *
-# SWH_TR_2_202511 - flux messy at end, reduce obs length to 150 sec *
-# SWH_TR_3_202511 - reduce obs length by 10 sec *
-# SWH_TR_4_202509 - increase start time to 10:42 *
-# SWH_TR_5_202509 - chamber opening at 11:08, start time was entered incorrectly, fixed as 11:01
-# SWH_W_4_202507 - reduce obs length by 1 minute to avoid saturation 
-# SWH_TR_4_202507 - reduce obs length by 30 sec
-# MSM_TR_5_202511 - reduce obs length to 3 min
-# MSM_W_2_202509 - reduce obs length to 2 minutes
-
-# SWH_W_1_202511 - add 30 sec to start time
 
 ##Already added notes to metadata for the ones I fixed
 ##Add qaqc flags 
 #Fluxes that need to be removed
-remove_flags <- c("MSM_TR_4_202509", "SWH_TR_1_202509", "SWH_TR_2_202509", "MSM_TR_5_202507")
+remove_flags <- c("GCW_TR_1_202607", "GCW_TR_5_202607", "GWI_TR_2_202609", "GWI_TR_3_202607", "GWI_TR_3_202609", "GWI_TR_4_202609", "GWI_TR_5_202607", "GWI_W_1_202609", "GWI_W_4_202609", "GWI_W_5_202609", "MSM_TR_3_202607", "SWH_TR_4_202609", "GWI_W_2_202609", "GCW_W_4_202607", "GCW_W_5_202609", "SWH_W_1_202607", "MSM_W_3_202609", 
+"GWI_TR_4_202607")
 fluxes$qaqc_flag <- NA
 fluxes <- fluxes %>%
     mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% remove_flags, "messy flux, remove", qaqc_flag))
@@ -491,14 +435,12 @@ head(IDs)
 allflux <- cbind(IDs, fluxes)
 
 ##Add in notes from metadata
-metadat_notes <- metadat_L1temp[, c("Plot", "Temp_ByHand", "wx.tempavg15", "Notes")]
+metadat_notes <- metadat[, c("Plot", "Temp_ByHand", "Notes")]
 allflux_notes <- allflux %>% 
   left_join(metadat_notes, by=c("Plot"="Plot"))
 
 #export as a csv to the folder that you want 
-# setwd("S:/Biogeochemistry/COMPASS Synoptics/Samples & Data/Fluxes/Macrophyte GHG Fluxes/Final Data")        #Change wd 
-
-write.csv(allflux_notes, file="Processed Data/COMPASS_Synoptic_CB_Macrophyte_Fluxes_Final_2025_CO2.csv")           #Change file name
+write.csv(allflux_notes, file="Processed Data/COMPASS_Synoptic_CB_Macrophyte_Fluxes_Final_2026_CO2.csv")           #Change file name
 
 ```
 
