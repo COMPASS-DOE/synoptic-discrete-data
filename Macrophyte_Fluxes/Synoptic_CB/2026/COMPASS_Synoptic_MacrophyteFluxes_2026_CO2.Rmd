@@ -1,0 +1,568 @@
+---
+title: "COMPASS_Synoptic_MacrophyteFluxes_2026_CO2"
+author: "Stephanie J. Wilson"
+date: "2026-11-24"
+output: pdf_document
+---
+## Set Up
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+#install.packages("remotes") # if necessary
+#remotes::install_github("COMPASS-DOE/fluxfinder")
+
+library(fluxfinder)
+library(ggplot2)
+library(ggpubr)
+library(lubridate)
+library(dplyr)
+library(tidyr)
+```
+
+## Pull in Raw Datafiles
+```{r}
+#read in files
+file.list <- dir(path = "Raw Data/", pattern = "txt$", full.names = TRUE)
+head(file.list)
+
+#Read in the data 
+alldat1 <- lapply(file.list, ffi_read_LI7810)
+
+alldat <- data.table::rbindlist(alldat1, fill=TRUE)
+
+```
+
+## Read in metadata file and match to raw data
+```{r}
+
+#read in metadatfile
+md <- "Raw Data/COMPASS_ChamberFlux_Metadata_2026.csv"
+#metadat <- read_excel(md)
+metadat <- read.csv(md) 
+
+head(metadat)  
+
+#can remove any row that have NA's in the date column 
+metadat <- metadat %>%
+  filter(!is.na(Date))
+
+#remove unnecessary columns
+metadat <- metadat %>% 
+  select(Date:Starting_CO2)
+head(metadat) 
+
+```
+
+## Read in Air Temp Data from Air Temp Code # use after L1 release
+```{r}
+
+# # Air temp 
+# # Read in L1 Sensor Data from S Drive and only save necessary data
+# # Path to zip file
+# L1 <- "S:/Biogeochemistry/COMPASS Synoptics/Samples & Data/Synoptic L1 Sensor/L1 2025 Sensor Data v2-1"
+# 
+# # List CSV files inside the zip
+# # files <- unzip(L1, list = TRUE)$Name
+# files <- list.files(path = L1, recursive = TRUE, full.names = TRUE, pattern = "\\.csv$")
+# 
+# results <- list()
+# 
+# for (f in files) {
+#   message(f)
+#   # f = "S:/Biogeochemistry/COMPASS Synoptics/Samples & Data/Synoptic L1 Sensor/L1 2025 Sensor Data v2-1/GWI_2025/GWI_2025/GWI_W_20250101-20251231_wx-tempavg15_L1_v2-1.csv"
+#   selected_research_names <- c("wx-tempavg15")
+# 
+#   # Read CSV directly from zip
+#   # dat <- read.csv(unz(L1, f))
+#   dat <- read.csv(f)
+#   temp <- subset(dat, Instrument == "ClimaVUE50" | Instrument == "CS EE181") 
+# 
+#   gw <- temp %>%
+#     filter(research_name %in% selected_research_names) %>%
+#     select(TIMESTAMP, research_name, Value, F_OOB, F_OOS, Plot, Site)
+# 
+#   results[[f]] <- gw
+# }
+# 
+# #we need to bind these together
+# dat <- do.call(rbind, results)
+# rownames(dat) <- NULL
+# dat1 <- dat %>% filter((F_OOB != 1 & F_OOS != 1))
+# head(dat1)
+
+##Read in raw temperature data
+files <- dir(path = "Raw Data/", pattern = "_wx-tempavg15.*\\.csv$", full.names = TRUE)
+results <- lapply(files, read.csv)
+dat <- do.call(rbind, results)
+rownames(dat) <- NULL
+dat <- dat %>%
+  select(TIMESTAMP, research_name, Value, F_OOB, F_OOS, Plot, Site)
+dat1 <- dat %>% filter((F_OOB != 1 & F_OOS != 1))
+head(dat1)
+
+#convert to wide format
+temps <- pivot_wider(dat1, id_cols = c("TIMESTAMP", "Plot", "Site"), names_from = research_name, values_from = Value )
+head(temps)
+
+write.csv(temps, file="Raw Data/L1_temps.csv")
+
+temps <- read.csv("Raw Data/L1_temps.csv")
+
+```
+
+## Match up the L1 temp data and add it to the metadata dataframe
+```{r}
+#Going to need to use site and timestamp in the metadata in order to find a date 
+
+#first we need to make a timestamp column in metadat so that we can 
+metadat$TIMESTAMP <- mdy_hms(paste(metadat$Date, metadat$Time_start))
+
+#make sure time stamps are in the correct format 
+metadat$TIMESTAMP <- as.POSIXct(metadat$TIMESTAMP, format = "%Y-%m-%d %H:%M:%OS")
+temps$TIMESTAMP <- as.POSIXct(temps$TIMESTAMP, format = "%Y-%m-%d %H:%M:%OS")
+
+#time rounding step 
+metadat$DateTime_round <- round_date(metadat$TIMESTAMP, "15 mins")
+temps$TIMESTAMP_round <- round_date(temps$TIMESTAMP, "15 mins")
+  
+#ensure there is only one data observation per 15 minutes 
+temps$`wx_tempavg15` <- temps$`wx-tempavg15`
+temps_clean <- temps %>% 
+    group_by(TIMESTAMP_round, Site) %>%
+    summarize(wx.tempavg15 = mean(wx.tempavg15))
+
+#join them 
+metadat_L1temp <- metadat %>% 
+  left_join(temps_clean, by=c("Site"="Site", "DateTime_round"="TIMESTAMP_round"))
+
+
+
+```
+
+## Match metadata to raw data
+```{r}
+
+#match the metadata to the concentration data 
+alldat$metadat_row <- ffi_metadata_match(
+  data_timestamps = alldat$TIMESTAMP,
+  start_dates = metadat$Date,
+  start_times = metadat$Time_start,
+  obs_lengths = metadat$Obs_length) 
+head(alldat)
+
+#Set plot, temp, volume, etc. here 
+alldat$Plot <- metadat$Plot[alldat$metadat_row]
+alldat$ID <- metadat$Plot1[alldat$metadat_row]
+alldat$Volume <- metadat$Volume[alldat$metadat_row]
+alldat$Hand_Temp <- metadat$Temp_ByHand[alldat$metadat_row] #found online from weather 
+alldat$L1_Temp <- metadat_L1temp$wx.tempavg15[alldat$metadat_row] #calculate  temp for the measurement time from L1
+alldat$Site <- metadat$Site[alldat$metadat_row]
+metadat$metadat_row <- seq_len(nrow(metadat))
+
+#We need one more line that creates a column for final temp and takes the L1 data but if there isn't L1 data it will pull in another datatype 
+# in this case we will use the by hand data i guess? but we could look to using some sort of NOAA dataset.... that we would need to match 
+
+alldat$Hand_Temp <- as.numeric(alldat$Hand_Temp)
+
+alldat <- alldat %>%
+  mutate(final_temp = coalesce(L1_Temp, Hand_Temp))
+
+#remove the rows that don't match to metadata 
+#alldat <- alldat %>%
+ # filter(!is.na(metadat_row))
+
+#can remove any row that have NA's in the CO2 column 
+#alldat <- alldat %>%
+ # filter(!is.na(CO2))
+
+#can remove any row that have NA's in the CO2 column 
+#alldat <- alldat %>%
+ # filter(CO2 < 0)
+
+#can remove any row that have NA's in the CO2 column 
+#alldat <- alldat %>%
+ # filter(!is.na(CO2))
+
+#can remove any row that have NA's in the CO2 column 
+#alldat <- alldat %>%
+ # filter(CO2 < 0)
+
+```
+
+## Calculate fluxes 
+```{r}
+#change the units
+alldat$CO2_umol <- ffi_ppm_to_umol(alldat$CO2, 
+                                volume = alldat$Volume, # m3
+                                temp = alldat$final_temp)    # degrees C
+#> Assuming atm = 101325 Pa
+#> Using R = 8.31446261815324 m3 Pa K-1 mol-1
+
+alldat$CO2_umol_m2 <- alldat$CO2_umol / 0.16
+
+fluxes <- ffi_compute_fluxes(alldat,
+                             group_column = "Plot", 
+                             time_column = "TIMESTAMP", 
+                             gas_column = "CO2_umol_m2", 
+                             dead_band = 10) #, c0_band = 5?
+head(fluxes)
+
+#take a look at the fluxes we calculated with R2 
+ggplot(fluxes, aes(Plot, lin_flux.estimate, color = lin_r.squared)) +
+  geom_point(size=4) + theme_classic() + 
+  geom_linerange(aes(ymin = lin_flux.estimate- lin_flux.std.error,
+                   ymax = lin_flux.estimate+ lin_flux.std.error)) +
+  scale_color_gradientn(colours = c("darkred",  "red", "white","lightblue", "darkblue"),
+                        values = c(0, 0.5, 0.6, 0.7, 1)) +
+  ylab("CO2 flux (umol/m2/s)")
+
+#sort fluxes by R2 
+fluxes_good <- as.data.frame(subset(fluxes, lin_r.squared >= .90, select = Plot:TIMESTAMP_max))
+fluxes_weird <- as.data.frame(subset(fluxes, lin_r.squared < .90, select = Plot:TIMESTAMP_max))
+
+#negative CO2 fluxes
+fluxes_negative <- as.data.frame(subset(fluxes,  lin_flux.estimate < 0, select = Plot:TIMESTAMP_max))
+
+#find fluxes that represent the first and fourth quartile of the data 
+low <- quantile(fluxes$lin_flux.estimate, 0.05) 
+high <- quantile(fluxes$lin_flux.estimate, 0.95) 
+
+fluxes_low <- as.data.frame(subset(fluxes, lin_flux.estimate <= low, select = Plot:TIMESTAMP_max))
+fluxes_high <- as.data.frame(subset(fluxes, lin_flux.estimate >= high, select = Plot:TIMESTAMP_max))
+
+tails <- rbind(fluxes_low, fluxes_high)
+
+
+```
+
+## Check the fluxes for which I changed the start time due to lags or ebullition (recorded in notes of metadata)
+```{r}
+
+tobechecked <- c("MSM_TR_2_202507", "MSM_TR_2_202509")
+
+colnames <- c("Plot")
+
+#Loop to run plots above 
+for(P in tobechecked){ 
+  r1 <- subset(alldat, Plot == P)
+  p1 <- ggplot(r1, aes(TIMESTAMP, CO2)) + geom_point() + theme_classic() +
+  ylab(expression(paste( CO [2], " (ppm)"))) +
+  xlab("Time") + labs(title = P) + 
+  geom_smooth(color="red")
+  print(p1)
+}
+
+#list of the ones that I changed and checked and looked good? 
+fixedplots <- c("MSM_TR_4_202507", "SWH_TR_1_202509", "SWH_TR_2_202511", "SWH_TR_3_202511", "SWH_TR_4_202509", "SWH_TR_5_202509", "SWH_W_4_202507", "SWH_TR_3_202509")
+  
+
+```
+
+
+## Spot check a few fluxes with R2 > 0.9
+```{r, echo=FALSE}
+
+### pull a random sample of good fluxes to check and plot 
+good_plots <- unique(fluxes_good$Plot)
+
+# take a random sample (FALSE so we don't get the same plot twice)
+# set.seed(...) to guarantee reproducibility
+good_sample <- sample(good_plots, 5, replace=FALSE)
+
+#Loop to run five random plots subset above 
+for(P in good_sample){ 
+  r1 <- subset(alldat, Plot == P)
+  p1 <- ggplot(r1, aes(TIMESTAMP, CO2)) + geom_point() + theme_classic() +
+  ylab(expression(paste( CO [2], " (ppm)"))) +
+  xlab("Time") + labs(title = P) + 
+  geom_smooth(color="red")
+  print(p1)
+  }
+
+####################
+```
+
+## Take a look at the bad fluxes <0.9 
+# If a flux was started to early/late, change start time or Obs_length in metadata file and note n the note column
+```{r, echo=FALSE}
+
+### pull out fluxes with R2 < 0.9 and put them in a list 
+bad_plots <- unique(fluxes_weird$Plot)
+
+#Loop to run five random plots subset above 
+for(P in bad_plots){ 
+  r1 <- subset(alldat, Plot == P)
+  p1 <- ggplot(r1, aes(TIMESTAMP, CO2)) + geom_point() + theme_classic() +
+  ylab(expression(paste( CO [2], " (ppm)"))) +
+  xlab("Time") + labs(title = P) + 
+  geom_smooth(color="red")
+  print(p1)
+  }
+
+####################
+
+#Notes on the bad ones 
+
+# GCW_W_1_202509 - wobbly but okay flux
+# GCW_W_3_202509 - wobbly but okay flux
+# GCW_W_4_202509 - wobbly but okay flux
+# GCW_W_5_202509 - wobbly but okay flux
+# GWI_TR_3_202509 - wobbly but okay flux
+# GWI_TR_4_202509 - wobbly but low flux
+# MSM_TR_1_202509 - wobbly but okay flux
+# MSM_TR_5_202509 - messy but okay flux
+# MSM_W_4_202509 - messy but okay flux
+# SWH_TR_1_202507 - messy but low flux
+# SWH_TR_3_202507 - messy but okay flux
+# SWH_TR_2_202509 - wobbly but low flux
+# GCW_TR_5_202509 - low r squared but okay flux
+
+
+##Fluxes to remove: 
+# MSM_TR_4_202509 - very messy, may want to remove this flux
+# SWH_TR_1_202509 - very messy, may want to remove this flux
+# SWH_TR_2_202509 - very messy, remove
+# MSM_TR_5_202507 - very messy, may want to remove this flux
+
+
+##Fluxes to change: 
+# MSM_TR_4_202507 - clip flux at 15:03 *
+# SWH_TR_2_202511 - flux messy at end, reduce obs length to 150 sec *
+# SWH_TR_3_202511 - reduce obs length by 10 sec *
+# SWH_TR_4_202509 - increase start time to 10:42 *
+# SWH_TR_5_202509 - chamber opening at 11:08, start time was entered incorrectly, fixed as 11:01
+# SWH_W_4_202507 - reduce obs length by 1 minute to avoid saturation 
+# SWH_TR_4_202507 - reduce obs length by 30 sec
+# MSM_TR_5_202511 - reduce obs length to 3 min
+# MSM_W_2_202509 - reduce obs length to 2 minutes
+
+# SWH_W_1_202511 - add 30 sec to start time
+
+##Already added notes to metadata for the ones I fixed
+##Add qaqc flags 
+#Fluxes that need to be removed
+remove_flags <- c("MSM_TR_4_202509", "SWH_TR_1_202509", "SWH_TR_2_202509", "MSM_TR_5_202507")
+fluxes$qaqc_flag <- NA
+fluxes <- fluxes %>%
+    mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% remove_flags, "messy flux, remove", qaqc_flag))
+
+#Any other fluxes that had low R squared but are okay otherwise
+fluxes <- fluxes %>%
+    mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% bad_plots, "low r squared, but checked and flux is okay", qaqc_flag))
+
+###########################
+
+
+```
+
+## Look at the really high or really low ones to see if there is a timing issue or something
+```{r, echo=FALSE}
+
+### pull out fluxes in the 5% and 95% tails to look at really high and really low 
+tail_plots <- unique(tails$Plot)
+
+#Loop to run five random plots subset above 
+for(P in tail_plots){ 
+  r1 <- subset(alldat, Plot == P)
+  p1 <- ggplot(r1, aes(TIMESTAMP, CO2)) + geom_point() + theme_classic() +
+  ylab(expression(paste( CO [2], " (ppm)"))) +
+  xlab("Time") + labs(title = P) + 
+  geom_smooth(color="red")
+  print(p1)
+  }
+
+#would be nice to put on the plot the flux estimate and if it is a high or low or something 
+####################
+
+
+```
+
+## Look at the negative CO2 fluxes
+```{r, echo=FALSE}
+
+### pull out negative fluxes and put them in a list 
+neg_plots <- unique(fluxes_negative$Plot)
+
+#Loop to run five random plots subset above 
+for(P in neg_plots){ 
+ r1 <- subset(alldat, Plot == P)
+  p1 <- ggplot(r1, aes(TIMESTAMP, CO2)) + geom_point() + theme_classic() +
+  ylab(expression(paste( CO [2], " (ppm)"))) +
+  xlab("Time") + labs(title = P) + 
+  geom_smooth(color="red")
+  print(p1)
+}
+
+####################Negative CO2 fluxes
+# add a flag for the fluxes that are negative for CO2 because they should be positive
+fluxes <- fluxes %>%
+    mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% neg_plots, "negative CO2 flux, remove", qaqc_flag))
+
+```
+
+## Plot all fluxes
+```{r, echo=FALSE}
+
+#ffi_qaqc(fluxes, Plot, output_file = "qaqc.html", output_dir = getwd(), open_output = TRUE)
+
+### pull a random sample of good fluxes to check and plot 
+all_plots <- unique(fluxes$Plot)
+
+#Loop to run five random plots subset above 
+for(P in all_plots){ 
+ r1 <- subset(alldat, Plot == P)
+  p1 <- ggplot(r1, aes(TIMESTAMP, CO2)) + geom_point() + theme_classic() +
+  ylab(expression(paste( CO [2], " (ppm)"))) +
+  xlab("Time") + labs(title = P) + 
+  geom_smooth(color="red")
+  print(p1)
+  }
+
+####################
+
+
+```
+
+
+## Do some visualization of QAQC plots to assess fluxes  
+```{r, echo=FALSE}
+
+p1 <- ggplot(fluxes, aes(lin_flux.estimate, rob_flux.estimate, color = Plot)) +
+  geom_point(size=4) + geom_abline() + 
+  theme_classic() + 
+  labs(title = "A") + 
+  ylab(expression(paste( CH [4], " Flux (nmol m"^-2* " s"^-1*") Robust Method"))) +
+  xlab(expression(paste( CH [4], " Flux (nmol m"^-2* " s"^-1*") Linear Method"))) +
+  guides(color = guide_legend(title = "Plot")) +
+  theme(legend.position="none") +
+  theme(axis.title.x = element_text(size=12), axis.text = element_text(size=12),
+        axis.title.y = element_text(size=12), legend.text=element_text(size=12),
+        panel.border = element_rect(colour = "black", fill=NA, linewidth =1), 
+        aspect.ratio = 1)
+p1
+
+
+p2 <- ggplot(fluxes, aes(lin_r.squared, poly_r.squared, color = Plot)) +
+  geom_point(size=4) + geom_abline() + 
+  theme_classic() + 
+  xlim(0,1) + ylim(0,1) +
+  labs(title = "B") + 
+  ylab(expression(paste("R"^2* " Second-Order Polynomial"))) +
+  xlab(expression(paste("R"^2* " Linear Model"))) +
+  guides(color = guide_legend(title = "Plot")) + 
+  theme(legend.position="none") +
+  theme(axis.title.x = element_text(size=12), axis.text = element_text(size=12),
+        axis.title.y = element_text(size=12), legend.text=element_text(size=12),
+        panel.border = element_rect(colour = "black", fill=NA, linewidth =1), 
+        aspect.ratio = 1)
+p2
+
+p3 <- ggplot(fluxes, aes(lin_flux.estimate, HM81_flux.estimate, color = lin_r.squared )) +
+  geom_point(size=4) + geom_abline() + 
+  theme_classic() + 
+  #xlim(0,50) + #ylim(0,50) +
+  labs(title = "C") + 
+  ylab(expression(paste( CH [4], " Flux (nmol m"^-2* " s"^-1*") HM1981 Method"))) +
+  xlab(expression(paste( CH [4], " Flux (nmol m"^-2* " s"^-1*") Linear Method"))) +
+  guides(color = guide_legend(title = "Plot")) + 
+  theme(legend.position="right") +
+  theme(axis.title.x = element_text(size=12), axis.text = element_text(size=12),
+        axis.title.y = element_text(size=12), legend.text=element_text(size=12),
+        panel.border = element_rect(colour = "black", fill=NA, linewidth =1), 
+        aspect.ratio = 1)
+p3
+
+#ggarrange(p1, p2, p3, ncol=3, nrow=1) #, common.legend = TRUE, legend="none")
+```
+
+## Pull together dataframe and export for use elsewhere 
+```{r, echo=FALSE}
+
+#head(fluxes1)
+
+####Already flagged poor fluxes, negative fluxes, and low r squared fluxes that are actually okay
+
+#make new columns with the plot; zone; replicate 
+IDs <- data.frame(do.call('rbind', strsplit(as.character(fluxes$Plot),'_',fixed=TRUE)))
+colnames(IDs) <- c("Site",  "Zone", "Replicate", "Date") #, "RHZ", "RHZ_Rep")
+head(IDs)
+
+#rejoin them to the dataframe
+allflux <- cbind(IDs, fluxes)
+
+##Add in notes from metadata
+metadat_notes <- metadat_L1temp[, c("Plot", "Temp_ByHand", "wx.tempavg15", "Notes")]
+allflux_notes <- allflux %>% 
+  left_join(metadat_notes, by=c("Plot"="Plot"))
+
+#export as a csv to the folder that you want 
+# setwd("S:/Biogeochemistry/COMPASS Synoptics/Samples & Data/Fluxes/Macrophyte GHG Fluxes/Final Data")        #Change wd 
+
+write.csv(allflux_notes, file="Processed Data/COMPASS_Synoptic_CB_Macrophyte_Fluxes_Final_2025_CO2.csv")           #Change file name
+
+```
+
+# If you need to look at fluxes from a certain day to see how the concentrations before and after look:
+# this doesn't work unless you reload and don't filter out the non matched data because you want to see what is before and after 
+# and we take that out in the filter step *** 
+```{r, echo=FALSE}
+
+# #SWH 2025-07 because there are one or two that look funky  
+# p <- ggplot(alldat, aes(TIMESTAMP, CO2, color = Plot)) + geom_point() + theme_classic() + 
+#          ylab(expression(paste( CO [2], " (ppmv)"))) + ylim(200, 5250) +
+#       xlim(c(as.POSIXct('2025-07-24 06:50:00', format = "%Y-%m-%d %H:%M:%S"),
+#          as.POSIXct('2025-07-24 08:30:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
+# 
+# print(p)
+# 
+# #GWI 2025-06 because there are a few that are odd and wonky 
+# p <- ggplot(alldat, aes(TIMESTAMP, CO2, color = Plot)) + geom_point() + theme_classic() + 
+#   ylab(expression(paste( CO [2], " (ppmv)"))) + ylim(100, 1500) +
+#   xlim(c(as.POSIXct('2025-06-27 04:55:00', format = "%Y-%m-%d %H:%M:%S"),
+#          as.POSIXct('2025-06-27 10:15:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
+# print(p)
+# 
+# #GCW 2025-06 because there are a few that are odd and wonky 
+# p <- ggplot(alldat, aes(TIMESTAMP, CO2, color = Plot)) + geom_point() + theme_classic() + 
+#   ylab(expression(paste( CO [2], " (ppmv)"))) + ylim(100, 1500) +
+#   xlim(c(as.POSIXct('2025-06-19 02:55:00', format = "%Y-%m-%d %H:%M:%S"),
+#          as.POSIXct('2025-06-19 7:15:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
+# print(p)
+# 
+# #MSM 2025-06 because there are a few that are odd and wonky 
+# p <- ggplot(alldat, aes(TIMESTAMP, CO2, color = Plot)) + geom_point() + theme_classic() + 
+#   ylab(expression(paste( CO [2], " (ppmv)"))) + ylim(100, 1500) +
+#   xlim(c(as.POSIXct('2025-06-18 05:45:00', format = "%Y-%m-%d %H:%M:%S"),
+#          as.POSIXct('2025-06-18 8:35:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
+# print(p)
+# 
+# #SWH 2025-06 because there are a few that are odd and wonky 
+# p <- ggplot(alldat, aes(TIMESTAMP, CO2, color = Plot)) + geom_point() + theme_classic() + 
+#   ylab(expression(paste( CO [2], " (ppmv)"))) + ylim(100, 1500) +
+#   xlim(c(as.POSIXct('2025-06-26 02:45:00', format = "%Y-%m-%d %H:%M:%S"),
+#          as.POSIXct('2025-06-26 12:15:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
+# print(p)
+# 
+# #GWI 2025-07 because there are a few that are odd and wonky 
+# p <- ggplot(alldat, aes(TIMESTAMP, CO2, color = Plot)) + geom_point() + theme_classic() + 
+#   ylab(expression(paste( CO [2], " (ppmv)"))) + ylim(100, 1500) +
+#   xlim(c(as.POSIXct('2025-07-25 05:45:00', format = "%Y-%m-%d %H:%M:%S"),
+#          as.POSIXct('2025-07-25 8:15:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
+# print(p)
+# 
+# #GWI 2025-10 because there are a few that are odd and wonky 
+# p <- ggplot(alldat, aes(TIMESTAMP, CO2, color = Plot)) + geom_point() + theme_classic() + 
+#   ylab(expression(paste( CO [2], " (ppmv)"))) + ylim(100, 1500) +
+#   xlim(c(as.POSIXct('2025-10-23 05:15:00', format = "%Y-%m-%d %H:%M:%S"),
+#          as.POSIXct('2025-10-23 10:15:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
+# print(p)
+# 
+# #SWH 2025-10 because there are a few that are odd and wonky 
+# p <- ggplot(alldat, aes(TIMESTAMP, CO2, color = Plot)) + geom_point() + theme_classic() + 
+#   ylab(expression(paste( CO [2], " (ppmv)"))) + ylim(100, 1500) +
+#   xlim(c(as.POSIXct('2025-10-24 04:35:00', format = "%Y-%m-%d %H:%M:%S"),
+#          as.POSIXct('2025-10-24 8:45:00', format = "%Y-%m-%d %H:%M:%S"))) + theme(legend.position="none")
+# print(p)
+
+```
+
