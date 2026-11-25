@@ -33,7 +33,7 @@ library(here)
 final_data <- read.csv("../COMPASS_SynopticCB_MC_Fluxes_AllData.csv")
 
 final_data <- final_data %>% 
-  select(-c("Soil.Moisture.wfv", "Soil.Moisture.percent", "Soil.Temperature.C", "Bulk.EC.Raw.dS.per.m.", "Bulk.EC.TC.dS.per.m", "Pore.Water.EC.dS.per.m", "Pore.Water.EC.Offset", "Raw.Real.Dielectric", "Raw.Imaginary.Dielectric", "Loss.Tangent", "soil.EC.10cm.TEROS", "soil.salinity.10cm.TEROS", "soil.temp.10cm.TEROS", "soil.vwc.10cm.TEROS", "HydraGO_Notes"))
+  select(-c("Soil.Moisture.wfv", "Soil.Moisture.percent", "Soil.Temperature.C", "Bulk.EC.Raw.dS.per.m.", "Bulk.EC.TC.dS.per.m", "Pore.Water.EC.dS.per.m", "Pore.Water.EC.Offset", "Raw.Real.Dielectric", "Raw.Imaginary.Dielectric", "Loss.Tangent", "soil.EC.10cm.TEROS", "soil.salinity.10cm.TEROS", "soil.temp.10cm.TEROS", "soil.vwc.10cm.TEROS", "HydraGO_Notes", "tz_Licor"))
 
 
 ##Separate by year for ESS-DIVE 
@@ -41,12 +41,14 @@ final_data_2022 <- subset(final_data, Year == "2022")
 final_data_2023 <- subset(final_data, Year == "2023")
 final_data_2024 <- subset(final_data, Year == "2024")
 final_data_2025 <- subset(final_data, Year == "2025")
+final_data_2026 <- subset(final_data, Year == "2026")
 
 ##Write out annual data files
 write.csv(final_data_2022, "Data package/COMPASS_SynopticCB_Macrophyte_Fluxes_2022.csv", row.names = FALSE)
 write.csv(final_data_2023, "Data package/COMPASS_SynopticCB_Macrophyte_Fluxes_2023.csv", row.names = FALSE)
 write.csv(final_data_2024, "Data package/COMPASS_SynopticCB_Macrophyte_Fluxes_2024.csv", row.names = FALSE)
 write.csv(final_data_2025, "Data package/COMPASS_SynopticCB_Macrophyte_Fluxes_2025.csv", row.names = FALSE)
+write.csv(final_data_2026, "Data package/COMPASS_SynopticCB_Macrophyte_Fluxes_2026.csv", row.names = FALSE)
 
 ```
 
@@ -56,7 +58,7 @@ write.csv(final_data_2025, "Data package/COMPASS_SynopticCB_Macrophyte_Fluxes_20
 
 #pull the column names from the all_dat1 dataframe and create a new dataframe with them
 dd <- data.frame(column_or_row_name = colnames(final_data))
-# dd$column_or_row_name
+dd$column_or_row_name
 
 dd$Unit <- ""
 dd$Definition <- ""
