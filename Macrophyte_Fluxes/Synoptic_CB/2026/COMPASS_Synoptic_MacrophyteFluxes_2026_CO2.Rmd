@@ -18,6 +18,7 @@ library(lubridate)
 library(dplyr)
 library(tidyr)
 library(readxl)
+library(data.table)
 
 ```
 
@@ -30,7 +31,22 @@ head(file.list)
 #Read in the data 
 alldat1 <- lapply(file.list, ffi_read_LI7810)
 
-alldat <- data.table::rbindlist(alldat1, fill=TRUE)
+alldat2 <- lapply(alldat1, function(df) {
+  df %>%
+    mutate(TIMESTAMP = force_tz(TIMESTAMP, tzone = "EST"))
+})
+
+alldat <- data.table::rbindlist(alldat2, fill=TRUE)
+
+##This says the file starts at 7:40 when it reads it in, but then when I look at the alldat file it starts at 8:40 and so is missing the 8:33 flux? 
+# COMPASS-CBSYNOPTIC-SWH-MC-20260917.txt: read 17507 rows of TG10-01087 data, 2026-09-17 07:40:19 to 2026-09-17 12:32:10 EST
+# test <- ffi_read_LI7810("Raw Data/COMPASS-CBSYNOPTIC-SWH-MC-20260917.txt")
+# 
+# ##This should be empty
+# example1 <- alldat %>% 
+#   filter(TIMESTAMP == as.POSIXct("2026-09-17 08:33:00", format = "%Y-%m-%d %H:%M:%S"))
+# 
+# alldat1
 
 ```
 
@@ -78,6 +94,26 @@ metadat$metadat_row <- seq_len(nrow(metadat))
 # in this case we will use the by hand data i guess? but we could look to using some sort of NOAA dataset.... that we would need to match 
 
 alldat$final_temp <- as.numeric(alldat$Hand_Temp)
+
+# View rows in alldat with no metadata match
+matched <- alldat %>% 
+  select(metadat_row) %>% 
+  distinct() 
+
+unmatched <- metadat %>%
+  anti_join(matched, by = "metadat_row")
+
+head(unmatched)
+
+##This should be empty
+example1 <- alldat %>% 
+  filter(TIMESTAMP == as.POSIXct("09-17-2026 08:33:00", format = "%m-%d-%Y %H:%M:%S"))
+
+##This should work
+example2 <- alldat %>% 
+  filter(TIMESTAMP == as.POSIXct("05-13-2026 08:52:00", format = "%m-%d-%Y %H:%M:%S"))
+
+##Trying to figure out why they aren't matching
 
 #remove the rows that don't match to metadata 
 # alldat <- alldat %>%
@@ -221,7 +257,6 @@ for(P in bad_plots){
 #GCW_W_1_202607 - just a very low, messy flux
 #GCW_W_2_202607 - just a very low, messy flux
 #GCW_W_3_202607 - just a very low, messy flux
-#GWI_W_1_202607 - just a very low, messy flux
 #GWI_W_3_202607 - just a very low, messy flux
 #GWI_W_4_202607 - just a very low, messy flux
 #MSM_W_1_202607 - just a very low, messy flux
@@ -234,24 +269,9 @@ for(P in bad_plots){
 #SWH_W_4_202607 - just a very low, messy flux
 
 ##Fluxes to remove: 
-#GCW_TR_1_202607 - very wonky, jumping around from -1000 to 1000 ppm CO2 - remove
-#GCW_TR_5_202607 - remove, all values are at -101585.3, very strange - remove 
-#GWI_TR_2_202609 - only 4 points?? add another 5 minutes?*
-#GWI_TR_3_202607 - what?? add another 5 minutes?*
-#GWI_TR_3_202609 - several ebullition peaks in the middle - remove
-#GWI_TR_4_202609 - ebullition in the beginning - remove
-#GWI_TR_5_202607 - several ebullition peaks in the middle - remove
-#GWI_W_1_202609 - two U shapes, not sure what happened here - remove
-#GWI_W_4_202609 - very messy, not sure what happened here - remove
-#GWI_W_5_202609 - Two large peaks; unusable - remove
-#MSM_TR_3_202607 - very messy, unusable - remove 
-#SWH_TR_4_202609 - starting value is 3000 - remove 
-#GWI_W_2_202609 - unusable 
-#GCW_W_4_202607 - ebullition; co2 at 700 ppm
-#GCW_W_5_202609 - high co2, too messy
-#SWH_W_1_202607 - messy and negative flux
-#MSM_W_3_202609 - messy
-#GWI_TR_4_202607 - extremely negative co2 flux, starts at 2000
+#GWI_W_1_202607 - U-shaped
+#GWI_W_2_202607 - L-shaped
+
 
 ##Fluxes to change: Many issues, probably due to using Gru
 #GCW_TR_1_202609 - remove 15 sec from obs length
@@ -260,7 +280,6 @@ for(P in bad_plots){
 #GCW_TR_3_202607 - remove 120 sec from obs length
 #GCW_W_5_202607 - only use the first 2 minutes to avoid weird dip to -400 ppm
 #GWI_TR_5_202609 - only use the first 3 minutes to avoid ebullition 
-#GWI_W_2_202607 - only use the first 3 minutes to avoid weird dip 
 #GWI_W_3_202609 - use first 2 minutes, ebullition in the middle 
 #GWI_W_5_202607 - avoid weird dip to -400 ppm, change start time to 12:51 and run for 100 seconds*
 #MSM_TR_1_202607 - maybe use the last 2 minutes to avoid the ebullition peak
@@ -279,13 +298,13 @@ for(P in bad_plots){
 #SWH_TR_5_202609 - reduce obs length by 30 sec 
 #SWH_W_2_202607 - use last 2.5 minutes 
 #SWH_W_5_202607 - add 1 min to start time *
+#GWI_TR_2_202609 - ?
 
 
 ##Already added notes to metadata for the ones I fixed
 ##Add qaqc flags 
 #Fluxes that need to be removed
-remove_flags <- c("GCW_TR_1_202607", "GCW_TR_5_202607", "GWI_TR_2_202609", "GWI_TR_3_202607", "GWI_TR_3_202609", "GWI_TR_4_202609", "GWI_TR_5_202607", "GWI_W_1_202609", "GWI_W_4_202609", "GWI_W_5_202609", "MSM_TR_3_202607", "SWH_TR_4_202609", "GWI_W_2_202609", "GCW_W_4_202607", "GCW_W_5_202609", "SWH_W_1_202607", "MSM_W_3_202609", 
-"GWI_TR_4_202607")
+remove_flags <- c("GWI_W_1_202607", "GWI_W_2_202607")
 fluxes$qaqc_flag <- NA
 fluxes <- fluxes %>%
     mutate(qaqc_flag = ifelse(is.na(qaqc_flag) & Plot %in% remove_flags, "messy flux, remove", qaqc_flag))
@@ -428,14 +447,14 @@ p3
 
 #make new columns with the plot; zone; replicate 
 IDs <- data.frame(do.call('rbind', strsplit(as.character(fluxes$Plot),'_',fixed=TRUE)))
-colnames(IDs) <- c("Site",  "Zone", "Replicate", "Date") #, "RHZ", "RHZ_Rep")
+colnames(IDs) <- c("Site",  "Zone", "Replicate", "Date")
 head(IDs)
 
 #rejoin them to the dataframe
 allflux <- cbind(IDs, fluxes)
 
 ##Add in notes from metadata
-metadat_notes <- metadat[, c("Plot", "Temp_ByHand", "Notes")]
+metadat_notes <- metadat[, c("Plot", "Temp_ByHand", "Notes", "tz_Licor")]
 allflux_notes <- allflux %>% 
   left_join(metadat_notes, by=c("Plot"="Plot"))
 
