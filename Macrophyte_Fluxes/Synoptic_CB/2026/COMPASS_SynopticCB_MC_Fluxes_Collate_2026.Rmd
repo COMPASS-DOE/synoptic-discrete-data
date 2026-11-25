@@ -1,6 +1,6 @@
 ---
 title: "Synoptic CB: Macrophyte Fluxes"
-author: "2025 Samples"
+author: "2026 Samples"
 date: "`r Sys.Date()`"
 output: 
   pdf_document:
@@ -27,7 +27,7 @@ library(lubridate)
 #Read in and collate all the files in the Processed Data folder 
 ```{r, include = FALSE}
 
-ch4 <- read.csv("Processed Data/COMPASS_Synoptic_CB_Macrophyte_Fluxes_Final_2025_CH4.csv")
+ch4 <- read.csv("Processed Data/COMPASS_Synoptic_CB_Macrophyte_Fluxes_Final_2026_CH4.csv")
 ch4$X <- NULL
 ch4 <- ch4 %>%
   rename_with(
@@ -37,21 +37,20 @@ ch4 <- ch4 %>%
   rename(ch4_qaqc_flag = qaqc_flag) %>% 
   mutate(Year = substring(TIMESTAMP, 1, 4))
 
-co2 <- read.csv("Processed Data/COMPASS_Synoptic_CB_Macrophyte_Fluxes_Final_2025_CO2.csv")
+co2 <- read.csv("Processed Data/COMPASS_Synoptic_CB_Macrophyte_Fluxes_Final_2026_CO2.csv")
 co2$X <- NULL
 co2 <- co2 %>%
   rename_with(
     .cols = 7:(ncol(.) - 6),
     .fn = ~paste0("co2_", .)
   ) %>%
-  rename(co2_qaqc_flag = qaqc_flag, 
-         wx_tempavg15 = wx.tempavg15) %>% 
+  rename(co2_qaqc_flag = qaqc_flag) %>% 
   mutate(Year = substring(TIMESTAMP, 1, 4))
 
 # Combine all files
 colnames(ch4)
 colnames(co2)
-all_dat <- merge(ch4, co2, by = c("Year", "Plot", "Site", "Zone", "Replicate", "Date", "TIMESTAMP", "TIMESTAMP_min", "TIMESTAMP_max", "Temp_ByHand", "wx_tempavg15", "Notes"))
+all_dat <- merge(ch4, co2, by = c("Year", "Plot", "Site", "Zone", "Replicate", "Date", "TIMESTAMP", "TIMESTAMP_min", "TIMESTAMP_max", "tz_Licor", "Temp_ByHand", "Notes"))
 
 ##Rename Zone
 all_dat$Zone <- gsub("W", "WC", all_dat$Zone)
@@ -73,7 +72,7 @@ all_dat1 <- all_dat %>%
 
 
 ##Read in hydrago data from S Drive
-hydrago <- read.csv("S:/Biogeochemistry/COMPASS Synoptics/Samples & Data/Soil Conductivity Probe/Raw Data Files/2025/COMPASS_Synoptic_2025_ALL_SoilCond_Data.csv")
+hydrago <- read.csv("S:/Biogeochemistry/COMPASS Synoptics/Samples & Data/Soil Conductivity Probe/Raw Data Files/2026/COMPASS_Synoptic_2026_ALL_SoilCond_Data.csv")
 
 ## Select only measurements from collars
 hydrago <- hydrago %>% 
@@ -93,9 +92,9 @@ missing_ids <- all_dat1 %>%
 
 
 if (nrow(missing_ids) == 0) {
-  message("All flux IDs are present in hydrago data")
+  message("All flux IDs are present in hydrago data or are accounted for in HydraGO_NoData_Notes.csv")
 } else {
-  message("Some flux IDs are missing from hydrago data")
+  message("Some flux IDs are missing from hydrago data and are not accounted for in HydraGO_NoData_Notes.csv")
   
   # Optional: Which ones are missing?
   print(missing_ids)
@@ -112,7 +111,7 @@ missing_ids <- missing_ids %>%
     into = c("Site", "Zone", "Collar" ,"Date"),
     remove = FALSE)
 
-write.csv(missing_ids, "fluxes_missing_hydrago_data_2025.csv", row.names = FALSE)
+write.csv(missing_ids, "fluxes_missing_hydrago_data_2026.csv", row.names = FALSE)
 
 ##Combine with flux data
 final_dat1 <- all_dat1 %>% 
@@ -122,84 +121,85 @@ final_dat1 <- all_dat1 %>%
 
 
 ##pull TEROS data for the zone during the time of the fluxes and put it into another column so that we can use that too.
+# Soil sensors - will need to use this when the 2026 L2 sensor data release comes out because the HydraGO was broken for July 2026 fluxes 
 ```{r, include = FALSE}
-# Soil sensors
 
-##Read in L1 Sensor Data from S Drive and only save necessary data
-# Path to zip file
-L2 <- "S:/Biogeochemistry/COMPASS/L2 Data/v2-1"
-
-# List CSV files inside the zip
-files <- list.files(path = L2, recursive = TRUE, full.names = TRUE)
-
-files <- files[
-  grepl("soil", files, ignore.case = TRUE) &
-  grepl("10cm", files, ignore.case = TRUE) &
-  grepl("SWH|GCW|MSM|GWI", files, ignore.case = TRUE) &
-  grepl("2025", files, ignore.case = TRUE) &
-  grepl("\\.parquet$", files, ignore.case = TRUE)
-]
-
-teros <- files %>%
-  map_dfr(read_parquet)
-
-#Change W Plot to WC
-teros <- teros %>%
-  mutate(Plot = ifelse(Plot == "W", "WC", Plot))
-
-##Want to go from long to wide format
-teros_wide <- pivot_wider(teros, id_cols = c("TIMESTAMP", "Plot", "Site", "Instrument", "Instrument_ID", "Sensor_ID"), names_from = research_name, values_from = Value )
-
-##Average for each TIMESTAMP by Site, Plot, and Timestamp
-teros_wide_avg <- teros_wide %>%
-  group_by(Site, Plot, TIMESTAMP) %>%
-   dplyr::summarize(
-     soil.EC.10cm.TEROS = mean(`soil-EC-10cm`, na.rm=TRUE),
-     soil.salinity.10cm.TEROS = mean(`soil-salinity-10cm`, na.rm=TRUE),
-     soil.temp.10cm.TEROS = mean(`soil-temp-10cm`, na.rm=TRUE),
-     soil.vwc.10cm.TEROS = mean(`soil-vwc-10cm`, na.rm=TRUE))
-
-##Write out this dataframe
-write.csv(teros_wide_avg, file="Raw Data/TEROS_data.csv", row.names = FALSE)
-
-teros_wide_avg <- read.csv("Raw Data/TEROS_data.csv")
-colnames(teros_wide_avg)
+# ##Read in L1 Sensor Data from S Drive and only save necessary data
+# # Path to zip file
+# L2 <- "S:/Biogeochemistry/COMPASS/L2 Data/v2-1"
+# 
+# # List CSV files inside the zip
+# files <- list.files(path = L2, recursive = TRUE, full.names = TRUE)
+# 
+# files <- files[
+#   grepl("soil", files, ignore.case = TRUE) &
+#   grepl("10cm", files, ignore.case = TRUE) &
+#   grepl("SWH|GCW|MSM|GWI", files, ignore.case = TRUE) &
+#   grepl("2026", files, ignore.case = TRUE) &
+#   grepl("\\.parquet$", files, ignore.case = TRUE)
+# ]
+# 
+# teros <- files %>%
+#   map_dfr(read_parquet)
+# 
+# #Change W Plot to WC
+# teros <- teros %>%
+#   mutate(Plot = ifelse(Plot == "W", "WC", Plot))
+# 
+# ##Want to go from long to wide format
+# teros_wide <- pivot_wider(teros, id_cols = c("TIMESTAMP", "Plot", "Site", "Instrument", "Instrument_ID", "Sensor_ID"), names_from = research_name, values_from = Value )
+# 
+# ##Average for each TIMESTAMP by Site, Plot, and Timestamp
+# teros_wide_avg <- teros_wide %>%
+#   group_by(Site, Plot, TIMESTAMP) %>%
+#    dplyr::summarize(
+#      soil.EC.10cm.TEROS = mean(`soil-EC-10cm`, na.rm=TRUE),
+#      soil.salinity.10cm.TEROS = mean(`soil-salinity-10cm`, na.rm=TRUE),
+#      soil.temp.10cm.TEROS = mean(`soil-temp-10cm`, na.rm=TRUE),
+#      soil.vwc.10cm.TEROS = mean(`soil-vwc-10cm`, na.rm=TRUE))
+# 
+# ##Write out this dataframe
+# write.csv(teros_wide_avg, file="Raw Data/TEROS_data.csv", row.names = FALSE)
+# 
+# teros_wide_avg <- read.csv("Raw Data/TEROS_data.csv")
+# colnames(teros_wide_avg)
 ```
 
 ## Match up the TEROS soil data and add it to the flux dataframe
 ```{r, include = FALSE}
-#Going to need to use site and timestamp in the metadata in order to find a date 
-
-#first we need to make a timestamp column in metadat so that we can 
-final_dat1$TIMESTAMP <- ymd_hms(final_dat1$TIMESTAMP)
-
-#make sure time stamps are in the correct format 
-final_dat1$TIMESTAMP <- as.POSIXct(final_dat1$TIMESTAMP, format = "%Y-%m-%d %H:%M:%OS")
-teros_wide_avg$TIMESTAMP <- as.POSIXct(teros_wide_avg$TIMESTAMP, format = "%Y-%m-%d %H:%M:%OS")
-
-#time rounding step to closest 15 minutes
-final_dat1$DateTime_round <- round_date(final_dat1$TIMESTAMP, "15 mins")
-teros_wide_avg$TIMESTAMP_round <- round_date(teros_wide_avg$TIMESTAMP, "15 mins")
-  
-#ensure there is only one data observation per hour 
-teros_wide_avg_clean <- teros_wide_avg %>% 
-    group_by(TIMESTAMP_round, Site, Plot) %>%
-    summarize(
-     soil.EC.10cm.TEROS = mean(soil.EC.10cm.TEROS, na.rm=TRUE),
-     soil.salinity.10cm.TEROS = mean(soil.salinity.10cm.TEROS, na.rm=TRUE),
-     soil.temp.10cm.TEROS = mean(soil.temp.10cm.TEROS, na.rm=TRUE),
-     soil.vwc.10cm.TEROS = mean(soil.vwc.10cm.TEROS, na.rm=TRUE))
-
-#join them 
-final_dat2 <- final_dat1 %>% 
-  left_join(teros_wide_avg_clean, by=c("Site"="Site", "Zone"="Plot", "DateTime_round"="TIMESTAMP_round")) %>% 
-  select(-DateTime_round)
-
+# #Going to need to use site and timestamp in the metadata in order to find a date 
+# 
+# #first we need to make a timestamp column in metadat so that we can 
+# final_dat1$TIMESTAMP <- ymd_hms(final_dat1$TIMESTAMP)
+# 
+# #make sure time stamps are in the correct format 
+# final_dat1$TIMESTAMP <- as.POSIXct(final_dat1$TIMESTAMP, format = "%Y-%m-%d %H:%M:%OS")
+# teros_wide_avg$TIMESTAMP <- as.POSIXct(teros_wide_avg$TIMESTAMP, format = "%Y-%m-%d %H:%M:%OS")
+# 
+# #time rounding step to closest 15 minutes
+# final_dat1$DateTime_round <- round_date(final_dat1$TIMESTAMP, "15 mins")
+# teros_wide_avg$TIMESTAMP_round <- round_date(teros_wide_avg$TIMESTAMP, "15 mins")
+#   
+# #ensure there is only one data observation per hour 
+# teros_wide_avg_clean <- teros_wide_avg %>% 
+#     group_by(TIMESTAMP_round, Site, Plot) %>%
+#     summarize(
+#      soil.EC.10cm.TEROS = mean(soil.EC.10cm.TEROS, na.rm=TRUE),
+#      soil.salinity.10cm.TEROS = mean(soil.salinity.10cm.TEROS, na.rm=TRUE),
+#      soil.temp.10cm.TEROS = mean(soil.temp.10cm.TEROS, na.rm=TRUE),
+#      soil.vwc.10cm.TEROS = mean(soil.vwc.10cm.TEROS, na.rm=TRUE))
+# 
+# #join them 
+# final_dat2 <- final_dat1 %>% 
+#   left_join(teros_wide_avg_clean, by=c("Site"="Site", "Zone"="Plot", "DateTime_round"="TIMESTAMP_round")) %>% 
+#   select(-DateTime_round)
+# 
 ```
 
 ##Remove bad fluxes and calculate how many there were
 ```{r, echo=FALSE}
 ##Remove any samples with "remove" in the qaqc_flag columns
+final_dat2 <- final_dat1
 final_dat <- final_dat2 %>% 
   filter(!grepl("remove", ch4_qaqc_flag, ignore.case = TRUE)) %>% 
   filter(!grepl("remove", co2_qaqc_flag, ignore.case = TRUE)) 
@@ -223,7 +223,7 @@ perc_unusual = nrow(unusual)/nrow(all_dat)*100
 
 #Poor/messy flux
 messy <- all_dat %>% 
-  filter(grepl("messy", ch4_qaqc_flag, ignore.case = TRUE) | grepl("poor", co2_qaqc_flag, ignore.case = TRUE))
+  filter(grepl("messy", ch4_qaqc_flag, ignore.case = TRUE) | grepl("messy", co2_qaqc_flag, ignore.case = TRUE))
 perc_messy = nrow(messy)/nrow(all_dat)*100
 
 ##Table with  percentage and type of issue
@@ -245,7 +245,7 @@ cat(paste0("Percentage messy fluxes removed: ", round(perc_messy, digits = 2), "
 ```{r write out combined data and metadata, include=FALSE}
 
 #write out a csv of all the data to the main folder: 
-write.csv(final_dat, "COMPASS_SynopticCB_MC_Fluxes_2025.csv")
+write.csv(final_dat, "COMPASS_SynopticCB_MC_Fluxes_2026.csv")
 
 ```
 
@@ -266,12 +266,9 @@ data_plotting <- data_plotting[order(data_plotting$Site), ]
 #Plot samples to get a first look at concentrations (sanity check)
 #group the data for plotting
 data_plotting_all <- data_plotting %>%
-  group_by(Site, Zone) %>%
+  group_by(Site) %>%
   mutate(row_num = factor(row_number())) %>%  # create row_num as factor per group
   ungroup()
-
-# data_plotting_all$Date <- as.Date(paste(data_plotting_all$Year, data_plotting_all$Month, data_plotting_all$Day, sep = "-"))
-
 
 #Plot data and change colors based on Zone:
 viz_ch4_plot <- ggplot(data_plotting_all, aes(x = row_num, y = ch4_lin_flux.estimate, fill = Zone)) +
@@ -285,7 +282,7 @@ viz_ch4_plot <- ggplot(data_plotting_all, aes(x = row_num, y = ch4_lin_flux.esti
     "SW" = "#25ABE6"
   )) +
   theme_classic() +
-  labs(x = " ", y = "CH4", title = "CO2 Fluxes by Site") +
+  labs(x = " ", y = "CH4 (nmol/m^2/s)", title = "CH4 Fluxes by Site") +
   theme(
     panel.spacing = unit(.05, "lines"), 
     panel.border = element_rect(color = "black", fill = NA, linewidth = 1)) + 
@@ -305,7 +302,7 @@ viz_ch4_plot <- ggplot(data_plotting_all, aes(x = row_num, y = ch4_lin_flux.esti
     "SW" = "#25ABE6"
   )) +
   theme_classic() +
-  labs(x = " ", y = "CO2", title = "CO2 Fluxes by Site") +
+  labs(x = " ", y = "CO2 (umol/m^2/s)", title = "CO2 Fluxes by Site") +
   theme(
     panel.spacing = unit(.05, "lines"), 
     panel.border = element_rect(color = "black", fill = NA, linewidth = 1)) + 
@@ -347,7 +344,7 @@ viz_ch4_boxplot <- ggplot(data_plotting_all, aes(x = as.character(Date), y = ch4
     "Surface Water" = "#25ABE6"
   ), labels = c("Upland", "Swamp", "Transition", "Wetland", "Surface Water")) +
   theme_classic() +
-  labs(x = " ", y = "CH4", title = "Summary Boxplot of CH4 by Site and Zone") +
+  labs(x = " ", y = "CH4 (nmol/m^2/s)", title = "Summary Boxplot of CH4 by Site and Zone") +
   theme(
     panel.spacing = unit(0.5, "lines"), 
     panel.border = element_rect(color = "black", fill = NA, linewidth = 1)) +
@@ -373,7 +370,7 @@ viz_co2_boxplot <- ggplot(data_plotting_all, aes(x = as.character(Date), y = co2
     "Surface Water" = "#25ABE6"
   ), labels = c("Upland", "Swamp", "Transition", "Wetland", "Surface Water")) +
   theme_classic() +
-  labs(x = " ", y = "CO2", title = "Summary Boxplot of CO2 by Site and Zone") +
+  labs(x = " ", y = "CO2 (umol/m^2/s)", title = "Summary Boxplot of CO2 by Site and Zone") +
   theme(
     panel.spacing = unit(0.5, "lines"), 
     panel.border = element_rect(color = "black", fill = NA, linewidth = 1)) +
@@ -403,7 +400,7 @@ viz_ch4_summary_boxplot <- ggplot(data_plotting_all, aes(x = Zone_1, y = ch4_lin
     "Surface Water" = "#25ABE6"
   ), labels = c("Upland", "Swamp", "Transition", "Wetland", "Surface Water")) +
   theme_classic() +
-  labs(x = " ", y = "CH4", title = "Summary Boxplot of CH4 by Site and Zone") +
+  labs(x = " ", y = "CH4 (nmol/m^2/s)", title = "Summary Boxplot of CH4 by Site and Zone") +
   theme(
     panel.spacing = unit(0.5, "lines"), 
     panel.border = element_rect(color = "black", fill = NA, linewidth = 1)) +
@@ -429,7 +426,7 @@ viz_co2_summary_boxplot <- ggplot(data_plotting_all, aes(x = Zone_1, y = co2_lin
     "Surface Water" = "#25ABE6"
   ), labels = c("Upland", "Swamp", "Transition", "Wetland", "Surface Water")) +
   theme_classic() +
-  labs(x = " ", y = "CO2", title = "Summary Boxplot of CO2 by Site and Zone") +
+  labs(x = " ", y = "CO2 (umol/m^2/s)", title = "Summary Boxplot of CO2 by Site and Zone") +
   theme(
     panel.spacing = unit(0.5, "lines"), 
     panel.border = element_rect(color = "black", fill = NA, linewidth = 1)) +
